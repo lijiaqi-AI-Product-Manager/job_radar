@@ -1,0 +1,35 @@
+name: record-fixtures
+# 在 Actions 机房用真实网络录制适配器 fixtures，并提交回当前分支。
+# 触发：推送修改了 docs/recon/record.txt 的提交（每行一个 source id），或手动触发。
+on:
+  push:
+    paths:
+      - docs/recon/record.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Record
+        run: |
+          grep -v '^\s*#' docs/recon/record.txt | grep -v '^\s*$' | while read -r sid pages; do
+            uv run python scripts/record_fixtures.py "$sid" --max-pages "${pages:-1}"
+          done
+      - name: Commit fixtures
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/fixtures
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "fixtures: record $(grep -v '^\s*#' docs/recon/record.txt | awk '{print $1}' | tr '\n' ' ')"
+          git push

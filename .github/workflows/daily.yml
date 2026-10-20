@@ -1,0 +1,85 @@
+name: daily-crawl
+# 每日抓取 -> 增量写入上一次发布的库 -> 发布到 Release data-latest；每周一另存一份快照到 data-archive。
+# 注意：schedule 只在默认分支生效。
+on:
+  schedule:
+    - cron: "17 19 * * *"   # UTC 19:17 = 北京时间 03:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: daily-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+
+      - name: Restore previous databases
+        # 历史是核心资产：Release 存在但下载失败时必须失败退出，绝不能"从零开始"后覆盖历史
+        run: |
+          mkdir -p data
+          if gh release view data-latest >/dev/null 2>&1; then
+            gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db'
+            python3 -c "import sqlite3; c=sqlite3.connect('data/jobs.db'); assert c.execute('PRAGMA quick_check').fetchone()[0]=='ok'; print('restored jobs:', c.execute('SELECT COUNT(*) FROM job').fetchone()[0])"
+          else
+            echo "no data-latest release yet, starting fresh"
+          fi
+          python3 -c "import sqlite3,os; p='data/jobs.db'; print(sqlite3.connect(p).execute('SELECT COUNT(*) FROM job').fetchone()[0] if os.path.exists(p) else 0)" > restored_count.txt
+
+      - name: Crawl
+        shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
+        run: uv run jobradar crawl --sources sources --out data | tee crawl-summary.json
+
+      - name: Publish data-latest
+        run: |
+          # 入库从不删行：岗位行数变少说明库出了问题，拒绝发布
+          python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); print('jobs', old, '->', n); assert n >= old, 'job rows decreased; refusing to publish'"
+          gh release view data-latest >/dev/null 2>&1 || \
+            gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
+          gh release upload data-latest data/jobs.db data/jd_text.db crawl-summary.json --clobber
+
+      - name: Weekly archive snapshot
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            d=$(date -u +%Y-%m-%d)
+            cp data/jobs.db "data/jobs-$d.db"
+            gh release view data-archive >/dev/null 2>&1 || \
+              gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照，用于灾备与历史回溯。" --latest=false
+            gh release upload data-archive "data/jobs-$d.db" --clobber
+          fi
+
+      - name: Health issue
+        if: always()
+        run: |
+          set +e
+          python3 scripts/health_report.py crawl-summary.json > report.md
+          bad=$?
+          set -e
+          num=$(gh issue list --label data-health --state open --json number -q '.[0].number')
+          if [ "$bad" != "0" ]; then
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --body-file report.md
+            else
+              gh label create data-health --color B60205 --description "每日抓取健康报告" --force
+              gh issue create --title "数据源健康报告" --label data-health --body-file report.md
+            fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "$(date -u +%F)：全部数据源恢复正常。"
+          fi
+
+      - name: Keep schedule alive
+        # 公开仓库 60 天无活动会自动停用定时任务；每月 1 日重新启用一次
+        run: |
+          if [ "$(date -u +%d)" = "01" ]; then gh workflow enable daily.yml; fi

@@ -1,0 +1,42 @@
+# 职类归一化规则：按岗位标题关键词匹配，自上而下，命中第一条即停止。
+# 拿不准就不要加规则——宁可留空，也不要分错（标题仍可用 --keyword 检索）。
+# 修改本文件不会产生"岗位变更"事件（职类不计入内容哈希），下一次抓取时静默生效。
+# 关键词为正则（不区分大小写）。
+
+rules:
+  # —— 明确的非技术类先匹配，避免"产品经理（算法方向）"之类被误判；设计类放在芯片之后（"芯片设计师"）——
+  - {category: 管培, subcategory: 管培生, any: ["管培生", "管理培训生", "培训生", "储备干部"]}
+  - {category: 产品, subcategory: 产品经理, any: ["产品经理", "产品策划", "产品专员", "产品助理"]}
+  - {category: 项目管理, subcategory: 项目管理, any: ["项目管理", "项目经理", "项目专员", "项目助理"]}
+
+  # —— 技术类 ——
+  - {category: 技术, subcategory: 算法, any: ["算法", "机器学习", "深度学习", "大模型", "LLM", "NLP", "自然语言", "计算机视觉", "机器视觉", "图像识别", "推荐系统", "语音识别", "多模态", "具身智能", "强化学习", "Agent", "AIGC"]}
+  - {category: 技术, subcategory: 芯片/硬件, any: ["芯片", "数字IC", "模拟IC", "\\bIC\\b", "集成电路", "版图", "FPGA", "SoC", "射频", "硬件工程师", "硬件开发", "电路设计", "PCB", "验证工程师", "DFT", "封装", "天线"]}
+  - {category: 设计, subcategory: 设计, any: ["UI设计", "UX", "交互设计", "视觉设计", "平面设计", "设计师"]}
+  - {category: 技术, subcategory: 嵌入式, any: ["嵌入式", "单片机", "MCU", "驱动开发", "固件"]}
+  - {category: 技术, subcategory: 前端, any: ["前端", "Web开发", "H5"]}
+  - {category: 技术, subcategory: 客户端, any: ["客户端", "iOS", "Android", "安卓", "鸿蒙", "HarmonyOS"]}
+  - {category: 技术, subcategory: 测试, any: ["测试工程师", "测试开发", "软件测试", "\\bQA\\b"]}
+  - {category: 技术, subcategory: 数据, any: ["数据开发", "数据工程", "大数据", "数仓", "数据仓库", "数据分析", "数据挖掘", "数据科学", "BI工程师"]}
+  - {category: 技术, subcategory: 运维, any: ["运维", "\\bSRE\\b", "DevOps"]}
+  - {category: 技术, subcategory: 安全, any: ["网络安全", "信息安全", "安全工程师", "渗透", "密码"]}
+  - {category: 技术, subcategory: 后端, any: ["后端", "后台开发", "服务端", "Java开发", "Java工程师", "Golang", "Go开发", "C\\+\\+开发", "PHP", "Python开发"]}
+  - {category: 技术, subcategory: 软件开发, any: ["软件开发", "软件工程师", "开发工程师", "研发工程师", "程序员", "架构师"]}
+
+  # —— 工程制造 ——
+  - {category: 工程制造, subcategory: 汽车工程, any: ["底盘", "车身", "内饰", "外饰", "整车", "动力总成", "NVH", "CAE", "车架", "电驱", "三电", "座舱"]}
+  - {category: 工程制造, subcategory: 工艺/设备, any: ["工艺工程师", "设备工程师", "制程", "工艺整合", "PIE", "TD工程师"]}
+  - {category: 工程制造, subcategory: 质量, any: ["质量工程师", "品质", "QA工程师", "QC", "PQE", "SQE", "可靠性"]}
+  - {category: 工程制造, subcategory: 机械/电气, any: ["机械工程师", "结构工程师", "机械设计", "电气", "自动化工程师", "仿真工程师"]}
+  - {category: 工程制造, subcategory: 生产, any: ["生产", "制造工程师", "精益", "IE工程师"]}
+
+  # —— 商业与职能 ——
+  - {category: 运营, subcategory: 运营, any: ["运营"]}
+  - {category: 市场销售, subcategory: 销售, any: ["销售", "客户经理", "商务", "\\bBD\\b", "大客户"]}
+  - {category: 市场销售, subcategory: 市场, any: ["市场", "营销", "品牌", "公关", "推广"]}
+  - {category: 职能, subcategory: 人力, any: ["人力资源", "\\bHR\\b", "HRBP", "招聘", "薪酬"]}
+  - {category: 职能, subcategory: 财务审计, any: ["财务", "会计", "审计", "税务", "资金"]}
+  - {category: 职能, subcategory: 法务, any: ["法务", "律师", "合规"]}
+  - {category: 职能, subcategory: 采购供应链, any: ["采购", "供应链", "物流", "计划员"]}
+  - {category: 职能, subcategory: 行政, any: ["行政", "秘书"]}
+  - {category: 金融, subcategory: 投研, any: ["研究员", "投资", "投行", "分析师", "精算", "风控", "风险管理"]}

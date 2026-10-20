@@ -1,0 +1,18 @@
+id: beisen-fosunpharma
+company: 复星医药
+adapter: beisen
+params:
+  tenant: fosunpharma
+  max_pages: 2
+  page_size: 20
+recruit_types:
+- campus
+- intern
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-20'
+  robots: allowed
+  terms: 公开招聘门户，列表接口无需登录、无签名、明文 JSON
+  notes: 同一域名后缀下所有租户串行抓取（crawl 按适配器分组）

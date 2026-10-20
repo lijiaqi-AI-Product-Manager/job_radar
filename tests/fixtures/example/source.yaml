@@ -1,0 +1,9 @@
+id: example-corp
+company: 示例公司
+adapter: example
+params: {max_pages: 2}
+recruit_types: [campus, intern]
+compliance:
+  checked_on: 2026-10-20
+  robots: not_applicable
+  terms: fixture only

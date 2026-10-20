@@ -1,0 +1,4 @@
+[
+  {"method": "GET", "url": "https://api.example.invalid/v1/jobs?page=1&size=20", "body": "", "status": 200, "content_type": "application/json", "file": "001.json"},
+  {"method": "GET", "url": "https://api.example.invalid/v1/jobs?page=2&size=20", "body": "", "status": 200, "content_type": "application/json", "file": "002.json"}
+]

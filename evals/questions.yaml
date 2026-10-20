@@ -1,0 +1,131 @@
+# 评测题集。每题 = 一个真实用户会问的问题 + 判分要点（checks）。
+# checks 取值见 evals/README.md。facts 留空表示需要在有真实数据后补"黄金答案"（Phase 1 完成时填）。
+# 每次改动 schema / core / skill 后重跑，比较通过率；通过率下降 = 改坏了。
+
+- id: lookup-01
+  type: lookup
+  question: 腾讯现在在招哪些2027届校招的技术岗？
+  checks: [cite_source, state_updated_at, only_from_data]
+- id: lookup-02
+  type: lookup
+  question: 字节跳动有没有北京的算法实习岗位？
+  checks: [cite_source, state_updated_at, only_from_data]
+- id: lookup-03
+  type: lookup
+  question: 美团杭州有哪些产品经理的校招岗位？
+  checks: [cite_source, state_updated_at, only_from_data]
+- id: lookup-04
+  type: lookup
+  question: 帮我找深圳的后端开发校招岗位，公司不限，最多列10个。
+  checks: [cite_source, state_updated_at, respect_limit]
+- id: lookup-05
+  type: lookup
+  question: 有哪些公司在招2028届的暑期实习生？
+  checks: [cite_source, state_updated_at, only_from_data]
+- id: lookup-06
+  type: lookup
+  question: 阿里巴巴云智能事业群现在有哪些校招岗位？
+  checks: [cite_source, state_updated_at, only_from_data]
+
+- id: diff-01
+  type: diff
+  question: 腾讯这周新开了什么岗位？
+  checks: [cite_source, state_updated_at, only_from_data, use_event_data]
+- id: diff-02
+  type: diff
+  question: 最近三天有哪些公司下架了校招岗位？
+  checks: [state_updated_at, only_from_data, use_event_data]
+- id: diff-03
+  type: diff
+  question: 字节跳动上周和这周比，岗位有什么变化？
+  checks: [state_updated_at, only_from_data, use_event_data]
+- id: diff-04
+  type: diff
+  question: 我之前关注的那个岗位，现在还在招吗？（给出岗位链接）
+  checks: [cite_source, state_updated_at, distinguish_closed_vs_missing]
+
+- id: compare-01
+  type: compare
+  question: 阿里和字节的算法岗要求有什么差异？
+  checks: [cite_source, state_updated_at, use_jd_text_only, separate_quoted_vs_inferred]
+- id: compare-02
+  type: compare
+  question: 腾讯和美团的后端校招岗，技术栈要求有什么不同？
+  checks: [cite_source, use_jd_text_only, separate_quoted_vs_inferred]
+- id: compare-03
+  type: compare
+  question: 比较一下三家公司产品经理实习岗的学历要求。
+  checks: [cite_source, use_jd_text_only, say_not_found_if_missing]
+- id: compare-04
+  type: compare
+  question: 哪家公司的算法岗最看重论文发表？
+  checks: [use_jd_text_only, separate_quoted_vs_inferred, no_fabrication]
+
+- id: trend-01
+  type: trend
+  question: 腾讯的校招岗位数量最近一个月是增加还是减少？
+  checks: [state_updated_at, only_from_data, use_event_data, state_data_span]
+- id: trend-02
+  type: trend
+  question: 最近哪类职位新增最多？
+  checks: [state_updated_at, only_from_data, state_data_span]
+- id: trend-03
+  type: trend
+  question: 去年同期这家公司招多少人？
+  checks: [say_not_found_if_missing, no_fabrication, state_data_span]
+
+- id: fresh-01
+  type: freshness
+  question: 你这里的数据是什么时候更新的？
+  checks: [state_updated_at]
+- id: fresh-02
+  type: freshness
+  question: （本地数据已超过一周未更新）腾讯现在在招什么？
+  checks: [ask_to_update_if_stale, state_updated_at]
+- id: fresh-03
+  type: freshness
+  question: 哪些公司的数据最近抓取失败了？
+  checks: [only_from_data, use_status_data]
+
+- id: neg-01
+  type: negative
+  question: 某某不存在科技有限公司现在在招什么？
+  checks: [say_not_found, no_fabrication]
+- id: neg-02
+  type: negative
+  question: 腾讯算法岗的薪资一般是多少？
+  checks: [no_fabrication, say_not_found_if_missing]
+- id: neg-03
+  type: negative
+  question: 帮我用我的简历投递字节的后端岗位。
+  checks: [refuse_out_of_scope]
+- id: neg-04
+  type: negative
+  question: 这家公司面试难不难、加班多不多？
+  checks: [no_fabrication, refuse_out_of_scope]
+
+# —— 2026-10-20 新增：针对已覆盖公司（北森门户、腾讯社招）的题目 ——
+- id: lookup-07
+  type: lookup
+  question: 长鑫存储现在有哪些2027届校招岗位？主要是哪些方向？
+  checks: [cite_source, state_updated_at, only_from_data]
+- id: lookup-08
+  type: lookup
+  question: 有哪些半导体公司在招芯片设计相关的校招岗？
+  checks: [cite_source, state_updated_at, only_from_data, respect_limit]
+- id: compare-05
+  type: compare
+  question: 药明康德和正大天晴的校招研发岗，要求有什么不同？
+  checks: [cite_source, use_jd_text_only, separate_quoted_vs_inferred]
+- id: compare-06
+  type: compare
+  question: 中金公司和中信建投的校招岗位，对学历和专业的要求有什么差别？
+  checks: [cite_source, use_jd_text_only, separate_quoted_vs_inferred, say_not_found_if_missing]
+- id: diff-05
+  type: diff
+  question: 奇瑞汽车最近一周新开了多少岗位？
+  checks: [state_updated_at, only_from_data, use_event_data, state_data_span]
+- id: neg-05
+  type: negative
+  question: 这些岗位都在哪个城市？（针对城市信息缺失的北森门户公司提问）
+  checks: [no_fabrication, say_not_found_if_missing]
