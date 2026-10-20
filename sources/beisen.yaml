@@ -1,5 +1,5 @@
 # 北森新版门户租户（{tenant}.zhiye.com）。一行一家；租户由 tenant-verify 工作流验证为 new 门户后加入。
-# 第 1 批：2026-10-20 验证 67 家（另有 6 家为旧版门户，见 docs/recon/beisen.md）。公司名为常用简称。
+# 第 1 批 67 家、第 2 批 36 家（2026-10-20 验证；旧版门户另见 docs/recon/beisen.md）。公司名为常用简称。
 # 侦察与合规：docs/recon/beisen.md
 defaults:
   adapter: beisen
@@ -78,3 +78,40 @@ sources:
   - {id: beisen-ruiinsurance, company: 瑞众人寿, params: {tenant: ruiinsurance}}
   - {id: beisen-xiangyu, company: 象屿集团, params: {tenant: xiangyu}}
   - {id: beisen-mthreads, company: 摩尔线程, params: {tenant: mthreads}}
+  # —— 第 2 批 ——
+  - {id: beisen-sigmastar, company: 星宸科技, params: {tenant: sigmastar}}
+  - {id: beisen-bestechnic, company: 恒玄科技, params: {tenant: bestechnic}}
+  - {id: beisen-chinacpt, company: 康比特, params: {tenant: chinacpt}}
+  - {id: beisen-vivofj, company: vivo（福建）, params: {tenant: vivofj}}
+  - {id: beisen-coamc, company: 中国东方资产管理, params: {tenant: coamc}}
+  - {id: beisen-wantwant, company: 旺旺集团, params: {tenant: wantwant}}
+  - {id: beisen-shining3d, company: 先临三维, params: {tenant: shining3d}}
+  - {id: beisen-dgyiheda, company: 怡合达, params: {tenant: dgyiheda}}
+  - {id: beisen-unix-group, company: 优理奇, params: {tenant: unix-group}}
+  - {id: beisen-jssoft, company: 金山云, params: {tenant: jssoft}}
+  - {id: beisen-amlogicsh, company: 晶晨半导体, params: {tenant: amlogicsh}}
+  - {id: beisen-norincogroupzhaopin, company: 中国兵器工业集团, params: {tenant: norincogroupzhaopin}}
+  - {id: beisen-qilu-pharma, company: 齐鲁制药, params: {tenant: qilu-pharma}}
+  - {id: beisen-haige, company: 海格通信, params: {tenant: haige}}
+  - {id: beisen-sacavic, company: 沈阳飞机工业, params: {tenant: sacavic}}
+  - {id: beisen-synear, company: 思念食品, params: {tenant: synear}}
+  - {id: beisen-tnong, company: 天农食品, params: {tenant: tnong}}
+  - {id: beisen-kkguan, company: KK集团, params: {tenant: kkguan}}
+  - {id: beisen-heytea, company: 喜茶, params: {tenant: heytea}}
+  - {id: beisen-dklt, company: 中电科蓝天, params: {tenant: dklt}}
+  - {id: beisen-yhwins, company: 赢合科技, params: {tenant: yhwins}}
+  - {id: beisen-tsingtao, company: 青岛啤酒, params: {tenant: tsingtao}}
+  - {id: beisen-vital, company: 先导科技集团, params: {tenant: vital}}
+  - {id: beisen-genori, company: 臻宝科技, params: {tenant: genori}}
+  - {id: beisen-bozhon4, company: 灵猴机器人, params: {tenant: bozhon4}}
+  - {id: beisen-nerin, company: 中国瑞林, params: {tenant: nerin}}
+  - {id: beisen-wondersharecampus, company: 万兴科技, params: {tenant: wondersharecampus}}
+  - {id: beisen-ryytn, company: 认养一头牛, params: {tenant: ryytn}}
+  - {id: beisen-xmhjjt, company: 厦门火炬集团, params: {tenant: xmhjjt}}
+  - {id: beisen-smbccn, company: 三井住友银行（中国）, params: {tenant: smbccn}}
+  - {id: beisen-hkaco, company: 虹科, params: {tenant: hkaco}}
+  - {id: beisen-inovance, company: 汇川技术, params: {tenant: inovance}}
+  - {id: beisen-hitachienergy, company: 日立能源, params: {tenant: hitachienergy}}
+  - {id: beisen-farasisenergy, company: 孚能科技, params: {tenant: farasisenergy}}
+  - {id: beisen-intelligents, company: 中国航空无线电电子研究所, params: {tenant: intelligents}}
+  - {id: beisen-linkcharging, company: 领充, params: {tenant: linkcharging}}

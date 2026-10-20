@@ -41,6 +41,11 @@
 - 旧版门户 6 家：smics（中芯国际）、xib（厦门国际银行）、glprop（普洛斯）、kelun（科伦药业）、biad（北京建院）、eic（启德教育）
 - 注意：raytrontek 与 raytrontek1 均为睿创微纳（两个门户），可能存在重复岗位
 
+## 4.2 租户验证（第 2 批，2026-10-20）
+- 候选 46 家：new 门户 37 家，入库 36 家（`jmgroup-o` 标题为"JM华中华东区"，无法确认公司，暂不入库）
+- 旧版门户 9 家：eswinchipch（奕斯伟）、gtgroup（绿城）、newhope（新希望）、crrczzs（中车株洲所）、sast（上海航天）、cssc（中船）、casic（航天科工）、ehr-dian（小电）、zghkyjy（中国航空研究院）
+- 大户：heytea 5144、norincogroupzhaopin 1903、jssoft 671、vital 532、inovance 417
+
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）
 - 部分租户在 `/custom/...` 自定义页面（cmhk、chinalife、coamc），接口是否相同待验证
