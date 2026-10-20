@@ -1,4 +1,4 @@
-# 评测用查询（每行一条 jobradar 子命令）。对应 evals/questions.yaml，供 eval-queries 工作流执行。
+# 评测用查询（每行一条 jobradar 子命令）。对应 evals/questions.yaml，供 eval-queries 工作流执行。（第 2 轮：修复后复测）
 doctor
 sources --table
 search --company 腾讯 --type campus --grad-year 2027 --category 技术 --limit 5

@@ -51,6 +51,10 @@
 - 旧版门户 2 家：weiheng（威衡）、tecon（天康生物）
 - 大户：sunwodacampus 1286、gotion 937、cpgroup 816、cttq 769、futurefoton 683、wuxiapptec 634
 
+## 4.3b 租户验证（第 4 批，2026-10-20）
+- 候选 23 家：new 门户 22 家，入库 21 家（`huitian1` 标题为"招聘门户网站"，无法确认公司，暂不入库）；`eswinplp` 非新版门户
+- 大户：ccccltd（中国交建）2630、ymtc（长江存储）656、tigermed 515、pudutech 281、mindray 238、mengniu 213
+
 ## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
 - 共 17 家：smics、xib、glprop、kelun、biad、eic、eswinchipch、gtgroup、newhope、crrczzs、sast、cssc、casic、ehr-dian、zghkyjy、weiheng、tecon
 - 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
