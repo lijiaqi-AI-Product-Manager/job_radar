@@ -22,7 +22,8 @@ jobs:
       - run: uv sync
       - name: Record
         run: |
-          grep -v '^\s*#' docs/recon/record.txt | grep -v '^\s*$' | while read -r sid pages; do
+          # 去掉行尾注释后再解析：<source_id> [页数]
+          sed 's/#.*//' docs/recon/record.txt | grep -v '^\s*$' | while read -r sid pages; do
             uv run python scripts/record_fixtures.py "$sid" --max-pages "${pages:-1}"
           done
       - name: Commit fixtures
