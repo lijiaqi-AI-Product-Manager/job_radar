@@ -1,5 +1,6 @@
-# 第 12 轮：北森旧版门户（服务端渲染）的列表结构与接口
-GREP https://smics.zhiye.com/campus/ (?i)(?:jobid|jobadid|JobDetail|/zpdetail|detail\.aspx)[^"'<>]{0,120}
-GREP https://smics.zhiye.com/campus/ (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生)[^<]{0,30}</a>
-GREP https://smics.zhiye.com/campus/ (?i)(?:ajax|\$\.post|\$\.get|fetch\(|url\s*:)[^;]{0,160}
-GREP https://cssc.zhiye.com/campus/?PageIndex=0 (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生|师)[^<]{0,30}</a>
+# 第 13 轮：北森岗位详情接口（找城市字段）
+GET https://fosunpharma.zhiye.com/api/Jobad/GetJobAdDetail?jobAdId=f4e9186a-6a1c-422f-a226-9ab168987881
+POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdDetail {"JobAdId":"f4e9186a-6a1c-422f-a226-9ab168987881"}
+GET https://fosunpharma.zhiye.com/api/Jobad/GetJobAdById?id=f4e9186a-6a1c-422f-a226-9ab168987881
+POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":2,"KeyWords":"","SpecialType":0,"PortalId":"","IsShowLocation":true,"NeedLoc":true}
+GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js [0-9]{2,4}:"[0-9a-f]{20}"
