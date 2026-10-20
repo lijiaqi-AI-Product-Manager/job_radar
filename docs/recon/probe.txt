@@ -1,5 +1,5 @@
-# 第 11 轮：CategoryId=5 的岗位是什么（看标题与职责）；门户导航里有哪些页面
-POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "JobAdName":"[^"]{0,60}"[^{}]{0,300}"CategoryId":"5"
-POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "JobAdName":"[^"]{0,60}"[^{}]{0,300}"CategoryId":"5"
-GREP https://cxmt.zhiye.com/campus/jobs "Name":"[^"]{1,20}","PageId"
-GREP https://chinalife.zhiye.com/campus/jobs "Name":"[^"]{1,20}","PageId"
+# 第 12 轮：北森旧版门户（服务端渲染）的列表结构与接口
+GREP https://smics.zhiye.com/campus/ (?i)(?:jobid|jobadid|JobDetail|/zpdetail|detail\.aspx)[^"'<>]{0,120}
+GREP https://smics.zhiye.com/campus/ (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生)[^<]{0,30}</a>
+GREP https://smics.zhiye.com/campus/ (?i)(?:ajax|\$\.post|\$\.get|fetch\(|url\s*:)[^;]{0,160}
+GREP https://cssc.zhiye.com/campus/?PageIndex=0 (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生|师)[^<]{0,30}</a>
