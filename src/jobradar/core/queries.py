@@ -132,3 +132,26 @@ def compare_roles(jobs_conn, text_conn, companies, category, *, per_company=5) -
             j["requirements"] = t["requirements"] if t else None
         out[name] = jobs
     return out
+
+
+def get_job(jobs_conn, text_conn, job_id) -> dict | None:
+    """单个岗位详情（含已下架的）。text_conn 为 None 表示用户没下载 JD 库，原文字段为 None。"""
+    row = jobs_conn.execute(
+        f"SELECT {_JOB_COLS} FROM job j JOIN company c ON c.id = j.company_id WHERE j.id = ?", (job_id,)
+    ).fetchone()
+    if row is None:
+        return None
+    d = _job_dict(row)
+    t = None
+    if text_conn is not None:
+        t = text_conn.execute(
+            "SELECT description, requirements FROM job_text WHERE job_id=?", (job_id,)
+        ).fetchone()
+    d["description"] = t["description"] if t else None
+    d["requirements"] = t["requirements"] if t else None
+    return d
+
+
+def data_as_of(conn) -> str | None:
+    """数据截至时间 = 最近一次成功抓取的时间。所有对外回答都应带上它。"""
+    return conn.execute("SELECT MAX(ts) FROM source_run WHERE status='ok'").fetchone()[0]

@@ -6,7 +6,9 @@ from helpers import T, make_job
 from jobradar.core.queries import (
     company_trend,
     compare_roles,
+    data_as_of,
     data_status,
+    get_job,
     recent_changes,
     search_jobs,
 )
@@ -142,3 +144,20 @@ def test_compare_roles(jobs_db, text_db):
     assert len(out["腾讯"]) == 1 and out["腾讯"][0]["requirements"] in {"精通 PyTorch", "熟悉 CUDA"}
     assert out["字节跳动"][0]["requirements"] is None
     assert out["不存在公司"] == []  # 空列表 = 库里没有，skill 据此回答"没有数据"
+
+
+def test_get_job_with_text_and_unknown(jobs_db, text_db):
+    j = make_job(1, requirements="熟悉 Go")
+    ingest_run(jobs_db, "s1", [j], ts=T(1))
+    upsert_texts(text_db, [j], ts=T(1))
+    got = get_job(jobs_db, text_db, "s1:1")
+    assert got["title"] == j.title and got["requirements"] == "熟悉 Go" and got["url"].startswith("http")
+    assert get_job(jobs_db, None, "s1:1")["requirements"] is None  # 未下载 JD 库也能用
+    assert get_job(jobs_db, text_db, "nope") is None
+
+
+def test_data_as_of_is_latest_successful_run(jobs_db):
+    assert data_as_of(jobs_db) is None
+    ingest_run(jobs_db, "s1", [make_job(1)], ts=T(3))
+    ingest_run(jobs_db, "s1", [], ts=T(4), ok=False, error="x")
+    assert data_as_of(jobs_db) == T(3)

@@ -1,7 +1,6 @@
-# 第 2 轮：平台优先。看入口页结构、脚本、接口路径
-GET https://app.mokahr.com/campus_apply/atour/7562
-GET https://app.mokahr.com/campus_apply/bjwgby/29108
-GET https://beisen.zhiye.com/campus/jobs
-GET https://beisen.zhiye.com/campus
-GET https://www.mokahr.com/docs/api/view/v2.html
-GREP https://www.mokahr.com/docs/api/view/v2.html (?s)招聘官网.{0,600}
+# 第 3 轮：在 JS 包里找职位列表接口
+GREP https://static-ats.mokahr.com/apply-web/javascripts/applyWeb-20260831-1750-7b41e-release.js ["'`](/api/[\w\-/.{}$]+)["'`]
+GREP https://static-ats.mokahr.com/apply-web/javascripts/applyWeb-20260831-1750-7b41e-release.js .{0,120}(?:necromancer|decrypt|AES|CryptoJS|yidun|NECaptcha).{0,120}
+GREP https://app.mokahr.com/campus_apply/atour/7562 <input[^>]{0,40}(?:init-data|initData)[^>]{0,300}
+GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js ["'`](/?api/[\w\-/.]+)["'`]
+GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js .{0,80}(?:GetJobAdPageList|JobAd|jobad).{0,160}
