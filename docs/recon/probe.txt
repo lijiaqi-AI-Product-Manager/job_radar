@@ -1,7 +1,6 @@
-# 第 6 轮：用纯校招租户确认 SpecialType 含义；腾讯校招接口
-POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":0,"PortalId":""}
-POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":1,"PortalId":""}
-POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
-POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":3,"PortalId":""}
-GREP https://smics.zhiye.com/campus/jobs (?i)"(?:PortalId|PortalType|SpecialType|Title|CompanyName|TenantName)":"?[^",]{0,80}
-GREP https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/p_zh-cn_post.build.js ["'`](/?api/[\w\-/.]+)["'`]
+# 第 7 轮：北森新版门户导航配置（找 SpecialType 与校招页的对应关系）；旧版门户页面结构
+GREP https://beisen.zhiye.com/campus/jobs "Navigations":\[.{0,2500}
+GREP https://fosunpharma.zhiye.com/campus/jobs "Navigations":\[.{0,2500}
+POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":0,"PortalId":""}
+POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
+GREP https://smics.zhiye.com/campus/jobs (?s)<(?:a|tr|li)[^>]{0,200}(?:detail|jobAdId|JobAdId)[^>]{0,300}>.{0,300}
