@@ -23,6 +23,10 @@ rules:
   - {category: 技术, subcategory: 后端, any: ["后端", "后台开发", "服务端", "Java开发", "Java工程师", "Golang", "Go开发", "C\\+\\+开发", "PHP", "Python开发"]}
   - {category: 技术, subcategory: 软件开发, any: ["软件开发", "软件工程师", "开发工程师", "研发工程师", "程序员", "架构师"]}
 
+  # —— 医药 ——
+  - {category: 医药, subcategory: 医药研发, any: ["制剂", "药物", "药学", "药理", "毒理", "化学合成", "合成研究", "分析方法", "生物药", "CMC", "多肽", "抗体", "细胞治疗", "注册专员"]}
+  - {category: 医药, subcategory: 临床医学, any: ["临床医师", "临床护士", "医师", "护士", "临床研究", "CRA", "CRC", "医学经理", "医学联络"]}
+
   # —— 工程制造 ——
   - {category: 工程制造, subcategory: 汽车工程, any: ["底盘", "车身", "内饰", "外饰", "整车", "动力总成", "NVH", "CAE", "车架", "电驱", "三电", "座舱"]}
   - {category: 工程制造, subcategory: 工艺/设备, any: ["工艺工程师", "设备工程师", "制程", "工艺整合", "PIE", "TD工程师"]}
@@ -39,4 +43,4 @@ rules:
   - {category: 职能, subcategory: 法务, any: ["法务", "律师", "合规"]}
   - {category: 职能, subcategory: 采购供应链, any: ["采购", "供应链", "物流", "计划员"]}
   - {category: 职能, subcategory: 行政, any: ["行政", "秘书"]}
-  - {category: 金融, subcategory: 投研, any: ["研究员", "投资", "投行", "分析师", "精算", "风控", "风险管理"]}
+  - {category: 金融, subcategory: 投研, any: ["行业研究", "证券研究", "投资", "投行", "投研", "分析师", "精算", "风控", "风险管理"]}

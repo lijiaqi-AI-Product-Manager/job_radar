@@ -1,0 +1,27 @@
+name: eval-queries
+# 用最新发布的数据执行 evals/commands.txt 中的查询（每行一条 jobradar 子命令），输出打印到日志供评测判分。
+on:
+  push:
+    paths:
+      - evals/commands.txt
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      JOBRADAR_HOME: ${{ github.workspace }}/jr
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: mkdir -p jr && gh release download data-latest -D jr -p jobs.db -p jd_text.db
+      - name: Queries
+        run: |
+          sed 's/#.*//' evals/commands.txt | grep -v '^\s*$' | while read -r line; do
+            echo "=================== jobradar $line"
+            eval "uv run jobradar $line" 2>&1 | head -c 5000
+            echo
+          done
