@@ -1,0 +1,5 @@
+{"total": 3, "items": [
+  {"id": 101, "title": "后端开发工程师（校招）", "type": "校招", "city": "深圳/北京", "dept": "示例事业群", "degree": "本科", "grad_year": 2027, "batch": "正式批", "desc": "负责示例系统开发。", "req": "熟悉 Go 或 Java；了解分布式系统。"},
+  {"id": 102, "title": "算法工程师", "type": "实习", "city": "上海", "dept": "示例研究院", "degree": "硕士", "grad_year": 2028, "batch": null, "desc": "示例算法研究。", "req": "熟悉 PyTorch。"},
+  {"id": 103, "title": "", "type": "校招", "city": "北京"}
+]}

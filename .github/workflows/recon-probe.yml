@@ -1,0 +1,19 @@
+name: recon-probe
+# 手动触发：测试 GitHub Actions 机房能否访问目标招聘站点（Phase 0 必做）。
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 要探测的 URL，空格分隔（每个站点 1 次请求 + 1 次 robots.txt）
+        required: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install httpx
+      - run: python scripts/recon_probe.py ${{ inputs.urls }}
