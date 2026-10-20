@@ -1,2 +1,24 @@
-# 北森 zhiye.com 待验证租户。验证为 new 的租户移入 sources/beisen.yaml 后从本文件删除。一行一个子域名。
-# （第 1–3 批已处理完毕）
+# 北森 zhiye.com 待验证租户（第 4 批，来源：搜索引擎 site:zhiye.com，2026-10-20）。验证为 new 的租户移入 sources/beisen.yaml 后从本文件删除。
+hillstonenet
+imou
+ymtc
+yuguanggold-lead
+huitian1
+kingfa
+zhongkehuanbao
+gzmetro
+mindray
+ccccltd
+hanyao
+jlcehr
+feisu
+hairobotics
+pudutech
+cetccq
+ubtrobot
+shuanghui
+roborock
+mengniu
+eswinplp
+tigermed
+huafeng
