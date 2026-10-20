@@ -1,6 +1,3 @@
-# 第 24 轮：百度校招、华为校招列表接口（无需登录？）
-FORMGREP https://talent.baidu.com/httservice/getPostListNew recruitType=GRADUATE&pageSize=3&curPage=1&keyWord=&projectType= "total":\d+|"name":"[^"]{0,40}"|"postId":"[^"]+"|"workPlace":"[^"]{0,40}"|"status":[^,]{0,20}|"message":"[^"]{0,60}"
-FORMGREP https://talent.baidu.com/httservice/getPostListNew recruitType=INTERN&pageSize=3&curPage=1&keyWord=&projectType= "total":\d+|"name":"[^"]{0,40}"|"status":[^,]{0,20}
-GREP https://talent-offical-static-prod.cdn.bcebos.com/hcm-recruitment/talent-offical-static-prod/client/static/js/Page.695b8d85.chunk.js .{0,120}httservice.{0,160}
-GET https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/3/1?jobFamilyCode=&deptCode=&keywords=&searchType=1&orderBy=P_COUNT_DESC&jobType=0
-GET https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/3/1?jobFamilyCode=&deptCode=&keywords=&searchType=1&orderBy=P_COUNT_DESC&jobType=1
+# 第 25 轮：smics 详情页（完整标题/JD）；小米职位列表入口
+GREP https://smics.zhiye.com/campusxq?jobId=390852209&jc=2 <title>[^<]{0,80}|<h\d[^>]*>[^<]{0,80}</h\d>|class="[^"]*(?:title|name)[^"]*"[^>]*>[^<]{0,80}|岗位职责|任职要求|工作职责
+GREP https://hr.xiaomi.com/website/campus.html href="[^"]{0,160}"|https?://[\w.\-]+(?:mioffice|xiaomi)[\w./\-?=&]*
