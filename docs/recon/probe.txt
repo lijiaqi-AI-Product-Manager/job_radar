@@ -1,17 +1,11 @@
-# 第 15 轮：北森旧版门户各租户是否为变体 A（/zpdetail/ 链接 + 共N条记录）
-GREP https://smics.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://xib.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://glprop.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://kelun.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://biad.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://eic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://eswinchipch.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://gtgroup.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://newhope.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://crrczzs.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://sast.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://casic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://ehr-dian.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://zghkyjy.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://weiheng.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://tecon.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+# 第 16 轮：北森旧版门户变体 B/其他结构（smics、611、kelun、casic、weiheng）+ 大厂校招站首页
+GREP https://smics.zhiye.com/campus/?PageIndex=1 <a[^>]{0,200}jobId=[^>]{0,200}>|当前第\s*\d+\s*/\s*\d+\s*页|共\d+条
+GREP https://smics.zhiye.com/campus/?PageIndex=1 <tr[^>]*>[\s\S]{0,600}?</tr>
+GREP https://611.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
+GREP https://kelun.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|href="[^"]{0,120}(?:detail|job)[^"]{0,80}"|当前第\s*\d+\s*/\s*\d+\s*页
+GREP https://casic.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|href="[^"]{0,120}(?:detail|job)[^"]{0,80}"|当前第\s*\d+\s*/\s*\d+\s*页
+GREP https://weiheng.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|href="[^"]{0,120}(?:detail|job)[^"]{0,80}"|当前第\s*\d+\s*/\s*\d+\s*页
+GET https://campus-talent.alibaba.com/
+GET https://zhaopin.meituan.com/web/campus
+GET https://campus.jd.com/
+GET https://join.qq.com/
