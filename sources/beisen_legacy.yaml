@@ -1,0 +1,12 @@
+# 北森旧版门户（服务端渲染）。侦察：docs/recon/beisen.md §4.4。先接入变体 A（/zpdetail/ 链接）。
+defaults:
+  adapter: beisen_legacy
+  recruit_types: [campus]
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-20
+    robots: not_applicable   # 抽查 smics、cssc 的 robots.txt 为空文件
+    terms: "公开招聘门户列表页，无需登录、无验证码"
+    notes: "仅抓列表页（标题、id），不抓详情页"
+sources:
+  - {id: beisen-legacy-cssc, company: 中国船舶集团, params: {tenant: cssc, portal: campus}}

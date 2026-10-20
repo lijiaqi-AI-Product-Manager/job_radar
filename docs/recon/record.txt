@@ -2,3 +2,4 @@
 # 录完后把该行注释掉，避免重复录制覆盖测试依赖的数据。
 # tencent 1   (已录制 2026-10-20)
 # beisen-fosunpharma 2   (已录制 2026-10-20)
+beisen-legacy-cssc 2
