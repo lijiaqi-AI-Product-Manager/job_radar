@@ -1,19 +1,20 @@
 name: recon-probe
-# 手动触发：测试 GitHub Actions 机房能否访问目标招聘站点（Phase 0 必做）。
+# Phase 0 侦察：在 GitHub Actions 机房对 docs/recon/probe.txt 中的少量地址各发 1 次请求，结果打印到日志。
+# 触发：推送修改了 probe.txt 的提交，或手动触发。
 on:
+  push:
+    paths:
+      - docs/recon/probe.txt
   workflow_dispatch:
-    inputs:
-      urls:
-        description: 要探测的 URL，空格分隔（每个站点 1 次请求 + 1 次 robots.txt）
-        required: true
 
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install httpx
-      - run: python scripts/recon_probe.py ${{ inputs.urls }}
+      - run: python scripts/recon_probe.py --file docs/recon/probe.txt --body 6000
