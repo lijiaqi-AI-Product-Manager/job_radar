@@ -1,10 +1,8 @@
-# 第 22 轮：其他大厂校招站首页（入口、脚本、接口线索）
-GET https://campus.163.com/
-GET https://talent.baidu.com/jobs/list
-GET https://campus.kuaishou.cn/
-GET https://hr.xiaomi.com/campus
-GET https://career.huawei.com/reccampportal/portal5/index.html
-GET https://careers.pddglobalhr.com/campus/grad
-GET https://campus.meituan.com/
-GET https://hr.163.com/
-GET https://zhaopin.jd.com/
+# 第 23 轮：百度、华为、拼多多、网易校招的接口线索（只读 JS / HTML）
+GREP https://talent-offical-static-prod.cdn.bcebos.com/hcm-recruitment/talent-offical-static-prod/client/static/js/Page.695b8d85.chunk.js ["'`](/(?:httservice|api|recruit)[\w/\-.]*)["'`]
+GREP https://career.huawei.com/reccampportal/portal5/js/portal5_index.js?v=x120260812 ["'`]([\w/\-.]*services[\w/\-.]*)["'`]
+GREP https://career.huawei.com/reccampportal/HwPortalReccamp.js?v=x1x120241120 ["'`]([\w/\-.]*services[\w/\-.]*)["'`]
+GREP https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/pages/grad-2f163a946521885c.js ["'`](/(?:api|recruit|campus)[\w/\-.]*)["'`]
+GREP https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/pages/_app-3aa121da9785b8fd.js ["'`](/(?:api|recruit)[\w/\-.]*)["'`]|anti[\w]{0,20}|captcha
+GREP https://campus.163.com/ src="[^"]+"|href="[^"]+\.js"|<script[^>]*>[^<]{0,300}
+GET https://career.huawei.com/robots.txt
