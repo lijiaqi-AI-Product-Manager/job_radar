@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+*.egg-info/
+
+# 运行产物：数据只通过 Release 发布，不进 git
+data/
+*.db
+*.db-journal
+*.parquet

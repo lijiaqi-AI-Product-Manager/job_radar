@@ -1,0 +1,14 @@
+id: tencent
+company: 腾讯
+adapter: tencent
+params:
+  max_pages: 1
+recruit_types:
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-20'
+  robots: not_applicable
+  terms: 列表接口为公开 JSON，无需登录；未见禁止自动化访问的条款（待人工复核用户协议）
+  notes: 侦察：docs/recon/tencent.md。仅抓列表，频率 1 req/s，约 46 页/天。

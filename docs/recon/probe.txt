@@ -1,0 +1,5 @@
+# 第 12 轮：北森旧版门户（服务端渲染）的列表结构与接口
+GREP https://smics.zhiye.com/campus/ (?i)(?:jobid|jobadid|JobDetail|/zpdetail|detail\.aspx)[^"'<>]{0,120}
+GREP https://smics.zhiye.com/campus/ (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生)[^<]{0,30}</a>
+GREP https://smics.zhiye.com/campus/ (?i)(?:ajax|\$\.post|\$\.get|fetch\(|url\s*:)[^;]{0,160}
+GREP https://cssc.zhiye.com/campus/?PageIndex=0 (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生|师)[^<]{0,30}</a>
