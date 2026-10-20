@@ -1,9 +1,7 @@
-# 第 1 轮：平台入口页 + robots，以及大厂入口的可达性
+# 第 2 轮：平台优先。看入口页结构、脚本、接口路径
 GET https://app.mokahr.com/campus_apply/atour/7562
 GET https://app.mokahr.com/campus_apply/bjwgby/29108
-GET https://www.mokahr.com/docs/api/view/v2.html
 GET https://beisen.zhiye.com/campus/jobs
-GET https://careers.tencent.com/
-GET https://jobs.bytedance.com/campus
-GET https://talent.alibaba.com/
-GET https://zhaopin.meituan.com/
+GET https://beisen.zhiye.com/campus
+GET https://www.mokahr.com/docs/api/view/v2.html
+GREP https://www.mokahr.com/docs/api/view/v2.html (?s)招聘官网.{0,600}

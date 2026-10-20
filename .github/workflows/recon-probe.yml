@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install httpx
-      - run: python scripts/recon_probe.py --file docs/recon/probe.txt --body 6000
+      - run: python scripts/recon_probe.py --file docs/recon/probe.txt --body 3000
