@@ -1,7 +1,6 @@
-# 第 18 轮：smics 标题是否被截断（span/a 是否带 title）；阿里/美团/腾讯校招的列表接口线索
-GREP https://smics.zhiye.com/campus/?PageIndex=1 <span[^>]*title="[^"]{0,80}"|<a[^>]*campusxq[^>]*title="[^"]{0,80}"|<span style="width: \d+%;">[^<]{0,60}</span>
-GET https://campus-talent.alibaba.com/campus/position
-GREP https://campus-talent.alibaba.com/campus/position _csrf[^,;]{0,80}|csrf[^,;]{0,80}|window\.\w+\s*=
-GREP https://g.alicdn.com/CPO-platform/recruit-portal/1.0.6/js/index.js .{0,200}/position/search.{0,300}
-GREP https://zhaopin.meituan.com/web/campus ["'`](/api/[\w/\-]+)["'`]|src="[^"]+\.js"|href="[^"]+\.js"
-GREP https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/p_zh-cn_index.build.js ["'`]((?:https?:)?/{1,2}[\w.\-]*/?(?:api|wechat|tapi|position|post|job)[\w/\-.]*)["'`]
+# 第 19 轮：大厂校招列表接口是否无需登录即可访问（每个只发 1 次；需要 token/签名/验证码即判 blocked）
+GREP https://campus-talent.alibaba.com/campus/position window\.__userconfig\s*=[^;]{0,400}|window\.__sysconfig\s*=[^;]{0,400}
+POST https://campus-talent.alibaba.com/position/search {"pageIndex":1,"pageSize":3,"channel":"campus_group_official_site","language":"zh"}
+POST https://zhaopin.meituan.com/api/official/job/getJobList {"page":{"pageNo":1,"pageSize":3},"jobShareType":"1","keywords":"","cityList":[],"department":[],"jfJgList":[],"jobType":[{"code":"1","subCode":[]}],"typeCode":[],"specialCode":[]}
+POST https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":1,"pageSize":3}
+GREP https://storage.360buyimg.com/public.wechat.resume/web/official/20260902001311/umi.js .{0,160}getCaptchaSession.{0,200}
