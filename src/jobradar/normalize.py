@@ -125,3 +125,13 @@ def looks_like_location(text: str | None) -> bool:
                               or _LOCATION_PART.match(level)):
                 return False
     return True
+
+
+DEGREES = ("大专", "本科", "硕士", "博士")  # 由低到高
+
+
+def degree_min_from_text(text: str | None) -> str | None:
+    """学历字段（如"硕士、博士""本科及以上"）中出现的最低学历；没有明写学历时返回 None。"""
+    if not text:
+        return None
+    return next((d for d in DEGREES if d in text), None)
