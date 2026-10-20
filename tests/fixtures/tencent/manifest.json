@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/Query?pageIndex=1&pageSize=50&language=zh-cn&area=cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "001.json"
+  }
+]
