@@ -17,3 +17,4 @@ sources:
   - {id: beisen-legacy-xib, company: 厦门国际银行, params: {tenant: xib, portal: campus}}
   - {id: beisen-legacy-ehr-dian, company: 小电科技, params: {tenant: ehr-dian, portal: campus}}
   - {id: beisen-legacy-zghkyjy, company: 中国航空研究院, params: {tenant: zghkyjy, portal: campus}}
+  - {id: beisen-legacy-611, company: 中航工业成都飞机设计研究所, params: {tenant: "611", portal: campus}}
