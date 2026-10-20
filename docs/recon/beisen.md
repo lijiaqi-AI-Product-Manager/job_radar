@@ -46,6 +46,11 @@
 - 旧版门户 9 家：eswinchipch（奕斯伟）、gtgroup（绿城）、newhope（新希望）、crrczzs（中车株洲所）、sast（上海航天）、cssc（中船）、casic（航天科工）、ehr-dian（小电）、zghkyjy（中国航空研究院）
 - 大户：heytea 5144、norincogroupzhaopin 1903、jssoft 671、vital 532、inovance 417
 
+## 4.3 租户验证（第 3 批，2026-10-20）
+- 候选 31 家：new 门户 29 家，入库 28 家（`ciccwm` 中金财富的 Count 与 `cicc` 完全相同（483），疑似共享岗位，暂不入库以免重复）
+- 旧版门户 2 家：weiheng（威衡）、tecon（天康生物）
+- 大户：sunwodacampus 1286、gotion 937、cpgroup 816、cttq 769、futurefoton 683、wuxiapptec 634
+
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）
 - 部分租户在 `/custom/...` 自定义页面（cmhk、chinalife、coamc），接口是否相同待验证

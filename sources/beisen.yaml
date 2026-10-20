@@ -1,5 +1,5 @@
 # 北森新版门户租户（{tenant}.zhiye.com）。一行一家；租户由 tenant-verify 工作流验证为 new 门户后加入。
-# 第 1 批 67 家、第 2 批 36 家（2026-10-20 验证；旧版门户另见 docs/recon/beisen.md）。公司名为常用简称。
+# 第 1 批 67 家、第 2 批 36 家、第 3 批 28 家（2026-10-20 验证；旧版门户另见 docs/recon/beisen.md）。公司名为常用简称。
 # 侦察与合规：docs/recon/beisen.md
 defaults:
   adapter: beisen
@@ -115,3 +115,32 @@ sources:
   - {id: beisen-farasisenergy, company: 孚能科技, params: {tenant: farasisenergy}}
   - {id: beisen-intelligents, company: 中国航空无线电电子研究所, params: {tenant: intelligents}}
   - {id: beisen-linkcharging, company: 领充, params: {tenant: linkcharging}}
+  # —— 第 3 批 ——
+  - {id: beisen-casco, company: 卡斯柯, params: {tenant: casco}}
+  - {id: beisen-yangtzelabs, company: 湖北江城实验室, params: {tenant: yangtzelabs}}
+  - {id: beisen-qhkyfund, company: 前海开源基金, params: {tenant: qhkyfund}}
+  - {id: beisen-innosilicon, company: 芯动科技, params: {tenant: innosilicon}}
+  - {id: beisen-dsbj, company: 东山精密, params: {tenant: dsbj}}
+  - {id: beisen-fscut, company: 柏楚电子, params: {tenant: fscut}}
+  - {id: beisen-dcits, company: 神州信息, params: {tenant: dcits}}
+  - {id: beisen-gotion, company: 国轩高科, params: {tenant: gotion}}
+  - {id: beisen-lngzl, company: 广之旅, params: {tenant: lngzl}}
+  - {id: beisen-cpgroup, company: 正大集团, params: {tenant: cpgroup}}
+  - {id: beisen-biwin1, company: 佰维存储, params: {tenant: biwin1}}
+  - {id: beisen-srhino, company: 石犀科技, params: {tenant: srhino}}
+  - {id: beisen-hkyl, company: 华康医疗, params: {tenant: hkyl}}
+  - {id: beisen-founderic, company: 方正微电子, params: {tenant: founderic}}
+  - {id: beisen-futurefoton, company: 北汽福田, params: {tenant: futurefoton}}
+  - {id: beisen-svolt, company: 蜂巢能源, params: {tenant: svolt}}
+  - {id: beisen-deye, company: 德业股份, params: {tenant: deye}}
+  - {id: beisen-greenway-battery, company: 博力威, params: {tenant: greenway-battery}}
+  - {id: beisen-sunwodacampus, company: 欣旺达, params: {tenant: sunwodacampus}}
+  - {id: beisen-wuxiapptec, company: 药明康德, params: {tenant: wuxiapptec}}
+  - {id: beisen-skhb3, company: 科华生物, params: {tenant: skhb3}}
+  - {id: beisen-cttq, company: 正大天晴, params: {tenant: cttq}}
+  - {id: beisen-king-eagle, company: 晶易医药, params: {tenant: king-eagle}}
+  - {id: beisen-hayao, company: 哈药集团, params: {tenant: hayao}}
+  - {id: beisen-bocd, company: 成都银行, params: {tenant: bocd}}
+  - {id: beisen-zjtlcb, company: 浙江泰隆商业银行, params: {tenant: zjtlcb}}
+  - {id: beisen-heavengifts, company: 爱奇迹, params: {tenant: heavengifts}}
+  - {id: beisen-dwzq, company: 东吴证券, params: {tenant: dwzq}}
