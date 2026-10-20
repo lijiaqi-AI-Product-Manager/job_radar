@@ -1,6 +1,6 @@
 import pytest
 
-from jobradar.normalize import batch_from_text, grad_year_from_text
+from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from_text
 
 
 @pytest.mark.parametrize("text,year", [
@@ -39,3 +39,18 @@ def test_batch(text, batch):
 
 def test_none_and_empty():
     assert grad_year_from_text(None) is None and batch_from_text("") is None
+
+
+@pytest.mark.parametrize("text,cities", [
+    ("北京市", ["北京"]),
+    ("江苏省-连云港市", ["连云港"]),
+    ("深圳", ["深圳"]),
+    ("上海市,北京市", ["上海", "北京"]),
+    ("广东省·深圳市", ["深圳"]),
+    ("海外", ["海外"]),
+    ("", []),
+    (None, []),
+    ("北京市,北京市", ["北京"]),
+])
+def test_cities(text, cities):
+    assert cities_from_text(text) == cities

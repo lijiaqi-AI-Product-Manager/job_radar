@@ -55,3 +55,21 @@ def categorize(title: str | None) -> tuple[str | None, str | None]:
             if pattern.search(title):
                 return category, subcategory
     return None, None
+
+
+_CITY_SPLIT = re.compile(r"[,，、;；/|]")
+_CITY_LEVELS = re.compile(r"[-·—]")
+
+
+def cities_from_text(text: str | None) -> list[str]:
+    """"江苏省-连云港市,北京市" -> ["连云港", "北京"]：取最末一级，去掉"市"后缀，去重保序。"""
+    if not text:
+        return []
+    out: list[str] = []
+    for part in _CITY_SPLIT.split(text):
+        name = _CITY_LEVELS.split(part.strip())[-1].strip()
+        if len(name) > 2 and name.endswith("市"):
+            name = name[:-1]
+        if name and name not in out:
+            out.append(name)
+    return out

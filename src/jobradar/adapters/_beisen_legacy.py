@@ -1,8 +1,9 @@
 """北森旧版门户（服务端渲染，{tenant}.zhiye.com）变体 A。侦察：docs/recon/beisen.md §4.4
 
-列表页 GET /{portal}/?PageIndex=N，岗位链接形如
-  <a title="算法工程师(J11995)" href="/zpdetail/311047502?PageIndex=0">
-列表只有标题与 id，JD 原文暂不抓取（需逐个请求详情页）。
+列表页 GET /{portal}/?PageIndex=N（N 从 1 开始；0 视为越界并返回第 1 页），每行：
+  <tr><td><a title="算法工程师(J11995)" href="/zpdetail/311047502?PageIndex=1">…</a></td>
+      <td title="所属单位">…</td><td title="江苏省-连云港市">…</td><td>2026-09-03</td></tr>
+页脚"当前第N/M页"给出总页数。JD 原文暂不抓取（需逐个请求详情页）。
 
 source.params:
   tenant: 子域名，如 "cssc"
@@ -16,11 +17,14 @@ from html import unescape
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, grad_year_from_text
+from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from_text
 
 LIST_URL = "https://{tenant}.zhiye.com/{portal}/"
 DETAIL_URL = "https://{tenant}.zhiye.com/zpdetail/{id}"
+ROW = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
 LINK = re.compile(r'<a[^>]*?title="([^"]+)"[^>]*?href="/zpdetail/(\d+)[^"]*"', re.I)
+TD_TITLE = re.compile(r'<td[^>]*?title="([^"]*)"', re.I)
+TOTAL_PAGES = re.compile(r"当前第\s*\d+\s*/\s*(\d+)\s*页")
 MAX_PAGES = 200  # 防御：站点分页异常时不无限翻页
 
 
@@ -32,18 +36,28 @@ class BeisenLegacyAdapter(Adapter):
         p = self.source.params
         url = LIST_URL.format(tenant=p["tenant"], portal=p.get("portal", "campus"))
         seen: set[str] = set()
-        page = 0
-        while page < MAX_PAGES:
+        page, last = 1, MAX_PAGES
+        while page <= last:
             html = self.request_text("GET", url, params={"PageIndex": page})
-            new = [(t, i) for t, i in LINK.findall(html) if i not in seen]
-            if not new:  # 翻过最后一页时站点会重复返回末页或空页
+            m = TOTAL_PAGES.search(html)
+            if m:
+                last = min(int(m.group(1)), MAX_PAGES)
+            new = 0
+            for row in ROW.findall(html):
+                link = LINK.search(row)
+                if not link or link.group(2) in seen:
+                    continue
+                seen.add(link.group(2))
+                new += 1
+                tds = TD_TITLE.findall(row)
+                yield {"id": link.group(2), "title": unescape(link.group(1)).strip(),
+                       "org": unescape(tds[0]).strip() if len(tds) > 0 else None,
+                       "city": unescape(tds[1]).strip() if len(tds) > 1 else None}
+            if not new:  # 没有新岗位：已越过末页
                 return
-            for title, job_id in new:
-                seen.add(job_id)
-                yield {"id": job_id, "title": unescape(title).strip()}
-            page += 1
             if self.source.max_pages and page >= self.source.max_pages:
                 return
+            page += 1
 
     def normalize(self, raw: dict) -> Job:
         if not raw.get("id") or not raw.get("title"):
@@ -57,6 +71,8 @@ class BeisenLegacyAdapter(Adapter):
             url=DETAIL_URL.format(tenant=p["tenant"], id=raw["id"]),
             title=raw["title"],
             recruit_type=recruit_type,
+            cities=cities_from_text(raw.get("city")),
+            department=raw.get("org") or None,
             grad_year=grad_year_from_text(raw["title"]) if recruit_type != "social" else None,
             batch=batch_from_text(raw["title"]) if recruit_type == "campus" else None,
         )
