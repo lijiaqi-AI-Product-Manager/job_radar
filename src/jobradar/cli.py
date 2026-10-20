@@ -5,7 +5,6 @@
 
 import argparse
 import json
-import os
 import shutil
 import sqlite3
 import sys
@@ -15,32 +14,16 @@ from datetime import timedelta
 from pathlib import Path
 
 from jobradar.core import queries as q
+from jobradar.local import DB_FILES, NoData, envelope, home, open_db, release_url
 from jobradar.store.migrate import connect
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
-REPO = "lijiaqimun-coder/job_radar"
-RELEASE_TAG = "data-latest"
-DB_FILES = {"jobs": "jobs.db", "text": "jd_text.db"}
-STALE_HOURS = 48
-
-
-def home() -> Path:
-    return Path(os.environ.get("JOBRADAR_HOME", Path.home() / ".cache" / "jobradar"))
-
-
-def release_url(name: str) -> str:
-    base = f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{name}"
-    mirror = os.environ.get("JOBRADAR_MIRROR", "").rstrip("/")  # 例如国内 GitHub 加速前缀
-    return f"{mirror}/{base}" if mirror else base
-
 
 def _open(kind: str, required: bool = True):
-    path = home() / DB_FILES[kind]
-    if not path.exists():
-        if required:
-            raise SystemExit(f"本地没有数据：{path}。先运行 `jobradar update`。")
-        return None
-    return connect(path, kind)
+    try:
+        return open_db(kind, required)
+    except NoData as e:
+        raise SystemExit(str(e)) from e
 
 
 def _emit(args, payload: dict):
@@ -54,12 +37,6 @@ def _emit(args, payload: dict):
                 r.get("ts") or r.get("first_seen"), r.get("url"))))
         return
     print(json.dumps(payload, ensure_ascii=False, indent=2))
-
-
-def _envelope(conn, results, **extra) -> dict:
-    as_of = q.data_as_of(conn)
-    stale = as_of is None or (parse_ts(now_ts()) - parse_ts(as_of)).total_seconds() > STALE_HOURS * 3600
-    return {"data_as_of": as_of, "stale": stale, **extra, "results": results}
 
 
 def _download(name: str, dest: Path):
@@ -90,13 +67,13 @@ def cmd_search(args):
     rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
                          recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
                          include_closed=args.include_closed, limit=args.limit)
-    _emit(args, _envelope(conn, rows))
+    _emit(args, envelope(conn, rows))
 
 
 def cmd_show(args):
     conn = _open("jobs")
     job = q.get_job(conn, _open("text", required=False), args.job_id)
-    _emit(args, _envelope(conn, [job] if job else [], found=job is not None))
+    _emit(args, envelope(conn, [job] if job else [], found=job is not None))
 
 
 def cmd_diff(args):
@@ -104,7 +81,7 @@ def cmd_diff(args):
     since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
     rows = q.recent_changes(conn, since=since, company=args.company,
                             types=args.types.split(",") if args.types else None, limit=args.limit)
-    _emit(args, _envelope(conn, rows, since=since))
+    _emit(args, envelope(conn, rows, since=since))
 
 
 def cmd_compare(args):
@@ -113,20 +90,20 @@ def cmd_compare(args):
     if text is None:
         raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update --with-text`。")
     out = q.compare_roles(conn, text, args.companies, args.category, per_company=args.per_company)
-    _emit(args, _envelope(conn, out, category=args.category,
+    _emit(args, envelope(conn, out, category=args.category,
                           not_found=[c for c, v in out.items() if not v]))
 
 
 def cmd_trends(args):
     conn = _open("jobs")
     rows = q.company_trend(conn, args.company, until=now_ts(), step_days=args.step_days)
-    _emit(args, _envelope(conn, rows, company=args.company))
+    _emit(args, envelope(conn, rows, company=args.company))
 
 
 def cmd_sources(args):
     conn = _open("jobs")
     rows = q.data_status(conn, now=now_ts())
-    _emit(args, _envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]]))
+    _emit(args, envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]]))
 
 
 def cmd_doctor(args):
@@ -134,7 +111,7 @@ def cmd_doctor(args):
            "jd_text_db": (home() / DB_FILES["text"]).exists()}
     if out["jobs_db"]:
         conn = _open("jobs")
-        env = _envelope(conn, [])
+        env = envelope(conn, [])
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
         out["advice"] = "数据已过期，运行 `jobradar update`" if env["stale"] else "ok"
     else:

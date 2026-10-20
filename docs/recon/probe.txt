@@ -1,7 +1,6 @@
-# 第 4 轮：直接请求候选的职位列表接口（各 1 次）
-POST https://app.mokahr.com/api/outer/ats-apply/website/jobs {"orgId":"atour","siteId":7562,"limit":2,"offset":0}
-GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js [\w\-./]*\.(?:js|json)\b
-POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":2,"KeyWords":"","SpecialType":0,"PortalId":""}
-GET https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=1&keyword=&pageIndex=1&pageSize=2&language=zh-cn&area=cn
-GET https://join.qq.com/post.html
-POST https://jobs.bytedance.com/api/v1/search/job/posts {"keyword":"","limit":2,"offset":0,"job_category_id_list":[],"location_code_list":[],"subject_id_list":[],"recruitment_id_list":[],"portal_type":3,"portal_entrance":1}
+# 第 5 轮：北森校招筛选参数/详情链接；腾讯校招站接口
+GREP https://beisen.zhiye.com/campus/jobs (?i).{0,80}(?:portalid|specialtype|channel|recruittype|"kind").{0,120}
+POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":1,"PortalId":""}
+POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
+GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js .{0,200}\.chk\.js.{0,200}
+GREP https://join.qq.com/post.html .{0,200}(?:src=|href=).{0,200}

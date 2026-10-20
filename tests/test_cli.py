@@ -3,7 +3,7 @@ import json
 import pytest
 
 from helpers import T, make_job
-from jobradar import cli
+from jobradar import cli, local
 from jobradar.pipeline.ingest import ingest_run, upsert_texts
 from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts
@@ -69,4 +69,4 @@ def test_missing_data_tells_user_to_update(tmp_path, monkeypatch):
 
 def test_mirror_prefix(monkeypatch):
     monkeypatch.setenv("JOBRADAR_MIRROR", "https://mirror.example/")
-    assert cli.release_url("jobs.db").startswith("https://mirror.example/https://github.com/")
+    assert local.release_url("jobs.db").startswith("https://mirror.example/https://github.com/")
