@@ -1,6 +1,1 @@
-# 北森 zhiye.com 待验证租户（第 5 批）。验证为 new 的租户移入 sources/beisen.yaml 后从本文件删除。
-leapmotor1
-dptech
-novastar
-611
-chery
+# 北森 zhiye.com 待验证租户。验证为 new 的租户移入 sources/beisen.yaml 后从本文件删除。

@@ -166,3 +166,6 @@ sources:
   - {id: beisen-mengniu, company: 蒙牛, params: {tenant: mengniu}}
   - {id: beisen-tigermed, company: 泰格医药, params: {tenant: tigermed}}
   - {id: beisen-huafeng, company: 华峰集团, params: {tenant: huafeng}}
+  - {id: beisen-leapmotor1, company: 零跑汽车, params: {tenant: leapmotor1}}
+  - {id: beisen-dptech, company: 迪普科技, params: {tenant: dptech}}
+  - {id: beisen-novastar, company: 诺瓦星云, params: {tenant: novastar}}

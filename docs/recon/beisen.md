@@ -55,6 +55,11 @@
 - 候选 23 家：new 门户 22 家，入库 21 家（`huitian1` 标题为"招聘门户网站"，无法确认公司，暂不入库）；`eswinplp` 非新版门户
 - 大户：ccccltd（中国交建）2630、ymtc（长江存储）656、tigermed 515、pudutech 281、mindray 238、mengniu 213
 
+## 4.3c 租户验证（第 5 批，2026-10-20）
+- 候选 5 家：new 门户 4 家，入库 3 家：leapmotor1（零跑汽车）1174、dptech（迪普科技）407、novastar（诺瓦星云）148
+- `chery` 的 Count 与已入库 `chery1` 完全相同（5781），同一批岗位，不入库
+- `611`（成都飞机设计研究所）为旧版门户，待旧版变体检查
+
 ## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
 - 共 17 家：smics、xib、glprop、kelun、biad、eic、eswinchipch、gtgroup、newhope、crrczzs、sast、cssc、casic、ehr-dian、zghkyjy、weiheng、tecon
 - 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
