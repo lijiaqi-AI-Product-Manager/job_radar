@@ -109,3 +109,19 @@ def cities_from_title(title: str | None) -> list[str]:
         if tok in KNOWN_CITIES and tok not in out:
             out.append(tok)
     return out
+
+
+_LOCATION_PART = re.compile(r".+(?:省|市|区|县|州|盟|自治区|特别行政区)$")
+
+
+def looks_like_location(text: str | None) -> bool:
+    """单元格内容是否为地名（每一段都以省/市/区/县等结尾，或为已知城市/全国/海外）。"""
+    if not text or not text.strip():
+        return False
+    for part in _CITY_SPLIT.split(text):
+        for level in _CITY_LEVELS.split(part.strip()):
+            level = level.strip()
+            if level and not (level in KNOWN_CITIES or level in ("全国", "海外", "不限")
+                              or _LOCATION_PART.match(level)):
+                return False
+    return True

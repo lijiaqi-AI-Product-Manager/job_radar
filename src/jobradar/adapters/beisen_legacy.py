@@ -17,7 +17,12 @@ from html import unescape
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from_text
+from jobradar.normalize import (
+    batch_from_text,
+    cities_from_text,
+    grad_year_from_text,
+    looks_like_location,
+)
 
 LIST_URL = "https://{tenant}.zhiye.com/{portal}/"
 DETAIL_URL = "https://{tenant}.zhiye.com/zpdetail/{id}"
@@ -49,10 +54,11 @@ class BeisenLegacyAdapter(Adapter):
                     continue
                 seen.add(link.group(2))
                 new += 1
-                tds = TD_TITLE.findall(row)
+                # 各租户列顺序不一：按内容识别，地名列当城市，第一个非地名列当所属单位
+                tds = [unescape(t).strip() for t in TD_TITLE.findall(row)]
                 yield {"id": link.group(2), "title": unescape(link.group(1)).strip(),
-                       "org": unescape(tds[0]).strip() if len(tds) > 0 else None,
-                       "city": unescape(tds[1]).strip() if len(tds) > 1 else None}
+                       "org": next((t for t in tds if t and not looks_like_location(t)), None),
+                       "city": next((t for t in tds if looks_like_location(t)), None)}
             if not new:  # 没有新岗位：已越过末页
                 return
             if self.source.max_pages and page >= self.source.max_pages:

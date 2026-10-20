@@ -56,7 +56,10 @@
 - 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
 - 变体 B（如 smics）：链接参数形如 `jobId=390852397&jc=2&c=&p=1^-1,3^-1`
 - 列表只有标题与 id；JD 原文需逐个请求详情页（HTML）
-- 结论：可做，单独写 `beisen_legacy` 适配器（HTML 解析，标准库 `html.parser`，不引入新依赖）
+- 页码从 1 开始（PageIndex=0 越界并返回第 1 页）；页脚"当前第N/M页"给出总页数；每行带所属单位、地点、发布日期
+- 结论：可做，已实现 `adapters/beisen_legacy.py`（正则解析，无新依赖；列按内容识别地名，不依赖列顺序）
+- 第 15 轮变体检查：变体 A 共 8 家（cssc、sast 207 岗、tecon、eic、gtgroup、xib、ehr-dian、zghkyjy）已入库；
+  smics（变体 B）、kelun（另一结构）、casic/weiheng（路径不同）、glprop/biad/newhope/crrczzs（列表页无岗位链接）待后续
 
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）

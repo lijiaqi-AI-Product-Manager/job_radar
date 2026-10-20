@@ -10,3 +10,10 @@ defaults:
     notes: "仅抓列表页（标题、id），不抓详情页"
 sources:
   - {id: beisen-legacy-cssc, company: 中国船舶集团, params: {tenant: cssc, portal: campus}}
+  - {id: beisen-legacy-sast, company: 上海航天技术研究院, params: {tenant: sast, portal: campus}}
+  - {id: beisen-legacy-tecon, company: 天康生物, params: {tenant: tecon, portal: campus}}
+  - {id: beisen-legacy-eic, company: 启德教育, params: {tenant: eic, portal: campus}}
+  - {id: beisen-legacy-gtgroup, company: 绿城中国, params: {tenant: gtgroup, portal: campus}}
+  - {id: beisen-legacy-xib, company: 厦门国际银行, params: {tenant: xib, portal: campus}}
+  - {id: beisen-legacy-ehr-dian, company: 小电科技, params: {tenant: ehr-dian, portal: campus}}
+  - {id: beisen-legacy-zghkyjy, company: 中国航空研究院, params: {tenant: zghkyjy, portal: campus}}

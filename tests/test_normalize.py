@@ -5,6 +5,7 @@ from jobradar.normalize import (
     cities_from_text,
     cities_from_title,
     grad_year_from_text,
+    looks_like_location,
 )
 
 
@@ -90,3 +91,12 @@ def test_cities(text, cities):
 ])
 def test_cities_from_title(title, cities):
     assert cities_from_title(title) == cities
+
+
+@pytest.mark.parametrize("text,ok", [
+    ("北京市", True), ("江苏省-连云港市", True), ("北京市-海淀区,武汉市", True), ("深圳", True),
+    ("海淀区", True), ("全国", True), ("海外", True),
+    ("中船智海创新研究院有限公司", False), ("技术研发类", False), ("", False), (None, False),
+])
+def test_looks_like_location(text, ok):
+    assert looks_like_location(text) is ok
