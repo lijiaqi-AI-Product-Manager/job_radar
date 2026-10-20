@@ -1,5 +1,5 @@
 # 北森新版门户租户（{tenant}.zhiye.com）。一行一家；租户由 tenant-verify 工作流验证为 new 门户后加入。
-# 第 1 批 67 家、第 2 批 36 家、第 3 批 28 家（2026-10-20 验证；旧版门户另见 docs/recon/beisen.md）。公司名为常用简称。
+# 第 1 批 67 家、第 2 批 36 家、第 3 批 28 家、第 4 批 21 家（2026-10-20 验证；旧版门户另见 docs/recon/beisen.md）。公司名为常用简称。
 # 侦察与合规：docs/recon/beisen.md
 defaults:
   adapter: beisen
@@ -144,3 +144,28 @@ sources:
   - {id: beisen-zjtlcb, company: 浙江泰隆商业银行, params: {tenant: zjtlcb}}
   - {id: beisen-heavengifts, company: 爱奇迹, params: {tenant: heavengifts}}
   - {id: beisen-dwzq, company: 东吴证券, params: {tenant: dwzq}}
+  # —— 第 4 批 ——
+  - {id: beisen-hillstonenet, company: 山石网科, params: {tenant: hillstonenet}}
+  - {id: beisen-imou, company: 华橙网络, params: {tenant: imou}}
+  - {id: beisen-ymtc, company: 长江存储, params: {tenant: ymtc}}
+  - {id: beisen-yuguanggold-lead, company: 豫光金铅, params: {tenant: yuguanggold-lead}}
+  - {id: beisen-kingfa, company: 金发科技, params: {tenant: kingfa}}
+  - {id: beisen-zhongkehuanbao, company: 中科环保, params: {tenant: zhongkehuanbao}}
+  - {id: beisen-gzmetro, company: 广州地铁, params: {tenant: gzmetro}}
+  - {id: beisen-mindray, company: 迈瑞医疗, params: {tenant: mindray}}
+  - {id: beisen-ccccltd, company: 中国交建, params: {tenant: ccccltd}}
+  - {id: beisen-hanyao, company: 邯郸制药, params: {tenant: hanyao}}
+  - {id: beisen-jlcehr, company: 嘉立创, params: {tenant: jlcehr}}
+  - {id: beisen-feisu, company: 飞速创新, params: {tenant: feisu}}
+  - {id: beisen-hairobotics, company: 海柔创新, params: {tenant: hairobotics}}
+  - {id: beisen-pudutech, company: 普渡机器人, params: {tenant: pudutech}}
+  - {id: beisen-cetccq, company: 中电科芯片技术, params: {tenant: cetccq}}
+  - {id: beisen-ubtrobot, company: 优必选, params: {tenant: ubtrobot}}
+  - {id: beisen-shuanghui, company: 双汇, params: {tenant: shuanghui}}
+  - {id: beisen-roborock, company: 石头科技, params: {tenant: roborock}}
+  - {id: beisen-mengniu, company: 蒙牛, params: {tenant: mengniu}}
+  - {id: beisen-tigermed, company: 泰格医药, params: {tenant: tigermed}}
+  - {id: beisen-huafeng, company: 华峰集团, params: {tenant: huafeng}}
+  - {id: beisen-leapmotor1, company: 零跑汽车, params: {tenant: leapmotor1}}
+  - {id: beisen-dptech, company: 迪普科技, params: {tenant: dptech}}
+  - {id: beisen-novastar, company: 诺瓦星云, params: {tenant: novastar}}
