@@ -1,5 +1,6 @@
-# 第 9 轮：北森旧版门户 HTML 结构；字节接口形态
-GREP https://smics.zhiye.com/campus/jobs (?i)href="[^"]{0,200}(?:detail|jobad)[^"]{0,200}"
-GREP https://smics.zhiye.com/campus/jobs (?s)<(?:li|tr|div)[^>]{0,120}class="[^"]{0,60}(?:job|position|list)[^"]{0,60}"[^>]{0,200}>.{0,400}
-GREP https://jobs.bytedance.com/campus/position <script[^>]{0,200}src="[^"]{0,300}"
-GREP https://jobs.bytedance.com/campus/position (?i)csrf.{0,200}
+# 第 10 轮：北森是否存在 1/2/3 以外的 CategoryId（中国人寿、长鑫入库数少于接口 Count）
+POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
+POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":5,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
+POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
+POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":10,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
+POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":19,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} (?:"Count":\d+|"CategoryId":(?:"[^"]*"|null))

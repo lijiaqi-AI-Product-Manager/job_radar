@@ -24,6 +24,10 @@ def main(summary_path: str, data_dir: str) -> int:
         for col in ("grad_year", "batch", "degree_min", "department"):
             n = q(f"SELECT COUNT(*) FROM job WHERE {col} IS NOT NULL")[0][0]
             print(f"coverage {col}: {n / total:.0%}")
+        for col in ("category", "subcategory"):
+            n = q(f"SELECT COUNT(*) FROM job WHERE {col} IS NOT NULL")[0][0]
+            print(f"coverage {col}: {n / total:.0%}")
+        print("by subcategory:", dict(q("SELECT subcategory, COUNT(*) FROM job GROUP BY 1 ORDER BY 2 DESC LIMIT 25")))
         n = q("SELECT COUNT(*) FROM job WHERE cities != '[]'")[0][0]
         print(f"coverage cities: {n / total:.0%}")
     text = sqlite3.connect(Path(data_dir) / "jd_text.db")
@@ -33,6 +37,9 @@ def main(summary_path: str, data_dir: str) -> int:
         print(f"  {n:6d}  {name}")
     print("\nsample campus 2027 titles:")
     for (t,) in q("SELECT title FROM job WHERE recruit_type='campus' AND grad_year=2027 ORDER BY RANDOM() LIMIT 15"):
+        print("  ", t)
+    print("\nuncategorized campus titles (sample):")
+    for (t,) in q("SELECT title FROM job WHERE recruit_type='campus' AND category IS NULL ORDER BY RANDOM() LIMIT 25"):
         print("  ", t)
     print("\ncampus titles without grad_year (sample):")
     for (t,) in q("SELECT title FROM job WHERE recruit_type='campus' AND grad_year IS NULL ORDER BY RANDOM() LIMIT 15"):
