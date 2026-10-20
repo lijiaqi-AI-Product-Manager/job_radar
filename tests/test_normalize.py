@@ -15,6 +15,10 @@ from jobradar.normalize import batch_from_text, grad_year_from_text
     ("3A动作冒险游戏-战斗主策划", None),
     ("工作经验2027年以上", None),   # 不是届别
     ("J12027 后端开发", None),     # 编号里的数字不算
+    ("【2027】研究助理岗(J19663)", 2027),
+    ("【2027】云控制台开发工程师（AI架构）-成都(J14240)", 2027),
+    ("（2027届校招）财富管理培训生", 2027),
+    ("项目经理（2027）", None),     # 括号里只有年份但不在开头的方括号里，不算
 ])
 def test_grad_year(text, year):
     assert grad_year_from_text(text) == year

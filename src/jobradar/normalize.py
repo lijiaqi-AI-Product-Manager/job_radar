@@ -9,6 +9,8 @@ import yaml
 _GRAD = re.compile(
     r"(?<![\dA-Za-z])(?:20)?(2[4-9]|3[0-2])\s*(?:届|(?:秋季|春季)?(?:校招|校园招聘|秋招|春招|暑期实习|实习))"
 )
+# 标题开头的【2027】/[27] 这类只写年份的括号
+_GRAD_BRACKET = re.compile(r"^\s*[【\[](?:20)?(2[4-9]|3[0-2])[】\]]")
 # 顺序即优先级：更具体的批次在前
 _BATCHES = (
     ("提前批", ("提前批",)),
@@ -22,7 +24,7 @@ _BATCHES = (
 def grad_year_from_text(text: str | None) -> int | None:
     if not text:
         return None
-    m = _GRAD.search(text)
+    m = _GRAD.search(text) or _GRAD_BRACKET.search(text)
     return 2000 + int(m.group(1)) if m else None
 
 
