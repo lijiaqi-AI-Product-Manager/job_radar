@@ -64,15 +64,20 @@ def recent_changes(days: int = 7, company: str | None = None, types: list[str] |
 
 
 @server.tool()
-def compare_roles(companies: list[str], category: str, per_company: int = 5) -> dict:
-    """取多家公司同类岗位的 JD 原文，供对比要求差异。not_found 列出数据里没有匹配岗位的公司。"""
+def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
+                  per_company: int = 5) -> dict:
+    """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category 和/或标题关键词 keyword 选岗位（至少给一个）。
+    not_found 列出数据里没有匹配岗位的公司。"""
     def run():
         conn = open_db("jobs")
         text = open_db("text", required=False)
         if text is None:
             return {"error": "对比需要 JD 原文库：运行 `jobradar update --with-text`", "results": {}}
-        out = q.compare_roles(conn, text, companies, category, per_company=min(per_company, 20))
-        return envelope(conn, out, category=category, not_found=[c for c, v in out.items() if not v])
+        if not category and not keyword:
+            return {"error": "需要 category 或 keyword", "results": {}}
+        out = q.compare_roles(conn, text, companies, category, keyword=keyword, per_company=min(per_company, 20))
+        return envelope(conn, out, category=category, keyword=keyword,
+                        not_found=[c for c, v in out.items() if not v])
     return _guard(run)
 
 

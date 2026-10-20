@@ -89,8 +89,11 @@ def cmd_compare(args):
     text = _open("text", required=False)
     if text is None:
         raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update --with-text`。")
-    out = q.compare_roles(conn, text, args.companies, args.category, per_company=args.per_company)
-    _emit(args, envelope(conn, out, category=args.category,
+    if not args.category and not args.keyword:
+        raise SystemExit("compare 需要 --category 或 --keyword")
+    out = q.compare_roles(conn, text, args.companies, args.category, keyword=args.keyword,
+                          per_company=args.per_company)
+    _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword,
                           not_found=[c for c, v in out.items() if not v]))
 
 
@@ -175,7 +178,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = add("compare", cmd_compare, "取多家公司同类岗位的 JD 原文，供对比")
     sp.add_argument("companies", nargs="+")
-    sp.add_argument("--category", required=True)
+    sp.add_argument("--category", help="职类，见 skill references/fields.md")
+    sp.add_argument("--keyword", help="标题关键词，如 研发")
     sp.add_argument("--per-company", type=int, default=5)
 
     sp = add("trends", cmd_trends, "某公司在招岗位数随时间变化")

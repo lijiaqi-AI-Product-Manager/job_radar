@@ -25,11 +25,11 @@ jobradar doctor
 | 标题关键词 | `jobradar search --keyword 大模型` |
 | 某个岗位详情、要求 | `jobradar show <job_id>` |
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |
-| 两家或多家公司同类岗位要求对比 | `jobradar compare 阿里巴巴 字节跳动 --category 算法 --per-company 5` |
+| 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`，或按标题关键词 `--keyword 研发` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
 
-参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配；`--category` 同时匹配大类与子类（如 技术、算法、后端、产品）。字段含义见 `references/fields.md`。
+参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配；`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），两者都无结果才能说"没有"。
 
 ## 回答规则（必须遵守）
 
@@ -39,6 +39,7 @@ jobradar doctor
 4. **查不到时说清楚是哪种情况**：
    - 公司不在库里（`results` 为空，或 `compare` 的 `not_found` 里有它）→ "目前的数据里没有这家公司"，不要说"这家公司没在招"。
    - 岗位 `closed_at` 有值 → "该岗位已于 {closed_at} 下架"。
+   - 字段为空（如北森门户的 `cities` 为空列表）→ 说明"数据中未提供该信息"，不要从标题或常识推断。
 5. **变化类问题用 `diff`/`trends`**，不要拿两次 `search` 结果自己比。说明覆盖的时间跨度；历史不足时如实说（例如"数据从 X 日开始积累"）。
 6. **对比类问题**：只依据 `compare` 返回的 `requirements`/`description` 原文；区分"JD 原文写的"与"你的归纳"，引用关键原句。某家 `requirements` 为 `null` 时说明缺少原文。样本有限时（如每家只有 2–3 个岗位）提醒结论的代表性有限。
 7. **超出范围的请求**（投递简历、内推、面试评价、薪资）→ 说明本工具不提供，建议去官网或其他渠道。

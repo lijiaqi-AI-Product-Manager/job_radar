@@ -161,3 +161,18 @@ def test_data_as_of_is_latest_successful_run(jobs_db):
     ingest_run(jobs_db, "s1", [make_job(1)], ts=T(3))
     ingest_run(jobs_db, "s1", [], ts=T(4), ok=False, error="x")
     assert data_as_of(jobs_db) == T(3)
+
+
+def test_compare_roles_by_keyword(jobs_db, text_db):
+    a = [make_job(1, company="药明康德", title="【2027校招】化学研发研究员", subcategory=None, category=None, requirements="有机化学"),
+         make_job(2, company="药明康德", title="财务专员", subcategory=None, category=None)]
+    ingest_run(jobs_db, "s1", a, ts=T(1))
+    upsert_texts(text_db, a, ts=T(1))
+    out = compare_roles(jobs_db, text_db, ["药明康德"], keyword="研发")
+    assert [j["title"] for j in out["药明康德"]] == ["【2027校招】化学研发研究员"]
+    assert out["药明康德"][0]["requirements"] == "有机化学"
+
+
+def test_compare_roles_requires_category_or_keyword(jobs_db, text_db):
+    with pytest.raises(ValueError):
+        compare_roles(jobs_db, text_db, ["x"])

@@ -118,12 +118,14 @@ def data_status(conn, *, now, stale_after_hours=36) -> list[dict]:
     return out
 
 
-def compare_roles(jobs_conn, text_conn, companies, category, *, per_company=5) -> dict:
-    """每家公司取 per_company 个同类岗位及其 JD 原文。对比由调用方（agent）完成。
+def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, per_company=5) -> dict:
+    """每家公司取 per_company 个同类岗位（按职类和/或标题关键词）及其 JD 原文。对比由调用方（agent）完成。
     公司无匹配岗位 -> 空列表（调用方据此告知"库里没有"，不得编造）。"""
+    if not category and not keyword:
+        raise ValueError("compare_roles needs category or keyword")
     out = {}
     for name in companies:
-        jobs = search_jobs(jobs_conn, company=name, category=category, limit=per_company)
+        jobs = search_jobs(jobs_conn, company=name, category=category, keyword=keyword, limit=per_company)
         for j in jobs:
             t = text_conn.execute(
                 "SELECT description, requirements FROM job_text WHERE job_id=?", (j["id"],)
