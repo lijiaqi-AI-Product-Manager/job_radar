@@ -3,6 +3,9 @@
 
 source.params:
   tenant: 子域名，如 "fosunpharma"
+  page_size: 每页条数，默认 100（录 fixtures 时用小值）
+
+已知缺口：列表接口的 LocNames 恒为空，城市暂缺（不从标题猜）。
 """
 
 from collections.abc import Iterator
@@ -28,17 +31,18 @@ class BeisenAdapter(Adapter):
         return self.source.params["tenant"]
 
     def fetch_raw(self) -> Iterator[dict]:
+        size = int(self.source.params.get("page_size", PAGE_SIZE))
         page = 0
         while True:
             data = self.request_json("POST", LIST_URL.format(tenant=self.tenant), json={
-                "PageIndex": page, "PageSize": PAGE_SIZE, "KeyWords": "", "SpecialType": 0, "PortalId": "",
+                "PageIndex": page, "PageSize": size, "KeyWords": "", "SpecialType": 0, "PortalId": "",
             })
             if data.get("Code") != 200:
                 raise RuntimeError(f"beisen {self.tenant} code={data.get('Code')} {data.get('Message')}")
             items = data.get("Data") or []
             yield from items
             total = data.get("Count") or 0
-            if not items or (page + 1) * PAGE_SIZE >= total:
+            if not items or (page + 1) * size >= total:
                 return
             if self.source.max_pages and page + 1 >= self.source.max_pages:
                 return

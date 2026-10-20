@@ -1,0 +1,13 @@
+# 北森新版门户租户（{tenant}.zhiye.com）。一行一家；租户由 tenant-verify 工作流验证为 new 门户后加入。
+# 侦察与合规：docs/recon/beisen.md
+defaults:
+  adapter: beisen
+  recruit_types: [campus, intern, social]
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-20
+    robots: allowed            # 各租户 robots.txt 均为 "User-agent: * / Allow: /"（抽查 beisen、fosunpharma、intsig、cfmoto）
+    terms: "公开招聘门户，列表接口无需登录、无签名、明文 JSON"
+    notes: "同一域名后缀下所有租户串行抓取（crawl 按适配器分组）"
+sources:
+  - {id: beisen-fosunpharma, company: 复星医药, params: {tenant: fosunpharma}}

@@ -24,13 +24,14 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("source_id")
     ap.add_argument("--max-pages", type=int, default=2)
+    ap.add_argument("--page-size", type=int, default=20, help="适配器支持 params.page_size 时生效")
     args = ap.parse_args()
 
     source = next((s for s in load_sources(ROOT / "sources") if s.id == args.source_id), None)
     if source is None:
         print(f"source {args.source_id} not found in sources/")
         return 1
-    source.params = {**source.params, "max_pages": args.max_pages}
+    source.params = {**source.params, "max_pages": args.max_pages, "page_size": args.page_size}
     out = ROOT / "tests" / "fixtures" / source.adapter
     transport = RecordingTransport(out)
     adapter = load_all(include_drafts=True)[source.adapter](source, make_client(transport))
