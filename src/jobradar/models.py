@@ -33,7 +33,8 @@ class Job(BaseModel):
         return f"{self.source_id}:{self.source_job_id}"
 
     def content_hash(self) -> str:
-        payload = self.model_dump(exclude={"source_id", "source_job_id", "company"})
+        # category/subcategory 是按规则推导的数据，不计入：规则调整不应产生"变更"事件
+        payload = self.model_dump(exclude={"source_id", "source_job_id", "company", "category", "subcategory"})
         payload["cities"] = sorted(self.cities)
         raw = json.dumps(payload, sort_keys=True, ensure_ascii=False)
         return hashlib.sha1(raw.encode()).hexdigest()

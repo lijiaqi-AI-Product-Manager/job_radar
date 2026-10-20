@@ -1,6 +1,10 @@
 """从岗位标题等文本中提取校招字段。规则保守：拿不准就返回 None（CLAUDE.md：不要猜）。"""
 
 import re
+from functools import cache
+from pathlib import Path
+
+import yaml
 
 _GRAD = re.compile(
     r"(?<![\dA-Za-z])(?:20)?(2[4-9]|3[0-2])\s*(?:届|(?:秋季|春季)?(?:校招|校园招聘|秋招|春招|暑期实习|实习))"
@@ -29,3 +33,23 @@ def batch_from_text(text: str | None) -> str | None:
         if any(w in text for w in words):
             return batch
     return None
+
+
+TAXONOMY = Path(__file__).resolve().parents[2] / "taxonomy" / "categories.yaml"
+
+
+@cache
+def _rules() -> list[tuple[str, str, re.Pattern]]:
+    if not TAXONOMY.exists():  # 以库的形式安装时没有规则表；归类只在采集端进行
+        return []
+    doc = yaml.safe_load(TAXONOMY.read_text(encoding="utf-8"))
+    return [(r["category"], r["subcategory"], re.compile("|".join(r["any"]), re.I)) for r in doc["rules"]]
+
+
+def categorize(title: str | None) -> tuple[str | None, str | None]:
+    """按 taxonomy/categories.yaml 归类岗位标题；没有命中返回 (None, None)。"""
+    if title:
+        for category, subcategory, pattern in _rules():
+            if pattern.search(title):
+                return category, subcategory
+    return None, None

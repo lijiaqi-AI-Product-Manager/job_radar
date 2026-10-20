@@ -32,6 +32,8 @@ def test_crawl_ingests_jobs_and_texts(jobs_db, text_db):
                 adapters={"example": ExampleAdapter}, sleep=lambda s: None)
     assert res["example-corp"].opened == 2
     assert text_db.execute("SELECT COUNT(*) FROM job_text").fetchone()[0] == 2
+    cats = dict(jobs_db.execute("SELECT source_job_id, subcategory FROM job").fetchall())
+    assert cats == {"101": "后端", "102": "算法"}  # 适配器未给职类 -> crawl 按 taxonomy 归类
 
 
 def test_adapter_error_is_a_failed_run_and_isolated(jobs_db, text_db):

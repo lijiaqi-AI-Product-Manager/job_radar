@@ -15,15 +15,20 @@ import httpx
 
 from jobradar.adapters.base import Adapter, load_all, make_client
 from jobradar.models import Job, SourceConfig
+from jobradar.normalize import categorize
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
 def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Client,
            sleep: Callable[[float], None]) -> tuple[list[Job] | None, str | None]:
     try:
-        return list(adapter_cls(source, client, sleep=sleep).fetch_all()), None
+        jobs = list(adapter_cls(source, client, sleep=sleep).fetch_all())
     except Exception as e:  # noqa: BLE001 — 任何适配器错误都只算该源失败
         return None, f"{type(e).__name__}: {e}"[:500]
+    for j in jobs:  # 适配器没给职类的，按 taxonomy 规则归类
+        if j.category is None and j.subcategory is None:
+            j.category, j.subcategory = categorize(j.title)
+    return jobs, None
 
 
 def _fetch_group(sources, adapter_cls, client_factory, sleep):

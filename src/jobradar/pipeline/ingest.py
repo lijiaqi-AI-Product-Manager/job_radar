@@ -15,9 +15,9 @@ CLOSE_AFTER_MISSES = 3
 DROP_THRESHOLD = 0.5  # 比基线少了超过 50% 视为异常
 MIN_BASELINE = 10  # 基线小于此值不做骤降判断（小公司岗位数本来就波动）
 
+# 参与"变更"判定的结构化字段。category/subcategory 是推导数据，不在其中（见 Job.content_hash）
 STRUCT_FIELDS = (
-    "url", "title", "category", "subcategory", "recruit_type",
-    "grad_year", "batch", "degree_min", "department",
+    "url", "title", "recruit_type", "grad_year", "batch", "degree_min", "department",
 )
 
 
@@ -125,7 +125,8 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
                     _event(conn, jid, ts, "change", diff)
                     res.changed += 1
             conn.execute(
-                "UPDATE job SET last_seen=?, miss_count=0, closed_at=NULL WHERE id=?", (ts, jid)
+                "UPDATE job SET last_seen=?, miss_count=0, closed_at=NULL, category=?, subcategory=? WHERE id=?",
+                (ts, job.category, job.subcategory, jid),
             )
             if was_closed:
                 _event(conn, jid, ts, "reopen")
