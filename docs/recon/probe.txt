@@ -1,3 +1,4 @@
-# 第 25 轮：smics 详情页（完整标题/JD）；小米职位列表入口
-GREP https://smics.zhiye.com/campusxq?jobId=390852209&jc=2 <title>[^<]{0,80}|<h\d[^>]*>[^<]{0,80}</h\d>|class="[^"]*(?:title|name)[^"]*"[^>]*>[^<]{0,80}|岗位职责|任职要求|工作职责
-GREP https://hr.xiaomi.com/website/campus.html href="[^"]{0,160}"|https?://[\w.\-]+(?:mioffice|xiaomi)[\w./\-?=&]*
+# 第 26 轮：smics 详情页 JD 区块结构、列表第 2 页
+GREP https://smics.zhiye.com/campusxq?jobId=390852209&jc=2 职位描述</h3>[\s\S]{0,700}|职位要求</h3>[\s\S]{0,700}|<h2 class=" col26[^>]*>[^<]*</h2>[\s\S]{0,600}
+GREP https://smics.zhiye.com/campus/?PageIndex=2 campusxq\?jobId=\d+|<span style="width: 37%;">[^<]{0,60}</span>
+GREP https://smics.zhiye.com/campus/?PageIndex=22 campusxq\?jobId=\d+|<span style="width: 37%;">[^<]{0,60}</span>|<span style="width: \d+%;">[^<]{0,30}</span>
