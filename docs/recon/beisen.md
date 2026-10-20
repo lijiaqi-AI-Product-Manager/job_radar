@@ -51,6 +51,16 @@
 - 旧版门户 2 家：weiheng（威衡）、tecon（天康生物）
 - 大户：sunwodacampus 1286、gotion 937、cpgroup 816、cttq 769、futurefoton 683、wuxiapptec 634
 
+## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
+- 共 17 家：smics、xib、glprop、kelun、biad、eic、eswinchipch、gtgroup、newhope、crrczzs、sast、cssc、casic、ehr-dian、zghkyjy、weiheng、tecon
+- 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
+- 变体 B（如 smics）：链接参数形如 `jobId=390852397&jc=2&c=&p=1^-1,3^-1`
+- 列表只有标题与 id；JD 原文需逐个请求详情页（HTML）
+- 页码从 1 开始（PageIndex=0 越界并返回第 1 页）；页脚"当前第N/M页"给出总页数；每行带所属单位、地点、发布日期
+- 结论：可做，已实现 `adapters/beisen_legacy.py`（正则解析，无新依赖；列按内容识别地名，不依赖列顺序）
+- 第 15 轮变体检查：变体 A 共 8 家（cssc、sast 207 岗、tecon、eic、gtgroup、xib、ehr-dian、zghkyjy）已入库；
+  smics（变体 B）、kelun（另一结构）、casic/weiheng（路径不同）、glprop/biad/newhope/crrczzs（列表页无岗位链接）待后续
+
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）
 - 部分租户在 `/custom/...` 自定义页面（cmhk、chinalife、coamc），接口是否相同待验证

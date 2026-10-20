@@ -55,6 +55,13 @@ class Adapter(ABC):
 
     def request_json(self, method: str, url: str, *, params=None, json=None) -> dict:
         """限速 + 重试(仅 5xx/429/网络错误) 的 JSON 请求。适配器里一律用它，不要直接用 client。"""
+        return self._request(method, url, params=params, json=json).json()
+
+    def request_text(self, method: str, url: str, *, params=None, json=None) -> str:
+        """同 request_json，返回文本（用于服务端渲染的 HTML 页面）。"""
+        return self._request(method, url, params=params, json=json).text
+
+    def _request(self, method: str, url: str, *, params=None, json=None) -> httpx.Response:
         for attempt in range(3):
             self._throttle()
             try:
@@ -62,7 +69,7 @@ class Adapter(ABC):
                 if r.status_code == 429 or r.status_code >= 500:
                     raise httpx.HTTPStatusError("retryable", request=r.request, response=r)
                 r.raise_for_status()
-                return r.json()
+                return r
             except (httpx.TransportError, httpx.HTTPStatusError) as e:
                 retryable = isinstance(e, httpx.TransportError) or (
                     e.response.status_code == 429 or e.response.status_code >= 500

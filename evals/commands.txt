@@ -1,0 +1,19 @@
+# 评测用查询（每行一条 jobradar 子命令）。对应 evals/questions.yaml，供 eval-queries 工作流执行。
+doctor
+sources --table
+search --company 腾讯 --type campus --grad-year 2027 --category 技术 --limit 5
+search --company 字节 --city 北京 --category 算法 --type intern --limit 5
+search --company 美团 --limit 3
+search --city 深圳 --category 后端 --type campus --limit 10 --table
+search --type intern --grad-year 2028 --limit 10 --table
+search --company 阿里 --limit 3
+diff --days 7 --company 腾讯 --types open --limit 5
+diff --days 3 --types close --limit 5
+search --company 长鑫 --type campus --grad-year 2027 --limit 15 --table
+search --category 芯片/硬件 --type campus --limit 15 --table
+compare 药明康德 正大天晴 --keyword 研发 --per-company 3
+compare 中金 中信建投 --keyword 2027 --per-company 2
+diff --days 7 --company 奇瑞 --types open --limit 3
+trends 腾讯 --step-days 7
+search --company 复星 --type campus --limit 3
+search --company 某某不存在科技 --limit 3

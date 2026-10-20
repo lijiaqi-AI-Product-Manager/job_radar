@@ -5,16 +5,17 @@
 
 import argparse
 import json
-import shutil
+import os
 import sqlite3
 import sys
 import tempfile
-import urllib.request
 from datetime import timedelta
 from pathlib import Path
 
+import httpx
+
 from jobradar.core import queries as q
-from jobradar.local import DB_FILES, NoData, envelope, home, open_db, release_url
+from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, envelope, home, open_db, release_url
 from jobradar.store.migrate import connect
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
@@ -30,25 +31,56 @@ def _emit(args, payload: dict):
     if getattr(args, "table", False) and isinstance(payload.get("results"), list):
         rows = payload["results"]
         print(f"# data_as_of: {payload.get('data_as_of')}  ({len(rows)} 条)")
-        for r in rows:
-            cities = "/".join(r.get("cities") or [])
-            print(" | ".join(str(x) for x in (
-                r.get("company"), r.get("title"), cities, r.get("recruit_type"), r.get("grad_year") or "",
-                r.get("ts") or r.get("first_seen"), r.get("url"))))
+        if rows and "title" in rows[0]:  # 岗位 / 事件
+            for r in rows:
+                cities = "/".join(r.get("cities") or [])
+                print(" | ".join(str(x) for x in (
+                    r.get("company"), r.get("title"), cities, r.get("type") or r.get("recruit_type"),
+                    r.get("grad_year") or "", r.get("ts") or r.get("first_seen"), r.get("url"))))
+        elif rows:  # 其他（数据源状态、趋势）：按字段输出
+            cols = list(rows[0].keys())
+            print(" | ".join(cols))
+            for r in rows:
+                print(" | ".join("" if r.get(c) is None else str(r.get(c)) for c in cols))
         return
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 
-def _download(name: str, dest: Path):
+def _asset_request(name: str, client: httpx.Client) -> tuple[str, dict]:
+    """公开仓库：直接下载 Release 资源（可走 JOBRADAR_MIRROR）。
+    设置了 GITHUB_TOKEN/GH_TOKEN（例如仓库尚未公开时）：通过 API 带鉴权下载。"""
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if not token:
+        return release_url(name), {}
+    auth = {"Authorization": f"Bearer {token}"}
+    r = client.get(f"https://api.github.com/repos/{REPO}/releases/tags/{RELEASE_TAG}", headers=auth)
+    r.raise_for_status()
+    asset = next((a for a in r.json().get("assets", []) if a["name"] == name), None)
+    if asset is None:
+        raise SystemExit(f"Release {RELEASE_TAG} 中没有 {name}")
+    return asset["url"], {**auth, "Accept": "application/octet-stream"}
+
+
+def _download(name: str, dest: Path, client: httpx.Client | None = None):
+    client = client or httpx.Client(timeout=120, follow_redirects=True)
+    url, headers = _asset_request(name, client)
+    dest.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(dir=dest.parent, delete=False, suffix=".part") as tmp:
-        with urllib.request.urlopen(release_url(name), timeout=120) as resp:  # noqa: S310
-            shutil.copyfileobj(resp, tmp)
+        with client.stream("GET", url, headers=headers) as resp:
+            if resp.status_code == 404:
+                Path(tmp.name).unlink(missing_ok=True)
+                raise SystemExit(f"下载 {name} 失败（404）。若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
+            resp.raise_for_status()
+            for chunk in resp.iter_bytes():
+                tmp.write(chunk)
     tmp_path = Path(tmp.name)
     try:
-        sqlite3.connect(tmp_path).execute("PRAGMA quick_check").fetchone()
-    except sqlite3.DatabaseError as e:
+        ok = sqlite3.connect(tmp_path).execute("PRAGMA quick_check").fetchone()[0] == "ok"
+    except sqlite3.DatabaseError:
+        ok = False
+    if not ok:
         tmp_path.unlink()
-        raise SystemExit(f"下载的 {name} 不是有效的数据库：{e}") from e
+        raise SystemExit(f"下载的 {name} 不是有效的数据库")
     tmp_path.replace(dest)
 
 

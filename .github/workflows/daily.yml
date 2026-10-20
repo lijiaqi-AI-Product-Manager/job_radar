@@ -55,9 +55,10 @@ jobs:
           if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             d=$(date -u +%Y-%m-%d)
             cp data/jobs.db "data/jobs-$d.db"
+            uv run python scripts/weekly_report.py data/jobs.db > "data/weekly-$d.md"
             gh release view data-archive >/dev/null 2>&1 || \
-              gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照，用于灾备与历史回溯。" --latest=false
-            gh release upload data-archive "data/jobs-$d.db" --clobber
+              gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照与周报，用于灾备、历史回溯与传播。" --latest=false
+            gh release upload data-archive "data/jobs-$d.db" "data/weekly-$d.md" --clobber
           fi
 
       - name: Health issue

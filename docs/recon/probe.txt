@@ -1,5 +1,17 @@
-# 第 12 轮：北森旧版门户（服务端渲染）的列表结构与接口
-GREP https://smics.zhiye.com/campus/ (?i)(?:jobid|jobadid|JobDetail|/zpdetail|detail\.aspx)[^"'<>]{0,120}
-GREP https://smics.zhiye.com/campus/ (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生)[^<]{0,30}</a>
-GREP https://smics.zhiye.com/campus/ (?i)(?:ajax|\$\.post|\$\.get|fetch\(|url\s*:)[^;]{0,160}
-GREP https://cssc.zhiye.com/campus/?PageIndex=0 (?i)<a[^>]{0,300}>[^<]{2,40}(?:工程师|专员|岗|生|师)[^<]{0,30}</a>
+# 第 15 轮：北森旧版门户各租户是否为变体 A（/zpdetail/ 链接 + 共N条记录）
+GREP https://smics.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://xib.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://glprop.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://kelun.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://biad.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://eic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://eswinchipch.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://gtgroup.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://newhope.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://crrczzs.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://sast.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://casic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://ehr-dian.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://zghkyjy.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://weiheng.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+GREP https://tecon.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}

@@ -76,6 +76,7 @@ evals/              评测集：判断改动是否变好的唯一客观依据
 适配器代码规范：
 - 网络请求只能用 `self.request_json`；不得自己 sleep/重试；不得读取环境变量里的凭据。
 - `normalize` 里拿不准的字段留 `None`，不要猜；`category/subcategory` 默认留空（归一化阶段统一处理）。
+- 标题中**明写**的信息（被分隔符隔开的城市名、届别年份）由 crawl 阶段统一提取（`pipeline/crawl.py::_enrich`，规则在 `normalize.py`），适配器不要各自实现。提取 ≠ 推测：不得根据公司名、部门名等推断城市或届别。
 - 平台型适配器（如 Moka、北森）：一个适配器类服务多个租户，租户差异全部放 `source.params`。
 - 站点返回字段缺失/类型变化要**显式处理**（抛 `SkipRecord` 或留 `None`），不能让整次抓取崩溃。
 
