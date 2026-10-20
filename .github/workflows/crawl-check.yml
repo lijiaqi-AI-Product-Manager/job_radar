@@ -1,0 +1,22 @@
+name: crawl-check
+# 在分支上用真实网络完整跑一次 crawl（不发布），输出每个源的结果与数据统计。
+# 触发：推送修改了 docs/recon/crawl-check.txt 的提交（文件内容即本次说明，可为任意文本）。
+on:
+  push:
+    paths:
+      - docs/recon/crawl-check.txt
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Crawl
+        shell: bash
+        run: uv run jobradar crawl --sources sources --out data > summary.json
+      - name: Report
+        run: uv run python scripts/crawl_report.py summary.json data

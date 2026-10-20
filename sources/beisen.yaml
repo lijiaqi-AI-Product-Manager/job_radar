@@ -1,4 +1,5 @@
 # 北森新版门户租户（{tenant}.zhiye.com）。一行一家；租户由 tenant-verify 工作流验证为 new 门户后加入。
+# 第 1 批：2026-10-20 验证 67 家（另有 6 家为旧版门户，见 docs/recon/beisen.md）。公司名为常用简称。
 # 侦察与合规：docs/recon/beisen.md
 defaults:
   adapter: beisen
@@ -10,4 +11,70 @@ defaults:
     terms: "公开招聘门户，列表接口无需登录、无签名、明文 JSON"
     notes: "同一域名后缀下所有租户串行抓取（crawl 按适配器分组）"
 sources:
+  - {id: beisen-beisen, company: 北森, params: {tenant: beisen}}
+  - {id: beisen-zszhcpa, company: 中审众环, params: {tenant: zszhcpa}}
+  - {id: beisen-lgmg, company: 临工重机, params: {tenant: lgmg}}
+  - {id: beisen-pret, company: 普利特, params: {tenant: pret}}
+  - {id: beisen-rwdls, company: 瑞沃德, params: {tenant: rwdls}}
+  - {id: beisen-megarobo, company: 镁伽科技, params: {tenant: megarobo}}
+  - {id: beisen-cnsszn, company: 深视智能, params: {tenant: cnsszn}}
   - {id: beisen-fosunpharma, company: 复星医药, params: {tenant: fosunpharma}}
+  - {id: beisen-bestsemi, company: 屹唐半导体, params: {tenant: bestsemi}}
+  - {id: beisen-yealink, company: 亿联网络, params: {tenant: yealink}}
+  - {id: beisen-cfmoto, company: 春风动力, params: {tenant: cfmoto}}
+  - {id: beisen-careerktc, company: 康冠科技, params: {tenant: careerktc}}
+  - {id: beisen-aimer, company: 爱慕集团, params: {tenant: aimer}}
+  - {id: beisen-zcset, company: 芯晖, params: {tenant: zcset}}
+  - {id: beisen-sany, company: 三一集团, params: {tenant: sany}}
+  - {id: beisen-digitalchina, company: 神州数码, params: {tenant: digitalchina}}
+  - {id: beisen-campuske, company: 贝壳, params: {tenant: campuske}}
+  - {id: beisen-vmax, company: 威迈斯, params: {tenant: vmax}}
+  - {id: beisen-lockin, company: 鹿客科技, params: {tenant: lockin}}
+  - {id: beisen-gwpst, company: 长城电源, params: {tenant: gwpst}}
+  - {id: beisen-jftech, company: 杰峰物联, params: {tenant: jftech}}
+  - {id: beisen-csic, company: 中国船舶集团第七一一研究所, params: {tenant: csic}}
+  - {id: beisen-yaskawa, company: 安川电机（中国）, params: {tenant: yaskawa}}
+  - {id: beisen-nanxin, company: 南芯科技, params: {tenant: nanxin}}
+  - {id: beisen-shenergy, company: 申能集团, params: {tenant: shenergy}}
+  - {id: beisen-bdochina, company: 立信会计师事务所, params: {tenant: bdochina}}
+  - {id: beisen-nexchip, company: 晶合集成, params: {tenant: nexchip}}
+  - {id: beisen-raytrontek, company: 睿创微纳, params: {tenant: raytrontek}}
+  - {id: beisen-raytrontek1, company: 睿创微纳, params: {tenant: raytrontek1}}
+  - {id: beisen-siasun, company: 新松机器人, params: {tenant: siasun}}
+  - {id: beisen-hitrendtech1, company: 钜泉科技, params: {tenant: hitrendtech1}}
+  - {id: beisen-stics, company: 中景芯创, params: {tenant: stics}}
+  - {id: beisen-cxmt, company: 长鑫存储, params: {tenant: cxmt}}
+  - {id: beisen-joulwatt, company: 杰华特, params: {tenant: joulwatt}}
+  - {id: beisen-fullsemi, company: 富芯半导体, params: {tenant: fullsemi}}
+  - {id: beisen-bpsemi, company: 晶丰明源, params: {tenant: bpsemi}}
+  - {id: beisen-maxscend, company: 卓胜微, params: {tenant: maxscend}}
+  - {id: beisen-cicc, company: 中金公司, params: {tenant: cicc}}
+  - {id: beisen-cjzq, company: 长江证券, params: {tenant: cjzq}}
+  - {id: beisen-cmhk, company: 招商局集团, params: {tenant: cmhk}}
+  - {id: beisen-chinastock, company: 中国银河证券, params: {tenant: chinastock}}
+  - {id: beisen-bosc, company: 上海银行, params: {tenant: bosc}}
+  - {id: beisen-chinalife, company: 中国人寿, params: {tenant: chinalife}}
+  - {id: beisen-csc108, company: 中信建投证券, params: {tenant: csc108}}
+  - {id: beisen-h618, company: 航空工业自控所, params: {tenant: h618}}
+  - {id: beisen-sugon, company: 中科曙光, params: {tenant: sugon}}
+  - {id: beisen-sansec, company: 三未信安, params: {tenant: sansec}}
+  - {id: beisen-intsig, company: 合合信息, params: {tenant: intsig}}
+  - {id: beisen-estun1, company: 埃斯顿, params: {tenant: estun1}}
+  - {id: beisen-cudt, company: 联通数科, params: {tenant: cudt}}
+  - {id: beisen-szly, company: 联友科技, params: {tenant: szly}}
+  - {id: beisen-ankai, company: 安凯客车, params: {tenant: ankai}}
+  - {id: beisen-hongyantruck1, company: 上汽红岩, params: {tenant: hongyantruck1}}
+  - {id: beisen-luxshare-tech, company: 立讯技术, params: {tenant: luxshare-tech}}
+  - {id: beisen-junlebaoruye, company: 君乐宝, params: {tenant: junlebaoruye}}
+  - {id: beisen-haitian, company: 海天集团, params: {tenant: haitian}}
+  - {id: beisen-guofanggroup1, company: 国芳集团, params: {tenant: guofanggroup1}}
+  - {id: beisen-yuewen, company: 阅文集团, params: {tenant: yuewen}}
+  - {id: beisen-chery1, company: 奇瑞汽车, params: {tenant: chery1}}
+  - {id: beisen-keyence, company: 基恩士（中国）, params: {tenant: keyence}}
+  - {id: beisen-jwkaiwu2, company: 经纬开物, params: {tenant: jwkaiwu2}}
+  - {id: beisen-360campus, company: 360集团, params: {tenant: 360campus}}
+  - {id: beisen-mediatek, company: 联发科技, params: {tenant: mediatek}}
+  - {id: beisen-dearsamsung, company: 中国三星, params: {tenant: dearsamsung}}
+  - {id: beisen-ruiinsurance, company: 瑞众人寿, params: {tenant: ruiinsurance}}
+  - {id: beisen-xiangyu, company: 象屿集团, params: {tenant: xiangyu}}
+  - {id: beisen-mthreads, company: 摩尔线程, params: {tenant: mthreads}}

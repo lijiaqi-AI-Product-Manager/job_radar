@@ -36,6 +36,11 @@
 | degree_min | Degree | 多为 null |
 | description / requirements | Duty / Require | 列表直接带 JD 原文 |
 
+## 4.1 租户验证（第 1 批，2026-10-20）
+- 候选 73 家：**new 门户 67 家**（已写入 `sources/beisen.yaml`，合计约 2 万岗位，最大为奇瑞 5781、中国人寿 2931、长鑫存储 2001）
+- 旧版门户 6 家：smics（中芯国际）、xib（厦门国际银行）、glprop（普洛斯）、kelun（科伦药业）、biad（北京建院）、eic（启德教育）
+- 注意：raytrontek 与 raytrontek1 均为睿创微纳（两个门户），可能存在重复岗位
+
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）
 - 部分租户在 `/custom/...` 自定义页面（cmhk、chinalife、coamc），接口是否相同待验证
