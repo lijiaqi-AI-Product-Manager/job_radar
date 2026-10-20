@@ -4,6 +4,7 @@ from jobradar.normalize import (
     batch_from_text,
     cities_from_text,
     cities_from_title,
+    degree_min_from_text,
     grad_year_from_text,
     looks_like_location,
 )
@@ -100,3 +101,11 @@ def test_cities_from_title(title, cities):
 ])
 def test_looks_like_location(text, ok):
     assert looks_like_location(text) is ok
+
+
+@pytest.mark.parametrize("text,degree", [
+    ("硕士、博士", "硕士"), ("本科及以上", "本科"), ("博士", "博士"), ("大专", "大专"),
+    ("本科/硕士", "本科"), ("不限", None), ("", None), (None, None),
+])
+def test_degree_min(text, degree):
+    assert degree_min_from_text(text) == degree

@@ -19,3 +19,12 @@ sources:
   - {id: beisen-legacy-zghkyjy, company: 中国航空研究院, params: {tenant: zghkyjy, portal: campus}}
   - {id: beisen-legacy-611, company: 中航工业成都飞机设计研究所, params: {tenant: "611", portal: campus}}
   - {id: beisen-legacy-kelun, company: 科伦药业, params: {tenant: kelun, portal: campus}}
+  - id: beisen-legacy-smics
+    company: 中芯国际
+    params: {tenant: smics, portal: campus, variant: b}
+    compliance:
+      checked_on: 2026-10-20
+      robots: not_applicable   # smics.zhiye.com/robots.txt 为空文件
+      terms: "公开招聘门户，无需登录、无验证码"
+      notes: "变体 B：列表标题会被截断，逐岗位请求详情页（约 220 次/天，1 req/s）取完整标题与 JD"
+  - {id: beisen-legacy-jingce, company: 精测电子, params: {tenant: jingce, portal: campus}}

@@ -89,3 +89,55 @@ def test_job_show_link_variant():
     assert j.title == "科伦博泰-药效研究助理科学家/科学家(J13516)"
     assert j.url == "https://kelun.zhiye.com/job_show/230947311"
     assert j.department == "研发临床类" and j.cities == []
+
+
+B_LIST = """<a href="/campusxq?jobId=390852209&jc=2&c=&p=1^-1,3^-1&ky=" class="flex-between align-center">
+    <span style="width: 15%;">技术研发类</span>
+    <span style="width: 37%;">设计工艺协同研发工程师-张江（2027届校招）(J133...</span>
+    <span style="width: 13%;">硕士、博士</span>
+    <span style="width: 20%;">上海市</span>
+    <span style="width: 15%;">2026-09-20</span>
+</a> <a href="/campus/?PageIndex=22">22</a>"""
+B_DETAIL = """<h2 class=" col26 b f20 lh30">设计工艺协同研发工程师-张江（2027届校招）(J13378)</h2>
+<h3 class="f16 col333 b lh26 pb10">职位描述</h3>
+<div class="xqm">1、负责工艺设计协同开发；<br />2、负责评估工艺节点性能。 </div>
+<h3 class="f16 col333 b lh26 pb10 pt35">职位要求</h3>
+<div class="xqm">微电子、集成电路等相关专业硕士及以上学历</div>"""
+
+
+def test_variant_b_list_plus_detail():
+    """中芯（smics）变体 B：列表为 /campusxq 链接 + span 列，标题可能被截断；完整标题与 JD 取详情页（第 25–26 轮侦察）。"""
+    calls = []
+
+    def handler(request):
+        calls.append(str(request.url))
+        if "campusxq" in str(request.url):
+            return httpx.Response(200, text=B_DETAIL)
+        return httpx.Response(200, text=B_LIST)
+
+    s = source(tenant="smics", variant="b")
+    s.params = {k: v for k, v in s.params.items() if k != "max_pages"}
+    a = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
+    jobs = list(a.fetch_all())
+    assert len(jobs) == 1
+    j = jobs[0]
+    assert j.source_job_id == "390852209"
+    assert j.title == "设计工艺协同研发工程师-张江（2027届校招）(J13378)"
+    assert j.url == "https://smics.zhiye.com/campusxq?jobId=390852209&jc=2"
+    assert j.cities == ["上海"] and j.degree_min == "硕士" and j.department == "技术研发类"
+    assert j.grad_year == 2027
+    assert j.description == "1、负责工艺设计协同开发；\n2、负责评估工艺节点性能。"
+    assert j.requirements == "微电子、集成电路等相关专业硕士及以上学历"
+    assert any("PageIndex=2" in c for c in calls)  # 第 2 页无新岗位后停止
+
+
+def test_variant_b_detail_without_title_keeps_list_title():
+    def handler(request):
+        if "campusxq" in str(request.url):
+            return httpx.Response(200, text="<html>no h2</html>")
+        return httpx.Response(200, text=B_LIST.replace("(J133...", "(J13378)"))
+
+    s = source(tenant="smics", variant="b")
+    a = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
+    [j] = a.fetch_all()
+    assert j.title == "设计工艺协同研发工程师-张江（2027届校招）(J13378)" and j.description is None
