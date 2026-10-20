@@ -1,6 +1,6 @@
-# 第 7 轮：北森新版门户导航配置（找 SpecialType 与校招页的对应关系）；旧版门户页面结构
-GREP https://beisen.zhiye.com/campus/jobs "Navigations":\[.{0,2500}
-GREP https://fosunpharma.zhiye.com/campus/jobs "Navigations":\[.{0,2500}
-POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":0,"PortalId":""}
-POST https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
-GREP https://smics.zhiye.com/campus/jobs (?s)<(?:a|tr|li)[^>]{0,200}(?:detail|jobAdId|JobAdId)[^>]{0,300}>.{0,300}
+# 第 8 轮：北森 CategoryId 取值（含实习门户）、城市字段、页大小上限
+POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:CategoryId|Kind|Station)":(?:"[^"]*"|null)
+POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:Count|LocNames|LocId|DetailAddress)":(?:\[[^\]]*\]|"[^"]*"|\d+|null)
+POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "Id":"[0-9a-f-]{36}"
+POSTGREP https://cfmoto.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":20,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:CategoryId|LocNames|Degree|Kind)":(?:\[[^\]]*\]|"[^"]*"|null)
+GREP https://fosunpharma.zhiye.com/campus/detail?jobAdId=f4e9186a-6a1c-422f-a226-9ab168987881 (?i)"(?:LocNames|WorkPlace|Location|CityName|Address)"[^,]{0,120}

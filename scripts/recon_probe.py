@@ -8,6 +8,7 @@
   GET  <url>                  HTML 只打印标题/脚本地址/疑似接口路径/内嵌 JSON 片段；JSON 打印正文开头
   POST <url> <json body>
   GREP <url> <正则>           打印正则的去重匹配（用于在 JS 包里找接口）
+  POSTGREP <url> <json> <正则>  POST 后对响应做正则匹配（json 内不能有空格）
 """
 
 import argparse
@@ -88,8 +89,12 @@ def main() -> int:
                     print(f"ROBOTS ERROR {type(e).__name__}")
                 time.sleep(1.5)
             t = time.monotonic()
+            regex = extra if verb == "GREP" else None
+            if verb == "POSTGREP":
+                body, regex = extra.split(" ", 1)
+                extra = body
             try:
-                if verb == "POST":
+                if verb in ("POST", "POSTGREP"):
                     r = client.post(url, json=json.loads(extra or "{}"))
                 else:
                     r = client.get(url)
@@ -99,7 +104,7 @@ def main() -> int:
                 continue
             print(f"\n>>> {verb} {url}\n{r.status_code} | {r.headers.get('content-type', '-')} | "
                   f"{len(r.content)}B | {time.monotonic() - t:.1f}s | final={r.url}")
-            report(r, args.body, extra if verb == "GREP" else None)
+            report(r, args.body, regex)
             time.sleep(1.5)
     return 0
 
