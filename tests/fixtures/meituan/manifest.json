@@ -1,0 +1,10 @@
+[
+  {
+    "method": "POST",
+    "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+    "body": "{\"page\":{\"pageNo\":1,\"pageSize\":5},\"jobShareType\":\"1\",\"keywords\":\"\",\"cityList\":[],\"department\":[],\"jfJgList\":[],\"jobType\":[],\"typeCode\":[],\"specialCode\":[]}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "001.json"
+  }
+]

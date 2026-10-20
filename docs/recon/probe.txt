@@ -1,17 +1,6 @@
-# 第 15 轮：北森旧版门户各租户是否为变体 A（/zpdetail/ 链接 + 共N条记录）
-GREP https://smics.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://xib.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://glprop.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://kelun.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://biad.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://eic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://eswinchipch.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://gtgroup.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://newhope.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://crrczzs.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://sast.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://casic.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://ehr-dian.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://zghkyjy.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://weiheng.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
-GREP https://tecon.zhiye.com/campus/?PageIndex=1 共\d+条记录|<title>[^<]{0,40}|/zpdetail/\d{6,}
+# 第 24 轮：百度校招、华为校招列表接口（无需登录？）
+FORMGREP https://talent.baidu.com/httservice/getPostListNew recruitType=GRADUATE&pageSize=3&curPage=1&keyWord=&projectType= "total":\d+|"name":"[^"]{0,40}"|"postId":"[^"]+"|"workPlace":"[^"]{0,40}"|"status":[^,]{0,20}|"message":"[^"]{0,60}"
+FORMGREP https://talent.baidu.com/httservice/getPostListNew recruitType=INTERN&pageSize=3&curPage=1&keyWord=&projectType= "total":\d+|"name":"[^"]{0,40}"|"status":[^,]{0,20}
+GREP https://talent-offical-static-prod.cdn.bcebos.com/hcm-recruitment/talent-offical-static-prod/client/static/js/Page.695b8d85.chunk.js .{0,120}httservice.{0,160}
+GET https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/3/1?jobFamilyCode=&deptCode=&keywords=&searchType=1&orderBy=P_COUNT_DESC&jobType=0
+GET https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/3/1?jobFamilyCode=&deptCode=&keywords=&searchType=1&orderBy=P_COUNT_DESC&jobType=1

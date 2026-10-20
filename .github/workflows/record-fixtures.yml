@@ -22,9 +22,9 @@ jobs:
       - run: uv sync
       - name: Record
         run: |
-          # 去掉行尾注释后再解析：<source_id> [页数]
-          sed 's/#.*//' docs/recon/record.txt | grep -v '^\s*$' | while read -r sid pages; do
-            uv run python scripts/record_fixtures.py "$sid" --max-pages "${pages:-1}"
+          # 去掉行尾注释后再解析：<source_id> [页数] [每页条数]
+          sed 's/#.*//' docs/recon/record.txt | grep -v '^\s*$' | while read -r sid pages size; do
+            uv run python scripts/record_fixtures.py "$sid" --max-pages "${pages:-1}" --page-size "${size:-20}"
           done
       - name: Commit fixtures
         run: |

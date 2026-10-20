@@ -1,0 +1,17 @@
+id: meituan
+company: 美团
+adapter: meituan
+params:
+  max_pages: 1
+  page_size: 5
+recruit_types:
+- campus
+- intern
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-20'
+  robots: not_applicable
+  terms: 列表接口为官网前端使用的公开 JSON，无需登录、无签名、无验证码（待人工复核用户协议）
+  notes: 侦察：docs/recon/meituan.md。仅抓列表（已含职责/要求），约 32 页/天，1 req/s。

@@ -1,0 +1,10 @@
+id: tencent-campus
+company: 腾讯
+adapter: tencent_campus
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+compliance:
+  checked_on: 2026-10-20
+  robots: not_applicable   # join.qq.com/robots.txt 返回 HTML 页面（无 robots 规则）
+  terms: "列表与详情接口为官网前端使用的公开 JSON，无需登录、无签名、无验证码（待人工复核用户协议）"
+  notes: "侦察：docs/recon/tencent.md §9。列表约 11 页 + 每岗 1 次详情，约 1000 次/天，1 req/s。"

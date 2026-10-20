@@ -69,6 +69,10 @@
 - 结论：可做，已实现 `adapters/beisen_legacy.py`（正则解析，无新依赖；列按内容识别地名，不依赖列顺序）
 - 第 15 轮变体检查：变体 A 共 8 家（cssc、sast 207 岗、tecon、eic、gtgroup、xib、ehr-dian、zghkyjy）已入库；
   smics（变体 B）、kelun（另一结构）、casic/weiheng（路径不同）、glprop/biad/newhope/crrczzs（列表页无岗位链接）待后续
+- 第 16–18 轮：611（成飞所）为变体 A，已入库；kelun 与变体 A 相同但链接为 `/job_show/<id>`，已支持并入库；
+  casic、weiheng 的 `/campus/` 返回 404；
+  smics（变体 B）：`<a href="/campusxq?jobId=<id>&jc=2…">` 内依次为 `<span>` 职位分类、职位名称、学历、地点（如"广东省-深圳市"），共 22 页。
+  **职位名称超长时被截断为"…(J133..."**，完整标题需逐个请求详情页，待做
 
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）

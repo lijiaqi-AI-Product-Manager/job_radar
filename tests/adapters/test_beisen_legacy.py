@@ -69,3 +69,23 @@ def test_total_pages_footer_bounds_paging():
     s.params = {k: v for k, v in s.params.items() if k != "max_pages"}
     a = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
     assert [j.title for j in a.fetch_all()] == ["A(J1)"] and len(calls) == 1
+
+
+def test_job_show_link_variant():
+    """科伦（kelun）的门户与变体 A 相同，只是详情链接为 /job_show/<id>（结构取自第 17 轮侦察）。"""
+    html = """<tr>
+            <td>
+                <a title="科伦博泰-药效研究助理科学家/科学家(J13516)" href="/job_show/230947311?PageIndex=1" >科伦博泰-药效研究助理科学家/科学家(J13516)</a>
+            </td>
+                    <td title="研发临床类">研发临床类</td>
+                    <td title="研发类子分公司">研发类子分公司</td>
+            <td>1</td>
+    </tr> 当前第1/1页"""
+    s = source(tenant="kelun")
+    s.params = {k: v for k, v in s.params.items() if k != "max_pages"}
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, text=html)))
+    [j] = BeisenLegacyAdapter(s, client, sleep=lambda s: None).fetch_all()
+    assert j.source_job_id == "230947311"
+    assert j.title == "科伦博泰-药效研究助理科学家/科学家(J13516)"
+    assert j.url == "https://kelun.zhiye.com/job_show/230947311"
+    assert j.department == "研发临床类" and j.cities == []
