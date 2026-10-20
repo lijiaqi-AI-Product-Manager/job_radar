@@ -1,6 +1,7 @@
-# 第 5 轮：北森校招筛选参数/详情链接；腾讯校招站接口
-GREP https://beisen.zhiye.com/campus/jobs (?i).{0,80}(?:portalid|specialtype|channel|recruittype|"kind").{0,120}
-POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":1,"PortalId":""}
-POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
-GREP https://acdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/pc-e2be192404257687c4d1.chunk.min.js .{0,200}\.chk\.js.{0,200}
-GREP https://join.qq.com/post.html .{0,200}(?:src=|href=).{0,200}
+# 第 6 轮：用纯校招租户确认 SpecialType 含义；腾讯校招接口
+POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":0,"PortalId":""}
+POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":1,"PortalId":""}
+POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":2,"PortalId":""}
+POST https://smics.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":1,"KeyWords":"","SpecialType":3,"PortalId":""}
+GREP https://smics.zhiye.com/campus/jobs (?i)"(?:PortalId|PortalType|SpecialType|Title|CompanyName|TenantName)":"?[^",]{0,80}
+GREP https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/p_zh-cn_post.build.js ["'`](/?api/[\w\-/.]+)["'`]
