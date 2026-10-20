@@ -169,3 +169,37 @@ sources:
   - {id: beisen-leapmotor1, company: 零跑汽车, params: {tenant: leapmotor1}}
   - {id: beisen-dptech, company: 迪普科技, params: {tenant: dptech}}
   - {id: beisen-novastar, company: 诺瓦星云, params: {tenant: novastar}}
+  - {id: beisen-gdinsight, company: 因赛集团, params: {tenant: gdinsight}}
+  - {id: beisen-sanycampus, company: 三一集团（校招门户）, params: {tenant: sanycampus}}
+  - {id: beisen-jnzhaopin, company: 江南造船, params: {tenant: jnzhaopin}}
+  - {id: beisen-hsingchen, company: 湖北星辰, params: {tenant: hsingchen}}
+  - {id: beisen-cnnc, company: 中国核工业集团, params: {tenant: cnnc}}
+  - {id: beisen-polynew, company: 保利发展, params: {tenant: polynew}}
+  - {id: beisen-jggroup2, company: 晋钢控股, params: {tenant: jggroup2}}
+  - {id: beisen-tzcpa, company: 天职国际, params: {tenant: tzcpa}}
+  - {id: beisen-neweastech, company: 新毅东, params: {tenant: neweastech}}
+  - {id: beisen-gention, company: 格通智联, params: {tenant: gention}}
+  - {id: beisen-bhidi, company: 中国电建北京院, params: {tenant: bhidi}}
+  - {id: beisen-zspcl, company: 众生药业, params: {tenant: zspcl}}
+  - {id: beisen-znlh, company: 众能联合, params: {tenant: znlh}}
+  - {id: beisen-shsus, company: 康恒环境, params: {tenant: shsus}}
+  - {id: beisen-syamt, company: 富创精密, params: {tenant: syamt}}
+  - {id: beisen-thdk, company: 通号低空, params: {tenant: thdk}}
+  - {id: beisen-govtor, company: 江苏高科技投资集团, params: {tenant: govtor}}
+  - {id: beisen-gyzq, company: 国元证券, params: {tenant: gyzq}}
+  - {id: beisen-leetx, company: 砺星工业科技, params: {tenant: leetx}}
+  - {id: beisen-xingheng, company: 星恒电源, params: {tenant: xingheng}}
+  - {id: beisen-guosen, company: 国信证券, params: {tenant: guosen}}
+  - {id: beisen-sxqc, company: 陕汽控股, params: {tenant: sxqc}}
+  - {id: beisen-baicgroup, company: 北汽集团, params: {tenant: baicgroup}}
+  - {id: beisen-jd-energy, company: 奇点能源, params: {tenant: jd-energy}}
+  - {id: beisen-kanghong, company: 康弘药业, params: {tenant: kanghong}}
+  - {id: beisen-yangzijiang, company: 扬子江药业, params: {tenant: yangzijiang}}
+  - {id: beisen-genomics, company: 华大集团, params: {tenant: genomics}}
+  - {id: beisen-renfu, company: 人福医药, params: {tenant: renfu}}
+  - {id: beisen-sph, company: 上海医药, params: {tenant: sph}}
+  - {id: beisen-awinic1, company: 艾为电子, params: {tenant: awinic1}}
+  - {id: beisen-starnet, company: 星网锐捷, params: {tenant: starnet}}
+  - {id: beisen-jxrt, company: 融通供应链, params: {tenant: jxrt}}
+  - {id: beisen-scement16, company: 南方新材料, params: {tenant: scement16}}
+  - {id: beisen-ronbay, company: 容百科技, params: {tenant: ronbay}}

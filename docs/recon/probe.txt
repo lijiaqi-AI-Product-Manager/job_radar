@@ -1,4 +1,3 @@
-# 第 26 轮：smics 详情页 JD 区块结构、列表第 2 页
-GREP https://smics.zhiye.com/campusxq?jobId=390852209&jc=2 职位描述</h3>[\s\S]{0,700}|职位要求</h3>[\s\S]{0,700}|<h2 class=" col26[^>]*>[^<]*</h2>[\s\S]{0,600}
-GREP https://smics.zhiye.com/campus/?PageIndex=2 campusxq\?jobId=\d+|<span style="width: 37%;">[^<]{0,60}</span>
-GREP https://smics.zhiye.com/campus/?PageIndex=22 campusxq\?jobId=\d+|<span style="width: 37%;">[^<]{0,60}</span>|<span style="width: \d+%;">[^<]{0,30}</span>
+# 第 27 轮：旧版门户 jingce、htffund 属于哪种变体
+GREP https://jingce.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
+GREP https://htffund.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
