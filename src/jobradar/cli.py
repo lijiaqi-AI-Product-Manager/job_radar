@@ -160,6 +160,8 @@ def cmd_crawl(args):
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     failed = [s for s, r in results.items() if r.status != "ok"]
     print(f"# {len(results) - len(failed)} ok, {len(failed)} not ok", file=sys.stderr)
+    if results and len(failed) == len(results):
+        raise SystemExit("all sources failed")  # 让 CI 变红并通知维护者
 
 
 def build_parser() -> argparse.ArgumentParser:

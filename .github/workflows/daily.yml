@@ -1,0 +1,50 @@
+name: daily-crawl
+# 每日抓取 -> 增量写入上一次发布的库 -> 发布到 Release data-latest；每周一另存一份快照到 data-archive。
+# 注意：schedule 只在默认分支生效。
+on:
+  schedule:
+    - cron: "17 19 * * *"   # UTC 19:17 = 北京时间 03:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+
+      - name: Restore previous databases
+        run: |
+          mkdir -p data
+          gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db' || echo "no previous release, starting fresh"
+
+      - name: Crawl
+        shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
+        run: uv run jobradar crawl --sources sources --out data | tee crawl-summary.json
+
+      - name: Publish data-latest
+        run: |
+          gh release view data-latest >/dev/null 2>&1 || \
+            gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
+          gh release upload data-latest data/jobs.db data/jd_text.db crawl-summary.json --clobber
+
+      - name: Weekly archive snapshot
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            d=$(date -u +%Y-%m-%d)
+            cp data/jobs.db "data/jobs-$d.db"
+            gh release view data-archive >/dev/null 2>&1 || \
+              gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照，用于灾备与历史回溯。" --latest=false
+            gh release upload data-archive "data/jobs-$d.db" --clobber
+          fi
