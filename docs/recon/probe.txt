@@ -1,7 +1,10 @@
-# 第 21 轮：腾讯校招项目类型与每页上限、详情页链接；美团每页上限与详情页链接
-POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":1,"pageSize":100} "count":\d+|"projectName":"[^"]*"|"recruitLabelName":"[^"]*"|"projectId":\d+
-POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":11,"pageSize":100} "count":\d+|"projectName":"[^"]*"|"recruitLabelName":"[^"]*"|"projectId":\d+
-GET https://join.qq.com/post_detail.html?postid=1282707398326592512
-POSTGREP https://zhaopin.meituan.com/api/official/job/getJobList {"page":{"pageNo":1,"pageSize":100},"jobShareType":"1","keywords":"","cityList":[],"department":[],"jfJgList":[],"jobType":[{"code":"1","subCode":[]}],"typeCode":[],"specialCode":[]} "page":\{[^}]*\}|"jobSpecialCode":"\d+"|"code":"\d+","msg":"[^"]*"
-GET https://zhaopin.meituan.com/web/position/detail?jobUnionId=4697320043&highlightType=campus
-GREP https://zhaopin.meituan.com/web/campus .{0,80}position/detail.{0,80}|.{0,60}jobUnionId.{0,60}
+# 第 22 轮：其他大厂校招站首页（入口、脚本、接口线索）
+GET https://campus.163.com/
+GET https://talent.baidu.com/jobs/list
+GET https://campus.kuaishou.cn/
+GET https://hr.xiaomi.com/campus
+GET https://career.huawei.com/reccampportal/portal5/index.html
+GET https://careers.pddglobalhr.com/campus/grad
+GET https://campus.meituan.com/
+GET https://hr.163.com/
+GET https://zhaopin.jd.com/
