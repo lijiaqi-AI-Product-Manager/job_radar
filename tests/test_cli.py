@@ -128,3 +128,16 @@ def test_download_404_explains_private_repo(tmp_path, monkeypatch):
     client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(404)))
     with pytest.raises(SystemExit, match="GITHUB_TOKEN"):
         cli._download("jobs.db", tmp_path / "jobs.db", client=client)
+
+
+def test_sources_table_prints_status_columns(home, capsys):
+    cli.main(["sources", "--table"])
+    out = capsys.readouterr().out
+    assert "None | None" not in out
+    assert "s1" in out and "ok" in out
+
+
+def test_trends_table(home, capsys):
+    cli.main(["trends", "腾讯", "--table"])
+    out = capsys.readouterr().out
+    assert "None" not in out and "open" in out

@@ -31,11 +31,17 @@ def _emit(args, payload: dict):
     if getattr(args, "table", False) and isinstance(payload.get("results"), list):
         rows = payload["results"]
         print(f"# data_as_of: {payload.get('data_as_of')}  ({len(rows)} 条)")
-        for r in rows:
-            cities = "/".join(r.get("cities") or [])
-            print(" | ".join(str(x) for x in (
-                r.get("company"), r.get("title"), cities, r.get("recruit_type"), r.get("grad_year") or "",
-                r.get("ts") or r.get("first_seen"), r.get("url"))))
+        if rows and "title" in rows[0]:  # 岗位 / 事件
+            for r in rows:
+                cities = "/".join(r.get("cities") or [])
+                print(" | ".join(str(x) for x in (
+                    r.get("company"), r.get("title"), cities, r.get("type") or r.get("recruit_type"),
+                    r.get("grad_year") or "", r.get("ts") or r.get("first_seen"), r.get("url"))))
+        elif rows:  # 其他（数据源状态、趋势）：按字段输出
+            cols = list(rows[0].keys())
+            print(" | ".join(cols))
+            for r in rows:
+                print(" | ".join("" if r.get(c) is None else str(r.get(c)) for c in cols))
         return
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 

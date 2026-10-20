@@ -15,7 +15,7 @@ import httpx
 
 from jobradar.adapters.base import Adapter, load_all, make_client
 from jobradar.models import Job, SourceConfig
-from jobradar.normalize import categorize
+from jobradar.normalize import categorize, cities_from_title, grad_year_from_text
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
@@ -25,10 +25,20 @@ def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Clien
         jobs = list(adapter_cls(source, client, sleep=sleep).fetch_all())
     except Exception as e:  # noqa: BLE001 — 任何适配器错误都只算该源失败
         return None, f"{type(e).__name__}: {e}"[:500]
-    for j in jobs:  # 适配器没给职类的，按 taxonomy 规则归类
-        if j.category is None and j.subcategory is None:
-            j.category, j.subcategory = categorize(j.title)
+    for j in jobs:
+        _enrich(j)
     return jobs, None
+
+
+def _enrich(j: Job) -> None:
+    """适配器没给的字段，从标题中提取明写的信息（规则见 normalize.py / taxonomy/）。
+    注意：cities/grad_year 计入内容哈希，修改这些提取规则会让受影响岗位产生一次 change 事件。"""
+    if j.category is None and j.subcategory is None:
+        j.category, j.subcategory = categorize(j.title)
+    if not j.cities:
+        j.cities = cities_from_title(j.title)
+    if j.grad_year is None and j.recruit_type in ("campus", "intern"):
+        j.grad_year = grad_year_from_text(j.title, loose=True)
 
 
 def _fetch_group(sources, adapter_cls, client_factory, sleep):
