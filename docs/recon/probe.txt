@@ -1,6 +1,5 @@
-# 第 10 轮：北森是否存在 1/2/3 以外的 CategoryId（中国人寿、长鑫入库数少于接口 Count）
-POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
-POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":5,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
-POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
-POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":10,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "CategoryId":(?:"[^"]*"|null|\d+)
-POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":19,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} (?:"Count":\d+|"CategoryId":(?:"[^"]*"|null))
+# 第 11 轮：CategoryId=5 的岗位是什么（看标题与职责）；门户导航里有哪些页面
+POSTGREP https://cxmt.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "JobAdName":"[^"]{0,60}"[^{}]{0,300}"CategoryId":"5"
+POSTGREP https://chinalife.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "JobAdName":"[^"]{0,60}"[^{}]{0,300}"CategoryId":"5"
+GREP https://cxmt.zhiye.com/campus/jobs "Name":"[^"]{1,20}","PageId"
+GREP https://chinalife.zhiye.com/campus/jobs "Name":"[^"]{1,20}","PageId"
