@@ -1,6 +1,5 @@
-# 第 8 轮：北森 CategoryId 取值（含实习门户）、城市字段、页大小上限
-POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:CategoryId|Kind|Station)":(?:"[^"]*"|null)
-POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:Count|LocNames|LocId|DetailAddress)":(?:\[[^\]]*\]|"[^"]*"|\d+|null)
-POSTGREP https://intsig.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""} "Id":"[0-9a-f-]{36}"
-POSTGREP https://cfmoto.zhiye.com/api/Jobad/GetJobAdPageList {"PageIndex":0,"PageSize":20,"KeyWords":"","SpecialType":0,"PortalId":""} "(?:CategoryId|LocNames|Degree|Kind)":(?:\[[^\]]*\]|"[^"]*"|null)
-GREP https://fosunpharma.zhiye.com/campus/detail?jobAdId=f4e9186a-6a1c-422f-a226-9ab168987881 (?i)"(?:LocNames|WorkPlace|Location|CityName|Address)"[^,]{0,120}
+# 第 9 轮：北森旧版门户 HTML 结构；字节接口形态
+GREP https://smics.zhiye.com/campus/jobs (?i)href="[^"]{0,200}(?:detail|jobad)[^"]{0,200}"
+GREP https://smics.zhiye.com/campus/jobs (?s)<(?:li|tr|div)[^>]{0,120}class="[^"]{0,60}(?:job|position|list)[^"]{0,60}"[^>]{0,200}>.{0,400}
+GREP https://jobs.bytedance.com/campus/position <script[^>]{0,200}src="[^"]{0,300}"
+GREP https://jobs.bytedance.com/campus/position (?i)csrf.{0,200}
