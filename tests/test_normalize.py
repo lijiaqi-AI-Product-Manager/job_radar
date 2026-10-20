@@ -1,0 +1,37 @@
+import pytest
+
+from jobradar.normalize import batch_from_text, grad_year_from_text
+
+
+@pytest.mark.parametrize("text,year", [
+    ("【27校招】人力管培生(J15003)", 2027),
+    ("审计员（2027届校招-北京分所）(J10667)", 2027),
+    ("硬件工程师（27届校招）", 2027),
+    ("算法工程师岗-AI机器视觉（2027校招）", 2027),
+    ("2028届暑期实习-前端开发", 2028),
+    ("27届校招-AI平台研发工程师(J19213)", 2027),
+    ("【2026届春招】测试工程师", 2026),
+    ("销售总监/经理（CBG/全国）(J13700)", None),
+    ("3A动作冒险游戏-战斗主策划", None),
+    ("工作经验2027年以上", None),   # 不是届别
+    ("J12027 后端开发", None),     # 编号里的数字不算
+])
+def test_grad_year(text, year):
+    assert grad_year_from_text(text) == year
+
+
+@pytest.mark.parametrize("text,batch", [
+    ("【2027届提前批】算法工程师", "提前批"),
+    ("2027届秋招正式批-产品经理", "正式批"),
+    ("【补录】硬件工程师", "补录"),
+    ("2026届春招-运营", "春招"),
+    ("2027秋季校园招聘 销售工程师", "秋招"),
+    ("2027秋招 销售", "秋招"),
+    ("后端开发工程师", None),
+])
+def test_batch(text, batch):
+    assert batch_from_text(text) == batch
+
+
+def test_none_and_empty():
+    assert grad_year_from_text(None) is None and batch_from_text("") is None
