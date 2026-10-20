@@ -30,7 +30,7 @@
 | source_job_id | Id（UUID） | |
 | title | JobAdName | |
 | url | 由 Id 与类型构造 | |
-| recruit_type | CategoryId：1 社招 / 2 校招 / 3 实习 | 实测 intsig 三种都有；其他值跳过 |
+| recruit_type | CategoryId：1 社招 / 2 校招 / 3 实习 / 5 社招（专家、资深岗） | 1–3 实测于 intsig；5 实测于 cxmt、chinalife；其他值跳过 |
 | grad_year / batch | 从标题解析（`normalize.py`） | 如"【27校招】""2027届提前批" |
 | cities | LocNames | **列表中恒为空**，城市暂缺 |
 | degree_min | Degree | 多为 null |

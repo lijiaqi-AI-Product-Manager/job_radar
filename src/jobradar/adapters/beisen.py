@@ -18,7 +18,7 @@ LIST_URL = "https://{tenant}.zhiye.com/api/Jobad/GetJobAdPageList"
 DETAIL_URL = "https://{tenant}.zhiye.com/{portal}/detail?jobAdId={id}"
 PAGE_SIZE = 100
 # CategoryId 是北森门户的招聘类型
-RECRUIT_TYPE = {"1": "social", "2": "campus", "3": "intern"}
+RECRUIT_TYPE = {"1": "social", "2": "campus", "3": "intern", "5": "social"}  # 5：第二个社招页面（专家/资深岗）
 PORTAL = {"social": "social", "campus": "campus", "intern": "intern"}
 
 

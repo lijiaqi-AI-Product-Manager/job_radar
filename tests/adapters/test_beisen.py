@@ -72,6 +72,13 @@ def test_unknown_category_and_missing_fields_are_skipped():
             a.normalize(raw)
 
 
+def test_category_5_is_social():
+    """CategoryId=5：实测长鑫、中国人寿的"专家/经理/资深"类岗位，门户导航中为第二个社招页面。"""
+    a = BeisenAdapter(source(), httpx.Client(), sleep=lambda s: None)
+    j = a.normalize({"Id": "u5", "JobAdName": "设计验证经理-Design Verification Manager(J21397)", "CategoryId": "5"})
+    assert j.recruit_type == "social" and "/social/detail?jobAdId=u5" in j.url
+
+
 def test_intern_mapping():
     a = BeisenAdapter(source(), httpx.Client(), sleep=lambda s: None)
     j = a.normalize({"Id": "u1", "JobAdName": "2028届暑期实习-AI数智", "CategoryId": "3"})
