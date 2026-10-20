@@ -1,8 +1,7 @@
-# 第 17 轮：kelun（/job_show/ 链接）与 smics（/campusxq 链接）的行结构；美团、阿里、腾讯校招的前端接口线索
-GREP https://kelun.zhiye.com/campus/?PageIndex=1 <tr[^>]*>(?:(?!</tr>)[\s\S]){0,900}?job_show[\s\S]{0,900}?</tr>
-GREP https://smics.zhiye.com/campus/?PageIndex=1 <a href="/campusxq\?jobId=\d+[^"]*"[^>]*>[\s\S]{0,1200}?</a>|当前第[\s\S]{0,40}页|PageIndex=\d+
-GREP https://611.zhiye.com/campus/?PageIndex=1 当前第\s*\d+\s*/\s*\d+\s*页|<a[^>]*zpdetail[^>]*>
-GREP https://s3.meituan.net/static-prod01/com.sankuai.recruitment.official.website/entry-main-9361c032.js ["'`](/api/[\w/\-]+)["'`]
-GREP https://g.alicdn.com/CPO-platform/recruit-portal/1.0.6/js/index.js ["'`](/(?:position|campus|api)[\w/\-.]*)["'`]
-GREP https://join.qq.com/ <script[^>]*>|<link[^>]*>|src=[^ >]+
-GREP https://storage.360buyimg.com/public.wechat.resume/web/official/20260902001311/umi.js ["'`](/(?:api|wecruit|campus)[\w/\-.]*)["'`]
+# 第 18 轮：smics 标题是否被截断（span/a 是否带 title）；阿里/美团/腾讯校招的列表接口线索
+GREP https://smics.zhiye.com/campus/?PageIndex=1 <span[^>]*title="[^"]{0,80}"|<a[^>]*campusxq[^>]*title="[^"]{0,80}"|<span style="width: \d+%;">[^<]{0,60}</span>
+GET https://campus-talent.alibaba.com/campus/position
+GREP https://campus-talent.alibaba.com/campus/position _csrf[^,;]{0,80}|csrf[^,;]{0,80}|window\.\w+\s*=
+GREP https://g.alicdn.com/CPO-platform/recruit-portal/1.0.6/js/index.js .{0,200}/position/search.{0,300}
+GREP https://zhaopin.meituan.com/web/campus ["'`](/api/[\w/\-]+)["'`]|src="[^"]+\.js"|href="[^"]+\.js"
+GREP https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/p_zh-cn_index.build.js ["'`]((?:https?:)?/{1,2}[\w.\-]*/?(?:api|wechat|tapi|position|post|job)[\w/\-.]*)["'`]
