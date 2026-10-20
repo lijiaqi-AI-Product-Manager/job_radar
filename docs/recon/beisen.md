@@ -60,6 +60,13 @@
 - `chery` 的 Count 与已入库 `chery1` 完全相同（5781），同一批岗位，不入库
 - `611`（成都飞机设计研究所）为旧版门户，待旧版变体检查
 
+## 4.3d 租户验证（第 6 批，2026-10-20）
+- 候选 39 家（搜索 site:zhiye.com）：new 门户 37 家，入库 34 家
+  - 不入库：`polycareer`（与 `polynew` 同为保利发展、Count 均为 798，重复）、`yzwhr`（中建电商，0 岗位）、`zczy`（标题为"招聘官网"，无法确认公司）
+  - `sanycampus`（147）与已入库的 `sany` 为三一的两个门户，可能有少量重复岗位
+- 旧版门户 2 家：jingce（精测电子）为变体 A，已入库；htffund（汇添富基金）校招页当前 0 个岗位链接，暂不入库（空源每天会被判为失败）
+- 大户：genomics（华大）1901、cnnc（中核）1612、polynew 798、baicgroup（北汽）518、tzcpa 481、yangzijiang 424
+
 ## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
 - 共 17 家：smics、xib、glprop、kelun、biad、eic、eswinchipch、gtgroup、newhope、crrczzs、sast、cssc、casic、ehr-dian、zghkyjy、weiheng、tecon
 - 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
@@ -72,7 +79,9 @@
 - 第 16–18 轮：611（成飞所）为变体 A，已入库；kelun 与变体 A 相同但链接为 `/job_show/<id>`，已支持并入库；
   casic、weiheng 的 `/campus/` 返回 404；
   smics（变体 B）：`<a href="/campusxq?jobId=<id>&jc=2…">` 内依次为 `<span>` 职位分类、职位名称、学历、地点（如"广东省-深圳市"），共 22 页。
-  **职位名称超长时被截断为"…(J133..."**，完整标题需逐个请求详情页，待做
+  **职位名称超长时被截断为"…(J133..."**；详情页 `/campusxq?jobId=<id>&jc=2` 的 `<h2 class=" col26 …">` 为完整标题，
+  `<h3>职位描述</h3><div class="xqm">`、`<h3>职位要求</h3><div class="xqm">` 为 JD（第 25–26 轮）。
+  已实现为 `beisen_legacy` 的 `variant: b`（逐岗位请求详情，约 220 次/天）
 
 ## 5. 已知陷阱
 - 城市字段缺失（需要找详情接口；不要从标题猜）
