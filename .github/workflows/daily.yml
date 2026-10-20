@@ -27,9 +27,16 @@ jobs:
       - run: uv sync
 
       - name: Restore previous databases
+        # 历史是核心资产：Release 存在但下载失败时必须失败退出，绝不能"从零开始"后覆盖历史
         run: |
           mkdir -p data
-          gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db' || echo "no previous release, starting fresh"
+          if gh release view data-latest >/dev/null 2>&1; then
+            gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db'
+            python3 -c "import sqlite3; c=sqlite3.connect('data/jobs.db'); assert c.execute('PRAGMA quick_check').fetchone()[0]=='ok'; print('restored jobs:', c.execute('SELECT COUNT(*) FROM job').fetchone()[0])"
+          else
+            echo "no data-latest release yet, starting fresh"
+          fi
+          python3 -c "import sqlite3,os; p='data/jobs.db'; print(sqlite3.connect(p).execute('SELECT COUNT(*) FROM job').fetchone()[0] if os.path.exists(p) else 0)" > restored_count.txt
 
       - name: Crawl
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
@@ -37,6 +44,8 @@ jobs:
 
       - name: Publish data-latest
         run: |
+          # 入库从不删行：岗位行数变少说明库出了问题，拒绝发布
+          python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); print('jobs', old, '->', n); assert n >= old, 'job rows decreased; refusing to publish'"
           gh release view data-latest >/dev/null 2>&1 || \
             gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
           gh release upload data-latest data/jobs.db data/jd_text.db crawl-summary.json --clobber
