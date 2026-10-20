@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  issues: write
+  actions: write
 
 concurrency:
   group: daily-crawl
@@ -48,3 +50,27 @@ jobs:
               gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照，用于灾备与历史回溯。" --latest=false
             gh release upload data-archive "data/jobs-$d.db" --clobber
           fi
+
+      - name: Health issue
+        if: always()
+        run: |
+          set +e
+          python3 scripts/health_report.py crawl-summary.json > report.md
+          bad=$?
+          set -e
+          num=$(gh issue list --label data-health --state open --json number -q '.[0].number')
+          if [ "$bad" != "0" ]; then
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --body-file report.md
+            else
+              gh label create data-health --color B60205 --description "每日抓取健康报告" --force
+              gh issue create --title "数据源健康报告" --label data-health --body-file report.md
+            fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "$(date -u +%F)：全部数据源恢复正常。"
+          fi
+
+      - name: Keep schedule alive
+        # 公开仓库 60 天无活动会自动停用定时任务；每月 1 日重新启用一次
+        run: |
+          if [ "$(date -u +%d)" = "01" ]; then gh workflow enable daily.yml; fi
