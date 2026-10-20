@@ -1,46 +1,42 @@
-# 路线图（2 天出初版，2 周发布）
+# 路线图
 
-> 状态说明：✅ 已完成　⬜ 未开始。每项都有可验证的完成标准。
-> "2 天"的前提是 Phase 0 的侦察结论为"可做"。如果 Moka/北森的接口需要签名/登录，或 GitHub Actions 访问不通，
-> 计划作废并立即重新评估——这两件事要在第一个小时内就知道。
+> ✅ 已完成　🟡 进行中　⬜ 未开始　⛔ 不做（附原因）
 
-## 已完成：工程底座（本分支）
+## 数据源状态（2026-10-20 侦察结果）
 
-- ✅ schema + 迁移 + 迁移守卫（不可改已有迁移）
-- ✅ 入库逻辑 `ingest_run`：新增/变更/下架(连续3次缺席)/重开 + 抓取失败不下架 + 骤降熔断
-- ✅ 查询层 `core/queries.py`：search / recent_changes / company_trend / data_status / compare_roles
-- ✅ 适配器基类 + 模板 + fixtures 录制/回放 + 契约测试；sources 加载与合规校验
-- ✅ 评测题集 24 题；CLAUDE.md / 会话命令 `/recon` `/new-adapter`
-- 58 个测试全绿
+| 来源 | 类型 | 状态 | 说明 |
+|---|---|---|---|
+| 北森新版门户 `*.zhiye.com` | 平台 | ✅ 适配器完成 | 明文 JSON，含 JD 原文；租户批量验证中（`docs/recon/beisen_tenants.txt`） |
+| 腾讯社招 careers.tencent.com | 自研 | ✅ 适配器完成 | 约 2300 岗位 |
+| Moka `app.mokahr.com` | 平台 | ⛔ blocked | 职位接口响应 AES 加密，按铁律不逆向（`docs/recon/moka.md`） |
+| 北森旧版门户（smics、cssc、casic…） | 平台 | ⬜ | 服务端渲染 HTML，需单独适配器 |
+| 腾讯校招 join.qq.com | 自研 | ⬜ | 静态资源 403，接口未确认 |
+| 字节 jobs.bytedance.com | 自研 | ⬜ | 列表接口 405，需进一步侦察（不得绕过 token/签名） |
+| 阿里、美团 | 自研 | ⬜ | 入口可达（200），接口未侦察 |
+| gllue、大易 | 平台 | ⬜ | 未侦察 |
 
-## Day 1：数据跑起来
+## 已完成
 
-| # | 任务 | 完成标准 |
-|---|---|---|
-| 1 | **Phase 0 侦察（平台优先）**：Moka、北森、gllue（`/recon`），并用 `recon-probe` 工作流测 Actions 可达性 | 每个平台一份 `docs/recon/*.md`，结论明确；租户数量有估计 |
-| 2 | 平台适配器 #1（体量最大且结论为"可做"的那个）`/new-adapter` | 契约测试 + 专属测试通过；录到真实 fixtures |
-| 3 | 租户清单：把可发现的租户写进 `sources/<平台>.yaml`（一行一家） | 首批 N 家，每家有 compliance；`test_sources` 通过 |
-| 4 | **crawl 编排器**：按 sources 并发/限速抓取 → `ingest_run` → 写 `jobs.db`/`jd_text.db` → 失败/熔断记录 | 本地一条命令跑完全量，`data_status` 能看到每源状态 |
-| 5 | GitHub Actions 每日定时 + 发布到 Release（`latest`）+ 保活 | 手动触发一次成功，Release 里有两个 db |
+- ✅ schema / 迁移守卫；入库（下架判定、失败不下架、骤降熔断）；查询层
+- ✅ 适配器框架：模板、草稿流程、fixtures 录制（Actions 上真实录制并提交回分支）与回放、契约测试
+- ✅ crawl 编排（同平台串行、跨平台并行）
+- ✅ CLI：`update search show diff compare trends sources doctor crawl`
+- ✅ MCP server（6 个只读工具）
+- ✅ Skill（`skill/jobradar/`）
+- ✅ 每日采集发布工作流（`daily.yml`，合并到 main 后生效）+ 每周快照
+- ✅ 侦察工具：`recon-probe`、`tenant-verify`、`record-fixtures` 工作流
+- ✅ 评测题集 24 题；端到端测试
 
-## Day 2：agent 能用
+## 下一步
 
-| # | 任务 | 完成标准 |
-|---|---|---|
-| 6 | CLI：`update` `search` `show` `diff` `compare` `trends` `sources` `doctor`（只调 core） | 每个命令有测试；输出带 `url` 与 `updated_at` |
-| 7 | Skill：SKILL.md + references（schema、职类、回答模板），回答规则按 `evals/README.md` | 手工跑 24 题，记录通过率 |
-| 8 | 平台适配器 #2、再 3–5 家大厂自研站（逐家先侦察） | 契约测试通过 |
-| 9 | 首版 README（含一段真实对话演示） | 他人能照着装好并问出第一个问题 |
-
-## Day 3–14：发布前
-
-- 监控：每日健康报告（哪些源挂了/熔断）→ 自动开 issue；`sources` 新增的 PR 校验
-- 镜像方案（国内下载）：CLI `--mirror`，至少一个国内可用的数据镜像
-- MCP 薄壳（6 个只读工具）
-- 职类归一化（`taxonomy/` 规则表，遇不确定留空）
-- 趋势与周报（自动生成，作为传播内容）
-- 贡献指南 + 新增公司的最短路径（一个 yaml PR）
-- 发布前合规复核（COMPLIANCE.md 的许可措辞、LICENSE）
+1. 🟡 北森租户：验证候选清单，把 new 门户租户写入 `sources/beisen.yaml`（目标 200+）
+2. ⬜ 合并 PR → 手动触发 `daily-crawl` → 产出第一份 Release 数据
+3. ⬜ 用真实数据跑一遍 24 道评测题，记录通过率
+4. ⬜ 北森城市字段（找详情接口）
+5. ⬜ 北森旧版门户适配器（覆盖中芯、中船、航天科工等）
+6. ⬜ 大厂自研站逐家侦察：字节、阿里、美团、腾讯校招
+7. ⬜ 职类归一化（`taxonomy/`）
+8. ⬜ 国内下载镜像方案；周报自动生成；健康报告自动开 issue
 
 ## 不会承诺的
 
