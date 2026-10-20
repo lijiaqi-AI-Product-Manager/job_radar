@@ -1,0 +1,2 @@
+# 每行：<source_id> [页数]。推送本文件会触发 record-fixtures 工作流，在 Actions 上录制并提交 fixtures。
+tencent 1

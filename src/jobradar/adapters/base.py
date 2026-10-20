@@ -100,10 +100,17 @@ def register(cls: type[Adapter]) -> type[Adapter]:
     return cls
 
 
-def load_all() -> dict[str, type[Adapter]]:
+def load_all(include_drafts: bool = False) -> dict[str, type[Adapter]]:
+    """加载全部适配器。以 _ 开头的模块是草稿（还没录 fixtures/写测试），默认不加载，
+    只有 scripts/record_fixtures.py 会带 include_drafts=True 加载它们。"""
     import jobradar.adapters as pkg
 
     for m in pkgutil.iter_modules(pkg.__path__):
-        if m.name not in _NOT_ADAPTERS and not m.name.startswith("_"):
-            importlib.import_module(f"{pkg.__name__}.{m.name}")
-    return dict(_REGISTRY)
+        if m.name in _NOT_ADAPTERS or m.name.startswith("__"):
+            continue
+        if m.name.startswith("_") and not include_drafts:
+            continue
+        importlib.import_module(f"{pkg.__name__}.{m.name}")
+    if include_drafts:
+        return dict(_REGISTRY)
+    return {k: v for k, v in _REGISTRY.items() if not v.__module__.rsplit(".", 1)[-1].startswith("_")}

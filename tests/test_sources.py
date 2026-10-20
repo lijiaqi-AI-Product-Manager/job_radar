@@ -14,7 +14,7 @@ def test_all_sources_are_valid_and_unique():
     srcs = load_sources(SOURCES)
     ids = [s.id for s in srcs]
     assert len(ids) == len(set(ids)), "source id 重复"
-    adapters = load_all()
+    adapters = load_all(include_drafts=True)  # 草稿适配器的源可以先登记
     for s in srcs:
         assert s.adapter in adapters, f"{s.id}: 未知适配器 {s.adapter}"
         assert s.enabled is False or s.compliance is not None

@@ -48,7 +48,7 @@ evals/              评测集：判断改动是否变好的唯一客观依据
 
 | 对象 | 规则 | 例 |
 |---|---|---|
-| 适配器 id / 模块文件 / fixtures 目录 | 小写蛇形，三者完全一致 | `moka` → `adapters/moka.py` → `tests/fixtures/moka/` |
+| 适配器 id / 模块文件 / fixtures 目录 | 小写蛇形，三者完全一致；草稿期模块名前加 `_` | `beisen` → `adapters/beisen.py`（草稿 `_beisen.py`）→ `tests/fixtures/beisen/` |
 | 适配器类 | `<Id>Adapter`，用 `@register` | `MokaAdapter` |
 | 专属测试 | `tests/adapters/test_<id>.py` | `test_moka.py` |
 | source id | 小写，`-` 分隔；平台型 `<平台>-<租户slug>`，自研站直接用公司拼音/英文 | `moka-acme`、`tencent` |
@@ -65,11 +65,11 @@ evals/              评测集：判断改动是否变好的唯一客观依据
 流程（`/new-adapter <id>` 会按此执行）：
 
 1. 读侦察文档，确认结论为"可做"、合规信息齐全。
-2. 复制 `adapters/example.py` → `adapters/<id>.py`，复制 `tests/adapters/test_example.py` → `test_<id>.py`。**不要改结构**，只改站点常量与字段映射。
+2. 复制 `adapters/example.py` → **`adapters/_<id>.py`（草稿，以 `_` 开头）**，只改站点常量与字段映射，不要改结构。草稿不进注册表、不进契约测试，所以此时 CI 仍是绿的。
 3. 在 `sources/` 加条目（平台型：往 `sources/<平台>.yaml` 追加一行；自研站：新建文件），填真实 `compliance`。
-4. 用 `scripts/record_fixtures.py` 录制 fixtures（≤2 页），检查体积 <300KB、无敏感信息；必要时裁剪 `items`，但保留至少：一条完整记录、一条缺字段记录、末页空页。
-5. **先写专属测试**：断言至少一条真实记录的全部关键字段（标题、城市、届别/批次、类型、链接、JD 文本），以及缺字段记录被正确跳过或留空。确认测试失败。
-6. 实现 `fetch_raw`（翻页，遵守 `max_pages`）和 `normalize`（只映射，不联网）。
+4. **录制 fixtures**：本地能访问目标站点就用 `scripts/record_fixtures.py <source_id> --max-pages 1`；不能（例如云端沙箱）就在 `docs/recon/record.txt` 写一行 `<source_id> [页数]` 并推送，`record-fixtures` 工作流会在 Actions 上录制并把 fixtures 提交回分支，随后 `git pull`。检查体积 <300KB、无敏感信息；必要时裁剪。
+5. **先写专属测试** `tests/adapters/test_<id>.py`：断言至少一条真实记录的全部关键字段（标题、城市、届别/批次、类型、链接、JD 文本），以及缺字段记录被正确跳过或留空。
+6. `git mv adapters/_<id>.py adapters/<id>.py` 转正（此时契约测试开始覆盖它），修实现直到全部测试通过。
 7. 全部测试 + ruff 通过后提交。**一个适配器一次提交**，不要夹带无关改动。
 8. 若发现需要改 `models.py`/schema/`ingest`：**停下来**，说明原因并请用户确认，不要顺手改。
 
