@@ -20,7 +20,7 @@ jobradar diff --days 7 --types open
 jobradar compare 公司A 公司B --category 算法
 ```
 
-国内下载慢：设置 `JOBRADAR_MIRROR` 为 GitHub 加速前缀。
+国内下载慢：设置 `JOBRADAR_MIRROR` 为 GitHub 加速前缀。仓库未公开期间：设置 `GITHUB_TOKEN`（有仓库读权限的 token）后 `update` 会走 API 带鉴权下载。
 
 ### 接入 agent
 

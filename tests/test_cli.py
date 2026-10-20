@@ -70,3 +70,61 @@ def test_missing_data_tells_user_to_update(tmp_path, monkeypatch):
 def test_mirror_prefix(monkeypatch):
     monkeypatch.setenv("JOBRADAR_MIRROR", "https://mirror.example/")
     assert local.release_url("jobs.db").startswith("https://mirror.example/https://github.com/")
+
+
+def _sqlite_bytes(tmp_path):
+    p = tmp_path / "src.db"
+    connect(p, "jobs").close()
+    return p.read_bytes()
+
+
+def test_download_public(tmp_path, monkeypatch):
+    import httpx
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    body = _sqlite_bytes(tmp_path)
+    seen = []
+
+    def handler(request):
+        seen.append(str(request.url))
+        return httpx.Response(200, content=body)
+
+    cli._download("jobs.db", tmp_path / "jobs.db", client=httpx.Client(transport=httpx.MockTransport(handler)))
+    assert seen == [local.release_url("jobs.db")]
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
+def test_download_private_with_token(tmp_path, monkeypatch):
+    import httpx
+    monkeypatch.setenv("GITHUB_TOKEN", "t0k")
+    body = _sqlite_bytes(tmp_path)
+
+    def handler(request):
+        assert request.headers["authorization"] == "Bearer t0k"
+        if request.url.path.endswith("/releases/tags/data-latest"):
+            return httpx.Response(200, json={"assets": [{"name": "jobs.db", "url": "https://api.github.com/assets/7"}]})
+        assert str(request.url) == "https://api.github.com/assets/7"
+        assert request.headers["accept"] == "application/octet-stream"
+        return httpx.Response(200, content=body)
+
+    cli._download("jobs.db", tmp_path / "jobs.db", client=httpx.Client(transport=httpx.MockTransport(handler)))
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
+def test_download_rejects_non_sqlite(tmp_path, monkeypatch):
+    import httpx
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=b"<html>not found</html>")))
+    with pytest.raises(SystemExit, match="不是有效的数据库"):
+        cli._download("jobs.db", tmp_path / "jobs.db", client=client)
+    assert not (tmp_path / "jobs.db").exists()
+
+
+def test_download_404_explains_private_repo(tmp_path, monkeypatch):
+    import httpx
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(404)))
+    with pytest.raises(SystemExit, match="GITHUB_TOKEN"):
+        cli._download("jobs.db", tmp_path / "jobs.db", client=client)
