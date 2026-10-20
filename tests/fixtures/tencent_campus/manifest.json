@@ -1,0 +1,50 @@
+[
+  {
+    "method": "POST",
+    "url": "https://join.qq.com/api/v1/position/searchPosition",
+    "body": "{\"projectIdList\":[],\"projectMappingIdList\":[],\"keyword\":\"\",\"bgList\":[],\"workCountryType\":0,\"workCityList\":[],\"recruitCityList\":[],\"positionFidList\":[],\"pageIndex\":1,\"pageSize\":5}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707398326592512",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "002.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707395466077184",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "003.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707395466077185",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "004.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707395466077186",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "005.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1283126460798018560",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "006.json"
+  }
+]

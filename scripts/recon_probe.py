@@ -9,6 +9,7 @@
   POST <url> <json body>
   GREP <url> <正则>           打印正则的去重匹配（用于在 JS 包里找接口）
   POSTGREP <url> <json> <正则>  POST 后对响应做正则匹配（json 内不能有空格）
+  FORMGREP <url> <a=1&b=2> <正则> 以表单（application/x-www-form-urlencoded）POST 后做正则匹配
 """
 
 import argparse
@@ -16,7 +17,7 @@ import json
 import re
 import sys
 import time
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlsplit
 
 import httpx
 
@@ -90,12 +91,14 @@ def main() -> int:
                 time.sleep(1.5)
             t = time.monotonic()
             regex = extra if verb == "GREP" else None
-            if verb == "POSTGREP":
+            if verb in ("POSTGREP", "FORMGREP"):
                 body, regex = extra.split(" ", 1)
                 extra = body
             try:
                 if verb in ("POST", "POSTGREP"):
                     r = client.post(url, json=json.loads(extra or "{}"))
+                elif verb == "FORMGREP":
+                    r = client.post(url, data=dict(parse_qsl(extra, keep_blank_values=True)))
                 else:
                     r = client.get(url)
             except httpx.HTTPError as e:
