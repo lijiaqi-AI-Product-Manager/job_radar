@@ -27,3 +27,4 @@ sources:
       robots: not_applicable   # smics.zhiye.com/robots.txt 为空文件
       terms: "公开招聘门户，无需登录、无验证码"
       notes: "变体 B：列表标题会被截断，逐岗位请求详情页（约 220 次/天，1 req/s）取完整标题与 JD"
+  - {id: beisen-legacy-jingce, company: 精测电子, params: {tenant: jingce, portal: campus}}

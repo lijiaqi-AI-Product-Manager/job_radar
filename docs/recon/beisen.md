@@ -64,7 +64,7 @@
 - 候选 39 家（搜索 site:zhiye.com）：new 门户 37 家，入库 34 家
   - 不入库：`polycareer`（与 `polynew` 同为保利发展、Count 均为 798，重复）、`yzwhr`（中建电商，0 岗位）、`zczy`（标题为"招聘官网"，无法确认公司）
   - `sanycampus`（147）与已入库的 `sany` 为三一的两个门户，可能有少量重复岗位
-- 旧版门户 2 家：jingce（精测电子）、htffund（汇添富基金），待变体检查
+- 旧版门户 2 家：jingce（精测电子）为变体 A，已入库；htffund（汇添富基金）校招页当前 0 个岗位链接，暂不入库（空源每天会被判为失败）
 - 大户：genomics（华大）1901、cnnc（中核）1612、polynew 798、baicgroup（北汽）518、tzcpa 481、yangzijiang 424
 
 ## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
