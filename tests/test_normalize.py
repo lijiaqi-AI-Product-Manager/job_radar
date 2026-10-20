@@ -51,6 +51,9 @@ def test_none_and_empty():
     ("", []),
     (None, []),
     ("北京市,北京市", ["北京"]),
+    ("北京市-海淀区", ["北京"]),       # 有"市"一级时取市，不取区
+    ("浙江省-杭州市-余杭区", ["杭州"]),
+    ("上海市-浦东新区,江苏省-苏州市", ["上海", "苏州"]),
 ])
 def test_cities(text, cities):
     assert cities_from_text(text) == cities

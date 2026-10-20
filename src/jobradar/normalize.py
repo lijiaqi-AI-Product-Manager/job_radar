@@ -62,12 +62,16 @@ _CITY_LEVELS = re.compile(r"[-·—]")
 
 
 def cities_from_text(text: str | None) -> list[str]:
-    """"江苏省-连云港市,北京市" -> ["连云港", "北京"]：取最末一级，去掉"市"后缀，去重保序。"""
+    """"江苏省-连云港市,北京市-海淀区" -> ["连云港", "北京"]：有"市"一级取市，否则取最末一级；
+    去掉"市"后缀，去重保序。"""
     if not text:
         return []
     out: list[str] = []
     for part in _CITY_SPLIT.split(text):
-        name = _CITY_LEVELS.split(part.strip())[-1].strip()
+        levels = [x.strip() for x in _CITY_LEVELS.split(part.strip()) if x.strip()]
+        if not levels:
+            continue
+        name = next((x for x in levels if x.endswith("市") and len(x) > 2), levels[-1])
         if len(name) > 2 and name.endswith("市"):
             name = name[:-1]
         if name and name not in out:
