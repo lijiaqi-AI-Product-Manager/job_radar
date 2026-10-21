@@ -9,7 +9,7 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     env:
       GH_TOKEN: ${{ github.token }}
       GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
@@ -23,8 +23,15 @@ jobs:
           echo "GITEE_TOKEN set: $([ -n "$GITEE_TOKEN" ] && echo yes || echo NO)"
           echo "GITEE_REPO: $GITEE_REPO"
       - run: mkdir -p d && gh release download data-latest -D d -p 'jobs.db.gz' -p 'jd_text.db.gz' -p 'calendar.db.gz' || true; ls -l d
+      - name: Connectivity to Gitee
+        run: |
+          curl -sS -o /dev/null -w "api repo: %{http_code} %{time_total}s\n" "https://gitee.com/api/v5/repos/$GITEE_REPO"
+          head -c 1000000 /dev/urandom > /tmp/probe.bin
+          curl -sS -o /dev/null -w "upload 1MB (to repo page, expect 4xx): %{http_code} %{speed_upload} B/s %{time_total}s\n" \
+            --max-time 120 -F "file=@/tmp/probe.bin" "https://gitee.com/api/v5/repos/$GITEE_REPO/releases/0/attach_files" || true
       - name: Publish to Gitee
-        run: uv run python scripts/publish_gitee.py d/*.gz
+        timeout-minutes: 40
+        run: uv run python -u scripts/publish_gitee.py d/*.gz
       - name: Anonymous download test
         run: |
           for f in jobs.db.gz; do
