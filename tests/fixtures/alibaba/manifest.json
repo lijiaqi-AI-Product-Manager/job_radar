@@ -1,0 +1,42 @@
+[
+  {
+    "method": "GET",
+    "url": "https://campus-talent.alibaba.com/campus/position",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "001.txt"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus-talent.alibaba.com/searchCondition/listBatch?_csrf=REDACTED",
+    "body": "{\"channel\":\"campus_group_official_site\",\"language\":\"zh\"}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "002.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus-talent.alibaba.com/position/search?_csrf=REDACTED",
+    "body": "{\"batchId\":100000760001,\"pageIndex\":1,\"pageSize\":3,\"channel\":\"campus_group_official_site\",\"language\":\"zh\"}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "003.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus-talent.alibaba.com/position/search?_csrf=REDACTED",
+    "body": "{\"batchId\":100000560002,\"pageIndex\":1,\"pageSize\":3,\"channel\":\"campus_group_official_site\",\"language\":\"zh\"}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "004.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus-talent.alibaba.com/position/search?_csrf=REDACTED",
+    "body": "{\"batchId\":100000560001,\"pageIndex\":1,\"pageSize\":3,\"channel\":\"campus_group_official_site\",\"language\":\"zh\"}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "005.json"
+  }
+]
