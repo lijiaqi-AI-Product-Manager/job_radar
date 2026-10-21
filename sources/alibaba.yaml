@@ -1,0 +1,10 @@
+id: alibaba
+company: 阿里巴巴
+adapter: alibaba
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+compliance:
+  checked_on: 2026-10-21
+  robots: not_applicable   # campus-talent.alibaba.com/robots.txt 返回 404（无 robots 规则）
+  terms: "职位页与列表接口为官网前端使用的公开 JSON，无需登录、无签名、无验证码；使用站点下发给匿名访客的会话 cookie 与页面内嵌 token（只在内存中，CLAUDE.md 铁律 1，2026-10-21 用户批准）。用户协议待人工复核"
+  notes: "侦察：docs/recon/alibaba.md（recon-probe 第 35–38 轮）。1 次页面 + 1 次批次列表 + 每批次 ceil(n/20) 页，约 30 次/天，1 req/s。"
