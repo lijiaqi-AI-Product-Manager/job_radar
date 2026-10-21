@@ -14,6 +14,8 @@ source.params:
 import re
 from collections.abc import Iterator
 
+import httpx
+
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
 from jobradar.normalize import cities_from_text, grad_year_from_text
@@ -35,6 +37,13 @@ class AlibabaAdapter(Adapter):
         return self.source.params.get("base_url", BASE_URL).rstrip("/")
 
     def fetch_raw(self) -> Iterator[dict]:
+        try:
+            yield from self._fetch()
+        except httpx.HTTPStatusError as e:
+            # 异常信息里的 URL 带 token：只报路径与状态码，不让 token 进日志/健康报告
+            raise RuntimeError(f"alibaba {e.request.url.path} HTTP {e.response.status_code}") from None
+
+    def _fetch(self) -> Iterator[dict]:
         base = self._base()
         page_url = f"{base}/campus/position"
         m = re.search(TOKEN_RE, self.request_text("GET", page_url))
