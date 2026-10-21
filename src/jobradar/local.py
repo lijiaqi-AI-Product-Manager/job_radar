@@ -8,6 +8,7 @@ from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts
 
 REPO = "lijiaqimun-coder/job_radar"
+GITEE_REPO = os.environ.get("JOBRADAR_GITEE_REPO", "lijiaqimun-coder/job_radar")  # 国内镜像（Gitee 发行版）
 RELEASE_TAG = "data-latest"
 DB_FILES = {"jobs": "jobs.db", "text": "jd_text.db"}
 STALE_HOURS = 48
@@ -21,10 +22,25 @@ def home() -> Path:
     return Path(os.environ.get("JOBRADAR_HOME", Path.home() / ".cache" / "jobradar"))
 
 
-def release_url(name: str) -> str:
-    base = f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{name}"
-    mirror = os.environ.get("JOBRADAR_MIRROR", "").rstrip("/")  # 例如国内 GitHub 加速前缀
-    return f"{mirror}/{base}" if mirror else base
+def github_url(name: str) -> str:
+    return f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{name}"
+
+
+def gitee_url(name: str) -> str:
+    return f"https://gitee.com/{GITEE_REPO}/releases/download/{RELEASE_TAG}/{name}"
+
+
+def asset_urls(name: str, prefer: str | None = None) -> list[tuple[str, str]]:
+    """按尝试顺序返回 (镜像名, 下载地址)。
+    prefer：github / gitee；JOBRADAR_MIRROR 若是 URL 前缀（如 GitHub 加速代理），排在最前。"""
+    mirrors = [("github", github_url(name)), ("gitee", gitee_url(name))]
+    env = os.environ.get("JOBRADAR_MIRROR", "").strip()
+    prefer = prefer or (env if env in ("github", "gitee") else None)
+    if prefer == "gitee":
+        mirrors.reverse()
+    if env.startswith("http"):
+        mirrors.insert(0, ("mirror", f"{env.rstrip('/')}/{github_url(name)}"))
+    return mirrors
 
 
 def open_db(kind: str, required: bool = True):

@@ -29,14 +29,21 @@ def _guard(fn):
 @server.tool()
 def search_jobs(company: str | None = None, category: str | None = None, city: str | None = None,
                 recruit_type: str | None = None, grad_year: int | None = None,
-                keyword: str | None = None, include_closed: bool = False, limit: int = 30) -> dict:
+                keyword: str | None = None, text: str | None = None,
+                include_closed: bool = False, limit: int = 30) -> dict:
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；company 为名称子串；
-    category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 匹配岗位标题。"""
+    category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
+    text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
+    结果带 match（JD 中命中处的片段，仅标题命中时为 null）。"""
     def run():
         conn = open_db("jobs")
+        text_conn = open_db("text", required=False) if text else None
+        if text and text_conn is None:
+            return {"error": "全文检索需要 JD 原文库：先运行 `jobradar update`", "results": []}
         rows = q.search_jobs(conn, company=company, category=category, city=city,
                              recruit_type=recruit_type, grad_year=grad_year, keyword=keyword,
-                             include_closed=include_closed, limit=min(limit, 200))
+                             text=text, text_conn=text_conn, include_closed=include_closed,
+                             limit=min(limit, 200))
         return envelope(conn, rows)
     return _guard(run)
 
@@ -72,7 +79,7 @@ def compare_roles(companies: list[str], category: str | None = None, keyword: st
         conn = open_db("jobs")
         text = open_db("text", required=False)
         if text is None:
-            return {"error": "对比需要 JD 原文库：运行 `jobradar update --with-text`", "results": {}}
+            return {"error": "对比需要 JD 原文库：运行 `jobradar update`", "results": {}}
         if not category and not keyword:
             return {"error": "需要 category 或 keyword", "results": {}}
         out = q.compare_roles(conn, text, companies, category, keyword=keyword, per_company=min(per_company, 20))

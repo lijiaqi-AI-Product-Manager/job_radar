@@ -32,3 +32,10 @@ def test_missing_data_is_an_error_not_a_crash(tmp_path, monkeypatch):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     out = mcp_server.search_jobs()
     assert "jobradar update" in out["error"] and out["results"] == []
+
+
+def test_search_full_text(home):
+    out = mcp_server.search_jobs(text="pytorch")
+    assert out["results"][0]["id"] == "s1:1" and out["results"][0]["match"] == "PyTorch"
+    (home / "jd_text.db").unlink()
+    assert "error" in mcp_server.search_jobs(text="pytorch")

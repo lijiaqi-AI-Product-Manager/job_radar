@@ -176,3 +176,42 @@ def test_compare_roles_by_keyword(jobs_db, text_db):
 def test_compare_roles_requires_category_or_keyword(jobs_db, text_db):
     with pytest.raises(ValueError):
         compare_roles(jobs_db, text_db, ["x"])
+
+
+@pytest.fixture
+def jd_seeded(jobs_db, text_db):
+    a = [make_job(1, company="腾讯", title="算法工程师", requirements="精通 PyTorch，熟悉 CUDA 优化"),
+         make_job(2, company="腾讯", title="后端开发", description="负责推荐系统后台", requirements="熟悉 Go 与 Kafka"),
+         make_job(3, company="腾讯", title="PyTorch 框架研发", requirements="C++"),
+         make_job(4, company="腾讯", title="产品经理")]  # 无 JD
+    b = [make_job(1, source_id="s2", company="美团", title="机器学习工程师", requirements="pytorch / TensorFlow")]
+    ingest_run(jobs_db, "s1", a, ts=T(1))
+    ingest_run(jobs_db, "s2", b, ts=T(1))
+    upsert_texts(text_db, a + b, ts=T(1))
+    return jobs_db, text_db
+
+
+def test_search_text_matches_jd_and_title(jd_seeded):
+    jobs, text = jd_seeded
+    got = search_jobs(jobs, text="PyTorch", text_conn=text)
+    assert sorted(titles(got)) == ["PyTorch 框架研发", "机器学习工程师", "算法工程师"]  # JD 命中 + 标题命中，不分大小写
+
+
+def test_search_text_multiple_terms_are_and(jd_seeded):
+    jobs, text = jd_seeded
+    assert titles(search_jobs(jobs, text="PyTorch CUDA", text_conn=text)) == ["算法工程师"]
+    assert titles(search_jobs(jobs, text="推荐 Kafka", text_conn=text)) == ["后端开发"]  # 跨职责与要求
+
+
+def test_search_text_combines_with_filters_and_gives_snippet(jd_seeded):
+    jobs, text = jd_seeded
+    [r] = search_jobs(jobs, text="pytorch", company="美团", text_conn=text)
+    assert r["title"] == "机器学习工程师" and "pytorch" in r["match"]
+    [t] = search_jobs(jobs, text="框架", text_conn=text)
+    assert t["match"] is None  # 只命中标题时没有 JD 片段
+
+
+def test_search_text_requires_text_db(jd_seeded):
+    jobs, _ = jd_seeded
+    with pytest.raises(ValueError):
+        search_jobs(jobs, text="Go")

@@ -1,3 +1,4 @@
-# 第 27 轮：旧版门户 jingce、htffund 属于哪种变体
-GREP https://jingce.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
-GREP https://htffund.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
+# 第 28 轮：补全 JD——腾讯社招详情接口（岗位要求）、北森旧版变体 A 详情页结构
+GET https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2079604867550330880&language=zh-cn
+GREP https://cssc.zhiye.com/zpdetail/311047525 <title>[^<]{0,60}|<h\d[^>]*>[^<]{0,60}</h\d>|class="[^"]*(?:xqm|describe|content|duty|require)[^"]*"[^>]*>[\s\S]{0,300}|岗位职责[\s\S]{0,200}|任职要求[\s\S]{0,200}|职位描述[\s\S]{0,200}
+GREP https://kelun.zhiye.com/job_show/230947311 <title>[^<]{0,60}|<h\d[^>]*>[^<]{0,60}</h\d>|class="[^"]*(?:xqm|describe|content|duty|require)[^"]*"[^>]*>[\s\S]{0,300}|职位描述[\s\S]{0,200}
