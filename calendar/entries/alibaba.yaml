@@ -1,0 +1,45 @@
+group: 阿里巴巴
+entries:
+  - id: alibaba-2027-qz
+    company: 阿里巴巴集团
+    grad_year: 2027
+    project_type: 秋招
+    apply_url: https://campus-talent.alibaba.com/campus/position
+    source: {type: official_site, name: 阿里巴巴校园招聘官网（岗位页）, url: "https://campus-talent.alibaba.com/campus/position/199907840004"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
+    notes: "岗位页标注招聘项目「阿里巴巴2027届校园招聘」、笔试方向「阿里巴巴集团27届秋招」；毕业时间要求 2026-11-01 至 2027-10-31。招聘主体包括阿里巴巴控股集团、淘天集团、淘宝闪购、飞猪、阿里国际数字商业集团、阿里云、高德地图等。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+  - id: alibaba-aliyun-2027-qz
+    company: 阿里云
+    product: 阿里云
+    grad_year: 2027
+    project_type: 秋招
+    apply_url: https://careers.aliyun.com/campus/home
+    source: {type: official_site, name: 阿里云校园招聘官网（公告）, url: "https://careers.aliyun.com/campus/home", date: 2026-08-04}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://careers.aliyun.com/campus/home"}
+    notes: "官网公告「阿里巴巴2027届应届生招聘正式启动」发布于 2026-08-04；毕业时间 2026.11-2027.10；含管培生、A Star 人才计划；官网声明校招无提前批。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+  - id: alibaba-taotian-2027-qz
+    company: 淘天集团
+    product: 淘宝/天猫
+    grad_year: 2027
+    project_type: 秋招
+    tracks:
+      - {direction: 技术类}
+      - {direction: 产品类}
+      - {direction: 设计类}
+    apply_url: https://talent.taotian.com/campus/home
+    source: {type: official_site, name: 淘天集团校园招聘官网（2027届应届生招聘公告）, url: "https://talent.taotian.com/campus/home", date: 2026-08-05}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://talent.taotian.com/campus/home"}
+    notes: "招聘对象 2026.11.1-2027.10.31 毕业；聚焦技术类、产品类、设计类 3 大职类；另有 T-Star 顶尖人才计划（面向 27 届硕博，含实习生专项）。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+  - id: alibaba-fliggy-2027-qz
+    company: 飞猪
+    product: 飞猪旅行
+    grad_year: 2027
+    project_type: 秋招
+    apply_url: https://campus-talent.alibaba.com/campus/position
+    source: {type: official_site, name: 阿里巴巴校园招聘官网（招聘主体：飞猪）, url: "https://campus-talent.alibaba.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
+    notes: "飞猪未单独设校招站，岗位在阿里巴巴校园招聘官网中按招聘主体「飞猪」筛选；可见部门含技术部、设计部、大住宿等。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"

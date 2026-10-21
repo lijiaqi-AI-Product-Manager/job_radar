@@ -1,0 +1,38 @@
+name: calendar-check
+# 用最新发布的岗位数据 + 分支上的人工条目构建招聘日历，探活全部链接，打印覆盖率与异常链接（不发布）。
+on:
+  push:
+    paths:
+      - calendar/**
+      - taxonomy/calendar.yaml
+      - src/jobradar/pipeline/calendar.py
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      JOBRADAR_HOME: ${{ github.workspace }}/jr
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: mkdir -p jr && gh release download data-latest -D jr -p jobs.db -p jd_text.db
+      - name: Build calendar with link check
+        run: uv run jobradar calendar-build --jobs jr/jobs.db --out jr/calendar.db --check-links
+      - name: Report
+        run: |
+          uv run jobradar stats | python3 -c "import json,sys; d=json.load(sys.stdin); c=d['calendar']; print({k: c[k] for k in ('targets','calendar_covered','jd_covered','entries')}); print('by_sector', c['by_sector'])"
+          uv run python -c "
+          import sqlite3, json
+          from jobradar.core.queries import dead_links
+          c = sqlite3.connect('jr/calendar.db'); c.row_factory = sqlite3.Row
+          for r in dead_links(c, include_errors=True): print('LINK', r['status'], r['http_status'], r['url'], r['entries'][:3])
+          heads = ['阿里巴巴','字节跳动','腾讯','美团','京东','拼多多','快手','百度','网易','小红书','哔哩哔哩','滴滴','华为','小米','OPPO','vivo','荣耀','大疆','比亚迪','宁德时代','奇瑞汽车','蔚来','中金公司','中信证券','招商银行','工商银行','顺丰','美的','海尔']
+          for h in heads:
+              rows = c.execute('SELECT origin, jd_status, COUNT(*) FROM entry WHERE group_name=? GROUP BY 1,2', (h,)).fetchall()
+              print('HEAD', h, [tuple(r) for r in rows] or 'MISSING')
+          "
+          uv run python scripts/weekly_report.py jr/jobs.db --calendar jr/calendar.db | sed -n '/投递链接探活/,$p'

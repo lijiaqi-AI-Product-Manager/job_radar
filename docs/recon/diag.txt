@@ -1,0 +1,2 @@
+# 腾讯校招 JD 缺口修复后复测
+scripts/diag_tencent_campus.py

@@ -39,3 +39,15 @@ def test_search_full_text(home):
     assert out["results"][0]["id"] == "s1:1" and out["results"][0]["match"] == "PyTorch"
     (home / "jd_text.db").unlink()
     assert "error" in mcp_server.search_jobs(text="pytorch")
+
+
+def test_calendar_and_stats_tools(home):
+    from jobradar.pipeline import calendar as cal
+    conn = connect(home / "calendar.db", "calendar")
+    jobs = connect(home / "jobs.db", "jobs")
+    cal.build(conn, jobs, manual=[], sources=[], targets={"sectors": {"x": ["腾讯", "阿里巴巴"]}}, ts=now_ts())
+    conn.close()
+    out = mcp_server.calendar(group="腾讯")
+    assert out["results"] and out["results"][0]["origin"] == "auto"
+    st = mcp_server.stats()
+    assert st["calendar"]["calendar_covered"] == 1 and st["calendar"]["missing_calendar"] == ["阿里巴巴"]

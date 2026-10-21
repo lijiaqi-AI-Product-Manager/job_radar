@@ -1,0 +1,20 @@
+group: 蔚来
+entries:
+  - id: nio-2027-zsp
+    company: 蔚来
+    grad_year: 2027
+    project_type: 秋招正式批
+    apply_url: https://nio.jobs.feishu.cn/campus
+    source: {type: official_site, name: 蔚来校招官方招聘页, url: "https://nio.jobs.feishu.cn/campus"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://nio.jobs.feishu.cn/campus"}
+    notes: "官方招聘页列有「2027届校园招聘-正式批」；查看职位与投递需登录。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+  - id: nio-2027-intern
+    company: 蔚来
+    grad_year: 2027
+    project_type: 实习
+    apply_url: https://nio.jobs.feishu.cn/campus
+    source: {type: official_site, name: 蔚来校招官方招聘页, url: "https://nio.jobs.feishu.cn/campus"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://nio.jobs.feishu.cn/campus"}
+    notes: "官方招聘页列有「2027届储备实习生招募」。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"

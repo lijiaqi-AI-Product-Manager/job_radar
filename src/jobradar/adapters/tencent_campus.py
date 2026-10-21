@@ -2,6 +2,8 @@
 
 列表接口（POST，公开 JSON）只有标题、城市、事业群；职责与要求逐岗位请求详情接口（GET，公开 JSON）。
 约 1000 岗，按 1 req/s 每日约 17 分钟。
+青云课题类岗位的 desc/request 为空，JD 在 topicDetail/topicRequirement；
+列表里仍有、详情返回"岗位已下架"（status 404）的岗位跳过。
 
 source.params:
   page_size: 每页条数，默认 100（录 fixtures 时用小值）
@@ -15,6 +17,7 @@ from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from
 
 LIST_URL = "https://join.qq.com/api/v1/position/searchPosition"
 DETAIL_URL = "https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId"
+DETAIL_KEYS = ("desc", "request", "topicDetail", "topicRequirement", "tidName")
 JOB_URL = "https://join.qq.com/post_detail.html?postid={id}"
 PAGE_SIZE = 100
 
@@ -46,11 +49,12 @@ class TencentCampusAdapter(Adapter):
             body = data.get("data") or {}
             items = body.get("positionList") or []
             for item in items:
-                detail = {}
+                detail, delisted = {}, False
                 if item.get("postId"):
                     d = self.request_json("GET", DETAIL_URL, params={"postId": item["postId"]})
                     detail = (d.get("data") or {}) if d.get("status") == 0 else {}
-                yield {**item, "detail": {k: detail.get(k) for k in ("desc", "request", "tidName")}}
+                    delisted = d.get("status") == 404 and "下架" in (d.get("message") or "")
+                yield {**item, "delisted": delisted, "detail": {k: detail.get(k) for k in DETAIL_KEYS}}
             total = body.get("count") or 0
             if not items or page * size >= total:
                 return
@@ -60,7 +64,7 @@ class TencentCampusAdapter(Adapter):
 
     def normalize(self, raw: dict) -> Job:
         recruit_type = recruit_type_of(raw.get("projectName") or raw.get("recruitLabelName") or "")
-        if not raw.get("postId") or not raw.get("positionTitle") or recruit_type is None:
+        if not raw.get("postId") or not raw.get("positionTitle") or recruit_type is None or raw.get("delisted"):
             raise SkipRecord
         title = raw["positionTitle"].strip()
         cities: list[str] = []
@@ -80,6 +84,6 @@ class TencentCampusAdapter(Adapter):
             batch=batch_from_text(title) if recruit_type == "campus" else None,
             cities=cities,
             department=" ".join((raw.get("bgs") or "").split()) or None,
-            description=detail.get("desc") or None,
-            requirements=detail.get("request") or None,
+            description=detail.get("desc") or detail.get("topicDetail") or None,
+            requirements=detail.get("request") or detail.get("topicRequirement") or None,
         )

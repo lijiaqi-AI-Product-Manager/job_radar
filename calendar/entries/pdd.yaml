@@ -1,0 +1,29 @@
+group: 拼多多
+entries:
+  - id: pdd-2027-zsp
+    company: 拼多多
+    grad_year: 2027
+    project_type: 秋招正式批
+    apply_url: https://careers.pddglobalhr.com/campus/grad
+    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网（应届生）, url: "https://careers.pddglobalhr.com/campus/grad"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/grad"}
+    notes: "官网批次名称「2027届校招正式批」（2026-10-21 抓取核对）；毕业时间 2026 年 9 月至 2027 年 8 月（依据搜索引擎索引）。"
+  - id: pdd-2027-maicai
+    company: 拼多多
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://careers.pddglobalhr.com/campus/grad
+    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网（应届生）, url: "https://careers.pddglobalhr.com/campus/grad"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/grad"}
+    notes: "官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。"
+  - id: pdd-2027-intern
+    company: 拼多多
+    grad_year: 2027
+    project_type: 实习
+    apply_url: https://careers.pddglobalhr.com/campus/
+    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网, url: "https://careers.pddglobalhr.com/campus/grad"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/"}
+    notes: "官网项目名称「2027届实习生招聘」（2026-10-21 抓取核对）。"

@@ -1,0 +1,15 @@
+group: 滴滴
+entries:
+  - id: didi-2027-qz
+    company: 滴滴
+    grad_year: 2027
+    project_type: 秋招
+    tracks:
+      - {direction: 技术类, roles: [算法工程师, 后端研发工程师, 测试开发工程师, Golang研发工程师, C++研发工程师]}
+      - {direction: 数据与分析, roles: [数据分析师, 商业分析师, 数据产品助理]}
+      - {direction: 运营类, roles: [运力运营顾问, 渠道运营顾问]}
+    apply_url: https://campus.didiglobal.com/campus_apply/didiglobal/96064
+    source: {type: official_site, name: 滴滴校园招聘官网, url: "https://campus.didiglobal.com/campus_apply/didiglobal/96064"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://campus.didiglobal.com/campus_apply/didiglobal/96064"}
+    notes: "官网标题「滴滴27届秋招正式启动」，项目「2027届-秋招」在招约 100 个岗位；方向与岗位名取自官网在招岗位标题（2026-10-21 抓取核对）。"

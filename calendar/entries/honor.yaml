@@ -1,0 +1,11 @@
+group: 荣耀
+entries:
+  - id: honor-2027-xz
+    company: 荣耀
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://www.honor.com/cn/career/
+    source: {type: official_site, name: 荣耀招聘官网（校招动态「荣耀2027届校园招聘全球启动」）, url: "https://www.honor.com/cn/career/", date: 2026-08-18}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://www.honor.com/cn/career/"}
+    notes: "官网动态「校招 | 荣耀2027届校园招聘全球启动」2026.08.18（2026-10-21 抓取核对）；每人投递一个职位，可填写第二意向岗位（依据搜索引擎索引）。"

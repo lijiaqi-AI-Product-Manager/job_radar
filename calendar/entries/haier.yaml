@@ -1,0 +1,21 @@
+group: 海尔
+entries:
+  - id: haier-2027-xz
+    company: 海尔集团
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://maker.haier.net/client/campus/index
+    source: {type: official_site, name: 海尔招聘官网（校园频道）, url: "https://maker.haier.net/client/campus/index"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://maker.haier.net/client/campus/index"}
+    notes: "官网原文「海尔集团2027校园招聘——面向2027届应届毕业生」（2026-10-21 抓取核对）；每人只能投递一个生态圈中的一个职位（依据搜索引擎索引）。"
+  - id: haier-2027-phd
+    company: 海尔集团
+    product: 博士登陆计划
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://maker.haier.net/client/campus/index
+    source: {type: official_site, name: 海尔招聘官网（校园频道）, url: "https://maker.haier.net/client/campus/index"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://maker.haier.net/client/campus/index"}
+    notes: "官网原文「海尔集团博士登陆计划——面向2027届应届国内&海外博士」（2026-10-21 抓取核对）。"
