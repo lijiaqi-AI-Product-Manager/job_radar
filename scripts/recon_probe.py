@@ -16,6 +16,8 @@
                               再按 method/url/json/data/headers 请求接口，grep 可选。只打印 cookie 名与 token 长度，不打印值。
   RENDER <url> [正则]          浏览器渲染（Playwright，CLAUDE.md 铁律 6）：打印页面可见文字（或正则匹配）、
                               页面发出的 XHR/fetch 请求；出现验证码字样时提示停止。
+  RENDERXHR <url> <正则>       同 RENDER，并对 URL 匹配正则的 XHR 打印请求体与响应体开头（token/签名值脱敏）。
+                              接口要求反爬签名（如 _signature、X-Bogus）的站点不用浏览器去"代签"，按 blocked 处理。
 """
 
 import argparse
@@ -34,6 +36,12 @@ INLINE_JSON = re.compile(r"""(window\.__[\w]+__\s*=|<script[^>]+type=["'](?:appl
 
 
 CAPTCHA_HINT = re.compile(r"验证码|滑块|安全验证|captcha|人机验证|请登录|登录后查看", re.I)
+# 日志里不出现 token/签名的值（CLAUDE.md 铁律 1）
+SECRET = re.compile(r"""((?:_csrf|csrf[\w-]*|[\w-]*token|_signature|signature|msToken|X-Bogus|a_bogus|userId)["']?\s*[=:]\s*["']?)[^&\s"',}]+""", re.I)
+
+
+def redact(s: str) -> str:
+    return SECRET.sub(r"\1***", s)
 
 
 def parse_lines(lines):
@@ -115,14 +123,28 @@ def run_flow(spec: dict, headers: dict, body_chars: int) -> None:
         report(r, body_chars, spec.get("grep"))
 
 
-def run_render(url: str, regex: str | None, body_chars: int) -> None:
+def run_render(url: str, regex: str | None, body_chars: int, xhr_filter: str | None = None) -> None:
+    """xhr_filter（RENDERXHR）：对 URL 匹配该正则的 XHR，打印请求体与响应体开头（token/签名值已脱敏）。"""
     from playwright.sync_api import sync_playwright
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
         page = browser.new_page(user_agent=UA, locale="zh-CN")
         calls = []
-        page.on("response", lambda r: calls.append((r.request.method, r.status, r.url))
-                if r.request.resource_type in ("xhr", "fetch") else None)
+
+        def on_response(r):
+            if r.request.resource_type not in ("xhr", "fetch"):
+                return
+            calls.append((r.request.method, r.status, redact(r.url)))
+            if xhr_filter and re.search(xhr_filter, r.url):
+                try:
+                    body = r.text()
+                except Exception:  # noqa: BLE001
+                    body = "(no body)"
+                print(f"  XHRDATA {r.request.method} {r.status} {redact(r.url)[:300]}")
+                print(f"    REQ {redact(r.request.post_data or '')[:1200]}")
+                print(f"    RESP {redact(body)[:body_chars]}")
+
+        page.on("response", on_response)
         try:
             page.goto(url, wait_until="networkidle", timeout=45000)
         except Exception as e:  # noqa: BLE001 - 侦察脚本：打印即可
@@ -166,11 +188,13 @@ def main() -> int:
                     print(f"ROBOTS ERROR {type(e).__name__}")
                 time.sleep(1.5)
             t = time.monotonic()
-            if verb in ("FLOW", "RENDER"):
-                print(f"\n>>> {verb} {url}")
+            if verb in ("FLOW", "RENDER", "RENDERXHR"):
+                print(f"\n>>> {verb} {redact(url)}")
                 try:
                     if verb == "FLOW":
                         run_flow(extra, headers, args.body)
+                    elif verb == "RENDERXHR":
+                        run_render(url, None, args.body, xhr_filter=extra)
                     else:
                         run_render(url, extra, args.body)
                 except Exception as e:  # noqa: BLE001
