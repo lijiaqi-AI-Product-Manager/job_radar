@@ -7,4 +7,4 @@
 # beisen-legacy-cssc 1   (已录制 2026-10-21，含详情，详情页已裁剪为 positiondetail 模块)
 # meituan 1 5   (已录制 2026-10-20)
 # tencent-campus 1 5   (已录制 2026-10-20)
-alibaba 1 3
+alibaba 1 3   # 第 2 次（listBatch 需 JSON 请求体）

@@ -54,7 +54,9 @@ class AlibabaAdapter(Adapter):
         channel = self.source.params.get("channel", CHANNEL)
         size = int(self.source.params.get("page_size", PAGE_SIZE))
 
-        batches = self.request_json("POST", f"{base}/searchCondition/listBatch", params=params, headers=headers)
+        # 必须带 JSON 请求体（不带时 403，第 39 轮）
+        batches = self.request_json("POST", f"{base}/searchCondition/listBatch", params=params, headers=headers,
+                                    json={"channel": channel, "language": "zh"})
         if not batches.get("success"):
             raise RuntimeError(f"alibaba listBatch failed: {batches.get('errorMsg')}")
         seen_batches = set()
