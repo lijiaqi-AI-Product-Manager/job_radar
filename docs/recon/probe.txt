@@ -1,3 +1,5 @@
-# 第 27 轮：旧版门户 jingce、htffund 属于哪种变体
-GREP https://jingce.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
-GREP https://htffund.zhiye.com/campus/?PageIndex=1 <title>[^<]{0,40}|/zpdetail/\d{6,}|/job_show/\d{6,}|campusxq\?jobId=\d+|当前第\s*\d+\s*/\s*\d+\s*页
+# 第 29 轮：北森旧版变体 A 详情页的 JD 区块（cssc /zpdetail、kelun /job_show、611）
+GREP https://cssc.zhiye.com/zpdetail/311047525 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+GREP https://cssc.zhiye.com/zpdetail/311047525 <div class="positiondetail-template6[\s\S]{0,2500}
+GREP https://kelun.zhiye.com/job_show/230947311 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+GREP https://611.zhiye.com/zpdetail/351602837 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}

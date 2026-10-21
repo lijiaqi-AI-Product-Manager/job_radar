@@ -3,7 +3,8 @@
 列表页 GET /{portal}/?PageIndex=N（N 从 1 开始；0 视为越界并返回第 1 页），每行：
   <tr><td><a title="算法工程师(J11995)" href="/zpdetail/311047502?PageIndex=1">…</a></td>
       <td title="所属单位">…</td><td title="江苏省-连云港市">…</td><td>2026-09-03</td></tr>
-页脚"当前第N/M页"给出总页数。JD 原文暂不抓取（需逐个请求详情页）。
+页脚"当前第N/M页"给出总页数。JD 原文逐个请求详情页 /zpdetail/<id>：
+  <p class="title">工作职责：</p><p>…</p> … <p class="title">任职资格：</p><p>…</p>
 部分租户（如 kelun）详情链接为 /job_show/<id>，其余结构相同。
 
 变体 B（params.variant = "b"，如 smics）：每个岗位是
@@ -44,14 +45,26 @@ B_TITLE = re.compile(r'<h2 class="\s*col26[^"]*"[^>]*>([^<]+)</h2>', re.I)
 TAG = re.compile(r"<[^>]+>")
 
 
-def _section(html: str, name: str) -> str | None:
-    """详情页中 <h3>{name}</h3><div class="xqm">…</div> 的纯文本。"""
-    m = re.search(rf'<h3[^>]*>\s*{name}\s*</h3>\s*<div class="xqm">(.*?)</div>', html, re.S | re.I)
-    if not m:
-        return None
-    text = re.sub(r"<br\s*/?>", "\n", m.group(1), flags=re.I)
+A_DESC = "工作职责|岗位职责|职位描述|职责描述|工作内容"
+A_REQ = "任职资格|任职要求|职位要求|岗位要求"
+
+
+def _text(fragment: str) -> str | None:
+    text = re.sub(r"<br\s*/?>", "\n", fragment, flags=re.I)
     text = unescape(TAG.sub("", text))
     return "\n".join(line.strip() for line in text.splitlines() if line.strip()) or None
+
+
+def _section(html: str, name: str) -> str | None:
+    """变体 B 详情页中 <h3>{name}</h3><div class="xqm">…</div> 的纯文本。"""
+    m = re.search(rf'<h3[^>]*>\s*{name}\s*</h3>\s*<div class="xqm">(.*?)</div>', html, re.S | re.I)
+    return _text(m.group(1)) if m else None
+
+
+def _a_section(html: str, labels: str) -> str | None:
+    """变体 A 详情页中 <p>{标签}：</p><p>…</p> 的纯文本。"""
+    m = re.search(rf"<p[^>]*>\s*(?:{labels})\s*[：:]?\s*</p>\s*<p[^>]*>(.*?)</p>", html, re.S | re.I)
+    return _text(m.group(1)) if m else None
 
 
 @register
@@ -80,9 +93,13 @@ class BeisenLegacyAdapter(Adapter):
                 new += 1
                 # 各租户列顺序不一：按内容识别，地名列当城市，第一个非地名列当所属单位
                 tds = [unescape(t).strip() for t in TD_TITLE.findall(row)]
+                detail = self.request_text("GET", DETAIL_URL.format(
+                    tenant=p["tenant"], path=link.group(2), id=link.group(3)))
                 yield {"id": link.group(3), "path": link.group(2), "title": unescape(link.group(1)).strip(),
                        "org": next((t for t in tds if t and not looks_like_location(t)), None),
-                       "city": next((t for t in tds if looks_like_location(t)), None)}
+                       "city": next((t for t in tds if looks_like_location(t)), None),
+                       "description": _a_section(detail, A_DESC),
+                       "requirements": _a_section(detail, A_REQ)}
             if not new:  # 没有新岗位：已越过末页
                 return
             if self.source.max_pages and page >= self.source.max_pages:

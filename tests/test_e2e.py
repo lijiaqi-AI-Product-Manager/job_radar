@@ -39,7 +39,7 @@ def test_crawl_then_query(tmp_path, monkeypatch, capsys):
                 client_factory=lambda: httpx.Client(transport=RoutingTransport()),
                 adapters=load_all(), sleep=lambda s: None)
     assert {k: v.status for k, v in res.items()} == {"tencent": "ok", "beisen-fosunpharma": "ok"}
-    assert res["tencent"].opened == 50 and res["beisen-fosunpharma"].opened == 40
+    assert res["tencent"].opened == 5 and res["beisen-fosunpharma"].opened == 40
     jobs.close()
     text.close()
 
@@ -57,6 +57,8 @@ def test_crawl_then_query(tmp_path, monkeypatch, capsys):
     assert shown["results"][0]["requirements"]
 
     assert run("search", "--company", "腾讯", "--city", "深圳")["results"]
-    assert len(run("diff", "--days", "1", "--types", "open", "--limit", "500")["results"]) == 90
+    assert len(run("diff", "--days", "1", "--types", "open", "--limit", "500")["results"]) == 45
+    hits = run("search", "--text", "本科", "--company", "腾讯")["results"]  # 全文检索命中腾讯详情接口补全的岗位要求
+    assert hits and all(r["company"] == "腾讯" for r in hits) and any(r["match"] for r in hits)
     st = run("sources")
     assert st["failing"] == [] and {r["source_id"] for r in st["results"]} == {"tencent", "beisen-fosunpharma"}

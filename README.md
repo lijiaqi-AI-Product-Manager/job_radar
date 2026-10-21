@@ -14,13 +14,16 @@
 
 ```bash
 pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
-jobradar update --with-text          # 下载最新数据（JD 原文库用于岗位对比）
+jobradar update                      # 下载最新数据（岗位库 + JD 原文库，压缩传输）
+jobradar update --mirror gitee       # 国内网络：走 Gitee 镜像（失败会自动换 GitHub）
 jobradar search --company 复星 --type campus --grad-year 2027 --table
+jobradar search --text "PyTorch 大模型" --type campus   # 全文检索：标题 + JD 原文
 jobradar diff --days 7 --types open
 jobradar compare 公司A 公司B --category 算法
 ```
 
-国内下载慢：设置 `JOBRADAR_MIRROR` 为 GitHub 加速前缀。仓库未公开期间：设置 `GITHUB_TOKEN`（有仓库读权限的 token）后 `update` 会走 API 带鉴权下载。
+下载源：默认 GitHub，失败自动换 Gitee；`--mirror gitee` 或环境变量 `JOBRADAR_MIRROR=gitee` 优先走 Gitee，
+`JOBRADAR_MIRROR` 也可设为任意 GitHub 加速前缀。仓库未公开期间：设置 `GITHUB_TOKEN`（有仓库读权限的 token）后 `update` 会走 API 带鉴权下载。
 
 ### 接入 agent
 
@@ -31,8 +34,10 @@ jobradar compare 公司A 公司B --category 算法
 
 | 文件（Release `data-latest`） | 内容 |
 |---|---|
-| `jobs.db` | 岗位、变化事件、抓取记录（SQLite） |
-| `jd_text.db` | 岗位描述与要求原文 |
+| `jobs.db`（`.gz`） | 岗位、变化事件、抓取记录（SQLite） |
+| `jd_text.db`（`.gz`） | 岗位职责与要求原文（全文检索用） |
+
+同样的文件每天同步到 Gitee 发行版（国内镜像）。
 
 字段说明见 [skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)。下架判定：连续 3 次成功抓取中缺席。
 
