@@ -9,10 +9,122 @@
   },
   {
     "method": "GET",
-    "url": "https://cssc.zhiye.com/campus/?PageIndex=2",
+    "url": "https://cssc.zhiye.com/zpdetail/311047528",
     "body": "",
     "status": 200,
     "content_type": "text/html; charset=utf-8",
     "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047525",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047521",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047516",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "005.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047512",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "006.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047502",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "007.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047479",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "008.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047476",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "009.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047212",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "010.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047199",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "011.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047193",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "012.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047184",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "013.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/311047182",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "014.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/310981752",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "015.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://cssc.zhiye.com/zpdetail/310981751",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "016.txt"
   }
 ]

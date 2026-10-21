@@ -1,0 +1,640 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="mobileUrl" content="//cssc.m.zhiye.com/JobAd/Info?adid=311047182" />
+       <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/10729800/10729800_themes_default_style.css?v=0.0.1.2" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+          <link href="http://v3.jiathis.com/code/css/jiathis_share.css" rel="stylesheet" type="text/css">
+          <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_themes_default_scripts_jquery.js?v=0.0.1.2" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_themes_default_scripts_bgfull.js?v=0.0.1.2" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_themes_default_scripts_dialog.js?v=0.0.1.2" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_themes_default_scripts_pagescripts.js?v=0.0.1.2" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+		<title>中船集团网申系统--招聘详细</title>
+</head>
+<body>
+  
+    <div class="indexmain">
+<div class="header">
+    <div class="mainContent">
+         <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_medias_cblogo2.png?v=637666243958100000"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item "><a target="_self" href="/home" >首页</a>
+                </li>                <li class="item "><a target="_self" href="/Social" >社会招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Intern" >实习生招聘</a>
+                </li>                <li class="item "><a target="_blank" href="http://www.cssc.net.cn/" >公司介绍</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin, .unLogin {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+    
+    <div class="isLogin" style="display:none">
+        <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+        <a href="/User/Account/LogOut"><span>退出</span></a>
+    </div>
+    
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fcssc.zhiye.com%2F%2Fzpdetail%2F311047182">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fcssc.zhiye.com%2F%2Fzpdetail%2F311047182">注册</a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+<script>
+   // 初始化来也机器人
+    function initLaiye(){
+        var aiScript = document.createElement('script');
+        aiScript.type = 'text/javascript';
+        aiScript.src = 'https://cdn.wul.ai/IMLib-3.30.0.min.js';
+        document.body.insertBefore(aiScript, document.body.firstChild);
+        aiScript.onload = function () {
+            // 需要在这里写ajax异步操作，不然它可能在没加载之前调用然后报错
+            $.ajax({
+                url: '/User/Account/GetWulPubKey'
+                , type: 'get'
+                , success: function (resp) {
+                    // 获取来也机器人信息
+                    var isOpen = resp.Data.IsOpen;
+                    if (isOpen) {
+                        var key = resp.Data.PubKey;
+                        new websdk({
+                            data: {
+                                pubkey: key, // 吾来平台PubKey
+                                autoOpen: false, // 是否自动打开
+                                extra: {
+                                    tagValues: [],
+                                    presetTagValues: []
+                                }
+                            },
+                            el: 'body'
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    // 初始化天润机器
+    function initTianrun(robotKey){
+        (function(win, doc, src, opt) {
+            win[opt] = win[opt] || function () {
+            win[opt].options = arguments[0]};
+            var script = doc.createElement("script");
+            script.async = 1;
+            script.src = src;
+            doc.body.appendChild(script);
+            })(window, document, "https://webchat-sh.clink.cn/webchat.js?v="+Date.now(), "clinkWebchatOptions");
+        clinkWebchatOptions({
+            accessId: robotKey,
+            language: "zh_CN"
+        });
+    }
+
+    // 获取天润机器人灰度
+    $.ajax({
+            url: '/User/Account/GetPortalAIRobot'
+            , type: 'get'
+            , success: function (resp) {
+                if (resp.Data.IsOpen && resp.Data.PubKey) {
+                    initTianrun(resp.Data.PubKey)
+                }else{
+                    initLaiye();
+                }
+            }
+        })
+</script>
+
+    </div>
+</div>
+<!--module:login end-->
+    </div>
+</div>
+<div class="banner">
+      
+		<img src="//stc-cms.beisen.com/CmsPortal/10729800/10729800_medias_bannercampus.jpg?v=637663018805900000"  draggable="false"/>
+
+</div>
+<div class="content mtf168">
+    <div class="mainContent">
+        <div class="wide mr10">
+            <div class="box">
+                
+<!--module:positiondetail begin-->
+<div class="bs-module">
+    <div class="positiondetail-template6 ">
+        
+
+
+
+
+<script type="text/javascript" src="/Scripts/JsBuild/lib/recommend-code.js?v=134303074920000000"></script>
+
+
+
+
+<div class="boxSupertitle">
+            <span>智能决策算法工程师(J11988) <b class="applyStatus"></b></span>
+
+</div>
+    <div class="xiangqingcontain">
+
+                <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasRecruitCategories">招聘类别：</li>
+            <li class="nvalue" style="word-break: break-all;" title="校园招聘">
+                校园招聘
+            </li>
+                <li class="ntitle td-HasKind">工作性质：</li>
+            <li class="nvalue" style="word-break: break-all;" title="全职">
+                全职
+            </li>
+                <li class="ntitle td-HasSalaries">薪资范围：</li>
+            <li class="nvalue" style="word-break: break-all;" title="面议">
+                面议
+            </li>
+                <li class="ntitle td-HasHeadCount">招聘人数：</li>
+            <li class="nvalue" style="word-break: break-all;" title="若干">
+                若干
+            </li>
+                </ul>
+                <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasPostDate">发布时间：</li>
+            <li class="nvalue" style="word-break: break-all;" title="2026-09-03">
+                2026-09-03
+            </li>
+                <li class="ntitle td-HasEndTime">截止时间：</li>
+            <li class="nvalue" style="word-break: break-all;" title="">
+                &nbsp;
+            </li>
+
+            </ul>
+                    <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasCities">工作地点：</li>
+                <li class="nvcity">
+
+                    北京市
+                </li>
+            </ul>
+                <br />
+        <div class="xiangqingtext">
+
+                            <p class="title">工作职责：</p>
+                <p>
+                    1、负责决策和优化方面的算法研究，具体围绕深度强化学习、行为树、多智能体等开展深入研究；<br>2、组织提炼及优化智能模型算法，跟踪领域新技术动态；<br>3、参与应用系统设计，开展模型算法持续改进。
+                </p>
+                <br />
+                            <p class="title">任职资格：</p>
+                <p>
+                    1、人工智能、计算机/软件、应用数学相关专业背景；<br>2、有深度强化学习、博弈论、自动控制、概率论等方面的学术或工程经验；<br>3、有一定软件编程经验，熟练使用Matlab或Tensorflow等AI模型开发平台工具。
+                </p>
+
+        </div>
+        <div class="xiangqingfooter clearfix">
+            <div class="footerbtn fl"><a href="#this" id="apply" url="/Portal/Resume/ResumeItem?jid=311047182&amp;r=%2Fzpdetail%2F311047182">现在申请</a></div>
+                <a href="javascript:ReturnToJobList()" class="returnlist">返回职位列表</a>
+
+        </div>
+        <div class="fenxiang clearfix">
+            <a href="#this" id="collect">收藏</a>
+            
+            <!--<script type="text/javascript" src="" charset="utf-8"></script>-->
+        </div>
+    </div>
+
+
+<script language="javascript">
+    var htmlSuccess = ['<div class="dl_dialog1">',
+                        '   <div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                        //' <div class="dl_dialog_btn">',
+                        //' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        //'     <div>',
+                        '   </div>',
+                        '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '   <div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '   <div class="dl_dialog_btn">',
+                        ' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '       <div>',
+                        '   </div>',
+                        '</div>'].join("");
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {
+            'jobAdId': "311047182"
+        }
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+            var args = resp.Model;
+
+            var hasA = args.HasApplyedFoJs;
+            var isAllow = args.Allow;
+            var allowCount = args.AllowCount;
+            var jobCategory = "校园招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = args.IntAllowApplyInfinity;
+            var jobAdCategory = args.JobAdCategory || 1; // 1 社招 2 校招 3 实习生
+            var JOB_CATEGORY_ARRAY = [,'社招', '校招', '实习生'];
+            //var jobAdCategoryName = JOB_CATEGORY_ARRAY[jobAdCategory];
+            var jobAdCategoryName = args.JobAdCategoryName || ''
+            var jobApplyMaxLimit = args.MaxAllowCount;
+
+            $(document).ready(function () {
+                // 申请状态
+                $(".boxSupertitle .applyStatus").css("font-weight", "normal")
+                if (hasA == 0) {
+                    $(".boxSupertitle .applyStatus").text("(未申请)")
+                } else {
+                    $(".boxSupertitle .applyStatus").text("(已申请)")
+                }
+                //根据用户的登陆状态给收藏按钮绑定事件
+                var collectBtn = $("#collect");
+                if (isLogin) {
+
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            $.post("/Portal/Apply/JobAdCollect", { "jId": "311047182" }, function (data) {
+                                if (!data) {
+                                    htmlSuccess = htmlError;
+                                }
+                                $.modal(htmlSuccess, {
+                                    containerCss: {
+                                        backgroundColor: "transparent",
+                                        borderColor: "transparent",
+                                        padding: 0,
+                                        width: '150px'
+                                    },
+                                    onShow: function () {
+                                        $("#okbtn1").click(function () {
+                                            $.modal.close();
+                                        });
+                                    }
+                                });
+                                function a() {
+                                    $.modal.close();
+                                }
+                                setTimeout(a, 2000);
+                            }, "json");
+                        });
+                }
+                else {
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        });
+                }
+
+                $("#apply").click(function () {
+                    if (!isLogin) {
+                        location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        return;
+                    }
+                    var isRecommendJob = false;
+                    var jobAdId = 311047182;
+                    var jobAdName = "智能决策算法工程师(J11988)";
+
+                    function goNext() {
+                        function jump() {
+                            var url = $("#apply").attr("url");
+                            window.location.href = url;
+                            $.modal.close();
+                            showWaitDialage("页面跳转中......");
+                        }
+
+                        // 判断调用内推码弹窗-20210115
+                        isRecommendJob ? RecommendCodeMadal.confirm({ jobName: jobAdName, jobId: jobAdId }, jump) : jump();
+                    }
+
+                    if (allowCount == 0 && hasA == 0) {
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>您申请的', jobAdCategoryName, '职位个数已达上限（最多', jobApplyMaxLimit, '个），无法继续投递</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else if (hasA == 1 && isAllow == 0) {
+                        var hasas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>您之前已经成功申请过该职位，请不要重复申请！</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(hasas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        if (hasA == 1 || isAllowApplyInfinity == 1) {
+                            goNext();
+                            return;
+                        }
+
+                        var applyMsg = ["您可申请", jobApplyMaxLimit, "个", jobAdCategoryName, "职位，还剩", allowCount, "个，是否继续投递"].join("");
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>' + applyMsg + '</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="cancelBtn"><span>取消</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    goNext();
+                                });
+
+                                $("#cancelBtn").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+
+                })
+            })
+
+        }
+    });
+
+    function ReturnToJobList() {
+        if (document.referrer == null || document.referrer == "" || document.referrer == location.href) {
+            location.href = '/';
+        }
+        else {
+            location.href = document.referrer;
+        }
+        return false;
+    }
+
+    function showWaitDialage(msg) {
+        var html = ['<div class="dl_dialog1">',
+                ' <div class="dl_dialog_wrap">',
+                '   <div class="dl_tocenter">',
+                '<span class=" dl_ft14_grey2"><b>' + msg + '</b>',
+                '</span>',
+                '</div>',
+                ' </div>',
+                '</div>'].join("");
+
+        $.modal(html, {
+            containerCss: {
+                backgroundColor: "transparent",
+                borderColor: "transparent",
+                padding: 0
+            },
+            onShow: function () {
+                $("div[class='dl_dialog1']").css("padding", "15px");
+            }
+        });
+    }
+
+</script>
+
+
+    </div>
+</div>
+<!--module:positiondetail end-->
+            </div>
+        </div><div class="narrow">
+            <!--职位分类列表-->
+            <div class="box">
+                
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-template6simple ">
+        
+
+
+
+
+
+
+
+<!--开始-->
+<div class="boxSupertitle"><span>热招职位</span><a href="/alljob/?o=2" class="more">更多 >></a></div>
+<ul class="litJobList">
+        <li><a title="智能认知算法工程师(J12000)" href="/zpdetail/311047528">智能认知算法工程师(J12000)</a></li>
+        <li><a title="软件工程师(J11999)" href="/zpdetail/311047525">软件工程师(J11999)</a></li>
+        <li><a title="电气工程师(J11998)" href="/zpdetail/311047521">电气工程师(J11998)</a></li>
+        <li><a title="测试工程师(J11997)" href="/zpdetail/311047516">测试工程师(J11997)</a></li>
+        <li><a title="系统研发工程师(J11996)" href="/zpdetail/311047512">系统研发工程师(J11996)</a></li>
+</ul>
+
+
+    </div>
+</div>
+<!--module:positionlist end-->
+            </div>
+            <!--职位分类列表-->
+            <div class="box">
+               
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-template6simple ">
+        
+
+
+
+
+
+
+
+<!--开始-->
+<div class="boxSupertitle"><span>长招职位</span><a href="/alljob/?o=1" class="more">更多 >></a></div>
+<ul class="litJobList">
+        <li><a title="智能认知算法工程师(J12000)" href="/zpdetail/311047528">智能认知算法工程师(J12000)</a></li>
+        <li><a title="软件工程师(J11999)" href="/zpdetail/311047525">软件工程师(J11999)</a></li>
+        <li><a title="电气工程师(J11998)" href="/zpdetail/311047521">电气工程师(J11998)</a></li>
+        <li><a title="测试工程师(J11997)" href="/zpdetail/311047516">测试工程师(J11997)</a></li>
+        <li><a title="系统研发工程师(J11996)" href="/zpdetail/311047512">系统研发工程师(J11996)</a></li>
+</ul>
+
+
+    </div>
+</div>
+<!--module:positionlist end-->
+            </div>
+        </div>
+        <div class="footer3">
+          &copy;2026&nbsp;&nbsp;中船集团&nbsp;&nbsp;&nbsp<a target="_blank" href="http://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;">京ICP备05051632号-16</a>&nbsp<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802032024" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;"><img src="//stc.beisen.com/ux/tms-recruit/release/app/images/beian.png" style="float:left;"/>京公网安备 11010802032024号</a><a href="/Portal/Apply/PrivacyPolicy" style="color:#1D86F0;padding-left:5px;" target="_blank">隐私政策</a>&nbsp;Powered by&nbsp;<a href="http://www.beisen.com" class="footerlogo" target="_blank"></a>
+	</div>
+    </div>
+</div>
+  </div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,107298,'new_zhiye_com');
+    });
+    </script>
