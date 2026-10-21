@@ -3,6 +3,7 @@ company: 腾讯
 adapter: tencent
 params:
   max_pages: 1
+  page_size: 5
 recruit_types:
 - social
 enabled: true
@@ -11,4 +12,4 @@ compliance:
   checked_on: '2026-10-20'
   robots: not_applicable
   terms: 列表接口为公开 JSON，无需登录；未见禁止自动化访问的条款（待人工复核用户协议）
-  notes: 侦察：docs/recon/tencent.md。仅抓列表，频率 1 req/s，约 46 页/天。
+  notes: 侦察：docs/recon/tencent.md。列表约 46 页 + 每岗 1 次详情（岗位要求），约 2300 次/天，1 req/s。
