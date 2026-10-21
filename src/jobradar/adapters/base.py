@@ -28,6 +28,8 @@ class SkipRecord(Exception):
 
 class Adapter(ABC):
     id: ClassVar[str]  # 小写蛇形，必须与模块文件名一致，如 "moka"、"tencent"
+    # 站点下发给匿名访客的 token 的正则（各带一个分组）。录制 fixtures 时据此脱敏（CLAUDE.md 铁律 1）
+    secret_patterns: ClassVar[list[str]] = []
 
     def __init__(self, source: SourceConfig, client: httpx.Client, *,
                  sleep: Callable[[float], None] = time.sleep):
@@ -53,19 +55,21 @@ class Adapter(ABC):
             except SkipRecord:
                 continue
 
-    def request_json(self, method: str, url: str, *, params=None, json=None) -> dict:
-        """限速 + 重试(仅 5xx/429/网络错误) 的 JSON 请求。适配器里一律用它，不要直接用 client。"""
-        return self._request(method, url, params=params, json=json).json()
+    def request_json(self, method: str, url: str, *, params=None, json=None, headers=None) -> dict:
+        """限速 + 重试(仅 5xx/429/网络错误) 的 JSON 请求。适配器里一律用它，不要直接用 client。
+        headers 只用于浏览器本来就会带的 Referer/Origin 等；User-Agent 固定，传了也会被忽略。"""
+        return self._request(method, url, params=params, json=json, headers=headers).json()
 
-    def request_text(self, method: str, url: str, *, params=None, json=None) -> str:
+    def request_text(self, method: str, url: str, *, params=None, json=None, headers=None) -> str:
         """同 request_json，返回文本（用于服务端渲染的 HTML 页面）。"""
-        return self._request(method, url, params=params, json=json).text
+        return self._request(method, url, params=params, json=json, headers=headers).text
 
-    def _request(self, method: str, url: str, *, params=None, json=None) -> httpx.Response:
+    def _request(self, method: str, url: str, *, params=None, json=None, headers=None) -> httpx.Response:
+        headers = {k: v for k, v in (headers or {}).items() if k.lower() != "user-agent"} or None
         for attempt in range(3):
             self._throttle()
             try:
-                r = self.client.request(method, url, params=params, json=json)
+                r = self.client.request(method, url, params=params, json=json, headers=headers)
                 if r.status_code == 429 or r.status_code >= 500:
                     raise httpx.HTTPStatusError("retryable", request=r.request, response=r)
                 r.raise_for_status()
