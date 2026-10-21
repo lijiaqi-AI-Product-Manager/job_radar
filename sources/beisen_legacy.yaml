@@ -7,7 +7,7 @@ defaults:
     checked_on: 2026-10-20
     robots: not_applicable   # 抽查 smics、cssc 的 robots.txt 为空文件
     terms: "公开招聘门户列表页，无需登录、无验证码"
-    notes: "仅抓列表页（标题、id），不抓详情页"
+    notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
 sources:
   - {id: beisen-legacy-cssc, company: 中国船舶集团, params: {tenant: cssc, portal: campus}}
   - {id: beisen-legacy-sast, company: 上海航天技术研究院, params: {tenant: sast, portal: campus}}

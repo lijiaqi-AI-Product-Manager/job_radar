@@ -4,6 +4,6 @@
 # tencent 1 5   (已录制 2026-10-21，含详情)
 # beisen-fosunpharma 2   (已录制 2026-10-20)
 # beisen-legacy-cssc 2   (已录制 2026-10-20)
-beisen-legacy-cssc 1
+# beisen-legacy-cssc 1   (已录制 2026-10-21，含详情，详情页已裁剪为 positiondetail 模块)
 # meituan 1 5   (已录制 2026-10-20)
 # tencent-campus 1 5   (已录制 2026-10-20)

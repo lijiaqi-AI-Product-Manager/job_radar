@@ -21,9 +21,10 @@ def run(src=None):
     return list(a.fetch_all())
 
 
-def test_two_pages_distinct_jobs():
+def test_page_distinct_jobs_all_with_jd():
     jobs = run()
-    assert len(jobs) == 30 and len({j.id for j in jobs}) == 30
+    assert len(jobs) == 15 and len({j.id for j in jobs}) == 15
+    assert all(j.description and j.requirements for j in jobs)  # 详情页补全 JD
 
 
 def test_row_mapping_of_real_record():
@@ -34,7 +35,8 @@ def test_row_mapping_of_real_record():
     assert j.cities == ["北京", "武汉"]
     assert j.department == "中船智海创新研究院有限公司"
     assert j.url == "https://cssc.zhiye.com/zpdetail/311047525"
-    assert j.description is None and j.requirements is None  # 列表页无 JD 原文
+    assert j.description == "1、参与平台控制系统软件及产品开发测试；\n2、组织控制系统软件测试、交付、维护及试验保障。"
+    assert j.requirements.startswith("1、控制科学/计算机/软件、自动化相关专业背景；")
 
 
 def test_city_with_district_maps_to_city():

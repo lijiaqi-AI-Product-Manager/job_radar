@@ -13,8 +13,8 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 jobradar doctor
 ```
 
-- 没有数据，或 `stale: true` → 先运行 `jobradar update`（需要对比岗位要求时用 `jobradar update --with-text`），再继续。
-- 用户所在网络下载慢时，可设置环境变量 `JOBRADAR_MIRROR` 为 GitHub 加速前缀后重试。
+- 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
+- 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
 - 没装 `jobradar`：`pip install git+https://github.com/lijiaqimun-coder/job_radar`（或 `uv tool install ...`）。
 
 ## 按问题类型选命令
@@ -23,13 +23,14 @@ jobradar doctor
 |---|---|
 | 某公司/城市/职类在招什么 | `jobradar search --company 腾讯 --category 技术 --city 深圳 --type campus --grad-year 2027 --limit 20` |
 | 标题关键词 | `jobradar search --keyword 大模型` |
+| 按技能/要求找岗位（JD 原文里出现的词） | `jobradar search --text "PyTorch 多模态" --type campus --limit 20`（空格分隔的词须全部出现；结果的 `match` 是命中处原文片段） |
 | 某个岗位详情、要求 | `jobradar show <job_id>` |
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |
 | 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`，或按标题关键词 `--keyword 研发` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
 
-参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配；`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），两者都无结果才能说"没有"。
+参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配；`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），仍无结果再用 `--text` 在 JD 原文里查，三者都无结果才能说"没有"。
 
 ## 回答规则（必须遵守）
 

@@ -27,7 +27,8 @@
 | `first_seen` | 第一次被抓到的时间（≈发布时间，但不等于官方发布日期） |
 | `last_seen` | 最后一次确认在招的时间 |
 | `closed_at` | 下架时间；为空表示仍在招 |
-| `description` / `requirements` | JD 原文（需 `update --with-text`） |
+| `description` / `requirements` | JD 原文（职责 / 要求）；`search --text` 全文检索 |
+| `match` | 仅 `search --text` 返回：JD 原文中命中处的片段（只命中标题时为 null） |
 
 ## 变化（diff）
 
