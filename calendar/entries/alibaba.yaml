@@ -8,7 +8,36 @@ entries:
     source: {type: official_site, name: 阿里巴巴校园招聘官网（岗位页）, url: "https://campus-talent.alibaba.com/campus/position/199907840004"}
     as_of: 2026-10-21
     jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
-    notes: "岗位页标注招聘项目「阿里巴巴2027届校园招聘」、笔试方向「阿里巴巴集团27届秋招」；毕业时间要求 2026-11-01 至 2027-10-31。招聘主体包括阿里巴巴控股集团、淘天集团、淘宝闪购、飞猪、阿里国际数字商业集团、阿里云、高德地图等。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+    notes: "岗位页标注招聘项目「阿里巴巴2027届校园招聘」、笔试方向「阿里巴巴集团27届秋招」；毕业时间要求 2026-11-01 至 2027-10-31（搜索引擎索引，以官网为准）。2026-10-21 浏览器渲染官网职位页核对：项目类型筛选含「阿里巴巴2027届应届生」，全部在招职位 458 个，招聘主体含阿里巴巴控股集团、淘天集团、淘宝闪购、飞猪、阿里国际数字商业集团、阿里云、千问事业部、平头哥、高德地图、虎鲸文娱集团、盒马、阿里健康、灵犀互娱等。"
+  - id: alibaba-astar-2027
+    company: 阿里巴巴集团
+    product: 阿里星
+    grad_year: 2027
+    project_type: 校招
+    tracks:
+      - {direction: 顶尖人才计划, roles: [阿里星]}
+    apply_url: https://campus-talent.alibaba.com/campus/position
+    source: {type: official_site, name: 阿里巴巴校园招聘官网（职位页）, url: "https://campus-talent.alibaba.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
+    notes: "官网职位页项目类型含「顶尖人才计划 · 阿里星-27届应届生」。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: alibaba-daily-intern
+    company: 阿里巴巴集团
+    project_type: 日常实习
+    apply_url: https://campus-talent.alibaba.com/campus/position
+    source: {type: official_site, name: 阿里巴巴校园招聘官网（职位页）, url: "https://campus-talent.alibaba.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
+    notes: "官网职位页项目类型含「实习生 · 阿里巴巴日常实习生」。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: alibaba-research-intern
+    company: 阿里巴巴集团
+    product: 研究型实习生
+    project_type: 实习
+    apply_url: https://campus-talent.alibaba.com/campus/position
+    source: {type: official_site, name: 阿里巴巴校园招聘官网（职位页）, url: "https://campus-talent.alibaba.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://campus-talent.alibaba.com/campus/position"}
+    notes: "官网职位页项目类型含「实习生 · 阿里巴巴研究型实习生」。（2026-10-21 浏览器渲染官网页面核对原文）"
   - id: alibaba-aliyun-2027-qz
     company: 阿里云
     product: 阿里云
