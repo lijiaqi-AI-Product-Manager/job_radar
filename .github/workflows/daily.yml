@@ -58,21 +58,23 @@ jobs:
       - name: Build recruiting calendar
         # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活；失败不影响岗位数据发布
         continue-on-error: true
+        timeout-minutes: 30
         run: |
           uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db --check-links
           gzip -9 -k -f data/calendar.db
           gh release upload data-latest data/calendar.db data/calendar.db.gz --clobber
 
       - name: Mirror to Gitee (domestic download)
-        # 未配置 GITEE_TOKEN / GITEE_REPO 时脚本自动跳过；镜像失败不影响主发布
+        # 未配置 GITEE_TOKEN / GITEE_REPO 时脚本自动跳过；镜像失败或超时不影响主发布
         continue-on-error: true
+        timeout-minutes: 30
         env:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
           GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
         run: |
           files="data/jobs.db.gz data/jd_text.db.gz crawl-summary.json"
           [ -f data/calendar.db.gz ] && files="$files data/calendar.db.gz"
-          uv run python scripts/publish_gitee.py $files
+          uv run python -u scripts/publish_gitee.py $files
 
       - name: Weekly archive snapshot
         run: |
