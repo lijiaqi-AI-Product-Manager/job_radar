@@ -344,6 +344,9 @@ def build(cal_conn, jobs_conn, *, manual: list[ManualEntry], sources: list[Sourc
 _DEAD = {404, 410}
 
 
+_ACCEPT = "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8"
+
+
 def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, min_interval: float = 1.0) -> dict:
     """对全部投递/JD/来源链接各发一次 GET（同一主机间隔 ≥1s，遵守各主机 robots.txt）。
     404/410 记为 dead，网络错误/其他状态记为 error；robots 禁止的链接不访问（计入 skipped_robots）。"""
@@ -366,7 +369,8 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
             sleep(wait)
         try:
             # 只看状态码，不下载正文（避免大文件或慢速流把探活拖住）
-            with client.stream("GET", url, headers={"User-Agent": USER_AGENT}, follow_redirects=True) as r:
+            with client.stream("GET", url, headers={"User-Agent": USER_AGENT, "Accept": _ACCEPT},
+                               follow_redirects=True) as r:
                 code = r.status_code
             status = "ok" if code < 400 else ("dead" if code in _DEAD else "error")
         except httpx.HTTPError:
