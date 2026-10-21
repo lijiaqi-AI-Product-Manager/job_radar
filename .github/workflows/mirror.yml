@@ -1,0 +1,40 @@
+name: mirror-gitee
+# 国内下载镜像：daily-crawl 发布成功后，把 Release data-latest 的压缩包同步到 Gitee 发行版，并匿名下载验证。
+# 与 daily 分开：GitHub Actions → Gitee 上行很慢（实测单连接约 11KB/s），不能占用每日采集的时间。
+# 需要：仓库 secret GITEE_TOKEN；GITEE_REPO（variable 或 secret，默认 qgauss/job_radar）。
+on:
+  workflow_run:
+    workflows: [daily-crawl]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-gitee
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+      GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Download release assets
+        run: |
+          mkdir -p d
+          gh release download data-latest -D d -p 'jobs.db.gz' -p 'jd_text.db.gz' -p 'calendar.db.gz' -p 'crawl-summary.json' || true
+          ls -l d
+      - name: Publish to Gitee
+        run: uv run python -u scripts/publish_gitee.py d/*
+      - name: Anonymous download check
+        run: |
+          for f in $(ls d); do
+            curl -sSL -o /dev/null -w "$f: %{http_code} %{size_download} bytes %{time_total}s\n" \
+              "https://gitee.com/$GITEE_REPO/releases/download/data-latest/$f" || true
+          done

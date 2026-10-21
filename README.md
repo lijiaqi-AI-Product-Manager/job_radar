@@ -37,7 +37,7 @@ jobradar compare 公司A 公司B --category 算法
 | `jobs.db`（`.gz`） | 岗位、变化事件、抓取记录（SQLite） |
 | `jd_text.db`（`.gz`） | 岗位职责与要求原文（全文检索用） |
 
-同样的文件每天同步到 Gitee 发行版（国内镜像）。
+同样的文件每天在采集发布后同步到 Gitee 发行版（国内镜像；上传需要较长时间，通常比 GitHub 晚 1 小时左右更新，同步期间下载会自动回退到 GitHub）。
 
 字段说明见 [skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)。下架判定：连续 3 次成功抓取中缺席。
 

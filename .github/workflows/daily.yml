@@ -64,18 +64,6 @@ jobs:
           gzip -9 -k -f data/calendar.db
           gh release upload data-latest data/calendar.db data/calendar.db.gz --clobber
 
-      - name: Mirror to Gitee (domestic download)
-        # 未配置 GITEE_TOKEN / GITEE_REPO 时脚本自动跳过；镜像失败或超时不影响主发布
-        continue-on-error: true
-        timeout-minutes: 30
-        env:
-          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
-          GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
-        run: |
-          files="data/jobs.db.gz data/jd_text.db.gz crawl-summary.json"
-          [ -f data/calendar.db.gz ] && files="$files data/calendar.db.gz"
-          uv run python -u scripts/publish_gitee.py $files
-
       - name: Weekly archive snapshot
         run: |
           if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
