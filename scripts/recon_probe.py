@@ -94,7 +94,8 @@ def run_flow(spec: dict, headers: dict, body_chars: int) -> None:
         extra_headers = dict(spec.get("headers") or {})
         params, body = {}, spec.get("json")
         if spec.get("page"):
-            p = c.get(spec["page"], headers={"Accept": "text/html,application/xhtml+xml,*/*;q=0.8"})
+            p = c.get(spec["page"], headers={"Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+                                             **(spec.get("page_headers") or {})})
             print(f"  PAGE {p.status_code} {len(p.content)}B cookies={sorted(c.cookies.keys())}")
             if CAPTCHA_HINT.search(p.text[:200000]):
                 print("  WARN page mentions captcha/login keywords")
