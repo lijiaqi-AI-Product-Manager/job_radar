@@ -28,6 +28,9 @@ jobradar doctor
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |
 | 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`，或按标题关键词 `--keyword 研发` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
+| 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含字节、京东等抓不到 JD 的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
+| 现在还能投哪些 | `jobradar calendar --type 秋招正式批 --open-on <今天日期>` |
+| 覆盖了哪些公司 | `jobradar stats` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
 
 参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配；`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），仍无结果再用 `--text` 在 JD 原文里查，三者都无结果才能说"没有"。
@@ -45,7 +48,13 @@ jobradar doctor
    - 某公司未收录或只覆盖了部分招聘类型（例如阿里、字节、京东因访问限制未收录）：`jobradar sources` 可看各源；不要因为没查到就说"该公司没有校招"，应说"数据里没有"。
 5. **变化类问题用 `diff`/`trends`**，不要拿两次 `search` 结果自己比。说明覆盖的时间跨度；历史不足时如实说（例如"数据从 X 日开始积累"）。
 6. **对比类问题**：只依据 `compare` 返回的 `requirements`/`description` 原文；区分"JD 原文写的"与"你的归纳"，引用关键原句。某家 `requirements` 为 `null` 时说明缺少原文。样本有限时（如每家只有 2–3 个岗位）提醒结论的代表性有限。
-7. **超出范围的请求**（投递简历、内推、面试评价、薪资）→ 说明本工具不提供，建议去官网或其他渠道。
+7. **招聘日历（`calendar`）**：
+   - 每条都有 `source`（来源名称、链接、发布日期）与 `as_of`（核实日期），回答时注明，例如"据字节跳动校园招聘官网（核实于 2026-10-21）"。
+   - `origin: manual` 是人工从官方公众号/官网/政府平台整理的；`origin: auto` 是从岗位数据自动汇总的（`apply_start`/`apply_end` 为空，`observed_from` 表示数据里首次看到在招的日期，不是网申开始日）。
+   - 字段为 `null` 表示来源没写，**不要补全或推测**（例如不要根据往年推测今年截止日期）。
+   - `jd_status: linked` → 可以接着用 `jobradar search --company <jd_company>` 列出具体岗位与 JD。
+   - `jd_status: blocked` → 只给日历信息，并**把 `hint` 原样放在回答最后一句**（如"拼多多希望你去他们的招聘页逛一逛哦~"），附 `apply_url`。
+8. **超出范围的请求**（投递简历、内推、面试评价、薪资）→ 说明本工具不提供，建议去官网或其他渠道。
 
 ## 输出建议
 

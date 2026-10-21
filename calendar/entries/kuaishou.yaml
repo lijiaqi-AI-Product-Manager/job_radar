@@ -1,0 +1,10 @@
+group: 快手
+entries:
+  - id: kuaishou-xz
+    company: 快手
+    project_type: 校招
+    apply_url: https://zhaopin.kuaishou.cn/
+    source: {type: official_site, name: 快手招聘官网, url: "https://zhaopin.kuaishou.cn/"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://zhaopin.kuaishou.cn/"}
+    notes: "官网设有校园招聘、日常实习、社会招聘板块；未查到 2027 届的批次与时间安排，故不填届次与日期。快手校招站 robots.txt 禁止自动访问，本条不做链接探活。"

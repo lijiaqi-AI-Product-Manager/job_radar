@@ -133,10 +133,15 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
 
 def cmd_update(args):
     home().mkdir(parents=True, exist_ok=True)
-    kinds = ["jobs"] if args.jobs_only else ["jobs", "text"]
+    kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
     used = {}
     for k in kinds:
-        used[k] = _download(DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror)
+        try:
+            used[k] = _download(DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror)
+        except SystemExit:
+            if k != "calendar":  # 日历库在旧版发布中不存在：缺失不影响岗位数据
+                raise
+            used[k] = None
     conn = _open("jobs")
     print(json.dumps({"updated": kinds, "mirror": used, "data_as_of": q.data_as_of(conn), "home": str(home())},
                      ensure_ascii=False))
@@ -194,7 +199,8 @@ def cmd_sources(args):
 
 def cmd_doctor(args):
     out = {"home": str(home()), "jobs_db": (home() / DB_FILES["jobs"]).exists(),
-           "jd_text_db": (home() / DB_FILES["text"]).exists()}
+           "jd_text_db": (home() / DB_FILES["text"]).exists(),
+           "calendar_db": (home() / DB_FILES["calendar"]).exists()}
     if out["jobs_db"]:
         conn = _open("jobs")
         env = envelope(conn, [])
@@ -203,6 +209,46 @@ def cmd_doctor(args):
     else:
         out["advice"] = "运行 `jobradar update`"
     print(json.dumps(out, ensure_ascii=False, indent=2))
+
+
+def cmd_calendar(args):
+    conn = _open("calendar")
+    rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
+                              grad_year=args.grad_year, origin=args.origin, open_on=args.open_on, limit=args.limit)
+    _emit(args, envelope(None, rows, as_of=q.calendar_as_of(conn)))
+
+
+def cmd_stats(args):
+    out = {}
+    cal_conn = _open("calendar", required=False)
+    if cal_conn is not None:
+        out["calendar"] = q.calendar_stats(cal_conn)
+        out["calendar_as_of"] = q.calendar_as_of(cal_conn)
+    jobs_conn = _open("jobs", required=False)
+    if jobs_conn is not None:
+        out["jobs"] = q.data_summary(jobs_conn, _open("text", required=False))
+    if not out:
+        raise SystemExit("本地没有数据：先运行 `jobradar update`。")
+    print(json.dumps(out, ensure_ascii=False, indent=2))
+
+
+def cmd_calendar_build(args):
+    """开发/CI 用：从人工条目 + 数据层重建 calendar.db，可选探活全部链接。"""
+    import yaml
+
+    from jobradar.pipeline import calendar as cal
+    from jobradar.sources import load_sources
+
+    sources_dir = Path(args.sources)
+    sources = load_sources(sources_dir) if sources_dir.exists() else []
+    targets = yaml.safe_load(Path(args.targets).read_text(encoding="utf-8"))
+    cal_conn = connect(Path(args.out), "calendar")
+    counts = cal.build(cal_conn, connect(Path(args.jobs), "jobs"), manual=cal.load_manual(Path(args.entries)),
+                       sources=sources, targets=targets, ts=now_ts())
+    if args.check_links:
+        with httpx.Client(timeout=httpx.Timeout(20, connect=10)) as client:
+            counts["links"] = cal.check_links(cal_conn, client, ts=now_ts())
+    print(json.dumps(counts, ensure_ascii=False))
 
 
 def cmd_crawl(args):
@@ -272,6 +318,16 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("company")
     sp.add_argument("--step-days", type=int, default=7)
 
+    sp = add("calendar", cmd_calendar, "招聘日历：各公司批次、网申时间、投递入口（含抓不到 JD 的大厂）")
+    sp.add_argument("--group", help="集团，如 阿里巴巴")
+    sp.add_argument("--company", help="具体公司/产品，如 飞猪")
+    sp.add_argument("--type", help="项目类型（子串匹配），如 秋招 / 提前批 / 实习 / 社招")
+    sp.add_argument("--grad-year", type=int)
+    sp.add_argument("--origin", choices=["manual", "auto"], help="manual=人工编辑，auto=数据层自动生成")
+    sp.add_argument("--open-on", help="YYYY-MM-DD：只看该日网申开放中的")
+    sp.add_argument("--limit", type=int, default=100)
+
+    add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
     add("sources", cmd_sources, "各数据源的抓取状态与新鲜度")
     add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
 
@@ -279,6 +335,14 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--sources", default="sources")
     sp.add_argument("--out", default="data")
     sp.add_argument("--only", help="逗号分隔的 source id")
+
+    sp = add("calendar-build", cmd_calendar_build, "（开发/CI）重建招聘日历库")
+    sp.add_argument("--jobs", default="data/jobs.db")
+    sp.add_argument("--out", default="data/calendar.db")
+    sp.add_argument("--entries", default="calendar/entries")
+    sp.add_argument("--sources", default="sources")
+    sp.add_argument("--targets", default="targets/top_companies.yaml")
+    sp.add_argument("--check-links", action="store_true", help="对全部链接各发一次请求探活")
     return p
 
 

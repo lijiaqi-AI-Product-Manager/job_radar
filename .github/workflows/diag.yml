@@ -1,0 +1,24 @@
+name: diag
+# 一次性诊断：docs/recon/diag.txt 每行一个 scripts/ 下的脚本及参数（# 开头为注释），在真实网络下运行。
+on:
+  push:
+    paths:
+      - docs/recon/diag.txt
+  workflow_dispatch:
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Run
+        shell: bash
+        run: |
+          grep -v '^\s*#' docs/recon/diag.txt | grep -v '^\s*$' | while read -r line; do
+            case "$line" in scripts/*.py*) ;; *) echo "skip: $line"; continue ;; esac
+            echo "===== $line"
+            uv run python $line || echo "exit $?"
+          done

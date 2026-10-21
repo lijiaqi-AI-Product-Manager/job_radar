@@ -7,6 +7,7 @@
 
 import os
 import sys
+import time
 from pathlib import Path
 
 import httpx
@@ -31,18 +32,22 @@ def ensure_release(client: httpx.Client, base: str, token: str) -> int:
 def publish(files: list[Path], *, token: str, repo: str, client: httpx.Client) -> None:
     base = API.format(repo=repo)
     rid = ensure_release(client, base, token)
+    print(f"gitee: release {TAG} id={rid}", flush=True)
     existing = client.get(f"{base}/releases/{rid}/attach_files", params={"access_token": token, "per_page": 100})
     existing.raise_for_status()
     by_name = {a["name"]: a["id"] for a in existing.json()}
-    for f in files:
+    print(f"gitee: existing attachments {sorted(by_name)}", flush=True)
+    for f in sorted(files, key=lambda f: f.stat().st_size):  # 小文件（主库）先传
+        t0 = time.monotonic()
         if f.name in by_name:
             client.delete(f"{base}/releases/{rid}/attach_files/{by_name[f.name]}",
                           params={"access_token": token}).raise_for_status()
+        print(f"gitee: uploading {f.name} ({f.stat().st_size} bytes)…", flush=True)
         with open(f, "rb") as fh:
             r = client.post(f"{base}/releases/{rid}/attach_files", data={"access_token": token},
                             files={"file": (f.name, fh)})
         r.raise_for_status()
-        print(f"gitee: uploaded {f.name} ({f.stat().st_size} bytes)")
+        print(f"gitee: uploaded {f.name} ({f.stat().st_size} bytes, {time.monotonic() - t0:.0f}s)", flush=True)
 
 
 def main() -> int:

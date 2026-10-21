@@ -1,5 +1,5 @@
-# 第 29 轮：北森旧版变体 A 详情页的 JD 区块（cssc /zpdetail、kelun /job_show、611）
-GREP https://cssc.zhiye.com/zpdetail/311047525 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
-GREP https://cssc.zhiye.com/zpdetail/311047525 <div class="positiondetail-template6[\s\S]{0,2500}
-GREP https://kelun.zhiye.com/job_show/230947311 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
-GREP https://611.zhiye.com/zpdetail/351602837 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+# 第 33 轮：腾讯校招详情接口——desc 为空的岗位（青云计划等）JD 在哪个字段
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1274356447064759296 "[A-Za-z]+":
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1274356447064759296 "(?:introduction|desc|request|requirement|duty|content|detail)[A-Za-z]*":"[^"]{1,300}
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1274481034578500612 "(?:introduction|desc|request|requirement|duty|content|detail)[A-Za-z]*":"[^"]{1,300}
+GET https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1274356447064759296

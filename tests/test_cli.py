@@ -168,10 +168,20 @@ def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     got = []
     monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
     cli.main(["update"])
-    assert got == ["jobs.db", "jd_text.db"]
+    assert got == ["jobs.db", "jd_text.db", "calendar.db"]
     got.clear()
     cli.main(["update", "--jobs-only", "--mirror", "gitee"])
-    assert got == ["jobs.db"]
+    assert got == ["jobs.db", "calendar.db"]
+
+
+def test_update_tolerates_missing_calendar_db(home, monkeypatch, capsys):
+    def fake(name, dest, client=None, prefer=None):
+        if name == "calendar.db":
+            raise SystemExit("404")
+        return "github"
+    monkeypatch.setattr(cli, "_download", fake)
+    cli.main(["update"])
+    assert json.loads(capsys.readouterr().out)["mirror"]["calendar"] is None
 
 
 def test_sources_table_prints_status_columns(home, capsys):
@@ -196,3 +206,37 @@ def test_search_full_text_without_text_db(home, capsys):
     (home / "jd_text.db").unlink()
     with pytest.raises(SystemExit):
         cli.main(["search", "--text", "pytorch"])
+
+
+def test_calendar_build_query_and_stats(home, capsys, tmp_path):
+    import yaml
+    entries = tmp_path / "entries"
+    entries.mkdir()
+    (entries / "pdd.yaml").write_text(yaml.safe_dump({"group": "拼多多", "entries": [{
+        "id": "pdd-2027-qz", "project_type": "秋招正式批", "grad_year": 2027, "as_of": "2026-10-21",
+        "apply_url": "https://careers.pddglobalhr.com/campus/grad", "jd": {"status": "blocked"},
+        "source": {"type": "official_site", "name": "拼多多校园招聘官网",
+                   "url": "https://careers.pddglobalhr.com/campus/grad"},
+    }]}, allow_unicode=True), encoding="utf-8")
+    targets = tmp_path / "targets.yaml"
+    targets.write_text(yaml.safe_dump({"sectors": {"互联网": ["拼多多", "腾讯", "字节跳动"]},
+                                       "blocked": {"拼多多": "验证码"}}, allow_unicode=True), encoding="utf-8")
+    cli.main(["calendar-build", "--jobs", str(home / "jobs.db"), "--out", str(home / "calendar.db"),
+              "--entries", str(entries), "--targets", str(targets), "--sources", str(tmp_path / "nosources")])
+    capsys.readouterr()
+
+    out = run(capsys, "calendar", "--group", "拼多多")
+    assert out["data_as_of"] and [r["id"] for r in out["results"]] == ["pdd-2027-qz"]
+    assert out["results"][0]["hint"] == "拼多多希望你去他们的招聘页逛一逛哦~"
+    auto = run(capsys, "calendar", "--group", "腾讯", "--origin", "auto")["results"]
+    assert auto and auto[0]["jd_status"] == "linked"
+
+    st = run(capsys, "stats")
+    assert st["calendar"]["targets"] == 3 and st["calendar"]["calendar_covered"] == 3
+    assert st["calendar"]["jd_covered"] == 2 and st["jobs"]["open_jobs"] == 2
+    assert st["jobs"]["with_jd_text"] == 1
+
+
+def test_calendar_without_db_tells_user_to_update(home, capsys):
+    with pytest.raises(SystemExit, match="jobradar update"):
+        cli.main(["calendar"])

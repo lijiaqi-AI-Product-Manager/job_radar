@@ -1,0 +1,12 @@
+group: 中信证券
+entries:
+  - id: citics-2027-branch
+    company: 中信证券
+    product: 分支机构校园招聘
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://careers.citics.com/
+    source: {type: official_site, name: 中信证券（山东）「2027年校园招聘简章」, url: "http://sd.citics.com/rczp/xyzp/202609/t20260907_1216631.html", date: 2026-09-07}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.citics.com/"}
+    notes: "简章（2026-09-07 发布，2026-10-21 抓取核对）：候选人登录中信证券官网网申投递，或扫码移动端投递；流程含宣讲与网申。面向 2026 年下半年至 2027 年上半年毕业、各环节约 2026 年 9 月至 2027 年 4 月（依据搜索引擎索引）。该简章为山东分公司发布，其他分支机构以官网为准。"

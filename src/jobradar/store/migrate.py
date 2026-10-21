@@ -9,7 +9,7 @@ import sqlite3
 from pathlib import Path
 
 MIGRATIONS_ROOT = Path(__file__).parent / "migrations"
-KINDS = ("jobs", "text")
+KINDS = ("jobs", "text", "calendar")
 _NAME = re.compile(r"^(\d{4})_[a-z0-9_]+\.sql$")
 
 

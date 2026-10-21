@@ -193,3 +193,108 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
 def data_as_of(conn) -> str | None:
     """数据截至时间 = 最近一次成功抓取的时间。所有对外回答都应带上它。"""
     return conn.execute("SELECT MAX(ts) FROM source_run WHERE status='ok'").fetchone()[0]
+
+
+# ---------- 招聘日历（calendar.db） ----------
+
+BLOCKED_HINT = "{name}希望你去他们的招聘页逛一逛哦~"
+
+
+def _cal_dict(r) -> dict:
+    d = dict(r)
+    for k in ("tracks", "cities"):
+        d[k] = json.loads(d[k]) if d[k] else []
+    d["source"] = {"type": d.pop("source_type"), "name": d.pop("source_name"),
+                   "url": d.pop("source_url"), "date": d.pop("source_date")}
+    d["hint"] = BLOCKED_HINT.format(name=d["product"] or d["group_name"]) if d["jd_status"] == "blocked" else None
+    return d
+
+
+def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
+                     origin=None, open_on=None, limit=100) -> list[dict]:
+    """日历条目。group/company/project_type 为子串匹配（如 project_type="实习" 命中暑期/日常实习）。
+    open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。"""
+    where, args = [], []
+    if group:
+        where.append("group_name LIKE ?")
+        args.append(f"%{group}%")
+    if company:
+        where.append("(company LIKE ? OR product LIKE ? OR group_name LIKE ?)")
+        args += [f"%{company}%"] * 3
+    if project_type:
+        where.append("project_type LIKE ?")
+        args.append(f"%{project_type}%")
+    if grad_year:
+        where.append("grad_year = ?")
+        args.append(grad_year)
+    if origin:
+        where.append("origin = ?")
+        args.append(origin)
+    if open_on:
+        where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
+        args += [open_on, open_on]
+    sql = "SELECT * FROM entry"
+    if where:
+        sql += " WHERE " + " AND ".join(where)
+    sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
+    return [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
+
+
+def calendar_stats(cal_conn) -> dict:
+    """覆盖率：目标公司中有日历条目的、有 JD（数据层关联或官方 JD 页）的。"""
+    targets = cal_conn.execute("SELECT name, sector, blocked_reason, data_companies FROM target").fetchall()
+    with_cal = {r[0] for r in cal_conn.execute("SELECT DISTINCT group_name FROM entry")}
+    with_jd = {r[0] for r in cal_conn.execute(
+        "SELECT DISTINCT group_name FROM entry WHERE jd_status IN ('linked', 'official_page')")}
+    sectors: dict[str, dict] = {}
+    for t in targets:
+        s = sectors.setdefault(t["sector"], {"sector": t["sector"], "targets": 0, "calendar_covered": 0,
+                                             "jd_covered": 0})
+        s["targets"] += 1
+        s["calendar_covered"] += t["name"] in with_cal
+        s["jd_covered"] += t["name"] in with_jd
+    origin = dict(cal_conn.execute("SELECT origin, COUNT(*) FROM entry GROUP BY 1").fetchall())
+    return {
+        "targets": len(targets),
+        "calendar_covered": sum(t["name"] in with_cal for t in targets),
+        "jd_covered": sum(t["name"] in with_jd for t in targets),
+        "entries": {"manual": origin.get("manual", 0), "auto": origin.get("auto", 0)},
+        "by_sector": list(sectors.values()),
+        "missing_calendar": [t["name"] for t in targets if t["name"] not in with_cal],
+        "jd_blocked": [{"name": t["name"], "reason": t["blocked_reason"]} for t in targets if t["blocked_reason"]],
+    }
+
+
+def dead_links(cal_conn, *, include_errors=False) -> list[dict]:
+    """探活失败的链接及引用它们的条目。dead = 404/410；error = 网络错误或其他 4xx/5xx。"""
+    statuses = ("dead", "error") if include_errors else ("dead",)
+    rows = cal_conn.execute(
+        f"SELECT url, status, http_status, checked_at, first_failed_at FROM link_check "
+        f"WHERE status IN ({','.join('?' * len(statuses))}) ORDER BY status, url", statuses).fetchall()
+    out = []
+    for r in rows:
+        d = dict(r)
+        d["entries"] = [e[0] for e in cal_conn.execute(
+            "SELECT id FROM entry WHERE apply_url=? OR jd_url=? OR source_url=? ORDER BY id", (r[0],) * 3)]
+        out.append(d)
+    return out
+
+
+def calendar_as_of(cal_conn) -> str | None:
+    row = cal_conn.execute("SELECT ts FROM build ORDER BY id DESC LIMIT 1").fetchone()
+    return row[0] if row else None
+
+
+def data_summary(jobs_conn, text_conn=None) -> dict:
+    """岗位数据层概况；with_jd_text 为有 JD 正文的在招岗位数（未下载原文库时为 None）。"""
+    open_ids = [r[0] for r in jobs_conn.execute("SELECT id FROM job WHERE closed_at IS NULL")]
+    companies = jobs_conn.execute(
+        "SELECT COUNT(DISTINCT company_id) FROM job WHERE closed_at IS NULL").fetchone()[0]
+    with_text = None
+    if text_conn is not None:
+        with_text = text_conn.execute(
+            "SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
+            "AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')",
+            (json.dumps(open_ids),)).fetchone()[0]
+    return {"open_jobs": len(open_ids), "companies": companies, "with_jd_text": with_text,
+            "data_as_of": data_as_of(jobs_conn)}
