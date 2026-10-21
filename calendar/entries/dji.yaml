@@ -1,0 +1,22 @@
+group: 大疆
+entries:
+  - id: dji-2027-xz
+    company: 大疆
+    product: 拓疆者校园招聘
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://careers.dji.com/zh-CN/campus/recruitment
+    source: {type: official_site, name: DJI 大疆招聘官网（拓疆者校园招聘）, url: "https://careers.dji.com/zh-CN/campus/recruitment"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.dji.com/zh-CN/campus/hot-jobs"}
+    notes: "官网原文「不设置投递截止日期，招满即止」（2026-10-21 抓取核对）；每人仅可投递 1 次；2026-06-25 启动（依据搜索引擎索引）。"
+  - id: dji-2027-digital
+    company: 大疆
+    product: 数字管理构建者计划
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://careers.dji.com/zh-CN/campus/digital-recruitment
+    source: {type: official_site, name: DJI 大疆招聘官网（数字管理构建者计划）, url: "https://careers.dji.com/zh-CN/campus/digital-recruitment"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.dji.com/zh-CN/campus/digital-recruitment"}
+    notes: "面向 2027 届及优秀的 2026 届毕业生，理工科背景优先；投递不占校招投递次数；2026-08-07 开放（依据搜索引擎索引）。"

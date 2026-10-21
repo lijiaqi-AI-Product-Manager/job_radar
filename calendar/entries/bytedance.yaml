@@ -1,0 +1,36 @@
+group: 字节跳动
+entries:
+  - id: bytedance-2027-xz
+    company: 字节跳动
+    grad_year: 2027
+    project_type: 校招
+    apply_end: 2027-05-31
+    apply_url: https://jobs.bytedance.com/campus
+    source: {type: official_site, name: 字节跳动校园招聘官网（校招说明页）, url: "https://jobs.bytedance.com/campus/m/page-6272Gc"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus"}
+    notes: "官网原文：「投递时间：2026 年 8 月至 2027 年 5 月 31 日止」「笔试时间：即日起」；可投递两个职位，彼此独立、默认优先处理较早投递的职位（2026-10-21 抓取官网页面核对）。"
+  - id: bytedance-seed-2027-xz
+    company: 字节跳动
+    product: Seed（大模型）
+    grad_year: 2027
+    project_type: 校招
+    tracks:
+      - {direction: 技术类, roles: [大模型]}
+    apply_url: https://jobs.bytedance.com/campus
+    source: {type: official_site, name: 字节跳动 Seed 官网博文「字节跳动 Seed 2027 届大模型人才校招启动（含实习）」, url: "https://seed.bytedance.com/en/blog/bytedance-seed-2027-foundation-model-campus-recruitment-is-now-open-internships-included", date: 2026-04-01}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus"}
+    notes: "官网原文「Seed 大模型人才校招 2027 届正式启动」（2026-10-21 抓取核对）。毕业时间要求 2026 年 9 月至 2027 年 8 月（依据搜索引擎索引）。"
+  - id: bytedance-seed-2027-intern
+    company: 字节跳动
+    product: Seed（大模型）
+    grad_year: 2027
+    project_type: 实习
+    tracks:
+      - {direction: 技术类, roles: [大模型]}
+    apply_url: https://jobs.bytedance.com/campus
+    source: {type: official_site, name: 字节跳动 Seed 官网博文「字节跳动 Seed 2027 届大模型人才校招启动（含实习）」, url: "https://seed.bytedance.com/en/blog/bytedance-seed-2027-foundation-model-campus-recruitment-is-now-open-internships-included", date: 2026-04-01}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus"}
+    notes: "与 Seed 2027 届校招同期发布的实习招聘（标题写明「含实习」）。"

@@ -1,0 +1,20 @@
+group: 小米
+entries:
+  - id: xiaomi-2027-xz
+    company: 小米
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://xiaomi.jobs.f.mioffice.cn/campus/
+    source: {type: official_site, name: 小米招聘官网（校园招聘）, url: "https://hr.xiaomi.com/campus"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://xiaomi.jobs.f.mioffice.cn/campus/"}
+    notes: "官网标题「小米2027届全球校园招聘」（2026-10-21 抓取核对）；可通过官网或小米招聘公众号投递，流程为在线测评、简历评估、业务面试、Offer（依据搜索引擎索引）。"
+  - id: xiaomi-toptalent
+    company: 小米
+    product: 顶尖应届生招聘
+    project_type: 校招
+    apply_url: https://xiaomi.jobs.f.mioffice.cn/toptalent/
+    source: {type: official_site, name: 小米招聘官网（顶尖人才）, url: "https://hr.xiaomi.com/website/top-talent.html"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://xiaomi.jobs.f.mioffice.cn/toptalent/"}
+    notes: "面向 2024 至 2027 年毕业的应届生及 2027 年出站的博士后，侧重 AI 等前沿领域。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"

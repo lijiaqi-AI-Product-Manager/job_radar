@@ -1,0 +1,34 @@
+group: 百度
+entries:
+  - id: baidu-2027-xz
+    company: 百度
+    grad_year: 2027
+    project_type: 校招
+    tracks:
+      - {direction: 技术类}
+      - {direction: 产品类}
+      - {direction: 政企类}
+      - {direction: 销售类}
+      - {direction: 综合类}
+    apply_url: https://talent.baidu.com/jobs/list?recruitType=GRADUATE
+    source: {type: official_site, name: 百度校园招聘官网, url: "https://talent.baidu.com/jobs/list?recruitType=GRADUATE"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://talent.baidu.com/jobs/list?recruitType=GRADUATE"}
+    notes: "官网原文「面向全球2027届毕业生，毕业时间在2026年9月1日到2027年8月31日之间」（2026-10-21 抓取核对）；五大类岗位与北京/上海/深圳等城市依据搜索引擎索引。"
+  - id: baidu-2027-summer
+    company: 百度
+    grad_year: 2027
+    project_type: 暑期实习
+    apply_url: https://talent.baidu.com/jobs/list?recruitType=INTERN
+    source: {type: official_site, name: 百度校园招聘官网, url: "https://talent.baidu.com/jobs/list?recruitType=GRADUATE"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://talent.baidu.com/jobs/list?recruitType=INTERN"}
+    notes: "官网原文「2027届暑期实习项目已结束」（2026-10-21 抓取核对）。"
+  - id: baidu-daily-intern
+    company: 百度
+    project_type: 日常实习
+    apply_url: https://talent.baidu.com/jobs/list?recruitType=INTERN
+    source: {type: official_site, name: 百度校园招聘官网, url: "https://talent.baidu.com/jobs/list?recruitType=GRADUATE"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://talent.baidu.com/jobs/list?recruitType=INTERN"}
+    notes: "官网原文「日常实习项目全年开放且不限毕业时间」（2026-10-21 抓取核对）。"
