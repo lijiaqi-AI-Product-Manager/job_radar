@@ -13,6 +13,7 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
+from urllib.robotparser import RobotFileParser
 
 import httpx
 import yaml
@@ -344,14 +345,22 @@ _DEAD = {404, 410}
 
 
 def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, min_interval: float = 1.0) -> dict:
-    """对全部投递/JD/来源链接各发一次 GET（同一主机间隔 ≥1s）。404/410 记为 dead，网络错误/其他状态记为 error。"""
+    """对全部投递/JD/来源链接各发一次 GET（同一主机间隔 ≥1s，遵守各主机 robots.txt）。
+    404/410 记为 dead，网络错误/其他状态记为 error；robots 禁止的链接不访问（计入 skipped_robots）。"""
     urls = sorted({u for (u,) in cal_conn.execute(
         """SELECT apply_url FROM entry UNION SELECT jd_url FROM entry UNION
            SELECT source_url FROM entry WHERE origin='manual'""") if u})
     last_hit: dict[str, float] = {}
+    robots: dict[str, RobotFileParser | None] = {}
     counts = Counter()
     for url in urls:
         host = _host(url)
+        if host not in robots:
+            robots[host] = _robots(client, url)
+        rp = robots[host]
+        if rp is not None and not rp.can_fetch(USER_AGENT, url):
+            counts["skipped_robots"] += 1
+            continue
         wait = min_interval - (time.monotonic() - last_hit.get(host, -1e9))
         if wait > 0:
             sleep(wait)
@@ -372,4 +381,19 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
                    checked_at=excluded.checked_at, first_failed_at=excluded.first_failed_at""",
                 (url, status, code, ts, first_failed))
     return dict(counts)
+
+
+def _robots(client: httpx.Client, url: str) -> RobotFileParser | None:
+    """取主机的 robots.txt；取不到或不是文本时视为未限制（返回 None）。"""
+    parts = urlsplit(url)
+    try:
+        r = client.get(f"{parts.scheme}://{parts.netloc}/robots.txt", headers={"User-Agent": USER_AGENT},
+                       follow_redirects=True)
+    except httpx.HTTPError:
+        return None
+    if r.status_code != 200 or "html" in r.headers.get("content-type", ""):
+        return None
+    rp = RobotFileParser()
+    rp.parse(r.text.splitlines())
+    return rp
 

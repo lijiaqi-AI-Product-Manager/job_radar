@@ -222,3 +222,19 @@ def test_repo_calendar_entries_are_valid():
     names = {n for ns in targets["sectors"].values() for n in ns}
     for e in entries:
         assert e.group in names, f"{e.id}: 集团 {e.group} 不在 targets/top_companies.yaml"
+
+
+def test_link_check_respects_robots(built):
+    seen = []
+
+    def handler(req):
+        seen.append(str(req.url))
+        if req.url.path == "/robots.txt":
+            body = "User-agent: *\nDisallow: /\n" if req.url.host == "jobs.bytedance.com" else ""
+            return httpx.Response(200, text=body)
+        return httpx.Response(200)
+
+    counts = cal.check_links(built, httpx.Client(transport=httpx.MockTransport(handler)), ts=T(21),
+                             sleep=lambda s: None)
+    assert counts["skipped_robots"] >= 1
+    assert not [u for u in seen if u.startswith("https://jobs.bytedance.com/") and "robots" not in u]
