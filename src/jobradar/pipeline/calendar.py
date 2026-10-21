@@ -365,8 +365,9 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
         if wait > 0:
             sleep(wait)
         try:
-            r = client.get(url, headers={"User-Agent": USER_AGENT}, follow_redirects=True)
-            code = r.status_code
+            # 只看状态码，不下载正文（避免大文件或慢速流把探活拖住）
+            with client.stream("GET", url, headers={"User-Agent": USER_AGENT}, follow_redirects=True) as r:
+                code = r.status_code
             status = "ok" if code < 400 else ("dead" if code in _DEAD else "error")
         except httpx.HTTPError:
             code, status = None, "error"
