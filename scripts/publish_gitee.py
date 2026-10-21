@@ -1,4 +1,4 @@
-"""把数据文件同步到 Gitee 发行版（国内下载镜像）。由 daily.yml 在发布 GitHub Release 之后调用。
+"""把数据文件同步到 Gitee 发行版（国内下载镜像）。由 mirror.yml 在 daily-crawl 发布 GitHub Release 之后调用。
 
 用法：python scripts/publish_gitee.py <file> [<file> ...]
 环境变量：GITEE_TOKEN（Gitee 私人令牌，需 projects 权限）、GITEE_REPO（owner/repo）
@@ -8,6 +8,7 @@
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import httpx
@@ -37,7 +38,8 @@ def publish(files: list[Path], *, token: str, repo: str, client: httpx.Client) -
     existing.raise_for_status()
     by_name = {a["name"]: a["id"] for a in existing.json()}
     print(f"gitee: existing attachments {sorted(by_name)}", flush=True)
-    for f in sorted(files, key=lambda f: f.stat().st_size):  # 小文件（主库）先传
+
+    def upload(f: Path) -> None:
         t0 = time.monotonic()
         if f.name in by_name:
             client.delete(f"{base}/releases/{rid}/attach_files/{by_name[f.name]}",
@@ -48,6 +50,11 @@ def publish(files: list[Path], *, token: str, repo: str, client: httpx.Client) -
                             files={"file": (f.name, fh)})
         r.raise_for_status()
         print(f"gitee: uploaded {f.name} ({f.stat().st_size} bytes, {time.monotonic() - t0:.0f}s)", flush=True)
+
+    # 单连接上行很慢（GitHub Actions → Gitee 实测约 11KB/s），各文件并行上传
+    with ThreadPoolExecutor(max_workers=max(1, len(files))) as pool:
+        for fut in [pool.submit(upload, f) for f in files]:
+            fut.result()
 
 
 def main() -> int:
