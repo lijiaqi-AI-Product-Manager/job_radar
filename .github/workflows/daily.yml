@@ -68,7 +68,7 @@ jobs:
         continue-on-error: true
         env:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
-          GITEE_REPO: ${{ vars.GITEE_REPO }}
+          GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
         run: |
           files="data/jobs.db.gz data/jd_text.db.gz crawl-summary.json"
           [ -f data/calendar.db.gz ] && files="$files data/calendar.db.gz"
