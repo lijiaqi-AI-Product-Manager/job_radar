@@ -1,3 +1,5 @@
-# 第 30 轮：腾讯校招详情接口为何多数岗位无 JD（取后几页的 postId 再查详情）
-POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":6,"pageSize":4} "postId":"\d+"|"projectName":"[^"]*"|"positionTitle":"[^"]*"|"positionSource":"[^"]*"|"positionUrl":[^,]*
-POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":10,"pageSize":4} "postId":"\d+"|"projectName":"[^"]*"|"positionTitle":"[^"]*"|"positionSource":"[^"]*"|"positionUrl":[^,]*
+# 第 31 轮：腾讯校招详情接口对后几页岗位的返回（status/message/desc 是否为空）
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707390126745600 "status":[^,]*|"message":"[^"]*"|"desc":"[^"]{0,60}|"request":"[^"]{0,60}|"title":"[^"]*"
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1283126425985295360 "status":[^,]*|"message":"[^"]*"|"desc":"[^"]{0,60}|"request":"[^"]{0,60}|"title":"[^"]*"
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1283045530146251776 "status":[^,]*|"message":"[^"]*"|"desc":"[^"]{0,60}|"request":"[^"]{0,60}|"title":"[^"]*"
+GREP https://join.qq.com/api/v1/jobDetails/getJobDetailsByPostId?postId=1282707442895266816 "status":[^,]*|"message":"[^"]*"|"desc":"[^"]{0,60}|"request":"[^"]{0,60}|"title":"[^"]*"
