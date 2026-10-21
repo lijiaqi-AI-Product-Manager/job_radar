@@ -1,4 +1,5 @@
-# 第 28 轮：补全 JD——腾讯社招详情接口（岗位要求）、北森旧版变体 A 详情页结构
-GET https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2079604867550330880&language=zh-cn
-GREP https://cssc.zhiye.com/zpdetail/311047525 <title>[^<]{0,60}|<h\d[^>]*>[^<]{0,60}</h\d>|class="[^"]*(?:xqm|describe|content|duty|require)[^"]*"[^>]*>[\s\S]{0,300}|岗位职责[\s\S]{0,200}|任职要求[\s\S]{0,200}|职位描述[\s\S]{0,200}
-GREP https://kelun.zhiye.com/job_show/230947311 <title>[^<]{0,60}|<h\d[^>]*>[^<]{0,60}</h\d>|class="[^"]*(?:xqm|describe|content|duty|require)[^"]*"[^>]*>[\s\S]{0,300}|职位描述[\s\S]{0,200}
+# 第 29 轮：北森旧版变体 A 详情页的 JD 区块（cssc /zpdetail、kelun /job_show、611）
+GREP https://cssc.zhiye.com/zpdetail/311047525 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+GREP https://cssc.zhiye.com/zpdetail/311047525 <div class="positiondetail-template6[\s\S]{0,2500}
+GREP https://kelun.zhiye.com/job_show/230947311 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+GREP https://611.zhiye.com/zpdetail/351602837 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
