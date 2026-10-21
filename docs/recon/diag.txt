@@ -1,2 +1,2 @@
-# 腾讯校招 JD 缺口：完整列表 + 逐岗详情，统计状态
+# 腾讯校招 JD 缺口修复后复测
 scripts/diag_tencent_campus.py
