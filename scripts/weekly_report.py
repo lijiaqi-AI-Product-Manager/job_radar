@@ -13,10 +13,25 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from jobradar.core.queries import dead_links  # noqa: E402
 from jobradar.timeutil import FMT, now_ts, parse_ts  # noqa: E402
 
 
-def build(conn: sqlite3.Connection, until: str) -> str:
+def link_section(cal_conn) -> list[str]:
+    rows = dead_links(cal_conn, include_errors=True)
+    out = ["", "## 投递链接探活", ""]
+    if not rows:
+        return out + ["全部投递/JD/来源链接本周探活正常。"]
+    out += ["🔴 = 链接已失效（404/410），⚠️ = 访问异常（超时/5xx/403 等，可能是临时问题）。", "",
+            "| 状态 | 链接 | HTTP | 首次失败 | 涉及条目 |", "|---|---|---|---|---|"]
+    for r in rows:
+        mark = "🔴" if r["status"] == "dead" else "⚠️"
+        out.append(f"| {mark} | {mark} {r['url']} | {r['http_status'] or '-'} | {(r['first_failed_at'] or '')[:10]} "
+                   f"| {', '.join(r['entries']) or '-'} |")
+    return out
+
+
+def build(conn: sqlite3.Connection, until: str, cal_conn=None) -> str:
     since = (parse_ts(until) - timedelta(days=7)).strftime(FMT)
     one = lambda sql, *a: conn.execute(sql, a).fetchone()[0]  # noqa: E731
     rows = lambda sql, *a: conn.execute(sql, a).fetchall()  # noqa: E731
@@ -55,6 +70,8 @@ def build(conn: sqlite3.Connection, until: str) -> str:
                            WHERE j.closed_at IS NULL AND j.recruit_type='campus' AND j.grad_year=2027
                            GROUP BY 1 ORDER BY 2 DESC LIMIT 10"""):
         out.append(f"| {name} | {n} |")
+    if cal_conn is not None:
+        out += link_section(cal_conn)
     out += ["", "---", "数据来自各公司官方招聘页，由 [job_radar](https://github.com/lijiaqimun-coder/job_radar) 每日自动更新。"
             "届别仅统计标题中写明届别的岗位。"]
     return "\n".join(out) + "\n"
@@ -64,8 +81,13 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("db")
     ap.add_argument("--until", default=now_ts())
+    ap.add_argument("--calendar", help="calendar.db 路径：附上投递链接探活结果")
     args = ap.parse_args()
-    print(build(sqlite3.connect(args.db), args.until))
+    cal_conn = None
+    if args.calendar and Path(args.calendar).exists():
+        cal_conn = sqlite3.connect(args.calendar)
+        cal_conn.row_factory = sqlite3.Row
+    print(build(sqlite3.connect(args.db), args.until, cal_conn))
     return 0
 
 

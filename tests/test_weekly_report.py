@@ -27,3 +27,19 @@ def test_weekly_report_numbers(jobs_db):
 def test_first_week_note(jobs_db):
     ingest_run(jobs_db, "s1", [make_job(1)], ts=T(10))
     assert "开始积累" in weekly.build(jobs_db, T(14))
+
+
+def test_dead_links_are_flagged_red(jobs_db):
+    from jobradar.store.migrate import connect
+    ingest_run(jobs_db, "s1", [make_job(1)], ts=T(10))
+    cal = connect(":memory:", "calendar")
+    cal.execute("""INSERT INTO entry(id, origin, group_name, project_type, source_type, source_name, as_of,
+                   jd_status, apply_url) VALUES ('pdd-2027-qz','manual','拼多多','秋招正式批','official_site','官网',
+                   '2026-10-21','blocked','https://example.invalid/gone')""")
+    cal.execute("INSERT INTO link_check VALUES ('https://example.invalid/gone','dead',404,?,?)", (T(13), T(11)))
+    cal.execute("INSERT INTO link_check VALUES ('https://example.invalid/slow','error',NULL,?,?)", (T(13), T(13)))
+    md = weekly.build(jobs_db, T(14), cal_conn=cal)
+    section = md.split("## 投递链接探活")[1]
+    assert "🔴 https://example.invalid/gone" in section and "404" in section and "pdd-2027-qz" in section
+    assert "⚠️ https://example.invalid/slow" in section
+    assert "## 投递链接探活" not in weekly.build(jobs_db, T(14))  # 没有日历库时不输出该段

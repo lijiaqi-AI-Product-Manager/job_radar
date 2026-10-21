@@ -8,9 +8,9 @@ from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts
 
 REPO = "lijiaqimun-coder/job_radar"
-GITEE_REPO = os.environ.get("JOBRADAR_GITEE_REPO", "lijiaqimun-coder/job_radar")  # 国内镜像（Gitee 发行版）
+GITEE_REPO = os.environ.get("JOBRADAR_GITEE_REPO", "qgauss/job_radar")  # 国内镜像（Gitee 发行版）
 RELEASE_TAG = "data-latest"
-DB_FILES = {"jobs": "jobs.db", "text": "jd_text.db"}
+DB_FILES = {"jobs": "jobs.db", "text": "jd_text.db", "calendar": "calendar.db"}
 STALE_HOURS = 48
 
 
@@ -52,7 +52,8 @@ def open_db(kind: str, required: bool = True):
     return connect(path, kind)
 
 
-def envelope(conn, results, **extra) -> dict:
-    as_of = q.data_as_of(conn)
+def envelope(conn, results, *, as_of: str | None = None, **extra) -> dict:
+    """统一的返回包装。conn 为 jobs.db；日历等其他库传 conn=None 并显式给出 as_of。"""
+    as_of = as_of if conn is None else q.data_as_of(conn)
     stale = as_of is None or (parse_ts(now_ts()) - parse_ts(as_of)).total_seconds() > STALE_HOURS * 3600
     return {"data_as_of": as_of, "stale": stale, **extra, "results": results}

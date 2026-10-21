@@ -32,6 +32,8 @@ jobs:
           mkdir -p data
           if gh release view data-latest >/dev/null 2>&1; then
             gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db'
+            # 日历库保存链接探活历史（连续失败起始时间）；旧发布里没有它，缺失不报错
+            gh release download data-latest -D data -p 'calendar.db' || echo "no calendar.db yet"
             python3 -c "import sqlite3; c=sqlite3.connect('data/jobs.db'); assert c.execute('PRAGMA quick_check').fetchone()[0]=='ok'; print('restored jobs:', c.execute('SELECT COUNT(*) FROM job').fetchone()[0])"
           else
             echo "no data-latest release yet, starting fresh"
@@ -53,20 +55,31 @@ jobs:
           ls -l data/
           gh release upload data-latest data/jobs.db data/jd_text.db data/jobs.db.gz data/jd_text.db.gz crawl-summary.json --clobber
 
+      - name: Build recruiting calendar
+        # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活；失败不影响岗位数据发布
+        continue-on-error: true
+        run: |
+          uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db --check-links
+          gzip -9 -k -f data/calendar.db
+          gh release upload data-latest data/calendar.db data/calendar.db.gz --clobber
+
       - name: Mirror to Gitee (domestic download)
         # 未配置 GITEE_TOKEN / GITEE_REPO 时脚本自动跳过；镜像失败不影响主发布
         continue-on-error: true
         env:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
           GITEE_REPO: ${{ vars.GITEE_REPO }}
-        run: uv run python scripts/publish_gitee.py data/jobs.db.gz data/jd_text.db.gz crawl-summary.json
+        run: |
+          files="data/jobs.db.gz data/jd_text.db.gz crawl-summary.json"
+          [ -f data/calendar.db.gz ] && files="$files data/calendar.db.gz"
+          uv run python scripts/publish_gitee.py $files
 
       - name: Weekly archive snapshot
         run: |
           if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             d=$(date -u +%Y-%m-%d)
             cp data/jobs.db "data/jobs-$d.db"
-            uv run python scripts/weekly_report.py data/jobs.db > "data/weekly-$d.md"
+            uv run python scripts/weekly_report.py data/jobs.db --calendar data/calendar.db > "data/weekly-$d.md"
             gh release view data-archive >/dev/null 2>&1 || \
               gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照与周报，用于灾备、历史回溯与传播。" --latest=false
             gh release upload data-archive "data/jobs-$d.db" "data/weekly-$d.md" --clobber

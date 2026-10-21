@@ -108,6 +108,41 @@ def data_status() -> dict:
     return _guard(run)
 
 
+@server.tool()
+def calendar(group: str | None = None, company: str | None = None, project_type: str | None = None,
+             grad_year: int | None = None, origin: str | None = None, open_on: str | None = None,
+             limit: int = 50) -> dict:
+    """招聘日历：各公司的招聘项目（提前批/秋招正式批/暑期实习/社招…）、届次、方向、网申时间、城市、投递入口与来源。
+    覆盖抓不到 JD 的大厂（人工从官方公众号/官网/政府平台整理，origin=manual），以及数据层自动生成的条目（origin=auto）。
+    group 集团（如 阿里巴巴）、company 具体公司或产品（如 飞猪）、project_type 子串匹配（如 秋招、实习）；
+    open_on=YYYY-MM-DD 只看当天网申开放中的。jd_status=linked 表示可用 search_jobs 查到 JD；
+    jd_status=blocked 时把 hint 原样放在回答末尾。"""
+    def run():
+        conn = open_db("calendar")
+        rows = q.calendar_entries(conn, group=group, company=company, project_type=project_type,
+                                  grad_year=grad_year, origin=origin, open_on=open_on, limit=min(limit, 200))
+        return envelope(None, rows, as_of=q.calendar_as_of(conn))
+    return _guard(run)
+
+
+@server.tool()
+def stats() -> dict:
+    """覆盖率：目标公司（约 370 家）中有招聘日历的、有 JD 的，按行业分布；岗位与 JD 正文数量。"""
+    def run():
+        out = {}
+        cal_conn = open_db("calendar", required=False)
+        if cal_conn is not None:
+            out["calendar"] = q.calendar_stats(cal_conn)
+            out["calendar_as_of"] = q.calendar_as_of(cal_conn)
+        jobs_conn = open_db("jobs", required=False)
+        if jobs_conn is not None:
+            out["jobs"] = q.data_summary(jobs_conn, open_db("text", required=False))
+        if not out:
+            raise NoData("本地没有数据：先运行 `jobradar update`。")
+        return out
+    return _guard(run)
+
+
 def main():
     server.run()
 

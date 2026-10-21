@@ -1,0 +1,51 @@
+# 招聘日历的受控词表与来源规则。calendar/entries/*.yaml 的取值必须在这里出现（tests/test_calendar.py 检查）。
+
+# 项目类型：每种类型单独成条（同一批次的实习与校招分两条）
+project_types:
+  - 提前批
+  - 秋招正式批
+  - 秋招补录
+  - 春招
+  - 校招          # 来源未细分批次时用
+  - 暑期实习
+  - 寒假实习
+  - 日常实习
+  - 实习          # 来源未细分实习类型时用
+  - 校园大使
+  - 社招
+  - 兼职
+  - 线上项目      # 线上实习/线上训练营等
+
+# 来源类型 -> 允许的域名（url 为空时只能填 name，表示来源存在但无可公开访问的链接）
+sources:
+  wechat: [mp.weixin.qq.com]                  # 公司官方公众号推文
+  gov: [ncss.cn, 24365.ncss.cn, chsi.com.cn, iguopin.com, gp.iguopin.com, job.mohrss.gov.cn]  # 教育部 24365 / 国聘 等政府平台
+  official_site: []                           # 公司官网/官方招聘站：任意域名，但不能是下方第三方
+
+# 禁止作为来源的第三方站点（不抄第三方日历）。按域名后缀匹配；
+# 公司自己的招聘站不受影响（如 jobs.bilibili.com、talent.baidu.com、job.xiaohongshu.com 都是官方站）。
+third_party_blocklist:
+  - nowcoder.com
+  - offershow.cn
+  - zhihu.com
+  - www.xiaohongshu.com      # 小红书笔记（UGC）
+  - www.douyin.com
+  - www.bilibili.com         # B 站视频（UGC）
+  - weibo.com
+  - kanzhun.com
+  - zhipin.com
+  - liepin.com
+  - 51job.com
+  - zhaopin.com
+  - yingjiesheng.com
+  - shixiseng.com
+  - jobui.com
+  - baijiahao.baidu.com
+  - zhidao.baidu.com
+  - tieba.baidu.com
+  - csdn.net
+  - jianshu.com
+  - toutiao.com
+  - www.163.com              # 网易新闻门户（转载）
+  - www.sohu.com
+  - www.qq.com               # 腾讯新闻门户（转载）
