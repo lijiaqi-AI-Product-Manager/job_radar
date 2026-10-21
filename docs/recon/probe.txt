@@ -1,7 +1,4 @@
-# 第 36 轮：页面自己发出的列表请求长什么样（请求体/响应），以及直接用匿名会话能否调用
-# 字节（接口需 _signature 反爬签名）、小红书（加载验证码/安全 SDK）不做。
+# 第 37 轮：页面自己发出的列表请求长什么样（请求体/响应）。字节（_signature 反爬签名）、小红书（验证码/安全 SDK）不做。
 RENDERXHR https://campus-talent.alibaba.com/campus/position position/search|searchCondition/list
 RENDERXHR https://career.huawei.com/reccampportal/portal5/campus-recruitment.html getJob/newHr
-FLOW {"page":"https://career.huawei.com/reccampportal/portal5/campus-recruitment.html","url":"https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/10/1?curPage=1&pageSize=10&jobTypes=2&jobType=0&jobFamClsCode=&searchText=&cityCode=&countryCode=&deptCode=&graduateItem=&language=zh_CN&orderBy=","headers":{"Referer":"https://career.huawei.com/reccampportal/portal5/campus-recruitment.html","Accept":"application/json, text/plain, */*"}}
-RENDERXHR https://careers.midea.com/schoolOut backend/school/position
-GET https://careers.midea.com/backend/school/position/common/project/list?status=1&projectTypes=1,2,9,5&employementCategories=1,4
+RENDERXHR https://careers.midea.com/schoolOut/position backend/school/position
