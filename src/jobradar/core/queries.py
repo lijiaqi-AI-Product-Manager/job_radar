@@ -19,8 +19,34 @@ def _job_dict(row) -> dict:
     return d
 
 
+def _like(term: str) -> str:
+    return "%" + term.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
+
+
+def _jd_ids(text_conn, term: str) -> list[str]:
+    """JD 原文（职责 + 要求）中包含 term 的岗位 id。ASCII 不区分大小写。"""
+    return [r[0] for r in text_conn.execute(
+        "SELECT job_id FROM job_text WHERE COALESCE(description,'') || char(10) || COALESCE(requirements,'') "
+        "LIKE ? ESCAPE '\\'", (_like(term),))]
+
+
+def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> str | None:
+    row = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (job_id,)).fetchone()
+    if row is None:
+        return None
+    body = "\n".join(x for x in (row["description"], row["requirements"]) if x)
+    low = body.lower()
+    for t in terms:
+        i = low.find(t.lower())
+        if i >= 0:
+            return body[max(0, i - width):i + len(t) + width].replace("\n", " ")
+    return None
+
+
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
-                grad_year=None, keyword=None, include_closed=False, limit=50) -> list[dict]:
+                grad_year=None, keyword=None, text=None, text_conn=None,
+                include_closed=False, limit=50) -> list[dict]:
+    """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。"""
     where, args = [], []
     if not include_closed:
         where.append("j.closed_at IS NULL")
@@ -42,11 +68,21 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if keyword:
         where.append("j.title LIKE ?")
         args.append(f"%{keyword}%")
+    terms = text.split() if text else []
+    if terms and text_conn is None:
+        raise ValueError("全文检索需要 JD 原文库 jd_text.db")
+    for t in terms:
+        where.append("(j.title LIKE ? ESCAPE '\\' OR j.id IN (SELECT value FROM json_each(?)))")
+        args += [_like(t), json.dumps(_jd_ids(text_conn, t))]
     sql = f"SELECT {_JOB_COLS} FROM job j JOIN company c ON c.id = j.company_id"
     if where:
         sql += " WHERE " + " AND ".join(where)
     sql += " ORDER BY j.first_seen DESC, j.id LIMIT ?"
-    return [_job_dict(r) for r in conn.execute(sql, [*args, limit])]
+    rows = [_job_dict(r) for r in conn.execute(sql, [*args, limit])]
+    if terms:
+        for r in rows:
+            r["match"] = _snippet(text_conn, r["id"], terms)
+    return rows
 
 
 def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[dict]:

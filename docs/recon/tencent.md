@@ -20,7 +20,7 @@
 - 返回：`{"Code":200,"Data":{"Count":2282,"Posts":[...]}}`
 - 分页：pageIndex 从 1 开始；`pageIndex*pageSize >= Count` 时结束。
 - 唯一 id：`PostId`；岗位链接：`PostURL`（http，转 https）。
-- 详情（含岗位要求）：未调用；后续如需 requirements，需逐岗位请求详情，约 2300 次/天，暂不做。
+- 详情（含岗位要求）：`GET https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=<id>&language=zh-cn` → `Data.Requirement`（公开 JSON，第 28 轮确认）；逐岗位请求，约 2300 次/天
 
 ## 4. 字段映射
 | 我们的字段 | 站点字段 | 备注 |
@@ -32,7 +32,7 @@
 | cities | [LocationName] | |
 | department | BGName | 如 IEG |
 | description | Responsibility | 职责 |
-| requirements | — | 列表不含 |
+| requirements | 详情 Requirement | 逐岗位请求详情接口 |
 | 其他 | CategoryName、ProductName、RequireWorkYearsName、LastUpdateTime | 暂不入库 |
 
 ## 7. 从 GitHub Actions 的可达性

@@ -32,6 +32,19 @@ def main(summary_path: str, data_dir: str) -> int:
         print(f"coverage cities: {n / total:.0%}")
     text = sqlite3.connect(Path(data_dir) / "jd_text.db")
     print("job_text rows:", text.execute("SELECT COUNT(*) FROM job_text").fetchone()[0])
+    db.execute("ATTACH DATABASE ? AS t", (str(Path(data_dir) / "jd_text.db"),))
+    jd = q("""SELECT j.source_id, COUNT(*),
+                     SUM(t.description IS NOT NULL AND t.description != ''),
+                     SUM(t.requirements IS NOT NULL AND t.requirements != '')
+              FROM job j LEFT JOIN t.job_text t ON t.job_id = j.id WHERE j.closed_at IS NULL GROUP BY 1""")
+    n_all = sum(r[1] for r in jd)
+    n_desc, n_req = sum(r[2] or 0 for r in jd), sum(r[3] or 0 for r in jd)
+    if n_all:
+        print(f"coverage JD description: {n_desc / n_all:.0%}  requirements: {n_req / n_all:.0%}  (open jobs {n_all})")
+    gaps = [r for r in jd if (r[2] or 0) < 0.9 * r[1] or (r[3] or 0) < 0.9 * r[1]]
+    print(f"sources with JD gaps (<90% description or requirements): {len(gaps)}")
+    for sid, n, d, rq in sorted(gaps, key=lambda r: -r[1])[:40]:
+        print(f"  JD-GAP {sid}: jobs {n}  description {d or 0}  requirements {rq or 0}")
     print("\ntop companies:")
     for name, n in q("SELECT c.name, COUNT(*) FROM job j JOIN company c ON c.id=j.company_id GROUP BY 1 ORDER BY 2 DESC LIMIT 15"):
         print(f"  {n:6d}  {name}")

@@ -16,6 +16,9 @@
 5. **流水线里不调用 LLM、不引入付费服务**。归一化用规则和映射表（`taxonomy/`）。需要 LLM 辅助整理映射表时，作为离线工作产出 PR，由人审核。
 6. **不用 Playwright/浏览器渲染**，除非用户明确批准。优先找页面背后的公开 JSON 接口。
 7. 查询逻辑只在 `src/jobradar/core/queries.py` 写一份；CLI、MCP 只调用它，不写 SQL、不写业务逻辑。
+8. **JD 正文必须入库**（2026-10-21 起）：每个适配器都要抓职责与要求原文（列表没有就请求详情页/详情接口），
+   并能被全文检索（`search --text`）。`tests/test_adapter_contract.py::test_adapter_stores_jd_text` 强制 ≥90% 岗位有正文；
+   `crawl-check` 报告里的 `JD-GAP` 行列出真实抓取中正文不足的源。
 
 ## 常用命令
 
@@ -74,7 +77,8 @@ evals/              评测集：判断改动是否变好的唯一客观依据
 8. 若发现需要改 `models.py`/schema/`ingest`：**停下来**，说明原因并请用户确认，不要顺手改。
 
 适配器代码规范：
-- 网络请求只能用 `self.request_json`；不得自己 sleep/重试；不得读取环境变量里的凭据。
+- 网络请求只能用 `self.request_json` / `self.request_text`；不得自己 sleep/重试；不得读取环境变量里的凭据。
+- 必须产出 JD 正文（`description`/`requirements`）；详情请求很多时用 `params.page_size` 让 fixtures 保持小体积。
 - `normalize` 里拿不准的字段留 `None`，不要猜；`category/subcategory` 默认留空（归一化阶段统一处理）。
 - 标题中**明写**的信息（被分隔符隔开的城市名、届别年份）由 crawl 阶段统一提取（`pipeline/crawl.py::_enrich`，规则在 `normalize.py`），适配器不要各自实现。提取 ≠ 推测：不得根据公司名、部门名等推断城市或届别。
 - 平台型适配器（如 Moka、北森）：一个适配器类服务多个租户，租户差异全部放 `source.params`。

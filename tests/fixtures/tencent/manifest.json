@@ -1,10 +1,50 @@
 [
   {
     "method": "GET",
-    "url": "https://careers.tencent.com/tencentcareer/api/post/Query?pageIndex=1&pageSize=50&language=zh-cn&area=cn",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/Query?pageIndex=1&pageSize=5&language=zh-cn&area=cn",
     "body": "",
     "status": 200,
     "content_type": "application/json; charset=utf-8",
     "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2069057652431962112&language=zh-cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "002.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2064519581267046400&language=zh-cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "003.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2075419676283940864&language=zh-cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "004.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2083026463266881536&language=zh-cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "005.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.tencent.com/tencentcareer/api/post/ByPostId?postId=2112491758024835072&language=zh-cn",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "006.json"
   }
 ]

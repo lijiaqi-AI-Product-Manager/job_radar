@@ -4,8 +4,10 @@
 """
 
 import argparse
+import gzip
 import json
 import os
+import shutil
 import sqlite3
 import sys
 import tempfile
@@ -15,7 +17,7 @@ from pathlib import Path
 import httpx
 
 from jobradar.core import queries as q
-from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, envelope, home, open_db, release_url
+from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, asset_urls, envelope, home, open_db
 from jobradar.store.migrate import connect
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
@@ -46,59 +48,108 @@ def _emit(args, payload: dict):
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 
-def _asset_request(name: str, client: httpx.Client) -> tuple[str, dict]:
-    """公开仓库：直接下载 Release 资源（可走 JOBRADAR_MIRROR）。
-    设置了 GITHUB_TOKEN/GH_TOKEN（例如仓库尚未公开时）：通过 API 带鉴权下载。"""
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if not token:
-        return release_url(name), {}
+def _github_api_asset(name: str, client: httpx.Client, token: str) -> tuple[str, dict] | None:
+    """仓库未公开时：通过 GitHub API 带鉴权下载 Release 资源。"""
     auth = {"Authorization": f"Bearer {token}"}
     r = client.get(f"https://api.github.com/repos/{REPO}/releases/tags/{RELEASE_TAG}", headers=auth)
     r.raise_for_status()
     asset = next((a for a in r.json().get("assets", []) if a["name"] == name), None)
-    if asset is None:
-        raise SystemExit(f"Release {RELEASE_TAG} 中没有 {name}")
-    return asset["url"], {**auth, "Accept": "application/octet-stream"}
+    return (asset["url"], {**auth, "Accept": "application/octet-stream"}) if asset else None
 
 
-def _download(name: str, dest: Path, client: httpx.Client | None = None):
-    client = client or httpx.Client(timeout=120, follow_redirects=True)
-    url, headers = _asset_request(name, client)
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(dir=dest.parent, delete=False, suffix=".part") as tmp:
+def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Path | None:
+    """下载到临时文件；404 返回 None。"""
+    with tempfile.NamedTemporaryFile(dir=dest_dir, delete=False, suffix=".part") as tmp:
         with client.stream("GET", url, headers=headers) as resp:
             if resp.status_code == 404:
                 Path(tmp.name).unlink(missing_ok=True)
-                raise SystemExit(f"下载 {name} 失败（404）。若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
+                return None
             resp.raise_for_status()
             for chunk in resp.iter_bytes():
                 tmp.write(chunk)
-    tmp_path = Path(tmp.name)
+    return Path(tmp.name)
+
+
+def _install(tmp: Path, name: str, gz: bool, dest: Path):
+    """解压（若为 .gz）并校验 SQLite 完整性后替换目标文件。"""
+    if gz:
+        raw = tmp.with_suffix(".raw")
+        try:
+            with gzip.open(tmp) as src, open(raw, "wb") as out:
+                shutil.copyfileobj(src, out)
+        except (OSError, EOFError):
+            raw.unlink(missing_ok=True)
+            tmp.unlink()
+            raise ValueError("压缩包损坏") from None
+        tmp.unlink()
+        tmp = raw
     try:
-        ok = sqlite3.connect(tmp_path).execute("PRAGMA quick_check").fetchone()[0] == "ok"
+        ok = sqlite3.connect(tmp).execute("PRAGMA quick_check").fetchone()[0] == "ok"
     except sqlite3.DatabaseError:
         ok = False
     if not ok:
-        tmp_path.unlink()
-        raise SystemExit(f"下载的 {name} 不是有效的数据库")
-    tmp_path.replace(dest)
+        tmp.unlink()
+        raise ValueError("不是有效的数据库")
+    tmp.replace(dest)
+
+
+def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None) -> str:
+    """依次尝试各镜像，每个镜像先取压缩版 <name>.gz，没有再取原文件。返回实际使用的镜像名。"""
+    client = client or httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:  # 私有仓库：只能走 GitHub API
+        found = _github_api_asset(name, client, token)
+        if found is None:
+            raise SystemExit(f"Release {RELEASE_TAG} 中没有 {name}")
+        tmp = _fetch(client, found[0], found[1], dest.parent)
+        if tmp is None:
+            raise SystemExit(f"下载 {name} 失败（404）")
+        try:
+            _install(tmp, name, False, dest)
+        except ValueError as e:
+            raise SystemExit(f"下载的 {name} {e}") from None
+        return "github"
+    errors, invalid = [], False
+    for (mirror, url), (_, gz_url) in zip(asset_urls(name, prefer), asset_urls(name + ".gz", prefer), strict=True):
+        for candidate, gz in ((gz_url, True), (url, False)):
+            try:
+                tmp = _fetch(client, candidate, {}, dest.parent)
+                if tmp is None:
+                    continue
+                _install(tmp, name, gz, dest)
+                return mirror
+            except httpx.HTTPError as e:
+                errors.append(f"{mirror}: {type(e).__name__}")
+                break  # 该镜像不可达，换下一个
+            except ValueError as e:
+                errors.append(f"{mirror}: {e}")
+                invalid = True
+    if invalid:
+        raise SystemExit(f"下载的 {name} 不是有效的数据库（{'; '.join(errors)}）")
+    raise SystemExit(f"下载 {name} 失败（{'; '.join(errors) or '404'}）。"
+                     "国内网络可试 `jobradar update --mirror gitee`；若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
 
 
 def cmd_update(args):
     home().mkdir(parents=True, exist_ok=True)
-    kinds = ["jobs", "text"] if args.with_text else ["jobs"]
+    kinds = ["jobs"] if args.jobs_only else ["jobs", "text"]
+    used = {}
     for k in kinds:
-        _download(DB_FILES[k], home() / DB_FILES[k])
+        used[k] = _download(DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror)
     conn = _open("jobs")
-    print(json.dumps({"updated": kinds, "data_as_of": q.data_as_of(conn), "home": str(home())},
+    print(json.dumps({"updated": kinds, "mirror": used, "data_as_of": q.data_as_of(conn), "home": str(home())},
                      ensure_ascii=False))
 
 
 def cmd_search(args):
     conn = _open("jobs")
+    text = _open("text", required=False) if args.text else None
+    if args.text and text is None:
+        raise SystemExit("全文检索需要 JD 原文库：先运行 `jobradar update`")
     rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
                          recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
-                         include_closed=args.include_closed, limit=args.limit)
+                         text=args.text, text_conn=text, include_closed=args.include_closed, limit=args.limit)
     _emit(args, envelope(conn, rows))
 
 
@@ -120,7 +171,7 @@ def cmd_compare(args):
     conn = _open("jobs")
     text = _open("text", required=False)
     if text is None:
-        raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update --with-text`。")
+        raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update`。")
     if not args.category and not args.keyword:
         raise SystemExit("compare 需要 --category 或 --keyword")
     out = q.compare_roles(conn, text, args.companies, args.category, keyword=args.keyword,
@@ -150,7 +201,7 @@ def cmd_doctor(args):
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
         out["advice"] = "数据已过期，运行 `jobradar update`" if env["stale"] else "ok"
     else:
-        out["advice"] = "运行 `jobradar update`（对比岗位要求另加 --with-text）"
+        out["advice"] = "运行 `jobradar update`"
     print(json.dumps(out, ensure_ascii=False, indent=2))
 
 
@@ -187,7 +238,9 @@ def build_parser() -> argparse.ArgumentParser:
         return sp
 
     sp = add("update", cmd_update, "下载最新数据")
-    sp.add_argument("--with-text", action="store_true", help="同时下载 JD 原文库（对比岗位要求需要）")
+    sp.add_argument("--jobs-only", action="store_true", help="只下载岗位主库，不下载 JD 原文库（全文检索、对比要求需要原文库）")
+    sp.add_argument("--with-text", action="store_true", help=argparse.SUPPRESS)  # 兼容旧参数：现在默认就下载原文库
+    sp.add_argument("--mirror", choices=["github", "gitee"], help="下载源；国内网络建议 gitee。失败时自动换另一个")
 
     sp = add("search", cmd_search, "搜索在招岗位")
     sp.add_argument("--company")
@@ -196,6 +249,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--type", choices=["campus", "intern", "social"])
     sp.add_argument("--grad-year", type=int)
     sp.add_argument("--keyword", help="标题关键词")
+    sp.add_argument("--text", help="全文检索：标题 + JD 原文，多个词用空格分隔（都须出现），如 \"PyTorch 大模型\"")
     sp.add_argument("--include-closed", action="store_true")
     sp.add_argument("--limit", type=int, default=50)
 

@@ -1,0 +1,320 @@
+<html><body>
+<!--module:positiondetail begin-->
+<div class="bs-module">
+    <div class="positiondetail-template6 ">
+        
+
+
+
+
+<script type="text/javascript" src="/Scripts/JsBuild/lib/recommend-code.js?v=134303074920000000"></script>
+
+
+
+
+<div class="boxSupertitle">
+            <span>测试工程师(J11997) <b class="applyStatus"></b></span>
+
+</div>
+    <div class="xiangqingcontain">
+
+                <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasRecruitCategories">招聘类别：</li>
+            <li class="nvalue" style="word-break: break-all;" title="校园招聘">
+                校园招聘
+            </li>
+                <li class="ntitle td-HasKind">工作性质：</li>
+            <li class="nvalue" style="word-break: break-all;" title="全职">
+                全职
+            </li>
+                <li class="ntitle td-HasSalaries">薪资范围：</li>
+            <li class="nvalue" style="word-break: break-all;" title="面议">
+                面议
+            </li>
+                <li class="ntitle td-HasHeadCount">招聘人数：</li>
+            <li class="nvalue" style="word-break: break-all;" title="若干">
+                若干
+            </li>
+                </ul>
+                <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasPostDate">发布时间：</li>
+            <li class="nvalue" style="word-break: break-all;" title="2026-09-03">
+                2026-09-03
+            </li>
+                <li class="ntitle td-HasEndTime">截止时间：</li>
+            <li class="nvalue" style="word-break: break-all;" title="">
+                &nbsp;
+            </li>
+
+            </ul>
+                    <ul class="xiangqinglist clearfix">
+                <li class="ntitle td-HasCities">工作地点：</li>
+                <li class="nvcity">
+
+                    北京市-海淀区
+                </li>
+            </ul>
+                <br />
+        <div class="xiangqingtext">
+
+                            <p class="title">工作职责：</p>
+                <p>
+                    负责自主能力测试系统建构与实施工作，参与相关项目论证、设计、研制和生产工作。
+                </p>
+                <br />
+                            <p class="title">任职资格：</p>
+                <p>
+                    1、计算机科学与技术、控制科学与工程/系统工程、模式识别与智能系统相关专业背景；<br>2、熟练掌握测试系统等相关基础理论知识。具有相关平台总体设计和实施工作经验者优先，相关军工单位工作经验者优先；<br>3、有一定的智能算法开发、训练、测试经验。
+                </p>
+
+        </div>
+        <div class="xiangqingfooter clearfix">
+            <div class="footerbtn fl"><a href="#this" id="apply" url="/Portal/Resume/ResumeItem?jid=311047516&amp;r=%2Fzpdetail%2F311047516">现在申请</a></div>
+                <a href="javascript:ReturnToJobList()" class="returnlist">返回职位列表</a>
+
+        </div>
+        <div class="fenxiang clearfix">
+            <a href="#this" id="collect">收藏</a>
+            
+            <!--<script type="text/javascript" src="" charset="utf-8"></script>-->
+        </div>
+    </div>
+
+
+<script language="javascript">
+    var htmlSuccess = ['<div class="dl_dialog1">',
+                        '   <div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                        //' <div class="dl_dialog_btn">',
+                        //' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        //'     <div>',
+                        '   </div>',
+                        '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '   <div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '   <div class="dl_dialog_btn">',
+                        ' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '       <div>',
+                        '   </div>',
+                        '</div>'].join("");
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {
+            'jobAdId': "311047516"
+        }
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+            var args = resp.Model;
+
+            var hasA = args.HasApplyedFoJs;
+            var isAllow = args.Allow;
+            var allowCount = args.AllowCount;
+            var jobCategory = "校园招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = args.IntAllowApplyInfinity;
+            var jobAdCategory = args.JobAdCategory || 1; // 1 社招 2 校招 3 实习生
+            var JOB_CATEGORY_ARRAY = [,'社招', '校招', '实习生'];
+            //var jobAdCategoryName = JOB_CATEGORY_ARRAY[jobAdCategory];
+            var jobAdCategoryName = args.JobAdCategoryName || ''
+            var jobApplyMaxLimit = args.MaxAllowCount;
+
+            $(document).ready(function () {
+                // 申请状态
+                $(".boxSupertitle .applyStatus").css("font-weight", "normal")
+                if (hasA == 0) {
+                    $(".boxSupertitle .applyStatus").text("(未申请)")
+                } else {
+                    $(".boxSupertitle .applyStatus").text("(已申请)")
+                }
+                //根据用户的登陆状态给收藏按钮绑定事件
+                var collectBtn = $("#collect");
+                if (isLogin) {
+
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            $.post("/Portal/Apply/JobAdCollect", { "jId": "311047516" }, function (data) {
+                                if (!data) {
+                                    htmlSuccess = htmlError;
+                                }
+                                $.modal(htmlSuccess, {
+                                    containerCss: {
+                                        backgroundColor: "transparent",
+                                        borderColor: "transparent",
+                                        padding: 0,
+                                        width: '150px'
+                                    },
+                                    onShow: function () {
+                                        $("#okbtn1").click(function () {
+                                            $.modal.close();
+                                        });
+                                    }
+                                });
+                                function a() {
+                                    $.modal.close();
+                                }
+                                setTimeout(a, 2000);
+                            }, "json");
+                        });
+                }
+                else {
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        });
+                }
+
+                $("#apply").click(function () {
+                    if (!isLogin) {
+                        location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        return;
+                    }
+                    var isRecommendJob = false;
+                    var jobAdId = 311047516;
+                    var jobAdName = "测试工程师(J11997)";
+
+                    function goNext() {
+                        function jump() {
+                            var url = $("#apply").attr("url");
+                            window.location.href = url;
+                            $.modal.close();
+                            showWaitDialage("页面跳转中......");
+                        }
+
+                        // 判断调用内推码弹窗-20210115
+                        isRecommendJob ? RecommendCodeMadal.confirm({ jobName: jobAdName, jobId: jobAdId }, jump) : jump();
+                    }
+
+                    if (allowCount == 0 && hasA == 0) {
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>您申请的', jobAdCategoryName, '职位个数已达上限（最多', jobApplyMaxLimit, '个），无法继续投递</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else if (hasA == 1 && isAllow == 0) {
+                        var hasas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>您之前已经成功申请过该职位，请不要重复申请！</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(hasas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        if (hasA == 1 || isAllowApplyInfinity == 1) {
+                            goNext();
+                            return;
+                        }
+
+                        var applyMsg = ["您可申请", jobApplyMaxLimit, "个", jobAdCategoryName, "职位，还剩", allowCount, "个，是否继续投递"].join("");
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                        '    <div class="dl_dialog_wrap">',
+                                        '       <div class="dl_dialog_icowarn"><span>' + applyMsg + '</span></div>',
+                                        '    <div class="dl_dialog_btn">',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                        ' <a href="javascript:void(0);" class="dl_btn_grey1 ok" id="cancelBtn"><span>取消</span></a>',
+                                        '        <div>',
+                                        '    </div>',
+                                        '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    goNext();
+                                });
+
+                                $("#cancelBtn").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+
+                })
+            })
+
+        }
+    });
+
+    function ReturnToJobList() {
+        if (document.referrer == null || document.referrer == "" || document.referrer == location.href) {
+            location.href = '/';
+        }
+        else {
+            location.href = document.referrer;
+        }
+        return false;
+    }
+
+    function showWaitDialage(msg) {
+        var html = ['<div class="dl_dialog1">',
+                ' <div class="dl_dialog_wrap">',
+                '   <div class="dl_tocenter">',
+                '<span class=" dl_ft14_grey2"><b>' + msg + '</b>',
+                '</span>',
+                '</div>',
+                ' </div>',
+                '</div>'].join("");
+
+        $.modal(html, {
+            containerCss: {
+                backgroundColor: "transparent",
+                borderColor: "transparent",
+                padding: 0
+            },
+            onShow: function () {
+                $("div[class='dl_dialog1']").css("padding", "15px");
+            }
+        });
+    }
+
+</script>
+
+
+    </div>
+</div>
+<!--module:positiondetail end-->
+</body></html>

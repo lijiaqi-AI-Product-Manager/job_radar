@@ -69,7 +69,14 @@ def test_missing_data_tells_user_to_update(tmp_path, monkeypatch):
 
 def test_mirror_prefix(monkeypatch):
     monkeypatch.setenv("JOBRADAR_MIRROR", "https://mirror.example/")
-    assert local.release_url("jobs.db").startswith("https://mirror.example/https://github.com/")
+    assert local.asset_urls("jobs.db")[0] == ("mirror", "https://mirror.example/" + local.github_url("jobs.db"))
+
+
+def test_asset_urls_order(monkeypatch):
+    monkeypatch.delenv("JOBRADAR_MIRROR", raising=False)
+    assert [m for m, _ in local.asset_urls("x")] == ["github", "gitee"]
+    assert [m for m, _ in local.asset_urls("x", prefer="gitee")] == ["gitee", "github"]
+    assert local.asset_urls("x", prefer="gitee")[0][1].startswith("https://gitee.com/")
 
 
 def _sqlite_bytes(tmp_path):
@@ -78,25 +85,57 @@ def _sqlite_bytes(tmp_path):
     return p.read_bytes()
 
 
-def test_download_public(tmp_path, monkeypatch):
-    import httpx
+@pytest.fixture
+def no_token(monkeypatch):
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
     monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.delenv("JOBRADAR_MIRROR", raising=False)
+
+
+def _client(handler):
+    import httpx
+    return httpx.Client(transport=httpx.MockTransport(handler))
+
+
+def test_download_prefers_gzip(tmp_path, no_token):
+    import gzip
+
+    import httpx
     body = _sqlite_bytes(tmp_path)
     seen = []
 
     def handler(request):
         seen.append(str(request.url))
-        return httpx.Response(200, content=body)
+        return httpx.Response(200, content=gzip.compress(body))
 
-    cli._download("jobs.db", tmp_path / "jobs.db", client=httpx.Client(transport=httpx.MockTransport(handler)))
-    assert seen == [local.release_url("jobs.db")]
+    used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
+    assert used == "github" and seen == [local.github_url("jobs.db.gz")]
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
+def test_download_falls_back_to_raw_then_next_mirror(tmp_path, no_token):
+    import httpx
+    body = _sqlite_bytes(tmp_path)
+    seen = []
+
+    def handler(request):
+        seen.append(str(request.url))
+        if "gitee.com" in str(request.url) and str(request.url).endswith("/jobs.db"):
+            return httpx.Response(200, content=body)
+        if "github.com" in str(request.url):
+            raise httpx.ConnectError("blocked")
+        return httpx.Response(404)
+
+    used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
+    assert used == "gitee"
+    assert seen[-2:] == [local.gitee_url("jobs.db.gz"), local.gitee_url("jobs.db")]
     assert (tmp_path / "jobs.db").read_bytes() == body
 
 
 def test_download_private_with_token(tmp_path, monkeypatch):
     import httpx
     monkeypatch.setenv("GITHUB_TOKEN", "t0k")
+    monkeypatch.delenv("JOBRADAR_MIRROR", raising=False)
     body = _sqlite_bytes(tmp_path)
 
     def handler(request):
@@ -107,27 +146,32 @@ def test_download_private_with_token(tmp_path, monkeypatch):
         assert request.headers["accept"] == "application/octet-stream"
         return httpx.Response(200, content=body)
 
-    cli._download("jobs.db", tmp_path / "jobs.db", client=httpx.Client(transport=httpx.MockTransport(handler)))
+    cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
     assert (tmp_path / "jobs.db").read_bytes() == body
 
 
-def test_download_rejects_non_sqlite(tmp_path, monkeypatch):
+def test_download_rejects_non_sqlite(tmp_path, no_token):
     import httpx
-    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
-    monkeypatch.delenv("GH_TOKEN", raising=False)
-    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=b"<html>not found</html>")))
+    client = _client(lambda r: httpx.Response(200, content=b"<html>not found</html>"))
     with pytest.raises(SystemExit, match="不是有效的数据库"):
         cli._download("jobs.db", tmp_path / "jobs.db", client=client)
     assert not (tmp_path / "jobs.db").exists()
 
 
-def test_download_404_explains_private_repo(tmp_path, monkeypatch):
+def test_download_all_404_explains_private_repo(tmp_path, no_token):
     import httpx
-    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
-    monkeypatch.delenv("GH_TOKEN", raising=False)
-    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(404)))
     with pytest.raises(SystemExit, match="GITHUB_TOKEN"):
-        cli._download("jobs.db", tmp_path / "jobs.db", client=client)
+        cli._download("jobs.db", tmp_path / "jobs.db", client=_client(lambda r: httpx.Response(404)))
+
+
+def test_update_downloads_text_by_default(home, monkeypatch, capsys):
+    got = []
+    monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
+    cli.main(["update"])
+    assert got == ["jobs.db", "jd_text.db"]
+    got.clear()
+    cli.main(["update", "--jobs-only", "--mirror", "gitee"])
+    assert got == ["jobs.db"]
 
 
 def test_sources_table_prints_status_columns(home, capsys):
@@ -141,3 +185,14 @@ def test_trends_table(home, capsys):
     cli.main(["trends", "腾讯", "--table"])
     out = capsys.readouterr().out
     assert "None" not in out and "open" in out
+
+
+def test_search_full_text(home, capsys):
+    out = run(capsys, "search", "--text", "pytorch")
+    assert [r["id"] for r in out["results"]] == ["s1:1"] and "PyTorch" in out["results"][0]["match"]
+
+
+def test_search_full_text_without_text_db(home, capsys):
+    (home / "jd_text.db").unlink()
+    with pytest.raises(SystemExit):
+        cli.main(["search", "--text", "pytorch"])

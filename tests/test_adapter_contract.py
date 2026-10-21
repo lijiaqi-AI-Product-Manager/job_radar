@@ -51,3 +51,13 @@ def test_adapter_contract(aid):
     assert len({j.id for j in jobs}) == len(jobs), "同一次抓取里岗位 id 重复"
     assert all(j.url.startswith("http") and j.title.strip() for j in jobs)
     assert all(j.company for j in jobs)
+
+
+@pytest.mark.parametrize("aid", sorted(ADAPTERS))
+def test_adapter_stores_jd_text(aid):
+    """JD 正文必须入库（2026-10-21 起的硬性要求）：≥90% 的岗位要有职责或要求原文。列表里没有就请求详情页。"""
+    fx = TESTS / "fixtures" / aid
+    source = SourceConfig(**yaml.safe_load((fx / "source.yaml").read_text(encoding="utf-8")))
+    jobs = list(ADAPTERS[aid](source, httpx.Client(transport=ReplayTransport(fx)), sleep=lambda s: None).fetch_all())
+    with_jd = [j for j in jobs if (j.description or "").strip() or (j.requirements or "").strip()]
+    assert len(with_jd) >= 0.9 * len(jobs), f"{aid}: 只有 {len(with_jd)}/{len(jobs)} 个岗位有 JD 正文"

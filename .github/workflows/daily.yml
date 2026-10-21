@@ -48,7 +48,18 @@ jobs:
           python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); print('jobs', old, '->', n); assert n >= old, 'job rows decreased; refusing to publish'"
           gh release view data-latest >/dev/null 2>&1 || \
             gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
-          gh release upload data-latest data/jobs.db data/jd_text.db crawl-summary.json --clobber
+          # 压缩版供用户下载（CLI 优先取 .gz）；原文件保留给次日恢复与旧版 CLI
+          gzip -9 -k -f data/jobs.db data/jd_text.db
+          ls -l data/
+          gh release upload data-latest data/jobs.db data/jd_text.db data/jobs.db.gz data/jd_text.db.gz crawl-summary.json --clobber
+
+      - name: Mirror to Gitee (domestic download)
+        # 未配置 GITEE_TOKEN / GITEE_REPO 时脚本自动跳过；镜像失败不影响主发布
+        continue-on-error: true
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_REPO: ${{ vars.GITEE_REPO }}
+        run: uv run python scripts/publish_gitee.py data/jobs.db.gz data/jd_text.db.gz crawl-summary.json
 
       - name: Weekly archive snapshot
         run: |

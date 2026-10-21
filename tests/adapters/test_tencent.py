@@ -25,21 +25,21 @@ def run():
 
 def test_field_mapping_of_real_record():
     j = run()[0]
-    assert j.id == "tencent:2079604867550330880"
+    assert j.id == "tencent:2069057652431962112"
     assert j.company == "腾讯"
-    assert j.title == "3A动作冒险游戏-战斗主策划"
+    assert j.title == "腾讯云-产品管理高级经理(深圳/北京)"
     assert j.recruit_type == "social"
-    assert j.cities == ["上海"]
-    assert j.department == "IEG"
-    assert j.url == "https://careers.tencent.com/jobdesc.html?postId=2079604867550330880"
-    assert j.description.startswith("1.负责3A动作冒险游戏的战斗系统")
-    assert j.requirements is None  # 列表接口不含岗位要求
+    assert j.cities == ["深圳"]
+    assert j.department == "CSIG"
+    assert j.url == "https://careers.tencent.com/jobdesc.html?postId=2069057652431962112"
+    assert j.description.startswith("1.为部门整体经营过程与结果负责")
+    assert j.requirements.startswith("1.本科及以上学历，五年以上的云计算相关产品")  # 来自详情接口
 
 
-def test_whole_page_is_parsed():
+def test_whole_page_is_parsed_with_details():
     jobs = run()
-    assert len(jobs) == 50
-    assert all(j.url.startswith("https://") for j in jobs)
+    assert len(jobs) == 5
+    assert all(j.url.startswith("https://") and j.requirements for j in jobs)
 
 
 def test_invalid_or_incomplete_records_are_skipped():
@@ -56,13 +56,17 @@ def test_pagination_stops_at_count_without_max_pages():
 
     def handler(request):
         calls.append(str(request.url))
+        if "ByPostId" in str(request.url):
+            return httpx.Response(200, json={"Code": 404, "Data": None})  # 详情失败：要求留空，不影响列表
         return httpx.Response(200, json={"Code": 200, "Data": {"Count": 2, "Posts": [
             {"PostId": "1", "RecruitPostName": "a"}, {"PostId": "2", "RecruitPostName": "b"}]}})
 
     s = source()
     s.params = {}
     a = TencentAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
-    assert len(list(a.fetch_all())) == 2 and len(calls) == 1
+    jobs = list(a.fetch_all())
+    assert len(jobs) == 2 and all(j.requirements is None for j in jobs)
+    assert len([c for c in calls if "Query" in c]) == 1
 
 
 def test_api_error_code_raises():

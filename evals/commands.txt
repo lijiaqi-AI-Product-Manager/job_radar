@@ -17,3 +17,6 @@ diff --days 7 --company 奇瑞 --types open --limit 3
 trends 腾讯 --step-days 7
 search --company 复星 --type campus --limit 3
 search --company 某某不存在科技 --limit 3
+search --text "PyTorch 大模型" --type campus --limit 5
+search --text 博士 --company 中芯 --limit 3
+search --text Verilog --limit 5
