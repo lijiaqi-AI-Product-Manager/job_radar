@@ -33,6 +33,21 @@ def test_recording_scrubs_session_tokens_and_replay_still_matches(tmp_path):
         assert r.json()["ok"] is True
 
 
+def test_recording_passes_session_cookies_to_client_but_never_stores_them(tmp_path):
+    # 录制时客户端要能拿到站点下发的会话 cookie（否则依赖会话的接口 403），但 fixtures 里不能有 cookie
+    def real(req):
+        if req.url.path == "/page":
+            return httpx.Response(200, text="ok", headers={"set-cookie": "SESSION=s3cr3t; Path=/"})
+        return httpx.Response(200 if req.headers.get("cookie") == "SESSION=s3cr3t" else 403, json={})
+
+    rec = RecordingTransport(tmp_path, inner=httpx.MockTransport(real))
+    with httpx.Client(transport=rec) as c:
+        c.get("https://x.invalid/page")
+        assert c.post("https://x.invalid/api", json={}).status_code == 200
+    blob = "".join(p.read_text(encoding="utf-8") for p in tmp_path.iterdir())
+    assert "s3cr3t" not in blob
+
+
 def test_recording_without_patterns_is_unchanged(tmp_path):
     rec = RecordingTransport(tmp_path, inner=httpx.MockTransport(lambda r: httpx.Response(200, text=PAGE)))
     with httpx.Client(transport=rec) as c:

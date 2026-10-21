@@ -78,5 +78,8 @@ class RecordingTransport(httpx.BaseTransport):
         (self.dir / "manifest.json").write_text(
             json.dumps(self.entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
-        return httpx.Response(response.status_code, headers={"content-type": ctype},
-                              content=content, request=request)
+        # 原样把响应头交给客户端（含 Set-Cookie，匿名会话要用），只去掉与已解码正文不符的传输头；
+        # 响应头不写入 fixtures，所以 cookie 不会落盘
+        headers = [(k, v) for k, v in response.headers.multi_items()
+                   if k.lower() not in ("content-encoding", "content-length", "transfer-encoding")]
+        return httpx.Response(response.status_code, headers=headers, content=content, request=request)
