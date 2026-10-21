@@ -1,6 +1,9 @@
-# 第 34 轮：招聘日历补缺（小红书/比亚迪/宁德时代/工商银行/美的）——只访问官方招聘站，各 1 次，抽取批次/日期文字
-GREP https://job.xiaohongshu.com/campus (?:20\d\d[年\-./]\d{1,2}[月\-./]\d{1,2}日?|\d{1,2}月\d{1,2}日)[^<>"]{0,50}|[^<>"{}]{0,30}(?:网申|投递时间|截止|启动|正式批|提前批|2027届|27届|校园招聘|秋季招聘|暑期实习)[^<>"{}]{0,60}
-GREP https://job.byd.com/portal/pc/#/index (?:20\d\d[年\-./]\d{1,2}[月\-./]\d{1,2}日?|\d{1,2}月\d{1,2}日)[^<>"]{0,50}|[^<>"{}]{0,30}(?:网申|投递时间|截止|启动|正式批|提前批|2027届|27届|校园招聘|秋季招聘|暑期实习)[^<>"{}]{0,60}
-GREP https://talent.catl.com/campus-recruitment/catlhr/142197 "(?:projectName|name|title)":"[^"]{0,60}(?:届|校招|校园|秋招|实习|202[67])[^"]{0,40}"
-GREP https://job.icbc.com.cn/ (?:20\d\d[年\-./]\d{1,2}[月\-./]\d{1,2}日?|\d{1,2}月\d{1,2}日)[^<>"]{0,50}|[^<>"{}]{0,30}(?:网申|投递时间|截止|启动|正式批|提前批|2027届|27届|校园招聘|秋季招聘|暑期实习)[^<>"{}]{0,60}
-GREP https://careers.midea.com/campus (?:20\d\d[年\-./]\d{1,2}[月\-./]\d{1,2}日?|\d{1,2}月\d{1,2}日)[^<>"]{0,50}|[^<>"{}]{0,30}(?:网申|投递时间|截止|启动|正式批|提前批|2027届|27届|校园招聘|秋季招聘|暑期实习)[^<>"{}]{0,60}
+# 第 35 轮（2026-10-21，匿名会话 / 浏览器渲染获批后）：渲染各站招聘页，看可见文字与页面实际请求的接口
+RENDER https://campus-talent.alibaba.com/campus/position
+RENDER https://talent.baidu.com/jobs/list?recruitType=GRADUATE
+RENDER https://career.huawei.com/reccampportal/portal5/campus-recruitment.html
+RENDER https://jobs.bytedance.com/campus/position
+RENDER https://job.xiaohongshu.com/campus
+RENDER https://job.byd.com/portal/pc/#/index
+RENDER https://careers.midea.com/schoolOut
+RENDER https://talent.catl.com/campus-recruitment/catlhr/142197
