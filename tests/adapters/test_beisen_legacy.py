@@ -54,7 +54,7 @@ def test_stops_when_page_has_no_new_jobs():
     s.params = {k: v for k, v in s.params.items() if k != "max_pages"}
     a = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
     assert len(list(a.fetch_all())) == 15
-    assert len(calls) == 2
+    assert len([c for c in calls if "PageIndex" in c]) == 2
 
 
 def test_total_pages_footer_bounds_paging():
@@ -62,7 +62,8 @@ def test_total_pages_footer_bounds_paging():
     calls = []
 
     def handler(request):
-        calls.append(1)
+        if "PageIndex" in str(request.url):
+            calls.append(1)
         return httpx.Response(200, text=html)
 
     s = source()
@@ -141,3 +142,33 @@ def test_variant_b_detail_without_title_keeps_list_title():
     a = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None)
     [j] = a.fetch_all()
     assert j.title == "设计工艺协同研发工程师-张江（2027届校招）(J13378)" and j.description is None
+
+
+A_DETAIL = """<div class="positiondetail-template6 ">
+  <p class="title">工作职责：</p>
+  <p>
+      1、参与平台控制系统软件及产品开发测试；<br>2、组织控制系统软件测试、交付、维护及试验保障。
+  </p>
+  <br />
+  <p class="title">任职资格：</p>
+  <p>
+      1、控制科学/计算机/软件、自动化相关专业背景；<br>2、有ARM/DSP/FPGA等开发经验；
+  </p>
+</div>"""
+
+
+def test_variant_a_fetches_detail_for_jd():
+    """变体 A 列表只有标题；JD 取详情页 <p>工作职责：</p><p>…</p>、<p>任职资格：</p><p>…</p>（第 29 轮侦察）。"""
+    html = '<tr><td><a title="软件工程师(J11999)" href="/zpdetail/311047525?PageIndex=1">x</a></td></tr> 当前第1/1页'
+    seen = []
+
+    def handler(request):
+        seen.append(request.url.path)
+        return httpx.Response(200, text=A_DETAIL if "/zpdetail/" in request.url.path else html)
+
+    s = source()
+    s.params = {k: v for k, v in s.params.items() if k != "max_pages"}
+    [j] = BeisenLegacyAdapter(s, httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda s: None).fetch_all()
+    assert "/zpdetail/311047525" in seen
+    assert j.description == "1、参与平台控制系统软件及产品开发测试；\n2、组织控制系统软件测试、交付、维护及试验保障。"
+    assert j.requirements == "1、控制科学/计算机/软件、自动化相关专业背景；\n2、有ARM/DSP/FPGA等开发经验；"
