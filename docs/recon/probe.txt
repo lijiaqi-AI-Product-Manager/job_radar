@@ -1,4 +1,4 @@
-# 第 37 轮：页面自己发出的列表请求长什么样（请求体/响应）。字节（_signature 反爬签名）、小红书（验证码/安全 SDK）不做。
-RENDERXHR https://campus-talent.alibaba.com/campus/position position/search|searchCondition/list
-RENDERXHR https://career.huawei.com/reccampportal/portal5/campus-recruitment.html getJob/newHr
-RENDERXHR https://careers.midea.com/schoolOut/position backend/school/position
+# 第 38 轮：阿里——匿名会话直接调用 position/search（token 取自页面，值不打印）；美的——找职位列表接口路径
+FLOW {"page":"https://campus-talent.alibaba.com/campus/position","token":{"re":"__token__[\"']?\\s*:\\s*[\"']([^\"']+)","query":"_csrf"},"method":"POST","url":"https://campus-talent.alibaba.com/position/search","json":{"batchId":100000760001,"pageIndex":1,"pageSize":2,"channel":"campus_group_official_site","language":"zh"},"headers":{"Referer":"https://campus-talent.alibaba.com/campus/position","Origin":"https://campus-talent.alibaba.com"},"grep":"\"success\":\\w+|\"totalCount\":\\d+|\"name\":\"[^\"]{2,40}\"|\"errorMsg\":\"[^\"]*\""}
+FLOW {"page":"https://campus-talent.alibaba.com/campus/position","token":{"re":"_csrf\\W{1,6}([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})","query":"_csrf"},"method":"POST","url":"https://campus-talent.alibaba.com/position/search","json":{"batchId":100000560002,"pageIndex":1,"pageSize":2,"channel":"campus_group_official_site","language":"zh"},"headers":{"Referer":"https://campus-talent.alibaba.com/campus/position","Origin":"https://campus-talent.alibaba.com"},"grep":"\"success\":\\w+|\"totalCount\":\\d+|\"name\":\"[^\"]{2,40}\"|\"errorMsg\":\"[^\"]*\""}
+GET https://careers.midea.com/schoolOut/position
