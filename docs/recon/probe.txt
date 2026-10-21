@@ -1,5 +1,3 @@
-# 第 29 轮：北森旧版变体 A 详情页的 JD 区块（cssc /zpdetail、kelun /job_show、611）
-GREP https://cssc.zhiye.com/zpdetail/311047525 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
-GREP https://cssc.zhiye.com/zpdetail/311047525 <div class="positiondetail-template6[\s\S]{0,2500}
-GREP https://kelun.zhiye.com/job_show/230947311 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
-GREP https://611.zhiye.com/zpdetail/351602837 (?:工作职责|岗位职责|职位描述|职责描述|任职资格|任职要求|职位要求|岗位要求)[\s\S]{0,400}
+# 第 30 轮：腾讯校招详情接口为何多数岗位无 JD（取后几页的 postId 再查详情）
+POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":6,"pageSize":4} "postId":"\d+"|"projectName":"[^"]*"|"positionTitle":"[^"]*"|"positionSource":"[^"]*"|"positionUrl":[^,]*
+POSTGREP https://join.qq.com/api/v1/position/searchPosition {"projectIdList":[],"projectMappingIdList":[],"keyword":"","bgList":[],"workCountryType":0,"workCityList":[],"recruitCityList":[],"positionFidList":[],"pageIndex":10,"pageSize":4} "postId":"\d+"|"projectName":"[^"]*"|"positionTitle":"[^"]*"|"positionSource":"[^"]*"|"positionUrl":[^,]*
