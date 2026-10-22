@@ -1,0 +1,15 @@
+group: 北京银行
+entries:
+- id: home-bankofbeijing-official-home-2026
+  company: 北京银行
+  project_type: 校招
+  apply_url: https://www.bankofbeijing.com.cn/
+  source:
+    type: official_site
+    name: 北京银行 官网
+    url: https://www.bankofbeijing.com.cn/
+  as_of: '2026-10-23'
+  jd:
+    status: none
+  notes: 【仅官网首页·未直连验证】官网域名；本次网络环境连不上（ConnectError），日期 2026-10-23。原先误写的 bob.com.cn
+    是停放域名，已删。
