@@ -1,0 +1,15 @@
+group: 北方华创
+entries:
+- id: naura-campus-entry
+  company: 北方华创
+  project_type: 校招
+  apply_url: https://career.naura.com/social
+  source:
+    type: official_site
+    name: 北方华创招聘
+    url: https://career.naura.com/social
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://career.naura.com/social
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：北方华创招聘）。入口页未写明批次/网申时间/城市，按红线留空。

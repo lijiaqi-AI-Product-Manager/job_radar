@@ -1,0 +1,15 @@
+group: 立讯精密
+entries:
+- id: luxshare-campus-entry
+  company: 立讯精密
+  project_type: 校招
+  apply_url: https://www.luxshare-ict.com/careers.html
+  source:
+    type: official_site
+    name: 立讯精密-加入我们
+    url: https://www.luxshare-ict.com/careers.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.luxshare-ict.com/careers.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：立讯精密-加入我们）。入口页未写明批次/网申时间/城市，按红线留空。

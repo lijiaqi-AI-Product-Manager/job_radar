@@ -40,3 +40,12 @@ sources:
   - id: hotjob-yonyou
     company: 用友
     params: {host: career.yonyou.com, tenant: SU67ac41886202cc7916ae3029}
+  - id: hotjob-xyzq
+    company: 兴业证券
+    params: {tenant: SU68fb2499b7da1347a9dd852c, max_pages: 5}
+  - id: hotjob-gtzq
+    company: 国投证券
+    params: {tenant: SU625d4a0b2f9d24287db127c8, max_pages: 5}
+  - id: hotjob-ctsec
+    company: 财通证券
+    params: {tenant: SU60613f74bef57c36adc66d0b, max_pages: 10}

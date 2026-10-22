@@ -1,0 +1,15 @@
+group: 微创医疗
+entries:
+- id: microport-campus-entry
+  company: 微创医疗
+  project_type: 校招
+  apply_url: https://microport.com/careers
+  source:
+    type: official_site
+    name: 微创医疗 Careers
+    url: https://microport.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://microport.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：微创医疗 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
