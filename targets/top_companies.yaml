@@ -73,7 +73,10 @@ aliases:
 # 不能合规覆盖的目标与原因（详见侦察文档）。理由必须是可复核的事实。
 # 2026-10-22 复核：区分「必然」与「短暂」——频控/超时重试可解；凭证/验证码/robots 在合规前提下无解。
 blocked:
-  字节跳动: "必然：POST 列表接口三次均 405、GET 回落 SPA、SSR 无 CSRF，站点部署滑块；飞书 ATSX 的搜索调用方式待用 Actions 浏览器抓包（docs/recon/bytedance.md）"
+  字节跳动: "必然：POST 列表接口三次均 405、GET 回落 SPA、SSR 无 CSRF，站点部署滑块；飞书 ATSX 的搜索接口还要求前端 `_signature`（docs/recon/atsx.md）"
+  大疆: "必然：不是 ATSX 而是 Moka，职位接口返回加密串 + necromancer（docs/recon/atsx.md）"
+  蔚来: "必然：飞书 ATSX，搜索接口要求前端 `_signature`，本机复现 405（docs/recon/atsx.md）"
+  小鹏汽车: "必然：飞书 ATSX，同上（docs/recon/atsx.md）"
   京东: "必然：页面预加载验证码脚本，列表接口在触发验证码前无法确认（docs/recon/jd.md）"
   拼多多: "必然：前端完整验证码流程，robots 403（docs/recon/bigtech.md）"
   百度: "必然：列表接口匿名返回 no-auth，需登录态（docs/recon/bigtech.md）"
