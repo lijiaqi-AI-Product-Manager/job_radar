@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://campus.163.com/api/campuspc/position/getJobList?projectId=103&pageNo=1&pageSize=3",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "001.json"
+  }
+]
