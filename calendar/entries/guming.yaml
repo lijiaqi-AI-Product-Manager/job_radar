@@ -1,0 +1,15 @@
+group: 古茗
+entries:
+- id: guming-campus-entry
+  company: 古茗
+  project_type: 校招
+  apply_url: https://app.mokahr.com/campus_apply/guming/39377
+  source:
+    type: official_site
+    name: 古茗科技集团有限公司 - 校园招聘
+    url: https://app.mokahr.com/campus_apply/guming/39377
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://app.mokahr.com/campus_apply/guming/39377
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空。
