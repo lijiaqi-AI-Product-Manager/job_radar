@@ -1,13 +1,13 @@
-group: 汇添富
+group: 良品铺子
 entries:
-- id: 99fund-com-official-home-2026
-  company: 汇添富
+- id: home-517lppz-com-official-home-2026
+  company: 良品铺子
   project_type: 校招
-  apply_url: https://www.99fund.com
+  apply_url: https://www.517lppz.com
   source:
     type: official_site
-    name: 汇添富 官网
-    url: https://www.99fund.com
+    name: 良品铺子 官网
+    url: https://www.517lppz.com
   as_of: '2026-10-22'
   jd:
     status: none

@@ -1,0 +1,14 @@
+group: 中国中冶
+entries:
+- id: mccchina-com-official-home-2026
+  company: 中国中冶
+  project_type: 校招
+  apply_url: https://www.mccchina.com
+  source:
+    type: official_site
+    name: 中国中冶 官网
+    url: https://www.mccchina.com
+  as_of: '2026-10-23'
+  jd:
+    status: none
+  notes: 【仅官网首页·未直连验证】官网域名；本次网络环境无法直连验证（部分国内站点在采集环境不可达），日期 2026-10-23。

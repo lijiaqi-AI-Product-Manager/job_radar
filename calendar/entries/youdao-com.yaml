@@ -1,0 +1,14 @@
+group: 网易有道
+entries:
+- id: youdao-com-official-home-2026
+  company: 网易有道
+  project_type: 校招
+  apply_url: https://www.youdao.com
+  source:
+    type: official_site
+    name: 网易有道 官网
+    url: https://www.youdao.com
+  as_of: '2026-10-23'
+  jd:
+    status: none
+  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（已于 2026-10-22 访问确认 200）。
