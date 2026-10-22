@@ -1,6 +1,7 @@
 """用户本地数据的位置、下载地址、打开方式与结果包装。CLI 与 MCP 共用。"""
 
 import os
+from contextlib import contextmanager
 from pathlib import Path
 
 from jobradar.core import queries as q
@@ -50,6 +51,24 @@ def open_db(kind: str, required: bool = True):
             raise NoData(f"本地没有数据：{path}。先运行 `jobradar update`。")
         return None
     return connect(path, kind)
+
+
+@contextmanager
+def db(kind: str, required: bool = True):
+    """打开本地库，退出时关闭。
+
+    Windows 上未关闭的连接会一直锁着文件：`jobradar update` 的最后一步是
+    `tmp.replace(dest)`，库文件被锁时会报 PermissionError: [WinError 32]。
+    MCP server 常驻进程，不关闭还会每调用一次泄漏一个句柄。
+    """
+    conn = open_db(kind, required)
+    if conn is None:
+        yield None
+        return
+    try:
+        yield conn
+    finally:
+        conn.close()
 
 
 def envelope(conn, results, *, as_of: str | None = None, **extra) -> dict:

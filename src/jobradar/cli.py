@@ -11,20 +11,23 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+from contextlib import closing, contextmanager, nullcontext
 from datetime import timedelta
 from pathlib import Path
 
 import httpx
 
 from jobradar.core import queries as q
-from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, asset_urls, envelope, home, open_db
+from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, asset_urls, db, envelope, home
 from jobradar.store.migrate import connect
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
 
+@contextmanager
 def _open(kind: str, required: bool = True):
     try:
-        return open_db(kind, required)
+        with db(kind, required) as conn:
+            yield conn
     except NoData as e:
         raise SystemExit(str(e)) from e
 
@@ -58,16 +61,28 @@ def _github_api_asset(name: str, client: httpx.Client, token: str) -> tuple[str,
 
 
 def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Path | None:
-    """下载到临时文件；404 返回 None。"""
-    with tempfile.NamedTemporaryFile(dir=dest_dir, delete=False, suffix=".part") as tmp:
-        with client.stream("GET", url, headers=headers) as resp:
+    """下载到临时文件；404 返回 None。
+
+    先关闭文件再删除：Windows 上删除仍被打开的文件会报 WinError 32。
+    """
+    fd, name = tempfile.mkstemp(dir=dest_dir, suffix=".part")
+    tmp = Path(name)
+    not_found = False
+    try:
+        with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers=headers) as resp:
             if resp.status_code == 404:
-                Path(tmp.name).unlink(missing_ok=True)
-                return None
-            resp.raise_for_status()
-            for chunk in resp.iter_bytes():
-                tmp.write(chunk)
-    return Path(tmp.name)
+                not_found = True
+            else:
+                resp.raise_for_status()
+                for chunk in resp.iter_bytes():
+                    out.write(chunk)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
+    if not_found:
+        tmp.unlink(missing_ok=True)
+        return None
+    return tmp
 
 
 def _install(tmp: Path, name: str, gz: bool, dest: Path):
@@ -83,10 +98,13 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path):
             raise ValueError("压缩包损坏") from None
         tmp.unlink()
         tmp = raw
+    con = sqlite3.connect(tmp)
     try:
-        ok = sqlite3.connect(tmp).execute("PRAGMA quick_check").fetchone()[0] == "ok"
+        ok = con.execute("PRAGMA quick_check").fetchone()[0] == "ok"
     except sqlite3.DatabaseError:
         ok = False
+    finally:
+        con.close()  # 必须关闭：否则 Windows 上 replace 会失败（WinError 32）
     if not ok:
         tmp.unlink()
         raise ValueError("不是有效的数据库")
@@ -142,59 +160,58 @@ def cmd_update(args):
             if k != "calendar":  # 日历库在旧版发布中不存在：缺失不影响岗位数据
                 raise
             used[k] = None
-    conn = _open("jobs")
-    print(json.dumps({"updated": kinds, "mirror": used, "data_as_of": q.data_as_of(conn), "home": str(home())},
-                     ensure_ascii=False))
+    with _open("jobs") as conn:
+        print(json.dumps({"updated": kinds, "mirror": used, "data_as_of": q.data_as_of(conn), "home": str(home())},
+                         ensure_ascii=False))
 
 
 def cmd_search(args):
-    conn = _open("jobs")
-    text = _open("text", required=False) if args.text else None
-    if args.text and text is None:
-        raise SystemExit("全文检索需要 JD 原文库：先运行 `jobradar update`")
-    rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
-                         recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
-                         text=args.text, text_conn=text, include_closed=args.include_closed, limit=args.limit)
-    _emit(args, envelope(conn, rows))
+    text_cm = _open("text", required=False) if args.text else nullcontext(None)
+    with _open("jobs") as conn, text_cm as text:
+        if args.text and text is None:
+            raise SystemExit("全文检索需要 JD 原文库：先运行 `jobradar update`")
+        rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
+                             recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
+                             text=args.text, text_conn=text, include_closed=args.include_closed, limit=args.limit)
+        _emit(args, envelope(conn, rows))
 
 
 def cmd_show(args):
-    conn = _open("jobs")
-    job = q.get_job(conn, _open("text", required=False), args.job_id)
-    _emit(args, envelope(conn, [job] if job else [], found=job is not None))
+    with _open("jobs") as conn, _open("text", required=False) as text:
+        job = q.get_job(conn, text, args.job_id)
+        _emit(args, envelope(conn, [job] if job else [], found=job is not None))
 
 
 def cmd_diff(args):
-    conn = _open("jobs")
-    since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
-    rows = q.recent_changes(conn, since=since, company=args.company,
-                            types=args.types.split(",") if args.types else None, limit=args.limit)
-    _emit(args, envelope(conn, rows, since=since))
+    with _open("jobs") as conn:
+        since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
+        rows = q.recent_changes(conn, since=since, company=args.company,
+                                types=args.types.split(",") if args.types else None, limit=args.limit)
+        _emit(args, envelope(conn, rows, since=since))
 
 
 def cmd_compare(args):
-    conn = _open("jobs")
-    text = _open("text", required=False)
-    if text is None:
-        raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update`。")
-    if not args.category and not args.keyword:
-        raise SystemExit("compare 需要 --category 或 --keyword")
-    out = q.compare_roles(conn, text, args.companies, args.category, keyword=args.keyword,
-                          per_company=args.per_company)
-    _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword,
-                          not_found=[c for c, v in out.items() if not v]))
+    with _open("jobs") as conn, _open("text", required=False) as text:
+        if text is None:
+            raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update`。")
+        if not args.category and not args.keyword:
+            raise SystemExit("compare 需要 --category 或 --keyword")
+        out = q.compare_roles(conn, text, args.companies, args.category, keyword=args.keyword,
+                              per_company=args.per_company)
+        _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword,
+                              not_found=[c for c, v in out.items() if not v]))
 
 
 def cmd_trends(args):
-    conn = _open("jobs")
-    rows = q.company_trend(conn, args.company, until=now_ts(), step_days=args.step_days)
-    _emit(args, envelope(conn, rows, company=args.company))
+    with _open("jobs") as conn:
+        rows = q.company_trend(conn, args.company, until=now_ts(), step_days=args.step_days)
+        _emit(args, envelope(conn, rows, company=args.company))
 
 
 def cmd_sources(args):
-    conn = _open("jobs")
-    rows = q.data_status(conn, now=now_ts())
-    _emit(args, envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]]))
+    with _open("jobs") as conn:
+        rows = q.data_status(conn, now=now_ts())
+        _emit(args, envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]]))
 
 
 def cmd_doctor(args):
@@ -202,8 +219,8 @@ def cmd_doctor(args):
            "jd_text_db": (home() / DB_FILES["text"]).exists(),
            "calendar_db": (home() / DB_FILES["calendar"]).exists()}
     if out["jobs_db"]:
-        conn = _open("jobs")
-        env = envelope(conn, [])
+        with _open("jobs") as conn:
+            env = envelope(conn, [])
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
         out["advice"] = "数据已过期，运行 `jobradar update`" if env["stale"] else "ok"
     else:
@@ -212,21 +229,21 @@ def cmd_doctor(args):
 
 
 def cmd_calendar(args):
-    conn = _open("calendar")
-    rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
-                              grad_year=args.grad_year, origin=args.origin, open_on=args.open_on, limit=args.limit)
-    _emit(args, envelope(None, rows, as_of=q.calendar_as_of(conn)))
+    with _open("calendar") as conn:
+        rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
+                                  grad_year=args.grad_year, origin=args.origin, open_on=args.open_on, limit=args.limit)
+        _emit(args, envelope(None, rows, as_of=q.calendar_as_of(conn)))
 
 
 def cmd_stats(args):
     out = {}
-    cal_conn = _open("calendar", required=False)
-    if cal_conn is not None:
-        out["calendar"] = q.calendar_stats(cal_conn)
-        out["calendar_as_of"] = q.calendar_as_of(cal_conn)
-    jobs_conn = _open("jobs", required=False)
-    if jobs_conn is not None:
-        out["jobs"] = q.data_summary(jobs_conn, _open("text", required=False))
+    with _open("calendar", required=False) as cal_conn, _open("jobs", required=False) as jobs_conn, \
+            _open("text", required=False) as text_conn:
+        if cal_conn is not None:
+            out["calendar"] = q.calendar_stats(cal_conn)
+            out["calendar_as_of"] = q.calendar_as_of(cal_conn)
+        if jobs_conn is not None:
+            out["jobs"] = q.data_summary(jobs_conn, text_conn)
     if not out:
         raise SystemExit("本地没有数据：先运行 `jobradar update`。")
     print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -242,12 +259,13 @@ def cmd_calendar_build(args):
     sources_dir = Path(args.sources)
     sources = load_sources(sources_dir) if sources_dir.exists() else []
     targets = yaml.safe_load(Path(args.targets).read_text(encoding="utf-8"))
-    cal_conn = connect(Path(args.out), "calendar")
-    counts = cal.build(cal_conn, connect(Path(args.jobs), "jobs"), manual=cal.load_manual(Path(args.entries)),
-                       sources=sources, targets=targets, ts=now_ts())
-    if args.check_links:
-        with httpx.Client(timeout=httpx.Timeout(20, connect=10)) as client:
-            counts["links"] = cal.check_links(cal_conn, client, ts=now_ts())
+    with closing(connect(Path(args.out), "calendar")) as cal_conn, \
+            closing(connect(Path(args.jobs), "jobs")) as jobs_conn:
+        counts = cal.build(cal_conn, jobs_conn, manual=cal.load_manual(Path(args.entries)),
+                           sources=sources, targets=targets, ts=now_ts())
+        if args.check_links:
+            with httpx.Client(timeout=httpx.Timeout(20, connect=10)) as client:
+                counts["links"] = cal.check_links(cal_conn, client, ts=now_ts())
     print(json.dumps(counts, ensure_ascii=False))
 
 
@@ -261,9 +279,9 @@ def cmd_crawl(args):
     sources = load_sources(Path(args.sources))
     if args.only:
         sources = [s for s in sources if s.id in set(args.only.split(","))]
-    jobs_conn = connect(out / DB_FILES["jobs"], "jobs")
-    text_conn = connect(out / DB_FILES["text"], "text")
-    results = crawl(sources, jobs_conn, text_conn, ts=now_ts())
+    with closing(connect(out / DB_FILES["jobs"], "jobs")) as jobs_conn, \
+            closing(connect(out / DB_FILES["text"], "text")) as text_conn:
+        results = crawl(sources, jobs_conn, text_conn, ts=now_ts())
     summary = {sid: {"status": r.status, "opened": r.opened, "closed": r.closed,
                      "changed": r.changed, "reason": r.reason} for sid, r in sorted(results.items())}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
