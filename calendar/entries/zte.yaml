@@ -1,0 +1,15 @@
+group: 中兴通讯
+entries:
+- id: zte-campus-entry
+  company: 中兴通讯
+  project_type: 校招
+  apply_url: https://job.zte.com.cn/cn/campus-recruitment/School_Recruitment_Announcement/news.html
+  source:
+    type: official_site
+    name: 中兴通讯校园招聘-最新动态
+    url: https://job.zte.com.cn/cn/campus-recruitment/School_Recruitment_Announcement/news.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.zte.com.cn/cn/campus-recruitment/School_Recruitment_Announcement/news.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中兴通讯校园招聘-最新动态）。入口页未写明批次/网申时间/城市，按红线留空。

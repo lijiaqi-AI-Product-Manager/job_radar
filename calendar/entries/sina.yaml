@@ -1,0 +1,15 @@
+group: 新浪
+entries:
+- id: sina-campus-entry
+  company: 新浪
+  project_type: 校招
+  apply_url: http://app.mokahr.com/campus-recruitment/sina/43536
+  source:
+    type: official_site
+    name: 新浪集团 - 校园招聘
+    url: http://app.mokahr.com/campus-recruitment/sina/43536
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://app.mokahr.com/campus-recruitment/sina/43536
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：新浪集团 - 校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
