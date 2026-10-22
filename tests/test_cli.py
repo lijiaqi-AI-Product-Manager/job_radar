@@ -247,6 +247,13 @@ def test_stdio_keeps_terminal_encoding(monkeypatch):
     assert out.kwargs == {"errors": "replace"}
 
 
+def test_version_flag(capsys):
+    with pytest.raises(SystemExit) as e:
+        cli.main(["--version"])
+    assert e.value.code == 0
+    assert capsys.readouterr().out.startswith("jobradar ")
+
+
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     got = []
     monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
