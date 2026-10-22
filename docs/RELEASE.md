@@ -23,7 +23,7 @@ uv run python scripts/release_check.py --home ~/.jobradar
 | 项 | 当前值 | 门槛 | 状态 |
 |---|---|---|---|
 | 数据源覆盖 | 123 / 500 | ≥150 | FAIL |
-| 日历覆盖 | 256 / 500（blocked 10） | ≥450 | FAIL |
+| 日历覆盖 | 270 / 500（blocked 10） | ≥450 | FAIL |
 | 校园岗城市覆盖 | 18.4% | ≥60% | FAIL |
 | JD 正文覆盖 | 99.9% | ≥95% | PASS |
 | 发布文档 | 齐全 | 齐全 | PASS |
