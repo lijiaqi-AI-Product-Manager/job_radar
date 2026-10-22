@@ -1,0 +1,28 @@
+group: 中广核
+entries:
+- id: cgn-campus-entry
+  company: 中广核
+  project_type: 校招
+  apply_url: http://job.cgnpc.com.cn/clients/home
+  source:
+    type: official_site
+    name: 中广核招聘官网
+    url: http://job.cgnpc.com.cn/clients/home
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://job.cgnpc.com.cn/clients/home
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: cgn-social-entry
+  company: 中广核
+  project_type: 社招
+  apply_url: http://job.cgnpc.com.cn/clients/home
+  source:
+    type: official_site
+    name: 中广核招聘官网
+    url: http://job.cgnpc.com.cn/clients/home
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://job.cgnpc.com.cn/clients/home
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
