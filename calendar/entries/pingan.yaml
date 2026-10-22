@@ -1,0 +1,15 @@
+group: 中国平安
+entries:
+- id: pingan-campus-entry
+  company: 中国平安
+  project_type: 校招
+  apply_url: https://campus.pingan.com/
+  source:
+    type: official_site
+    name: 中国平安校园招聘
+    url: https://campus.pingan.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://campus.pingan.com/
+  notes: 官方校园招聘入口（2026-10-22 访问确认 200；页面标题：中国平安校园招聘）。入口页未写明批次/时间/城市，按红线留空。
