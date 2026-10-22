@@ -2,7 +2,12 @@
 
 用法：python scripts/publish_gitee.py <file> [<file> ...]
 环境变量：GITEE_TOKEN（Gitee 私人令牌，需 projects 权限）、GITEE_REPO（owner/repo）
-发行版标签固定为 data-latest；同名附件先删后传，保证用户拿到的总是最新一份。
+
+为什么每次重建 release：
+2026-10-22 实测发现，Gitee 的「删除单个附件」对大文件不生效（jobs.db.gz 12.5MB 删了仍存在），
+同名的旧附件与新附件并存，而 downloads/download/data-latest/<name> 会解析到旧的那份——
+镜像工作流显示成功、用户下载到的却是上一天的数据。改成先删整个 release、
+再新建并上传，恒为一份；mirror.yml 之后还会用匿名下载校验大小，防止再出现这种"假成功"。
 """
 
 import os
@@ -18,9 +23,14 @@ TAG = "data-latest"
 
 
 def ensure_release(client: httpx.Client, base: str, token: str) -> int:
+    """返回可用的 release id：已存在则整个删掉重建，保证同名附件只有一份。"""
     r = client.get(f"{base}/releases/tags/{TAG}", params={"access_token": token})
     if r.status_code == 200 and r.json():
-        return r.json()["id"]
+        stale = r.json()["id"]
+        d = client.delete(f"{base}/releases/{stale}", params={"access_token": token})
+        if d.status_code not in (200, 204):
+            d.raise_for_status()
+        print(f"gitee: deleted stale release {TAG} id={stale}（Gitee 删单个大附件不生效）", flush=True)
     branch = client.get(base, params={"access_token": token}).json().get("default_branch") or "master"
     r = client.post(f"{base}/releases", data={
         "access_token": token, "tag_name": TAG, "name": "Latest data", "target_commitish": branch,
@@ -34,16 +44,9 @@ def publish(files: list[Path], *, token: str, repo: str, client: httpx.Client) -
     base = API.format(repo=repo)
     rid = ensure_release(client, base, token)
     print(f"gitee: release {TAG} id={rid}", flush=True)
-    existing = client.get(f"{base}/releases/{rid}/attach_files", params={"access_token": token, "per_page": 100})
-    existing.raise_for_status()
-    by_name = {a["name"]: a["id"] for a in existing.json()}
-    print(f"gitee: existing attachments {sorted(by_name)}", flush=True)
 
     def upload(f: Path) -> None:
         t0 = time.monotonic()
-        if f.name in by_name:
-            client.delete(f"{base}/releases/{rid}/attach_files/{by_name[f.name]}",
-                          params={"access_token": token}).raise_for_status()
         print(f"gitee: uploading {f.name} ({f.stat().st_size} bytes)…", flush=True)
         with open(f, "rb") as fh:
             r = client.post(f"{base}/releases/{rid}/attach_files", data={"access_token": token},
