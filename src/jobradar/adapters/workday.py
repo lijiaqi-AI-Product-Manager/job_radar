@@ -23,6 +23,7 @@ from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
+from jobradar.normalize import city_from_english
 
 LIST_URL = "https://{host}/wday/cxs/{tenant}/{site}/jobs"
 DETAIL_URL = "https://{host}/wday/cxs/{tenant}/{site}{path}"
@@ -31,17 +32,6 @@ BR = re.compile(r"<br\s*/?>|</p>|</li>", re.I)
 # 标题里明写的实习/校招（\b 避免 "Internal Tools" 之类误判）
 TITLE_INTERN = re.compile(r"\b(?:intern|internship)\b", re.I)
 TITLE_CAMPUS = re.compile(r"\b(?:new college graduate|university graduate)\b", re.I)
-
-# Workday 的 location 是英文（"China, Shanghai"）；数据集里的 cities 用中文
-CITY_EN = {
-    "beijing": "北京", "shanghai": "上海", "shenzhen": "深圳", "guangzhou": "广州",
-    "hangzhou": "杭州", "suzhou": "苏州", "nanjing": "南京", "chengdu": "成都",
-    "wuhan": "武汉", "xi'an": "西安", "xian": "西安", "tianjin": "天津",
-    "hong kong": "香港", "taipei": "台北", "hsinchu": "新竹", "dalian": "大连",
-    "qingdao": "青岛", "xiamen": "厦门", "chongqing": "重庆", "changsha": "长沙",
-    "hefei": "合肥", "wuxi": "无锡", "dongguan": "东莞", "zhuhai": "珠海",
-    "foshan": "佛山", "shenyang": "沈阳", "kunshan": "昆山",
-}
 
 
 def _text(html: str | None) -> str | None:
@@ -87,7 +77,7 @@ def cities_of(location: str | None) -> list[str]:
         return []
     out = []
     for part in location.split(","):
-        name = CITY_EN.get(part.strip().lower())
+        name = city_from_english(part)
         if name and name not in out:
             out.append(name)
     return out

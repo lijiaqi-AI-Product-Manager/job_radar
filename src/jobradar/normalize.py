@@ -149,3 +149,19 @@ def degree_min_from_text(text: str | None) -> str | None:
     if not text:
         return None
     return next((d for d in DEGREES if d in text), None)
+
+
+# 外资 ATS（Workday / SmartRecruiters）的城市是英文；只映射确定的中文城市名
+CITY_EN = {
+    "beijing": "北京", "shanghai": "上海", "shenzhen": "深圳", "guangzhou": "广州",
+    "hangzhou": "杭州", "suzhou": "苏州", "nanjing": "南京", "chengdu": "成都",
+    "wuhan": "武汉", "xi'an": "西安", "xian": "西安", "tianjin": "天津",
+    "hong kong": "香港", "taipei": "台北", "hsinchu": "新竹", "dalian": "大连",
+    "qingdao": "青岛", "xiamen": "厦门", "chongqing": "重庆", "changsha": "长沙",
+    "hefei": "合肥", "wuxi": "无锡", "dongguan": "东莞", "zhuhai": "珠海",
+    "foshan": "佛山", "shenyang": "沈阳", "kunshan": "昆山",
+}
+
+
+def city_from_english(name: str | None) -> str | None:
+    return CITY_EN.get((name or "").strip().lower())

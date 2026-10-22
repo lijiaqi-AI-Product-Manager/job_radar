@@ -79,3 +79,4 @@ blocked:
   百度: "必然：列表接口匿名返回 no-auth，需登录态（docs/recon/bigtech.md）"
   华为: "必然：列表接口匿名返回 403（docs/recon/bigtech.md）"
   快手: "政策禁止：robots.txt Disallow: /，不是技术问题（docs/recon/bigtech.md）"
+  博世: "政策禁止：api.smartrecruiters.com 的 robots.txt 对非 LinkedInBot 一律 Disallow: /（docs/recon/smartrecruiters.md）"
