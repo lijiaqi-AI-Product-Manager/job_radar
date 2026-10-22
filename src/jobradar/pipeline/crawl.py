@@ -15,7 +15,7 @@ import httpx
 
 from jobradar.adapters.base import Adapter, load_all, make_client
 from jobradar.models import Job, SourceConfig
-from jobradar.normalize import categorize, cities_from_title, grad_year_from_text
+from jobradar.normalize import categorize, cities_from_title, grad_year_from_jd, grad_year_from_text
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
@@ -38,7 +38,8 @@ def _enrich(j: Job) -> None:
     if not j.cities:
         j.cities = cities_from_title(j.title)
     if j.grad_year is None and j.recruit_type in ("campus", "intern"):
-        j.grad_year = grad_year_from_text(j.title, loose=True)
+        j.grad_year = grad_year_from_text(j.title, loose=True) or grad_year_from_jd(
+            j.description, j.requirements)
 
 
 def _fetch_group(sources, adapter_cls, client_factory, sleep):
