@@ -4,6 +4,7 @@
 并运行 scripts/update_schema_lock.py 登记。tests/test_schema_guard.py 会强制检查。
 """
 
+import hashlib
 import re
 import sqlite3
 from pathlib import Path
@@ -11,6 +12,17 @@ from pathlib import Path
 MIGRATIONS_ROOT = Path(__file__).parent / "migrations"
 KINDS = ("jobs", "text", "calendar")
 _NAME = re.compile(r"^(\d{4})_[a-z0-9_]+\.sql$")
+
+
+def migration_digest(path: str | Path) -> str:
+    """迁移文件的内容哈希。
+
+    忽略 CRLF/LF 差异：Windows 的 git checkout 默认会把 LF 转成 CRLF，
+    不做归一化的话，同一份迁移在 Windows 上算出的哈希与 schema_lock 不符
+    （2026-10-22 Windows CI 实际踩到）。
+    """
+    data = Path(path).read_bytes().replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
 
 
 def migration_files(kind: str) -> list[Path]:
