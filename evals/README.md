@@ -8,7 +8,7 @@
 `tests/test_core.py` + `tests/test_ingest.py` 已覆盖查询与入库规则。Phase 1 有真实数据后，在 `evals/golden/` 放一份固定的小型快照库 + 期望结果，作为回归基线。
 
 **L2 — agent 端到端（`questions.yaml`）**
-让 agent 在装好 skill 与数据的环境里回答这 24 题，对照 `checks` 判分。Phase 1 完成时补 `facts`（黄金答案要点）与自动判分脚本；此前先人工跑，记录通过率。
+让 agent 在装好 skill 与数据的环境里回答这些题（当前 30 题），对照 `checks` 判分。Phase 1 完成时补 `facts`（黄金答案要点）与自动判分脚本；此前先人工跑，记录通过率。
 
 ## checks 含义
 
