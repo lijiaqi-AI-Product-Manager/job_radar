@@ -26,7 +26,8 @@ jobradar doctor
 | 按技能/要求找岗位（JD 原文里出现的词） | `jobradar search --text "PyTorch 多模态" --type campus --limit 20`（空格分隔的词须全部出现；结果的 `match` 是命中处原文片段） |
 | 某个岗位详情、要求 | `jobradar show <job_id>` |
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |
-| 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`，或按标题关键词 `--keyword 研发` |
+| 最近哪类职位新增最多 | `jobradar diff --days 7 --by category`（返回 `[{category, n}]`，按数量降序；没职类的归「未分类」） |
+| 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`；按标题关键词用 `--keyword 研发`，按 JD 原文（如「论文」）用 `--text 论文` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
 | 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含字节、京东等抓不到 JD 的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
 | 现在还能投哪些 | `jobradar calendar --type 秋招正式批 --open-on <今天日期>` |

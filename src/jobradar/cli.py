@@ -185,20 +185,24 @@ def cmd_show(args):
 def cmd_diff(args):
     with _open("jobs") as conn:
         since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
+        if args.by:
+            rows = q.new_jobs_by_category(conn, since=since, limit=args.limit)
+            _emit(args, envelope(conn, rows, since=since, by=args.by))
+            return
         rows = q.recent_changes(conn, since=since, company=args.company,
                                 types=args.types.split(",") if args.types else None, limit=args.limit)
         _emit(args, envelope(conn, rows, since=since))
 
 
 def cmd_compare(args):
-    with _open("jobs") as conn, _open("text", required=False) as text:
-        if text is None:
+    with _open("jobs") as conn, _open("text", required=False) as text_conn:
+        if text_conn is None:
             raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update`。")
-        if not args.category and not args.keyword:
-            raise SystemExit("compare 需要 --category 或 --keyword")
-        out = q.compare_roles(conn, text, args.companies, args.category, keyword=args.keyword,
-                              per_company=args.per_company)
-        _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword,
+        if not args.category and not args.keyword and not args.text:
+            raise SystemExit("compare 需要 --category、--keyword 或 --text")
+        out = q.compare_roles(conn, text_conn, args.companies, args.category, keyword=args.keyword,
+                              text=args.text, per_company=args.per_company)
+        _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword, text=args.text,
                               not_found=[c for c, v in out.items() if not v]))
 
 
@@ -324,12 +328,14 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--days", type=int, default=7)
     sp.add_argument("--company")
     sp.add_argument("--types", help="逗号分隔：open,close,change,reopen")
+    sp.add_argument("--by", choices=["category"], help="按维度聚合：category = 新增岗位按职类统计")
     sp.add_argument("--limit", type=int, default=200)
 
     sp = add("compare", cmd_compare, "取多家公司同类岗位的 JD 原文，供对比")
     sp.add_argument("companies", nargs="+")
     sp.add_argument("--category", help="职类，见 skill references/fields.md")
     sp.add_argument("--keyword", help="标题关键词，如 研发")
+    sp.add_argument("--text", help="JD 全文检索词，如 论文；与 --keyword 不同，它在职责/要求原文里找")
     sp.add_argument("--per-company", type=int, default=5)
 
     sp = add("trends", cmd_trends, "某公司在招岗位数随时间变化")

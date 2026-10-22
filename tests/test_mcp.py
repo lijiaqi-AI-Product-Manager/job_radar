@@ -25,6 +25,7 @@ def test_tools_return_envelopes(home):
     assert mcp_server.search_jobs(company="腾讯")["results"][0]["id"] == "s1:1"
     assert mcp_server.get_job("s1:1")["results"][0]["requirements"] == "PyTorch"
     assert mcp_server.recent_changes(days=1)["results"][0]["type"] == "open"
+    assert mcp_server.new_jobs_by_category(days=1)["results"] == [{"category": "技术", "n": 1}]
     assert mcp_server.compare_roles(["腾讯", "无"], "算法")["not_found"] == ["无"]
     assert mcp_server.company_trend("腾讯")["results"]
     assert mcp_server.data_status()["failing"] == []
