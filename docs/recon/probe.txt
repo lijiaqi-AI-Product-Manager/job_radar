@@ -14,3 +14,11 @@ RENDERXHR https://nio.jobs.feishu.cn/campus (search|job|csrf|api)
 # 第 41 轮补充：大疆走的也是 ATSX，但挂在定制域名上（apply.careers.dji.com），
 # API 路径与 saas 租户不同；同样用 RENDERXHR 抓一次真实请求。
 RENDERXHR https://apply.careers.dji.com/campus-recruitment/dji/143359 (search|job|csrf|api|recruit)
+
+# 第 42 轮：hotjob（大易云）平台 —— 伊利/中联重科/歌尔/长城汽车都在用。
+# 从 social.js 里能看到 /positionInfo/listPosition/<tenant> 与 /listSearchTerm/，
+# 但直连是 404/405（路径前缀或方法不对）。用 RENDERXHR 抓一次真实 XHR：
+# 完整 URL、方法、请求头与 body，之后写 hotjob 适配器（一次能覆盖 4~5 家）。
+RENDERXHR https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html (positionInfo|listPosition|listSearchTerm|api)
+RENDERXHR https://yili.hotjob.cn/ (positionInfo|listPosition|listSearchTerm|api)
+RENDERXHR https://goertek.hotjob.cn/SU65dd9ebd1c240e4b11c4f491/pb/index.html (positionInfo|listPosition|listSearchTerm|api)
