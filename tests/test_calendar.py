@@ -42,6 +42,22 @@ def manual(**kw):
     return base
 
 
+def test_match_targets_prefers_exact_over_substring():
+    """「京东」不能把「京东方」抢走（2026-10-22 实测：京东方 366 个岗被挂在京东名下）。"""
+    t = {"sectors": {"x": ["京东", "京东方"]}, "aliases": {}, "blocked": {}}
+    matched = cal.match_targets(t, {"京东方", "京东"})
+    assert matched["京东"] == ["京东"]
+    assert matched["京东方"] == ["京东方"]
+
+
+def test_match_targets_still_uses_aliases_and_substrings():
+    t = {"sectors": {"x": ["中核集团", "美团", "网易"]}, "aliases": {"中核集团": ["中国核工业集团"]}, "blocked": {}}
+    matched = cal.match_targets(t, {"中国核工业集团", "美团点评", "网易互娱"})
+    assert matched["中核集团"] == ["中国核工业集团"]
+    assert matched["美团"] == ["美团点评"]
+    assert matched["网易"] == ["网易互娱"]   # 没有精确目标认领时，子串仍然生效
+
+
 def write_entries(tmp_path, group, entries):
     d = tmp_path / "entries"
     d.mkdir(exist_ok=True)

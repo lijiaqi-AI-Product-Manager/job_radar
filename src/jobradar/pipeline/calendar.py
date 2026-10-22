@@ -171,10 +171,31 @@ def target_names(targets: dict) -> list[tuple[str, str]]:
 
 
 def match_targets(targets: dict, companies: set[str]) -> dict[str, list[str]]:
-    """目标名 -> 数据层中匹配到的公司名。"""
+    """目标名 -> 数据层里匹配到的公司名。
+
+    精确匹配（含 aliases）优先：某家公司如果精确等于某个目标（或别名），就只有它能认领这家公司，
+    其他目标不能再用子串抢走。否则「京东」会把「京东方」算进来——2026-10-22 实测日历把
+    京东方 366 个岗位挂在了京东名下，查询结果里的 jd_company 也是错的。
+    """
     aliases = targets.get("aliases") or {}
-    return {t: sorted(c for c in companies if any(_matches(k, c) for k in [t, *aliases.get(t, [])]))
-            for t, _ in target_names(targets)}
+    names = [t for t, _ in target_names(targets)]
+    exact: dict[str, list[str]] = {}
+    for t in names:
+        keys = {t, *aliases.get(t, [])}
+        for c in companies:
+            if c in keys:
+                exact.setdefault(c, []).append(t)
+    out: dict[str, list[str]] = {t: [] for t in names}
+    for c in companies:
+        if c in exact:
+            for t in exact[c]:
+                out[t].append(c)
+            continue
+        for t in names:
+            keys = [t, *aliases.get(t, [])]
+            if any(_matches(k, c) for k in keys):
+                out[t].append(c)
+    return {t: sorted(v) for t, v in out.items()}
 
 
 # ---------- 自动生成 ----------

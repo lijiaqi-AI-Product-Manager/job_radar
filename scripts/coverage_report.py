@@ -13,6 +13,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from jobradar.pipeline.calendar import match_targets  # noqa: E402
 from jobradar.sources import load_sources  # noqa: E402
 
 
@@ -20,19 +21,9 @@ def load_targets(path: Path = ROOT / "targets" / "top_companies.yaml") -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
-def _matches(name: str, company: str) -> bool:
-    return len(name) >= 2 and len(company) >= 2 and (name in company or company in name)
-
-
 def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
-    """目标公司 -> 匹配到的数据源公司名（空列表 = 未覆盖）。"""
-    aliases = targets.get("aliases") or {}
-    out = {}
-    for names in targets["sectors"].values():
-        for t in names:
-            keys = [t, *aliases.get(t, [])]
-            out[t] = sorted(c for c in companies if any(_matches(k, c) for k in keys))
-    return out
+    """与日历共用同一套匹配（精确匹配优先，别名生效），避免两处规则漂移。"""
+    return match_targets(targets, companies)
 
 
 def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | None = None) -> str:
