@@ -63,8 +63,9 @@ def main() -> int:
 
     slugs = list(args.slugs)
     if args.file:
-        slugs += [ln.strip() for ln in Path(args.file).read_text(encoding="utf-8").splitlines()
-                  if ln.strip() and not ln.startswith("#")]
+        # Windows 记事本/PowerShell 5 的 UTF-8 会带 BOM：\ufeffhikvision 会让 httpx 抛 InvalidURL
+        slugs += [ln.strip().lstrip("\ufeff") for ln in Path(args.file).read_text(encoding="utf-8-sig").splitlines()
+                  if ln.strip().lstrip("\ufeff") and not ln.lstrip("\ufeff").startswith("#")]
     if not slugs:
         ap.error("至少给一个 slug")
 

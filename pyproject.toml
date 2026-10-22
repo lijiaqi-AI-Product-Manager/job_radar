@@ -1,6 +1,6 @@
 [project]
 name = "jobradar"
-version = "0.1.0"
+version = "0.9.0"
 description = "Daily-updated, structured open dataset of Chinese campus/intern/social job postings, for AI agents."
 requires-python = ">=3.11"
 dependencies = [
