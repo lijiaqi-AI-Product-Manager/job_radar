@@ -1,0 +1,16 @@
+group: AMD
+entries:
+- id: amd-campus-entry
+  company: AMD
+  project_type: 校招
+  apply_url: https://careers.amd.com/careers-home/jobs
+  source:
+    type: official_site
+    name: AMD招聘官网
+    url: https://careers.amd.com/careers-home/jobs
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.amd.com/careers-home/jobs
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：AMD Jobs and Career Opportunities | Search Open
+    Ro）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

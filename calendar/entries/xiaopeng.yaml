@@ -1,0 +1,28 @@
+group: 小鹏汽车
+entries:
+- id: xiaopeng-campus-entry
+  company: 小鹏汽车
+  project_type: 校招
+  apply_url: https://xiaopeng.jobs.feishu.cn/campus
+  source:
+    type: official_site
+    name: 小鹏汽车招聘官网
+    url: https://xiaopeng.jobs.feishu.cn/campus
+  as_of: '2026-10-22'
+  jd:
+    status: blocked
+    url: https://xiaopeng.jobs.feishu.cn/campus
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：加入小鹏集团）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: xiaopeng-social-entry
+  company: 小鹏汽车
+  project_type: 社招
+  apply_url: https://xiaopeng.jobs.feishu.cn/campus
+  source:
+    type: official_site
+    name: 小鹏汽车招聘官网
+    url: https://xiaopeng.jobs.feishu.cn/campus
+  as_of: '2026-10-22'
+  jd:
+    status: blocked
+    url: https://xiaopeng.jobs.feishu.cn/campus
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：加入小鹏集团）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

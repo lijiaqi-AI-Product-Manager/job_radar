@@ -1,0 +1,28 @@
+group: 作业帮
+entries:
+- id: zuoyebang-campus-entry
+  company: 作业帮
+  project_type: 校招
+  apply_url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  source:
+    type: official_site
+    name: 作业帮招聘官网
+    url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：作业帮招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: zuoyebang-social-entry
+  company: 作业帮
+  project_type: 社招
+  apply_url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  source:
+    type: official_site
+    name: 作业帮招聘官网
+    url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：作业帮招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

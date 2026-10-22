@@ -1,0 +1,28 @@
+group: 猿辅导
+entries:
+- id: yuanfudao-campus-entry
+  company: 猿辅导
+  project_type: 校招
+  apply_url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  source:
+    type: official_site
+    name: 猿辅导招聘官网
+    url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：2026届猿辅导集团 - 校园招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: yuanfudao-social-entry
+  company: 猿辅导
+  project_type: 社招
+  apply_url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  source:
+    type: official_site
+    name: 猿辅导招聘官网
+    url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：2026届猿辅导集团 - 校园招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

@@ -1,0 +1,28 @@
+group: 美图
+entries:
+- id: meitu-campus-entry
+  company: 美图
+  project_type: 校招
+  apply_url: https://hr.meitu.com/
+  source:
+    type: official_site
+    name: 美图招聘官网
+    url: https://hr.meitu.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://hr.meitu.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：正在招聘-美图公司）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: meitu-social-entry
+  company: 美图
+  project_type: 社招
+  apply_url: https://hr.meitu.com/
+  source:
+    type: official_site
+    name: 美图招聘官网
+    url: https://hr.meitu.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://hr.meitu.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：正在招聘-美图公司）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

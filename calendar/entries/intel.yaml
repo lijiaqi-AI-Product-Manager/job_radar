@@ -1,0 +1,28 @@
+group: 英特尔
+entries:
+- id: intel-campus-entry
+  company: 英特尔
+  project_type: 校招
+  apply_url: https://www.intel.com/content/www/us/en/jobs.html
+  source:
+    type: official_site
+    name: 英特尔招聘官网
+    url: https://www.intel.com/content/www/us/en/jobs.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.intel.com/content/www/us/en/jobs.html
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：无）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: intel-social-entry
+  company: 英特尔
+  project_type: 社招
+  apply_url: https://www.intel.com/content/www/us/en/jobs.html
+  source:
+    type: official_site
+    name: 英特尔招聘官网
+    url: https://www.intel.com/content/www/us/en/jobs.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.intel.com/content/www/us/en/jobs.html
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：无）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

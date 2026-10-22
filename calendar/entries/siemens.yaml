@@ -1,0 +1,28 @@
+group: 西门子
+entries:
+- id: siemens-campus-entry
+  company: 西门子
+  project_type: 校招
+  apply_url: https://jobs.siemens.com/en_US/externaljobs
+  source:
+    type: official_site
+    name: 西门子招聘官网
+    url: https://jobs.siemens.com/en_US/externaljobs
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.siemens.com/en_US/externaljobs
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Jobs at Siemens）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: siemens-social-entry
+  company: 西门子
+  project_type: 社招
+  apply_url: https://jobs.siemens.com/en_US/externaljobs
+  source:
+    type: official_site
+    name: 西门子招聘官网
+    url: https://jobs.siemens.com/en_US/externaljobs
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.siemens.com/en_US/externaljobs
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Jobs at Siemens）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
