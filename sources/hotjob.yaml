@@ -19,3 +19,6 @@ sources:
   - id: hotjob-goertek
     company: 歌尔股份
     params: {host: goertek.hotjob.cn, tenant: SU65dd9ebd1c240e4b11c4f491}
+  - id: hotjob-gwm
+    company: 长城汽车
+    params: {host: zhaopin.gwm.cn, tenant: SU692d3058ea11b01b6c54d0ea, max_pages: 10}  # 校招 173 页，先只抓 10 页
