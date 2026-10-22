@@ -295,8 +295,18 @@ def cmd_doctor(args):
     if out["jobs_db"]:
         with _open("jobs") as conn:
             env = envelope(conn, [])
+            out["fields"] = q.field_coverage(conn)
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
-        out["advice"] = "数据已过期，运行 `jobradar update`" if env["stale"] else "ok"
+        cov = _text_coverage(home())
+        if cov is not None:
+            out["jd_text_match"] = round(cov, 3)
+        campus_city = (out["fields"] or {}).get("campus_cities")
+        advice = ["数据已过期，运行 `jobradar update`"] if env["stale"] else []
+        if cov is not None and cov < 0.9:
+            advice.append("JD 原文库与岗位库对不上（镜像可能没同步完），再运行一次 `jobradar update`")
+        if campus_city is not None and campus_city < 0.25:
+            advice.append(f"校园岗城市覆盖只有 {campus_city:.0%}：多数北森门户不返回城市，搜城市时结果会偏少")
+        out["advice"] = "；".join(advice) or "ok"
     else:
         out["advice"] = "运行 `jobradar update`"
     print(json.dumps(out, ensure_ascii=False, indent=2))
