@@ -68,10 +68,12 @@
 
 ### 飞书 ATSX 的进展（2026-10-22）
 
-- 确认蔚来/小鹏等用的是 `*.jobs.feishu.cn`（与字节同一套 ATSX）。
+- 确认**蔚来、小鹏、大疆**等用的是飞书 ATSX（`*.jobs.feishu.cn`；大疆还挂了定制域名
+  `apply.careers.dji.com/campus-recruitment/dji/143359`），与字节同一套。
 - 已找到公开接口：`GET /campus` → 200，SSR 数据在 `#js-websiteInfo`。
 - CSRF：`POST /api/v1/csrf/token` → 200，返回 `{"data":{"token":…}}` 并下发 `atsx-csrf-token` cookie（**匿名可拿**，符合铁律 1）。
 - 搜索：前端调用 `{base}/api/v1/search/job/posts`，但直接 POST 返回 **405/307**——说明还有一层签名/网关校验，必须看浏览器真实请求头与顺序。
+  定制域名（大疆）返回的是另一套后端的 JSON 404（`connect.sid`/`csrfCk`），路径也不一样。
 - **结论**：本地沙箱禁止命名管道，Playwright 起不来（`spawn EPERM`）；仓库已有的 `recon-probe` 工作流跑在 Actions 上，有浏览器，用 `RENDER`/`RENDERXHR` 抓一次即可拿到完整请求。这是下一步的最高杠杆动作。
 
 ### 北森租户发现（本轮实测有效）
