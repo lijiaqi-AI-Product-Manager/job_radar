@@ -45,6 +45,33 @@ def test_search_by_company_is_substring(seeded):
     assert len(search_jobs(seeded, company="阿里")) == 1
 
 
+def test_search_by_company_alias(jobs_db):
+    """用户说「中核」，库里是「中国核工业集团」：简称要能命中（评测 neg-05）。"""
+    ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
+    assert titles(search_jobs(jobs_db, company="中核")) == ["核工程研发"]
+    assert titles(search_jobs(jobs_db, company="中国核工业集团")) == ["核工程研发"]
+
+
+def test_company_alias_does_not_fuzzy_match(jobs_db):
+    """映射表里没有的说法保持原样，不做模糊猜测。"""
+    ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
+    assert search_jobs(jobs_db, company="中核集团") == []
+    assert titles(search_jobs(jobs_db, company="核工业")) == ["核工程研发"]
+
+
+def test_recent_changes_by_company_alias(jobs_db):
+    ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
+    rows = recent_changes(jobs_db, since=T(0), company="中核")
+    assert [r["title"] for r in rows] == ["核工程研发"]
+
+
+def test_alias_table_only_maps_unique_short_names():
+    from jobradar.aliases import match_names
+    assert match_names("中核") == ["中核", "中国核工业集团"]
+    assert match_names("腾讯") == ["腾讯"]
+    assert match_names("  中核  ") == ["中核", "中国核工业集团"]
+
+
 def test_search_by_category_matches_category_or_subcategory(seeded):
     assert len(search_jobs(seeded, category="技术")) == 3
     assert titles(search_jobs(seeded, category="算法", company="腾讯")) == ["算法工程师（大模型）"]
