@@ -183,6 +183,41 @@ def test_db_context_closes_connection(tmp_path, monkeypatch):
         conn.execute("select 1")
 
 
+class _FakeStdout:
+    """模拟 Windows 上的 GBK 控制台：只记录 reconfigure 的参数。"""
+
+    encoding = "gbk"
+
+    def __init__(self, tty):
+        self._tty = tty
+        self.kwargs = {}
+
+    def isatty(self):
+        return self._tty
+
+    def reconfigure(self, **kwargs):
+        self.kwargs.update(kwargs)
+
+
+def test_stdio_uses_utf8_for_pipes(monkeypatch):
+    """管道输出（agent 读 JSON）统一 UTF-8，避免 GBK 把非常规字符替换成 ?。"""
+    out, err = _FakeStdout(False), _FakeStdout(False)
+    monkeypatch.setattr(cli.sys, "stdout", out)
+    monkeypatch.setattr(cli.sys, "stderr", err)
+    cli._configure_stdio()
+    assert out.kwargs == {"encoding": "utf-8", "errors": "replace"}
+    assert err.kwargs == {"encoding": "utf-8", "errors": "replace"}
+
+
+def test_stdio_keeps_terminal_encoding(monkeypatch):
+    """终端保留系统编码（中文正常显示），只把无法编码的字符降级，不再抛 UnicodeEncodeError。"""
+    out = _FakeStdout(True)
+    monkeypatch.setattr(cli.sys, "stdout", out)
+    monkeypatch.setattr(cli.sys, "stderr", _FakeStdout(True))
+    cli._configure_stdio()
+    assert out.kwargs == {"errors": "replace"}
+
+
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     got = []
     monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")

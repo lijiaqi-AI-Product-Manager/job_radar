@@ -364,7 +364,25 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def _configure_stdio():
+    """Windows 终端默认 GBK/CP936，岗位标题或 JD 里的非常规字符（如零宽空格 U+200B）
+    会让 print 直接抛 UnicodeEncodeError，整条命令失败。
+
+    - 输出到管道/文件（agent 读的就是这个）：统一 UTF-8，便于下游解析。
+    - 输出到终端：保留系统编码（中文照常显示），个别字符降级为 ?，不再崩溃。
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            if stream.isatty():
+                stream.reconfigure(errors="replace")
+            else:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError, OSError):
+            pass  # 非标准流（测试替身、已关闭的管道）直接跳过
+
+
 def main(argv=None):
+    _configure_stdio()
     args = build_parser().parse_args(argv)
     args.fn(args)
 
