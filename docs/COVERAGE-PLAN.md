@@ -47,6 +47,8 @@
 | 华为 | 社招 `career.huawei.com` 同域 403 | 自研 | 需授权 | 只能日历兜底 |
 | 快手 | `campus.kuaishou.cn` robots 禁止 | — | 需授权 | 不做 |
 | 博世 | api.smartrecruiters.com | SmartRecruiters | robots 禁止（非 LinkedInBot 一律 Disallow） | 不做 |
+| 高通 | careers.qualcomm.com | Eightfold（PCSX） | robots 允许 `/api/apply`，但接口返回 403 `Not authorized for PCSX`（需前端令牌） | 需浏览器抓包 |
+| AMD | careers.amd.com | 自研 / Phenom | robots 允许（crawl-delay 5），但 `/api/apply/v2/jobs` 返回 404，接口路径不同 | 需再侦察 |
 | 小米 | 无列表 | — | 公众号投递 | 日历条目（已有小红书/美的先例） |
 
 补充路径（对所有公司适用）：
