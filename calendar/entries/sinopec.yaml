@@ -26,3 +26,16 @@ entries:
     status: official_page
     url: https://job.sinopec.com/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: sinopec-wechat-20261008
+  company: 中石化炼化工程
+  project_type: 校招
+  apply_url: https://mp.weixin.qq.com/s/Ogar3bEBbwYY0ZlXTMspPA
+  source:
+    type: wechat
+    name: 中石化炼化工程 公众号
+    url: https://mp.weixin.qq.com/s/Ogar3bEBbwYY0ZlXTMspPA
+    date: '2026-10-08'
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 官方公众号推文《中石化炼化工程集团2027年校园招聘正式启动！》（2026-10-08）。投递入口与批次时间以推文内二维码/链接为准，未固定写出，故不填网申时间。

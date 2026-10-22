@@ -13,3 +13,16 @@ entries:
     status: official_page
     url: http://job.ccb.com/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: ccb-wechat-20260904
+  company: 中国建设银行福建省分行
+  project_type: 校招
+  apply_url: https://mp.weixin.qq.com/s/YX_nWs4NPOHWJKKCPggGiQ?scene=1&click_id=1571729081
+  source:
+    type: wechat
+    name: 中国建设银行福建省分行 公众号
+    url: https://mp.weixin.qq.com/s/YX_nWs4NPOHWJKKCPggGiQ?scene=1&click_id=1571729081
+    date: '2026-09-04'
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 官方公众号推文《中国建设银行福建省分行2027年度秋季校园招聘》（2026-09-04）。投递入口与批次时间以推文内二维码/链接为准，未固定写出，故不填网申时间。
