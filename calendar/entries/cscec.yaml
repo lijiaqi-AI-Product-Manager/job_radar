@@ -1,0 +1,16 @@
+group: 中国建筑
+entries:
+- id: cscec-3rd-bureau-sz-2027-qz
+  company: 中建三局集团（深圳）有限公司
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://mp.weixin.qq.com/s/h0Saino74B-et18AT5tGww
+  source:
+    type: wechat
+    name: 中建三局深圳有限公司 公众号
+    url: https://mp.weixin.qq.com/s/h0Saino74B-et18AT5tGww
+    date: '2026-09-11'
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 官方公众号推文《中建三局集团（深圳）有限公司2027届校园招聘正式启动！》（2026-09-11）。投递入口与批次时间以推文内二维码/链接为准，未在正文中固定写出，故不填网申时间。
