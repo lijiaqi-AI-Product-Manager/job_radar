@@ -31,7 +31,8 @@
 - ✅ 每日采集发布工作流（`daily.yml`，合并到 main 后生效）+ 每周快照
 - ✅ 侦察工具：`recon-probe`、`tenant-verify`、`record-fixtures` 工作流
 - ✅ 评测题集 24 题；端到端测试
-- ✅ 覆盖率攻坚计划（`docs/COVERAGE-PLAN.md`）：blocked 逐家判定必然/短暂、替代路径矩阵、平台优先路线；2026-10-22 新增京东方、海信（北森租户）
+- ✅ 覆盖率攻坚计划（`docs/COVERAGE-PLAN.md`）：blocked 逐家判定必然/短暂、替代路径矩阵、平台优先路线；2026-10-22 新增京东方、海信
+- ✅ 平台适配器：北森新版 196 家、北森旧版 14 家、Workday（英伟达，含中国分面过滤）；新增源上线前冒烟工具 `scripts/smoke_sources.py`
 
 ## 下一步
 
