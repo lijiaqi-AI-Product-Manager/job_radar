@@ -1,0 +1,28 @@
+group: 黑芝麻智能
+entries:
+- id: blacksesame-campus-entry
+  company: 黑芝麻智能
+  project_type: 校招
+  apply_url: https://www.blacksesame.com/zh/
+  source:
+    type: official_site
+    name: 黑芝麻智能招聘入口
+    url: https://www.blacksesame.com/zh/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.blacksesame.com/zh/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: blacksesame-social-entry
+  company: 黑芝麻智能
+  project_type: 社招
+  apply_url: https://www.blacksesame.com/zh/
+  source:
+    type: official_site
+    name: 黑芝麻智能招聘入口
+    url: https://www.blacksesame.com/zh/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.blacksesame.com/zh/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。

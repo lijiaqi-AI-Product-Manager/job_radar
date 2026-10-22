@@ -1,0 +1,28 @@
+group: 文远知行
+entries:
+- id: weride-campus-entry
+  company: 文远知行
+  project_type: 校招
+  apply_url: https://www.weride.ai/careers
+  source:
+    type: official_site
+    name: 文远知行招聘入口
+    url: https://www.weride.ai/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.weride.ai/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: weride-social-entry
+  company: 文远知行
+  project_type: 社招
+  apply_url: https://www.weride.ai/careers
+  source:
+    type: official_site
+    name: 文远知行招聘入口
+    url: https://www.weride.ai/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.weride.ai/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。

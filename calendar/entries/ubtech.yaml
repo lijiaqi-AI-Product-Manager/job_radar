@@ -1,0 +1,28 @@
+group: 优必选
+entries:
+- id: ubtech-campus-entry
+  company: 优必选
+  project_type: 校招
+  apply_url: https://www.ubtrobot.com/
+  source:
+    type: official_site
+    name: 优必选招聘入口
+    url: https://www.ubtrobot.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ubtrobot.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: ubtech-social-entry
+  company: 优必选
+  project_type: 社招
+  apply_url: https://www.ubtrobot.com/
+  source:
+    type: official_site
+    name: 优必选招聘入口
+    url: https://www.ubtrobot.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ubtrobot.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。

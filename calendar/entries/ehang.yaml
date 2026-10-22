@@ -1,0 +1,28 @@
+group: 亿航智能
+entries:
+- id: ehang-campus-entry
+  company: 亿航智能
+  project_type: 校招
+  apply_url: https://www.ehang.com/
+  source:
+    type: official_site
+    name: 亿航智能招聘入口
+    url: https://www.ehang.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ehang.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: ehang-social-entry
+  company: 亿航智能
+  project_type: 社招
+  apply_url: https://www.ehang.com/
+  source:
+    type: official_site
+    name: 亿航智能招聘入口
+    url: https://www.ehang.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ehang.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
