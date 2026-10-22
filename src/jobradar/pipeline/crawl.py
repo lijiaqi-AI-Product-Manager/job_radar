@@ -42,10 +42,18 @@ def _enrich(j: Job) -> None:
             j.description, j.requirements)
 
 
-def _fetch_group(sources, adapter_cls, client_factory, sleep):
+def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
     client = client_factory()
+    out = []
     try:
-        return [(s, *_fetch(s, adapter_cls, client, sleep)) for s in sources]
+        for s in sources:
+            # 预算守卫：整轮采集有时间上限，超时就跳过剩下的源（标记为失败），
+            # 保证 daily 不会因为某个超慢的站点拖到 workflow 120 分钟上限而整体失败。
+            if deadline is not None and time.monotonic() > deadline:
+                out.append((s, None, "crawl budget exceeded"))
+                continue
+            out.append((s, *_fetch(s, adapter_cls, client, sleep)))
+        return out
     finally:
         client.close()
 
@@ -54,8 +62,9 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           client_factory: Callable[[], httpx.Client] = make_client,
           adapters: dict[str, type[Adapter]] | None = None,
           sleep: Callable[[float], None] = time.sleep,
-          max_workers: int = 4) -> dict[str, RunResult]:
+          max_workers: int = 4, budget_seconds: float | None = None) -> dict[str, RunResult]:
     adapters = adapters if adapters is not None else load_all()
+    deadline = time.monotonic() + budget_seconds if budget_seconds else None
     groups: dict[str, list[SourceConfig]] = defaultdict(list)
     results: dict[str, RunResult] = {}
     for s in sources:
@@ -68,7 +77,7 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
         groups[s.adapter].append(s)
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep)
+        futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)
                    for aid, srcs in groups.items()]
         for fut in as_completed(futures):
             for source, jobs, error in fut.result():

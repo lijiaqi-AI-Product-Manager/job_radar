@@ -89,4 +89,11 @@ def test_enrich_does_not_take_grad_year_for_social():
     j = _job(recruit_type="social", description="面向 2027 届毕业生")
     _enrich(j)
     assert j.grad_year is None
-
+def test_budget_exceeded_skips_remaining_sources(jobs_db, text_db):
+    """整轮采集有预算：超时后剩余源标记失败，不拖到 workflow 上限（2026-10-22 daily 跑了 75 分钟+）。"""
+    sources = [example_source(), example_source(id="later")]
+    res = crawl(sources, jobs_db, text_db, ts=T(1), client_factory=replay_client,
+                adapters={"example": ExampleAdapter}, sleep=lambda s: None, budget_seconds=-1)
+    assert set(res) == {"example-corp", "later"}
+    for r in res.values():
+        assert r.status == "failed" and "budget" in (r.reason or "")
