@@ -38,17 +38,18 @@ def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
 def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | None = None) -> str:
     blocked = targets.get("blocked") or {}
     total = len(matched)
-    covered = sum(1 for v in matched.values() if v)
+    # blocked 的公司即使被子串误匹配（「京东」in「京东方」）也不能算已覆盖
+    covered = sum(1 for k, v in matched.items() if v and k not in blocked)
     lines = ["# 覆盖率报告", "",
              f"目标 {total} 家：已覆盖 **{covered}**（{covered / total:.0%}），"
              f"不可合规覆盖 {len(blocked)}，待侦察 {total - covered - len(blocked)}。", "",
              "| 行业 | 目标 | 已覆盖 | 覆盖率 |", "|---|---|---|---|"]
     for sector, names in targets["sectors"].items():
-        c = sum(1 for n in names if matched[n])
+        c = sum(1 for n in names if matched[n] and n not in blocked)
         lines.append(f"| {sector} | {len(names)} | {c} | {c / len(names):.0%} |")
     lines += ["", "## 已覆盖", ""]
     for sector, names in targets["sectors"].items():
-        got = [n for n in names if matched[n]]
+        got = [n for n in names if matched[n] and n not in blocked]
         if got:
             def fmt(n):
                 cnt = sum((jobs or {}).get(c, 0) for c in matched[n])

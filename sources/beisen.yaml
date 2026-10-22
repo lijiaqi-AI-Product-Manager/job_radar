@@ -14,6 +14,11 @@ sources:
   - {id: beisen-beisen, company: 北森, params: {tenant: beisen}}
   - {id: beisen-boe, company: 京东方, params: {tenant: boe}}          # 2026-10-22 新增：1050 岗
   - {id: beisen-hisense, company: 海信, params: {tenant: hisense1}}   # 2026-10-22 新增：1201 岗
+  - {id: beisen-miniso, company: 名创优品, params: {tenant: miniso}}   # 2026-10-22 新增：57 岗
+  - {id: beisen-popmart, company: 泡泡玛特, params: {tenant: popmart}}  # 2026-10-22 新增：313 岗
+  - {id: beisen-changan, company: 长安汽车, params: {tenant: changan}}  # 2026-10-22 新增：375 岗
+  - {id: beisen-weichai, company: 潍柴动力, params: {tenant: weichai}}  # 2026-10-22 新增：246 岗
+  - {id: beisen-iflytek, company: 科大讯飞, params: {tenant: iflytek}}  # 2026-10-22 新增：884 岗
   - {id: beisen-zszhcpa, company: 中审众环, params: {tenant: zszhcpa}}
   - {id: beisen-lgmg, company: 临工重机, params: {tenant: lgmg}}
   - {id: beisen-pret, company: 普利特, params: {tenant: pret}}
