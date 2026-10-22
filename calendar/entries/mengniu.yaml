@@ -1,0 +1,15 @@
+group: 蒙牛
+entries:
+- id: mengniu-join-entry
+  company: 蒙牛
+  project_type: 校招
+  apply_url: https://www.mengniu.com.cn/join.html
+  source:
+    type: official_site
+    name: 蒙牛官网-加入我们
+    url: https://www.mengniu.com.cn/join.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.mengniu.com.cn/join.html
+  notes: 蒙牛官网「加入我们」页（2026-10-22 访问确认 200；页面：加入我们_蒙牛官网）。入口页未写明批次/网申时间/城市，按红线留空。
