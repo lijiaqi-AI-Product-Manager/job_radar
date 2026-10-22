@@ -4,11 +4,15 @@
 
 ## 1. 现在的状态
 
-- **38 个提交在本地 `main`，还没有推到 `origin`**（缺 GitHub 凭证，见 §5）。
-- 工作树干净，`uv run pytest` 全绿（370+ 用例），`uv run ruff check .` 无错误。
+- ✅ **已推送到 `origin/main`**（2026-10-22；classic PAT，需要 `repo` + `workflow` scope）。
+  CI 双平台（ubuntu + windows）在最新提交上全绿。
+- 工作树干净，`uv run pytest` 全绿（380+ 用例），`uv run ruff check .` 无错误。
 - 数据源 **221 个**：北森新版 200 家、北森旧版 14 家、自研 7 个（腾讯社招/校招、美团、阿里、网易×2）、Workday 1 家（英伟达）。
-- 目标覆盖 **99 / 370（27%）**；不可合规覆盖 7 家；待侦察 264 家。
+- 目标覆盖 **99 / 370（27%）**；不可合规覆盖 **10 家**；待侦察 261 家。
 - 备份：`pre-takeover` 标签（接手前的主干）、`backups/*.bundle`（全量历史）、`backups/worktree-*.zip`（接手时的工作树）。
+
+> Windows CI 第一次跑就发现一个真 bug：迁移文件的 SHA 受 CRLF 影响。已修
+> （`migration_digest()` 归一换行 + `.gitattributes` 统一 LF），现在双平台全绿。
 
 ## 2. 这轮做了什么（按主题）
 
@@ -44,25 +48,26 @@
 - SmartRecruiters（博世）：技术上能抓 1,331 个中国岗，但 robots 对非 LinkedInBot 一律 `Disallow: /` → **不实现**，记入 blocked。
 - 字节/京东/拼多多/百度/华为：逐家复测，全部是「必然阻断」（405/验证码/no-auth/403），不是限流；快手 robots 禁止。
 
-## 3. 推送（唯一未完成的事）
+## 3. 推送方式（已完成一次，留作参考）
 
-需要的权限：对该仓库的 fine-grained PAT（**Contents: Read and write**、Actions: Read、Metadata: Read）。
+2026-10-22 已用 classic PAT 推送成功；CI 双平台全绿。**token 需要两个 scope：`repo` + `workflow`**
+——没有 `workflow` 会被 GitHub 拒绝（提交里改了 `.github/workflows/`）。
 
 ```powershell
-# 把 token 存到工作区（不要提交）
-New-Item -ItemType Directory -Force "C:\Users\lijia\Documents\deepseek-harness\default-workspace\.secrets"
-# 或直接设环境变量
-$env:GITHUB_TOKEN = "github_pat_xxx"
-
-cd "C:\Users\lijia\Documents\deepseek-harness\default-workspace\job_radar\job_radar-main"
-..\..\tools\git\cmd\git.exe push origin main
+$tok = Get-Content "...\default-workspace\.secrets\github_token.txt" -Raw
+$b64 = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("x-access-token:$($tok.Trim())"))
+cd "...\job_radar\job_radar-main"
+..\..\tools\git\cmd\git.exe -c http.extraHeader="AUTHORIZATION: basic $b64" push origin main
 ```
 
-推送后会自动触发 CI（ubuntu + windows）。**注意**：`sources/` 新增的 17 个源会在下一次 `daily-crawl`（每天 23 点）被采集，预计多入库 6,000+ 岗位。
+注意：`record-fixtures` 工作流会在 push 后**自己往 main 推一个提交**（重新录制 fixtures），
+所以本地再次 push 前要先 `git pull --rebase`。
 
 ## 4. 下一步（按 ROI 排序）
 
-1. **飞书 ATSX**（字节、大疆、蔚来、小鹏）：已确认 `POST /api/v1/csrf/token` 能匿名拿 token，但搜索接口直接 POST 返回 405/307，需要浏览器真实请求。`docs/recon/probe.txt` 已写好 `RENDERXHR` 行，push 后在 Actions 手动触发 `recon-probe` 即可抓到，然后写平台适配器。
+1. **飞书 ATSX**（字节、蔚来、小鹏）：2026-10-22 已在 Actions 抓到真实请求（`recon-probe #53`），
+   结论是搜索 POST 需要前端算的 `_signature`，本机按抓包参数复现仍 405 → 按铁律 1 不做
+   （`docs/recon/atsx.md`）。除非官方取消签名校验。
 2. **Workday 租户发现**：英伟达已接；其他外资需从官网 Careers 链接拿完整 host/tenant/site（不要猜，会 422）。
 3. **自研站逐家**：OPPO/荣耀/联想/比亚迪都是自研，需逐个侦察。
 4. **北森租户**：命中率已从 6% 掉到 ~3%，还能挖但收益递减。
@@ -72,7 +77,8 @@ cd "C:\Users\lijia\Documents\deepseek-harness\default-workspace\job_radar\job_ra
 
 | 来源 | 判定 | 依据 |
 |---|---|---|
-| 字节 | 必然阻断 | POST 列表 405（5 种组合）、GET 回落 SPA、SSR 无 CSRF、滑块 |
+| 字节 / 蔚来 / 小鹏 | 必然阻断 | 飞书 ATSX：CSRF 可拿，搜索 POST 需要前端 `_signature`（`docs/recon/atsx.md`） |
+| 大疆 | 必然阻断 | 其实是 Moka：职位接口返回加密串 + `necromancer` |
 | 京东/拼多多 | 必然阻断 | 页面级验证码 |
 | 百度/华为 | 必然阻断 | 匿名 no-auth / 403 |
 | 快手 | robots 禁止 | `Disallow: /` |
