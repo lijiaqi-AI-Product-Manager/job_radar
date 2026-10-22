@@ -18,3 +18,16 @@ jobs:
       - run: uv sync --all-extras
       - run: uv run ruff check .
       - run: uv run pytest
+      # 打包体积守卫：2026-10-22 曾把 .uv-cache 打进 sdist，产物 117MB（发布阻断）
+      - name: Build sdist/wheel and check size
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf dist
+          uv build
+          size=$(stat -c%s dist/*.tar.gz)
+          echo "sdist: $size bytes"
+          if [ "$size" -gt 5242880 ]; then
+            echo "::error::sdist 超过 5MB，检查是否有缓存/数据库被打包"
+            exit 1
+          fi
