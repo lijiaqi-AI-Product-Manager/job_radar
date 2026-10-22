@@ -1,0 +1,18 @@
+id: netease
+company: 网易
+adapter: netease
+params:
+  base_url: https://campus.163.com
+  project_id: 103
+  project_name: 网易互联网2027届校园招聘
+  max_pages: 1
+  page_size: 3
+recruit_types:
+- campus
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-22'
+  robots: not_applicable
+  terms: 列表接口为官网前端使用的公开 JSON，无需登录、无签名、无验证码；易盾 SDK 只用于登录/报名，列表接口不校验（2026-10-22 实测）。用户协议待人工复核
+  notes: campus.163.com，网易互联网 2027 届校招 81 岗。侦察：docs/recon/netease.md。
