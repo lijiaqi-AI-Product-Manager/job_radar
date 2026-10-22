@@ -330,6 +330,30 @@ def calendar_as_of(cal_conn) -> str | None:
     return row[0] if row else None
 
 
+def field_coverage(jobs_conn) -> dict:
+    """在招岗位的字段覆盖率（0~1）。让 agent 回答前知道哪些字段不可靠。
+
+    城市/届次缺失是"来源没给"，不是"没有"——见 skill/jobradar/references/fields.md。
+    """
+    n, city, gy, cat, deg, campus, campus_city, campus_gy = jobs_conn.execute("""
+        SELECT COUNT(*),
+               SUM(cities IS NOT NULL AND cities NOT IN ('', '[]')),
+               SUM(grad_year IS NOT NULL),
+               SUM(category IS NOT NULL),
+               SUM(degree_min IS NOT NULL),
+               SUM(recruit_type = 'campus'),
+               SUM(recruit_type = 'campus' AND cities IS NOT NULL AND cities NOT IN ('', '[]')),
+               SUM(recruit_type = 'campus' AND grad_year IS NOT NULL)
+        FROM job WHERE closed_at IS NULL""").fetchone()
+
+    def ratio(x, base):
+        return round((x or 0) / base, 3) if base else None
+
+    return {"cities": ratio(city, n), "grad_year": ratio(gy, n), "category": ratio(cat, n),
+            "degree_min": ratio(deg, n),
+            "campus_cities": ratio(campus_city, campus), "campus_grad_year": ratio(campus_gy, campus)}
+
+
 def data_summary(jobs_conn, text_conn=None) -> dict:
     """岗位数据层概况；with_jd_text 为有 JD 正文的在招岗位数（未下载原文库时为 None）。"""
     open_ids = [r[0] for r in jobs_conn.execute("SELECT id FROM job WHERE closed_at IS NULL")]
@@ -342,4 +366,4 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
             "AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')",
             (json.dumps(open_ids),)).fetchone()[0]
     return {"open_jobs": len(open_ids), "companies": companies, "with_jd_text": with_text,
-            "data_as_of": data_as_of(jobs_conn)}
+            "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn)}
