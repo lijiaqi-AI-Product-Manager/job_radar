@@ -26,3 +26,14 @@
 ## 后续可能
 - 若某些租户在 Moka 之外另有公开职位页（公司官网自建），按公司单独侦察。
 - 若 Moka 未来提供公开数据接口或获得授权，再评估。
+
+## 2026-10-22 复核（第二次抓包，换租户验证）
+
+- 用 RENDERXHR 抓了**吉利**（`app.mokahr.com/campus-recruitment/geely/78436`）：
+  `POST /api/outer/ats-apply/website/group-by-job` 的 body 是
+  `{"orgId":"geely","siteId":78436,"locale":"zh-CN"}`，响应同样是
+  `{"data":"zBpVxS4NuymSc2K7..."}` 加密串；部门树（`departments/flat`）是明文。
+- 与大疆（定制域名 `apply.careers.dji.com`）结论一致：**所有租户的职位数据都加密**，
+  不是个别配置，解密需要前端密钥 → 按铁律 1 不做。
+- **可以用的部分**：Moka 的校招/社招页面本身公开可访问，已作为招聘日历的 `apply_url`
+  （吉利、恒瑞、华润置地、新城控股、旷视、新浪、古茗、大众中国、宁德时代、安踏…）。
