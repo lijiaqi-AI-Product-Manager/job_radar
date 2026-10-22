@@ -74,6 +74,8 @@ sources:
   - {id: beisen-transsion, company: 传音控股, params: {tenant: transsion}}   # 2026-10-22 新增：986 岗
   - {id: beisen-iqiyi, company: 爱奇艺, params: {tenant: iqiyi}}            # 2026-10-22 新增：13 岗（线下业务）
   - {id: beisen-jobtaikang, company: 泰康, params: {tenant: jobtaikang}}   # 2026-10-22 新增：1739 岗
+  - {id: beisen-xdf, company: 新东方, params: {tenant: xdf}}             # 2026-10-22 新增：4436 岗
+  - {id: beisen-huolala, company: 货拉拉, params: {tenant: huolala}}       # 2026-10-22 新增：532 岗
   - {id: beisen-csc108, company: 中信建投证券, params: {tenant: csc108}}
   - {id: beisen-h618, company: 航空工业自控所, params: {tenant: h618}}
   - {id: beisen-sugon, company: 中科曙光, params: {tenant: sugon}}
