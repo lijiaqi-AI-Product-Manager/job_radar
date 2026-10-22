@@ -26,3 +26,7 @@ RENDERXHR https://goertek.hotjob.cn/SU65dd9ebd1c240e4b11c4f491/pb/index.html (po
 # 但列表没有 JD 正文；详情页是 SPA，需要抓它的 XHR 才能拿到 description/requirements。
 RENDERXHR https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/posDetail.html?postId=6ad9c667f0cfabf2b4002cea&postType=social (positionInfo|postDetail|detail|api)
 RENDERXHR https://goertek.hotjob.cn/SU65dd9ebd1c240e4b11c4f491/pb/posDetail.html?postId=6a1536dae791100f0a0900b6&postType=campus (positionInfo|postDetail|detail|api)
+
+# 第 44 轮：Moka 平台（安踏/吉利/恒瑞/华润置地/新城/旷视/新浪等在用）。
+# 已知大疆的 Moka 返回加密串；需要确认其它租户是否也加密——抓一次校园页的 XHR。
+RENDERXHR https://app.mokahr.com/campus-recruitment/geely/78436 (api|jobs|position|ats-apply)
