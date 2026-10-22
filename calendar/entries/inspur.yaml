@@ -1,0 +1,15 @@
+group: 浪潮
+entries:
+- id: inspur-campus-entry
+  company: 浪潮
+  project_type: 校招
+  apply_url: http://career.inspur.com/campus2027/campus.html
+  source:
+    type: official_site
+    name: 浪潮校园招聘
+    url: http://career.inspur.com/campus2027/campus.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://career.inspur.com/campus2027/campus.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：浪潮校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。

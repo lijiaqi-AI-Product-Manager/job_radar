@@ -1,0 +1,15 @@
+group: 海康威视
+entries:
+- id: hikvision-campus-entry
+  company: 海康威视
+  project_type: 校招
+  apply_url: https://campushr.hikvision.com/
+  source:
+    type: official_site
+    name: 海康威视校园招聘
+    url: https://campushr.hikvision.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://campushr.hikvision.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：海康威视校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
