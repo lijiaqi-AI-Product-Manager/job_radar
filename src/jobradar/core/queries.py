@@ -113,6 +113,21 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[
     return out
 
 
+def new_jobs_by_category(conn, *, since, limit=20) -> list[dict]:
+    """since 之后新开（open 事件）的岗位按职类计数；没有职类的归到「未分类」。
+
+    回答"最近哪类职位新增最多"。只统计首次出现（open），不含重开（reopen）。
+    """
+    rows = conn.execute(
+        """SELECT COALESCE(NULLIF(j.category, ''), '未分类') AS category, COUNT(*) AS n
+           FROM job_event e JOIN job j ON j.id = e.job_id
+           WHERE e.type = 'open' AND e.ts >= ?
+           GROUP BY category ORDER BY n DESC, category LIMIT ?""",
+        (since, limit),
+    )
+    return [{"category": r["category"], "n": r["n"]} for r in rows]
+
+
 def company_trend(conn, company, *, until, step_days=7) -> list[dict]:
     """从该公司最早岗位出现之日起，每 step_days 采样一次"当日在招岗位数"，最后一个点落在 until。
     注意：按 first_seen/closed_at 还原，岗位若曾关闭又重开，中间的空档不会体现。"""
@@ -164,14 +179,16 @@ def data_status(conn, *, now, stale_after_hours=36) -> list[dict]:
     return out
 
 
-def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, per_company=5) -> dict:
-    """每家公司取 per_company 个同类岗位（按职类和/或标题关键词）及其 JD 原文。对比由调用方（agent）完成。
+def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, text=None,
+                  per_company=5) -> dict:
+    """每家公司取 per_company 个同类岗位（按职类、标题关键词和/或 JD 全文）及其 JD 原文。对比由调用方（agent）完成。
     公司无匹配岗位 -> 空列表（调用方据此告知"库里没有"，不得编造）。"""
-    if not category and not keyword:
-        raise ValueError("compare_roles needs category or keyword")
+    if not category and not keyword and not text:
+        raise ValueError("compare_roles needs category, keyword or text")
     out = {}
     for name in companies:
-        jobs = search_jobs(jobs_conn, company=name, category=category, keyword=keyword, limit=per_company)
+        jobs = search_jobs(jobs_conn, company=name, category=category, keyword=keyword,
+                           text=text, text_conn=text_conn, limit=per_company)
         for j in jobs:
             t = text_conn.execute(
                 "SELECT description, requirements FROM job_text WHERE job_id=?", (j["id"],)

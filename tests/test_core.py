@@ -9,6 +9,7 @@ from jobradar.core.queries import (
     data_as_of,
     data_status,
     get_job,
+    new_jobs_by_category,
     recent_changes,
     search_jobs,
 )
@@ -171,6 +172,40 @@ def test_compare_roles(jobs_db, text_db):
     assert len(out["腾讯"]) == 1 and out["腾讯"][0]["requirements"] in {"精通 PyTorch", "熟悉 CUDA"}
     assert out["字节跳动"][0]["requirements"] is None
     assert out["不存在公司"] == []  # 空列表 = 库里没有，skill 据此回答"没有数据"
+
+
+def test_compare_roles_by_jd_text(jobs_db, text_db):
+    """「谁最看重论文」这类问题要按 JD 原文取岗位，而不是标题关键词（评测 compare-04）。"""
+    a = [make_job(1, company="腾讯", subcategory="算法", requirements="有顶会论文者优先"),
+         make_job(2, company="腾讯", subcategory="算法", requirements="熟悉 Go")]
+    b = [make_job(1, source_id="s2", company="美团", subcategory="算法", requirements="扎实的编程基础")]
+    ingest_run(jobs_db, "s1", a, ts=T(1))
+    ingest_run(jobs_db, "s2", b, ts=T(1))
+    upsert_texts(text_db, a + b, ts=T(1))
+
+    out = compare_roles(jobs_db, text_db, ["腾讯", "美团"], text="论文")
+    assert [j["requirements"] for j in out["腾讯"]] == ["有顶会论文者优先"]
+    assert out["美团"] == []
+
+
+def test_compare_roles_needs_a_selector(jobs_db, text_db):
+    import pytest
+    with pytest.raises(ValueError):
+        compare_roles(jobs_db, text_db, ["腾讯"])
+
+
+def test_new_jobs_by_category(jobs_db):
+    """回答"最近哪类职位新增最多"（评测 trend-02）。"""
+    ingest_run(jobs_db, "s1", [make_job(1, category="技术", subcategory="后端"),
+                               make_job(2, category="技术", subcategory="算法"),
+                               make_job(3, category="产品")], ts=T(1))
+    assert new_jobs_by_category(jobs_db, since=T(0)) == [
+        {"category": "技术", "n": 2}, {"category": "产品", "n": 1}]
+
+
+def test_new_jobs_by_category_buckets_unclassified(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, category=None, subcategory=None)], ts=T(1))
+    assert new_jobs_by_category(jobs_db, since=T(0)) == [{"category": "未分类", "n": 1}]
 
 
 def test_get_job_with_text_and_unknown(jobs_db, text_db):

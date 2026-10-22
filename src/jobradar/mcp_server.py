@@ -72,19 +72,31 @@ def recent_changes(days: int = 7, company: str | None = None, types: list[str] |
 
 
 @server.tool()
-def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
-                  per_company: int = 5) -> dict:
-    """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category 和/或标题关键词 keyword 选岗位（至少给一个）。
-    not_found 列出数据里没有匹配岗位的公司。"""
+def new_jobs_by_category(days: int = 7, limit: int = 10) -> dict:
+    """最近 N 天新开的岗位按职类统计（没有职类的归到「未分类」），按数量降序。
+    回答「最近哪类职位新增最多」用它，不要自己比对两次 search 结果。"""
     def run():
-        with db("jobs") as conn, db("text", required=False) as text:
-            if text is None:
+        with db("jobs") as conn:
+            since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
+            rows = q.new_jobs_by_category(conn, since=since, limit=min(limit, 50))
+            return envelope(conn, rows, since=since)
+    return _guard(run)
+
+
+@server.tool()
+def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
+                  text: str | None = None, per_company: int = 5) -> dict:
+    """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category、标题关键词 keyword
+    或 JD 全文 text 选岗位（至少给一个）。not_found 列出数据里没有匹配岗位的公司。"""
+    def run():
+        with db("jobs") as conn, db("text", required=False) as text_conn:
+            if text_conn is None:
                 return {"error": "对比需要 JD 原文库：运行 `jobradar update`", "results": {}}
-            if not category and not keyword:
-                return {"error": "需要 category 或 keyword", "results": {}}
-            out = q.compare_roles(conn, text, companies, category, keyword=keyword,
+            if not category and not keyword and not text:
+                return {"error": "需要 category、keyword 或 text", "results": {}}
+            out = q.compare_roles(conn, text_conn, companies, category, keyword=keyword, text=text,
                                   per_company=min(per_company, 20))
-            return envelope(conn, out, category=category, keyword=keyword,
+            return envelope(conn, out, category=category, keyword=keyword, text=text,
                             not_found=[c for c, v in out.items() if not v])
     return _guard(run)
 

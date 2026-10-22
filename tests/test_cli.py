@@ -54,6 +54,13 @@ def test_diff_and_sources(home, capsys):
     assert out["failing"] == [] and {r["source_id"] for r in out["results"]} == {"s1", "s2"}
 
 
+def test_diff_by_category(home, capsys):
+    """「最近哪类职位新增最多」：按职类聚合，而不是自己比对两次 search（评测 trend-02）。"""
+    out = run(capsys, "diff", "--days", "7", "--by", "category")
+    assert out["by"] == "category" and out["since"]
+    assert out["results"] == [{"category": "技术", "n": 2}]
+
+
 def test_stale_data_is_flagged(tmp_path, monkeypatch, capsys):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     jobs = connect(tmp_path / "jobs.db", "jobs")
