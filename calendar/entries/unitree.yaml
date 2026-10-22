@@ -1,0 +1,28 @@
+group: 宇树科技
+entries:
+- id: unitree-campus-entry
+  company: 宇树科技
+  project_type: 校招
+  apply_url: https://www.unitree.com/position/
+  source:
+    type: official_site
+    name: 宇树科技招聘入口
+    url: https://www.unitree.com/position/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.unitree.com/position/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: unitree-social-entry
+  company: 宇树科技
+  project_type: 社招
+  apply_url: https://www.unitree.com/position/
+  source:
+    type: official_site
+    name: 宇树科技招聘入口
+    url: https://www.unitree.com/position/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.unitree.com/position/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。

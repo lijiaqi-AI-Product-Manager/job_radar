@@ -1,0 +1,28 @@
+group: 第四范式
+entries:
+- id: 4paradigm-campus-entry
+  company: 第四范式
+  project_type: 校招
+  apply_url: https://www.4paradigm.com/
+  source:
+    type: official_site
+    name: 第四范式招聘入口
+    url: https://www.4paradigm.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.4paradigm.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+- id: 4paradigm-social-entry
+  company: 第四范式
+  project_type: 社招
+  apply_url: https://www.4paradigm.com/
+  source:
+    type: official_site
+    name: 第四范式招聘入口
+    url: https://www.4paradigm.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.4paradigm.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
