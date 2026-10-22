@@ -1,0 +1,21 @@
+# hotjob（大易云）招聘门户。一行一个租户；侦察与接口说明见 docs/recon/hotjob.md。
+# 先只开校园招聘：详情请求量 = 岗位数，社招动辄几百页，等有预算再开。
+defaults:
+  adapter: hotjob
+  recruit_types: [campus]
+  rate_limit_rps: 1
+  params:
+    page_size: 50
+  compliance:
+    checked_on: 2026-10-22
+    robots: allowed            # 抽查 wecruit/goertek/yili：User-agent: * / Allow: /
+    terms: "大易云招聘门户的公开 JSON 接口（官网前端使用），无需登录、无签名、无验证码"
+    notes: "侦察：docs/recon/hotjob.md。列表 + 每岗 1 次详情取 JD，1 req/s。"
+
+sources:
+  - id: hotjob-zoomlion
+    company: 中联重科
+    params: {tenant: SU60a6449a2f9d2430fdc11a19}
+  - id: hotjob-goertek
+    company: 歌尔股份
+    params: {host: goertek.hotjob.cn, tenant: SU65dd9ebd1c240e4b11c4f491}
