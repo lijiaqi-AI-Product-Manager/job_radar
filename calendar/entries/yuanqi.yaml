@@ -1,0 +1,15 @@
+group: 元气森林
+entries:
+- id: yuanqi-campus-entry
+  company: 元气森林
+  project_type: 校招
+  apply_url: https://app.mokahr.com/campus-recruitment/yqrecruit/43258
+  source:
+    type: official_site
+    name: 元气森林（北京）食品科技集团有限公司 - 校园招聘（Moka）
+    url: https://app.mokahr.com/campus-recruitment/yqrecruit/43258
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://app.mokahr.com/campus-recruitment/yqrecruit/43258
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题只有公司名，URL 是 Moka campus-recruitment 路径）。入口页未写明批次/网申时间/城市，按红线留空。
