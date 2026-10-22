@@ -1,0 +1,15 @@
+group: 大众
+entries:
+- id: vw-campus-entry
+  company: 大众
+  project_type: 校招
+  apply_url: https://app.mokahr.com/campus-recruitment/vwa/168597
+  source:
+    type: official_site
+    name: 大众汽车集团（中国）- 校招岗位
+    url: https://app.mokahr.com/campus-recruitment/vwa/168597
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://app.mokahr.com/campus-recruitment/vwa/168597
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：大众汽车集团（中国）-校招岗位）。入口页未写明批次/网申时间/城市，按红线留空。
