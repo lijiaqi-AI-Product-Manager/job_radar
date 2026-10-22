@@ -22,3 +22,7 @@ RENDERXHR https://apply.careers.dji.com/campus-recruitment/dji/143359 (search|jo
 RENDERXHR https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html (positionInfo|listPosition|listSearchTerm|api)
 RENDERXHR https://yili.hotjob.cn/ (positionInfo|listPosition|listSearchTerm|api)
 RENDERXHR https://goertek.hotjob.cn/SU65dd9ebd1c240e4b11c4f491/pb/index.html (positionInfo|listPosition|listSearchTerm|api)
+# 第 43 轮：hotjob 详情页（JD 正文）。listPosition 已拿到列表（含 workPlaceStr 城市），
+# 但列表没有 JD 正文；详情页是 SPA，需要抓它的 XHR 才能拿到 description/requirements。
+RENDERXHR https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/posDetail.html?postId=6ad9c667f0cfabf2b4002cea&postType=social (positionInfo|postDetail|detail|api)
+RENDERXHR https://goertek.hotjob.cn/SU65dd9ebd1c240e4b11c4f491/pb/posDetail.html?postId=6a1536dae791100f0a0900b6&postType=campus (positionInfo|postDetail|detail|api)
