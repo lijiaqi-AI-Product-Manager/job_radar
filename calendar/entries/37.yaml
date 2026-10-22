@@ -1,0 +1,15 @@
+group: 三七互娱
+entries:
+- id: 37-campus-entry
+  company: 三七互娱
+  project_type: 校招
+  apply_url: http://zhaopin.37.com/
+  source:
+    type: official_site
+    name: 三七互娱招聘
+    url: http://zhaopin.37.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://zhaopin.37.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：三七互娱招聘）。入口页未写明批次/网申时间/城市，按红线留空。

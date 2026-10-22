@@ -1,0 +1,15 @@
+group: 喜马拉雅
+entries:
+- id: ximalaya-campus-entry
+  company: 喜马拉雅
+  project_type: 校招
+  apply_url: https://jobs.ximalaya.com/
+  source:
+    type: official_site
+    name: 喜马拉雅招聘
+    url: https://jobs.ximalaya.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.ximalaya.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：喜马拉雅招聘）。入口页未写明批次/网申时间/城市，按红线留空。

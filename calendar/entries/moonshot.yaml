@@ -1,0 +1,15 @@
+group: 月之暗面
+entries:
+- id: moonshot-campus-entry
+  company: 月之暗面
+  project_type: 校招
+  apply_url: https://careers.kimi.com/
+  source:
+    type: official_site
+    name: Kimi 招聘官网
+    url: https://careers.kimi.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.kimi.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Kimi 招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。
