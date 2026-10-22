@@ -283,3 +283,10 @@ def test_link_check_respects_robots(built):
                              sleep=lambda s: None)
     assert counts["skipped_robots"] >= 1
     assert not [u for u in seen if u.startswith("https://jobs.bytedance.com/") and "robots" not in u]
+def test_group_query_expands_aliases(tmp_path, jobs, cal_db):
+    """用户会打简称：「中建」要能查到「中国建筑」（映射见 taxonomy/company_aliases.yaml）。"""
+    d = write_entries(tmp_path, "中国建筑", [manual(id="cscec-1", company="中建三局", project_type="校招",
+                                                   jd={"status": "none"})])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    assert [r["id"] for r in calendar_entries(cal_db, group="中建")] == ["cscec-1"]
+    assert [r["id"] for r in calendar_entries(cal_db, group="中国建筑")] == ["cscec-1"]
