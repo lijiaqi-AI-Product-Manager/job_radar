@@ -1,0 +1,15 @@
+group: 中联重科
+entries:
+- id: zoomlion-campus-entry
+  company: 中联重科
+  project_type: 校招
+  apply_url: https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html
+  source:
+    type: official_site
+    name: 中联重科招聘（hotjob）
+    url: https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：中联重科招聘（hotjob））。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

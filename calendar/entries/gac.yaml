@@ -1,0 +1,15 @@
+group: 广汽集团
+entries:
+- id: gac-campus-entry
+  company: 广汽集团
+  project_type: 校招
+  apply_url: https://career.gac-international.com/apply/gac-international/100006013/
+  source:
+    type: official_site
+    name: 广汽集团招聘（Moka）
+    url: https://career.gac-international.com/apply/gac-international/100006013/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://career.gac-international.com/apply/gac-international/100006013/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：广汽集团招聘（Moka））。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
