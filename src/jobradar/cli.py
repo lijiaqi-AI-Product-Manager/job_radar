@@ -328,8 +328,17 @@ def cmd_crawl(args):
         raise SystemExit("all sources failed")  # 让 CI 变红并通知维护者
 
 
+def _version() -> str:
+    try:
+        from importlib.metadata import version
+        return version("jobradar")
+    except Exception:  # 源码目录直接跑（未安装）时兜底
+        return "0.1.0"
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="jobradar", description="中国校招/实习/社招岗位数据查询")
+    p.add_argument("--version", action="version", version=f"jobradar {_version()}")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     def add(name, fn, help_):
