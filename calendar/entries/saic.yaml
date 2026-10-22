@@ -1,0 +1,15 @@
+group: 上汽集团
+entries:
+- id: saic-campus-entry
+  company: 上汽集团
+  project_type: 校招
+  apply_url: https://www.saicmotor.com/chinese/rlzy/rcxq/xyzp/index_xz1.shtml
+  source:
+    type: official_site
+    name: 上汽集团校园招聘
+    url: https://www.saicmotor.com/chinese/rlzy/rcxq/xyzp/index_xz1.shtml
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.saicmotor.com/chinese/rlzy/rcxq/xyzp/index_xz1.shtml
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：上汽集团校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
