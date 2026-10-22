@@ -71,11 +71,11 @@ aliases:
   中国太保: [太平洋保险]
 
 # 不能合规覆盖的目标与原因（详见侦察文档）。理由必须是可复核的事实。
+# 2026-10-22 复核：区分「必然」与「短暂」——频控/超时重试可解；凭证/验证码/robots 在合规前提下无解。
 blocked:
-  阿里巴巴: "列表接口需页面下发的 token + 会话 cookie（docs/recon/alibaba.md）"
-  字节跳动: "滑块验证码 + CSRF（docs/recon/bytedance.md）"
-  京东: "验证码（docs/recon/jd.md）"
-  拼多多: "前端完整验证码流程（docs/recon/bigtech.md）"
-  百度: "列表接口匿名返回 no-auth（docs/recon/bigtech.md）"
-  华为: "列表接口匿名返回 403（docs/recon/bigtech.md）"
-  快手: "robots.txt Disallow: /（docs/recon/bigtech.md）"
+  字节跳动: "必然：POST 列表接口三次均 405、GET 回落 SPA、SSR 无 CSRF，站点部署滑块；飞书 ATSX 的搜索调用方式待用 Actions 浏览器抓包（docs/recon/bytedance.md）"
+  京东: "必然：页面预加载验证码脚本，列表接口在触发验证码前无法确认（docs/recon/jd.md）"
+  拼多多: "必然：前端完整验证码流程，robots 403（docs/recon/bigtech.md）"
+  百度: "必然：列表接口匿名返回 no-auth，需登录态（docs/recon/bigtech.md）"
+  华为: "必然：列表接口匿名返回 403（docs/recon/bigtech.md）"
+  快手: "政策禁止：robots.txt Disallow: /，不是技术问题（docs/recon/bigtech.md）"

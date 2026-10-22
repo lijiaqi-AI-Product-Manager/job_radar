@@ -12,6 +12,8 @@ defaults:
     notes: "同一域名后缀下所有租户串行抓取（crawl 按适配器分组）"
 sources:
   - {id: beisen-beisen, company: 北森, params: {tenant: beisen}}
+  - {id: beisen-boe, company: 京东方, params: {tenant: boe}}          # 2026-10-22 新增：1050 岗
+  - {id: beisen-hisense, company: 海信, params: {tenant: hisense1}}   # 2026-10-22 新增：1201 岗
   - {id: beisen-zszhcpa, company: 中审众环, params: {tenant: zszhcpa}}
   - {id: beisen-lgmg, company: 临工重机, params: {tenant: lgmg}}
   - {id: beisen-pret, company: 普利特, params: {tenant: pret}}
