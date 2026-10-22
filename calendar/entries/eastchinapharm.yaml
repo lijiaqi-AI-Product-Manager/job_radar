@@ -1,0 +1,15 @@
+group: 华东医药
+entries:
+- id: eastchinapharm-campus-entry
+  company: 华东医药
+  project_type: 校招
+  apply_url: https://www.huadongmedicine.com/careers/
+  source:
+    type: official_site
+    name: 华东医药-职业发展
+    url: https://www.huadongmedicine.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.huadongmedicine.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：华东医药-职业发展）。入口页未写明批次/网申时间/城市，按红线留空。

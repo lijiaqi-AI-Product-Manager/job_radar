@@ -1,0 +1,15 @@
+group: 中国中煤
+entries:
+- id: chinacoal-campus-entry
+  company: 中国中煤
+  project_type: 校招
+  apply_url: https://zhaopin.chinacoal.com/
+  source:
+    type: official_site
+    name: 中煤招聘
+    url: https://zhaopin.chinacoal.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://zhaopin.chinacoal.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中煤招聘）。入口页未写明批次/网申时间/城市，按红线留空。

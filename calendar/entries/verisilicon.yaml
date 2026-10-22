@@ -1,0 +1,15 @@
+group: 芯原股份
+entries:
+- id: verisilicon-campus-entry
+  company: 芯原股份
+  project_type: 校招
+  apply_url: https://www.verisilicon.com/cn/Careers
+  source:
+    type: official_site
+    name: 芯原股份-加入我们
+    url: https://www.verisilicon.com/cn/Careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.verisilicon.com/cn/Careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：芯原股份-加入我们）。入口页未写明批次/网申时间/城市，按红线留空。

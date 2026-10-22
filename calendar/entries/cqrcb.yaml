@@ -1,0 +1,15 @@
+group: 重庆农商行
+entries:
+- id: cqrcb-campus-entry
+  company: 重庆农商行
+  project_type: 校招
+  apply_url: https://www.cqrcb.com/cqrcb/aboutus/job/index.html
+  source:
+    type: official_site
+    name: 重庆农村商业银行-招聘
+    url: https://www.cqrcb.com/cqrcb/aboutus/job/index.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.cqrcb.com/cqrcb/aboutus/job/index.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：重庆农村商业银行-招聘）。入口页未写明批次/网申时间/城市，按红线留空。

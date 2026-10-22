@@ -1,0 +1,15 @@
+group: 君实生物
+entries:
+- id: junshipharma-campus-entry
+  company: 君实生物
+  project_type: 校招
+  apply_url: https://www.junshipharma.com/join/
+  source:
+    type: official_site
+    name: 君实生物-人才招聘
+    url: https://www.junshipharma.com/join/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.junshipharma.com/join/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：君实生物-人才招聘）。入口页未写明批次/网申时间/城市，按红线留空。

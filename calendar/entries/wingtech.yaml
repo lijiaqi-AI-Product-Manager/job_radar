@@ -1,0 +1,15 @@
+group: 闻泰科技
+entries:
+- id: wingtech-campus-entry
+  company: 闻泰科技
+  project_type: 校招
+  apply_url: http://jobs.wingtech.com/social
+  source:
+    type: official_site
+    name: 闻泰科技招聘门户
+    url: http://jobs.wingtech.com/social
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://jobs.wingtech.com/social
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：闻泰科技招聘门户）。入口页未写明批次/网申时间/城市，按红线留空。

@@ -1,0 +1,15 @@
+group: 南京银行
+entries:
+- id: njcb-campus-entry
+  company: 南京银行
+  project_type: 校招
+  apply_url: https://job.njcb.com.cn
+  source:
+    type: official_site
+    name: 南京银行招聘
+    url: https://job.njcb.com.cn
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.njcb.com.cn
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：南京银行招聘）。入口页未写明批次/网申时间/城市，按红线留空。
