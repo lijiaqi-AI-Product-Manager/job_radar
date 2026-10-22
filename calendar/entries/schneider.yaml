@@ -1,0 +1,15 @@
+group: 施耐德电气
+entries:
+- id: schneider-campus-entry
+  company: 施耐德电气
+  project_type: 校招
+  apply_url: https://www.schneider-electric.cn/zh/about-us/careers/overview/
+  source:
+    type: official_site
+    name: 施耐德电气- Careers
+    url: https://www.schneider-electric.cn/zh/about-us/careers/overview/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.schneider-electric.cn/zh/about-us/careers/overview/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：施耐德电气- Careers）。入口页未写明批次/网申时间/城市，按红线留空。

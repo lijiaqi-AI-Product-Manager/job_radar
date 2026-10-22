@@ -1,0 +1,14 @@
+group: 新希望
+entries:
+- id: newhopegroup-com-official-home-2026
+  company: 新希望
+  project_type: 校招
+  apply_url: http://www.newhopegroup.com
+  source:
+    type: official_site
+    name: 新希望 官网
+    url: http://www.newhopegroup.com
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（2026-10-22 访问确认 200）。

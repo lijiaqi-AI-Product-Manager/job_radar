@@ -1,0 +1,14 @@
+group: 华夏基金
+entries:
+- id: chinaamc-com-official-home-2026
+  company: 华夏基金
+  project_type: 校招
+  apply_url: https://www.chinaamc.com
+  source:
+    type: official_site
+    name: 华夏基金 官网
+    url: https://www.chinaamc.com
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（2026-10-22 访问确认 200）。

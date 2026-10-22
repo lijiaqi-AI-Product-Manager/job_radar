@@ -1,0 +1,15 @@
+group: 同程旅行
+entries:
+- id: ly-campus-entry
+  company: 同程旅行
+  project_type: 校招
+  apply_url: https://mhr.ly.com/recruit/portal/
+  source:
+    type: official_site
+    name: 同程旅行招聘
+    url: https://mhr.ly.com/recruit/portal/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://mhr.ly.com/recruit/portal/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：同程旅行招聘）。入口页未写明批次/网申时间/城市，按红线留空。
