@@ -9,8 +9,8 @@
 |---|---|
 | 目标公司（`targets/top_companies.yaml`） | 370 |
 | 已覆盖（有数据源） | 86 → **95**（本轮 +京东方、海信、名创优品、泡泡玛特、长安汽车、潍柴动力、科大讯飞、汇顶科技、英伟达） |
-| 其中 blocked | 7 → 复核后 6（阿里已做） |
-| 待侦察 | 277 → 269 |
+| 其中 blocked | 7 → 复核后 6 → 7（新增博世：SmartRecruiters robots 禁止） |
+| 待侦察 | 277 → 268 |
 | 数据源 | 207 → **217** |
 | 在招岗位 | 60,721（下一轮 + 阿里 1,075 + 网易 119 + 本轮 3,680） |
 
@@ -46,6 +46,7 @@
 | 百度 | 社招 `talent.baidu.com` 同域 | 自研 | 需授权 | 只能日历兜底 |
 | 华为 | 社招 `career.huawei.com` 同域 403 | 自研 | 需授权 | 只能日历兜底 |
 | 快手 | `campus.kuaishou.cn` robots 禁止 | — | 需授权 | 不做 |
+| 博世 | api.smartrecruiters.com | SmartRecruiters | robots 禁止（非 LinkedInBot 一律 Disallow） | 不做 |
 | 小米 | 无列表 | — | 公众号投递 | 日历条目（已有小红书/美的先例） |
 
 补充路径（对所有公司适用）：
