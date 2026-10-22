@@ -1,0 +1,15 @@
+group: 晶科能源
+entries:
+- id: jinko-campus-entry
+  company: 晶科能源
+  project_type: 校招
+  apply_url: https://app.mokahr.com/campus-recruitment/jinkosolar/41896
+  source:
+    type: official_site
+    name: 晶科能源-校园招聘
+    url: https://app.mokahr.com/campus-recruitment/jinkosolar/41896
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://app.mokahr.com/campus-recruitment/jinkosolar/41896
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：晶科能源-校园招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

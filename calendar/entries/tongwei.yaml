@@ -1,0 +1,15 @@
+group: 通威
+entries:
+- id: tongwei-campus-entry
+  company: 通威
+  project_type: 校招
+  apply_url: https://www.tongwei.com/index.php/recruit.html
+  source:
+    type: official_site
+    name: 人才战略 - 通威集团有限公司
+    url: https://www.tongwei.com/index.php/recruit.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.tongwei.com/index.php/recruit.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：人才战略 - 通威集团有限公司）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

@@ -1,0 +1,15 @@
+group: 联想
+entries:
+- id: lenovo-campus-entry
+  company: 联想
+  project_type: 校招
+  apply_url: https://jobs.lenovo.com/zh_CN/careers
+  source:
+    type: official_site
+    name: Jobs at Lenovo（中文站）
+    url: https://jobs.lenovo.com/zh_CN/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.lenovo.com/zh_CN/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：Jobs at Lenovo（中文站））。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

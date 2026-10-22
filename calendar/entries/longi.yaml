@@ -1,0 +1,28 @@
+group: 隆基绿能
+entries:
+- id: longi-campus-entry
+  company: 隆基绿能
+  project_type: 校招
+  apply_url: https://www.longi.com/en/career/
+  source:
+    type: official_site
+    name: LONGi Career
+    url: https://www.longi.com/en/career/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.longi.com/en/career/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：LONGi Career）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: longi-social-entry
+  company: 隆基绿能
+  project_type: 社招
+  apply_url: https://www.longi.com/en/career/
+  source:
+    type: official_site
+    name: LONGi Career
+    url: https://www.longi.com/en/career/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.longi.com/en/career/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：LONGi Career）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

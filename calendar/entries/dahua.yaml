@@ -1,0 +1,15 @@
+group: 大华股份
+entries:
+- id: dahua-campus-entry
+  company: 大华股份
+  project_type: 校招
+  apply_url: https://job.dahuatech.com/#/page
+  source:
+    type: official_site
+    name: 大华股份招聘官网
+    url: https://job.dahuatech.com/#/page
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.dahuatech.com/#/page
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：大华股份招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
