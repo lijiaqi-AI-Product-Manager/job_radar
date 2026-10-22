@@ -15,6 +15,7 @@
 | 字节 jobs.bytedance.com | 自研 | ⛔ blocked | 飞书 ATSX：列表接口 POST 405，页面未下发 CSRF，且部署滑块验证（`docs/recon/bytedance.md`） |
 | 阿里 campus-talent.alibaba.com | 自研 | ✅ 适配器完成 | 匿名会话（页面 token + 会话 cookie，2026-10-21 用户批准）；校招 458 + 日常实习 360 + 研究型实习 257，含职责/要求 |
 | 网易 campus.163.com / campus.game.163.com | 自研 | ✅ 适配器完成 | 公开 JSON；网易互联网 81 + 互娱 38，含职责/要求；接口无单岗位链接，url 用项目列表页（`docs/recon/netease.md`） |
+| Workday `*.myworkdayjobs.com` | 平台 | ✅ 适配器完成（1 家） | 英伟达中国岗位 244 个（上海 181 / 北京 42 / 深圳 21），含 JD；用国家分面过滤，不抓全球岗位（`docs/recon/workday.md`） |
 | 小米 hr.xiaomi.com | 自研 | ⛔ 不做 | 只有品牌介绍页，投递走公众号，无公开岗位列表（`docs/recon/bigtech.md`） |
 | 京东 campus.jd.com | 自研 | ⛔ blocked | 验证码（`docs/recon/jd.md`） |
 | gllue、大易 | 平台 | ⬜ | 未侦察 |
