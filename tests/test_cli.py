@@ -365,3 +365,10 @@ def test_text_coverage_detects_stale_jd_text(tmp_path):
 
 def test_text_coverage_none_without_dbs(tmp_path):
     assert cli._text_coverage(tmp_path) is None
+def test_doctor_reports_field_coverage_and_jd_match(home, capsys):
+    """doctor 要告诉用户数据能不能用：字段覆盖率、JD 原文库是否对得上。"""
+    cli.main(["doctor"])
+    out = json.loads(capsys.readouterr().out)
+    assert out["advice"]
+    assert set(out["fields"]) >= {"cities", "campus_cities", "grad_year"}
+    assert out["jd_text_match"] is not None
