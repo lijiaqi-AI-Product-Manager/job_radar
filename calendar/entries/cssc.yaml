@@ -1,0 +1,15 @@
+group: 中国船舶
+entries:
+- id: cssc-wechat-20260903
+  company: 中船海舟
+  project_type: 校招
+  apply_url: https://mp.weixin.qq.com/s/bdOL9bKCtQnkzmAipJjEjw
+  source:
+    type: wechat
+    name: 中船海舟 公众号
+    url: https://mp.weixin.qq.com/s/bdOL9bKCtQnkzmAipJjEjw
+    date: '2026-09-03'
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 官方公众号推文《智行深蓝 舰启新程 | 中船海舟2027届校园招聘正式启动》（2026-09-03）。投递入口与批次时间以推文内二维码/链接为准，未固定写出，故不填网申时间。
