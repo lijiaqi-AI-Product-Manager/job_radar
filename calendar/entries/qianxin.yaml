@@ -1,0 +1,15 @@
+group: 奇安信
+entries:
+- id: qianxin-campus-entry
+  company: 奇安信
+  project_type: 校招
+  apply_url: https://campus.qianxin.com/campus/graduates/positions
+  source:
+    type: official_site
+    name: 奇安信校园招聘
+    url: https://campus.qianxin.com/campus/graduates/positions
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://campus.qianxin.com/campus/graduates/positions
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：奇安信校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
