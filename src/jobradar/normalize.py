@@ -104,9 +104,43 @@ KNOWN_CITIES = frozenset("""
 潍坊 淄博 威海 临沂 徐州 扬州 镇江 盐城 泰州 连云港 芜湖 蚌埠 马鞍山 洛阳 唐山 保定 廊坊 绵阳 宜宾
 柳州 桂林 赣州 九江 襄阳 宜昌 株洲 湘潭 岳阳 泉州 漳州 香港 澳门
 """.split())
-_TITLE_DELIMS = re.compile(r"[-－—_（）()【】\[\]/／,，、\s·:：]|base", re.I)
+# `&`/`＆`/`+`/`＋`/`｜`/`丨`/`;`/`；` 也都是城市分隔符：北森标题形如
+# 「…（直营电商/济南&青岛）(J14673)」「…（软件交付部/苏州｜郑州）(J14673)」。
+# 不加这些字符的话整段「济南&青岛」不在 KNOWN_CITIES 里，一个城市都提取不到
+# （2026-10-22 实测：北森缺失城市的标题提取率为 0%）。
+_TITLE_DELIMS = re.compile(r"[-－—_（）()【】\[\]/／|｜丨¦,，、;；&＆+＋\s·・:：]|base", re.I)
 _PROVINCE_PREFIX = re.compile(r"^(?:北京|上海|天津|重庆|河北|山西|辽宁|吉林|黑龙江|江苏|浙江|安徽|福建|江西|山东|河南|湖北|湖南|"
                               r"广东|海南|四川|贵州|云南|陕西|甘肃|青海|内蒙古|广西|西藏|宁夏|新疆)(?:省|市|自治区)?")
+
+# 标题里的城市常常是"城市 + 机构后缀"或"英文字母 + 城市"（北森/事务所类门户很常见）：
+# 「北京分所」「武汉总所」「上海自贸区分所」「深圳基地负责人」「CBG北京」。
+# 这些都是明写，不是推测；后缀必须是机构/地点类词，避免「北京烤鸭」这类误判。
+_CITY_SUFFIXES = ("分所", "总所", "分公司", "子公司", "分厂", "工厂", "基地", "园区", "办公区", "战区",
+                  "大区", "区域", "研究所", "研究院", "研发中心", "总部", "办事处", "代表处", "分行", "支行", "校区", "公司")
+_CITY_AFTER_LATIN = re.compile(r"^[A-Za-z0-9]+(?P<city>" + "|".join(sorted(KNOWN_CITIES, key=len, reverse=True)) + r")$")
+
+
+def _city_of_token(tok: str) -> str | None:
+    """一个标题片段里的城市：整段等于城市、城市+机构描述、英文字母+城市。
+
+    支持的真实写法（2026-10-22 从北森标题里统计）：
+    「北京分所」「上海自贸区分所」「深圳基地负责人」「上海2」「重庆公司」「中国香港」「CBG北京」。
+    城市后面必须跟机构/地点词或编号，否则「北京烤鸭」「上海大众汽车」这类不会命中。
+    """
+    tok = re.sub(r"\d{1,2}$", "", tok)  # 「上海2」「北京3」：同城多岗位的编号
+    if tok in KNOWN_CITIES:
+        return tok
+    if tok.startswith("中国") and tok[2:] in KNOWN_CITIES:  # 中国香港
+        return tok[2:]
+    for city in sorted(KNOWN_CITIES, key=len, reverse=True):
+        if not tok.startswith(city):
+            continue
+        rest = tok[len(city):]
+        if rest and len(rest) <= 10 and (rest in _CITY_SUFFIXES
+                                         or any(rest.startswith(s) or rest.endswith(s) for s in _CITY_SUFFIXES)):
+            return city
+    m = _CITY_AFTER_LATIN.match(tok)
+    return m.group("city") if m else None
 
 
 def cities_from_title(title: str | None) -> list[str]:
@@ -117,11 +151,13 @@ def cities_from_title(title: str | None) -> list[str]:
         tok = tok.strip()
         if tok.endswith("市") and len(tok) > 2:
             tok = tok[:-1]
-        if tok not in KNOWN_CITIES:
+        city = _city_of_token(tok)
+        if city is None:
             stripped = _PROVINCE_PREFIX.sub("", tok)
             tok = stripped[:-1] if stripped.endswith("市") and len(stripped) > 2 else stripped
-        if tok in KNOWN_CITIES and tok not in out:
-            out.append(tok)
+            city = _city_of_token(tok)
+        if city and city not in out:
+            out.append(city)
     return out
 
 
