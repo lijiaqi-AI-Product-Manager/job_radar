@@ -1,0 +1,15 @@
+group: 建设银行
+entries:
+- id: ccb-campus-entry
+  company: 建设银行
+  project_type: 校招
+  apply_url: http://job.ccb.com/
+  source:
+    type: official_site
+    name: 建设银行招聘官网
+    url: http://job.ccb.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: http://job.ccb.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

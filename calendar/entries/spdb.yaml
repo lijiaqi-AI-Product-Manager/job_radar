@@ -1,0 +1,15 @@
+group: 浦发银行
+entries:
+- id: spdb-campus-entry
+  company: 浦发银行
+  project_type: 校招
+  apply_url: https://job.spdb.com.cn/
+  source:
+    type: official_site
+    name: 浦发银行招聘官网
+    url: https://job.spdb.com.cn/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.spdb.com.cn/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
