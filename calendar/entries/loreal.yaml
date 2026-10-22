@@ -1,0 +1,28 @@
+group: 欧莱雅
+entries:
+- id: loreal-campus-entry
+  company: 欧莱雅
+  project_type: 校招
+  apply_url: https://careers.loreal.com/en
+  source:
+    type: official_site
+    name: L'Oréal Careers
+    url: https://careers.loreal.com/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.loreal.com/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：L'Oréal Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: loreal-social-entry
+  company: 欧莱雅
+  project_type: 社招
+  apply_url: https://careers.loreal.com/en
+  source:
+    type: official_site
+    name: L'Oréal Careers
+    url: https://careers.loreal.com/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.loreal.com/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：L'Oréal Careers）。入口页未写明批次/网申时间/城市，按红线留空。

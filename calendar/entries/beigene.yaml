@@ -1,0 +1,28 @@
+group: 百济神州
+entries:
+- id: beigene-campus-entry
+  company: 百济神州
+  project_type: 校招
+  apply_url: https://beonemedicines.com/careers/
+  source:
+    type: official_site
+    name: 百济神州 Careers
+    url: https://beonemedicines.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://beonemedicines.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：百济神州 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: beigene-social-entry
+  company: 百济神州
+  project_type: 社招
+  apply_url: https://beonemedicines.com/careers/
+  source:
+    type: official_site
+    name: 百济神州 Careers
+    url: https://beonemedicines.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://beonemedicines.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：百济神州 Careers）。入口页未写明批次/网申时间/城市，按红线留空。

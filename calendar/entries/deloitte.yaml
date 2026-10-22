@@ -1,0 +1,28 @@
+group: 德勤
+entries:
+- id: deloitte-campus-entry
+  company: 德勤
+  project_type: 校招
+  apply_url: https://www.deloitte.com/cn/zh/cn-careers.html
+  source:
+    type: official_site
+    name: 德勤中国 Careers
+    url: https://www.deloitte.com/cn/zh/cn-careers.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.deloitte.com/cn/zh/cn-careers.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：德勤中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: deloitte-social-entry
+  company: 德勤
+  project_type: 社招
+  apply_url: https://www.deloitte.com/cn/zh/cn-careers.html
+  source:
+    type: official_site
+    name: 德勤中国 Careers
+    url: https://www.deloitte.com/cn/zh/cn-careers.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.deloitte.com/cn/zh/cn-careers.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：德勤中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。

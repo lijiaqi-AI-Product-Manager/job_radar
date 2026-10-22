@@ -1,0 +1,28 @@
+group: 联影医疗
+entries:
+- id: unitedimaging-campus-entry
+  company: 联影医疗
+  project_type: 校招
+  apply_url: https://www.united-imaging.com/careers
+  source:
+    type: official_site
+    name: 联影医疗招聘
+    url: https://www.united-imaging.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.united-imaging.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: unitedimaging-social-entry
+  company: 联影医疗
+  project_type: 社招
+  apply_url: https://www.united-imaging.com/careers
+  source:
+    type: official_site
+    name: 联影医疗招聘
+    url: https://www.united-imaging.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.united-imaging.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。

@@ -1,0 +1,28 @@
+group: 普华永道
+entries:
+- id: pwc-campus-entry
+  company: 普华永道
+  project_type: 校招
+  apply_url: https://www.pwccn.com/zh/careers.html
+  source:
+    type: official_site
+    name: 普华永道中国 Careers
+    url: https://www.pwccn.com/zh/careers.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.pwccn.com/zh/careers.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：普华永道中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: pwc-social-entry
+  company: 普华永道
+  project_type: 社招
+  apply_url: https://www.pwccn.com/zh/careers.html
+  source:
+    type: official_site
+    name: 普华永道中国 Careers
+    url: https://www.pwccn.com/zh/careers.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.pwccn.com/zh/careers.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：普华永道中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
