@@ -31,6 +31,20 @@ def grad_year_from_text(text: str | None, *, loose: bool = False) -> int | None:
     return 2000 + int(m.group(1)) if m else None
 
 
+# JD 原文里的届别：只认"20XX届"这种明确写法
+_GRAD_JD = re.compile(r"20(2[4-9]|3[0-2])\s*届")
+
+
+def grad_year_from_jd(description: str | None, requirements: str | None) -> int | None:
+    """标题没写届别时的兜底：JD 原文里明写的「20XX届」。
+
+    同一份 JD 出现多个不同届别（"2026届、2027届均可投递"）时无法判断是哪一届，返回 None。
+    只认"届"，不认"2027年毕业"——后者容易和入职年份混淆。
+    """
+    years = set(_GRAD_JD.findall(" ".join(x or "" for x in (description, requirements))))
+    return 2000 + int(years.pop()) if len(years) == 1 else None
+
+
 def batch_from_text(text: str | None) -> str | None:
     if not text:
         return None

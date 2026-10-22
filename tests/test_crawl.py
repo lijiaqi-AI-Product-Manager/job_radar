@@ -6,8 +6,8 @@ import yaml
 from helpers import T
 from jobradar.adapters.example import ExampleAdapter
 from jobradar.adapters.recording import ReplayTransport
-from jobradar.models import SourceConfig
-from jobradar.pipeline.crawl import crawl
+from jobradar.models import Job, SourceConfig
+from jobradar.pipeline.crawl import _enrich, crawl
 
 FX = Path(__file__).parent / "fixtures" / "example"
 
@@ -59,3 +59,34 @@ def test_unmatched_request_counts_as_failure(jobs_db, text_db, tmp_path):
                 client_factory=lambda: httpx.Client(transport=ReplayTransport(tmp_path)),
                 adapters={"example": ExampleAdapter}, sleep=lambda s: None)
     assert res["example-corp"].status == "failed"
+
+
+def _job(**kw):
+    base = dict(source_id="s1", source_job_id="1", company="某公司", url="https://x/1",
+                title="算法工程师", recruit_type="campus")
+    return Job(**{**base, **kw})
+
+
+def test_enrich_takes_grad_year_from_jd_when_title_has_none():
+    j = _job(description="面向 2027 届毕业生", requirements="")
+    _enrich(j)
+    assert j.grad_year == 2027
+
+
+def test_enrich_does_not_override_title_grad_year():
+    j = _job(title="2027届-算法工程师", description="2026 届毕业生也可投递")
+    _enrich(j)
+    assert j.grad_year == 2027
+
+
+def test_enrich_ignores_ambiguous_jd_grad_year():
+    j = _job(description="2026届、2027届均可投递")
+    _enrich(j)
+    assert j.grad_year is None
+
+
+def test_enrich_does_not_take_grad_year_for_social():
+    j = _job(recruit_type="social", description="面向 2027 届毕业生")
+    _enrich(j)
+    assert j.grad_year is None
+

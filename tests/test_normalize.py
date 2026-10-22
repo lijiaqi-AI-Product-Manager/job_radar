@@ -5,6 +5,7 @@ from jobradar.normalize import (
     cities_from_text,
     cities_from_title,
     degree_min_from_text,
+    grad_year_from_jd,
     grad_year_from_text,
     looks_like_location,
 )
@@ -60,6 +61,19 @@ def test_batch(text, batch):
 
 def test_none_and_empty():
     assert grad_year_from_text(None) is None and batch_from_text("") is None
+
+
+@pytest.mark.parametrize("desc,req,year", [
+    ("面向 2027 届毕业生，本科及以上", None, 2027),
+    (None, "2028届优先", 2028),
+    ("2026届、2027届均可投递", None, None),   # 同一份 JD 写了两个届别：不猜
+    ("2027年毕业", None, None),               # 只认"届"；"年毕业"容易和入职年份混
+    ("", "", None),
+    (None, None, None),
+])
+def test_grad_year_from_jd(desc, req, year):
+    """标题没写届别时，JD 原文里明写的「20XX届」可以作为兜底；有歧义就不填。"""
+    assert grad_year_from_jd(desc, req) == year
 
 
 @pytest.mark.parametrize("text,cities", [
