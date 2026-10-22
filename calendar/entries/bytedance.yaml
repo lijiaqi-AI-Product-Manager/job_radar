@@ -34,3 +34,31 @@ entries:
     as_of: 2026-10-21
     jd: {status: blocked, url: "https://jobs.bytedance.com/campus"}
     notes: "与 Seed 2027 届校招同期发布的实习招聘（标题写明「含实习」）。"
+  - id: bytedance-frontier-2027-xz
+    company: 字节跳动
+    product: 前沿技术领域人才
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://jobs.bytedance.com/campus/position
+    source: {type: official_site, name: 字节跳动校园招聘官网（职位页）, url: "https://jobs.bytedance.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus/position"}
+    notes: "官网职位页招聘项目「正式 · 2027届前沿技术领域人才校招」；对应实习项目「前沿技术领域人才实习招聘」。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: bytedance-byteintern
+    company: 字节跳动
+    product: ByteIntern
+    grad_year: 2027
+    project_type: 实习
+    apply_url: https://jobs.bytedance.com/campus/position
+    source: {type: official_site, name: 字节跳动校园招聘官网（职位页）, url: "https://jobs.bytedance.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus/position"}
+    notes: "官网职位页招聘项目「ByteIntern」，岗位说明写明「面向2027届毕业生」。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: bytedance-daily-intern
+    company: 字节跳动
+    project_type: 日常实习
+    apply_url: https://jobs.bytedance.com/campus/position
+    source: {type: official_site, name: 字节跳动校园招聘官网（职位页）, url: "https://jobs.bytedance.com/campus/position"}
+    as_of: 2026-10-21
+    jd: {status: blocked, url: "https://jobs.bytedance.com/campus/position"}
+    notes: "官网职位页招聘项目「日常实习」：「面向全体在校生，为符合岗位要求的同学提供为期3个月及以上的项目实践机会」。（2026-10-21 浏览器渲染官网页面核对原文）"

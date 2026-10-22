@@ -1,0 +1,31 @@
+group: 美的
+entries:
+  - id: midea-2027-mideastar
+    company: 美的集团
+    product: 美的星
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://careers.midea.com/schoolOut
+    source: {type: official_site, name: 美的集团校园招聘官网（在招项目）, url: "https://careers.midea.com/schoolOut"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.midea.com/schoolOut"}
+    notes: "官网在招项目「2027届美的星校园招聘」，毕业时间 2026-01-01 至 2027-12-31；流程：筛选、笔试、AI面试、一面、二面、终面、录用、签约。官网未写网申起止日期。（2026-10-21 读取官网项目列表接口核对）"
+  - id: midea-2027-phd
+    company: 美的集团
+    grad_year: 2027
+    project_type: 校招
+    tracks:
+      - {direction: 博士, roles: [应届博士]}
+    apply_url: https://careers.midea.com/schoolOut
+    source: {type: official_site, name: 美的集团校园招聘官网（在招项目）, url: "https://careers.midea.com/schoolOut"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.midea.com/schoolOut"}
+    notes: "官网在招项目「2027应届博士校园招聘」，毕业时间 2026-01-01 至 2027-12-31。（2026-10-21 读取官网项目列表接口核对）"
+  - id: midea-daily-intern
+    company: 美的集团
+    project_type: 日常实习
+    apply_url: https://careers.midea.com/schoolOut
+    source: {type: official_site, name: 美的集团校园招聘官网（在招项目）, url: "https://careers.midea.com/schoolOut"}
+    as_of: 2026-10-21
+    jd: {status: official_page, url: "https://careers.midea.com/schoolOut"}
+    notes: "官网在招项目「日常实习生招聘通道」，毕业时间 2026-01-01 至 2028-12-31；流程：筛选、AI面试、一面、录用。（2026-10-21 读取官网项目列表接口核对）"

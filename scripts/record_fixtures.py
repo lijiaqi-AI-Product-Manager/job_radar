@@ -33,8 +33,9 @@ def main() -> int:
         return 1
     source.params = {**source.params, "max_pages": args.max_pages, "page_size": args.page_size}
     out = ROOT / "tests" / "fixtures" / source.adapter
-    transport = RecordingTransport(out)
-    adapter = load_all(include_drafts=True)[source.adapter](source, make_client(transport))
+    cls = load_all(include_drafts=True)[source.adapter]
+    transport = RecordingTransport(out, secret_patterns=cls.secret_patterns)
+    adapter = cls(source, make_client(transport))
     jobs = list(adapter.fetch_all())
     (out / "source.yaml").write_text(
         yaml.safe_dump(source.model_dump(mode="json"), allow_unicode=True, sort_keys=False), encoding="utf-8"

@@ -10,6 +10,14 @@
   GREP <url> <正则>           打印正则的去重匹配（用于在 JS 包里找接口）
   POSTGREP <url> <json> <正则>  POST 后对响应做正则匹配（json 内不能有空格）
   FORMGREP <url> <a=1&b=2> <正则> 以表单（application/x-www-form-urlencoded）POST 后做正则匹配
+  FLOW {json}                 匿名会话（CLAUDE.md 铁律 1）：先 GET 公开页面 page（保留站点下发的 cookie），
+                              可从页面取匿名 token（token: {"re": 带一个分组的正则, "header"|"json"|"query": 名字}），
+                              可把某个 cookie 回填到请求头（cookie_header: {"cookie": 名, "header": 名}），
+                              再按 method/url/json/data/headers 请求接口，grep 可选。只打印 cookie 名与 token 长度，不打印值。
+  RENDER <url> [正则]          浏览器渲染（Playwright，CLAUDE.md 铁律 6）：打印页面可见文字（或正则匹配）、
+                              页面发出的 XHR/fetch 请求；出现验证码字样时提示停止。
+  RENDERXHR <url> <正则>       同 RENDER，并对 URL 匹配正则的 XHR 打印请求体与响应体开头（token/签名值脱敏）。
+                              接口要求反爬签名（如 _signature、X-Bogus）的站点不用浏览器去"代签"，按 blocked 处理。
 """
 
 import argparse
@@ -27,11 +35,24 @@ SCRIPT_SRC = re.compile(r"""<script[^>]+src=["']([^"']+)["']""", re.I)
 INLINE_JSON = re.compile(r"""(window\.__[\w]+__\s*=|<script[^>]+type=["'](?:application|text)/json["'][^>]*>)""", re.I)
 
 
+CAPTCHA_HINT = re.compile(r"验证码|滑块|安全验证|captcha|人机验证|请登录|登录后查看", re.I)
+# 日志里不出现 token/签名的值（CLAUDE.md 铁律 1）
+SECRET = re.compile(r"""((?:_csrf|csrf[\w-]*|[\w-]*token|_signature|signature|msToken|X-Bogus|a_bogus|userId)["']?\s*[=:]\s*["']?)[^&\s"',}]+""", re.I)
+
+
+def redact(s: str) -> str:
+    return SECRET.sub(r"\1***", s)
+
+
 def parse_lines(lines):
     out = []
     for line in lines:
         line = line.strip()
         if not line or line.startswith("#"):
+            continue
+        if line.startswith("FLOW "):
+            spec = json.loads(line[5:])
+            out.append(("FLOW", spec.get("page") or spec["url"], spec))
             continue
         parts = line.split(" ", 2)
         out.append((parts[0], parts[1], parts[2] if len(parts) > 2 else None))
@@ -67,6 +88,84 @@ def report(r: httpx.Response, body_chars: int, regex: str | None):
         print("  INLINE", text[m.start():m.start() + min(body_chars, 1500)].replace("\n", " "))
 
 
+def run_flow(spec: dict, headers: dict, body_chars: int) -> None:
+    """匿名会话：一个 FLOW 用独立的 client，cookie 只在内存里，结束即丢弃。"""
+    with httpx.Client(headers=headers, timeout=20, follow_redirects=True) as c:
+        extra_headers = dict(spec.get("headers") or {})
+        params, body = {}, spec.get("json")
+        if spec.get("page"):
+            p = c.get(spec["page"], headers={"Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+                                             **(spec.get("page_headers") or {})})
+            print(f"  PAGE {p.status_code} {len(p.content)}B cookies={sorted(c.cookies.keys())}")
+            if CAPTCHA_HINT.search(p.text[:200000]):
+                print("  WARN page mentions captcha/login keywords")
+            tok = spec.get("token")
+            if tok:
+                m = re.search(tok["re"], p.text)
+                print(f"  TOKEN {'found len=' + str(len(m.group(1))) if m else 'NOT FOUND'}")
+                if m:
+                    if "header" in tok:
+                        extra_headers[tok["header"]] = m.group(1)
+                    elif "query" in tok:
+                        params[tok["query"]] = m.group(1)
+                    elif "json" in tok:
+                        body = {**(body or {}), tok["json"]: m.group(1)}
+            time.sleep(1.5)
+        ch = spec.get("cookie_header")
+        if ch:
+            v = c.cookies.get(ch["cookie"])
+            print(f"  COOKIE->HEADER {ch['cookie']}: {'present' if v else 'MISSING'}")
+            if v:
+                extra_headers[ch["header"]] = v
+        method = spec.get("method", "GET")
+        r = c.request(method, spec["url"], params=params or None, json=body,
+                      data=spec.get("data"), headers=extra_headers)
+        print(f"  {method} {spec['url']} -> {r.status_code} | {r.headers.get('content-type', '-')} | {len(r.content)}B")
+        report(r, body_chars, spec.get("grep"))
+
+
+def run_render(url: str, regex: str | None, body_chars: int, xhr_filter: str | None = None) -> None:
+    """xhr_filter（RENDERXHR）：对 URL 匹配该正则的 XHR，打印请求体与响应体开头（token/签名值已脱敏）。"""
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        page = browser.new_page(user_agent=UA, locale="zh-CN")
+        calls = []
+
+        def on_response(r):
+            if r.request.resource_type not in ("xhr", "fetch"):
+                return
+            calls.append((r.request.method, r.status, redact(r.url)))
+            if xhr_filter and re.search(xhr_filter, r.url):
+                try:
+                    body = r.text()
+                except Exception:  # noqa: BLE001
+                    body = "(no body)"
+                print(f"  XHRDATA {r.request.method} {r.status} {redact(r.url)[:300]}")
+                print(f"    REQ {redact(r.request.post_data or '')[:1200]}")
+                print(f"    RESP {redact(body)[:body_chars]}")
+
+        page.on("response", on_response)
+        try:
+            page.goto(url, wait_until="networkidle", timeout=45000)
+        except Exception as e:  # noqa: BLE001 - 侦察脚本：打印即可
+            print(f"  GOTO {type(e).__name__}: {str(e)[:200]}")
+        page.wait_for_timeout(3000)
+        text = page.inner_text("body") if page.query_selector("body") else ""
+        html = page.content()
+        print(f"  RENDERED title={page.title()[:80]!r} text={len(text)} chars html={len(html)}B")
+        if CAPTCHA_HINT.search(text):
+            print("  WARN rendered text mentions captcha/login keywords -> stop if it blocks content")
+        for m, st, u in uniq(calls, 40):
+            print(f"  XHR {m} {st} {u[:250]}")
+        if regex:
+            for m in uniq(re.findall(regex, text + "\n" + html), 60):
+                print("  MATCH", (m if isinstance(m, str) else " | ".join(m))[:300])
+        else:
+            print("  TEXT", " ".join(text.split())[:body_chars])
+        browser.close()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", required=True)
@@ -90,6 +189,20 @@ def main() -> int:
                     print(f"ROBOTS ERROR {type(e).__name__}")
                 time.sleep(1.5)
             t = time.monotonic()
+            if verb in ("FLOW", "RENDER", "RENDERXHR"):
+                print(f"\n>>> {verb} {redact(url)}")
+                try:
+                    if verb == "FLOW":
+                        run_flow(extra, headers, args.body)
+                    elif verb == "RENDERXHR":
+                        run_render(url, None, args.body, xhr_filter=extra)
+                    else:
+                        run_render(url, extra, args.body)
+                except Exception as e:  # noqa: BLE001
+                    print(f"ERROR {type(e).__name__}: {str(e)[:300]}")
+                print(f"  ({time.monotonic() - t:.1f}s)")
+                time.sleep(1.5)
+                continue
             regex = extra if verb == "GREP" else None
             if verb in ("POSTGREP", "FORMGREP"):
                 body, regex = extra.split(" ", 1)

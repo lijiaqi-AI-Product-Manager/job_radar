@@ -10,11 +10,16 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install httpx
+      - name: Install Playwright (only when probe.txt has RENDER lines)
+        run: |
+          if grep -q '^RENDER' docs/recon/probe.txt; then
+            pip install playwright && python -m playwright install --with-deps chromium
+          fi
       - run: python scripts/recon_probe.py --file docs/recon/probe.txt --body 3000
