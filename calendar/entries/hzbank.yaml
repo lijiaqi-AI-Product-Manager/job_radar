@@ -1,0 +1,15 @@
+group: 杭州银行
+entries:
+- id: hzbank-campus-entry
+  company: 杭州银行
+  project_type: 校招
+  apply_url: https://myjob.hzbank.com.cn/hzzp-apply-web/static/index.html
+  source:
+    type: official_site
+    name: 杭州银行招聘
+    url: https://myjob.hzbank.com.cn/hzzp-apply-web/static/index.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://myjob.hzbank.com.cn/hzzp-apply-web/static/index.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：杭州银行招聘）。入口页未写明批次/网申时间/城市，按红线留空。
