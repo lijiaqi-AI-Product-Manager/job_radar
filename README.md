@@ -8,7 +8,7 @@
 
 数据来自各公司官方招聘页（公开接口、低频、不绕过任何限制，见 [COMPLIANCE.md](COMPLIANCE.md)）。零服务器：采集跑在 GitHub Actions，数据发布到 Release，查询在本地完成。
 
-> **状态：0.9.0（发布候选）。** 231 个数据源、**约 68,800 个在招岗位**、JD 正文覆盖 99.9%；目标公司 **500 家**（含智谱/月之暗面/深度求索/百川/阶跃等 AI 公司），其中日历覆盖 205 家、数据源覆盖 104 家，10 家因 robots/验证码/签名/加密不可合规覆盖（[docs/COVERAGE-PLAN.md](docs/COVERAGE-PLAN.md) 逐家有证据）。
+> **状态：0.9.0（发布候选）。** 240 个数据源、**71,604 个在招岗位**、JD 正文覆盖 99.9%；目标公司 **500 家**（含智谱/月之暗面/深度求索/百川/阶跃等 AI 公司），其中日历覆盖 256 家、数据源覆盖 123 家，10 家因 robots/验证码/签名/加密不可合规覆盖（[docs/COVERAGE-PLAN.md](docs/COVERAGE-PLAN.md) 逐家有证据）。
 > 最近一次采集 221/221 源成功（后续新增了大华、太平保险、光大证券、新华三、传音、中联重科、歌尔等 10 个源）。v1.0 的门槛与当前进度见 [docs/RELEASE.md](docs/RELEASE.md)，自检命令：`uv run python scripts/release_check.py --home ~/.jobradar`。
 
 ## 安装与使用
