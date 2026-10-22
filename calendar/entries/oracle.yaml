@@ -1,0 +1,28 @@
+group: 甲骨文
+entries:
+- id: oracle-campus-entry
+  company: 甲骨文
+  project_type: 校招
+  apply_url: https://www.oracle.com/careers/
+  source:
+    type: official_site
+    name: Oracle Careers
+    url: https://www.oracle.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.oracle.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Oracle Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: oracle-social-entry
+  company: 甲骨文
+  project_type: 社招
+  apply_url: https://www.oracle.com/careers/
+  source:
+    type: official_site
+    name: Oracle Careers
+    url: https://www.oracle.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.oracle.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Oracle Careers）。入口页未写明批次/网申时间/城市，按红线留空。
