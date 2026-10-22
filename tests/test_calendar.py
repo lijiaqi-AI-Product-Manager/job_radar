@@ -158,6 +158,35 @@ def built(tmp_path, jobs, cal_db):
     return cal_db
 
 
+def test_group_query_prefers_exact_over_substring(built):
+    """`--group 京东` 不能把「京东方」带出来；精确无结果时才退化为子串（`字节` → 字节跳动）。"""
+    # built 里已有「字节跳动」的两条手动条目：子串仍要能命中
+    assert sorted(r["id"] for r in calendar_entries(built, group="字节")) == [
+        "bytedance-2027-intern", "bytedance-2027-qz"]
+    assert calendar_entries(built, group="不存在的公司") == []
+
+
+def test_group_query_exact_wins_when_both_exist(tmp_path, jobs, cal_db):
+    """同时存在「京东」与「京东方」时，group=京东 只返回京东。"""
+    d = write_entries(tmp_path, "京东", [manual(id="jd-1", company="京东", project_type="校招",
+                                                jd={"status": "blocked"})])
+    auto = {"group": "京东方", "entries": [manual(id="boe-1", company="京东方", project_type="校招",
+                                                 jd={"status": "none"})]}
+    (d / "京东方.yaml").write_text(__import__("yaml").safe_dump(auto, allow_unicode=True), encoding="utf-8")
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    assert [r["id"] for r in calendar_entries(cal_db, group="京东")] == ["jd-1"]
+    assert [r["id"] for r in calendar_entries(cal_db, group="京东方")] == ["boe-1"]
+
+
+def test_hint_uses_company_not_product(tmp_path, jobs, cal_db):
+    """提示语必须是公司名：用 product 会变成「管理培训生（TET）希望你去…」（2026-10-22 实测）。"""
+    d = write_entries(tmp_path, "字节跳动", [manual(product="管理培训生（TET）", company="字节跳动")])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    [r] = calendar_entries(cal_db, group="字节跳动")
+    assert r["product"] == "管理培训生（TET）"
+    assert r["hint"] == "字节跳动希望你去他们的招聘页逛一逛哦~"
+
+
 def test_query_by_group_type_and_hint_for_blocked_jd(built):
     rows = calendar_entries(built, group="字节", project_type="秋招")
     assert [r["id"] for r in rows] == ["bytedance-2027-qz"]
