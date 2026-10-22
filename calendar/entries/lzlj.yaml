@@ -1,0 +1,15 @@
+group: 泸州老窖
+entries:
+- id: lzlj-campus-entry
+  company: 泸州老窖
+  project_type: 校招
+  apply_url: https://job.lzlj.com/
+  source:
+    type: official_site
+    name: 泸州老窖股份公司招聘门户
+    url: https://job.lzlj.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.lzlj.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：泸州老窖股份公司招聘门户）。入口页未写明批次/网申时间/城市，按红线留空。

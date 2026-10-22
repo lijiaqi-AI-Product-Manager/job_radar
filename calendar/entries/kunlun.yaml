@@ -1,0 +1,15 @@
+group: 昆仑万维
+entries:
+- id: kunlun-campus-entry
+  company: 昆仑万维
+  project_type: 校招
+  apply_url: https://jobs.kunlun.com/459522
+  source:
+    type: official_site
+    name: 昆仑万维-加入Kunlun
+    url: https://jobs.kunlun.com/459522
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.kunlun.com/459522
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：昆仑万维-加入Kunlun）。入口页未写明批次/网申时间/城市，按红线留空。

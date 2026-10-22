@@ -1,0 +1,15 @@
+group: 东方财富
+entries:
+- id: eastmoney-campus-entry
+  company: 东方财富
+  project_type: 校招
+  apply_url: https://zhaopin.eastmoney.com/social-recruitment/eastmoney/57970/
+  source:
+    type: official_site
+    name: 东方财富招聘
+    url: https://zhaopin.eastmoney.com/social-recruitment/eastmoney/57970/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://zhaopin.eastmoney.com/social-recruitment/eastmoney/57970/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：东方财富招聘）。入口页未写明批次/网申时间/城市，按红线留空。

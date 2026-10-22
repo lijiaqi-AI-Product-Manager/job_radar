@@ -1,0 +1,15 @@
+group: 信永中和
+entries:
+- id: shinewing-campus-entry
+  company: 信永中和
+  project_type: 校招
+  apply_url: https://job.shinewing.com/
+  source:
+    type: official_site
+    name: 信永中和招聘
+    url: https://job.shinewing.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.shinewing.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：信永中和招聘）。入口页未写明批次/网申时间/城市，按红线留空。

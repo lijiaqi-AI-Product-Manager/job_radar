@@ -1,0 +1,14 @@
+group: 爱尔眼科
+entries:
+- id: aierchina-com-official-home-2026
+  company: 爱尔眼科
+  project_type: 校招
+  apply_url: https://www.aierchina.com
+  source:
+    type: official_site
+    name: 爱尔眼科 官网
+    url: https://www.aierchina.com
+  as_of: '2026-10-22'
+  jd:
+    status: none
+  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（2026-10-22 访问确认 200）。
