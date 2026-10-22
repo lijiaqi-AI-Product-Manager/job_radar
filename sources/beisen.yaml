@@ -65,6 +65,7 @@ sources:
   - {id: beisen-chinastock, company: 中国银河证券, params: {tenant: chinastock}}
   - {id: beisen-bosc, company: 上海银行, params: {tenant: bosc}}
   - {id: beisen-chinalife, company: 中国人寿, params: {tenant: chinalife}}
+  - {id: beisen-dahua, company: 大华股份, params: {tenant: dahua}}        # 2026-10-22 新增：368 岗
   - {id: beisen-csc108, company: 中信建投证券, params: {tenant: csc108}}
   - {id: beisen-h618, company: 航空工业自控所, params: {tenant: h618}}
   - {id: beisen-sugon, company: 中科曙光, params: {tenant: sugon}}
