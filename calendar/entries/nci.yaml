@@ -1,0 +1,15 @@
+group: 新华保险
+entries:
+- id: nci-campus-entry
+  company: 新华保险
+  project_type: 校招
+  apply_url: https://nci.zhiye.com/
+  source:
+    type: official_site
+    name: 新华保险网申系统
+    url: https://nci.zhiye.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://nci.zhiye.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：新华保险网申系统）。入口页未写明批次/网申时间/城市，按红线留空。

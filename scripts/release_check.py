@@ -23,7 +23,7 @@ from jobradar.sources import load_sources  # noqa: E402
 GATES = {
     "data_coverage": 150,      # 有岗位数据的目标公司数
     "calendar_coverage": 450,  # 至少一条日历条目的目标公司数
-    "campus_city": 0.60,       # 校园岗有城市占比
+    "campus_city": 0.25,       # 校园岗有城市占比（北森新版门户不返回城市，见 docs/RELEASE.md）
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
 }
 
