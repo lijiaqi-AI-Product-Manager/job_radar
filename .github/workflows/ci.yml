@@ -5,7 +5,13 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Windows 单独跑一遍：目标用户大多是 Windows，而"文件还开着就改名/删除"
+    # 这类问题只在 Windows 上出现（POSIX 允许，ubuntu 一直是绿的）。
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
