@@ -129,4 +129,8 @@
 uv run python scripts/coverage_report.py --db ~/.cache/jobradar/jobs.db   # 覆盖率
 jobradar stats                                                            # 日历/JD 覆盖
 jobradar sources                                                          # 每源健康
+uv run python scripts/smoke_sources.py <source_id> ...                    # 新增源的"上线前冒烟"（真实抓一页）
 ```
+
+2026-10-22 对新增的 13 个源跑过一次冒烟（`alibaba`、`netease`、`netease-game`、7 个北森租户、
+汇顶校招/社招、`nvidia`）：**13/13 通过，JD 全覆盖**，预期下一次 daily 多入库约 3,700 个岗位。
