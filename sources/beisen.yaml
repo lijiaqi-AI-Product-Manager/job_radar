@@ -221,6 +221,9 @@ sources:
   - {id: beisen-shrcb, company: 上海农商行, params: {tenant: shrcb}}          # 2026-10-23 新增：17 岗
   - {id: beisen-sinotrans, company: 中国外运, params: {tenant: sinotrans}}    # 2026-10-23 新增：521 岗
   - {id: beisen-yiling, company: 以岭药业, params: {tenant: yiling}}        # 2026-10-23 新增：331 岗
+  - {id: beisen-bfhc3, company: 北方华创, params: {tenant: bfhc3}}          # 2026-10-23 新增：22 岗
+  - {id: beisen-calbjs, company: 中创新航, params: {tenant: calbjs}}        # 2026-10-23 新增：249 岗
+  - {id: beisen-lppz, company: 良品铺子, params: {tenant: lppz}}            # 2026-10-23 新增：12 岗
   - {id: beisen-genomics, company: 华大集团, params: {tenant: genomics}}
   - {id: beisen-renfu, company: 人福医药, params: {tenant: renfu}}
   - {id: beisen-sph, company: 上海医药, params: {tenant: sph}}
