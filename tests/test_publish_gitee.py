@@ -11,7 +11,8 @@ spec.loader.exec_module(pg)
 BASE = "https://gitee.com/api/v5/repos/o/r"
 
 
-def test_creates_release_and_replaces_same_name_asset(tmp_path):
+def test_rebuilds_existing_release_instead_of_deleting_attachments(tmp_path):
+    """Gitee 删除单个大附件不生效（2026-10-22 实测）：必须整个 release 删掉重建。"""
     f = tmp_path / "jobs.db.gz"
     f.write_bytes(b"x" * 10)
     calls = []
@@ -19,26 +20,43 @@ def test_creates_release_and_replaces_same_name_asset(tmp_path):
     def handler(req):
         calls.append((req.method, req.url.path))
         path = req.url.path
-        if path.endswith("/releases/tags/data-latest"):
-            return httpx.Response(404, json={"message": "Not Found"})
+        if req.method == "GET" and path.endswith("/releases/tags/data-latest"):
+            return httpx.Response(200, json={"id": 9})
+        if req.method == "DELETE" and path.endswith("/releases/9"):
+            return httpx.Response(204)
         if req.method == "GET" and path == "/api/v5/repos/o/r":
             return httpx.Response(200, json={"default_branch": "main"})
         if req.method == "POST" and path.endswith("/releases"):
             assert b"target_commitish=main" in req.content
-            return httpx.Response(201, json={"id": 9})
-        if req.method == "GET" and path.endswith("/releases/9/attach_files"):
-            return httpx.Response(200, json=[{"name": "jobs.db.gz", "id": 3}, {"name": "other", "id": 4}])
-        if req.method == "DELETE":
-            return httpx.Response(204)
-        if req.method == "POST" and path.endswith("/releases/9/attach_files"):
+            return httpx.Response(201, json={"id": 10})
+        if req.method == "POST" and path.endswith("/releases/10/attach_files"):
             assert b'filename="jobs.db.gz"' in req.content
             return httpx.Response(201, json={"id": 5})
         raise AssertionError(f"unexpected {req.method} {path}")
 
     pg.publish([f], token="t", repo="o/r", client=httpx.Client(transport=httpx.MockTransport(handler)))
-    assert ("DELETE", "/api/v5/repos/o/r/releases/9/attach_files/3") in calls
-    assert ("DELETE", "/api/v5/repos/o/r/releases/9/attach_files/4") not in calls
-    assert calls[-1] == ("POST", "/api/v5/repos/o/r/releases/9/attach_files")
+    assert ("DELETE", "/api/v5/repos/o/r/releases/9") in calls
+    assert not [c for c in calls if "attach_files/" in c[1] and c[0] == "DELETE"], "不应再逐个删附件"
+    assert calls[-1] == ("POST", "/api/v5/repos/o/r/releases/10/attach_files")
+
+
+def test_creates_release_when_missing(tmp_path):
+    f = tmp_path / "calendar.db.gz"
+    f.write_bytes(b"x" * 10)
+
+    def handler(req):
+        path = req.url.path
+        if path.endswith("/releases/tags/data-latest"):
+            return httpx.Response(404, json={"message": "Not Found"})
+        if req.method == "GET" and path == "/api/v5/repos/o/r":
+            return httpx.Response(200, json={"default_branch": "main"})
+        if req.method == "POST" and path.endswith("/releases"):
+            return httpx.Response(201, json={"id": 10})
+        if req.method == "POST" and path.endswith("/releases/10/attach_files"):
+            return httpx.Response(201, json={"id": 5})
+        raise AssertionError(f"unexpected {req.method} {path}")
+
+    pg.publish([f], token="t", repo="o/r", client=httpx.Client(transport=httpx.MockTransport(handler)))
 
 
 def test_skips_without_credentials(monkeypatch, capsys):
@@ -59,9 +77,11 @@ def test_uploads_files_in_parallel(tmp_path):
     def handler(req):
         path = req.url.path
         if path.endswith("/releases/tags/data-latest"):
-            return httpx.Response(200, json={"id": 9})
-        if req.method == "GET" and path.endswith("/releases/9/attach_files"):
-            return httpx.Response(200, json=[])
+            return httpx.Response(404, json={"message": "Not Found"})
+        if req.method == "GET" and path == "/api/v5/repos/o/r":
+            return httpx.Response(200, json={"default_branch": "main"})
+        if req.method == "POST" and path.endswith("/releases"):
+            return httpx.Response(201, json={"id": 9})
         if req.method == "POST" and path.endswith("/releases/9/attach_files"):
             barrier.wait()  # 两个上传必须同时在途
             uploaded.append(req.content.split(b'filename="')[1].split(b'"')[0].decode())

@@ -32,9 +32,18 @@ jobs:
           ls -l d
       - name: Publish to Gitee
         run: uv run python -u scripts/publish_gitee.py d/*
-      - name: Anonymous download check
+      - name: Anonymous download check（大小必须与本地一致，否则算失败）
         run: |
+          set -euo pipefail
+          rc=0
           for f in $(ls d); do
-            curl -sSL -o /dev/null -w "$f: %{http_code} %{size_download} bytes %{time_total}s\n" \
-              "https://gitee.com/$GITEE_REPO/releases/download/data-latest/$f" || true
+            expected=$(stat -c%s "d/$f")
+            got=$(curl -sSL -o /dev/null -w '%{size_download}' \
+              "https://gitee.com/$GITEE_REPO/releases/download/data-latest/$f" || echo 0)
+            echo "$f: gitee=${got}B local=${expected}B"
+            if [ "$got" != "$expected" ]; then
+              echo "::error::Gitee 上的 $f 与本地大小不一致（拿到的很可能是旧文件）"
+              rc=1
+            fi
           done
+          exit $rc
