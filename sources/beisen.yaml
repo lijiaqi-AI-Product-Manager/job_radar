@@ -76,7 +76,6 @@ sources:
   - {id: beisen-jobtaikang, company: 泰康, params: {tenant: jobtaikang}}   # 2026-10-22 新增：1739 岗
   - {id: beisen-xdf, company: 新东方, params: {tenant: xdf}}             # 2026-10-22 新增：4436 岗
   - {id: beisen-huolala, company: 货拉拉, params: {tenant: huolala}}       # 2026-10-22 新增：532 岗
-  - {id: beisen-yangzijiang, company: 扬子江药业, params: {tenant: yangzijiang}}  # 2026-10-22 新增：423 岗
   - {id: beisen-csc108, company: 中信建投证券, params: {tenant: csc108}}
   - {id: beisen-h618, company: 航空工业自控所, params: {tenant: h618}}
   - {id: beisen-sugon, company: 中科曙光, params: {tenant: sugon}}
