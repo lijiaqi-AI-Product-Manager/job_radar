@@ -14,3 +14,17 @@
 
 按 CLAUDE.md 铁律：验证码、需要登录/凭据、robots 禁止 → 不实现，不绕过。
 已可做：腾讯校招（`tencent.md` §9）、美团（`meituan.md`）。阿里、京东见各自文档。
+
+## 2026-10-22 复侦察：其他大厂的 ATS 归属
+
+覆盖率攻坚时逐个探过一遍（判断"是不是北森白标"：POST `/api/Jobad/GetJobAdPageList`）：
+
+| 公司 | 入口 | 归属 | 结论 |
+|---|---|---|---|
+| 大疆 | careers.dji.com → apply.careers.dji.com | 飞书 ATSX（定制域名） | 接口需浏览器抓包，见 `COVERAGE-PLAN.md` §4 |
+| 蔚来 / 小鹏 | `*.jobs.feishu.cn` | 飞书 ATSX | 同上 |
+| 比亚迪 | job.byd.com | 自研（Spring Boot） | `/portal/api/job/list` 返回 `Token无效或已过期: Not Authenticated` → 需登录态，blocked |
+| OPPO | careers.oppo.com | 自研（Spring Boot + Vue） | `/api/Jobad/...` 返回 500；列表接口未找到公开出口 |
+| 荣耀 / 联想 | honors/honor、lenovo 域 | 自研 | 招聘域名不可直连（ConnectError），需人工确认入口 |
+| 安踏 | app.mokahr.com/campus-recruitment/antahr | Moka | 响应加密，按铁律不做 |
+| 汇顶科技 | goodix.zhiye.com | **北森旧版** | ✅ 已接入（`beisen_legacy`，36 校招 + 64 社招） |
