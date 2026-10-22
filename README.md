@@ -8,7 +8,7 @@
 
 数据来自各公司官方招聘页（公开接口、低频、不绕过任何限制，见 [COMPLIANCE.md](COMPLIANCE.md)）。零服务器：采集跑在 GitHub Actions，数据发布到 Release，查询在本地完成。
 
-> **状态：早期。** 覆盖北森招聘门户上的 200 家公司（中金、中国人寿、中核、华大、长鑫存储、长江存储、中芯国际、药明康德、奇瑞、中国交建、北汽……）与腾讯（社招+校招）、美团；2026-10-20 实测 204 个源一次抓取 6 万岗位、0 失败。覆盖范围见 [docs/ROADMAP.md](docs/ROADMAP.md)。
+> **状态：早期。** 覆盖北森招聘门户上的 200 家公司（中金、中国人寿、中核、华大、长鑫存储、长江存储、中芯国际、药明康德、奇瑞、中国交建、北汽……）与腾讯（社招+校招）、美团、阿里；2026-10-21 实测 204 个源一次抓取 6 万岗位、0 失败（阿里适配器 2026-10-22 合入，下一次采集起为 205 个源）。覆盖范围见 [docs/ROADMAP.md](docs/ROADMAP.md)。
 
 ## 安装与使用
 
@@ -23,7 +23,7 @@ jobradar compare 公司A 公司B --category 算法
 ```
 
 下载源：默认 GitHub，失败自动换 Gitee；`--mirror gitee` 或环境变量 `JOBRADAR_MIRROR=gitee` 优先走 Gitee，
-`JOBRADAR_MIRROR` 也可设为任意 GitHub 加速前缀。仓库未公开期间：设置 `GITHUB_TOKEN`（有仓库读权限的 token）后 `update` 会走 API 带鉴权下载。
+`JOBRADAR_MIRROR` 也可设为任意 GitHub 加速前缀。仓库已公开，可匿名下载；设置 `GITHUB_TOKEN` 可提高 API 限额（私有镜像仓库仍走该方式）。
 
 ### 接入 agent
 
