@@ -22,3 +22,9 @@ sources:
   - id: hotjob-gwm
     company: 长城汽车
     params: {host: zhaopin.gwm.cn, tenant: SU692d3058ea11b01b6c54d0ea, max_pages: 10}  # 校招 173 页，先只抓 10 页
+  - id: hotjob-faw
+    company: 一汽
+    params: {host: faw-zhaopin.hotjob.cn, tenant: SU603374380dcad4635b836531, max_pages: 10}  # 校招 171 页，先抓 10 页
+  - id: hotjob-horizon
+    company: 地平线
+    params: {tenant: SU64819a4f2f9d2433ba8b043a, max_pages: 5}   # 地平线；校招 34 页
