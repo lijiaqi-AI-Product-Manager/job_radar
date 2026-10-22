@@ -140,6 +140,28 @@ def test_download_falls_back_to_raw_then_next_mirror(tmp_path, no_token):
     assert (tmp_path / "jobs.db").read_bytes() == body
 
 
+def test_download_aborts_slow_mirror_and_falls_back(tmp_path, no_token, monkeypatch):
+    """read timeout 管不住"每秒滴几 KB"的连接（2026-10-22 Gitee 卡了 14 分钟），按吞吐兜底。"""
+    import gzip
+
+    import httpx
+    body = _sqlite_bytes(tmp_path)
+    clock = iter([0.0, 31.0] + [31.0] * 100)
+    monkeypatch.setattr(cli, "_now", lambda: next(clock))
+
+    def handler(request):
+        url = str(request.url)
+        if "github.com" in url:  # 慢镜像：30 秒只给 1KB，且文件有 27MB
+            return httpx.Response(200, headers={"content-length": "27000000"}, content=iter([b"x" * 1024]))
+        if url.endswith("/jobs.db.gz"):
+            return httpx.Response(200, content=gzip.compress(body))
+        return httpx.Response(404)
+
+    used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
+    assert used == "gitee"
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
 def test_download_private_with_token(tmp_path, monkeypatch):
     import httpx
     monkeypatch.setenv("GITHUB_TOKEN", "t0k")
@@ -229,10 +251,25 @@ def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     got = []
     monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
     cli.main(["update"])
-    assert got == ["jobs.db", "jd_text.db", "calendar.db"]
+    assert sorted(got) == ["calendar.db", "jd_text.db", "jobs.db"]  # 并行下载，完成顺序不保证
     got.clear()
     cli.main(["update", "--jobs-only", "--mirror", "gitee"])
-    assert got == ["jobs.db", "calendar.db"]
+    assert sorted(got) == ["calendar.db", "jobs.db"]
+
+
+def test_update_downloads_in_parallel(home, monkeypatch, capsys):
+    """三个库并行下载：jd_text 最大，串行时总耗时是三者之和（2026-10-22 实测 82s）。"""
+    import threading
+    barrier, done = threading.Barrier(3, timeout=5), []
+
+    def fake(name, dest, client=None, prefer=None):
+        barrier.wait()  # 三个下载必须同时在途
+        done.append(name)
+        return "github"
+
+    monkeypatch.setattr(cli, "_download", fake)
+    cli.main(["update"])
+    assert sorted(done) == ["calendar.db", "jd_text.db", "jobs.db"]
 
 
 def test_update_tolerates_missing_calendar_db(home, monkeypatch, capsys):

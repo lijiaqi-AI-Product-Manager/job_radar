@@ -11,6 +11,8 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+import time
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing, contextmanager, nullcontext
 from datetime import timedelta
 from pathlib import Path
@@ -60,22 +62,47 @@ def _github_api_asset(name: str, client: httpx.Client, token: str) -> tuple[str,
     return (asset["url"], {**auth, "Accept": "application/octet-stream"}) if asset else None
 
 
+SLOW_AFTER_SECONDS = 30      # 开始评估吞吐
+SLOW_MIN_RATE = 25 * 1024    # 低于 25KB/s 视为不可用
+SLOW_MAX_PROJECTED = 300     # 按当前速率预计还要超过 5 分钟，就别等了
+MAX_DOWNLOAD_SECONDS = 480   # 单个文件的硬上限
+
+
+def _now() -> float:
+    return time.monotonic()
+
+
 def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Path | None:
     """下载到临时文件；404 返回 None。
 
     先关闭文件再删除：Windows 上删除仍被打开的文件会报 WinError 32。
+    慢镜像要尽早放弃：read timeout 只约束"多久没收到字节"，对每秒滴几 KB 的连接无效
+    （2026-10-22 实测 Gitee 一次 update 卡了 14 分钟还没完），所以按吞吐与总时长兜底。
     """
     fd, name = tempfile.mkstemp(dir=dest_dir, suffix=".part")
     tmp = Path(name)
     not_found = False
+    started, received, slow_checked = _now(), 0, False
     try:
         with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers=headers) as resp:
             if resp.status_code == 404:
                 not_found = True
             else:
                 resp.raise_for_status()
+                size = int(resp.headers.get("content-length") or 0)
                 for chunk in resp.iter_bytes():
                     out.write(chunk)
+                    received += len(chunk)
+                    elapsed = _now() - started
+                    if elapsed > MAX_DOWNLOAD_SECONDS:
+                        raise httpx.ReadTimeout(f"下载超时（{elapsed:.0f}s，已收 {received} 字节）")
+                    if not slow_checked and elapsed >= SLOW_AFTER_SECONDS:
+                        slow_checked = True
+                        rate = received / elapsed
+                        projected = size / rate if size and rate else 0
+                        if rate < SLOW_MIN_RATE and (not size or projected > SLOW_MAX_PROJECTED):
+                            raise httpx.ReadTimeout(
+                                f"下载太慢（{rate / 1024:.0f}KB/s，预计还需 {projected:.0f}s）")
     except BaseException:
         tmp.unlink(missing_ok=True)
         raise
@@ -152,17 +179,23 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
 def cmd_update(args):
     home().mkdir(parents=True, exist_ok=True)
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
-    used = {}
-    for k in kinds:
-        try:
-            used[k] = _download(DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror)
-        except SystemExit:
-            if k != "calendar":  # 日历库在旧版发布中不存在：缺失不影响岗位数据
-                raise
-            used[k] = None
+    used: dict[str, str | None] = {}
+    errors: dict[str, SystemExit] = {}
+    # 三个库并行下载：总耗时从"三个文件之和"降到"最慢的那个"（jd_text 最大）
+    with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
+        futures = [(k, pool.submit(_download, DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror))
+                   for k in kinds]
+        for k, fut in futures:
+            try:
+                used[k] = fut.result()
+            except SystemExit as e:
+                errors[k] = e
+    if "jobs" in errors or "text" in errors:  # 日历库在旧版发布中不存在：缺失不影响岗位数据
+        raise errors.get("jobs") or errors["text"]
+    used["calendar"] = None if "calendar" in errors else used.get("calendar")
     with _open("jobs") as conn:
-        print(json.dumps({"updated": kinds, "mirror": used, "data_as_of": q.data_as_of(conn), "home": str(home())},
-                         ensure_ascii=False))
+        print(json.dumps({"updated": kinds, "mirror": {k: used.get(k) for k in kinds},
+                          "data_as_of": q.data_as_of(conn), "home": str(home())}, ensure_ascii=False))
 
 
 def cmd_search(args):
