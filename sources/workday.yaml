@@ -1,0 +1,21 @@
+# Workday 租户（外资公司在华招聘常用）。侦察：docs/recon/workday.md
+# 站点是全球站，只收 country 分面下的岗位（默认 China），避免把全球岗位灌进中国数据集。
+defaults:
+  adapter: workday
+  recruit_types: [social, intern]   # 标题里明写 Intern 的岗位按 intern 入库
+  rate_limit_rps: 1
+  params:
+    country: China
+  compliance:
+    checked_on: 2026-10-22
+    robots: allowed            # nvidia.wd5.myworkdayjobs.com/robots.txt: Allow: /NVIDIAExternalCareerSite/，未禁止 /wday
+    terms: "Workday 公开职位接口（官网前端使用），无需登录、无签名、无验证码；只取中国分面岗位"
+    notes: "侦察：docs/recon/workday.md。中国岗位列表 + 每岗 1 次详情取 JD，1 req/s。"
+
+sources:
+  - id: nvidia
+    company: 英伟达
+    params:
+      host: nvidia.wd5.myworkdayjobs.com
+      tenant: nvidia
+      site: NVIDIAExternalCareerSite

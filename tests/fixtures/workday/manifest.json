@@ -1,0 +1,42 @@
+[
+  {
+    "method": "POST",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs",
+    "body": "{\"appliedFacets\":{},\"limit\":1,\"offset\":0,\"searchText\":\"\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs",
+    "body": "{\"appliedFacets\":{\"locations\":[\"91336993fab910af6d710912773cc339\",\"91336993fab910af6d710b3449b4c33e\",\"91336993fab910af6d7106eea8f4c334\"]},\"limit\":3,\"offset\":0,\"searchText\":\"\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "002.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/China-Shanghai/Senior-Power-and-Performance-Engineer_JR2019124",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "003.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/China-Shanghai/Deep-Learning-Compiler-CI-Infrastructure-Engineer_JR2020326",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "004.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/China-Shanghai/GPU-Computing-Software-Engineering-Intern--Autonomous-Driving---2027_JR2026546",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "005.json"
+  }
+]
