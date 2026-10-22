@@ -233,38 +233,56 @@ def _cal_dict(r) -> dict:
         d[k] = json.loads(d[k]) if d[k] else []
     d["source"] = {"type": d.pop("source_type"), "name": d.pop("source_name"),
                    "url": d.pop("source_url"), "date": d.pop("source_date")}
-    d["hint"] = BLOCKED_HINT.format(name=d["product"] or d["group_name"]) if d["jd_status"] == "blocked" else None
+    # 提示语用公司名（用户要求："字节跳动希望你去他们的招聘页逛一逛哦~"）；
+    # 用 product 会出现"管理培训生（TET）希望你去…"这种病句（2026-10-22 实测）。
+    d["hint"] = BLOCKED_HINT.format(name=d["group_name"]) if d["jd_status"] == "blocked" else None
     return d
 
 
 def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
                      origin=None, open_on=None, limit=100) -> list[dict]:
-    """日历条目。group/company/project_type 为子串匹配（如 project_type="实习" 命中暑期/日常实习）。
-    open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。"""
-    where, args = [], []
-    if group:
-        where.append("group_name LIKE ?")
-        args.append(f"%{group}%")
-    if company:
-        where.append("(company LIKE ? OR product LIKE ? OR group_name LIKE ?)")
-        args += [f"%{company}%"] * 3
-    if project_type:
-        where.append("project_type LIKE ?")
-        args.append(f"%{project_type}%")
-    if grad_year:
-        where.append("grad_year = ?")
-        args.append(grad_year)
-    if origin:
-        where.append("origin = ?")
-        args.append(origin)
-    if open_on:
-        where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
-        args += [open_on, open_on]
-    sql = "SELECT * FROM entry"
-    if where:
-        sql += " WHERE " + " AND ".join(where)
-    sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
-    return [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
+    """日历条目。
+
+    过滤先按**精确**匹配；没有结果再退化为子串（`--group 字节` 仍能找到「字节跳动」）。
+    这样 `--group 京东` 不会把「京东方」一起带出来（2026-10-22 实测的误匹配）。
+    project_type 始终子串：`实习` 要能命中「暑期实习」「日常实习」。
+    open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。
+    """
+    def run(exact: bool) -> list[dict]:
+        where, args = [], []
+        if group:
+            where.append("group_name = ?" if exact else "group_name LIKE ?")
+            args.append(group if exact else f"%{group}%")
+        if company:
+            if exact:
+                where.append("(company = ? OR product = ? OR group_name = ?)")
+                args += [company] * 3
+            else:
+                where.append("(company LIKE ? OR product LIKE ? OR group_name LIKE ?)")
+                args += [f"%{company}%"] * 3
+        if project_type:
+            where.append("project_type LIKE ?")
+            args.append(f"%{project_type}%")
+        if grad_year:
+            where.append("grad_year = ?")
+            args.append(grad_year)
+        if origin:
+            where.append("origin = ?")
+            args.append(origin)
+        if open_on:
+            where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
+            args += [open_on, open_on]
+        sql = "SELECT * FROM entry"
+        if where:
+            sql += " WHERE " + " AND ".join(where)
+        sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
+        return [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
+
+    if group or company:
+        rows = run(exact=True)
+        if rows:
+            return rows
+    return run(exact=False)
 
 
 def calendar_stats(cal_conn) -> dict:
