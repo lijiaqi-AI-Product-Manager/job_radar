@@ -140,7 +140,7 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
 
 @server.tool()
 def stats() -> dict:
-    """覆盖率：目标公司（约 370 家）中有招聘日历的、有 JD 的，按行业分布；岗位与 JD 正文数量。"""
+    """覆盖率：目标公司（500 家）中有招聘日历的、有 JD 的，按行业分布；岗位、JD 正文数量与字段覆盖率（jobs.fields）。"""
     def run():
         out = {}
         with db("calendar", required=False) as cal_conn, db("jobs", required=False) as jobs_conn, \

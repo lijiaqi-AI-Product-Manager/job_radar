@@ -54,3 +54,5 @@ def test_calendar_and_stats_tools(home):
     assert out["results"] and out["results"][0]["origin"] == "auto"
     st = mcp_server.stats()
     assert st["calendar"]["calendar_covered"] == 1 and st["calendar"]["missing_calendar"] == ["阿里巴巴"]
+    # 字段覆盖率要一起返回：agent 需要知道城市/届次能不能用
+    assert set(st["jobs"]["fields"]) >= {"cities", "grad_year", "category", "campus_cities"}
