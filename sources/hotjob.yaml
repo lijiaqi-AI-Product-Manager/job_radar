@@ -28,3 +28,9 @@ sources:
   - id: hotjob-horizon
     company: 地平线
     params: {tenant: SU64819a4f2f9d2433ba8b043a, max_pages: 5}   # 地平线；校招 34 页
+  - id: hotjob-huaxia
+    company: 华夏银行
+    params: {tenant: SU645b0d18bef57c0907e9fbc8, max_pages: 10}   # 校招 58 页
+  - id: hotjob-crrc
+    company: 中国中车
+    params: {host: crrc.hotjob.cn, tenant: SU64d480906202cc36e27a5fd8, max_pages: 10}
