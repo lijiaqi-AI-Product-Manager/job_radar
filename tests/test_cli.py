@@ -257,6 +257,7 @@ def test_version_flag(capsys):
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     got = []
     monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
+    monkeypatch.setattr(cli, "_text_coverage", lambda *a, **k: None)  # 这个用例不测一致性检查
     cli.main(["update"])
     assert sorted(got) == ["calendar.db", "jd_text.db", "jobs.db"]  # 并行下载，完成顺序不保证
     got.clear()
@@ -275,6 +276,7 @@ def test_update_downloads_in_parallel(home, monkeypatch, capsys):
         return "github"
 
     monkeypatch.setattr(cli, "_download", fake)
+    monkeypatch.setattr(cli, "_text_coverage", lambda *a, **k: None)  # 这个用例不测一致性检查
     cli.main(["update"])
     assert sorted(done) == ["calendar.db", "jd_text.db", "jobs.db"]
 
@@ -345,3 +347,21 @@ def test_calendar_build_query_and_stats(home, capsys, tmp_path):
 def test_calendar_without_db_tells_user_to_update(home, capsys):
     with pytest.raises(SystemExit, match="jobradar update"):
         cli.main(["calendar"])
+def test_text_coverage_detects_stale_jd_text(tmp_path):
+    """镜像同步慢时 jobs 新、jd_text 旧，两个库 id 对不上——必须能测出来。"""
+    import sqlite3
+    jobs = sqlite3.connect(tmp_path / "jobs.db")
+    jobs.execute("CREATE TABLE job(id TEXT, closed_at TEXT, last_seen TEXT)")
+    jobs.executemany("INSERT INTO job VALUES (?,NULL,'2026-10-22T00:00:00Z')", [("a:1",), ("a:2",), ("a:3",), ("a:4",)])
+    jobs.commit()
+    jobs.close()
+    text = sqlite3.connect(tmp_path / "jd_text.db")
+    text.execute("CREATE TABLE job_text(job_id TEXT, description TEXT, requirements TEXT)")
+    text.executemany("INSERT INTO job_text VALUES (?, 'd', '')", [("a:1",), ("a:2",)])
+    text.commit()
+    text.close()
+    assert cli._text_coverage(tmp_path) == 0.5
+
+
+def test_text_coverage_none_without_dbs(tmp_path):
+    assert cli._text_coverage(tmp_path) is None

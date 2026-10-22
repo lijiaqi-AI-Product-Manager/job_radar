@@ -176,6 +176,30 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                      "国内网络可试 `jobradar update --mirror gitee`；若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
 
 
+def _text_coverage(home_dir: Path, sample: int = 300) -> float | None:
+    """jd_text.db 能对上 jobs.db 的比例（采样在招岗位的 id）。
+
+    镜像同步大文件很慢（jd_text 28MB，Gitee 上行约 10KB/s），会出现「jobs 已更新、jd_text 还是旧的」：
+    两个库的岗位 id 对不上，全文检索会静默缺结果。用比例把这种情况显式暴露出来。
+    """
+    jobs_db, text_db = home_dir / DB_FILES["jobs"], home_dir / DB_FILES["text"]
+    if not jobs_db.exists() or not text_db.exists():
+        return None
+    j = sqlite3.connect(jobs_db)
+    t = sqlite3.connect(text_db)
+    try:
+        ids = [r[0] for r in j.execute(
+            "SELECT id FROM job WHERE closed_at IS NULL ORDER BY last_seen DESC LIMIT ?", (sample,))]
+        if not ids:
+            return None
+        found = t.execute("SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?))",
+                          (json.dumps(ids),)).fetchone()[0]
+        return found / len(ids)
+    finally:
+        j.close()
+        t.close()
+
+
 def cmd_update(args):
     home().mkdir(parents=True, exist_ok=True)
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
@@ -193,6 +217,19 @@ def cmd_update(args):
     if "jobs" in errors or "text" in errors:  # 日历库在旧版发布中不存在：缺失不影响岗位数据
         raise errors.get("jobs") or errors["text"]
     used["calendar"] = None if "calendar" in errors else used.get("calendar")
+    if "text" not in errors:
+        cov = _text_coverage(home())
+        if cov is not None and cov < 0.9:
+            print(f"JD 原文库与岗位库对不上（采样 {cov:.0%}），可能镜像还在同步；改从 GitHub 重下…",
+                  file=sys.stderr)
+            try:
+                used["text"] = _download(DB_FILES["text"], home() / DB_FILES["text"], prefer="github")
+                cov = _text_coverage(home())
+            except SystemExit as e:
+                print(f"重下失败：{e}", file=sys.stderr)
+            if cov is not None and cov < 0.9:
+                print(f"警告：JD 原文库仍不匹配（{cov:.0%}）——全文检索可能缺结果，稍后再 update",
+                      file=sys.stderr)
     with _open("jobs") as conn:
         print(json.dumps({"updated": kinds, "mirror": {k: used.get(k) for k in kinds},
                           "data_as_of": q.data_as_of(conn), "home": str(home())}, ensure_ascii=False))
