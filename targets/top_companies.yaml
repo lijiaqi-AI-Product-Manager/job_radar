@@ -92,3 +92,8 @@ blocked:
   华为: "必然：列表接口匿名返回 403（docs/recon/bigtech.md）"
   快手: "政策禁止：robots.txt Disallow: /，不是技术问题（docs/recon/bigtech.md）"
   博世: "政策禁止：api.smartrecruiters.com 的 robots.txt 对非 LinkedInBot 一律 Disallow: /（docs/recon/smartrecruiters.md）"
+  BOSS直聘: "政策禁止：招聘平台自身域名在 taxonomy/calendar.yaml 的 third_party_blocklist 里，按红线不能作为来源（2026-10-23）"
+  猎聘: "政策禁止：同上，平台自身域名属第三方站点黑名单（2026-10-23）"
+  智联招聘: "政策禁止：同上，平台自身域名属第三方站点黑名单（2026-10-23）"
+  前程无忧: "政策禁止：同上，平台自身域名属第三方站点黑名单（2026-10-23）"
+  微博: "必然：官网域名只暴露 Sina Visitor System 登录墙，招聘入口在登录后/第三方托管（2026-10-23 实测）"
