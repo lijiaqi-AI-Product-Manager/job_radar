@@ -28,6 +28,19 @@ uv run python scripts/release_check.py --home ~/.jobradar
 | JD 正文覆盖 | 99.9% | ≥95% | PASS |
 | 发布文档 | 齐全 | 齐全 | PASS |
 
+## 干净环境安装验证（2026-10-22 已通过）
+
+用 uv build 的 wheel 建全新 venv（不依赖仓库），跑完整用户路径：
+
+| 步骤 | 结果 |
+|---|---|
+| jobradar --version | jobradar 0.9.0 |
+| jobradar update | 4.6s，三个库都走 GitHub，data_as_of = 当天 |
+| jobradar doctor | jobs/jd_text/calendar 都在，未过期 |
+| jobradar search --limit 2 | 正常返回岗位 |
+| jobradar calendar --group 京东 | 返回 2 条，含 blocked 提示 |
+| jobradar stats | jobs.fields 字段覆盖率正常输出 |
+
 ## 发布流程（每次发版）
 
 1. `uv run pytest` + `uv run ruff check .` 全绿；

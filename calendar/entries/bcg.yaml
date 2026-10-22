@@ -1,0 +1,28 @@
+group: 波士顿咨询
+entries:
+- id: bcg-campus-entry
+  company: 波士顿咨询
+  project_type: 校招
+  apply_url: https://careers.bcg.com/global/en
+  source:
+    type: official_site
+    name: BCG Careers
+    url: https://careers.bcg.com/global/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.bcg.com/global/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：BCG Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: bcg-social-entry
+  company: 波士顿咨询
+  project_type: 社招
+  apply_url: https://careers.bcg.com/global/en
+  source:
+    type: official_site
+    name: BCG Careers
+    url: https://careers.bcg.com/global/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.bcg.com/global/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：BCG Careers）。入口页未写明批次/网申时间/城市，按红线留空。

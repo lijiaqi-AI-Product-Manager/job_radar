@@ -1,0 +1,28 @@
+group: 埃森哲
+entries:
+- id: accenture-campus-entry
+  company: 埃森哲
+  project_type: 校招
+  apply_url: https://www.accenture.com/cn-zh/careers
+  source:
+    type: official_site
+    name: 埃森哲中国 Careers
+    url: https://www.accenture.com/cn-zh/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.accenture.com/cn-zh/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：埃森哲中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: accenture-social-entry
+  company: 埃森哲
+  project_type: 社招
+  apply_url: https://www.accenture.com/cn-zh/careers
+  source:
+    type: official_site
+    name: 埃森哲中国 Careers
+    url: https://www.accenture.com/cn-zh/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.accenture.com/cn-zh/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：埃森哲中国 Careers）。入口页未写明批次/网申时间/城市，按红线留空。
