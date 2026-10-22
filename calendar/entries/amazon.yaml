@@ -1,0 +1,28 @@
+group: 亚马逊
+entries:
+- id: amazon-campus-entry
+  company: 亚马逊
+  project_type: 校招
+  apply_url: https://www.amazon.jobs/en/
+  source:
+    type: official_site
+    name: 亚马逊招聘官网
+    url: https://www.amazon.jobs/en/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.amazon.jobs/en/
+  notes: '官方招聘入口（2026-10-22 访问确认；页面标题：Amazon Careers: Impact the Future, Today）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。'
+- id: amazon-social-entry
+  company: 亚马逊
+  project_type: 社招
+  apply_url: https://www.amazon.jobs/en/
+  source:
+    type: official_site
+    name: 亚马逊招聘官网
+    url: https://www.amazon.jobs/en/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.amazon.jobs/en/
+  notes: '官方招聘入口（2026-10-22 访问确认；页面标题：Amazon Careers: Impact the Future, Today）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。'

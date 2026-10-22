@@ -1,0 +1,28 @@
+group: 好未来
+entries:
+- id: tal-campus-entry
+  company: 好未来
+  project_type: 校招
+  apply_url: https://job.tal.com/
+  source:
+    type: official_site
+    name: 好未来招聘官网
+    url: https://job.tal.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.tal.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: tal-social-entry
+  company: 好未来
+  project_type: 社招
+  apply_url: https://job.tal.com/
+  source:
+    type: official_site
+    name: 好未来招聘官网
+    url: https://job.tal.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://job.tal.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

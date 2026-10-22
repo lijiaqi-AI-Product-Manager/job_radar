@@ -1,0 +1,28 @@
+group: 携程
+entries:
+- id: ctrip-campus-entry
+  company: 携程
+  project_type: 校招
+  apply_url: https://careers.ctrip.com/
+  source:
+    type: official_site
+    name: 携程招聘官网
+    url: https://careers.ctrip.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.ctrip.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：无）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: ctrip-social-entry
+  company: 携程
+  project_type: 社招
+  apply_url: https://careers.ctrip.com/
+  source:
+    type: official_site
+    name: 携程招聘官网
+    url: https://careers.ctrip.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.ctrip.com/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：无）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

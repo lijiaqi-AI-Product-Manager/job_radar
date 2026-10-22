@@ -1,0 +1,28 @@
+group: 微软
+entries:
+- id: microsoft-campus-entry
+  company: 微软
+  project_type: 校招
+  apply_url: https://careers.microsoft.com/v2/global/en/home.html
+  source:
+    type: official_site
+    name: 微软招聘官网
+    url: https://careers.microsoft.com/v2/global/en/home.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.microsoft.com/v2/global/en/home.html
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Home | Microsoft Careers）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: microsoft-social-entry
+  company: 微软
+  project_type: 社招
+  apply_url: https://careers.microsoft.com/v2/global/en/home.html
+  source:
+    type: official_site
+    name: 微软招聘官网
+    url: https://careers.microsoft.com/v2/global/en/home.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.microsoft.com/v2/global/en/home.html
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Home | Microsoft Careers）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

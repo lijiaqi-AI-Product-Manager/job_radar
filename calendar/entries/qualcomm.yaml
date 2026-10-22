@@ -1,0 +1,16 @@
+group: 高通
+entries:
+- id: qualcomm-campus-entry
+  company: 高通
+  project_type: 校招
+  apply_url: https://careers.qualcomm.com/careers
+  source:
+    type: official_site
+    name: 高通招聘官网
+    url: https://careers.qualcomm.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.qualcomm.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Qualcomm Careers | Engineering Jobs and More
+    | Qua）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。

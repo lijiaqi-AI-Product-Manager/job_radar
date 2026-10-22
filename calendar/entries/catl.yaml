@@ -1,0 +1,28 @@
+group: 宁德时代
+entries:
+- id: catl-campus-entry
+  company: 宁德时代
+  project_type: 校招
+  apply_url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  source:
+    type: official_site
+    name: 宁德时代招聘官网
+    url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：宁德时代校招 | 宁德时代社招 | 宁德时代招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+- id: catl-social-entry
+  company: 宁德时代
+  project_type: 社招
+  apply_url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  source:
+    type: official_site
+    name: 宁德时代招聘官网
+    url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://talent.catl.com/social-recruitment/catlhr/96144/
+  notes: 官方招聘入口（2026-10-22 访问确认；页面标题：宁德时代校招 | 宁德时代社招 | 宁德时代招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
