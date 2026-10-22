@@ -1,0 +1,15 @@
+group: 中车株洲所
+entries:
+- id: crrczzs-campus-entry
+  company: 中车株洲所
+  project_type: 校招
+  apply_url: https://crrczzs.zhiye.com/
+  source:
+    type: official_site
+    name: 中车株洲电力机车研究所有限公司 招聘系统
+    url: https://crrczzs.zhiye.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://crrczzs.zhiye.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200）。该租户是定制网申页，列表接口非标准北森 API，未接入数据层。
