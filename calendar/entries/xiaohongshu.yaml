@@ -1,0 +1,43 @@
+group: 小红书
+entries:
+  - id: xhs-2027-xz
+    company: 行吟信息科技（上海）有限公司
+    product: 小红书
+    grad_year: 2027
+    project_type: 校招
+    apply_url: https://campus.xiaohongshu.com
+    source: {type: official_site, name: 小红书校园招聘官网, url: "https://job.xiaohongshu.com/campus"}
+    as_of: 2026-10-21
+    jd: {status: none}
+    notes: "官网「2027 校园招聘」：面向毕业时间在 2026年9月-2027年8月的全球本硕博毕业生；投递入口为校招官网与「小红书招聘」小程序。官网未写网申起止日期。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: xhs-redstar
+    company: 行吟信息科技（上海）有限公司
+    product: 小红书
+    project_type: 校招
+    tracks:
+      - {direction: 顶尖人才计划, roles: [REDstar]}
+    apply_url: https://campus.xiaohongshu.com
+    source: {type: official_site, name: 小红书校园招聘官网, url: "https://job.xiaohongshu.com/campus"}
+    as_of: 2026-10-21
+    jd: {status: none}
+    notes: "官网「REDstar 顶尖人才计划」：「毕业两年内均可投递」，毕业时间在 2024年9月-2027年8月的全球本硕博毕业生。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: xhs-ace-intern
+    company: 行吟信息科技（上海）有限公司
+    product: 小红书
+    project_type: 实习
+    tracks:
+      - {direction: 顶尖实习生计划, roles: [Ace]}
+    apply_url: https://campus.xiaohongshu.com
+    source: {type: official_site, name: 小红书校园招聘官网, url: "https://job.xiaohongshu.com/campus"}
+    as_of: 2026-10-21
+    jd: {status: none}
+    notes: "官网「Ace 顶尖实习生计划」：面向全球顶尖高校在校生的战略级实习生项目。（2026-10-21 浏览器渲染官网页面核对原文）"
+  - id: xhs-intern
+    company: 行吟信息科技（上海）有限公司
+    product: 小红书
+    project_type: 实习
+    apply_url: https://campus.xiaohongshu.com
+    source: {type: official_site, name: 小红书校园招聘官网, url: "https://job.xiaohongshu.com/campus"}
+    as_of: 2026-10-21
+    jd: {status: none}
+    notes: "官网「实习生招聘」：为在校生提供实践机会。未写届次与时间。（2026-10-21 浏览器渲染官网页面核对原文）"

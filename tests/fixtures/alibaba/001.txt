@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="//g.alicdn.com/platform/alixiaoyouhui/2.1.6/img/icon.ico?v=20150801" />
+            <title>阿里巴巴校园招聘</title>
+    
+                    <meta property="og:image" content="//g.alicdn.com/platform/alixiaoyouhui/2.1.6/img/icon.ico?v=20150801" />
+    
+    
+    <script src="https://g.alicdn.com/code/lib/??react/16.14.0/umd/react.production.min.js,react-dom/16.14.0/umd/react-dom.production.min.js,prop-types/15.7.2/prop-types.js"></script>
+    <script> React.PropTypes = PropTypes; </script>
+    <script src="https://lang.alicdn.com/mcms/recruit-careers-center/0.0.56/recruit-careers-center.json"></script>
+    <script src="https://lang.alicdn.com/mcms/recruit-careers-portal/0.0.92/recruit-careers-portal.json"></script>
+    <link href="https://g.alicdn.com/CPO-platform/recruit-portal/1.0.6/css/index.css" rel="stylesheet">
+
+    <script crossorigin="anonymous" src="https://g.alicdn.com/code/npm/@ali/cpo-aem/1.0.47/index.js" type="text/javascript"></script>
+    <script>
+        window.CES.start({
+            pid: "xux-Sexf4s",
+            // 白屏检测根节点
+            plugin_blank_cfg: {
+                plugin_blank_target: "#app",
+            },
+            // 其他项目中需要的 AEM 配置 https://aliyuque.antfin.com/aes/help/kyt9tl
+        });
+    </script>
+
+    <script crossorigin="anonymous" charset="utf-8" type="text/javascript">
+        window.__userconfig = {
+            locale: "zh",
+            iconUrl: "${iconUrl}",
+            myReferralShareCode: "",
+            videoMeetingPassword: ""
+        };
+
+        window.__sysconfig = {
+            environment     : "online",
+            __token__: "REDACTED",
+            circle          : {"portalOfficialOverseasChannel":"group_overseas_official_site","circleAliasNameEn":"Alibaba","portalCampusOverseasChannel":"new_campus_en_group_official_site","portalCampusChannel":"new_campus_group_official_site","portalOfficialChannel":"group_official_site","circleAliasName":"阿里巴巴","portalDomain":"https://campus-talent.alibaba.com","circleCode":"1002","enableOverseasSite":true},
+            channelCodeMap: {
+                offCampus: "group_official_site",
+                campus: "new_campus_group_official_site",
+            },
+            __front_end_micro_modules: "{&quot;recruitmentExamModule&quot;:[&quot;https://g.alicdn.com/code/npm/@ali/recruitment-exam-icestark-module/0.2.0/index/index.js&quot;,&quot;https://g.alicdn.com/code/npm/@ali/recruitment-exam-icestark-module/0.2.0/index/index.css&quot;],&quot;campusApplication&quot;:[&quot;https://g.alicdn.com/platform/campus-application/1.4.7/js/index.js&quot;,&quot;https://g.alicdn.com/platform/campus-application/1.4.7/css/index.css&quot;],&quot;invitionProgressManagment&quot;:[&quot;https://g.alicdn.com/code/npm/@ali/invition-progress-managment/0.0.2/index/index.js&quot;,&quot;https://g.alicdn.com/code/npm/@ali/invition-progress-managment/0.0.2/index/index.css&quot;],&quot;invitionTaskManagment&quot;:[&quot;https://g.alicdn.com/code/npm/@ali/invition-task-managment/0.0.3/index/index.js&quot;,&quot;https://g.alicdn.com/code/npm/@ali/invition-task-managment/0.0.3/index/index.css&quot;],&quot;interviewRoomFeedback&quot;:[&quot;https://g.alicdn.com/code/npm/@ali/interview-room-feedback/0.0.16/index/index.js&quot;,&quot;https://g.alicdn.com/code/npm/@ali/interview-room-feedback/0.0.16/index/index.css&quot;]}",
+        }
+
+        window.g_config = {
+            baseInfo: {"moreBatch":false,"toCampusCareers":false,"onlyOnePosition":false},
+            enableCampusAgent: true,
+            referralCode: "",
+            aiInterviewRoomV2Eligible: false
+        };
+    </script>
+</head>
+
+<body>
+<div id="app"></div>
+</body>
+<script defer src="https://g.alicdn.com/CPO-platform/recruit-portal/1.0.6/js/index.js"></script>
+</html>
+
+
