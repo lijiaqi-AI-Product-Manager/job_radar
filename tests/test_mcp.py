@@ -16,6 +16,8 @@ def home(tmp_path, monkeypatch):
     j = make_job(1, subcategory="算法", requirements="PyTorch")
     ingest_run(jobs, "s1", [j], ts=now_ts())
     upsert_texts(text, [j], ts=now_ts())
+    jobs.close()
+    text.close()
     return tmp_path
 
 

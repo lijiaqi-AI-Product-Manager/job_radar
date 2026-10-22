@@ -1,4 +1,5 @@
 import json
+import sqlite3
 
 import pytest
 
@@ -162,6 +163,24 @@ def test_download_all_404_explains_private_repo(tmp_path, no_token):
     import httpx
     with pytest.raises(SystemExit, match="GITHUB_TOKEN"):
         cli._download("jobs.db", tmp_path / "jobs.db", client=_client(lambda r: httpx.Response(404)))
+
+
+def test_download_leaves_no_part_files(tmp_path, no_token):
+    """404 分支要先关闭临时文件再删除：Windows 上删除打开中的文件会报 WinError 32。"""
+    import httpx
+    with pytest.raises(SystemExit):
+        cli._download("jobs.db", tmp_path / "jobs.db", client=_client(lambda r: httpx.Response(404)))
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_db_context_closes_connection(tmp_path, monkeypatch):
+    """连接必须在退出时关闭：Windows 上未关闭的连接会锁住库，update 的原子替换会失败。"""
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    connect(tmp_path / "jobs.db", "jobs").close()
+    with local.db("jobs") as conn:
+        assert conn.execute("select count(*) from job").fetchone()[0] == 0
+    with pytest.raises(sqlite3.ProgrammingError):
+        conn.execute("select 1")
 
 
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
