@@ -1,0 +1,106 @@
+[
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPosition/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&isFrompb=true&recruitType=1&pageSize=5&currentPage=1",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6aaa2c10b6fae46f67553282",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "002.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c7a643154813049e1552",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "003.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c82b68cc6f624f41ba31",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "004.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c8cf43154813049e15f1",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "005.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c91f1ad6db7cf8048e66",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "006.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c96268cc6f624f41bac5",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "007.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c7d668cc6f624f41ba01",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "008.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6a82c9441ad6db7cf8048e86",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "009.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6aab842ef0cfabf2b4c55c3f",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "010.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6aa66edf38cb5261fe62cae2",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "011.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6aa66f9442efacd5904fea46",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "012.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPositionDetail/SU60a6449a2f9d2430fdc11a19?iSaJAx=isAjax&request_locale=zh_CN&postId=6acc897af0cfabf2b4ec8520",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "013.json"
+  }
+]
