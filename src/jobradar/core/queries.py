@@ -6,6 +6,7 @@
 import json
 from datetime import date, timedelta
 
+from jobradar.aliases import match_names
 from jobradar.timeutil import parse_ts
 
 _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category, j.subcategory,
@@ -43,6 +44,12 @@ def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> str |
     return None
 
 
+def _company_clause(company: str) -> tuple[str, list[str]]:
+    """公司过滤：原词子串，或简称映射到的全名子串（见 aliases.py）。"""
+    names = match_names(company)
+    return "(" + " OR ".join(["c.name LIKE ?"] * len(names)) + ")", [f"%{n}%" for n in names]
+
+
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
                 grad_year=None, keyword=None, text=None, text_conn=None,
                 include_closed=False, limit=50) -> list[dict]:
@@ -51,8 +58,9 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if not include_closed:
         where.append("j.closed_at IS NULL")
     if company:
-        where.append("c.name LIKE ?")
-        args.append(f"%{company}%")
+        clause, company_args = _company_clause(company)
+        where.append(clause)
+        args += company_args
     if category:
         where.append("(j.category = ? OR j.subcategory = ?)")
         args += [category, category]
@@ -88,8 +96,9 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
 def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[dict]:
     where, args = ["e.ts >= ?"], [since]
     if company:
-        where.append("c.name LIKE ?")
-        args.append(f"%{company}%")
+        clause, company_args = _company_clause(company)
+        where.append(clause)
+        args += company_args
     if types:
         where.append(f"e.type IN ({','.join('?' * len(types))})")
         args += list(types)
@@ -107,10 +116,11 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[
 def company_trend(conn, company, *, until, step_days=7) -> list[dict]:
     """从该公司最早岗位出现之日起，每 step_days 采样一次"当日在招岗位数"，最后一个点落在 until。
     注意：按 first_seen/closed_at 还原，岗位若曾关闭又重开，中间的空档不会体现。"""
+    clause, args = _company_clause(company)
     rows = conn.execute(
-        """SELECT j.first_seen, j.closed_at FROM job j JOIN company c ON c.id = j.company_id
-           WHERE c.name LIKE ?""",
-        (f"%{company}%",),
+        f"""SELECT j.first_seen, j.closed_at FROM job j JOIN company c ON c.id = j.company_id
+           WHERE {clause}""",
+        tuple(args),
     ).fetchall()
     if not rows:
         return []
