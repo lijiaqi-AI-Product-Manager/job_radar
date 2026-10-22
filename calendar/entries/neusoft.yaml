@@ -1,0 +1,15 @@
+group: 东软集团
+entries:
+- id: neusoft-campus-entry
+  company: 东软集团
+  project_type: 校招
+  apply_url: https://www.neusoft.com/careers/
+  source:
+    type: official_site
+    name: Neusoft Careers
+    url: https://www.neusoft.com/careers/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.neusoft.com/careers/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Neusoft Careers）。入口页未写明批次/网申时间/城市，按红线留空。

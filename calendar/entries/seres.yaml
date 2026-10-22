@@ -1,0 +1,15 @@
+group: 赛力斯
+entries:
+- id: seres-campus-entry
+  company: 赛力斯
+  project_type: 校招
+  apply_url: https://www.seres.cn/p/career-development.html
+  source:
+    type: official_site
+    name: 赛力斯集团-职业发展
+    url: https://www.seres.cn/p/career-development.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.seres.cn/p/career-development.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：赛力斯集团-职业发展）。入口页未写明批次/网申时间/城市，按红线留空。

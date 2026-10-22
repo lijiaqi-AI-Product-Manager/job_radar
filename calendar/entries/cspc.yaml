@@ -1,0 +1,15 @@
+group: 石药集团
+entries:
+- id: cspc-campus-entry
+  company: 石药集团
+  project_type: 校招
+  apply_url: https://ehr.e-cspc.com:8081/RedseaPlatform/zhaopin/zpChannelQrCode/0beb3022-3214-4333-a2e7-20786c4916d5/officeWebsite.mob
+  source:
+    type: official_site
+    name: 石药集团招聘官网
+    url: https://ehr.e-cspc.com:8081/RedseaPlatform/zhaopin/zpChannelQrCode/0beb3022-3214-4333-a2e7-20786c4916d5/officeWebsite.mob
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://ehr.e-cspc.com:8081/RedseaPlatform/zhaopin/zpChannelQrCode/0beb3022-3214-4333-a2e7-20786c4916d5/officeWebsite.mob
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：石药集团招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。

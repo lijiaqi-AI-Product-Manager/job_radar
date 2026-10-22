@@ -1,0 +1,15 @@
+group: 霸王茶姬
+entries:
+- id: chagee-campus-entry
+  company: 霸王茶姬
+  project_type: 校招
+  apply_url: https://jobs.chagee.com
+  source:
+    type: official_site
+    name: 欢迎加入霸王茶姬
+    url: https://jobs.chagee.com
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://jobs.chagee.com
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：欢迎加入霸王茶姬）。入口页未写明批次/网申时间/城市，按红线留空。

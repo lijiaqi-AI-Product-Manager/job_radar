@@ -1,0 +1,15 @@
+group: 软通动力
+entries:
+- id: isoftstone-campus-entry
+  company: 软通动力
+  project_type: 校招
+  apply_url: https://career.isoftstone.com/
+  source:
+    type: official_site
+    name: 软通动力-人才招聘
+    url: https://career.isoftstone.com/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://career.isoftstone.com/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：软通动力-人才招聘）。入口页未写明批次/网申时间/城市，按红线留空。

@@ -1,0 +1,15 @@
+group: MiniMax
+entries:
+- id: minimax-campus-entry
+  company: MiniMax
+  project_type: 校招
+  apply_url: https://www.minimax.cn/careers
+  source:
+    type: official_site
+    name: MiniMax 加入我们
+    url: https://www.minimax.cn/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.minimax.cn/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：MiniMax 加入我们）。入口页未写明批次/网申时间/城市，按红线留空。

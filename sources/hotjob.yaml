@@ -34,3 +34,9 @@ sources:
   - id: hotjob-crrc
     company: 中国中车
     params: {host: crrc.hotjob.cn, tenant: SU64d480906202cc36e27a5fd8, max_pages: 10}
+  - id: hotjob-yunnanbaiyao
+    company: 云南白药
+    params: {tenant: SU6136b970bef57c3b638162c4}
+  - id: hotjob-yonyou
+    company: 用友
+    params: {host: career.yonyou.com, tenant: SU67ac41886202cc7916ae3029}
