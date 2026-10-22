@@ -52,4 +52,8 @@
 ## 6. 下一步
 
 - 用同样的方法找其他外资的在华 Workday 站点（host/tenant/site 可从官网「Careers」跳转拿到）。
+- **不要猜 host/tenant/site**：2026-10-22 试了特斯拉/宝马/奔驰/大众/索尼/施耐德的
+  `*.wdN.myworkdayjobs.com + External` 组合，全部返回 **422**（Workday 的 wdN 编号与
+  site 名各家不同）。可靠做法是从官网 Careers 链接或搜索引擎拿到完整 URL，再用
+  `scripts` 里的方式验证。
 - 若某租户有多个 China 站点（北京/上海/深圳），分面 id 会全部取到，无需逐个配。
