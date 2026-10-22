@@ -1,0 +1,28 @@
+group: 思科
+entries:
+- id: cisco-campus-entry
+  company: 思科
+  project_type: 校招
+  apply_url: https://careers.cisco.com/global/en
+  source:
+    type: official_site
+    name: Careers at Cisco
+    url: https://careers.cisco.com/global/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.cisco.com/global/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Careers at Cisco）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: cisco-social-entry
+  company: 思科
+  project_type: 社招
+  apply_url: https://careers.cisco.com/global/en
+  source:
+    type: official_site
+    name: Careers at Cisco
+    url: https://careers.cisco.com/global/en
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://careers.cisco.com/global/en
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Careers at Cisco）。入口页未写明批次/网申时间/城市，按红线留空。

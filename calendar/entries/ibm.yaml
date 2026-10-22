@@ -1,0 +1,28 @@
+group: IBM
+entries:
+- id: ibm-campus-entry
+  company: IBM
+  project_type: 校招
+  apply_url: https://www.ibm.com/careers
+  source:
+    type: official_site
+    name: Define your career with IBM
+    url: https://www.ibm.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ibm.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Define your career with IBM）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: ibm-social-entry
+  company: IBM
+  project_type: 社招
+  apply_url: https://www.ibm.com/careers
+  source:
+    type: official_site
+    name: Define your career with IBM
+    url: https://www.ibm.com/careers
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.ibm.com/careers
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Define your career with IBM）。入口页未写明批次/网申时间/城市，按红线留空。

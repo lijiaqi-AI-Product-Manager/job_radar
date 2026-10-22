@@ -1,0 +1,28 @@
+group: 大陆集团
+entries:
+- id: continental-campus-entry
+  company: 大陆集团
+  project_type: 校招
+  apply_url: https://www.continental.com/en/career/
+  source:
+    type: official_site
+    name: Your Career at Continental
+    url: https://www.continental.com/en/career/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.continental.com/en/career/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Your Career at Continental）。入口页未写明批次/网申时间/城市，按红线留空。
+- id: continental-social-entry
+  company: 大陆集团
+  project_type: 社招
+  apply_url: https://www.continental.com/en/career/
+  source:
+    type: official_site
+    name: Your Career at Continental
+    url: https://www.continental.com/en/career/
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://www.continental.com/en/career/
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：Your Career at Continental）。入口页未写明批次/网申时间/城市，按红线留空。
