@@ -4,19 +4,27 @@
 - 新增了迁移文件却没登记 -> 失败（运行 scripts/update_schema_lock.py）
 """
 
-import hashlib
 import json
 from pathlib import Path
 
 import pytest
 
-from jobradar.store.migrate import KINDS, migration_files
+from jobradar.store.migrate import KINDS, migration_digest, migration_files
 
 LOCK = Path(__file__).parent / "schema_lock.json"
 
 
 def sha(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return migration_digest(path)
+
+
+def test_digest_ignores_line_endings(tmp_path):
+    """Windows checkout 会把 LF 转成 CRLF，哈希不能因此变化（Windows CI 实际踩到）。"""
+    lf = tmp_path / "lf.sql"
+    crlf = tmp_path / "crlf.sql"
+    lf.write_bytes(b"select 1;\nselect 2;\n")
+    crlf.write_bytes(b"select 1;\r\nselect 2;\r\n")
+    assert migration_digest(lf) == migration_digest(crlf)
 
 
 @pytest.fixture(scope="module")
