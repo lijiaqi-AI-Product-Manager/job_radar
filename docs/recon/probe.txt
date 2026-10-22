@@ -10,3 +10,7 @@ FLOW {"page":"https://campus-talent.alibaba.com/campus/position","page_headers":
 # 405/307；CSRF（POST /api/v1/csrf/token）能匿名拿到。本地沙箱起不了浏览器，
 # 用 Actions 上的 RENDERXHR 抓真实 XHR：方法、完整头、body、响应结构。
 RENDERXHR https://nio.jobs.feishu.cn/campus (search|job|csrf|api)
+
+# 第 41 轮补充：大疆走的也是 ATSX，但挂在定制域名上（apply.careers.dji.com），
+# API 路径与 saas 租户不同；同样用 RENDERXHR 抓一次真实请求。
+RENDERXHR https://apply.careers.dji.com/campus-recruitment/dji/143359 (search|job|csrf|api|recruit)
