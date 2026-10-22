@@ -49,6 +49,8 @@
 | 博世 | api.smartrecruiters.com | SmartRecruiters | robots 禁止（非 LinkedInBot 一律 Disallow） | 不做 |
 | 高通 | careers.qualcomm.com | Eightfold（PCSX） | robots 允许 `/api/apply`，但接口返回 403 `Not authorized for PCSX`（需前端令牌） | 需浏览器抓包 |
 | AMD | careers.amd.com | 自研 / Phenom | robots 允许（crawl-delay 5），但 `/api/apply/v2/jobs` 返回 404，接口路径不同 | 需再侦察 |
+| 字节 / 蔚来 / 小鹏 | `*.jobs.feishu.cn` | 飞书 ATSX | CSRF 匿名可取、GET 接口正常，但搜索 POST 要前端算的 `_signature`；本机按抓包参数复现仍 405（`docs/recon/atsx.md`） | 不做（逆向签名） |
+| 大疆 | apply.careers.dji.com | **Moka**（不是 ATSX） | `/api/outer/ats-apply/website/jobs/v2` 返回加密串 + `necromancer` | 不做（响应加密） |
 | 小米 | 无列表 | — | 公众号投递 | 日历条目（已有小红书/美的先例） |
 
 补充路径（对所有公司适用）：
