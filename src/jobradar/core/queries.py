@@ -245,21 +245,25 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
 
     过滤先按**精确**匹配；没有结果再退化为子串（`--group 字节` 仍能找到「字节跳动」）。
     这样 `--group 京东` 不会把「京东方」一起带出来（2026-10-22 实测的误匹配）。
+    简称也会展开：`--group 中建` 能命中「中国建筑」（映射见 taxonomy/company_aliases.yaml）。
     project_type 始终子串：`实习` 要能命中「暑期实习」「日常实习」。
     open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。
     """
     def run(exact: bool) -> list[dict]:
         where, args = [], []
         if group:
-            where.append("group_name = ?" if exact else "group_name LIKE ?")
-            args.append(group if exact else f"%{group}%")
+            names = match_names(group)
+            op = " = ?" if exact else " LIKE ?"
+            where.append("(" + " OR ".join(f"group_name{op}" for _ in names) + ")")
+            args += [n if exact else f"%{n}%" for n in names]
         if company:
+            names = match_names(company)
             if exact:
-                where.append("(company = ? OR product = ? OR group_name = ?)")
-                args += [company] * 3
+                where.append("(" + " OR ".join(["company = ?", "product = ?", "group_name = ?"] * len(names)) + ")")
+                args += [n for n in names for _ in range(3)]
             else:
-                where.append("(company LIKE ? OR product LIKE ? OR group_name LIKE ?)")
-                args += [f"%{company}%"] * 3
+                where.append("(" + " OR ".join(["company LIKE ?", "product LIKE ?", "group_name LIKE ?"] * len(names)) + ")")
+                args += [f"%{n}%" for n in names for _ in range(3)]
         if project_type:
             where.append("project_type LIKE ?")
             args.append(f"%{project_type}%")
