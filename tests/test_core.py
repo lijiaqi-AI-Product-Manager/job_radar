@@ -8,6 +8,7 @@ from jobradar.core.queries import (
     compare_roles,
     data_as_of,
     data_status,
+    field_coverage,
     get_job,
     new_jobs_by_category,
     recent_changes,
@@ -277,3 +278,13 @@ def test_search_text_requires_text_db(jd_seeded):
     jobs, _ = jd_seeded
     with pytest.raises(ValueError):
         search_jobs(jobs, text="Go")
+def test_field_coverage_reports_missing_city_and_grad_year(jobs_db):
+    """城市/届次缺失是来源没给：stats 要把覆盖率报出来，别让 agent 以为"没有"。"""
+    ingest_run(jobs_db, "s1", [
+        make_job(1, cities=["深圳"], grad_year=2027, category="技术"),
+        make_job(2, cities=[], grad_year=None, category=None, degree_min=None),
+        make_job(3, recruit_type="social", cities=[], grad_year=None),
+    ], ts=T(20))
+    cov = field_coverage(jobs_db)
+    assert cov["cities"] == 0.333 and cov["grad_year"] == 0.333 and cov["category"] == 0.667
+    assert cov["campus_cities"] == 0.5 and cov["campus_grad_year"] == 0.5  # 只统计 campus 两条
