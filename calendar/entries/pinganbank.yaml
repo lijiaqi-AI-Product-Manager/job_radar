@@ -1,0 +1,28 @@
+group: 平安银行
+entries:
+- id: pinganbank-campus-entry
+  company: 平安银行
+  project_type: 校招
+  apply_url: https://talent.pingan.com/recruit/social.html
+  source:
+    type: official_site
+    name: 平安招聘（社招）
+    url: https://talent.pingan.com/recruit/social.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://talent.pingan.com/recruit/social.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：平安招聘（社招））。入口页未写明批次/网申时间/城市，按红线留空。
+- id: pinganbank-social-entry
+  company: 平安银行
+  project_type: 社招
+  apply_url: https://talent.pingan.com/recruit/social.html
+  source:
+    type: official_site
+    name: 平安招聘（社招）
+    url: https://talent.pingan.com/recruit/social.html
+  as_of: '2026-10-22'
+  jd:
+    status: official_page
+    url: https://talent.pingan.com/recruit/social.html
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：平安招聘（社招））。入口页未写明批次/网申时间/城市，按红线留空。
