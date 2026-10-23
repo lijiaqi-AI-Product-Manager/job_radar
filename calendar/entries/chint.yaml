@@ -13,3 +13,7 @@ entries:
     status: official_page
     url: https://chint.com/join_us.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：正泰招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks:
+  - direction: 运营类
+    roles:
+    - 市场简介

@@ -12,3 +12,12 @@ entries:
   jd:
     status: none
   notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（2026-10-22 访问确认 200）。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 基准测试
+    - LYY | 工程师
+  - direction: 产品类
+    roles:
+    - 产品经理
+    - 小熊 | 产品经理

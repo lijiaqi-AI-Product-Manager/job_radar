@@ -12,3 +12,7 @@ entries:
   jd:
     status: none
   notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（已于 2026-10-22 访问确认 200）。
+  tracks:
+  - direction: 运营类
+    roles:
+    - 市场推广活动

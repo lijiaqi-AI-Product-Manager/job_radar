@@ -12,3 +12,10 @@ entries:
   jd:
     status: none
   notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（2026-10-22 访问确认 200）。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 开发者社区
+    - 软件生态与社区 BIRENSUPA™ 开发者社区
+    - BIRENSUPA™ 开发者社区
+    - 自主原创软件开发体系，软硬件全栈协同创新

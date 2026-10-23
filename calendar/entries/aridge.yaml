@@ -13,6 +13,20 @@ entries:
     status: official_page
     url: https://www.aridge.com/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+  tracks:
+  - direction: 运营类
+    roles:
+    - 落地成都！汇天西部首个“6S”综合运营中心
+    - 汇天西部首个飞行汽车“6S”综合运营中心正式落户成都
+  - direction: 设计类
+    roles:
+    - 捷报频传！陆地航母及设计师团队揽多项设计大奖
+  cities:
+  - 北京
+  - 广州
+  - 深圳
+  - 成都
+  - 海口
 - id: aridge-social-entry
   company: 小鹏汇天
   project_type: 社招

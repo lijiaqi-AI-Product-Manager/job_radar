@@ -1,12 +1,56 @@
 group: 招商银行
 entries:
-  - id: cmb-2027-qz
-    company: 招商银行
-    grad_year: 2027
-    project_type: 秋招
-    apply_end: 2026-10-10
-    apply_url: https://career.cmbchina.com/
-    source: {type: official_site, name: 招商银行招聘官网（校园招聘常见问题）, url: "https://career.cmbchina.com/question/school"}
-    as_of: 2026-10-21
-    jd: {status: official_page, url: "https://career.cmbchina.com/"}
-    notes: "2027届秋季校园招聘网申截止 2026-10-10 23:59（各分行、子公司以招聘公告为准）；境内院校毕业时间 2027-01-01 至 2027-07-31；最多投递 5 个机构（分行，不含子公司）。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: cmb-2027-qz
+  company: 招商银行
+  grad_year: 2027
+  project_type: 秋招
+  apply_end: 2026-10-10
+  apply_url: https://career.cmbchina.com/
+  source:
+    type: official_site
+    name: 招商银行招聘官网（校园招聘常见问题）
+    url: https://career.cmbchina.com/question/school
+  as_of: 2026-10-21
+  jd:
+    status: official_page
+    url: https://career.cmbchina.com/
+  notes: 2027届秋季校园招聘网申截止 2026-10-10 23:59（各分行、子公司以招聘公告为准）；境内院校毕业时间 2027-01-01 至 2027-07-31；最多投递
+    5 个机构（分行，不含子公司）。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 运营类
+    roles:
+    - 投行与金融市场
+    - 温蒂运营管理岗 | 悉尼分行
+    - 运营管理岗 | 悉尼分行
+  - direction: 职能类
+    roles:
+    - 娉婷软件分析师 | 新加坡分行
+    - 软件分析师 | 新加坡分行
+  - direction: 销售类
+    roles:
+    - Yukho跨境金融客户经理 | 广州分行
+    - 杉杉金葵花客户经理 | 杭州分行
+    - 小刘零售信贷客户经理 | 武汉分行
+    - 旺仔牛奶金葵花客户经理 | 西安分行
+    - 小金对公助理客户经理 | 丹东分行
+    - 好木头机构客户经理 | 北京分行
+  - direction: 产品类
+    roles:
+    - 源周率产品运营岗 | 济南分行
+    - 牙牙平台产品经理岗 | 交易银行部
+    - 花卷零售产品经理 | 北京分行
+    - Yang产品与系统运营管理岗 | 私人银行部
+    - 产品运营岗 | 济南分行
+    - 平台产品经理岗 | 交易银行部
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  - 武汉
+  - 西安
+  - 苏州
+  - 济南
