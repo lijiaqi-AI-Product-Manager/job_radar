@@ -134,3 +134,28 @@ def test_looks_like_location(text, ok):
 ])
 def test_degree_min(text, degree):
     assert degree_min_from_text(text) == degree
+
+@pytest.mark.parametrize("en,city", [
+    ("Lianyungang", "连云港"),   # Workday 真实写法（pypinyin 生成）
+    ("LianYungang", "连云港"),   # 大小写不敏感
+    ("Urumqi", "乌鲁木齐"),       # 官方英文名，不是拼音
+    ("Harbin", "哈尔滨"),
+    ("Lhasa", "拉萨"),
+    ("Hohhot", "呼和浩特"),
+    ("xi'an", "西安"),
+    ("Hong Kong", "香港"),
+])
+def test_city_from_english_covers_workday_spellings(en, city):
+    """外资站（Workday）用英文城市名：拼音 + 官方异写都要能映射，否则城市全空。
+
+    背景（2026-10-24）：CITY_EN 原来只有 27 条，Workday 源的城市覆盖率被它卡在
+    64%~90%；补齐到 101 条后 Intel 90%→100%、辉瑞 75%→88%。
+    """
+    from jobradar.normalize import city_from_english
+    assert city_from_english(en) == city
+
+
+def test_city_from_english_unknown_returns_none():
+    from jobradar.normalize import city_from_english
+    assert city_from_english("Jiangsu") is None      # 省名不是城市
+    assert city_from_english("") is None
