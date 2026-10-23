@@ -219,6 +219,25 @@ def test_open_on_uses_apply_window(built):
     assert "bytedance-2027-qz" in [r["id"] for r in calendar_entries(built, group="字节", open_on="2026-10-21")]
 
 
+def test_open_on_marks_unknown_window(tmp_path, jobs, cal_db):
+    """来源没写起止的条目会被带回（否则等于藏起 99% 的校招），但必须标成 unknown：
+
+    「没写截止日期」不等于「今天确定还能投」，agent 不能把前者当后者说（2026-10-24 外部评审）。
+    """
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="known-window", apply_start="2026-08-01", apply_end="2026-12-31"),
+        manual(id="unknown-window", project_type="日常实习", apply_start=None, apply_end=None),
+    ])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    rows = {r["id"]: r for r in calendar_entries(cal_db, group="字节跳动", open_on="2026-10-21")}
+    assert rows["known-window"]["window_status"] == "open"
+    assert rows["unknown-window"]["window_status"] == "unknown"
+    # 不带 open_on 时不加这个字段（不是所有调用方都需要）
+    assert all("window_status" not in r for r in calendar_entries(cal_db, group="字节跳动"))
+
+
+
+
 def test_stats_coverage(built):
     st = calendar_stats(built)
     assert st["targets"] == 4

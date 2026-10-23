@@ -1,6 +1,6 @@
 [project]
 name = "jobradar"
-version = "1.0.1"
+version = "1.0.2"
 description = "每日自动更新的中国校招/实习/社招岗位开放数据集：CLI + MCP + Skill，让 AI agent 直接查询（零服务器、可离线）"
 readme = "README.md"
 license = { text = "MIT" }
@@ -36,6 +36,11 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/jobradar"]
+
+# taxonomy/ 在仓库根，不在包里；但 `--company 中核` 的简称映射靠它。
+# 不打进 wheel 的话 pip 用户拿不到映射（源码树里跑测试却是绿的）。
+[tool.hatch.build.targets.wheel.force-include]
+"taxonomy/company_aliases.yaml" = "jobradar/_data/company_aliases.yaml"
 
 # sdist 白名单：只打包需要的东西。默认行为会把 .uv-cache/（几十 MB）一起塞进 tar，
 # 2026-10-22 实测产物 117MB——这是发布阻断项。

@@ -61,6 +61,25 @@ def test_diff_by_category(home, capsys):
     assert out["results"] == [{"category": "技术", "n": 2}]
 
 
+def test_diff_by_category_with_company_is_actually_scoped(home, capsys):
+    """`--by category --company` 曾静默忽略 --company（2026-10-24 外部评审 P0）。"""
+    out = run(capsys, "diff", "--days", "7", "--by", "category", "--company", "字节跳动")
+    assert out["company_match"]["match"] == "exact"
+    assert out["results"] == [{"category": "技术", "n": 1}]     # 腾讯那条不算进来
+    assert run(capsys, "diff", "--days", "7", "--by", "category", "--company", "京东")["results"] == []
+
+
+def test_empty_search_reports_hints(home, capsys):
+    """空结果要给「下一步怎么查」：字段没写 ≠ 没有岗位（2026-10-24 外部评审）。"""
+    out = run(capsys, "search", "--company", "腾讯", "--grad-year", "2099")
+    assert out["results"] == [] and any("--grad-year" in h for h in out["hints"])
+    miss = run(capsys, "search", "--company", "京东")
+    assert miss["company_match"]["match"] == "none"
+    assert any("公司名没有唯一确定" in h for h in miss["hints"])
+    ok = run(capsys, "search", "--company", "腾讯")
+    assert ok["results"] and "hints" not in ok
+
+
 def test_stale_data_is_flagged(tmp_path, monkeypatch, capsys):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     jobs = connect(tmp_path / "jobs.db", "jobs")
@@ -472,6 +491,17 @@ def test_doctor_reports_corrupt_db_with_advice(home, capsys):
     out = json.loads(capsys.readouterr().out)
     assert out["jobs_db"] is False
     assert "--force" in out["advice"]
+
+
+def test_corrupt_db_gives_actionable_error_for_every_command(home, capsys):
+    """doctor 之外的命令也要给「重下」的指引，不能把 sqlite3 的 traceback 甩给用户。"""
+    (home / "jobs.db").write_bytes(b"not a sqlite file")
+    for argv in (["stats"], ["search", "--company", "腾讯"], ["sources"]):
+        with pytest.raises(SystemExit) as exc:
+            cli.main(argv)
+        msg = str(exc.value)
+        assert "损坏" in msg and "--force" in msg
+        assert "Traceback" not in capsys.readouterr().err
 
 def test_download_falls_back_when_parts_are_truncated(tmp_path, no_token):
     """Gitee 分片不完整（只传了一半）时不能直接失败：要退回整文件/下一个镜像。"""

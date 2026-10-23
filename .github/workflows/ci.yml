@@ -35,6 +35,19 @@ jobs:
             echo "::error::sdist 超过 5MB，检查是否有缓存/数据库被打包"
             exit 1
           fi
+      # wheel 里必须带简称映射表，否则 pip 装完 `--company 中核` 查不到（源码树里测不出来）
+      - name: Wheel must contain company_aliases.yaml
+        shell: bash
+        run: |
+          set -euo pipefail
+          uv run python - <<'PY'
+          import glob, sys, zipfile
+          wheel = sorted(glob.glob("dist/*.whl"))[-1]
+          names = zipfile.ZipFile(wheel).namelist()
+          target = "jobradar/_data/company_aliases.yaml"
+          print(wheel, "->", target in names)
+          sys.exit(0 if target in names else 1)
+          PY
 
   py311:
     # 兼容性下限：pyproject 声明 >=3.11，这里真跑一遍（只跑 ubuntu，省额度）

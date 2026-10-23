@@ -67,6 +67,61 @@ def test_recent_changes_by_company_alias(jobs_db):
     assert [r["title"] for r in rows] == ["核工程研发"]
 
 
+def test_company_prefix_extension_does_not_return_another_company(jobs_db):
+    """`--company 京东` 不能返回「京东方」的岗位（2026-10-24 外部评审 P0：200+ 行别家数据）。
+
+    京东不在数据集里，京东方是另一家公司。子串只多一个字的「前缀延伸」不敢猜，
+    返回空 + 候选，让用户知道是「未收录」而不是「京东在招 200 个岗」。
+    """
+    ingest_run(jobs_db, "boe", [make_job(1, source_id="boe", company="京东方", title="面板工艺工程师")], ts=T(1))
+    meta = {}
+    assert search_jobs(jobs_db, company="京东", meta=meta) == []
+    assert meta["company_match"]["match"] == "none"
+    assert meta["company_match"]["candidates"] == ["京东方"]
+
+
+def test_ambiguous_company_term_returns_nothing_and_lists_candidates(jobs_db):
+    """「中国」命中多家时不能随手挑一家，也不能把 30 家混在一起返回。"""
+    ingest_run(jobs_db, "a", [make_job(1, source_id="a", company="中国核工业集团", title="核工程")], ts=T(1))
+    ingest_run(jobs_db, "b", [make_job(1, source_id="b", company="中国船舶集团", title="船舶设计")], ts=T(1))
+    meta = {}
+    assert search_jobs(jobs_db, company="中国", meta=meta) == []
+    assert meta["company_match"]["match"] == "ambiguous"
+    assert meta["company_match"]["candidates"] == ["中国核工业集团", "中国船舶集团"]
+
+
+def test_company_contains_flag_allows_group_query(jobs_db):
+    """显式 `--contains` 才是「按子串搜」，此时多家结果是有意的。"""
+    ingest_run(jobs_db, "a", [make_job(1, source_id="a", company="中国核工业集团", title="核工程")], ts=T(1))
+    ingest_run(jobs_db, "b", [make_job(1, source_id="b", company="中国船舶集团", title="船舶设计")], ts=T(1))
+    meta = {}
+    assert len(search_jobs(jobs_db, company="中国", contains=True, meta=meta)) == 2
+    assert meta["company_match"]["match"] == "contains"
+
+
+def test_company_match_mode_is_reported_for_exact_and_alias(jobs_db):
+    """命中方式要能回显，agent 才知道「这是精确匹配」还是「猜的」。"""
+    ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
+    exact, alias = {}, {}
+    search_jobs(jobs_db, company="中国核工业集团", meta=exact)
+    search_jobs(jobs_db, company="中核", meta=alias)
+    assert exact["company_match"] == {"match": "exact", "matched": ["中国核工业集团"]}
+    assert alias["company_match"]["match"] == "alias"
+    assert alias["company_match"]["matched"] == ["中国核工业集团"]
+
+
+def test_diff_by_category_respects_company(jobs_db):
+    """`diff --by category --company 某公司` 曾静默忽略 --company，把全库数字当该公司的。"""
+    ingest_run(jobs_db, "a", [make_job(i, source_id="a", company="腾讯", category="技术") for i in range(1, 4)], ts=T(1))
+    ingest_run(jobs_db, "b", [make_job(1, source_id="b", company="美团", category="产品")], ts=T(1))
+    meta = {}
+    rows = new_jobs_by_category(jobs_db, since=T(0), company="腾讯", meta=meta)
+    assert rows == [{"category": "技术", "n": 3}]
+    assert meta["company_match"]["match"] == "exact"
+    # 不带 --company 时仍是全库
+    assert sum(r["n"] for r in new_jobs_by_category(jobs_db, since=T(0))) == 4
+
+
 def test_alias_table_only_maps_unique_short_names():
     from jobradar.aliases import match_names
     assert match_names("中核") == ["中核", "中国核工业集团"]
