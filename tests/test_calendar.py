@@ -290,3 +290,44 @@ def test_group_query_expands_aliases(tmp_path, jobs, cal_db):
     cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
     assert [r["id"] for r in calendar_entries(cal_db, group="中建")] == ["cscec-1"]
     assert [r["id"] for r in calendar_entries(cal_db, group="中国建筑")] == ["cscec-1"]
+
+def test_link_check_keeps_one_request_per_host(tmp_path, jobs, cal_db):
+    """并行化之后仍然要守「同一主机 1 rps」的承诺。"""
+    import time
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="a-1"), manual(id="a-2", apply_url="https://jobs.bytedance.com/campus?page=2"),
+        manual(id="a-3", apply_url="https://jobs.bytedance.com/campus?page=3")])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    hits = []
+
+    def handler(req):
+        if req.url.path.endswith("robots.txt"):
+            return httpx.Response(404)
+        hits.append(time.monotonic())
+        return httpx.Response(200)
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    cal.check_links(cal_db, client, ts=T(21), sleep=time.sleep, min_interval=0.2)
+    assert len(hits) >= 2
+    gaps = [b - a for a, b in zip(hits, hits[1:])]
+    assert min(gaps) >= 0.18, gaps
+
+
+def test_link_check_stops_retrying_unreachable_host(tmp_path, jobs, cal_db):
+    """主机整个连不上时，剩余链接直接记 error——不要一条条等超时（daily 就是这样超时的）。"""
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="a-1"), manual(id="a-2", apply_url="https://jobs.bytedance.com/campus?page=2"),
+        manual(id="a-3", apply_url="https://jobs.bytedance.com/campus?page=3")])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    calls = {"n": 0}
+
+    def handler(req):
+        if req.url.path.endswith("robots.txt"):
+            return httpx.Response(404)
+        calls["n"] += 1
+        raise httpx.ConnectError("blocked")
+
+    cal.check_links(cal_db, httpx.Client(transport=httpx.MockTransport(handler)), ts=T(21), sleep=lambda s: None)
+    assert calls["n"] == 1           # 只对第一条发起过真实请求
+    rows = dead_links(cal_db, include_errors=True)
+    assert len(rows) == 3 and all(r["status"] == "error" for r in rows)
