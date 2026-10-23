@@ -348,7 +348,8 @@ def cmd_calendar_build(args):
         counts = cal.build(cal_conn, jobs_conn, manual=cal.load_manual(Path(args.entries)),
                            sources=sources, targets=targets, ts=now_ts())
         if args.check_links:
-            with httpx.Client(timeout=httpx.Timeout(20, connect=10)) as client:
+            # 探活只看状态码：超时给 8s/连接 5s（部分国内站点在 Actions 上根本连不上，等 20s 是浪费）
+            with httpx.Client(timeout=httpx.Timeout(8, connect=5)) as client:
                 counts["links"] = cal.check_links(cal_conn, client, ts=now_ts())
     print(json.dumps(counts, ensure_ascii=False))
 
