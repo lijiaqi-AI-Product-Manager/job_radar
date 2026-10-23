@@ -25,7 +25,7 @@ uv run python scripts/release_check.py --home ~/.jobradar
 | 数据源覆盖 | 161 / 500 | ≥150 | **PASS** |
 | 日历覆盖 | 494 / 500（blocked 16） | ≥450 | **PASS** |
 | 校园岗城市覆盖 | 18.4% | ≥60% | FAIL |
-| JD 正文覆盖 | 99.9% | ≥95% | PASS |
+| JD 正文覆盖 | 100.0% | ≥95% | PASS |
 | 发布文档 | 齐全 | 齐全 | PASS |
 
 ## 干净环境安装验证（2026-10-22 已通过）
@@ -34,7 +34,7 @@ uv run python scripts/release_check.py --home ~/.jobradar
 
 | 步骤 | 结果 |
 |---|---|
-| jobradar --version | jobradar 0.9.0 |
+| jobradar --version | jobradar 1.0.0 |
 | jobradar update | 4.6s，三个库都走 GitHub，data_as_of = 当天 |
 | jobradar doctor | jobs/jd_text/calendar 都在，未过期 |
 | jobradar search --limit 2 | 正常返回岗位 |

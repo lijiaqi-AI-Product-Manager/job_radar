@@ -83,7 +83,7 @@ GitHub Actions（每日 UTC 22:19）
   └─ mirror       同步到 Gitee 发行版（国内加速）
 
 本地
-  jobradar update     ← Release / Gitee（自动回退、大小校验）
+  jobradar update     ← Release / Gitee（自动回退、gzip 与 SQLite 完整性校验）
   jobradar <query>    ← 纯本地 SQLite 查询（CLI / MCP / Skill 共用同一套查询层）
 ```
 
