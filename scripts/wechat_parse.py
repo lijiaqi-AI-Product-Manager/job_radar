@@ -82,9 +82,30 @@ def parse(raw: str) -> dict:
 
 
 def fetch(url: str) -> str:
+    """公众号文章对非浏览器 UA 会返回空壳页，所以优先用渲染（Playwright，已批准）。"""
+    try:
+        return _fetch_render(url)
+    except Exception:
+        pass
     with httpx.Client(headers={"User-Agent": UA}, timeout=25, follow_redirects=True) as c:
         r = c.get(url)
         return r.text if r.status_code == 200 else ""
+
+
+def _fetch_render(url: str) -> str:
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        b = p.chromium.launch(args=["--no-sandbox"])
+        ctx = b.new_context(locale="zh-CN")
+        page = ctx.new_page()
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            page.wait_for_timeout(2500)
+            html = page.content()
+        finally:
+            page.close()
+            b.close()
+    return html
 
 
 def main() -> int:
