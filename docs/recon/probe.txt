@@ -44,3 +44,6 @@ RENDERXHR https://career.cmbchina.com/index.html (api|job|position)
 
 # 第 48 轮：招行校招页面（SPA 客户端路由，试 /campus）——目标：拿到岗位列表 JSON 端点。
 RENDERXHR https://career.cmbchina.com/campus (api|Recruitment|job|position)
+
+# 第 49 轮：招行岗位列表路由 /positionlist/<guid>（从 chunk 2466 里挖到的），抓它的 XHR。
+RENDERXHR https://career.cmbchina.com/positionlist/96574F8D-C7ED-4772-AE7C-BAC896D190C1 (api|Recruitment|position)
