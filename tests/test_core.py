@@ -299,6 +299,21 @@ def test_data_as_of_is_latest_successful_run(jobs_db):
     assert data_as_of(jobs_db) == T(3)
 
 
+def test_stale_threshold_agrees_with_envelope(jobs_db, monkeypatch):
+    """`sources` 的 stale 与 envelope 的 stale 必须是同一个阈值（以前 36h vs 48h）。
+
+    40 小时没成功抓取：还没到「两个日报周期」，两边都算新鲜；50 小时两边都算过期。
+    """
+    from jobradar import local
+
+    ingest_run(jobs_db, "s1", [make_job(1)], ts="2026-10-20T00:00:00Z")
+    for now, expect in (("2026-10-21T16:00:00Z", False),    # +40h
+                        ("2026-10-22T02:00:00Z", True)):     # +50h
+        monkeypatch.setattr(local, "now_ts", lambda now=now: now)
+        assert data_status(jobs_db, now=now)[0]["stale"] is expect
+        assert local.envelope(jobs_db, [])["stale"] is expect
+
+
 def test_compare_roles_by_keyword(jobs_db, text_db):
     a = [make_job(1, company="药明康德", title="【2027校招】化学研发研究员", subcategory=None, category=None, requirements="有机化学"),
          make_job(2, company="药明康德", title="财务专员", subcategory=None, category=None)]
