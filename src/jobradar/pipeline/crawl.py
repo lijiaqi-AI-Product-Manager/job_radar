@@ -58,6 +58,15 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
         client.close()
 
 
+def _expected_max(source: SourceConfig) -> int | None:
+    """源设了 max_pages 时，这次抓取最多能拿到多少条（用于骤降基线，见 ingest_run.expected_max）。"""
+    cap = source.max_pages
+    if not cap:
+        return None
+    size = int(source.params.get("page_size") or 100)
+    return cap * size
+
+
 def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           client_factory: Callable[[], httpx.Client] = make_client,
           adapters: dict[str, type[Adapter]] | None = None,
@@ -84,7 +93,8 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
                 if jobs is None:
                     results[source.id] = ingest_run(jobs_conn, source.id, [], ts=ts, ok=False, error=error)
                     continue
-                res = ingest_run(jobs_conn, source.id, jobs, ts=ts)
+                res = ingest_run(jobs_conn, source.id, jobs, ts=ts,
+                                 expected_max=_expected_max(source))
                 if res.status == "ok":
                     upsert_texts(text_conn, jobs, ts=ts)
                 results[source.id] = res

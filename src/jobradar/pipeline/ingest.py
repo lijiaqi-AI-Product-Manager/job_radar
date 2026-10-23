@@ -70,7 +70,7 @@ def _write_fields(conn, job: Job, ts):
 
 def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=False,
                close_after=CLOSE_AFTER_MISSES, drop_threshold=DROP_THRESHOLD,
-               min_baseline=MIN_BASELINE) -> RunResult:
+               min_baseline=MIN_BASELINE, expected_max=None) -> RunResult:
     if not ok:
         with conn:
             _log_run(conn, source_id, ts, "failed", 0, error)
@@ -89,7 +89,12 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
     if baseline and not by_id and not allow_empty:
         reason = f"empty result but {baseline} jobs are open"
     elif baseline >= min_baseline and len(by_id) < baseline * (1 - drop_threshold):
-        reason = f"job count dropped {baseline} -> {len(by_id)}"
+        # 源设了 max_pages 限额时，历史基线可能来自「还没限额」的时候（如星巴克 18418 -> 3000）。
+        # 这种情况用「限额能覆盖的最大条数」做基线，否则每次都会被骤降保护挡掉、旧岗位永远不下架。
+        if expected_max and baseline > expected_max:
+            baseline = expected_max
+        if len(by_id) < baseline * (1 - drop_threshold):
+            reason = f"job count dropped {baseline} -> {len(by_id)}"
     if reason:
         with conn:
             _log_run(conn, source_id, ts, "rejected", len(by_id), reason)
