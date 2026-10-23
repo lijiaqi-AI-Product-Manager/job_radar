@@ -1,227 +1,176 @@
 [
  {
-  "id": "bytedance-2027-xz",
-  "group": "字节跳动",
-  "url": "https://jobs.bytedance.com/campus"
- },
- {
   "id": "bytedance-frontier-2027-xz",
   "group": "字节跳动",
-  "url": "https://jobs.bytedance.com/campus/position"
+  "url": "https://jobs.bytedance.com/campus/position",
+  "scroll": 8
  },
  {
   "id": "baidu-2027-xz",
   "group": "百度",
-  "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE"
- },
- {
-  "id": "baidu-2027-summer",
-  "group": "百度",
-  "url": "https://talent.baidu.com/jobs/list?recruitType=INTERN"
+  "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE",
+  "scroll": 8
  },
  {
   "id": "huawei-2027-xz",
   "group": "华为",
-  "url": "https://career.huawei.com/cn/campus-recruitment-job-list"
- },
- {
-  "id": "huawei-2027-ai-intern",
-  "group": "华为",
-  "url": "https://career.huawei.com/cn/campus-recruitment"
- },
- {
-  "id": "jd-2027-xinxing",
-  "group": "京东",
-  "url": "https://campus.jd.com/"
- },
- {
-  "id": "pdd-2027-zsp",
-  "group": "拼多多",
-  "url": "https://careers.pddglobalhr.com/campus/grad"
- },
- {
-  "id": "pdd-2027-intern",
-  "group": "拼多多",
-  "url": "https://careers.pddglobalhr.com/campus/"
- },
- {
-  "id": "kuaishou-xz",
-  "group": "快手",
-  "url": "https://zhaopin.kuaishou.cn/"
- },
- {
-  "id": "xiaomi-2027-xz",
-  "group": "小米",
-  "url": "https://xiaomi.jobs.f.mioffice.cn/campus/"
+  "url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+  "scroll": 8
  },
  {
   "id": "xiaomi-toptalent",
   "group": "小米",
-  "url": "https://xiaomi.jobs.f.mioffice.cn/toptalent/"
+  "url": "https://xiaomi.jobs.f.mioffice.cn/campus/",
+  "scroll": 8
  },
  {
-  "id": "netease-game-2027-intern",
-  "group": "网易",
-  "url": "https://game.campus.163.com/"
+  "id": "kuaishou-xz",
+  "group": "快手",
+  "url": "https://zhaopin.kuaishou.cn/",
+  "scroll": 8
  },
  {
-  "id": "tencent-2027-xz",
-  "group": "腾讯",
-  "url": "https://join.qq.com/post.html"
+  "id": "jd-2027-xinxing",
+  "group": "京东",
+  "url": "https://campus.jd.com/",
+  "scroll": 8
  },
  {
-  "id": "alibaba-2027-qz",
-  "group": "阿里巴巴",
-  "url": "https://campus-talent.alibaba.com/campus/position"
- },
- {
-  "id": "alibaba-aliyun-2027-qz",
-  "group": "阿里巴巴",
-  "url": "https://careers.aliyun.com/campus/home"
- },
- {
-  "id": "alibaba-taotian-2027-qz",
-  "group": "阿里巴巴",
-  "url": "https://talent.taotian.com/campus/home"
+  "id": "pdd-2027-zsp",
+  "group": "拼多多",
+  "url": "https://careers.pddglobalhr.com/campus/grad",
+  "scroll": 8
  },
  {
   "id": "meituan-2027-qz",
   "group": "美团",
-  "url": "https://zhaopin.meituan.com/web/campus"
+  "url": "https://zhaopin.meituan.com/web/campus",
+  "scroll": 8
+ },
+ {
+  "id": "tencent-2027-xz",
+  "group": "腾讯",
+  "url": "https://join.qq.com/post.html",
+  "scroll": 8
+ },
+ {
+  "id": "alibaba-2027-qz",
+  "group": "阿里巴巴",
+  "url": "https://talent.alibaba.com/campus/position",
+  "scroll": 8
  },
  {
   "id": "didi-2027-qz",
   "group": "滴滴",
-  "url": "https://campus.didiglobal.com/campus_apply/didiglobal/96064"
+  "url": "https://jobs.didiglobal.com/campus",
+  "scroll": 8
  },
  {
   "id": "ctrip-campus-entry",
   "group": "携程",
-  "url": "https://careers.ctrip.com/"
+  "url": "https://careers.ctrip.com/",
+  "scroll": 8
  },
  {
   "id": "bilibili-2027-qz",
   "group": "哔哩哔哩",
-  "url": "https://jobs.bilibili.com/campus/positions"
+  "url": "https://jobs.bilibili.com/campus",
+  "scroll": 8
  },
  {
   "id": "xhs-2027-xz",
   "group": "小红书",
-  "url": "https://campus.xiaohongshu.com"
+  "url": "https://job.xiaohongshu.com/campus",
+  "scroll": 8
  },
  {
   "id": "mihoyo-campus-entry",
   "group": "米哈游",
-  "url": "https://jobs.mihoyo.com/"
+  "url": "https://jobs.mihoyo.com/campus",
+  "scroll": 8
  },
  {
   "id": "dewu-campus-entry",
   "group": "得物",
-  "url": "https://careers.dewu.com/"
+  "url": "https://poizon.jobs.feishu.cn/index",
+  "scroll": 8
  },
  {
   "id": "vip-campus-entry",
   "group": "唯品会",
-  "url": "https://app-tc.mokahr.com/social-recruitment/vipshophr/10038"
+  "url": "https://job.vip.com/campus",
+  "scroll": 8
  },
  {
-  "id": "zhihu-campus-entry",
-  "group": "知乎",
-  "url": "https://app.mokahr.com/apply/zhihu/78336"
- },
- {
-  "id": "sina-campus-entry",
-  "group": "新浪",
-  "url": "http://app.mokahr.com/campus-recruitment/sina/43536"
+  "id": "netease-game-2027-intern",
+  "group": "网易",
+  "url": "https://hr.163.com/campus.html",
+  "scroll": 8
  },
  {
   "id": "sohu-campus-entry",
   "group": "搜狐",
-  "url": "https://hr.sohu.com/social-recruitment/sohu/43256"
+  "url": "https://hr.sohu.com/campus",
+  "scroll": 8
  },
  {
-  "id": "dji-2027-xz",
-  "group": "大疆",
-  "url": "https://careers.dji.com/zh-CN/campus/recruitment"
+  "id": "sina-campus-entry",
+  "group": "新浪",
+  "url": "https://career.sina.com.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "zhihu-campus-entry",
+  "group": "知乎",
+  "url": "https://jobs.zhihu.com/campus",
+  "scroll": 8
  },
  {
   "id": "dji-2027-digital",
   "group": "大疆",
-  "url": "https://careers.dji.com/zh-CN/campus/digital-recruitment"
+  "url": "https://we.dji.com/zh-CN/campus",
+  "scroll": 8
  },
  {
   "id": "nio-2027-zsp",
   "group": "蔚来",
-  "url": "https://nio.jobs.feishu.cn/campus"
+  "url": "https://nio.jobs.feishu.cn/campus",
+  "scroll": 8
  },
  {
   "id": "xiaopeng-campus-entry",
   "group": "小鹏汽车",
-  "url": "https://xiaopeng.jobs.feishu.cn/campus"
+  "url": "https://xiaopeng.jobs.feishu.cn/campus",
+  "scroll": 8
  },
  {
   "id": "lixiang-campus-entry",
   "group": "理想汽车",
-  "url": "https://www.lixiang.com/employ/campus.html"
+  "url": "https://lixiang.jobs.feishu.cn/campus",
+  "scroll": 8
  },
  {
-  "id": "home-58com-campus-entry",
-  "group": "58同城",
-  "url": "https://app.mokahr.com/campus_apply/58/150953"
+  "id": "qianxin-campus-entry",
+  "group": "奇安信",
+  "url": "https://campus.qianxin.com/campus/graduates/positions",
+  "scroll": 8
  },
  {
-  "id": "abb-campus-entry",
-  "group": "ABB",
-  "url": "https://careers.abb/global/en"
+  "id": "sangfor-campus-entry",
+  "group": "深信服",
+  "url": "https://hr.sangfor.com/campus",
+  "scroll": 8
  },
  {
-  "id": "amd-campus-entry",
-  "group": "AMD",
-  "url": "https://careers.amd.com/careers-home/jobs"
+  "id": "zte-campus-entry",
+  "group": "中兴通讯",
+  "url": "https://job.zte.com.cn/campus",
+  "scroll": 8
  },
  {
-  "id": "ibm-campus-entry",
-  "group": "IBM",
-  "url": "https://www.ibm.com/careers"
- },
- {
-  "id": "minimax-campus-entry",
-  "group": "MiniMax",
-  "url": "https://www.minimax.cn/careers"
- },
- {
-  "id": "oppo-2027-xz",
-  "group": "OPPO",
-  "url": "https://careers.oppo.com/university/oppo/campus/post?recruitType=Graduate"
- },
- {
-  "id": "sap-cn-official-home-2026",
-  "group": "SAP",
-  "url": "https://www.sap.cn/index.html"
- },
- {
-  "id": "tcl-campus-entry",
-  "group": "TCL",
-  "url": "https://zhaopin.tcl.com/campus/index.html"
- },
- {
-  "id": "vanke-campus-entry",
-  "group": "万科",
-  "url": "https://app.mokahr.com/campus_apply/vanke/37550"
- },
- {
-  "id": "home-37-campus-entry",
-  "group": "三七互娱",
-  "url": "http://zhaopin.37.com/"
- },
- {
-  "id": "home-3songshu-campus-entry",
-  "group": "三只松鼠",
-  "url": "https://www.3songshu.com/jobs/#/social"
- },
- {
-  "id": "ctg-com-cn-official-home-2026",
-  "group": "三峡集团",
-  "url": "https://www.ctg.com.cn"
+  "id": "lenovo-campus-entry",
+  "group": "联想",
+  "url": "https://jobs.lenovo.com/zh_CN/careers",
+  "scroll": 8
  }
 ]
