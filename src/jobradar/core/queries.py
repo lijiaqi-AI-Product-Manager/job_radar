@@ -240,7 +240,8 @@ def _cal_dict(r) -> dict:
 
 
 def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
-                     origin=None, open_on=None, limit=100) -> list[dict]:
+                     origin=None, open_on=None, has_tracks=None, has_window=None,
+                     limit=100) -> list[dict]:
     """日历条目。
 
     过滤先按**精确**匹配；没有结果再退化为子串（`--group 字节` 仍能找到「字节跳动」）。
@@ -248,6 +249,7 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     简称也会展开：`--group 中建` 能命中「中国建筑」（映射见 taxonomy/company_aliases.yaml）。
     project_type 始终子串：`实习` 要能命中「暑期实习」「日常实习」。
     open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。
+    has_tracks/has_window：只返回「有方向」/「有网申起止」的条目（None 表示不过滤）。
     """
     def run(exact: bool) -> list[dict]:
         where, args = [], []
@@ -273,6 +275,10 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         if origin:
             where.append("origin = ?")
             args.append(origin)
+        if has_tracks:
+            where.append("tracks IS NOT NULL AND tracks NOT IN ('', '[]')")
+        if has_window:
+            where.append("apply_start IS NOT NULL AND apply_end IS NOT NULL")
         if open_on:
             where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
             args += [open_on, open_on]

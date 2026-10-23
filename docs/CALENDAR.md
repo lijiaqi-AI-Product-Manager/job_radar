@@ -31,6 +31,8 @@ C 档是为了保证「500 家覆盖」不出现空洞：宁可给一个能点�
 jobradar calendar --group 阿里巴巴 --type 秋招 --grad-year 2027   # 某集团某批次
 jobradar calendar --type 秋招正式批 --open-on 2026-10-24           # 今天还能投的
 jobradar calendar --company 飞猪                                   # 具体公司/产品线
+jobradar calendar --has-window --limit 50                          # 只看写了网申起止的
+jobradar calendar --has-tracks --limit 50                          # 只看有方向的
 ```
 
 每条结果都带 `source`（来源）与 `as_of`（核实日期），回答用户时应当注明，例如

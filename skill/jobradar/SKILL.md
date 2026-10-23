@@ -31,6 +31,7 @@ jobradar doctor
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
 | 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含字节、京东等抓不到 JD 的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
 | 现在还能投哪些 | `jobradar calendar --type 秋招正式批 --open-on <今天日期>` |
+| 哪些公司写了网申起止 / 招哪些方向 | `jobradar calendar --has-window` / `jobradar calendar --has-tracks` |
 | 覆盖了哪些公司 | `jobradar stats` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
 

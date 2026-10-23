@@ -408,7 +408,9 @@ def cmd_doctor(args):
 def cmd_calendar(args):
     with _open("calendar") as conn:
         rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
-                                  grad_year=args.grad_year, origin=args.origin, open_on=args.open_on, limit=args.limit)
+                                  grad_year=args.grad_year, origin=args.origin, open_on=args.open_on,
+                                  has_tracks=getattr(args, "has_tracks", False),
+                                  has_window=getattr(args, "has_window", False), limit=args.limit)
         env = envelope(None, rows, as_of=q.calendar_as_of(conn))
         if not rows and args.group:
             reason = q.calendar_blocked_reason(conn, args.group)
@@ -539,6 +541,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--grad-year", type=int)
     sp.add_argument("--origin", choices=["manual", "auto"], help="manual=人工编辑，auto=数据层自动生成")
     sp.add_argument("--open-on", help="YYYY-MM-DD：只看该日网申开放中的")
+    sp.add_argument("--has-tracks", action="store_true", help="只看有方向（track）的条目")
+    sp.add_argument("--has-window", action="store_true", help="只看写了网申起止的条目")
     sp.add_argument("--limit", type=int, default=100)
 
     add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
