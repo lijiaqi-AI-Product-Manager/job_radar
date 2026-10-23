@@ -264,7 +264,13 @@ def company_trend(conn, company, *, until, step_days=7, contains=False, meta=Non
     return out
 
 
-def data_status(conn, *, now, stale_after_hours=36) -> list[dict]:
+def data_status(conn, *, now, stale_after_hours=48) -> list[dict]:
+    """各源最近一次成功抓取的时间与是否过期。
+
+    `stale_after_hours` 必须与 `local.STALE_HOURS`（envelope 的 stale 判断）一致：
+    以前这里是 36h、envelope 是 48h，同一个数据年龄在两个命令里会给出相反的结论
+    （2026-10-24 外部评审）。48h = 连续两个日报周期没成功。
+    """
     now_dt = parse_ts(now)
     out = []
     for r in conn.execute("SELECT DISTINCT source_id FROM source_run ORDER BY source_id"):
