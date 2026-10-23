@@ -1,7 +1,7 @@
 # 侦察：中国建筑招聘门户（recruit.cscec.com）
 
 - 侦察日期：2026-10-23
-- **结论：待定（发现 Open API 网关，端点名未知）**
+- **结论：blocked（网关返回的 hcm_param 是加密串，属主动技术保护）**
 - 类型：企业自研门户（Angular 单页应用）
 
 ## 1. 入口
@@ -28,7 +28,7 @@
   - 业务侧只有 **前端路由/组件名**：`campus_job`、`campusJobListCtrl`、`zsb-campus-job`、
     `portal-job-list-pc`、`/portal_job_detail`，没有直接的接口名
 
-## 3. 下一步
+## 3. 抓包结论（recon #59，2026-10-23）
 
 用 `recon-probe` 工作流的 RENDERXHR 抓一次真实页面（已加入 `docs/recon/probe.txt` 第 46 轮），
 从 XHR 里读出岗位列表接口。若能确认是公开 GET/POST JSON，就可以照 `hotjob` 的写法做适配器 ——
