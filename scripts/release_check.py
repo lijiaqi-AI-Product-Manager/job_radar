@@ -27,7 +27,7 @@ GATES = {
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
     # 日历字段完整度：一条日历 11 个必填字段里至少填了 7 个的条目占比
     # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
-    "calendar_fields": 0.25,
+    "calendar_fields": 0.30,
 }
 
 FILES = ["README.md", "CHANGELOG.md", "COMPLIANCE.md", "LICENSE"]

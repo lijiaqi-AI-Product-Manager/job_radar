@@ -12,7 +12,30 @@ entries:
   jd:
     status: official_page
     url: https://goertek.hotjob.cn/
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：歌尔股份招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：歌尔股份招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：63/64
+    为 2027 届】 【方向来自该公司岗位数据（64 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 工程制造
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 技术
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 职能
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 市场销售
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
 - id: goertek-social-entry
   company: 歌尔股份
   project_type: 社招
@@ -25,4 +48,27 @@ entries:
   jd:
     status: official_page
     url: https://goertek.hotjob.cn/
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：歌尔股份招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：歌尔股份招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：63/64
+    为 2027 届】 【方向来自该公司岗位数据（64 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 工程制造
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 技术
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 职能
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法
+  - direction: 市场销售
+    roles:
+    - 生产
+    - 芯片/硬件
+    - 算法

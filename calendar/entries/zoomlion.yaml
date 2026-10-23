@@ -13,3 +13,15 @@ entries:
     status: official_page
     url: https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：中联重科招聘（hotjob））。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+    【方向来自该公司岗位数据（15 个在招岗位的职类分布）】
+  tracks:
+  - direction: 技术
+    roles:
+    - 软件开发
+    - 算法
+    - 嵌入式
+  - direction: 工程制造
+    roles:
+    - 软件开发
+    - 算法
+    - 嵌入式

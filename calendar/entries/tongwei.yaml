@@ -13,3 +13,20 @@ entries:
     status: official_page
     url: https://www.tongwei.com/index.php/recruit.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：人才战略 - 通威集团有限公司）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+    【方向来自该公司岗位数据（6 个在招岗位的职类分布）】
+  tracks:
+  - direction: 市场销售
+    roles:
+    - 销售
+    - 技术支持
+    - 质量
+  - direction: 技术
+    roles:
+    - 销售
+    - 技术支持
+    - 质量
+  - direction: 工程制造
+    roles:
+    - 销售
+    - 技术支持
+    - 质量

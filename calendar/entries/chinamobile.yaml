@@ -55,3 +55,8 @@ entries:
     status: official_page
     url: https://job.10086.cn/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  cities:
+  - 北京
+  - 广州
+  - 兰州
+  - 香港
