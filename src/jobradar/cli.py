@@ -72,6 +72,24 @@ def _now() -> float:
     return time.monotonic()
 
 
+def _local_db_ok(path: Path) -> bool:
+    """本地库是否能正常打开（增量更新「跳过下载」前必须验一下）。
+
+    背景：digest 一致就跳过下载，但如果本地文件被截断/损坏，用户会一直卡在坏库上。
+    `quick_check(1)` 只做轻量校验，85MB 的库通常 <1s。
+    """
+    if not path.exists():
+        return False
+    try:
+        con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+        try:
+            return con.execute("PRAGMA quick_check(1)").fetchone()[0] == "ok"
+        finally:
+            con.close()
+    except sqlite3.DatabaseError:
+        return False
+
+
 def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Path | None:
     """下载到临时文件；404 返回 None。
 
@@ -252,7 +270,7 @@ def cmd_update(args):
         for k in list(kinds):
             gz = DB_FILES[k] + ".gz"
             digest = remote.get(gz)
-            if digest and meta.get(gz) == digest and (home() / DB_FILES[k]).exists():
+            if digest and meta.get(gz) == digest and _local_db_ok(home() / DB_FILES[k]):
                 kinds.remove(k)
                 skipped.append(k)
     if skipped and not kinds:
@@ -358,9 +376,15 @@ def cmd_sources(args):
 
 
 def cmd_doctor(args):
-    out = {"home": str(home()), "jobs_db": (home() / DB_FILES["jobs"]).exists(),
-           "jd_text_db": (home() / DB_FILES["text"]).exists(),
-           "calendar_db": (home() / DB_FILES["calendar"]).exists()}
+    out = {"home": str(home()),
+           "jobs_db": _local_db_ok(home() / DB_FILES["jobs"]),
+           "jd_text_db": _local_db_ok(home() / DB_FILES["text"]),
+           "calendar_db": _local_db_ok(home() / DB_FILES["calendar"])}
+    if not out["jobs_db"] and (home() / DB_FILES["jobs"]).exists():
+        # 文件在但打不开：多半是下载被截断/磁盘问题，别让用户对着 traceback 发愣
+        out["advice"] = "本地库损坏，运行 `jobradar update --force` 重新下载"
+        print(json.dumps(out, ensure_ascii=False, indent=2))
+        return
     if out["jobs_db"]:
         with _open("jobs") as conn:
             env = envelope(conn, [])

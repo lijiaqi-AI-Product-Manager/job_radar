@@ -437,3 +437,38 @@ def test_update_skips_download_when_digest_unchanged(home, monkeypatch, capsys):
     out = _json.loads(capsys.readouterr().out)
     assert called == []                       # 一个都没下
     assert out["updated"] == [] and sorted(out["skipped"]) == ["calendar", "jobs", "text"]
+
+def test_update_redownloads_when_local_db_is_corrupt(home, monkeypatch, capsys):
+    """本地库损坏时不能因为 digest 没变就跳过下载——否则用户永远卡在坏库上。"""
+    import json as _json
+
+    from jobradar import local
+
+    digests = {"jobs.db.gz": "d1", "jd_text.db.gz": "d2", "calendar.db.gz": "d3"}
+    (home / ".sync.json").write_text(_json.dumps(digests), encoding="utf-8")
+    good = {name: (home / name).read_bytes() for name in ("jobs.db", "jd_text.db")}
+    for name in ("jobs.db", "jd_text.db", "calendar.db"):
+        (home / name).write_bytes(b"not a sqlite file")      # 三个都损坏
+    monkeypatch.setattr(local, "remote_digests", lambda timeout=6.0: dict(digests))
+
+    called = []
+
+    def fake(name, dest, client=None, prefer=None):
+        called.append(name)
+        if name in good:
+            dest.write_bytes(good[name])                     # 模拟下载到好库
+        return "github"
+
+    monkeypatch.setattr(cli, "_download", fake)
+    monkeypatch.setattr(cli, "_text_coverage", lambda *a, **k: None)
+
+    cli.main(["update"])
+    assert sorted(called) == ["calendar.db", "jd_text.db", "jobs.db"]   # 三个都重下
+
+def test_doctor_reports_corrupt_db_with_advice(home, capsys):
+    """库文件损坏时 doctor 要给出可执行的建议，而不是抛 sqlite3.DatabaseError。"""
+    (home / "jobs.db").write_bytes(b"not a sqlite file")
+    cli.main(["doctor"])
+    out = json.loads(capsys.readouterr().out)
+    assert out["jobs_db"] is False
+    assert "--force" in out["advice"]
