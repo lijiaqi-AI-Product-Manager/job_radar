@@ -13,6 +13,11 @@ entries:
     status: official_page
     url: https://www.pony.ai/careers
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未区分校招/社招、也未写明批次/时间，按红线留空，以官网为准。
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
 - id: pony-social-entry
   company: 小马智行
   project_type: 社招

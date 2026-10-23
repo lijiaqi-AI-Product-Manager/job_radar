@@ -13,6 +13,19 @@ entries:
     status: official_page
     url: https://talent.pingan.com/recruit/social.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：平安招聘（社招））。入口页未写明批次/网申时间/城市，按红线留空。
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  - 武汉
+  - 西安
+  - 苏州
+  - 长沙
+  - 南昌
 - id: pinganbank-social-entry
   company: 平安银行
   project_type: 社招
