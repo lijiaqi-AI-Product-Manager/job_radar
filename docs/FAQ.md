@@ -77,3 +77,19 @@ Gitee 上的大文件是分片存放的（`.partNN`），客户端会自动下�
 
 本项目在 Windows 上跑全量测试（CI 有 windows-latest）。
 非中文 locale 的控制台也已处理（CLI 会把输出切到 UTF-8）。
+
+**Q：本地数据坏了（磁盘错误、下载被中断）怎么办？**
+
+`jobradar doctor` 会显示 `jobs_db: false` 并给出建议。直接跑：
+
+```bash
+jobradar update --force     # 全量重下，覆盖坏文件
+```
+
+`update` 本身也会自愈：增量比对时如果发现本地库打不开（`PRAGMA quick_check` 失败），
+会跳过「已是最新」的判断、重新下载那个库。
+
+**Q：Gitee 镜像同步到一半（分片不全）会怎样？**
+
+客户端会先试整文件、再试 `.partNN`；拼接出来的文件要过 gzip + SQLite `quick_check`，
+不完整就自动退回下一个镜像（GitHub）。镜像工作流本身也有大小校验，不会把半成品当成功。

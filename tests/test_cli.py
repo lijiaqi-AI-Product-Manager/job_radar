@@ -472,3 +472,40 @@ def test_doctor_reports_corrupt_db_with_advice(home, capsys):
     out = json.loads(capsys.readouterr().out)
     assert out["jobs_db"] is False
     assert "--force" in out["advice"]
+
+def test_download_falls_back_when_parts_are_truncated(tmp_path, no_token):
+    """Gitee 分片不完整（只传了一半）时不能直接失败：要退回整文件/下一个镜像。"""
+    import gzip
+
+    import httpx
+    body = _sqlite_bytes(tmp_path)
+    blob = gzip.compress(body)
+    half = len(blob) // 2
+
+    def handler(request):
+        url = str(request.url)
+        if "gitee.com" in url:
+            if url.endswith("jobs.db.gz.part01"):
+                return httpx.Response(200, content=blob[:half])     # 只有一半的分片
+            if url.endswith("/jobs.db"):
+                return httpx.Response(200, content=body)            # 整文件可用
+            return httpx.Response(404)
+        return httpx.Response(404)
+
+    used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler), prefer="gitee")
+    assert used == "gitee"
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
+def test_download_error_message_is_actionable(tmp_path, no_token):
+    """两个镜像都不可达时，报错要告诉用户下一步怎么做，而不是一串 httpx 异常。"""
+    import httpx
+    import pytest
+
+    def handler(request):
+        raise httpx.ConnectError("blocked")
+
+    with pytest.raises(SystemExit) as ei:
+        cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
+    msg = str(ei.value)
+    assert "update" in msg and "--mirror gitee" in msg
