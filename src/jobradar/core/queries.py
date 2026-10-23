@@ -4,7 +4,9 @@
 """
 
 import json
+import unicodedata
 from datetime import date, timedelta
+from typing import NamedTuple
 
 from jobradar.aliases import match_names
 from jobradar.timeutil import parse_ts
@@ -44,23 +46,96 @@ def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> str |
     return None
 
 
-def _company_clause(company: str) -> tuple[str, list[str]]:
-    """公司过滤：原词子串，或简称映射到的全名子串（见 aliases.py）。"""
-    names = match_names(company)
-    return "(" + " OR ".join(["c.name LIKE ?"] * len(names)) + ")", [f"%{n}%" for n in names]
+class CompanyMatch(NamedTuple):
+    """`--company` 的解析结果。
 
+    mode: exact(公司名全等) / alias(简称映射命中) / contains(唯一子串) / ambiguous(命中多家) / none(没有)
+    只有 ids 非空时才代表"确定是这家"，其余情况一律 0 行 + 候选，由调用方把原因告诉用户。
+    """
+
+    mode: str
+    ids: list[int]
+    matched: list[str] = []
+    candidates: list[str] = []
+    alias_target: str | None = None
+
+    def as_meta(self) -> dict:
+        d = {"match": self.mode, "matched": self.matched}
+        if self.candidates:
+            d["candidates"] = self.candidates
+        if self.alias_target:
+            d["alias_target"] = self.alias_target
+        return d
+
+
+# 子串匹配时，查询词只比公司名少 1 个字的"前缀延伸"更像另一家公司（京东 → 京东方），不敢猜。
+_PREFIX_TAIL_GUESS_LIMIT = 1
+
+
+def _norm_name(s: str) -> str:
+    """公司名归一化：全半角统一、去空白、ASCII 忽略大小写（vivo / ＶＩＶＯ）。"""
+    return "".join(unicodedata.normalize("NFKC", s or "").split()).casefold()
+
+
+def resolve_company(conn, term: str, *, contains: bool = False) -> CompanyMatch:
+    """把用户写的公司词解析成库里的公司。
+
+    顺序：全等 → 简称映射（taxonomy/company_aliases.yaml）→ 唯一子串（`contains=True` 才放开）。
+    任何一步没把握就返回 0 行 + 候选，**绝不挑一家最像的顶上**：
+    2026-10-24 外部评审发现 `--company 京东` 按子串命中「京东方」，200+ 行别家岗位
+    被当作京东返回且毫无提示——查询层给出的错误答案比没有答案更有害。
+    """
+    term = (term or "").strip()
+    if not term:
+        return CompanyMatch("none", [])
+    rows = conn.execute("SELECT id, name FROM company ORDER BY name").fetchall()
+    by_norm = {_norm_name(r["name"]): r for r in rows}
+    t = _norm_name(term)
+    hit = by_norm.get(t)
+    if hit is not None:
+        return CompanyMatch("exact", [hit["id"]], [hit["name"]])
+    names = match_names(term)
+    target = names[1] if len(names) > 1 else None
+    if target and (hit := by_norm.get(_norm_name(target))) is not None:
+        return CompanyMatch("alias", [hit["id"]], [hit["name"]], [], alias_target=target)
+    cands = [r for r in rows if t in _norm_name(r["name"])]
+    cand_names = [r["name"] for r in cands]
+    if contains:
+        return (CompanyMatch("contains", [r["id"] for r in cands], cand_names, [], target)
+                if cands else CompanyMatch("none", [], [], [], target))
+    if not cands:
+        return CompanyMatch("none", [], [], [], target)
+    if len(cands) == 1:
+        norm = _norm_name(cands[0]["name"])
+        if norm.startswith(t) and len(norm) - len(t) <= _PREFIX_TAIL_GUESS_LIMIT:
+            return CompanyMatch("none", [], [], cand_names, target)
+        return CompanyMatch("contains", [cands[0]["id"]], cand_names, [], target)
+    return CompanyMatch("ambiguous", [], [], cand_names, target)
+
+
+def _company_sql(match: CompanyMatch) -> tuple[str, list]:
+    """把解析结果变成 SQL 片段。没确定就 `0`：宁可 0 行，也不返回别家的岗位。"""
+    if not match.ids:
+        return "0", []
+    return "c.id IN (" + ",".join("?" * len(match.ids)) + ")", list(match.ids)
 
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
                 grad_year=None, keyword=None, text=None, text_conn=None,
-                include_closed=False, limit=50) -> list[dict]:
-    """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。"""
+                include_closed=False, limit=50, contains=False, meta=None) -> list[dict]:
+    """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
+
+    meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
+    """
     where, args = [], []
     if not include_closed:
         where.append("j.closed_at IS NULL")
     if company:
-        clause, company_args = _company_clause(company)
+        match = resolve_company(conn, company, contains=contains)
+        clause, company_args = _company_sql(match)
         where.append(clause)
         args += company_args
+        if meta is not None:
+            meta["company_match"] = match.as_meta()
     if category:
         where.append("(j.category = ? OR j.subcategory = ?)")
         args += [category, category]
@@ -93,12 +168,16 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     return rows
 
 
-def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[dict]:
+def recent_changes(conn, *, since, company=None, types=None, limit=200,
+                   contains=False, meta=None) -> list[dict]:
     where, args = ["e.ts >= ?"], [since]
     if company:
-        clause, company_args = _company_clause(company)
+        match = resolve_company(conn, company, contains=contains)
+        clause, company_args = _company_sql(match)
         where.append(clause)
         args += company_args
+        if meta is not None:
+            meta["company_match"] = match.as_meta()
     if types:
         where.append(f"e.type IN ({','.join('?' * len(types))})")
         args += list(types)
@@ -113,25 +192,41 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200) -> list[
     return out
 
 
-def new_jobs_by_category(conn, *, since, limit=20) -> list[dict]:
+def new_jobs_by_category(conn, *, since, limit=20, company=None, contains=False,
+                         meta=None) -> list[dict]:
     """since 之后新开（open 事件）的岗位按职类计数；没有职类的归到「未分类」。
 
     回答"最近哪类职位新增最多"。只统计首次出现（open），不含重开（reopen）。
+    company 过滤此前被静默忽略（`diff --by category --company X` 把全库数字当成 X 的，
+    2026-10-24 外部评审 P0），现在会真的按公司统计。
     """
+    where, args = ["e.type = 'open'", "e.ts >= ?"], [since]
+    join = ""
+    if company:
+        match = resolve_company(conn, company, contains=contains)
+        clause, company_args = _company_sql(match)
+        join = " JOIN company c ON c.id = j.company_id"
+        where.append(clause)
+        args += company_args
+        if meta is not None:
+            meta["company_match"] = match.as_meta()
     rows = conn.execute(
-        """SELECT COALESCE(NULLIF(j.category, ''), '未分类') AS category, COUNT(*) AS n
-           FROM job_event e JOIN job j ON j.id = e.job_id
-           WHERE e.type = 'open' AND e.ts >= ?
+        f"""SELECT COALESCE(NULLIF(j.category, ''), '未分类') AS category, COUNT(*) AS n
+           FROM job_event e JOIN job j ON j.id = e.job_id{join}
+           WHERE {' AND '.join(where)}
            GROUP BY category ORDER BY n DESC, category LIMIT ?""",
-        (since, limit),
+        (*args, limit),
     )
     return [{"category": r["category"], "n": r["n"]} for r in rows]
 
 
-def company_trend(conn, company, *, until, step_days=7) -> list[dict]:
+def company_trend(conn, company, *, until, step_days=7, contains=False, meta=None) -> list[dict]:
     """从该公司最早岗位出现之日起，每 step_days 采样一次"当日在招岗位数"，最后一个点落在 until。
     注意：按 first_seen/closed_at 还原，岗位若曾关闭又重开，中间的空档不会体现。"""
-    clause, args = _company_clause(company)
+    match = resolve_company(conn, company, contains=contains)
+    if meta is not None:
+        meta["company_match"] = match.as_meta()
+    clause, args = _company_sql(match)
     rows = conn.execute(
         f"""SELECT j.first_seen, j.closed_at FROM job j JOIN company c ON c.id = j.company_id
            WHERE {clause}""",
@@ -248,7 +343,9 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     这样 `--group 京东` 不会把「京东方」一起带出来（2026-10-22 实测的误匹配）。
     简称也会展开：`--group 中建` 能命中「中国建筑」（映射见 taxonomy/company_aliases.yaml）。
     project_type 始终子串：`实习` 要能命中「暑期实习」「日常实习」。
-    open_on=YYYY-MM-DD：只返回该日处于网申窗口内的条目（没写起止的视为未知，不排除）。
+    open_on=YYYY-MM-DD：返回该日**可能**在网申中的条目。带起止日期的按日期过滤；
+    没写起止的也保留（否则等于把 99% 的校招藏起来），但会标 `window_status: unknown`——
+    回答时不能说"确定还能投"（2026-10-24 外部评审：不加标记等于把未知当已知）。
     has_tracks/has_window：只返回「有方向」/「有网申起止」的条目（None 表示不过滤）。
     """
     def run(exact: bool) -> list[dict]:
@@ -286,13 +383,39 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         if where:
             sql += " WHERE " + " AND ".join(where)
         sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
-        return [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
+        rows = [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
+        if open_on:
+            for d in rows:
+                known = d["apply_start"] is not None and d["apply_end"] is not None
+                d["window_status"] = "open" if known else "unknown"
+        return rows
 
     if group or company:
         rows = run(exact=True)
         if rows:
             return rows
     return run(exact=False)
+
+
+def empty_result_hints(rows, *, company_match=None, grad_year=None, city=None,
+                       category=None) -> list[str]:
+    """结果为空时告诉调用方「下一步怎么查」。
+
+    有结果时返回空列表。空结果最常见的两个原因是：字段没写（届别/城市/职类来自标题或 JD，
+    很多岗位两处都不写）和公司名没唯一确定——不提示的话，agent 会把它们说成「没有岗位」。
+    """
+    if rows:
+        return []
+    out = []
+    cm = company_match or {}
+    if cm.get("match") in ("none", "ambiguous"):
+        cands = "、".join(cm.get("candidates") or [])
+        out.append(f"公司名没有唯一确定（{cm['match']}）" + (f"，候选：{cands}" if cands else "")
+                   + "；换完整公司名，或加 --contains 按子串搜")
+    for flag, label in ((grad_year, "--grad-year"), (city, "--city"), (category, "--category")):
+        if flag:
+            out.append(f"{label} 只命中该字段有值的岗位（很多校招岗位不写届别/城市）；去掉它再查一次")
+    return out
 
 
 def calendar_blocked_reason(cal_conn, term: str) -> str | None:

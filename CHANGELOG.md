@@ -2,6 +2,43 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.0.2] - 2026-10-24
+
+修外部评审（5 份）指出的「会让用户得出错误结论」的缺陷。原则：**宁可 0 条并说明原因，不返回看似正确的错数据**。
+
+### 修复（结果错误类）
+
+- **`--company` 张冠李戴**：`--company 京东` 以前按 `LIKE %京东%` 返回「京东方」的 200+ 行岗位，
+  且没有任何提示。现在按「全等 → 简称表 → 唯一子串」解析，只差一个字的前缀延伸不猜；
+  命中方式写进 `company_match`（`exact` / `alias` / `contains` / `ambiguous` / `none`），
+  没确定时返回 0 条 + 候选，CLI 同时在 stderr 说明原因。新增 `--contains` 显式开启子串搜索。
+- **`diff --by category --company X` 静默忽略 `--company`**：以前把全库数字当成该公司的
+  （腾讯实测：全库 14,156 → 现在 1,283）。`new_jobs_by_category` 增加 `company` 参数并真的过滤。
+- **空结果被「连续拒绝」保护放行**：`MAX_REJECTS` 连续 3 轮后无条件放行，连「返回 0 条」也放行，
+  源一旦挂掉/改版就会把整家公司洗空。现在空结果永不自动放行，只能由源配置
+  `params.allow_empty: true` 显式接受（`crawl` 已接线）。
+- **本地库损坏时裸 traceback**：`doctor` 之外的所有命令都会把 `sqlite3.DatabaseError` 直接抛给用户。
+  现在 `local.open_db` 统一转成「本地库损坏（…）→ `jobradar update --force`」，CLI 与 MCP 同一套文案；
+  MCP 另加兜底，返回结构化 `error` 而不是崩掉进程。
+
+### 修复（误导类）
+
+- **`calendar --open-on` 把「没写起止」当「确定可投」**：现在这类条目仍会带回（否则等于藏起 99% 的校招），
+  但会标 `window_status: unknown`，agent 不能再说成「确定还能投」。
+- **空结果没有下一步提示**：`search` 返回空且带过滤条件时新增 `hints`（例如「`--grad-year` 只命中
+  写了届别的岗位，去掉它再查一次」；公司名没唯一确定时提示候选），避免 agent 把「字段没写」说成「没岗位」。
+
+### 修复（打包 / 文档）
+
+- **wheel 里没有简称映射表**：`taxonomy/` 在仓库根、不在 `src/jobradar` 下，pip 装完
+  `--company 中核` 直接查不到。改用 hatch `force-include` 打进 `jobradar/_data/`，
+  CI 增加「wheel 必须包含 company_aliases.yaml」检查。
+- **文档数字全面对齐实测**：门槛 7→8 项；采集时间 UTC 22:19→19:17（北京时间 03:17）；
+  测试数 255→490；「约 5% 有网申时间」→ 实测 8/1372（0.6%，纯人工 1.8%）；
+  标题「按公司 60.7%」标明分母是 596 个集团而非 500 家；README 不再宣称已发布 PyPI；
+  `docs/CALENDAR-FORMAT.md` 的 `janitor/taxonomy/…` 路径修正；新增「重复岗位 9.2%（8,115 条）」
+  的已知限制说明。
+
 ## [1.0.1] - 2026-10-24
 
 ### 推广与工程（2026-10-24）

@@ -1,6 +1,7 @@
 """用户本地数据的位置、下载地址、打开方式与结果包装。CLI 与 MCP 共用。"""
 
 import os
+import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -50,7 +51,18 @@ def open_db(kind: str, required: bool = True):
         if required:
             raise NoData(f"本地没有数据：{path}。先运行 `jobradar update`。")
         return None
-    return connect(path, kind)
+    try:
+        return connect(path, kind)
+    except sqlite3.DatabaseError as e:
+        # 文件在但打不开：多半是下载被截断/磁盘问题。给可执行的一条话，
+        # 而不是把 sqlite3 的 traceback 甩给用户（CLI 与 MCP 都走这里）。
+        raise NoData(
+            f"本地库损坏（{e}）：{path}\n"
+            "运行 `jobradar update --force` 重新下载即可；反复损坏请检查磁盘空间与网络。"
+        ) from e
+    except RuntimeError as e:
+        # migrate 的「库比代码新」：升级 jobradar 而不是重下数据
+        raise NoData(f"{e}（当前库：{path}）") from e
 
 
 @contextmanager

@@ -319,15 +319,50 @@ def cmd_update(args):
         print(json.dumps(out, ensure_ascii=False))
 
 
+def _company_note(term, info, err=None):
+    """把「公司名没对上」说出来。
+
+    查询层对没把握的公司返回 0 行（而不是挑一家最像的）。理由不写出来，用户
+    只会看到"空结果"并以为这家公司没在招——所以必须给一句话说明是「未收录/不唯一」。
+    """
+    err = err or sys.stderr
+    if not term or not info:
+        return
+    mode, matched = info.get("match"), info.get("matched") or []
+    cands = info.get("candidates") or []
+    if mode == "none":
+        if cands:
+            print(f"注意：数据集中没有名为「{term}」的公司；最接近的是「{'、'.join(cands)}」。"
+                  "要按子串搜索请加 --contains。", file=err)
+        elif info.get("alias_target"):
+            print(f"注意：「{term}」按简称映射到「{info['alias_target']}」，但数据集中还没有这家公司。", file=err)
+        else:
+            print(f"注意：数据集中没有名为「{term}」的公司（`jobradar stats` 可看收录规模）。", file=err)
+    elif mode == "ambiguous":
+        print(f"注意：「{term}」命中多家公司（{'、'.join(cands)}），未返回结果；"
+              "请写更完整的公司名，或加 --contains 一次性搜全部。", file=err)
+    elif mode == "contains" and len(matched) > 1:
+        print(f"注意：「{term}」按子串命中 {len(matched)} 家公司（{'、'.join(matched[:5])}）。", file=err)
+
+
 def cmd_search(args):
     text_cm = _open("text", required=False) if args.text else nullcontext(None)
     with _open("jobs") as conn, text_cm as text:
         if args.text and text is None:
             raise SystemExit("全文检索需要 JD 原文库：先运行 `jobradar update`")
+        meta = {}
         rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
                              recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
-                             text=args.text, text_conn=text, include_closed=args.include_closed, limit=args.limit)
-        _emit(args, envelope(conn, rows))
+                             text=args.text, text_conn=text, include_closed=args.include_closed,
+                             limit=args.limit, contains=args.contains, meta=meta)
+        _company_note(args.company, meta.get("company_match"))
+        payload = envelope(conn, rows, **meta)
+        hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
+                                     grad_year=args.grad_year, city=args.city, category=args.category)
+        if hints:
+            payload["hints"] = hints
+        _emit(args, payload)
+
 
 
 def cmd_show(args):
@@ -339,13 +374,19 @@ def cmd_show(args):
 def cmd_diff(args):
     with _open("jobs") as conn:
         since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
+        meta = {}
         if args.by:
-            rows = q.new_jobs_by_category(conn, since=since, limit=args.limit)
-            _emit(args, envelope(conn, rows, since=since, by=args.by))
+            rows = q.new_jobs_by_category(conn, since=since, limit=args.limit, company=args.company,
+                                          contains=args.contains, meta=meta)
+            _company_note(args.company, meta.get("company_match"))
+            _emit(args, envelope(conn, rows, since=since, by=args.by, **meta))
             return
         rows = q.recent_changes(conn, since=since, company=args.company,
-                                types=args.types.split(",") if args.types else None, limit=args.limit)
-        _emit(args, envelope(conn, rows, since=since))
+                                types=args.types.split(",") if args.types else None, limit=args.limit,
+                                contains=args.contains, meta=meta)
+        _company_note(args.company, meta.get("company_match"))
+        _emit(args, envelope(conn, rows, since=since, **meta))
+
 
 
 def cmd_compare(args):
@@ -362,8 +403,10 @@ def cmd_compare(args):
 
 def cmd_trends(args):
     with _open("jobs") as conn:
-        rows = q.company_trend(conn, args.company, until=now_ts(), step_days=args.step_days)
-        _emit(args, envelope(conn, rows, company=args.company))
+        meta = {}
+        rows = q.company_trend(conn, args.company, until=now_ts(), step_days=args.step_days, meta=meta)
+        _company_note(args.company, meta.get("company_match"))
+        _emit(args, envelope(conn, rows, company=args.company, **meta))
 
 
 def cmd_sources(args):
@@ -503,7 +546,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--force", action="store_true", help="忽略增量比对，强制重新下载全部数据")
 
     sp = add("search", cmd_search, "搜索在招岗位")
-    sp.add_argument("--company")
+    sp.add_argument("--company", help="公司名（支持简称映射；只差一个字的前缀延伸不猜，如 京东≠京东方）")
+    sp.add_argument("--contains", action="store_true", help="--company 按子串匹配（会命中多家，如 --company 中国）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
     sp.add_argument("--city")
     sp.add_argument("--type", choices=["campus", "intern", "social"])
@@ -518,7 +562,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = add("diff", cmd_diff, "最近 N 天的新开/下架/变更")
     sp.add_argument("--days", type=int, default=7)
-    sp.add_argument("--company")
+    sp.add_argument("--company", help="公司名；与 --by 一起用时会真的只统计这家公司")
+    sp.add_argument("--contains", action="store_true", help="--company 按子串匹配")
     sp.add_argument("--types", help="逗号分隔：open,close,change,reopen")
     sp.add_argument("--by", choices=["category"], help="按维度聚合：category = 新增岗位按职类统计")
     sp.add_argument("--limit", type=int, default=200)
@@ -540,7 +585,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--type", help="项目类型（子串匹配），如 秋招 / 提前批 / 实习 / 社招")
     sp.add_argument("--grad-year", type=int)
     sp.add_argument("--origin", choices=["manual", "auto"], help="manual=人工编辑，auto=数据层自动生成")
-    sp.add_argument("--open-on", help="YYYY-MM-DD：只看该日网申开放中的")
+    sp.add_argument("--open-on", help="YYYY-MM-DD：该日可能在投的（没写起止的条目也会返回，带 window_status=unknown）")
     sp.add_argument("--has-tracks", action="store_true", help="只看有方向（track）的条目")
     sp.add_argument("--has-window", action="store_true", help="只看写了网申起止的条目")
     sp.add_argument("--limit", type=int, default=100)
@@ -608,7 +653,13 @@ def main(argv=None):
     _ensure_utf8_streams()
     _configure_stdio()
     args = build_parser().parse_args(argv)
-    args.fn(args)
+    try:
+        args.fn(args)
+    except sqlite3.DatabaseError as e:
+        # 兜底：local.open_db 之外的路径（写库、只读库、锁库）漏出来的 sqlite 错误
+        # 也不能让用户对着 traceback 发愣。
+        raise SystemExit(f"本地数据读取失败（{e}）。先运行 `jobradar doctor`；"
+                         "若提示损坏，用 `jobradar update --force` 重新下载。") from None
 
 
 if __name__ == "__main__":

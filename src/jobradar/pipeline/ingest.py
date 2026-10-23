@@ -86,13 +86,16 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
     baseline = conn.execute(
         "SELECT COUNT(*) FROM job WHERE source_id=? AND closed_at IS NULL", (source_id,)
     ).fetchone()[0]
-    reason = None
-    if baseline and not by_id and not allow_empty:
-        reason = f"empty result but {baseline} jobs are open"
     consecutive_rejects = conn.execute(
         "SELECT COUNT(*) FROM (SELECT status FROM source_run WHERE source_id=? ORDER BY id DESC LIMIT ?) "
         "WHERE status='rejected'", (source_id, MAX_REJECTS)).fetchone()[0]
-    if consecutive_rejects >= MAX_REJECTS:
+    reason = None
+    if baseline and not by_id and not allow_empty:
+        # 空结果**永远不因「连续被拦」放行**（2026-10-24 外部评审 P0）：放行等于
+        # 「源挂了 → 这家公司所有岗位都下架」，比旧岗位多挂几天糟得多。
+        # 真要接受空结果（源确实清空了），必须在源配置里显式写 params.allow_empty: true。
+        reason = f"empty result but {baseline} jobs are open (需要接受空结果请在源配置设 params.allow_empty)"
+    elif consecutive_rejects >= MAX_REJECTS:
         # 连续多轮都是同样的骤降 → 大概率是季节结束/岗位真下架，不是抓取故障。
         # 永远拦着会让源卡死（旧岗位不下架、新岗位进不来），所以放行这一轮并记事件。
         reason = None

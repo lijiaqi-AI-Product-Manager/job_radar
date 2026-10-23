@@ -4,6 +4,7 @@
 运行：jobradar-mcp（stdio）。数据需先用 `jobradar update` 下载。
 """
 
+import sqlite3
 from contextlib import nullcontext
 from datetime import timedelta
 
@@ -25,14 +26,19 @@ def _guard(fn):
         return fn()
     except NoData as e:
         return {"error": str(e), "results": []}
+    except sqlite3.DatabaseError as e:
+        return {"error": f"本地数据读取失败（{e}）；运行 `jobradar update --force` 重新下载", "results": []}
 
 
 @server.tool()
 def search_jobs(company: str | None = None, category: str | None = None, city: str | None = None,
                 recruit_type: str | None = None, grad_year: int | None = None,
                 keyword: str | None = None, text: str | None = None,
-                include_closed: bool = False, limit: int = 30) -> dict:
-    """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；company 为名称子串；
+                include_closed: bool = False, limit: int = 30,
+                contains: bool = False) -> dict:
+    """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
+    company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
+    「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配。
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
     结果带 match（JD 中命中处的片段，仅标题命中时为 null）。"""
@@ -41,11 +47,17 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
         with db("jobs") as conn, text_cm as text_conn:
             if text and text_conn is None:
                 return {"error": "全文检索需要 JD 原文库：先运行 `jobradar update`", "results": []}
+            meta = {}
             rows = q.search_jobs(conn, company=company, category=category, city=city,
                                  recruit_type=recruit_type, grad_year=grad_year, keyword=keyword,
                                  text=text, text_conn=text_conn, include_closed=include_closed,
-                                 limit=min(limit, 200))
-            return envelope(conn, rows)
+                                 limit=min(limit, 200), contains=contains, meta=meta)
+            payload = envelope(conn, rows, **meta)
+            hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
+                                         grad_year=grad_year, city=city, category=category)
+            if hints:
+                payload["hints"] = hints
+            return payload
     return _guard(run)
 
 
@@ -61,25 +73,30 @@ def get_job(job_id: str) -> dict:
 
 @server.tool()
 def recent_changes(days: int = 7, company: str | None = None, types: list[str] | None = None,
-                   limit: int = 200) -> dict:
+                   limit: int = 200, contains: bool = False) -> dict:
     """最近 N 天的岗位变化。types 可选 open(新开)/close(下架)/change(变更)/reopen(重开)。"""
     def run():
         with db("jobs") as conn:
             since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
-            rows = q.recent_changes(conn, since=since, company=company, types=types, limit=min(limit, 500))
-            return envelope(conn, rows, since=since)
+            meta = {}
+            rows = q.recent_changes(conn, since=since, company=company, types=types,
+                                    limit=min(limit, 500), contains=contains, meta=meta)
+            return envelope(conn, rows, since=since, **meta)
     return _guard(run)
 
 
 @server.tool()
-def new_jobs_by_category(days: int = 7, limit: int = 10) -> dict:
+def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = None,
+                         contains: bool = False) -> dict:
     """最近 N 天新开的岗位按职类统计（没有职类的归到「未分类」），按数量降序。
-    回答「最近哪类职位新增最多」用它，不要自己比对两次 search 结果。"""
+    company 可选：只统计这家公司。回答「最近哪类职位新增最多」用它，不要自己比对两次 search 结果。"""
     def run():
         with db("jobs") as conn:
             since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
-            rows = q.new_jobs_by_category(conn, since=since, limit=min(limit, 50))
-            return envelope(conn, rows, since=since)
+            meta = {}
+            rows = q.new_jobs_by_category(conn, since=since, limit=min(limit, 50),
+                                          company=company, contains=contains, meta=meta)
+            return envelope(conn, rows, since=since, **meta)
     return _guard(run)
 
 
@@ -102,12 +119,14 @@ def compare_roles(companies: list[str], category: str | None = None, keyword: st
 
 
 @server.tool()
-def company_trend(company: str, step_days: int = 7) -> dict:
+def company_trend(company: str, step_days: int = 7, contains: bool = False) -> dict:
     """某公司在招岗位数随时间的变化（每 step_days 天一个点）。"""
     def run():
         with db("jobs") as conn:
-            return envelope(conn, q.company_trend(conn, company, until=now_ts(), step_days=step_days),
-                            company=company)
+            meta = {}
+            rows = q.company_trend(conn, company, until=now_ts(), step_days=step_days,
+                                   contains=contains, meta=meta)
+            return envelope(conn, rows, company=company, **meta)
     return _guard(run)
 
 

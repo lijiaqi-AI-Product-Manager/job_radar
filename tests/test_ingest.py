@@ -175,3 +175,18 @@ def test_drop_is_accepted_after_repeated_rejections(jobs_db):
         assert ingest_run(jobs_db, "s1", capped, ts=T(day)).status == "rejected"
     res = ingest_run(jobs_db, "s1", capped, ts=T(5))     # 第 4 次：连续 3 次被拦 → 放行
     assert res.status == "ok"
+
+
+def test_empty_result_is_never_accepted_after_repeated_rejections(jobs_db):
+    """「连续被拦就放行」只针对「变少了」，不针对「空了」（2026-10-24 外部评审 P0）。
+
+    源挂了/改版返回 0 条时，放行等于把这家公司整个洗空——比旧岗位多挂几天糟得多。
+    真要接受空结果，只能在源配置里显式写 params.allow_empty。
+    """
+    ingest_run(jobs_db, "s1", [make_job(i) for i in range(1, 201)], ts=T(1))
+    for day in (2, 3, 4, 5):
+        res = ingest_run(jobs_db, "s1", [], ts=T(day))
+        assert res.status == "rejected"
+    assert "empty" in res.reason
+    open_jobs = jobs_db.execute("SELECT COUNT(*) FROM job WHERE closed_at IS NULL").fetchone()[0]
+    assert open_jobs == 200

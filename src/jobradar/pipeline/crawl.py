@@ -103,7 +103,8 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
                     results[source.id] = ingest_run(jobs_conn, source.id, [], ts=ts, ok=False, error=error)
                     continue
                 res = ingest_run(jobs_conn, source.id, jobs, ts=ts,
-                                 expected_max=_expected_max(source))
+                                 expected_max=_expected_max(source),
+                                 allow_empty=bool(source.params.get("allow_empty")))
                 if res.status == "ok":
                     upsert_texts(text_conn, jobs, ts=ts)
                 results[source.id] = res
