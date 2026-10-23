@@ -25,7 +25,8 @@
 ```bash
 pip install "jobradar[mcp]"            # 已发布到 PyPI（未发布时用下面这行装源码）
 # pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
-jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回）
+jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回、0 下载）
+# jobradar update --force              # 忽略增量比对，强制全量重下
 jobradar search --company 复星 --type campus --grad-year 2027 --table
 ```
 
@@ -85,7 +86,7 @@ $ jobradar update          # 全新环境实测 4 秒
 | `calendar.db.gz` | 300 KB | 招聘日历（500 家目标公司） |
 | `crawl-summary.json` | 32 KB | 每个源的状态、新增/下架数 |
 
-- 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步（上行慢，通常比 GitHub 晚 1 小时，同步期间下载自动回退）
+- 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步（大文件按 `.partNN` 分片上传，`jobradar update` 会自动下载并合并；实测走 Gitee 拉全量 3 分钟，失败自动回退 GitHub）
 - 下架判定：连续 3 次成功抓取中缺席；抓取失败**不会**导致岗位下架
 - 字段说明：[skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)
 
