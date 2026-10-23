@@ -14,3 +14,14 @@ entries:
     url: http://app.mokahr.com/campus-recruitment/sina/43536
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：新浪集团 - 校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
   grad_year: 2027
+  tracks:
+  - direction: 产品类
+    roles:
+    - 娱乐事业部 产品运营、集团运营管培生
+    - 集团产品管培生
+    - 产品运营、集团运营管培生
+    - 产品经理
+  - direction: 技术类
+    roles:
+    - 微博广告产品部 算法工程师
+    - 算法工程师

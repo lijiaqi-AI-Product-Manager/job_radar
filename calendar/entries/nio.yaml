@@ -14,8 +14,23 @@ entries:
     status: blocked
     url: https://nio.jobs.feishu.cn/campus
   notes: 官方招聘页列有「2027届校园招聘-正式批」；查看职位与投递需登录。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
-  cities: []
-  tracks: []
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 杭州
+  - 南京
+  - 武汉
+  - 合肥
+  tracks:
+  - direction: 技术类
+    roles:
+    - 校招-智能机器人电气工程师
+    - 校招-现场应用工程师
+    - 校招-音频质量算法工程师
+    - 数字技术 - 算法
+    - 校招-机械结构设计工程师
+    - 校招-转子机械设计工程师
 - id: nio-2027-intern
   company: 蔚来
   grad_year: 2027
