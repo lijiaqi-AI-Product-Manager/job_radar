@@ -141,3 +141,20 @@ def test_country_locations_exact_mode_uses_given_facet():
         {"descriptor": "China, Hong Kong", "id": "hmm"},
     ]}]
     assert country_locations(facets, "China", facet="Location_Country", prefix_match=False) == ["cn"]
+
+def test_cities_of_many_reads_additional_locations():
+    """多地点岗位：Workday 详情里 location + additionalLocations 都要解析。
+
+    真实样本（辉瑞）：location="China - Jiangsu - LianYungang"，
+    additionalLocations=["China - Jiangsu - Yancheng", "China - Jiangsu - Huai'An"]。
+    """
+    from jobradar.adapters.workday import cities_of_many
+    got = cities_of_many("China - Shanghai - Shanghai",
+                         ["China - Beijing - Beijing"], "2 Locations")
+    assert got == ["上海", "北京"]
+
+
+def test_cities_of_many_ignores_placeholder_text():
+    from jobradar.adapters.workday import cities_of_many
+    assert cities_of_many("2 Locations") == []
+    assert cities_of_many(None, []) == []

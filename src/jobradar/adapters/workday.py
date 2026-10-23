@@ -107,6 +107,27 @@ def _descendants_under(facets, parameter: str) -> list[dict]:
     return out
 
 
+def cities_of_many(*locations) -> list[str]:
+    """多地点岗位：Workday 详情里有 `location` + `additionalLocations` 列表。
+
+    `locationsText` 形如 "3 Locations"，不要当城市用；只有具体地点串才解析。
+    """
+    out: list[str] = []
+    for loc in locations:
+        if isinstance(loc, list):
+            for item in loc:
+                for c in cities_of(str(item) if item else None):
+                    if c not in out:
+                        out.append(c)
+            continue
+        if not loc or "Location" in str(loc):
+            continue
+        for c in cities_of(str(loc)):
+            if c not in out:
+                out.append(c)
+    return out
+
+
 def cities_of(location: str | None) -> list[str]:
     if not location:
         return []
@@ -193,7 +214,8 @@ class WorkdayAdapter(Adapter):
             url=url,
             title=title,
             recruit_type=recruit_type_of(title, self.source.recruit_types[0]),
-            cities=cities_of(info.get("location") or raw.get("locationsText")),
+            cities=cities_of_many(info.get("location"), info.get("additionalLocations"),
+                                  raw.get("locationsText")),
             degree_min=None,
             description=_text(info.get("jobDescription")),
             requirements=None,
