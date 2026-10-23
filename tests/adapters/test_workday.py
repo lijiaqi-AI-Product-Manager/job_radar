@@ -119,3 +119,25 @@ def test_unusable_record_is_skipped():
     for raw in ({}, {"title": "x"}, {"externalPath": "/job/x"}):
         with pytest.raises(SkipRecord):
             a.normalize(raw)
+
+def test_country_locations_accepts_three_country_formats():
+    """实测遇到的三种写法：China, Shanghai（多数）/ China - Shanghai - Shanghai（辉瑞）/ China（阿斯利康）。"""
+    from jobradar.adapters.workday import country_locations
+    facets = [{"facetParameter": "locations", "values": [
+        {"descriptor": "China, Shanghai", "id": "a"},
+        {"descriptor": "China - Beijing - Beijing", "id": "b"},
+        {"descriptor": "China", "id": "c"},
+        {"descriptor": "Chinatown, CA", "id": "bad"},
+        {"descriptor": "USA, Austin", "id": "d"},
+    ]}]
+    assert country_locations(facets, "China") == ["a", "b", "c"]
+
+
+def test_country_locations_exact_mode_uses_given_facet():
+    """辉瑞用 Location_Country 分面，descriptor 就是国家名，必须精确匹配。"""
+    from jobradar.adapters.workday import country_locations
+    facets = [{"facetParameter": "Location_Country", "values": [
+        {"descriptor": "China", "id": "cn"},
+        {"descriptor": "China, Hong Kong", "id": "hmm"},
+    ]}]
+    assert country_locations(facets, "China", facet="Location_Country", prefix_match=False) == ["cn"]
