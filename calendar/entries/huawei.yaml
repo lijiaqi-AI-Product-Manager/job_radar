@@ -14,7 +14,7 @@ entries:
     status: blocked
     url: https://career.huawei.com/cn/campus-recruitment-job-list
   notes: 官网原文：2027届应届生招聘对象为「2027年1月1日-2027年12月31日毕业的国内高校本科生与硕士研究生；2026年1月1日-2027年12月31日毕业的国内高校博士生与海外高校本硕博学生」（2026-10-21
-    抓取核对）。官网为简历投递的唯一官方渠道。
+    抓取核对）。官网为简历投递的唯一官方渠道。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 技术类
     roles:

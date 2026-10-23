@@ -14,6 +14,7 @@ entries:
     status: official_page
     url: https://jobs.bilibili.com/campus/positions
   notes: 面向毕业时间 2026-09-01 至 2027-08-31 的 27 届；每人最多 2 个志愿。所引岗位页标注网申 2026-08-03 至 2026-12-31，各岗位截止时间可能不同，故条目不填统一起止。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 产品类
     roles:

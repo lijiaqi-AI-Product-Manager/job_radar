@@ -46,7 +46,8 @@ entries:
   jd:
     status: blocked
     url: https://nio.jobs.feishu.cn/campus
-  notes: 官方招聘页列有「2027届储备实习生招募」。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  notes: 官方招聘页列有「2027届储备实习生招募」。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准 【岗位/城市来自官方招聘页渲染
+    2026-10-23】
   tracks:
   - direction: 产品类
     roles:
