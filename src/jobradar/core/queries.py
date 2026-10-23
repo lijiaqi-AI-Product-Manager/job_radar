@@ -401,5 +401,8 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
             "SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
             "AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')",
             (json.dumps(open_ids),)).fetchone()[0]
+    by_type = dict(jobs_conn.execute(
+        "SELECT recruit_type, COUNT(*) FROM job WHERE closed_at IS NULL GROUP BY 1").fetchall())
     return {"open_jobs": len(open_ids), "companies": companies, "with_jd_text": with_text,
+            "by_recruit_type": by_type,
             "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn)}
