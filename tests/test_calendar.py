@@ -343,3 +343,17 @@ def test_calendar_blocked_reason_for_targets_without_entries(tmp_path, jobs, cal
     cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
     assert "滑块" in calendar_blocked_reason(cal_db, "字节跳动")
     assert calendar_blocked_reason(cal_db, "腾讯") is None
+
+def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
+    """--has-tracks / --has-window：只返回「有方向」/「有网申起止」的条目。"""
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="x-dir", tracks=[{"direction": "技术类", "roles": ["后端"]}]),
+        manual(id="x-win", tracks=[], apply_start="2026-08-01", apply_end="2026-09-30"),
+        manual(id="x-none", tracks=[], apply_start=None, apply_end=None),
+    ])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+
+    # 只看人工条目：数据层自动条目也可能有 tracks（来自岗位职类）
+    assert {r["id"] for r in calendar_entries(cal_db, has_tracks=True, origin="manual")} == {"x-dir"}
+    assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual")} == {"x-win"}
+    assert len(calendar_entries(cal_db, origin="manual")) == 3
