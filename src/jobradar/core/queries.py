@@ -335,6 +335,9 @@ def calendar_stats(cal_conn) -> dict:
         "calendar_covered": sum(t["name"] in with_cal for t in targets),
         # 有日历条目 或 有岗位数据：README/发布自检用的是这个口径（数据可搜到也算覆盖）
         "covered_any": covered_any,
+        # 显式别名，避免和「岗位有 JD 正文的比例」混淆
+        "calendar_entries_covered": sum(t["name"] in with_cal for t in targets),
+        "jd_page_covered": sum(t["name"] in with_jd for t in targets),
         "jd_covered": sum(t["name"] in with_jd for t in targets),
         "entries": {"manual": origin.get("manual", 0), "auto": origin.get("auto", 0)},
         "by_sector": list(sectors.values()),
