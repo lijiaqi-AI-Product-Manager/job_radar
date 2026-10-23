@@ -224,6 +224,16 @@ sources:
   - {id: beisen-bfhc3, company: 北方华创, params: {tenant: bfhc3}}          # 2026-10-23 新增：22 岗
   - {id: beisen-calbjs, company: 中创新航, params: {tenant: calbjs}}        # 2026-10-23 新增：249 岗
   - {id: beisen-lppz, company: 良品铺子, params: {tenant: lppz}}            # 2026-10-23 新增：12 岗
+  - {id: beisen-vivo-main, company: vivo, params: {tenant: vivo}}          # 2026-10-23 新增：25 岗（总部）
+  - {id: beisen-changanqiche, company: 长安汽车, params: {tenant: changanqiche}}  # 2026-10-23 新增：375 岗
+  - {id: beisen-sokon, company: 赛力斯, params: {tenant: sokon}}            # 2026-10-23 新增：339 岗
+  - {id: beisen-cjzq1, company: 长江证券, params: {tenant: cjzq1}}           # 2026-10-23 新增：44 岗（分支机构）
+  - {id: beisen-bsthr, company: 黑芝麻智能, params: {tenant: bsthr}}         # 2026-10-23 新增：109 岗
+  - {id: beisen-szgd, company: 南方电网, params: {tenant: szgd}}            # 2026-10-23 新增：227 岗（南网引才项目）
+  - {id: beisen-langjiu, company: 郎酒, params: {tenant: langjiu}}          # 2026-10-23 新增：30 岗
+  - {id: beisen-cast, company: 航天五院遥感部, params: {tenant: cast}}     # 2026-10-23 新增：9 岗（航天科技集团五院）
+  - {id: beisen-hellobike, company: 哈啰, params: {tenant: hellobike}}      # 2026-10-23 新增：423 岗
+  - {id: beisen-ke, company: 贝壳, params: {tenant: ke}}                    # 2026-10-23 新增：56 岗（校招官网）
   - {id: beisen-genomics, company: 华大集团, params: {tenant: genomics}}
   - {id: beisen-renfu, company: 人福医药, params: {tenant: renfu}}
   - {id: beisen-sph, company: 上海医药, params: {tenant: sph}}
