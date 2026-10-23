@@ -169,7 +169,7 @@ def main(argv: list[str] | None = None):
 
     ap = argparse.ArgumentParser(
         prog="jobradar-mcp",
-        description="job_radar 的 MCP 服务器（stdio）。把本命令填进 MCP 客户端的 command 即可，无需参数。",
+        description="job_radar MCP server (stdio). Put this command in your MCP client config; no arguments needed.",
     )
     ap.add_argument("--version", action="version", version=f"jobradar-mcp {_ver}")
     ap.parse_args(argv)

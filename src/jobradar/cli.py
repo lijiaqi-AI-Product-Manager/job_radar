@@ -491,7 +491,26 @@ def _configure_stdio():
             pass  # 非标准流（测试替身、已关闭的管道）直接跳过
 
 
+def _ensure_utf8_streams() -> None:
+    """把 stdout/stderr 切成 UTF-8（errors=replace）。
+
+    背景：Windows 英文版控制台默认 cp1252，打印中文 JSON 会直接 UnicodeEncodeError
+    （2026-10-23 CI 的 windows-latest 就是这样红的）。中文 Windows 是 cp936 不受影响，
+    但没理由让英文 locale 的用户用不了。
+    """
+    import sys
+
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            enc = (getattr(stream, "encoding", "") or "").lower()
+            if enc not in ("utf-8", "utf8"):
+                stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:  # noqa: BLE001 — 某些被重定向的流不支持 reconfigure
+            pass
+
+
 def main(argv=None):
+    _ensure_utf8_streams()
     _configure_stdio()
     args = build_parser().parse_args(argv)
     args.fn(args)
