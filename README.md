@@ -136,6 +136,6 @@ uv run ruff check src tests scripts
 
 ## 文档
 
-[CLAUDE.md](CLAUDE.md)（施工规范）· [ROADMAP](docs/ROADMAP.md) · [发布门槛](docs/RELEASE.md) · [日历字段规范](docs/CALENDAR-FORMAT.md) · [阶段验收](docs/PROGRESS-2026-10-23.md) · [侦察结论](docs/recon/) · [评测集](evals/) · [CHANGELOG](CHANGELOG.md) · [合规](COMPLIANCE.md)
+[FAQ](docs/FAQ.md) · [CLAUDE.md](CLAUDE.md)（施工规范）· [ROADMAP](docs/ROADMAP.md) · [发布门槛](docs/RELEASE.md) · [日历字段规范](docs/CALENDAR-FORMAT.md) · [阶段验收](docs/PROGRESS-2026-10-23.md) · [侦察结论](docs/recon/) · [评测集](evals/) · [CHANGELOG](CHANGELOG.md) · [合规](COMPLIANCE.md)
 
 MIT License
