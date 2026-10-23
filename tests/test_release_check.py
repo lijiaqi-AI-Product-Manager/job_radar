@@ -102,3 +102,32 @@ def test_run_reports_fail_when_below_gates(tmp_path):
     rows = rc.run(None, sources, targets, None)
     assert any(r["gate"] == "数据源覆盖" and not r["ok"] for r in rows)
     assert any(r["gate"] == "发布文档齐全" for r in rows)
+
+def test_data_sanity_flags_structural_anomalies(tmp_path):
+    """数据自检：空标题/非法类型/届次越界/窗口倒挂/同源重复 都必须被抓出来。"""
+    jobs = tmp_path / "jobs.db"
+    j = sqlite3.connect(jobs)
+    j.execute("CREATE TABLE job(id TEXT, source_id TEXT, source_job_id TEXT, title TEXT, "
+              "recruit_type TEXT, grad_year INT, url TEXT, closed_at TEXT)")
+    j.executemany("INSERT INTO job VALUES (?,?,?,?,?,?,?,NULL)", [
+        ("a", "s1", "1", "后端", "campus", 2027, "https://x/1"),
+        ("b", "s1", "2", "", "campus", 2027, "https://x/2"),          # 空标题
+        ("c", "s1", "3", "运营", "parttime", 2027, "https://x/3"),    # 非法类型
+        ("d", "s1", "4", "算法", "campus", 2099, "https://x/4"),      # 届次越界
+        ("e", "s1", "1", "重复", "campus", 2027, "https://x/5"),      # 同源重复
+    ])
+    j.commit()
+    j.close()
+    cal = tmp_path / "calendar.db"
+    c = sqlite3.connect(cal)
+    c.execute("CREATE TABLE entry(id TEXT, apply_start TEXT, apply_end TEXT, grad_year INT)")
+    c.execute("INSERT INTO entry VALUES ('x', '2026-09-01', '2026-08-01', 2027)")   # 窗口倒挂
+    c.commit()
+    c.close()
+    bad, detail = rc.data_sanity(tmp_path, cal)
+    assert bad == 5
+    assert "空标题" in detail and "窗口倒挂" in detail
+
+
+def test_data_sanity_clean_data_returns_zero(tmp_path):
+    assert rc.data_sanity(None, None) == (0, "无异常")
