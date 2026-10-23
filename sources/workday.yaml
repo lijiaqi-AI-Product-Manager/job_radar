@@ -28,3 +28,13 @@ sources:
       site: External
       country: PRC          # Intel 的 location 分面用 "PRC, Shanghai" 这种写法
       max_pages: 3
+
+  - id: workday-pfizer
+    company: 辉瑞
+    params:
+      host: pfizer.wd1.myworkdayjobs.com
+      tenant: pfizer
+      site: PfizerCareers
+      location_facet: Location_Country   # 辉瑞用国家分面（descriptor 就是 "China"）
+      country_exact: true
+      max_pages: 12
