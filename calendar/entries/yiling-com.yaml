@@ -3,12 +3,13 @@ entries:
 - id: yiling-com-official-home-2026
   company: 以岭药业
   project_type: 校招
-  apply_url: https://www.yiling.com
+  apply_url: https://yiling.zhiye.com/campus/jobs
   source:
     type: official_site
-    name: 以岭药业 官网
-    url: https://www.yiling.com
+    name: 以岭药业
+    url: https://yiling.zhiye.com/campus/jobs
   as_of: '2026-10-23'
   jd:
-    status: none
-  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（已于 2026-10-22 访问确认 200）。
+    status: official_page
+    url: https://yiling.zhiye.com/campus/jobs
+  notes: 官方招聘入口（2026-10-23 复核升级：以岭药业）。入口页未写明批次/网申时间/城市，按红线留空。
