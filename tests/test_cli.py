@@ -136,7 +136,31 @@ def test_download_falls_back_to_raw_then_next_mirror(tmp_path, no_token):
 
     used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
     assert used == "gitee"
-    assert seen[-2:] == [local.gitee_url("jobs.db.gz"), local.gitee_url("jobs.db")]
+    # 整文件 .gz → 分片探测（.part01）→ 原文件
+    assert seen[-3:] == [local.gitee_url("jobs.db.gz"), local.gitee_url("jobs.db.gz.part01"),
+                         local.gitee_url("jobs.db")]
+    assert (tmp_path / "jobs.db").read_bytes() == body
+
+
+def test_download_joins_gitee_parts(tmp_path, no_token):
+    """Gitee 大文件是分片存放的：整文件 404 时按 .partNN 下载并拼接（gzip 多成员可直接解压）。"""
+    import gzip
+
+    import httpx
+    body = _sqlite_bytes(tmp_path)
+    blob = gzip.compress(body)
+    half = len(blob) // 2
+    parts = {"jobs.db.gz.part01": blob[:half], "jobs.db.gz.part02": blob[half:]}
+
+    def handler(request):
+        url = str(request.url)
+        for name, data in parts.items():
+            if url.endswith("/" + name):
+                return httpx.Response(200, content=data)
+        return httpx.Response(404)
+
+    used = cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler), prefer="gitee")
+    assert used == "gitee"
     assert (tmp_path / "jobs.db").read_bytes() == body
 
 
