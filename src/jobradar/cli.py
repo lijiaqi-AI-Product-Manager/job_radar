@@ -374,7 +374,8 @@ def cmd_crawl(args):
         sources = [s for s in sources if s.id in set(args.only.split(","))]
     with closing(connect(out / DB_FILES["jobs"], "jobs")) as jobs_conn, \
             closing(connect(out / DB_FILES["text"], "text")) as text_conn:
-        results = crawl(sources, jobs_conn, text_conn, ts=now_ts(), budget_seconds=args.budget_seconds)
+        results = crawl(sources, jobs_conn, text_conn, ts=now_ts(), budget_seconds=args.budget_seconds,
+                        max_workers=getattr(args, "workers", 4))
     summary = {sid: {"status": r.status, "opened": r.opened, "closed": r.closed,
                      "changed": r.changed, "reason": r.reason} for sid, r in sorted(results.items())}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
@@ -460,6 +461,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--only", help="逗号分隔的 source id")
     sp.add_argument("--budget-seconds", type=float, default=None,
                     help="整轮采集的时间预算；超出后剩余源标记为失败（daily 用，防止拖到 workflow 上限）")
+    sp.add_argument("--workers", type=int, default=4,
+                    help="并行站点数（按「适配器+站点」分组，同站点仍串行）")
 
     sp = add("calendar-build", cmd_calendar_build, "（开发/CI）重建招聘日历库")
     sp.add_argument("--jobs", default="data/jobs.db")

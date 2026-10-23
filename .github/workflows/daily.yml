@@ -42,7 +42,7 @@ jobs:
 
       - name: Crawl
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
-        run: uv run jobradar crawl --sources sources --out data --budget-seconds 5400 | tee crawl-summary.json
+        run: uv run jobradar crawl --sources sources --out data --budget-seconds 5400 --workers 8 | tee crawl-summary.json
 
       - name: Publish data-latest
         run: |

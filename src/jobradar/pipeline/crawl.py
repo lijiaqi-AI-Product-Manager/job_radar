@@ -67,6 +67,12 @@ def _expected_max(source: SourceConfig) -> int | None:
     return cap * size
 
 
+def _site_key(source: SourceConfig) -> str:
+    """同一个站点（同 host 或同租户）的源必须串行，保证对单站点的 1 req/s。"""
+    p = source.params or {}
+    return str(p.get("host") or p.get("tenant") or source.id)
+
+
 def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           client_factory: Callable[[], httpx.Client] = make_client,
           adapters: dict[str, type[Adapter]] | None = None,
@@ -74,7 +80,10 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           max_workers: int = 4, budget_seconds: float | None = None) -> dict[str, RunResult]:
     adapters = adapters if adapters is not None else load_all()
     deadline = time.monotonic() + budget_seconds if budget_seconds else None
-    groups: dict[str, list[SourceConfig]] = defaultdict(list)
+    # 并行单位从「适配器」改成「适配器 + 站点」：北森几百个租户各自是不同子域，
+    # 串行跑一轮要 70+ 分钟（daily 常年贴着 90 分钟预算）；按站点分组后不同子域可以并行，
+    # 同一站点（如 wecruit.hotjob.cn 上的多个租户）仍然串行，1 req/s 的承诺不变。
+    groups: dict[tuple[str, str], list[SourceConfig]] = defaultdict(list)
     results: dict[str, RunResult] = {}
     for s in sources:
         if not s.enabled:
@@ -83,11 +92,11 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
             results[s.id] = ingest_run(jobs_conn, s.id, [], ts=ts, ok=False,
                                        error=f"unknown adapter {s.adapter}")
             continue
-        groups[s.adapter].append(s)
+        groups[(s.adapter, _site_key(s))].append(s)
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)
-                   for aid, srcs in groups.items()]
+                   for (aid, _site), srcs in groups.items()]
         for fut in as_completed(futures):
             for source, jobs, error in fut.result():
                 if jobs is None:
