@@ -21,13 +21,14 @@ from jobradar.sources import load_sources  # noqa: E402
 
 # v1.0 门槛（可随实际调整，但要有共识后再改）
 GATES = {
-    "data_coverage": 150,      # 有岗位数据的目标公司数
+    "data_coverage": 160,      # 有岗位数据的目标公司数
     "calendar_coverage": 450,  # 至少一条日历条目的目标公司数
     "campus_city": 0.20,       # 校园岗有城市占比（北森新版门户不返回城市，20% 是当前源结构的现实上限）
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
     # 日历字段完整度：一条日历 11 个必填字段里至少填了 7 个的条目占比
     # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
-    "calendar_fields": 0.35,
+    "calendar_fields": 0.37,
+    "calendar_fields_by_company": 0.60,
 }
 
 FILES = ["README.md", "CHANGELOG.md", "COMPLIANCE.md", "LICENSE"]
@@ -51,7 +52,7 @@ CAL_FIELDS = ["group_name", "company", "grad_year", "project_type", "tracks", "a
 def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
     """日历字段完整度：人工条目里 ≥7/11 字段的占比。"""
     if not calendar_db or not calendar_db.exists():
-        return 0.0, "无 calendar.db"
+        return 0.0, "无 calendar.db", 0.0
     import sqlite3
     con = sqlite3.connect(calendar_db)
     con.row_factory = sqlite3.Row
@@ -68,7 +69,7 @@ def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
         return True
 
     if not rows:
-        return 0.0, "0 条"
+        return 0.0, "0 条", 0.0
     good = sum(1 for r in rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
     all_rows = con.execute("SELECT * FROM entry").fetchall()
     all_good = sum(1 for r in all_rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
@@ -78,9 +79,10 @@ def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
         ok = sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7
         by_group[r["group_name"]] = by_group.get(r["group_name"], False) or ok
     groups_ok = sum(1 for v in by_group.values() if v)
+    by_company = groups_ok / len(by_group) if by_group else 0.0
     detail = (f"{good}/{len(rows)}；全部条目 {all_good}/{len(all_rows)} = {all_good / len(all_rows):.1%}；"
-              f"按公司 {groups_ok}/{len(by_group)} = {groups_ok / len(by_group):.1%}" if all_rows else f"{good}/{len(rows)}")
-    return good / len(rows), detail
+              f"按公司 {groups_ok}/{len(by_group)} = {by_company:.1%}" if all_rows else f"{good}/{len(rows)}")
+    return good / len(rows), detail, by_company
 
 
 def calendar_coverage(calendar_db: Path | None) -> tuple[int, int, int]:
@@ -160,9 +162,12 @@ def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path 
     rows.append({"gate": "JD 正文覆盖", "value": "无数据" if jd is None else f"{jd:.1%}",
                  "ok": jd is not None and jd >= GATES["jd_coverage"], "target": f"≥{GATES['jd_coverage']:.0%}"})
 
-    fields, detail = calendar_fields(calendar_db)
+    fields, detail, by_company = calendar_fields(calendar_db)
     rows.append({"gate": "日历字段完整度", "value": f"{fields:.1%}（≥7/11 字段：{detail}）",
                  "ok": fields >= GATES["calendar_fields"], "target": f"≥{GATES['calendar_fields']:.0%}"})
+    rows.append({"gate": "日历按公司完整", "value": f"{by_company:.1%}（每家公司至少一条 ≥7/11）",
+                 "ok": by_company >= GATES["calendar_fields_by_company"],
+                 "target": f"≥{GATES['calendar_fields_by_company']:.0%}"})
 
     missing = [f for f in FILES if not (ROOT / f).exists()]
     rows.append({"gate": "发布文档齐全", "value": "缺少 " + ",".join(missing) if missing else "齐全",
