@@ -1,272 +1,272 @@
 [
  {
-  "id": "alibaba-research-intern",
+  "id": "alibaba-fliggy-2027-qz",
   "group": "阿里巴巴",
   "url": "https://campus-talent.alibaba.com/campus/position",
   "scroll": 10
  },
  {
-  "id": "bytedance-seed-2027-intern",
-  "group": "字节跳动",
-  "url": "https://jobs.bytedance.com/campus",
-  "scroll": 10
- },
- {
-  "id": "ccccltd-social-entry",
-  "group": "中国交建",
-  "url": "https://zhaopin.ccccltd.cn/",
-  "scroll": 10
- },
- {
-  "id": "chng-social-entry",
-  "group": "中国华能",
-  "url": "https://zhaopin.chng.com.cn/",
-  "scroll": 10
- },
- {
-  "id": "csg-social-entry",
-  "group": "南方电网",
-  "url": "https://zhaopin.csg.cn/",
-  "scroll": 10
- },
- {
-  "id": "ey-social-entry",
-  "group": "安永",
-  "url": "https://www.ey.com/zh_cn/careers",
-  "scroll": 10
- },
- {
-  "id": "fourier-social-entry",
-  "group": "傅利叶智能",
-  "url": "https://www.fftai.com/careers",
-  "scroll": 10
- },
- {
-  "id": "galbot-social-entry",
-  "group": "银河通用",
-  "url": "https://www.galbot.com/careers",
-  "scroll": 10
- },
- {
-  "id": "goertek-social-entry",
-  "group": "歌尔股份",
-  "url": "https://goertek.hotjob.cn/",
-  "scroll": 10
- },
- {
-  "id": "gwm-campus-entry",
-  "group": "长城汽车",
-  "url": "https://zhaopin.gwm.cn/",
-  "scroll": 10
- },
- {
-  "id": "haier-2027-xz",
+  "id": "haier-2027-phd",
   "group": "海尔",
   "url": "https://maker.haier.net/client/campus/index",
   "scroll": 10
  },
  {
-  "id": "hengrui-campus-entry",
-  "group": "恒瑞医药",
-  "url": "https://app.mokahr.com/m/campus-recruitment/hengrui/145997",
-  "scroll": 10
- },
- {
-  "id": "hikvision-campus-entry",
-  "group": "海康威视",
-  "url": "https://campushr.hikvision.com/",
-  "scroll": 10
- },
- {
-  "id": "home-01ai-campus-entry",
+  "id": "home-01ai-social-entry",
   "group": "零一万物",
   "url": "https://www.01.ai/careers",
   "scroll": 10
  },
  {
-  "id": "home-10jqka-campus-entry",
+  "id": "home-10jqka-social-entry",
   "group": "同花顺",
   "url": "https://job.10jqka.com.cn/",
   "scroll": 10
  },
  {
-  "id": "honor-2027-xz",
-  "group": "荣耀",
-  "url": "https://www.honor.com/cn/career/",
-  "scroll": 10
- },
- {
-  "id": "htsc-campus-entry",
-  "group": "华泰证券",
-  "url": "http://job.htsc.com.cn/",
-  "scroll": 10
- },
- {
-  "id": "huahong-campus-entry",
-  "group": "华虹集团",
-  "url": "https://app.mokahr.com/campus-recruitment/huahong/74036",
-  "scroll": 10
- },
- {
-  "id": "huawei-2027-ambassador",
-  "group": "华为",
-  "url": "https://career.huawei.com/cn/campus-recruitment",
-  "scroll": 10
- },
- {
-  "id": "hzbank-campus-entry",
-  "group": "杭州银行",
-  "url": "https://myjob.hzbank.com.cn/hzzp-apply-web/static/index.html",
-  "scroll": 10
- },
- {
-  "id": "ibm-social-entry",
-  "group": "IBM",
-  "url": "https://www.ibm.com/careers",
-  "scroll": 10
- },
- {
-  "id": "inspur-campus-entry",
-  "group": "浪潮",
-  "url": "http://career.inspur.com/campus2027/campus.html",
-  "scroll": 10
- },
- {
-  "id": "intel-campus-entry",
+  "id": "intel-social-entry",
   "group": "英特尔",
   "url": "https://www.intel.com/content/www/us/en/jobs.html",
   "scroll": 10
  },
  {
-  "id": "isoftstone-campus-entry",
-  "group": "软通动力",
-  "url": "https://career.isoftstone.com/",
-  "scroll": 10
- },
- {
-  "id": "jahwa-campus-entry",
-  "group": "上海家化",
-  "url": "https://www.jahwa.com.cn/job",
-  "scroll": 10
- },
- {
-  "id": "jd-2027-tet",
+  "id": "jd-2027-xinrui",
   "group": "京东",
   "url": "https://campus.jd.com/",
   "scroll": 10
  },
  {
-  "id": "jianfa-campus-entry",
-  "group": "建发房产",
-  "url": "https://chinacdc.zhiye.com/campus",
-  "scroll": 10
- },
- {
-  "id": "jinko-campus-entry",
-  "group": "晶科能源",
-  "url": "https://app.mokahr.com/campus-recruitment/jinkosolar/41896",
-  "scroll": 10
- },
- {
-  "id": "jsfund-campus-entry",
-  "group": "嘉实基金",
-  "url": "https://app.mokahr.com/m/campus_apply/jsfund/43906",
-  "scroll": 10
- },
- {
-  "id": "junshipharma-campus-entry",
-  "group": "君实生物",
-  "url": "https://www.junshipharma.com/join/",
-  "scroll": 10
- },
- {
-  "id": "kingdee-campus-entry",
-  "group": "金蝶",
-  "url": "https://app.mokahr.com/campus-recruitment/kingdeehr/166565",
-  "scroll": 10
- },
- {
-  "id": "kpmg-campus-entry",
+  "id": "kpmg-social-entry",
   "group": "毕马威",
   "url": "https://kpmg.com/cn/zh/careers.html",
   "scroll": 10
  },
  {
-  "id": "kunlun-campus-entry",
-  "group": "昆仑万维",
-  "url": "https://jobs.kunlun.com/459522",
-  "scroll": 10
- },
- {
-  "id": "livzon-campus-entry",
-  "group": "丽珠集团",
-  "url": "https://www.livzon.com.cn/Campus.html",
-  "scroll": 10
- },
- {
-  "id": "longfor-campus-entry",
-  "group": "龙湖",
-  "url": "https://www.longfor.com/join/job.html",
-  "scroll": 10
- },
- {
-  "id": "longi-campus-entry",
+  "id": "longi-social-entry",
   "group": "隆基绿能",
   "url": "https://www.longi.com/en/career/",
   "scroll": 10
  },
  {
-  "id": "loreal-campus-entry",
+  "id": "loreal-social-entry",
   "group": "欧莱雅",
   "url": "https://careers.loreal.com/en",
   "scroll": 10
  },
  {
-  "id": "luckin-social-entry",
-  "group": "瑞幸咖啡",
-  "url": "https://app.mokahr.com/apply/lkcoffee/45256",
-  "scroll": 10
- },
- {
-  "id": "luxshare-campus-entry",
-  "group": "立讯精密",
-  "url": "https://www.luxshare-ict.com/careers.html",
-  "scroll": 10
- },
- {
-  "id": "ly-campus-entry",
-  "group": "同程旅行",
-  "url": "https://mhr.ly.com/recruit/portal/",
-  "scroll": 10
- },
- {
-  "id": "lzlj-campus-entry",
-  "group": "泸州老窖",
-  "url": "https://job.lzlj.com/",
-  "scroll": 10
- },
- {
-  "id": "megvii-campus-entry",
-  "group": "旷视科技",
-  "url": "https://app.mokahr.com/campus_apply/megviihr/38642",
-  "scroll": 10
- },
- {
-  "id": "meitu-campus-entry",
+  "id": "meitu-social-entry",
   "group": "美图",
   "url": "https://hr.meitu.com/",
   "scroll": 10
  },
  {
-  "id": "meituan-2027-beidou",
-  "group": "美团",
-  "url": "https://zhaopin.meituan.com/web/campus",
+  "id": "metax-campus-entry",
+  "group": "沐曦",
+  "url": "https://www.metax-tech.com/join",
   "scroll": 10
  },
  {
-  "id": "mengniu-join-entry",
-  "group": "蒙牛",
-  "url": "https://www.mengniu.com.cn/join.html",
+  "id": "microport-campus-entry",
+  "group": "微创医疗",
+  "url": "https://microport.com/careers",
+  "scroll": 10
+ },
+ {
+  "id": "microsoft-campus-entry",
+  "group": "微软",
+  "url": "https://careers.microsoft.com/v2/global/en/home.html",
+  "scroll": 10
+ },
+ {
+  "id": "midea-2027-mideastar",
+  "group": "美的",
+  "url": "https://careers.midea.com/schoolOut",
+  "scroll": 10
+ },
+ {
+  "id": "mihoyo-social-entry",
+  "group": "米哈游",
+  "url": "https://jobs.mihoyo.com/",
+  "scroll": 10
+ },
+ {
+  "id": "mixue-campus-entry",
+  "group": "蜜雪冰城",
+  "url": "https://careers.mxbc.com/",
+  "scroll": 10
+ },
+ {
+  "id": "moonshot-campus-entry",
+  "group": "月之暗面",
+  "url": "https://careers.kimi.com/",
+  "scroll": 10
+ },
+ {
+  "id": "muyuan-early-entry",
+  "group": "牧原",
+  "url": "https://app.mokahr.com/campus-recruitment/muyuan/74358",
+  "scroll": 10
+ },
+ {
+  "id": "naura-campus-entry",
+  "group": "北方华创",
+  "url": "https://career.naura.com/social",
+  "scroll": 10
+ },
+ {
+  "id": "neusoft-campus-entry",
+  "group": "东软集团",
+  "url": "https://www.neusoft.com/careers/",
+  "scroll": 10
+ },
+ {
+  "id": "nio-2027-intern",
+  "group": "蔚来",
+  "url": "https://nio.jobs.feishu.cn/campus",
+  "scroll": 10
+ },
+ {
+  "id": "njcb-campus-entry",
+  "group": "南京银行",
+  "url": "https://job.njcb.com.cn",
+  "scroll": 10
+ },
+ {
+  "id": "nongfu-campus-entry",
+  "group": "农夫山泉",
+  "url": "https://app.mokahr.com/campus-recruitment/yst/68367",
+  "scroll": 10
+ },
+ {
+  "id": "oracle-campus-entry",
+  "group": "甲骨文",
+  "url": "https://www.oracle.com/careers/",
+  "scroll": 10
+ },
+ {
+  "id": "panasonic-campus-entry",
+  "group": "松下",
+  "url": "https://panasonic.cn/recruit/",
+  "scroll": 10
+ },
+ {
+  "id": "pdd-2027-maicai",
+  "group": "拼多多",
+  "url": "https://careers.pddglobalhr.com/campus/grad",
+  "scroll": 10
+ },
+ {
+  "id": "pfizer-campus-entry",
+  "group": "辉瑞",
+  "url": "https://www.pfizer.com.cn/zh-hans/careers-cn",
+  "scroll": 10
+ },
+ {
+  "id": "pg-campus-entry",
+  "group": "宝洁",
+  "url": "https://www.pgcareers.com/apac/en",
+  "scroll": 10
+ },
+ {
+  "id": "pingan-campus-entry",
+  "group": "中国平安",
+  "url": "https://campus.pingan.com/",
+  "scroll": 10
+ },
+ {
+  "id": "pinganbank-campus-entry",
+  "group": "平安银行",
+  "url": "https://talent.pingan.com/recruit/social.html",
+  "scroll": 10
+ },
+ {
+  "id": "pony-campus-entry",
+  "group": "小马智行",
+  "url": "https://www.pony.ai/careers",
+  "scroll": 10
+ },
+ {
+  "id": "powerchina-campus-entry",
+  "group": "中国电建",
+  "url": "https://zhaopin.powerchina.cn/",
+  "scroll": 10
+ },
+ {
+  "id": "pwc-campus-entry",
+  "group": "普华永道",
+  "url": "https://www.pwccn.com/zh/careers.html",
+  "scroll": 10
+ },
+ {
+  "id": "qualcomm-campus-entry",
+  "group": "高通",
+  "url": "https://careers.qualcomm.com/careers",
+  "scroll": 10
+ },
+ {
+  "id": "roche-campus-entry",
+  "group": "罗氏",
+  "url": "https://careers.roche.com/global/en",
+  "scroll": 10
+ },
+ {
+  "id": "sangfor-social-entry",
+  "group": "深信服",
+  "url": "https://hr.sangfor.com/",
+  "scroll": 10
+ },
+ {
+  "id": "schneider-campus-entry",
+  "group": "施耐德电气",
+  "url": "https://www.schneider-electric.cn/zh/about-us/careers/overview/",
+  "scroll": 10
+ },
+ {
+  "id": "seazen-social-entry",
+  "group": "新城控股",
+  "url": "https://app.mokahr.com/social-recruitment/seazen/168435?locale=zh-CN#/",
+  "scroll": 10
+ },
+ {
+  "id": "sensetime-campus-entry",
+  "group": "商汤科技",
+  "url": "https://hr.sensetime.com/",
+  "scroll": 10
+ },
+ {
+  "id": "seres-campus-entry",
+  "group": "赛力斯",
+  "url": "https://www.seres.cn/p/career-development.html",
+  "scroll": 10
+ },
+ {
+  "id": "sf-2027-xz",
+  "group": "顺丰",
+  "url": "https://campus.sf-express.com/",
+  "scroll": 10
+ },
+ {
+  "id": "shinewing-campus-entry",
+  "group": "信永中和",
+  "url": "https://job.shinewing.com/",
+  "scroll": 10
+ },
+ {
+  "id": "shuanghui-campus-entry",
+  "group": "双汇",
+  "url": "https://www.shuanghui.net/job-50.html",
+  "scroll": 10
+ },
+ {
+  "id": "siemens-campus-entry",
+  "group": "西门子",
+  "url": "https://jobs.siemens.com/en_US/externaljobs",
+  "scroll": 10
+ },
+ {
+  "id": "sinomach-campus-entry",
+  "group": "国机集团",
+  "url": "https://zhaopin.sinomach.com.cn/",
   "scroll": 10
  }
 ]

@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: pip install httpx playwright && python -m playwright install --with-deps chromium
       - name: Render and extract
         run: python scripts/render_extract.py --file calendar/enrich-targets.json --out enrich-open.json
       - name: Parse official WeChat articles
