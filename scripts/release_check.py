@@ -25,6 +25,9 @@ GATES = {
     "calendar_coverage": 450,  # 至少一条日历条目的目标公司数
     "campus_city": 0.20,       # 校园岗有城市占比（北森新版门户不返回城市，20% 是当前源结构的现实上限）
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
+    # 日历字段完整度：一条日历 11 个必填字段里至少填了 7 个的条目占比
+    # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
+    "calendar_fields": 0.25,
 }
 
 FILES = ["README.md", "CHANGELOG.md", "COMPLIANCE.md", "LICENSE"]
@@ -39,6 +42,35 @@ def data_coverage(targets: dict, companies: set[str]) -> tuple[int, int]:
     matched = match_targets(targets, companies)
     covered = sum(1 for names in matched.values() if names)
     return covered, len(target_names(targets))
+
+
+CAL_FIELDS = ["group_name", "company", "grad_year", "project_type", "tracks", "apply_start",
+              "apply_end", "cities", "apply_url", "source_name", "as_of"]
+
+
+def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
+    """日历字段完整度：人工条目里 ≥7/11 字段的占比。"""
+    if not calendar_db or not calendar_db.exists():
+        return 0.0, "无 calendar.db"
+    import sqlite3
+    con = sqlite3.connect(calendar_db)
+    con.row_factory = sqlite3.Row
+    rows = con.execute("SELECT * FROM entry WHERE origin='manual'").fetchall()
+
+    def filled(r, k):
+        v = r[k]
+        if v is None:
+            return False
+        if isinstance(v, str) and v.strip() in ("", "[]", "null"):
+            return False
+        if isinstance(v, (list, dict)) and not v:
+            return False
+        return True
+
+    if not rows:
+        return 0.0, "0 条"
+    good = sum(1 for r in rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
+    return good / len(rows), f"{good}/{len(rows)}"
 
 
 def calendar_coverage(calendar_db: Path | None) -> tuple[int, int, int]:
@@ -117,6 +149,10 @@ def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path 
     jd = jd_ratio(home)
     rows.append({"gate": "JD 正文覆盖", "value": "无数据" if jd is None else f"{jd:.1%}",
                  "ok": jd is not None and jd >= GATES["jd_coverage"], "target": f"≥{GATES['jd_coverage']:.0%}"})
+
+    fields, detail = calendar_fields(calendar_db)
+    rows.append({"gate": "日历字段完整度", "value": f"{fields:.1%}（≥7/11 字段：{detail}）",
+                 "ok": fields >= GATES["calendar_fields"], "target": f"≥{GATES['calendar_fields']:.0%}"})
 
     missing = [f for f in FILES if not (ROOT / f).exists()]
     rows.append({"gate": "发布文档齐全", "value": "缺少 " + ",".join(missing) if missing else "齐全",
