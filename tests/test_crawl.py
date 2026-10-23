@@ -97,3 +97,18 @@ def test_budget_exceeded_skips_remaining_sources(jobs_db, text_db):
     assert set(res) == {"example-corp", "later"}
     for r in res.values():
         assert r.status == "failed" and "budget" in (r.reason or "")
+
+def test_site_key_separates_tenants_but_keeps_shared_hosts_serial():
+    """并行单位是「适配器 + 站点」：北森租户各在不同子域可以并行，同一 host 必须串行。"""
+    from jobradar.models import Compliance
+    from jobradar.pipeline.crawl import _site_key
+
+    compliance = Compliance(checked_on="2026-10-20", robots="allowed", terms="t")
+
+    def src(sid, **params):
+        return SourceConfig(id=sid, company="某公司", adapter="beisen", params=params, compliance=compliance)
+
+    assert _site_key(src("a", tenant="acme")) == "acme"
+    assert _site_key(src("b", tenant="beta")) == "beta"          # 不同租户 → 不同组 → 可并行
+    assert _site_key(src("c", host="wecruit.hotjob.cn", tenant="SU1")) == "wecruit.hotjob.cn"
+    assert _site_key(src("d", host="wecruit.hotjob.cn", tenant="SU2")) == "wecruit.hotjob.cn"  # 同站 → 同组
