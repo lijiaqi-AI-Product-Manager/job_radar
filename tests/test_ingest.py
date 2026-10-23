@@ -153,3 +153,15 @@ def test_upsert_texts(jobs_db, text_db):
     upsert_texts(text_db, [make_job(1, description="D2", requirements="R2")], ts=T(2))
     r = text_db.execute("SELECT * FROM job_text WHERE job_id='s1:1'").fetchone()
     assert (r["description"], r["requirements"], r["fetched_at"]) == ("D2", "R2", T(2))
+
+def test_expected_max_absorbs_the_drop_caused_by_a_new_page_cap(jobs_db):
+    """给源加 max_pages 限额后，岗位数会从「历史全量」掉到「限额」，不应该被骤降保护拦下。
+
+    真实场景：星巴克 18418 岗 → 限 30 页（3000）后，每次都判 dropped 18418 -> 3000，
+    源被永久 rejected，旧岗位也永远不下架。
+    """
+    ingest_run(jobs_db, "s1", [make_job(i) for i in range(1, 201)], ts=T(1))
+    capped = [make_job(i) for i in range(1, 100)]   # 99/200 = 49.5%，低于阈值
+    assert ingest_run(jobs_db, "s1", capped, ts=T(2)).status == "rejected"          # 旧行为：拦
+    res = ingest_run(jobs_db, "s1", capped, ts=T(3), expected_max=120)               # 限额生效：放行
+    assert res.status == "ok"
