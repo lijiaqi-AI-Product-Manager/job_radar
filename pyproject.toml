@@ -1,8 +1,23 @@
 [project]
 name = "jobradar"
 version = "1.0.0"
-description = "Daily-updated, structured open dataset of Chinese campus/intern/social job postings, for AI agents."
+description = "每日自动更新的中国校招/实习/社招岗位开放数据集：CLI + MCP + Skill，让 AI agent 直接查询（零服务器、可离线）"
+readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.11"
+keywords = ["jobs", "campus-recruitment", "china", "dataset", "ai-agents", "mcp", "cli", "sqlite"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Education",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
 dependencies = [
     "httpx>=0.27",
     "pydantic>=2.7",
@@ -53,3 +68,9 @@ jobradar-mcp = "jobradar.mcp_server:main"
 mcp = [
     "mcp>=2",
 ]
+
+[project.urls]
+Homepage = "https://github.com/lijiaqimun-coder/job_radar"
+Repository = "https://github.com/lijiaqimun-coder/job_radar"
+Changelog = "https://github.com/lijiaqimun-coder/job_radar/blob/main/CHANGELOG.md"
+Issues = "https://github.com/lijiaqimun-coder/job_radar/issues"

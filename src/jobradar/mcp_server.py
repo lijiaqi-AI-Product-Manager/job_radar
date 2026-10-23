@@ -156,7 +156,23 @@ def stats() -> dict:
     return _guard(run)
 
 
-def main():
+def main(argv: list[str] | None = None):
+    """MCP stdio 服务器。默认无参数直接跑；`--help/--version` 给出说明，避免用户一脸茫然。"""
+    import argparse
+    from importlib.metadata import PackageNotFoundError
+    from importlib.metadata import version as _v
+
+    try:
+        _ver = _v("jobradar")
+    except PackageNotFoundError:  # 直接从源码跑时没有安装元数据
+        _ver = "unknown"
+
+    ap = argparse.ArgumentParser(
+        prog="jobradar-mcp",
+        description="job_radar 的 MCP 服务器（stdio）。把本命令填进 MCP 客户端的 command 即可，无需参数。",
+    )
+    ap.add_argument("--version", action="version", version=f"jobradar-mcp {_ver}")
+    ap.parse_args(argv)
     server.run()
 
 
