@@ -29,6 +29,8 @@ GATES = {
     # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
     "calendar_fields": 0.37,
     "calendar_fields_by_company": 0.60,
+    # 数据自检：不允许出现「空标题 / 非法招聘类型 / 届次越界 / 网申窗口倒挂 / 同源重复」
+    "data_sanity": 0,
 }
 
 FILES = ["README.md", "CHANGELOG.md", "COMPLIANCE.md", "LICENSE"]
@@ -147,6 +149,50 @@ def jd_ratio(home: Path | None) -> float | None:
         t.close()
 
 
+def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
+    """数据层面的硬性自检，返回 (异常条数, 明细)。
+
+    这些异常一旦出现就是真 bug（不是覆盖率问题），所以门槛是 0。
+    """
+    problems: list[str] = []
+    if home and (home / "jobs.db").exists():
+        j = sqlite3.connect(home / "jobs.db")
+        try:
+            checks = {
+                "空标题": "SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND TRIM(COALESCE(title,''))=''",
+                "非法招聘类型": ("SELECT COUNT(*) FROM job WHERE closed_at IS NULL "
+                                 "AND recruit_type NOT IN ('campus','intern','social')"),
+                "届次越界": ("SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND grad_year IS NOT NULL "
+                             "AND (grad_year < 2023 OR grad_year > 2032)"),
+                "链接非 http": "SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND url NOT LIKE 'http%'",
+            }
+            for label, sql in checks.items():
+                n = j.execute(sql).fetchone()[0]
+                if n:
+                    problems.append(f"{label} {n}")
+            dups = j.execute(
+                "SELECT COUNT(*) FROM (SELECT source_id, source_job_id FROM job WHERE closed_at IS NULL "
+                "GROUP BY 1,2 HAVING COUNT(*) > 1)").fetchone()[0]
+            if dups:
+                problems.append(f"同源重复 {dups}")
+        finally:
+            j.close()
+    if calendar_db and calendar_db.exists():
+        c = sqlite3.connect(calendar_db)
+        try:
+            n = c.execute("SELECT COUNT(*) FROM entry WHERE apply_start IS NOT NULL AND apply_end IS NOT NULL "
+                          "AND apply_end < apply_start").fetchone()[0]
+            if n:
+                problems.append(f"网申窗口倒挂 {n}")
+            n = c.execute("SELECT COUNT(*) FROM entry WHERE grad_year IS NOT NULL "
+                          "AND (grad_year < 2023 OR grad_year > 2032)").fetchone()[0]
+            if n:
+                problems.append(f"日历届次越界 {n}")
+        finally:
+            c.close()
+    return len(problems), "；".join(problems) if problems else "无异常"
+
+
 def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path | None) -> list[dict]:
     t = _targets(targets_path)
     companies = {s.company for s in load_sources(sources)}
@@ -175,6 +221,10 @@ def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path 
     rows.append({"gate": "日历按公司完整", "value": f"{by_company:.1%}（每家公司至少一条 ≥7/11）",
                  "ok": by_company >= GATES["calendar_fields_by_company"],
                  "target": f"≥{GATES['calendar_fields_by_company']:.0%}"})
+
+    bad, detail = data_sanity(home, calendar_db)
+    rows.append({"gate": "数据自检", "value": f"异常 {bad}（{detail}）",
+                 "ok": bad <= GATES["data_sanity"], "target": "0 异常"})
 
     missing = [f for f in FILES if not (ROOT / f).exists()]
     rows.append({"gate": "发布文档齐全", "value": "缺少 " + ",".join(missing) if missing else "齐全",
