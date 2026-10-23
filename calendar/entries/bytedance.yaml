@@ -15,7 +15,7 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus
   notes: 官网原文：「投递时间：2026 年 8 月至 2027 年 5 月 31 日止」「笔试时间：即日起」；可投递两个职位，彼此独立、默认优先处理较早投递的职位（2026-10-21
-    抓取官网页面核对）。
+    抓取官网页面核对）。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks: []
   cities:
   - 北京
@@ -42,7 +42,7 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus
   notes: 官网原文「Seed 大模型人才校招 2027 届正式启动」（2026-10-21 抓取核对）。毕业时间要求 2026 年 9 月至 2027 年
-    8 月（依据搜索引擎索引）。
+    8 月（依据搜索引擎索引）。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   cities:
   - 北京
   - 上海
@@ -67,7 +67,7 @@ entries:
   jd:
     status: blocked
     url: https://jobs.bytedance.com/campus
-  notes: 与 Seed 2027 届校招同期发布的实习招聘（标题写明「含实习」）。
+  notes: 与 Seed 2027 届校招同期发布的实习招聘（标题写明「含实习」）。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   cities:
   - 北京
   - 上海
@@ -88,6 +88,7 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus/position
   notes: 官网职位页招聘项目「正式 · 2027届前沿技术领域人才校招」；对应实习项目「前沿技术领域人才实习招聘」。（2026-10-21 浏览器渲染官网页面核对原文）
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 技术类
     roles:
@@ -127,7 +128,8 @@ entries:
   jd:
     status: blocked
     url: https://jobs.bytedance.com/campus/position
-  notes: 官网职位页招聘项目「ByteIntern」，岗位说明写明「面向2027届毕业生」。（2026-10-21 浏览器渲染官网页面核对原文）
+  notes: 官网职位页招聘项目「ByteIntern」，岗位说明写明「面向2027届毕业生」。（2026-10-21 浏览器渲染官网页面核对原文） 【岗位/城市来自官方招聘页渲染
+    2026-10-23】
   tracks:
   - direction: 设计类
     roles:
@@ -164,6 +166,7 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus/position
   notes: 官网职位页招聘项目「日常实习」：「面向全体在校生，为符合岗位要求的同学提供为期3个月及以上的项目实践机会」。（2026-10-21 浏览器渲染官网页面核对原文）
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   grad_year: 2027
   tracks:
   - direction: 产品类

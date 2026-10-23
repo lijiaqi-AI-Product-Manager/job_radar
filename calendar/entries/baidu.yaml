@@ -20,6 +20,7 @@ entries:
     status: blocked
     url: https://talent.baidu.com/jobs/list?recruitType=GRADUATE
   notes: 官网原文「面向全球2027届毕业生，毕业时间在2026年9月1日到2027年8月31日之间」（2026-10-21 抓取核对）；五大类岗位与北京/上海/深圳等城市依据搜索引擎索引。
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   apply_start: '2026-09-01'
   apply_end: '2027-08-31'
 - id: baidu-2027-summer

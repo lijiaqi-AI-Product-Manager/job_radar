@@ -17,6 +17,7 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 网申/内推 8 月 3 日至 11 月 30 日，之后测评、笔试或 AI 面试，再进入面试。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   cities: []
   tracks:
   - direction: 管培类
@@ -38,7 +39,8 @@ entries:
   jd:
     status: blocked
     url: https://campus.jd.com/
-  notes: 网申/内推 7 月 1 日至 11 月 30 日。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  notes: 网申/内推 7 月 1 日至 11 月 30 日。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准 【岗位/城市来自官方招聘页渲染
+    2026-10-23】
   tracks:
   - direction: 管培类
     roles:
@@ -60,6 +62,7 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 网申/内推 8 月 17 日至 11 月 30 日，面向基层业务。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 管培类
     roles:
@@ -78,6 +81,7 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 面向高校本硕博在校生、应届生及毕业两年内的技术人才，网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 管培类
     roles:
@@ -95,7 +99,7 @@ entries:
   jd:
     status: blocked
     url: https://campus.jd.com/
-  notes: 网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  notes: 网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准 【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 管培类
     roles:

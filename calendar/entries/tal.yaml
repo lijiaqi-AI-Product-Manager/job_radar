@@ -13,6 +13,7 @@ entries:
     status: official_page
     url: https://job.tal.com/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   grad_year: 2027
   tracks:
   - direction: 运营类
@@ -50,6 +51,7 @@ entries:
     status: official_page
     url: https://job.tal.com/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   grad_year: 2027
   tracks:
   - direction: 运营类

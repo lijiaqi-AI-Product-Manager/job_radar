@@ -14,6 +14,7 @@ entries:
     status: blocked
     url: https://careers.pddglobalhr.com/campus/grad
   notes: 官网批次名称「2027届校招正式批」（2026-10-21 抓取核对）；毕业时间 2026 年 9 月至 2027 年 8 月（依据搜索引擎索引）。
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 技术类
     roles:
@@ -47,7 +48,7 @@ entries:
   jd:
     status: blocked
     url: https://careers.pddglobalhr.com/campus/grad
-  notes: 官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。
+  notes: 官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 运营类
     roles:
@@ -77,7 +78,7 @@ entries:
   jd:
     status: blocked
     url: https://careers.pddglobalhr.com/campus/
-  notes: 官网项目名称「2027届实习生招聘」（2026-10-21 抓取核对）。
+  notes: 官网项目名称「2027届实习生招聘」（2026-10-21 抓取核对）。 【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 职能类
     roles:

@@ -14,6 +14,7 @@ entries:
     status: official_page
     url: https://campus.sf-express.com/
   notes: 面向 26 年 10 月至 27 年 9 月毕业的在校生；项目含供应链、国际物流（IMT）、运营、菁英计划、科技人才、经营管理岗、航空人才、实习生招聘、新鹰计划。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 管培类
     roles:

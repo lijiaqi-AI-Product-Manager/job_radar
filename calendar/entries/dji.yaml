@@ -29,7 +29,8 @@ entries:
   jd:
     status: official_page
     url: https://careers.dji.com/zh-CN/campus/digital-recruitment
-  notes: 面向 2027 届及优秀的 2026 届毕业生，理工科背景优先；投递不占校招投递次数；2026-08-07 开放（依据搜索引擎索引）。
+  notes: 面向 2027 届及优秀的 2026 届毕业生，理工科背景优先；投递不占校招投递次数；2026-08-07 开放（依据搜索引擎索引）。 【岗位/城市来自官方招聘页渲染
+    2026-10-23】
   tracks:
   - direction: 技术类
     roles:

@@ -12,7 +12,8 @@ entries:
   jd:
     status: official_page
     url: https://www.sony.com.cn/content/sonyportal_hr/Social_recruitment.html
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：索尼中国-社会招聘）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：索尼中国-社会招聘）。入口页未写明批次/网申时间/城市，按红线留空。 【岗位/城市来自官方招聘页渲染
+    2026-10-23】
   cities:
   - 北京
   - 上海

@@ -14,6 +14,7 @@ entries:
     status: official_page
     url: https://xiaomi.jobs.f.mioffice.cn/campus/
   notes: 官网标题「小米2027届全球校园招聘」（2026-10-21 抓取核对）；可通过官网或小米招聘公众号投递，流程为在线测评、简历评估、业务面试、Offer（依据搜索引擎索引）。
+    【岗位/城市来自官方招聘页渲染 2026-10-23】
   tracks:
   - direction: 销售类
     roles:
