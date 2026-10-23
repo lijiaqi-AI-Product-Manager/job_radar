@@ -60,6 +60,10 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 网申/内推 8 月 17 日至 11 月 30 日，面向基层业务。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 管培类
+    roles:
+    - TET-管理培训生
 - id: jd-dmt
   company: 京东
   product: 顶尖青年技术天才计划

@@ -13,3 +13,16 @@ entries:
     status: official_page
     url: https://app.mokahr.com/social-recruitment/seazen/168435?locale=zh-CN#/
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：新城控股社会招聘（Moka））。入口页未写明批次/网申时间/城市，按红线留空。
+  cities:
+  - 杭州
+  - 成都
+  - 西安
+  - 天津
+  - 重庆
+  - 长沙
+  - 合肥
+  - 青岛
+  - 南宁
+  - 沈阳
+  - 长春
+  - 乌鲁木齐

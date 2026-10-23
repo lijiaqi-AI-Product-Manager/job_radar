@@ -48,6 +48,22 @@ entries:
     status: blocked
     url: https://careers.pddglobalhr.com/campus/grad
   notes: 官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。
+  tracks:
+  - direction: 运营类
+    roles:
+    - 市场营销
+    - 物流运营管培生（上海）
+    - 运营中台管培生（广东）
+  - direction: 技术类
+    roles:
+    - AI Infra研发工程师
+  - direction: 销售类
+    roles:
+    - 商务管培生（香港）
+  - direction: 管培类
+    roles:
+    - 仓储管理管培生（广东）
+    - 质检管培生（广东）
 - id: pdd-2027-intern
   company: 拼多多
   grad_year: 2027

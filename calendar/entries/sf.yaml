@@ -1,11 +1,23 @@
 group: 顺丰
 entries:
-  - id: sf-2027-xz
-    company: 顺丰
-    grad_year: 2027
-    project_type: 校招
-    apply_url: https://campus.sf-express.com/
-    source: {type: official_site, name: 顺丰校园招聘官网, url: "https://campus.sf-express.com/m/"}
-    as_of: 2026-10-21
-    jd: {status: official_page, url: "https://campus.sf-express.com/"}
-    notes: "面向 26 年 10 月至 27 年 9 月毕业的在校生；项目含供应链、国际物流（IMT）、运营、菁英计划、科技人才、经营管理岗、航空人才、实习生招聘、新鹰计划。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: sf-2027-xz
+  company: 顺丰
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://campus.sf-express.com/
+  source:
+    type: official_site
+    name: 顺丰校园招聘官网
+    url: https://campus.sf-express.com/m/
+  as_of: 2026-10-21
+  jd:
+    status: official_page
+    url: https://campus.sf-express.com/
+  notes: 面向 26 年 10 月至 27 年 9 月毕业的在校生；项目含供应链、国际物流（IMT）、运营、菁英计划、科技人才、经营管理岗、航空人才、实习生招聘、新鹰计划。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 管培类
+    roles:
+    - 管培生计划
+  - direction: 运营类
+    roles:
+    - SF运营星
