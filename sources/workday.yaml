@@ -38,3 +38,12 @@ sources:
       location_facet: Location_Country   # 辉瑞用国家分面（descriptor 就是 "China"）
       country_exact: true
       max_pages: 12
+
+  - id: workday-astrazeneca
+    company: 阿斯利康
+    params:
+      host: astrazeneca.wd3.myworkdayjobs.com
+      tenant: astrazeneca
+      site: Careers
+      country: China
+      max_pages: 12
