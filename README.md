@@ -23,8 +23,9 @@
 ## 30 秒上手
 
 ```bash
-pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
-jobradar update                       # 下载最新数据（约 20 MB + 35 MB，压缩传输）
+pip install "jobradar[mcp]"            # 已发布到 PyPI（未发布时用下面这行装源码）
+# pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
+jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回）
 jobradar search --company 复星 --type campus --grad-year 2027 --table
 ```
 

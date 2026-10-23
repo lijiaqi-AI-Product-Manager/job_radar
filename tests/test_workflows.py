@@ -36,3 +36,28 @@ def test_calendar_step_asserts_freshness():
     assert "--check-links" in run
     assert "SELECT MAX(ts) FROM build" in run
     assert "sys.exit" in run
+
+def test_all_workflows_parse():
+    """所有工作流必须能被 YAML 解析：改坏一个文件会让整个流水线静默不跑。"""
+    files = sorted((ROOT / ".github" / "workflows").glob("*.yml"))
+    assert len(files) >= 10
+    for f in files:
+        doc = yaml.safe_load(f.read_text(encoding="utf-8"))
+        assert isinstance(doc.get("jobs"), dict) and doc["jobs"], f.name
+
+
+def test_publish_workflow_uses_trusted_publishing():
+    """PyPI 发布走 OIDC（不存 token）：缺 id-token 权限会直接失败，这条测试守着它。"""
+    doc = yaml.safe_load((ROOT / ".github" / "workflows" / "publish.yml").read_text(encoding="utf-8"))
+    job = doc["jobs"]["publish-pypi"]
+    assert job["permissions"]["id-token"] == "write"
+    assert job["environment"] == "pypi"
+    assert any("pypa/gh-action-pypi-publish" in step.get("uses", "") for step in job["steps"])
+
+
+def test_mirror_verification_uses_size_checker():
+    """镜像校验必须比较大小（Gitee 删除单个大附件不生效，会出现"假成功"）。"""
+    doc = yaml.safe_load((ROOT / ".github" / "workflows" / "mirror.yml").read_text(encoding="utf-8"))
+    steps = doc["jobs"]["mirror"]["steps"]
+    check = next(s for s in steps if "download check" in (s.get("name") or ""))
+    assert "verify_gitee.py" in check["run"]
