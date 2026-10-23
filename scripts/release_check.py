@@ -72,7 +72,14 @@ def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
     good = sum(1 for r in rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
     all_rows = con.execute("SELECT * FROM entry").fetchall()
     all_good = sum(1 for r in all_rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
-    detail = f"{good}/{len(rows)}；全部条目 {all_good}/{len(all_rows)} = {all_good / len(all_rows):.1%}" if all_rows else f"{good}/{len(rows)}"
+    # 按公司看：每家只要有一条完整条目，用户就能查到这家的届次/方向/城市
+    by_group: dict[str, bool] = {}
+    for r in all_rows:
+        ok = sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7
+        by_group[r["group_name"]] = by_group.get(r["group_name"], False) or ok
+    groups_ok = sum(1 for v in by_group.values() if v)
+    detail = (f"{good}/{len(rows)}；全部条目 {all_good}/{len(all_rows)} = {all_good / len(all_rows):.1%}；"
+              f"按公司 {groups_ok}/{len(by_group)} = {groups_ok / len(by_group):.1%}" if all_rows else f"{good}/{len(rows)}")
     return good / len(rows), detail
 
 
