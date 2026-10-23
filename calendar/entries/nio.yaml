@@ -14,6 +14,7 @@ entries:
     status: blocked
     url: https://nio.jobs.feishu.cn/campus
   notes: 官方招聘页列有「2027届校园招聘-正式批」；查看职位与投递需登录。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【城市来自官方招聘页（Moka/飞书页渲染）】
   cities:
   - 北京
   - 上海
@@ -22,6 +23,7 @@ entries:
   - 南京
   - 武汉
   - 合肥
+  - 宁波
   tracks:
   - direction: 技术类
     roles:

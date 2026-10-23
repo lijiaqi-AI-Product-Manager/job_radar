@@ -66,6 +66,27 @@ def test_jd_ratio_requires_both_dbs(tmp_path):
     assert rc.jd_ratio(tmp_path) == 0.5
 
 
+def test_calendar_fields_reports_manual_ratio_and_all_entries(tmp_path):
+    """人工口径是发布门槛（没有数据源的公司只能靠人工条目）；全部条目口径只做展示。"""
+    db = tmp_path / "calendar.db"
+    con = sqlite3.connect(db)
+    con.execute(
+        "CREATE TABLE entry (id TEXT, origin TEXT, group_name TEXT, company TEXT, grad_year INT, "
+        "project_type TEXT, tracks TEXT, apply_start TEXT, apply_end TEXT, cities TEXT, apply_url TEXT, "
+        "source_name TEXT, as_of TEXT)")
+    base = ("某集团", "某公司", None, "校招", "[]", None, None, "[]", "https://example.invalid", "官网", "2026-10-23")
+    con.execute("INSERT INTO entry VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", ("m1", "manual", *base))  # 6 个必备字段
+    con.execute("INSERT INTO entry VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                ("m2", "manual", *base[:4], '[{"direction": "技术类", "roles": ["后端"]}]', *base[5:]))  # +方向 → 达标
+    con.execute("INSERT INTO entry VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                ("a1", "auto", *base[:4], '[{"direction": "技术类", "roles": []}]', *base[5:-3], '["北京"]', *base[-2:]))
+    con.commit()
+    con.close()
+    ratio, detail = rc.calendar_fields(db)
+    assert ratio == 0.5          # 2 条人工里 1 条达标
+    assert "1/2" in detail and "2/3" in detail   # 人工 1/2，全部条目 2/3
+
+
 def test_run_reports_fail_when_below_gates(tmp_path):
     sources = tmp_path / "sources"
     sources.mkdir()
