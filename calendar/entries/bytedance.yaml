@@ -68,6 +68,11 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus
   notes: 与 Seed 2027 届校招同期发布的实习招聘（标题写明「含实习」）。
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 香港
 - id: bytedance-frontier-2027-xz
   company: 字节跳动
   product: 前沿技术领域人才
