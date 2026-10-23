@@ -1,272 +1,144 @@
 [
  {
-  "id": "abb-social-entry",
-  "group": "ABB",
-  "url": "https://careers.abb/global/en",
-  "scroll": 6
+  "id": "tencent-2027-xz",
+  "group": "腾讯",
+  "url": "https://join.qq.com/post.html",
+  "click": [
+   "职位列表"
+  ],
+  "scroll": 10
  },
  {
-  "id": "accenture-campus-entry",
-  "group": "埃森哲",
-  "url": "https://www.accenture.com/cn-zh/careers",
-  "scroll": 6
+  "id": "baidu-2027-xz",
+  "group": "百度",
+  "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "airchina-campus-entry",
-  "group": "中国国航",
-  "url": "https://zhaopin.airchina.com.cn/",
-  "scroll": 6
+  "id": "kuaishou-xz",
+  "group": "快手",
+  "url": "https://zhaopin.kuaishou.cn/recruit/campus/",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "amazon-campus-entry",
-  "group": "亚马逊",
-  "url": "https://www.amazon.jobs/en/",
-  "scroll": 6
+  "id": "jd-2027-xz",
+  "group": "京东",
+  "url": "https://campus.jd.com/#/jobs",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "amec-campus-entry",
-  "group": "中微公司",
-  "url": "https://app.mokahr.com/campus_apply/amec/4362",
-  "scroll": 6
+  "id": "alibaba-2027-xz",
+  "group": "阿里巴巴",
+  "url": "https://talent.alibaba.com/campus/position",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "anta-campus-entry",
-  "group": "安踏",
-  "url": "https://campus.anta.com/campus-recruitment/antahr/142914/",
-  "scroll": 6
+  "id": "netease-2027-xz",
+  "group": "网易",
+  "url": "https://hr.163.com/campus.html",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "antgroup-campus-entry",
-  "group": "蚂蚁集团",
-  "url": "https://talent.antgroup.com/",
-  "scroll": 6
+  "id": "xiaohongshu-2027-xz",
+  "group": "小红书",
+  "url": "https://job.xiaohongshu.com/campus",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "apple-campus-entry",
-  "group": "苹果",
-  "url": "https://www.apple.com/careers/cn/",
-  "scroll": 6
+  "id": "vip-2027-xz",
+  "group": "唯品会",
+  "url": "https://job.vip.com/campus",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "bain-campus-entry",
-  "group": "贝恩",
-  "url": "https://www.bain.com.cn/join.php?act=job",
-  "scroll": 6
+  "id": "sohu-2027-xz",
+  "group": "搜狐",
+  "url": "https://hr.sohu.com/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "bcg-campus-entry",
-  "group": "波士顿咨询",
-  "url": "https://careers.bcg.com/global/en",
-  "scroll": 6
+  "id": "zhihu-2027-xz",
+  "group": "知乎",
+  "url": "https://jobs.zhihu.com/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "beigene-campus-entry",
-  "group": "百济神州",
-  "url": "https://beonemedicines.com/careers/",
-  "scroll": 6
+  "id": "xiaomi-2027-xz",
+  "group": "小米",
+  "url": "https://xiaomi.jobs.f.mioffice.cn/campus/",
+  "click": [],
+  "scroll": 10
  },
  {
-  "id": "bmw-campus-entry",
-  "group": "宝马",
-  "url": "https://www.bmwgroup.jobs/en.html",
-  "scroll": 6
+  "id": "qianxin-2027-xz",
+  "group": "奇安信",
+  "url": "https://campus.qianxin.com/campus/graduates/positions",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "bosch-campus-entry",
-  "group": "博世",
-  "url": "https://www.bosch.com/careers/",
-  "scroll": 6
+  "id": "sangfor-2027-xz",
+  "group": "深信服",
+  "url": "https://hr.sangfor.com/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "bosera-com-official-home-2026",
-  "group": "博时基金",
-  "url": "https://bosera.hotjob.cn",
-  "scroll": 6
+  "id": "iflytek-2027-xz",
+  "group": "科大讯飞",
+  "url": "https://campus.iflytek.com/",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "bosideng-campus-entry",
-  "group": "波司登",
-  "url": "https://www.bosideng.com/job.html",
-  "scroll": 6
+  "id": "zte-2027-xz",
+  "group": "中兴通讯",
+  "url": "https://job.zte.com.cn/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "byd-campus-entry",
-  "group": "比亚迪",
-  "url": "https://job.byd.com/",
-  "scroll": 6
+  "id": "lenovo-2027-xz",
+  "group": "联想",
+  "url": "https://talent.lenovo.com.cn/",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "cambricon-campus-entry",
-  "group": "寒武纪",
-  "url": "https://app.mokahr.com/campus_apply/cambricon/44201",
-  "scroll": 6
- },
- {
-  "id": "catl-campus-entry",
-  "group": "宁德时代",
-  "url": "https://talent.catl.com/social-recruitment/catlhr/96144/",
-  "scroll": 6
- },
- {
-  "id": "ccb-campus-entry",
-  "group": "建设银行",
-  "url": "http://job.ccb.com/",
-  "scroll": 6
- },
- {
-  "id": "ceair-campus-entry",
-  "group": "东方航空",
-  "url": "https://job.ceair.com/",
-  "scroll": 6
- },
- {
-  "id": "cec-campus-entry",
-  "group": "中国电子",
-  "url": "https://career.cec.com.cn/",
-  "scroll": 6
- },
- {
-  "id": "cgb-campus-entry",
-  "group": "广发银行",
-  "url": "https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1",
-  "scroll": 6
- },
- {
-  "id": "cgn-campus-entry",
-  "group": "中广核",
-  "url": "http://job.cgnpc.com.cn/clients/home",
-  "scroll": 6
- },
- {
-  "id": "chagee-campus-entry",
-  "group": "霸王茶姬",
-  "url": "https://jobs.chagee.com",
-  "scroll": 6
- },
- {
-  "id": "chinacoal-campus-entry",
-  "group": "中国中煤",
-  "url": "https://zhaopin.chinacoal.com/",
-  "scroll": 6
- },
- {
-  "id": "chinamobile-campus-entry",
-  "group": "中国移动",
-  "url": "https://job.10086.cn/",
-  "scroll": 6
- },
- {
-  "id": "chinatelecom-campus-entry",
-  "group": "中国电信",
-  "url": "https://job.chinatelecom.com.cn/wt/TELE/web/index#/",
-  "scroll": 6
- },
- {
-  "id": "chint-campus-entry",
-  "group": "正泰",
-  "url": "https://chint.com/join_us.html",
-  "scroll": 6
- },
- {
-  "id": "chng-campus-entry",
-  "group": "中国华能",
-  "url": "https://zhaopin.chng.com.cn/",
-  "scroll": 6
- },
- {
-  "id": "cib-campus-entry",
-  "group": "兴业银行",
-  "url": "https://job.cib.com.cn/portal/",
-  "scroll": 6
- },
- {
-  "id": "cisco-campus-entry",
-  "group": "思科",
-  "url": "https://careers.cisco.com/global/en",
-  "scroll": 6
- },
- {
-  "id": "citic-campus-entry",
-  "group": "中信集团",
-  "url": "https://job.citic.com/recruit",
-  "scroll": 6
- },
- {
-  "id": "citicbank-campus-entry",
-  "group": "中信银行",
-  "url": "https://job.citicbank.com/",
-  "scroll": 6
- },
- {
-  "id": "citics-2027-branch",
-  "group": "中信证券",
-  "url": "https://careers.citics.com/",
-  "scroll": 6
- },
- {
-  "id": "cmb-2027-qz",
-  "group": "招商银行",
-  "url": "https://career.cmbchina.com/",
-  "scroll": 6
- },
- {
-  "id": "continental-campus-entry",
-  "group": "大陆集团",
-  "url": "https://www.continental.com/en/career/",
-  "scroll": 6
- },
- {
-  "id": "cpic-campus-entry",
-  "group": "中国太保",
-  "url": "https://app.mokahr.com/campus-recruitment/cpicproperty/150956",
-  "scroll": 6
- },
- {
-  "id": "cqrcb-campus-entry",
-  "group": "重庆农商行",
-  "url": "https://www.cqrcb.com/cqrcb/aboutus/job/index.html",
-  "scroll": 6
- },
- {
-  "id": "crland-campus-entry",
-  "group": "华润置地",
-  "url": "https://app.mokahr.com/campus-recruitment/crland/168540?locale=zh-CN#/",
-  "scroll": 6
- },
- {
-  "id": "csair-campus-entry",
-  "group": "南方航空",
-  "url": "https://job.csair.com/",
-  "scroll": 6
- },
- {
-  "id": "cspc-campus-entry",
-  "group": "石药集团",
-  "url": "https://ehr.e-cspc.com:8081/RedseaPlatform/zhaopin/zpChannelQrCode/0beb3022-3214-4333-a2e7-20786c4916d5/officeWebsite.mob",
-  "scroll": 6
- },
- {
-  "id": "ctg-cn-campus-entry",
-  "group": "中国旅游集团",
-  "url": "https://www.ctg.cn/careers-t46",
-  "scroll": 6
- },
- {
-  "id": "ctrip-social-entry",
+  "id": "ctrip-2027-xz",
   "group": "携程",
-  "url": "https://careers.ctrip.com/",
-  "scroll": 6
+  "url": "https://careers.ctrip.com/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "deloitte-campus-entry",
-  "group": "德勤",
-  "url": "https://www.deloitte.com/cn/zh/cn-careers.html",
-  "scroll": 6
+  "id": "didi-2027-xz",
+  "group": "滴滴",
+  "url": "https://jobs.didiglobal.com/campus",
+  "click": [],
+  "scroll": 8
  },
  {
-  "id": "dewu-social-entry",
-  "group": "得物",
-  "url": "https://careers.dewu.com/",
-  "scroll": 6
+  "id": "bilibili-2027-qz",
+  "group": "哔哩哔哩",
+  "url": "https://jobs.bilibili.com/campus",
+  "click": [],
+  "scroll": 8
+ },
+ {
+  "id": "mihoyo-2027-qz",
+  "group": "米哈游",
+  "url": "https://jobs.mihoyo.com/campus",
+  "click": [],
+  "scroll": 8
  }
 ]
