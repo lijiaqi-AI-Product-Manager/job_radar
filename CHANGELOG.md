@@ -4,6 +4,15 @@
 
 ## [Unreleased]
 
+### 推广与工程（2026-10-24）
+
+- **PyPI 发布就绪**：`publish.yml` 用 Trusted Publishing(OIDC) 发版，tag `v*` 自动触发；`docs/PUBLISHING.md` 写明 PyPI 侧一次性配置
+- **Gitee 镜像分片**：>12MB 文件切成 `.partNN` 上传（3 路并行），`jobradar update` 整文件 404 时自动按序下载并拼接；`verify_gitee.py` 支持分片求和校验
+- **增量更新**：比对 Release asset 的 sha256 digest，未变化则跳过 55MB 下载（二次 update 实测 0 下载）；新增 `--force`
+- **CI**：ubuntu(3.12)+windows(3.12) 之外增加 ubuntu(3.11) 兼容性作业；加 concurrency 取消过期运行
+- **文档**：CONTRIBUTING.md、SECURITY.md、issue 模板、docs/README.md 索引、README 真实输出示例
+- **修复**：非中文 locale 控制台打印中文崩溃（CI windows 红）；`jobradar-mcp --help` 挂在 stdio
+
 ### 招聘日历（2026-10-23 起）
 
 - **字段规范固化为长期约定**：`docs/CALENDAR-FORMAT.md` + `CLAUDE.md`（集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳；JD 有则挂、被挡只发日历并带提示语）

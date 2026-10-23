@@ -3,6 +3,10 @@ on:
   push:
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     # Windows 单独跑一遍：目标用户大多是 Windows，而"文件还开着就改名/删除"
@@ -31,3 +35,14 @@ jobs:
             echo "::error::sdist 超过 5MB，检查是否有缓存/数据库被打包"
             exit 1
           fi
+
+  py311:
+    # 兼容性下限：pyproject 声明 >=3.11，这里真跑一遍（只跑 ubuntu，省额度）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+      - run: uv sync --all-extras
+      - run: uv run pytest
