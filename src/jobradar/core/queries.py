@@ -121,10 +121,12 @@ def _company_sql(match: CompanyMatch) -> tuple[str, list]:
 
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
                 grad_year=None, keyword=None, text=None, text_conn=None,
-                include_closed=False, limit=50, contains=False, meta=None) -> list[dict]:
+                include_closed=False, limit=50, contains=False, meta=None,
+                dedupe=False) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
+    dedupe=True 时把「同公司+同标题+同城市」的多条 req 折叠成一条，并给出 `variants`（原条数）。
     """
     where, args = [], []
     if not include_closed:
@@ -157,11 +159,22 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     for t in terms:
         where.append("(j.title LIKE ? ESCAPE '\\' OR j.id IN (SELECT value FROM json_each(?)))")
         args += [_like(t), json.dumps(_jd_ids(text_conn, t))]
-    sql = f"SELECT {_JOB_COLS} FROM job j JOIN company c ON c.id = j.company_id"
-    if where:
-        sql += " WHERE " + " AND ".join(where)
-    sql += " ORDER BY j.first_seen DESC, j.id LIMIT ?"
+    where_sql = (" WHERE " + " AND ".join(where)) if where else ""
+    if dedupe:
+        # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
+        # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
+        part = "PARTITION BY j.company_id, j.title, j.cities"
+        sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
+               f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
+               f" FROM job j JOIN company c ON c.id = j.company_id{where_sql})"
+               " WHERE _rn = 1 ORDER BY first_seen DESC, id LIMIT ?")
+    else:
+        sql = f"SELECT {_JOB_COLS} FROM job j JOIN company c ON c.id = j.company_id{where_sql}"
+        sql += " ORDER BY j.first_seen DESC, j.id LIMIT ?"
     rows = [_job_dict(r) for r in conn.execute(sql, [*args, limit])]
+    if dedupe:
+        for r in rows:
+            r.pop("_rn", None)
     if terms:
         for r in rows:
             r["match"] = _snippet(text_conn, r["id"], terms)

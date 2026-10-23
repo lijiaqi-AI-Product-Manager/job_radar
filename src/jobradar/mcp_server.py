@@ -35,10 +35,11 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                 recruit_type: str | None = None, grad_year: int | None = None,
                 keyword: str | None = None, text: str | None = None,
                 include_closed: bool = False, limit: int = 30,
-                contains: bool = False) -> dict:
+                contains: bool = False, dedupe: bool = False) -> dict:
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
     company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
-    「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配。
+    「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配；
+    dedupe=True 折叠「同公司+同标题+同城市」的多条 req（全库约 9.2%，结果带 variants 原条数）。
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
     结果带 match（JD 中命中处的片段，仅标题命中时为 null）。"""
@@ -51,7 +52,8 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
             rows = q.search_jobs(conn, company=company, category=category, city=city,
                                  recruit_type=recruit_type, grad_year=grad_year, keyword=keyword,
                                  text=text, text_conn=text_conn, include_closed=include_closed,
-                                 limit=min(limit, 200), contains=contains, meta=meta)
+                                 limit=min(limit, 200), contains=contains, meta=meta,
+                                 dedupe=dedupe)
             payload = envelope(conn, rows, **meta)
             hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
                                          grad_year=grad_year, city=city, category=category)
