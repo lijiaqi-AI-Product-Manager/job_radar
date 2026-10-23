@@ -41,3 +41,6 @@ RENDERXHR https://recruit.cscec.com/recruit (api|job|position)
 # 第 47 轮：招商银行招聘门户（career.cmbchina.com，React 单页）——找岗位列表接口，
 # 若是公开 JSON 就照 hotjob 写适配器（招行是 500 家里还没数据的大目标）。
 RENDERXHR https://career.cmbchina.com/index.html (api|job|position)
+
+# 第 48 轮：招行校招页面（SPA 客户端路由，试 /campus）——目标：拿到岗位列表 JSON 端点。
+RENDERXHR https://career.cmbchina.com/campus (api|Recruitment|job|position)
