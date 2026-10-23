@@ -13,6 +13,35 @@ entries:
     status: official_page
     url: https://job.10086.cn/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 系统开发管理
+    - 省DICT中心-数据要素方案经理
+    - 省算力运维中心-数据中心电气运维工程师
+    - 数据AI工程师
+    - AI全栈工程师
+    - AI算法工程师
+  - direction: 运营类
+    roles:
+    - 战略运营
+    - 网络运营管理
+  - direction: 设计类
+    roles:
+    - 市场策划
+  - direction: 职能类
+    roles:
+    - 财务管理
+    - 综合类 财务管理 法律管理
+    - 财务管理法律管理
+  - direction: 产品类
+    roles:
+    - 湾区研究院-产品经理及售前支撑
+  cities:
+  - 北京
+  - 广州
+  - 兰州
+  - 香港
 - id: chinamobile-social-entry
   company: 中国移动
   project_type: 社招

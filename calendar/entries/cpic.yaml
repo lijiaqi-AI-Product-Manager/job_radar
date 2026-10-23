@@ -14,3 +14,16 @@ entries:
     url: https://app.mokahr.com/campus-recruitment/cpicproperty/150956
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中国太平洋财产保险股份有限公司校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
   grad_year: 2026
+  tracks:
+  - direction: 运营类
+    roles:
+    - 家再保险运营中心，
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 成都
+  - 重庆
+  - 青岛
+  - 厦门
+  - 大连

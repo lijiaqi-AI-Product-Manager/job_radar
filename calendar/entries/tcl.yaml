@@ -14,5 +14,8 @@ entries:
     url: https://zhaopin.tcl.com/campus/index.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：TCL 校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
   grad_year: 2027
-  cities: []
+  cities:
+  - 深圳
+  - 西安
+  - 天津
   tracks: []

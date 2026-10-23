@@ -17,7 +17,11 @@ entries:
   notes: 官网原文：「投递时间：2026 年 8 月至 2027 年 5 月 31 日止」「笔试时间：即日起」；可投递两个职位，彼此独立、默认优先处理较早投递的职位（2026-10-21
     抓取官网页面核对）。
   tracks: []
-  cities: []
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 香港
 - id: bytedance-seed-2027-xz
   company: 字节跳动
   product: Seed（大模型）
@@ -83,9 +87,14 @@ entries:
     - 大数据引擎SRE工程师 - 数据平台
     - 前端开发实习生-TRAE
     - 研发 - 算法
+    - 大语言模型后训练算法实习生 - 国际化广告创意与品牌
+    - AI应用开发（AI剪辑）实习生 - 剪映CapCut
   - direction: 设计类
     roles:
     - 游戏策划
+  - direction: 产品类
+    roles:
+    - OpenViking产品实习生 - Data AML
   cities:
   - 北京
   - 上海
@@ -109,6 +118,29 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus/position
   notes: 官网职位页招聘项目「ByteIntern」，岗位说明写明「面向2027届毕业生」。（2026-10-21 浏览器渲染官网页面核对原文）
+  tracks:
+  - direction: 设计类
+    roles:
+    - 游戏策划
+  - direction: 技术类
+    roles:
+    - AI应用研发工程师 - IT
+    - 大语言模型后训练算法实习生 - 国际化广告创意与品牌
+    - 算法实习生 - 安全与风控
+    - AI应用开发（AI剪辑）实习生 - 剪映CapCut
+    - 多模态算法工程师 - TikTok内容安全算法
+    - 大数据引擎SRE工程师 - 数据平台
+  - direction: 产品类
+    roles:
+    - OpenViking产品实习生 - Data AML
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 西安
 - id: bytedance-daily-intern
   company: 字节跳动
   project_type: 日常实习

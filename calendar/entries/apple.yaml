@@ -13,6 +13,14 @@ entries:
     status: official_page
     url: https://www.apple.com/careers/cn/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：Apple 职位与工作机会 - Apple 职业机会）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 硬件工程师
+    - 软件工程师
+  - direction: 销售类
+    roles:
+    - 销售政策
 - id: apple-social-entry
   company: 苹果
   project_type: 社招

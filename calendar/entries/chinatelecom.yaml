@@ -13,6 +13,16 @@ entries:
     status: official_page
     url: https://job.chinatelecom.com.cn/wt/TELE/web/index#/
   notes: 官方招聘入口（2026-10-22 访问确认 200）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks:
+  - direction: 运营类
+    roles:
+    - 中国电信云网运营部
+    - 云网运营
+  cities:
+  - 北京
+  - 上海
+  - 天津
+  - 重庆
 - id: chinatelecom-social-entry
   company: 中国电信
   project_type: 社招
