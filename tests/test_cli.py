@@ -377,9 +377,9 @@ def test_sources_problems_shows_only_rejected_or_stale(home, capsys):
     """排障时只想看「没跑成功」的源：rejected 会一直挂着旧岗位，不能被淹没在几百个 ok 里。"""
     from datetime import UTC, datetime
 
+    from helpers import make_job
     from jobradar.pipeline.ingest import ingest_run
     from jobradar.store.migrate import connect
-    from helpers import make_job
 
     now = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     path = home / "jobs.db"
