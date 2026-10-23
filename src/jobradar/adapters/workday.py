@@ -71,12 +71,13 @@ def country_locations(facets, country: str, facet: str = "locations", prefix_mat
     不同租户的分面名不一样：多数是 `locations`（descriptor 形如 "China, Shanghai"），
     也有租户用 `locationMainGroup` 并把国家包在 children 里（如 Intel：`PRC, Shanghai`）。
     """
-    prefix = f"{country}, "
     values = _facet_values(facets, facet)
     if not values and facet == "locations":
         values = _descendants_under(facets, "locationMainGroup")
     if prefix_match:
-        ok = lambda d: isinstance(d, str) and d.startswith(prefix)          # noqa: E731
+        # "China, Shanghai" / "China - Shanghai - Shanghai" / "China" 都要认
+        pat = re.compile(rf"^{re.escape(country)}\b")
+        ok = lambda d: isinstance(d, str) and bool(pat.match(d.strip()))    # noqa: E731
     else:
         ok = lambda d: isinstance(d, str) and d.strip() == country          # noqa: E731
     return [v["id"] for v in values if ok(v.get("descriptor"))]
