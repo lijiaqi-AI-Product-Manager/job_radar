@@ -13,7 +13,7 @@ entries:
     status: official_page
     url: https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html
   notes: 官方招聘入口（2026-10-23 复核升级：https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html）。入口页未写明批次/网申时间/城市，按红线留空。
-    【届次来自该公司岗位数据：44/44 为 2027 届】 【方向来自该公司岗位数据（74 个在招岗位的职类分布）】
+    【届次来自该公司岗位数据：44/44 为 2027 届】 【方向来自该公司岗位数据（74 个在招岗位的职类分布）】 【城市来自该公司岗位标题/部门（14 处提及）】
   grad_year: 2027
   tracks:
   - direction: 金融
@@ -36,3 +36,10 @@ entries:
     - 投研
     - 财务审计
     - 销售
+  cities:
+  - 湖州
+  - 嘉兴
+  - 金华
+  - 宁波
+  - 厦门
+  - 上海
