@@ -20,3 +20,13 @@ sources:
     recruit_types: [social]
     max_pages: 5
     params: {host: efunds.hotjob.cn, tenant: efunds}
+  - id: hotjob-legacy-lining
+    company: 李宁
+    recruit_types: [campus]
+    max_pages: 10
+    params: {host: www.hotjob.cn, tenant: lining}
+  - id: hotjob-legacy-haidilao
+    company: 海底捞
+    recruit_types: [campus]
+    max_pages: 2
+    params: {host: www.hotjob.cn, tenant: haidilao}
