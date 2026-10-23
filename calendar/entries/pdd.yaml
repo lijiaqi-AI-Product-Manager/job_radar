@@ -1,29 +1,88 @@
 group: 拼多多
 entries:
-  - id: pdd-2027-zsp
-    company: 拼多多
-    grad_year: 2027
-    project_type: 秋招正式批
-    apply_url: https://careers.pddglobalhr.com/campus/grad
-    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网（应届生）, url: "https://careers.pddglobalhr.com/campus/grad"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/grad"}
-    notes: "官网批次名称「2027届校招正式批」（2026-10-21 抓取核对）；毕业时间 2026 年 9 月至 2027 年 8 月（依据搜索引擎索引）。"
-  - id: pdd-2027-maicai
-    company: 拼多多
-    grad_year: 2027
-    project_type: 校招
-    apply_url: https://careers.pddglobalhr.com/campus/grad
-    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网（应届生）, url: "https://careers.pddglobalhr.com/campus/grad"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/grad"}
-    notes: "官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。"
-  - id: pdd-2027-intern
-    company: 拼多多
-    grad_year: 2027
-    project_type: 实习
-    apply_url: https://careers.pddglobalhr.com/campus/
-    source: {type: official_site, name: 拼多多集团-PDD校园招聘官网, url: "https://careers.pddglobalhr.com/campus/grad"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://careers.pddglobalhr.com/campus/"}
-    notes: "官网项目名称「2027届实习生招聘」（2026-10-21 抓取核对）。"
+- id: pdd-2027-zsp
+  company: 拼多多
+  grad_year: 2027
+  project_type: 秋招正式批
+  apply_url: https://careers.pddglobalhr.com/campus/grad
+  source:
+    type: official_site
+    name: 拼多多集团-PDD校园招聘官网（应届生）
+    url: https://careers.pddglobalhr.com/campus/grad
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://careers.pddglobalhr.com/campus/grad
+  notes: 官网批次名称「2027届校招正式批」（2026-10-21 抓取核对）；毕业时间 2026 年 9 月至 2027 年 8 月（依据搜索引擎索引）。
+  tracks:
+  - direction: 技术类
+    roles:
+    - AI Infra研发工程师 紧缺
+  - direction: 运营类
+    roles:
+    - 物流运营管培生（上海）
+    - 运营中台管培生（广东）
+    - 市场营销
+  - direction: 销售类
+    roles:
+    - 商务管培生（香港）
+  - direction: 管培类
+    roles:
+    - 仓储管理管培生（广东）
+    - 质检管培生（广东）
+    - 仓储类管培生
+  cities: []
+- id: pdd-2027-maicai
+  company: 拼多多
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://careers.pddglobalhr.com/campus/grad
+  source:
+    type: official_site
+    name: 拼多多集团-PDD校园招聘官网（应届生）
+    url: https://careers.pddglobalhr.com/campus/grad
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://careers.pddglobalhr.com/campus/grad
+  notes: 官网批次名称「2027届校招买菜批」，与正式批分开（2026-10-21 抓取核对）。
+- id: pdd-2027-intern
+  company: 拼多多
+  grad_year: 2027
+  project_type: 实习
+  apply_url: https://careers.pddglobalhr.com/campus/
+  source:
+    type: official_site
+    name: 拼多多集团-PDD校园招聘官网
+    url: https://careers.pddglobalhr.com/campus/grad
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://careers.pddglobalhr.com/campus/
+  notes: 官网项目名称「2027届实习生招聘」（2026-10-21 抓取核对）。
+  tracks:
+  - direction: 职能类
+    roles:
+    - '- HR管培生 2022届 法国里昂商学院'
+  - direction: 管培类
+    roles:
+    - '- 仓储管理管培生 2023届 新疆财经大学'
+    - '- 仓配物流管培生 2023届 三亚学院'
+  - direction: 产品类
+    roles:
+    - '- 产品管培生 2023届 上海交通大学'
+  - direction: 运营类
+    roles:
+    - 招商运营管培生 2023届 伦敦大学学院 ”
+    - '- 市场管培生 2021届 香港大学'
+  - direction: 技术类
+    roles:
+    - '- 客户端研发工程师 2022届 华南理工大学'
+    - 技术栈新，开发体验超级棒
+    - '- Web前端研发工程师 2023届 云南大学'
+    - '- 算法工程师 2023届 武汉大学'
+  cities:
+  - 上海
+  - 武汉
+  - 三亚
+  - 香港

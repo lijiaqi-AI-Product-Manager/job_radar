@@ -1,56 +1,83 @@
 group: 京东
 entries:
-  - id: jd-2027-xinxing
-    company: 京东
-    product: 新星计划
-    grad_year: 2027
-    project_type: 秋招
-    apply_start: 2026-08-03
-    apply_end: 2026-11-30
-    apply_url: https://campus.jd.com/
-    source: {type: official_site, name: 京东校招官网（2027校园招聘）, url: "https://campus.jd.com/"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://campus.jd.com/"}
-    notes: "网申/内推 8 月 3 日至 11 月 30 日，之后测评、笔试或 AI 面试，再进入面试。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
-  - id: jd-2027-tet
-    company: 京东
-    product: 管理培训生（TET）
-    grad_year: 2027
-    project_type: 秋招
-    apply_start: 2026-07-01
-    apply_end: 2026-11-30
-    apply_url: https://campus.jd.com/
-    source: {type: official_site, name: 京东校招官网（2027校园招聘）, url: "https://campus.jd.com/"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://campus.jd.com/"}
-    notes: "网申/内推 7 月 1 日至 11 月 30 日。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
-  - id: jd-2027-xinrui
-    company: 京东
-    product: 新锐之星
-    grad_year: 2027
-    project_type: 秋招
-    apply_start: 2026-08-17
-    apply_end: 2026-11-30
-    apply_url: https://campus.jd.com/
-    source: {type: official_site, name: 京东校招官网（2027校园招聘）, url: "https://campus.jd.com/"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://campus.jd.com/"}
-    notes: "网申/内推 8 月 17 日至 11 月 30 日，面向基层业务。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
-  - id: jd-dmt
-    company: 京东
-    product: 顶尖青年技术天才计划
-    project_type: 校招
-    apply_url: https://campus.jd.com/
-    source: {type: official_site, name: 京东校招官网（2027校园招聘）, url: "https://campus.jd.com/"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://campus.jd.com/"}
-    notes: "面向高校本硕博在校生、应届生及毕业两年内的技术人才，网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
-  - id: jd-young-intern
-    company: 京东
-    product: 实习生计划（JD YOUNG）
-    project_type: 实习
-    apply_url: https://campus.jd.com/
-    source: {type: official_site, name: 京东校招官网（2027校园招聘）, url: "https://campus.jd.com/"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://campus.jd.com/"}
-    notes: "网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: jd-2027-xinxing
+  company: 京东
+  product: 新星计划
+  grad_year: 2027
+  project_type: 秋招
+  apply_start: 2026-08-03
+  apply_end: 2026-11-30
+  apply_url: https://campus.jd.com/
+  source:
+    type: official_site
+    name: 京东校招官网（2027校园招聘）
+    url: https://campus.jd.com/
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://campus.jd.com/
+  notes: 网申/内推 8 月 3 日至 11 月 30 日，之后测评、笔试或 AI 面试，再进入面试。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  cities: []
+  tracks: []
+- id: jd-2027-tet
+  company: 京东
+  product: 管理培训生（TET）
+  grad_year: 2027
+  project_type: 秋招
+  apply_start: 2026-07-01
+  apply_end: 2026-11-30
+  apply_url: https://campus.jd.com/
+  source:
+    type: official_site
+    name: 京东校招官网（2027校园招聘）
+    url: https://campus.jd.com/
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://campus.jd.com/
+  notes: 网申/内推 7 月 1 日至 11 月 30 日。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+- id: jd-2027-xinrui
+  company: 京东
+  product: 新锐之星
+  grad_year: 2027
+  project_type: 秋招
+  apply_start: 2026-08-17
+  apply_end: 2026-11-30
+  apply_url: https://campus.jd.com/
+  source:
+    type: official_site
+    name: 京东校招官网（2027校园招聘）
+    url: https://campus.jd.com/
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://campus.jd.com/
+  notes: 网申/内推 8 月 17 日至 11 月 30 日，面向基层业务。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+- id: jd-dmt
+  company: 京东
+  product: 顶尖青年技术天才计划
+  project_type: 校招
+  apply_url: https://campus.jd.com/
+  source:
+    type: official_site
+    name: 京东校招官网（2027校园招聘）
+    url: https://campus.jd.com/
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://campus.jd.com/
+  notes: 面向高校本硕博在校生、应届生及毕业两年内的技术人才，网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+- id: jd-young-intern
+  company: 京东
+  product: 实习生计划（JD YOUNG）
+  project_type: 实习
+  apply_url: https://campus.jd.com/
+  source:
+    type: official_site
+    name: 京东校招官网（2027校园招聘）
+    url: https://campus.jd.com/
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://campus.jd.com/
+  notes: 网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准

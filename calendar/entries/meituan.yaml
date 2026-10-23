@@ -1,23 +1,78 @@
 group: 美团
 entries:
-  - id: meituan-2027-qz
-    company: 美团
-    grad_year: 2027
-    project_type: 秋招
-    apply_start: 2026-08-17
-    apply_end: 2026-10-31
-    apply_url: https://zhaopin.meituan.com/web/campus
-    source: {type: official_site, name: 美团招聘官网（校招行程）, url: "https://zhaopin.meituan.com/web/campus/schedule"}
-    as_of: 2026-10-21
-    jd: {status: none}
-    notes: "网申时间 2026-08-17 至 2026-10-31（北京时间），部分岗位招满提前结束；招聘对象毕业时间 2026 年 11 月至 2027 年 10 月；2026-08-31 起陆续安排面试。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
-  - id: meituan-2027-beidou
-    company: 美团
-    product: 北斗计划 / LongCat 顶尖人才校招
-    grad_year: 2027
-    project_type: 校招
-    apply_url: https://zhaopin.meituan.com/web/campus
-    source: {type: official_site, name: 美团招聘官网（校招行程）, url: "https://zhaopin.meituan.com/web/campus/schedule"}
-    as_of: 2026-10-21
-    jd: {status: none}
-    notes: "全年招聘，面向毕业时间 2026 年 1 月至 2027 年 12 月的同学。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: meituan-2027-qz
+  company: 美团
+  grad_year: 2027
+  project_type: 秋招
+  apply_start: 2026-08-17
+  apply_end: 2026-10-31
+  apply_url: https://zhaopin.meituan.com/web/campus
+  source:
+    type: official_site
+    name: 美团招聘官网（校招行程）
+    url: https://zhaopin.meituan.com/web/campus/schedule
+  as_of: 2026-10-21
+  jd:
+    status: none
+  notes: 网申时间 2026-08-17 至 2026-10-31（北京时间），部分岗位招满提前结束；招聘对象毕业时间 2026 年 11 月至 2027
+    年 10 月；2026-08-31 起陆续安排面试。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 管培类
+    roles:
+    - 食杂零售管培生计划
+  - direction: 运营类
+    roles:
+    - 商品运营
+    - 用户运营
+    - 内容运营
+    - 市场营销类
+    - 下沉市场发展部
+  - direction: 产品类
+    roles:
+    - 产品运营
+    - AI产品经理岗 稀缺
+    - AI产品经理岗
+    - AI产品运营岗 稀缺
+    - AI产品运营岗
+  - direction: 职能类
+    roles:
+    - 人力资源
+    - 财务平台
+    - 人力资源平台
+    - 智能商业分析师（BA/DS） 稀缺
+    - 智能商业分析师（BA/DS）
+  - direction: 销售类
+    roles:
+    - 销售、客服与支持类
+  - direction: 技术类
+    roles:
+    - AI全栈工程师 稀缺
+    - AI全栈工程师
+    - AI后端开发工程师 稀缺
+    - AI后端开发工程师
+    - 美团平台-数据开发工程师
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  - 武汉
+  - 西安
+  - 重庆
+- id: meituan-2027-beidou
+  company: 美团
+  product: 北斗计划 / LongCat 顶尖人才校招
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://zhaopin.meituan.com/web/campus
+  source:
+    type: official_site
+    name: 美团招聘官网（校招行程）
+    url: https://zhaopin.meituan.com/web/campus/schedule
+  as_of: 2026-10-21
+  jd:
+    status: none
+  notes: 全年招聘，面向毕业时间 2026 年 1 月至 2027 年 12 月的同学。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
