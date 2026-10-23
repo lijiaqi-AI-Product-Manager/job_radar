@@ -12,6 +12,7 @@
 | [CALENDAR.md](CALENDAR.md) | 招聘日历入口分级（A/B/C 三档）与来源规则 |
 | [PROGRESS-2026-10-23.md](PROGRESS-2026-10-23.md) | 2026-10-23 阶段验收（日历字段 + 数据源） |
 | [PROGRESS-2026-10-24.md](PROGRESS-2026-10-24.md) | 2026-10-24 阶段验收（可推广性：PyPI/镜像分片/增量更新/自愈） |
+| [REVIEW-TRIAGE-2026-10-24.md](REVIEW-TRIAGE-2026-10-24.md) | 外部评审处置记录：改了什么、换了什么方案、还剩什么 |
 | [HANDOVER.md](HANDOVER.md) | 交接说明 |
 | [PUBLISHING.md](PUBLISHING.md) | 发布到 PyPI（Trusted Publishing 配置与发版流程） |
 | [DATA-LICENSE.md](DATA-LICENSE.md) | 数据许可草案（三个方案与建议，待维护者确认） |
