@@ -29,3 +29,22 @@
 ## 3. 合规
 
 - 公开页面、无登录；robots 允许；限速 1 req/s。侦察到此为止，未做任何绕过。
+## 4. 岗位列表接口（2026-10-23 recon #62 抓到）
+
+前端路由是 `/positionlist/<recruitmentTypeId>`，页面发出：
+
+```
+POST https://career.cmbchina.com/api/campusRecruitmentWebsite/job/getList
+REQ  {"orgIdList":[],"keywords":"","locationIdList":[],"pageIndex":1,"pageSize":10,
+      "recruitmentTypeId":"96574F8D-C7ED-4772-AE7C-BAC896D190C1","jobTypeIdList":[]}
+RESP {"returnCode":"SUC0000","errorMsg":null,"body":{"total":0,"data":[]}}
+```
+
+- **明文 JSON、无需登录**（`pageIndex` 从 1 开始）
+- 但 `recruitmentTypeId` 必须是**当前招聘季**的 GUID；chunk 里挖到的那个是旧季（total=0）
+- 拿季 id 的接口目前都返回 401（`recruitmentType/*`、`job/getRecruitmentTypeList` 等），说明需要登录态；
+  `/campus/home` 只调公告、FAQ、宣讲会日历，不返回季 id
+
+**结论**：接口是公开的、结构清楚，卡在「当前招聘季 GUID」上。可行路径：
+从公告详情页（`notice/getList` 拿到的 noticeId）里找季 id，或等官方在页面上暴露季列表。
+下一步留给后续会话，不绕过鉴权。
