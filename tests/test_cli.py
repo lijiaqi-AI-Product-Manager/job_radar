@@ -509,3 +509,11 @@ def test_download_error_message_is_actionable(tmp_path, no_token):
         cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
     msg = str(ei.value)
     assert "update" in msg and "--mirror gitee" in msg
+
+def test_commands_without_data_give_actionable_error(tmp_path, monkeypatch, capsys):
+    """全新环境第一次跑查询：要告诉用户「先 update」，而不是 KeyError/SQL 报错。"""
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path / "empty"))
+    for argv in (["search", "--company", "腾讯"], ["calendar", "--group", "腾讯"], ["stats"]):
+        with pytest.raises(SystemExit) as ei:
+            cli.main(argv)
+        assert "jobradar update" in str(ei.value)
