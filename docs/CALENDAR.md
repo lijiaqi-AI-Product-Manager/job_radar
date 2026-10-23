@@ -29,11 +29,16 @@ C 档是为了保证「500 家覆盖」不出现空洞：宁可给一个能点�
 
 ```bash
 jobradar calendar --group 阿里巴巴 --type 秋招 --grad-year 2027   # 某集团某批次
-jobradar calendar --type 秋招正式批 --open-on 2026-10-24           # 今天还能投的
+jobradar calendar --type 秋招正式批 --open-on 2026-10-24           # 该日可能在投的
+jobradar calendar --has-window --type 秋招正式批                   # 只想看写明截止日期的
 jobradar calendar --company 飞猪                                   # 具体公司/产品线
 jobradar calendar --has-window --limit 50                          # 只看写了网申起止的
 jobradar calendar --has-tracks --limit 50                          # 只看有方向的
 ```
+
+`--open-on` 会带回两类条目：写明了起止日期且覆盖当天的（`window_status: open`），
+以及**没写起止日期**的（`window_status: unknown`）。后者不能说成"确定还能投"——
+来源没写不代表已截止，也不代表还开着；要严格的只看已知窗口就加 `--has-window`。
 
 每条结果都带 `source`（来源）与 `as_of`（核实日期），回答用户时应当注明，例如
 「据字节跳动校园招聘官网（核实于 2026-10-21）」。
