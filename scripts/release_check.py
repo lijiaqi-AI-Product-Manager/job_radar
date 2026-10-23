@@ -150,7 +150,7 @@ def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path 
                  "target": f"≥{GATES['data_coverage']}/{total}"})
 
     cal_covered, cal_total, blocked = calendar_coverage(calendar_db)
-    rows.append({"gate": "日历覆盖", "value": f"{cal_covered}/{cal_total}（blocked {blocked}）",
+    rows.append({"gate": "目标覆盖(日历或数据)", "value": f"{cal_covered}/{cal_total}（blocked {blocked}）",
                  "ok": cal_covered >= GATES["calendar_coverage"],
                  "target": f"≥{GATES['calendar_coverage']}/{cal_total}"})
 
