@@ -316,7 +316,12 @@ def cmd_calendar(args):
     with _open("calendar") as conn:
         rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
                                   grad_year=args.grad_year, origin=args.origin, open_on=args.open_on, limit=args.limit)
-        _emit(args, envelope(None, rows, as_of=q.calendar_as_of(conn)))
+        env = envelope(None, rows, as_of=q.calendar_as_of(conn))
+        if not rows and args.group:
+            reason = q.calendar_blocked_reason(conn, args.group)
+            if reason:
+                env["hint"] = f"{args.group}：{reason}。{args.group}希望你去他们的招聘页逛一逛哦~"
+        _emit(args, env)
 
 
 def cmd_stats(args):

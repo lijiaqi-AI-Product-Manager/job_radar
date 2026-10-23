@@ -289,6 +289,24 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     return run(exact=False)
 
 
+def calendar_blocked_reason(cal_conn, term: str) -> str | None:
+    """查这家公司是不是「合规上做不了」的目标，返回原因（没有则 None）。
+
+    没有条目的 blocked 目标（BOSS直聘/微博/招商蛇口…）在 `calendar --group` 里会返回空，
+    用户看不出是"没数据"还是"不能做"。CLI 用这个把原因带出来。
+    """
+    for name in match_names(term):
+        row = cal_conn.execute(
+            "SELECT blocked_reason FROM target WHERE name = ? AND COALESCE(blocked_reason,'') <> ''",
+            (name,)).fetchone()
+        if row:
+            return row[0]
+    row = cal_conn.execute(
+        "SELECT blocked_reason FROM target WHERE name LIKE ? AND COALESCE(blocked_reason,'') <> '' LIMIT 1",
+        (f"%{term}%",)).fetchone()
+    return row[0] if row else None
+
+
 def calendar_stats(cal_conn) -> dict:
     """覆盖率：目标公司中有日历条目的、有 JD（数据层关联或官方 JD 页）的。"""
     targets = cal_conn.execute("SELECT name, sector, blocked_reason, data_companies FROM target").fetchall()
