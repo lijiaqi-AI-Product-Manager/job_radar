@@ -372,3 +372,23 @@ def test_doctor_reports_field_coverage_and_jd_match(home, capsys):
     assert out["advice"]
     assert set(out["fields"]) >= {"cities", "campus_cities", "grad_year"}
     assert out["jd_text_match"] is not None
+
+def test_sources_problems_shows_only_rejected_or_stale(home, capsys):
+    """排障时只想看「没跑成功」的源：rejected 会一直挂着旧岗位，不能被淹没在几百个 ok 里。"""
+    from datetime import UTC, datetime
+
+    from jobradar.pipeline.ingest import ingest_run
+    from jobradar.store.migrate import connect
+    from helpers import make_job
+
+    now = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    path = home / "jobs.db"
+    conn = connect(path, "jobs")
+    ingest_run(conn, "s-ok", [make_job(1, source_id="s-ok")], ts=now)
+    ingest_run(conn, "s-bad", [make_job(2, source_id="s-bad")], ts=now)
+    ingest_run(conn, "s-bad", [], ts=now, ok=False, error="boom")   # 记为 failed
+    conn.close()
+
+    cli.main(["sources", "--problems"])
+    out = json.loads(capsys.readouterr().out)
+    assert [r["source_id"] for r in out["results"]] == ["s-bad"]
