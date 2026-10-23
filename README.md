@@ -48,6 +48,33 @@ jobradar show <job_id>                                  # 单岗详情（含 JD 
 
 `calendar` 是给「官网能看到岗位、但 JD 接口被验证码/签名挡住」的大厂准备的：只发日历信息（届次、项目类型、方向、城市、投递入口、来源、时间戳），末尾带一句 `{公司名}希望你去他们的招聘页逛一逛哦~`。
 
+
+## 真实输出示例
+
+```text
+$ jobradar calendar --group 华为 --type 校招
+
+华为 · 校招 · 2027届
+  方向   技术类（AI Infra工程师 应届生 / 研究员 / 高级工程师 …）、职能类（人力资源类）
+  城市   北京 / 上海 / 深圳 / 杭州 / 成都 / 南京 / 武汉 / 西安 / 苏州 / 长沙
+  入口   https://career.huawei.com/cn/campus-recruitment-job-list
+  来源   华为招聘官网  时间戳 2026-10-23
+```
+
+```text
+$ jobradar search --company 复星 --type campus --grad-year 2027 --table
+
+# data_as_of: 2026-10-23T14:48:52Z  (2 条)
+复星医药 | 【27年校招】AI战略与产品运营管培生(J14975) | campus | 2027 | 2026-10-20
+复星医药 | 【27校招】人力资源管培生(J14996)        | campus | 2027 | 2026-10-20
+```
+
+```text
+$ jobradar update          # 全新环境实测 4 秒
+{"updated": ["jobs", "text", "calendar"], "mirror": {"jobs": "github", ...},
+ "data_as_of": "2026-10-23T14:48:52Z"}
+```
+
 ## 数据
 
 | 文件（Release `data-latest`） | 大小 | 内容 |

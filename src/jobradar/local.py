@@ -76,3 +76,49 @@ def envelope(conn, results, *, as_of: str | None = None, **extra) -> dict:
     as_of = as_of if conn is None else q.data_as_of(conn)
     stale = as_of is None or (parse_ts(now_ts()) - parse_ts(as_of)).total_seconds() > STALE_HOURS * 3600
     return {"data_as_of": as_of, "stale": stale, **extra, "results": results}
+
+SYNC_META = ".sync.json"
+
+
+def _meta_path() -> Path:
+    return home() / SYNC_META
+
+
+def load_sync_meta() -> dict:
+    import json
+
+    p = _meta_path()
+    try:
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    except Exception:  # noqa: BLE001 — 元数据坏了就当没有
+        return {}
+
+
+def save_sync_meta(meta: dict) -> None:
+    import json
+
+    try:
+        _meta_path().write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def remote_digests(timeout: float = 6.0) -> dict[str, str]:
+    """GitHub Release 里每个 asset 的 sha256 digest（一次 API 调用）。
+
+    用于增量更新：本地记录的 digest 没变就不下载那 20/35MB。
+    匿名 60 次/小时够用；拿不到（限流/离线）就返回空，退化成全量下载。
+    """
+    import httpx
+
+    url = f"https://api.github.com/repos/{REPO}/releases/tags/{RELEASE_TAG}"
+    try:
+        headers = {"User-Agent": "jobradar/0.1"}
+        token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+        with httpx.Client(headers=headers, timeout=timeout, follow_redirects=True) as c:
+            data = c.get(url).json()
+        return {a["name"]: a.get("digest") or "" for a in (data.get("assets") or [])}
+    except Exception:  # noqa: BLE001
+        return {}
