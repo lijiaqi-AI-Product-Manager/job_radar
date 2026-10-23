@@ -15,16 +15,16 @@
 采集跑在 GitHub Actions，数据发布到 Release，查询在本地完成——**没有服务器，也不需要 API key**。
 数据只来自各公司**官方招聘页**的公开内容，低频、不绕过任何限制（见 [COMPLIANCE.md](COMPLIANCE.md)）。
 
-> **当前数据（2026-10-23 发布 · 代码 1.0.1）**
+> **当前数据（2026-10-24 发布 · 代码 1.0.2）**
 > **277 个数据源** · **约 8.9 万个在招岗位**（校园约 3.2 万 / 实习约 5 千 / 社招约 5.2 万）· **JD 正文 99.8%**
 > 目标公司 **500 家**：日历/数据覆盖 **494 家**（其中 490 家有日历条目，4 家只有岗位数据；其余 6 家已注明不可合规覆盖），数据源覆盖 **161 家**。
-> 自检：`uv run python scripts/release_check.py --home ~/.jobradar`（7 项门槛全绿）
+> 自检：`uv run python scripts/release_check.py --home ~/.jobradar`（8 项门槛全绿）
 
 ## 30 秒上手
 
 ```bash
-pip install "jobradar[mcp]"            # 已发布到 PyPI（未发布时用下面这行装源码）
-# pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
+# 尚未发布到 PyPI（发布流程见 docs/PUBLISHING.md），现在从源码装：
+pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
 jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回、0 下载）
 # jobradar update --force              # 忽略增量比对，强制全量重下
 jobradar search --company 复星 --type campus --grad-year 2027 --table
@@ -86,7 +86,7 @@ $ jobradar update          # 全新环境实测 4 秒
 | `calendar.db.gz` | 300 KB | 招聘日历（500 家目标公司） |
 | `crawl-summary.json` | 32 KB | 每个源的状态、新增/下架数 |
 
-- 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步，大文件按 `.partNN` 分片并行上传（实测镜像同步 **2.6 分钟**，此前整文件要 2 小时），`jobradar update` 自动下载并合并（实测走 Gitee 全量 **80 秒**，失败回退 GitHub）
+- 每日 UTC 19:17（北京时间 03:17）采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步，大文件按 `.partNN` 分片并行上传（实测镜像同步 **2.6 分钟**，此前整文件要 2 小时），`jobradar update` 自动下载并合并（实测走 Gitee 全量 **80 秒**，失败回退 GitHub）
 - 下架判定：连续 3 次成功抓取中缺席；抓取失败**不会**导致岗位下架
 - 字段说明：[skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)
 - 数据许可：代码 MIT；岗位内容权利归原发布方，本库只做索引（草案与选项见 [docs/DATA-LICENSE.md](docs/DATA-LICENSE.md)）
@@ -98,15 +98,17 @@ $ jobradar update          # 全新环境实测 4 秒
 | 目标公司日历 | 494/500；6 家（BOSS直聘/猎聘/智联/前程无忧/微博/招商蛇口）因 robots/登录墙/域名失效不可合规覆盖，逐家证据见 [docs/COVERAGE-PLAN.md](docs/COVERAGE-PLAN.md) |
 | 数据源 | 161/500 家能抓到岗位级数据；其余多为自研站、加密平台（Moka/飞书）或 Workday 之外的外企系统 |
 | JD 正文 | 99.8%（抓不到正文的源不进数据集；比例按在招岗位算） |
-| 日历字段完整度 | 全部条目 **74.9%** 达到「11 个必填字段里 ≥7 个」，按公司 **60.7%**；纯人工条目 38.0%（原因见 [docs/PROGRESS-2026-10-23.md](docs/PROGRESS-2026-10-23.md)） |
-| 网申时间 | 仅约 5% 的官网会公开写起止日期；公众号推文是最可靠来源，但微信对数据中心 IP 返回验证页，故不自动化 |
+| 日历字段完整度 | 全部条目 **74.9%** 达到「11 个必填字段里 ≥7 个」；按集团 **60.7%（362/596 个集团——分母是日历里出现过的集团，含 500 目标之外的网易互娱等）**；纯人工条目 38.0%（原因见 [docs/PROGRESS-2026-10-23.md](docs/PROGRESS-2026-10-23.md)） |
+| 网申时间 | 只有 **8/1372 条（0.6%）** 带完整网申起止（纯人工条目 1.8%）：官网多数只写「9 月起」或干脆不写，微信公众号推文最可靠，但微信对数据中心 IP 返回验证页，故不自动化 |
+| 重复岗位 | **9.2%**（8,115/88,608）是「同公司 + 同标题 + 同城市」的多条 req（星巴克门店岗一家就 2,907 条）。ATS 上它们确实是不同岗位，但对求职者等于重复条目；暂未合并，`show <job_id>` 可看单条 |
+
 
 不做的事：不爬第三方聚合站、不绕过验证码/登录/签名、不伪造 UA、不在流水线里用 LLM、不持久化任何凭据。
 
 ## 架构
 
 ```
-GitHub Actions（每日 UTC 22:19）
+GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
   ├─ crawl        277 个源 → 适配器（北森 / 大易 / Workday / 自研站）→ SQLite
   ├─ calendar     日历库：人工条目（A/B/C 三档）+ 数据层自动条目
   ├─ release      打包 gzip 上传 Release data-latest（+ 每周归档）
@@ -127,7 +129,7 @@ GitHub Actions（每日 UTC 22:19）
 
 ```bash
 uv sync --all-extras
-uv run pytest          # 255 个测试函数全绿
+uv run pytest          # 485 个测试函数全绿
 uv run ruff check src tests scripts
 ```
 

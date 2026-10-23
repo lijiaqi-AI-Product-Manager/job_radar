@@ -35,7 +35,8 @@ jobradar doctor
 | 覆盖了哪些公司 | `jobradar stats` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
 
-参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 是名称子串匹配（也认常见简称，如 `中核`→中国核工业集团、`国寿`→中国人寿，见 `taxonomy/company_aliases.yaml`）；`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），仍无结果再用 `--text` 在 JD 原文里查，三者都无结果才能说"没有"。
+参数说明：`--type` 取 `campus`(校招) / `intern`(实习) / `social`(社招)；`--company` 先按**公司名全等**匹配，再查简称映射表（如 `中核`→中国核工业集团、`国寿`→中国人寿，见 `taxonomy/company_aliases.yaml`），最后只在命中唯一一家时用子串兜底（`阿里`→阿里巴巴）。**没把握就不猜**：`--company 京东` 不会返回「京东方」，而是 0 条 + 提示 `company_match.match = none`；命中多家时 `match = ambiguous` 并给出候选。要看 `company_match` 再回答（见回答规则 4）。`--contains` 才强制子串搜索（如 `--company 中国` 一次看所有含「中国」的公司）。`--category` 同时匹配大类与子类（如 技术、算法、后端、芯片/硬件、产品经理），可选值见 `references/fields.md`。**职类按标题规则归类，部分岗位为空**：`--category` 无结果时，再用 `--keyword` 按标题关键词查一次（如 `--keyword 研发`），仍无结果再用 `--text` 在 JD 原文里查，三者都无结果才能说"没有"。
+
 
 ## 回答规则（必须遵守）
 
@@ -44,6 +45,7 @@ jobradar doctor
 3. **只用返回的数据**：没查到就说没查到。不编造岗位、薪资、面试难度、往年数据、HC 数量。
 4. **查不到时说清楚是哪种情况**：
    - 公司不在库里（`results` 为空，或 `compare` 的 `not_found` 里有它）→ "目前的数据里没有这家公司"，不要说"这家公司没在招"。
+   - **先看 `company_match`**（`search`/`diff`/`trends` 都带）：`match: none` = 这个名字在数据集中不存在（`candidates` 是相近的公司，可以顺势提示"你要找的是不是 X"）；`match: ambiguous` = 命中多家、故意不返回；`match: contains` = 按子串唯一命中（如 阿里→阿里巴巴）；`exact`/`alias` = 确定是这家。**`none`/`ambiguous` 时不能说"该公司没在招"**。
    - 岗位 `closed_at` 有值 → "该岗位已于 {closed_at} 下架"。
    - 字段为空（如北森门户的 `cities` 为空列表）→ 说明"数据中未提供该信息"，不要从标题或常识推断。
    - **过滤条件会漏掉字段为空的岗位**：`--grad-year`、`--city`、`--category` 只命中该字段有值的岗位（届别来自标题或 JD 原文里明写的年份，很多校招岗位两处都不写）。加了这些过滤后结果为 0 或很少时，去掉该过滤再查一次（如只用 `--type campus`），再如实说明"其中 N 个岗位写明了 2027 届"。
