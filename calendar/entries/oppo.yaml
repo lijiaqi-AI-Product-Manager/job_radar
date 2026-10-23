@@ -1,11 +1,43 @@
 group: OPPO
 entries:
-  - id: oppo-2027-xz
-    company: OPPO
-    grad_year: 2027
-    project_type: 校招
-    apply_url: https://careers.oppo.com/university/oppo/campus/post?recruitType=Graduate
-    source: {type: official_site, name: OPPO招聘官网（校园招聘）, url: "https://careers.oppo.com/campus"}
-    as_of: 2026-10-21
-    jd: {status: official_page, url: "https://careers.oppo.com/university/oppo/campus/post?recruitType=Graduate"}
-    notes: "应届生通道面向 2027 年 1 月至 12 月毕业的境内本硕及港澳台、海外本硕；每人最多投递 2 个岗位，第一志愿优先处理。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: oppo-2027-xz
+  company: OPPO
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://careers.oppo.com/university/oppo/campus/post?recruitType=Graduate
+  source:
+    type: official_site
+    name: OPPO招聘官网（校园招聘）
+    url: https://careers.oppo.com/campus
+  as_of: 2026-10-21
+  jd:
+    status: official_page
+    url: https://careers.oppo.com/university/oppo/campus/post?recruitType=Graduate
+  notes: 应届生通道面向 2027 年 1 月至 12 月毕业的境内本硕及港澳台、海外本硕；每人最多投递 2 个岗位，第一志愿优先处理。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 运营类
+    roles:
+    - 市场管理培训生（自营电商）
+  - direction: 技术类
+    roles:
+    - AI/算法类
+    - AI算法工程师（端侧部署方向）
+    - AI算法工程师（影像算法方向）
+  - direction: 产品类
+    roles:
+    - AI产品经理（零售产品方向）
+  - direction: 设计类
+    roles:
+    - 空间设计师（零售形象方向）
+    - 平面设计师（零售形象方向）
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  - 武汉
+  - 西安
+  - 重庆
+  - 厦门

@@ -1,12 +1,22 @@
 group: 网易
 entries:
-  - id: netease-game-2027-intern
-    company: 网易
-    product: 网易游戏（互娱）
-    grad_year: 2027
-    project_type: 实习
-    apply_url: https://game.campus.163.com/
-    source: {type: official_site, name: 网易游戏(互娱)校园招聘官网, url: "https://game.campus.163.com/m/position/30?searchPositionType=%5B2%5D"}
-    as_of: 2026-10-21
-    jd: {status: official_page, url: "https://game.campus.163.com/"}
-    notes: "「网易互娱2027届实习生项目」，毕业时间 2026 年 9 月至 2027 年 8 月；未查到网易 2027 届秋招正式批的公告。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: netease-game-2027-intern
+  company: 网易
+  product: 网易游戏（互娱）
+  grad_year: 2027
+  project_type: 实习
+  apply_url: https://game.campus.163.com/
+  source:
+    type: official_site
+    name: 网易游戏(互娱)校园招聘官网
+    url: https://game.campus.163.com/m/position/30?searchPositionType=%5B2%5D
+  as_of: 2026-10-21
+  jd:
+    status: official_page
+    url: https://game.campus.163.com/
+  notes: 「网易互娱2027届实习生项目」，毕业时间 2026 年 9 月至 2027 年 8 月；未查到网易 2027 届秋招正式批的公告。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 技术类
+    roles:
+    - 资深游戏客户端开发工程师
+  cities: []

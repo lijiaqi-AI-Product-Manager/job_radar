@@ -13,6 +13,8 @@ entries:
     status: official_page
     url: https://hr.sohu.com/social-recruitment/sohu/43256
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：搜狐 - 招聘官网）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks: []
+  cities: []
 - id: sohu-social-entry
   company: 搜狐
   project_type: 社招

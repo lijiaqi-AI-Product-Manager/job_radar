@@ -13,3 +13,9 @@ entries:
     status: official_page
     url: https://app.mokahr.com/campus_apply/vanke/37550
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：万科集团校园招聘（Moka））。入口页未写明批次/网申时间/城市，按红线留空。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 房地产开发与经营
+    - 商业开发运营
+  cities: []

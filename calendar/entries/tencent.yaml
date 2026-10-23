@@ -1,12 +1,46 @@
 group: 腾讯
 entries:
-  - id: tencent-2027-xz
-    company: 腾讯
-    grad_year: 2027
-    project_type: 校招
-    apply_start: 2026-08-11
-    apply_url: https://join.qq.com/post.html
-    source: {type: official_site, name: 腾讯校招官网（2027 校园招聘启动公告）, url: "https://join.qq.com/detail.html?id=288", date: 2026-08-11}
-    as_of: 2026-10-21
-    jd: {status: none}
-    notes: "2027 校园招聘于 2026-08-11 启动；投递时选择「应届毕业生-2027校园招聘」项目；毕业时间 2026 年 1 月至 2027 年 12 月；公告未给出网申截止日期，建议尽早投递。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准"
+- id: tencent-2027-xz
+  company: 腾讯
+  grad_year: 2027
+  project_type: 校招
+  apply_start: 2026-08-11
+  apply_url: https://join.qq.com/post.html
+  source:
+    type: official_site
+    name: 腾讯校招官网（2027 校园招聘启动公告）
+    url: https://join.qq.com/detail.html?id=288
+    date: 2026-08-11
+  as_of: 2026-10-21
+  jd:
+    status: none
+  notes: 2027 校园招聘于 2026-08-11 启动；投递时选择「应届毕业生-2027校园招聘」项目；毕业时间 2026 年 1 月至 2027 年
+    12 月；公告未给出网申截止日期，建议尽早投递。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 运营类
+    roles:
+    - 战略投资类市场营销类公共关系类销售拓展类
+    - 投资运营分析师
+    - 市场 ｜ 应届毕业生 ｜CDG
+  - direction: 职能类
+    roles:
+    - 财经分析类人力资源类法律与公共策略类行政支持类
+  - direction: 技术类
+    roles:
+    - AI全栈工程师
+    - Agent开发工程师
+    - AI应用工程师
+    - AI算法工程
+  - direction: 产品类
+    roles:
+    - AI产品经理
+  - direction: 管培类
+    roles:
+    - 游戏策划培训生
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都

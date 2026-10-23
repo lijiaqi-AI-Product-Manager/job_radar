@@ -1,30 +1,69 @@
 group: 华为
 entries:
-  - id: huawei-2027-xz
-    company: 华为
-    grad_year: 2027
-    project_type: 校招
-    apply_url: https://career.huawei.com/cn/campus-recruitment-job-list
-    source: {type: official_site, name: 华为招聘官网（校园招聘）, url: "https://career.huawei.com/cn/campus-recruitment"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://career.huawei.com/cn/campus-recruitment-job-list"}
-    notes: "官网原文：2027届应届生招聘对象为「2027年1月1日-2027年12月31日毕业的国内高校本科生与硕士研究生；2026年1月1日-2027年12月31日毕业的国内高校博士生与海外高校本硕博学生」（2026-10-21 抓取核对）。官网为简历投递的唯一官方渠道。"
-  - id: huawei-2027-ai-intern
-    company: 华为
-    product: AI实习生专项计划
-    grad_year: 2027
-    project_type: 实习
-    apply_url: https://career.huawei.com/cn/campus-recruitment
-    source: {type: official_site, name: 华为招聘官网（校园招聘动态）, url: "https://career.huawei.com/cn/campus-recruitment"}
-    as_of: 2026-10-21
-    jd: {status: blocked, url: "https://career.huawei.com/cn/campus-recruitment"}
-    notes: "官网动态「华为2027届AI实习生专项计划正式启动！」（2026-10-21 抓取核对）。"
-  - id: huawei-2027-ambassador
-    company: 华为
-    grad_year: 2027
-    project_type: 校园大使
-    apply_url: https://career.huawei.com/cn/campus-recruitment
-    source: {type: official_site, name: 华为招聘官网（校园招聘动态）, url: "https://career.huawei.com/cn/campus-recruitment"}
-    as_of: 2026-10-21
-    jd: {status: none}
-    notes: "官网动态「【招募令】2027届华为校园大使火热招募中」（2026-10-21 抓取核对）。"
+- id: huawei-2027-xz
+  company: 华为
+  grad_year: 2027
+  project_type: 校招
+  apply_url: https://career.huawei.com/cn/campus-recruitment-job-list
+  source:
+    type: official_site
+    name: 华为招聘官网（校园招聘）
+    url: https://career.huawei.com/cn/campus-recruitment
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://career.huawei.com/cn/campus-recruitment-job-list
+  notes: 官网原文：2027届应届生招聘对象为「2027年1月1日-2027年12月31日毕业的国内高校本科生与硕士研究生；2026年1月1日-2027年12月31日毕业的国内高校博士生与海外高校本硕博学生」（2026-10-21
+    抓取核对）。官网为简历投递的唯一官方渠道。
+  tracks:
+  - direction: 技术类
+    roles:
+    - 工程师研究员/高级工程师
+    - 研究员/高级工程师
+    - AI Infra工程师 应届生
+    - AI应用工程师 应届生
+    - AI模型工程师 应届生
+  - direction: 职能类
+    roles:
+    - 人力资源类
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  - 武汉
+  - 西安
+  - 苏州
+  - 长沙
+- id: huawei-2027-ai-intern
+  company: 华为
+  product: AI实习生专项计划
+  grad_year: 2027
+  project_type: 实习
+  apply_url: https://career.huawei.com/cn/campus-recruitment
+  source:
+    type: official_site
+    name: 华为招聘官网（校园招聘动态）
+    url: https://career.huawei.com/cn/campus-recruitment
+  as_of: 2026-10-21
+  jd:
+    status: blocked
+    url: https://career.huawei.com/cn/campus-recruitment
+  notes: 官网动态「华为2027届AI实习生专项计划正式启动！」（2026-10-21 抓取核对）。
+  cities: []
+  tracks: []
+- id: huawei-2027-ambassador
+  company: 华为
+  grad_year: 2027
+  project_type: 校园大使
+  apply_url: https://career.huawei.com/cn/campus-recruitment
+  source:
+    type: official_site
+    name: 华为招聘官网（校园招聘动态）
+    url: https://career.huawei.com/cn/campus-recruitment
+  as_of: 2026-10-21
+  jd:
+    status: none
+  notes: 官网动态「【招募令】2027届华为校园大使火热招募中」（2026-10-21 抓取核对）。

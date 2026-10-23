@@ -16,6 +16,8 @@ entries:
     url: https://jobs.bytedance.com/campus
   notes: 官网原文：「投递时间：2026 年 8 月至 2027 年 5 月 31 日止」「笔试时间：即日起」；可投递两个职位，彼此独立、默认优先处理较早投递的职位（2026-10-21
     抓取官网页面核对）。
+  tracks: []
+  cities: []
 - id: bytedance-seed-2027-xz
   company: 字节跳动
   product: Seed（大模型）
@@ -72,6 +74,22 @@ entries:
     status: blocked
     url: https://jobs.bytedance.com/campus/position
   notes: 官网职位页招聘项目「正式 · 2027届前沿技术领域人才校招」；对应实习项目「前沿技术领域人才实习招聘」。（2026-10-21 浏览器渲染官网页面核对原文）
+  tracks:
+  - direction: 技术类
+    roles:
+    - AI应用研发工程师 - IT
+    - 算法实习生 - 安全与风控
+    - 多模态算法工程师 - TikTok内容安全算法
+    - 大数据引擎SRE工程师 - 数据平台
+    - 前端开发实习生-TRAE
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 西安
 - id: bytedance-byteintern
   company: 字节跳动
   product: ByteIntern

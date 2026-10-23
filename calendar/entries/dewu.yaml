@@ -13,6 +13,8 @@ entries:
     status: official_page
     url: https://careers.dewu.com/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：加入得物App）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+  tracks: []
+  cities: []
 - id: dewu-social-entry
   company: 得物
   project_type: 社招
