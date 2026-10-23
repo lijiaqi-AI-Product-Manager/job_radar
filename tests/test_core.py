@@ -110,6 +110,24 @@ def test_company_match_mode_is_reported_for_exact_and_alias(jobs_db):
     assert alias["company_match"]["matched"] == ["中国核工业集团"]
 
 
+def test_search_dedupe_collapses_identical_reqs(jobs_db):
+    """同一 ATS 岗位开成多条 req（同公司+同标题+同城市）时，--dedupe 折叠并给出原条数。
+
+    全库实测 9.2% 是这种重复（星巴克门店岗一家 2,907 条），默认不折叠（计数口径不变），
+    但用户问"这家公司在招几个岗"时要能拿到折叠后的数字。
+    """
+    dup = [make_job(i, title="门店储备干部", cities=["上海"]) for i in range(1, 4)]
+    keep = make_job(9, title="区域经理", cities=["上海"])
+    ingest_run(jobs_db, "s1", [*dup, keep], ts=T(1))
+    assert len(search_jobs(jobs_db)) == 4
+    rows = search_jobs(jobs_db, dedupe=True)
+    assert len(rows) == 2
+    by_title = {r["title"]: r for r in rows}
+    assert by_title["门店储备干部"]["variants"] == 3
+    assert by_title["区域经理"]["variants"] == 1
+    assert "_rn" not in rows[0]
+
+
 def test_diff_by_category_respects_company(jobs_db):
     """`diff --by category --company 某公司` 曾静默忽略 --company，把全库数字当该公司的。"""
     ingest_run(jobs_db, "a", [make_job(i, source_id="a", company="腾讯", category="技术") for i in range(1, 4)], ts=T(1))

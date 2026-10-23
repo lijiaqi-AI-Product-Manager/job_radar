@@ -354,7 +354,8 @@ def cmd_search(args):
         rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
                              recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
                              text=args.text, text_conn=text, include_closed=args.include_closed,
-                             limit=args.limit, contains=args.contains, meta=meta)
+                             limit=args.limit, contains=args.contains, meta=meta,
+                             dedupe=args.dedupe)
         _company_note(args.company, meta.get("company_match"))
         payload = envelope(conn, rows, **meta)
         hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
@@ -548,6 +549,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("search", cmd_search, "搜索在招岗位")
     sp.add_argument("--company", help="公司名（支持简称映射；只差一个字的前缀延伸不猜，如 京东≠京东方）")
     sp.add_argument("--contains", action="store_true", help="--company 按子串匹配（会命中多家，如 --company 中国）")
+    sp.add_argument("--dedupe", action="store_true",
+                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants（全库约 9.2% 是这种重复）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
     sp.add_argument("--city")
     sp.add_argument("--type", choices=["campus", "intern", "social"])
