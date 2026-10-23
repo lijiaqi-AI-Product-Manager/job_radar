@@ -128,13 +128,20 @@ def jd_ratio(home: Path | None) -> float | None:
         return None
     j, t = sqlite3.connect(jobs), sqlite3.connect(text)
     try:
-        n = j.execute("SELECT COUNT(*) FROM job WHERE closed_at IS NULL").fetchone()[0]
+        import json as _json
+
+        open_ids = [r[0] for r in j.execute("SELECT id FROM job WHERE closed_at IS NULL")]
+        n = len(open_ids)
         if not n:
             return None
-        have = t.execute("""SELECT COUNT(*) FROM job_text
-                            WHERE (description IS NOT NULL AND description != '')
-                               OR (requirements IS NOT NULL AND requirements != '')""").fetchone()[0]
-        return min(have, n) / n
+        # 只数「在招岗位」的正文：jd_text 里还留着已下架岗位的行，
+        # 之前用总数会被 min(have, n) 截到 1.0，把真实覆盖率报高（2026-10-24 修）
+        have = t.execute(
+            """SELECT COUNT(*) FROM job_text
+               WHERE job_id IN (SELECT value FROM json_each(?))
+                 AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')""",
+            (_json.dumps(open_ids),)).fetchone()[0]
+        return have / n
     finally:
         j.close()
         t.close()
