@@ -9,7 +9,7 @@
 - id: lookup-02
   type: lookup
   question: 字节跳动有没有北京的算法实习岗位？
-  checks: [cite_source, state_updated_at, only_from_data]
+  checks: [cite_source, state_updated_at, only_from_data, say_not_found]
 - id: lookup-03
   type: lookup
   question: 美团杭州有哪些产品经理的校招岗位？
@@ -38,7 +38,7 @@
 - id: diff-03
   type: diff
   question: 字节跳动上周和这周比，岗位有什么变化？
-  checks: [state_updated_at, only_from_data, use_event_data]
+  checks: [state_updated_at, only_from_data, use_event_data, say_not_found, state_data_span]
 - id: diff-04
   type: diff
   question: 我之前关注的那个岗位，现在还在招吗？（给出岗位链接）
