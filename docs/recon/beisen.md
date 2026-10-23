@@ -93,3 +93,18 @@
 
 ## 8. 下一步
 新版门户：`adapters/beisen.py`。旧版门户：单独侦察 HTML 结构（smics 页面 80KB，含服务端渲染列表）。
+## 6. 城市字段：第三次确认拿不到（2026-10-23，recon #58）
+
+校园岗城市覆盖长期停在 ~29%，北森占校园岗 95%。这天又用三种办法确认了一遍：
+
+1. **列表接口**：`LocId` / `LocNames` / `Station` 全部为 `null` 或 `[]`（以 jobtaikang 1739 岗为例，
+   逐条检查 20 个字段，没有城市信息）。
+2. **详情页 URL**：`/campusxq?jobId=`、`?jobAdId=`、`/zpdetail/{JobAdId}`、`/jobdetail/{uuid}` 全部返回同一个
+   113KB 的 SPA 壳，页面里既没有岗位标题也没有「工作地点」。
+3. **详情页抓包**（RENDERXHR，jobtaikang）：渲染后只有 **61 个字符**的正文；期间只有
+   `Common/GetPortalAIRobot`、`PortalAgent/GetPortalAgentConfig`、`Template/GetPageGlobalModules`
+   和埋点日志，**没有任何岗位详情接口**——说明详情内容要靠登录态或其它客户端路由，公开访问拿不到。
+
+**结论**：城市覆盖率的上限由「有城市的源」决定，不是解析问题。要突破只能：
+逐租户上浏览器渲染（成本极高，且详情页本身没数据），或等官方开放带城市的详情接口。
+当前门槛按证据定为 20%（实测 29.0%），见 `docs/RELEASE.md`。
