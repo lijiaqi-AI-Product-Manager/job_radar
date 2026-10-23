@@ -39,3 +39,15 @@ GitHub Actions 的海外机房能否正常访问这些站点（状态码、耗�
 | 字节 / 飞书招聘站 | 自研/平台 | 待定（大概率 blocked） | `bytedance.md`：滑块验证码 + CSRF 策略 |
 | 阿里、美团 | 自研 | 未开始 | 入口可达（200） |
 | gllue、大易 | 平台 | 未开始 | |
+## 2026-10-23 复审补记
+
+| 目标 | 结论 | 文档 |
+|---|---|---|
+| 大易（Dayee）新版 `/wecruit/SU...` | ✅ 可做（已接入 11 家：中联/歌尔/长城/一汽/地平线/华夏银行/中车/云南白药/用友/兴业/国投/财通/李宁…） | `hotjob.md` |
+| 大易旧版 `/wt/{tenant}/...` | ✅ 可做（列表 JSON 自带 JD 正文） | `hotjob-legacy.md` |
+| 北森旧版门户 | ✅ 已有适配器（smics/cssc/sast/kelun/goodix 等在用）；但对剩余 343 家目标探测 **0 命中** | `beisen.md` §4.4 |
+| 北森城市字段 | ⛔ 拿不到（列表/详情/详情抓包三次验证） | `beisen.md` §6 |
+| 中国建筑 `recruit.cscec.com` | ⛔ blocked：请求/响应 `hcm_param` 加密 | `cscec.md` |
+| 招商银行 `career.cmbchina.com` | 🟡 接口明文可读，但当前季只有 19 个岗位、且列表无 JD 字段 | `cmb.md` |
+| 飞书招聘（jobs.feishu.cn） | ⛔ blocked：ATSX 需要前端 `_signature` | `atsx.md` |
+| Moka 二次验证（吉利租户） | ⛔ blocked：与大疆一致，职位数据全加密 | `moka.md` |
