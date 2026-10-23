@@ -37,3 +37,7 @@ RENDERXHR https://jobtaikang.zhiye.com/campusxq?jobId=620767293 (api|Jobad|detai
 
 # 第 46 轮：中国建筑自研门户（recruit.cscec.com）——JS 里只有组件名，接口名要靠 XHR 抓。
 RENDERXHR https://recruit.cscec.com/recruit (api|job|position)
+
+# 第 47 轮：招商银行招聘门户（career.cmbchina.com，React 单页）——找岗位列表接口，
+# 若是公开 JSON 就照 hotjob 写适配器（招行是 500 家里还没数据的大目标）。
+RENDERXHR https://career.cmbchina.com/index.html (api|job|position)
