@@ -30,3 +30,13 @@ sources:
     recruit_types: [campus]
     max_pages: 2
     params: {host: www.hotjob.cn, tenant: haidilao}
+  - id: hotjob-legacy-sbc
+    company: 上海宝冶
+    recruit_types: [campus]
+    max_pages: 3
+    params: {host: www.hotjob.cn, tenant: sbc}
+  - id: hotjob-legacy-qianxin
+    company: 奇安信
+    recruit_types: [social]
+    max_pages: 7
+    params: {host: www.hotjob.cn, tenant: qianxin}
