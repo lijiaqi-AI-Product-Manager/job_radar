@@ -56,3 +56,8 @@ uv run pytest
 [CLAUDE.md](CLAUDE.md)（施工规范）· [ROADMAP](docs/ROADMAP.md) · [侦察](docs/recon/) · [合规](COMPLIANCE.md) · [评测集](evals/)
 
 MIT License
+
+## 阶段进展与验收
+
+- 2026-10-23 阶段报告：[docs/PROGRESS-2026-10-23.md](docs/PROGRESS-2026-10-23.md)（目标逐项对账、字段完整度天花板证据、复现命令）
+- 日历字段规范：[docs/CALENDAR-FORMAT.md](docs/CALENDAR-FORMAT.md)
