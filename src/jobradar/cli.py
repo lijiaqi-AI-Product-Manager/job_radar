@@ -138,6 +138,40 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path):
     tmp.replace(dest)
 
 
+def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -> Path | None:
+    """按 `<name>.part01/.part02…` 顺序下载并拼成一个临时文件；一个分片都没有则返回 None。
+
+    Gitee 上行慢，大文件在镜像侧是分片存放的（见 scripts/publish_gitee.py）。
+    拼接后的文件仍会过 gzip + SQLite quick_check，损坏会抛 ValueError。
+    """
+    tmp_all = None
+    count = 0
+    try:
+        for idx in range(1, 100):
+            part = f"{name}.part{idx:02d}"
+            url = dict(asset_urls(part)).get(mirror)
+            if not url:
+                break
+            piece = _fetch(client, url, {}, dest_dir)
+            if piece is None:
+                break
+            if tmp_all is None:
+                tmp_all = dest_dir / f".{name}.joined.part"
+                tmp_all.unlink(missing_ok=True)
+            with open(tmp_all, "ab") as out, open(piece, "rb") as src:
+                shutil.copyfileobj(src, out)
+            piece.unlink(missing_ok=True)
+            count += 1
+    except httpx.HTTPError:
+        if tmp_all is not None:
+            tmp_all.unlink(missing_ok=True)
+        raise
+    if count == 0:
+        return None
+    print(f"{mirror}: {name} 由 {count} 个分片拼接", file=sys.stderr)
+    return tmp_all
+
+
 def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None) -> str:
     """依次尝试各镜像，每个镜像先取压缩版 <name>.gz，没有再取原文件。返回实际使用的镜像名。"""
     client = client or httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True)
@@ -160,6 +194,9 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
         for candidate, gz in ((gz_url, True), (url, False)):
             try:
                 tmp = _fetch(client, candidate, {}, dest.parent)
+                if tmp is None and gz:
+                    # 大文件在镜像侧是分片存放的：整文件 404 时按 .partNN 拼接
+                    tmp = _fetch_parts(client, name + ".gz", mirror, dest.parent)
                 if tmp is None:
                     continue
                 _install(tmp, name, gz, dest)
