@@ -14,6 +14,29 @@ entries:
     url: https://job.tal.com/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
   grad_year: 2027
+  tracks:
+  - direction: 运营类
+    roles:
+    - 教务运营
+    - 电商运营
+    - 直播运营
+    - 用户运营
+    - 运营-管理
+    - 市场与公关
+  - direction: 设计类
+    roles:
+    - 内容策划与审核
+  - direction: 职能类
+    roles:
+    - 法务综合
+    - 人力资源
+  - direction: 产品类
+    roles:
+    - 产品运营
+    - 产品策划
+  - direction: 技术类
+    roles:
+    - 硬件开发
 - id: tal-social-entry
   company: 好未来
   project_type: 社招
@@ -28,3 +51,26 @@ entries:
     url: https://job.tal.com/
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：好未来招聘官网｜校园招聘、实习生招聘、社会招聘）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
   grad_year: 2027
+  tracks:
+  - direction: 运营类
+    roles:
+    - 教务运营
+    - 电商运营
+    - 直播运营
+    - 用户运营
+    - 运营-管理
+    - 市场与公关
+  - direction: 设计类
+    roles:
+    - 内容策划与审核
+  - direction: 职能类
+    roles:
+    - 法务综合
+    - 人力资源
+  - direction: 产品类
+    roles:
+    - 产品运营
+    - 产品策划
+  - direction: 技术类
+    roles:
+    - 硬件开发

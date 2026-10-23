@@ -150,10 +150,10 @@ def main() -> int:
 
             page.on("response", on_response)
             try:
-                page.goto(url, wait_until="domcontentloaded", timeout=45000)
-                page.wait_for_timeout(3500)
+                page.goto(url, wait_until="domcontentloaded", timeout=25000)
+                page.wait_for_timeout(2500)
                 interact(page, item)
-                page.wait_for_timeout(1500)
+                page.wait_for_timeout(1000)
                 data = extract_dom(page)
                 docs = collect_doc_links(page)
                 if docs:
