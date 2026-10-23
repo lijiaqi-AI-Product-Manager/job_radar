@@ -19,3 +19,4 @@ data/
 *.db
 *.db-journal
 *.parquet
+calendar/enrich-report.json
