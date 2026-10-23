@@ -15,7 +15,7 @@ jobradar doctor
 
 - 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
-- 没装 `jobradar`：`pip install git+https://github.com/lijiaqimun-coder/job_radar`（或 `uv tool install ...`）。
+- 没装 `jobradar`：`pip install jobradar`（PyPI 未发布时用 `pip install git+https://github.com/lijiaqimun-coder/job_radar`，或 `uv tool install jobradar`）。
 
 ## 按问题类型选命令
 
