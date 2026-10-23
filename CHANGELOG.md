@@ -2,6 +2,30 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### 修复
+
+- **限额配置静默失效**：`max_pages` 写在源顶层而不是 `params` 里时被 pydantic 忽略，
+  限额完全不生效（星巴克一次抓了 18418 岗）。11 个源已修正，加载器现在对未知顶层字段直接报错。
+- **加限额反而把源判死**：给源加 `max_pages` 后，骤降保护会拿「历史全量」当基线，
+  每轮都判 `dropped 18418 -> 3000` 并 rejected（rejected 不下架，旧岗位永远挂着）。
+  新增 `expected_max`：限额能覆盖的最大条数参与基线计算。
+- **真实下架导致源被永久封印**：校招季结束后岗位掉 50%+，rejected 不更新基线 →
+  永远拒绝。现在连续 3 轮 rejected 后放行一次（`MAX_REJECTS`），空结果保护不变。
+- **`python -m jobradar` 不可用**：wheel 装进干净 venv 才暴露（只有 console script）。补 `__main__.py`。
+
+### 优化
+
+- **采集并行单位改为「适配器 + 站点」**：北森几百个租户各在不同子域，串行跑一轮 70+ 分钟；
+  现在不同子域并行、同站点仍串行（1 req/s 不变），daily 新增 `--workers`。
+- **`jobradar sources --problems`**：只列出未成功/过期的源，排障不用再翻几百行 summary。
+- **日历入口分级**：A 官方招聘页 / B 官方公众号 / C 仅官网首页，7 条 C 档已升级为真实招聘页。
+
+### 侦察
+
+- 大易旧版 wt 门户可做（列表自带 JD 正文）；中国建筑网关加密 → blocked；
+  招商银行接口明文但仅 19 岗且列表无 JD；北森城市字段三次验证为空（见 docs/recon）。
 ## [1.0.0] - 2026-10-23（正式版）
 
 第一版「可发布」：五项发布门槛全部达标（`scripts/release_check.py`）。
