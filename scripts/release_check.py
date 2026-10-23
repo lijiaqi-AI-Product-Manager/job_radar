@@ -27,7 +27,7 @@ GATES = {
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
     # 日历字段完整度：一条日历 11 个必填字段里至少填了 7 个的条目占比
     # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
-    "calendar_fields": 0.30,
+    "calendar_fields": 0.35,
 }
 
 FILES = ["README.md", "CHANGELOG.md", "COMPLIANCE.md", "LICENSE"]
@@ -70,7 +70,10 @@ def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
     if not rows:
         return 0.0, "0 条"
     good = sum(1 for r in rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
-    return good / len(rows), f"{good}/{len(rows)}"
+    all_rows = con.execute("SELECT * FROM entry").fetchall()
+    all_good = sum(1 for r in all_rows if sum(1 for k in CAL_FIELDS if filled(r, k)) >= 7)
+    detail = f"{good}/{len(rows)}；全部条目 {all_good}/{len(all_rows)} = {all_good / len(all_rows):.1%}" if all_rows else f"{good}/{len(rows)}"
+    return good / len(rows), detail
 
 
 def calendar_coverage(calendar_db: Path | None) -> tuple[int, int, int]:
