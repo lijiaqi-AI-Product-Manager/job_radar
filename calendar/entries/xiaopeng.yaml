@@ -34,3 +34,8 @@ entries:
     url: https://xiaopeng.jobs.feishu.cn/campus
   notes: 官方招聘入口（2026-10-22 访问确认；页面标题：加入小鹏集团）。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
   grad_year: 2027
+  cities:
+  - 广州
+  - 深圳
+  - 哈尔滨
+  - 香港

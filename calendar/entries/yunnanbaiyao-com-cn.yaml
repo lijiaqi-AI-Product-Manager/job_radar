@@ -36,3 +36,21 @@ entries:
     - 医药研发
     - 管培生
     - 生产
+  - direction: 运营类
+    roles:
+    - 战略运营管理类
+    - 市场推广类
+    - 品牌药材销售经理
+  - direction: 职能类
+    roles:
+    - 人力资源主管
+  - direction: 设计类
+    roles:
+    - 文山三七市场策划岗
+  cities:
+  - 北京
+  - 上海
+  - 天津
+  - 重庆
+  - 昆明
+  - 保定

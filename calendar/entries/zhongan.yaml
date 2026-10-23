@@ -14,3 +14,11 @@ entries:
     url: https://app.mokahr.com/campus-recruitment/zhongan/71908
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：众安校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
   grad_year: 2027
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 杭州
+  - 无锡
+  - 大连
+  - 香港

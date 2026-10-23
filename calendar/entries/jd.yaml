@@ -78,6 +78,10 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 面向高校本硕博在校生、应届生及毕业两年内的技术人才，网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 管培类
+    roles:
+    - TET-管理培训生
 - id: jd-young-intern
   company: 京东
   product: 实习生计划（JD YOUNG）
@@ -92,3 +96,7 @@ entries:
     status: blocked
     url: https://campus.jd.com/
   notes: 网申全年开放。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+  tracks:
+  - direction: 管培类
+    roles:
+    - TET-管理培训生

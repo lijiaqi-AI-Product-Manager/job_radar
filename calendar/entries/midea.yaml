@@ -46,6 +46,18 @@ entries:
     status: official_page
     url: https://careers.midea.com/schoolOut
   notes: 官网在招项目「2027应届博士校园招聘」，毕业时间 2026-01-01 至 2027-12-31。（2026-10-21 读取官网项目列表接口核对）
+  cities:
+  - 北京
+  - 上海
+  - 南京
+  - 武汉
+  - 西安
+  - 天津
+  - 重庆
+  - 厦门
+  - 大连
+  - 哈尔滨
+  - 香港
 - id: midea-daily-intern
   company: 美的集团
   project_type: 日常实习
@@ -60,3 +72,16 @@ entries:
     url: https://careers.midea.com/schoolOut
   notes: 官网在招项目「日常实习生招聘通道」，毕业时间 2026-01-01 至 2028-12-31；流程：筛选、AI面试、一面、录用。（2026-10-21
     读取官网项目列表接口核对）
+  cities:
+  - 北京
+  - 上海
+  - 南京
+  - 武汉
+  - 西安
+  - 天津
+  - 重庆
+  - 厦门
+  - 大连
+  - 哈尔滨
+  - 香港
+  grad_year: 2027
