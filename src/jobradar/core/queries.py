@@ -327,9 +327,14 @@ def calendar_stats(cal_conn) -> dict:
         s["calendar_covered"] += t["name"] in with_cal
         s["jd_covered"] += t["name"] in with_jd
     origin = dict(cal_conn.execute("SELECT origin, COUNT(*) FROM entry GROUP BY 1").fetchall())
+    covered_any = sum(
+        1 for t in targets
+        if t["name"] in with_cal or (t["data_companies"] or "[]") not in ("[]", "", None))
     return {
         "targets": len(targets),
         "calendar_covered": sum(t["name"] in with_cal for t in targets),
+        # 有日历条目 或 有岗位数据：README/发布自检用的是这个口径（数据可搜到也算覆盖）
+        "covered_any": covered_any,
         "jd_covered": sum(t["name"] in with_jd for t in targets),
         "entries": {"manual": origin.get("manual", 0), "auto": origin.get("auto", 0)},
         "by_sector": list(sectors.values()),
