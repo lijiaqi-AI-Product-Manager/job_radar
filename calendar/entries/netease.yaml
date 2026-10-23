@@ -15,8 +15,12 @@ entries:
     status: official_page
     url: https://game.campus.163.com/
   notes: 「网易互娱2027届实习生项目」，毕业时间 2026 年 9 月至 2027 年 8 月；未查到网易 2027 届秋招正式批的公告。页面为前端渲染，未能直接抓取原文核对；内容依据官网页面的搜索引擎索引，以官网为准
+    【城市来自该公司岗位标题/部门（13 处提及）】
   tracks:
   - direction: 技术类
     roles:
     - 资深游戏客户端开发工程师
-  cities: []
+  cities:
+  - 宁波
+  - 杭州
+  - 北京
