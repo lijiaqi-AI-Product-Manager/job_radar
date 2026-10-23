@@ -15,11 +15,19 @@ import yaml
 
 from jobradar.models import SourceConfig
 
+KNOWN_FIELDS = frozenset(SourceConfig.model_fields)
+
 
 def _merge(defaults: dict, entry: dict) -> dict:
     merged = {**defaults, **entry}
     if "params" in defaults or "params" in entry:
         merged["params"] = {**defaults.get("params", {}), **entry.get("params", {})}
+    # 顶格写了未知字段 = 配置静默失效（2026-10-23 踩过：11 个源把 max_pages 写在顶层，
+    # 而 SourceConfig.max_pages 读的是 params["max_pages"]，于是限额全部没生效，星巴克一次抓了 18418 岗）
+    unknown = set(merged) - KNOWN_FIELDS
+    if unknown:
+        hint = "；max_pages 这类适配器参数要写在 params 里" if "max_pages" in unknown else ""
+        raise ValueError(f"source {merged.get('id') or '?'}: 未知字段 {sorted(unknown)}{hint}")
     return merged
 
 

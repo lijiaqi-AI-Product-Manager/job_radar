@@ -13,30 +13,24 @@ sources:
   - id: hotjob-legacy-yili
     company: 伊利
     recruit_types: [campus]
-    max_pages: 5
-    params: {host: yili.hotjob.cn, tenant: yili}
+    params: {host: yili.hotjob.cn, tenant: yili, max_pages: 5}
   - id: hotjob-legacy-efunds
     company: 易方达基金
     recruit_types: [social]
-    max_pages: 5
-    params: {host: efunds.hotjob.cn, tenant: efunds}
+    params: {host: efunds.hotjob.cn, tenant: efunds, max_pages: 5}
   - id: hotjob-legacy-lining
     company: 李宁
     recruit_types: [campus]
-    max_pages: 10
-    params: {host: www.hotjob.cn, tenant: lining}
+    params: {host: www.hotjob.cn, tenant: lining, max_pages: 10}
   - id: hotjob-legacy-haidilao
     company: 海底捞
     recruit_types: [campus]
-    max_pages: 2
-    params: {host: www.hotjob.cn, tenant: haidilao}
+    params: {host: www.hotjob.cn, tenant: haidilao, max_pages: 2}
   - id: hotjob-legacy-sbc
     company: 上海宝冶
     recruit_types: [campus]
-    max_pages: 3
-    params: {host: www.hotjob.cn, tenant: sbc}
+    params: {host: www.hotjob.cn, tenant: sbc, max_pages: 3}
   - id: hotjob-legacy-qianxin
     company: 奇安信
     recruit_types: [social]
-    max_pages: 7
-    params: {host: www.hotjob.cn, tenant: qianxin}
+    params: {host: www.hotjob.cn, tenant: qianxin, max_pages: 7}
