@@ -48,3 +48,28 @@ RESP {"returnCode":"SUC0000","errorMsg":null,"body":{"total":0,"data":[]}}
 **结论**：接口是公开的、结构清楚，卡在「当前招聘季 GUID」上。可行路径：
 从公告详情页（`notice/getList` 拿到的 noticeId）里找季 id，或等官方在页面上暴露季列表。
 下一步留给后续会话，不绕过鉴权。
+## 5. 招聘季 GUID 找到了（2026-10-23 追加）
+
+从 chunk `2466` 里挖到两个 `/positionlist/<GUID>`，逐个用 `job/getList` 试出当前季：
+
+```
+DF94FD6D-26D3-4A19-9E69-577C4BA1DE82 → total=19   ← 当前 2027 校招季（19 个岗位）
+96574F8D-C7ED-4772-AE7C-BAC896D190C1 → total=0    ← 旧季
+```
+
+公告也能公开读：
+
+```
+GET /api/campusRecruitmentWebsite/notice/getList?pageIndex=1&pageSize=4
+GET /api/campusRecruitmentWebsite/notice/getDetail?noticeId=<id>     # 明文 HTML 正文
+```
+
+**结论**：接口全部公开可读，数据量小（19 个校招岗）。做适配器成本不高，但收益是 +1 家目标、19 个岗位，
+优先级排在「能一次带几百上千岗的源」之后。需要时按 `hotjob` 的结构写即可：
+
+```
+POST /api/campusRecruitmentWebsite/job/getList
+{"orgIdList":[],"keywords":"","locationIdList":[],"pageIndex":N,"pageSize":10,
+ "recruitmentTypeId":"DF94FD6D-...","jobTypeIdList":[]}
+→ {"returnCode":"SUC0000","body":{"total":19,"data":[...]}}
+```
