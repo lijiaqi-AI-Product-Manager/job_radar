@@ -392,3 +392,24 @@ def test_sources_problems_shows_only_rejected_or_stale(home, capsys):
     cli.main(["sources", "--problems"])
     out = json.loads(capsys.readouterr().out)
     assert [r["source_id"] for r in out["results"]] == ["s-bad"]
+
+def test_update_skips_download_when_digest_unchanged(home, monkeypatch, capsys):
+    """增量更新：Release 里 asset 的 sha256 没变就不下载那 20/35MB。"""
+    import json as _json
+
+    from jobradar import local
+    from jobradar.store.migrate import connect
+
+    for kind, name in (("jobs", "jobs.db"), ("text", "jd_text.db"), ("calendar", "calendar.db")):
+        con = connect(home / name, kind)
+        con.close()
+    digests = {"jobs.db.gz": "d1", "jd_text.db.gz": "d2", "calendar.db.gz": "d3"}
+    (home / ".sync.json").write_text(_json.dumps(digests), encoding="utf-8")
+    monkeypatch.setattr(local, "remote_digests", lambda timeout=6.0: dict(digests))
+    called = []
+    monkeypatch.setattr(cli, "_download", lambda *a, **k: called.append(a) or "github")
+
+    cli.main(["update"])
+    out = _json.loads(capsys.readouterr().out)
+    assert called == []                       # 一个都没下
+    assert out["updated"] == [] and sorted(out["skipped"]) == ["calendar", "jobs", "text"]

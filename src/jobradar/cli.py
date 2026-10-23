@@ -205,6 +205,24 @@ def cmd_update(args):
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
     used: dict[str, str | None] = {}
     errors: dict[str, SystemExit] = {}
+
+    # 增量：先比对 Release 里各 asset 的 sha256，与本地记录一致就跳过下载（省 55MB）
+    from jobradar.local import load_sync_meta, remote_digests, save_sync_meta
+    meta = load_sync_meta()
+    remote = {} if getattr(args, "force", False) else remote_digests()
+    skipped: list[str] = []
+    if remote:
+        for k in list(kinds):
+            gz = DB_FILES[k] + ".gz"
+            digest = remote.get(gz)
+            if digest and meta.get(gz) == digest and (home() / DB_FILES[k]).exists():
+                kinds.remove(k)
+                skipped.append(k)
+    if skipped and not kinds:
+        with _open("jobs") as conn:
+            print(json.dumps({"updated": [], "skipped": skipped, "data_as_of": q.data_as_of(conn),
+                              "home": str(home())}, ensure_ascii=False))
+        return
     # 三个库并行下载：总耗时从"三个文件之和"降到"最慢的那个"（jd_text 最大）
     with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
         futures = [(k, pool.submit(_download, DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror))
@@ -230,9 +248,20 @@ def cmd_update(args):
             if cov is not None and cov < 0.9:
                 print(f"警告：JD 原文库仍不匹配（{cov:.0%}）——全文检索可能缺结果，稍后再 update",
                       file=sys.stderr)
+    if remote:
+        for k in kinds:
+            if k in errors or used.get(k) is None:
+                continue
+            digest = remote.get(DB_FILES[k] + ".gz")
+            if digest:
+                meta[DB_FILES[k] + ".gz"] = digest
+        save_sync_meta(meta)
     with _open("jobs") as conn:
-        print(json.dumps({"updated": kinds, "mirror": {k: used.get(k) for k in kinds},
-                          "data_as_of": q.data_as_of(conn), "home": str(home())}, ensure_ascii=False))
+        out = {"updated": kinds, "mirror": {k: used.get(k) for k in kinds},
+               "data_as_of": q.data_as_of(conn), "home": str(home())}
+        if skipped:
+            out["skipped"] = skipped
+        print(json.dumps(out, ensure_ascii=False))
 
 
 def cmd_search(args):
@@ -408,6 +437,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--jobs-only", action="store_true", help="只下载岗位主库，不下载 JD 原文库（全文检索、对比要求需要原文库）")
     sp.add_argument("--with-text", action="store_true", help=argparse.SUPPRESS)  # 兼容旧参数：现在默认就下载原文库
     sp.add_argument("--mirror", choices=["github", "gitee"], help="下载源；国内网络建议 gitee。失败时自动换另一个")
+    sp.add_argument("--force", action="store_true", help="忽略增量比对，强制重新下载全部数据")
 
     sp = add("search", cmd_search, "搜索在招岗位")
     sp.add_argument("--company")
