@@ -13,3 +13,7 @@ entries:
     status: official_page
     url: https://www.livzon.com.cn/Campus.html
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：丽珠医药-校园招聘）。入口页未写明批次/网申时间/城市，按红线留空。
+  cities:
+  - 上海
+  - 福州
+  - 珠海
