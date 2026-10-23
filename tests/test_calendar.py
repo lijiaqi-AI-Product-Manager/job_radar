@@ -309,7 +309,7 @@ def test_link_check_keeps_one_request_per_host(tmp_path, jobs, cal_db):
     client = httpx.Client(transport=httpx.MockTransport(handler))
     cal.check_links(cal_db, client, ts=T(21), sleep=time.sleep, min_interval=0.2)
     assert len(hits) >= 2
-    gaps = [b - a for a, b in zip(hits, hits[1:])]
+    gaps = [b - a for a, b in zip(hits, hits[1:], strict=False)]
     assert min(gaps) >= 0.18, gaps
 
 
