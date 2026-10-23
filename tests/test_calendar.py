@@ -357,3 +357,10 @@ def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
     assert {r["id"] for r in calendar_entries(cal_db, has_tracks=True, origin="manual")} == {"x-dir"}
     assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual")} == {"x-win"}
     assert len(calendar_entries(cal_db, origin="manual")) == 3
+
+def test_calendar_stats_exposes_both_coverage_definitions(built, jobs):
+    """stats 里「有日历条目」与「有日历或数据」是两种口径，都要给出来且不相等。"""
+    st = calendar_stats(built)
+    assert st["calendar_entries_covered"] == st["calendar_covered"]
+    assert st["jd_page_covered"] == st["jd_covered"]
+    assert st["covered_any"] >= st["calendar_covered"]

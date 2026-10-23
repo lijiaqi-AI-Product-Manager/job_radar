@@ -98,3 +98,14 @@
 | 职能 | 人力、财务审计、法务、采购供应链、行政 |
 | 金融 | 投研、银行柜员、保险 |
 | 医药 | 医药研发、临床医学、学术推广 |
+
+## `stats` 里几个容易混淆的键
+
+| 键 | 含义 |
+|---|---|
+| `calendar.calendar_covered` / `calendar_entries_covered` | **有日历条目**的目标公司数（490） |
+| `calendar.covered_any` | **有日历条目或有岗位数据**（494）——README 与发布自检用这个口径 |
+| `calendar.jd_covered` / `jd_page_covered` | 有**公开 JD 页/关联**的公司数（326），不是岗位比例 |
+| `calendar.entries` | 人工条目数 / 数据层自动条目数 |
+| `calendar.by_sector` | 按行业的 `targets` / `calendar_covered` / `jd_covered` |
+| `jobs.with_jd_text` | **岗位**里有 JD 正文的数量（与上面的「公司数」不是一个量纲） |
