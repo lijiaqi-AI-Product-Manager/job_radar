@@ -10,7 +10,6 @@
 """
 
 import argparse
-import json
 import sqlite3
 import sys
 from collections import Counter
