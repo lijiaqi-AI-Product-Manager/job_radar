@@ -56,13 +56,24 @@ jobs:
           gh release upload data-latest data/jobs.db data/jd_text.db data/jobs.db.gz data/jd_text.db.gz crawl-summary.json --clobber
 
       - name: Build recruiting calendar
-        # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活；失败不影响岗位数据发布
+        # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活。
+        # 失败不阻塞岗位数据发布，但**不再静默**：上传后校验 build 时间戳是不是今天，
+        # 不是就让这一步失败（2026-10-23 之前串行探活常年超时 + continue-on-error，
+        # 发布里的 calendar.db 停在旧版本好几轮都没人发现）。
         continue-on-error: true
         timeout-minutes: 30
         run: |
           uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db --check-links
           gzip -9 -k -f data/calendar.db
           gh release upload data-latest data/calendar.db data/calendar.db.gz --clobber
+          uv run python - <<'PY'
+          import sqlite3, sys, datetime
+          ts = sqlite3.connect("data/calendar.db").execute("SELECT MAX(ts) FROM build").fetchone()[0]
+          today = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d")
+          print(f"calendar build ts={ts} today={today}")
+          if not str(ts).startswith(today):
+              sys.exit(f"calendar.db 没有更新到今天（{ts}），发布里会继续是旧数据")
+          PY
 
       - name: Weekly archive snapshot
         run: |
