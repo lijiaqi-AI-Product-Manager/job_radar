@@ -3,12 +3,13 @@ entries:
 - id: ctsec-com-official-home-2026
   company: 财通证券
   project_type: 校招
-  apply_url: https://www.ctsec.com
+  apply_url: https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html
   source:
     type: official_site
-    name: 财通证券 官网
-    url: https://www.ctsec.com
+    name: 财通证券 招聘
+    url: https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html
   as_of: '2026-10-23'
   jd:
-    status: none
-  notes: 【仅官网首页】未找到独立招聘专页；招聘信息请从官网「人才招聘/加入我们」入口查看（已于 2026-10-22 访问确认 200）。
+    status: official_page
+    url: https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html
+  notes: 官方招聘入口（2026-10-23 复核升级：https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html）。入口页未写明批次/网申时间/城市，按红线留空。
