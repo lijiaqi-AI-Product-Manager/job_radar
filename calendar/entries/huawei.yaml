@@ -23,6 +23,7 @@ entries:
     - AI Infra工程师 应届生
     - AI应用工程师 应届生
     - AI模型工程师 应届生
+    - 硬件技术工程师 应届生
   - direction: 职能类
     roles:
     - 人力资源类
@@ -37,6 +38,8 @@ entries:
   - 西安
   - 苏州
   - 长沙
+  - 合肥
+  - 济南
 - id: huawei-2027-ai-intern
   company: 华为
   product: AI实习生专项计划
