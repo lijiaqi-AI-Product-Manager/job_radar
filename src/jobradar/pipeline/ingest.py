@@ -14,6 +14,7 @@ from jobradar.models import Job
 CLOSE_AFTER_MISSES = 3
 DROP_THRESHOLD = 0.5  # 比基线少了超过 50% 视为异常
 MIN_BASELINE = 10  # 基线小于此值不做骤降判断（小公司岗位数本来就波动）
+MAX_REJECTS = 3    # 连续被骤降保护拦下 N 次后放行一次（季节结束是真的会掉一半以上）
 
 # 参与"变更"判定的结构化字段。category/subcategory 是推导数据，不在其中（见 Job.content_hash）
 STRUCT_FIELDS = (
@@ -88,6 +89,13 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
     reason = None
     if baseline and not by_id and not allow_empty:
         reason = f"empty result but {baseline} jobs are open"
+    consecutive_rejects = conn.execute(
+        "SELECT COUNT(*) FROM (SELECT status FROM source_run WHERE source_id=? ORDER BY id DESC LIMIT ?) "
+        "WHERE status='rejected'", (source_id, MAX_REJECTS)).fetchone()[0]
+    if consecutive_rejects >= MAX_REJECTS:
+        # 连续多轮都是同样的骤降 → 大概率是季节结束/岗位真下架，不是抓取故障。
+        # 永远拦着会让源卡死（旧岗位不下架、新岗位进不来），所以放行这一轮并记事件。
+        reason = None
     elif baseline >= min_baseline and len(by_id) < baseline * (1 - drop_threshold):
         # 源设了 max_pages 限额时，历史基线可能来自「还没限额」的时候（如星巴克 18418 -> 3000）。
         # 这种情况用「限额能覆盖的最大条数」做基线，否则每次都会被骤降保护挡掉、旧岗位永远不下架。

@@ -165,3 +165,13 @@ def test_expected_max_absorbs_the_drop_caused_by_a_new_page_cap(jobs_db):
     assert ingest_run(jobs_db, "s1", capped, ts=T(2)).status == "rejected"          # 旧行为：拦
     res = ingest_run(jobs_db, "s1", capped, ts=T(3), expected_max=120)               # 限额生效：放行
     assert res.status == "ok"
+
+def test_drop_is_accepted_after_repeated_rejections(jobs_db):
+    """季节结束是真的会掉一半以上：连续拦 3 次后必须放行一次，否则源会永久卡死
+    （rejected 不执行下架，旧岗位永远挂着，新岗位也进不来）。"""
+    ingest_run(jobs_db, "s1", [make_job(i) for i in range(1, 201)], ts=T(1))
+    capped = [make_job(i) for i in range(1, 100)]
+    for day in (2, 3, 4):
+        assert ingest_run(jobs_db, "s1", capped, ts=T(day)).status == "rejected"
+    res = ingest_run(jobs_db, "s1", capped, ts=T(5))     # 第 4 次：连续 3 次被拦 → 放行
+    assert res.status == "ok"
