@@ -13,6 +13,7 @@
 | [PROGRESS-2026-10-23.md](PROGRESS-2026-10-23.md) | 2026-10-23 阶段验收（目标逐项对账 + 天花板证据） |
 | [HANDOVER.md](HANDOVER.md) | 交接说明 |
 | [PUBLISHING.md](PUBLISHING.md) | 发布到 PyPI（Trusted Publishing 配置与发版流程） |
+| [DATA-LICENSE.md](DATA-LICENSE.md) | 数据许可草案（三个方案与建议，待维护者确认） |
 | [recon/](recon/) | 各平台/公司的侦察结论（适配器的唯一输入） |
 | [../evals/](../evals/) | 评测集：查询改动是否变好的客观依据 |
 | [../CHANGELOG.md](../CHANGELOG.md) | 版本变更记录 |

@@ -89,6 +89,7 @@ $ jobradar update          # 全新环境实测 4 秒
 - 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步，大文件按 `.partNN` 分片并行上传（实测镜像同步 **2.6 分钟**，此前整文件要 2 小时），`jobradar update` 自动下载并合并（实测走 Gitee 全量 **80 秒**，失败回退 GitHub）
 - 下架判定：连续 3 次成功抓取中缺席；抓取失败**不会**导致岗位下架
 - 字段说明：[skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)
+- 数据许可：代码 MIT；岗位内容权利归原发布方，本库只做索引（草案与选项见 [docs/DATA-LICENSE.md](docs/DATA-LICENSE.md)）
 
 ## 覆盖与已知限制（诚实版）
 
