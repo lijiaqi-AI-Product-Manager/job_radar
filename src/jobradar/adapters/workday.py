@@ -66,10 +66,41 @@ def _facet_values(facets, parameter: str) -> list[dict]:
 
 
 def country_locations(facets, country: str) -> list[str]:
-    """`locations` 分面中属于该国家的 id（descriptor 形如 "China, Shanghai"）。"""
+    """属于该国家的 location 分面 id。
+
+    不同租户的分面名不一样：多数是 `locations`（descriptor 形如 "China, Shanghai"），
+    也有租户用 `locationMainGroup` 并把国家包在 children 里（如 Intel：`PRC, Shanghai`）。
+    """
     prefix = f"{country}, "
-    return [v["id"] for v in _facet_values(facets, "locations")
+    values = _facet_values(facets, "locations")
+    if not values:
+        values = _descendants_under(facets, "locationMainGroup")
+    return [v["id"] for v in values
             if isinstance(v.get("descriptor"), str) and v["descriptor"].startswith(prefix)]
+
+
+def _descendants_under(facets, parameter: str) -> list[dict]:
+    """取某个分面（如 locationMainGroup）下所有层的取值（含 children），用于分面结构不同的租户。"""
+    out: list[dict] = []
+
+    def walk(items):
+        for f in items or []:
+            if not isinstance(f, dict):
+                continue
+            if f.get("facetParameter") == parameter:
+                def collect(vs):
+                    for v in vs or []:
+                        if not isinstance(v, dict):
+                            continue
+                        if v.get("id"):
+                            out.append(v)
+                        collect(v.get("values"))
+                collect(f.get("values"))
+                return
+            walk(f.get("values"))
+
+    walk(facets)
+    return out
 
 
 def cities_of(location: str | None) -> list[str]:

@@ -19,3 +19,12 @@ sources:
       host: nvidia.wd5.myworkdayjobs.com
       tenant: nvidia
       site: NVIDIAExternalCareerSite
+
+  - id: workday-intel
+    company: 英特尔
+    params:
+      host: intel.wd1.myworkdayjobs.com
+      tenant: intel
+      site: External
+      country: PRC          # Intel 的 location 分面用 "PRC, Shanghai" 这种写法
+      max_pages: 3
