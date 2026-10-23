@@ -1,144 +1,272 @@
 [
  {
-  "id": "tencent-2027-xz",
-  "group": "腾讯",
-  "url": "https://join.qq.com/post.html",
-  "click": [
-   "职位列表"
-  ],
-  "scroll": 10
+  "id": "accenture-social-entry",
+  "group": "埃森哲",
+  "url": "https://www.accenture.com/cn-zh/careers",
+  "scroll": 8
  },
  {
-  "id": "baidu-2027-xz",
-  "group": "百度",
-  "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE",
-  "click": [],
-  "scroll": 10
+  "id": "airchina-social-entry",
+  "group": "中国国航",
+  "url": "https://zhaopin.airchina.com.cn/",
+  "scroll": 8
  },
  {
-  "id": "kuaishou-xz",
-  "group": "快手",
-  "url": "https://zhaopin.kuaishou.cn/recruit/campus/",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "jd-2027-xz",
-  "group": "京东",
-  "url": "https://campus.jd.com/#/jobs",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "alibaba-2027-xz",
+  "id": "alibaba-astar-2027",
   "group": "阿里巴巴",
-  "url": "https://talent.alibaba.com/campus/position",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "netease-2027-xz",
-  "group": "网易",
-  "url": "https://hr.163.com/campus.html",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "xiaohongshu-2027-xz",
-  "group": "小红书",
-  "url": "https://job.xiaohongshu.com/campus",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "vip-2027-xz",
-  "group": "唯品会",
-  "url": "https://job.vip.com/campus",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "sohu-2027-xz",
-  "group": "搜狐",
-  "url": "https://hr.sohu.com/campus",
-  "click": [],
+  "url": "https://campus-talent.alibaba.com/campus/position",
   "scroll": 8
  },
  {
-  "id": "zhihu-2027-xz",
-  "group": "知乎",
-  "url": "https://jobs.zhihu.com/campus",
-  "click": [],
+  "id": "amazon-social-entry",
+  "group": "亚马逊",
+  "url": "https://www.amazon.jobs/en/",
   "scroll": 8
  },
  {
-  "id": "xiaomi-2027-xz",
-  "group": "小米",
-  "url": "https://xiaomi.jobs.f.mioffice.cn/campus/",
-  "click": [],
-  "scroll": 10
- },
- {
-  "id": "qianxin-2027-xz",
-  "group": "奇安信",
-  "url": "https://campus.qianxin.com/campus/graduates/positions",
-  "click": [],
+  "id": "antgroup-social-entry",
+  "group": "蚂蚁集团",
+  "url": "https://talent.antgroup.com/",
   "scroll": 8
  },
  {
-  "id": "sangfor-2027-xz",
-  "group": "深信服",
-  "url": "https://hr.sangfor.com/campus",
-  "click": [],
+  "id": "apple-social-entry",
+  "group": "苹果",
+  "url": "https://www.apple.com/careers/cn/",
   "scroll": 8
  },
  {
-  "id": "iflytek-2027-xz",
-  "group": "科大讯飞",
-  "url": "https://campus.iflytek.com/",
-  "click": [],
+  "id": "bcg-social-entry",
+  "group": "波士顿咨询",
+  "url": "https://careers.bcg.com/global/en",
   "scroll": 8
  },
  {
-  "id": "zte-2027-xz",
-  "group": "中兴通讯",
-  "url": "https://job.zte.com.cn/campus",
-  "click": [],
+  "id": "beigene-social-entry",
+  "group": "百济神州",
+  "url": "https://beonemedicines.com/careers/",
   "scroll": 8
  },
  {
-  "id": "lenovo-2027-xz",
-  "group": "联想",
-  "url": "https://talent.lenovo.com.cn/",
-  "click": [],
+  "id": "bmw-social-entry",
+  "group": "宝马",
+  "url": "https://www.bmwgroup.jobs/en.html",
   "scroll": 8
  },
  {
-  "id": "ctrip-2027-xz",
-  "group": "携程",
-  "url": "https://careers.ctrip.com/campus",
-  "click": [],
+  "id": "bosch-social-entry",
+  "group": "博世",
+  "url": "https://www.bosch.com/careers/",
   "scroll": 8
  },
  {
-  "id": "didi-2027-xz",
-  "group": "滴滴",
-  "url": "https://jobs.didiglobal.com/campus",
-  "click": [],
+  "id": "byd-social-entry",
+  "group": "比亚迪",
+  "url": "https://job.byd.com/",
   "scroll": 8
  },
  {
-  "id": "bilibili-2027-qz",
-  "group": "哔哩哔哩",
-  "url": "https://jobs.bilibili.com/campus",
-  "click": [],
+  "id": "bytedance-seed-2027-xz",
+  "group": "字节跳动",
+  "url": "https://jobs.bytedance.com/campus",
   "scroll": 8
  },
  {
-  "id": "mihoyo-2027-qz",
-  "group": "米哈游",
-  "url": "https://jobs.mihoyo.com/campus",
-  "click": [],
+  "id": "bytedance-daily-intern",
+  "group": "字节跳动",
+  "url": "https://jobs.bytedance.com/campus/position",
+  "scroll": 8
+ },
+ {
+  "id": "catl-social-entry",
+  "group": "宁德时代",
+  "url": "https://talent.catl.com/social-recruitment/catlhr/96144/",
+  "scroll": 8
+ },
+ {
+  "id": "ccccltd-campus-entry",
+  "group": "中国交建",
+  "url": "https://zhaopin.ccccltd.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "ceair-social-entry",
+  "group": "东方航空",
+  "url": "https://job.ceair.com/",
+  "scroll": 8
+ },
+ {
+  "id": "cgn-social-entry",
+  "group": "中广核",
+  "url": "http://job.cgnpc.com.cn/clients/home",
+  "scroll": 8
+ },
+ {
+  "id": "chinamobile-social-entry",
+  "group": "中国移动",
+  "url": "https://job.10086.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "chinatelecom-social-entry",
+  "group": "中国电信",
+  "url": "https://job.chinatelecom.com.cn/wt/TELE/web/index#/",
+  "scroll": 8
+ },
+ {
+  "id": "chng-campus-entry",
+  "group": "中国华能",
+  "url": "https://zhaopin.chng.com.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "cisco-social-entry",
+  "group": "思科",
+  "url": "https://careers.cisco.com/global/en",
+  "scroll": 8
+ },
+ {
+  "id": "citic-social-entry",
+  "group": "中信集团",
+  "url": "https://job.citic.com/recruit",
+  "scroll": 8
+ },
+ {
+  "id": "continental-social-entry",
+  "group": "大陆集团",
+  "url": "https://www.continental.com/en/career/",
+  "scroll": 8
+ },
+ {
+  "id": "csair-social-entry",
+  "group": "南方航空",
+  "url": "https://job.csair.com/",
+  "scroll": 8
+ },
+ {
+  "id": "csg-campus-entry",
+  "group": "南方电网",
+  "url": "https://zhaopin.csg.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "ctsec-com-official-home-2026",
+  "group": "财通证券",
+  "url": "https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/index.html",
+  "scroll": 8
+ },
+ {
+  "id": "dahua-campus-entry",
+  "group": "大华股份",
+  "url": "https://job.dahuatech.com/#/page",
+  "scroll": 8
+ },
+ {
+  "id": "deloitte-social-entry",
+  "group": "德勤",
+  "url": "https://www.deloitte.com/cn/zh/cn-careers.html",
+  "scroll": 8
+ },
+ {
+  "id": "dfmc-campus-entry",
+  "group": "东风汽车",
+  "url": "https://www.dfmc.com.cn/zhaopin/rencaizhaopin.html",
+  "scroll": 8
+ },
+ {
+  "id": "dfzq-campus-entry",
+  "group": "东方证券",
+  "url": "https://app.mokahr.com/campus_apply/dfzq/116289",
+  "scroll": 8
+ },
+ {
+  "id": "eastchinapharm-campus-entry",
+  "group": "华东医药",
+  "url": "https://www.huadongmedicine.com/careers/",
+  "scroll": 8
+ },
+ {
+  "id": "eastmoney-campus-entry",
+  "group": "东方财富",
+  "url": "https://zhaopin.eastmoney.com/social-recruitment/eastmoney/57970/",
+  "scroll": 8
+ },
+ {
+  "id": "essence-com-cn-official-home-2026",
+  "group": "国投证券",
+  "url": "https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html#/",
+  "scroll": 8
+ },
+ {
+  "id": "eve-campus-entry",
+  "group": "亿纬锂能",
+  "url": "https://www.evebattery.com/join-us",
+  "scroll": 8
+ },
+ {
+  "id": "eximbank-gov-cn-campus-entry",
+  "group": "进出口银行",
+  "url": "http://www.eximbank.gov.cn/info/notice/recruit/",
+  "scroll": 8
+ },
+ {
+  "id": "ey-campus-entry",
+  "group": "安永",
+  "url": "https://www.ey.com/zh_cn/careers",
+  "scroll": 8
+ },
+ {
+  "id": "fourier-campus-entry",
+  "group": "傅利叶智能",
+  "url": "https://www.fftai.com/careers",
+  "scroll": 8
+ },
+ {
+  "id": "gac-campus-entry",
+  "group": "广汽集团",
+  "url": "https://career.gac-international.com/apply/gac-international/100006013/",
+  "scroll": 8
+ },
+ {
+  "id": "galbot-campus-entry",
+  "group": "银河通用",
+  "url": "https://www.galbot.com/careers",
+  "scroll": 8
+ },
+ {
+  "id": "gaotu-campus-entry",
+  "group": "高途",
+  "url": "https://app.mokahr.com/campus-recruitment/bjhl/102145",
+  "scroll": 8
+ },
+ {
+  "id": "geely-campus-entry",
+  "group": "吉利",
+  "url": "https://app.mokahr.com/campus-recruitment/geely/78436",
+  "scroll": 8
+ },
+ {
+  "id": "gffunds-campus-entry",
+  "group": "广发基金",
+  "url": "https://gffunds.jobs.feishu.cn/index",
+  "scroll": 8
+ },
+ {
+  "id": "gigadevice-campus-entry",
+  "group": "兆易创新",
+  "url": "https://app.mokahr.com/campus-recruitment/gigadevice/92215",
+  "scroll": 8
+ },
+ {
+  "id": "goertek-campus-entry",
+  "group": "歌尔股份",
+  "url": "https://goertek.hotjob.cn/",
+  "scroll": 8
+ },
+ {
+  "id": "guming-campus-entry",
+  "group": "古茗",
+  "url": "https://app.mokahr.com/campus_apply/guming/39377",
   "scroll": 8
  }
 ]
