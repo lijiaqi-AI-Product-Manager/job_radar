@@ -1,66 +1,198 @@
 [
  {
-  "id": "jd-young-intern",
-  "group": "京东",
-  "url": "https://campus.jd.com/",
+  "id": "amec-campus-entry",
+  "group": "中微公司",
+  "url": "https://app.mokahr.com/campus_apply/amec/4362",
   "scroll": 10
  },
  {
-  "id": "midea-daily-intern",
-  "group": "美的",
-  "url": "https://careers.midea.com/schoolOut",
+  "id": "cambricon-campus-entry",
+  "group": "寒武纪",
+  "url": "https://app.mokahr.com/campus_apply/cambricon/44201",
   "scroll": 10
  },
  {
-  "id": "sinopec-social-entry",
-  "group": "中国石化",
-  "url": "https://job.sinopec.com/",
+  "id": "cpic-campus-entry",
+  "group": "中国太保",
+  "url": "https://app.mokahr.com/campus-recruitment/cpicproperty/150956",
   "scroll": 10
  },
  {
-  "id": "tal-social-entry",
-  "group": "好未来",
-  "url": "https://job.tal.com/",
+  "id": "crland-campus-entry",
+  "group": "华润置地",
+  "url": "https://app.mokahr.com/campus-recruitment/crland/168540?locale=zh-CN#/",
   "scroll": 10
  },
  {
-  "id": "unilever-social-entry",
-  "group": "联合利华",
-  "url": "https://careers.unilever.com/en",
+  "id": "dfzq-campus-entry",
+  "group": "东方证券",
+  "url": "https://app.mokahr.com/campus_apply/dfzq/116289",
   "scroll": 10
  },
  {
-  "id": "unitedimaging-social-entry",
-  "group": "联影医疗",
-  "url": "https://www.united-imaging.com/careers",
+  "id": "gaotu-campus-entry",
+  "group": "高途",
+  "url": "https://app.mokahr.com/campus-recruitment/bjhl/102145",
   "scroll": 10
  },
  {
-  "id": "weride-social-entry",
-  "group": "文远知行",
-  "url": "https://www.weride.ai/careers",
+  "id": "geely-campus-entry",
+  "group": "吉利",
+  "url": "https://app.mokahr.com/campus-recruitment/geely/78436",
   "scroll": 10
  },
  {
-  "id": "xhs-ace-intern",
-  "group": "小红书",
-  "url": "https://campus.xiaohongshu.com",
+  "id": "gffunds-campus-entry",
+  "group": "广发基金",
+  "url": "https://gffunds.jobs.feishu.cn/index",
   "scroll": 10
  },
  {
-  "id": "yuanfudao-social-entry",
-  "group": "猿辅导",
-  "url": "https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/",
+  "id": "gigadevice-campus-entry",
+  "group": "兆易创新",
+  "url": "https://app.mokahr.com/campus-recruitment/gigadevice/92215",
   "scroll": 10
  },
  {
-  "id": "zf-social-entry",
-  "group": "采埃孚",
-  "url": "https://www.zf.com/mobile/en/careers/careers.html",
+  "id": "guming-campus-entry",
+  "group": "古茗",
+  "url": "https://app.mokahr.com/campus_apply/guming/39377",
   "scroll": 10
  },
  {
-  "id": "zhihu-social-entry",
+  "id": "hengrui-campus-entry",
+  "group": "恒瑞医药",
+  "url": "https://app.mokahr.com/m/campus-recruitment/hengrui/145997",
+  "scroll": 10
+ },
+ {
+  "id": "home-58com-campus-entry",
+  "group": "58同城",
+  "url": "https://app.mokahr.com/campus_apply/58/150953",
+  "scroll": 10
+ },
+ {
+  "id": "huahong-campus-entry",
+  "group": "华虹集团",
+  "url": "https://app.mokahr.com/campus-recruitment/huahong/74036",
+  "scroll": 10
+ },
+ {
+  "id": "jinko-campus-entry",
+  "group": "晶科能源",
+  "url": "https://app.mokahr.com/campus-recruitment/jinkosolar/41896",
+  "scroll": 10
+ },
+ {
+  "id": "jsfund-campus-entry",
+  "group": "嘉实基金",
+  "url": "https://app.mokahr.com/m/campus_apply/jsfund/43906",
+  "scroll": 10
+ },
+ {
+  "id": "kingdee-campus-entry",
+  "group": "金蝶",
+  "url": "https://app.mokahr.com/campus-recruitment/kingdeehr/166565",
+  "scroll": 10
+ },
+ {
+  "id": "luckin-social-entry",
+  "group": "瑞幸咖啡",
+  "url": "https://app.mokahr.com/apply/lkcoffee/45256",
+  "scroll": 10
+ },
+ {
+  "id": "megvii-campus-entry",
+  "group": "旷视科技",
+  "url": "https://app.mokahr.com/campus_apply/megviihr/38642",
+  "scroll": 10
+ },
+ {
+  "id": "muyuan-early-entry",
+  "group": "牧原",
+  "url": "https://app.mokahr.com/campus-recruitment/muyuan/74358",
+  "scroll": 10
+ },
+ {
+  "id": "nio-2027-zsp",
+  "group": "蔚来",
+  "url": "https://nio.jobs.feishu.cn/campus",
+  "scroll": 10
+ },
+ {
+  "id": "nongfu-campus-entry",
+  "group": "农夫山泉",
+  "url": "https://app.mokahr.com/campus-recruitment/yst/68367",
+  "scroll": 10
+ },
+ {
+  "id": "seazen-social-entry",
+  "group": "新城控股",
+  "url": "https://app.mokahr.com/social-recruitment/seazen/168435?locale=zh-CN#/",
+  "scroll": 10
+ },
+ {
+  "id": "sina-campus-entry",
+  "group": "新浪",
+  "url": "http://app.mokahr.com/campus-recruitment/sina/43536",
+  "scroll": 10
+ },
+ {
+  "id": "sungrow-campus-entry",
+  "group": "阳光电源",
+  "url": "https://app.mokahr.com/m/campus-recruitment/sungrow/94416",
+  "scroll": 10
+ },
+ {
+  "id": "swhysc-campus-entry",
+  "group": "申万宏源",
+  "url": "https://app.mokahr.com/m/campus-recruitment/swhysc-job/140752",
+  "scroll": 10
+ },
+ {
+  "id": "vanke-campus-entry",
+  "group": "万科",
+  "url": "https://app.mokahr.com/campus_apply/vanke/37550",
+  "scroll": 10
+ },
+ {
+  "id": "vip-campus-entry",
+  "group": "唯品会",
+  "url": "https://app-tc.mokahr.com/social-recruitment/vipshophr/10038",
+  "scroll": 10
+ },
+ {
+  "id": "vw-campus-entry",
+  "group": "大众",
+  "url": "https://app.mokahr.com/campus-recruitment/vwa/168597",
+  "scroll": 10
+ },
+ {
+  "id": "wens-campus-entry",
+  "group": "温氏",
+  "url": "https://app.mokahr.com/campus-recruitment/wens/92366",
+  "scroll": 10
+ },
+ {
+  "id": "xiaopeng-campus-entry",
+  "group": "小鹏汽车",
+  "url": "https://xiaopeng.jobs.feishu.cn/campus",
+  "scroll": 10
+ },
+ {
+  "id": "xtep-campus-entry",
+  "group": "特步",
+  "url": "https://app.mokahr.com/campus-recruitment/xtep/148871",
+  "scroll": 10
+ },
+ {
+  "id": "yuanqi-campus-entry",
+  "group": "元气森林",
+  "url": "https://app.mokahr.com/campus-recruitment/yqrecruit/43258",
+  "scroll": 10
+ },
+ {
+  "id": "zhihu-campus-entry",
   "group": "知乎",
   "url": "https://app.mokahr.com/apply/zhihu/78336",
   "scroll": 10
@@ -75,18 +207,6 @@
   "id": "ziroom-campus-entry",
   "group": "自如",
   "url": "https://app.mokahr.com/campus-recruitment/ziroomhr/37294",
-  "scroll": 10
- },
- {
-  "id": "zoomlion-campus-entry",
-  "group": "中联重科",
-  "url": "https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/social.html",
-  "scroll": 10
- },
- {
-  "id": "zuoyebang-campus-entry",
-  "group": "作业帮",
-  "url": "https://job.zuoyebang.com/social-recruitment/zuoyebang/41328/",
   "scroll": 10
  }
 ]
