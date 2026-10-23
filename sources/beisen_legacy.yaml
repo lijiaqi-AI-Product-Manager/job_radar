@@ -34,3 +34,7 @@ sources:
     company: 汇顶科技
     recruit_types: [social]
     params: {tenant: goodix, portal: social, recruit_type: social}
+  - id: beisen-legacy-nci
+    company: 新华保险
+    recruit_types: [campus]
+    params: {tenant: nci, portal: campus, max_pages: 30, page_size: 10}
