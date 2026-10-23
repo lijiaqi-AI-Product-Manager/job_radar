@@ -7,7 +7,12 @@ import pytest
 import yaml
 
 from helpers import T, make_job
-from jobradar.core.queries import calendar_entries, calendar_stats, dead_links
+from jobradar.core.queries import (
+    calendar_blocked_reason,
+    calendar_entries,
+    calendar_stats,
+    dead_links,
+)
 from jobradar.models import Compliance, SourceConfig
 from jobradar.pipeline import calendar as cal
 from jobradar.pipeline.ingest import ingest_run
@@ -331,3 +336,10 @@ def test_link_check_stops_retrying_unreachable_host(tmp_path, jobs, cal_db):
     assert calls["n"] == 1           # 只对第一条发起过真实请求
     rows = dead_links(cal_db, include_errors=True)
     assert len(rows) == 3 and all(r["status"] == "error" for r in rows)
+
+def test_calendar_blocked_reason_for_targets_without_entries(tmp_path, jobs, cal_db):
+    """没有条目的 blocked 目标（BOSS直聘/微博…）要能说出"为什么没有"，而不是返回空列表就完了。"""
+    d = write_entries(tmp_path, "腾讯", [manual(id="t-1", company="腾讯", grad_year=2027)])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    assert "滑块" in calendar_blocked_reason(cal_db, "字节跳动")
+    assert calendar_blocked_reason(cal_db, "腾讯") is None
