@@ -86,7 +86,7 @@ $ jobradar update          # 全新环境实测 4 秒
 | `calendar.db.gz` | 300 KB | 招聘日历（500 家目标公司） |
 | `crawl-summary.json` | 32 KB | 每个源的状态、新增/下架数 |
 
-- 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步（大文件按 `.partNN` 分片上传，`jobradar update` 会自动下载并合并；实测走 Gitee 拉全量 3 分钟，失败自动回退 GitHub）
+- 每日 UTC 22:19 采集，采集完成后自动发布新 Release；**Gitee 镜像**同日同步，大文件按 `.partNN` 分片并行上传（实测镜像同步 **2.6 分钟**，此前整文件要 2 小时），`jobradar update` 自动下载并合并（实测走 Gitee 全量 **80 秒**，失败回退 GitHub）
 - 下架判定：连续 3 次成功抓取中缺席；抓取失败**不会**导致岗位下架
 - 字段说明：[skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)
 
