@@ -13,3 +13,26 @@ entries:
     status: official_page
     url: https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html#/
   notes: 官方招聘入口（2026-10-23 复核升级：https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html#/）。入口页未写明批次/网申时间/城市，按红线留空。
+    【届次来自该公司岗位数据：16/16 为 2027 届】 【方向来自该公司岗位数据（85 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 金融
+    roles:
+    - 投研
+    - 销售
+    - 芯片/硬件
+  - direction: 市场销售
+    roles:
+    - 投研
+    - 销售
+    - 芯片/硬件
+  - direction: 技术
+    roles:
+    - 投研
+    - 销售
+    - 芯片/硬件
+  - direction: 产品
+    roles:
+    - 投研
+    - 销售
+    - 芯片/硬件

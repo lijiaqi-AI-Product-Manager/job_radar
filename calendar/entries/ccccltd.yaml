@@ -12,7 +12,30 @@ entries:
   jd:
     status: official_page
     url: https://zhaopin.ccccltd.cn/
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中国交建招聘平台）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中国交建招聘平台）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：948/952
+    为 2027 届】 【方向来自该公司岗位数据（959 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 职能
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 工程制造
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 技术
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 市场销售
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
 - id: ccccltd-social-entry
   company: 中国交建
   project_type: 社招
@@ -25,4 +48,27 @@ entries:
   jd:
     status: official_page
     url: https://zhaopin.ccccltd.cn/
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中国交建招聘平台）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：中国交建招聘平台）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：948/952
+    为 2027 届】 【方向来自该公司岗位数据（959 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 职能
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 工程制造
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 技术
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售
+  - direction: 市场销售
+    roles:
+    - 财务审计
+    - 机械/电气
+    - 销售

@@ -43,6 +43,11 @@ entries:
     url: https://jobs.bytedance.com/campus
   notes: 官网原文「Seed 大模型人才校招 2027 届正式启动」（2026-10-21 抓取核对）。毕业时间要求 2026 年 9 月至 2027 年
     8 月（依据搜索引擎索引）。
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 香港
 - id: bytedance-seed-2027-intern
   company: 字节跳动
   product: Seed（大模型）
@@ -155,3 +160,44 @@ entries:
     url: https://jobs.bytedance.com/campus/position
   notes: 官网职位页招聘项目「日常实习」：「面向全体在校生，为符合岗位要求的同学提供为期3个月及以上的项目实践机会」。（2026-10-21 浏览器渲染官网页面核对原文）
   grad_year: 2027
+  tracks:
+  - direction: 产品类
+    roles:
+    - 产品运营
+    - 产品经理
+    - OpenViking产品实习生 - Data AML
+  - direction: 运营类
+    roles:
+    - 商业运营
+    - 用户运营
+    - 内容运营
+    - 销售运营
+    - 游戏运营
+    - 频道运营
+  - direction: 设计类
+    roles:
+    - 游戏美术
+    - 营销策划
+    - 游戏策划
+    - 游戏系统策划
+    - 游戏数值策划
+    - 游戏音频策划
+  - direction: 销售类
+    roles:
+    - 销售支持
+  - direction: 技术类
+    roles:
+    - AI应用研发工程师 - IT
+    - 大语言模型后训练算法实习生 - 国际化广告创意与品牌
+    - 算法实习生 - 安全与风控
+    - AI应用开发（AI剪辑）实习生 - 剪映CapCut
+    - 多模态算法工程师 - TikTok内容安全算法
+    - 大数据引擎SRE工程师 - 数据平台
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 深圳
+  - 杭州
+  - 成都
+  - 西安

@@ -12,7 +12,29 @@ entries:
   jd:
     status: official_page
     url: https://www.united-imaging.com/careers
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。 【方向来自该公司岗位数据（139
+    个在招岗位的职类分布）】
+  tracks:
+  - direction: 技术
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 工程制造
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 管培
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 职能
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
 - id: unitedimaging-social-entry
   company: 联影医疗
   project_type: 社招
@@ -25,4 +47,26 @@ entries:
   jd:
     status: official_page
     url: https://www.united-imaging.com/careers
-  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-22 访问确认 200；页面：联影医疗招聘）。入口页未写明批次/网申时间/城市，按红线留空。 【方向来自该公司岗位数据（139
+    个在招岗位的职类分布）】
+  tracks:
+  - direction: 技术
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 工程制造
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 管培
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件
+  - direction: 职能
+    roles:
+    - 算法
+    - 软件开发
+    - 芯片/硬件

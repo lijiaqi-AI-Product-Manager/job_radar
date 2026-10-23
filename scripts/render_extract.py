@@ -77,7 +77,7 @@ def collect_doc_links(page) -> list[dict]:
             continue
         if not href.startswith("http") or not (2 <= len(txt) <= 40):
             continue
-        if DOC_KW.search(txt) and href not in {d["url"] for d in out}:
+        if ("mp.weixin.qq.com" in href or DOC_KW.search(txt)) and href not in {d["url"] for d in out}:
             out.append({"text": txt, "url": href})
         if len(out) >= 20:
             break

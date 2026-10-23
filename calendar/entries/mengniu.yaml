@@ -12,4 +12,21 @@ entries:
   jd:
     status: official_page
     url: https://www.mengniu.com.cn/join.html
-  notes: 蒙牛官网「加入我们」页（2026-10-22 访问确认 200；页面：加入我们_蒙牛官网）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 蒙牛官网「加入我们」页（2026-10-22 访问确认 200；页面：加入我们_蒙牛官网）。入口页未写明批次/网申时间/城市，按红线留空。 【方向来自该公司岗位数据（77
+    个在招岗位的职类分布）】
+  tracks:
+  - direction: 职能
+    roles:
+    - 市场
+    - 采购供应链
+    - 销售
+  - direction: 市场销售
+    roles:
+    - 市场
+    - 采购供应链
+    - 销售
+  - direction: 运营
+    roles:
+    - 市场
+    - 采购供应链
+    - 销售

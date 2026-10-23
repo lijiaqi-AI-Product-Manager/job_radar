@@ -12,4 +12,27 @@ entries:
   jd:
     status: official_page
     url: https://yiling.zhiye.com/campus/jobs
-  notes: 官方招聘入口（2026-10-23 复核升级：以岭药业）。入口页未写明批次/网申时间/城市，按红线留空。
+  notes: 官方招聘入口（2026-10-23 复核升级：以岭药业）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：10/10 为
+    2027 届】 【方向来自该公司岗位数据（76 个在招岗位的职类分布）】
+  grad_year: 2027
+  tracks:
+  - direction: 医药
+    roles:
+    - 学术推广
+    - 销售
+    - 质量
+  - direction: 市场销售
+    roles:
+    - 学术推广
+    - 销售
+    - 质量
+  - direction: 工程制造
+    roles:
+    - 学术推广
+    - 销售
+    - 质量
+  - direction: 产品
+    roles:
+    - 学术推广
+    - 销售
+    - 质量

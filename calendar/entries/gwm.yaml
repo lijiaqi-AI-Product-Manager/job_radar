@@ -13,3 +13,26 @@ entries:
     status: official_page
     url: https://zhaopin.gwm.cn/
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面标题：长城汽车招聘门户（hotjob））。入口页未写明批次/网申时间/城市，按红线留空，以官网为准。
+    【届次来自该公司岗位数据：8/9 为 2026 届】 【方向来自该公司岗位数据（500 个在招岗位的职类分布）】
+  grad_year: 2026
+  tracks:
+  - direction: 工程制造
+    roles:
+    - 汽车工程
+    - 采购供应链
+    - 生产
+  - direction: 职能
+    roles:
+    - 汽车工程
+    - 采购供应链
+    - 生产
+  - direction: 市场销售
+    roles:
+    - 汽车工程
+    - 采购供应链
+    - 生产
+  - direction: 技术
+    roles:
+    - 汽车工程
+    - 采购供应链
+    - 生产
