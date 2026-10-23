@@ -13,7 +13,7 @@ entries:
     status: official_page
     url: https://yili.hotjob.cn/
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：伊利招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：393/396
-    为 2027 届】 【方向来自该公司岗位数据（403 个在招岗位的职类分布）】
+    为 2027 届】 【方向来自该公司岗位数据（403 个在招岗位的职类分布）】 【城市来自该公司 JD 明写的工作地点（5 处提及）】
   grad_year: 2027
   tracks:
   - direction: 管培
@@ -36,6 +36,8 @@ entries:
     - 管培生
     - 销售
     - 生产
+  cities:
+  - 成都
 - id: yili-social-entry
   company: 伊利
   project_type: 社招
@@ -49,7 +51,7 @@ entries:
     status: official_page
     url: https://yili.hotjob.cn/
   notes: 官方招聘入口（2026-10-22 访问确认 200；页面：伊利招聘官网）。入口页未写明批次/网申时间/城市，按红线留空。 【届次来自该公司岗位数据：393/396
-    为 2027 届】 【方向来自该公司岗位数据（403 个在招岗位的职类分布）】
+    为 2027 届】 【方向来自该公司岗位数据（403 个在招岗位的职类分布）】 【城市来自该公司 JD 明写的工作地点（5 处提及）】
   grad_year: 2027
   tracks:
   - direction: 管培
@@ -72,3 +74,5 @@ entries:
     - 管培生
     - 销售
     - 生产
+  cities:
+  - 成都
