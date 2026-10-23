@@ -59,6 +59,31 @@ def _walk_jobs(obj, out: list[str], depth: int = 0) -> None:
             _walk_jobs(v, out, depth + 1)
 
 
+DOC_KW = re.compile(r"(公告|简章|通知|招聘信息|时间安排|网申|报名)")
+
+
+def collect_doc_links(page) -> list[dict]:
+    """收集页面上的「招聘公告/简章」链接——网申时间多半写在这些子页面里。"""
+    out: list[dict] = []
+    try:
+        anchors = page.query_selector_all("a")
+    except Exception:
+        return out
+    for a in anchors[:2000]:
+        try:
+            txt = re.sub(r"\s+", " ", (a.inner_text() or "")).strip()
+            href = a.get_attribute("href") or ""
+        except Exception:
+            continue
+        if not href.startswith("http") or not (2 <= len(txt) <= 40):
+            continue
+        if DOC_KW.search(txt) and href not in {d["url"] for d in out}:
+            out.append({"text": txt, "url": href})
+        if len(out) >= 20:
+            break
+    return out
+
+
 def extract_dom(page) -> dict:
     text = page.inner_text("body")[:250_000]
     out: dict = {}
@@ -130,6 +155,9 @@ def main() -> int:
                 interact(page, item)
                 page.wait_for_timeout(1500)
                 data = extract_dom(page)
+                docs = collect_doc_links(page)
+                if docs:
+                    data["doc_links"] = docs
                 if xhr_jobs:
                     data["xhr_jobs"] = xhr_jobs[:120]
                 data.update({"group": item.get("group"), "url": url, "title": page.title()[:60]})
