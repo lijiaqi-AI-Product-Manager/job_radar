@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - calendar/enrich-targets.json
+      - calendar/wechat-urls.json
 
 jobs:
   render:
@@ -20,8 +21,12 @@ jobs:
       - run: pip install playwright && python -m playwright install --with-deps chromium
       - name: Render and extract
         run: python scripts/render_extract.py --file calendar/enrich-targets.json --out enrich-open.json
+      - name: Parse official WeChat articles
+        run: python scripts/wechat_parse.py --file calendar/wechat-urls.json --out wechat-parsed.json || true
       - uses: actions/upload-artifact@v4
         with:
           name: enrich-open
-          path: enrich-open.json
+          path: |
+            enrich-open.json
+            wechat-parsed.json
           if-no-files-found: error
