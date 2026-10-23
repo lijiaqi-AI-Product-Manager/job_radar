@@ -65,18 +65,21 @@ def _facet_values(facets, parameter: str) -> list[dict]:
     return out
 
 
-def country_locations(facets, country: str) -> list[str]:
+def country_locations(facets, country: str, facet: str = "locations", prefix_match: bool = True) -> list[str]:
     """属于该国家的 location 分面 id。
 
     不同租户的分面名不一样：多数是 `locations`（descriptor 形如 "China, Shanghai"），
     也有租户用 `locationMainGroup` 并把国家包在 children 里（如 Intel：`PRC, Shanghai`）。
     """
     prefix = f"{country}, "
-    values = _facet_values(facets, "locations")
-    if not values:
+    values = _facet_values(facets, facet)
+    if not values and facet == "locations":
         values = _descendants_under(facets, "locationMainGroup")
-    return [v["id"] for v in values
-            if isinstance(v.get("descriptor"), str) and v["descriptor"].startswith(prefix)]
+    if prefix_match:
+        ok = lambda d: isinstance(d, str) and d.startswith(prefix)          # noqa: E731
+    else:
+        ok = lambda d: isinstance(d, str) and d.strip() == country          # noqa: E731
+    return [v["id"] for v in values if ok(v.get("descriptor"))]
 
 
 def _descendants_under(facets, parameter: str) -> list[dict]:
@@ -107,7 +110,7 @@ def cities_of(location: str | None) -> list[str]:
     if not location:
         return []
     out = []
-    for part in location.split(","):
+    for part in re.split(r"\s+-\s+|,", location):
         name = city_from_english(part)
         if name and name not in out:
             out.append(name)
@@ -139,10 +142,12 @@ class WorkdayAdapter(Adapter):
         # 1) 先拿一次 facets，确定该国家的分面 id
         probe = self.request_json("POST", self._base(),
                                   json={"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": ""})
-        ids = country_locations(probe.get("facets"), country)
+        facet = p.get("location_facet") or "locations"
+        exact = bool(p.get("country_exact"))
+        ids = country_locations(probe.get("facets"), country, facet=facet, prefix_match=not exact)
         if not ids:
             raise RuntimeError(f"workday {p['tenant']}: 找不到 {country} 的 location 分面，不抓全球岗位")
-        applied = {"locations": ids}
+        applied = {facet if exact else "locations": ids}
         offset, page, total = 0, 0, None
         while True:
             data = self.request_json("POST", self._base(), json={
