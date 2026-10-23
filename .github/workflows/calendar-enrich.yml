@@ -1,0 +1,27 @@
+name: calendar-enrich
+# 用 Playwright 渲染招聘页，抽取日历需要的字段（方向/岗位、城市、届次、项目类型）。
+# 适用场景：公开 JD 被滑块/签名挡住，但网页上岗位列表公开可见（很多大厂都是这样）。
+# 只读公开页面，不登录、不破解验证码；结果作为 artifact 供人工复核后写回日历。
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - calendar/enrich-targets.json
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - name: Render and extract
+        run: python scripts/render_extract.py --file calendar/enrich-targets.json --out enrich-open.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: enrich-open
+          path: enrich-open.json
+          if-no-files-found: error
