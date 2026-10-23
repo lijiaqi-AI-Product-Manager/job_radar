@@ -234,6 +234,7 @@ sources:
   - {id: beisen-cast, company: 航天五院遥感部, params: {tenant: cast}}     # 2026-10-23 新增：9 岗（航天科技集团五院）
   - {id: beisen-hellobike, company: 哈啰, params: {tenant: hellobike}}      # 2026-10-23 新增：423 岗
   - {id: beisen-ke, company: 贝壳, params: {tenant: ke}}                    # 2026-10-23 新增：56 岗（校招官网）
+  - {id: beisen-united-imaging, company: 联影医疗, params: {tenant: united-imaging}}  # 2026-10-23 新增：763 岗
   - {id: beisen-genomics, company: 华大集团, params: {tenant: genomics}}
   - {id: beisen-renfu, company: 人福医药, params: {tenant: renfu}}
   - {id: beisen-sph, company: 上海医药, params: {tenant: sph}}
