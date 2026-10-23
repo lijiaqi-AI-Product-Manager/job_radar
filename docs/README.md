@@ -11,6 +11,7 @@
 | [CALENDAR.md](CALENDAR.md) | 招聘日历入口分级（A/B/C 三档）与来源规则 |
 | [PROGRESS-2026-10-23.md](PROGRESS-2026-10-23.md) | 2026-10-23 阶段验收（目标逐项对账 + 天花板证据） |
 | [HANDOVER.md](HANDOVER.md) | 交接说明 |
+| [PUBLISHING.md](PUBLISHING.md) | 发布到 PyPI（Trusted Publishing 配置与发版流程） |
 | [recon/](recon/) | 各平台/公司的侦察结论（适配器的唯一输入） |
 | [../evals/](../evals/) | 评测集：查询改动是否变好的客观依据 |
 | [../CHANGELOG.md](../CHANGELOG.md) | 版本变更记录 |

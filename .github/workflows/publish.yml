@@ -1,0 +1,69 @@
+name: publish-pypi
+# 发布到 PyPI：推送 v* 标签时自动跑，也可手动（可选 TestPyPI 预演）。
+# 需要先在 PyPI 配好 Trusted Publishing（见 docs/PUBLISHING.md），不需要存 API token。
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "发布到哪里"
+        type: choice
+        options: ["pypi", "testpypi", "none"]
+        default: "none"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Build sdist + wheel
+        run: |
+          rm -rf dist
+          uv build
+          ls -l dist
+          uv run python - <<'PY'
+          import glob, sys
+          size = max(__import__("os").path.getsize(p) for p in glob.glob("dist/*"))
+          print(f"max artifact: {size} bytes")
+          if size > 5 * 1024 * 1024:
+              sys.exit("artifact 超过 5MB，检查是否把缓存/数据库打进去了")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish-testpypi:
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'testpypi'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write # Trusted Publishing（OIDC）
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  publish-pypi:
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.target == 'pypi')
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write # Trusted Publishing（OIDC）
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
