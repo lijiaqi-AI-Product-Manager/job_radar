@@ -82,9 +82,10 @@ def test_calendar_fields_reports_manual_ratio_and_all_entries(tmp_path):
                 ("a1", "auto", *base[:4], '[{"direction": "技术类", "roles": []}]', *base[5:-3], '["北京"]', *base[-2:]))
     con.commit()
     con.close()
-    ratio, detail = rc.calendar_fields(db)
+    ratio, detail, by_company = rc.calendar_fields(db)
     assert ratio == 0.5          # 2 条人工里 1 条达标
     assert "1/2" in detail and "2/3" in detail   # 人工 1/2，全部条目 2/3
+    assert by_company == 1.0     # 唯一的公司有达标条目
 
 
 def test_run_reports_fail_when_below_gates(tmp_path):
