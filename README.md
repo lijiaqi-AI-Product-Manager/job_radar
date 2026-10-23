@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/lijiaqimun-coder/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqimun-coder/job_radar/actions/workflows/ci.yml)
 [![daily](https://github.com/lijiaqimun-coder/job_radar/actions/workflows/daily.yml/badge.svg)](https://github.com/lijiaqimun-coder/job_radar/actions/workflows/daily.yml)
-[![version](https://img.shields.io/badge/version-1.0.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.0.1-blue)](CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
 
@@ -15,7 +15,7 @@
 采集跑在 GitHub Actions，数据发布到 Release，查询在本地完成——**没有服务器，也不需要 API key**。
 数据只来自各公司**官方招聘页**的公开内容，低频、不绕过任何限制（见 [COMPLIANCE.md](COMPLIANCE.md)）。
 
-> **当前数据（2026-10-23 发布）**
+> **当前数据（2026-10-23 发布 · 代码 1.0.1）**
 > **277 个数据源** · **88,630 个在招岗位**（校园 31,975 / 实习 4,990 / 社招 51,665）· **JD 正文 100%**
 > 目标公司 **500 家**：日历覆盖 **494 家**（其余 6 家已注明不可合规覆盖），数据源覆盖 **161 家**，共 271 家公司在库。
 > 自检：`uv run python scripts/release_check.py --home ~/.jobradar`（7 项门槛全绿）
