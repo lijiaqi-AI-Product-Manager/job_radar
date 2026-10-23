@@ -235,6 +235,11 @@ sources:
   - {id: beisen-hellobike, company: 哈啰, params: {tenant: hellobike}}      # 2026-10-23 新增：423 岗
   - {id: beisen-ke, company: 贝壳, params: {tenant: ke}}                    # 2026-10-23 新增：56 岗（校招官网）
   - {id: beisen-united-imaging, company: 联影医疗, params: {tenant: united-imaging}}  # 2026-10-23 新增：763 岗
+  - {id: beisen-starbucks, company: 星巴克中国, params: {tenant: starbucks}, max_pages: 30}  # 2026-10-23 新增：18420 岗（多为门店社招/兼职）
+  - {id: beisen-gjzq, company: 国金证券, params: {tenant: gjzq}, max_pages: 5}      # 2026-10-23 新增：401 岗
+  - {id: beisen-cscb, company: 长沙银行, params: {tenant: cscb}, max_pages: 2}      # 2026-10-23 新增：53 岗
+  - {id: beisen-suzhoubank, company: 苏州银行, params: {tenant: suzhoubank}, max_pages: 2}  # 2026-10-23 新增：55 岗
+  - {id: beisen-ugreen, company: 绿联科技, params: {tenant: ugreen}, max_pages: 1}   # 2026-10-23 新增：32 岗
   - {id: beisen-genomics, company: 华大集团, params: {tenant: genomics}}
   - {id: beisen-renfu, company: 人福医药, params: {tenant: renfu}}
   - {id: beisen-sph, company: 上海医药, params: {tenant: sph}}
