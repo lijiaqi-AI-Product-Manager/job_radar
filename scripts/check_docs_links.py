@@ -10,6 +10,13 @@ import re
 import sys
 from pathlib import Path
 
+# Windows 的 GitHub runner 控制台是 cp1252，直接 print 中文会 UnicodeEncodeError（2026-10-24 CI 实测）
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001 — 被重定向的流可能不支持
+        pass
+
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", ".venv", "node_modules", ".uv-cache", "t-tmp", "dist", "build"}
 LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
