@@ -1,8 +1,10 @@
 # 发布到 PyPI
 
-目标：让用户一条命令装上——`pip install jobradar`。
+目标：让用户一条命令装上——`pip install jobsearchradar`（**发布名**），装完命令仍是 `jobradar`。
 
-项目名 `jobradar` 在 PyPI 上**当前可用**（2026-10-24 查询 404；注意 `job-radar` 是另一个项目，不要混淆）。
+**已发布（1.1.1，2026-10-24）**：<https://pypi.org/project/jobsearchradar/>
+`jobradar` 这个名字在 PyPI 上与已有的 `job-radar` 过于接近、无法注册，所以 distribution 叫
+`jobsearchradar`；import 包名、命令行（`jobradar` / `jobradar-mcp`）都不变。
 
 ## 一次性配置（需要仓库所有者操作，约 5 分钟）
 
@@ -11,7 +13,7 @@
 
 | 字段 | 值 |
 |---|---|
-| PyPI Project Name | `jobradar` |
+| PyPI Project Name | `jobsearchradar` |
 | Owner | `lijiaqimun-coder` |
 | Repository name | `job_radar` |
 | Workflow name | `publish.yml` |
@@ -24,20 +26,21 @@
 ## 发一个版本
 
 ```bash
-# 1) 改版本号（两处必须一致）
-#    pyproject.toml: version = "1.1.0"
-#    uv.lock 由 uv 自动更新
+# 1) 改版本号（唯一来源：src/jobradar/__init__.py 的 __version__）
+#    pyproject.toml 用 hatch 动态读它，不要在那里写死 version
+#    uv lock 由 uv 自动更新
 uv lock
 
-# 2) 更新 CHANGELOG（把 Unreleased 段落改成 [1.1.0] - 日期）
+# 2) 更新 CHANGELOG（把 Unreleased 段落改成 [x.y.z] - 日期）
 
 # 3) 本地自检
 uv run pytest && uv run ruff check src tests scripts
+uv run python scripts/check_docs_links.py
 uv run python scripts/release_check.py --home ~/.jobradar
 
 # 4) 提交 + 打 tag + 推（tag 会触发 publish-pypi）
-git add -A && git commit -m "release: 1.1.0"
-git tag v1.1.0 && git push origin main --tags
+git add -A && git commit -m "release: x.y.z"
+git tag vx.y.z && git push origin main --tags
 
 # 5) 验证
 pip install -U jobsearchradar && jobradar --version

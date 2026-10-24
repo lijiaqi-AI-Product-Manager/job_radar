@@ -56,7 +56,7 @@
 
 | # | 事项 | 说明 |
 |---|---|---|
-| 1 | **PyPI 发布** | 代码侧就绪（`publish.yml` + OIDC）；只差维护者在 PyPI 配一次 Trusted Publishing，然后推 tag，8 个 README 一起改成 `pip install` |
+| 1 | ✅ **PyPI 发布（2026-10-24 完成）** | 发布名 `jobsearchradar`（`jobradar` 与已有 `job-radar` 冲突），命令仍是 `jobradar`；8 个 README + Skill 已改为 `pip install "jobsearchradar[mcp]"` |
 | 2 | **增量详情抓取** | 腾讯社招 2,300 次详情请求 = 38 分钟/天。只对「新增或变更的 PostId」拉详情可砍到几分钟，但要给适配器传已有 id 集合（改基类契约，需确认） |
 | 3 | **字段补全** | 校招届次（从批次名/项目名提取）、北森城市（查详情接口）、职类映射（还有 3.8 万条未分类） |
 | 4 | **日历细化** | 387 条笼统的「校招」拆成提前批 / 正式批 / 暑期实习；补网申起止（当前只有 0.6%） |
