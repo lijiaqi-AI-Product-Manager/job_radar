@@ -54,6 +54,13 @@ def test_diff_and_sources(home, capsys):
     assert out["failing"] == [] and {r["source_id"] for r in out["results"]} == {"s1", "s2"}
 
 
+def test_sources_summary_is_compact(home, capsys):
+    """`sources --summary`：277 行整表 52KB，agent 通常只想知道有没有源坏了。"""
+    out = run(capsys, "sources", "--summary")
+    assert out["counts"]["sources"] == 2 and out["counts"]["open_jobs"] == 2
+    assert out["problems"] == [] and out["results"] == []
+
+
 def test_diff_by_category(home, capsys):
     """「最近哪类职位新增最多」：按职类聚合，而不是自己比对两次 search（评测 trend-02）。"""
     out = run(capsys, "diff", "--days", "7", "--by", "category")

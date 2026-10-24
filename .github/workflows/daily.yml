@@ -84,6 +84,16 @@ jobs:
             gh release view data-archive >/dev/null 2>&1 || \
               gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照与周报，用于灾备、历史回溯与传播。" --latest=false
             gh release upload data-archive "data/jobs-$d.db" "data/weekly-$d.md" --clobber
+            # 保留策略：只留最近 8 周（每份 jobs.db ~85MB，无限增长会把 release 撑爆）
+            cutoff=$(date -u -d '8 weeks ago' +%Y-%m-%d)
+            gh api "repos/${{ github.repository }}/releases/tags/data-archive" --jq '.assets[].name' \
+              | grep -E '^(jobs|weekly)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.(db|md)$' | while read -r name; do
+                  day=$(echo "$name" | sed -E 's/^[a-z]+-([0-9]{4}-[0-9]{2}-[0-9]{2})\..*$/\1/')
+                  if [[ "$day" < "$cutoff" ]]; then
+                    echo "prune $name (older than $cutoff)"
+                    gh release delete-asset data-archive "$name" -y
+                  fi
+                done
           fi
 
       - name: Health issue

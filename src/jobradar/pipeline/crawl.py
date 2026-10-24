@@ -20,14 +20,16 @@ from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
 def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Client,
-           sleep: Callable[[float], None]) -> tuple[list[Job] | None, str | None]:
+           sleep: Callable[[float], None]) -> tuple[list[Job] | None, str | None, float]:
+    """返回 (岗位, 错误, 耗时秒)。耗时记进 source_run.duration_s，抓得慢的源要能被看见。"""
+    started = time.monotonic()
     try:
         jobs = list(adapter_cls(source, client, sleep=sleep).fetch_all())
     except Exception as e:  # noqa: BLE001 — 任何适配器错误都只算该源失败
-        return None, f"{type(e).__name__}: {e}"[:500]
+        return None, f"{type(e).__name__}: {e}"[:500], time.monotonic() - started
     for j in jobs:
         _enrich(j)
-    return jobs, None
+    return jobs, None, time.monotonic() - started
 
 
 def _enrich(j: Job) -> None:
@@ -50,7 +52,7 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
             # 预算守卫：整轮采集有时间上限，超时就跳过剩下的源（标记为失败），
             # 保证 daily 不会因为某个超慢的站点拖到 workflow 120 分钟上限而整体失败。
             if deadline is not None and time.monotonic() > deadline:
-                out.append((s, None, "crawl budget exceeded"))
+                out.append((s, None, "crawl budget exceeded", 0.0))
                 continue
             out.append((s, *_fetch(s, adapter_cls, client, sleep)))
         return out
@@ -98,13 +100,15 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
         futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)
                    for (aid, _site), srcs in groups.items()]
         for fut in as_completed(futures):
-            for source, jobs, error in fut.result():
+            for source, jobs, error, elapsed in fut.result():
                 if jobs is None:
-                    results[source.id] = ingest_run(jobs_conn, source.id, [], ts=ts, ok=False, error=error)
+                    results[source.id] = ingest_run(jobs_conn, source.id, [], ts=ts, ok=False,
+                                                    error=error, duration_s=elapsed)
                     continue
                 res = ingest_run(jobs_conn, source.id, jobs, ts=ts,
                                  expected_max=_expected_max(source),
-                                 allow_empty=bool(source.params.get("allow_empty")))
+                                 allow_empty=bool(source.params.get("allow_empty")),
+                                 duration_s=elapsed)
                 if res.status == "ok":
                     upsert_texts(text_conn, jobs, ts=ts)
                 results[source.id] = res

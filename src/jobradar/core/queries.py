@@ -270,27 +270,57 @@ def data_status(conn, *, now, stale_after_hours=48) -> list[dict]:
     `stale_after_hours` 必须与 `local.STALE_HOURS`（envelope 的 stale 判断）一致：
     以前这里是 36h、envelope 是 48h，同一个数据年龄在两个命令里会给出相反的结论
     （2026-10-24 外部评审）。48h = 连续两个日报周期没成功。
+
+    三条聚合查询搞定（以前每个源 3 条，277 个源 = 831 条，MCP 每次调用都在付这个成本）。
     """
     now_dt = parse_ts(now)
+    last: dict[str, dict] = {}
+    for r in conn.execute(
+        "SELECT source_id, status, ts, error, duration_s FROM ("
+        "  SELECT source_id, status, ts, error, duration_s,"
+        "         ROW_NUMBER() OVER (PARTITION BY source_id ORDER BY ts DESC, id DESC) AS rn"
+        "  FROM source_run) WHERE rn = 1"
+    ):
+        last[r["source_id"]] = dict(r)
+    last_ok = {r[0]: r[1] for r in conn.execute(
+        "SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' GROUP BY source_id")}
+    open_jobs = {r[0]: r[1] for r in conn.execute(
+        "SELECT source_id, COUNT(*) FROM job WHERE closed_at IS NULL GROUP BY source_id")}
     out = []
-    for r in conn.execute("SELECT DISTINCT source_id FROM source_run ORDER BY source_id"):
-        sid = r["source_id"]
-        last = conn.execute(
-            "SELECT status, ts FROM source_run WHERE source_id=? ORDER BY ts DESC, id DESC LIMIT 1", (sid,)
-        ).fetchone()
-        last_ok = conn.execute(
-            "SELECT MAX(ts) FROM source_run WHERE source_id=? AND status='ok'", (sid,)
-        ).fetchone()[0]
-        age = (now_dt - parse_ts(last_ok)).total_seconds() / 3600 if last_ok else None
-        open_jobs = conn.execute(
-            "SELECT COUNT(*) FROM job WHERE source_id=? AND closed_at IS NULL", (sid,)
-        ).fetchone()[0]
+    for sid in sorted(last):
+        row = last[sid]
+        ok_ts = last_ok.get(sid)
+        age = (now_dt - parse_ts(ok_ts)).total_seconds() / 3600 if ok_ts else None
         out.append({
-            "source_id": sid, "last_status": last["status"], "last_run": last["ts"],
-            "last_ok": last_ok, "age_hours": age, "open_jobs": open_jobs,
+            "source_id": sid, "last_status": row["status"], "last_run": row["ts"],
+            "last_ok": ok_ts, "age_hours": age, "open_jobs": open_jobs.get(sid, 0),
+            "duration_s": row["duration_s"], "error": row["error"],
             "stale": age is None or age > stale_after_hours,
         })
     return out
+
+
+def data_status_summary(rows) -> dict:
+    """把 277 行压成 agent 真正需要的东西：计数 + 有问题的源。
+
+    原来的整表是 52KB（约 15k tokens），而 95% 的信息是"一切正常"。
+    """
+    problems = [r for r in rows if r["stale"] or r["last_status"] != "ok"]
+    return {
+        "counts": {
+            "sources": len(rows),
+            "ok": sum(1 for r in rows if r["last_status"] == "ok"),
+            "failed": sum(1 for r in rows if r["last_status"] == "failed"),
+            "rejected": sum(1 for r in rows if r["last_status"] == "rejected"),
+            "stale": sum(1 for r in rows if r["stale"]),
+            "open_jobs": sum(r["open_jobs"] for r in rows),
+        },
+        "slowest": sorted(
+            ({"source_id": r["source_id"], "duration_s": round(r["duration_s"], 1)}
+             for r in rows if r["duration_s"]),
+            key=lambda d: d["duration_s"], reverse=True)[:5],
+        "problems": problems,
+    }
 
 
 def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, text=None,

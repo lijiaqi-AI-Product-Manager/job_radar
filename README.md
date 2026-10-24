@@ -129,7 +129,7 @@ GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
 
 ```bash
 uv sync --all-extras
-uv run pytest          # 492 个测试函数全绿
+uv run pytest          # 497 个测试函数全绿
 uv run ruff check src tests scripts
 ```
 

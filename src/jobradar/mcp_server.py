@@ -133,12 +133,16 @@ def company_trend(company: str, step_days: int = 7, contains: bool = False) -> d
 
 
 @server.tool()
-def data_status() -> dict:
-    """各数据源最近抓取状态与数据新鲜度。"""
+def data_status(verbose: bool = False) -> dict:
+    """各数据源最近抓取状态与数据新鲜度。默认返回计数 + 有问题的源（整表 277 行约 15k tokens，
+    多数情况下你只需要知道"有没有源坏了"）；需要逐源明细时传 verbose=True。"""
     def run():
         with db("jobs") as conn:
             rows = q.data_status(conn, now=now_ts())
-            return envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]])
+            failing = [r["source_id"] for r in rows if r["stale"]]
+            if verbose:
+                return envelope(conn, rows, failing=failing)
+            return envelope(conn, [], failing=failing, **q.data_status_summary(rows))
     return _guard(run)
 
 
