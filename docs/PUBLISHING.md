@@ -25,19 +25,19 @@
 
 ```bash
 # 1) 改版本号（两处必须一致）
-#    pyproject.toml: version = "1.0.1"
+#    pyproject.toml: version = "1.1.0"
 #    uv.lock 由 uv 自动更新
 uv lock
 
-# 2) 更新 CHANGELOG（把 Unreleased 段落改成 [1.0.1] - 日期）
+# 2) 更新 CHANGELOG（把 Unreleased 段落改成 [1.1.0] - 日期）
 
 # 3) 本地自检
 uv run pytest && uv run ruff check src tests scripts
 uv run python scripts/release_check.py --home ~/.jobradar
 
 # 4) 提交 + 打 tag + 推（tag 会触发 publish-pypi）
-git add -A && git commit -m "release: 1.0.1"
-git tag v1.0.1 && git push origin main --tags
+git add -A && git commit -m "release: 1.1.0"
+git tag v1.1.0 && git push origin main --tags
 
 # 5) 验证
 pip install -U jobradar && jobradar --version

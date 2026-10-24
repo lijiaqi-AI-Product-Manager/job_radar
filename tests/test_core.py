@@ -398,3 +398,14 @@ def test_field_coverage_reports_missing_city_and_grad_year(jobs_db):
     cov = field_coverage(jobs_db)
     assert cov["cities"] == 0.333 and cov["grad_year"] == 0.333 and cov["category"] == 0.667
     assert cov["campus_cities"] == 0.5 and cov["campus_grad_year"] == 0.5  # 只统计 campus 两条
+
+
+def test_exclude_store_drops_retail_posts(jobs_db):
+    """喜茶/星巴克门店帖约 8 千条；校招用户用 --exclude-store 排掉，但默认不过滤。"""
+    ingest_run(jobs_db, "tea", [
+        make_job(1, source_id="tea", company="喜茶", title="门店店员（上海）"),
+        make_job(2, source_id="tea", company="喜茶", title="品牌营销管培生"),
+    ], ts=T(1))
+    assert len(search_jobs(jobs_db)) == 2
+    rows = search_jobs(jobs_db, exclude_store=True)
+    assert [r["title"] for r in rows] == ["品牌营销管培生"]

@@ -58,7 +58,18 @@ class Adapter(ABC):
     def request_json(self, method: str, url: str, *, params=None, json=None, headers=None) -> dict:
         """限速 + 重试(仅 5xx/429/网络错误) 的 JSON 请求。适配器里一律用它，不要直接用 client。
         headers 只用于浏览器本来就会带的 Referer/Origin 等；User-Agent 固定，传了也会被忽略。"""
-        return self._request(method, url, params=params, json=json, headers=headers).json()
+        r = self._request(method, url, params=params, json=json, headers=headers)
+        try:
+            return r.json()
+        except ValueError as e:  # json.JSONDecodeError 是 ValueError 的子类
+            # 2026-10-24 实测：Workday 被限流时返回 303/500 + 空 body，原来只报
+            # "Expecting value: line 1 column 1" —— 排障时完全看不出是被挡了。
+            ct = (r.headers.get("content-type") or "")[:40]
+            body = " ".join(r.text[:120].split())
+            raise RuntimeError(
+                f"{method} {url.split('?')[0]} 返回的不是 JSON（HTTP {r.status_code}, {ct}）：{body!r}。"
+                "常见原因：被限流/反爬拦截（Workday 会给 303/500），或接口已改版。"
+            ) from e
 
     def request_text(self, method: str, url: str, *, params=None, json=None, headers=None) -> str:
         """同 request_json，返回文本（用于服务端渲染的 HTML 页面）。"""

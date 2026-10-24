@@ -15,6 +15,10 @@ _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category,
     j.recruit_type, j.grad_year, j.batch, j.cities, j.degree_min, j.department,
     j.first_seen, j.last_seen, j.closed_at"""
 
+# 门店/零售岗的标题特征：喜茶、星巴克一家就 2,900+ 条，校招用户搜「在招岗位」时基本是噪声。
+# 只用于 `--exclude-store`（默认不过滤），避免替用户做决定。
+STORE_TITLE_WORDS = ("门店", "店员", "导购", "收银", "服务员", "咖啡师", "店长", "值班主管")
+
 
 def _job_dict(row) -> dict:
     d = dict(row)
@@ -122,15 +126,20 @@ def _company_sql(match: CompanyMatch) -> tuple[str, list]:
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
                 grad_year=None, keyword=None, text=None, text_conn=None,
                 include_closed=False, limit=50, contains=False, meta=None,
-                dedupe=False) -> list[dict]:
+                dedupe=False, exclude_store=False) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
     dedupe=True 时把「同公司+同标题+同城市」的多条 req 折叠成一条，并给出 `variants`（原条数）。
+    exclude_store=True 排掉门店/零售岗（喜茶、星巴克那类门店帖占了 8 千条，校招用户基本不需要）。
     """
     where, args = [], []
     if not include_closed:
         where.append("j.closed_at IS NULL")
+    if exclude_store:
+        # 只按标题关键词排，不用公司名（公司名排会误伤整家公司的正常岗位）
+        where.append("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")")
+        args += [f"%{w}%" for w in STORE_TITLE_WORDS]
     if company:
         match = resolve_company(conn, company, contains=contains)
         clause, company_args = _company_sql(match)
@@ -464,6 +473,34 @@ def empty_result_hints(rows, *, company_match=None, grad_year=None, city=None,
     for flag, label in ((grad_year, "--grad-year"), (city, "--city"), (category, "--category")):
         if flag:
             out.append(f"{label} 只命中该字段有值的岗位（很多校招岗位不写届别/城市）；去掉它再查一次")
+    return out
+
+
+def calendar_hint(cal_conn, term: str) -> dict | None:
+    """岗位搜不到时，把「日历里有这家公司」这件事说出来。
+
+    背景（2026-10-24 实测）：搜「字节跳动」「华为」「小米」「招商银行」只回"数据里没有"，
+    但这些公司日历里全都有条目——用户/agent 会误以为整个数据集没有它们。
+    返回 None 表示日历里也没有，调用方就不用多说什么了。
+    """
+    if not term:
+        return None
+    rows = calendar_entries(cal_conn, group=term, company=term, limit=20)
+    reason = calendar_blocked_reason(cal_conn, term)
+    if not rows and not reason:
+        return None
+    types = sorted({r["project_type"] for r in rows if r.get("project_type")})
+    years = sorted({r["grad_year"] for r in rows if r.get("grad_year")}, reverse=True)
+    out = {
+        "entries": len(rows),
+        "grad_years": years,
+        "project_types": types[:6],
+        "apply_url": next((r["apply_url"] for r in rows if r.get("apply_url")), None),
+        "cmd": f"jobradar calendar --group {term} --table",
+    }
+    if reason:
+        out["blocked_reason"] = reason
+        out["hint"] = f"{term}希望你去他们的招聘页逛一逛哦~"
     return out
 
 
