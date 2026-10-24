@@ -51,15 +51,26 @@ def broken_links(files: list[Path]) -> list[str]:
 
 def versions() -> list[str]:
     py = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    ver = re.search(r'^version = "([^"]+)"', py, re.M).group(1)
+    # 版本唯一来源是 src/jobradar/__init__.py（pyproject 用 hatch 动态读）
+    init = (ROOT / "src" / "jobradar" / "__init__.py").read_text(encoding="utf-8")
+    ver = re.search(r'^__version__ = "([^"]+)"', init, re.M).group(1)
     problems = []
+    if 'dynamic = ["version"]' not in py or "[tool.hatch.version]" not in py:
+        problems.append("pyproject.toml 应使用 hatch 动态版本（唯一来源 src/jobradar/__init__.py）")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     badge = re.search(r"badge/version-([0-9.]+)-", readme)
     if badge and badge.group(1) != ver:
-        problems.append(f"README 徽章 {badge.group(1)} != pyproject {ver}")
+        problems.append(f"README 徽章 {badge.group(1)} != jobradar.__version__ {ver}")
     body = re.search(r"代码 v?([0-9]+\.[0-9]+\.[0-9]+)", readme)
     if body and body.group(1) != ver:
         problems.append(f"README 正文 {body.group(1)} != pyproject {ver}")
+    # 发布名必须和 README 里的安装命令一致（2026-10-24 踩过：PyPI 建的是 jobsearchradar，文档写的是 jobradar）
+    dist = re.search(r'^name = "([^"]+)"', py, re.M).group(1)
+    for f in sorted(ROOT.glob("README*.md")):
+        text = f.read_text(encoding="utf-8")
+        m = re.search(r'pip install "([a-z0-9_.-]+)\[mcp\]"', text)
+        if m and m.group(1).lower().replace("_", "-") != dist.lower().replace("_", "-"):
+            problems.append(f"{f.name}: 安装名 {m.group(1)} != pyproject name {dist}")
     return problems
 
 

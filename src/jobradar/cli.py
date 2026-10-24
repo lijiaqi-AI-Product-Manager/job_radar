@@ -586,11 +586,9 @@ def cmd_crawl(args):
 
 
 def _version() -> str:
-    try:
-        from importlib.metadata import version
-        return version("jobradar")
-    except Exception:  # 源码目录直接跑（未安装）时兜底
-        return "0.1.0"
+    """版本号唯一来源是 jobradar.__version__（pyproject 用 hatch 动态读取）。"""
+    from jobradar import __version__
+    return __version__
 
 
 def build_parser() -> argparse.ArgumentParser:

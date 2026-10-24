@@ -15,7 +15,7 @@ jobradar doctor
 
 - 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
-- 没装 `jobradar`：`pip install "jobradar[mcp]"`（已在 PyPI 上）。数据目录不是默认的
+- 没装 `jobradar`：`pip install "jobsearchradar[mcp]"`（PyPI 包名 `jobsearchradar`，命令仍是 `jobradar`）。数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。
 
 ## 按问题类型选命令

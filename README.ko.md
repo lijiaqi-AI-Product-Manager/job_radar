@@ -3,7 +3,7 @@
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
 [![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobradar)](https://pypi.org/project/jobradar/)
+[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -28,7 +28,7 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 ## 빠른 시작
 
 ```bash
-pip install "jobradar[mcp]"
+pip install "jobsearchradar[mcp]"
 
 jobradar update     # 약 20 MB + 35 MB, 최신이면 다운로드 없음
 jobradar search --company 腾讯 --city 深圳 --category 算法 --table

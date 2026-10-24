@@ -1,7 +1,7 @@
 [project]
-name = "jobradar"
-version = "1.1.1"
-description = "每日自动更新的中国校招/实习/社招岗位开放数据集：CLI + MCP + Skill，让 AI agent 直接查询（零服务器、可离线）"
+name = "jobsearchradar"
+dynamic = ["version"]
+description = "每日自动更新的中国校招/实习/社招岗位开放数据集（PyPI 包名 jobsearchradar，命令 jobradar）：CLI + MCP + Skill，让 AI agent 直接查询（零服务器、可离线）"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
@@ -33,6 +33,9 @@ dev = [
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/jobradar/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/jobradar"]

@@ -10,6 +10,7 @@ from datetime import timedelta
 
 from mcp.server.mcpserver import MCPServer
 
+from jobradar import __version__
 from jobradar.core import queries as q
 from jobradar.local import NoData, db, envelope
 from jobradar.timeutil import FMT, now_ts, parse_ts
@@ -196,13 +197,8 @@ def stats() -> dict:
 def main(argv: list[str] | None = None):
     """MCP stdio 服务器。默认无参数直接跑；`--help/--version` 给出说明，避免用户一脸茫然。"""
     import argparse
-    from importlib.metadata import PackageNotFoundError
-    from importlib.metadata import version as _v
 
-    try:
-        _ver = _v("jobradar")
-    except PackageNotFoundError:  # 直接从源码跑时没有安装元数据
-        _ver = "unknown"
+    _ver = __version__
 
     ap = argparse.ArgumentParser(
         prog="jobradar-mcp",

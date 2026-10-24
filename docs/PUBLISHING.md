@@ -40,13 +40,13 @@ git add -A && git commit -m "release: 1.1.0"
 git tag v1.1.0 && git push origin main --tags
 
 # 5) 验证
-pip install -U jobradar && jobradar --version
+pip install -U jobsearchradar && jobradar --version
 ```
 
 ## 预演（TestPyPI）
 
 GitHub → Actions → **publish-pypi** → Run workflow → `target` 选 `testpypi`。
-装预演版本：`pip install -i https://test.pypi.org/simple/ jobradar`。
+装预演版本：`pip install -i https://test.pypi.org/simple/ jobsearchradar`。
 
 ## 发布了什么
 
