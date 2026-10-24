@@ -2,7 +2,8 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | Русский
 
-[![version](https://img.shields.io/badge/version-1.1.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![pypi](https://img.shields.io/pypi/v/jobradar)](https://pypi.org/project/jobradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -27,8 +28,7 @@
 ## Быстрый старт
 
 ```bash
-# Пока не в PyPI (процесс готов, см. docs/PUBLISHING.md) — установка из исходников:
-pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
+pip install "jobradar[mcp]"
 
 jobradar update     # ~20 МБ + 35 МБ; если уже актуально — ничего не скачивается
 jobradar search --company 腾讯 --city 深圳 --category 算法 --table

@@ -2,7 +2,8 @@
 
 简体中文 | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![pypi](https://img.shields.io/pypi/v/jobradar)](https://pypi.org/project/jobradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -29,8 +30,7 @@
 ## 30 秒上手
 
 ```bash
-# 尚未发布到 PyPI（发布流程已就绪，见 docs/PUBLISHING.md），现在从源码装：
-pip install "jobradar[mcp] @ git+https://github.com/lijiaqimun-coder/job_radar"
+pip install "jobradar[mcp]"
 
 jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回、0 下载）
 jobradar search --company 复星 --type campus --grad-year 2027 --table
@@ -42,8 +42,8 @@ jobradar search --company 复星 --type campus --grad-year 2027 --table
 jobradar update --mirror gitee        # 或 export JOBRADAR_MIRROR=gitee
 ```
 
-> PyPI 发布只需在 PyPI 侧配一次 Trusted Publishing，之后 `pip install "jobradar[mcp]"` 即可，
-> 8 个语言的 README 会同步改。步骤见 [docs/PUBLISHING.md](docs/PUBLISHING.md)。
+> 装好后先跑一次 `jobradar update` 下载数据（数据不走 PyPI，走 Release / Gitee）。
+> 发版流程见 [docs/PUBLISHING.md](docs/PUBLISHING.md)。
 
 ## 能问什么
 

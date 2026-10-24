@@ -2,6 +2,16 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.1.1] - 2026-10-24
+
+**首次发布到 PyPI**：`pip install "jobradar[mcp]"` 即可安装（Trusted Publishing / OIDC，
+仓库里不存任何 PyPI token）。数据仍然不走 PyPI，装完跑一次 `jobradar update` 从 Release / Gitee 下载。
+
+- 8 个语言的 README 与 `skill/jobradar/SKILL.md` 的安装说明改为 PyPI 安装，README 加 PyPI 徽章
+- `scripts/check_docs_links.py` 规则反转：发布后仍写「尚未发布到 PyPI」会直接失败
+  （CHANGELOG 与 `docs/internal/` 的历史记录除外）
+- `docs/PUBLISHING.md` 标注已发布并保留后续发版步骤
+
 ## [1.1.0] - 2026-10-24
 
 按用户实测反馈（P0/P1/P2）做的一轮体验修缮，外加 8 语言 README、中英演示 GIF 与 social preview。
