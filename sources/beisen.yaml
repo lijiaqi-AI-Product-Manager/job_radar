@@ -248,3 +248,5 @@ sources:
   - {id: beisen-jxrt, company: 融通供应链, params: {tenant: jxrt}}
   - {id: beisen-scement16, company: 南方新材料, params: {tenant: scement16}}
   - {id: beisen-ronbay, company: 容百科技, params: {tenant: ronbay}}
+  - {id: beisen-cinda, company: 中国信达, params: {tenant: cinda}}     # 2026-10-24 新增：35 岗（探测 1,448 次命中）
+  - {id: beisen-yuwell, company: 鱼跃医疗, params: {tenant: yuwellhr}}  # 2026-10-24 新增：1 岗（营销管培生）
