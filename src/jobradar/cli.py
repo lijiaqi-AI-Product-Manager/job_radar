@@ -38,7 +38,10 @@ def _emit(args, payload: dict):
     if getattr(args, "table", False) and isinstance(payload.get("results"), list):
         rows = payload["results"]
         print(f"# data_as_of: {payload.get('data_as_of')}  ({len(rows)} 条)")
-        if rows and "title" in rows[0]:  # 岗位 / 事件
+        if rows and "project_type" in rows[0]:  # 日历：一条一块，别把 20 个字段堆一行
+            for r in rows:
+                _print_calendar_row(r)
+        elif rows and "title" in rows[0]:  # 岗位 / 事件
             for r in rows:
                 cities = "/".join(r.get("cities") or [])
                 print(" | ".join(str(x) for x in (
@@ -49,8 +52,49 @@ def _emit(args, payload: dict):
             print(" | ".join(cols))
             for r in rows:
                 print(" | ".join("" if r.get(c) is None else str(r.get(c)) for c in cols))
+        if payload.get("hint"):
+            print(f"\n{payload['hint']}")
         return
     print(json.dumps(payload, ensure_ascii=False, indent=2))
+
+
+def _fmt_window(r: dict) -> str:
+    start, end = r.get("apply_start"), r.get("apply_end")
+    if start and end:
+        return f"{start} ~ {end}"
+    if start:
+        return f"{start} 起（未写截止）"
+    if end:
+        return f"截止 {end}"
+    return "来源未写（不代表已截止）"
+
+
+def _print_calendar_row(r: dict):
+    """人读的日历条目：按 docs/CALENDAR-FORMAT.md 的字段顺序，缺的写「未提供」。"""
+    head = " · ".join(x for x in (r.get("group_name"), f"{r['grad_year']}届" if r.get("grad_year") else None,
+                                  r.get("project_type")) if x)
+    print(f"\n{head}")
+    if r.get("company") and r["company"] != r.get("group_name"):
+        print(f"  公司/产品：{r['company']}")
+    tracks = r.get("tracks") or []
+    if tracks:
+        parts = []
+        for t in tracks:
+            roles = "、".join((t or {}).get("roles") or [])
+            parts.append(f"{t.get('direction')}（{roles}）" if roles else str(t.get("direction")))
+        print(f"  方向：{'；'.join(parts)}")
+    print(f"  网申：{_fmt_window(r)}")
+    print(f"  城市：{'、'.join(r.get('cities') or []) or '未提供'}")
+    print(f"  入口：{r.get('apply_url') or '未提供'}")
+    src = r.get("source") or {}
+    when = f"（{src['date']}）" if src.get("date") else ""
+    print(f"  来源：{src.get('name')}{when}")
+    status = r.get("jd_status")
+    extra = {"linked": "可在 search 里查到 JD", "official_page": "有官方 JD 页",
+             "blocked": "JD 被挡，只发日历", "none": "无公开 JD"}.get(status, status)
+    print(f"  JD：{extra}")
+    if r.get("window_status") == "unknown":
+        print("  注意：来源没写网申起止，不能断定今天还能投")
 
 
 def _github_api_asset(name: str, client: httpx.Client, token: str) -> tuple[str, dict] | None:
@@ -319,14 +363,17 @@ def cmd_update(args):
         print(json.dumps(out, ensure_ascii=False))
 
 
-def _company_note(term, info, err=None):
+def _company_note(term, info, err=None, quiet=False):
     """把「公司名没对上」说出来。
 
     查询层对没把握的公司返回 0 行（而不是挑一家最像的）。理由不写出来，用户
     只会看到"空结果"并以为这家公司没在招——所以必须给一句话说明是「未收录/不唯一」。
+
+    quiet=True：日历里能查到这家公司时用（名字是对的，只是没有岗位数据，
+    "没有这家公司"这种话会误导）。
     """
     err = err or sys.stderr
-    if not term or not info:
+    if quiet or not term or not info:
         return
     mode, matched = info.get("match"), info.get("matched") or []
     cands = info.get("candidates") or []
@@ -355,11 +402,23 @@ def cmd_search(args):
                              recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
                              text=args.text, text_conn=text, include_closed=args.include_closed,
                              limit=args.limit, contains=args.contains, meta=meta,
-                             dedupe=args.dedupe)
-        _company_note(args.company, meta.get("company_match"))
+                             dedupe=args.dedupe, exclude_store=args.exclude_store)
         payload = envelope(conn, rows, **meta)
         hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
                                      grad_year=args.grad_year, city=args.city, category=args.category)
+        cal_hint = None
+        if not rows and args.company:
+            # 「字节/华为/小米」这类只做日历的公司，不能只回一句"数据里没有"
+            with _open("calendar", required=False) as cal:
+                if cal is not None:
+                    cal_hint = q.calendar_hint(cal, args.company)
+        _company_note(args.company, meta.get("company_match"), quiet=bool(cal_hint))
+        if cal_hint:
+            payload["calendar"] = cal_hint
+            hints = [h for h in hints if "公司名没有唯一确定" not in h]   # 名字是对的，只是没岗位数据
+            hints.append(f"岗位数据里没有，但日历里有 {cal_hint['entries']} 条：`{cal_hint['cmd']}`")
+            if cal_hint.get("hint"):
+                hints.append(cal_hint["hint"])
         if hints:
             payload["hints"] = hints
         _emit(args, payload)
@@ -556,6 +615,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--contains", action="store_true", help="--company 按子串匹配（会命中多家，如 --company 中国）")
     sp.add_argument("--dedupe", action="store_true",
                     help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants（全库约 9.2% 是这种重复）")
+    sp.add_argument("--exclude-store", action="store_true",
+                    help="排除门店/零售岗（门店/店员/导购/收银/咖啡师/店长…；喜茶、星巴克门店帖约 8 千条）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
     sp.add_argument("--city")
     sp.add_argument("--type", choices=["campus", "intern", "social"])

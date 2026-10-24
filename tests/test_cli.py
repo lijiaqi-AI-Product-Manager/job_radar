@@ -87,6 +87,40 @@ def test_empty_search_reports_hints(home, capsys):
     assert ok["results"] and "hints" not in ok
 
 
+def test_empty_search_points_to_calendar(home, capsys, monkeypatch):
+    """字节/华为这类只做日历的公司：搜不到岗位时要引导到 calendar，而不是只说"没有"。"""
+    from jobradar.core import queries as q
+
+    connect(home / "calendar.db", "calendar").close()   # 有日历库才会走引导
+    monkeypatch.setattr(q, "calendar_hint", lambda conn, term: {
+        "entries": 3, "grad_years": [2027], "project_types": ["秋招正式批"],
+        "apply_url": "https://jobs.bytedance.com/campus",
+        "cmd": f"jobradar calendar --group {term} --table",
+        "blocked_reason": "验证码", "hint": f"{term}希望你去他们的招聘页逛一逛哦~",
+    })
+    out = run(capsys, "search", "--company", "华为")
+    assert out["results"] == [] and out["calendar"]["entries"] == 3
+    assert any("calendar --group 华为" in h for h in out["hints"])
+    assert any("逛一逛" in h for h in out["hints"])
+
+
+def test_calendar_table_output_is_readable(capsys):
+    """日历的 --table 输出要能直接读（以前是 20 个字段堆一行）。"""
+    cli._print_calendar_row({
+        "group_name": "阿里巴巴", "company": "飞猪", "grad_year": 2027, "project_type": "秋招正式批",
+        "tracks": [{"direction": "技术类", "roles": ["后端", "算法"]}],
+        "apply_start": "2026-08-01", "apply_end": "2026-09-30", "cities": ["杭州", "北京"],
+        "apply_url": "https://talent.alibaba.com/campus",
+        "source": {"name": "阿里巴巴校园招聘官网", "date": "2026-08-01"},
+        "jd_status": "linked",
+    })
+    out = capsys.readouterr().out
+    for must in ("阿里巴巴 · 2027届 · 秋招正式批", "公司/产品：飞猪", "方向：技术类（后端、算法）",
+                 "网申：2026-08-01 ~ 2026-09-30", "城市：杭州、北京", "入口：https://",
+                 "来源：阿里巴巴校园招聘官网（2026-08-01）", "JD：可在 search 里查到 JD"):
+        assert must in out
+
+
 def test_stale_data_is_flagged(tmp_path, monkeypatch, capsys):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     jobs = connect(tmp_path / "jobs.db", "jobs")

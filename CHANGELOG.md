@@ -2,6 +2,47 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.1.0] - 2026-10-24
+
+按用户实测反馈（P0/P1/P2）做的一轮体验修缮，外加 8 语言 README、中英演示 GIF 与 social preview。
+
+### 修复（用户直接踩到的）
+
+- **搜不到就引导到日历**：搜「字节跳动/华为/小米/招商银行」不再只回"数据里没有"，结果为空时
+  返回 `calendar` 字段（条目数、届次、项目类型、投递入口）+ 提示 `jobradar calendar --group X --table`，
+  blocked 的公司带 `{公司名}希望你去他们的招聘页逛一逛哦~`。CLI 与 MCP 都生效。
+- **`calendar --table` 真的可读**：以前把 20 个字段堆在一行；现在一条一块，按「集团·届次·项目类型 /
+  方向 / 网申 / 城市 / 入口 / 来源 / JD」输出，`window_status=unknown` 会明确写「来源没写起止，不能断定今天还能投」。
+- **文档三处不一致**：
+  - 版本徽章 1.0.1、正文 1.0.2、代码 1.0.3 → 统一 1.1.0
+  - README 说"尚未发布到 PyPI"，Skill 却让 `pip install jobradar` → 全部改成源码安装，并说明 PyPI 未发布
+  - README 的日历输出示例与真实输出不一致 → 换成 `--table` 的真实渲染
+- **新增 `scripts/check_docs_links.py`**（CI 会跑）：断链、版本号漂移、`pip install jobradar` 未标注
+  "尚未发布" 都直接失败——这类问题不该靠人肉发现。
+
+### 新增（压噪声与可观测性）
+
+- **`search --exclude-store`**（MCP `exclude_store`）：排掉门店/店员/导购/收银/咖啡师/店长等零售岗
+  （喜茶、星巴克门店帖约 8 千条），默认不过滤。
+- **Workday 报错说清楚**：`request_json` 遇到非 JSON 时抛「返回的不是 JSON（HTTP 303, …）。常见原因：
+  被限流/反爬拦截…」，以前只有 `Expecting value: line 1 column 1`，排障时完全看不出被挡。
+- **MCP 自定义数据目录**：文档补 `JOBRADAR_HOME` 的传法（否则 MCP 去找默认目录报"本地没有数据"）。
+
+### 文档与素材
+
+- **README 8 种语言**：中文为主版本，另有 en / ja / ko / es / fr / de / ru，顶部语言切换，事实口径一致。
+- **演示 GIF 两版**（15 秒，8 fps）：`docs/assets/demo-zh.gif`、`demo-en.gif`，由 `scripts/make_assets.py` 生成（Pillow 手绘，可重复产出）。
+- **social preview**：`docs/assets/social-preview.png`（1280×640，中文主视觉）。
+- **内部过程文档移到 `docs/internal/`**：HANDOVER / PROGRESS ×2 / REVIEW-TRIAGE / COVERAGE-PLAN，
+  面向用户的 README 不再链到过程文档深处。
+
+### 已知未做（下一轮）
+
+- **PyPI 发布**：代码侧就绪，需要维护者在 PyPI 配一次 Trusted Publishing（步骤见 `docs/PUBLISHING.md`）。
+- **腾讯社招 38 分钟**：一个源 2,300 次详情请求，1 req/s 下就是 38 分钟。要加速只能做「只对新增/变更
+  PostId 拉详情」的增量详情（需要给适配器传已有 id 集合，改的是适配器基类契约，先确认再动）。
+- **字段补全**（届次 / 北森城市 / 职类映射）与**日历细化**（把 387 条笼统「校招」拆成提前批/正式批/暑期实习）。
+
 ## [1.0.3] - 2026-10-24
 
 接 1.0.2：把评审里剩下的三条工程债清掉，再做一轮扩源尝试（结论写入 `docs/COVERAGE-PLAN.md` §8）。

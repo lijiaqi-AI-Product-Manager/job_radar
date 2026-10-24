@@ -10,6 +10,7 @@ from helpers import T, make_job
 from jobradar.core.queries import (
     calendar_blocked_reason,
     calendar_entries,
+    calendar_hint,
     calendar_stats,
     dead_links,
 )
@@ -246,6 +247,29 @@ def test_stats_coverage(built):
     assert {s["sector"]: s["calendar_covered"] for s in st["by_sector"]} == {"互联网": 2, "银行": 0}
 
 
+def test_calendar_hint_for_company_with_entries(built):
+    """搜「字节跳动」没岗位时，要能引导到日历（2026-10-24 实测：只回"数据里没有"）。"""
+    hint = calendar_hint(built, "字节跳动")
+    assert hint["entries"] == 2 and hint["grad_years"] == [2027]
+    assert hint["cmd"] == "jobradar calendar --group 字节跳动 --table"
+    assert hint["apply_url"] == "https://jobs.bytedance.com/campus"
+
+
+def test_calendar_hint_returns_none_when_absent(built):
+    assert calendar_hint(built, "某不存在公司") is None
+
+
+def test_calendar_hint_carries_blocked_prompt(built, jobs):
+    """blocked 的公司要带「希望你去他们的招聘页逛一逛哦~」，且不能说要投它。"""
+    targets = {
+        "sectors": {**TARGETS["sectors"], "互联网": [*TARGETS["sectors"]["互联网"], "某被挡公司"]},
+        "aliases": {},
+        "blocked": {"某被挡公司": "验证码"},
+    }
+    cal.build(built, jobs, manual=[], sources=[], targets=targets, ts=T(23))
+    hint = calendar_hint(built, "某被挡公司")
+    assert hint and hint["blocked_reason"] == "验证码"
+    assert hint["hint"] == "某被挡公司希望你去他们的招聘页逛一逛哦~"
 def test_rebuild_replaces_entries(built, jobs):
     before = len(calendar_entries(built, origin="auto"))
     cal.build(built, jobs, manual=[], sources=[], targets=TARGETS, ts=T(22))

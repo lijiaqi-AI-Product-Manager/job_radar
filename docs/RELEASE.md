@@ -42,8 +42,8 @@ uv run python scripts/release_check.py --home ~/.jobradar
 
 | 步骤 | 结果 |
 |---|---|
-| `jobradar --version` | `jobradar 1.0.1` |
-| `jobradar update` | 4 秒（全新环境），三个库走 GitHub；**再次运行 0 下载**（增量） |
+| `jobradar --version` | `jobradar 1.1.0` |
+| `jobradar update` | 5.6 秒（全新环境，实测），三个库走 GitHub；**再次运行 0 下载**（增量） |
 | `JOBRADAR_MIRROR=gitee jobradar update --force` | 80 秒，自动拼接 2+3 个分片 |
 | `jobradar doctor` | 三个库齐全，未过期，`jd_text_match = 1.0` |
 | `jobradar search --company 复星 --type campus` | 正常返回岗位 |
