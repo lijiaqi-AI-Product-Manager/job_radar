@@ -3,7 +3,7 @@
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | Français | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
 [![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobradar)](https://pypi.org/project/jobradar/)
+[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -29,7 +29,7 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 
 ```bash
 # Pas encore sur PyPI (pipeline prêt, voir docs/PUBLISHING.md) — installation depuis les sources :
-pip install "jobradar[mcp]"
+pip install "jobsearchradar[mcp]"
 
 jobradar update     # ~20 Mo + 35 Mo ; aucun téléchargement si déjà à jour
 jobradar search --company 腾讯 --city 深圳 --category 算法 --table

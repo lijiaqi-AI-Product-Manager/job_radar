@@ -3,7 +3,7 @@
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
 [![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobradar)](https://pypi.org/project/jobradar/)
+[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -31,7 +31,7 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 ## Quick start
 
 ```bash
-pip install "jobradar[mcp]"
+pip install "jobsearchradar[mcp]"
 
 jobradar update                        # ~20 MB + 35 MB; instant/no-op downloads when already current
 jobradar search --company 复星 --type campus --grad-year 2027 --table
