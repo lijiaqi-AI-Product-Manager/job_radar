@@ -2,6 +2,32 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.0.3] - 2026-10-24
+
+接 1.0.2：把评审里剩下的三条工程债清掉，再做一轮扩源尝试（结论写入 `docs/COVERAGE-PLAN.md` §8）。
+
+### 优化
+
+- **每源耗时入库**：`source_run.duration_s` 以前永远是 NULL。crawl 现在按源计时（成功/失败/超预算都记），
+  `sources --summary` 给出 `slowest` Top5，慢源和超时源第一次能被看见。
+- **`sources` 从 79KB 降到 1.5KB**：新增 `data_status_summary`（计数 + 有问题的源 + slowest）；
+  `jobradar sources --summary` 与 MCP `data_status()` 默认走摘要（MCP 传 `verbose=True` 看逐源明细）。
+  顺带把 277 源 × 3 条查询（831 条）压成 3 条聚合查询：**120ms → 55ms**。
+- **周归档只留 8 周**：`data-archive` 每周一份 ~85MB 快照、此前无上限；daily 归档后按资产名里的日期删 8 周前的。
+- `--text` 实测 240–410ms（85MB 主库 + 144MB 原文库），对本地 CLI 够用，**FTS5 暂不做**，实测数字记进评审处置记录。
+
+### 扩源尝试（本轮新增 0 个，但把路走清楚了）
+
+- **北森**：322 家未覆盖目标 × 拼音/英文/suffix 变体 = **1,448 次**探测，4 个 200 全部不可用——
+  `5i5j` 我爱我家（真租户，但内容是门店销售帖、标题含招聘人姓名）、`sunny` 天阳地产、`ctghr` 易才集团、
+  `minmetalshr` 五矿**考试中心**（笔试系统不是岗位）。
+- **Workday**：13 个上一轮已知租户逐个校验 China 分面时被限流（CXS 连续返回 303/500，连在用的 nvidia 也 303），
+  按合规停止，不加新租户。
+- **大易 hotjob**：荣耀 `career.honor.com` 重定向到 `wecruit500.hotjob.cn/SU5fb…`，但列表接口返回
+  「官网不存在，无法继续访问」，接不进。
+- 结论：便宜的平台型租户发现已到底，剩下的 339 家都在加密平台（Moka/飞书 ATSX）或自研站，
+  下一轮必须逐家写适配器；候选顺序与做法写在 `docs/COVERAGE-PLAN.md` §8。
+
 ## [1.0.2] - 2026-10-24
 
 修外部评审（5 份）指出的「会让用户得出错误结论」的缺陷。原则：**宁可 0 条并说明原因，不返回看似正确的错数据**。
