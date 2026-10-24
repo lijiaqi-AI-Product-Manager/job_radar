@@ -16,12 +16,12 @@
 | 5 | `--open-on` 把「没写起止」当「确定可投」 | 1372 条日历里只有 8 条有完整起止，其余被当成"今天还能投" | 条目仍返回（否则等于藏起 99% 校招），但标 `window_status: unknown`；要严格就加 `--has-window` |
 | 6 | 空结果没有下一步提示 | agent 把「字段没写」说成「没岗位」 | 空结果新增 `hints`（届别/城市/职类只命中字段有值的岗位；公司名未唯一确定时给候选） |
 | 7 | wheel 里没有 `taxonomy/`，简称映射在 pip 安装后失效 | `taxonomy/` 在仓库根，hatch 只打 `src/jobradar` | `force-include` 到 `jobradar/_data/`；单测 + CI 都校验 wheel 内容（本地已 build 验证，1830B 在包内） |
-| 8 | README/文档数字与实测不符 | 逐项复核：门槛 7→8、UTC 22:19→19:17、测试 255→491、网申时间「约 5%」→ 0.6%、按公司 60.7% 的分母是 596 不是 500、PyPI 实际 404、`janitor/` 路径不存在 | 全部改成实测值，并在 FAQ 写清「怎么复算」 |
+| 8 | README/文档数字与实测不符 | 逐项复核：门槛 7→8、UTC 22:19→19:17、测试 255→497、网申时间「约 5%」→ 0.6%、按公司 60.7% 的分母是 596 不是 500、PyPI 实际 404、`janitor/` 路径不存在 | 全部改成实测值，并在 FAQ 写清「怎么复算」 |
 | 9 | 重复岗位 | 实测 8,115/88,608 = **9.2%**（星巴克门店岗一家 2,907 条同标题同城市） | 如实写进「已知限制」（此前完全没提）+ `search --dedupe` 折叠（星巴克实测 2,907 条 → 22 组，带 `variants`）；默认计数口径不变，避免牵动发布门槛。入库层去重单独一轮 |
 | 10 | 过期判定两套阈值（36h vs 48h） | `sources` 用 36h、`envelope` 用 48h，同一份数据两个命令可能一个说新鲜、一个说过期 | 统一 48h（连续两个日报周期没成功），加测试钉住「40h 两边都新鲜、50h 两边都过期」 |
 
 对应提交：`edc248b`（代码+测试+打包）、`68f5a3c`（文档）、`5c6c979`（评审处置记录）、
-`22a151f`（`--dedupe`）以及本文件所在提交。测试 485 → 492，`ruff check .` 干净。
+`22a151f`（`--dedupe`）以及本文件所在提交。测试 485 → 497，`ruff check .` 干净。
 
 ## 二、换方案处理
 
@@ -43,16 +43,19 @@
 ## 四、仍然开着（按优先级）
 
 1. **入库层去重**：`--dedupe` 只折叠展示；同一 ATS 多 req 是否在库里并成一条（会改岗位总数与门槛）待定。
-2. **性能债**：`--text` 的 `LIKE` 全表扫 + 把 179KB 的 id JSON 塞进 `json_each`；`data_status` 一次返回 67KB。
-3. **阈值口径不统一**：`local.STALE_HOURS=48` 与 `data_status(stale_after_hours=36)` 两处判断，`sources` 与 `doctor` 可能给出不同"过期"结论。
-4. **`source_run.duration_s` 从没写入**（字段在 schema 里，抓取时长没记）。
-5. **`data-archive` 每周 ~82MB 无上限**：需要保留策略（比如只留 8 周）。
-6. **PyPI 未发布**（流程就绪，等维护者开 `PYPI_ENABLED`）；`DATA-LICENSE.md` 仍是草案。
+2. **`--text` 性能**：实测 `本科` 296ms、`PyTorch 大模型` 414ms（本机 85MB 主库 + 144MB 原文库，
+   含 `_jd_ids` 全扫与 `json_each` 解析）。对本地 CLI 够用，**暂不上 FTS5**：中文需要 trigram
+   分词、要新迁移 + 重写查询层，等数据量再涨几倍或用户体感变慢再动。（`data_status` 的 52KB 已处理：
+   `sources --summary` / MCP `data_status()` 默认只回 1.5KB 计数 + 有问题的源。）
+3. **PyPI 未发布**（流程就绪，等维护者开 `PYPI_ENABLED`）；`DATA-LICENSE.md` 仍是草案。
+
+已完成（原「仍开着」清单里）：过期阈值统一 48h、`source_run.duration_s` 现在真的写入并被
+`sources` 显示（含 `slowest` Top5）、周归档只保留 8 周快照。
 
 ## 五、怎么复核
 
 ```bash
-uv run pytest -q                                   # 491 个测试
+uv run pytest -q                                   # 497 个测试
 uv run ruff check .
 uv run python scripts/release_check.py --home ~/.jobradar    # 8 项门槛
 

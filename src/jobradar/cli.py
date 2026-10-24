@@ -416,7 +416,12 @@ def cmd_sources(args):
         if getattr(args, "problems", False):
             # 排障用：只看「上次没成功」或「过期」的源（rejected 会一直挂着旧岗位，值得盯）
             rows = [r for r in rows if r["stale"] or r.get("last_status") != "ok"]
-        _emit(args, envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]]))
+        if getattr(args, "summary", False):
+            payload = envelope(conn, [], failing=[r["source_id"] for r in rows if r["stale"]],
+                               **q.data_status_summary(rows))
+        else:
+            payload = envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]])
+        _emit(args, payload)
 
 
 def cmd_doctor(args):
@@ -596,6 +601,7 @@ def build_parser() -> argparse.ArgumentParser:
     add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
     sp = add("sources", cmd_sources, "各数据源的抓取状态与新鲜度")
     sp.add_argument("--problems", action="store_true", help="只看上次未成功或已过期的源")
+    sp.add_argument("--summary", action="store_true", help="只给计数与有问题的源（277 行整表约 52KB）")
     add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
 
     sp = add("crawl", cmd_crawl, "（开发/CI）抓取并写库")

@@ -32,10 +32,10 @@ class RunResult:
     reason: str | None = None
 
 
-def _log_run(conn, source_id, ts, status, count, error=None):
+def _log_run(conn, source_id, ts, status, count, error=None, duration_s=None):
     conn.execute(
-        "INSERT INTO source_run(source_id, ts, status, job_count, error) VALUES (?,?,?,?,?)",
-        (source_id, ts, status, count, error),
+        "INSERT INTO source_run(source_id, ts, status, job_count, error, duration_s) VALUES (?,?,?,?,?,?)",
+        (source_id, ts, status, count, error, duration_s),
     )
 
 
@@ -71,10 +71,11 @@ def _write_fields(conn, job: Job, ts):
 
 def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=False,
                close_after=CLOSE_AFTER_MISSES, drop_threshold=DROP_THRESHOLD,
-               min_baseline=MIN_BASELINE, expected_max=None) -> RunResult:
+               min_baseline=MIN_BASELINE, expected_max=None, duration_s=None) -> RunResult:
+    """duration_s 记到 source_run：抓得慢的源要能从 `sources` 里看出来（以前这列永远是 NULL）。"""
     if not ok:
         with conn:
-            _log_run(conn, source_id, ts, "failed", 0, error)
+            _log_run(conn, source_id, ts, "failed", 0, error, duration_s)
         return RunResult("failed", reason=error)
 
     by_id: dict[str, Job] = {}
@@ -108,7 +109,7 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
             reason = f"job count dropped {baseline} -> {len(by_id)}"
     if reason:
         with conn:
-            _log_run(conn, source_id, ts, "rejected", len(by_id), reason)
+            _log_run(conn, source_id, ts, "rejected", len(by_id), reason, duration_s)
         return RunResult("rejected", reason=reason)
 
     res = RunResult("ok")
@@ -159,7 +160,7 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
             else:
                 conn.execute("UPDATE job SET miss_count=? WHERE id=?", (misses, jid))
 
-        _log_run(conn, source_id, ts, "ok", len(by_id))
+        _log_run(conn, source_id, ts, "ok", len(by_id), duration_s=duration_s)
     return res
 
 

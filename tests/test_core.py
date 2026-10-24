@@ -314,6 +314,28 @@ def test_stale_threshold_agrees_with_envelope(jobs_db, monkeypatch):
         assert local.envelope(jobs_db, [])["stale"] is expect
 
 
+def test_data_status_reports_duration_and_error(jobs_db):
+    """抓得慢/坏在哪要能看出来：source_run.duration_s 以前永远是 NULL。"""
+    ingest_run(jobs_db, "s1", [make_job(1)], ts=T(1), duration_s=12.5)
+    ingest_run(jobs_db, "s1", [], ts=T(2), ok=False, error="ReadTimeout", duration_s=30.0)
+    row = data_status(jobs_db, now=T(2))[0]
+    assert row["last_status"] == "failed" and row["error"] == "ReadTimeout"
+    assert row["duration_s"] == 30.0 and row["last_ok"] == T(1)
+
+
+def test_data_status_summary_is_compact(jobs_db):
+    """277 行整表约 52KB（15k tokens），summary 只给计数 + 有问题的源。"""
+    from jobradar.core.queries import data_status_summary
+
+    ingest_run(jobs_db, "ok-src", [make_job(1, source_id="ok-src")], ts=T(1))
+    ingest_run(jobs_db, "bad-src", [], ts=T(1), ok=False, error="boom")
+    rows = data_status(jobs_db, now=T(1))
+    s = data_status_summary(rows)
+    assert s["counts"] == {"sources": 2, "ok": 1, "failed": 1, "rejected": 0, "stale": 1, "open_jobs": 1}
+    assert [p["source_id"] for p in s["problems"]] == ["bad-src"]
+    assert s["slowest"] == []          # duration_s 为 NULL 时不编造耗时
+
+
 def test_compare_roles_by_keyword(jobs_db, text_db):
     a = [make_job(1, company="药明康德", title="【2027校招】化学研发研究员", subcategory=None, category=None, requirements="有机化学"),
          make_job(2, company="药明康德", title="财务专员", subcategory=None, category=None)]

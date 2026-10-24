@@ -36,6 +36,22 @@ def test_crawl_ingests_jobs_and_texts(jobs_db, text_db):
     assert cats == {"101": "后端", "102": "算法"}  # 适配器未给职类 -> crawl 按 taxonomy 归类
 
 
+def test_crawl_records_per_source_duration(jobs_db, text_db):
+    """每源耗时写进 source_run.duration_s（这一列以前永远是 NULL，慢源无法定位）。"""
+    crawl([example_source()], jobs_db, text_db, ts=T(1), client_factory=replay_client,
+          adapters={"example": ExampleAdapter}, sleep=lambda s: None)
+    d = jobs_db.execute("SELECT duration_s FROM source_run WHERE source_id='example-corp'").fetchone()[0]
+    assert d is not None and d >= 0
+
+
+def test_crawl_records_duration_for_failed_source(jobs_db, text_db):
+    """失败也要记耗时：超时的源正是最需要被看见的那类。"""
+    crawl([example_source(id="broken", adapter="boom")], jobs_db, text_db, ts=T(1),
+          client_factory=replay_client, adapters={"boom": Boom}, sleep=lambda s: None)
+    d = jobs_db.execute("SELECT duration_s FROM source_run WHERE source_id='broken'").fetchone()[0]
+    assert d is not None
+
+
 def test_adapter_error_is_a_failed_run_and_isolated(jobs_db, text_db):
     sources = [example_source(), example_source(id="broken", adapter="boom")]
     res = crawl(sources, jobs_db, text_db, ts=T(1), client_factory=replay_client,
