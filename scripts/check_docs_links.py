@@ -64,17 +64,21 @@ def versions() -> list[str]:
 
 
 def install_claims() -> list[str]:
-    """`pip install jobradar`（不带 git+）只能出现在明确说明"尚未发布"的上下文里。"""
+    """PyPI 已发布（1.1.1 起）：面向用户的文档里不该再有"尚未发布到 PyPI"。
+
+    跳过 CHANGELOG 与 docs/internal/：那是历史记录，写的是当时的状态。
+    """
     problems = []
     for f in md_files():
+        rel = f.relative_to(ROOT).as_posix()
+        if rel == "CHANGELOG.md" or rel.startswith("docs/internal/"):
+            continue
         text = f.read_text(encoding="utf-8", errors="replace")
-        for m in re.finditer(r"pip install \"?jobradar", text):
-            if "git+" in text[m.start():m.start() + 60]:
+        for i, line in enumerate(text.splitlines(), 1):
+            if not line.lstrip().startswith(("#", ">", "-", "|")):
                 continue
-            window = text[max(0, m.start() - 400):m.start() + 400]
-            if any(h in window for h in ALLOW_PIP_HINT):
-                continue
-            problems.append(f"{f.relative_to(ROOT)}: `pip install jobradar` 未说明尚未发布")
+            if "PyPI" in line and ("尚未发布" in line or "Not on PyPI" in line or "not yet on PyPI" in line):
+                problems.append(f"{rel}:{i}: 仍写着「尚未发布到 PyPI」")
     return problems
 
 
