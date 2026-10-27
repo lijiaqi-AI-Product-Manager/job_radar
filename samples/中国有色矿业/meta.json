@@ -1,0 +1,24 @@
+{
+  "company": "中国有色矿业",
+  "careers_url": "https://www.cnmc.com.cn/cnmc/rlzy/rczl/A002007005Gone1.html",
+  "host": "www.cnmc.com.cn",
+  "ats": "unknown",
+  "page_title": "中国有色矿业集团有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校园大使"
+  ],
+  "tracks": 5,
+  "roles": 9,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国有色矿业集团有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

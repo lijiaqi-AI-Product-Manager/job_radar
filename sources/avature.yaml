@@ -1,0 +1,36 @@
+# Avature 招聘站（`careers.<公司>.com/<lang>/careers/JobDetail/…`）。
+# 侦察：docs/recon/avature.md。服务端渲染 HTML，匿名可读，无登录、无签名、无验证码。
+#
+# 为什么走 **sitemap** 而不是搜索接口：
+#   robots.txt 自己用 `Sitemap:` 声明了 `{lang}/careers/sitemap.xml`（等于站点邀请抓），
+#   一次请求就能给出全部岗位 URL。而翻页接口 `SearchJobs` 带 `qtvc=` 会话参数，
+#   robots 里 `Disallow: /careers/*qtvc=` 正是要挡它 —— 站点明确不想让人翻页。
+#   sitemap 路线既合规又省请求。
+#
+# 接入门槛：sitemap 里必须能区分「岗位详情页」和「账户页」（Login/RegistrationMethods/
+# AgentCreate/Error… 匿名访问 403）。适配器用 params.path_re 只收 `/JobDetail/…/\d+$`。
+defaults:
+  adapter: avature
+  recruit_types: [social, intern]
+  rate_limit_rps: 1
+
+sources:
+  # 达能中国（careers.danone.com.cn）。站点有三套门户：careers(社招) / campus(校招) / portal。
+  # 实测 2026-10-26：zh_CN/careers 73 个 JobDetail、en_US/careers 74 个（同一批岗位的英文版，
+  # 只接中文版避免重复）；zh_CN/campus 的 24 条 sitemap 里只有 1 条 JobDetail 且无 id，暂不接。
+  - id: avature-danone
+    company: 达能
+    params:
+      base: https://careers.danone.com.cn
+      lang: zh_CN
+      sitemap: "{lang}/careers/sitemap.xml"
+      # 不写 path_re 就走适配器默认值（同样只收 JobDetail + 数字尾），这里显式写出来，
+      # 方便将来换公司时一眼看到要改哪里
+      path_re: '/careers/JobDetail/(?:[^/]+/)?\d+$'
+      # 供 scripts/record_fixtures.py --keep-details 判定「哪些请求是详情页」
+      url_filter: '/JobDetail/'
+    compliance:
+      checked_on: 2026-10-26
+      robots: allowed   # `Allow: /careers` + `Disallow: /careers/*qtvc=`；本适配器不碰 qtvc 翻页接口
+      terms: "服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核"
+      notes: "1 次 sitemap + 73 次详情 ≈ 74 次/天，1 req/s ≈ 1.5 分钟/轮"

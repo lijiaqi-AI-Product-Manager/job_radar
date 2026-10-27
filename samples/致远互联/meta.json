@@ -1,0 +1,25 @@
+{
+  "company": "致远互联",
+  "careers_url": "https://www.seeyon.com/Index/job.html",
+  "host": "www.seeyon.com",
+  "ats": "unknown",
+  "page_title": "致远招聘-OA_OA办公系统_协同管理软件及云服务领导供应商-致远互联",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 46,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "致远招聘-OA_OA办公系统_协同管理软件及云服务领导供应商-致远互联",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

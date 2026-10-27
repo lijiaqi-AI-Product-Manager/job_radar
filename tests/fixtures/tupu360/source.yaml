@@ -1,0 +1,20 @@
+id: tupu360-siemens
+company: 西门子
+adapter: tupu360
+params:
+  base: https://jobs.siemens.com.cn
+  tenant: siemens
+  fetch_detail: true
+  url_filter: /position/detail\?
+  max_pages: 2
+  page_size: 15
+recruit_types:
+- campus
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: not_applicable
+  terms: 列表页与 nextPageList 均为官网对匿名访客直出的服务端渲染 HTML，无登录、无签名、无验证码；未使用 Cookie、未逆向任何加密参数。用户协议待人工复核
+  notes: 每类招聘 1 次 GET index + ceil(N/15) 次 POST nextPageList，西门子合计约 6 次/天，1 req/s。

@@ -1,0 +1,25 @@
+{
+  "company": "中信保诚人寿",
+  "careers_url": "http://citicprulife.zhiye.com/",
+  "host": "citicprulife.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中信保诚人寿保险有限公司网申系统--首页",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中信保诚人寿保险有限公司网申系统--首页",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

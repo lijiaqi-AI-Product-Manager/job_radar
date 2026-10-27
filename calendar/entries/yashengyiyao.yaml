@@ -1,0 +1,28 @@
+group: 亚盛医药
+entries:
+- id: yashengyiyao-campus-entry
+  company: 亚盛医药
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 运营类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.ascentage.cn/careers/our-stories/
+  source:
+    type: official_site
+    name: 亚盛医药招聘官网
+    url: https://www.ascentage.cn/careers/our-stories/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：我们的故事 - 亚盛医药）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

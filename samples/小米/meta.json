@@ -1,0 +1,27 @@
+{
+  "company": "小米",
+  "careers_url": "https://xiaomi.jobs.f.mioffice.cn/campus/",
+  "host": "xiaomi.jobs.f.mioffice.cn",
+  "ats": "unknown",
+  "page_title": "小米校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "小米校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020830",
+      "https://job.zzu.edu.cn/campus/view/id/1018766"
+    ]
+  }
+}

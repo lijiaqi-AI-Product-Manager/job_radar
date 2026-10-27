@@ -1,0 +1,16 @@
+id: baidu
+company: 百度
+adapter: baidu
+params:
+  max_pages: 2
+recruit_types:
+- campus
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: not_applicable
+  terms: 职位列表接口是官网前端公开调用的 JSON，无需登录、无签名、无验证码；不带 Cookie、不伪造浏览器 UA。用户协议待人工复核
+  notes: 侦察：docs/recon/baidu.md。GRADUATE(校招 159 条/16 页) + INTERN(实习 536 条/54 页)，pageSize
+    固定 10，约 70 次/天，1 req/s 约 70 秒。SOCIAL 不抓（本数据集只收校招/实习）。

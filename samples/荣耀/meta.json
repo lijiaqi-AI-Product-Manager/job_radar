@@ -1,0 +1,24 @@
+{
+  "company": "荣耀",
+  "careers_url": "https://career.honor.com/SU60ee9e002f9d247b98da489e/mc/position/campus",
+  "host": "career.honor.com",
+  "ats": "self_hosted",
+  "page_title": "",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 10,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

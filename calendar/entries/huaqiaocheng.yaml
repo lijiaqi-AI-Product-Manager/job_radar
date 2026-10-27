@@ -1,0 +1,33 @@
+group: 华侨城
+entries:
+- id: huaqiaocheng-campus-entry
+  company: 华侨城
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 运营类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 成都
+  - 武汉
+  apply_url: https://campus.niuqizp.com/job-vUl5ZaLMN.html
+  source:
+    type: official_site
+    name: 华侨城招聘官网
+    url: https://campus.niuqizp.com/job-vUl5ZaLMN.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：华侨城集团2026届春季校园招聘正式启动2027校园招聘,招聘城市有:北京,深圳,上海,成都,武汉,华侨城招聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

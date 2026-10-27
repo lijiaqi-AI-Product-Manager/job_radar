@@ -1,0 +1,748 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_style.css?v=0.0.0.3" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+    <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_jquery311.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_bgfull.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_pagescripts.js?v=0.0.0.3" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+    <title>今麦郎招聘系统--校园招聘</title>
+</head>
+<body>
+
+  <div class="indexmain">
+<div class="header">
+    <div class="mainContent">
+         <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/101409/101409_medias_2017118_2017118logo.png?v=636203467497170000"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item "><a target="_self" href="/home" >首页</a>
+                </li>                <li class="item "><a target="_self" href="/a/AboutUs" >走进今麦郎</a>
+                </li>                <li class="item "><a target="_self" href="/Social" >社会招聘</a>
+                </li>                <li class="item on"><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_self" href="/a/contactus" >联系我们</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin, .unLogin {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+    
+    <div class="isLogin" style="display:none">
+        <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+        <a href="/User/Account/LogOut"><span>退出</span></a>
+    </div>
+    
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fjmlzp.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fjmlzp.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">注册</a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+<script>
+   // 初始化来也机器人
+    function initLaiye(){
+        var aiScript = document.createElement('script');
+        aiScript.type = 'text/javascript';
+        aiScript.src = 'https://cdn.wul.ai/IMLib-3.30.0.min.js';
+        document.body.insertBefore(aiScript, document.body.firstChild);
+        aiScript.onload = function () {
+            // 需要在这里写ajax异步操作，不然它可能在没加载之前调用然后报错
+            $.ajax({
+                url: '/User/Account/GetWulPubKey'
+                , type: 'get'
+                , success: function (resp) {
+                    // 获取来也机器人信息
+                    var isOpen = resp.Data.IsOpen;
+                    if (isOpen) {
+                        var key = resp.Data.PubKey;
+                        new websdk({
+                            data: {
+                                pubkey: key, // 吾来平台PubKey
+                                autoOpen: false, // 是否自动打开
+                                extra: {
+                                    tagValues: [],
+                                    presetTagValues: []
+                                }
+                            },
+                            el: 'body'
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    // 初始化天润机器
+    function initTianrun(robotKey){
+        (function(win, doc, src, opt) {
+            win[opt] = win[opt] || function () {
+            win[opt].options = arguments[0]};
+            var script = doc.createElement("script");
+            script.async = 1;
+            script.src = src;
+            doc.body.appendChild(script);
+            })(window, document, "https://webchat-sh.clink.cn/webchat.js?v="+Date.now(), "clinkWebchatOptions");
+        clinkWebchatOptions({
+            accessId: robotKey,
+            language: "zh_CN"
+        });
+    }
+
+    // 获取天润机器人灰度
+    $.ajax({
+            url: '/User/Account/GetPortalAIRobot'
+            , type: 'get'
+            , success: function (resp) {
+                if (resp.Data.IsOpen && resp.Data.PubKey) {
+                    initTianrun(resp.Data.PubKey)
+                }else{
+                    initLaiye();
+                }
+            }
+        })
+</script>
+
+    </div>
+</div>
+<!--module:login end-->
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+       <a class="internal" href="http://neitui.zhiye.com/jmlzp" target="_blank">内部推荐</a>
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+    </div>
+</div>
+<div class="banner">
+      
+		<img src="//stc-cms.beisen.com/CmsPortal/101409/101409_medias_20161014_20161014bannercampus.jpg?v=636120414686000000"  draggable="false"/>
+
+</div>
+<div class="content">
+    <div class="mainContent">
+        <div class="narrow mr10">
+            
+<!--module:positioncategory begin-->
+<div class="bs-module">
+    <div class="positioncategory-smallblue ">
+        
+
+
+
+
+
+
+
+        <div class="box pb5">
+            <div class="boxSupertitle" title="职位分类"><span>职位分类</span></div>
+            <ul class="cateList">
+                        <li><a href='/campus?p=1^1#jlt' constval ="1" title="技工类/操作工">技工类/操作工</a></li>
+                        <li><a href='/campus?p=1^3#jlt' constval ="3" title="人力资源类">人力资源类</a></li>
+                        <li><a href='/campus?p=1^2#jlt' constval ="2" title="食品研发类/研究员/化验员">食品研发类/研究员/...</a></li>
+                        <li><a href='/campus?p=1^7#jlt' constval ="7" title="行政类/行政文员">行政类/行政文员</a></li>
+                        <li><a href='/campus?p=1^6#jlt' constval ="6" title="IT类/程序员/Java工程师">IT类/程序员/Ja...</a></li>
+                        <li><a href='/campus?p=1^5#jlt' constval ="5" title="市场营销类/客户主管">市场营销类/客户主管</a></li>
+                        <li><a href='/campus?p=1^4#jlt' constval ="4" title="品牌类/推广经理/设计">品牌类/推广经理/设...</a></li>
+                        <li><a href='/campus?p=1^15#jlt' constval ="15" title="品质管理类/品管员">品质管理类/品管员</a></li>
+                        <li><a href='/campus?p=1^14#jlt' constval ="14" title="稽查类/生产稽查/营销稽查">稽查类/生产稽查/营...</a></li>
+                        <li><a href='/campus?p=1^13#jlt' constval ="13" title="财务类/会计/审计/审核">财务类/会计/审计/...</a></li>
+                        <li><a href='/campus?p=1^12#jlt' constval ="12" title="工程类/土建工程师/装修工程师">工程类/土建工程师/...</a></li>
+                        <li><a href='/campus?p=1^11#jlt' constval ="11" title="电商类">电商类</a></li>
+                        <li><a href='/campus?p=1^10#jlt' constval ="10" title="新媒体运营类">新媒体运营类</a></li>
+                        <li><a href='/campus?p=1^9#jlt' constval ="9" title="物流类">物流类</a></li>
+                        <li><a href='/campus?p=1^8#jlt' constval ="8" title="储备干部/生产储干/营销储干">储备干部/生产储干/...</a></li>
+                        <li><a href='/campus?p=1^16#jlt' constval ="16" title="证券/金融">证券/金融</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positioncategory end-->
+            <div class="box">
+                
+<!--module:newslist begin-->
+<div class="bs-module">
+    <div class="newslist-template6simple ">
+        
+
+
+
+ 
+
+
+
+<div class="boxSupertitle"><span>招聘动态</span>                                                                           <a class="more" href="/newslist"></a>
+</div>
+
+<ul class="newsList">
+            <li><a>暂无内容</a></li>
+</ul>
+
+    </div>
+</div>
+<!--module:newslist end-->
+            </div>
+        </div>
+        <div class="wide">
+            <div class="box">
+                
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-smallblue ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+<div class="boxSupertitle"><span>职位搜索</span></div>
+<div class="searchCityList">
+            <div class="searchBoxl">
+                <div class="l"></div>
+				<div class="txtIn">
+					<input type="text" id="k" name="k" autocomplete="off" maxlength="50"/>
+				</div>
+				<a class="searchBtn" href="javascript:void(0)" id="searchlink"></a>
+            </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        <div class="mainTitle" title="职位分类">职位分类：</div>
+                        <div class="mainListWrap">
+                            <ul class="mainList">
+                                        <li><a href="/campus?r=&amp;p=1^-1&amp;c=&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^1&amp;c=&amp;d=&amp;k=#jlt" title="技工类/操作工">技工类/操作工</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^3&amp;c=&amp;d=&amp;k=#jlt" title="人力资源类">人力资源类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^2&amp;c=&amp;d=&amp;k=#jlt" title="食品研发类/研究员/化验员">食品研发类/研究员/化验员</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^7&amp;c=&amp;d=&amp;k=#jlt" title="行政类/行政文员">行政类/行政文员</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^6&amp;c=&amp;d=&amp;k=#jlt" title="IT类/程序员/Java工程师">IT类/程序员/Java工程师</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^5&amp;c=&amp;d=&amp;k=#jlt" title="市场营销类/客户主管">市场营销类/客户主管</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^4&amp;c=&amp;d=&amp;k=#jlt" title="品牌类/推广经理/设计">品牌类/推广经理/设计</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^15&amp;c=&amp;d=&amp;k=#jlt" title="品质管理类/品管员">品质管理类/品管员</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^14&amp;c=&amp;d=&amp;k=#jlt" title="稽查类/生产稽查/营销稽查">稽查类/生产稽查/营销稽查</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^13&amp;c=&amp;d=&amp;k=#jlt" title="财务类/会计/审计/审核">财务类/会计/审计/审核</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^12&amp;c=&amp;d=&amp;k=#jlt" title="工程类/土建工程师/装修工程师">工程类/土建工程师/装修工程师</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^11&amp;c=&amp;d=&amp;k=#jlt" title="电商类">电商类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^10&amp;c=&amp;d=&amp;k=#jlt" title="新媒体运营类">新媒体运营类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^9&amp;c=&amp;d=&amp;k=#jlt" title="物流类">物流类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^8&amp;c=&amp;d=&amp;k=#jlt" title="储备干部/生产储干/营销储干">储备干部/生产储干/营销储干</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^16&amp;c=&amp;d=&amp;k=#jlt" title="证券/金融">证券/金融</a></li>
+                            </ul>
+                            <a class="viewMore" href="javascript:void(0);">更多</a>
+                        </div>
+                <div class="mainTitle">工作地点：</div>
+                <div class="mainListWrap">
+                    <ul class="mainList">
+                                <li><a href="/campus?r=&amp;p=&amp;c=-1&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1100&amp;d=&amp;k=#jlt" title="北京市">北京市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1104&amp;d=&amp;k=#jlt" title="朝阳区">朝阳区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1115&amp;d=&amp;k=#jlt" title="密云区">密云区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1305&amp;d=&amp;k=#jlt" title="邢台市">邢台市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4403&amp;d=&amp;k=#jlt" title="深圳市">深圳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=130507&amp;d=&amp;k=#jlt" title="隆尧县">隆尧县</a></li>
+                    </ul>
+                    <a class="viewMore" href="javascript:void(0);">更多</a>
+                </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <div class="mainTitle">发布时间：</div>
+                    <div class="mainListWrap">
+                        <ul class="mainList">
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=-1&amp;k=#jlt" class="on">全部</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=3&amp;k=#jlt" title="三天内">三天内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=7&amp;k=#jlt" title="一周内">一周内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=30&amp;k=#jlt" title="一个月内">一个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=90&amp;k=#jlt" title="三个月内">三个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=180&amp;k=#jlt" title="半年内">半年内</a></li>
+                        </ul>
+                        <a class="viewMore" href="javascript:void(0);">更多</a>
+                    </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        </div>
+
+<script type="text/javascript">
+    function GetParam(key) {
+        return (document.location.search.match(new RegExp("(?:^\\?|&)" + key + "=(.*?)(?=&|$)")) || ['', null])[1];
+    }
+
+    function myHTMLEnCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&amp;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function myHTMLDeCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+    var defaultText = "请输入职位关键字";
+
+    $(document).ready(function () {
+        $("input[name='keyword']").click(function () {
+            $(this).val("");
+        });
+
+        var keyWord = GetParam("k");
+
+        if (keyWord != null) {
+            keyWord = decodeURIComponent(keyWord);
+            keyWord = myHTMLDeCode(keyWord);
+
+            $("input[name='k']").val(keyWord);
+        }
+
+        $("#searchlink").click(function () {
+            var r = GetParam("r");
+            r = (r == null ? -1 : r);
+            var p = GetParam("p");
+            p = (p == null ? "" : p);
+            var c = GetParam("c");
+            c = (c == null ? "" : c);
+            var d = GetParam("d");
+            d = (d == null ? "" : d);
+            var k = $.trim($("input[name='k']").val());
+
+            if (k == defaultText)
+                k = "";
+
+            k = myHTMLEnCode(k);
+            k = encodeURIComponent($.trim(k));
+
+            location.href = "/campus" + "?r=" + r + "&p=" + p + "&c=" + c + "&d=" + d + "&k=" + k + '#jlt';
+        });
+
+        var keyStr = $("#k").val();
+        if (!keyStr || keyStr == "") {
+            $("#k").css("color", "#d2cece");
+            $("#k").val(defaultText);
+        }
+
+        $("#k").focus(function () {
+            var v = $(this).val();
+            if (v == defaultText) {
+                $(this).val("");
+                $(this).css("color", "");
+            }
+        });
+
+        $("#k").blur(function () {
+            var v = $(this).val();
+            if (!v || v == "") {
+                $(this).val(defaultText);
+                $(this).css("color", "#d2cece");
+            }
+        });
+        //搜索区折叠处理
+        // 超过三行 折叠显示更多
+        $.each($('.mainList'), function (i, n) {
+            if ($(this).height() > 90) {
+                $(this).addClass('more');
+                $(this).next('.viewMore').show();
+            }
+        })
+        $('.viewMore').click(function (e) {
+            var target = $(e.currentTarget)
+            if (target.text() == "更多") {
+                target.text('收起')
+                target.prev('.mainList').removeClass('more')
+            } else {
+                target.text('更多')
+                target.prev('.mainList').addClass('more')
+            }
+
+        })
+    });
+</script>
+
+
+    </div>
+</div>
+<!--module:positionsearch end-->
+                
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-smallblue ">
+        
+
+
+
+
+
+
+
+<div class="joblist">
+	<table class="jobsTable" border="0" cellpadding="0" cellspacing="0">
+	    <tr class="title">
+                <td>职位名称</td>
+                <td title="职位分类">职位分类</td>
+            <td>工作地点</td>
+            <td>发布时间</td>
+
+        </tr>
+                <tr>
+
+
+            <td>
+                <a title="会计(J10689)" href="/zpdetail/350595892?PageIndex=1&amp;k=" >会计(J10689)</a>
+            </td>
+        
+
+                    <td title="财务类/会计/审计/审核">财务类/会计/审计/审核</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="培训/主持人(J11094)" href="/zpdetail/350595891?PageIndex=1&amp;k=" >培训/主持人(J11094)</a>
+            </td>
+        
+
+                    <td title="人力资源类">人力资源类</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="法务专员(J11093)" href="/zpdetail/350595885?PageIndex=1&amp;k=" >法务专员(J11093)</a>
+            </td>
+        
+
+                    <td title="行政类/行政文员">行政类/行政文员</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="行政文员(J10703)" href="/zpdetail/350595875?PageIndex=1&amp;k=" >行政文员(J10703)</a>
+            </td>
+        
+
+                    <td title="行政类/行政文员">行政类/行政文员</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="食品研发员(J10692)" href="/zpdetail/350595868?PageIndex=1&amp;k=" >食品研发员(J10692)</a>
+            </td>
+        
+
+                    <td title="食品研发类/研究员/化验员">食品研发类/研究员/化...</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="IT专员(J10706)" href="/zpdetail/350595867?PageIndex=1&amp;k=" >IT专员(J10706)</a>
+            </td>
+        
+
+                    <td title="IT类/程序员/Java工程师">IT类/程序员/Java工程师</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="生产储备干部(J10985)" href="/zpdetail/350595866?PageIndex=1&amp;k=" >生产储备干部(J10985)</a>
+            </td>
+        
+
+                    <td title="储备干部/生产储干/营销储干">储备干部/生产储干/营...</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="讲解员(J10707)" href="/zpdetail/350217511?PageIndex=1&amp;k=" >讲解员(J10707)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="产品专员(J10694)" href="/zpdetail/350217443?PageIndex=1&amp;k=" >产品专员(J10694)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="人资专员(J10688)" href="/zpdetail/350217415?PageIndex=1&amp;k=" >人资专员(J10688)</a>
+            </td>
+        
+
+                    <td title="人力资源类">人力资源类</td>
+
+
+
+            <td title="河北省-邢台市-隆尧县">河北省-邢台市-...</td>
+                            <td>2023-08-27</td>
+        
+      
+
+                </tr>
+	</table>
+</div>
+
+
+<div class="pager">
+
+</div>
+
+    </div>
+</div>
+<!--module:positionlist end-->
+<!--module:deliverystoredb begin-->
+<div class="bs-module">
+    <div class="deliverystoredb-smallblue ">
+        
+
+
+
+
+
+
+ 
+
+
+
+
+
+    </div>
+</div>
+<!--module:deliverystoredb end-->
+		
+            </div>
+        </div>
+      <div class="footer3">
+          &copy;2026&nbsp;&nbsp;今麦郎&nbsp;&nbsp;&nbsp<a target="_blank" href="http://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;">京ICP备05051632号-16</a>&nbsp<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802032024" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;"><img src="//stc.beisen.com/ux/tms-recruit/release/app/images/beian.png" style="float:left;"/>京公网安备 11010802032024号</a><a href="/Portal/Apply/PrivacyPolicy" style="color:#1D86F0;padding-left:5px;" target="_blank">隐私政策</a>&nbsp;Powered by&nbsp;<a href="https://www.beisen.com" class="footerlogo" target="_blank"></a>
+	</div>
+    </div>
+</div>
+  </div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,101409,'new_zhiye_com');
+    });
+    </script>

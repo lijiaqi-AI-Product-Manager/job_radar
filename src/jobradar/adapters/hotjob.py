@@ -15,12 +15,43 @@ from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, grad_year_from_text
+from jobradar.normalize import batch_from_text, date_only, grad_year_from_text
 
 RECRUIT_CODE = {"campus": "1", "social": "2", "intern": "3"}
 PORTAL = {"campus": "campus", "social": "social", "intern": "campus"}
 DEFAULT_HOST = "wecruit.hotjob.cn"
 DEFAULT_PAGE_SIZE = 50
+
+# 大易对"长期开放"的岗位给 3000-01-01，是哨兵值不是真日期。
+# 当成真日期会让"找快截止的岗位"筛出一堆 3000 年，必须归一成 None。
+# （哨兵判定已收进 normalize.date_only，这里保留常量给文档引用）
+_LONG_TERM_YEAR = 2100
+# workPlaceStr 的「全部地区」「不限」也不是城市
+_PLACE_NOISE = {"全部地区", "不限", "全国", "多个城市", "若干"}
+
+
+def _date_only(s) -> str | None:
+    """'2026-10-24 11:30:58' -> '2026-10-24'；空值/哨兵值/0001 年 -> None。"""
+    return date_only(s)
+
+
+def _cities_from_place(place: str | None) -> list[str]:
+    """'长沙市-长沙县' -> ['长沙']；'北京' -> ['北京']；'全部地区' -> []。
+
+    只取城市级（第一段），不要区县——用户按城市筛，区县会把结果切得太碎。
+    逗号/顿号分隔的多个城市也拆开。
+    """
+    if not place or not isinstance(place, str):
+        return []
+    out: list[str] = []
+    for chunk in place.replace("，", ",").replace("、", ",").replace("/", ",").split(","):
+        seg = chunk.split("-")[0].strip()
+        if not seg or seg in _PLACE_NOISE:
+            continue
+        seg = seg.removesuffix("市")
+        if seg and seg not in out and len(seg) <= 12:
+            out.append(seg)
+    return out[:6]
 
 
 @register
@@ -89,8 +120,7 @@ class HotjobAdapter(Adapter):
         if not post_id or not title:
             raise SkipRecord
         rtype = raw["recruit_type"]
-        places = [p for p in (it.get("workPlaceStr") or "").split("-") if p.strip()]
-        cities = [p.strip().removesuffix("市") for p in places[:1]]  # 只要城市级，不要区县
+        cities = _cities_from_place(it.get("workPlaceStr"))
         return Job(
             source_id=self.source.id,
             source_job_id=str(post_id),
@@ -104,6 +134,9 @@ class HotjobAdapter(Adapter):
             cities=cities,
             degree_min=(detail.get("education") or it.get("educationStr") or None),
             department=(it.get("company") or None),
+            # 大易列表接口直接给了这两个日期，抓到就是白拿的截止日
+            apply_end=_date_only(it.get("endDate")),
+            publish_at=_date_only(it.get("publishDate") or it.get("publishFirstDate")),
             description=(detail.get("workContent") or None),
             requirements=(detail.get("serviceCondition") or None),
         )

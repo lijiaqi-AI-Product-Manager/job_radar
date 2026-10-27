@@ -1,0 +1,30 @@
+{
+  "company": "中国石化",
+  "careers_url": "https://job.sinopec.com/",
+  "host": "job.sinopec.com",
+  "ats": "self_hosted",
+  "page_title": "中国石化招聘网站",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 66,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国石化招聘网站",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 11,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758141",
+      "https://job.xidian.edu.cn/campus/view/id/758038",
+      "https://job.zzu.edu.cn/campus/view/id/1019842"
+    ]
+  }
+}

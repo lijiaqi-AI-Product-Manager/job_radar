@@ -1,0 +1,25 @@
+{
+  "company": "达能中国",
+  "careers_url": "https://careers.danone.com.cn/zh_CN/campus",
+  "host": "careers.danone.com.cn",
+  "ats": "self_hosted",
+  "page_title": "职位搜索 &#124; 达能中国",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "职位搜索 &#124; 达能中国",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

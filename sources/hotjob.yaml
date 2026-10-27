@@ -1,8 +1,10 @@
 # hotjob（大易云）招聘门户。一行一个租户；侦察与接口说明见 docs/recon/hotjob.md。
-# 先只开校园招聘：详情请求量 = 岗位数，社招动辄几百页，等有预算再开。
+# 2026-10-27 起社招也开：`work/hotjob_audit.py` 实测 80 个租户里社招岗普遍是校招的
+# 3~5 倍（一汽 校招 511/社招 1113、长城 517/2644、中联重科 16/460），此前只抓校招
+# 等于把大半个门户丢掉。详情请求量 = 岗位数，`max_pages: 0` 表示「按 positonNum 算够」。
 defaults:
   adapter: hotjob
-  recruit_types: [campus]
+  recruit_types: [campus, social]
   rate_limit_rps: 1
   params:
     page_size: 50
@@ -21,19 +23,56 @@ sources:
     params: {host: goertek.hotjob.cn, tenant: SU65dd9ebd1c240e4b11c4f491}
   - id: hotjob-gwm
     company: 长城汽车
-    params: {host: zhaopin.gwm.cn, tenant: SU692d3058ea11b01b6c54d0ea, max_pages: 10}  # 校招 173 页，先只抓 10 页
+    params: {host: zhaopin.gwm.cn, tenant: SU692d3058ea11b01b6c54d0ea, max_pages: 0}  # 校招 517 岗/社招 2644 岗（2026-10-27 审计），max_pages 已放开
   - id: hotjob-faw
     company: 一汽
-    params: {host: faw-zhaopin.hotjob.cn, tenant: SU603374380dcad4635b836531, max_pages: 10}  # 校招 171 页，先抓 10 页
+    params: {host: faw-zhaopin.hotjob.cn, tenant: SU603374380dcad4635b836531, max_pages: 0}  # 校招 511 岗/社招 1113 岗（2026-10-27 审计），max_pages 已放开
   - id: hotjob-horizon
     company: 地平线
-    params: {tenant: SU64819a4f2f9d2433ba8b043a, max_pages: 5}   # 地平线；校招 34 页
+    params: {tenant: SU64819a4f2f9d2433ba8b043a, max_pages: 0}   # 地平线；校招 100 岗/社招 282 岗
   - id: hotjob-huaxia
     company: 华夏银行
-    params: {tenant: SU645b0d18bef57c0907e9fbc8, max_pages: 10}   # 校招 58 页
+    params: {tenant: SU645b0d18bef57c0907e9fbc8, max_pages: 0}   # 校招 58 页
+  - id: hotjob-minmetals
+    company: 中国五矿
+    params: {host: minmetals.hotjob.cn, tenant: SU62f37858bef57c29ead8adab, max_pages: 0}
+    # 2026-10-27 由 DNS 筛 `{slug}.hotjob.cn` 命中：自定义域名 minmetals 即五矿；
+    # 岗位 company 是下属公司（湖南有色中央研究院），集团门户常态。974 岗。
+  - id: hotjob-gf
+    company: 广发证券
+    params: {host: gf.hotjob.cn, tenant: SU625527c30dcad4021443cdda, max_pages: 0}
+    # 337 岗；岗位 company 为各分公司（深圳/东莞分公司），符合券商总部门户形态。
+  - id: hotjob-tfzq
+    company: 天风证券
+    params: {host: tfzq.hotjob.cn, tenant: SU6114cab40dcad4106ffc953b, max_pages: 0}
+    # 46 岗；岗位 company 写「天风总部」，归属确凿。
+  - id: hotjob-htzq
+    company: 红塔证券
+    params: {host: htzq.hotjob.cn, tenant: SU68245c3ad9c14f2a7d99fcc1, max_pages: 0}
+    # 2026-10-27 实测：租户 slug 是 `htzq`（红塔证券拼音首字母），**不是海通证券**——
+    # 海通是 `htsec`。列表 company 字段写「红塔证券股份有限公司」，以此为准。2 岗。
+  - id: hotjob-luxshare
+    company: 立讯精密
+    params: {tenant: SU601778b25d83dc072073230a, max_pages: 0}
+    # 54 岗；自定义域名 luxshare 即立讯。
+  - id: hotjob-feihe
+    company: 飞鹤乳业
+    params: {host: feihe.hotjob.cn, tenant: SU6304eeb40dcad45aa776d597, max_pages: 0}
+    # 15 岗；岗位 company 直接写「飞鹤乳业」。
+  - id: hotjob-eve
+    company: 亿纬锂能
+    params: {tenant: SU630487ca0dcad45aa7768a79, max_pages: 0}
+    # 2026-10-27 由「亿纬锂能 招聘」搜索反查到 wecruit 主域租户，列表返回的 `company` 字段
+    # 全是「亿纬锂能」、城市惠州/南通/合肥，归属无歧义。校招 108 岗 + 社招 1141 岗。
+  - id: hotjob-chinalogistics
+    company: 中国物流
+    params: {host: chinalogisticsgroup.hotjob.cn, tenant: SU643df049bef57c46afe5ed7c, max_pages: 0}
+    # 2026-10-27 实测：自定义域名 `chinalogisticsgroup` 即公司名；岗位 `company` 字段是
+    # 集团下属公司（港中旅华贸、中铁物总、中国物流集团广西），属正常集团门户形态。
+    # 校招 78 岗 + 社招 138 岗。
   - id: hotjob-crrc
     company: 中国中车
-    params: {host: crrc.hotjob.cn, tenant: SU64d480906202cc36e27a5fd8, max_pages: 10}
+    params: {host: crrc.hotjob.cn, tenant: SU64d480906202cc36e27a5fd8, max_pages: 0}
   - id: hotjob-yunnanbaiyao
     company: 云南白药
     params: {tenant: SU6136b970bef57c3b638162c4}
@@ -42,10 +81,250 @@ sources:
     params: {host: career.yonyou.com, tenant: SU67ac41886202cc7916ae3029}
   - id: hotjob-xyzq
     company: 兴业证券
-    params: {tenant: SU68fb2499b7da1347a9dd852c, max_pages: 5}
+    params: {tenant: SU68fb2499b7da1347a9dd852c, max_pages: 0}
   - id: hotjob-gtzq
     company: 国投证券
-    params: {tenant: SU625d4a0b2f9d24287db127c8, max_pages: 5}
+    params: {tenant: SU625d4a0b2f9d24287db127c8, max_pages: 0}
   - id: hotjob-ctsec
     company: 财通证券
-    params: {tenant: SU60613f74bef57c36adc66d0b, max_pages: 10}
+    params: {tenant: SU60613f74bef57c36adc66d0b, max_pages: 0}
+  - id: hotjob-su668b8b251c240e2e76ea71d8
+    company: 创维
+    params: {host: skyworth.hotjob.cn, tenant: SU668b8b251c240e2e76ea71d8}  # 108 岗实测（Skyworth创维招聘官网）
+  - id: hotjob-su5ff30f5b9b0d78e6f4283a0b
+    company: 宁德时代
+    params: {host: atl.hotjob.cn, tenant: SU5ff30f5b9b0d78e6f4283a0b}  # 43 岗实测（ATL招聘官网）
+  - id: hotjob-su630a3a0e2f9d2406b4f6c5f1
+    company: 固德威
+    params: {host: goodwe.hotjob.cn, tenant: SU630a3a0e2f9d2406b4f6c5f1}  # 44 岗实测（固德威招聘官网）
+  - id: hotjob-su62c3b55d2f9d241e4c8e260f
+    company: 天赐材料
+    params: {host: tinci.hotjob.cn, tenant: SU62c3b55d2f9d241e4c8e260f}  # 124 岗实测（天赐招聘官网）
+  - id: hotjob-su69294dabe3842960d1a72594
+    company: 中国化学工程
+    params: {host: cncec.hotjob.cn, tenant: SU69294dabe3842960d1a72594}  # 301 岗实测（化学工程招聘官网）
+  - id: hotjob-su66f3c75a6202cc1a0cba3202
+    company: 澳优乳业
+    params: {host: ausnutria.hotjob.cn, tenant: SU66f3c75a6202cc1a0cba3202}  # 15 岗实测（澳优乳业招聘官网）
+  - id: hotjob-su63e34a270dcad474881066a5
+    company: 五菱
+    params: {host: wuling.hotjob.cn, tenant: SU63e34a270dcad474881066a5}  # 5 岗实测（广西汽车招聘官网）
+  - id: hotjob-su652251308ac1ca0dbbc521c3
+    company: 中集集团
+    params: {host: cimc.hotjob.cn, tenant: SU652251308ac1ca0dbbc521c3}  # 4 岗实测（中集集团招聘官网）
+  - id: hotjob-422dbe
+    company: 华泰证券
+    params: {host: wecruit.hotjob.cn, tenant: SU5d4bd89a9b0d7889b8422dbe}
+    # 2026-10-27 搜索反查新增：校招 107 岗；城市 20/20、发布日 20/20；岗位代码前缀 HTSC
+  - id: hotjob-22f6f8
+    company: 碧桂园
+    params: {host: wecruit.hotjob.cn, tenant: SU5fe5ad319b0d78e6f422f6f8}
+    # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；自定义域名归属
+  - id: hotjob-f11c21
+    company: 中国中化
+    params: {host: sinochem.hotjob.cn, tenant: SU610b91ee0dcad4106ff11c21}
+    # 2026-10-27 搜索反查新增：校招 602 岗；城市 12/12、发布日 12/12；岗位代码前缀 Sinochem
+  - id: hotjob-450aa2
+    company: 特变电工
+    params: {host: wecruit.hotjob.cn, tenant: SU612f55eebef57c0616450aa2}
+    # 2026-10-27 搜索反查新增：校招 381 岗；城市 11/12、发布日 12/12；岗位代码前缀 TBEA
+  - id: hotjob-dcd7a9
+    company: 先声药业
+    params: {host: wecruit.hotjob.cn, tenant: SU61403c7e0dcad45880dcd7a9}
+    # 2026-10-27 搜索反查新增：校招 268 岗；城市 20/20、发布日 20/20；岗位代码前缀 simcere
+  - id: hotjob-9bc0fa
+    company: 招商证券
+    params: {host: wecruit.hotjob.cn, tenant: SU629dbc260dcad452299bc0fa}
+    # 2026-10-27 搜索反查新增：校招 36 岗；城市 20/20、发布日 20/20；岗位代码前缀 cms
+  - id: hotjob-2da4c5
+    company: 海天味业
+    params: {host: wecruit.hotjob.cn, tenant: SU6322dfb70dcad46a862da4c5}
+    # 2026-10-27 搜索反查新增：校招 60 岗；城市 20/20、发布日 20/20；岗位代码前缀 haday
+  - id: hotjob-b75e63
+    company: 台州银行
+    params: {host: wecruit.hotjob.cn, tenant: SU63ae8855bef57c0c2eb75e63}
+    # 2026-10-27 搜索反查新增：校招 18 岗；城市 18/18、发布日 18/18；岗位代码前缀 TZBANK
+  - id: hotjob-43df7e
+    company: 隆基绿能
+    params: {host: longi.hotjob.cn, tenant: SU649d2f9c0dcad4644b43df7e}
+    # 2026-10-27 搜索反查新增：校招 152 岗；城市 20/20、发布日 20/20；岗位代码前缀 LONGI
+  - id: hotjob-b17d1f
+    company: 沃森生物
+    params: {host: wecruit.hotjob.cn, tenant: SU64ab6b940dcad465c3b17d1f}
+    # 2026-10-27 搜索反查新增：校招 16 岗；城市 16/16、发布日 16/16；岗位代码前缀 walvax
+  - id: hotjob-4a7a2c
+    company: 大众
+    params: {host: faw-zhaopin.hotjob.cn, tenant: SU64bb3226bef57c7e364a7a2c}
+    # 2026-10-27 搜索反查新增：校招 17 岗；城市 12/12、发布日 12/12；岗位代码前缀 FAW
+  - id: hotjob-4839a1
+    company: 中车株洲所
+    params: {host: crrc-zzdj.hotjob.cn, tenant: SU64ca1ec06202cc125d4839a1}
+    # 2026-10-27 搜索反查新增：校招 6 岗；城市 6/6、发布日 6/6；岗位代码前缀 CRRC
+  - id: hotjob-c60436
+    company: 中国汽研
+    params: {host: wecruit.hotjob.cn, tenant: SU6603d5a01eb8054100c60436}
+    # 2026-10-27 搜索反查新增：校招 100 岗；城市 20/20、发布日 20/20；岗位代码前缀 CAERI
+  - id: hotjob-f19c2a
+    company: 中国一重
+    params: {host: wecruit.hotjob.cn, tenant: SU6738316a1eb805735df19c2a}
+    # 2026-10-27 搜索反查新增：校招 19 岗；城市 19/19、发布日 19/19；岗位代码前缀 CFHI
+  - id: hotjob-c9c470
+    company: 九洲药业
+    params: {host: wecruit.hotjob.cn, tenant: SU67c7a52a1c240e1887c9c470}
+    # 2026-10-27 搜索反查新增：校招 162 岗；城市 20/20、发布日 20/20；岗位代码前缀 jezetek
+  - id: hotjob-2f05c8
+    company: 鹏辉能源
+    params: {host: wecruit.hotjob.cn, tenant: SU69fc56961f17c372512f05c8}
+    # 2026-10-27 搜索反查新增：校招 29 岗；城市 20/20、发布日 20/20；岗位代码前缀 GreatPower
+  - id: hotjob-4b6888
+    company: 白云山
+    params: {host: wecruit.hotjob.cn, tenant: SU6a94e5b85e09b14b274b6888}
+    # 2026-10-27 搜索反查新增：校招 117 岗；城市 20/20、发布日 20/20；岗位代码前缀 GPC
+  - id: hotjob-3e1c5b
+    company: 中国电科
+    params: {host: wecruit.hotjob.cn, tenant: SU6056ebe60dcad424d03e1c5b}
+    # 2026-10-27 搜索反查新增：校招 136 岗；城市 20/20、发布日 20/20；岗位代码前缀 cetc
+  - id: hotjob-124ff0
+    company: 中国铁建
+    params: {host: wecruit.hotjob.cn, tenant: SU6125b2ce0dcad4106f124ff0}
+    # 2026-10-27 搜索反查新增：校招 124 岗；城市 20/20、发布日 20/20；岗位代码前缀 ztjs
+  - id: hotjob-6b5464
+    company: 中国航信
+    params: {host: travelsky.hotjob.cn, tenant: SU6358e2600dcad448466b5464}
+    # 2026-10-27 搜索反查新增：校招 87 岗；城市 20/20、发布日 20/20；岗位代码前缀 travelsky
+  - id: hotjob-e82bab
+    company: 德勤
+    params: {host: wecruit.hotjob.cn, tenant: SU64365a780dcad43c5ae82bab}
+    # 2026-10-27 搜索反查新增：校招 181 岗；城市 20/20、发布日 20/20；岗位代码前缀 Deloitte
+  - id: hotjob-482154
+    company: 金龙鱼
+    params: {host: wecruit.hotjob.cn, tenant: SU646ed8970dcad45af1482154}
+    # 2026-10-27 搜索反查新增：校招 152 岗；城市 12/12、发布日 12/12；岗位代码前缀 YihaiKerry
+  - id: hotjob-461810
+    company: 中国金茂
+    params: {host: wecruit.hotjob.cn, tenant: SU64f6a5026202cc0401461810}
+    # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；岗位代码前缀 jinmao
+  - id: hotjob-c744bc
+    company: 广东南粤银行
+    params: {host: wecruit.hotjob.cn, tenant: SU670a291d6202cc7666c744bc}
+    # 2026-10-27 搜索反查新增：校招 6 岗；城市 6/6、发布日 6/6；岗位代码前缀 gdnybank
+  - id: hotjob-3ff1a3
+    company: 国机集团
+    params: {host: wecruit.hotjob.cn, tenant: SU64b60d25bef57c7e363ff1a3}
+    # 2026-10-27 搜索反查新增：校招 1011 岗；城市 10/10、发布日 10/10；岗位代码前缀 sinomach
+  - id: hotjob-45b915
+    company: 华熙生物
+    params: {host: bloomagebiotech.hotjob.cn, tenant: SU64de19ec6202cc6de345b915}
+    # 2026-10-27 搜索反查新增：校招 15 岗；城市 15/15、发布日 15/15；岗位代码前缀 HXSW
+  - id: hotjob-ea6f47
+    company: 飞鹤
+    params: {host: wecruit.hotjob.cn, tenant: SU65b7693c1eb8053c62ea6f47}
+    # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；岗位代码前缀 feihe
+  - id: hotjob-26a2e9
+    company: 洛阳钼业
+    params: {host: wecruit.hotjob.cn, tenant: SU67e513c01c240e188726a2e9}
+    # 2026-10-27 搜索反查新增：校招 25 岗；城市 12/12、发布日 12/12；岗位代码前缀 CMOC
+  - id: hotjob-23d358
+    company: 怡宝
+    params: {host: wecruit.hotjob.cn, tenant: SU636b6e722f9d2439ab23d358}
+    # 2026-10-27 搜索反查新增：校招 2 岗；城市 2/2、发布日 2/2；岗位代码前缀 CRbeverage
+  - id: hotjob-74bd36
+    company: 上海电气
+    params: {host: wecruit.hotjob.cn, tenant: SU60de8350bef57c519874bd36}
+    # 2026-10-27 搜索反查新增：校招 506 岗；城市 12/12、发布日 12/12；岗位代码前缀 SEC
+  - id: hotjob-014abb
+    company: 上汽通用五菱
+    params: {host: wecruit.hotjob.cn, tenant: SU611bbe3c2f9d24229e014abb}
+    # 2026-10-27 搜索反查新增：校招 1 岗；城市 1/1、发布日 1/1；岗位代码前缀 SGMW
+  - id: hotjob-7ddf32
+    company: 柳工
+    params: {host: wecruit.hotjob.cn, tenant: SU6132f9c3bef57c3b637ddf32}
+    # 2026-10-27 搜索反查新增：校招 336 岗；城市 10/10、发布日 10/10；岗位代码前缀 Liugong
+  - id: hotjob-8d207c
+    company: 西部证券
+    params: {host: wecruit.hotjob.cn, tenant: SU614049aebef57c3b638d207c}
+    # 2026-10-27 搜索反查新增：校招 32 岗；城市 20/20、发布日 20/20；岗位代码前缀 XBZQ
+  - id: hotjob-b4e43f
+    company: 先声药业
+    params: {host: wecruit.hotjob.cn, tenant: SU61458d83bef57c54dcb4e43f}
+    # 2026-10-27 搜索反查新增：校招 268 岗；城市 20/20、发布日 20/20；岗位代码前缀 simcere
+  - id: hotjob-c07957
+    company: 华润万家
+    params: {host: wecruit.hotjob.cn, tenant: SU61500b08bef57c54dcc07957}
+    # 2026-10-27 搜索反查新增：校招 74 岗；城市 20/20、发布日 20/20；岗位代码前缀 crv
+  - id: hotjob-f1a77b
+    company: 三诺生物
+    params: {host: wecruit.hotjob.cn, tenant: SU61f128d3bef57c632bf1a77b}
+    # 2026-10-27 搜索反查新增：校招 13 岗；城市 13/13、发布日 13/13；岗位代码前缀 Sinocare
+  - id: hotjob-50a153
+    company: 东阿阿胶
+    params: {host: wecruit.hotjob.cn, tenant: SU623314ce2f9d244b1b50a153}
+    # 2026-10-27 搜索反查新增：校招 36 岗；城市 12/12、发布日 12/12；岗位代码前缀 DEEJ
+  - id: hotjob-2e833a
+    company: 国检
+    params: {host: wecruit.hotjob.cn, tenant: SU637b4abd0dcad415782e833a}
+    # 2026-10-27 搜索反查新增：校招 175 岗；城市 20/20、发布日 20/20；岗位代码前缀 ccicg
+  - id: hotjob-45b5b1
+    company: 聚光科技
+    params: {host: wecruit.hotjob.cn, tenant: SU649e8a960dcad4644b45b5b1}
+    # 2026-10-27 搜索反查新增：校招 9 岗；城市 9/9、发布日 9/9；岗位代码前缀 FPI
+  - id: hotjob-52057a
+    company: 春秋航空
+    params: {host: wecruit.hotjob.cn, tenant: SU64be2022bef57c7e3652057a}
+    # 2026-10-27 搜索反查新增：校招 15 岗；城市 15/15、发布日 15/15；岗位代码前缀 springhr
+  - id: hotjob-f80335
+    company: 燕京啤酒
+    params: {host: wecruit.hotjob.cn, tenant: SU65031ba06202cc4693f80335}
+    # 2026-10-27 搜索反查新增：校招 19 岗；城市 19/19、发布日 19/19；岗位代码前缀 yanjingbeer
+  - id: hotjob-1f5c42
+    company: 柳州银行
+    params: {host: wecruit.hotjob.cn, tenant: SU6520caa31c240e3d681f5c42}
+    # 2026-10-27 搜索反查新增：校招 4 岗；城市 4/4、发布日 4/4；岗位代码前缀 bolz
+  - id: hotjob-868066
+    company: 康佳
+    params: {host: wecruit.hotjob.cn, tenant: SU65274af98ac1ca5869868066}
+    # 2026-10-27 搜索反查新增：校招 15 岗；城市 14/15、发布日 15/15；岗位代码前缀 konka
+  - id: hotjob-600e7e
+    company: 开源证券
+    params: {host: wecruit.hotjob.cn, tenant: SU654f2df43538bc6c4d600e7e}
+    # 2026-10-27 搜索反查新增：校招 4 岗；城市 4/4、发布日 4/4；岗位代码前缀 kysec
+  - id: hotjob-256280
+    company: 大北农
+    params: {host: wecruit.hotjob.cn, tenant: SU66ab37a71c240e2e76256280}
+    # 2026-10-27 搜索反查新增：校招 53 岗；城市 20/20、发布日 20/20；岗位代码前缀 DBN
+  - id: hotjob-0db791
+    company: 港华燃气
+    params: {host: towngas.hotjob.cn, tenant: SU687915d58131aa76aa0db791}
+    # 2026-10-27 搜索反查新增：校招 5 岗；城市 5/5、发布日 5/5；岗位代码前缀 Towngas
+  - id: hotjob-60df9d
+    company: 国盛证券
+    params: {host: gszq.hotjob.cn, tenant: SU6879a7b3e57172288b60df9d}
+    # 2026-10-27 搜索反查新增：校招 44 岗；城市 20/20、发布日 20/20；岗位代码前缀 GSZQ
+  - id: hotjob-1b1369
+    company: 盐湖
+    params: {host: wecruit.hotjob.cn, tenant: SU6894021e6c88b20bfe1b1369}
+    # 2026-10-27 搜索反查新增：校招 24 岗；城市 20/20、发布日 20/20；岗位代码前缀 minmetals
+  - id: hotjob-887983
+    company: 双胞胎
+    params: {host: wecruit.hotjob.cn, tenant: SU6a5f1fabba2dc64cbb887983}
+    # 2026-10-27 搜索反查新增：校招 33 岗；城市 20/20、发布日 20/20；岗位代码前缀 TWINSGROUP
+  - id: hotjob-7ac122
+    company: 华友钴业
+    params: {host: wecruit.hotjob.cn, tenant: SU62624051bef57c796a7ac122}
+    # 2026-10-27 搜索反查新增：校招 193 岗；城市 10/10、发布日 10/10；岗位代码前缀 HUAYOU
+  - id: hotjob-41e2c6
+    company: 卓越
+    params: {host: wecruit.hotjob.cn, tenant: SU63366959bef57c270741e2c6}
+    # 2026-10-27 搜索反查新增：校招 430 岗；城市 20/20、发布日 20/20；岗位代码前缀 ZYJob
+  - id: hotjob-76d597
+    company: 飞鹤
+    params: {host: wecruit.hotjob.cn, tenant: SU6304eeb40dcad45aa776d597}
+    # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；岗位代码前缀 feihe
+  - id: hotjob-de36ef
+    company: 远东
+    params: {host: wecruit.hotjob.cn, tenant: SU63fda86c2f9d240675de36ef}
+    # 2026-10-27 搜索反查新增：校招 53 岗；城市 20/20、发布日 20/20；岗位代码前缀 FarEast
+  - id: hotjob-8e84de
+    company: 河南能源
+    params: {host: wecruit.hotjob.cn, tenant: SU62c3f8b42f9d241e4c8e84de}
+    # 2026-10-27 搜索反查新增：校招 73 岗；城市 50/50、发布日 50/50；岗位代码前缀 HNEC

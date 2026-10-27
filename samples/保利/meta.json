@@ -1,0 +1,30 @@
+{
+  "company": "保利",
+  "careers_url": "https://polycareer.zhiye.com/",
+  "host": "polycareer.zhiye.com",
+  "ats": "beisen",
+  "page_title": "保利发展控股集团股份有限公司",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 45,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "保利发展控股集团股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 9,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120089.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/120078.html",
+      "https://job.xidian.edu.cn/campus/view/id/758108"
+    ]
+  }
+}

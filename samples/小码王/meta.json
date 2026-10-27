@@ -1,0 +1,25 @@
+{
+  "company": "小码王",
+  "careers_url": "https://www.xiaomawang.cn/job/",
+  "host": "www.xiaomawang.cn",
+  "ats": "unknown",
+  "page_title": "小码王招聘-小码教育公司工作岗位招聘|校园人才招聘-小码王",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "暑期实习"
+  ],
+  "tracks": 10,
+  "roles": 38,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "小码王招聘-小码教育公司工作岗位招聘|校园人才招聘-小码王",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

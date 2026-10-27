@@ -1,0 +1,27 @@
+{
+  "company": "仙工智能",
+  "careers_url": "https://seer-group.jobs.feishu.cn/campus/",
+  "host": "seer-group.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "加入仙工智能",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 22,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入仙工智能",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757127"
+    ]
+  }
+}

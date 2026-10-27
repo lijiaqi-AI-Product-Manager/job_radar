@@ -10,6 +10,7 @@ from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
+from jobradar.normalize import date_only
 
 LIST_URL = "https://careers.tencent.com/tencentcareer/api/post/Query"
 DETAIL_URL = "https://careers.tencent.com/tencentcareer/api/post/ByPostId"
@@ -62,6 +63,9 @@ class TencentAdapter(Adapter):
             recruit_type="social",
             cities=[city] if city else [],
             department=raw.get("BGName") or None,
+            # 列表接口给的是中文日期串「2026年10月21日」——只当"上架日"用，
+            # 没有截止日字段就留空（不猜）。
+            publish_at=date_only(raw.get("LastUpdateTime")),
             description=raw.get("Responsibility") or None,
             requirements=raw.get("Requirement") or None,
         )

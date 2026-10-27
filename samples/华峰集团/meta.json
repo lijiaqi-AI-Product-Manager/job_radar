@@ -1,0 +1,26 @@
+{
+  "company": "华峰集团",
+  "careers_url": "https://huafeng.zhiye.com/",
+  "host": "huafeng.zhiye.com",
+  "ats": "beisen",
+  "page_title": "华峰集团有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 19,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "华峰集团有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019796"
+    ]
+  }
+}

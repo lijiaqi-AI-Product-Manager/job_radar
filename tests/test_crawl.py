@@ -83,28 +83,29 @@ def _job(**kw):
     return Job(**{**base, **kw})
 
 
-def test_enrich_takes_grad_year_from_jd_when_title_has_none():
-    j = _job(description="面向 2027 届毕业生", requirements="")
+def test_enrich_never_touches_grad_year():
+    """届别由适配器一人说了算，_enrich 不许从 JD 再补一次（2026-10-26 字节跳动实测）。
+
+    反例：2023 年挂到现在的实习岗，JD 写着"2023届"。适配器按发布时间判定 JD 已过期、
+    主动留空，_enrich 却用 grad_year_from_jd 补成 2027 —— 于是"2027届在招"出现在一个
+    2023 年的岗位上。所以这里断言的正是"什么都不做"。
+    """
+    for kw in (
+        {"description": "面向 2027 届毕业生", "requirements": ""},
+        {"title": "2027届-算法工程师", "description": "2026 届毕业生也可投递"},
+        {"description": "2026届、2027届均可投递"},
+        {"recruit_type": "social", "description": "面向 2027 届毕业生"},
+    ):
+        j = _job(**kw)
+        _enrich(j)
+        assert j.grad_year is None, kw
+
+
+def test_enrich_still_fills_category_and_cities():
+    j = _job(title="后端开发工程师（深圳）")
     _enrich(j)
-    assert j.grad_year == 2027
-
-
-def test_enrich_does_not_override_title_grad_year():
-    j = _job(title="2027届-算法工程师", description="2026 届毕业生也可投递")
-    _enrich(j)
-    assert j.grad_year == 2027
-
-
-def test_enrich_ignores_ambiguous_jd_grad_year():
-    j = _job(description="2026届、2027届均可投递")
-    _enrich(j)
-    assert j.grad_year is None
-
-
-def test_enrich_does_not_take_grad_year_for_social():
-    j = _job(recruit_type="social", description="面向 2027 届毕业生")
-    _enrich(j)
-    assert j.grad_year is None
+    assert j.category == "技术"
+    assert j.cities == ["深圳"]
 def test_budget_exceeded_skips_remaining_sources(jobs_db, text_db):
     """整轮采集有预算：超时后剩余源标记失败，不拖到 workflow 上限（2026-10-22 daily 跑了 75 分钟+）。"""
     sources = [example_source(), example_source(id="later")]

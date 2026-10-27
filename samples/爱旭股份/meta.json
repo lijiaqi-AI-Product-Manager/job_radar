@@ -1,0 +1,24 @@
+{
+  "company": "爱旭股份",
+  "careers_url": "https://aikosolar.com/cn/careers/",
+  "host": "aikosolar.com",
+  "ats": "unknown",
+  "page_title": "爱旭股份人才招聘与职业发展 | 爱旭股份官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 3,
+  "roles": 10,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "爱旭股份人才招聘与职业发展 | 爱旭股份官网",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "深蓝汽车",
+  "careers_url": "https://shenlan1.zhiye.com/",
+  "host": "shenlan1.zhiye.com",
+  "ats": "beisen",
+  "page_title": "深蓝航天-2027届校园招聘官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 4,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "深蓝航天-2027届校园招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

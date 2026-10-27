@@ -1,0 +1,28 @@
+{
+  "company": "阿斯利康中国",
+  "careers_url": "https://careers.astrazeneca.com/china-zh",
+  "host": "careers.astrazeneca.com",
+  "ats": "self_hosted",
+  "page_title": "&#x963F;&#x65AF;&#x5229;&#x5EB7;&#x4E2D;&#x56FD;",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 28,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "&#x963F;&#x65AF;&#x5229;&#x5EB7;&#x4E2D;&#x56FD;",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757549",
+      "https://job.zzu.edu.cn/campus/view/id/1019367"
+    ]
+  }
+}

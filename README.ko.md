@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,15 +14,15 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 
 ![demo](docs/assets/demo-en.gif)
 
-> **데이터(2026-10-24)**: **279개 소스** · **약 88,600개 오픈 공고** · **JD 원문 99.8%**
-> 목표 500개 기업 중 **494개**가 캘린더 또는 공고 데이터 보유(공고 단위는 **161개**).
+> **데이터(2026-10-26)**: **370개 소스** · **97,607개 오픈 공고** · **JD 원문 99.8%**
+> 목표 1,014개 기업 중 **891개**가 캘린더 보유(공고 단위는 **264개**, 총 **895개**).
 
 ## 특징
 
 - ✅ 각 기업 **공식** 채용 페이지의 공고와 JD 원문(제3자 집계 사이트 제외)
 - ✅ 매일 전체 재수집, 이력 보존(신규·마감·변경 추적)
 - ✅ 채용 캘린더: 졸업 연도, 프로그램 유형, 직무 방향, 지원 기간, 도시, 지원 URL, 출처
-- ❌ 500개 중 161개만 공고 단위 데이터 제공
+- ❌ 1,014개 중 264개만 공고 단위 데이터 제공
 - ❌ 지원 대행·추천·면접 후기·연봉은 다루지 않으며, 캡차/로그인/서명 우회도 하지 않습니다
 
 ## 빠른 시작
@@ -64,8 +64,8 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 읽기 쉬운 �
 
 | 항목 | 현황 |
 |---|---|
-| 캘린더 커버리지 | 494/500 (나머지 6개는 robots/로그인/DNS 로 불가) |
-| 공고 단위 | 161/500 (나머지는 자체 사이트 또는 암호화 플랫폼) |
+| 캘린더 커버리지 | 891/1,014 (나머지 17개는 robots/로그인/DNS 로 불가) |
+| 공고 단위 | 264/1,014 (나머지는 자체 사이트 또는 암호화 플랫폼) |
 | 대형 테크 | 알리바바·텐센트·메이투안 등은 공고 있음. 바이트댄스·징둥·화웨이는 캘린더만 |
 | 지원 기간 | 1,372건 중 8건(0.6%)만 시작·마감 모두 기재 |
 | 중복 | 9.2% 가 동일 기업·제목·도시(`--dedupe` 로 통합) |

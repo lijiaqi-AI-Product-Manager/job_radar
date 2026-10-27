@@ -1,0 +1,26 @@
+{
+  "company": "厦钨新能",
+  "careers_url": "https://xtc-xny1.zhiye.com/campus/detail?jobAdId=6001feb8-1764-45c3-9436-f7154b3136bd",
+  "host": "xtc-xny1.zhiye.com",
+  "ats": "beisen",
+  "page_title": "厦钨新能源",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "厦钨新能源",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/996917"
+    ]
+  }
+}

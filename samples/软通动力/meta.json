@@ -1,0 +1,25 @@
+{
+  "company": "软通动力",
+  "careers_url": "https://career.isoftstone.com/",
+  "host": "career.isoftstone.com",
+  "ats": "self_hosted",
+  "page_title": "isoftstone软通动力-人才招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 44,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "isoftstone软通动力-人才招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "company": "优必选",
+  "careers_url": "https://ubtrobot.zhiye.com/campus/jobs",
+  "host": "ubtrobot.zhiye.com",
+  "ats": "beisen",
+  "page_title": "优必选科技",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 42,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "优必选科技",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020826",
+      "https://job.zzu.edu.cn/campus/view/id/1018908"
+    ]
+  }
+}

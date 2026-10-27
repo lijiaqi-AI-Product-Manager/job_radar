@@ -1,0 +1,20 @@
+[
+  {
+    "title": "招聘专家（高招）",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 285
+  },
+  {
+    "title": "可靠性工程师",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 61
+  },
+  {
+    "title": "招聘专员",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 146
+  }
+]

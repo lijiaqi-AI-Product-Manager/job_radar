@@ -1,0 +1,24 @@
+{
+  "company": "老百姓大药房",
+  "careers_url": "https://www.lbxdrugs.com/rcyj.html",
+  "host": "www.lbxdrugs.com",
+  "ats": "unknown",
+  "page_title": "人才引进-老百姓大药房连锁股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "人才引进-老百姓大药房连锁股份有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

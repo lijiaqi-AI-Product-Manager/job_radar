@@ -1,0 +1,24 @@
+{
+  "company": "巨子生物",
+  "careers_url": "https://xajuzi.zhiye.com/campus/detail?jobAdId=a6b924b8-5673-4bc4-a25d-e6e0249eca30",
+  "host": "xajuzi.zhiye.com",
+  "ats": "beisen",
+  "page_title": "巨子生物",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 4,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "巨子生物",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

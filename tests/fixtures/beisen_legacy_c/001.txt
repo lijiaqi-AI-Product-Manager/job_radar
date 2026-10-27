@@ -1,0 +1,122 @@
+<html><body><table>
+<tr>
+				<th align="left" width="25%"><div class="ml35 zwtabtxt tc">
+					<b>招聘岗位</b>
+					<!--<p>Hiring Position</p>-->
+				</div></th>
+                           <th align="center" width="17%">
+					<b>部门名称</b>
+					<!--<p>Department</p>-->
+				</th>
+				<th align="center" width="17%">
+					<b>职位类别</b>
+					<!--<p>Job Category</p>-->
+				</th>
+				<th align="center" width="17%">
+					<b>工作地点</b>
+					<!--<p>Working Location</p>-->
+				</th>
+				<th align="center" width="12%">
+					<b>发布日期</b>
+					<!--<p>Release Time</p>-->
+				</th>
+				<th align="center" width="12%">
+					<b>操作</b>
+					<!--<p>Operation</p>-->
+				</th>
+			</tr>
+<tr>
+                                  <td align="left"><a href="/socialxq?jobId=621155633"><span class="pl35">电商金融产品岗</span></a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621155633">中欧财富</a></td>
+                                  <td align="center"><a href="/socialxq?jobId=621155633">市场体系</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621155633">上海市</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621155633">2026-10-15</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621155633" class="ckzw">查看职位</a></td>
+                                </tr>
+<tr>
+                                  <td align="left"><a href="/socialxq?jobId=621154998"><span class="pl35">策略分析</span></a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621154998">零售业务部</a></td>
+                                  <td align="center"><a href="/socialxq?jobId=621154998">市场体系</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621154998">上海市</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621154998">2026-10-14</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621154998" class="ckzw">查看职位</a></td>
+                                </tr>
+<tr>
+                                  <td align="left"><a href="/socialxq?jobId=621150144"><span class="pl35">AI研究员（固收投研）</span></a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621150144">基础研究及投资支持部</a></td>
+                                  <td align="center"><a href="/socialxq?jobId=621150144">市场体系</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621150144">上海市</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621150144">2026-09-28</a></td>
+                                        <td align="center"><a href="/socialxq?jobId=621150144" class="ckzw">查看职位</a></td>
+                                </tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+<tr>
+				<td align="left"><a href=""><span class="pl35">高级T经理(投研方向)</span></a></td>
+				<td align="center"><a href="">市场体系</a></td>
+				<td align="center"><a href="">广东省-深圳市</a></td>
+				<td align="center"><a href="">2020-07-02</a></td>
+				<td align="center"><a href="" class="ckzw">查看职位</a></td>
+			</tr>
+</table></body></html>

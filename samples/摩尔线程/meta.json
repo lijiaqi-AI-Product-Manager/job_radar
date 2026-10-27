@@ -1,0 +1,25 @@
+{
+  "company": "摩尔线程",
+  "careers_url": "https://mthreads.zhiye.com/campus",
+  "host": "mthreads.zhiye.com",
+  "ats": "beisen",
+  "page_title": "摩尔线程招聘门户",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 6,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "摩尔线程招聘门户",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "company": "中信证券",
+  "careers_url": "https://careers.citics.com/campus/branch",
+  "host": "careers.citics.com",
+  "ats": "self_hosted",
+  "page_title": "中信证券招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 34,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中信证券招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 18,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120080.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119962.html",
+      "https://job.xidian.edu.cn/campus/view/id/757762"
+    ]
+  }
+}

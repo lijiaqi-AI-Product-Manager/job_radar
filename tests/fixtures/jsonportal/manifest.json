@@ -1,0 +1,18 @@
+[
+  {
+    "method": "POST",
+    "url": "https://campus.cec.com.cn/student-api/api/position/search",
+    "body": "{\"name\":\"\",\"degree\":null,\"orgId\":[],\"page\":1,\"size\":10,\"positionType\":\"0\"}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.cec.com.cn/student-api/api/position/search",
+    "body": "{\"name\":\"\",\"degree\":null,\"orgId\":[],\"page\":2,\"size\":10,\"positionType\":\"0\"}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "002.json"
+  }
+]

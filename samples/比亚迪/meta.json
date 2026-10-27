@@ -1,0 +1,28 @@
+{
+  "company": "比亚迪",
+  "careers_url": "https://job.byd.com/portal/pc/",
+  "host": "job.byd.com",
+  "ats": "self_hosted",
+  "page_title": "比亚迪招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 34,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "比亚迪招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.neuq.edu.cn/campus/view/id/861565",
+      "https://job.zzu.edu.cn/campus/view/id/1018826"
+    ]
+  }
+}

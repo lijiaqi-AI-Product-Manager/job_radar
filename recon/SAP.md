@@ -1,0 +1,24 @@
+# SAP
+
+- **行业**：外资在华
+- **投递入口**：https://careers.sap.com/
+- **host**：`careers.sap.com`　**ATS**：`self_hosted`
+- **日历条目**：2 条　**方向**：1 个　**岗位名**：1 个
+- **批次**：校招
+- **届次**：-
+- **有网申窗口**：否　**有城市**：否
+- **JD**：blocked
+- **复核时间**：2026-10-26
+
+## 证据
+
+- 入口 HTTP：200
+- 站点标题：Jobs at SAP | SAP Careers
+- 池来源：`careers_final`　等级：`B`
+- 判级理由：career_subdomain
+- 简章命中：0 条
+
+## 日历条目
+
+- `sap-campus-entry` 校招  ｜? ~ ?｜城市未知
+- `zhongguosapsap-xz` 校招  ｜? ~ ?｜城市未知

@@ -1,0 +1,24 @@
+{
+  "company": "作业帮",
+  "careers_url": "https://app.mokahr.com/campus-recruitment/zuoyebang/39595",
+  "host": "app.mokahr.com",
+  "ats": "moka",
+  "page_title": "作业帮教育科技（北京）有限公司 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "暑期实习"
+  ],
+  "tracks": 3,
+  "roles": 7,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "作业帮教育科技（北京）有限公司 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

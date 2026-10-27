@@ -47,7 +47,7 @@ uv run python scripts/release_check.py --home ~/.jobradar
 | `JOBRADAR_MIRROR=gitee jobradar update --force` | 80 秒，自动拼接 2+3 个分片 |
 | `jobradar doctor` | 三个库齐全，未过期，`jd_text_match = 1.0` |
 | `jobradar search --company 复星 --type campus` | 正常返回岗位 |
-| `jobradar calendar --group 京东` | 返回条目，`jd_status=blocked` 带提示语 |
+| `jobradar calendar --group 京东` | 返回日历条目，同时有 355 条 JD（`campus.jd.com` 公开接口，2026-10-26 起） |
 
 ## 发布流程（每次发版）
 

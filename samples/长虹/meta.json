@@ -1,0 +1,30 @@
+{
+  "company": "长虹",
+  "careers_url": "http://www.changhong-network.com/content/?306.html",
+  "host": "www.changhong-network.com",
+  "ats": "unknown",
+  "page_title": "校园招聘——四川长虹网络科技有限责任公司",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 69,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘——四川长虹网络科技有限责任公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757297",
+      "https://job.zzu.edu.cn/campus/view/id/1019867",
+      "https://job.zzu.edu.cn/campus/view/id/1019168"
+    ]
+  }
+}

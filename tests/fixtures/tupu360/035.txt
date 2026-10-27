@@ -1,0 +1,674 @@
+   </div>
+    <div class="card-footer d-flex justify-content-between">
+        
+            
+            <label class="d-flex align-items-center checkbox-default" data-action="ajaxSearch">
+                <input type="checkbox" id="hot" name="hot" selectType="checkbox_boolean" >
+                <span class="txt">热招</span>
+            </label>
+        
+        
+        
+            
+            <div class="keywrods-search-box">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="keyword" value="" selectType="text"  placeholder="职位名称关键字或Job ID" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="searchBtn">搜索职位</button>
+                </form>
+            </div>
+        
+
+    </div>
+</div>
+
+
+        
+            
+            
+
+<!--页码翻页模式-->
+<div class="card card-normal card-position-list" id="position-list" positionCount="9">
+    <div class="card-header">
+    <div class="txt">共9个职位</div>
+    
+        <div class="subscribe-actions">
+    <div class="input-group">
+        <div class="form-control form-control-modify-select">
+            <div class="modify-show">
+                <input type="text" placeholder="请选择订阅周期"
+                       id="selectedPositionSubscribe"/>
+                
+                <select name="frequency" id="subscribeFrequency">
+                    <option value="">请选择订阅周期</option>
+                    
+                         <option value="weekly">每周</option>
+                    
+                         <option value="monthly">每月</option>
+                    
+                </select>
+                <span class="icons i-arrow-down"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="btn-group-sm">
+        <button class="btn btn-outline-primary" id="btnPositionSubscribe">
+            <span class="icons i-subscribe"></span>
+            <span class="t" >订阅</span>
+        </button>
+    </div>
+</div>
+    
+</div>
+<div class="card-body">
+    <div class="position-list">
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6ad22f955643cc5f6a59e252" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">智慧建筑数字化产品实习生</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:526048</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-16</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6ad2135c5643cc5f6a59e24e" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">AI基础设施/数据中心团队实习生</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:525764</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-16</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6ad1db045643cc5f6a59e21c" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Student Intern</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：四川省-成都</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:525911</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-16</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6acd920e5643cc5f6a59ded0" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">西门子 数据与人工智能中心中国研发部 AI产品体验设计实习生（工业AI方向）（面向在校学生/无转正）</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,江苏省-苏州,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:525532</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-13</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a44cb65cf856c3f733f73e6" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">西门子 数据与人工智能中心中国研发部 LMM/LLM方向科研实习生（在校学生/无转正/长期有效）</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:512285</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-22</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa756937280da28da079abe" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">西门子 数据与人工智能中心中国研发部 - 工业 AI 世界模型测评 Pipeline 实习生北京（可远程灵活办公）</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:522411</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：混合办公（远程/现场）</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-15</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6825bc9ca96002bdaae847b4" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Student Intern-CAD Infras</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:464739</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2025-05-15</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="67f89538a96002bdaae83544" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Student Intern- CAM</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:461059</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2025-04-11</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="67f89531a96002bdaae8353d" recruitment="INTERNSHIPRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Student Intern-CAM 2</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：行政</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:461051</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2025-04-11</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="position-show-more d-flex justify-content-end align-items-center mt-3">
+    <ul class="pagination justify-content-end" id="pageTurnUl">
+        
+        <li class="page-item disabled mr-3">
+            <a class="page-link text-dark" >共1页</a>
+        </li>
+        
+
+        
+            <li class='page-item active'  >
+                <a class="page-link text-dark" >1</a>
+            </li>
+        
+
+        
+
+    </ul>
+</div>
+    </div>
+</div>
+</div>
+
+        
+        </div>
+    </div>
+</div>
+
+
+            
+                
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                
+                    <div class="footer-text">
+                        
+                            
+                            
+                            
+                                Siemens AG, 1996 – 2021
+                            
+                        
+                             | 
+                            
+                            <a href=" https://new.siemens.com/cn/zh/general/privacy-notice.html" target="_blank">
+                                隐私政策
+                            </a>
+                        
+                             | 
+                            
+                            <a href="mailto:h2r.askhr.cn&#64;siemens.com" target="_blank">
+                                联系我们
+                            </a>
+                        
+                    </div>
+                    <div class="links">
+                        <div class="txt">
+                            
+                                
+                                
+                                <a href="http://beian.miit.gov.cn" target="_blank">
+                                    <span class="t">京ICP备06054295号</span>
+                                </a>
+                            
+                                 | 
+                                
+                                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502040638" target="_blank">
+                                    <span class="t"> 京公网安备11010502040638号</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+<script nonce="48136fc092f34d83883bffaabfaeae80" type="text/javascript" src="https://cdn.careersite.tupu360.com/csresources/scripts/jquery.cookie.js"></script>
+<div id="pixel-consent-container" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+     class="cc-window">
+    
+        <div class="third-party-consent-text column-container"><p id="pixelconsent:desc">本网站使用资讯记录程序帮助持续改进求职者的体验，我们存储的所有访客的互动资料均为匿名。查看我们的<a href='https://new.siemens.com/global/en/general/cookie-notice.html' target='_blank'>Cookie公告</a>页面，了解有关您的权利的更多资讯。 </p></div>
+    
+
+    <div class="third-party-button-container column-container">
+        <a aria-label="deny cookies" role="button" tabindex="0" class="deny-button" id="pixel-consent-deny-button" >
+            拒绝
+        </a>
+        <a aria-label="dismiss cookie message" role="button" tabindex="0" class="btn-primary accept-button" id="pixel-consent-accept-button" >
+            接受
+        </a>
+    </div>
+</div>
+<script nonce="48136fc092f34d83883bffaabfaeae80">
+    function HTMLDecode(text) {
+        var temp = document.createElement("div");
+        temp.innerHTML = text;
+        var output = temp.innerText || temp.textContent;
+        temp = null;
+        return output;
+    }
+    var cookieValue = $.cookie('acceptCookiePolicy');
+    if(cookieValue == "false" || cookieValue == undefined){
+        $("#pixel-consent-container").css("display","flex");
+    }else if(cookieValue == "true"){
+        $("#pixel-consent-container").hide();
+        
+        
+              $("body").append("<script nonce='48136fc092f34d83883bffaabfaeae80'>var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?dc5e98e65025f0e3fe4439ec95b4a319\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();<\/script>");
+        
+    }
+    $("#pixel-consent-accept-button").click(function () {
+        $.post( "/siemens/secure/acptCookiePolicy", { accepted: true })
+            .done(function() {
+                console.log('Cookie policy accepted. Server set secure cookie.');
+            });
+        $("#pixel-consent-container").hide();
+    });
+    $("#pixel-consent-deny-button").click(function () {
+        $("#pixel-consent-container").hide();
+    });
+</script>
+
+
+
+            
+        
+    </div>
+    
+
+
+
+
+
+
+
+<div class="loading-wrap" >
+    <div class="loaders">
+        <img src="//cdn.careersite.tupu360.com/csresources/images/default/page_loading.gif">
+    </div>
+</div>
+<div class="modal fade" id="alertTip">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="alertContent">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="commonTips">
+    <div class="modal-dialog" >
+        <div class="alert-content modal-content keep-content">
+            <div class="alert-logo pt-3 pb-3" style="background-color: #9999991c">
+                <a  id="commonTipsLogo" class="logo">
+                    <img src="https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_logo.png?t=1614935067569" alt=""
+                        >
+                </a>
+                <h5 class="alert-title text-center text-muted" id="commonTipsTitle"></h5>
+            </div>
+            <div class="alert-body">
+                <div class="modal-body" id="commonTipsContent">
+                </div>
+                <div class="form-btns text-center mt-3 w-100">
+                    <button class="btn btn-primary mr-5" id="commonTipsEnter" style="width: 40%">确定</button>
+                    <button class="btn btn-primary" id="commonTipsCancel" style="width: 40%;display: none">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/jquery.md5.js?v=20261016" integrity="sha384-wee72eE2NsTYs8iTY7oEnvWWxLBDG0Ui0/B5K2IxoiQLznovIIN9I00l6p/Ffbx1" crossorigin="anonymous"></script>
+
+

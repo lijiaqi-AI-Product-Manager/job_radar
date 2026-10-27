@@ -1,0 +1,24 @@
+{
+  "company": "招商工业",
+  "careers_url": "https://www.cmhijs.com/index.php/joins/recruit.html",
+  "host": "www.cmhijs.com",
+  "ats": "unknown",
+  "page_title": "招商局重工(江苏)有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 4,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招商局重工(江苏)有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

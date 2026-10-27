@@ -1,0 +1,25 @@
+{
+  "company": "中科蓝讯",
+  "careers_url": "https://www.bluetrum.com/job/job.php?class2=77",
+  "host": "www.bluetrum.com",
+  "ats": "unknown",
+  "page_title": "校园招聘-深圳市中科蓝讯科技股份有限公司(股票代码:688332)",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘-深圳市中科蓝讯科技股份有限公司(股票代码:688332)",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

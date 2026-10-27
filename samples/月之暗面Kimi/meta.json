@@ -1,0 +1,24 @@
+{
+  "company": "月之暗面Kimi",
+  "careers_url": "https://www.ruyuejian.com/company/moonshot-campus",
+  "host": "www.ruyuejian.com",
+  "ats": "unknown",
+  "page_title": "月之暗面Kimi招聘（最新143个在招岗位） - 如约见",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "月之暗面Kimi招聘（最新143个在招岗位） - 如约见",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

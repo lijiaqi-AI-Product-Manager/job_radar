@@ -1,0 +1,29 @@
+{
+  "company": "航天科工",
+  "careers_url": "",
+  "host": "job.xidian.edu.cn",
+  "ats": "none",
+  "page_title": "中国航天科工集团第十总体设计部 2027届校园招聘简章",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 32,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "中国航天科工集团第十总体设计部 2027届校园招聘简章",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757296",
+      "https://job.zzu.edu.cn/campus/view/id/1019432",
+      "https://job.xidian.edu.cn/campus/view/id/757212"
+    ]
+  }
+}

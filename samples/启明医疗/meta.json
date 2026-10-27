@@ -1,0 +1,24 @@
+{
+  "company": "启明医疗",
+  "careers_url": "https://www.venusmedtech.com/index.php/about/joinus",
+  "host": "www.venusmedtech.com",
+  "ats": "unknown",
+  "page_title": "招贤纳士-启明医疗-杭州启明医疗器械股份有限公司是中国领先的经导管心脏瓣膜医疗器械企业。",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 8,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招贤纳士-启明医疗-杭州启明医疗器械股份有限公司是中国领先的经导管心脏瓣膜医疗器械企业。",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "company": "光大理财",
+  "careers_url": "https://www.fenbi.com/page/exam-information-detail/469978881223680",
+  "host": "www.fenbi.com",
+  "ats": "unknown",
+  "page_title": "光大理财2027校园招聘-北京-北京市-山东-青岛市-国企-银行-2026-国央企正式-光大理财-粉笔资讯",
+  "calendar_entries": 4,
+  "project_types": [
+    "日常实习",
+    "校招",
+    "社招",
+    "秋招补录"
+  ],
+  "tracks": 20,
+  "roles": 92,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "光大理财2027校园招聘-北京-北京市-山东-青岛市-国企-银行-2026-国央企正式-光大理财-粉笔资讯",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758203"
+    ]
+  }
+}

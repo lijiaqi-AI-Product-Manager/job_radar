@@ -1,0 +1,28 @@
+{
+  "company": "海天味业",
+  "careers_url": "",
+  "host": "job.xidian.edu.cn",
+  "ats": "none",
+  "page_title": "海天味业2027全球校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "海天味业2027全球校园招聘",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757555",
+      "https://career.gdut.edu.cn/campus/view/id/1021053",
+      "https://job.zzu.edu.cn/campus/view/id/1019378"
+    ]
+  }
+}

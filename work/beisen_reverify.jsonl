@@ -1,0 +1,14 @@
+{"company": "鹏鼎控股", "sector": "通信与电子硬件", "brand": null, "url": "http://avaryholding.zhiye.com/", "tenant": "avaryholding", "title": "鹏鼎控股", "final_url": "http://avaryholding.zhiye.com/", "ok": false, "err": "no-count"}
+{"company": "京东方精电", "ok": false, "err": "not-zhiye"}
+{"company": "方太", "sector": "通信与电子硬件", "brand": null, "url": "https://fotile.zhiye.com/", "tenant": "fotile", "title": "方太集团招聘官网--首页", "final_url": "https://fotile.zhiye.com/", "ok": false, "err": "no-count"}
+{"company": "倍思", "ok": false, "err": "not-zhiye"}
+{"company": "爱芯元智", "ok": false, "err": "not-zhiye"}
+{"company": "蜂巢易创", "ok": false, "err": "not-zhiye"}
+{"company": "中原银行", "sector": "银行", "brand": null, "url": "https://zybank.zhiye.com/home", "tenant": "zybank", "title": "Not Found", "final_url": "https://zybank.zhiye.com/404", "ok": false, "err": "no-count"}
+{"company": "贝达药业", "sector": "医药医疗", "brand": null, "url": "https://bettapharma.zhiye.com/", "tenant": "bettapharma", "title": "贝达药业股份有限公司招聘系统", "final_url": "https://bettapharma.zhiye.com/", "ok": false, "err": "no-count"}
+{"company": "科兴生物", "sector": "医药医疗", "brand": null, "url": "https://kexing.zhiye.com/home", "tenant": "kexing", "title": "科兴制药招聘系统", "final_url": "https://kexing.zhiye.com/home", "ok": false, "err": "no-count"}
+{"company": "爱博医疗", "ok": false, "err": "not-zhiye"}
+{"company": "海王星辰", "ok": false, "err": "not-zhiye"}
+{"company": "百胜中国", "sector": "消费零售与食品", "brand": null, "url": "https://yumchina.zhiye.com/", "tenant": "yumchinarsc", "title": "百胜中国招聘系统--社会招聘", "final_url": "https://yumchina.zhiye.com/", "ok": true, "count": 39, "name_match": true, "title_match": true, "jobs": ["物流网络规划经理", "供应链自动化经理 (物流方向)", "Marketing Mgr - KFC饮料", "Executive Assistant", "Sr. Marketing Manager, Pizza"]}
+{"company": "爱茉莉太平洋中国", "ok": false, "err": "not-zhiye"}
+{"company": "爱信中国", "ok": false, "err": "not-zhiye"}

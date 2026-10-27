@@ -1,0 +1,27 @@
+{
+  "company": "岚图汽车",
+  "careers_url": "https://m.dsmp.voyah.com.cn/joinus.html",
+  "host": "m.dsmp.voyah.com.cn",
+  "ats": "unknown",
+  "page_title": "加入我们-岚图汽车官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 38,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们-岚图汽车官网",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018726"
+    ]
+  }
+}

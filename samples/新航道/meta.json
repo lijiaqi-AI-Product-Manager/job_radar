@@ -1,0 +1,24 @@
+{
+  "company": "新航道",
+  "careers_url": "https://bj.xhd.cn/topic/zhaopin/",
+  "host": "bj.xhd.cn",
+  "ats": "unknown",
+  "page_title": "新航道招募令-北京新航道学校招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 4,
+  "roles": 16,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "新航道招募令-北京新航道学校招聘",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

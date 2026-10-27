@@ -1,0 +1,29 @@
+{
+  "company": "北汽集团",
+  "careers_url": "https://baicgroup.zhiye.com/",
+  "host": "baicgroup.zhiye.com",
+  "ats": "beisen",
+  "page_title": "北汽集团招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 46,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "北汽集团招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757310",
+      "https://job.zzu.edu.cn/campus/view/id/1019177",
+      "https://job.neuq.edu.cn/campus/view/id/861626"
+    ]
+  }
+}

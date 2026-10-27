@@ -1,0 +1,592 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobileUrl" content="//allist.m.zhiye.com/campus" />
+    <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_style.css?v=0.0.0.3" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+    <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_jquery311.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_bgfull.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_pagescripts.js?v=0.0.0.3" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+    <title>上海艾力斯医药科技股份有限公司招聘系统--校园招聘</title>
+</head>
+<body>
+
+  <div class="indexmain">
+<div class="header">
+    <div class="mainContent">
+         <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/602473/602473_medias_2021512_2021512logo.png?v=637564309496130000"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item "><a target="_self" href="/home" >首页</a>
+                </li>                <li class="item "><a target="_self" href="/Social" >社会招聘</a>
+                </li>                <li class="item on"><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Intern" >实习生招聘</a>
+                </li>                <li class="item "><a target="_blank" href="https://www.allist.com.cn/" >联系我们</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin, .unLogin {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+    
+    <div class="isLogin" style="display:none">
+        <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+        <a href="/User/Account/LogOut"><span>退出</span></a>
+    </div>
+    
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fallist.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fallist.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">注册</a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+<script>
+   // 初始化来也机器人
+    function initLaiye(){
+        var aiScript = document.createElement('script');
+        aiScript.type = 'text/javascript';
+        aiScript.src = 'https://cdn.wul.ai/IMLib-3.30.0.min.js';
+        document.body.insertBefore(aiScript, document.body.firstChild);
+        aiScript.onload = function () {
+            // 需要在这里写ajax异步操作，不然它可能在没加载之前调用然后报错
+            $.ajax({
+                url: '/User/Account/GetWulPubKey'
+                , type: 'get'
+                , success: function (resp) {
+                    // 获取来也机器人信息
+                    var isOpen = resp.Data.IsOpen;
+                    if (isOpen) {
+                        var key = resp.Data.PubKey;
+                        new websdk({
+                            data: {
+                                pubkey: key, // 吾来平台PubKey
+                                autoOpen: false, // 是否自动打开
+                                extra: {
+                                    tagValues: [],
+                                    presetTagValues: []
+                                }
+                            },
+                            el: 'body'
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    // 初始化天润机器
+    function initTianrun(robotKey){
+        (function(win, doc, src, opt) {
+            win[opt] = win[opt] || function () {
+            win[opt].options = arguments[0]};
+            var script = doc.createElement("script");
+            script.async = 1;
+            script.src = src;
+            doc.body.appendChild(script);
+            })(window, document, "https://webchat-sh.clink.cn/webchat.js?v="+Date.now(), "clinkWebchatOptions");
+        clinkWebchatOptions({
+            accessId: robotKey,
+            language: "zh_CN"
+        });
+    }
+
+    // 获取天润机器人灰度
+    $.ajax({
+            url: '/User/Account/GetPortalAIRobot'
+            , type: 'get'
+            , success: function (resp) {
+                if (resp.Data.IsOpen && resp.Data.PubKey) {
+                    initTianrun(resp.Data.PubKey)
+                }else{
+                    initLaiye();
+                }
+            }
+        })
+</script>
+
+    </div>
+</div>
+<!--module:login end-->
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+       <a class="internal" href="https://neitui.italent.cn/allist/jobs" target="_blank">内部推荐</a>
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+    </div>
+</div>
+<div class="banner">
+      
+		<img src="//stc-cms.beisen.com/CmsPortal/602473/602473_medias_2021512_2021512bannercampus.jpg?v=637564312928430000"  draggable="false"/>
+
+</div>
+<div class="content">
+    <div class="mainContent">
+        <div class="narrow mr10">
+            
+<!--module:positioncategory begin-->
+<div class="bs-module">
+    <div class="positioncategory-smallblue ">
+        
+
+
+
+
+
+
+
+        <div class="box pb5">
+            <div class="boxSupertitle" title="职位类型"><span>职位类型</span></div>
+            <ul class="cateList">
+                        <li><a href='/campus?p=1^5#jlt' constval ="5" title="研发">研发</a></li>
+                        <li><a href='/campus?p=1^4#jlt' constval ="4" title="营销">营销</a></li>
+                        <li><a href='/campus?p=1^3#jlt' constval ="3" title="生产">生产</a></li>
+                        <li><a href='/campus?p=1^2#jlt' constval ="2" title="管理">管理</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positioncategory end-->
+            <div class="box">
+                
+<!--module:newslist begin-->
+<div class="bs-module">
+    <div class="newslist-template6simple ">
+        
+
+
+
+ 
+
+
+
+<div class="boxSupertitle"><span>招聘动态</span>                                                                           <a class="more" href="/newslist"></a>
+</div>
+
+<ul class="newsList">
+            <li><a>暂无内容</a></li>
+</ul>
+
+    </div>
+</div>
+<!--module:newslist end-->
+            </div>
+        </div>
+        <div class="wide">
+            <div class="box">
+                
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-smallblue ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+<div class="boxSupertitle"><span>职位搜索</span></div>
+<div class="searchCityList">
+            <div class="searchBoxl">
+                <div class="l"></div>
+				<div class="txtIn">
+					<input type="text" id="k" name="k" autocomplete="off" maxlength="50"/>
+				</div>
+				<a class="searchBtn" href="javascript:void(0)" id="searchlink"></a>
+            </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        <div class="mainTitle" title="职位类型">职位类型：</div>
+                        <div class="mainListWrap">
+                            <ul class="mainList">
+                                        <li><a href="/campus?r=&amp;p=1^-1&amp;c=&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^5&amp;c=&amp;d=&amp;k=#jlt" title="研发">研发</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^4&amp;c=&amp;d=&amp;k=#jlt" title="营销">营销</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^3&amp;c=&amp;d=&amp;k=#jlt" title="生产">生产</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^2&amp;c=&amp;d=&amp;k=#jlt" title="管理">管理</a></li>
+                            </ul>
+                            <a class="viewMore" href="javascript:void(0);">更多</a>
+                        </div>
+                <div class="mainTitle">工作地点：</div>
+                <div class="mainListWrap">
+                    <ul class="mainList">
+                                <li><a href="/campus?r=&amp;p=&amp;c=-1&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1&amp;d=&amp;k=#jlt" title="全国">全国</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1100&amp;d=&amp;k=#jlt" title="北京市">北京市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1200&amp;d=&amp;k=#jlt" title="天津市">天津市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1301&amp;d=&amp;k=#jlt" title="石家庄市">石家庄市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1303&amp;d=&amp;k=#jlt" title="秦皇岛市">秦皇岛市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1304&amp;d=&amp;k=#jlt" title="邯郸市">邯郸市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1305&amp;d=&amp;k=#jlt" title="邢台市">邢台市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1306&amp;d=&amp;k=#jlt" title="保定市">保定市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1308&amp;d=&amp;k=#jlt" title="承德市">承德市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1309&amp;d=&amp;k=#jlt" title="沧州市">沧州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1311&amp;d=&amp;k=#jlt" title="衡水市">衡水市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1401&amp;d=&amp;k=#jlt" title="太原市">太原市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1402&amp;d=&amp;k=#jlt" title="大同市">大同市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1405&amp;d=&amp;k=#jlt" title="晋城市">晋城市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1408&amp;d=&amp;k=#jlt" title="运城市">运城市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1410&amp;d=&amp;k=#jlt" title="临汾市">临汾市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1411&amp;d=&amp;k=#jlt" title="吕梁市">吕梁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1501&amp;d=&amp;k=#jlt" title="呼和浩特市">呼和浩特市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1502&amp;d=&amp;k=#jlt" title="包头市">包头市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1507&amp;d=&amp;k=#jlt" title="呼伦贝尔市">呼伦贝尔市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1508&amp;d=&amp;k=#jlt" title="巴彦淖尔市">巴彦淖尔市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2101&amp;d=&amp;k=#jlt" title="沈阳市">沈阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2102&amp;d=&amp;k=#jlt" title="大连市">大连市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2103&amp;d=&amp;k=#jlt" title="鞍山市">鞍山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2104&amp;d=&amp;k=#jlt" title="抚顺市">抚顺市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2106&amp;d=&amp;k=#jlt" title="丹东市">丹东市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2107&amp;d=&amp;k=#jlt" title="锦州市">锦州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2108&amp;d=&amp;k=#jlt" title="营口市">营口市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2111&amp;d=&amp;k=#jlt" title="盘锦市">盘锦市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2112&amp;d=&amp;k=#jlt" title="铁岭市">铁岭市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2114&amp;d=&amp;k=#jlt" title="葫芦岛市">葫芦岛市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2201&amp;d=&amp;k=#jlt" title="长春市">长春市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2202&amp;d=&amp;k=#jlt" title="吉林市">吉林市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2203&amp;d=&amp;k=#jlt" title="四平市">四平市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2205&amp;d=&amp;k=#jlt" title="通化市">通化市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2207&amp;d=&amp;k=#jlt" title="松原市">松原市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2301&amp;d=&amp;k=#jlt" title="哈尔滨市">哈尔滨市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2302&amp;d=&amp;k=#jlt" title="齐齐哈尔市">齐齐哈尔市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2305&amp;d=&amp;k=#jlt" title="双鸭山市">双鸭山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2306&amp;d=&amp;k=#jlt" title="大庆市">大庆市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2310&amp;d=&amp;k=#jlt" title="牡丹江市">牡丹江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2311&amp;d=&amp;k=#jlt" title="黑河市">黑河市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=2312&amp;d=&amp;k=#jlt" title="绥化市">绥化市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3100&amp;d=&amp;k=#jlt" title="上海市">上海市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3201&amp;d=&amp;k=#jlt" title="南京市">南京市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3202&amp;d=&amp;k=#jlt" title="无锡市">无锡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3203&amp;d=&amp;k=#jlt" title="徐州市">徐州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3204&amp;d=&amp;k=#jlt" title="常州市">常州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3205&amp;d=&amp;k=#jlt" title="苏州市">苏州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3206&amp;d=&amp;k=#jlt" title="南通市">南通市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3207&amp;d=&amp;k=#jlt" title="连云港市">连云港市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3208&amp;d=&amp;k=#jlt" title="淮安市">淮安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3209&amp;d=&amp;k=#jlt" title="盐城市">盐城市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3210&amp;d=&amp;k=#jlt" title="扬州市">扬州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3211&amp;d=&amp;k=#jlt" title="镇江市">镇江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3212&amp;d=&amp;k=#jlt" title="泰州市">泰州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3213&amp;d=&amp;k=#jlt" title="宿迁市">宿迁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3215&amp;d=&amp;k=#jlt" title="丹阳市">丹阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3217&amp;d=&amp;k=#jlt" title="句容市">句容市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3301&amp;d=&amp;k=#jlt" title="杭州市">杭州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3302&amp;d=&amp;k=#jlt" title="宁波市">宁波市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3303&amp;d=&amp;k=#jlt" title="温州市">温州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3304&amp;d=&amp;k=#jlt" title="嘉兴市">嘉兴市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3305&amp;d=&amp;k=#jlt" title="湖州市">湖州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3306&amp;d=&amp;k=#jlt" title="绍兴市">绍兴市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3307&amp;d=&amp;k=#jlt" title="金华市">金华市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3308&amp;d=&amp;k=#jlt" title="衢州市">衢州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3310&amp;d=&amp;k=#jlt" title="台州市">台州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3311&amp;d=&amp;k=#jlt" title="丽水市">丽水市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3401&amp;d=&amp;k=#jlt" title="合肥市">合肥市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3402&amp;d=&amp;k=#jlt" title="芜湖市">芜湖市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3403&amp;d=&amp;k=#jlt" title="蚌埠市">蚌埠市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3404&amp;d=&amp;k=#jlt" title="淮南市">淮南市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3405&amp;d=&amp;k=#jlt" title="马鞍山市">马鞍山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3406&amp;d=&amp;k=#jlt" title="淮北市">淮北市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3407&amp;d=&amp;k=#jlt" title="铜陵市">铜陵市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3408&amp;d=&amp;k=#jlt" title="安庆市">安庆市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3410&amp;d=&amp;k=#jlt" title="黄山市">黄山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3411&amp;d=&amp;k=#jlt" title="滁州市">滁州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3412&amp;d=&amp;k=#jlt" title="阜阳市">阜阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3413&amp;d=&amp;k=#jlt" title="宿州市">宿州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3414&amp;d=&amp;k=#jlt" title="巢湖市">巢湖市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3415&amp;d=&amp;k=#jlt" title="六安市">六安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3416&amp;d=&amp;k=#jlt" title="亳州市">亳州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3417&amp;d=&amp;k=#jlt" title="池州市">池州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3418&amp;d=&amp;k=#jlt" title="宣城市">宣城市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3501&amp;d=&amp;k=#jlt" title="福州市">福州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3502&amp;d=&amp;k=#jlt" title="厦门市">厦门市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3503&amp;d=&amp;k=#jlt" title="莆田市">莆田市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3504&amp;d=&amp;k=#jlt" title="三明市">三明市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3505&amp;d=&amp;k=#jlt" title="泉州市">泉州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3506&amp;d=&amp;k=#jlt" title="漳州市">漳州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3508&amp;d=&amp;k=#jlt" title="龙岩市">龙岩市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3509&amp;d=&amp;k=#jlt" title="宁德市">宁德市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3601&amp;d=&amp;k=#jlt" title="南昌市">南昌市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3602&amp;d=&amp;k=#jlt" title="景德镇市">景德镇市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3603&amp;d=&amp;k=#jlt" title="萍乡市">萍乡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3604&amp;d=&amp;k=#jlt" title="九江市">九江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3606&amp;d=&amp;k=#jlt" title="鹰潭市">鹰潭市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3607&amp;d=&amp;k=#jlt" title="赣州市">赣州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3608&amp;d=&amp;k=#jlt" title="吉安市">吉安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3610&amp;d=&amp;k=#jlt" title="抚州市">抚州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3611&amp;d=&amp;k=#jlt" title="上饶市">上饶市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3701&amp;d=&amp;k=#jlt" title="济南市">济南市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3702&amp;d=&amp;k=#jlt" title="青岛市">青岛市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3703&amp;d=&amp;k=#jlt" title="淄博市">淄博市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3704&amp;d=&amp;k=#jlt" title="枣庄市">枣庄市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3706&amp;d=&amp;k=#jlt" title="烟台市">烟台市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3707&amp;d=&amp;k=#jlt" title="潍坊市">潍坊市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3708&amp;d=&amp;k=#jlt" title="济宁市">济宁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3709&amp;d=&amp;k=#jlt" title="泰安市">泰安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3711&amp;d=&amp;k=#jlt" title="日照市">日照市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3713&amp;d=&amp;k=#jlt" title="临沂市">临沂市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3714&amp;d=&amp;k=#jlt" title="德州市">德州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3715&amp;d=&amp;k=#jlt" title="聊城市">聊城市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3716&amp;d=&amp;k=#jlt" title="滨州市">滨州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3717&amp;d=&amp;k=#jlt" title="菏泽市">菏泽市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4101&amp;d=&amp;k=#jlt" title="郑州市">郑州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4103&amp;d=&amp;k=#jlt" title="洛阳市">洛阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4104&amp;d=&amp;k=#jlt" title="平顶山市">平顶山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4105&amp;d=&amp;k=#jlt" title="安阳市">安阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4107&amp;d=&amp;k=#jlt" title="新乡市">新乡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4108&amp;d=&amp;k=#jlt" title="焦作市">焦作市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4109&amp;d=&amp;k=#jlt" title="濮阳市">濮阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4110&amp;d=&amp;k=#jlt" title="许昌市">许昌市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4111&amp;d=&amp;k=#jlt" title="漯河市">漯河市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4112&amp;d=&amp;k=#jlt" title="三门峡市">三门峡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4113&amp;d=&amp;k=#jlt" title="南阳市">南阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4114&amp;d=&amp;k=#jlt" title="商丘市">商丘市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4115&amp;d=&amp;k=#jlt" title="信阳市">信阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4116&amp;d=&amp;k=#jlt" title="周口市">周口市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4117&amp;d=&amp;k=#jlt" title="驻马店市">驻马店市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4201&amp;d=&amp;k=#jlt" title="武汉市">武汉市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4202&amp;d=&amp;k=#jlt" title="黄石市">黄石市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4203&amp;d=&amp;k=#jlt" title="十堰市">十堰市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4205&amp;d=&amp;k=#jlt" title="宜昌市">宜昌市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4206&amp;d=&amp;k=#jlt" title="襄阳市">襄阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4207&amp;d=&amp;k=#jlt" title="鄂州市">鄂州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4208&amp;d=&amp;k=#jlt" title="荆门市">荆门市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4209&amp;d=&amp;k=#jlt" title="孝感市">孝感市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4210&amp;d=&amp;k=#jlt" title="荆州市">荆州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4211&amp;d=&amp;k=#jlt" title="黄冈市">黄冈市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4212&amp;d=&amp;k=#jlt" title="咸宁市">咸宁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4213&amp;d=&amp;k=#jlt" title="随州市">随州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4228&amp;d=&amp;k=#jlt" title="恩施土家族苗族自治州">恩施土家族苗族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4230&amp;d=&amp;k=#jlt" title="仙桃市">仙桃市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4231&amp;d=&amp;k=#jlt" title="潜江市">潜江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4301&amp;d=&amp;k=#jlt" title="长沙市">长沙市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4302&amp;d=&amp;k=#jlt" title="株洲市">株洲市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4303&amp;d=&amp;k=#jlt" title="湘潭市">湘潭市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4304&amp;d=&amp;k=#jlt" title="衡阳市">衡阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4305&amp;d=&amp;k=#jlt" title="邵阳市">邵阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4306&amp;d=&amp;k=#jlt" title="岳阳市">岳阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4307&amp;d=&amp;k=#jlt" title="常德市">常德市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4309&amp;d=&amp;k=#jlt" title="益阳市">益阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4310&amp;d=&amp;k=#jlt" title="郴州市">郴州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4311&amp;d=&amp;k=#jlt" title="永州市">永州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4312&amp;d=&amp;k=#jlt" title="怀化市">怀化市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4313&amp;d=&amp;k=#jlt" title="娄底市">娄底市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4401&amp;d=&amp;k=#jlt" title="广州市">广州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4402&amp;d=&amp;k=#jlt" title="韶关市">韶关市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4403&amp;d=&amp;k=#jlt" title="深圳市">深圳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4404&amp;d=&amp;k=#jlt" title="珠海市">珠海市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4405&amp;d=&amp;k=#jlt" title="汕头市">汕头市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4406&amp;d=&amp;k=#jlt" title="佛山市">佛山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4407&amp;d=&amp;k=#jlt" title="江门市">江门市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4408&amp;d=&amp;k=#jlt" title="湛江市">湛江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4409&amp;d=&amp;k=#jlt" title="茂名市">茂名市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4412&amp;d=&amp;k=#jlt" title="肇庆市">肇庆市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4413&amp;d=&amp;k=#jlt" title="惠州市">惠州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4414&amp;d=&amp;k=#jlt" title="梅州市">梅州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4415&amp;d=&amp;k=#jlt" title="汕尾市">汕尾市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4417&amp;d=&amp;k=#jlt" title="阳江市">阳江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4418&amp;d=&amp;k=#jlt" title="清远市">清远市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4419&amp;d=&amp;k=#jlt" title="东莞市">东莞市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4420&amp;d=&amp;k=#jlt" title="中山市">中山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4451&amp;d=&amp;k=#jlt" title="潮州市">潮州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4452&amp;d=&amp;k=#jlt" title="揭阳市">揭阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4453&amp;d=&amp;k=#jlt" title="云浮市">云浮市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4501&amp;d=&amp;k=#jlt" title="南宁市">南宁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4502&amp;d=&amp;k=#jlt" title="柳州市">柳州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4503&amp;d=&amp;k=#jlt" title="桂林市">桂林市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4504&amp;d=&amp;k=#jlt" title="梧州市">梧州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4505&amp;d=&amp;k=#jlt" title="北海市">北海市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4507&amp;d=&amp;k=#jlt" title="钦州市">钦州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4508&amp;d=&amp;k=#jlt" title="贵港市">贵港市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4509&amp;d=&amp;k=#jlt" title="玉林市">玉林市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4510&amp;d=&amp;k=#jlt" title="百色市">百色市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4511&amp;d=&amp;k=#jlt" title="贺州市">贺州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4512&amp;d=&amp;k=#jlt" title="河池市">河池市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4600&amp;d=&amp;k=#jlt" title="海南省">海南省</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4601&amp;d=&amp;k=#jlt" title="海口市">海口市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4602&amp;d=&amp;k=#jlt" title="三亚市">三亚市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5000&amp;d=&amp;k=#jlt" title="重庆市">重庆市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5013&amp;d=&amp;k=#jlt" title="涪陵区">涪陵区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5101&amp;d=&amp;k=#jlt" title="成都市">成都市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5103&amp;d=&amp;k=#jlt" title="自贡市">自贡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5105&amp;d=&amp;k=#jlt" title="泸州市">泸州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5106&amp;d=&amp;k=#jlt" title="德阳市">德阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5107&amp;d=&amp;k=#jlt" title="绵阳市">绵阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5108&amp;d=&amp;k=#jlt" title="广元市">广元市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5109&amp;d=&amp;k=#jlt" title="遂宁市">遂宁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5110&amp;d=&amp;k=#jlt" title="内江市">内江市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5111&amp;d=&amp;k=#jlt" title="乐山市">乐山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5113&amp;d=&amp;k=#jlt" title="南充市">南充市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5114&amp;d=&amp;k=#jlt" title="眉山市">眉山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5115&amp;d=&amp;k=#jlt" title="宜宾市">宜宾市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5116&amp;d=&amp;k=#jlt" title="广安市">广安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5117&amp;d=&amp;k=#jlt" title="达州市">达州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5118&amp;d=&amp;k=#jlt" title="雅安市">雅安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5119&amp;d=&amp;k=#jlt" title="巴中市">巴中市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5120&amp;d=&amp;k=#jlt" title="资阳市">资阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5137&amp;d=&amp;k=#jlt" title="简阳市">简阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5201&amp;d=&amp;k=#jlt" title="贵阳市">贵阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5202&amp;d=&amp;k=#jlt" title="六盘水市">六盘水市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5203&amp;d=&amp;k=#jlt" title="遵义市">遵义市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5222&amp;d=&amp;k=#jlt" title="铜仁市">铜仁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5301&amp;d=&amp;k=#jlt" title="昆明市">昆明市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5303&amp;d=&amp;k=#jlt" title="曲靖市">曲靖市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5304&amp;d=&amp;k=#jlt" title="玉溪市">玉溪市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5305&amp;d=&amp;k=#jlt" title="保山市">保山市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5306&amp;d=&amp;k=#jlt" title="昭通市">昭通市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5308&amp;d=&amp;k=#jlt" title="普洱市">普洱市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5309&amp;d=&amp;k=#jlt" title="临沧市">临沧市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5325&amp;d=&amp;k=#jlt" title="红河哈尼族彝族自治州">红河哈尼族彝族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5328&amp;d=&amp;k=#jlt" title="西双版纳傣族自治州">西双版纳傣族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5329&amp;d=&amp;k=#jlt" title="大理白族自治州">大理白族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5331&amp;d=&amp;k=#jlt" title="德宏傣族景颇族自治州">德宏傣族景颇族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5401&amp;d=&amp;k=#jlt" title="拉萨市">拉萨市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6101&amp;d=&amp;k=#jlt" title="西安市">西安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6103&amp;d=&amp;k=#jlt" title="宝鸡市">宝鸡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6104&amp;d=&amp;k=#jlt" title="咸阳市">咸阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6105&amp;d=&amp;k=#jlt" title="渭南市">渭南市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6106&amp;d=&amp;k=#jlt" title="延安市">延安市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6107&amp;d=&amp;k=#jlt" title="汉中市">汉中市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6108&amp;d=&amp;k=#jlt" title="榆林市">榆林市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6110&amp;d=&amp;k=#jlt" title="商洛市">商洛市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6201&amp;d=&amp;k=#jlt" title="兰州市">兰州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6206&amp;d=&amp;k=#jlt" title="武威市">武威市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6207&amp;d=&amp;k=#jlt" title="张掖市">张掖市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6208&amp;d=&amp;k=#jlt" title="平凉市">平凉市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6210&amp;d=&amp;k=#jlt" title="庆阳市">庆阳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6301&amp;d=&amp;k=#jlt" title="西宁市">西宁市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6400&amp;d=&amp;k=#jlt" title="宁夏回族自治区">宁夏回族自治区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6401&amp;d=&amp;k=#jlt" title="银川市">银川市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6501&amp;d=&amp;k=#jlt" title="乌鲁木齐市">乌鲁木齐市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6502&amp;d=&amp;k=#jlt" title="克拉玛依市">克拉玛依市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6523&amp;d=&amp;k=#jlt" title="昌吉回族自治州">昌吉回族自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6528&amp;d=&amp;k=#jlt" title="巴音郭楞蒙古自治州">巴音郭楞蒙古自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6529&amp;d=&amp;k=#jlt" title="阿克苏地区">阿克苏地区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6531&amp;d=&amp;k=#jlt" title="喀什地区">喀什地区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6540&amp;d=&amp;k=#jlt" title="伊犁哈萨克自治州">伊犁哈萨克自治州</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=6544&amp;d=&amp;k=#jlt" title="石河子市">石河子市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320113&amp;d=&amp;k=#jlt" title="高淳区">高淳区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320202&amp;d=&amp;k=#jlt" title="江阴市">江阴市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320307&amp;d=&amp;k=#jlt" title="沛县">沛县</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320510&amp;d=&amp;k=#jlt" title="常熟市">常熟市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320511&amp;d=&amp;k=#jlt" title="太仓市">太仓市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=320512&amp;d=&amp;k=#jlt" title="张家港市">张家港市</a></li>
+                    

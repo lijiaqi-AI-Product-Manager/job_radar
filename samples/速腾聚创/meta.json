@@ -1,0 +1,24 @@
+{
+  "company": "速腾聚创",
+  "careers_url": "https://app.mokahr.com/campus-recruitment/robosense/69887",
+  "host": "app.mokahr.com",
+  "ats": "moka",
+  "page_title": "RoboSense速腾聚创 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 3,
+  "roles": 4,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "RoboSense速腾聚创 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

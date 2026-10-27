@@ -1,0 +1,25 @@
+{
+  "company": "帆软",
+  "careers_url": "https://join.fanruan.com/campus",
+  "host": "join.fanruan.com",
+  "ats": "unknown",
+  "page_title": "帆软校园招聘 | 职位列表",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 8,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "帆软校园招聘 | 职位列表",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

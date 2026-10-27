@@ -174,3 +174,17 @@ def test_variant_a_fetches_detail_for_jd():
     assert "/zpdetail/311047525" in seen
     assert j.description == "1、参与平台控制系统软件及产品开发测试；\n2、组织控制系统软件测试、交付、维护及试验保障。"
     assert j.requirements == "1、控制科学/计算机/软件、自动化相关专业背景；\n2、有ARM/DSP/FPGA等开发经验；"
+
+
+def test_publish_date_from_list_row():
+    """列表页最后一列是发布日期。抓不到就当没有，绝不猜。
+
+    这条是防回归：`_date_in()` 如果被写成「取行内第一个日期」，
+    会把 `title` 属性里偶现的年份抓成发布日。
+    """
+    from jobradar.adapters.beisen_legacy import _date_in
+
+    assert _date_in('<td class="t">2022-10-21</td>') == "2022-10-21"
+    assert _date_in('<td title="2019-03-01 更新">…</td><td>2019-03-01</td>') == "2019-03-01"
+    assert _date_in("<td>暂无</td>") is None
+    assert _date_in('<td>2026-9-3</td>') == "2026-09-03"

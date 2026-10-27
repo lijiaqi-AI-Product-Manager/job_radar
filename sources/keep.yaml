@@ -1,0 +1,13 @@
+id: keep
+company: Keep
+adapter: self_hosted
+recruit_types: [social]
+rate_limit_rps: 1
+params:
+  url: "https://www.calorietech.com/join"
+  default_city: ""
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"
+  terms: "Keep 官网招聘页，手写 HTML 单页，公开可访问、无需登录"
+  notes: "2026-10-27 work/self_hosted.py 从搜索结果域名 www.calorietech.com 的 /join 命中，14 个岗位块，职责/要求分段完整"

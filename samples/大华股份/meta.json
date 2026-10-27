@@ -1,0 +1,26 @@
+{
+  "company": "大华股份",
+  "careers_url": "",
+  "host": "career.gdut.edu.cn",
+  "ats": "none",
+  "page_title": "大华股份2027届全球秋季校园招聘正式启动",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 15,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "大华股份2027届全球秋季校园招聘正式启动",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1021112"
+    ]
+  }
+}

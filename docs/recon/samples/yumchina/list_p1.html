@@ -1,0 +1,860 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="mobileUrl" content="//yumchina.m.zhiye.com/campus" />
+ <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_style.css?v=0.0.1.0" front="css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_flexslider.css?v=0.0.1.0" front="css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuicore.css?v=0.0.1.0" front="css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuiselectmenu.css?v=0.0.1.0" front="css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuitheme.css?v=0.0.1.0" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+          <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jquery311.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryflexslidermin.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuicore1.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuiposition.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuiwidget.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jqueryuiselectmenu1.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_jquerymigrate.js?v=0.0.1.0" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/5/5_themes_default_demo.js?v=0.0.1.0" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+		<title>百胜中国招聘系统--校园招聘</title>
+</head>
+<body>
+  
+	<div class="header">
+		<div class="headercontain">
+			 <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/107028/107028_medias_2017613_2017613logo.png?v=636329571850230000"/>
+ 
+</div>
+			
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-link ">
+        
+
+
+
+
+
+
+<div class="login-hearder">
+   
+        <ul class="header-login" style="display:none">
+            
+            <li class="welcome"><span><span class="userName" style="float:none"></span>，欢迎您！</span></li>
+            <li class="PortalIndex"><a href="/Portal/Apply/Index"><span>个人中心</span></a></li>
+            <li class="LogoutUrl"><a href="/User/Account/LogOut"><span>退出</span></a></li>
+        </ul>   
+    
+        <ul class="header-unLogin" style="display:none">
+            <li><a class="loginlink" href="/Portal/Account/Login?returnUrl=%2Fcampus%3FPageIndex%3D1%26k%3D">
+                    <span>登录</span>
+                </a></li>
+            <li><a class="reglink" href="/Portal/Account/Register?returnUrl=%2Fcampus%3FPageIndex%3D1%26k%3D"><span>
+                注册</span></a></li>
+        </ul>
+    
+</div>
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        //var self = this;
+        var userInfo = {};
+        userInfo.name = (resp.Model.Email && resp.Model.Email.length > 20) ? resp.Model.Email.substring(0, 20) : resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        userInfo.mobile = resp.Model.Mobile;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .header-login");
+            var unLoginView = $(".login-hearder .header-unLogin");
+            if (userInfo.isLogin) {
+                loginView.find('.userName').text(userInfo.mobile ? userInfo.mobile : userInfo.name);
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+
+
+    </div>
+</div>
+<!--module:login end-->
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-default ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+		</div>
+	</div>
+	<div class="nav">
+		
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-simple ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu">
+
+
+                <li><a target="_blank" href="http://careers.yumchina.com/" class =''>首页</a>
+                </li>
+                <li><a target="_self" href="/Social" class =''>餐厅管理职位</a>
+                </li>
+                <li><a target="_self" href="/a/Nonrestaurant" class =''>餐厅服务团队</a>
+                </li>
+                <li><a target="_blank" href="https://yumchinarsc.zhiye.com/" class =''>社会招聘</a>
+                </li>
+</ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+	</div>
+	<div class="pictureplace">
+		<div class="pictureplacecenter">  
+		<img src="//stnew.beisen.com/beisencms/template/template5/commonbanner.jpg?v=634507910008300000"/>
+</div>
+	</div>
+	<div class="contain joblist clearfix">
+		<div class="containsidebar">
+			
+<!--module:positioncategory begin-->
+<div class="bs-module">
+    <div class="positioncategory-smallfresh ">
+        
+
+
+
+
+
+
+
+        <div class="zhiweifenlei bodertop">
+            <div class="parttitleline"></div>
+            <div class="parttitle height0"><span class="fenleiico"></span><div class="wordtitle lh0" title="品牌">品牌</div></div>
+
+            <div class="fenleilist">
+                <ul class="firstlist clearfix">
+            
+                            <li><a href='/campus?p=1^4#jlt' constval ="4" title="肯德基">肯德基</a></li>
+                            <li><a href='/campus?p=1^3#jlt' constval ="3" title="必胜客">必胜客</a></li>
+                            <li><a href='/campus?p=1^6#jlt' constval ="6" title="Lavazza">Lavazza</a></li>
+                            <li><a href='/campus?p=1^7#jlt' constval ="7" title="全品牌">全品牌</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positioncategory end-->
+			<div class="zhaopindongtai bodertop">
+				
+<!--module:newslist begin-->
+<div class="bs-module">
+    <div class="newslist-newsimple ">
+        
+
+
+
+ 
+
+
+<div class="parttitleline"></div>
+			<div class="parttitle"><span class="dongtaiico"></span><div class="wordtitle">招聘动态</div></div>
+                   <a href="/newslist" class="morelinks">更多>></a>
+             
+			<div class="dongtailinks">
+				<ul>
+                        <span>暂无内容</span>
+                    				</ul>
+			</div>
+
+    </div>
+</div>
+<!--module:newslist end-->
+			</div>
+		</div>
+           <div class="clearfix sousuocontain fl">
+			
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-smallfresh ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+
+
+<div class="zhiweisousuo bodertop">
+    <div class="parttitleline"></div>
+    <div class="parttitle">
+        <span class="serchico"></span>
+        <div class="wordtitle">职位搜索</div>
+    </div>
+    <div class="serchcontain">
+        <table class="jobserch">
+            
+                <tr class="serchjob">
+                    <td class="listtitle">工作地点：</td>
+                    <td>
+                        <ul class="workplace">
+                                <span class="selectall"><span class="shuxian"></span><a href="/campus?r=&amp;p=&amp;c=-1&amp;d=&amp;k=#jlt" class="chooseon" title="全部">全部</a></span>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1&amp;d=&amp;k=#jlt" title="全国">全国</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1100&amp;d=&amp;k=#jlt" title="北京市">北京市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1101&amp;d=&amp;k=#jlt" title="东城区">东城区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1102&amp;d=&amp;k=#jlt" title="西城区">西城区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1103&amp;d=&amp;k=#jlt" title="海淀区">海淀区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1104&amp;d=&amp;k=#jlt" title="朝阳区">朝阳区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1105&amp;d=&amp;k=#jlt" title="丰台区">丰台区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1106&amp;d=&amp;k=#jlt" title="石景山区">石景山区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1107&amp;d=&amp;k=#jlt" title="通州区">通州区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1108&amp;d=&amp;k=#jlt" title="顺义区">顺义区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1109&amp;d=&amp;k=#jlt" title="房山区">房山区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1110&amp;d=&amp;k=#jlt" title="大兴区">大兴区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1111&amp;d=&amp;k=#jlt" title="昌平区">昌平区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1112&amp;d=&amp;k=#jlt" title="怀柔区">怀柔区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1113&amp;d=&amp;k=#jlt" title="平谷区">平谷区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1114&amp;d=&amp;k=#jlt" title="门头沟区">门头沟区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1115&amp;d=&amp;k=#jlt" title="密云区">密云区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1116&amp;d=&amp;k=#jlt" title="延庆区">延庆区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1200&amp;d=&amp;k=#jlt" title="天津市">天津市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1400&amp;d=&amp;k=#jlt" title="山西省">山西省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1401&amp;d=&amp;k=#jlt" title="太原市">太原市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1402&amp;d=&amp;k=#jlt" title="大同市">大同市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1404&amp;d=&amp;k=#jlt" title="长治市">长治市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1405&amp;d=&amp;k=#jlt" title="晋城市">晋城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1406&amp;d=&amp;k=#jlt" title="朔州市">朔州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1408&amp;d=&amp;k=#jlt" title="运城市">运城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1410&amp;d=&amp;k=#jlt" title="临汾市">临汾市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1411&amp;d=&amp;k=#jlt" title="吕梁市">吕梁市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1500&amp;d=&amp;k=#jlt" title="内蒙古自治区">内蒙古自治区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1501&amp;d=&amp;k=#jlt" title="呼和浩特市">呼和浩特市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1502&amp;d=&amp;k=#jlt" title="包头市">包头市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1503&amp;d=&amp;k=#jlt" title="乌海市">乌海市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1504&amp;d=&amp;k=#jlt" title="赤峰市">赤峰市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1505&amp;d=&amp;k=#jlt" title="通辽市">通辽市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1506&amp;d=&amp;k=#jlt" title="鄂尔多斯市">鄂尔多斯市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1507&amp;d=&amp;k=#jlt" title="呼伦贝尔市">呼伦贝尔市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1508&amp;d=&amp;k=#jlt" title="巴彦淖尔市">巴彦淖尔市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1509&amp;d=&amp;k=#jlt" title="乌兰察布市">乌兰察布市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1529&amp;d=&amp;k=#jlt" title="阿拉善盟">阿拉善盟</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=1530&amp;d=&amp;k=#jlt" title="满洲里">满洲里</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2101&amp;d=&amp;k=#jlt" title="沈阳市">沈阳市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2102&amp;d=&amp;k=#jlt" title="大连市">大连市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2103&amp;d=&amp;k=#jlt" title="鞍山市">鞍山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2104&amp;d=&amp;k=#jlt" title="抚顺市">抚顺市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2105&amp;d=&amp;k=#jlt" title="本溪市">本溪市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2106&amp;d=&amp;k=#jlt" title="丹东市">丹东市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2107&amp;d=&amp;k=#jlt" title="锦州市">锦州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2108&amp;d=&amp;k=#jlt" title="营口市">营口市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2109&amp;d=&amp;k=#jlt" title="阜新市">阜新市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2110&amp;d=&amp;k=#jlt" title="辽阳市">辽阳市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2111&amp;d=&amp;k=#jlt" title="盘锦市">盘锦市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2112&amp;d=&amp;k=#jlt" title="铁岭市">铁岭市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2113&amp;d=&amp;k=#jlt" title="朝阳市">朝阳市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2114&amp;d=&amp;k=#jlt" title="葫芦岛市">葫芦岛市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2115&amp;d=&amp;k=#jlt" title="兴城市">兴城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2200&amp;d=&amp;k=#jlt" title="吉林省">吉林省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2201&amp;d=&amp;k=#jlt" title="长春市">长春市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2202&amp;d=&amp;k=#jlt" title="吉林市">吉林市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2203&amp;d=&amp;k=#jlt" title="四平市">四平市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2204&amp;d=&amp;k=#jlt" title="辽源市">辽源市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2205&amp;d=&amp;k=#jlt" title="通化市">通化市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2206&amp;d=&amp;k=#jlt" title="白山市">白山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2207&amp;d=&amp;k=#jlt" title="松原市">松原市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2208&amp;d=&amp;k=#jlt" title="白城市">白城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2210&amp;d=&amp;k=#jlt" title="延吉市">延吉市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2224&amp;d=&amp;k=#jlt" title="延边朝鲜族自治州">延边朝鲜族自治州</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2300&amp;d=&amp;k=#jlt" title="黑龙江省">黑龙江省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2301&amp;d=&amp;k=#jlt" title="哈尔滨市">哈尔滨市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2302&amp;d=&amp;k=#jlt" title="齐齐哈尔市">齐齐哈尔市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2303&amp;d=&amp;k=#jlt" title="鸡西市">鸡西市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2304&amp;d=&amp;k=#jlt" title="鹤岗市">鹤岗市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2305&amp;d=&amp;k=#jlt" title="双鸭山市">双鸭山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2306&amp;d=&amp;k=#jlt" title="大庆市">大庆市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2307&amp;d=&amp;k=#jlt" title="伊春市">伊春市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2308&amp;d=&amp;k=#jlt" title="佳木斯市">佳木斯市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2309&amp;d=&amp;k=#jlt" title="七台河市">七台河市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2310&amp;d=&amp;k=#jlt" title="牡丹江市">牡丹江市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2311&amp;d=&amp;k=#jlt" title="黑河市">黑河市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2312&amp;d=&amp;k=#jlt" title="绥化市">绥化市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2313&amp;d=&amp;k=#jlt" title="安达市">安达市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=2328&amp;d=&amp;k=#jlt" title="加格达奇区">加格达奇区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3100&amp;d=&amp;k=#jlt" title="上海市">上海市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3102&amp;d=&amp;k=#jlt" title="徐汇区">徐汇区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3105&amp;d=&amp;k=#jlt" title="普陀区">普陀区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3106&amp;d=&amp;k=#jlt" title="闸北区">闸北区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3107&amp;d=&amp;k=#jlt" title="虹口区">虹口区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3108&amp;d=&amp;k=#jlt" title="杨浦区">杨浦区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3109&amp;d=&amp;k=#jlt" title="浦东新区">浦东新区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3111&amp;d=&amp;k=#jlt" title="宝山区">宝山区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3113&amp;d=&amp;k=#jlt" title="金山区">金山区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3114&amp;d=&amp;k=#jlt" title="松江区">松江区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3115&amp;d=&amp;k=#jlt" title="青浦区">青浦区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3116&amp;d=&amp;k=#jlt" title="奉贤区">奉贤区</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3200&amp;d=&amp;k=#jlt" title="江苏省">江苏省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3201&amp;d=&amp;k=#jlt" title="南京市">南京市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3202&amp;d=&amp;k=#jlt" title="无锡市">无锡市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3203&amp;d=&amp;k=#jlt" title="徐州市">徐州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3204&amp;d=&amp;k=#jlt" title="常州市">常州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3205&amp;d=&amp;k=#jlt" title="苏州市">苏州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3206&amp;d=&amp;k=#jlt" title="南通市">南通市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3207&amp;d=&amp;k=#jlt" title="连云港市">连云港市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3208&amp;d=&amp;k=#jlt" title="淮安市">淮安市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3209&amp;d=&amp;k=#jlt" title="盐城市">盐城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3210&amp;d=&amp;k=#jlt" title="扬州市">扬州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3211&amp;d=&amp;k=#jlt" title="镇江市">镇江市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3212&amp;d=&amp;k=#jlt" title="泰州市">泰州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3214&amp;d=&amp;k=#jlt" title="扬中县">扬中县</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3215&amp;d=&amp;k=#jlt" title="丹阳市">丹阳市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3216&amp;d=&amp;k=#jlt" title="如皋市">如皋市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3217&amp;d=&amp;k=#jlt" title="句容市">句容市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3300&amp;d=&amp;k=#jlt" title="浙江省">浙江省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3301&amp;d=&amp;k=#jlt" title="杭州市">杭州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3302&amp;d=&amp;k=#jlt" title="宁波市">宁波市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3303&amp;d=&amp;k=#jlt" title="温州市">温州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3304&amp;d=&amp;k=#jlt" title="嘉兴市">嘉兴市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3305&amp;d=&amp;k=#jlt" title="湖州市">湖州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3306&amp;d=&amp;k=#jlt" title="绍兴市">绍兴市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3307&amp;d=&amp;k=#jlt" title="金华市">金华市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3308&amp;d=&amp;k=#jlt" title="衢州市">衢州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3309&amp;d=&amp;k=#jlt" title="舟山市">舟山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3310&amp;d=&amp;k=#jlt" title="台州市">台州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3311&amp;d=&amp;k=#jlt" title="丽水市">丽水市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3312&amp;d=&amp;k=#jlt" title="诸暨市">诸暨市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3313&amp;d=&amp;k=#jlt" title="永康市">永康市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3314&amp;d=&amp;k=#jlt" title="萧山市">萧山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3315&amp;d=&amp;k=#jlt" title="桐庐县">桐庐县</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3316&amp;d=&amp;k=#jlt" title="淳安县">淳安县</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3401&amp;d=&amp;k=#jlt" title="合肥市">合肥市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3402&amp;d=&amp;k=#jlt" title="芜湖市">芜湖市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3403&amp;d=&amp;k=#jlt" title="蚌埠市">蚌埠市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3404&amp;d=&amp;k=#jlt" title="淮南市">淮南市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3405&amp;d=&amp;k=#jlt" title="马鞍山市">马鞍山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3406&amp;d=&amp;k=#jlt" title="淮北市">淮北市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3407&amp;d=&amp;k=#jlt" title="铜陵市">铜陵市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3408&amp;d=&amp;k=#jlt" title="安庆市">安庆市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3410&amp;d=&amp;k=#jlt" title="黄山市">黄山市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3411&amp;d=&amp;k=#jlt" title="滁州市">滁州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3412&amp;d=&amp;k=#jlt" title="阜阳市">阜阳市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3413&amp;d=&amp;k=#jlt" title="宿州市">宿州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3414&amp;d=&amp;k=#jlt" title="巢湖市">巢湖市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3415&amp;d=&amp;k=#jlt" title="六安市">六安市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3416&amp;d=&amp;k=#jlt" title="亳州市">亳州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3417&amp;d=&amp;k=#jlt" title="池州市">池州市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3418&amp;d=&amp;k=#jlt" title="宣城市">宣城市</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3500&amp;d=&amp;k=#jlt" title="福建省">福建省</a>
+                                </li>
+                                <li>
+                                    <span class="shuxian"></span>
+                                    <a href="/campus?r=&amp;p=&amp;c=3501&amp;d=&amp;k=#jlt" title="福州市">福州市</a>
+   

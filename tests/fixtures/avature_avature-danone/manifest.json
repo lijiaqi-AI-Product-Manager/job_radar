@@ -1,0 +1,26 @@
+[
+  {
+    "method": "GET",
+    "url": "https://careers.danone.com.cn/zh_CN/careers/sitemap.xml",
+    "body": "",
+    "status": 200,
+    "content_type": "text/xml;charset=UTF-8",
+    "file": "001.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.danone.com.cn/zh_CN/careers/JobDetail/10300",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://careers.danone.com.cn/zh_CN/careers/JobDetail/Project-Manager-IPRO/10283",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "003.txt"
+  }
+]

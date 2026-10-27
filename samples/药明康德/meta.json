@@ -1,0 +1,29 @@
+{
+  "company": "药明康德",
+  "careers_url": "https://wuxiapptec.zhiye.com/campus",
+  "host": "wuxiapptec.zhiye.com",
+  "ats": "beisen",
+  "page_title": "药明康德招聘门户",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 72,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "药明康德招聘门户",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019893",
+      "https://career.csu.edu.cn/campus/view/id/590049"
+    ]
+  }
+}

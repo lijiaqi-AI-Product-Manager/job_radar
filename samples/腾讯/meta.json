@@ -1,0 +1,27 @@
+{
+  "company": "腾讯",
+  "careers_url": "https://join.qq.com/",
+  "host": "join.qq.com",
+  "ats": "unknown",
+  "page_title": "首页 | 腾讯校招",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 4,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "首页 | 腾讯校招",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758305"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+id: momenta
+company: Momenta
+adapter: feishu_atsx
+params:
+  base_url: https://momenta.jobs.feishu.cn
+  website_path: campus
+  portal_type: 3
+  page_size: 20
+  job_url: https://momenta.jobs.feishu.cn/campus/position/{id}/detail
+  max_pages: 1
+recruit_types:
+- campus
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: none
+  terms: 飞书招聘 ATSX 门户匿名接口；校园站招聘项目为 Mstar（自动驾驶算法之星）。无需登录、无验证码、无签名。
+  notes: 侦察：docs/recon/feishu-atsx.md。2026-10-26 实测 count=30，全部为 Mstar 计划校招岗，城市含北京/上海/苏州。

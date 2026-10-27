@@ -1,0 +1,25 @@
+{
+  "company": "中国广电",
+  "careers_url": "https://hr.grgbanking.com/",
+  "host": "hr.grgbanking.com",
+  "ats": "self_hosted",
+  "page_title": "广电运通|GRGBanking--招聘官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "校园大使",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 22,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "广电运通|GRGBanking--招聘官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

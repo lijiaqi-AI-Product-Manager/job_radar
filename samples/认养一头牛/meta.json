@@ -1,0 +1,29 @@
+{
+  "company": "认养一头牛",
+  "careers_url": "https://ryytn.zhiye.com/Campus",
+  "host": "ryytn.zhiye.com",
+  "ats": "beisen",
+  "page_title": "认养一头牛驿站",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校园大使"
+  ],
+  "tracks": 10,
+  "roles": 28,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "认养一头牛驿站",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.hznu.edu.cn/campus/view/id/551151",
+      "https://career.hznu.edu.cn/campus/view/id/550794",
+      "https://career.hznu.edu.cn/campus/view/id/550738"
+    ]
+  }
+}

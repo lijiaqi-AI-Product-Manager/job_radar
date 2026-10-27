@@ -1,0 +1,30 @@
+{
+  "company": "绿盟科技",
+  "careers_url": "https://update.nsfocus.com/",
+  "host": "update.nsfocus.com",
+  "ats": "unknown",
+  "page_title": "售后服务_客户支持_服务与支持_绿盟科技",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 69,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "售后服务_客户支持_服务与支持_绿盟科技",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757920",
+      "https://career.gdut.edu.cn/campus/view/id/1021172",
+      "https://job.zzu.edu.cn/campus/view/id/1019661"
+    ]
+  }
+}

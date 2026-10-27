@@ -1,0 +1,32 @@
+group: 百草味
+entries:
+- id: baicaowei-campus-entry
+  company: 百草味
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 运营类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  apply_url: https://campus.niuqizp.com/job-vky5aNZZL.html
+  source:
+    type: official_site
+    name: 百草味招聘官网
+    url: https://campus.niuqizp.com/job-vky5aNZZL.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：百草味2027校园招聘正式启动2027校园招聘,微信公众号百草味招聘 - 牛企直聘 -
+    哞~~~）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

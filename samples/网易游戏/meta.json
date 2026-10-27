@@ -1,0 +1,29 @@
+{
+  "company": "网易游戏",
+  "careers_url": "https://op.campus.163.com/",
+  "host": "op.campus.163.com",
+  "ats": "unknown",
+  "page_title": "网易游戏校园招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 54,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "网易游戏校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020885",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/997016"
+    ]
+  }
+}

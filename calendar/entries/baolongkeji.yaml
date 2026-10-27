@@ -1,0 +1,28 @@
+group: 保隆科技
+entries:
+- id: baolongkeji-campus-entry
+  company: 保隆科技
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 金融类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.baolong.biz/
+  source:
+    type: official_site
+    name: 保隆科技招聘官网
+    url: https://www.baolong.biz/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：保隆科技 让更多人受益于汽车科技的发展）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

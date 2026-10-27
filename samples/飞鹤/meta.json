@@ -1,0 +1,32 @@
+{
+  "company": "飞鹤",
+  "careers_url": "https://www.feihe.com/about/joinUs/",
+  "host": "www.feihe.com",
+  "ats": "unknown",
+  "page_title": "飞鹤奶粉 更适合中国宝宝体质",
+  "calendar_entries": 5,
+  "project_types": [
+    "日常实习",
+    "校园大使",
+    "校招",
+    "秋招正式批",
+    "秋招补录"
+  ],
+  "tracks": 25,
+  "roles": 125,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "飞鹤奶粉 更适合中国宝宝体质",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757357",
+      "https://career.gdut.edu.cn/campus/view/id/1020950",
+      "https://job.zzu.edu.cn/campus/view/id/1019146"
+    ]
+  }
+}

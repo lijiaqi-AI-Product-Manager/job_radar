@@ -1,0 +1,28 @@
+{
+  "company": "中国能建",
+  "careers_url": "https://zhaopin.chnenergy.com.cn/recTypeSerch?kinds=1",
+  "host": "zhaopin.chnenergy.com.cn",
+  "ats": "self_hosted",
+  "page_title": "校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 22,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757348",
+      "https://job.zzu.edu.cn/campus/view/id/1019204",
+      "https://career.shiep.edu.cn/campus/view/id/667471"
+    ]
+  }
+}

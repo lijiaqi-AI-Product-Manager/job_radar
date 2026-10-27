@@ -1,0 +1,24 @@
+{
+  "company": "小熊电器",
+  "careers_url": "https://bears.com.cn/join.html?cid=69",
+  "host": "bears.com.cn",
+  "ats": "unknown",
+  "page_title": "小熊电器-招聘信息-小熊电器股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "小熊电器-招聘信息-小熊电器股份有限公司",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

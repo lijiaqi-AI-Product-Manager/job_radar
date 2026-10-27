@@ -1,0 +1,27 @@
+{
+  "company": "英集芯",
+  "careers_url": "http://job.injoinic.com/schedule.html",
+  "host": "job.injoinic.com",
+  "ats": "self_hosted",
+  "page_title": "校园招聘 - 深圳英集芯科技股份有限公司招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 34,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘 - 深圳英集芯科技股份有限公司招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.shiep.edu.cn/campus/view/id/667339"
+    ]
+  }
+}

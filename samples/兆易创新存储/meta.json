@@ -1,0 +1,24 @@
+{
+  "company": "兆易创新存储",
+  "careers_url": "https://www.gigadevice.com/about/career",
+  "host": "www.gigadevice.com",
+  "ats": "unknown",
+  "page_title": "Careers at GigaDevice | Employee Benefits &amp; Opportunities | GigaDevice",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 4,
+  "roles": 4,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Careers at GigaDevice | Employee Benefits &amp; Opportunities | GigaDevice",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

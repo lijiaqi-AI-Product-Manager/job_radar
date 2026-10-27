@@ -1,0 +1,24 @@
+{
+  "company": "途游游戏",
+  "careers_url": "https://cug.91wllm.cn/campus/view/id/1002147",
+  "host": "cug.91wllm.cn",
+  "ats": "unknown",
+  "page_title": "中国地质大学就业信息网",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 1,
+  "roles": 2,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国地质大学就业信息网",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

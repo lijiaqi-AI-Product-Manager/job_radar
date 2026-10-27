@@ -1,0 +1,24 @@
+{
+  "company": "中集集团",
+  "careers_url": "https://www.cimc.cn/index.php?m=content&c=index&a=lists&catid=16",
+  "host": "www.cimc.cn",
+  "ats": "unknown",
+  "page_title": "加入中集 - CIMC中集集团官网-中国国际海运集装箱（集团）股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 11,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入中集 - CIMC中集集团官网-中国国际海运集装箱（集团）股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

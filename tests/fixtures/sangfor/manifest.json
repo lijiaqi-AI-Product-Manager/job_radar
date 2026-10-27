@@ -1,0 +1,26 @@
+[
+  {
+    "method": "GET",
+    "url": "https://hr.sangfor.com/webapi/api/connect/token",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://hr.sangfor.com/webapi/api/Jobs",
+    "body": "{\"channelId\":0,\"page\":1,\"pageSize\":20,\"departmentId\":0,\"functionId\":0,\"kw\":\"\",\"locationId\":0,\"workPlaceId\":0}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "002.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://hr.sangfor.com/webapi/api/Jobs",
+    "body": "{\"channelId\":0,\"page\":2,\"pageSize\":20,\"departmentId\":0,\"functionId\":0,\"kw\":\"\",\"locationId\":0,\"workPlaceId\":0}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "003.json"
+  }
+]

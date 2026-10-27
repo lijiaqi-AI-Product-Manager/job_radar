@@ -1,0 +1,24 @@
+{
+  "company": "智元机器人AgiBot",
+  "careers_url": "https://www.agibot.cn/recruiting/campus.html",
+  "host": "www.agibot.cn",
+  "ats": "unknown",
+  "page_title": "校园招聘-AGIBOT敏捷机器人",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘-AGIBOT敏捷机器人",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

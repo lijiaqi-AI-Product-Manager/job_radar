@@ -1,0 +1,24 @@
+{
+  "company": "薪人薪事",
+  "careers_url": "https://www.xinrenxinshi.com/feature/recruit",
+  "host": "www.xinrenxinshi.com",
+  "ats": "unknown",
+  "page_title": "招聘管理系统|人力资源管理系统|企业招聘系统|招聘管理软件-薪人薪事",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘管理系统|人力资源管理系统|企业招聘系统|招聘管理软件-薪人薪事",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

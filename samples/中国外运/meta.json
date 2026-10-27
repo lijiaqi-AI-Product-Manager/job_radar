@@ -1,0 +1,27 @@
+{
+  "company": "中国外运",
+  "careers_url": "https://sinotrans-csc.zhiye.com/campus",
+  "host": "sinotrans-csc.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中国外运长航集团有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 20,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国外运长航集团有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757569",
+      "https://career.csu.edu.cn/campus/view/id/590310"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "company": "工银安盛",
+  "careers_url": "https://yhks.cn/y.php/n?d3=3",
+  "host": "yhks.cn",
+  "ats": "unknown",
+  "page_title": "2027年度工银安盛校园招聘公告-2027银行校园招聘_秋招公告_春招公告_笔试面试真题-银行考试网",
+  "calendar_entries": 8,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "春招",
+    "暑期实习",
+    "校招",
+    "社招",
+    "秋招正式批",
+    "秋招补录"
+  ],
+  "tracks": 40,
+  "roles": 208,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "2027年度工银安盛校园招聘公告-2027银行校园招聘_秋招公告_春招公告_笔试面试真题-银行考试网",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019290"
+    ]
+  }
+}

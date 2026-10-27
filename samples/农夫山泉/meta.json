@@ -1,0 +1,28 @@
+{
+  "company": "农夫山泉",
+  "careers_url": "https://jobs.yst.com.cn/campus-recruitment/yst/68367",
+  "host": "jobs.yst.com.cn",
+  "ats": "self_hosted",
+  "page_title": "养生堂·农夫山泉·万泰 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "养生堂·农夫山泉·万泰 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020995",
+      "https://job.zzu.edu.cn/campus/view/id/1019694",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/996988"
+    ]
+  }
+}

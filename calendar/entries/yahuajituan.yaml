@@ -1,0 +1,23 @@
+group: 雅化集团
+entries:
+- id: yahuajituan-campus-entry
+  company: 雅化集团
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 广州
+  apply_url: https://www.yh.cn/jobsyh.html
+  source:
+    type: official_site
+    name: 雅化集团招聘官网
+    url: https://www.yh.cn/jobsyh.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：银汉游戏 - 创造精彩游戏生活 引领手机游戏潮流）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

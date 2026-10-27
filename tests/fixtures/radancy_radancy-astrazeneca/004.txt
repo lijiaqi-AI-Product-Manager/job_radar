@@ -1,0 +1,263 @@
+<p class="search-location-error" aria-hidden="true"></p>
+	</div>
+	<!--<div class="btn"><span>Close search</span></div>-->
+
+</form>
+
+</div>
+    
+	<div class="form-toggle-button-container">
+    	<div class="wrapper">
+    	    <div class="form-toggle-button btn btn--purple btn--shadow" aria-expanded="false" tabindex="0">
+    	        <span>搜索职位</span>
+    	        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M19.652 18.028L13.624 12c.927-1.217 1.449-2.782 1.449-4.464A7.52 7.52 0 0 0 7.537 0 7.522 7.522 0 0 0 0 7.537a7.52 7.52 0 0 0 7.536 7.535A7.478 7.478 0 0 0 12 13.623l6.029 6.03c.231.23.522.347.812.347.29 0 .58-.116.812-.348a1.122 1.122 0 0 0-.001-1.624zM7.537 12.754A5.195 5.195 0 0 1 2.32 7.537a5.195 5.195 0 0 1 5.217-5.218 5.195 5.195 0 0 1 5.217 5.218 5.196 5.196 0 0 1-5.217 5.217z" fill="#FFF" fill-rule="nonzero"/></svg>
+    	    </div>
+	    </div>
+    </div>
+    	
+</div>
+
+
+<div class="wrapper jd-main-elements">
+    
+    <section class="job-description-title" data-selector-name="jobdetails" data-org-id="12977" data-job-id="101856196240" data-save-jobs="false">
+        <h1>MR-BC-&#x664B;&#x4E2D;</h1>     
+    </section>
+
+
+
+    <section class="job-description" data-selector-name="jobdetails" data-org-id="12977" data-job-id="101856196240" data-save-jobs="true">
+    
+        <div class="details-and-apply-button">
+            <div class="details-and-apply-button__details">
+            
+                <span class="job-id job-info"><b>地点</b>
+                
+                 
+                         <span class="job-locations">
+                         
+                                <span> &#x4E0A;&#x6D77;, </span> 
+                            
+                                <span>&#x4E0A;&#x6D77;, </span> 
+    
+                            <span>&#x4E2D;&#x56FD;</span>
+                                
+                        </span>
+
+
+                </span>
+                
+ <span class="job-id job-info"><b>&#x804C;&#x4F4D; ID</b> TP24866</span>  <span class="job-date job-info"><b>&#x53D1;&#x5E03;&#x65E5;&#x671F;</b> 10/12/2026</span>                 
+                        <span class="hidden category-job">Tmp.Platform.Core.Model.Job.JobField</span>
+                
+            </div>
+            <div class="details-and-apply-button__apply-button">
+        <a class="button job-apply top btn  btn--shadow" data-job-id="101856196240" data-job-organization-id="12977" data-selector-name="job-apply-link" data-page-type="Job" data-page-Name="Job Details" data-override-candidate-card="False" data-delay-url="False" data-apply-url="https://careersite.tupu360.com/astrazeneca/position/detail?positionId=6acc98315643cc5f6a59de60" href="https://careersite.tupu360.com/astrazeneca/position/detail?positionId=6acc98315643cc5f6a59de60" rel="nofollow" data-apply-mobile="true" target="_blank">&#x7533;&#x8BF7;
+            <div class="purple-slide-in">
+                <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"></path></svg>
+                </div>
+        </a>
+            </div>
+        </div>     
+      
+        <div class="ats-description"><p><b>工作目的</b></p><p>在所负责的业务区域内, <span><span>利用医学专业知识和科学领导力，以病患为中心，建立稳固的合作共赢关系，实现产品的学术交流有效性，推动业务可持续的增长。</span></span></p><p><b>主要职责</b></p><p>拟订医药产品推广计划和方案；</p><p>向医务人员传递医药产品相关信息；</p><p>协助医务人员合理使用本企业医药产品；</p><p><span><span>收集、反馈药品临床使用情况及医院需求信息。</span></span></p><p><span><span>医学代表可通过下列形式开展学术推广等活动：</span></span></p><ul><li>在医疗机构当面与医务人员和药事人员沟通；</li><li>举办学术会议、讲座；</li><li>提供学术资料；</li><li>通过互联网或者电话会议沟通；</li><li>医疗机构同意的其他形式。</li></ul><p><b>个人发展：</b></p><ul><li>根据医学代表 (MR) 能力描述中的要求，培养能力，提高效率</li><li>确定自我完善的方向，并与地区经理 (DSM) 探讨发展需求</li><li><span><span>践行阿斯利康的价值观，培养秉承道德与合规的可持续发展的思维和行动</span></span></li><li><span><span>积极参与公司内部业务会议、产品与业务培训和活动</span></span></li></ul><p><b>工作要求和胜任能力</b></p><ul><li><span><span>大专或大专以上学历；医学、药学、生物，化学等相关专业的优先；</span></span></li><li>一年以上医药行业的相关经验优先；</li><li>有较强的学习能力和敬业精神；</li><li>良好的人际沟通能力和协作能力；</li><li>具有一定的分析和解决问题的能力；</li><li><span><span>入职后能办理招商银行信用卡的资格（通过报销的业务费用必须使用商务信用卡）</span></span></li></ul>
+            
+            
+            <!-- adding in Equality statement-->
+        <br><br>
+        <p>AstraZeneca embraces diversity and equality of opportunity.  We are committed to building an inclusive and diverse team representing all backgrounds, with as wide a range of perspectives as possible, and harnessing industry-leading skills.  We believe that the more inclusive we are, the better our work will be.  We welcome and consider applications to join our team from all qualified candidates, regardless of their characteristics.  We comply with all applicable laws and regulations on non-discrimination in employment (and recruitment), as well as work authorisation and employment eligibility verification requirements.</p>    
+        </div>
+     
+        
+        <div class="apply-save-bottom">
+            <div class="apply-save-bottom__apply">
+        <a class="button job-apply bottom btn  btn--shadow" data-job-id="101856196240" data-job-organization-id="12977" data-selector-name="job-apply-link" data-page-type="Job" data-page-Name="Job Details" data-override-candidate-card="False" data-delay-url="False" data-apply-url="https://careersite.tupu360.com/astrazeneca/position/detail?positionId=6acc98315643cc5f6a59de60" href="https://careersite.tupu360.com/astrazeneca/position/detail?positionId=6acc98315643cc5f6a59de60" rel="nofollow" data-apply-mobile="true" target="_blank">&#x7533;&#x8BF7;
+            <div class="purple-slide-in">
+                <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"></path></svg>
+                </div>
+        </a>
+            </div>
+            <div class="apply-save-bottom__save">
+                        <button type="button" class="js-save-job-btn btn btn--shadow" data-job-id="101856196240" data-org-id="12977">&#x4FDD;&#x5B58;&#x804C;&#x4F4D;</button>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <aside>
+        <a href="/saved-jobs" class="btn btn--with-slide-in btn--shadow">查看已保存的职位
+            <div class="purple-slide-in">
+            <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"></path></svg>
+            </div>
+        </a>
+        
+
+	<section class="container related-and-recent-jobs">
+	
+	<!--Tabs-->
+	<div role="tablist" aria-label="Related jobs and Recently viewed jobs tabs">
+    	<button role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" class="btn controls bold" tabindex="0">
+              相似角色
+        </button>
+        <button role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" class="btn controls" tabindex="0">
+              最近查看过
+        </button>
+    </div>
+	
+
+
+    <section class="job-list" data-selector-name="joblist"  id="panel-1" aria-labelledby="tab-1" role="tabpanel" tabindex="0">
+                <ul>
+                        <li>
+                                    <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/innovation-product-management-%e5%88%9b%e6%96%b0%e4%ba%a7%e5%93%81%e7%bb%8f%e7%90%86/12977/97462189936" data-job-id="97462189936">Innovation Product Management (&#x521B;&#x65B0;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;)</a>
+                                    <span class="location">&#x4E0A;&#x6D77;</span>
+                            
+                            <div class="purple-slide-in">
+                                    <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"/></svg>
+                            </div>
+                            
+                        </li>
+                        <li>
+                                    <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%99%8b%e4%b8%ad/12977/101856196240" data-job-id="101856196240">MR-BC-&#x664B;&#x4E2D;</a>
+                                    <span class="location">&#x4E0A;&#x6D77;</span>
+                            
+                            <div class="purple-slide-in">
+                                    <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"/></svg>
+                            </div>
+                            
+                        </li>
+                        <li>
+                                    <a href="/%e5%b7%a5%e4%bd%9c/%e6%97%a0%e9%94%a1%e5%b8%82/sr-engineer-production-maintenance/12977/100673432768" data-job-id="100673432768">Sr. Engineer, Production Maintenance</a>
+                                    <span class="location">&#x65E0;&#x9521;&#x5E02;</span>
+                            
+                            <div class="purple-slide-in">
+                                    <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"/></svg>
+                            </div>
+                            
+                        </li>
+                        <li>
+                                    <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%ad%a6%e6%b1%89/12977/102237755232" data-job-id="102237755232">MR-BC-&#x6B66;&#x6C49;</a>
+                                    <span class="location">&#x4E0A;&#x6D77;</span>
+                            
+                            <div class="purple-slide-in">
+                                    <svg width="9" height="19" viewBox="0 0 9 19" xmlns="http://www.w3.org/2000/svg"><path d="M7.921 8.675L1.691.341C1.33-.114.775-.114.434.341.092.796.092 1.565.433 2.02L6.044 9.5l-5.61 7.48c-.342.484-.342 1.224 0 1.679.34.455.895.455 1.258 0l6.23-8.306c.34-.483.34-1.223 0-1.678z" fill="#FFF" fill-rule="nonzero"/></svg>
+                            </div>
+                            
+                        </li>
+                </ul>
+    </section>
+
+
+    <section class="recently-viewed-job-list job-list hidden" data-recently-viewed-jobs="false" data-company-site-id="18300" data-ajax-url="//job-search.astrazeneca.cn/module/postmodule" data-module-name="Recently viewed jobs" data-module-type="RecentlyViewedJobList" data-selector-name="recentlyviewedjoblist" data-content-type="Dynamic" id="panel-2" aria-labelledby="tab-2" role="tabpanel" tabindex="0" hidden>
+        <p class="empty-list-alert">您还没有最近查看过的职位</p>
+    </section>
+	</section>
+
+
+    </aside>
+    
+</div>
+
+
+
+
+
+    
+    <section class="glassdoor-banner">
+        <div class="wrapper narrower">
+            <div class="glassdoor-banner__images">
+                <img src="//tbcdn.talentbrew.com/company/7684/v2_0/img/glassdoor-logo.png" alt="Glassdoor logo">
+                <img src="//tbcdn.talentbrew.com/company/7684/v2_0/img/Glassdoor-four-stars.svg" alt="Rated four stars on Glassdoor">
+            </div>
+            <div class="glassdoor-banner__quote">
+                <p>优秀的文化，出色的工作任务，充满支持的管理模式。 公司内部的轮换机会。 他们重视包容性和多样性。</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    	</main>
+    	<footer>
+            
+    
+        <div class="footer wrapper">
+            <div class="footer__logo">
+                <img src="//tbcdn.talentbrew.com/company/7684-preview-site/img/logo/logo-14641-17887.png" alt="AstraZeneca Logo"/>
+            </div>
+            <div class="footer__links">
+            
+                <a href="/网站地图" title="网站地图">网站地图</a>
+                
+                 <a href="https://policy.cookiereports.com/76cc70cc-zh-cn.html" class="CookieReportsLink">Cookie政策</a>  
+                <a href="https://www.azprivacy.astrazeneca.com/asia-pacific/china/cn-sim/privacy-notices.html" target="_blank" title="隐私政策">隐私政策</a>
+                <a href="https://www.astrazeneca.com.cn/zh/legal-issues.html" target="_blank" title="Legal Notice">法律事项</a>
+                <a href="https://www.astrazeneca.com" title="AstraZeneca global site" target="_blank">Astrazeneca.com</a>
+            </div>
+            <div class="footer__social-links">
+                <div class="instagram social-icons-container__child">
+                <a href="https://www.instagram.com/astrazeneca" title="Instagram" aria-label="AstraZeneca on Instagram" target="_blank"></a>
+                </div>
+                <div class="facebook social-icons-container__child">
+                    <a href="https://www.facebook.com/astrazenecacareers" title="facebook" aria-label="AstraZeneca on Facebook" target="_blank"></a>
+                </div>
+                <div class="linkedin social-icons-container__child">
+                    <a href="https://www.linkedin.com/company/astrazeneca" title="linkedin" aria-label="AstraZeneca on LinkedIn" target="_blank"></a>
+                </div>
+                <div class="twitter social-icons-container__child">
+                    <a href="https://twitter.com/astrazenecajobs" title="twitter" aria-label="Astrazenecajobs on Twitter" target="_blank"></a>
+                </div>
+                <div class="glassdoor social-icons-container__child">
+                    <a href="https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm" title="glassdoor" aria-label="AstraZeneca on Glassdoor" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+
+
+    	</footer>
+	
+	</div>
+	
+   	<script src="//tbcdn.talentbrew.com/bundles/jquery-client.js" ></script>
+    <script src="//tbcdn.talentbrew.com/bundles/tb-corepack.js" ></script>
+	
+    
+    
+    <script src="//tbcdn.talentbrew.com/company/12977/js/18300-Full.min.js" ></script>
+
+    <script src="//tbcdn.talentbrew.com/js/client/job-details.js" ></script>
+<script src="//tbcdn.talentbrew.com/js/client/recently-viewed-job-list.js" ></script>
+
+    
+    
+	
+
+
+	
+
+    <!-- new cookie banner -->
+    <script src="https://policy.cookiereports.com/76cc70cc_panel-zh-cn.js"></script>
+
+    <script>
+      
+        var slider = $('.header__hero-slider');
+         slider.slick({
+              infinite: true,
+              speed: 500,
+              dots: true,
+              arrows: true,
+              autoplay: true,
+              touchMove: false,
+              appendDots: $(".slide-m-dots"),
+              prevArrow: $(".slide-m-prev"),
+              nextArrow: $(".slide-m-next"),
+              slidesToShow: 1,
+              slidesToScroll: 1
+          });
+        </script>
+<script id="radancy-magicbullet" data-a11y src="https://services.tmpwebeng.com/magicbullet/" type="module"></script>
+</body>
+</html>
+ 

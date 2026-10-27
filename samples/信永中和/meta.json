@@ -1,0 +1,27 @@
+{
+  "company": "信永中和",
+  "careers_url": "https://job.shinewing.com/",
+  "host": "job.shinewing.com",
+  "ats": "self_hosted",
+  "page_title": "信永中和",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 8,
+  "roles": 26,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "信永中和",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758252"
+    ]
+  }
+}

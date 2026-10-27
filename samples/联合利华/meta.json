@@ -1,0 +1,24 @@
+{
+  "company": "联合利华",
+  "careers_url": "https://careers.unilever.com/en/",
+  "host": "careers.unilever.com",
+  "ats": "self_hosted",
+  "page_title": "Working at Unilever",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 1,
+  "roles": 1,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Working at Unilever",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

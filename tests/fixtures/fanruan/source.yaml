@@ -1,0 +1,21 @@
+id: fanruan
+company: 帆软
+adapter: fanruan
+params:
+  paths:
+  - social
+  - campus
+  - trainee
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- campus
+- intern
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-27'
+  robots: none
+  terms: 帆软招聘官网 join.fanruan.com：WordPress 主题自带的分页接口，匿名 POST 当前页面 URL 即可，无需登录/验证码/签名
+  notes: 2026-10-27 实测：社招 84 + 校招 23 + 实习 8 = 115 岗，列表接口直接带职责与要求全文，无需详情页

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "27校招- 技术平台管理",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 139
+  },
+  {
+    "title": "27校招-工业驱控硬件工程师",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 129
+  },
+  {
+    "title": "27校招-具身操作算法工程师",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 488
+  }
+]

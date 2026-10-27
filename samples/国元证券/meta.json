@@ -1,0 +1,27 @@
+{
+  "company": "国元证券",
+  "careers_url": "https://gyzq.zhiye.com/",
+  "host": "gyzq.zhiye.com",
+  "ats": "beisen",
+  "page_title": "国元证券",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 42,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国元证券",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019743"
+    ]
+  }
+}

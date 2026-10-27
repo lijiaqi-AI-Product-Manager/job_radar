@@ -1,0 +1,1585 @@
+
+<!doctype html>
+<html >
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="keywords" content="西门子中国, 招聘官网, 校园招聘, 实习生招聘, 官网招聘, 职位, 校招, 社招, 社会招聘, 应届生招聘, 招聘, 官网, 找工作, 求职, 人才网, 招聘网, 人才，简历，工作，求职，面试，应聘，跳槽，高薪，兼职，猎头，薪酬，薪资，培训，测评，人事"/>
+    <meta name="description" content="西门子中国"/>
+    <meta content="招聘官网, 校园招聘, 实习生招聘, 官网招聘, 职位, 校招, 社招, 社会招聘, 应届生招聘, 招聘, 官网, 找工作, 求职, 人才网, 招聘网, 人才，简历，工作，求职，面试，应聘，跳槽，高薪，兼职，猎头，薪酬，薪资，培训，测评，人事" name="keywords"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+
+
+    <title>
+        职位详情
+    </title>
+        <link href="//cdn.careersite.tupu360.com/csresources/scripts/plugin/bootstrap/4.6.2/css/bootstrap.min.css?v=20261016" rel="stylesheet" type="text/css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"/>
+    <link href="//cdn.careersite.tupu360.com/csresources/styles/default/iconfont/iconfont.css?v=20261016" rel="stylesheet" type="text/css" integrity="sha384-EF1x9qjQB93Fgouqzxr9EF2Wf33CCIF0Io1k/BAUAl2vVO4LChdScs2Oc/z3dcuF" crossorigin="anonymous"/>
+    <link href="//cdn.careersite.tupu360.com/csresources/styles/default/comm.css?v=20261016" rel="stylesheet" type="text/css" integrity="sha384-tOsSOlc3sOS+/y4uRpKPRA4dJxkCbYIJavqpCbbreLqAUIdKYyZR/D3gucmYSP+G" crossorigin="anonymous"/>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/jquery-3.7.1.min.js?v=20261016" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/popper.min.js?v=20261016" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/plugin/bootstrap/4.6.2/js/bootstrap.min.js?v=20261016" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/jquery.form.js?v=20261016" integrity="sha384-yhyOC9rZTHJejz9GsQdRMnn9OrSxXobZkhqI0b59cXXOhP8PuyJlBphd44XrkYgj" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/jquery.validate.min.js?v=20261016" integrity="sha384-Mbr/Uq0yclnHVahQVkSjwzFjoCwfJ6WkIzj0P7nMIbWzkjPEeCEwNUeIdQVHMnQF" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/messages_zh.js?v=20261016" integrity="sha384-OxMhUH24RZVWEbd9Uuk6mxTJwSE4o8XAMLHSPN43MjXceyiQRKgoJETc2K/O121W" crossorigin="anonymous"></script>
+    <script src="//cdn.careersite.tupu360.com/csresources/scripts/formSubmitTool.js?v=20261016" integrity="sha384-PRbyrHWVz0GyLiwNGc8pFsF9xsQI6+1yW/CVr9FrKSpZGalUOvKW6RJI3YsV10vy" crossorigin="anonymous"></script>
+
+    <script nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+        function isIe() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+            var version;
+            // 判断是否IE11
+            if(ua.toLowerCase().indexOf('like gecko') > 0){
+                version = 11
+            }else{
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // If Internet Explorer, return version number
+                    version = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
+                } else { // If another browser, return 0
+                    version = false;
+                }
+            }
+            return version;
+        }
+        if(isIe() == 9){
+            document.write('<script src="https://cdn.careersite.tupu360.com/csresources/scripts/plugin/bootstrap/3.3.7/js/bootstrap.min.js?v=20261016" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"><\/script>')
+            document.write('<link href="https://cdn.careersite.tupu360.com/csresources/scripts/plugin/bootstrap/3.3.7/css/bootstrap.min.css?v=20261016" rel="stylesheet" type="text/css"/>')
+            document.write('<link href="https://cdn.careersite.tupu360.com/csresources/styles/default/ie.css?v=20261016" rel="stylesheet" type="text/css"/>')
+            document.write('<script src="https://cdn.careersite.tupu360.com/csresources/scripts/ie9.js?v=20261016" integrity="sha384-4sEGj5Vd0CvImP65FoTBj9Q+UdpRSvh4RKPOjLgVMOXIMHu1GEt//GaIxIz534tf" crossorigin="anonymous"><\/script>')
+            
+        }else if(isIe() == 10){
+            document.write('<link href="https://cdn.careersite.tupu360.com/csresources/styles/default/ie10.css?v=20261016" rel="stylesheet" type="text/css"/>')
+        }
+    </script>
+
+
+
+
+
+<script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/web-default.js?v=20261016" integrity="sha384-gP2T9xVuf0bZz2YFXXTNj34JLJcrtWLvm6kO2VvkqVk7Ugl46NEU3BgAMnF/Ae5f" crossorigin="anonymous" defer></script>
+<script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/position-filter.js?v=20261016" integrity="sha384-qdsP+rrsI+vLUYz8xlekOGTXyN8eLRN0eRdo0DSZPecwhrRzS0/jXFALWhUdRLCl" crossorigin="anonymous" defer></script>
+<script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/login.utils.js?v=20261016" integrity="sha384-B2sqERfrXD/HLOVj1oFgvhwb6pi0MpOTJgEhTeWYMC+QKyUAbrdZnxsHP+ww5MCZ" crossorigin="anonymous" defer></script>
+
+
+    <script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/position.detail.js?v=20261016" integrity="sha384-bUfMZiZY3Rvwt9ERwquMuHa05JNb/GRlTuCU7xg+FQNyL2RXDY2lKhXlWTqiPAOZ" crossorigin="anonymous" defer></script>
+
+
+
+    
+    <script type="text/javascript" nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+        var staticParams = {version:"20261016", staticResource:"https://cdn.careersite.tupu360.com/csresources"};
+        staticParams.careerSiteCustomName = "siemens";
+        staticParams.onlyShowBody = false;
+        staticParams.hasLogin = false;
+        staticParams.resource = "https://cdn.careersite.tupu360.com/csresources";
+        staticParams.layout = "default";
+        staticParams.detailRecruitmentType = "CAMPUSRECRUITMENT";
+        staticParams.subTitleList =[];
+        staticParams.lang = "zh_CN"
+        staticParams.recruitmentType = ""
+        staticParams.domain = "siemens"
+        staticParams.jobFairCode = ""
+        staticParams.WXView_notCheckLogin = ""
+        staticParams.WXView_applyFrom = ""
+        
+        staticParams.privacyPersonals = {"needPrivacyBoolean":false,"needPrivacy":"N"};
+        staticParams.overseasAuth = {};
+        staticParams.hasAuthOverseasTransmission = false;
+        staticParams.hideOverseas = false;
+
+        function getVisitUrl(controller, name){
+            return "/"+staticParams.careerSiteCustomName + "/" + controller + "/" + name;
+        }
+
+    </script>
+    
+    
+    <meta name="layout" content="common/main"/>
+    
+
+</head>
+<body class="">
+    <div class="wrap position-detail-wrap ">
+        
+            
+                
+
+
+
+
+
+
+
+<header>
+    <div class="simple-header">
+        
+        <div class="container">
+            <div class="row">
+                
+                    <div class="col-2 logo">
+                        
+                        <img src="https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_logo.png?t=1614935067569" alt="">
+                        
+                    </div>
+                
+                <div class="actions-bar ">
+                    
+                    <div class="btn btn-primary btn-show"><span class="icons i-move"></span></div>
+                    <div class="actions-bar-inner">
+                        <div class="btn btn-primary btn-show btn-close"><span class="icons i-delete"></span></div>
+                        <div class="actions-module content head-menus ">
+                            <nav class="navbar navbar-expand-sm  ">
+                                
+
+
+<ul class="navbar-nav" id="headerList">
+    
+        
+        
+            
+    <li class="nav-item " activeKeywords="SOCIALRECRUITMENT" navType='parent' headTitle="社招职位">
+        <a class="nav-link" href="/siemens/position/index?recruitmentType=SOCIALRECRUITMENT"  >社招职位</a>
+    </li>
+            
+        
+    
+        
+        
+            
+    <li class="nav-item " activeKeywords="CAMPUSRECRUITMENT" navType='parent' headTitle="校招职位">
+        <a class="nav-link" href="/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT"  >校招职位</a>
+    </li>
+            
+        
+    
+        
+        
+            
+    <li class="nav-item " activeKeywords="INTERNSHIPRECRUITMENT" navType='parent' headTitle="实习生职位">
+        <a class="nav-link" href="/siemens/position/index?recruitmentType=INTERNSHIPRECRUITMENT"  >实习生职位</a>
+    </li>
+            
+        
+    
+        
+        
+            
+    <li class="nav-item " activeKeywords="stayconnected" navType='parent' headTitle="保持联系">
+        <a class="nav-link" href="/siemens/user/stayconnected"  >保持联系</a>
+    </li>
+            
+        
+    
+    <li id="campusAmbassadorTab" class="nav-item " activeKeywords="CAMPUSAMBASSADORRECRUITMENT" navType='parent' style="display: none" headTitle="校园大使">
+        <a class="nav-link" href="/siemens/position/index?recruitmentType=CAMPUSAMBASSADORRECRUITMENT" >校园大使</a>
+    </li>
+</ul>
+
+                            </nav>
+                        </div>
+                        <div class=" actions-module login " id="headLoginModule">
+                            
+                                <nav class="navbar navbar-expand-sm nav-switch-language newHeadMunus">
+                                    <ul class="navbar-nav dropdown">
+                                        
+                                            <li class="nav-item" data-action="changeLang" data-lang="en">
+                                                <a href="#" class="nav-link">
+                                                    <span class="icons i-earth"></span>
+                                                    <span class="txt">English</span>
+                                                </a>
+                                            </li>
+                                        
+                                        
+                                    </ul>
+                                </nav>
+                            
+                            
+<div class=" login-avatar head-logged" style="display: none">
+    <img src='' id="photoImg" alt=""/>
+</div>
+
+<nav class="navbar navbar-expand-sm  login-navbar head-logged" style="display: none">
+    <!-- Links -->
+    <ul class="navbar-nav dropdown">
+        <li class="nav-item user-name-account">
+            
+                <a class="nav-link" href="/siemens/user/delivery" >
+                    <span class="txt"></span></a>
+            
+        </li>
+<li class="nav-item">
+            <a class="nav-link" href="/siemens/user/logout" id="logout" >
+                <span class="txt">退出</span>
+            </a>
+</li>
+</ul>
+</nav>
+
+    <nav class="navbar navbar-expand-sm  login-navbar head-un-login">
+        <!-- Links -->
+        
+            <ul class="navbar-nav dropdown">
+                
+                
+                    <li class="nav-item">
+                        <a class="nav-link"  id="loadLoginBtn" data-toggle="modal" data-target="#signInModule">
+                            登录
+                        </a>
+                    </li>
+                    
+                        <li class="nav-item">
+                            <a class="nav-link"  id="loadRegisterBtn" data-toggle="modal" data-target="#signInModule">
+                                注册
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        
+    </nav>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="modal fade" id="signInModule">
+    <div class="modal-dialog" id="signInDiv"></div>
+</div>
+<script nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+    jQuery(function ($) {
+        $.ajaxSetup({
+            cache: false,
+            error: function(response){
+                if(response.status ===  310){
+                    with(window.document){
+                        open();
+                        write(response.responseText);
+                        close
+                    }
+                }
+            }
+        });
+
+        $.ajax({
+            url:"/siemens/position/positionTotal",
+            data:{recruitmentType:'CAMPUSAMBASSADORRECRUITMENT'},
+            cache:false,
+            success:function (data) {
+                if(data.positionTotal){
+                    $("#campusAmbassadorTab").show()
+                } else {
+                    $("#campusAmbassadorTab").hide()
+                }
+            }
+        });
+    });
+
+    $(".share-qr-float .btn").on("click",function () {
+        $(".share-qr-float input").select();
+        document.execCommand("Copy")
+    });
+
+    // 移动端显示菜单
+    $(".actions-bar .btn-show").on("click",function () {
+        $(this).parents('.actions-bar').toggleClass('show-actions')
+        $(this).parents('.actions-bar').siblings('.actions-bar').removeClass('show-actions')
+    })
+
+</script>
+
+
+            
+            
+
+
+    
+
+    
+        <div class="banner banner-no-img" id="commonBanner">
+
+            
+                <div class="banner-img">
+                    <img alt="">
+                </div>
+            
+
+            
+            
+        </div>
+    
+
+
+
+
+            
+
+<div class="container position-detail-container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-normal position-detail-box">
+                
+        
+
+
+
+    <div class="card-body">
+        <input type="hidden" id="positionName" value="Siemens Graduate Program - Product Strategy Management    西门子管理培训生-产品战略管理">
+        <input type="hidden" id="sourcePid" value="1948451">
+        <input type="hidden" id="recruitmentType" value="CAMPUSRECRUITMENT">
+        <input type="hidden" id="positionStatus" value="PUBLISHING">
+        <input type="hidden" id="positionId" value="6aa14c0d7280da28da07983f">
+        <input type="hidden" id="jobFairCode" value="">
+        
+            <div class="position-header">
+                
+                <div class="d-flex justify-content-between mt-2">
+                    <h4 class="name">Siemens Graduate Program - Product Strategy Management    西门子管理培训生-产品战略管理</h4>
+                    
+                        <div class="font-weight-normal text-muted action-share" >
+                            <div class="action" data-toggle="collapse" data-target="#shareFloat">
+                                <span class="icons i-share"></span>
+                                <span class="txt" >分享</span>
+                            </div>
+                            <div class="share-qr-float collapse position-absolute border" id="shareFloat">
+                                
+                                <div class="card-body">
+                                    <div>扫码分享职位</div>
+                                    <div class="text-center mt-3">
+                                        <img id="positionShareQrCode" src="" alt="" />
+                                    </div>
+                                    <br>
+                                    或 使用链接分享
+                                    <div class="d-flex">
+                                        <input type="text" class="share-link border text-muted" value="" readonly  id="positionShareUrl"/>
+                                        <span class="btn btn-dark btn-sm" data-toggle="popover" data-placement="top" data-content="复制成功">复制链接</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        
+
+
+        <div class="position-details "  id="positionDetail">
+            
+                <ul class="position-extend d-flex flex-wrap justify-content-start">
+                    
+                        
+
+                        
+                            <li class="ele city font-weight-bold">
+                                
+                                工作地点：北京
+                                
+                            </li>
+                        
+                    
+                        
+
+                        
+                            <li class="ele ">
+                                <span class="txt">
+                                工作经验：1年以下
+                                </span>
+                            </li>
+                        
+                    
+                        
+
+                        
+                            <li class="ele ">
+                                <span class="txt">
+                                职能类别：产品管理
+                                </span>
+                            </li>
+                        
+                    
+                        
+
+                        
+                            <li class="ele ">
+                                <span class="txt">
+                                组织：Digital Industries
+                                </span>
+                            </li>
+                        
+                    
+                        
+
+                        
+                    
+                        
+
+                        
+                            <li class="ele ">
+                                <span class="txt">
+                                办公模式：仅现场办公
+                                </span>
+                            </li>
+                        
+                    
+                </ul>
+            
+            <div class="position-description mt-4 mb-4" >
+                <strong>Why Choose Us? </strong><div> </div><div>Founded in 1922, SGP (Siemens Graduate Program) is a time-honored Siemens trainee program for master graduates who want to change the future. SGP offers you the ideal start to your career – your opportunity to prepare yourself for a successful career at Siemens. </div><div><br></div><div>Designed as an intensive and internationally oriented two-year program, the SGP will prepare you for future leadership tasks, offering both flexibility and diverse work experiences. The program, which enables you to actively integrate your interests and your qualifications, consists of three to four challenging assignments. At least one of these assignments will take place abroad at one of our 1,700 international business locations. On this international rotation, you will learn about the local business and culture while taking on various responsibilities and project work. </div><div><br></div><div>These are highly appreciated by our current SGP participants include material and immaterial advantages.</div><div>•	Competitive compensation package</div><div>•	Tailored trainings</div><div>•	Given responsibility and own projects</div><div>•	International work that has a significant contribution</div><div>•	Be part of a global network</div><div>•	Assignment abroad</div><div>You will also receive an intensive training program and the opportunity for personal development. A personal Development Manager will be at your side for the duration of the program, helping you to achieve your various objectives while promoting your development and assisting you in planning your career.</div><div><br></div><div><strong>What will you do if join us?</strong></div><div><br></div><div><div style="display: inline;"><ul><li><span style="font-size: 10pt;">Support the development and execution of product strategies aligned with business objectives and market opportunities. </span></li><li><span style="font-size: 10pt;">Conduct market research, competitive benchmarking, and industry trend analysis to identify growth opportunities and strategic priorities. </span></li><li><span style="font-size: 10pt;">Assist in evaluating product portfolio performance and provide data-driven recommendations for optimization. </span></li><li><span style="font-size: 10pt;">Collaborate with cross-functional teams, including Product Management, Sales, Marketing, R&D, and Operations, to drive strategic initiatives. </span></li><li><span style="font-size: 10pt;">Analyze customer needs, market feedback, and business requirements to support product roadmap planning. </span></li><li><span style="font-size: 10pt;">Prepare business cases, strategic presentations, and management reports for decision-making and executive reviews.</span></li><li><span style="font-size: 10pt;">Support pricing, positioning, and go-to-market strategy development for new and existing products. </span></li><li><span style="font-size: 10pt;">Monitor key business and product performance indicators and identify areas for continuous improvement. </span></li><li><span style="font-size: 10pt;">Engage in strategic projects and rotational assignments to gain a comprehensive understanding of product management and business operations.</span></li></ul></div><br></div><div><br></div><div><strong>Who are we looking for? </strong></div><div><br></div><div>•	An above-average Master's, Diploma, Doctoral Degree or equivalent</div><div>•	Maximum of 2 years of working experience between/after bachelor and master graduation</div><div>•	Minimum of 4 months of international experience gained either through studying, working or living</div><div>•	Flexibility and mobility especially within the program duration </div><div>•	Excellent command of English, business level proficiency in English, confident for cross border meetings, presentations and formal written communication.</div><div><br></div><div><strong>Other Requirements </strong></div><div><br></div><div></div><div style="display: inline;"><ul><li><span style="font-size: 10pt;">Major preferred in Engineering , automation , AI and Computer Science related </span></li><li><span style="font-size: 10pt;">Basic knowledge of industrial software;</span></li><li><span style="font-size: 10pt;">Internship experience in other SW companies (China or global)</span></li><li><span style="font-size: 10pt;">Basic understanding of industrial control system architecture</span></li></ul><ul style="margin-top: 0in;">  <li style=""><span style="font-size: 10pt;">Open-minded, highly      motivated and ready to take on challenges</span></li>  <li style=""><span style="font-size: 10pt;">Good learning ability & structural thinking </span></li>  <li style=""><span style="font-size: 10pt;">Good presentation      skills</span><span style="font-size: 10pt;"></span></li> </ul><p class="MsoListParagraph" style="text-indent: -0.25in;"><span style="font-family: Symbol; font-size: 10pt;"><span>·<span style="font: 7pt "Times New Roman";">       </span></span></span><span style="font-size: 10pt;">Proficient in Chinese and English</span></p></div><div></div><div><br></div><div><strong>Core Competence</strong></div><div><br></div><div>•	Decision Making</div><div>•	Driving for Results</div><div>•	Influencing</div><div>•	Driving Innovation</div><div>•	Driving Change</div><div>•	Fostering Diversity</div><div>•	Information and Communication Technology Literacy</div><div>•	Agile way of working</div><div>•	Reflexivity</div><div><br></div><div><strong>What else to know?</strong></div><div><br></div><div>For more introduction on SGP, please visit our SGP website: https://new.siemens.com/global/en/company/jobs/search-careers/siemens-graduate-program.html #siemensgraduateprogram</div><div>Do you think you have what it takes? We look forward to receiving your application!</div><div><br></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <script nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+        $(function () {
+            var recommendBtn = '<a  id="recommend" pid="6aa14c0d7280da28da07983f" class="btn btn-outline-secondary ml-3">推 荐</a>';
+            var applyBtn = '<a  class="btn btn-primary" id="application" style="display:none" pid="6aa14c0d7280da28da07983f" pType ="CAMPUSRECRUITMENT">申请</a>';
+            var appliedBtn = '<a  class="btn btn-primary disabled" id="applicationed" pid="6aa14c0d7280da28da07983f">已申请</a>';
+            var volApplyBtn = '<a  class="btn btn-outline-secondary ml-3 btn-vol-apply-black" id="application" pType ="CAMPUSRECRUITMENT" pid="6aa14c0d7280da28da07983f"  style="display:none">选好了，去投递简历</a>';
+            var addVolBtn = '<a  class="btn btn-primary" id="volunteer" pid="6aa14c0d7280da28da07983f" pType ="CAMPUSRECRUITMENT" style="display:none">添加到志愿</a>';
+            var collectBtn = '<span class="btn text-primary"  title="收藏" id="collection" pid="6aa14c0d7280da28da07983f">收藏</span>';
+            var collectedBtn = '<span class="btn text-primary collection" title="取消收藏" id="collection" pid="6aa14c0d7280da28da07983f">已收藏</span>';
+            var goPositionListBtn = '<a  class="btn btn-primary" id="goPositionList" data-action="positionList" data-projectid="6a98e2ddcdf4e85c06bb86b6" data-recruitmenttype="CAMPUSRECRUITMENT" style="display:none">返回列表</a>';
+
+            var isApplication = "false";
+            var isCollection = "false";
+            var content = '<div class="btn-group-toggle">';
+            var staffNotApply = "";
+            var currentPositionInRemoveVols = "";
+
+            if(true){
+                content += getApplyStr()
+            } else {
+                if(false){
+                    
+                    var tips = "<div class='deliver-notice'> <span class='txt'>您已认证为员工身份，请勿投递！</span> </div>";
+                    staffNotApply = tips
+                }
+            }
+
+            if (false) {
+                content += recommendBtn;
+                if(true){
+                    content += '<input type="hidden" name="fromRecommend" value="false" id="fromRecommend" />';
+                }
+            }
+
+            content += "</div>";
+            
+            if (isCollection === "false") {
+                content += collectBtn
+            } else {
+                content += collectedBtn
+            }
+            
+
+            if( false){
+                if ("false" === "true" && ("false" === "false" || "" === "true")) {
+                    $("#positionDetail").append('<div class="" id="volunteerPanel"></div>');
+                }
+            }
+
+            $("#positionDetail").append('<div class="btns text-center justify-content-between d-flex " id="buttonDiv">'+content+'</div>');
+
+            if( "false" === "true" && staffNotApply){
+                $("#buttonDiv").prepend(staffNotApply)
+            }
+
+
+            function getApplyStr() {
+                var applyHtml = "";
+                if (isApplication === "false" || currentPositionInRemoveVols==="true") {
+                    if (false && false && "" !=="N") {
+
+                        
+                        applyHtml += addVolBtn;
+                        applyHtml += goPositionListBtn;
+                        applyHtml +=volApplyBtn;
+                        
+
+                    } else {
+                        applyHtml += applyBtn
+                    }
+                } else {
+                    applyHtml += appliedBtn
+                }
+
+                return applyHtml
+            }
+        });
+    </script>
+
+    
+
+
+
+
+
+
+
+<script nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+    var addVolNode = null;
+    //    点击复制链接
+    function copyUrl() {
+        var Url = document.getElementById("input");
+        Url.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+    }
+
+    $('body').on('click', '.share-qr-float .btn', function(e) {
+        $(".share-qr-float input").select();
+        document.execCommand("Copy");
+        $(".share-qr-float input").blur();
+
+        // 显示复制提示
+        $(".share-qr-float .btn").popover('show');
+
+        // 定时清除提示
+        setTimeout(function () {
+            $(".share-qr-float .btn").popover('hide')
+        },2000);
+
+        // 弹层收起时，清除提示
+        $("#shareFloat").on('hide.bs.collapse',function () {
+            $(".share-qr-float .btn").popover('hide')
+        })
+    });
+
+    // 投递
+    $('body').on('click', '#application', function(e) {
+        if( true){
+            if (false && "" !=="N") {
+                var selectTotal = $(".volunteer-orders .volunteer-item").length
+                var maxPriorityCount = 3;
+                var notAllVolTips = "";
+                if(notAllVolTips && selectTotal<maxPriorityCount){
+                    v.showTips('提示', notAllVolTips, function () {
+                        toApplyPosition()
+                    }, true)
+
+                    return
+                }
+            }
+
+            if(false){
+                
+                
+                v.showTips('提示', $("#applyPopUpTips").html(), function () {
+                    toApplyPosition()
+                }, true)
+
+                return
+            }
+        }
+
+        toApplyPosition()
+
+    });
+
+    function toApplyPosition(){
+        v.showLoading();
+        var pid;
+        var recruitmentType;
+        if( true){
+            if (false && "" !=="N") {
+                pid = $(".volunteer-orders li:eq(" + 0 + ")").children(".position").attr("pid");
+                recruitmentType = $(".volunteer-orders li:eq(" + 0 + ")").attr("pType");
+            } else {
+                pid = $('#application').attr("pid");
+                recruitmentType = $('#application').attr("pType");
+            }
+        }else{
+            pid = $('#application').attr("pid");
+            recruitmentType = $('#application').attr("pType");
+        }
+        var prevPositionId = "6aa14c0d7280da28da07983f";
+        console.log("toApplyPosition pid:",pid, "; recruitmentType:", recruitmentType)
+        commonRequest(null, function(){
+            $.getJSON("/siemens/application/deliveryTotalByRecruitmentType",
+                {positionId: pid, recruitmentType:recruitmentType,projectId:"6a98e2ddcdf4e85c06bb86b6"},
+                function (data) {
+                    if (data.success) {
+                        if(pid){
+                            var sourcePid = $("#sourcePid").val();
+                            //跳转申请页面
+                            var url = "/siemens/resume/applicationView?positionId=" + pid;
+                            var projectId = "";
+                            if (projectId != "") {
+                                url = url+"&projectId="+projectId;
+                            }
+                            if(""){
+                                url = url+"&jobFairCode="+"";
+                            }
+                            if("CAMPUSRECRUITMENT"){
+                                url = url+"&prt="+"CAMPUSRECRUITMENT";
+                            }
+                            if(false){
+                                url +="&prevPositionId="+prevPositionId;
+                            }
+                            window.location.href = url;
+                        }else{
+                            v.hideLoading();
+                            v.showAlert('请先添加志愿！');
+                        }
+                    } else {
+                        v.hideLoading();
+                        v.showAlert(data.message);
+                    }
+                });
+        });
+    }
+
+
+    // 收藏/取消收藏
+    $('body').on('click', '#collection', function(e) {
+        v.showLoading();
+        var pid = $(this).attr("pid");
+        var flag = $(this).hasClass("collection");
+        console.log("flag:",flag)
+        if (flag === false) {
+            commonRequest(null, function() {
+                $.getJSON("/siemens/position/favorite", {positionId: pid},
+                    function (res) {
+                        v.hideLoading();
+                        if (res.success) {
+                            v.showAlert('收藏成功！');
+                            if ($("#collection").is(':has(span)')) {
+                                $("#collection").html('<span class="icons i-been-heart p-1" style="font-size: 1.5em"></span><span class="txt">已收藏</span>');
+                                $("#collection").attr("title", '取消收藏');
+                            } else {
+                                $("#collection").text('已收藏');
+                                $("#collection").attr("title", '取消收藏');
+                            }
+
+                            $("#collection").addClass("collection");
+                        } else {
+                            v.showAlert('收藏失败！');
+                        }
+                    })
+            });
+        } else {
+            commonRequest(null, function() {
+                $.getJSON("/siemens/position/cancelCollection", {positionId: pid},
+                    function (res) {
+                        v.hideLoading();
+                        if (res.success) {
+                            v.showAlert('取消收藏成功！');
+                            if ($("#collection").is(':has(span)')) {
+                                $("#collection").html('<span class="icons i-heart p-1"  style="font-size: 1.5em" ></span><span class="txt">收藏</span>');
+                                $("#collection").attr("title", '收藏');
+                            } else {
+                                $("#collection").text('收藏');
+                                $("#collection").attr("title", '收藏');
+                            }
+
+                            $("#collection").removeClass("collection");
+                        } else {
+                            v.showAlert('取消收藏失败！');
+                        }
+                    })
+            });
+        }
+
+    });
+
+    $('body').on('click', '#recommend', function(e) {
+        v.showLoading();
+        var pid = $(this).attr("pid");
+        //跳转推荐页面
+        var url = "/siemens/resume/relatedPosition?type=recommend&positionId=" + pid;
+       // window.location.href = url;
+       // commonRequest(url, null);
+        $.ajax({
+            url: getVisitUrl("login", "userIsLogin"),
+            dataType: "json",
+            type: "post",
+            async:false,
+            success: function (data) {
+                if(data.login){
+                    if(data.isEmployee != "Y"){
+                        v.showAlert('企业仅接受内部员工推荐！');
+                    }else{
+                        if(thatIsWindows()){
+                            window.open(url);
+                        } else {
+                            window.location.href = url
+                        }
+                    }
+                } else {
+                    v.hideLoading();
+                    if($("#fromRecommend").length > 0){
+                        $("#fromRecommend").val("true");
+                    }
+                    showLoginFrom();
+                    $("#signInModule").modal();
+                }
+            }
+        });
+        v.hideLoading();
+    });
+
+    $('body').on('click', '#volunteer', function(e) {
+        if("true" !== "true" && $("#addVolTips").length > 0){
+            $("#addVolTips").modal('toggle');
+            addVolNode = this;
+        } else {
+            addVolToProject(this)
+        }
+    });
+
+    /* 志愿排序 */
+    var volunteerActions = {
+        'init': function () {
+            const $this = this;
+            const $doc = $(document);
+
+            $doc.on('click', '.volunteer-box .i-up', (e) => $this.up(e.currentTarget));
+            $doc.on('click', '.volunteer-box .i-down', (e) => $this.down(e.currentTarget));
+            $doc.on('click', '.volunteer-box .i-remove', (e) => revokeDelivery(e.currentTarget));
+
+            // $(".volunteer-box .i-up").each(function (i,w) {
+            //     $(w).on("click",function () {
+            //         $this.up(w)
+            //     })
+            // });
+            // $(".volunteer-box .i-down").each(function (i,w) {
+            //     $(w).on("click",function () {
+            //         $this.down(w)
+            //     })
+            // });
+            // $(".volunteer-box .i-remove").each(function (i,w) {
+            //     $(w).on("click",function () {
+            //         revokeDelivery(w, i)
+            //     })
+            // })
+        },
+        'remove': function (box) {
+            var $this = this;
+            var $father = $(box).parentsUntil('.volunteer-orders');
+            var $box = $father.eq($father.length-1);
+            $box.find('.position').empty()
+        },
+        'up': function (box) {
+            v.showLoading();
+            var $this = this;
+            var $father = $(box).parentsUntil('.volunteer-orders');
+            var $box = $father.eq($father.length-1);
+            var $prev = $box.prev();
+            $this.move($prev, $box)
+
+        },
+        'down': function (box) {
+            v.showLoading();
+            var $this = this;
+            var $father = $(box).parentsUntil('.volunteer-orders');
+            var $box = $father.eq($father.length-1);
+            var $next = $box.next();
+
+            $this.move($box, $next)
+        },
+        'move': function (down, up) {
+            $(".volunteer-box").addClass('running');
+            down.addClass('move-down');
+            up.addClass('move-up');
+            var $downPosition = up.find('.position');
+            var $upPosition = down.find('.position');
+            setTimeout(function () {
+                $($downPosition).remove(".actions");
+                $($upPosition).remove(".actions");
+                $($downPosition).appendTo(down);
+                $($upPosition).appendTo(up);
+                down.removeClass('move-down');
+                up.removeClass('move-up');
+                $(".volunteer-box").removeClass('running');
+                saveVolunteers()
+            },299)
+
+        }
+    };
+    // volunteerActions.init();
+
+    function saveVolunteers() {
+        var pId;
+        var volunteers = [];
+        var pType
+        $(".volunteer-item").each(function (i, e) {
+            var volunteerNo = $(e).attr("volunteerNo");
+            var positionId = $(e).find(".position").attr("pid");
+            var positionName = $(e).find(".position").attr("pName");
+            var recruitmentType = $(e).find(".position").attr("pType");
+            var deliverId = $(e).find(".position").attr("deliverId");
+            var applicationId = $(e).find(".position").attr("applicationId");
+            var uid = $(e).find(".position").attr("uid");
+            pType =  $(e).find(".position").attr("pType");
+            var volunteer = {};
+            volunteer.volunteerNo = parseInt(volunteerNo);
+            volunteer.positionName = positionName;
+            volunteer.positionId = positionId;
+            volunteer.recruitmentType = recruitmentType;
+            if(deliverId){
+                volunteer.deliverId = deliverId;
+            }
+            if(applicationId){
+                volunteer.applicationId = applicationId;
+            }
+            if(uid){
+                volunteer.uid = uid;
+            }
+            volunteers.push(volunteer);
+
+            if(volunteerNo === "1"){
+                pId = positionId
+            }
+        });
+        commonRequest(null, function() {
+            $.ajax({
+                url: "/siemens/application/saveVolunteer",
+                data: {
+                    volunteers: JSON.stringify(volunteers),
+                    recruitmentType: pType,
+                    projectId: "6a98e2ddcdf4e85c06bb86b6"
+                },
+                success: function (res) {
+                    if (res.success) {
+                        v.showAlert('调整成功');
+                        $("#volunteerPanel").html(res.content);
+                        adjustBtnShow(res.volunteers)
+                    } else {
+                        v.showAlert('调整失败');
+                    }
+                }
+            });
+        });
+
+        v.hideLoading();
+    }
+
+    function adjustBtnShow(vols, appliedRemoveVol){
+        var maxPrioCount = 3;
+
+        var hasVol = false;
+        var hasNoApply = false;
+        var thatVolApplied = false;
+        for(var i =0; i < vols.length; i++){
+            var vol = vols[i];
+            if(vol.positionId === "6aa14c0d7280da28da07983f" || (vol.sourcePid && vol.sourcePid === "1948451")){
+                hasVol = true;
+                if(vol.applicationId){
+                    thatVolApplied = true;
+                }
+            }
+
+            if(!vol.applicationId){
+                hasNoApply = true
+            }
+        }
+
+        if(vols.length < maxPrioCount && !hasVol){
+            $("#volunteer").show();
+        } else {
+            $("#volunteer").hide();
+        }
+
+        if(hasVol){
+            if(thatVolApplied){
+                $("#applicationed").show();
+                if(appliedRemoveVol){
+                    console.log("thatVolApplied appliedRemoveVol");
+                    $("#volunteerPanel").remove();
+                }
+            } else {
+                $("#applicationed").hide();
+                $("#addedVolunteer").show()
+            }
+        } else {
+            $("#applicationed").hide();
+            $("#addedVolunteer").hide();
+        }
+
+        if(hasVol && vols.length < maxPrioCount){
+            $("#goPositionList").show();
+        } else {
+            $("#goPositionList").hide();
+        }
+
+        if(vols.length < 1 || !hasNoApply){
+            $("#application").hide();
+        } else {
+            $("#application").show();
+        }
+    }
+
+
+    setTimeout(function () {
+        buttonShow();
+    }, 5);
+    function buttonShow(){
+        var positionStatus = $("#positionStatus").val();
+        if(positionStatus !== "PUBLISHING"){
+            $("#buttonDiv").removeClass("d-flex");
+            $("#buttonDiv").css('display', 'none');
+        }
+    }
+
+    var hasApplyShowApplyFunction = false
+
+    function isShowApplyBtn(callback) {
+        if(hasApplyShowApplyFunction){
+            return
+        } else {
+            hasApplyShowApplyFunction = true
+        }
+        if($("#application").length > 0) {
+            $.ajax({
+                url: "/siemens/user/allowApply",
+                data: {},
+                success: function (res) {
+                    if (res.allowEdit != false) {
+                        $("#application").show()
+                    } else {
+                        $("#application").remove();
+                        if($("#goPositionList").length > 0){
+                            $("#goPositionList").remove()
+                        }
+                        if($("#volunteer").length > 0){
+                            $("#volunteer").remove()
+                        }
+                    }
+
+                    if(callback){
+                        callback.call();
+                    }
+                }
+            });
+        } else {
+            if(callback){
+                callback.call();
+            }
+        }
+    }
+
+    function revokeDelivery(box) {
+        v.showLoading();
+        //删除志愿
+        var pid = $(box).parents('li.volunteer-item').find(".position").attr("pid");
+        var pType = $(box).parents('li.volunteer-item').find(".position").attr("ptype");
+        var params = {positionId: pid, recruitmentType:pType};
+        var projectId = "6a98e2ddcdf4e85c06bb86b6";
+        if (projectId != "") {
+            params.projectId = projectId
+        }
+        $.getJSON("/siemens/application/delVolunteer",params,
+            function (res) {
+                v.hideLoading();
+                if (res.success) {
+                    v.showAlert('删除志愿成功');
+                    $("#volunteerPanel").html(res.content);
+
+                    adjustBtnShow(res.volunteers);
+                } else {
+                    v.showAlert('删除志愿失败');
+                }
+            });
+    }
+
+    $("#addVolEnter").click(function () {
+        $("#addVolTips").modal('hide');
+        addVolToProject(addVolNode)
+    });
+
+    $("#addVolCancel").click(function () {
+        $("#addVolTips").modal('hide');
+        addVolNode = null
+    });
+
+    function addVolToProject(that){
+        v.showLoading();
+        var pid = $(that).attr("pid");
+        var recruitmentType = $(that).attr("pType");
+        var params = {positionId: pid, recruitmentType:recruitmentType};
+        var projectId = "6a98e2ddcdf4e85c06bb86b6";
+        if (projectId != "") {
+            params.projectId = projectId
+        }
+        commonRequest(null, function() {
+            $.getJSON("/siemens/application/volunteerAndDeliverCount", params,
+                function (data) {
+                    if (data.success) {
+                        //保存志愿
+                        $.getJSON("/siemens/application/addVolunteer", params,
+                            function (res) {
+                                v.hideLoading();
+                                if (res.success) {
+                                    v.showAlert(res.message);
+                                    $("#volunteerPanel").html(res.content);
+                                    adjustBtnShow(res.volunteers);
+
+                                    addVolNode = null;
+                                } else {
+                                    v.showAlert(res.message);
+                                }
+                            });
+                    } else {
+                        v.hideLoading();
+                        v.showAlert(data.message);
+                    }
+                });
+        });
+    }
+
+    $(function () {
+        
+            $("#application").show();
+        
+
+        if( false) {
+            if ("false" === "true" && ("false" === "false" || ""==="true") && "" !=="N") {
+                var _volunteer_params = {positionId: '6aa14c0d7280da28da07983f',recruitmentType: 'CAMPUSRECRUITMENT'};
+                var projectId = "6a98e2ddcdf4e85c06bb86b6";
+                if (projectId !== "") {
+                    _volunteer_params.projectId = projectId;
+                }
+                $.get("/siemens/application/detail",
+                    _volunteer_params,
+                    function (data) {
+                        $("#volunteerPanel").append(data);
+
+                        
+                        const vp = $("#volunteerPanel");
+                        if(vp.length > 0 && !vp.hasClass("card")){
+                            vp.addClass("volunteer-box card-normal card")
+                        }
+                        
+                        volunteerActions.init();
+                        volunteerInitBtnShow();
+                    });
+            }
+        }
+
+        function volunteerInitBtnShow() {
+            let vols = $("#volunteersJson").val();
+            if(!vols){
+                vols = []
+            } else {
+                vols = JSON.parse(vols);
+            }
+            isShowApplyBtn( function () {adjustBtnShow(vols, true)});
+        }
+
+    })
+</script>
+
+
+
+
+            
+                
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                
+                    <div class="footer-text">
+                        
+                            
+                            
+                            
+                                Siemens AG, 1996 – 2021
+                            
+                        
+                             | 
+                            
+                            <a href=" https://new.siemens.com/cn/zh/general/privacy-notice.html" target="_blank">
+                                隐私政策
+                            </a>
+                        
+                             | 
+                            
+                            <a href="mailto:h2r.askhr.cn&#64;siemens.com" target="_blank">
+                                联系我们
+                            </a>
+                        
+                    </div>
+                    <div class="links">
+                        <div class="txt">
+                            
+                                
+                                
+                                <a href="http://beian.miit.gov.cn" target="_blank">
+                                    <span class="t">京ICP备06054295号</span>
+                                </a>
+                            
+                                 | 
+                                
+                                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502040638" target="_blank">
+                                    <span class="t"> 京公网安备11010502040638号</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+<script nonce="57b0d7dab9e545ada0b31f59959d5a9f" type="text/javascript" src="https://cdn.careersite.tupu360.com/csresources/scripts/jquery.cookie.js"></script>
+<div id="pixel-consent-container" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+     class="cc-window">
+    
+        <div class="third-party-consent-text column-container"><p id="pixelconsent:desc">本网站使用资讯记录程序帮助持续改进求职者的体验，我们存储的所有访客的互动资料均为匿名。查看我们的<a href='https://new.siemens.com/global/en/general/cookie-notice.html' target='_blank'>Cookie公告</a>页面，了解有关您的权利的更多资讯。 </p></div>
+    
+
+    <div class="third-party-button-container column-container">
+        <a aria-label="deny cookies" role="button" tabindex="0" class="deny-button" id="pixel-consent-deny-button" >
+            拒绝
+        </a>
+        <a aria-label="dismiss cookie message" role="button" tabindex="0" class="btn-primary accept-button" id="pixel-consent-accept-button" >
+            接受
+        </a>
+    </div>
+</div>
+<script nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+    function HTMLDecode(text) {
+        var temp = document.createElement("div");
+        temp.innerHTML = text;
+        var output = temp.innerText || temp.textContent;
+        temp = null;
+        return output;
+    }
+    var cookieValue = $.cookie('acceptCookiePolicy');
+    if(cookieValue == "false" || cookieValue == undefined){
+        $("#pixel-consent-container").css("display","flex");
+    }else if(cookieValue == "true"){
+        $("#pixel-consent-container").hide();
+        
+        
+              $("body").append("<script nonce='57b0d7dab9e545ada0b31f59959d5a9f'>var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?dc5e98e65025f0e3fe4439ec95b4a319\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();<\/script>");
+        
+    }
+    $("#pixel-consent-accept-button").click(function () {
+        $.post( "/siemens/secure/acptCookiePolicy", { accepted: true })
+            .done(function() {
+                console.log('Cookie policy accepted. Server set secure cookie.');
+            });
+        $("#pixel-consent-container").hide();
+    });
+    $("#pixel-consent-deny-button").click(function () {
+        $("#pixel-consent-container").hide();
+    });
+</script>
+
+
+
+            
+        
+    </div>
+    
+
+
+
+
+
+
+
+<div class="loading-wrap" >
+    <div class="loaders">
+        <img src="//cdn.careersite.tupu360.com/csresources/images/default/page_loading.gif">
+    </div>
+</div>
+<div class="modal fade" id="alertTip">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="alertContent">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="commonTips">
+    <div class="modal-dialog" >
+        <div class="alert-content modal-content keep-content">
+            <div class="alert-logo pt-3 pb-3" style="background-color: #9999991c">
+                <a  id="commonTipsLogo" class="logo">
+                    <img src="https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_logo.png?t=1614935067569" alt=""
+                        >
+                </a>
+                <h5 class="alert-title text-center text-muted" id="commonTipsTitle"></h5>
+            </div>
+            <div class="alert-body">
+                <div class="modal-body" id="commonTipsContent">
+                </div>
+                <div class="form-btns text-center mt-3 w-100">
+                    <button class="btn btn-primary mr-5" id="commonTipsEnter" style="width: 40%">确定</button>
+                    <button class="btn btn-primary" id="commonTipsCancel" style="width: 40%;display: none">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/jquery.md5.js?v=20261016" integrity="sha384-wee72eE2NsTYs8iTY7oEnvWWxLBDG0Ui0/B5K2IxoiQLznovIIN9I00l6p/Ffbx1" crossorigin="anonymous"></script>
+
+
+<style type="text/css" nonce="57b0d7dab9e545ada0b31f59959d5a9f">
+    
+    body {
+        --theme-color: #009999;
+        --nav-btn-color: #009999;
+        --alert-logo-bg: #FFFFFF;
+        --nav-open-btn-color: #009999;
+        
+        
+        
+    }
+
+    /* 主导航 背景色*/
+    .intop {
+        background: #FFFFFF;
+    }
+
+    /* 头部 */
+    header, header .dropdown-menu {
+        background: #FFFFFF;
+    }
+    @media screen and (max-width:1000px) {
+        header .actions-bar .actions-bar-inner {
+            background-color: #FFFFFF !important;
+        }
+    }
+
+    
+        header .navbar .nav-item .nav-link{
+            color: #000028 !important;
+        }
+        /* 导航 hover */
+        header .navbar .nav-item a.nav-link:hover, header .dropdown-menu a.dropdown-item:hover {
+            color: #000000 !important;
+        }
+
+        header .navbar .nav-item.active > a.nav-link,header .dropdown-menu a.dropdown-item.active{
+            background-color: #FFFFFF !important;
+            color:#009999 !important;
+            border-bottom:solid 2px #009999 !important;
+        }
+    
+
+    /* 职位过滤菜单： 激活 */
+    .key-category .word input:checked + .txt ,.search-setting .dropdown-item.active,.search-setting .dropdown-item:active{
+        background-color: #009999 !important;
+        color:#FFFFFF !important;
+    
+    }
+
+    /* 职位过滤菜单： 激活*/
+    .more-category .word input:checked + .txt{
+        background-color: transparent;
+        border-bottom: solid 1px #009999;
+        color: #009999;
+    }
+
+    /*footer, footer a {*/
+        /*font-size: 12px;*/
+        /*color: darkgray;*/
+    /*}*/
+
+    /* 默认链接色 */
+    a,
+        /* 复选&单选 */
+    .form-check-normal input:checked + .txt:before,
+        /* 表单模块选项标签  */
+    .resume-module-tags a,
+        /* 个人中心 - 选项标签：激活*/
+    .dashboard-actions a.active,
+        /* 个人中心 - 头部链接 - 默认色 */
+    .user-infomation a,
+        /* 职位名称 */
+    .position-name .i-title
+    {
+        color: #009999 ;
+    }
+
+    /* 登录注册选中框下划线和文字 */
+    .nav-register-type .active{
+        color: #009999 !important;
+        border-color: #009999 !important;
+    }
+
+    /* 登录短信发送按钮 */
+    #loginTypeMobile .btn-outline-info {
+        color: #009999 !important;
+        border-color: #009999 !important;
+    }
+
+    #loginTypeMobile .btn-outline-info:hover{
+        color: #fff !important;
+        background-color: #009999 !important;
+        border-color: #009999 !important;
+    }
+
+    /* 个人中心-简历预览-姓名 */
+    .resume-only-view .basic-info h4{
+        color:#009999;
+    }
+
+    /* 空心buttons */
+    .btn-outline-primary,
+    .text-primary,
+    a.text-primary:focus, a.text-primary:hover{
+        color: #009999 !important;
+    }
+
+    .result-filter .result-title .txt, .text-muted .position-list .position-item .e-actions .btn {
+        border-bottom-color: #009999;
+        color: #009999;
+    }
+    .result-filter .result-title {
+        border-bottom-color: #009999;
+    }
+
+    .text-muted .position-list .position-item .e-actions .btn:hover{
+        background-color: #009999 !important;
+        color:#fff;
+    }
+
+    /* 导航背景，导航激活 背景色 */
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link,
+    .btn-primary {
+        background-color: #009999 !important;
+    }
+
+    .hot-category-menu, .btn-collection, .btn-apply, .btn-search, .btn-customer {
+        background-color: #009999 !important;
+        border-color: #009999 !important;
+    }
+
+    .btn-customer{
+        width: 100%;
+    }
+
+    /* 边框颜色 */
+    /* 卡片模块 模块名 */
+    .card-normal .card-header .txt,
+        /* 空心buttons 边框 */
+    .btn-outline-primary,
+    .btn-primary {
+        border-color: #009999 !important;
+    }
+
+    /* 职位详情，职位扩展信息，分割线 */
+    .position-details .position-extend {
+        border-color: #009999;
+    }
+
+    .position-subscribe-box .btn-outline-primary{
+        background-color: unset !important;
+    }
+
+    .btn-outline-primary:hover{
+        background-color: #009999 !important;
+    }
+
+    /* 表单模块标签， 背景色 */
+    .mobile.resume-module-tags .this .inner,
+    .resume-module-tags .this .inner,
+    body .resume-module-tags .this .inner,
+    .resume-module-tags .tag.past:after,
+    .resume-module-tags .tag.this .arrow,
+    .resume-module-tags .tag.this{
+        background-color:#009999;
+    }
+
+    .mobile.resume-module-tags .active .inner{
+        color:#ffffff !important;
+    }
+
+    header .dropdown-item {
+        color: #000028 !important;
+        background-color:#FFFFFF !important;
+    }
+
+    header .dropdown-item.active, header .dropdown-item:active {
+        color: #009999 !important;
+        text-decoration: none;
+        background-color: #FFFFFF !important;
+        border-bottom:solid 2px #009999 !important;
+    }
+
+    #emailSuffix, #emailSuffixDropdown{
+        background-color:#FFFFFF;
+    }
+
+    #emailSuffix, #emailSuffixDropdown .dropdown-item{
+        color: #000028 ;
+    }
+
+    #emailSuffixDropdown .dropdown-item:focus,#emailSuffixDropdown .dropdown-item:hover {
+        color: #FFFFFF !important;
+        text-decoration: none;
+        background-color: #000028;
+    }
+
+    
+    .page-item.active .page-link{
+        background-color:  #009999 !important;
+        color:#ffffff !important;
+        border-color:#009999 !important;
+    }
+    
+
+    /* 登录注册弹出框下边按钮字体颜色 */
+    #signInDiv .login-links .link{
+        color:#009999!important;
+    }
+
+    /*公司落地页*/
+    .company-module .company-title, .position-list .company-title{
+         border-bottom-color: #009999;
+         color:  #009999;
+    }
+    .company-module .company-title .txt:after, .position-list .company-title .txt:after{
+        background-color: #009999;
+    }
+    .company-module .company-details .cd-title{
+        color:  #009999;
+    }
+    
+    .blc-primaryColor{
+        border-left: 2px solid #009999;
+    }
+
+    a:hover, .up-img-cover, span.i-up, span.i-down, span.i-remove, span[data-action="togglePositionDetail"]{
+        cursor: pointer;
+    }
+
+    
+    @font-face {
+        font-family: "siemens_roman";
+        src:
+        url("https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_roman.eot?t=1608635124987#iefix") format('embedded-opentype'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_roman.woff?t=1608635251370') format('woff'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_roman.ttf?t=1607935481117') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "siemens_italic";
+        src:
+        url("https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_italic.eot?t=1608635154013#iefix") format('embedded-opentype'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_italic.woff?t=1608635294414') format('woff'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_italic.ttf?t=1607935443711') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "simens_bolditalic";
+        src:
+        url("https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bolditalic.eot?t=1608635183580#iefix") format('embedded-opentype'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bolditalic.woff?t=1608635317376') format('woff'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bolditalic.ttf?t=1607935401183') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "siemens_bold";
+        src:
+        url("https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bold.eot?t=1608635227901#iefix") format('embedded-opentype'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bold.woff?t=1608635340779') format('woff'),
+        url('https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_siemens_global_bold.ttf?t=1607935363207') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    body, html, body *{
+        font-family: siemens_roman,siemens_italic,simens_bolditalic,siemens_bold!important;
+    }
+
+    .btn-vol-apply{
+        color: #009999;
+        border-color: #009999;
+    }
+
+    .btn-vol-apply:hover {
+        color: #fff;
+        background-color: #009999;
+        border-color: #009999;
+    }
+
+    .btn-vol-apply-black{
+        color: #009999;
+        border-color: #009999;
+    }
+
+    .btn-vol-apply-black:hover {
+        color: #fff;
+        background-color: #009999;
+        border-color: #009999;
+    }
+
+    .vol-applied-tips,.vol-applied-tips-bestseller{
+        color: #ff9721;
+        font-size: 12px;
+        border: solid 1px;
+        border-radius: 5px;
+        margin-left: 10px;
+        text-align: center;
+        padding: 3px;
+        display: inline-block;
+    }
+
+    .vol-position-name{
+        min-height: 30px;
+    }
+
+    @media screen and (max-width:1000px){
+        .vol-applied-tips{
+            display: block;
+            width: 50px;
+            margin-top: .5rem;
+        }
+    }
+
+    .btn-primary-hollow{
+        background-color: #fff;
+        border: #009999 1px solid;
+        color: #009999 !important;
+    }
+    .btn-primary-txt{
+        background-color:  #fff;
+        color: #009999;
+        border: none;
+        /*padding-left: 10px;*/
+    }
+
+</style>
+</body>
+</html>

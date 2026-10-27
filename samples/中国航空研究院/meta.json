@@ -1,0 +1,26 @@
+{
+  "company": "中国航空研究院",
+  "careers_url": "https://zghkyjy.zhiye.com/",
+  "host": "zghkyjy.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中国航空研究院招聘系统",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "春招",
+    "社招"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国航空研究院招聘系统",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

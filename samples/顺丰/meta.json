@@ -1,0 +1,30 @@
+{
+  "company": "顺丰",
+  "careers_url": "https://campus-static.sf-express.com/",
+  "host": "campus-static.sf-express.com",
+  "ats": "unknown",
+  "page_title": "顺丰校园招聘 Redirect Page",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 15,
+  "roles": 72,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "顺丰校园招聘 Redirect Page",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757637",
+      "https://job.xidian.edu.cn/campus/view/id/757625",
+      "https://job.zzu.edu.cn/campus/view/id/1019036"
+    ]
+  }
+}

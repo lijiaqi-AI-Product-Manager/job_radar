@@ -1,0 +1,33 @@
+group: 雷赛智能
+entries:
+- id: leisaizhineng-campus-entry
+  company: 雷赛智能
+  grad_year: null
+  project_type: 秋招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 运营类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  - 广州
+  - 无锡
+  apply_url: https://campus.niuqizp.com/job-vll5CMMLL.html
+  source:
+    type: official_site
+    name: 雷赛智能招聘官网
+    url: https://campus.niuqizp.com/job-vll5CMMLL.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：雷赛智能招聘27届秋招2027校园招聘,招聘城市有:广州,无锡,企业公众号雷赛智能HR
+    - 牛企直聘 - 哞~~~）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

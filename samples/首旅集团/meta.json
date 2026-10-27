@@ -1,0 +1,24 @@
+{
+  "company": "首旅集团",
+  "careers_url": "https://www.btg.com/careers/",
+  "host": "www.btg.com",
+  "ats": "unknown",
+  "page_title": "Careers Archive - BTG",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 1,
+  "roles": 1,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Careers Archive - BTG",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

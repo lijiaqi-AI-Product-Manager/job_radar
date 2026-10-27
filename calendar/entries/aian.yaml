@@ -1,0 +1,26 @@
+group: 埃安
+entries:
+- id: aian-campus-entry
+  company: 埃安
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.aion.com.cn/
+  source:
+    type: official_site
+    name: 埃安招聘官网
+    url: https://www.aion.com.cn/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：广汽埃安）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

@@ -1,0 +1,24 @@
+{
+  "company": "中通快运",
+  "careers_url": "https://www.zto56.com/recruitindex.html?type=1",
+  "host": "www.zto56.com",
+  "ats": "unknown",
+  "page_title": "首页 - 中通快运",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 2,
+  "roles": 3,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "首页 - 中通快运",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -19,7 +19,7 @@ from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from_text
+from jobradar.normalize import batch_from_text, cities_from_text, date_only, grad_year_from_text
 
 LIST_PATH = "/api/campuspc/position/getJobList"
 PAGE_SIZE = 100
@@ -66,6 +66,8 @@ class NeteaseAdapter(Adapter):
             grad_year=grad_year_from_text(project_name),
             batch=batch_from_text(project_name),
             cities=cities_from_text(raw.get("workPlaceName")),
+            # updateTime 是"最近更新"（逐条不同、不是整站刷新），当最晚上架日，不当截止日
+            publish_at=date_only(raw.get("updateTime")),
             description=(raw.get("positionDescription") or "").strip() or None,
             requirements=(raw.get("positionRequirement") or "").strip() or None,
         )

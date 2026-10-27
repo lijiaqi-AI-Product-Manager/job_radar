@@ -1,0 +1,26 @@
+{
+  "company": "星源材质",
+  "careers_url": "http://szsenior.senior798.com:8881/szxy/gw.html",
+  "host": "szsenior.senior798.com:8881",
+  "ats": "unknown",
+  "page_title": "星源材质校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 19,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "星源材质校园招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020853"
+    ]
+  }
+}

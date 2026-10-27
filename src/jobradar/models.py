@@ -24,6 +24,11 @@ class Job(BaseModel):
     cities: list[str] = Field(default_factory=list)
     degree_min: str | None = None
     department: str | None = None
+    # 网申时间窗（2026-10-26 新增）：只有接口明确给出时才填，不从正文猜。
+    # 大易列表接口直接返回 endDate/publishDate，北森不返回——所以这两个字段
+    # 天然是"部分源有值"，查询侧要按"没写 ≠ 已截止"处理。
+    apply_end: str | None = None   # YYYY-MM-DD，网申截止日
+    publish_at: str | None = None  # YYYY-MM-DD，岗位发布日期
     # 原文，进 jd_text.db，不进主库
     description: str | None = None
     requirements: str | None = None

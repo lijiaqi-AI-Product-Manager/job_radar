@@ -1,0 +1,24 @@
+{
+  "company": "水羊股份",
+  "careers_url": "https://syounggroup.jobs.feishu.cn/career/position/7555348295137790247/detail",
+  "host": "syounggroup.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "招聘岗-水羊股份 - 加入水羊",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 3,
+  "roles": 8,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘岗-水羊股份 - 加入水羊",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

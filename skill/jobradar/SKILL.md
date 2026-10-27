@@ -30,8 +30,10 @@ jobradar doctor
 | 最近哪类职位新增最多 | `jobradar diff --days 7 --by category`（返回 `[{category, n}]`，按数量降序；没职类的归「未分类」） |
 | 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`；按标题关键词用 `--keyword 研发`，按 JD 原文（如「论文」）用 `--text 论文` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
-| 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含字节、京东等抓不到 JD 的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
+| 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含目前只有日历、没有岗位数据的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
 | 现在还能投哪些 | `jobradar calendar --type 秋招正式批 --open-on <今天日期>` |
+| 快截止的岗位（按网申截止日） | `jobradar search --deadline-before <本月末> --type campus`；日历同理用 `jobradar calendar --deadline-before <日期>` |
+| 某城市有哪些校招 | `jobradar calendar --city 北京` / `jobradar search --city 北京` |
 | 哪些公司写了网申起止 / 招哪些方向 | `jobradar calendar --has-window` / `jobradar calendar --has-tracks` |
 | 覆盖了哪些公司 | `jobradar stats` |
 | 数据什么时候更新、哪些源有问题 | `jobradar sources` |
@@ -50,15 +52,24 @@ jobradar doctor
    - 岗位 `closed_at` 有值 → "该岗位已于 {closed_at} 下架"。
    - 字段为空（如北森门户的 `cities` 为空列表）→ 说明"数据中未提供该信息"，不要从标题或常识推断。
    - **过滤条件会漏掉字段为空的岗位**：`--grad-year`、`--city`、`--category` 只命中该字段有值的岗位（届别来自标题或 JD 原文里明写的年份，很多校招岗位两处都不写）。加了这些过滤后结果为 0 或很少时，去掉该过滤再查一次（如只用 `--type campus`），再如实说明"其中 N 个岗位写明了 2027 届"。
-   - 某公司未收录或只覆盖了部分招聘类型（例如字节、京东因访问限制未收录）：`jobradar sources` 可看各源；不要因为没查到就说"该公司没有校招"，应说"数据里没有"。
+   - 某公司未收录或只覆盖了部分招聘类型：`jobradar sources` 可看各源；不要因为没查到就说"该公司没有校招"，应说"数据里没有"。
+     **字节跳动、蔚来、小鹏汽车、Momenta 已收录**（同为飞书招聘 ATSX 门户，2026-10-26 起，见 `docs/recon/feishu-atsx.md`），
+     它们的岗位城市与 JD 覆盖率都是 100%，不要再用"访问受限"来解释查不到。
 5. **变化类问题用 `diff`/`trends`**，不要拿两次 `search` 结果自己比。说明覆盖的时间跨度；历史不足时如实说（例如"数据从 X 日开始积累"）。
 6. **对比类问题**：只依据 `compare` 返回的 `requirements`/`description` 原文；区分"JD 原文写的"与"你的归纳"，引用关键原句。某家 `requirements` 为 `null` 时说明缺少原文。样本有限时（如每家只有 2–3 个岗位）提醒结论的代表性有限。
 7. **招聘日历（`calendar`）**：
    - 每条都有 `source`（来源名称、链接、发布日期）与 `as_of`（核实日期），回答时注明，例如"据字节跳动校园招聘官网（核实于 2026-10-21）"。
-   - `origin: manual` 是人工从官方公众号/官网/政府平台整理的；`origin: auto` 是从岗位数据自动汇总的（`apply_start`/`apply_end` 为空，`observed_from` 表示数据里首次看到在招的日期，不是网申开始日）。
+   - `origin: manual` 是人工从官方公众号/官网/政府平台整理的；`origin: auto` 是从岗位数据自动汇总的（`apply_end` 取该批在招职位里最多数写的那天；`apply_start` 只在"多数职位同一天上架"时才给，否则为 `null`——单条上架日是补录日，不是开放日）。
    - 字段为 `null` 表示来源没写，**不要补全或推测**（例如不要根据往年推测今年截止日期）。
    - `jd_status: linked` → 可以接着用 `jobradar search --company <jd_company>` 列出具体岗位与 JD。
    - `jd_status: blocked` → 只给日历信息，并**把 `hint` 原样放在回答最后一句**（如"拼多多希望你去他们的招聘页逛一逛哦~"），附 `apply_url`。
+   - **城市和网申时间不是每条都有**：`--city` / `--deadline-before` 只命中写了该字段的条目（当前校招/实习口径：约 48% 条目有城市、约 23% 有网申时间）。所以
+     「`--city 拉萨` 返回 0 条」**不等于**"拉萨没有校招"，正确说法是"日历里没有写拉萨的条目，可以去掉城市再看该公司全部批次"。
+     返回里的 `hint`（或 MCP 返回的 `advice`）已经说明了这一点，**照它说，不要自己改写成"没有岗位"**。
+     同理 `--deadline-before` 返回空只能说明"没有写了截止日且落在该范围内的条目"，不能说"没有快截止的岗位"。
+   - `--has-window` 的口径是**起止任一有值**：只有截止日、没写开始日的批次也算"有网申时间"，回答时说"截止 X 月 X 日"即可，不要说"没有网申时间"。
+   - `project_type: 社招` 的条目来自社招板（一家几千条），没有届次也没有批次窗口，**不要当校招批次讲**。
+   - 一条日历 = 一个批次（秋招正式批 / 暑期实习 / 社招…），不是一条 = 一个岗位。想知道具体岗位，用 `search --company`。
 8. **超出范围的请求**（投递简历、内推、面试评价、薪资）→ 说明本工具不提供，建议去官网或其他渠道。
 
 ## 输出建议

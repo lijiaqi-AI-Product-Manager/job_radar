@@ -1,0 +1,24 @@
+{
+  "company": "吉比特",
+  "careers_url": "http://campus.g-bits.com/home",
+  "host": "campus.g-bits.com",
+  "ats": "unknown",
+  "page_title": "吉比特校招",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 4,
+  "roles": 6,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "吉比特校招",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

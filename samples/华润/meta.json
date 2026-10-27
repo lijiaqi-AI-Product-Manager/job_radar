@@ -1,0 +1,29 @@
+{
+  "company": "华润",
+  "careers_url": "https://wecruit.hotjob.cn/SU6149ff530dcad47003d01511/pb/school.html",
+  "host": "wecruit.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 60,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 14,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120091.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/120060.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119797.html"
+    ]
+  }
+}

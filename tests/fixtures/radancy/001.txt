@@ -1,0 +1,191 @@
+id="search-results" data-keywords="" data-location="" data-distance="50" data-latitude="" data-longitude="" data-show-radius="False" data-total-results="978" data-total-job-results="978" data-total-pages="66" data-current-page="1" data-records-per-page="15" data-active-facet-id="0" data-custom-facet-name="" data-facet-term="" data-facet-type="0" data-search-results-module-name="Search Results" data-sort-criteria="0" data-sort-direction="0" data-search-type="5" data-ajax-url="/search-jobs/results" data-ajax-post-url="/search-jobs/resultspost" data-server-error-message="检索您的结果时出错。请刷新并重试。" data-keyword-type="" data-location-type="" data-location-path="" data-organization-ids="" data-selector-name="searchresults" data-refined-keywords="[]" data-postal-code="" data-save-jobs="true" data-results-type="0" data-use-noindex="true">
+    
+        
+
+            <div class="total-headline">
+                <p class="preheadline"><strong>搜索结果如下 </strong></p>
+                <h1><em>978 职位</em></h1>
+            </div>
+            <div id="search-results-list">
+
+                <meta data-show-saved="True"/>
+                <ul>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="40300631424" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%b7%b4%e5%a1%9e%e7%bd%97%e9%82%a3/digital-product-owner-salesforce-order-to-cash/3036/40300631424" data-job-id="40300631424">
+                                <h2>Digital Product Owner - Salesforce  - Order to Cash</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5DF4;&#x585E;&#x7F57;&#x90A3;, &#x897F;&#x73ED;&#x7259;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Digital Data &amp; Technology                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46354228864" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%b5%b7%e5%be%97%e6%8b%89%e5%b7%b4/project-specialist-global-meetings-and-events/3036/46354228864" data-job-id="46354228864">
+                                <h2>Project Specialist - Global Meetings &amp; Events</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x6D77;&#x5F97;&#x62C9;&#x5DF4;, &#x5370;&#x5EA6;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Commercial Excellence                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46354228672" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%b9%bf%e5%b7%9e%e5%b8%82/cv-and-t-commercial-intern-%e5%b9%bf%e5%b7%9e/3036/46354228672" data-job-id="46354228672">
+                                <h2>CV&amp;T-Commercial Intern-&#x5E7F;&#x5DDE;</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5E7F;&#x5DDE;&#x5E02;, &#x4E2D;&#x56FD;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Human Resources                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46354228480" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%90%89%e9%9a%86%e5%9d%a1/a2r-closing-and-reporting-senior-analyst/3036/46354228480" data-job-id="46354228480">
+                                <h2>A2R Closing and Reporting Senior Analyst</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5409;&#x9686;&#x5761;, &#x9A6C;&#x6765;&#x897F;&#x4E9A;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Finance                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="42420137344" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%9c%e4%ba%ac/digital-business-analysis-lead-omnichannel/3036/42420137344" data-job-id="42420137344">
+                                <h2>Digital Business Analysis Lead Omnichannel</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x4E1C;&#x4EAC;, &#x65E5;&#x672C;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Digital Data &amp; Technology                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46354228096" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%b3%a2%e5%93%a5%e5%a4%a7/medical-advisor/3036/46354228096" data-job-id="46354228096">
+                                <h2>Medical Advisor</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x6CE2;&#x54E5;&#x5927;, &#x54E5;&#x4F26;&#x6BD4;&#x4E9A;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Clinical Development                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46354227968" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%b5%b7%e5%be%97%e6%8b%89%e5%b7%b4/storage-and-backup-engineer/3036/46354227968" data-job-id="46354227968">
+                                <h2>Storage &amp; Backup Engineer</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x6D77;&#x5F97;&#x62C9;&#x5DF4;, &#x5370;&#x5EA6;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Digital Data &amp; Technology                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45851505920" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%90%89%e9%9a%86%e5%9d%a1/business-relationship-manager/3036/45851505920" data-job-id="45851505920">
+                                <h2>Business Relationship Manager</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5409;&#x9686;&#x5761;, &#x9A6C;&#x6765;&#x897F;&#x4E9A;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Sales                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46150781888" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%b9%bf%e5%b7%9e%e5%b8%82/%e7%b3%96%e5%b0%bf%e7%97%85%e4%ba%8b%e4%b8%9a%e9%83%a8-%e5%8c%bb%e5%ad%a6%e4%bf%a1%e6%81%af%e6%b2%9f%e9%80%9a%e4%bb%a3%e8%a1%a8-%e6%b3%89%e5%b7%9e/3036/46150781888" data-job-id="46150781888">
+                                <h2>&#x7CD6;&#x5C3F;&#x75C5;&#x4E8B;&#x4E1A;&#x90E8; &#x533B;&#x5B66;&#x4FE1;&#x606F;&#x6C9F;&#x901A;&#x4EE3;&#x8868; &#x6CC9;&#x5DDE;</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5E7F;&#x5DDE;&#x5E02;, &#x4E2D;&#x56FD;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Sales                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="46124100224" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%8d%8e%e6%b2%99/corporate-affairs-vaccines-lead-poland-and-cse-mco/3036/46124100224" data-job-id="46124100224">
+                                <h2>Corporate Affairs Vaccines Lead Poland &amp; CSE MCO</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x534E;&#x6C99;, &#x6CE2;&#x862D;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Public Affairs                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45878440640" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e5%b9%bf%e5%b7%9e%e5%b8%82/cvt-commercial-intern-%e9%95%bf%e6%b2%99/3036/45878440640" data-job-id="45878440640">
+                                <h2>CVT-Commercial Intern-&#x957F;&#x6C99;</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x5E7F;&#x5DDE;&#x5E02;, &#x4E2D;&#x56FD;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Human Resources                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45951286208" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%9c%e4%ba%ac/pharmacovigilance-quality-and-compliance-manager/3036/45951286208" data-job-id="45951286208">
+                                <h2>Pharmacovigilance Quality &amp; Compliance Manager</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x4E1C;&#x4EAC;, &#x65E5;&#x672C;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Patient Safety &amp; Pharmacovigilance                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45904402240" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%b5%b7%e5%be%97%e6%8b%89%e5%b7%b4/network-security-engineer-deployment-and-support/3036/45904402240" data-job-id="45904402240">
+                                <h2>Network Security Engineer &#x2013; Deployment and Support</h2>
+                                    <span class="job-location"><strong>地点: </strong>&#x6D77;&#x5F97;&#x62C9;&#x5DF4;, &#x5370;&#x5EA6;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Digital Data &amp; Technology                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45872423424" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%96%b0%e6%b3%bd%e8%a5%bf%e5%b7%9e/strategic-account-manager-wisconsin-milwaukee-green-bay-madison-vaccine/3036/45872423424" data-job-id="45872423424">
+                                <h2>Strategic Account Manager - Wisconsin, Milwaukee, Green Bay, Madison, Vaccine</h2>
+                                    <span class="job-location"><strong>地点: </strong> &#x65B0;&#x6CFD;&#x897F;&#x5DDE;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Sales                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                                <button type="button" class="js-save-job-btn" data-job-id="45872423296" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                            <a href="/%e5%b7%a5%e4%bd%9c/%e6%96%b0%e6%b3%bd%e8%a5%bf%e5%b7%9e/strategic-account-manager-illinois-chicago/3036/45872423296" data-job-id="45872423296">
+                                <h2>Strategic Account Manager - Illinois, Chicago</h2>
+                                    <span class="job-location"><strong>地点: </strong> &#x65B0;&#x6CFD;&#x897F;&#x5DDE;</span>
+                                <span class="job-category">
+<strong>类别: </strong>Sales                                    
+                                </span>
+                            </a>
+                            
+                        </li>
+                </ul>
+        <nav id="pagination-bottom" class="pagination">
+            <div class="pagination-flex">
+                <div class="pagination-page-count">
+                    <label class="pagination-current-label" for="pagination-current-bottom"><b>&#x8F93;&#x5165;&#x6570;&#x5B57;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x3002;&#x60A8;&#x5F53;&#x524D;&#x6240;&#x5728;&#x9875;&#x9762;&#xFF1A; 1 / 66.</b>&#x9875;&#x7801;</label><input class="pagination-current" id="pagination-current-bottom" max="66" min="1" type="number" value="1" /><span class="pagination-total-pages">/ 66</span><button class="pagination-page-jump" type="button">&#x8DF3;&#x8F6C;</button>
+                </div>
+                <div class="pagination-paging">
+                    <a aria-hidden="true" class="prev disabled" href="/search-jobs&amp;p=1" rel="nofollow">&#x4E0A;&#x4E00;&#x9875;</a>
+                    <a class="next" href="/search-jobs&amp;p=2" rel="nofollow">&#x4E0B;&#x4E00;&#x9875;</a>
+                </div>
+            </div>
+        </nav>
+            </div>
+    </section>

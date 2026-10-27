@@ -1,0 +1,24 @@
+{
+  "company": "韦尔股份",
+  "careers_url": "https://ovt-omnivision.zhiye.com/Campus",
+  "host": "ovt-omnivision.zhiye.com",
+  "ats": "beisen",
+  "page_title": "豪威科技（上海）有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "豪威科技（上海）有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

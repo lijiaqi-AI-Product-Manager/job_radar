@@ -1,0 +1,29 @@
+group: 海底捞
+entries:
+- id: haidilao-campus-entry
+  company: 海底捞
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://campus.niuqizp.com/job-vYy5nC5tC.html
+  source:
+    type: official_site
+    name: 海底捞招聘官网
+    url: https://campus.niuqizp.com/job-vYy5nC5tC.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：海底捞火锅海底捞2027届管培生校园招聘热力启动，速来投递~2027校园招聘,微信公众号海底捞招聘
+    - 牛企直聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

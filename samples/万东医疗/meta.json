@@ -1,0 +1,24 @@
+{
+  "company": "万东医疗",
+  "careers_url": "http://wandong.com.cn/list-60-1.html",
+  "host": "wandong.com.cn",
+  "ats": "unknown",
+  "page_title": "万东医疗",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "万东医疗",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -190,3 +190,32 @@ def test_empty_result_is_never_accepted_after_repeated_rejections(jobs_db):
     assert "empty" in res.reason
     open_jobs = jobs_db.execute("SELECT COUNT(*) FROM job WHERE closed_at IS NULL").fetchone()[0]
     assert open_jobs == 200
+
+
+def test_expired_deadline_closes_job_automatically(jobs_db):
+    """接口给了截止日且已过 → 视为下架。
+
+    真实场景：北方华创/中国中车/长城汽车的门户不会把过期岗位摘掉，
+    实测 151 条 `apply_end` 已过却仍是 `closed_at IS NULL`，
+    用户搜「在招」会搜到一堆点进去显示"已截止"的岗位。
+    """
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-10")], ts=T(1))
+    # 第二轮该岗仍出现在列表里，但截止日已经过了（T(20) = 2026-10-20）
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-10")], ts=T(20))
+    assert res.closed == 1
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(20)
+
+
+def test_deadline_in_future_keeps_job_open(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-12-31")], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-12-31")], ts=T(20))
+    assert res.closed == 0
+    assert job_row(jobs_db, "s1:1")["closed_at"] is None
+
+
+def test_no_deadline_never_auto_closes(jobs_db):
+    """没有截止日 ≠ 已截止。北森门户全部没有截止日，不能因此把所有岗下架。"""
+    ingest_run(jobs_db, "s1", [make_job(1)], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [make_job(1)], ts=T(20))
+    assert res.closed == 0
+    assert job_row(jobs_db, "s1:1")["closed_at"] is None

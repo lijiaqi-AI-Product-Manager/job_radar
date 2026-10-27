@@ -1,0 +1,27 @@
+{
+  "company": "海康机器人",
+  "careers_url": "https://job.hikrobotics.com",
+  "host": "job.hikrobotics.com",
+  "ats": "self_hosted",
+  "page_title": "社会招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 50,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "社会招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/997080"
+    ]
+  }
+}

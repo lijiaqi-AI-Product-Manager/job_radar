@@ -1,0 +1,28 @@
+{
+  "company": "新时达",
+  "careers_url": "https://stepelectric.zhiye.com/Campus",
+  "host": "stepelectric.zhiye.com",
+  "ats": "beisen",
+  "page_title": "新时达电气股份有限公司招聘系统--校园招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 60,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "新时达电气股份有限公司招聘系统--校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020845"
+    ]
+  }
+}

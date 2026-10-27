@@ -1,0 +1,25 @@
+{
+  "company": "永洪科技",
+  "careers_url": "https://www.yonghongtech.com/gy/gzjh/",
+  "host": "www.yonghongtech.com",
+  "ats": "unknown",
+  "page_title": "招聘信息_社招|校招岗位信息 - 永洪科技",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘信息_社招|校招岗位信息 - 永洪科技",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

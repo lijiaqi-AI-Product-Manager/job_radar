@@ -1,0 +1,28 @@
+{
+  "company": "重庆银行",
+  "careers_url": "https://www.cqcbank.com/cn/jrch/rczp/index.html",
+  "host": "www.cqcbank.com",
+  "ats": "unknown",
+  "page_title": "重庆银行——校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "重庆银行——校园招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119676.html",
+      "https://job.xidian.edu.cn/campus/view/id/758109",
+      "https://job.zzu.edu.cn/campus/view/id/1019822"
+    ]
+  }
+}

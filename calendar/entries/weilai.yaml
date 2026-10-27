@@ -1,0 +1,20 @@
+group: 蔚来
+entries:
+- id: weilai-campus-entry
+  company: 蔚来
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://campus.nio.com/
+  source:
+    type: official_site
+    name: 蔚来招聘官网
+    url: https://campus.nio.com/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：校园招聘-NIO蔚来）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

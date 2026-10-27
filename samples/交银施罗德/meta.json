@@ -1,0 +1,25 @@
+{
+  "company": "交银施罗德",
+  "careers_url": "https://jysld.zhiye.com/home",
+  "host": "jysld.zhiye.com",
+  "ats": "beisen",
+  "page_title": "交银施罗德基金管理有限公司招聘系统",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 6,
+  "roles": 10,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "交银施罗德基金管理有限公司招聘系统",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "company": "德业股份",
+  "careers_url": "https://www.deye.com.cn/join/campus.html",
+  "host": "www.deye.com.cn",
+  "ats": "unknown",
+  "page_title": "宁波德业科技股份有限公司-宁波德业科技股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "宁波德业科技股份有限公司-宁波德业科技股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757169"
+    ]
+  }
+}

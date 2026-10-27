@@ -1,0 +1,165 @@
+zw";
+      });
+      
+      $(function(){
+          var keyword = $(".ss_input").val();
+          $(document).keypress(function (e){
+            if(e.keyCode == 13){
+                window.location.href = "/social?k="+keyword+"&c=&p=&d=&PageIndex=1&class=1#zw";
+            }
+          })
+      })
+</script> 
+ 
+<div class="cb pv20"></div>
+<div class="xqbox">
+	<div class="flex-between align-center pb30">
+		<span class="col000 f25 lh25">策略分析</span>
+          <a href="javascript:;" class="icon8" id="collect" >加入收藏</a>
+	</div>
+	<div class="zwbq mb40">
+		<ul>
+			<li>职位类别：市场体系</li>
+			<li>工作性质：全职 </li>
+			<li>工作地址：上海市</li>
+			<li>薪酬范围：面议</li>
+			<li>招聘人数：1</li>
+			<li>发布时间：2026-10-14</li>
+			<li>需求公司：零售业务部</li>
+			<li>招聘类型：社会招聘</li>
+		</ul>
+	</div><!--zwbq end-->
+	<h2 class="f14 col333 lh16 pb15">工作职责：</h2>
+	<div class="col333 f14 lh25">
+		1.&amp;#160;大类资产策略研究分析：持续跟踪宏观经济、政策及资金面、股债市场变化，重点深耕大固收方向（固收、固收+、FOF及多资产策略），研判市场机会及各品类商机，定期输出大类资产配置报告及产品策略解读报告。<br />2.&amp;#160;产品全生命周期运营管理：负责多资产、绝对收益类产品的策略跟踪、运作复盘、绩效梳理及亮点沉淀；持续对标行业同类策略产品，开展竞品跟踪分析，协助完成产品全生命周期中台运营工作。<br />3.&amp;#160;内部培训与投研赋能：基于财富管理视角，搭建固收及多资产标准化培训课程体系，独立输出市场解读、策略培训内容，承接内部策略分享与专题宣讲，完成团队投研赋能。<br />4.&amp;#160;中台体系建设：协助部门开展业务标准化建设，承担内部协作等中台运营工作，提升团队资产端专业支持能力。
+	</div>
+	<h2 class="f14 col333 lh16 pb15 pt40">任职资格：</h2>
+	<div class="col333 f14 lh25">
+          1.&#160;具备2-3年公募、券商研究所、银行产品经理/投顾等相关经验。<br />2.&#160;熟悉宏观利率、信用市场及多资产组合逻辑，对固收+、绝对收益策略有清晰认知。<br />3.&#160;具备独立报告撰写、课件搭建及公开宣讲能力，逻辑严谨、输出高效、表达能力强。<br />4.&#160;兼具投研思维与中台运营能力，做事细致有条理，具备较强的AI工具应用和系统化思维能力。
+  	</div>
+<div class="pv40"><a href="/Portal/Resume/ResumeItem?jid=621154998" class="ljsq">立即申请</a></div>
+<a href="/social" class="col999 f16 pl10">返回列表</a>
+
+</div><!--xqbox end-->
+
+<div class="cb pv20"></div>
+
+<script>
+  $(function(){
+	$('.bname').hide()
+	})
+  
+  
+  
+  	 var htmlSuccess = ['<div class="dl_dialog1">',
+                    '	<div class="dl_dialog_wrap" style="text-align:center">',
+                    '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                    //'	<div class="dl_dialog_btn">',
+                    //' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                    //'		<div>',
+                    '	</div>',
+                    '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '	<div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '	<div class="dl_dialog_btn">',
+                        ' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '		<div>',
+                        '	</div>',
+                        '</div>'].join("");
+
+	$.ajax({
+        url: '/User/Account/GetUserLoginInfo?v='+Math.random()
+        , data: {
+            'jobAdId': "621154998"
+        }
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+            var args = resp.Model;
+
+            var hasA = args.HasApplyedFoJs;
+            var isAllow = args.Allow;
+            var allowCount = args.AllowCount;
+            var jobCategory = "社会招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = args.IntAllowApplyInfinity;
+          
+
+            $(document).ready(function () {
+                //根据用户的登陆状态给收藏按钮绑定事件
+                var collectBtn = $("#collect");
+                if (isLogin){
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function(){
+                            $.post("/Portal/Apply/JobAdCollect", { "jId": "621154998" }, function(data) {
+                                if (!data) {
+                                    htmlSuccess = htmlError;
+                                }
+                                $.modal(htmlSuccess, {
+                                    containerCss: {
+                                        backgroundColor: "transparent",
+                                        borderColor: "transparent",
+                                        padding: 0,
+                                        width:'150px'
+                                    },
+                                    onShow: function () {
+                                        $("#okbtn1").click(function() {
+                                            $.modal.close();
+                                        });
+                                    }
+                                });
+                                function a() {
+                                    $.modal.close();
+                                }
+                                setTimeout(a, 2000);
+                            }, "json");
+                        });
+                }
+                else {
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            window.location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        });
+                }
+            })
+         }
+    })
+</script>
+    <div class="footer"><div class="wrap">
+	<div class="flex-between pb35">
+		<div class="flex-start align-center f14">
+			<a href="/index" class="colfff mr50">首页</a>
+			<a href="/social" class="colfff ml10 mr50">社会招聘</a>
+			<a href="/campus" class="colfff ml10 mr50">校园招聘</a>
+			<a href="/intern" class="colfff ml10 mr50">实习生招聘</a>
+			<a href="/why" class="colfff ml10">why zofund</a>
+		</div>
+		<div class="footerr flex-start align-center">
+			<span class="cola3 f14 mr10">关注我们</span>
+			<div class="iconwx"><div class="tcwx"><img src="//stc-cms.beisen.com/cmsportal/602033/602033_themes_theme2_images_imgwx.png" width="156" alt=""></div></div>
+		</div>
+	</div><!---->
+	<div class="flex-between align-center lh22 cola3 f14 lh25">
+		<div>
+			&copy;沪ICP备06048031号-5 | 沪公网安备 31011502014260号<br/>
+			2013 中欧基金管理有限公司 Zhong Ou Asset Management Co., Ltd. 版权所有
+		</div>
+		<div class="footerr">地址：上海市浦东新区陆家嘴环路479号上海中心大厦8层<br/>
+邮编：200120 传真：021-33830351</div>
+	</div>
+</div></div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,602033,'new_zhiye_com');
+    });
+    </script>

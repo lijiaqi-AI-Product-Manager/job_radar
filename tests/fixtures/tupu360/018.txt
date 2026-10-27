@@ -1,0 +1,755 @@
+
+
+<div class="card-header">
+    <div class="txt">共41个职位</div>
+    
+        <div class="subscribe-actions">
+    <div class="input-group">
+        <div class="form-control form-control-modify-select">
+            <div class="modify-show">
+                <input type="text" placeholder="请选择订阅周期"
+                       id="selectedPositionSubscribe"/>
+                
+                <select name="frequency" id="subscribeFrequency">
+                    <option value="">请选择订阅周期</option>
+                    
+                         <option value="weekly">每周</option>
+                    
+                         <option value="monthly">每月</option>
+                    
+                </select>
+                <span class="icons i-arrow-down"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="btn-group-sm">
+        <button class="btn btn-outline-primary" id="btnPositionSubscribe">
+            <span class="icons i-subscribe"></span>
+            <span class="t" >订阅</span>
+        </button>
+    </div>
+</div>
+    
+</div>
+<div class="card-body">
+    <div class="position-list">
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9fde0c7280da28da0796ba" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_解决方案工程师 上海&amp;北京</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：工程</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521630</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa113a37280da28da0797da" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业Sales100 解决方案工程师 天津</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：天津</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：工程</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521851</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa361e97280da28da079961" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">EP R&amp;D 初级AI算法工程师</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521884</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa361e87280da28da07995f" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">EP R&amp;D 初级嵌入式软件工程师</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521883</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9f6d827280da28da0795e2" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 杭州</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：浙江省-杭州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521627</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa281357280da28da079917" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">“智 · 先锋”销售培训生 广州</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：广东省-广州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:522059</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9ffa717280da28da079707" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 沈阳</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：辽宁省-沈阳</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521692</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa0db117280da28da079797" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业Sales100培训生销售工程师 苏州/南通/张家港</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州,江苏省-南通</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521823</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a97f5677280da28da0792e7" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 武汉</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：湖北省-武汉</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:520775</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9ffa707280da28da079705" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 大连</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：辽宁省-大连</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521691</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa29d7f7280da28da079925" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业Sales100培训生销售工程师 镇江/盐城</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-盐城,江苏省-镇江</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521847</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9ffa737280da28da079709" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 郑州</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：河南省-郑州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521694</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa113a17280da28da0797d8" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业Sales100培训生 销售工程师-数控产品 南京/苏州</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-南京,江苏省-苏州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521849</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9fde117280da28da0796c2" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Associate Management Consultant</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：战略</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521662</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9fde137280da28da0796c4" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Associate AI Consultant</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：产品管理</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521665</span></li>
+                                    
+                                
+                                    
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="position-show-more d-flex justify-content-end align-items-center mt-3">
+    <ul class="pagination justify-content-end" id="pageTurnUl">
+        
+        <li class="page-item disabled mr-3">
+            <a class="page-link text-dark" >共3页</a>
+        </li>
+        
+
+        
+            <li class='page-item '  data-action="pageTurn" data-pagenum="1" data-pagemax="15">
+                <a class="page-link text-dark" >1</a>
+            </li>
+        
+            <li class='page-item active'  >
+                <a class="page-link text-dark" >2</a>
+            </li>
+        
+            <li class='page-item '  data-action="pageTurn" data-pagenum="3" data-pagemax="15">
+                <a class="page-link text-dark" >3</a>
+            </li>
+        
+
+        
+
+    </ul>
+</div>
+    </div>
+</div>

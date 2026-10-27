@@ -1,0 +1,25 @@
+{
+  "company": "科兴生物",
+  "careers_url": "https://kexing.zhiye.com/campus",
+  "host": "kexing.zhiye.com",
+  "ats": "beisen",
+  "page_title": "科兴制药招聘系统--校园招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "科兴制药招聘系统--校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

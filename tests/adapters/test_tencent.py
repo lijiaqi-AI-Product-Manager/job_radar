@@ -34,6 +34,8 @@ def test_field_mapping_of_real_record():
     assert j.url == "https://careers.tencent.com/jobdesc.html?postId=2069057652431962112"
     assert j.description.startswith("1.为部门整体经营过程与结果负责")
     assert j.requirements.startswith("1.本科及以上学历，五年以上的云计算相关产品")  # 来自详情接口
+    # 列表接口的 `LastUpdateTime` 是中文日期串「2026年10月21日」，`date_only()` 已能解析
+    assert j.publish_at == "2026-10-21"
 
 
 def test_whole_page_is_parsed_with_details():

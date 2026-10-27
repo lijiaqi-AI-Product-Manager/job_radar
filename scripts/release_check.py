@@ -19,11 +19,24 @@ sys.path.insert(0, str(ROOT / "src"))
 from jobradar.pipeline.calendar import match_targets, target_names  # noqa: E402
 from jobradar.sources import load_sources  # noqa: E402
 
-# v1.0 门槛（可随实际调整，但要有共识后再改）
+# 门槛（可随实际调整，但要有共识后再改）。
+# 分子分母都按「当前目标总数」算比例，不再写死绝对值——2026-10-26 目标从 500 扩到 1021 家后，
+# 原来的 160/450 两个绝对值让「目标覆盖」变成 0/0，门槛形同虚设。
+# min_* 是绝对下限：只有 2 个目标时 1 个覆盖就是 50%，光看比例会误判成"达标"。
 GATES = {
-    "data_coverage": 160,      # 有岗位数据的目标公司数
-    "calendar_coverage": 450,  # 至少一条日历条目的目标公司数
+    # 有岗位数据的目标公司数（北森/大易等接口型源）
+    "data_coverage_ratio": 0.15,
+    "data_coverage_min": 100,
+    # 至少一条日历条目的目标公司数
+    "calendar_coverage_ratio": 0.42,
+    "calendar_coverage_min": 300,
     "campus_city": 0.20,       # 校园岗有城市占比（北森新版门户不返回城市，20% 是当前源结构的现实上限）
+    # 日历条目里「城市」填了的占比。城市是用户筛日历的第一维度（「我能在北京投什么」），
+    # 空城市的条目对用户等于不可用。2026-10-26 打通 E0 结构化城市前是 41%，打通后 47%。
+    "calendar_city": 0.44,
+    # 日历条目里「网申时间」至少有一端填了的占比。北森接口不返回截止日，
+    # 这条覆盖率的现实上限就是「有多少公司能从简章/大易拿到日期」，别定得比真相高。
+    "calendar_window": 0.20,
     "jd_coverage": 0.95,       # 在招岗位有 JD 正文占比
     # 日历字段完整度：一条日历 11 个必填字段里至少填了 7 个的条目占比
     # （2026-10-23 用户要求：集团/公司/届次/项目类型/方向/网申时间/城市/入口/来源/时间戳）
@@ -87,6 +100,68 @@ def calendar_fields(calendar_db: Path | None) -> tuple[float, str]:
     return good / len(rows), detail, by_company
 
 
+def calendar_ratios(calendar_db: Path | None) -> tuple[float | None, float | None]:
+    """日历条目的两个「能不能用」指标：(有城市占比, 有网申时间占比)。
+
+    分母排除两类条目，两类都写清理由，不是为了让数字好看：
+      1. `project_type='社招'`：本产品是**校园招聘**日历。社招岗来自海投式社招板
+         （一家公司几千条「Java 开发工程师」），既没有届次也没有批次窗口，
+         把它们算进分母等于要求社招岗也有校招批次——那是口径错配，不是数据缺陷。
+      2. 只有入口、没有任何字段的 `official_site` 条目：这类条目的价值是
+         「投递入口 + 来源」，它出现在日历里的意义是让人点进去，本来就取不到
+         日期和城市（官网首页正文中位数 108 字，全是标题）。用它们当分母，
+         等于把「有入口」和「有窗口」两件事混成一个指标，指标就失去诊断意义了。
+         判据是 notes 里的来源标记（生成器写死的固定前缀），不是靠猜。
+    「所有条目（含入口条目）」的口径另外单独输出，避免用口径掩盖问题。
+    """
+    if not calendar_db or not calendar_db.exists():
+        return None, None
+    con = sqlite3.connect(calendar_db)
+    try:
+        scope = ("FROM entry WHERE project_type != '社招' "
+                 "AND COALESCE(notes,'') NOT LIKE '官方招聘入口（%'")
+        total = con.execute(f"SELECT COUNT(*) {scope}").fetchone()[0]
+        if not total:
+            return None, None
+
+        def filled_count(sql: str) -> int:
+            return con.execute(sql).fetchone()[0]
+
+        city = filled_count(
+            "SELECT COUNT(*) " + scope + " AND cities IS NOT NULL AND TRIM(CAST(cities AS TEXT)) "
+            "NOT IN ('', '[]', 'null')")
+        win = filled_count(
+            "SELECT COUNT(*) " + scope + " AND ((apply_start IS NOT NULL AND TRIM(CAST(apply_start AS TEXT)) != '') "
+            "OR (apply_end IS NOT NULL AND TRIM(CAST(apply_end AS TEXT)) != ''))")
+        return city / total, win / total
+    finally:
+        con.close()
+
+
+def calendar_ratios_all(calendar_db: Path | None) -> tuple[float | None, float | None]:
+    """同上的两个比例，但分母是**全部条目**（含社招、含只有入口的条目）。
+
+    两个口径都要报：只看宽口径会把「有入口的条目」当成「该有 window 却没写」，
+    只看窄口径又有自我美化的嫌疑。并排给出，读者自己判断。
+    """
+    if not calendar_db or not calendar_db.exists():
+        return None, None
+    con = sqlite3.connect(calendar_db)
+    try:
+        total = con.execute("SELECT COUNT(*) FROM entry").fetchone()[0]
+        if not total:
+            return None, None
+        city = con.execute(
+            "SELECT COUNT(*) FROM entry WHERE cities IS NOT NULL AND TRIM(CAST(cities AS TEXT)) "
+            "NOT IN ('', '[]', 'null')").fetchone()[0]
+        win = con.execute(
+            "SELECT COUNT(*) FROM entry WHERE (apply_start IS NOT NULL AND TRIM(CAST(apply_start AS TEXT)) != '') "
+            "OR (apply_end IS NOT NULL AND TRIM(CAST(apply_end AS TEXT)) != '')").fetchone()[0]
+        return city / total, win / total
+    finally:
+        con.close()
+
+
 def calendar_coverage(calendar_db: Path | None) -> tuple[int, int, int]:
     """返回 (有日历条目的目标数, 目标总数, blocked 数)。"""
     if not calendar_db or not calendar_db.exists():
@@ -112,11 +187,13 @@ def campus_city_ratio(jobs_db: Path | None) -> float | None:
         return None
     con = sqlite3.connect(jobs_db)
     try:
+        # 分母只算「校园招聘」：社招/实习岗本来就不在日历口径里，拉进来只会稀释比例。
+        # 而且非北森源（大易）是能给出城市的，混算会让这个指标失去诊断意义。
         n = con.execute("SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND recruit_type='campus'").fetchone()[0]
         if not n:
             return None
         hit = con.execute("""SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND recruit_type='campus'
-                             AND cities IS NOT NULL AND cities NOT IN ('', '[]')""").fetchone()[0]
+                             AND COALESCE(cities,'') NOT IN ('', '[]', 'null')""").fetchone()[0]
         return hit / n
     finally:
         con.close()
@@ -193,37 +270,105 @@ def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
     return len(problems), "；".join(problems) if problems else "无异常"
 
 
+def deliverable_sanity() -> tuple[int, str]:
+    """交付物自身的自洽检查（不依赖数据库，直接看 companies.jsonl / calendar 条目）。
+
+    这些是「说得出但做不到」的矛盾，用户一眼就能看穿：
+      - `jd_status=official_page` 却没有 `careers_url`：声称有官方 JD 页却不给链接；
+      - `careers_url` 落在第三方聚合站（offernotes/牛客/职友集…）：违反「不用聚合站」红线；
+      - 日历条目 `apply_start > apply_end` 的倒挂窗口（数据库侧已查，这里查仓库文件侧）。
+    """
+    problems: list[str] = []
+    f = ROOT / "companies.jsonl"
+    if f.exists():
+        bad_jd = bad_host = 0
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                r = json.loads(line)
+            except ValueError:
+                problems.append("companies.jsonl 有非法 JSON 行")
+                break
+            url = (r.get("careers_url") or "").strip()
+            if r.get("jd_status") == "official_page" and not url:
+                bad_jd += 1
+            if url:
+                host = url.split("/")[2] if "//" in url else ""
+                if any(b in host for b in THIRD_PARTY_HOSTS):
+                    bad_host += 1
+        if bad_jd:
+            problems.append(f"companies.jsonl 声称有官方 JD 却无入口 {bad_jd}")
+        if bad_host:
+            problems.append(f"companies.jsonl 入口指向第三方聚合站 {bad_host}")
+    return len(problems), "；".join(problems) if problems else "无异常"
+
+
+# 第三方招聘聚合站：不是雇主自己的招聘入口，不能当投递链接
+THIRD_PARTY_HOSTS = ("offernotes", "nowcoder", "jobui", "kanzhun", "yingjiesheng", "shixiseng",
+                     "maimai.cn", "zhipin.com", "lagou.com", "liepin.com", "51job.com", "zhaopin.com")
+
+
 def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path | None) -> list[dict]:
     t = _targets(targets_path)
     companies = {s.company for s in load_sources(sources)}
     rows = []
 
     covered, total = data_coverage(t, companies)
-    rows.append({"gate": "数据源覆盖", "value": f"{covered}/{total}", "ok": covered >= GATES["data_coverage"],
-                 "target": f"≥{GATES['data_coverage']}/{total}"})
+    need_data = max(int(GATES["data_coverage_ratio"] * total), GATES["data_coverage_min"])
+    rows.append({"gate": "数据源覆盖", "value": f"{covered}/{total}",
+                 "ok": covered >= need_data,
+                 "target": f"≥{need_data}"
+                           f"（{GATES['data_coverage_ratio']:.0%} 且 ≥{GATES['data_coverage_min']}）"})
 
     cal_covered, cal_total, blocked = calendar_coverage(calendar_db)
-    rows.append({"gate": "目标覆盖(日历或数据)", "value": f"{cal_covered}/{cal_total}（blocked {blocked}）",
-                 "ok": cal_covered >= GATES["calendar_coverage"],
-                 "target": f"≥{GATES['calendar_coverage']}/{cal_total}"})
+    need_cal = max(int(GATES["calendar_coverage_ratio"] * cal_total),
+                   GATES["calendar_coverage_min"]) if cal_total else 1
+    rows.append({"gate": "目标覆盖(日历或数据)", "value": f"{cal_covered}/{cal_total}（blocked {blocked}）"
+                 if cal_total else "无日历库",
+                 "ok": cal_total > 0 and cal_covered >= need_cal,
+                 "skip": cal_total == 0,
+                 "target": f"≥{need_cal}"
+                           f"（{GATES['calendar_coverage_ratio']:.0%} 且 ≥{GATES['calendar_coverage_min']}）"})
 
     city = campus_city_ratio(home / "jobs.db" if home else None)
     rows.append({"gate": "校园岗城市覆盖", "value": "无数据" if city is None else f"{city:.1%}",
-                 "ok": city is not None and city >= GATES["campus_city"], "target": f"≥{GATES['campus_city']:.0%}"})
+                 "ok": city is not None and city >= GATES["campus_city"],
+                 "skip": city is None, "target": f"≥{GATES['campus_city']:.0%}"})
 
     jd = jd_ratio(home)
     rows.append({"gate": "JD 正文覆盖", "value": "无数据" if jd is None else f"{jd:.1%}",
-                 "ok": jd is not None and jd >= GATES["jd_coverage"], "target": f"≥{GATES['jd_coverage']:.0%}"})
+                 "ok": jd is not None and jd >= GATES["jd_coverage"],
+                 "skip": jd is None, "target": f"≥{GATES['jd_coverage']:.0%}"})
 
     fields, detail, by_company = calendar_fields(calendar_db)
     rows.append({"gate": "日历字段完整度", "value": f"{fields:.1%}（≥7/11 字段：{detail}）",
-                 "ok": fields >= GATES["calendar_fields"], "target": f"≥{GATES['calendar_fields']:.0%}"})
+                 "ok": fields >= GATES["calendar_fields"], "skip": calendar_db is None or not calendar_db.exists(),
+                 "target": f"≥{GATES['calendar_fields']:.0%}"})
     rows.append({"gate": "日历按公司完整", "value": f"{by_company:.1%}（每家公司至少一条 ≥7/11）",
                  "ok": by_company >= GATES["calendar_fields_by_company"],
+                 "skip": calendar_db is None or not calendar_db.exists(),
                  "target": f"≥{GATES['calendar_fields_by_company']:.0%}"})
+
+    cal_city, cal_win = calendar_ratios(calendar_db)
+    all_city, all_win = calendar_ratios_all(calendar_db)
+    rows.append({"gate": "日历有城市", "value": (
+        "无数据" if cal_city is None else
+        f"{cal_city:.1%}（全部条目口径 {all_city:.1%}）"),
+        "ok": cal_city is not None and cal_city >= GATES["calendar_city"],
+        "skip": cal_city is None, "target": f"≥{GATES['calendar_city']:.0%}"})
+    rows.append({"gate": "日历有网申时间", "value": (
+        "无数据" if cal_win is None else
+        f"{cal_win:.1%}（全部条目口径 {all_win:.1%}）"),
+        "ok": cal_win is not None and cal_win >= GATES["calendar_window"],
+        "skip": cal_win is None, "target": f"≥{GATES['calendar_window']:.0%}"})
 
     bad, detail = data_sanity(home, calendar_db)
     rows.append({"gate": "数据自检", "value": f"异常 {bad}（{detail}）",
+                 "ok": bad <= GATES["data_sanity"], "target": "0 异常"})
+
+    bad, detail = deliverable_sanity()
+    rows.append({"gate": "交付物自洽", "value": f"异常 {bad}（{detail}）",
                  "ok": bad <= GATES["data_sanity"], "target": "0 异常"})
 
     missing = [f for f in FILES if not (ROOT / f).exists()]
@@ -243,12 +388,25 @@ def main() -> int:
     cal = Path(args.calendar_db) if args.calendar_db else (home / "calendar.db" if home else None)
     rows = run(home, Path(args.sources), Path(args.targets), cal)
     width = max(len(r["gate"]) for r in rows)
-    failed = 0
+    failed, skipped = 0, 0
     for r in rows:
-        mark = "PASS" if r["ok"] else "FAIL"
-        failed += 0 if r["ok"] else 1
+        # 数据缺失（没跑过 update、没有 jobs.db）不算「未达标」，但也不能算通过——
+        # 标成 SKIP 并在结论里单独计数，避免「没数据」被误读成「检查通过」。
+        if r.get("skip"):
+            mark, skipped = "SKIP", skipped + 1
+        else:
+            mark = "PASS" if r["ok"] else "FAIL"
+            failed += 0 if r["ok"] else 1
         print(f"{mark}  {r['gate']:<{width}}  {r['value']:<28} 门槛 {r['target']}")
-    print("\n发布自检：", "全部达标" if not failed else f"{failed} 项未达标")
+    if not failed and not skipped:
+        print("\n发布自检： 全部达标")
+    else:
+        bits = []
+        if failed:
+            bits.append(f"{failed} 项未达标")
+        if skipped:
+            bits.append(f"{skipped} 项因缺数据未验证（先跑 jobradar update / calendar-build）")
+        print("\n发布自检： " + "，".join(bits))
     return 1 if failed else 0
 
 

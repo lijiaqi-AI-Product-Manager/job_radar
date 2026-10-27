@@ -1,0 +1,24 @@
+{
+  "company": "恩捷股份",
+  "careers_url": "https://www.semcorp.com/about/join-us/recruitment-position/campus-recruitment",
+  "host": "www.semcorp.com",
+  "ats": "unknown",
+  "page_title": "校园招聘-全球领先的锂电池隔膜供应商",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘-全球领先的锂电池隔膜供应商",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,16 @@
+id: weilongmeiwei
+company: 卫龙
+adapter: feishu_atsx
+recruit_types: [campus, intern, social]
+rate_limit_rps: 1
+params:
+  base_url: "https://weilongmeiwei.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://weilongmeiwei.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"            # weilongmeiwei.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验"
+  notes: "2026-10-27 work/site_ats.py「官网→ATS 反查」命中：公司官网招聘入口直接指向该飞书门户；门户壳页自报「卫龙美味」，count_tenants.py 实测有岗位"

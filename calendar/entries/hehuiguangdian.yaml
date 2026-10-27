@@ -1,0 +1,30 @@
+group: 和辉光电
+entries:
+- id: hehuiguangdian-campus-entry
+  company: 和辉光电
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 运营类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 上海
+  apply_url: https://campus.niuqizp.com/job-vrl5aZt5L.html
+  source:
+    type: official_site
+    name: 和辉光电招聘官网
+    url: https://campus.niuqizp.com/job-vrl5aZt5L.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：上海和辉光电股份有限公司和你一起，辉耀视界丨和辉光电2027届校园招聘2027校园招聘,招聘城市有:上海
+    - 牛企直聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

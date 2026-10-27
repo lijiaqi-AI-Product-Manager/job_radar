@@ -1,0 +1,24 @@
+{
+  "company": "GE医疗中国",
+  "careers_url": "https://career.gehealthcare.cn/",
+  "host": "career.gehealthcare.cn",
+  "ats": "self_hosted",
+  "page_title": "GE HealthCare",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 3,
+  "roles": 5,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "GE HealthCare",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

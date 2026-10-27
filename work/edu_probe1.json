@@ -1,0 +1,1234 @@
+[
+ {
+  "host": "career.nankai.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1489
+ },
+ {
+  "host": "job.xidian.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 29355
+ },
+ {
+  "host": "www.job.sjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 753
+ },
+ {
+  "host": "career.uibe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1516
+ },
+ {
+  "host": "xidian.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.cic.tsinghua.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.gdut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 25713
+ },
+ {
+  "host": "jobcareer.sdu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 139
+ },
+ {
+  "host": "career.muc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1638
+ },
+ {
+  "host": "job.zzu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 47691
+ },
+ {
+  "host": "job.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jiuye.swjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "scc.pku.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "sso.hdu.edu.cn",
+  "code": "500",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 163
+ },
+ {
+  "host": "2fjob.hdu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.hebut.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 4270
+ },
+ {
+  "host": "job.hdu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 27119
+ },
+ {
+  "host": "jdjyw.jlu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 274
+ },
+ {
+  "host": "school.gxjy.sdei.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 164943
+ },
+ {
+  "host": "aeo.uibe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1516
+ },
+ {
+  "host": "career.cup.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 37218
+ },
+ {
+  "host": "jobs.ynu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.career.zju.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 7570
+ },
+ {
+  "host": "myjob.dlmu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.shiep.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 38705
+ },
+ {
+  "host": "career.buct.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 139
+ },
+ {
+  "host": "career.gdufs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 667
+ },
+ {
+  "host": "jyw.zjgsu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2793
+ },
+ {
+  "host": "career.hznu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 32612
+ },
+ {
+  "host": "job.tju.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "xsjyzd.jmu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 25652
+ },
+ {
+  "host": "scc.hnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.zyufl.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2209
+ },
+ {
+  "host": "ejob.dhu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "www.buaa.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2048
+ },
+ {
+  "host": "study.neusoft.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 3246
+ },
+ {
+  "host": "job.neuq.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 23769
+ },
+ {
+  "host": "jobs.tiangong.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 155
+ },
+ {
+  "host": "job.bbc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jy.tust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1371
+ },
+ {
+  "host": "www.ccnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "nhjcxy.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 3
+ },
+ {
+  "host": "www.gzhs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "career.scnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.ygu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "jy.hnust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "spxy2.zjgsu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "career.smbu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "comm.ecnu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1941
+ },
+ {
+  "host": "jdjywpt.jlu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 274
+ },
+ {
+  "host": "gdjy.hfut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "job.bit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1842
+ },
+ {
+  "host": "job.hsu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2208
+ },
+ {
+  "host": "scdc.jnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 26370
+ },
+ {
+  "host": "job.lnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "job.hutb.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.fudan.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 186
+ },
+ {
+  "host": "career.bit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1842
+ },
+ {
+  "host": "career.tjcu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1515
+ },
+ {
+  "host": "www.xmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "www.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.hzau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "jy.gzhu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 25067
+ },
+ {
+  "host": "www.bbgu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "iipl.fudan.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2204
+ },
+ {
+  "host": "jwc.gzhs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "www.gzhsvc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "che.cczu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2204
+ },
+ {
+  "host": "staff.ustc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jy.buu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 10286
+ },
+ {
+  "host": "future.suda.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2214
+ },
+ {
+  "host": "www.ruc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2330
+ },
+ {
+  "host": "cs.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "career.bnuzh.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 14324
+ },
+ {
+  "host": "zyufl.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "my.zyufl.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1076
+ },
+ {
+  "host": "life.fjnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2208
+ },
+ {
+  "host": "www.dhu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "test.ustc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "dwtzb.bjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 139
+ },
+ {
+  "host": "www.nanshan.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "cn.ceibs.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "xinhua.nxu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "zhjyb.zua.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "ygb.suda.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2214
+ },
+ {
+  "host": "sfi.cuhk.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 105829
+ },
+ {
+  "host": "em.seu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2201
+ },
+ {
+  "host": "mobile.scnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2207
+ },
+ {
+  "host": "www.ecut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "career.hit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 437
+ },
+ {
+  "host": "jyzx.zuel.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "tsg.gzhs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "zs.gzhs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "www.scc.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2198
+ },
+ {
+  "host": "jy.bucm.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jy.cafa.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "job.bucea.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.cfec.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "yjszs.dhu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2204
+ },
+ {
+  "host": "www.jiangnan.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "graduate.buct.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2214
+ },
+ {
+  "host": "www.nxu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "www.studyinchina.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.carsi.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 146
+ },
+ {
+  "host": "www.fosu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1592
+ },
+ {
+  "host": "www.neusoft.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 139
+ },
+ {
+  "host": "job.bjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1894
+ },
+ {
+  "host": "zhixing.bjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 139
+ },
+ {
+  "host": "dev.zhixing.bjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.zhixing.bjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "electronic.seu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2200
+ },
+ {
+  "host": "www.cst.zju.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "yqkx.hfut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2210
+ },
+ {
+  "host": "nbubs.nbu.edu.cn",
+  "code": "401",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 165
+ },
+ {
+  "host": "career.sysu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 39430
+ },
+ {
+  "host": "xxxy.fafu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2215
+ },
+ {
+  "host": "eco.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.qau.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 727
+ },
+ {
+  "host": "www.ujs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "jy.cueb.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jy.ncut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "cem.njfu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2205
+ },
+ {
+  "host": "career.ahnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.lixin.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "lixin.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "zhaopin.lixin.edu.cn",
+  "code": "502",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1902
+ },
+ {
+  "host": "jyb.cjlu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 15781
+ },
+ {
+  "host": "www.qlu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1942
+ },
+ {
+  "host": "www.qlnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "cbs.cau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 29984
+ },
+ {
+  "host": "www.ecnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "www.hngm.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "jyzd.chnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 4922
+ },
+ {
+  "host": "smcareer.xmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2027
+ },
+ {
+  "host": "jy.xmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 6248
+ },
+ {
+  "host": "www2.scut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2204
+ },
+ {
+  "host": "jy.qztc.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 26229
+ },
+ {
+  "host": "jy.bwu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jysd.bigc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jy.scu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1858
+ },
+ {
+  "host": "jyzx.scau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "ecut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "lib.ecut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "jx.gcut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2937
+ },
+ {
+  "host": "jiuye.uestc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2000
+ },
+ {
+  "host": "cdutjy.cdut.edu.cn",
+  "code": "412",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2455
+ },
+ {
+  "host": "xsjyc.chd.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.tup.tsinghua.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 480
+ },
+ {
+  "host": "career.sustech.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "jyy.gxu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2933
+ },
+ {
+  "host": "tust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "shiep.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 28387
+ },
+ {
+  "host": "jxdxsjy.jx.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 28721
+ },
+ {
+  "host": "jy.neepu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "pjcareer.dlut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "xxfy.situ.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "dhxy.aust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "jy.zjyc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "www.hsxy.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "spjk.hcccm.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 727
+ },
+ {
+  "host": "spxy.zjgsu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 196
+ },
+ {
+  "host": "ly.wtc.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 750
+ },
+ {
+  "host": "jygl.dep.dlpu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 18375
+ },
+ {
+  "host": "www.guet.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 15275
+ },
+ {
+  "host": "career.cuhk.edu.cn",
+  "code": "200",
+  "items": 2,
+  "expire_in_html": false,
+  "len": 64585
+ },
+ {
+  "host": "jy.bsu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1894
+ },
+ {
+  "host": "nuist.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "scs.nuist.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "tlxy.zjgsu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2214
+ },
+ {
+  "host": "www.scfai.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 1588
+ },
+ {
+  "host": "job.henu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "job.tiangong.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 155
+ },
+ {
+  "host": "job.nju.edu.cn",
+  "code": "200",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 2876
+ },
+ {
+  "host": "henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 0
+ },
+ {
+  "host": "hr.bgypt.edu.cn",
+  "code": "404",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 147
+ },
+ {
+  "host": "www.qlit.edu.cn",
+  "code": "403",
+  "items": 0,
+  "expire_in_html": false,
+  "len": 727
+ }
+]

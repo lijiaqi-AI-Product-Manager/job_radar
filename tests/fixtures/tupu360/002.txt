@@ -1,0 +1,958 @@
+   </div>
+    <div class="card-footer d-flex justify-content-between">
+        
+            
+            <label class="d-flex align-items-center checkbox-default" data-action="ajaxSearch">
+                <input type="checkbox" id="hot" name="hot" selectType="checkbox_boolean" >
+                <span class="txt">热招</span>
+            </label>
+        
+        
+        
+            
+            <div class="keywrods-search-box">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="keyword" value="" selectType="text"  placeholder="职位名称关键字或Job ID" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="searchBtn">搜索职位</button>
+                </form>
+            </div>
+        
+
+    </div>
+</div>
+
+
+        
+            
+            
+
+<!--页码翻页模式-->
+<div class="card card-normal card-position-list" id="position-list" positionCount="41">
+    <div class="card-header">
+    <div class="txt">共41个职位</div>
+    
+        <div class="subscribe-actions">
+    <div class="input-group">
+        <div class="form-control form-control-modify-select">
+            <div class="modify-show">
+                <input type="text" placeholder="请选择订阅周期"
+                       id="selectedPositionSubscribe"/>
+                
+                <select name="frequency" id="subscribeFrequency">
+                    <option value="">请选择订阅周期</option>
+                    
+                         <option value="weekly">每周</option>
+                    
+                         <option value="monthly">每月</option>
+                    
+                </select>
+                <span class="icons i-arrow-down"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="btn-group-sm">
+        <button class="btn btn-outline-primary" id="btnPositionSubscribe">
+            <span class="icons i-subscribe"></span>
+            <span class="t" >订阅</span>
+        </button>
+    </div>
+</div>
+    
+</div>
+<div class="card-body">
+    <div class="position-list">
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa37e3b7280da28da079988" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Solution Management Architecture  西门子管理培训生 - 解决方案架构师方向</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：工程</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:522053</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa22cf47280da28da0798ac" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program – Vertical CoE Vertical Solution Architecture  西门子管理培训生_新兴行业解决方案架构师方向  上海</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：工程</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:522011</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa14c0d7280da28da07983f" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Product Strategy Management    西门子管理培训生-产品战略管理</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：产品管理</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521902</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa0db127280da28da079799" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Product Management Trainee   西门子管理培训生-产品管理方向 北京</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：产品管理</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521826</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa0db0c7280da28da079791" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">SCM Specialist(Digital&amp;AI)</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：采购/供应链</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521819</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa0db0a7280da28da07978f" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Procurement Specialist</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：采购/供应链</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521818</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-08</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9fde107280da28da0796c0" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Product Management 西门子管理培训生 - 产品管理方向  上海</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：产品管理</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521661</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-01</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9fde0f7280da28da0796be" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Product Management 西门子管理培训生 - 产品管理方向 北京</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：北京</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：产品管理</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521658</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-10-01</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9efcc07280da28da0795ce" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Commercial Excellence 西门子管理培训生 - 卓越商务</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：广东省-深圳</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：财务</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521560</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-30</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a98f1e47280da28da079346" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">“智 · 先锋”销售培训生 西安</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：陕西省-西安</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521016</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-29</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a9efcc17280da28da0795d0" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Siemens Graduate Program - Digital Sales 西门子管理培训生 - 数字化销售</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：广东省-深圳</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521566</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-24</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6a97d8e77280da28da0792ae" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 广州/佛山</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：广东省-广州,广东省-佛山</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:520777</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-24</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa7e3647280da28da079ba2" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">数字化工业 Sales100培训生_销售工程师 合肥</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：安徽省-合肥</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：销售</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:522451</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa113a07280da28da0797d6" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">Jr. Electrical Engineer_初级电气设计工程师</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：上海,上海-闵行区</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521829</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="position-item event-vertical" data-action="positionItem" pid="6aa361e67280da28da07995d" recruitment="CAMPUSRECRUITMENT" >
+                <!--events-date-special-->
+                
+
+                <div class="position-item-container">
+                    <div class="position-name">
+                        <h4 class="title">
+                            <span class="icons i-title"></span>
+                            <span class="txt">EP R&amp;D 初级硬件开发工程师</span>
+                        </h4>
+                        
+                    </div>
+
+                    <div class="position-extend">
+                        
+                            <ul class="extend">
+                                <li class="ele icons i-details"></li>
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">工作地点：江苏省-苏州</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">职能类别：研发</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">JobID:521881</span></li>
+                                    
+                                
+                                    
+                                    
+                                        <li class="ele " ><span class="txt">办公模式：仅现场办公</span></li>
+                                    
+                                
+                            </ul>
+                        
+                        <div class="time">发布于: 2026-09-23</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="position-show-more d-flex justify-content-end align-items-center mt-3">
+    <ul class="pagination justify-content-end" id="pageTurnUl">
+        
+        <li class="page-item disabled mr-3">
+            <a class="page-link text-dark" >共3页</a>
+        </li>
+        
+
+        
+            <li class='page-item active'  >
+                <a class="page-link text-dark" >1</a>
+            </li>
+        
+            <li class='page-item '  data-action="pageTurn" data-pagenum="2" data-pagemax="15">
+                <a class="page-link text-dark" >2</a>
+            </li>
+        
+            <li class='page-item '  data-action="pageTurn" data-pagenum="3" data-pagemax="15">
+                <a class="page-link text-dark" >3</a>
+            </li>
+        
+
+        
+
+    </ul>
+</div>
+    </div>
+</div>
+</div>
+
+        
+        </div>
+    </div>
+</div>
+
+
+            
+                
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                
+                    <div class="footer-text">
+                        
+                            
+                            
+                            
+                                Siemens AG, 1996 – 2021
+                            
+                        
+                             | 
+                            
+                            <a href=" https://new.siemens.com/cn/zh/general/privacy-notice.html" target="_blank">
+                                隐私政策
+                            </a>
+                        
+                             | 
+                            
+                            <a href="mailto:h2r.askhr.cn&#64;siemens.com" target="_blank">
+                                联系我们
+                            </a>
+                        
+                    </div>
+                    <div class="links">
+                        <div class="txt">
+                            
+                                
+                                
+                                <a href="http://beian.miit.gov.cn" target="_blank">
+                                    <span class="t">京ICP备06054295号</span>
+                                </a>
+                            
+                                 | 
+                                
+                                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502040638" target="_blank">
+                                    <span class="t"> 京公网安备11010502040638号</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+<script nonce="a2405af34eea41eb99cf56ccd1e2eb0d" type="text/javascript" src="https://cdn.careersite.tupu360.com/csresources/scripts/jquery.cookie.js"></script>
+<div id="pixel-consent-container" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+     class="cc-window">
+    
+        <div class="third-party-consent-text column-container"><p id="pixelconsent:desc">本网站使用资讯记录程序帮助持续改进求职者的体验，我们存储的所有访客的互动资料均为匿名。查看我们的<a href='https://new.siemens.com/global/en/general/cookie-notice.html' target='_blank'>Cookie公告</a>页面，了解有关您的权利的更多资讯。 </p></div>
+    
+
+    <div class="third-party-button-container column-container">
+        <a aria-label="deny cookies" role="button" tabindex="0" class="deny-button" id="pixel-consent-deny-button" >
+            拒绝
+        </a>
+        <a aria-label="dismiss cookie message" role="button" tabindex="0" class="btn-primary accept-button" id="pixel-consent-accept-button" >
+            接受
+        </a>
+    </div>
+</div>
+<script nonce="a2405af34eea41eb99cf56ccd1e2eb0d">
+    function HTMLDecode(text) {
+        var temp = document.createElement("div");
+        temp.innerHTML = text;
+        var output = temp.innerText || temp.textContent;
+        temp = null;
+        return output;
+    }
+    var cookieValue = $.cookie('acceptCookiePolicy');
+    if(cookieValue == "false" || cookieValue == undefined){
+        $("#pixel-consent-container").css("display","flex");
+    }else if(cookieValue == "true"){
+        $("#pixel-consent-container").hide();
+        
+        
+              $("body").append("<script nonce='a2405af34eea41eb99cf56ccd1e2eb0d'>var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?dc5e98e65025f0e3fe4439ec95b4a319\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();<\/script>");
+        
+    }
+    $("#pixel-consent-accept-button").click(function () {
+        $.post( "/siemens/secure/acptCookiePolicy", { accepted: true })
+            .done(function() {
+                console.log('Cookie policy accepted. Server set secure cookie.');
+            });
+        $("#pixel-consent-container").hide();
+    });
+    $("#pixel-consent-deny-button").click(function () {
+        $("#pixel-consent-container").hide();
+    });
+</script>
+
+
+
+            
+        
+    </div>
+    
+
+
+
+
+
+
+
+<div class="loading-wrap" >
+    <div class="loaders">
+        <img src="//cdn.careersite.tupu360.com/csresources/images/default/page_loading.gif">
+    </div>
+</div>
+<div class="modal fade" id="alertTip">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="alertContent">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="commonTips">
+    <div class="modal-dialog" >
+        <div class="alert-content modal-content keep-content">
+            <div class="alert-logo pt-3 pb-3" style="background-color: #9999991c">
+                <a  id="commonTipsLogo" class="logo">
+                    <img src="https://cdn.static.tupu360.com/public/configs/production/siemens/siemens_logo.png?t=1614935067569" alt=""
+                        >
+                </a>
+                <h5 class="alert-title text-center text-muted" id="commonTipsTitle"></h5>
+            </div>
+            <div class="alert-body">
+                <div class="modal-body" id="commonTipsContent">
+                </div>
+                <div class="form-btns text-center mt-3 w-100">
+                    <button class="btn btn-primary mr-5" id="commonTipsEnter" style="width: 40%">确定</button>
+                    <button class="btn btn-primary" id="commonTipsCancel" style="width: 40%;display: none">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.careersite.tupu360.com/csresources/scripts/default/jquery.md5.js?v=20261016" integrity="sha384-wee72eE2NsTYs8iTY7oEnvWWxLBDG0Ui0/B5K2IxoiQLznovIIN9I00l6p/Ffbx1" crossorigin="anonymous"></script>
+
+

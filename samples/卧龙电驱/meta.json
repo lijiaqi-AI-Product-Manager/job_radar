@@ -1,0 +1,25 @@
+{
+  "company": "卧龙电驱",
+  "careers_url": "https://www.wolong.com/index.php/join/campus.html",
+  "host": "www.wolong.com",
+  "ats": "unknown",
+  "page_title": "加入我们-校园招聘-卧龙控股集团有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 8,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们-校园招聘-卧龙控股集团有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

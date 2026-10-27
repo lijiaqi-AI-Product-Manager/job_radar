@@ -1,0 +1,32 @@
+group: 中交一公局
+entries:
+- id: zhongjiaoyigongju-campus-entry
+  company: 中交一公局
+  grad_year: null
+  project_type: 秋招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 广州
+  - 杭州
+  - 南京
+  - 武汉
+  - 苏州
+  - 天津
+  - 长沙
+  apply_url: https://campus.niuqizp.com/job-vks5aCzCa.html
+  source:
+    type: official_site
+    name: 中交一公局招聘官网
+    url: https://campus.niuqizp.com/job-vks5aCzCa.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：中交一公局集团招聘27届秋招2027校园招聘,招聘城市有:北京,天津,苏州,杭州,南京,厦门,郑州,武汉,长沙,广州）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

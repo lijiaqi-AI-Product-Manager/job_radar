@@ -1,0 +1,16 @@
+[
+ {"host": "job.xidian.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 1502, "note": "西电；同模板；详情需渲染"},
+ {"host": "career.gdut.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 2983, "note": "广工；同模板；正文最长之一"},
+ {"host": "job.zzu.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 1834, "note": "郑大；同模板"},
+ {"host": "job.neuq.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 430, "note": "东秦；同模板；正文多为职位列表，较短"},
+ {"host": "career.shiep.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 265, "note": "上电；同模板；正文常为空壳仅有元数据，部分条目可用"},
+ {"host": "xsjyzd.jmu.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 4057, "note": "集美大学；同模板；正文最长"},
+ {"host": "career.hznu.edu.cn", "path": "/campus", "items": 20, "has_expire": true, "body_len": 2299, "note": "杭师大；同模板"},
+ {"host": "career.csu.edu.cn", "path": "/campus", "items": 20, "has_expire": false, "body_len": 2837, "note": "中南大学；同模板(工作城市/发布日期)，无「过期时间」字段，正文完整；首页首条为汇总帖(30521字)"},
+ {"host": "career.sysu.edu.cn", "path": "/campus", "items": 0, "has_expire": false, "body_len": 0, "note": "中山大学；/campus 被跳转统一身份认证，匿名不可读"},
+ {"host": "scdc.jnu.edu.cn", "path": "/campus", "items": 20, "has_expire": false, "body_len": 30, "note": "暨南大学；列表可解析 20 条，但详情页为「环境异常」人机验证，无法取正文"},
+ {"host": "job.hdu.edu.cn", "path": "/campus", "items": 0, "has_expire": false, "body_len": 0, "note": "杭州电子科大；/campus 跳统一身份认证"},
+ {"host": "career.cup.edu.cn", "path": "/campus", "items": 0, "has_expire": false, "body_len": 0, "note": "中国石油大学(北京)；重定向后无条目，正文需登录"},
+ {"host": "jxdxsjy.jx.edu.cn", "path": "/campus", "items": 20, "has_expire": false, "body_len": 0, "note": "江西省就业平台；列表可解析 20 条，详情页强制扫码登录，废弃"},
+ {"host": "job.zjut.edu.cn", "path": "/campus", "items": 10, "has_expire": false, "body_len": 9521, "note": "浙工大；/campus/view/id/N 可解析，但详情路由到第三方 jysd.com 且无过期时间"}
+]

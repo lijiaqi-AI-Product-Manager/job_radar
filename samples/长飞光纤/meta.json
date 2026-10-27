@@ -1,0 +1,24 @@
+{
+  "company": "长飞光纤",
+  "careers_url": "https://yofc2.zhiye.com/",
+  "host": "yofc2.zhiye.com",
+  "ats": "beisen",
+  "page_title": "长飞光纤光缆股份有限公司 27届校招",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "长飞光纤光缆股份有限公司 27届校招",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "微软中国",
+  "careers_url": "https://careers.microsoft.com/v2/global/en/locations/gcr.html",
+  "host": "careers.microsoft.com",
+  "ats": "self_hosted",
+  "page_title": "Jobs in Greater China Region | Microsoft Careers",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 1,
+  "roles": 3,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Jobs in Greater China Region | Microsoft Careers",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

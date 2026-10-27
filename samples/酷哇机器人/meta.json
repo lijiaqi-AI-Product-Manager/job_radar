@@ -1,0 +1,25 @@
+{
+  "company": "酷哇机器人",
+  "careers_url": "https://www.cowarobot.com/join",
+  "host": "www.cowarobot.com",
+  "ats": "unknown",
+  "page_title": "加入我们｜酷哇科技",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "春招"
+  ],
+  "tracks": 10,
+  "roles": 16,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们｜酷哇科技",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

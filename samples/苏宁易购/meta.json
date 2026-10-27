@@ -1,0 +1,26 @@
+{
+  "company": "苏宁易购",
+  "careers_url": "http://campus.suning.cn/rps-campus/",
+  "host": "campus.suning.cn",
+  "ats": "unknown",
+  "page_title": "苏宁易购校园招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 51,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "苏宁易购校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

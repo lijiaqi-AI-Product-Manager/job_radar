@@ -1,0 +1,20 @@
+group: 国投证券
+entries:
+- id: guotouzhengquan-campus-entry
+  company: 国投证券
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: '2026-09-14'
+  apply_end: '2026-10-31'
+  cities: []
+  apply_url: https://gtzb.iguopin.com/
+  source:
+    type: official_site
+    name: 国投证券招聘官网
+    url: https://gtzb.iguopin.com/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：招聘官网）。网申时间取自campus 批次接口字段（多数字段口径，非推测）。未写明的届次一律留空。

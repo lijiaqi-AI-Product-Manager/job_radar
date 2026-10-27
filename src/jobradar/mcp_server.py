@@ -37,7 +37,9 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                 keyword: str | None = None, text: str | None = None,
                 include_closed: bool = False, limit: int = 30,
                 contains: bool = False, dedupe: bool = False,
-                exclude_store: bool = False) -> dict:
+                exclude_store: bool = False,
+                deadline_before: str | None = None,
+                deadline_after: str | None = None) -> dict:
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
     company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
     「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配；
@@ -47,7 +49,10 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     按它引导用户，不要说"这家公司没在招"。
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
-    结果带 match（JD 中命中处的片段，仅标题命中时为 null）。"""
+    结果带 match（JD 中命中处的片段，仅标题命中时为 null）。
+    deadline_before / deadline_after 为 YYYY-MM-DD，按**网申截止日**筛（"这周快截止的"用
+    deadline_before=本周日）。只有源里明确写了截止日的岗位参与比较——目前约 2.6%，
+    所以返回为空不等于"没有快截止的岗位"，要在回答里说明这个口径。"""
     def run():
         text_cm = db("text", required=False) if text else nullcontext(None)
         with db("jobs") as conn, text_cm as text_conn:
@@ -58,7 +63,9 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                                  recruit_type=recruit_type, grad_year=grad_year, keyword=keyword,
                                  text=text, text_conn=text_conn, include_closed=include_closed,
                                  limit=min(limit, 200), contains=contains, meta=meta,
-                                 dedupe=dedupe, exclude_store=exclude_store)
+                                 dedupe=dedupe, exclude_store=exclude_store,
+                                 deadline_before=deadline_before,
+                                 deadline_after=deadline_after)
             payload = envelope(conn, rows, **meta)
             hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
                                          grad_year=grad_year, city=city, category=category)
@@ -67,7 +74,11 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                     if cal is not None and (ch := q.calendar_hint(cal, company)):
                         payload["calendar"] = ch
                         hints = [h for h in hints if "公司名没有唯一确定" not in h]
-                        hints.append(f"岗位数据里没有，但日历里有 {ch['entries']} 条：`{ch['cmd']}`")
+                        hints.append(f"岗位数据里没有，但日历里有 {ch['entries']} 条"
+                                     f"（届次：{'、'.join(map(str, ch['grad_years'])) or '未标注'}；"
+                                     f"批次：{'、'.join(ch['project_types']) or '未标注'}）")
+                        if ch.get("apply_url"):
+                            hints.append(f"投递入口：{ch['apply_url']}")
                         if ch.get("hint"):
                             hints.append(ch["hint"])
             if hints:
@@ -162,17 +173,38 @@ def data_status(verbose: bool = False) -> dict:
 @server.tool()
 def calendar(group: str | None = None, company: str | None = None, project_type: str | None = None,
              grad_year: int | None = None, origin: str | None = None, open_on: str | None = None,
+             city: str | None = None, direction: str | None = None,
+             deadline_before: str | None = None, deadline_after: str | None = None,
+             has_tracks: bool = False, has_window: bool = False,
              limit: int = 50) -> dict:
     """招聘日历：各公司的招聘项目（提前批/秋招正式批/暑期实习/社招…）、届次、方向、网申时间、城市、投递入口与来源。
     覆盖抓不到 JD 的大厂（人工从官方公众号/官网/政府平台整理，origin=manual），以及数据层自动生成的条目（origin=auto）。
     group 集团（如 阿里巴巴）、company 具体公司或产品（如 飞猪）、project_type 子串匹配（如 秋招、实习）；
-    open_on=YYYY-MM-DD 只看当天网申开放中的。jd_status=linked 表示可用 search_jobs 查到 JD；
-    jd_status=blocked 时把 hint 原样放在回答末尾。"""
+    open_on=YYYY-MM-DD 只看当天网申开放中的；jd_status=linked 表示可用 search_jobs 查到 JD；
+    jd_status=blocked 时把 hint 原样放在回答末尾。
+
+    按城市/方向/截止日筛（回答「我能在北京投什么」「11 月前截止的还有哪些」用这几个参数）：
+    city（如 北京）、direction（方向名子串，如 算法 / 技术类）、deadline_before / deadline_after（YYYY-MM-DD）。
+    has_tracks=True 只返回有方向的条目，has_window=True 只返回有网申时间的条目（起止**任一**有值即可，
+    只有截止日的也算——那正是「什么时候之前必须投」）。
+
+    重要口径：只有部分条目写了城市和截止日（校招/实习口径：城市约 45%、网申时间约 20%），
+    所以「city=某地 返回空」不等于「该地没有岗位」，回答时要说明这一点，不能让用户以为没机会。
+    另外条目里 project_type=社招 的那些是社招板岗位，没有届次也没有批次窗口，别当校招批次讲。"""
     def run():
         with db("calendar") as conn:
             rows = q.calendar_entries(conn, group=group, company=company, project_type=project_type,
-                                      grad_year=grad_year, origin=origin, open_on=open_on, limit=min(limit, 200))
-            return envelope(None, rows, as_of=q.calendar_as_of(conn))
+                                      grad_year=grad_year, origin=origin, open_on=open_on,
+                                      city=city, direction=direction,
+                                      deadline_before=deadline_before, deadline_after=deadline_after,
+                                      has_tracks=True if has_tracks else None,
+                                      has_window=True if has_window else None,
+                                      limit=min(limit, 200))
+            env = envelope(None, rows, as_of=q.calendar_as_of(conn))
+            # 空结果不能只说「没有」：把「是因为筛选太窄还是真的没有」讲清楚
+            if not rows and (city or direction):
+                env["advice"] = q.calendar_filter_advice(conn, city=city, direction=direction)
+            return env
     return _guard(run)
 
 

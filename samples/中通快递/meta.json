@@ -1,0 +1,24 @@
+{
+  "company": "中通快递",
+  "careers_url": "https://hr.zto.com/Campus",
+  "host": "hr.zto.com",
+  "ats": "self_hosted",
+  "page_title": "中通招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 2,
+  "roles": 5,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中通招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

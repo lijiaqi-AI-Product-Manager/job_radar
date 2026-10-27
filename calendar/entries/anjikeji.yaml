@@ -1,0 +1,29 @@
+group: 安集科技
+entries:
+- id: anjikeji-campus-entry
+  company: 安集科技
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 上海
+  apply_url: https://www.anjimicro.com/shehuizixun/133.html
+  source:
+    type: official_site
+    name: 安集科技招聘官网
+    url: https://www.anjimicro.com/shehuizixun/133.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：『挚诚』安集科技2027届校园招聘正式启动！_挚诚_新闻中心_安集微电子科技（上海）股份有限公司）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

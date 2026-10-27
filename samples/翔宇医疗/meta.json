@@ -1,0 +1,25 @@
+{
+  "company": "翔宇医疗",
+  "careers_url": "https://www.xyyl.com/jrwm.html",
+  "host": "www.xyyl.com",
+  "ats": "unknown",
+  "page_title": "翔宇医疗|脑机交互-康复机器人-AI医疗-让全民享有高水平康复医疗服务",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 30,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "翔宇医疗|脑机交互-康复机器人-AI医疗-让全民享有高水平康复医疗服务",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

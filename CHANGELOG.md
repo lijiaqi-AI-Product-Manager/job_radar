@@ -2,6 +2,165 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.3.0] - 2026-10-27
+
+### 新增
+
+- **数据面大幅扩张**：数据源 **279 → 738**（北森 507、hotjob 82、飞书 ATSX 39、图普惠 32、旧版北森 28、
+  Workday 25…共 25 个适配器），公司清单 **866 → 1,009 家**，目标清单 **1,014 → 1,117 家**，
+  招聘日历 **1,383 个文件 / 2,078 条条目**，其中 18 家行业龙头补齐了入口与批次。
+  新增适配器：Avature、Radancy、飞书 ATSX 门户族、Workday 多租户、图普惠、自助建站、HR360、
+  京东校招、百度招聘、字节校园、帆软、深信服、NextData、JSON 门户等（`src/jobradar/adapters/`）。
+  单个数据源进库前都跑过字段覆盖率抽查：城市 ≥93%、发布日期 ≥96%、JD 正文 ≥99%。
+- **飞书招聘 ATSX 门户族：一次接入四家**（`adapters/feishu_atsx.py` + `sources/{nio,xpeng,momenta}.yaml`）。
+  字节跳动那套接口不是它自研的，是**飞书招聘（ATSX）的标准门户**——任何 `<tenant>.jobs.feishu.cn`
+  都吃同一套 `/api/v1/csrf/token` + `/api/v1/search/job/posts`。2026-10-26 按公开品牌名逐个实测
+  59 个子域（`curl -o /dev/null -w '%{http_code}'`，不做字典爆破），找出 3 家可匿名访问的门户并接入：
+  **蔚来 869 条**、**小鹏汽车 629 条**、**Momenta 17 条**（月之暗面门户存在但当时 0 条在招）。
+  三家城市覆盖均 **100%**、JD 覆盖 **100%**；在招岗位 104,575 → **106,090**，数据源 370 → 373。
+  做法上把 `bytedance.py` 重构成「通用 `feishu_atsx` + 薄子类 `bytedance`」，
+  `tests/adapters/test_bytedance.py` 19 条测试**一行未改**仍全绿。
+- **多源适配器的 fixtures 按 source 分目录**（`scripts/record_fixtures.py --multi-source`）。
+  原来一个适配器只能录一套 fixtures（固定写 `tests/fixtures/<adapter>/`），
+  一个适配器服务多家公司时后录的会覆盖先录的、契约测试也回放不到自己的域名。
+  现在多源适配器写 `tests/fixtures/<adapter>_<source>/`，契约测试自动发现并对**每个目录各跑一遍**
+  契约（含「≥90% 岗位有 JD 正文」「fixtures < 300 KB」两条硬约束）。
+
+### 修复
+
+- **`companies.jsonl` 漏掉了「有日历条目但没有高校简章」的公司**（`work/align_deliverables.py`）。
+  收录口径要求「必须有高校就业网命中的简章」，于是**华为、字节跳动、蔚来、小鹏、京东、兴业证券**
+  这类只有企业自有招聘站、没有简章转载的公司整批缺席——**866 家里一家头部互联网/车企都没有**。
+  日历条目本身就是最硬的证据（带届次、批次、投递入口），不该被「没有简章」一票否决。
+  改后 **866 → 1,009 家**，华为/字节跳动/蔚来/小鹏/京东等 143 家头部雇主一次补齐。
+  同时把 `sector` 用 `targets/top_companies.yaml` 的人工标注兜底（**228 行空行业 → 0**），
+  行业浏览功能才真正可用。
+- **`dedupe_auto` 把自动条目的字段一起丢掉了**（`pipeline/calendar.py`）。人工入口条目通常只有
+  「投递入口」一项，`cities`/`apply_end`/`grad_year` 全空；同公司的自动条目从结构化职位表里带着
+  完整城市与截止日。原实现整条丢弃自动条目，产品里就成了「蔚来：校招｜城市未知｜无网申时间」——
+  数据在手却看不见。现在改**字段级合并**：自动条目被丢弃前，先把人工条目**空着**的字段补上
+  （人工已写的一律不覆盖），并且把证据来源四件套（`observed_from/to`、`source_*`、`jd_status`）
+  一起搬过去，避免「引用入口页却带着职位表的城市」这种错标。
+- **`proposed-sources.yaml` 里 597 行写了不存在的适配器**。`adapter:` 直接用了 host 指纹
+  （`unknown`/`self_hosted`/`moka`/`beisen`），而这些不是已注册适配器 id，整段贴进 `sources/`
+  会立刻报「未知适配器」。现在按注册表归一，判不出的显式标注 `⚠ 需先实现适配器`。
+- **`ats_of()` 不认识飞书招聘门户**：`<tenant>.jobs.feishu.cn` 全被判成 `unknown`，
+  33 行飞书门户的 `ats` 列是错的。现在识别为 `feishu_atsx`。
+- **`publish_date()` 遇到越界时间戳会抛 `ValueError`**（`adapters/feishu_atsx.py`）。
+  `datetime.fromtimestamp(99999999999999999/1000)` 直接 `ValueError: year 3170843 is out of range`，
+  一条脏数据就能打断整轮抓取。现在先做范围判断（≤2040-01-01）再转换，异常一律兜底返回 `None`。
+- **`_d()` 会构造出不存在的日期**（`pipeline/calendar_extract.py`）。只校验「月 1~12、日 1~31」时，
+  页面上「2025年11月00日」这种占位写法会被拼成 `2025-11-00` 写进 `calendar/entries/hongqingting.yaml`，
+  随后 `ManualEntry` 抛 `day is out of range for month`，**整个 `calendar-build` 失败**——
+  一条脏数据让 1,475 条日历全部生成不出来。现在改用真日历校验（2 月 30 日、4 月 31 日、11 月 0 日
+  一律判废），并补了 11 条测试（含闰年 2-29 必须通过的反向断言）。
+- **自动日历条目的网申时间恒为空**（`pipeline/calendar.py`）。`_auto_entries` 把 `apply_start` /
+  `apply_end` 硬编码成 `None`，于是 `job.apply_end` 里几千条真实截止日在自己的产品里一条也看不到。
+  现在按与 `export_job_evidence` 完全一致的口径填：截止日取**多数**职位写的那天（不是 `min`——
+  实测兴业证券 43 条里有 1 条写 2026-09-30、26 条写 2027-09-29、14 条写 2026-11-02，取 min 会把
+  整批截止日提前一个月），起点只在「同批 ≥3 条且 ≥40% 同一天上架」时给，且起点晚于终点一律丢弃。
+- **`--has-window` 要求起止两端都有值**（`core/queries.py`）。写着「截止 9-30、开始未公布」的批次
+  被判成「没有网申时间」，而它恰恰是用户最需要的（知道什么时候之前必须投）。改为起止任一有值。
+- **入口条目完全不含日期**（`work/build_calendar_entries.py`）。交付物里的入口条目 `apply_start` /
+  `apply_end` 100% 为空，因为只从入口页正文抽日期，而入口页正文中位数只有 108 字（全是标题）。
+  现在接入同仓 `work/ats_evidence.jsonl` 的结构化字段，规则与 pipeline 一致，**361 条条目拿到真实网申窗口**。
+- **日历查询把「最紧迫的」埋在 200 条之后**（`core/queries.py`）。`--deadline-before 2026-12-31`
+  原来按 `group_name` 字母序排，ABB 排第一、一周内截止的公司沉底；用户在问「最紧迫的是哪个」，
+  按字母序回答等于没回答。现在问截止日就按截止日升序（无日期的排最后），`--open-on` 按开放日倒序。
+- **`--open-on` 会返回已过期的批次**。`apply_end IS NULL` 的条目被放行是合理的（没写 ≠ 已截止），
+  但写了截止日且早于那天的必须挡掉——否则「今天还能投什么」会返回去年的秋招。
+- **过期截止日混进交付物**（`work/build_calendar_entries.py`）。鸿星尔克/中国国航两条入口条目带着
+  2025-11-15 / 2025-12-31 的旧公告日期，用户点进去只会看到「已截止」。现在入口保留、**日期清空**。
+  另拒绝了一条第三方聚合站入口（`campus.niuqizp.com` 牛企直聘，标题里自称转载），红线不能开例外。
+- **同一批次在日历里出现两次**（`pipeline/calendar.py` 新增 `dedupe_auto`）。360 集团同时有「校招」
+  人工条目和自动条目，214 组同键条目里 11 组截止日互相矛盾——问「什么时候截止」会得到两个答案。
+  现在人工条目覆盖的 (集团, 批次, 届次) 不再生成自动条目（**自动条目 1,087 → 748**，混合重复归零），
+  但届次不同的都保留：那可能是不同届的两个批次，合并比重复更糟。副作用是两项覆盖率反而上升
+  （城市 44.9% → 45.9%、网申时间 20.4% → 23.0%），说明重复条目本来就在稀释数据。
+
+### 变更
+
+- **发布自检的两个日历指标改为双口径并排输出**。`日历有城市` / `日历有网申时间` 的分母排除
+  `project_type=社招`（本产品是校园招聘日历，社招板一家几千条岗位既无届次也无批次窗口）
+  与「只有入口、不含任何字段」的条目（它的价值是投递入口，本来就取不到日期），
+  同时把「全部条目」口径一并打印（城市 43.4%、网申时间 15.6%），避免用口径选择掩盖问题。
+- **目标清单 1,014 → 1,117 家**。103 个已经验证官方入口、并且已生成日历条目的集团不在
+  `targets/top_companies.yaml` 里，违反「日历里的集团必须是目标」这条不变量；按实测行业标注
+  补进对应行业块，实测没有行业标注的归入「扩展池（实测确认）」，不硬猜。
+
+### 收尾修正（本轮）
+
+- **`work/build_calendar.py` 的 `pypinyin` 改成按需导入**。原来顶层 `from pypinyin import ...`，
+  而它只是写日历条目时才需要的可选依赖；干净环境里跑 `tests/test_calendar_evidence_index.py`
+  会直接 `ModuleNotFoundError`，把整包测试卡在收集阶段。现在 `slug_of()` 里按需导入，
+  缺依赖时给出「生成日历条目需要 pypinyin：pip3 install pypinyin」的可执行提示。
+- **`adapters/workday.py` 的 `cities_of()` docstring 改成 raw string**，消掉 Python 3.12 的
+  `SyntaxWarning: invalid escape sequence '\s'`（`-W error` 的 CI 会因此失败）。
+- **`jobradar search --help` 不再抛 traceback**。`--dedupe` 的帮助文本里写了裸的「9.2%」，
+  argparse 会对 help 做 `%` 插值 → `ValueError: unsupported format character`。改成 `%%`，
+  并新增 `test_every_subcommand_help_renders` 把 12 个子命令的帮助挨个渲染一遍（这类问题
+  功能测试发现不了）。
+- **入口点测试显式 `stdin=DEVNULL`**。`tests/test_entrypoints.py` / `tests/test_version.py` 里
+  4 处 `subprocess.run` 以前继承父进程 stdin，父进程 stdin 若是永不关闭的管道（后台任务、
+  部分 CI/沙箱），子进程会挂在读输入上，表现为超时 60s+。
+- **`targets/top_companies.yaml` 的 blocked 名单 17 → 12 家**。字节跳动、蔚来、小鹏汽车、
+  京东、百度已确认有公开可采入口（飞书 ATSX 匿名接口 / `campus.jd.com` / `talent.baidu.com`），
+  继续挂在 blocked 里会让覆盖率报告与日历的 `blocked_reason` 一起说谎。剩余 12 家
+  （大疆 Moka 响应加密、拼多多/华为、快手/博世 robots、四家第三方招聘平台、微博登录墙、
+  招商蛇口无入口、中国建筑 hcm_param 加密）理由不变。
+- **`docs/recon/atsx.md` 补「后记」**：2026-10-22 那次判定 405 是签名缺失，实际是
+  `x-csrf-token` 取错了值（用了 URL 编码过的 cookie 而不是响应 body 原值）且缺
+  `Accept: application/json`；`_signature` 服务端不校验。旧结论留档，但表格与 ROADMAP /
+  FAQ / RELEASE / SKILL 等 8 处「这几家抓不到」的说法一并改掉。
+
+## [1.2.0] - 2026-10-26
+
+数据规模与日历质量的一轮系统性升级。**目标 500 → 1,014 家**，**数据源 279 → 370 个**，
+**在招岗位 89k → 97,607 个**，**日历条目 1,330 → 2,425 条**，发布自检 8 项从「7 PASS / 1 FAIL」变成全绿。
+
+### 新增
+
+- **数据源从 279 扩到 370**（`work/add_missing_sources.py`）。此前 `sources/` 只有 272 家公司，
+  而侦察阶段实测已打通的租户有 122 家——两边差 91 家「已验证可抓但没建源」的公司，
+  数据源覆盖这道闸门因此长期卡在 20% 左右。现在把差集按 (adapter, tenant) 去重后真正写入
+  `sources/beisen.yaml`（+75）/`beisen_legacy.yaml`（+8）/`hotjob.yaml`（+8）。
+- **结构化职位证据打通进日历**（`export_job_evidence` + `calendar-build --evidence-out`）。
+  热招（大易）列表接口每个岗位自带 `workPlaceStr`（「长沙市-长沙县」）和 `endDate`（真实截止日），
+  以前这些字段只落到 jobs.db，日历完全用不到。现在 `export_job_evidence()` 把它们按招聘类型
+  汇总成每家一条，日历生成时作为**权重最高的一路证据**接入。
+  **校园岗城市覆盖率 0.6% → 29.8%**，日历城市条目 547 → 624，届次 616 → 670，
+  条目数 1,326 → 1,337。
+- **日历「来源」这一列终于有日期**（`work/build_calendar.py`）。原来 1,326 条条目的 `source.date`
+  全是 null，用户看到「来源：某校就业网」却不知道是哪天的公告，没法判断时效。
+  现在只采信**该批次自己那批公告**的发布日期（`source.date` 覆盖 308 条），
+  且绝不拿 `as_of` 或别的批次的日期冒充。
+- **`stats` 报字段完整度**：`field_filled` / `field_ratio` / `entries_complete_7of10`。
+  以前只报「覆盖率 62%」，看不出是缺截止日还是缺城市，而这两个缺口成因完全不同。
+- **`calendar --city / --direction / --deadline-before / --deadline-after`**（上一版已加，
+  本版用真实数据验证：`--city 北京` 命中 200+ 条，`--deadline-before` 只在真知道截止日时命中）。
+
+### 修复
+
+- **7 对同一主体在 targets 里重复**（`work/merge_duplicate_targets.py`）：`ABB`/`ABB中国`、
+  `宝洁`/`宝洁中国`、`微软`/`微软中国`、`西门子`/`西门子中国`、`SAP`/`SAP中国`、
+  `阿斯利康`/`阿斯利康中国`、`民生银行`/`中国民生银行`。两套写法分属不同行业，
+  导致行业分布统计失真，日历也被拆成两个 group（用户在「ABB」下只看到半条）。
+  合并后 1,021 → 1,014 家，被合并名进 `aliases` 保证 `match_targets` 仍能双向命中。
+- **`site_resource.city` 口径**：`campus_city_ratio` 的分母把社招/实习也算进去，稀释了指标；
+  现在只算校园岗，并修正 `'null'` 字符串未排除的问题。
+- **`source.date` 在此之前全为 null**（见上）。
+- **`apply_end`/`publish_at` 全链路落地**：新增 migration `0002_job_window.sql`，
+  `Job` 模型、`hotjob` 适配器（含 `3000-01-01` 哨兵值归一）、`ingest` 三处写入同步。
+
+### 已知限制（如实记录，不做粉饰）
+
+- **北森新版门户不返回城市和截止日**：扫完全部 251 个北森租户 × 30 条，
+  `LocNames` 恒为 `[]`、`LocID` 恒为 `null`、`EndTime`/`PostDate` 恒为 `0001-01-01`。
+  这是平台限制，不是代码缺陷。城市和截止日只能从大易、旧版北森和高校简章拿到。
+- **日历 `apply_start` 仍只有 2.6%**：795/1,055 篇高校简章正文写的是流程描述
+  （「简历投递→笔试→面试」），没有可抽取的起止日期。留空比编造正确。
+- **164 家目标公司仍没有可用招聘入口**：多为 Workday/Taleo/自建站，需逐家人工侦察。
+
 ## [1.1.1] - 2026-10-24
 
 **首次发布到 PyPI**：`pip install "jobradar[mcp]"` 即可安装（Trusted Publishing / OIDC，
@@ -43,7 +202,7 @@
 - **README 8 种语言**：中文为主版本，另有 en / ja / ko / es / fr / de / ru，顶部语言切换，事实口径一致。
 - **演示 GIF 两版**（15 秒，8 fps）：`docs/assets/demo-zh.gif`、`demo-en.gif`，由 `scripts/make_assets.py` 生成（Pillow 手绘，可重复产出）。
 - **social preview**：`docs/assets/social-preview.png`（1280×640，中文主视觉）。
-- **内部过程文档移到 `docs/internal/`**：HANDOVER / PROGRESS ×2 / REVIEW-TRIAGE / COVERAGE-PLAN，
+- **内部过程文档移到 `docs/internal/`**：PROGRESS ×2 / REVIEW-TRIAGE / COVERAGE-PLAN / SOURCE-DISCOVERY，
   面向用户的 README 不再链到过程文档深处。
 
 ### 已知未做（下一轮）

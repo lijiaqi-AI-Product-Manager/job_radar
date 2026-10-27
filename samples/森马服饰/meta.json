@@ -1,0 +1,25 @@
+{
+  "company": "森马服饰",
+  "careers_url": "https://www.semir.com/join-us.html",
+  "host": "www.semir.com",
+  "ats": "unknown",
+  "page_title": "加入我们 - 森马集团",
+  "calendar_entries": 2,
+  "project_types": [
+    "校园大使",
+    "社招"
+  ],
+  "tracks": 6,
+  "roles": 8,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们 - 森马集团",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "风华高科",
+  "careers_url": "http://china-fenghuazp.zhiye.com/",
+  "host": "china-fenghuazp.zhiye.com",
+  "ats": "beisen",
+  "page_title": "风华高科",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 1,
+  "roles": 3,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "风华高科",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

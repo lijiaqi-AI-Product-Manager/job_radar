@@ -11,7 +11,7 @@ from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, cities_from_text, grad_year_from_text
+from jobradar.normalize import batch_from_text, cities_from_text, date_only, grad_year_from_text
 
 LIST_URL = "https://zhaopin.meituan.com/api/official/job/getJobList"
 JOB_URL = "https://zhaopin.meituan.com/web/position/detail?jobUnionId={id}&highlightType={portal}"
@@ -68,4 +68,12 @@ class MeituanAdapter(Adapter):
             department="/".join(depts) or None,
             description=raw.get("jobDuty") or None,
             requirements=raw.get("jobRequirement") or None,
+            # 列表接口直接给了三个日期，抓到就是白拿的（2026-10-26 实测）：
+            #   firstPostTime 首次发布 —— 多数岗位为 null，有值就是真正的上架日
+            #   refreshTime   最近刷新 —— 实测当天刷新的岗位就是这个时刻（1792991700000 = 13:15）
+            #   expiredTime   截止日   —— 常为 null（不限），有值即截止
+            # 用 firstPostTime 优先，缺失时退回 refreshTime：刷新日只会晚于真实上架日，
+            # 拿它当"上架日"会把窗口报窄，但比留空更能解释"这批什么时候开的"。
+            publish_at=date_only(raw.get("firstPostTime") or raw.get("refreshTime")),
+            apply_end=date_only(raw.get("expiredTime")),
         )

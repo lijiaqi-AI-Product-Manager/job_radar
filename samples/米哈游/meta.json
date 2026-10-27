@@ -1,0 +1,27 @@
+{
+  "company": "米哈游",
+  "careers_url": "https://jobs.mihoyo.com/",
+  "host": "jobs.mihoyo.com",
+  "ats": "self_hosted",
+  "page_title": "miHoYo招聘官网",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 21,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "miHoYo招聘官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020755"
+    ]
+  }
+}

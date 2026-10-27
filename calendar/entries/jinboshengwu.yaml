@@ -1,0 +1,26 @@
+group: 锦波生物
+entries:
+- id: jinboshengwu-campus-entry
+  company: 锦波生物
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 金融类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.sxjbswyy.com/
+  source:
+    type: official_site
+    name: 锦波生物招聘官网
+    url: https://www.sxjbswyy.com/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：山西锦波生物医药股份有限公司）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

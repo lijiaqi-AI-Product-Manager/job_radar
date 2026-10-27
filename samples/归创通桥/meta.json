@@ -1,0 +1,24 @@
+{
+  "company": "归创通桥",
+  "careers_url": "https://www.zyloxmedical.com/join-us",
+  "host": "www.zyloxmedical.com",
+  "ats": "unknown",
+  "page_title": "职位探索 - 加入我们 - 归创通桥 Zylox-Tonbridge",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 9,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "职位探索 - 加入我们 - 归创通桥 Zylox-Tonbridge",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

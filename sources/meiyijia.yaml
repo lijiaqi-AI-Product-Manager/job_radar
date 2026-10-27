@@ -1,0 +1,16 @@
+id: meiyijia
+company: 美宜佳
+adapter: feishu_atsx
+recruit_types: [campus, intern, social]
+rate_limit_rps: 1
+params:
+  base_url: "https://meiyijia.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://meiyijia.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"            # meiyijia.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验"
+  notes: "2026-10-27 work/ats_par.py 新增的「飞书裸探针」命中；门户壳页 tenant_info.tenant_name 自报「美宜佳控股有限公司」，实测 count=24"

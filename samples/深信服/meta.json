@@ -1,0 +1,28 @@
+{
+  "company": "深信服",
+  "careers_url": "https://hr.sangfor.com/campuszp",
+  "host": "hr.sangfor.com",
+  "ats": "self_hosted",
+  "page_title": "深信服校园招聘-深信服招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校园大使",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 42,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "深信服校园招聘-深信服招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020860",
+      "https://job.zzu.edu.cn/campus/view/id/1019564"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ from jobradar.normalize import (
     batch_from_text,
     cities_from_text,
     cities_from_title,
+    date_only,
     degree_min_from_text,
     grad_year_from_jd,
     grad_year_from_text,
@@ -114,6 +115,16 @@ def test_cities(text, cities):
     ("人才管理交付经理（CBG北京）(J14590)", ["北京"]),
     ("北京烤鸭师傅", []),                  # 城市+非机构词，不猜
     ("上海大众汽车工程师", []),
+    # 2026-10-26：北森校招标题里「届次前缀 + 城市」的写法（真实抓取样本）
+    ("27届校招北京-高中语文一对一教师(J55560)", ["北京"]),
+    ("2027届校招-北京-销售管培生", ["北京"]),
+    ("暑期实习上海-测试开发", ["上海"]),
+    ("北京-运营助理", ["北京"]),
+    ("成都-前端开发工程师", ["成都"]),
+    # 这些城市是专有名词的一部分，判成办公地点会把岗位挂到错误城市 → 一律留空
+    ("研发技术岗（北京本部）", []),
+    ("北京先驱-数字海洋部科研岗(J33568)", []),
+    ("审计业务岗（北京特派办）(J89186)", []),
 ])
 def test_cities_from_title(title, cities):
     assert cities_from_title(title) == cities
@@ -159,3 +170,42 @@ def test_city_from_english_unknown_returns_none():
     from jobradar.normalize import city_from_english
     assert city_from_english("Jiangsu") is None      # 省名不是城市
     assert city_from_english("") is None
+
+
+@pytest.mark.parametrize("title,expected", [
+    ("实习生（上海新嘉中心店）", ["上海"]),          # 省份前缀被剥掉后不能丢城市（2026-10-26 修）
+    ("实习生烘焙师（杭州湖滨88Lab店）", ["杭州"]),
+    ("咖啡师（成都IFS店）", ["成都"]),
+    ("门店伙伴（深圳）", ["深圳"]),
+    ("北京烤鸭", []),                                # 不是门店，别误判
+    ("上海大众汽车", []),
+])
+def test_cities_from_store_titles(title, expected):
+    assert cities_from_title(title) == expected
+
+
+# ---- date_only：把各平台的原值归一成 YYYY-MM-DD（2026-10-26 逐个实测的原值）----
+
+
+@pytest.mark.parametrize("value,expected", [
+    ("2026-11-17 23:59:59", "2026-11-17"),          # 大易 endDate
+    ("2026年10月21日", "2026-10-21"),                # 腾讯 LastUpdateTime
+    ("2026-10-26T13:15:00+08:00", "2026-10-26"),     # ISO 带时区
+    (1786960999000, "2026-08-17"),                    # 飞书/美团毫秒时间戳
+    ("1792991700000", "2026-10-26"),                  # 字符串形式的时间戳
+    (1792991700, "2026-10-26"),                       # 秒级时间戳
+])
+def test_date_only_accepts_real_platform_values(value, expected):
+    assert date_only(value) == expected
+
+
+@pytest.mark.parametrize("value", [
+    "0001-01-01T00:00:00",   # 北森未填（311 个租户全部如此，实测）
+    "3000-01-01",            # 大易"长期开放"哨兵
+    "9999-12-31",
+    None, "", 0, -1,
+    99999999999999999,       # 越界时间戳：不能让 fromtimestamp 抛 ValueError
+    "not a date", "2026-13-01", "abc",
+])
+def test_date_only_rejects_sentinels_and_garbage(value):
+    assert date_only(value) is None

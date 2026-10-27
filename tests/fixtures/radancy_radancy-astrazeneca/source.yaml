@@ -1,0 +1,19 @@
+id: radancy-astrazeneca
+company: 阿斯利康
+adapter: radancy
+params:
+  base: https://job-search.astrazeneca.cn
+  path: china-jobs?p={page}
+  fetch_detail: true
+  url_filter: /\d+/\d+$
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: allowed
+  terms: 服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核
+  notes: 19 页 × 15 条 + 每条 1 次详情 ≈ 300 次/天，1 req/s ≈ 5 分钟/轮

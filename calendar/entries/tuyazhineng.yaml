@@ -1,0 +1,24 @@
+group: 涂鸦智能
+entries:
+- id: tuyazhineng-campus-entry
+  company: 涂鸦智能
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 杭州
+  apply_url: https://campus.niuqizp.com/job-vls5tZMna.html
+  source:
+    type: official_site
+    name: 涂鸦智能招聘官网
+    url: https://campus.niuqizp.com/job-vls5tZMna.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：涂鸦智能上市公司总部杭州2026届春季校园招聘2027校园招聘,招聘城市有:杭州,微信公众号浙江引才
+    - 牛企直聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

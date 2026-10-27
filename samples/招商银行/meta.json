@@ -1,0 +1,29 @@
+{
+  "company": "招商银行",
+  "careers_url": "https://career.cmbchina.com/campus/home",
+  "host": "career.cmbchina.com",
+  "ats": "self_hosted",
+  "page_title": "招商银行招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 52,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招商银行招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 17,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757703",
+      "https://job.zzu.edu.cn/campus/view/id/1019526",
+      "https://job.zzu.edu.cn/campus/view/id/1019347"
+    ]
+  }
+}

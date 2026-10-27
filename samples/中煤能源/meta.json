@@ -1,0 +1,27 @@
+{
+  "company": "中煤能源",
+  "careers_url": "",
+  "host": "career.nankai.edu.cn",
+  "ats": "none",
+  "page_title": "中国中煤能源集团有限公司 2027届秋季校园招聘公告",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 15,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "中国中煤能源集团有限公司 2027届秋季校园招聘公告",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119727.html",
+      "https://career.shiep.edu.cn/campus/view/id/667475"
+    ]
+  }
+}

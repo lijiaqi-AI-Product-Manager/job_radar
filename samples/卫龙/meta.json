@@ -1,0 +1,27 @@
+{
+  "company": "卫龙",
+  "careers_url": "https://weilongmeiwei.jobs.feishu.cn/index/",
+  "host": "weilongmeiwei.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "加入卫龙美味",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入卫龙美味",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758265",
+      "https://job.xidian.edu.cn/campus/view/id/758254"
+    ]
+  }
+}

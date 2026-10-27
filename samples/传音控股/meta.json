@@ -1,0 +1,31 @@
+{
+  "company": "传音控股",
+  "careers_url": "https://transsion.zhiye.com/Campus",
+  "host": "transsion.zhiye.com",
+  "ats": "beisen",
+  "page_title": "深圳传音控股股份有限公司",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "校园大使",
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 96,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "深圳传音控股股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119756.html",
+      "https://job.zzu.edu.cn/campus/view/id/1019410",
+      "https://career.csu.edu.cn/campus/view/id/591013"
+    ]
+  }
+}

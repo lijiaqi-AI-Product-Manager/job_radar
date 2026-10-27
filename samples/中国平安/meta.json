@@ -1,0 +1,28 @@
+{
+  "company": "中国平安",
+  "careers_url": "https://campus.pingan.com/pacx",
+  "host": "campus.pingan.com",
+  "ats": "unknown",
+  "page_title": "中国平安校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国平安校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119748.html",
+      "https://job.xidian.edu.cn/campus/view/id/757207",
+      "https://career.hznu.edu.cn/campus/view/id/551117"
+    ]
+  }
+}

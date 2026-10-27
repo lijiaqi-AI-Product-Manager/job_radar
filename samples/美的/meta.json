@@ -1,0 +1,28 @@
+{
+  "company": "美的",
+  "careers_url": "https://careers.midea.com/schoolOut",
+  "host": "careers.midea.com",
+  "ats": "self_hosted",
+  "page_title": "美的集团-校园招聘官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "美的集团-校园招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020878",
+      "https://job.zzu.edu.cn/campus/view/id/1019756"
+    ]
+  }
+}

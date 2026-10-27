@@ -1,0 +1,32 @@
+{
+  "company": "海尔",
+  "careers_url": "https://maker.haier.net/client/campus/index",
+  "host": "maker.haier.net",
+  "ats": "unknown",
+  "page_title": "海尔校园官网--海尔招聘-海尔官方招聘网站",
+  "calendar_entries": 5,
+  "project_types": [
+    "实习",
+    "提前批",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 25,
+  "roles": 110,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "海尔校园官网--海尔招聘-海尔官方招聘网站",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120032.html",
+      "https://job.zzu.edu.cn/campus/view/id/1019038",
+      "https://job.neuq.edu.cn/campus/view/id/861576"
+    ]
+  }
+}

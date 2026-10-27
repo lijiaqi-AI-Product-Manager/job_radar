@@ -1,0 +1,28 @@
+{
+  "company": "芯碁微装",
+  "careers_url": "https://cfmee.zhiye.com/campus/",
+  "host": "cfmee.zhiye.com",
+  "ats": "beisen",
+  "page_title": "芯碁微装",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "芯碁微装",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757326",
+      "https://job.zzu.edu.cn/campus/view/id/1019164"
+    ]
+  }
+}

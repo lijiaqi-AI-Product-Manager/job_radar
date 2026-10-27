@@ -1,0 +1,25 @@
+{
+  "company": "禾迈股份",
+  "careers_url": "https://www.hoymiles.com/zh/talent-stories.html",
+  "host": "www.hoymiles.com",
+  "ats": "unknown",
+  "page_title": "禾迈&amp;开放能源，人人皆享",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "禾迈&amp;开放能源，人人皆享",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "company": "欧莱雅",
+  "careers_url": "https://careers.loreal.com/en",
+  "host": "careers.loreal.com",
+  "ats": "self_hosted",
+  "page_title": "L&#x27;Or&#xE9;al Careers | Jobs &amp; Career Opportunities - L&#x27;Or&#xE9;al Groupe",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 32,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "L&#x27;Or&#xE9;al Careers | Jobs &amp; Career Opportunities - L&#x27;Or&#xE9;al Groupe",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1021294",
+      "https://job.zzu.edu.cn/campus/view/id/1019962",
+      "https://career.hznu.edu.cn/campus/view/id/551374"
+    ]
+  }
+}

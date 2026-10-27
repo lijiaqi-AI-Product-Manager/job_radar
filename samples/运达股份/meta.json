@@ -1,0 +1,24 @@
+{
+  "company": "运达股份",
+  "careers_url": "https://hr.chinawindey.com:7443/r.do?method=portal&o=082443E1C6E8E566F4F3D5A79EC7D5B6B3B81D60B422AE60&p=6B1FBE97912F34475EBD1C3D250F3A163A012333B0230C2E&oursInWindowDialog=true&windowId=win_532757689329137108",
+  "host": "hr.chinawindey.com:7443",
+  "ats": "self_hosted",
+  "page_title": "校招",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 5,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校招",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

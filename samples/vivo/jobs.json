@@ -1,0 +1,20 @@
+[
+  {
+    "title": "资深技术员（IT网络方向）",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 784
+  },
+  {
+    "title": "资深技术员（IT桌面方向）",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 819
+  },
+  {
+    "title": "资深技术员（网络安全方向）",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 386
+  }
+]

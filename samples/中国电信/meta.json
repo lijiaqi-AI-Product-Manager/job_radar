@@ -1,0 +1,29 @@
+{
+  "company": "中国电信",
+  "careers_url": "https://job.chinatelecom.com.cn/wt/TELE/web/index",
+  "host": "job.chinatelecom.com.cn",
+  "ats": "self_hosted",
+  "page_title": "中国电信招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 54,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国电信招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 19,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758102",
+      "https://job.xidian.edu.cn/campus/view/id/757767",
+      "https://job.xidian.edu.cn/campus/view/id/757527"
+    ]
+  }
+}

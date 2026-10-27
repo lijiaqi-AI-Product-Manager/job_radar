@@ -1,0 +1,27 @@
+{
+  "company": "先声药业",
+  "careers_url": "https://wecruit.hotjob.cn/SU61403c7e0dcad45880dcd7a9/mc/index",
+  "host": "wecruit.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 19,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019571",
+      "https://career.csu.edu.cn/campus/view/id/590144"
+    ]
+  }
+}

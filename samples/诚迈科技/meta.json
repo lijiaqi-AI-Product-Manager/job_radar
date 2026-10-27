@@ -1,0 +1,25 @@
+{
+  "company": "诚迈科技",
+  "careers_url": "https://www.archermind.com/archermind-education/artificial-intelligence-industrial-talent-solutions",
+  "host": "www.archermind.com",
+  "ats": "unknown",
+  "page_title": "人才招募 - 诚迈科技",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 34,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "人才招募 - 诚迈科技",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

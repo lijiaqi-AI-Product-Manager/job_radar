@@ -77,9 +77,13 @@ def test_diff_by_category_with_company_is_actually_scoped(home, capsys):
 
 
 def test_empty_search_reports_hints(home, capsys):
-    """空结果要给「下一步怎么查」：字段没写 ≠ 没有岗位（2026-10-24 外部评审）。"""
+    """空结果要给「下一步怎么查」：字段没写 ≠ 没有岗位（2026-10-24 外部评审）。
+
+    提示文案用「去掉届别条件」而不是 `--grad-year`：同一段文字也会通过 MCP 返回给
+    AI 助手，对后者命令行开关是一句它做不到的指令（2026-10-26 统一措辞）。
+    """
     out = run(capsys, "search", "--company", "腾讯", "--grad-year", "2099")
-    assert out["results"] == [] and any("--grad-year" in h for h in out["hints"])
+    assert out["results"] == [] and any("届别" in h for h in out["hints"])
     miss = run(capsys, "search", "--company", "京东")
     assert miss["company_match"]["match"] == "none"
     assert any("公司名没有唯一确定" in h for h in miss["hints"])
@@ -95,7 +99,7 @@ def test_empty_search_points_to_calendar(home, capsys, monkeypatch):
     monkeypatch.setattr(q, "calendar_hint", lambda conn, term: {
         "entries": 3, "grad_years": [2027], "project_types": ["秋招正式批"],
         "apply_url": "https://jobs.bytedance.com/campus",
-        "cmd": f"jobradar calendar --group {term} --table",
+        "cli_hint": f"jobradar calendar --group {term} --table",
         "blocked_reason": "验证码", "hint": f"{term}希望你去他们的招聘页逛一逛哦~",
     })
     out = run(capsys, "search", "--company", "华为")
@@ -119,6 +123,23 @@ def test_calendar_table_output_is_readable(capsys):
                  "网申：2026-08-01 ~ 2026-09-30", "城市：杭州、北京", "入口：https://",
                  "来源：阿里巴巴校园招聘官网（2026-08-01）", "JD：可在 search 里查到 JD"):
         assert must in out
+
+
+def test_search_table_shows_deadline_column(tmp_path, monkeypatch, capsys):
+    """岗位的 --table 要带截止日，且「源没说」要显示成「未知」而不是空或「已截止」。
+
+    用户最先想知道的就是"还能不能投"。空字符串看起来像"已经截止"，
+    而北森门户全部不返回截止日，把所有岗位都显示成"已截止"是致命的误导。
+    """
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    jobs = connect(tmp_path / "jobs.db", "jobs")
+    ingest_run(jobs, "s1", [make_job(1, apply_end="2026-11-30"), make_job(2)], ts=T(1))
+    jobs.close()
+    cli.main(["search", "--table", "--limit", "10"])
+    out = capsys.readouterr().out
+    assert "截止日 | 公司 | 岗位" in out
+    assert "2026-11-30" in out
+    assert "未知" in out
 
 
 def test_stale_data_is_flagged(tmp_path, monkeypatch, capsys):
@@ -428,6 +449,25 @@ def test_calendar_build_query_and_stats(home, capsys, tmp_path):
     assert st["jobs"]["with_jd_text"] == 1
 
 
+def test_calendar_build_evidence_out_writes_file(home, capsys, tmp_path):
+    """`--evidence-out` 曾经因为 `closing()` 顺序错而彻底不可用。
+
+    `jobs_conn` 由 `with closing(...)` 管理，导出证据的调用写在 `with` **外面**，
+    传进去的已经是关掉的连接，抛 `Cannot operate on a closed database` ——
+    命令返回 0、counts 里也没有 `evidence_companies`，看着像成功（2026-10-26 修）。
+    """
+    import json
+
+    out = tmp_path / "evidence.jsonl"
+    cli.main(["calendar-build", "--jobs", str(home / "jobs.db"),
+              "--out", str(home / "calendar.db"), "--evidence-out", str(out)])
+    payload = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert "evidence_companies" in payload, "导出失败时这个键会整个缺失"
+    assert out.exists(), "文件没写出来"
+    # 有一家公司的岗位，就该有至少一行证据
+    assert out.read_text(encoding="utf-8").strip()
+
+
 def test_calendar_without_db_tells_user_to_update(home, capsys):
     with pytest.raises(SystemExit, match="jobradar update"):
         cli.main(["calendar"])
@@ -588,3 +628,20 @@ def test_commands_without_data_give_actionable_error(tmp_path, monkeypatch, caps
         with pytest.raises(SystemExit) as ei:
             cli.main(argv)
         assert "jobradar update" in str(ei.value)
+
+
+def test_every_subcommand_help_renders():
+    """每个子命令的 `--help` 都必须能渲染出来。
+
+    回归背景（2026-10-27 实测）：`--dedupe` 的 help 里写了裸的「9.2%」，
+    argparse 会把它当 `%` 格式串去插值，`jobradar search --help` 直接
+    `ValueError: unsupported format character`——用户查帮助反而看到 traceback。
+    这类问题跑功能测试发现不了，只能挨个渲染一遍 help。
+    """
+    parser = cli.build_parser()
+    subs = next(a for a in parser._actions if a.__class__.__name__ == "_SubParsersAction")
+    assert subs.choices, "没有任何子命令"
+    for name, sp in subs.choices.items():
+        text = sp.format_help()
+        assert text.strip(), f"{name}: help 是空的"
+        assert name in text or sp.description, f"{name}: help 里没有说明"

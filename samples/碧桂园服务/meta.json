@@ -1,0 +1,28 @@
+{
+  "company": "碧桂园服务",
+  "careers_url": "https://www.bgyfw.com/cn/join.html",
+  "host": "www.bgyfw.com",
+  "ats": "unknown",
+  "page_title": "首页 | 碧桂园服务-服务成就美好生活",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 12,
+  "roles": 45,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "首页 | 碧桂园服务-服务成就美好生活",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1021105"
+    ]
+  }
+}

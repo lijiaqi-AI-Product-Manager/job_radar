@@ -1,0 +1,27 @@
+{
+  "company": "中国中铁",
+  "careers_url": "https://ztjs.hotjob.cn/",
+  "host": "ztjs.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "招聘官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757645",
+      "https://job.zzu.edu.cn/campus/view/id/1019416"
+    ]
+  }
+}

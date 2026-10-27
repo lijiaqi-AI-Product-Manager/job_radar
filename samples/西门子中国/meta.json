@@ -1,0 +1,26 @@
+{
+  "company": "西门子中国",
+  "careers_url": "https://jobs.siemens.com.cn/siemens/position/index",
+  "host": "jobs.siemens.com.cn",
+  "ats": "self_hosted",
+  "page_title": "职位列表",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校园大使",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 57,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "职位列表",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

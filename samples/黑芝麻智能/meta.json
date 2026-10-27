@@ -1,0 +1,26 @@
+{
+  "company": "黑芝麻智能",
+  "careers_url": "https://bsthr.zhiye.com/campus",
+  "host": "bsthr.zhiye.com",
+  "ats": "beisen",
+  "page_title": "黑芝麻智能科技有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "黑芝麻智能科技有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757145"
+    ]
+  }
+}

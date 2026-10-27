@@ -1,0 +1,25 @@
+{
+  "company": "盖雅工场",
+  "careers_url": "https://www.gaiaworks.cn/solution/workforce-skills-development.html",
+  "host": "www.gaiaworks.cn",
+  "ats": "unknown",
+  "page_title": "盖雅工场 - 智能排班复杂考勤系统，帮助企业实现精益工时灵活用工管理",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 52,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "盖雅工场 - 智能排班复杂考勤系统，帮助企业实现精益工时灵活用工管理",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

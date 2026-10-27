@@ -1,0 +1,28 @@
+{
+  "company": "兰州银行",
+  "careers_url": "https://www.lzbank.com/public/pjiarulh/20261020/42412.html",
+  "host": "www.lzbank.com",
+  "ats": "unknown",
+  "page_title": "兰州银行门户网站",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "兰州银行门户网站",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758282",
+      "https://job.zzu.edu.cn/campus/view/id/1019980",
+      "https://career.csu.edu.cn/campus/view/id/591015"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "苹果",
+  "careers_url": "https://jobs.apple.com/zh-cn/search?location=china-CHNC",
+  "host": "jobs.apple.com",
+  "ats": "self_hosted",
+  "page_title": "Search Jobs - 中国内地 - 招贤纳才 (中国)",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 3,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Search Jobs - 中国内地 - 招贤纳才 (中国)",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

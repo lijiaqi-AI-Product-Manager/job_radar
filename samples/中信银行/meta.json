@@ -1,0 +1,29 @@
+{
+  "company": "中信银行",
+  "careers_url": "https://job.citicbank.com/",
+  "host": "job.citicbank.com",
+  "ats": "self_hosted",
+  "page_title": "中信银行招聘官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中信银行招聘官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758065",
+      "https://job.xidian.edu.cn/campus/view/id/757506",
+      "https://job.neuq.edu.cn/campus/view/id/861686"
+    ]
+  }
+}

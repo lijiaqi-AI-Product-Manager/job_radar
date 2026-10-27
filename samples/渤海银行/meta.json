@@ -1,0 +1,28 @@
+{
+  "company": "渤海银行",
+  "careers_url": "https://www.cbhb.com.cn/cbhbank/jrwm/zpxx/index.shtml",
+  "host": "www.cbhb.com.cn",
+  "ats": "unknown",
+  "page_title": "渤海银行-总行",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 46,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "渤海银行-总行",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/997022",
+      "https://career.csu.edu.cn/campus/view/id/589913"
+    ]
+  }
+}

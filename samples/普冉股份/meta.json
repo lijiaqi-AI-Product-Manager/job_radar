@@ -1,0 +1,25 @@
+{
+  "company": "普冉股份",
+  "careers_url": "https://www.puyasemi.com/shehuizhaopin.html",
+  "host": "www.puyasemi.com",
+  "ats": "unknown",
+  "page_title": "普冉半导体（上海）股份有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "普冉半导体（上海）股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

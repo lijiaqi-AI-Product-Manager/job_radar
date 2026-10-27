@@ -1,0 +1,12 @@
+id: jd
+company: 京东
+adapter: jd
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  page_size: 50
+compliance:
+  checked_on: 2026-10-26
+  robots: not_applicable   # campus.jd.com/robots.txt 无 Disallow 规则
+  terms: "校招站前端公开调用的 JSON，无需登录、无签名、无验证码；不带 Cookie，只带同源 Referer。用户协议待人工复核"
+  notes: "侦察：docs/recon/jd.md。1 次项目字典 + talent(2 计划)/present(3)/internship(2) 共 7 个项目，各 1~3 页，约 20 次/天，1 req/s。zhaopin.jd.com 同名接口有登录墙，必须用 campus.jd.com。"

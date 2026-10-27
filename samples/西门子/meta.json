@@ -1,0 +1,32 @@
+{
+  "company": "西门子",
+  "careers_url": "https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT",
+  "host": "jobs.siemens.com.cn",
+  "ats": "self_hosted",
+  "page_title": "职位列表",
+  "calendar_entries": 5,
+  "project_types": [
+    "实习",
+    "校园大使",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 25,
+  "roles": 115,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "职位列表",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757888",
+      "https://job.xidian.edu.cn/campus/view/id/757668",
+      "https://career.csu.edu.cn/campus/view/id/590002"
+    ]
+  }
+}

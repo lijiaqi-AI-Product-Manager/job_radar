@@ -1,0 +1,24 @@
+{
+  "company": "斗鱼",
+  "careers_url": "http://zhaopin.douyu.com/campus",
+  "host": "zhaopin.douyu.com",
+  "ats": "self_hosted",
+  "page_title": "斗鱼招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "斗鱼招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

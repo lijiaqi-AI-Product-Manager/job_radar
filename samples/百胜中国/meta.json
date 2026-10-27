@@ -1,0 +1,27 @@
+{
+  "company": "百胜中国",
+  "careers_url": "https://yumchina.zhiye.com/",
+  "host": "yumchina.zhiye.com",
+  "ats": "beisen",
+  "page_title": "百胜中国招聘系统--社会招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "百胜中国招聘系统--社会招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.hznu.edu.cn/campus/view/id/551321"
+    ]
+  }
+}

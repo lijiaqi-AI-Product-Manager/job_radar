@@ -1,0 +1,30 @@
+{
+  "company": "三星",
+  "careers_url": "https://dearsamsung.zhiye.com/campus/jobs5",
+  "host": "dearsamsung.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中国三星招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 72,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国三星招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757522",
+      "https://job.xidian.edu.cn/campus/view/id/757309",
+      "https://career.gdut.edu.cn/campus/view/id/1021005"
+    ]
+  }
+}

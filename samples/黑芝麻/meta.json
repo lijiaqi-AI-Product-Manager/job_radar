@@ -1,0 +1,24 @@
+{
+  "company": "黑芝麻",
+  "careers_url": "https://www.blacksesame.com/zh/join-us",
+  "host": "www.blacksesame.com",
+  "ats": "unknown",
+  "page_title": "校园招聘-黑芝麻智能|黑芝麻高级辅助驾驶ADAS-计算机视觉-黑芝麻芯片解决方案",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 14,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘-黑芝麻智能|黑芝麻高级辅助驾驶ADAS-计算机视觉-黑芝麻芯片解决方案",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

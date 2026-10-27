@@ -1,0 +1,27 @@
+{
+  "company": "宇树科技",
+  "careers_url": "https://unitree.zhiye.com/login?goto=campus%2Fjobs",
+  "host": "unitree.zhiye.com",
+  "ats": "beisen",
+  "page_title": "宇树科技招聘官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 38,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "宇树科技招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757091"
+    ]
+  }
+}

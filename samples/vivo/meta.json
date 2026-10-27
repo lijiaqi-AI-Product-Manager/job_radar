@@ -1,0 +1,26 @@
+{
+  "company": "vivo",
+  "careers_url": "https://hr-campus.vivo.com/jobs",
+  "host": "hr-campus.vivo.com",
+  "ats": "unknown",
+  "page_title": "vivo招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 10,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "vivo招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757206"
+    ]
+  }
+}

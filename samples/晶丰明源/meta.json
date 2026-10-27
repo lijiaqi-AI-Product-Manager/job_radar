@@ -1,0 +1,24 @@
+{
+  "company": "晶丰明源",
+  "careers_url": "https://bpsemi.zhiye.com/campus/jobs?queryId=b02ae0e6-78d7-4109-a187-0e387e1c53dd",
+  "host": "bpsemi.zhiye.com",
+  "ats": "beisen",
+  "page_title": "晶丰明源网申",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "晶丰明源网申",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

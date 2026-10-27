@@ -1,0 +1,25 @@
+{
+  "company": "宝洁",
+  "careers_url": "https://careers.pg.com.cn/cn/zh/home",
+  "host": "careers.pg.com.cn",
+  "ats": "self_hosted",
+  "page_title": "影响您不仅在宝洁的职业生涯 - 中国",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 4,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "影响您不仅在宝洁的职业生涯 - 中国",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

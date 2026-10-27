@@ -1,0 +1,16 @@
+id: mobvoi
+company: 出门问问
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://mobvoi.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://mobvoi.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"            # mobvoi.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表，不触达 /referral
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。token 只在内存中使用（CLAUDE.md 铁律 1）"
+  notes: "2026-10-27 实测 count=9，样本岗位「AI Agent Tech Lead/Agent开发技术专家」；接口必须 POST，GET 会掉回 SPA 首页 HTML。"

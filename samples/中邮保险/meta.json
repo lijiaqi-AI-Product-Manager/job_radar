@@ -1,0 +1,27 @@
+{
+  "company": "中邮保险",
+  "careers_url": "https://www.chinapost-life.com/job/",
+  "host": "www.chinapost-life.com",
+  "ats": "unknown",
+  "page_title": "中邮保险_人力招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 34,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中邮保险_人力招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590606"
+    ]
+  }
+}

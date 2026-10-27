@@ -1,0 +1,28 @@
+{
+  "company": "中建八局",
+  "careers_url": "https://job.cscec8b.com.cn/recruitment/job/detail/id/2759",
+  "host": "job.cscec8b.com.cn",
+  "ats": "self_hosted",
+  "page_title": "中建八局二公司2027届校园招聘 - 中国建筑第八工程局有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中建八局二公司2027届校园招聘 - 中国建筑第八工程局有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 8,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119677.html",
+      "https://career.gdut.edu.cn/campus/view/id/1020948",
+      "https://job.zzu.edu.cn/campus/view/id/1019209"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "荣昌生物",
+  "careers_url": "https://www.remegen.cn/index.php?v=listing&cid=27#rcdw",
+  "host": "www.remegen.cn",
+  "ats": "unknown",
+  "page_title": "荣昌生物制药（烟台）股份有限公司_荣昌生物",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "荣昌生物制药（烟台）股份有限公司_荣昌生物",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

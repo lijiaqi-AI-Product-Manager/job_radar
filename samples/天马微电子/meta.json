@@ -1,0 +1,24 @@
+{
+  "company": "天马微电子",
+  "careers_url": "https://jhun.91wllm.cn/campus/view/id/1002623",
+  "host": "jhun.91wllm.cn",
+  "ats": "unknown",
+  "page_title": "天马微电子2027届T-MAN校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 4,
+  "roles": 11,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "天马微电子2027届T-MAN校园招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

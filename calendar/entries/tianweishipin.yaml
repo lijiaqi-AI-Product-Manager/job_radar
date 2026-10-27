@@ -1,0 +1,31 @@
+group: 天味食品
+entries:
+- id: tianweishipin-campus-entry
+  company: 天味食品
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 上海
+  - 杭州
+  - 成都
+  apply_url: https://campus.niuqizp.com/job-v8m5M5MCN.html
+  source:
+    type: official_site
+    name: 天味食品招聘官网
+    url: https://campus.niuqizp.com/job-v8m5M5MCN.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：天味食品2027届校园招聘正式启动2027校园招聘,招聘城市有:全国重点城市,成都,杭州,微信公众号天味食品）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

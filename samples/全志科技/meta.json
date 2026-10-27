@@ -1,0 +1,28 @@
+{
+  "company": "全志科技",
+  "careers_url": "https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/",
+  "host": "campus.allwinnertech.com",
+  "ats": "unknown",
+  "page_title": "珠海全志科技股份有限公司 - 校园招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "秋招正式批"
+  ],
+  "tracks": 8,
+  "roles": 30,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "珠海全志科技股份有限公司 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020766",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/996891"
+    ]
+  }
+}

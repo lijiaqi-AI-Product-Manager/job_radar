@@ -1,0 +1,29 @@
+{
+  "company": "东风汽车",
+  "careers_url": "",
+  "host": "job.xidian.edu.cn",
+  "ats": "none",
+  "page_title": "中国东风汽车工业进出口有限公司 2027届校园招聘公告",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "中国东风汽车工业进出口有限公司 2027届校园招聘公告",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 9,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758107",
+      "https://job.xidian.edu.cn/campus/view/id/757814",
+      "https://career.gdut.edu.cn/campus/view/id/1020837"
+    ]
+  }
+}

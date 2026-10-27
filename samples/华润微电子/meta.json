@@ -1,0 +1,29 @@
+{
+  "company": "华润微电子",
+  "careers_url": "https://www.crmicro.com/talent/index.html",
+  "host": "www.crmicro.com",
+  "ats": "unknown",
+  "page_title": "华润微电子欢迎您--人才发展",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "华润微电子欢迎您--人才发展",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757861",
+      "https://career.gdut.edu.cn/campus/view/id/1021114",
+      "https://career.csu.edu.cn/campus/view/id/590297"
+    ]
+  }
+}

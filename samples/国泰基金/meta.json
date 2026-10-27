@@ -1,0 +1,24 @@
+{
+  "company": "国泰基金",
+  "careers_url": "https://gtfund.zhiye.com/campus/jobs?LocId=%5B%7B%22id%22%3A%223100%22%2C%22label%22%3A%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22%7D%5D",
+  "host": "gtfund.zhiye.com",
+  "ats": "beisen",
+  "page_title": "国泰基金",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国泰基金",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

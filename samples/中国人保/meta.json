@@ -1,0 +1,25 @@
+{
+  "company": "中国人保",
+  "careers_url": "https://portal-oss.zhiye.com/601659/resource/eee5af9e-6edd-486d-8692-fabdaa09162d.html",
+  "host": "portal-oss.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中国人保",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 6,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国人保",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

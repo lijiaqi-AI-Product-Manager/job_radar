@@ -1,0 +1,24 @@
+{
+  "company": "搜狐",
+  "careers_url": "http://campus.changyou.com/",
+  "host": "campus.changyou.com",
+  "ats": "unknown",
+  "page_title": "搜狐畅游校招|搜狐畅游校招|搜狐畅游2027校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 11,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "搜狐畅游校招|搜狐畅游校招|搜狐畅游2027校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

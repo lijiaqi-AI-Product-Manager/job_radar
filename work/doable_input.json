@@ -1,0 +1,211 @@
+[
+ {
+  "name": "货拉拉",
+  "sector": "互联网与软件",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "huolala",
+  "host": "huolala.zhiye.com",
+  "url": "https://huolala.zhiye.com/",
+  "count": 532,
+  "title": "货拉拉招聘门户"
+ },
+ {
+  "name": "vivo",
+  "sector": "通信与电子硬件",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "vivo",
+  "host": "vivo.zhiye.com",
+  "url": "https://vivo.zhiye.com/",
+  "count": 25,
+  "title": "vivo员工招聘"
+ },
+ {
+  "name": "北方华创",
+  "sector": "半导体",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "bfhc",
+  "host": "bfhc.zhiye.com",
+  "url": "https://bfhc.zhiye.com/",
+  "count": 322,
+  "title": "北方华创微电子内部招聘"
+ },
+ {
+  "name": "长安汽车",
+  "sector": "汽车与出行",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "changanqiche",
+  "host": "changanqiche.zhiye.com",
+  "url": "https://changanqiche.zhiye.com/",
+  "count": 375,
+  "title": "长安汽车招聘"
+ },
+ {
+  "name": "潍柴动力",
+  "sector": "汽车与出行",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "weichaidongli",
+  "host": "weichaidongli.zhiye.com",
+  "url": "https://weichaidongli.zhiye.com/",
+  "count": 246,
+  "title": "潍柴集团招聘"
+ },
+ {
+  "name": "通威",
+  "sector": "新能源与先进制造",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "tongwei",
+  "host": "tongwei.zhiye.com",
+  "url": "https://tongwei.zhiye.com/",
+  "count": 12,
+  "title": "通威股份有限公司"
+ },
+ {
+  "name": "中国航空研究院",
+  "sector": "央企与国企",
+  "brand": "",
+  "ats": "beisen_legacy",
+  "tenant": "zghkyjy",
+  "host": "zghkyjy.zhiye.com",
+  "url": "https://zghkyjy.zhiye.com/campus",
+  "count": 6,
+  "title": "中国航空研究院招聘系统--校园招聘"
+ },
+ {
+  "name": "兴业证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "hotjob",
+  "tenant": "SU68fb2499b7da1347a9dd852c",
+  "host": "xyzq.hotjob.cn",
+  "url": "https://xyzq.hotjob.cn/SU68fb2499b7da1347a9dd852c/pb/index.html",
+  "count": 43,
+  "title": "兴业证券招聘官网"
+ },
+ {
+  "name": "长江证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "cjzq",
+  "host": "cjzq.zhiye.com",
+  "url": "https://cjzq.zhiye.com/",
+  "count": 11,
+  "title": "长江证券股份有限公司"
+ },
+ {
+  "name": "国元证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "gyzq",
+  "host": "gyzq.zhiye.com",
+  "url": "https://gyzq.zhiye.com/",
+  "count": 85,
+  "title": "国元证券"
+ },
+ {
+  "name": "东吴证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "dwzq",
+  "host": "dwzq.zhiye.com",
+  "url": "https://dwzq.zhiye.com/",
+  "count": 46,
+  "title": "东吴证券股份有限公司"
+ },
+ {
+  "name": "浙商证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "beisen_legacy",
+  "tenant": "zszq",
+  "host": "zszq.zhiye.com",
+  "url": "https://zszq.zhiye.com/campus",
+  "count": 45,
+  "title": "浙商证券招聘系统--校园招聘"
+ },
+ {
+  "name": "国金证券",
+  "sector": "证券基金与资管",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "gjzq",
+  "host": "gjzq.zhiye.com",
+  "url": "https://gjzq.zhiye.com/",
+  "count": 403,
+  "title": "国金证券"
+ },
+ {
+  "name": "云南白药",
+  "sector": "医药医疗",
+  "brand": "",
+  "ats": "hotjob",
+  "tenant": "SU6136b970bef57c3b638162c4",
+  "host": "ynby.hotjob.cn",
+  "url": "https://ynby.hotjob.cn/SU6136b970bef57c3b638162c4/pb/index.html",
+  "count": 12,
+  "title": "云南白药招聘官网"
+ },
+ {
+  "name": "蒙牛",
+  "sector": "消费零售与食品",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "mengniu",
+  "host": "mengniu.zhiye.com",
+  "url": "https://mengniu.zhiye.com/",
+  "count": 211,
+  "title": "蒙牛招聘官网"
+ },
+ {
+  "name": "双汇",
+  "sector": "消费零售与食品",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "shuanghui",
+  "host": "shuanghui.zhiye.com",
+  "url": "https://shuanghui.zhiye.com/",
+  "count": 107,
+  "title": "双汇招聘"
+ },
+ {
+  "name": "认养一头牛",
+  "sector": "消费零售与食品",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "ryytn",
+  "host": "ryytn.zhiye.com",
+  "url": "https://ryytn.zhiye.com/",
+  "count": 50,
+  "title": "认养一头牛驿站"
+ },
+ {
+  "name": "郎酒",
+  "sector": "消费零售与食品",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "langjiu",
+  "host": "langjiu.zhiye.com",
+  "url": "https://langjiu.zhiye.com/",
+  "count": 30,
+  "title": "郎酒股份"
+ },
+ {
+  "name": "良品铺子",
+  "sector": "消费零售与食品",
+  "brand": "",
+  "ats": "beisen",
+  "tenant": "lppz",
+  "host": "lppz.zhiye.com",
+  "url": "https://lppz.zhiye.com/",
+  "count": 12,
+  "title": "良品铺子股份有限公司"
+ }
+]

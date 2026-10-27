@@ -177,3 +177,6 @@ uv run python scripts/smoke_sources.py <source_id> ...                    # 新�
 每家先按 `docs/recon/TEMPLATE.md` 侦察一次，确认有公开 JSON 再写适配器；
 `career.X.com` 这类域名常见 403/DNS 失效，侦察时先确认可达。
 
+> **状态（2026-10-27）**：本文是 2026-10-24 的快照。其中「必然 blocked」的字节跳动、蔚来、小鹏、京东、百度
+> 已于 2026-10-26 接入（飞书 ATSX 匿名接口 / `campus.jd.com` / `talent.baidu.com`，见 `docs/recon/feishu-atsx.md`、
+> `jd.md`、`baidu.md`）。当前仍 blocked 的 12 家见 `targets/top_companies.yaml` 的 `blocked:`。

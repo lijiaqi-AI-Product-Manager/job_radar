@@ -1,0 +1,24 @@
+{
+  "company": "上海农商行",
+  "careers_url": "https://shrcb.zhiye.com/Campus",
+  "host": "shrcb.zhiye.com",
+  "ats": "beisen",
+  "page_title": "上海农村商业银行股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 8,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "上海农村商业银行股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

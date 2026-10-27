@@ -1,0 +1,26 @@
+{
+  "company": "国家电网",
+  "careers_url": "https://job.sgepri.sgcc.com.cn/nari-career-ui/homepage",
+  "host": "job.sgepri.sgcc.com.cn",
+  "ats": "self_hosted",
+  "page_title": "南瑞集团官方招聘网站",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 13,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "南瑞集团官方招聘网站",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758074"
+    ]
+  }
+}

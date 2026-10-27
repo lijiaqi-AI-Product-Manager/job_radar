@@ -1,0 +1,24 @@
+{
+  "company": "蕉下",
+  "careers_url": "https://bananain.zhiye.com/Campus",
+  "host": "bananain.zhiye.com",
+  "ats": "beisen",
+  "page_title": "三立人招聘门户",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 11,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "三立人招聘门户",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -55,10 +55,12 @@ class Adapter(ABC):
             except SkipRecord:
                 continue
 
-    def request_json(self, method: str, url: str, *, params=None, json=None, headers=None) -> dict:
+    def request_json(self, method: str, url: str, *, params=None, data=None, json=None,
+                     headers=None) -> dict:
         """限速 + 重试(仅 5xx/429/网络错误) 的 JSON 请求。适配器里一律用它，不要直接用 client。
-        headers 只用于浏览器本来就会带的 Referer/Origin 等；User-Agent 固定，传了也会被忽略。"""
-        r = self._request(method, url, params=params, json=json, headers=headers)
+        headers 只用于浏览器本来就会带的 Referer/Origin 等；User-Agent 固定，传了也会被忽略。
+        data 用于 `application/x-www-form-urlencoded` 的 POST（Tupu360 的 nextPageList 就是这样）。"""
+        r = self._request(method, url, params=params, data=data, json=json, headers=headers)
         try:
             return r.json()
         except ValueError as e:  # json.JSONDecodeError 是 ValueError 的子类
@@ -71,16 +73,19 @@ class Adapter(ABC):
                 "常见原因：被限流/反爬拦截（Workday 会给 303/500），或接口已改版。"
             ) from e
 
-    def request_text(self, method: str, url: str, *, params=None, json=None, headers=None) -> str:
+    def request_text(self, method: str, url: str, *, params=None, data=None, json=None,
+                     headers=None) -> str:
         """同 request_json，返回文本（用于服务端渲染的 HTML 页面）。"""
-        return self._request(method, url, params=params, json=json, headers=headers).text
+        return self._request(method, url, params=params, data=data, json=json, headers=headers).text
 
-    def _request(self, method: str, url: str, *, params=None, json=None, headers=None) -> httpx.Response:
+    def _request(self, method: str, url: str, *, params=None, data=None, json=None,
+                 headers=None) -> httpx.Response:
         headers = {k: v for k, v in (headers or {}).items() if k.lower() != "user-agent"} or None
         for attempt in range(3):
             self._throttle()
             try:
-                r = self.client.request(method, url, params=params, json=json, headers=headers)
+                r = self.client.request(method, url, params=params, data=data, json=json,
+                                        headers=headers)
                 if r.status_code == 429 or r.status_code >= 500:
                     raise httpx.HTTPStatusError("retryable", request=r.request, response=r)
                 r.raise_for_status()

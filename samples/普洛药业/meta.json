@@ -1,0 +1,25 @@
+{
+  "company": "普洛药业",
+  "careers_url": "https://www.apeloa.com/join.html",
+  "host": "www.apeloa.com",
+  "ats": "unknown",
+  "page_title": "普洛药业-重视英才",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 46,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "普洛药业-重视英才",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

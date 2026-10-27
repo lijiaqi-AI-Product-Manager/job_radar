@@ -1,0 +1,102 @@
+[
+ {
+  "host": "job.hsu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "iipl.fudan.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "che.cczu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "jy.buu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "life.fjnu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "mobile.scnu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "www.fosu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "yqkx.hfut.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "cem.njfu.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "no items",
+  "_code": 200
+ },
+ {
+  "host": "jy.qztc.edu.cn",
+  "path": "/campus",
+  "items": 0,
+  "has_expire": false,
+  "body_len": 0,
+  "note": "blocked",
+  "_code": 200
+ },
+ {
+  "host": "jxdxsjy.jx.edu.cn",
+  "path": "/campus",
+  "items": 20,
+  "has_expire": false,
+  "body_len": 376,
+  "note": "",
+  "_code": 200,
+  "excerpt": "搜索 首页 帮助 温馨提示：新用户请通过手机号码与短信验证码进行注册 微信 请使用微信扫描二维码登录 刷新二维码 微信 江西智慧教育APP扫码登录 请使用江西智慧教育APP(下载APP)扫描二维码登录 刷新二维码 江西智慧教育APP / 钉钉 账号登录 手机登录 记住账号/邮箱 找回密码 我已阅读并同意 《江西智慧教育平台隐私政策》、《江西智慧教育平台用户协议 》。 登 录 其他方式登录 江西政务服务网 江西政务服务网(法人) 智教中国通行证 主管单位：江西省教育厅 技术支持：江西省教育技术与装备发展中心 平台技术咨询：0791-86765929 QQ群咨询：932987630 客服时间：工作"
+ }
+]

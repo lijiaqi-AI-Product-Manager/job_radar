@@ -36,14 +36,15 @@ def test_distribution_name_is_jobsearchradar():
 
 
 def test_cli_version_matches_package_version():
+    # stdin=DEVNULL：父进程 stdin 若是永不关闭的管道，子进程会挂在读输入上（见 test_entrypoints 注释）
     r = subprocess.run([sys.executable, "-m", "jobradar", "--version"],
-                       capture_output=True, text=True, timeout=60)
+                       capture_output=True, text=True, timeout=60, stdin=subprocess.DEVNULL)
     assert r.returncode == 0, r.stderr
     assert _init_version() in r.stdout, f"--version 输出 {r.stdout!r} 与 {_init_version()} 不一致"
 
 
 def test_mcp_version_matches_package_version():
     r = subprocess.run([sys.executable, "-m", "jobradar.mcp_server", "--version"],
-                       capture_output=True, text=True, timeout=60)
+                       capture_output=True, text=True, timeout=60, stdin=subprocess.DEVNULL)
     assert r.returncode == 0, r.stderr
     assert _init_version() in r.stdout

@@ -1,0 +1,24 @@
+{
+  "company": "中标软件",
+  "careers_url": "https://www.cs2c.com/about/job.html",
+  "host": "www.cs2c.com",
+  "ats": "unknown",
+  "page_title": "人才招聘·国产操作系统、银河麒麟、中标麒麟--中标软件官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 12,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "人才招聘·国产操作系统、银河麒麟、中标麒麟--中标软件官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

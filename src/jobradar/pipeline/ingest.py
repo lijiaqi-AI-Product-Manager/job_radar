@@ -19,6 +19,8 @@ MAX_REJECTS = 3    # 连续被骤降保护拦下 N 次后放行一次（季节�
 # 参与"变更"判定的结构化字段。category/subcategory 是推导数据，不在其中（见 Job.content_hash）
 STRUCT_FIELDS = (
     "url", "title", "recruit_type", "grad_year", "batch", "degree_min", "department",
+    # 截止日变了是用户最该知道的变化（延长报名 / 提前截止），必须产生 changed 事件
+    "apply_end",
 )
 
 
@@ -62,10 +64,11 @@ def _changed_fields(row, job: Job) -> list[str]:
 def _write_fields(conn, job: Job, ts):
     conn.execute(
         """UPDATE job SET url=?, title=?, category=?, subcategory=?, recruit_type=?, grad_year=?,
-           batch=?, cities=?, degree_min=?, department=?, content_hash=? WHERE id=?""",
+           batch=?, cities=?, degree_min=?, department=?, apply_end=?, publish_at=?, content_hash=?
+           WHERE id=?""",
         (job.url, job.title, job.category, job.subcategory, job.recruit_type, job.grad_year,
          job.batch, json.dumps(job.cities, ensure_ascii=False), job.degree_min, job.department,
-         job.content_hash(), job.id),
+         job.apply_end, job.publish_at, job.content_hash(), job.id),
     )
 
 
@@ -123,12 +126,12 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
                 conn.execute(
                     """INSERT INTO job(id, company_id, source_id, source_job_id, url, title, category,
                        subcategory, recruit_type, grad_year, batch, cities, degree_min, department,
-                       first_seen, last_seen, content_hash)
-                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       apply_end, publish_at, first_seen, last_seen, content_hash)
+                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                     (jid, cid, source_id, job.source_job_id, job.url, job.title, job.category,
                      job.subcategory, job.recruit_type, job.grad_year, job.batch,
                      json.dumps(job.cities, ensure_ascii=False), job.degree_min, job.department,
-                     ts, ts, h),
+                     job.apply_end, job.publish_at, ts, ts, h),
                 )
                 _event(conn, jid, ts, "open")
                 res.opened += 1
@@ -141,14 +144,27 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
                 if not was_closed:
                     _event(conn, jid, ts, "change", diff)
                     res.changed += 1
+            # 到期岗位仍然出现在列表里时，必须**保持下架**，不能顺手把它 reopen。
+            # 这是第一版写的坑：`jid in by_id` 会提前 continue，导致下架分支永远走不到；
+            # 改成在「已存在」分支里也判到期，并且在到期时不要 closed_at=NULL。
+            expired = bool(row["apply_end"]) and row["apply_end"] < ts[:10]
             conn.execute(
-                "UPDATE job SET last_seen=?, miss_count=0, closed_at=NULL, category=?, subcategory=? WHERE id=?",
-                (ts, job.category, job.subcategory, jid),
+                "UPDATE job SET last_seen=?, miss_count=0, closed_at=?, category=?, subcategory=? WHERE id=?",
+                (ts, ts if expired else None, job.category, job.subcategory, jid),
             )
-            if was_closed:
+            if expired and not was_closed:
+                _event(conn, jid, ts, "close", {"reason": f"passed deadline {row['apply_end']}"})
+                res.closed += 1
+            elif expired:
+                pass          # 已经下架过，别重复记事件
+            elif was_closed:
                 _event(conn, jid, ts, "reopen")
                 res.reopened += 1
 
+        # 到期自动下架：接口给了截止日（大易 endDate），且截止日已过 = 这岗投不了了。
+        # 北方华创/中车/长城汽车这类门户不会主动把过期岗位摘掉，实测 151 条截止日已过
+        # 却仍是 closed_at IS NULL —— 用户搜「在招」会搜到一堆点进去显示"已截止"的岗位。
+        # 判断放在「已存在」分支（见上方 expired），因为过期岗位通常仍然在列表里返回。
         for jid, row in existing.items():
             if jid in by_id or row["closed_at"] is not None:
                 continue

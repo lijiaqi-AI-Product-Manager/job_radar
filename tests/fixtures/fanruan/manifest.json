@@ -1,0 +1,26 @@
+[
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/social",
+    "body": "filter=1&w=&types=&departs=&citys=&cv=&page=1",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "001.txt"
+  },
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/campus",
+    "body": "filter=1&w=&types=&departs=&citys=&cv=&page=1",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/trainee",
+    "body": "filter=1&w=&types=&departs=&citys=&cv=&page=1",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "003.txt"
+  }
+]

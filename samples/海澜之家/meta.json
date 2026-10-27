@@ -1,0 +1,24 @@
+{
+  "company": "海澜之家",
+  "careers_url": "https://www.hotjob.cn/wt/HLA/web/index?brandCode=100001",
+  "host": "www.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "海澜之家招聘官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 2,
+  "roles": 4,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "海澜之家招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

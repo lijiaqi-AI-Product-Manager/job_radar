@@ -1,0 +1,25 @@
+{
+  "company": "维维股份",
+  "careers_url": "https://www.vvfood.cn/join.html",
+  "host": "www.vvfood.cn",
+  "ats": "unknown",
+  "page_title": "维维食品饮料股份有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "社招"
+  ],
+  "tracks": 8,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "维维食品饮料股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,16 @@
+id: nio
+company: 蔚来
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://nio.jobs.feishu.cn"
+  website_path: campus
+  portal_type: 3
+  page_size: 100
+  job_url: "https://nio.jobs.feishu.cn/campus/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-26
+  robots: "none"            # nio.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表，不触达 /referral
+  terms: "与字节跳动同一套飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。会话 token 只在内存中使用（CLAUDE.md 铁律 1）。用户协议待人工复核"
+  notes: "侦察：docs/recon/feishu-atsx.md。2026-10-26 实测 count=869，project='2027届校园招聘-正式批'，城市/项目名齐全。1 req/s，一轮约 9 页约 12 秒。"

@@ -40,8 +40,17 @@ def parse_file(path: Path) -> list[SourceConfig]:
 
 
 def load_sources(directory: Path, *, include_examples: bool = False) -> list[SourceConfig]:
+    """directory 可以是目录，也可以是单个 .yaml 文件。
+
+    只传文件的情况必须支持：`crawl --sources sources/beisen.yaml --only ...` 这种「只重抓
+    一批源」的用法很自然，而 `Path(file).rglob("*.yaml")` 返回空 —— 于是 CLI 打印
+    `# 0 ok, 0 not ok` 且**退出码 0**，看起来像抓取成功（2026-10-26 实际踩到）。
+    """
+    root = Path(directory)
+    if root.is_file():
+        return parse_file(root)
     out: list[SourceConfig] = []
-    for p in sorted(Path(directory).rglob("*.yaml")):
+    for p in sorted(root.rglob("*.yaml")):
         if p.name.startswith("_") and not include_examples:
             continue
         out.extend(parse_file(p))

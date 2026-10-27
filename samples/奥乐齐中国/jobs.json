@@ -1,0 +1,20 @@
+[
+  {
+    "title": "HR Manager （TA + HRBP）",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 896
+  },
+  {
+    "title": "采购实习生（数据与分析）",
+    "recruit_type": "intern",
+    "has_jd": true,
+    "jd_len": 224
+  },
+  {
+    "title": "采购实习生（数字化转型与流程优化）",
+    "recruit_type": "intern",
+    "has_jd": true,
+    "jd_len": 374
+  }
+]

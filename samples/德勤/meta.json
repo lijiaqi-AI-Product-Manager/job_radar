@@ -1,0 +1,27 @@
+{
+  "company": "德勤",
+  "careers_url": "https://wecruit.hotjob.cn/SU648133e50dcad45af15e3cb1/mc/position/campus",
+  "host": "wecruit.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 7,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020808",
+      "https://job.zzu.edu.cn/campus/view/id/1018836"
+    ]
+  }
+}

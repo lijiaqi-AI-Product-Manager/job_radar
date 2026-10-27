@@ -1,0 +1,31 @@
+{
+  "company": "联通数字科技",
+  "careers_url": "https://www.fenbi.com/page/exam-information-detail/469978881223680",
+  "host": "www.fenbi.com",
+  "ats": "unknown",
+  "page_title": "联通数字科技有限公司2027届秋季校园招聘-北京-北京市-江苏-南京市-陕西-西安市-四川-成都市-广东-深圳市-国企-2026-国央企正式-西城区-联通数字科技有限公司-粉笔资讯",
+  "calendar_entries": 4,
+  "project_types": [
+    "日常实习",
+    "社招",
+    "秋招正式批",
+    "秋招补录"
+  ],
+  "tracks": 20,
+  "roles": 80,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "联通数字科技有限公司2027届秋季校园招聘-北京-北京市-江苏-南京市-陕西-西安市-四川-成都市-广东-深圳市-国企-2026-国央企正式-西城区-联通数字科技有限公司-粉笔资讯",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757830",
+      "https://job.zzu.edu.cn/campus/view/id/1019678",
+      "https://career.csu.edu.cn/campus/view/id/590520"
+    ]
+  }
+}

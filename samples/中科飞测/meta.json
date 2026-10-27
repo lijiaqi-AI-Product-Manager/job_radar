@@ -1,0 +1,29 @@
+{
+  "company": "中科飞测",
+  "careers_url": "https://job.skyverse.cn/req/campus-list",
+  "host": "job.skyverse.cn",
+  "ats": "self_hosted",
+  "page_title": "校园招聘 - 中科飞测",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 84,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘 - 中科飞测",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020780"
+    ]
+  }
+}

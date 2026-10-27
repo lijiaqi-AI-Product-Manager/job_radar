@@ -1,0 +1,51 @@
+# Radancy / TalentBrew 招聘站（cdn.radancy.eu）。欧洲跨国企业在华常用的招聘平台。
+# 侦察：docs/recon/radancy.md。服务端渲染 HTML，无登录、无签名、无验证码。
+#
+# **robots.txt 必须先看，而且要看全**（2026-10-26 实测）：
+#   careers.loreal.com   Disallow: /search-jobs AND /location/ AND /category/ AND /employment/
+#                        -> 列表页的所有入口都被禁。只剩 sitemap 里的 /en/job/ 详情页可读，
+#                           但详情页不含筛选维度，无法把「中国岗位」挑出来 —— 不接入。
+#   careers.unilever.com Disallow: /search-jobs/  -> 同上，不接入。
+#
+# 赛诺菲是例外：robots 只写了 `Disallow:/求职/`（中文详情页路径），英文 `/search-jobs`
+# **不在** Disallow 内，而它又是本站唯一的岗位列表入口（首页 302 到 /zh-hans/china，那里没列表）。
+defaults:
+  adapter: radancy
+  recruit_types: [social, intern]
+  rate_limit_rps: 1
+
+sources:
+  # 中国 971 个岗位（65 页 × 15）。赛诺菲是**字段最全**的源：
+  # 城市 100%、发布日期 100%、申请截止日 100%、JD 正文 100%（2026-10-26 实测 21/21）。
+  - id: radancy-sanofi
+    company: 赛诺菲
+    params:
+      base: https://jobs.sanofi.cn
+      lang: ""
+      country: ""
+      fetch_detail: true
+      url_filter: '/[^/]+/[^/]+/[^/]+/\d+/\d+$'   # 详情页 /工作/<城市>/<slug>/<id>/<id>
+    compliance:
+      checked_on: 2026-10-26
+      robots: allowed   # robots.txt 全文只有 `User-agent: *` + `Disallow:/求职/`；本适配器只走 /search-jobs，不碰 /求职/
+      terms: "服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核"
+      notes: "65 页 × 15 条 + 每条 1 次详情 ≈ 1040 次/天，1 req/s ≈ 18 分钟/轮（只在全量轮跑）"
+
+  # 阿斯利康中国站（独立域名，与全球站 careers.astrazeneca.com 分开）。
+  # 全球站 822 个岗位里中国只占个位数（大陆岗位被引流到这个中国站），所以接中国站。
+  # 探测路径：全球站列表里有一处 `<a href="https://job-search.astrazeneca.cn/china-jobs">Looking for roles in China?</a>`
+  # —— 这是官方自己挂出来的入口，不是猜的域名。
+  - id: radancy-astrazeneca
+    company: 阿斯利康
+    params:
+      base: https://job-search.astrazeneca.cn
+      path: "china-jobs?p={page}"     # 分页仍是 ?p=N；path 里 {page} 占位
+      fetch_detail: true
+      # URL 里中文被百分号编码成 %e5%b7%a5…，所以只能锚「结尾两段数字」
+      url_filter: '/\d+/\d+$'
+    recruit_types: [social]
+    compliance:
+      checked_on: 2026-10-26
+      robots: allowed   # robots.txt 全文只有一行 `User-agent: *`，没有任何 Disallow
+      terms: "服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核"
+      notes: "19 页 × 15 条 + 每条 1 次详情 ≈ 300 次/天，1 req/s ≈ 5 分钟/轮"

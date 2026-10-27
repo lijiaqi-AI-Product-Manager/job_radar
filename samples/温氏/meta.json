@@ -1,0 +1,24 @@
+{
+  "company": "温氏",
+  "careers_url": "https://app.mokahr.com/campus-recruitment/wens/92366",
+  "host": "app.mokahr.com",
+  "ats": "moka",
+  "page_title": "温氏食品集团股份有限公司 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "温氏食品集团股份有限公司 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

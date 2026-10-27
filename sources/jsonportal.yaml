@@ -1,0 +1,49 @@
+# 自建 SPA 招聘门户（config-driven 的 jsonportal 适配器）。
+# 适用条件（三条全中才会加进来）：前端是 vue/react 打包、列表由公开 JSON 接口返回、
+# 接口**匿名可调**（不带 cookie/token/签名）。侦察方式见 docs/recon/jsonportal.md。
+# 不合规的一律不进本文件：Moka（前端签名）、部分 iguopin/国聘（登录+验证码）都排除在外。
+defaults:
+  adapter: jsonportal
+  recruit_types: [campus, social]
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-27
+    robots: allowed
+    terms: "招聘门户前端使用的公开 JSON 接口，匿名可调，无登录、无签名、无验证码"
+    notes: "每站 1 req/s；先取第 1 页确认字段，再翻页，翻页上限 200 页"
+
+sources:
+  - id: jsonportal-cec
+    company: 中国电子
+    params:
+      base: https://campus.cec.com.cn/student-api/api/position/search
+      method: POST
+      # 分页参数名是 `page`/`size`（从 1 开始），**不是** pageNum/pageSize：
+      # 传错名字服务端不报错、永远返回第 1 页（实测 10 条）。参数名是从门户真实请求里
+      # 抓的（Playwright 监听 network）：{"page":1,"size":10,"name":"","positionType":"0",
+      # "degree":null,"orgId":[]}。
+      page_param: page
+      size_param: size
+      extra_body: {name: "", degree: null, orgId: []}
+      page_size: 100
+      list_path: data.records
+      total_path: data.total
+      page_path: data.current
+      pages_path: data.pages
+      detail_url: https://campus.cec.com.cn/position/{id}
+      # 这个站的 WAF 对默认长 UA（带括号与分号）回 403、对短 UA 回 200——是它的 header
+      # 解析缺陷，不是反爬。只对本站生效，不改全局 USER_AGENT。
+      user_agent: jobradar/0.1
+      type_param:
+        positionType: {campus: 0, social: 1}
+      fields:
+        title: name
+        city: cityName
+        description: jobDescription
+        requirement: jobRequirements
+        deadline: closeDate
+        org: org
+        code: positionNo
+        dept: positionSecondOrg
+    # 2026-10-27 实测：positionType 0=校招 788 岗、1=社招 816 岗、2=内部 7 岗（不收）
+    # 门户 title「中国电子信息产业集团有限公司招聘」，org 字段给出「华大九天」等子公司名

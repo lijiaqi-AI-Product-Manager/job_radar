@@ -1,0 +1,21 @@
+id: avature-danone
+company: 达能
+adapter: avature
+params:
+  base: https://careers.danone.com.cn
+  lang: zh_CN
+  sitemap: '{lang}/careers/sitemap.xml'
+  path_re: /careers/JobDetail/(?:[^/]+/)?\d+$
+  url_filter: /JobDetail/
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- social
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: allowed
+  terms: 服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核
+  notes: 1 次 sitemap + 73 次详情 ≈ 74 次/天，1 req/s ≈ 1.5 分钟/轮

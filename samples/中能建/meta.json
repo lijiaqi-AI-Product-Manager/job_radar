@@ -1,0 +1,26 @@
+{
+  "company": "中能建",
+  "careers_url": "http://www.aepc1.ceec.net.cn/art/2026/9/18/art_14574_2525944.html",
+  "host": "www.aepc1.ceec.net.cn",
+  "ats": "unknown",
+  "page_title": "中能建建筑集团有限公司 人才招聘 中能建建筑集团2027年校园招聘简章",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 19,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中能建建筑集团有限公司 人才招聘 中能建建筑集团2027年校园招聘简章",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590348"
+    ]
+  }
+}

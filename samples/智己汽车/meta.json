@@ -1,0 +1,24 @@
+{
+  "company": "智己汽车",
+  "careers_url": "https://www.immotors.com/website/join_us",
+  "host": "www.immotors.com",
+  "ats": "unknown",
+  "page_title": "加入智己_智己汽车招聘_智己青年公社-IM智己汽车官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 5,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入智己_智己汽车招聘_智己青年公社-IM智己汽车官网",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

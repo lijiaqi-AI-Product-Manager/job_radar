@@ -1,0 +1,27 @@
+{
+  "company": "百世集团",
+  "careers_url": "https://www.pepsicojobs.com/main/china?lang=zh-CN",
+  "host": "www.pepsicojobs.com",
+  "ats": "unknown",
+  "page_title": "PepsiCo Careers",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "暑期实习",
+    "社招"
+  ],
+  "tracks": 16,
+  "roles": 56,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "PepsiCo Careers",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "中国兵器工业",
+  "careers_url": "https://norincogroupzhaopin.zhiye.com/",
+  "host": "norincogroupzhaopin.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中国兵器工业招聘网",
+  "calendar_entries": 1,
+  "project_types": [
+    "提前批"
+  ],
+  "tracks": 4,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国兵器工业招聘网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

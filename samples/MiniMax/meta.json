@@ -1,0 +1,24 @@
+{
+  "company": "MiniMax",
+  "careers_url": "https://vrfi1sk8a0.jobs.feishu.cn/index",
+  "host": "vrfi1sk8a0.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "加入MiniMax",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入MiniMax",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "method": "GET",
+    "url": "https://campus.jd.com/api/wx/position/getProjectList",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=talent",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[47],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "002.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=talent",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[55],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "003.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=present",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[56],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "004.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=present",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[57],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "005.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=present",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[58],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "006.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=internship",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[45],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "007.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://campus.jd.com/api/wx/position/page?type=internship",
+    "body": "{\"pageSize\":1,\"pageIndex\":0,\"parameter\":{\"positionName\":\"\",\"planIdList\":[51],\"jobDirectionCodeList\":[],\"workCityCodeList\":[],\"positionDeptList\":[]}}",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "008.json"
+  }
+]

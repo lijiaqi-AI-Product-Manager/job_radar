@@ -158,3 +158,50 @@ def test_cities_of_many_ignores_placeholder_text():
     from jobradar.adapters.workday import cities_of_many
     assert cities_of_many("2 Locations") == []
     assert cities_of_many(None, []) == []
+
+
+def test_china_lake_is_not_china():
+    """`USA - China Lake, CA` 是加州的中国湖（海军航空站），不是中国岗位。
+
+    原来的判据是 `country.lower() in locations_text.lower()`，只要串里有 "China"
+    就算命中——2026-10-26 实测波音（boeing.wd1）的 3 条 "China" 命中里就有它。
+    现在改成「按 `,` `-` `/` 切段后某段整体等于国家名/CN/CHN」。
+    """
+    from jobradar.adapters.workday import _in_country
+
+    assert _in_country("USA - China Lake, CA", "China") is False
+    assert _in_country("APAC - China Lake", "China") is False
+    # 真中国岗位的各种写法都要放过
+    for good in ("Dalian-Liaoning-China", "China - Shanghai", "CHN - Beijing, China",
+                 "Beijing, China", "Shanghai, China", "Pudong, Shanghai"):
+        assert _in_country(good, "China") is True, good
+    # 没有地名的「N Locations」一律不放行
+    assert _in_country("3 Locations", "China") is False
+
+
+def test_hyphenated_location_parses_city():
+    """Workday 的 `Dalian-Liaoning-China` 是「城市-省-国家」用**裸连字符**连起来的。
+
+    原来只按 `" - "`（带空格）和 `,` 切，整串丢给 `city_from_english` 一个都匹配不上：
+    江森自控 63 条岗位城市 100% 丢失（2026-10-26 实测）。
+    """
+    from jobradar.adapters.workday import cities_of
+
+    assert cities_of("Dalian-Liaoning-China") == ["大连"]
+    assert cities_of("Shanghai-Shanghai-China") == ["上海"]
+    assert cities_of("Macau-Macau-China-Macau (SAR)") == ["澳门"]
+    assert cities_of("Beijing, China") == ["北京"]
+    assert cities_of("USA - China Lake, CA") == []      # 加州中国湖不是中国城市
+    assert cities_of("Bangalore-Karnataka-India") == []
+
+
+def test_remote_location_becomes_remote_tag():
+    """`China---Remote` 是官方写明的远程岗（雅培 42 条）。
+
+    留空会让「搜远程」搜不到它——地点信息本身是对的，只是它不是城市。
+    """
+    from jobradar.adapters.workday import cities_of
+
+    assert cities_of("China---Remote") == ["远程"]
+    assert cities_of("Remote - China") == ["远程"]
+    assert cities_of("Dalian-Liaoning-China") == ["大连"]   # 有城市时不能被「远程」占位

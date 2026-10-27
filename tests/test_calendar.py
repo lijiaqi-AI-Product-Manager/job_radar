@@ -251,7 +251,7 @@ def test_calendar_hint_for_company_with_entries(built):
     """搜「字节跳动」没岗位时，要能引导到日历（2026-10-24 实测：只回"数据里没有"）。"""
     hint = calendar_hint(built, "字节跳动")
     assert hint["entries"] == 2 and hint["grad_years"] == [2027]
-    assert hint["cmd"] == "jobradar calendar --group 字节跳动 --table"
+    assert hint["cli_hint"] == "jobradar calendar --group 字节跳动 --table"
     assert hint["apply_url"] == "https://jobs.bytedance.com/campus"
 
 
@@ -271,11 +271,22 @@ def test_calendar_hint_carries_blocked_prompt(built, jobs):
     assert hint and hint["blocked_reason"] == "验证码"
     assert hint["hint"] == "某被挡公司希望你去他们的招聘页逛一逛哦~"
 def test_rebuild_replaces_entries(built, jobs):
-    before = len(calendar_entries(built, origin="auto"))
+    """删掉人工条目重建后，只剩数据层自动条目，且不残留任何人工条目。
+
+    注意不能在重建**前**数自动条目数：重建前人工条目还在，
+    `dedupe_auto` 会把「腾讯 校招/实习」两个批次的自动条目让给人工条目；
+    人工条目删掉后这两个批次重新由自动条目承担，数量自然会变多。
+    这正是去重该有的行为，所以断言的是「重建结果自洽」而不是「数量不变」。
+    """
     cal.build(built, jobs, manual=[], sources=[], targets=TARGETS, ts=T(22))
     assert calendar_entries(built, origin="manual") == []  # 人工条目删掉后不残留
     after = calendar_entries(built, origin="auto")
-    assert len(after) == before and all(r["apply_url"] is None for r in after)  # 数据层仍在；无源配置时没有入口
+    assert after, "数据层仍在，自动条目不能为空"
+    # 无源配置时没有投递入口（入口来自 SourceConfig）
+    assert all(r["apply_url"] is None for r in after)
+    # 去重后不允许出现同 (集团, 批次, 届次) 的重复批次
+    keys = [(r["group_name"], r["project_type"], r["grad_year"]) for r in after]
+    assert len(keys) == len(set(keys))
 
 
 # ---------- 链接探活 ----------
@@ -310,11 +321,20 @@ def test_link_check_network_error_is_error_not_dead(built):
 # ---------- 仓库里的真实条目 ----------
 
 def test_repo_calendar_entries_are_valid():
+    """仓库里的日历条目，`group` 必须能对上 targets 里的公司（**含别名**）。
+
+    条目的 group 是「集团」名，生成时用的常常是简称（`ABB`、`民生银行`），
+    而 targets 里写全名（`ABB中国`、`中国民生银行`）。管道内部本来就按
+    `aliases` 展开匹配（`pipeline/calendar.py::match_targets`），这条自检走同一口径，
+    否则「简称写法」会被误判成脏数据（2026-10-27 实测：3 条条目因此报错）。
+    """
     entries = cal.load_manual(ROOT / "calendar" / "entries")
     targets = yaml.safe_load((ROOT / "targets" / "top_companies.yaml").read_text(encoding="utf-8"))
     names = {n for ns in targets["sectors"].values() for n in ns}
+    names |= {a for vs in (targets.get("aliases") or {}).values() for a in vs}
     for e in entries:
-        assert e.group in names, f"{e.id}: 集团 {e.group} 不在 targets/top_companies.yaml"
+        assert e.group, f"{e.id}: 没有集团名"
+        assert e.group in names, f"{e.id}: 集团 {e.group} 不在 targets/top_companies.yaml（含别名）"
 
 
 def test_link_check_respects_robots(built):
@@ -387,10 +407,49 @@ def test_calendar_blocked_reason_for_targets_without_entries(tmp_path, jobs, cal
     assert "滑块" in calendar_blocked_reason(cal_db, "字节跳动")
     assert calendar_blocked_reason(cal_db, "腾讯") is None
 
-def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
-    """--has-tracks / --has-window：只返回「有方向」/「有网申起止」的条目。"""
+def test_calendar_deadline_query_sorts_by_deadline(tmp_path, jobs, cal_db):
+    """问「什么时候截止」就按截止日排，不能按集团字母序把最紧迫的埋在后面。
+
+    实测：`--deadline-before 2026-12-31` 原来按 group_name 排，
+    一周内截止的公司沉在 200 条之后——用户在问「最紧迫的是哪个」，等于没回答。
+    """
     d = write_entries(tmp_path, "字节跳动", [
-        manual(id="x-dir", tracks=[{"direction": "技术类", "roles": ["后端"]}]),
+        manual(id="far", group_name=None, company="A远", apply_end="2026-12-30"),
+        manual(id="near", group_name=None, company="Z近", apply_end="2026-11-01"),
+    ])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    rows = calendar_entries(cal_db, deadline_before="2026-12-31", limit=10)
+    ends = [r["apply_end"] for r in rows]
+    assert ends == sorted(x for x in ends if x), "有截止日的条目必须按截止日升序"
+
+
+def test_calendar_open_on_excludes_expired(tmp_path, jobs, cal_db):
+    """`--open-on` 问的是「这天还能投什么」，写了截止日且已经过了的必须挡掉。
+
+    没有截止日的条目仍然保留（没写 ≠ 已截止），但「2025-11-15 截止」的秋招
+    绝不能出现在 2026-10-26 的开放结果里。
+    """
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="live", apply_start="2026-08-01", apply_end="2026-12-31"),
+        manual(id="dead", apply_start="2025-09-16", apply_end="2025-11-15"),
+        manual(id="unknown", apply_start=None, apply_end=None),
+    ])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    got = {r["id"] for r in calendar_entries(cal_db, open_on="2026-10-26", origin="manual")}
+    assert "dead" not in got
+    assert got == {"live", "unknown"}
+
+
+def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
+    """--has-tracks / --has-window：只返回「有方向」/「有网申时间」的条目。
+
+    has_window 的口径是「起止**任一**有值」：写着「截止 9-30、开始未公布」的批次
+    对用户恰恰最有用（他知道什么时候之前必须投），不能因为缺起点就被判成没有网申时间。
+    """
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="x-dir", tracks=[{"direction": "技术类", "roles": ["后端"]}],
+               apply_start=None, apply_end=None),
+        manual(id="x-end-only", tracks=[], apply_start=None, apply_end="2026-09-30"),
         manual(id="x-win", tracks=[], apply_start="2026-08-01", apply_end="2026-09-30"),
         manual(id="x-none", tracks=[], apply_start=None, apply_end=None),
     ])
@@ -398,8 +457,8 @@ def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
 
     # 只看人工条目：数据层自动条目也可能有 tracks（来自岗位职类）
     assert {r["id"] for r in calendar_entries(cal_db, has_tracks=True, origin="manual")} == {"x-dir"}
-    assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual")} == {"x-win"}
-    assert len(calendar_entries(cal_db, origin="manual")) == 3
+    assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual")} == {"x-end-only", "x-win"}
+    assert len(calendar_entries(cal_db, origin="manual")) == 4
 
 def test_calendar_stats_exposes_both_coverage_definitions(built, jobs):
     """stats 里「有日历条目」与「有日历或数据」是两种口径，都要给出来且不相等。"""

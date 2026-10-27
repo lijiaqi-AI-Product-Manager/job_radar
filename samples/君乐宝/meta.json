@@ -1,0 +1,28 @@
+{
+  "company": "君乐宝",
+  "careers_url": "https://junlebaoruye.zhiye.com/Campus",
+  "host": "junlebaoruye.zhiye.com",
+  "ats": "beisen",
+  "page_title": "君乐宝乳业集团有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 50,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "君乐宝乳业集团有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019550",
+      "https://career.csu.edu.cn/campus/view/id/590432"
+    ]
+  }
+}

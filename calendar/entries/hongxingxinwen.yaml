@@ -1,0 +1,28 @@
+group: 红星新闻
+entries:
+- id: hongxingxinwen-campus-entry
+  company: 红星新闻
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://hongxingxinwen.com/2026/10/21/ultrasonic-welding-doubles-metal-joint-strength/
+  source:
+    type: official_site
+    name: 红星新闻招聘官网
+    url: https://hongxingxinwen.com/2026/10/21/ultrasonic-welding-doubles-metal-joint-strength/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：超声波焊接技术的进步提升了关键行业金属接头的性能 - 红星新闻）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

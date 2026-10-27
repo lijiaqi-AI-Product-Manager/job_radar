@@ -1,0 +1,24 @@
+{
+  "company": "和铂医药",
+  "careers_url": "https://www.harbourbiomed.cn/recruitment/zaoqiyanfa",
+  "host": "www.harbourbiomed.cn",
+  "ats": "unknown",
+  "page_title": "和铂医药 | 人才招聘 - 加入我们，共创下一代抗体药物未来",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "和铂医药 | 人才招聘 - 加入我们，共创下一代抗体药物未来",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

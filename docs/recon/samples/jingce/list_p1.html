@@ -1,0 +1,842 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobileUrl" content="//jingce.m.zhiye.com/campus" />
+    <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_style.css?v=0.0.0.3" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+    <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_jquery311.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_bgfull.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_pagescripts.js?v=0.0.0.3" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+    <title>武汉精测电子集团股份有限公司招聘系统--校园招聘</title>
+</head>
+<body>
+
+  <div class="indexmain">
+<div class="header">
+    <div class="mainContent">
+         <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/110240/110240_medias_202093_202093logo.png?v=637347253116230000"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item "><a target="_self" href="/home" >首页</a>
+                </li>                <li class="item on"><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Social" >社会招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Intern" >实习生招聘</a>
+                </li>                <li class="item "><a target="_blank" href="http://www.wuhanjingce.com" >关于精测</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin, .unLogin {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+    
+    <div class="isLogin" style="display:none">
+        <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+        <a href="/User/Account/LogOut"><span>退出</span></a>
+    </div>
+    
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fjingce.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fjingce.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">注册</a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+<script>
+   // 初始化来也机器人
+    function initLaiye(){
+        var aiScript = document.createElement('script');
+        aiScript.type = 'text/javascript';
+        aiScript.src = 'https://cdn.wul.ai/IMLib-3.30.0.min.js';
+        document.body.insertBefore(aiScript, document.body.firstChild);
+        aiScript.onload = function () {
+            // 需要在这里写ajax异步操作，不然它可能在没加载之前调用然后报错
+            $.ajax({
+                url: '/User/Account/GetWulPubKey'
+                , type: 'get'
+                , success: function (resp) {
+                    // 获取来也机器人信息
+                    var isOpen = resp.Data.IsOpen;
+                    if (isOpen) {
+                        var key = resp.Data.PubKey;
+                        new websdk({
+                            data: {
+                                pubkey: key, // 吾来平台PubKey
+                                autoOpen: false, // 是否自动打开
+                                extra: {
+                                    tagValues: [],
+                                    presetTagValues: []
+                                }
+                            },
+                            el: 'body'
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    // 初始化天润机器
+    function initTianrun(robotKey){
+        (function(win, doc, src, opt) {
+            win[opt] = win[opt] || function () {
+            win[opt].options = arguments[0]};
+            var script = doc.createElement("script");
+            script.async = 1;
+            script.src = src;
+            doc.body.appendChild(script);
+            })(window, document, "https://webchat-sh.clink.cn/webchat.js?v="+Date.now(), "clinkWebchatOptions");
+        clinkWebchatOptions({
+            accessId: robotKey,
+            language: "zh_CN"
+        });
+    }
+
+    // 获取天润机器人灰度
+    $.ajax({
+            url: '/User/Account/GetPortalAIRobot'
+            , type: 'get'
+            , success: function (resp) {
+                if (resp.Data.IsOpen && resp.Data.PubKey) {
+                    initTianrun(resp.Data.PubKey)
+                }else{
+                    initLaiye();
+                }
+            }
+        })
+</script>
+
+    </div>
+</div>
+<!--module:login end-->
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+       <a class="internal" href="https://neitui.italent.cn/jingce/jobs" target="_blank">内部推荐</a>
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+    </div>
+</div>
+<div class="banner">
+      
+		<img src="//stc-cms.beisen.com/CmsPortal/110240/110240_medias_202592_202592bannercampus.jpg?v=638924305656800000"  draggable="false"/>
+
+</div>
+<div class="content">
+    <div class="mainContent">
+        <div class="narrow mr10">
+            
+<!--module:positioncategory begin-->
+<div class="bs-module">
+    <div class="positioncategory-smallblue ">
+        
+
+
+
+
+
+
+
+        <div class="box pb5">
+            <div class="boxSupertitle" title="职位类型"><span>职位类型</span></div>
+            <ul class="cateList">
+                        <li><a href='/campus?p=1^8#jlt' constval ="8" title="管理类">管理类</a></li>
+                        <li><a href='/campus?p=1^1#jlt' constval ="1" title="研发类">研发类</a></li>
+                        <li><a href='/campus?p=1^2#jlt' constval ="2" title="工程技术类">工程技术类</a></li>
+                        <li><a href='/campus?p=1^3#jlt' constval ="3" title="制造类">制造类</a></li>
+                        <li><a href='/campus?p=1^4#jlt' constval ="4" title="供应链类">供应链类</a></li>
+                        <li><a href='/campus?p=1^5#jlt' constval ="5" title="市场销售类">市场销售类</a></li>
+                        <li><a href='/campus?p=1^6#jlt' constval ="6" title="职能类">职能类</a></li>
+                        <li><a href='/campus?p=1^7#jlt' constval ="7" title="操作类">操作类</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positioncategory end-->
+            <div class="box">
+                
+<!--module:newslist begin-->
+<div class="bs-module">
+    <div class="newslist-template6simple ">
+        
+
+
+
+ 
+
+
+
+<div class="boxSupertitle"><span>招聘动态</span>                                                                           <a class="more" href="/newslist"></a>
+</div>
+
+<ul class="newsList">
+        <li><a href="/newsdetail/390001869" title="“精”于芯 “测”于行 成于你——精测电子2027校园招聘正式启动" target="_blank">“精”于芯 “测”于行 ...</a></li>
+    </ul>
+
+    </div>
+</div>
+<!--module:newslist end-->
+            </div>
+        </div>
+        <div class="wide">
+            <div class="box">
+                
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-smallblue ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+<div class="boxSupertitle"><span>职位搜索</span></div>
+<div class="searchCityList">
+            <div class="searchBoxl">
+                <div class="l"></div>
+				<div class="txtIn">
+					<input type="text" id="k" name="k" autocomplete="off" maxlength="50"/>
+				</div>
+				<a class="searchBtn" href="javascript:void(0)" id="searchlink"></a>
+            </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        <div class="mainTitle" title="职位类型">职位类型：</div>
+                        <div class="mainListWrap">
+                            <ul class="mainList">
+                                        <li><a href="/campus?r=&amp;p=1^-1&amp;c=&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^8&amp;c=&amp;d=&amp;k=#jlt" title="管理类">管理类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^1&amp;c=&amp;d=&amp;k=#jlt" title="研发类">研发类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^2&amp;c=&amp;d=&amp;k=#jlt" title="工程技术类">工程技术类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^3&amp;c=&amp;d=&amp;k=#jlt" title="制造类">制造类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^4&amp;c=&amp;d=&amp;k=#jlt" title="供应链类">供应链类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^5&amp;c=&amp;d=&amp;k=#jlt" title="市场销售类">市场销售类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^6&amp;c=&amp;d=&amp;k=#jlt" title="职能类">职能类</a></li>
+                                        <li><a href="/campus?r=&amp;p=1^7&amp;c=&amp;d=&amp;k=#jlt" title="操作类">操作类</a></li>
+                            </ul>
+                            <a class="viewMore" href="javascript:void(0);">更多</a>
+                        </div>
+                <div class="mainTitle">工作地点：</div>
+                <div class="mainListWrap">
+                    <ul class="mainList">
+                                <li><a href="/campus?r=&amp;p=&amp;c=-1&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3202&amp;d=&amp;k=#jlt" title="无锡市">无锡市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3204&amp;d=&amp;k=#jlt" title="常州市">常州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3205&amp;d=&amp;k=#jlt" title="苏州市">苏州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3401&amp;d=&amp;k=#jlt" title="合肥市">合肥市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3502&amp;d=&amp;k=#jlt" title="厦门市">厦门市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4201&amp;d=&amp;k=#jlt" title="武汉市">武汉市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=5101&amp;d=&amp;k=#jlt" title="成都市">成都市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=420115&amp;d=&amp;k=#jlt" title="东湖新技术开发区">东湖新技术开发区</a></li>
+                    </ul>
+                    <a class="viewMore" href="javascript:void(0);">更多</a>
+                </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <div class="mainTitle">发布时间：</div>
+                    <div class="mainListWrap">
+                        <ul class="mainList">
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=-1&amp;k=#jlt" class="on">全部</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=3&amp;k=#jlt" title="三天内">三天内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=7&amp;k=#jlt" title="一周内">一周内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=30&amp;k=#jlt" title="一个月内">一个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=90&amp;k=#jlt" title="三个月内">三个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=180&amp;k=#jlt" title="半年内">半年内</a></li>
+                        </ul>
+                        <a class="viewMore" href="javascript:void(0);">更多</a>
+                    </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        <div class="mainTitle" title="招聘单位">招聘单位：</div>
+                        <div class="mainListWrap">
+                            <ul class="mainList">
+                                        <li><a href="/campus?r=&amp;p=3^-1&amp;c=&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^17&amp;c=&amp;d=&amp;k=#jlt" title="武汉精测&amp;精立">武汉精测&amp;精立</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^20&amp;c=&amp;d=&amp;k=#jlt" title="武汉精能">武汉精能</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^21&amp;c=&amp;d=&amp;k=#jlt" title="武汉精毅通">武汉精毅通</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^22&amp;c=&amp;d=&amp;k=#jlt" title="武汉精鸿">武汉精鸿</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^19&amp;c=&amp;d=&amp;k=#jlt" title="精测苏州">精测苏州</a></li>
+                                        <li><a href="/campus?r=&amp;p=3^18&amp;c=&amp;d=&amp;k=#jlt" title="上海精测半导体">上海精测半导体</a></li>
+                            </ul>
+                            <a class="viewMore" href="javascript:void(0);">更多</a>
+                        </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        </div>
+
+<script type="text/javascript">
+    function GetParam(key) {
+        return (document.location.search.match(new RegExp("(?:^\\?|&)" + key + "=(.*?)(?=&|$)")) || ['', null])[1];
+    }
+
+    function myHTMLEnCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&amp;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function myHTMLDeCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+    var defaultText = "请输入职位关键字";
+
+    $(document).ready(function () {
+        $("input[name='keyword']").click(function () {
+            $(this).val("");
+        });
+
+        var keyWord = GetParam("k");
+
+        if (keyWord != null) {
+            keyWord = decodeURIComponent(keyWord);
+            keyWord = myHTMLDeCode(keyWord);
+
+            $("input[name='k']").val(keyWord);
+        }
+
+        $("#searchlink").click(function () {
+            var r = GetParam("r");
+            r = (r == null ? -1 : r);
+            var p = GetParam("p");
+            p = (p == null ? "" : p);
+            var c = GetParam("c");
+            c = (c == null ? "" : c);
+            var d = GetParam("d");
+            d = (d == null ? "" : d);
+            var k = $.trim($("input[name='k']").val());
+
+            if (k == defaultText)
+                k = "";
+
+            k = myHTMLEnCode(k);
+            k = encodeURIComponent($.trim(k));
+
+            location.href = "/campus" + "?r=" + r + "&p=" + p + "&c=" + c + "&d=" + d + "&k=" + k + '#jlt';
+        });
+
+        var keyStr = $("#k").val();
+        if (!keyStr || keyStr == "") {
+            $("#k").css("color", "#d2cece");
+            $("#k").val(defaultText);
+        }
+
+        $("#k").focus(function () {
+            var v = $(this).val();
+            if (v == defaultText) {
+                $(this).val("");
+                $(this).css("color", "");
+            }
+        });
+
+        $("#k").blur(function () {
+            var v = $(this).val();
+            if (!v || v == "") {
+                $(this).val(defaultText);
+                $(this).css("color", "#d2cece");
+            }
+        });
+        //搜索区折叠处理
+        // 超过三行 折叠显示更多
+        $.each($('.mainList'), function (i, n) {
+            if ($(this).height() > 90) {
+                $(this).addClass('more');
+                $(this).next('.viewMore').show();
+            }
+        })
+        $('.viewMore').click(function (e) {
+            var target = $(e.currentTarget)
+            if (target.text() == "更多") {
+                target.text('收起')
+                target.prev('.mainList').removeClass('more')
+            } else {
+                target.text('更多')
+                target.prev('.mainList').addClass('more')
+            }
+
+        })
+    });
+</script>
+
+
+    </div>
+</div>
+<!--module:positionsearch end-->
+                
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-smallblue ">
+        
+
+
+
+
+
+
+
+<div class="joblist">
+	<table class="jobsTable" border="0" cellpadding="0" cellspacing="0">
+	    <tr class="title">
+                <td>职位名称</td>
+                <td title="职位类型">职位类型</td>
+            <td>工作地点</td>
+            <td>发布时间</td>
+
+        </tr>
+                <tr>
+
+
+            <td>
+                <a title="嵌入式工程师（2027校招）(J12268)" href="/zpdetail/390867148?PageIndex=1&amp;k=" >嵌入式工程师（2027校招）(J12268)</a>
+            </td>
+        
+
+                    <td title="研发类">研发类</td>
+
+
+
+            <td title="湖北省-武汉市,江苏省-苏州市,江苏省-常州市,江苏省-无锡市">湖北省-武汉市,...</td>
+                            <td>2026-09-15</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="AI工程师（2027校招）(J12242)" href="/zpdetail/390854898?PageIndex=1&amp;k=" >AI工程师（2027校招）(J12242)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="数据工程师（2027校招）(J12243)" href="/zpdetail/390854897?PageIndex=1&amp;k=" >数据工程师（2027校招）(J12243)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="电控工程师（2027校招）(J12245)" href="/zpdetail/390854896?PageIndex=1&amp;k=" >电控工程师（2027校招）(J12245)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="江苏省-苏州市">江苏省-苏州市</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="解决方案经理（2027校招）(J12244)" href="/zpdetail/390854895?PageIndex=1&amp;k=" >解决方案经理（2027校招）(J12244)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="MEMS工艺工程师（2027校招）(J12247)" href="/zpdetail/390854894?PageIndex=1&amp;k=" >MEMS工艺工程师（2027校招）(J12247)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="针卡工程师（2027校招）(J12248)" href="/zpdetail/390854893?PageIndex=1&amp;k=" >针卡工程师（2027校招）(J12248)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="产品工程师（2027校招）(J12251)" href="/zpdetail/390854891?PageIndex=1&amp;k=" >产品工程师（2027校招）(J12251)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="业务运营岗（2027校招）(J12250)" href="/zpdetail/390854890?PageIndex=1&amp;k=" >业务运营岗（2027校招）(J12250)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市-东湖新技术开发区">湖北省-武汉市-...</td>
+                            <td>2026-08-17</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="算法工程师（2027校招-苏州）(J12233)" href="/zpdetail/390852965?PageIndex=1&amp;k=" >算法工程师（2027校招-苏州）(J12233)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="江苏省-苏州市">江苏省-苏州市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="软件工程师（2027校招-苏州）(J12232)" href="/zpdetail/390852962?PageIndex=1&amp;k=" >软件工程师（2027校招-苏州）(J12232)</a>
+            </td>
+        
+
+                    <td title="研发类">研发类</td>
+
+
+
+            <td title="江苏省-苏州市">江苏省-苏州市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="机械工程师（2027校招-苏州）(J12231)" href="/zpdetail/390852949?PageIndex=1&amp;k=" >机械工程师（2027校招-苏州）(J12231)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="江苏省-苏州市">江苏省-苏州市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="工艺工程师（2027校招）(J12230)" href="/zpdetail/390852919?PageIndex=1&amp;k=" >工艺工程师（2027校招）(J12230)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市">湖北省-武汉市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="研究员-芯片设计（2027校招）(J12226)" href="/zpdetail/390851841?PageIndex=1&amp;k=" >研究员-芯片设计（2027校招）(J12226)</a>
+            </td>
+        
+
+                    <td title=""></td>
+
+
+
+            <td title="湖北省-武汉市">湖北省-武汉市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="光学工程师（2027校招）(J12216)" href="/zpdetail/390851793?PageIndex=1&amp;k=" >光学工程师（2027校招）(J12216)</a>
+            </td>
+        
+
+                    <td title="研发类">研发类</td>
+
+
+
+            <td title="湖北省-武汉市">湖北省-武汉市</td>
+                            <td>2026-08-10</td>
+        
+      
+
+                </tr>
+	</table>
+</div>
+
+
+<div class="pager">
+        <div class="counts">共26条记录</div>
+        <div class="tablefooter">
+        当前第1/2页
+	    <script language="javascript" type="text/javascript">function _MvcPager_Keydown(e){var _kc,_pib;if(window.event){_kc=e.keyCode;_pib=e.srcElement;}else if(e.which){_kc=e.which;_pib=e.target;}var validKey=(_kc==8||_kc==46||_kc==37||_kc==39||(_kc>=48&&_kc<=57)||(_kc>=96&&_kc<=105));if(!validKey){if(_kc==13){ _MvcPager_GoToPage(_pib,2);}if(e.preventDefault){e.preventDefault();}else{event.returnValue=false;}}}function _MvcPager_GoToPage(_pib,_mp){var pageIndex;if(_pib.tagName=="SELECT"){pageIndex=_pib.options[_pib.selectedIndex].value;}else{pageIndex=_pib.value;var r=new RegExp("^\\s*(\\d+)\\s*$");if(!r.test(pageIndex)){alert("当前页码错误");return;}else if(RegExp.$1<1||RegExp.$1>_mp){alert("当前页码超出范围");return;}}var _hl=document.getElementById(_pib.id+'link').childNodes[0];var _lh=_hl.href;_hl.href=_lh.replace('=0','='+pageIndex);_hl.click();_hl.href=_lh;}</script><div class="pager2"><span class="pitem"><a disabled="disabled" class="disabled next">首页</a></span><span class="pitem"><a disabled="disabled" class="disabled next"><span class="pre"></span>上一页</a></span><span class="pitem"><a href='/campus/?PageIndex=2' class="next">下一页<span class="nxt"></span></a></span><span class="pitem"><a href='/campus/?PageIndex=2' >尾页</a></span><span class="superGo"><input type="text" id="_MvcPager_Ctrl0_pib" value="1" onkeydown="_MvcPager_Keydown(event)"/><input type="button" value="跳转" onclick="_MvcPager_GoToPage(document.getElementById('_MvcPager_Ctrl0_pib'),2)"/><span id="_MvcPager_Ctrl0_piblink" style="display:none;width:0px;height:0px"><a href="/campus/?PageIndex=0" onclick="window.open(this.attributes.getNamedItem('href').value,'_self')"></a></span></span></div>
+            </div>
+
+</div>
+
+    </div>
+</div>
+<!--module:positionlist end-->
+<!--module:deliverystoredb begin-->
+<div class="bs-module">
+    <div class="deliverystoredb-smallblue ">
+        
+
+
+
+
+
+
+ 
+
+
+
+
+
+    </div>
+</div>
+<!--module:deliverystoredb end-->
+		
+            </div>
+        </div>
+      <div class="footer3">
+          &copy;2026&nbsp;&nbsp;武汉精测电子集团股份有限公司&nbsp;&nbsp;&nbsp<a target="_blank" href="http://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;">京ICP备05051632号-16</a>&nbsp<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802032024" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;"><img src="//stc.beisen.com/ux/tms-recruit/release/app/images/beian.png" style="float:left;"/>京公网安备 11010802032024号</a><a href="/Portal/Apply/PrivacyPolicy" style="color:#1D86F0;padding-left:5px;" target="_blank">隐私政策</a>&nbsp;Powered by&nbsp;<a href="https://www.beisen.com" class="footerlogo" target="_blank"></a>
+	</div>
+    </div>
+</div>
+  </div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,110240,'new_zhiye_com');
+    });
+    </script>

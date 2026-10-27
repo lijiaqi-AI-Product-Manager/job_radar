@@ -28,6 +28,12 @@ sources:
       site: External
       country: PRC          # Intel 的 location 分面用 "PRC, Shanghai" 这种写法
       max_pages: 3
+      # 2026-10-27 实测：这个站点的 facets 里**没有地区维度**（只有 jobFamilyGroup /
+      # workerSubType / timeType / locationMainGroup=「Locations」占位），
+      # 所以国家分面永远找不到 → 整源报「找不到 location 分面」直接 0 岗。
+      # 退回 searchText 检索：`searchText="China"` 返回 34 条、`"PRC"` 32 条，
+      # 结果 locationsText 就是「PRC, Shanghai」这种明写地点，本地再校验一次国家即可。
+      search_text: China
 
   - id: workday-pfizer
     company: 辉瑞
@@ -47,3 +53,218 @@ sources:
       site: Careers
       country: China
       max_pages: 12
+
+  # 2026-10-26 新增：从 careers.dupont.com/cn/zh 的岗位链接里读出真实 CXS 租户（站点名就是 Jobs）。
+  # 中国岗位没有国家分面可选（facets 只有 jobFamilyGroup/workerSubType/timeType/locationMainGroup），
+  # 所以用 searchText="China" 兜住；Workday 的 searchText 会命中标题/地点/描述，需人工复核比例。
+  - id: workday-dupont
+    company: 杜邦
+    params:
+      host: dupont.wd5.myworkdayjobs.com
+      tenant: dupont
+      site: Jobs
+      country: China
+      search_text: China    # 无国家分面时的兜底：按关键词检索
+      max_pages: 3
+
+  # 2026-10-26 批量探测新增（34 个候选租户里 13 个 CXS 可读，其中 5 个有 China 国家分面）。
+  # 探测记录：docs/internal/SOURCE-DISCOVERY.md §4.2
+  - id: workday-hp
+    company: 惠普
+    params:
+      host: hp.wd5.myworkdayjobs.com
+      tenant: hp
+      site: ExternalCareerSite
+      country: China
+      max_pages: 6
+
+  - id: workday-abbott
+    company: 雅培
+    params:
+      host: abbott.wd5.myworkdayjobs.com
+      tenant: abbott
+      site: abbottcareers
+      country: China
+      max_pages: 6
+
+  - id: workday-amgen
+    company: 安进
+    params:
+      host: amgen.wd1.myworkdayjobs.com
+      tenant: amgen
+      site: Careers
+      country: China
+      max_pages: 6
+
+  - id: workday-stryker
+    company: 史赛克
+    params:
+      host: stryker.wd1.myworkdayjobs.com
+      tenant: stryker
+      site: StrykerCareers
+      country: China
+      max_pages: 6
+
+  - id: workday-3m
+    company: 3M中国
+    params:
+      host: 3m.wd1.myworkdayjobs.com
+      tenant: 3m
+      site: Search
+      country: China
+      max_pages: 6
+
+  # 下面几个租户的 facets 里没有 China 分面，只能用 searchText 兜底 + 本地点名校验
+  # （`_in_country` 已修掉 "USA - China Lake, CA" 被当成中国岗位的坑）。
+  - id: workday-hpe
+    company: 慧与
+    params:
+      host: hpe.wd5.myworkdayjobs.com
+      tenant: hpe
+      site: Jobsathpe
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-cisco
+    company: 思科
+    params:
+      host: cisco.wd5.myworkdayjobs.com
+      tenant: cisco
+      site: Cisco_Careers
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-medtronic
+    company: 美敦力
+    params:
+      host: medtronic.wd1.myworkdayjobs.com
+      tenant: medtronic
+      site: MedtronicCareers
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-gilead
+    company: 吉利德
+    params:
+      host: gilead.wd1.myworkdayjobs.com
+      tenant: gilead
+      site: GileadCareers
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-jci
+    company: 江森自控
+    params:
+      host: jci.wd5.myworkdayjobs.com
+      tenant: jci
+      site: JCI
+      country: China
+      search_text: China
+      max_pages: 4
+
+  # ---- 2026-10-27 补录：`work/wd_verify.py` 用 robots.txt 找 Site + `/wday/cxs/` 读 total 逐个核过 ----
+  # 注意 ABB / 京东 的门户是多 Site 的（ABB 的 `External_Career_Page` 有 2000 岗，
+  # 而 `broadbean_external` 只有 130），只收岗数最多的那个主 Site，其余留作扩展。
+  - id: workday-abb
+    company: ABB中国
+    params:
+      host: abb.wd3.myworkdayjobs.com
+      tenant: abb
+      site: External_Career_Page     # robots.txt 只给 `Disallow: /External_Career_Page/`
+      country: China
+      search_text: China
+      max_pages: 12
+
+  - id: workday-jd
+    company: 京东
+    params:
+      host: jd.wd103.myworkdayjobs.com
+      tenant: jd
+      site: Careers_at_JD
+      country: China
+      search_text: China
+      max_pages: 12
+
+  - id: workday-jd-campus
+    company: 京东校招
+    params:
+      host: jd.wd103.myworkdayjobs.com
+      tenant: jd
+      site: Campus_Career_Site
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-accenture
+    company: 埃森哲
+    params:
+      host: accenture.wd103.myworkdayjobs.com
+      tenant: accenture
+      site: AccentureCareers
+      country: China
+      search_text: China
+      max_pages: 12
+
+  - id: workday-avanade
+    company: 埃维诺
+    params:
+      host: accenture.wd103.myworkdayjobs.com
+      tenant: accenture
+      site: AvanadeCareers
+      country: China
+      search_text: China
+      max_pages: 8
+
+  - id: workday-msd
+    company: 默沙东
+    params:
+      host: msd.wd5.myworkdayjobs.com
+      tenant: msd
+      site: SearchJobs
+      country: China
+      search_text: China
+      max_pages: 8
+
+  - id: workday-jll
+    company: 仲量联行
+    params:
+      host: jll.wd1.myworkdayjobs.com
+      tenant: jll
+      site: jllcareers
+      country: China
+      search_text: China
+      max_pages: 8
+
+  - id: workday-jll-china
+    company: 仲量联行中国
+    params:
+      host: jll.wd1.myworkdayjobs.com
+      tenant: jll
+      site: jllcareerschina   # 中国专用站点，80 岗里全是中文岗位名
+      country: China
+      search_text: China
+      max_pages: 4
+
+  - id: workday-ctbc
+    company: 中国信托商业银行
+    params:
+      host: ctbcholding.wd3.myworkdayjobs.com
+      tenant: ctbcholding
+      site: External
+      country: China
+      search_text: China
+      max_pages: 8
+
+  - id: workday-mgm
+    company: 美高梅中国
+    params:
+      host: mgmchina.wd5.myworkdayjobs.com
+      tenant: mgmchina
+      site: MGMCHINA
+      country: China
+      search_text: China
+      max_pages: 8

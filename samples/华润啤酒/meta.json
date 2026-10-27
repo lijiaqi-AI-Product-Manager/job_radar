@@ -1,0 +1,27 @@
+{
+  "company": "华润啤酒",
+  "careers_url": "https://wecruit.hotjob.cn/SU6047338a0dcad46d3e601b07/pb/index.html",
+  "host": "wecruit.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 9,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119808.html",
+      "https://job.zzu.edu.cn/campus/view/id/1019770"
+    ]
+  }
+}

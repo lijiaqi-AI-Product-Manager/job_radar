@@ -1,0 +1,24 @@
+{
+  "company": "国机集团",
+  "careers_url": "https://zhaopin.sinomach.com.cn/",
+  "host": "zhaopin.sinomach.com.cn",
+  "ats": "self_hosted",
+  "page_title": "招聘官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

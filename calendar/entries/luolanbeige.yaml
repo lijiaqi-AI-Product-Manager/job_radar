@@ -1,0 +1,21 @@
+group: 罗兰贝格
+entries:
+- id: luolanbeige-campus-entry
+  company: 罗兰贝格
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://ronbay.zhiye.com/campus/jobs
+  source:
+    type: official_site
+    name: 罗兰贝格招聘官网
+    url: https://ronbay.zhiye.com/campus/jobs
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: official_page
+    url: https://ronbay.zhiye.com/campus/jobs
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：容百集团）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

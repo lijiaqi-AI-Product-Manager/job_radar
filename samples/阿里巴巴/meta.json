@@ -1,0 +1,26 @@
+{
+  "company": "阿里巴巴",
+  "careers_url": "https://campus-talent.alibaba.com/campus/index",
+  "host": "campus-talent.alibaba.com",
+  "ats": "unknown",
+  "page_title": "阿里巴巴校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 22,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "阿里巴巴校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018685"
+    ]
+  }
+}

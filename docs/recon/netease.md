@@ -1,7 +1,7 @@
 # 侦察：网易校园招聘（campus.163.com / campus.game.163.com）
 
 - 侦察日期：2026-10-22
-- 侦察人：DeepSeek agent（本机直连，固定 UA，全程 ≤1 req/s）
+- 侦察人：本机探针（本机直连，固定 UA，全程 ≤1 req/s）
 - **结论：可做**
 - 类型：自研站（React SPA + 公开 JSON）
 

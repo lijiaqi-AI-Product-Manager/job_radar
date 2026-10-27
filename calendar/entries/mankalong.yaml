@@ -1,0 +1,26 @@
+group: 曼卡龙
+entries:
+- id: mankalong-campus-entry
+  company: 曼卡龙
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 设计类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.mclon.com/more-join.aspx
+  source:
+    type: official_site
+    name: 曼卡龙招聘官网
+    url: https://www.mclon.com/more-join.aspx
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：加入我们 - 曼卡龙）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

@@ -1,0 +1,28 @@
+{
+  "company": "中国铁建",
+  "careers_url": "http://jobs.crccig.com/req/urgent",
+  "host": "jobs.crccig.com",
+  "ats": "self_hosted",
+  "page_title": "中国铁建投资集团有限公司 - 2027届校招",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国铁建投资集团有限公司 - 2027届校招",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757380",
+      "https://job.zzu.edu.cn/campus/view/id/1019855",
+      "https://job.neuq.edu.cn/campus/view/id/861648"
+    ]
+  }
+}

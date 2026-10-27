@@ -1,0 +1,24 @@
+{
+  "company": "宜家中国",
+  "careers_url": "https://jobs.ikeachina.cn/",
+  "host": "jobs.ikeachina.cn",
+  "ats": "self_hosted",
+  "page_title": "&#x5728; IKEA &#x5DE5;&#x4F5C;",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 3,
+  "roles": 3,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "&#x5728; IKEA &#x5DE5;&#x4F5C;",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "company": "中科曙光",
+  "careers_url": "https://www.sugon.com/cut?id=2459&nav_id=160",
+  "host": "www.sugon.com",
+  "ats": "unknown",
+  "page_title": "人才发展-中科曙光",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 66,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "人才发展-中科曙光",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018820"
+    ]
+  }
+}

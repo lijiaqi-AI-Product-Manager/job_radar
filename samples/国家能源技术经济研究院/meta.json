@@ -1,0 +1,24 @@
+{
+  "company": "国家能源技术经济研究院",
+  "careers_url": "https://www.nice.com/careers",
+  "host": "www.nice.com",
+  "ats": "unknown",
+  "page_title": "NiCE: Careers",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 1,
+  "roles": 2,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "NiCE: Careers",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

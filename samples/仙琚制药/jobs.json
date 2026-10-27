@@ -1,0 +1,20 @@
+[
+  {
+    "title": "QC",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 325
+  },
+  {
+    "title": "设备员",
+    "recruit_type": "social",
+    "has_jd": true,
+    "jd_len": 463
+  },
+  {
+    "title": "生产管理岗",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 213
+  }
+]

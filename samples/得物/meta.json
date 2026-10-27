@@ -1,0 +1,25 @@
+{
+  "company": "得物",
+  "careers_url": "https://jobs.ultraai.site/sources/dewu_campus",
+  "host": "jobs.ultraai.site",
+  "ats": "self_hosted",
+  "page_title": "得物校园招聘官方岗位：实习与校招 | 职先机",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 48,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "得物校园招聘官方岗位：实习与校招 | 职先机",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

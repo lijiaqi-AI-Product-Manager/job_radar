@@ -1,0 +1,30 @@
+{
+  "company": "创维",
+  "careers_url": "https://www.skyworthdigital.com/job2.html",
+  "host": "www.skyworthdigital.com",
+  "ats": "unknown",
+  "page_title": "校园招聘,创维数字",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 78,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘,创维数字",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 8,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020893",
+      "https://career.gdut.edu.cn/campus/view/id/1020790",
+      "https://career.shiep.edu.cn/campus/view/id/667382"
+    ]
+  }
+}

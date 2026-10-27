@@ -1,0 +1,24 @@
+{
+  "company": "太平保险",
+  "careers_url": "http://static.cntaiping.com/",
+  "host": "static.cntaiping.com",
+  "ats": "unknown",
+  "page_title": "中国太平保险集团官方网站-人寿保险,财产保险,养老保险,资产管理",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国太平保险集团官方网站-人寿保险,财产保险,养老保险,资产管理",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

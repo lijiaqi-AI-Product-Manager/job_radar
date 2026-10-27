@@ -1,0 +1,43 @@
+[
+  {
+    "method": "GET",
+    "url": "https://job-search.astrazeneca.cn/china-jobs?p=1",
+    "body": "",
+    "status": 302,
+    "content_type": "application/json",
+    "file": "001.json",
+    "location": "https://job-search.astrazeneca.cn/%E6%B1%82%E8%81%8C?acm=ALL&alrpm=1814991&ascf=[%7B%22key%22:%22ALL%22,%22value%22:%22%22%7D]&p=1"
+  },
+  {
+    "method": "GET",
+    "url": "https://job-search.astrazeneca.cn/%E6%B1%82%E8%81%8C?acm=ALL&alrpm=1814991&ascf=[%7B%22key%22:%22ALL%22,%22value%22:%22%22%7D]&p=1",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job-search.astrazeneca.cn/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/innovation-product-management-%e5%88%9b%e6%96%b0%e4%ba%a7%e5%93%81%e7%bb%8f%e7%90%86/12977/97462189936",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job-search.astrazeneca.cn/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%99%8b%e4%b8%ad/12977/101856196240",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job-search.astrazeneca.cn/%e5%b7%a5%e4%bd%9c/%e6%97%a0%e9%94%a1%e5%b8%82/sr-engineer-production-maintenance/12977/100673432768",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "005.txt"
+  }
+]

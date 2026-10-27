@@ -1,0 +1,28 @@
+{
+  "company": "基恩士",
+  "careers_url": "https://keyence.zhiye.com/campus/jobs",
+  "host": "keyence.zhiye.com",
+  "ats": "beisen",
+  "page_title": "基恩士（中国）有限公司-招聘中心",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 8,
+  "roles": 22,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "基恩士（中国）有限公司-招聘中心",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020970",
+      "https://job.zzu.edu.cn/campus/view/id/1018892"
+    ]
+  }
+}

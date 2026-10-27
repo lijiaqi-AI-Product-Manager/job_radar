@@ -1,0 +1,24 @@
+{
+  "company": "天齐锂业",
+  "careers_url": "https://tianqilithium-hr.zhiye.com/jobs",
+  "host": "tianqilithium-hr.zhiye.com",
+  "ats": "beisen",
+  "page_title": "天齐锂业",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 11,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "天齐锂业",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "company": "浙商银行",
+  "careers_url": "https://zp.czbank.com.cn/zpweb/",
+  "host": "zp.czbank.com.cn",
+  "ats": "unknown",
+  "page_title": "浙商银行招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 40,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "浙商银行招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 19,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758290",
+      "https://job.xidian.edu.cn/campus/view/id/757996",
+      "https://job.xidian.edu.cn/campus/view/id/757768"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+id: sensetime
+company: 商汤科技
+adapter: feishu_atsx
+recruit_types: [campus, intern, social]
+rate_limit_rps: 1
+params:
+  base_url: "https://sensetime.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://sensetime.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验"
+  notes: "2026-10-27 work/ats_par.py 命中，count=87（门户首页 title「商汤科技招聘」）"

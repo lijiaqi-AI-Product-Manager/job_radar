@@ -19,7 +19,18 @@ class UnmatchedRequest(AssertionError):
 
 
 def _body(request: httpx.Request) -> str:
-    return request.content.decode("utf-8") if request.content else ""
+    """请求体（form POST / JSON）。
+
+    不能直接读 `request.content`：httpx 在 `content` 是流式的（重定向后重发、
+    或用 `content=generator` 时）会抛 `RequestNotRead`。2026-10-26 实测：
+    阿斯利康那条 GET 被 301 到 `china-jobs?p=1` 后重发，就是流式请求体，
+    录制脚本直接崩在 RequestNotRead。这里兜住——读不到就当空 body。
+    """
+    try:
+        content = request.content
+    except httpx.RequestNotRead:
+        return ""
+    return content.decode("utf-8", "replace") if content else ""
 
 
 class ReplayTransport(httpx.BaseTransport):
@@ -31,9 +42,15 @@ class ReplayTransport(httpx.BaseTransport):
         body = _body(request)
         for e in self.entries:
             if e["method"] == request.method and e["url"] == str(request.url) and e.get("body", "") == body:
+                headers = {"content-type": e.get("content_type", "application/json")}
+                # 重定向响应必须把 location 也回放出去，否则 client(follow_redirects=True)
+                # 拿到一个没有 location 的 3xx，直接抛 HTTPStatusError（2026-10-26 实测：
+                # 阿斯利康首页 302 到筛选后的 URL，回放就卡在这一步）。
+                if e.get("location"):
+                    headers["location"] = e["location"]
                 return httpx.Response(
                     e["status"],
-                    headers={"content-type": e.get("content_type", "application/json")},
+                    headers=headers,
                     content=(self.dir / e["file"]).read_bytes(),
                     request=request,
                 )
@@ -71,10 +88,14 @@ class RecordingTransport(httpx.BaseTransport):
                 self.secrets.update(m for m in p.findall(text) if m)
             stored = self._scrub(text).encode("utf-8")
         (self.dir / name).write_bytes(stored)
-        self.entries.append({
+        entry = {
             "method": request.method, "url": self._scrub(str(request.url)), "body": self._scrub(_body(request)),
             "status": response.status_code, "content_type": ctype, "file": name,
-        })
+        }
+        # 3xx 的 location 得存下来，否则回放时 follow_redirects 拿不到目标
+        if response.status_code in (301, 302, 303, 307, 308) and response.headers.get("location"):
+            entry["location"] = self._scrub(response.headers["location"])
+        self.entries.append(entry)
         (self.dir / "manifest.json").write_text(
             json.dumps(self.entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )

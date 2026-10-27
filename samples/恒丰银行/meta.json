@@ -1,0 +1,27 @@
+{
+  "company": "恒丰银行",
+  "careers_url": "",
+  "host": "career.nankai.edu.cn",
+  "ats": "none",
+  "page_title": "恒丰银行博士后研究员",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "恒丰银行博士后研究员",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119910.html",
+      "https://career.csu.edu.cn/campus/view/id/590898"
+    ]
+  }
+}

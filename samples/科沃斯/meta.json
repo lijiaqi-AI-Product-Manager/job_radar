@@ -1,0 +1,25 @@
+{
+  "company": "科沃斯",
+  "careers_url": "https://hr.ecovacs.cn/",
+  "host": "hr.ecovacs.cn",
+  "ats": "self_hosted",
+  "page_title": "科沃斯机器人招聘_机器人，有你更精彩 -科沃斯机器人HR官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 2,
+  "roles": 2,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "科沃斯机器人招聘_机器人，有你更精彩 -科沃斯机器人HR官网",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

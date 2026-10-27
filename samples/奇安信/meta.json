@@ -1,0 +1,25 @@
+{
+  "company": "奇安信",
+  "careers_url": "https://campus.qianxin.com/",
+  "host": "campus.qianxin.com",
+  "ats": "unknown",
+  "page_title": "奇安信校园招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "日常实习"
+  ],
+  "tracks": 2,
+  "roles": 4,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "奇安信校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

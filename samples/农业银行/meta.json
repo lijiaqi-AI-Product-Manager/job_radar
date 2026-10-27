@@ -1,0 +1,28 @@
+{
+  "company": "农业银行",
+  "careers_url": "",
+  "host": "xsjyzd.jmu.edu.cn",
+  "ats": "none",
+  "page_title": "中国农业银行浙江省分行2027年度校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 23,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "中国农业银行浙江省分行2027年度校园招聘",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 9,
+    "edu_notice_sample": [
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/996983",
+      "https://career.csu.edu.cn/campus/view/id/590357",
+      "https://career.csu.edu.cn/campus/view/id/590340"
+    ]
+  }
+}

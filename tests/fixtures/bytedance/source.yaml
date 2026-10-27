@@ -1,0 +1,18 @@
+id: bytedance
+company: 字节跳动
+adapter: bytedance
+params:
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- campus
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: allow
+  terms: 职位列表接口为官网前端自用的公开 JSON，无需登录、无验证码、无签名校验（_signature 篡改后仍 200，已实测）；会话 csrf token
+    由站点下发给匿名访客，只在内存中使用（CLAUDE.md 铁律 1）。用户协议待人工复核
+  notes: 侦察：docs/recon/bytedance.md。1 次 csrf + 每 100 条 1 页，共约 7000 条/70 页，1 req/s，单日一轮约
+    75 秒。

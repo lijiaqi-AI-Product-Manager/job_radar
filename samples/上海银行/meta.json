@@ -1,0 +1,31 @@
+{
+  "company": "上海银行",
+  "careers_url": "https://bosc.zhiye.com/campus",
+  "host": "bosc.zhiye.com",
+  "ats": "beisen",
+  "page_title": "上海银行股份有限公司",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 96,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "上海银行股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 6,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758024",
+      "https://career.gdut.edu.cn/campus/view/id/1021180",
+      "https://job.zzu.edu.cn/campus/view/id/1019826"
+    ]
+  }
+}

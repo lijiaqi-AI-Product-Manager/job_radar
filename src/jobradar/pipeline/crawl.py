@@ -15,7 +15,7 @@ import httpx
 
 from jobradar.adapters.base import Adapter, load_all, make_client
 from jobradar.models import Job, SourceConfig
-from jobradar.normalize import categorize, cities_from_title, grad_year_from_jd, grad_year_from_text
+from jobradar.normalize import categorize, cities_from_title
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
@@ -34,14 +34,17 @@ def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Clien
 
 def _enrich(j: Job) -> None:
     """适配器没给的字段，从标题中提取明写的信息（规则见 normalize.py / taxonomy/）。
-    注意：cities/grad_year 计入内容哈希，修改这些提取规则会让受影响岗位产生一次 change 事件。"""
+    注意：cities/grad_year 计入内容哈希，修改这些提取规则会让受影响岗位产生一次 change 事件。
+
+    这里**不碰 grad_year**：适配器是"该站点怎么判届别"的唯一权威，它明确判定"取不到"
+    时不能再用通用规则补一次。字节跳动的实测（2026-10-26）：2023 年挂到现在的实习岗，
+    JD 里写着"2023届"，适配器已按发布时间把它判为不可信并留空，这里用
+    grad_year_from_jd 又补回 2027 —— 于是"2027届在招"出现在一个 2023 年的岗位上。
+    """
     if j.category is None and j.subcategory is None:
         j.category, j.subcategory = categorize(j.title)
     if not j.cities:
         j.cities = cities_from_title(j.title)
-    if j.grad_year is None and j.recruit_type in ("campus", "intern"):
-        j.grad_year = grad_year_from_text(j.title, loose=True) or grad_year_from_jd(
-            j.description, j.requirements)
 
 
 def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):

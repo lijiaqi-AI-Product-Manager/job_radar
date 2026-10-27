@@ -1,0 +1,165 @@
+";
+      });
+      
+      $(function(){
+          var keyword = $(".ss_input").val();
+          $(document).keypress(function (e){
+            if(e.keyCode == 13){
+                window.location.href = "/social?k="+keyword+"&c=&p=&d=&PageIndex=1&class=1#zw";
+            }
+          })
+      })
+</script> 
+ 
+<div class="cb pv20"></div>
+<div class="xqbox">
+	<div class="flex-between align-center pb30">
+		<span class="col000 f25 lh25">电商金融产品岗</span>
+          <a href="javascript:;" class="icon8" id="collect" >加入收藏</a>
+	</div>
+	<div class="zwbq mb40">
+		<ul>
+			<li>职位类别：市场体系</li>
+			<li>工作性质：全职 </li>
+			<li>工作地址：上海市</li>
+			<li>薪酬范围：面议</li>
+			<li>招聘人数：1</li>
+			<li>发布时间：2026-10-15</li>
+			<li>需求公司：中欧财富</li>
+			<li>招聘类型：社会招聘</li>
+		</ul>
+	</div><!--zwbq end-->
+	<h2 class="f14 col333 lh16 pb15">工作职责：</h2>
+	<div class="col333 f14 lh25">
+		1、负责公司重点公募产品池的定期跟踪和维护，包括业绩分析、投研沟通尽调等。<br />2、结合市场环境，响应渠道运营需求，提供产品推荐策略和解决方案。<br />3、建立体系化的业务工作台，提升团队运营效能。<br />4、独立完成金融产品的对内、对外路演培训工作，推动产品销售。<br />5、领导交办的其他工作。
+	</div>
+	<h2 class="f14 col333 lh16 pb15 pt40">任职资格：</h2>
+	<div class="col333 f14 lh25">
+          1、硕士及以上学历，金融、经济等相关专业优先。<br />2、具备3年以上公募基金、券商等金融机构从业经验；具有公募产品中台、基金评价经验者优先。<br />3、熟练掌握 Wind等金融终端及主流AI模型，具备扎实的数据处理和AI工具应用能力。<br />4、擅长沟通，能与内部投研充分沟通衔接，团队协作和抗压能力强，逻辑严密，有结果意识。<br />5、持有基金从业资格证。
+  	</div>
+<div class="pv40"><a href="/Portal/Resume/ResumeItem?jid=621155633" class="ljsq">立即申请</a></div>
+<a href="/social" class="col999 f16 pl10">返回列表</a>
+
+</div><!--xqbox end-->
+
+<div class="cb pv20"></div>
+
+<script>
+  $(function(){
+	$('.bname').hide()
+	})
+  
+  
+  
+  	 var htmlSuccess = ['<div class="dl_dialog1">',
+                    '	<div class="dl_dialog_wrap" style="text-align:center">',
+                    '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                    //'	<div class="dl_dialog_btn">',
+                    //' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                    //'		<div>',
+                    '	</div>',
+                    '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '	<div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '	<div class="dl_dialog_btn">',
+                        ' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '		<div>',
+                        '	</div>',
+                        '</div>'].join("");
+
+	$.ajax({
+        url: '/User/Account/GetUserLoginInfo?v='+Math.random()
+        , data: {
+            'jobAdId': "621155633"
+        }
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+            var args = resp.Model;
+
+            var hasA = args.HasApplyedFoJs;
+            var isAllow = args.Allow;
+            var allowCount = args.AllowCount;
+            var jobCategory = "社会招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = args.IntAllowApplyInfinity;
+          
+
+            $(document).ready(function () {
+                //根据用户的登陆状态给收藏按钮绑定事件
+                var collectBtn = $("#collect");
+                if (isLogin){
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function(){
+                            $.post("/Portal/Apply/JobAdCollect", { "jId": "621155633" }, function(data) {
+                                if (!data) {
+                                    htmlSuccess = htmlError;
+                                }
+                                $.modal(htmlSuccess, {
+                                    containerCss: {
+                                        backgroundColor: "transparent",
+                                        borderColor: "transparent",
+                                        padding: 0,
+                                        width:'150px'
+                                    },
+                                    onShow: function () {
+                                        $("#okbtn1").click(function() {
+                                            $.modal.close();
+                                        });
+                                    }
+                                });
+                                function a() {
+                                    $.modal.close();
+                                }
+                                setTimeout(a, 2000);
+                            }, "json");
+                        });
+                }
+                else {
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            window.location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        });
+                }
+            })
+         }
+    })
+</script>
+    <div class="footer"><div class="wrap">
+	<div class="flex-between pb35">
+		<div class="flex-start align-center f14">
+			<a href="/index" class="colfff mr50">首页</a>
+			<a href="/social" class="colfff ml10 mr50">社会招聘</a>
+			<a href="/campus" class="colfff ml10 mr50">校园招聘</a>
+			<a href="/intern" class="colfff ml10 mr50">实习生招聘</a>
+			<a href="/why" class="colfff ml10">why zofund</a>
+		</div>
+		<div class="footerr flex-start align-center">
+			<span class="cola3 f14 mr10">关注我们</span>
+			<div class="iconwx"><div class="tcwx"><img src="//stc-cms.beisen.com/cmsportal/602033/602033_themes_theme2_images_imgwx.png" width="156" alt=""></div></div>
+		</div>
+	</div><!---->
+	<div class="flex-between align-center lh22 cola3 f14 lh25">
+		<div>
+			&copy;沪ICP备06048031号-5 | 沪公网安备 31011502014260号<br/>
+			2013 中欧基金管理有限公司 Zhong Ou Asset Management Co., Ltd. 版权所有
+		</div>
+		<div class="footerr">地址：上海市浦东新区陆家嘴环路479号上海中心大厦8层<br/>
+邮编：200120 传真：021-33830351</div>
+	</div>
+</div></div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,602033,'new_zhiye_com');
+    });
+    </script>

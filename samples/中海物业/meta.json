@@ -1,0 +1,25 @@
+{
+  "company": "中海物业",
+  "careers_url": "https://www.copm.com.cn/joinus",
+  "host": "www.copm.com.cn",
+  "ats": "unknown",
+  "page_title": "加入我们 - 中海物业管理有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 8,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们 - 中海物业管理有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

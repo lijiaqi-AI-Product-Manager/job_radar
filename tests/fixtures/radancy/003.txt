@@ -1,0 +1,770 @@
+="search-location" placeholder="&#x7F8E;&#x56FD;&#x9A6C;&#x8428;&#x8BF8;&#x585E;&#x5DDE;&#x5251;&#x6865;&#x5E02;" autocomplete="off" name="l" value="" maxlength="150" data-lat="" data-lon="" data-kt="" data-lt="" data-lp="" data-ajax-url="/search-jobs/locations?term=" data-country-codes="" data-display-typeahead="true" data-error-message="请重试。从推荐列表中选择一个地点，或清除字段以提交您的搜索。"/>
+                <input type="button" id="search-location-pin-44312c2937" class="location-pin" value="&#x4F7F;&#x7528;&#x5730;&#x70B9;" aria-hidden="true"/>
+		</p>
+        <input id="search-org-ids-44312c2937" name="orgIds" type="hidden" value="2649" />
+        <button id="search-submit-44312c2937">&#x641C;&#x7D22;&#x804C;&#x4F4D;</button>
+		<p class="search-location-error" aria-hidden="true"></p>
+	</div>
+</form>
+
+</div>
+
+
+
+<div class="section7" data-section-id="6506" data-layout-item-id="1808">
+        <div class="section7-first reveal-parent">
+            
+
+    <div class="job-description section7-title" data-selector-name="jobdetails" data-org-id="3036" data-job-id="46354228864" data-save-jobs="true">
+    
+        <h1>Project Specialist - Global Meetings &amp; Events</h1> 
+        
+            <span class="job-location job-info">海得拉巴, 印度</span> 
+        
+        
+            <span class="job-type job-info">Regular</span>
+        
+                <span  class="job-date job-info"><b>&#x53D1;&#x5E03;&#x4E8E; &nbsp;</b> Oct. 26, 2026</span> 
+              <span class="job-end-date job-info"><b>&#x7533;&#x8BF7;&#x622A;&#x6B62;&#x4E8E; &nbsp;</b> Nov. 06, 2026</span> 
+            <div class="section7-buttons">
+        <a class="button job-apply bottom" data-job-id="46354228864" data-job-organization-id="3036" data-selector-name="job-apply-link" data-page-type="Job" data-page-Name="Job Details" data-override-candidate-card="False" data-delay-url="True" data-apply-url="https://jobs.sanofi.cn/sys/apply/job/application/2649/46354228864" href="https://jobs.sanofi.cn/sys/apply/job/application/2649/46354228864" rel="nofollow" data-apply-mobile="true">&#x7ACB;&#x5373;&#x7533;&#x8BF7;</a>
+                
+                    <button type="button" class="js-save-job-btn" data-job-id="46354228864" data-org-id="3036">Save for Later</button>
+                
+                <button type="button" class="job-share-btn" data-fancybox data-src="#social-share">&#x5206;&#x4EAB;</button>
+            
+            </div>
+    </div>
+
+<script>
+    console.log({"ModuleType":13,"ApplyButtonText":"立即申请","JobDetailsAlign":2,"JobDetailsDate":0,"JobDetailsJobTypeId":2,"JobDetailsSelectedDate":"2026-10-26T08:00:45.078Z","JobDetailsJobDateFormat":1,"JobDetailsJobLabelId":"职位 ID","JobDetailsJobDatePosting":"发布日期","JobDetailsDescriptionFormat":0,"ShowApplyLater":false,"ShowApplyMobile":true,"ShowApplyLaterMobile":false,"ShowApplyLaterWeb":false,"ApplyLaterText":"Apply Later","ApplyLaterAlign":0,"ApplyLaterSubject":"[[JOB_TITLE]] at [[COMPANY_NAME]]","PublishedCandidateCardPageId":null,"ReferrerPageId":null,"ReferrerPageButtonText":"","ShowSavedJobsIcon":true,"IconLabel":"Save for Later","OverrideCandidateCard":false,"ModulePageType":2,"ModulePageName":"Job Details","DisplayJobDateFormat":"MMM. dd, yyyy","JobDetailsSelectedId":"","ApplyUrl":"https://sanofi.wd3.myworkdayjobs.com/SanofiCareers/job/Hyderabad/Project-Specialist---Global-Meetings---Events_R2874351/apply","JobDescription":"\u003cp\u003e\u003cb\u003eJob title\u003c/b\u003e:\u003ci\u003e Project Specialist - Global Meetings \u0026 Events\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eHiring Manager: Project Manager\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eLocation: Hyderabad/ Mumbai\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003e% of travel expected: Travel required as per business need\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eJob type: Permanent and Full time\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e\u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e\u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eAbout the job\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eOur Team:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eSanofi Business Operations (\u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSBO\u003c/i\u003e\u003c/span\u003e\u003ci\u003e) is designed to centralize processes and activities to support global medical business units and medical office.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations\u003c/i\u003e\u003c/span\u003e\u003ci\u003e is built to reduce reliance on external services providers and facilitate the development of internal expertise. The \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations \u003c/i\u003e\u003c/span\u003e\u003ci\u003ewill leverage untapped combination of talent pool.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eMain responsibilities:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe overall purpose and main responsibilities are listed below:\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eProject Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003c/i\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProduction (1) Support scientific events activities \u0026 external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts \u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cbr /\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProject Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eStakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eEvents (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation \u0026 training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eExperience\u003c/b\u003e: Post Graduate degree in any work stream with \u003e4 years of experience, life sciences degree is preferred \u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eSoft skills\u003c/b\u003e: Stakeholder \u0026 Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills\u003cb\u003eTechnical skills\u003c/b\u003e: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e","JobTitle":"Project Specialist - Global Meetings \u0026 Events","Job":{"ID":46354228864,"OrganizationID":3036,"TenantID":2649,"AdditionalFields":[{"ID":0,"JobID":0,"Name":"AJD","RawValue":"GenMed","DataType":0},{"ID":0,"JobID":0,"Name":"source","RawValue":"{\n  \u0022feedLocations\u0022: [\n    {\n      \u0022lat\u0022: null,\n      \u0022lon\u0022: null,\n      \u0022city\u0022: \u0022Hyderabad\u0022,\n      \u0022region\u0022: null,\n      \u0022country\u0022: \u0022India\u0022\n    }\n  ]\n}","DataType":0},{"ID":0,"JobID":0,"Name":"Division","RawValue":null,"DataType":0},{"ID":0,"JobID":0,"Name":"JobType1","RawValue":"Regular","DataType":0},{"ID":0,"JobID":0,"Name":"Hubsfacet","RawValue":"Hubs","DataType":0},{"ID":0,"JobID":0,"Name":"CareerArea","RawValue":"Marketing \u0026 Sales","DataType":0},{"ID":0,"JobID":0,"Name":"FilterFlag","RawValue":"No","DataType":0},{"ID":0,"JobID":0,"Name":"hiringname","RawValue":"Sanofi","DataType":0},{"ID":0,"JobID":0,"Name":"salarydesc","RawValue":null,"DataType":0},{"ID":0,"JobID":0,"Name":"Telecommute","RawValue":"No","DataType":0},{"ID":0,"JobID":0,"Name":"SalaryDisplay","RawValue":null,"DataType":0},{"ID":0,"JobID":0,"Name":"EarlyTalentHiring","RawValue":null,"DataType":0},{"ID":0,"JobID":0,"Name":"JobPostingEndDate","RawValue":"2026-11-06","DataType":0},{"ID":0,"JobID":0,"Name":"SalaryCurrencyCode1","RawValue":null,"DataType":0},{"ID":0,"JobID":0,"Name":"SalaryCurrencySymbol","RawValue":null,"DataType":0}],"AdditionalSearchKeywords":"","OfficeName":"","Address":"Sanofi Healthcare India Private Limited 9th floor Tower 100, Plot 4, Survey no. 83/1, Hyderabad Knowledge City, Raidurg Panmakhta Village, Serilingampally Mandal, Ranga Reddy District Hyderabad- 500032 Telangāna ","Address2":"","ApplyEmail":"","ApplyUrl":"https://sanofi.wd3.myworkdayjobs.com/SanofiCareers/job/Hyderabad/Project-Specialist---Global-Meetings---Events_R2874351/apply","ApplyUrls":{},"AssignmentStartDate":"","Benefits":"","BillingCostCenter":"","BillingNotesForInvoice":"","BillingPONumber":"","Campaign":"","Brands":[],"Categories":[{"ID":32251712,"JobID":46354228864,"Name":"Commercial Excellence","GroupID":null,"IsCategoryGroup":false}],"CategoryGroups":[],"LocationTranslations":[],"City":"Hyderabad","CompanyName":"General Medicines","ContactAddress":"","ContactAddress2":"","ContactCity":"","ContactCompany":"","ContactCountry":"","ContactEmail":"","ContactFax":"","ContactName":"","ContactPhone":"","ContactState":"","ContactZip":"","Country":"India","DaysRequiredToWork":"","Description":"\u003cp\u003e\u003cb\u003eJob title\u003c/b\u003e:\u003ci\u003e Project Specialist - Global Meetings \u0026amp; Events\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eHiring Manager: Project Manager\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eLocation: Hyderabad/ Mumbai\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003e% of travel expected: Travel required as per business need\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eJob type: Permanent and Full time\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eAbout the job\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eOur Team:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eSanofi Business Operations (\u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSBO\u003c/i\u003e\u003c/span\u003e\u003ci\u003e) is designed to centralize processes and activities to support global medical business units and medical office.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations\u003c/i\u003e\u003c/span\u003e\u003ci\u003e is built to reduce reliance on external services providers and facilitate the development of internal expertise. The \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations \u003c/i\u003e\u003c/span\u003e\u003ci\u003ewill leverage untapped combination of talent pool.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eMain responsibilities:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe overall purpose and main responsibilities are listed below:\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eProject Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProduction (1) Support scientific events activities \u0026amp; external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts \u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cbr /\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProject Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eStakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eEvents (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation \u0026amp; training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eExperience\u003c/b\u003e: Post Graduate degree in any work stream with \u0026gt;4 years of experience, life sciences degree is preferred \u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eSoft skills\u003c/b\u003e: Stakeholder \u0026amp; Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills\u003cb\u003eTechnical skills\u003c/b\u003e: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e","DescriptionHtml":"\u003cp\u003e\u003cb\u003eJob title\u003c/b\u003e:\u003ci\u003e Project Specialist - Global Meetings \u0026amp; Events\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eHiring Manager: Project Manager\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eLocation: Hyderabad/ Mumbai\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003e% of travel expected: Travel required as per business need\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eJob type: Permanent and Full time\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eAbout the job\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eOur Team:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eSanofi Business Operations (\u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSBO\u003c/i\u003e\u003c/span\u003e\u003ci\u003e) is designed to centralize processes and activities to support global medical business units and medical office.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations\u003c/i\u003e\u003c/span\u003e\u003ci\u003e is built to reduce reliance on external services providers and facilitate the development of internal expertise. The \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations \u003c/i\u003e\u003c/span\u003e\u003ci\u003ewill leverage untapped combination of talent pool.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eMain responsibilities:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe overall purpose and main responsibilities are listed below:\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eProject Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProduction (1) Support scientific events activities \u0026amp; external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts \u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cbr /\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProject Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eStakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eEvents (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation \u0026amp; training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eExperience\u003c/b\u003e: Post Graduate degree in any work stream with \u0026gt;4 years of experience, life sciences degree is preferred \u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eSoft skills\u003c/b\u003e: Stakeholder \u0026amp; Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills\u003cb\u003eTechnical skills\u003c/b\u003e: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e","Education":"","EndDate":"","ExternalReferenceCode":"R2874351","FeedCategory":"","FeedID":430888358,"Field1":"","Field2":"","HideEmailAddress":"","HoursPerWeek":"","ImportID":"","Industry":"","InsertedDate":"2026-10-26T08:00:45.078Z","PostedDate":"2026-10-26T00:00:00Z","Intro":"","IsManager":"Sanofi_WD_API_Prod_CN","IsTelecommute":"","JobLevel":"","JobStatus":"","JobType":"Regular","LanguageCode":"ZH","LanguageID":2,"LocationName":"","Locations":[{"ID":1269843,"LocationHierarchyID":0,"HierarchyPath":"/1269750/1254788/1269844/1269843/","Path":"/1269750/1254788/1269844/1269843/","Type":5,"Country":"印度","CountryCode":"IN","Division1":"特伦甘纳邦","Division1Code":"TS","Division2":"Hyderabad","Division2Code":"536","Division3":"","Division3Code":null,"Division4":null,"Division4Code":null,"City":"海得拉巴","Neighborhood70":"","Neighborhood80":"","Latitude":17.38405,"Longitude":78.45636,"Population":0,"FormattedName":"Hyderabad, Telangana","IsPostalCode":false,"AlternateNames":[],"Addresses":[]}],"MobileApplyUrl":"","MaxExperience":"","MinExperience":"","NumberOfPosition":"","PostalCode":"","Qualifications":"","ReferralBonus":"","Region":"","Salary":"","SalaryCurrencyCode":"","SalaryFrom":"","SalaryRelocation":"","SalaryTime":"","SalaryTo":"","Title":"Project Specialist - Global Meetings \u0026 Events","Travel":"","UpdatedDate":"2026-10-26T08:00:45.078Z","Version":1,"YearsOfExperience":"","IsGlobal":false,"HashMD5":"0da2e12b0426c83225820541dc3b3dec469274b6","PinnedStart":null,"PinnedExpires":null,"PrioritizeCategory":false,"PrioritizeLocation":false,"PrioritizeTitle":false,"PrioritizeCombine":false,"PrioritizeAlways":false,"GoogleJobName":"","TBApplyUrl":"","Priority":0,"OnetCode":"","Skills":[],"ApplyUrlMacros":{"JOB-REFERENCE-ID":"R2874351","JOB-REQUISITION-ID":"R2874351"},"Facetables":{"company_name":["General Medicines"],"is_manager":["Sanofi_WD_API_Prod_CN"],"job_type":["Regular"],"multivaluefield2":["hyderabad-jobs-vu","hyderabad-jobs-vu"],"custom_fields.AJD":["GenMed"],"custom_fields.source":["{\n  \u0022feedLocations\u0022: [\n    {\n      \u0022lat\u0022: null,\n      \u0022lon\u0022: null,\n      \u0022city\u0022: \u0022Hyderabad\u0022,\n      \u0022region\u0022: null,\n      \u0022country\u0022: \u0022India\u0022\n    }\n  ]\n}"],"custom_fields.JobType1":["Regular"],"custom_fields.Hubsfacet":["Hubs"],"custom_fields.CareerArea":["Marketing \u0026 Sales"],"custom_fields.FilterFlag":["No"],"custom_fields.hiringname":["Sanofi"],"custom_fields.Telecommute":["No"],"custom_fields.JobPostingEndDate":["2026-11-06"]}},"JobModel":{"Id":46354228864,"TenantId":2649,"OrganizationId":3036,"TBApplyUrl":null,"PostalCode":"","NumberOfPosition":null,"MinExperience":"","MaxExperience":"","MobileApplyUrl":null,"Locations":[{"Id":1269843,"IsPostalCode":false,"PostalCode":null,"FormattedName":"Hyderabad, Telangana","DisplayName":"海得拉巴","Population":0,"Longitude":78.45636,"Latitude":17.38405,"Level":0,"Neighborhood80":"","Neighborhood70":"","City":"海得拉巴","Division4Code":null,"Division4":null,"Division3Code":null,"Division3":"","Division2Code":"536","Division2":"Hyderabad","Division1Code":"TS","Division1":"特伦甘纳邦","CountryCode":"IN","Country":"印度","Type":5,"Path":"/1269750/1254788/1269844/1269843/","HierarchyPath":"/1269750/1254788/1269844/1269843/","LocationHierarchyID":0,"AlternateNames":[],"Addresses":[]}],"LocationName":null,"LanguageID":2,"LanguageCode":"ZH","JobType":"Regular","JobStatus":"","JobLevel":"","IsTelecommute":"","IsManager":"Sanofi_WD_API_Prod_CN","Intro":"","ONetSocCode":"","PostedDate":"2026-10-26T00:00:00Z","InsertedDate":"2026-10-26T08:00:45.078Z","Industry":"","ImportId":"","Qualifications":"","ApplyUrlMacros":null,"ReferralBonus":null,"Salary":null,"PrioritizeAlways":false,"PrioritizeCombine":false,"PrioritizeTitle":false,"PrioritizeLocation":false,"PrioritizeCategory":false,"PinnedExpires":null,"PinnedStart":null,"HashMD5":"0da2e12b0426c83225820541dc3b3dec469274b6","IsGlobal":false,"YearsOfExperience":null,"Version":1,"UpdatedDate":"2026-10-26T08:00:45.078Z","Travel":"","Title":"Project Specialist - Global Meetings \u0026 Events","SalaryTo":null,"SalaryTime":"","SalaryRelocation":"","SalaryFrom":null,"SalaryCurrencyCode":null,"HoursPerWeek":"","Region":"","HideEmailAddress":null,"Field1":"","Categories":[{"Id":32251712,"Name":"Commercial Excellence","Description":null,"Hidden":false,"IsCategoryGroup":false,"GroupId":null,"DisplayName":null}],"Brands":[],"LocationTranslations":[],"Campaign":"","BillingPONumber":null,"BillingNotesForInvoice":null,"BillingCostCenter":null,"Benefits":null,"AssignmentStartDate":null,"ApplyUrls":{},"ApplyUrl":"https://sanofi.wd3.myworkdayjobs.com/SanofiCareers/job/Hyderabad/Project-Specialist---Global-Meetings---Events_R2874351/apply","ApplyEmail":null,"Address2":"","Address":"Sanofi Healthcare India Private Limited 9th floor Tower 100, Plot 4, Survey no. 83/1, Hyderabad Knowledge City, Raidurg Panmakhta Village, Serilingampally Mandal, Ranga Reddy District Hyderabad- 500032 Telangāna ","OfficeName":null,"AdditionalSearchKeywords":null,"AdditionalFields":[{"Id":0,"JobId":0,"Name":"AJD","RawValue":"GenMed","DataType":0},{"Id":0,"JobId":0,"Name":"source","RawValue":"{\n  \u0022feedLocations\u0022: [\n    {\n      \u0022lat\u0022: null,\n      \u0022lon\u0022: null,\n      \u0022city\u0022: \u0022Hyderabad\u0022,\n      \u0022region\u0022: null,\n      \u0022country\u0022: \u0022India\u0022\n    }\n  ]\n}","DataType":0},{"Id":0,"JobId":0,"Name":"Division","RawValue":null,"DataType":0},{"Id":0,"JobId":0,"Name":"JobType1","RawValue":"Regular","DataType":0},{"Id":0,"JobId":0,"Name":"Hubsfacet","RawValue":"Hubs","DataType":0},{"Id":0,"JobId":0,"Name":"CareerArea","RawValue":"Marketing \u0026 Sales","DataType":0},{"Id":0,"JobId":0,"Name":"FilterFlag","RawValue":"No","DataType":0},{"Id":0,"JobId":0,"Name":"hiringname","RawValue":"Sanofi","DataType":0},{"Id":0,"JobId":0,"Name":"salarydesc","RawValue":null,"DataType":0},{"Id":0,"JobId":0,"Name":"Telecommute","RawValue":"No","DataType":0},{"Id":0,"JobId":0,"Name":"SalaryDisplay","RawValue":null,"DataType":0},{"Id":0,"JobId":0,"Name":"EarlyTalentHiring","RawValue":null,"DataType":0},{"Id":0,"JobId":0,"Name":"JobPostingEndDate","RawValue":"2026-11-06","DataType":0},{"Id":0,"JobId":0,"Name":"SalaryCurrencyCode1","RawValue":null,"DataType":0},{"Id":0,"JobId":0,"Name":"SalaryCurrencySymbol","RawValue":null,"DataType":0}],"Field2":"","City":"Hyderabad","CategoryGroups":null,"ContactAddress":"","FeedId":430888358,"FeedCategory":null,"ExternalReferenceCode":"R2874351","EndDate":null,"Education":"","DescriptionHtml":"\u003cp\u003e\u003cb\u003eJob title\u003c/b\u003e:\u003ci\u003e Project Specialist - Global Meetings \u0026amp; Events\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eHiring Manager: Project Manager\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eLocation: Hyderabad/ Mumbai\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003e% of travel expected: Travel required as per business need\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eJob type: Permanent and Full time\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eAbout the job\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eOur Team:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eSanofi Business Operations (\u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSBO\u003c/i\u003e\u003c/span\u003e\u003ci\u003e) is designed to centralize processes and activities to support global medical business units and medical office.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations\u003c/i\u003e\u003c/span\u003e\u003ci\u003e is built to reduce reliance on external services providers and facilitate the development of internal expertise. The \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations \u003c/i\u003e\u003c/span\u003e\u003ci\u003ewill leverage untapped combination of talent pool.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eMain responsibilities:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe overall purpose and main responsibilities are listed below:\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eProject Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProduction (1) Support scientific events activities \u0026amp; external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts \u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cbr /\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProject Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eStakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eEvents (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation \u0026amp; training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eExperience\u003c/b\u003e: Post Graduate degree in any work stream with \u0026gt;4 years of experience, life sciences degree is preferred \u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eSoft skills\u003c/b\u003e: Stakeholder \u0026amp; Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills\u003cb\u003eTechnical skills\u003c/b\u003e: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e","Description":"\u003cp\u003e\u003cb\u003eJob title\u003c/b\u003e:\u003ci\u003e Project Specialist - Global Meetings \u0026amp; Events\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eHiring Manager: Project Manager\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eLocation: Hyderabad/ Mumbai\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003e% of travel expected: Travel required as per business need\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003e·       \u003c/i\u003e\u003c/span\u003e\u003ci\u003eJob type: Permanent and Full time\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style=\u0022color:#7f7f7f\u0022\u003e\u003ci\u003e\u003cb\u003e \u003c/b\u003e\u003c/i\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eAbout the job\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eOur Team:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eSanofi Business Operations (\u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSBO\u003c/i\u003e\u003c/span\u003e\u003ci\u003e) is designed to centralize processes and activities to support global medical business units and medical office.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations\u003c/i\u003e\u003c/span\u003e\u003ci\u003e is built to reduce reliance on external services providers and facilitate the development of internal expertise. The \u003c/i\u003e\u003cspan style=\u0022color:#000000\u0022\u003e\u003ci\u003eSanofi Business Operations \u003c/i\u003e\u003c/span\u003e\u003ci\u003ewill leverage untapped combination of talent pool.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e\u003cb\u003eMain responsibilities:\u003c/b\u003e\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eThe overall purpose and main responsibilities are listed below:\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eProject Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003e \u003c/i\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProduction (1) Support scientific events activities \u0026amp; external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts \u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cbr /\u003e\u003cul\u003e\u003cli\u003e\u003ci\u003eProject Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eStakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eEvents (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation \u0026amp; training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eExperience\u003c/b\u003e: Post Graduate degree in any work stream with \u0026gt;4 years of experience, life sciences degree is preferred \u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003e\u003cb\u003eSoft skills\u003c/b\u003e: Stakeholder \u0026amp; Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills\u003cb\u003eTechnical skills\u003c/b\u003e: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e","DaysRequiredToWork":null,"CompanyName":"General Medicines","Country":"India","ContactState":"","ContactPhone":"","ContactName":"","ContactFax":"","ContactEmail":"","ContactCountry":"","ContactCompany":"","ContactCity":"","ContactAddress2":null,"ContactZip":"","Latitude":0.0,"Longitude":0.0,"Score":0.0,"GoogleJobName":null,"GoogleJobRequestId":null,"Facetables":{"company_name":["General Medicines"],"is_manager":["Sanofi_WD_API_Prod_CN"],"job_type":["Regular"],"multivaluefield2":["hyderabad-jobs-vu","hyderabad-jobs-vu"],"custom_fields.AJD":["GenMed"],"custom_fields.source":["{\n  \u0022feedLocations\u0022: [\n    {\n      \u0022lat\u0022: null,\n      \u0022lon\u0022: null,\n      \u0022city\u0022: \u0022Hyderabad\u0022,\n      \u0022region\u0022: null,\n      \u0022country\u0022: \u0022India\u0022\n    }\n  ]\n}"],"custom_fields.JobType1":["Regular"],"custom_fields.Hubsfacet":["Hubs"],"custom_fields.CareerArea":["Marketing \u0026 Sales"],"custom_fields.FilterFlag":["No"],"custom_fields.hiringname":["Sanofi"],"custom_fields.Telecommute":["No"],"custom_fields.JobPostingEndDate":["2026-11-06"]},"GoogleJobId":null,"GoogleRequestId":null,"FromGoogleSearchRequest":false,"ATSJobID":"","CategoryClasses":"commercialexcellence","CategoryDimensions":"Commercial Excellence","CategoryIds":"32251712","LocationDimensions":"海得拉巴~特伦甘纳邦~印度","LocationIds":"1269750-1254788-1269844-1269843","FacetIds":"company_name-General-Medicines is_manager-Sanofi_WD_API_Prod_CN job_type-Regular multivaluefield2-hyderabad-jobs-vu-hyderabad-jobs-vu custom_fields.AJD-GenMed custom_fields.source-{\n--\u0022feedLocations\u0022:-[\n----{\n------\u0022lat\u0022:-null,\n------\u0022lon\u0022:-null,\n------\u0022city\u0022:-\u0022Hyderabad\u0022,\n------\u0022region\u0022:-null,\n------\u0022country\u0022:-\u0022India\u0022\n----}\n--]\n} custom_fields.JobType1-Regular custom_fields.Hubsfacet-Hubs custom_fields.CareerArea-Marketing-\u0026-Sales custom_fields.FilterFlag-No custom_fields.hiringname-Sanofi custom_fields.Telecommute-No custom_fields.JobPostingEndDate-2026-11-06","DivisionDimensions":"3036,General Medicines"},"CustomFields":{},"WWMReferralId":null,"CanShowReferrerPage":false,"GoogleJobId":null,"GoogleRequestId":null,"PageTypeId":0,"PublishedQuickApplyPageId":null,"ShowApplyAndQuickApply":false,"QuickApplyButtonText":"","ShowOnlyJobData":false,"Id":487,"ModuleId":13,"CompanySiteId":1605,"PublishedCompanySiteId":0,"Name":"Section 7 - Job Title","Html":"@using Tmp.TalentBrew.Core\r\n@using Tmp.TalentBrew.Core.HtmlHelpers\r\n@using Tmp.TalentBrew.Model\r\n@using Tmp.Platform.Core.Base\r\n@using System.Globalization;\r\n@model PublishedJobDetailsModuleModel\r\n\r\n@{ \r\n\r\n\r\n\tvoid ApplyButton(string position) \r\n\t{\r\n        var buttonText = Model.PageTypeId == PageType.QuickApply ? Model.QuickApplyButtonText : Model.ApplyButtonText;\r\n        \r\n        if(Model.ShowApplyAndQuickApply \u0026\u0026 Model.PageTypeId == PageType.QuickApply)\r\n        {\r\n            \u003ca class=\u0022button job-apply @position\u0022 @Html.JobDetailIncludeApplyUrlAttributes(Model)\u003e@Model.ApplyButtonText\u003c/a\u003e \r\n        }\r\n        \u003ca class=\u0022button job-apply @position\u0022 @Html.JobDetailsApplyUrlAttributes(Model)\u003e@buttonText\u003c/a\u003e\r\n\t}\r\n\r\n    void ApplyLaterButton(string position) \r\n    {\r\n        \u003ca class=\u0022button job-apply job-apply-later @position\u0022 @Html.JobDetailsApplyLaterUrlAttributes(Model)\u003e@Model.ApplyLaterText\u003c/a\u003e\r\n    }\r\n    \r\n    @*  Making text that was in EN only multilingual  *@\r\n    @* Declaring  String and give it EN default*@\r\n    \r\n    string shareText = \u0022Share this job\u0022;\r\n    string multipleLocations = \u0022Multiple Locations\u0022;\r\n    string postedOnText = \u0022Posted on\u0022;\r\n    string closingOntext = \u0022Closing on\u0022;\r\n    string salaryText = \u0022Salary Range\u0022;\r\n    \r\n    var locationId = Model.Page.LocationIds;\r\n    var locationUSA = \u00226252001\u0022;\r\n    var salarySymbol = Model.CustomFields.salaryCurrencySymbol;\r\n    var salaryCode = Model.CustomFields.SalaryCurrencyCode1;\r\n    var salary = Model.CustomFields.SalaryDisplay;\r\n    \r\n    @* var  = Model.Job.AdditionalFields.FirstOrDefault(f =\u003e f.Name.Equals(\u0022\u0022, StringComparison.OrdinalIgnoreCase))?.RawValue; *@\r\n  \r\n    string jobPostingEndDate = Model.CustomFields.jobPostingEndDate;\r\n    string remoteLocation = Model.CustomFields.RemoteLocation;\r\n    \r\n    @* Switch  String based on site language  *@\r\n    switch(Model.UrlLanguageCode) {\r\n        @* Dutch\r\n        ========================================================================== *@     \r\n        case LanguageCode.NL:\r\n             \r\n        break; \r\n\r\n        @*  French\r\n        ========================================================================== *@     \r\n        case LanguageCode.FR:\r\n            shareText = \u0022Partagez ceci\u0022;\r\n            multipleLocations = \u0022Plusieurs emplacements\u0022;\r\n            postedOnText = \u0022Posté le\u0022;\r\n            closingOntext = \u0022Expire le\u0022;\r\n        break;\r\n\r\n        @*   French-Canadian\r\n        ========================================================================== *@     \r\n        case LanguageCode.FC:\r\n\r\n        break;\r\n\r\n        @*  German\r\n        ========================================================================== *@     \r\n        case LanguageCode.DE:\r\n            postedOnText = \u0022Gepostet am\u0022;\r\n            closingOntext = \u0022Endet am\u0022;\r\n\r\n        break;\r\n        \r\n        @*  Hungarian\r\n        ========================================================================== *@     \r\n        case LanguageCode.HU:\r\n\r\n        break;\r\n\r\n        @*  Italian\r\n        ========================================================================== *@     \r\n        case LanguageCode.IT:\r\n            \r\n        break;\r\n\r\n        @*  Japanese\r\n        ========================================================================== *@     \r\n        case LanguageCode.JA:\r\n            \r\n        break;\r\n\r\n        @*  Korean\r\n        ========================================================================== *@     \r\n        case LanguageCode.KO:\r\n            \r\n        break;\r\n\r\n        @*  Polish\r\n        ========================================================================== *@     \r\n        case LanguageCode.PL:\r\n\r\n        break;\r\n\r\n        @*  Portuguese-Brazil\r\n        ========================================================================== *@     \r\n        case LanguageCode.PT:\r\n\r\n        break;\r\n\r\n        @*  Romanian\r\n        ========================================================================== *@     \r\n        case LanguageCode.RO:\r\n            \r\n        break;\r\n\r\n        @*  Spanish\r\n        ========================================================================== *@     \r\n        case LanguageCode.ES:\r\n\r\n        break;\r\n\r\n        @*  Thai\r\n        ========================================================================== *@     \r\n        case LanguageCode.TH:\r\n                            \r\n        break;\r\n\r\n        @*  Vietnamese\r\n        ========================================================================== *@     \r\n        case LanguageCode.VI:\r\n            \r\n        break;\r\n\r\n        @* English - Default\r\n        ========================================================================== *@     \r\n        default:\r\n            //  variable is already set to the English default value.\r\n        break;\r\n    }\r\n    \r\n    switch(Model.CompanySiteId) {\r\n \r\n        @* Chinese Instance - GST_ZH-CN_v1_0 \r\n        ========================================================================== *@  \r\n        case 1605:\r\n            shareText = \u0022分享\u0022;\r\n            multipleLocations = \u0022多个地点\u0022;\r\n            postedOnText = \u0022发布于\u0022;\r\n            closingOntext = \u0022申请截止于\u0022;\r\n        break;\r\n \r\n    } @* End of Model.CompanySiteId Switch *@\r\n}\r\n\r\n@if (Model != null)\r\n{\r\n    \u003cdiv class=\u0022job-description section7-title\u0022 @Html.CustomSelector(Model) @Html.JobDetailsSectionAttributes(Model)\u003e\r\n    \r\n        @* Job Title *@\r\n        \u003ch1\u003e@Model.JobTitle\u003c/h1\u003e \r\n        \r\n        @* Location *@\r\n        @if(Model.Job.Locations.Count \u003e 3) {\r\n            \u003cspan class=\u0022job-location job-info\u0022\u003e@multipleLocations\u003c/span\u003e \r\n        }\r\n        else if(Model.Job.Locations.Count == 1 \u0026\u0026 !String.IsNullOrEmpty(remoteLocation)){\r\n            \u003cspan class=\u0022job-location job-info\u0022\u003e@Html.Raw(@remoteLocation)\u003c/span\u003e\r\n        }\r\n        else {\r\n            \u003cspan class=\u0022job-location job-info\u0022\u003e@Html.Raw(Html.JobFormattedLocation(Model.Job.Locations, \u0022 \u003cbr\u003e\u0022, \u0022[[CITY_NAME]], [[STATE_NAME]]\u0022, \u0022[[CITY_NAME]], [[COUNTRY_NAME]]\u0022))\u003c/span\u003e \r\n        }\r\n        \r\n        \r\n        @* Job Type *@\r\n        @if (!String.IsNullOrEmpty(Model.Job.JobType)) {\r\n            \u003cspan class=\u0022job-type job-info\u0022\u003e@Model.Job.JobType\u003c/span\u003e\r\n        }\r\n        \r\n     \t@if(Model.ShowOnlyJobData == true)\r\n\t\t{\r\n\t\t   @if (Model.JobDetailsJobTypeId != JobDetailsIdType.None)\r\n           { \r\n                @* Job ID *@\r\n                \u003cspan class=\u0022job-id job-info\u0022\u003e\u003cb\u003e@Model.JobDetailsJobLabelId\u003c/b\u003e @Model.JobDetailsSelectedId\u003c/span\u003e \r\n\t\t   }\r\n           @if (Model.JobDetailsJobDateFormat != JobDateFormat.NoDate)\r\n           { \r\n                @* Date *@\r\n                \u003cspan class=\u0022job-date job-info\u0022\u003e\u003cb\u003e@Model.JobDetailsJobDatePosting\u003c/b\u003e @Model.JobDetailsSelectedDate.ToLocalTime().ToString(Model.DisplayJobDateFormat)\u003c/span\u003e \r\n\t\t   } \r\n           @*\u003cdiv class=\u0022ats-description\u0022\u003e@Html.Raw(Model.JobDescription)\u003c/div\u003e*@\r\n\t\t} \r\n\t\t\r\n\t\telse\r\n\t\t\r\n\t\t{\r\n            @if (Model.JobDetailsAlign != JobDetailsAlignType.Below)\r\n            {\r\n                ApplyButton(\u0022top\u0022);\r\n            }\r\n            @if (Model.ShowApplyLater \u0026\u0026 Model.ApplyLaterAlign != JobDetailsAlignType.Below)\r\n            {\r\n                ApplyLaterButton(\u0022top\u0022);\r\n            }\r\n            \r\n            @if (Model.JobDetailsJobTypeId != JobDetailsIdType.None)\r\n            { \r\n                @* Job ID *@\r\n                \u003cspan class=\u0022job-id job-info\u0022\u003e\u003cb\u003e@Model.JobDetailsJobLabelId\u003c/b\u003e @Model.JobDetailsSelectedId\u003c/span\u003e\r\n            }\r\n            @if (Model.JobDetailsJobDateFormat != JobDateFormat.NoDate \u0026\u0026 Model.JobDetailsSelectedDate != null)\r\n            { \r\n                @* Date *@\r\n                \u003cspan  class=\u0022job-date job-info\u0022\u003e\u003cb\u003e@postedOnText \u0026nbsp;\u003c/b\u003e @Model.JobDetailsSelectedDate.ToLocalTime().ToString(Model.DisplayJobDateFormat)\u003c/span\u003e \r\n            }\r\n            \r\n            \r\n           @if ( !String.IsNullOrWhiteSpace(jobPostingEndDate))\r\n            { \r\n                @* Date *@\r\n              @* \u003cspan class=\u0022job-end-date job-info\u0022\u003e\u003cb\u003eClosing on \u0026nbsp;\u003c/b\u003e @jobEndDate.ToLocalTime().ToString(Model.DisplayJobDateFormat)\u003c/span\u003e  *@\r\n \r\n          \r\n              DateTime newDate = Convert.ToDateTime(jobPostingEndDate);\r\n             \r\n              \u003cspan class=\u0022job-end-date job-info\u0022\u003e\u003cb\u003e@closingOntext \u0026nbsp;\u003c/b\u003e @newDate.ToString(Model.DisplayJobDateFormat)\u003c/span\u003e \r\n            }\r\n          \r\n            @* UDS-24656 *@\r\n            @if ( !String.IsNullOrWhiteSpace(salary)) {\r\n                \u003cspan class=\u0022job-salary job-info\u0022\u003e\r\n                    \r\n                    @* Currency Icons *@\r\n                    @if ( !String.IsNullOrWhiteSpace(salaryCode)) {\r\n                        @if ( salaryCode == \u0022EUR\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon euro-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022CZK\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon czech-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022DKK\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon danish-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022HUF\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon hungarian-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022PLN\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon polish-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022RON\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon romanian-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022SEK\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon swedish-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                        else if ( salaryCode == \u0022USD\u0022 || salaryCode == \u0022CAD\u0022) {\r\n                            \u003cspan class=\u0022salary-currency-icon dollar-icon\u0022\u003e\u003c/span\u003e\r\n                        }\r\n                    }\r\n                    \r\n                    \u003cb\u003e@salaryText \u0026nbsp;\u003c/b\u003e @salary\r\n                \u003c/span\u003e\r\n            }\r\n\r\n            @*\u003cdiv class=\u0022ats-description\u0022\u003e@Html.Raw(Model.JobDescription)\u003c/div\u003e*@\r\n            \r\n            \u003cdiv class=\u0022section7-buttons\u0022\u003e\r\n                @if (Model.JobDetailsAlign != JobDetailsAlignType.Above)\r\n                {\r\n                    ApplyButton(\u0022bottom\u0022);\r\n                }\r\n                @if (Model.ShowApplyLater \u0026\u0026 Model.ApplyLaterAlign != JobDetailsAlignType.Above)\r\n                {\r\n                    ApplyLaterButton(\u0022bottom\u0022);\r\n                }\r\n                \r\n                @if (Model.ShowSavedJobsIcon == true) \r\n                { \r\n                    @* Save Job Button *@\r\n                    \u003cbutton type=\u0022button\u0022 class=\u0022js-save-job-btn\u0022 data-job-id=\u0022@Model.JobModel.Id.ToString()\u0022 data-org-id=\u0022@Model.JobModel.OrganizationId.ToString()\u0022\u003e@Model.IconLabel\u003c/button\u003e\r\n                }\r\n                \r\n                \u003cbutton type=\u0022button\u0022 class=\u0022job-share-btn\u0022 data-fancybox data-src=\u0022#social-share\u0022\u003e@shareText\u003c/button\u003e\r\n            \r\n            \u003c/div\u003e\r\n            \r\n            @if (Model.CanShowReferrerPage)\r\n            {\r\n                \u003ca class=\u0022button job-apply job-get-referred\u0022 @Html.JobDetailsReferrerUrlAttributes(Model)\u003e@Model.ReferrerPageButtonText\u003c/a\u003e\r\n            }\r\n\t\t}\r\n    \u003c/div\u003e\r\n\r\n\tusing (var context = Html.BeginScriptContext())\r\n    {\r\n        context.AddScriptFile(Url.CdnUrl(Constants.JobDetailsJavascript, \u0022TBCDN\u0022));\r\n    }\r\n}\r\n\r\n\u003cscript\u003e\r\n    console.log(@Html.Raw(Json.Serialize(Model)), \u0027site\u0027);\r\n\u003c/script\u003e","FormTypeId":null,"UrlLanguageCode":null,"PreviewType":0,"DateCreated":"2024-05-28T13:48:45.2081983","DateUpdated":"2026-04-15T16:47:00.8237378"}, 'site');
+</script>
+
+
+<form id="social-share" action="/subscribe/workwithme" data-error="" data-logged-in="" data-registered="" data-approved-domains="" data-ajax-url="//jobs.sanofi.cn/subscribe/workwithme" data-workwithme="False" data-selector-name="socialshare">
+        <section class="social-share">
+            <h2 class="social-share-headline">
+                <strong>将此发送给 </strong> <br>
+                <em>您认识的人 </em>
+            </h2>
+            <ul class="social-share-items">
+	                <li><a class="share email" data-job-id="46354228864" data-job-location="1269843" data-job-title="Project Specialist - Global Meetings &amp; Events" data-share-refer-url="//jobs.sanofi.cn/subscribe/refer/" data-share-type="email" href="mailto:?subject=Project%20Specialist%20-%20Global%20Meetings%20%26%20Events&amp;body=https%3a%2f%2fjobs.sanofi.cn%2f%25e5%25b7%25a5%25e4%25bd%259c%2f%25e6%25b5%25b7%25e5%25be%2597%25e6%258b%2589%25e5%25b7%25b4%2fproject-specialist-global-meetings-and-events%2f3036%2f46354228864%3futm_source%3demail%26utm_medium%3dsocial_post%26utm_campaign%3dSanofi_social">Email</a></li>
+            </ul>
+        </section>
+    </form>
+
+
+        </div>
+        <div class="section7-second">
+    	    
+
+    <div class="job-description section7-details" data-selector-name="jobdetails" data-org-id="3036" data-job-id="46354228864" data-save-jobs="true">
+
+        
+        
+
+            <div class="ats-description"><p><b>Job title</b>:<i> Project Specialist - Global Meetings & Events</i></p><p><i>Hiring Manager: Project Manager</i></p><p><span style="color:#000000"><i>·       </i></span><i>Location: Hyderabad/ Mumbai</i></p><p><span style="color:#000000"><i>·       </i></span><i>% of travel expected: Travel required as per business need</i></p><p><span style="color:#000000"><i>·       </i></span><i>Job type: Permanent and Full time</i></p><p><span style="color:#7f7f7f"><i><b></b></i></span></p><p><span style="color:#7f7f7f"><i><b></b></i></span></p><p><i>About the job</i></p><p><i></i></p><p><i><b>Our Team:</b></i></p><p><i>Sanofi Business Operations (</i><span style="color:#000000"><i>SBO</i></span><i>) is designed to centralize processes and activities to support global medical business units and medical office.</i></p><p><i>The </i><span style="color:#000000"><i>Sanofi Business Operations</i></span><i> is built to reduce reliance on external services providers and facilitate the development of internal expertise. The </i><span style="color:#000000"><i>Sanofi Business Operations </i></span><i>will leverage untapped combination of talent pool.</i></p><p><i></i></p><p><i></i></p><p><i><b>Main responsibilities:</b></i></p><p><i>The overall purpose and main responsibilities are listed below:</i></p><p><i>Project Specialist will be responsible for processing contracts and related documents, connecting with stakeholders, and tracking ongoing work.</i></p><p><i></i></p><ul><li><i>Production (1) Support scientific events activities & external expert engagements (2) Process contract and related documents within defined timelines (3) Check country specificities and handle queries received from country approver and/or external experts (4) Timely follow-ups with event leads, country approvers, and external experts </i></li></ul><br /><ul><li><i>Project Planning (1) Ensure delivery of ongoing projects as per agreed timelines (2) Ensure to follow defined/agreed quality parameters before sending out deliverables to the stakeholders</i></li><li><i>Stakeholder Management (1) Maintain effective working relationship with stakeholders and work with them to provide solutions on ongoing issues/problems (2) Regular connects with event leads, project requestors, and End-to-End contracting leads (3) Mentor the team on day to day as well exceptional cases , situations (4) Managing complex projects and interacting with local affliate/country approvers/BU to discuss over the hospitality (5) Training management on overall E2E actvities (Whenever required) (6) Driving the meetings with stakeholders and providing the project status (7) Manage challenges related to contracting tools (Vendor onboarding, OneCRM Profile creations (US), other technical issues in tools)</i></li><li><i>Events (1) Partner directly or indirectly, through third party agencies, with transversal brand teams, creative agencies, HCOs, Associations, and exhibit vendors for the best end-to-end experience at every event that meets/exceeds the expectations of our internal and external stakeholders. (2) Adhere to company policies, particularly those related to transparency and compliance. (3) Coordinate hotel accommodations and services, transportation, communications and facilities support, program functions and related activities, either directly or indirectly through a third party agency. (4) Plan and monitor different types of meetings, identify risks early in the process and set up a risk mitigation plan. Oversee all program logistics, including attendee registration and data management, food and beverage selection, speaker communications, audiovisual needs, and off-site venues, and on occasion provide hands-on program management. (5) Ensure budget management, financial reconciliation and post-meeting reporting to identify synergies and cost-efficiencies achieved. (6) Serve as the subject-matter expert for the implementation & training of technology solutions, and analysis of attendee data. Provide technical support and troubleshooting for One Sanofi platforms such as Veeva Vault CRM Events Management platform, SpotMe and CVent, as well as other meeting technology solutions.</i></li><li><i><b>Experience</b>: Post Graduate degree in any work stream with >4 years of experience, life sciences degree is preferred </i></li><li><i><b>Soft skills</b>: Stakeholder & Project management; communication skills; and ability to work independently and within a team environment. User and Data Management. Planning and analytical skills<b>Technical skills</b>: Proficient with Microsoft Office (i.e., Excel, Word, Access, PowerPoint, and Outlook)Experience of the Veeva Vault CRM Events Management platform, including report generation and event monitoring.Meeting planning and project management experience is an advantage.</i></li></ul></div>
+                <div class="jd-disclaimer">
+                    <p><strong>追寻</strong> <i>发展</i>。<strong>探索</strong> <i>菲凡</i>。</p>
+                <p>加入赛诺菲，开启科学新时代。在这里，你的成长将如我们的工作成果一样具有变革性。我们帮助你发展，助你走得更远、思考得更快、做前所未有的事。你将与我们一起突破边界、挑战常规，打造更智慧的解决方案，惠及全球社区。准备好追寻科学的奇迹，改善人们的生活了吗？让我们携手追寻发展，探索非凡。</p>
+                
+                <p>赛诺菲致力于为所有员工提供平等的就业机会，不因种族、肤色、血统、宗教、性别、国籍、性取向、年龄、公民身份、婚姻状况、残疾、性别认同、受保护的退伍军人身份或其他受法律保护的特征而有所差异。</p>
+                </div>
+            <div class="section7-buttons">
+        <a class="button job-apply bottom" data-job-id="46354228864" data-job-organization-id="3036" data-selector-name="job-apply-link" data-page-type="Job" data-page-Name="Job Details" data-override-candidate-card="False" data-delay-url="True" data-apply-url="https://jobs.sanofi.cn/sys/apply/job/application/2649/46354228864" href="https://jobs.sanofi.cn/sys/apply/job/application/2649/46354228864" rel="nofollow" data-apply-mobile="true">&#x7ACB;&#x5373;&#x7533;&#x8BF7;</a>
+                
+                    <button type="button" class="js-save-job-btn" data-job-id="46354228864" data-org-id="3036">&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</button>
+                
+                <button type="button" class="job-share-btn" data-fancybox data-src="#social-share">&#x5206;&#x4EAB;&#x6B64;&#x5185;&#x5BB9;</button>
+
+            </div>
+    </div>
+
+
+        </div>
+</div>
+
+
+
+<div class="section19" data-section-id="6558" data-layout-item-id="1624">
+    <div class="tablist section19-wrapper" data-vertical>
+    
+        <ul class="tablist__list section19-list">
+          <li><a class="tablist__tab section19-tab" href="#jobs-you-might-like">&#x53EF;&#x80FD;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x804C;&#x4F4D;</a></li>
+          <li><a class="tablist__tab section19-tab" href="#jobs-viewed">&#x6D4F;&#x89C8;&#x8FC7;&#x7684;&#x804C;&#x4F4D;</a></li>
+          <li><a class="tablist__tab section19-tab" href="#jobs-saved">&#x5DF2;&#x4FDD;&#x5B58;&#x7684;&#x804C;&#x4F4D;</a></li>
+        </ul>
+        
+        <div class="tablist__panel section19-panel" id="jobs-you-might-like">
+            <div class="tablist__content section19-content">
+                
+
+    <section class="job-list section19-joblist" data-selector-name="joblist" data-post-module="true" data-ajax-url="//jobs.sanofi.cn/module/postmodule" data-module-name="Section 19 - Job List" data-module-type="JobList" data-personalized="true">
+                <ul>
+                </ul>
+            <ul>
+                <li><a class="view-all" href="/%e6%b1%82%e8%81%8c">View All of Our Available Opportunities</a></li>
+            </ul>
+    </section>
+
+
+            </div>
+        </div>
+        <div class="tablist__panel section19-panel" id="jobs-viewed">
+            <div class="tablist__content section19-content">
+    	        
+
+    <section class="recently-viewed-job-list section19-joblist" data-recently-viewed-jobs="false" data-company-site-id="1605" data-ajax-url="//jobs.sanofi.cn/module/postmodule" data-module-name="Section 19 - Recently Viewed Jobs" data-module-type="RecentlyViewedJobList" data-selector-name="recentlyviewedjoblist" data-content-type="Dynamic">
+            <ul>
+                <li><p class="section19-no-jobs">&#x60A8;&#x8FD8;&#x6CA1;&#x6709;&#x67E5;&#x770B;&#x4EFB;&#x4F55;&#x804C;&#x4F4D;&#x3002;</li>
+            </ul>
+    </section>
+
+
+            </div>
+        </div>
+        <div class="tablist__panel section19-panel" id="jobs-saved">
+            <div class="tablist__content section19-content">
+    	        
+
+    <section class="recently-viewed-job-list section19-joblist" data-recently-viewed-jobs="false" data-company-site-id="1605" data-ajax-url="//jobs.sanofi.cn/module/postmodule" data-module-name="Section 19 - Saved Jobs" data-module-type="RecentlyViewedJobList" data-selector-name="recentlyviewedjoblist" data-content-type="UserSelected">
+            <ul>
+                <li><p class="section19-no-jobs">&#x60A8;&#x8FD8;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x804C;&#x4F4D;&#x3002;</li>
+            </ul>
+    </section>
+
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="section12 section12b" data-section-id="6536" data-layout-item-id="1566"> 
+    
+<h2 class="section12-copy__headline"><strong>体验可能性 </strong></h2>
+
+
+<div class="js-hub hub__wrapper content-feed" 
+id="data-content-feed-068606af77" 
+data-keepmappings="1" 
+data-narrowmappings="0" 
+data-load-more-max="3" 
+data-load-more-default="3" 
+data-load-more-amount="0" 
+data-load-more-current="3" 
+data-no-results-text="No results found, please try picking another combination of filters." 
+data-results-found-text="Results found." 
+data-no-prefiltered-results-text="No results found, please come back later." 
+data-feed-tracking-id="">
+
+  <ul class="hub-prefilter" hidden>
+
+
+
+
+    
+
+  </ul>
+
+
+  <ul class="js-hub-content hub-content__list" 
+  data-sort="1" 
+  data-sort-direction="2" 
+  data-sort-criteria="data-hub-title" 
+  data-system-css-columns="3">
+
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Ama" 
+      data-hub-meta-title=""  
+      data-hub-meta="&#x9;&#xD;&#xA;Ama puts her project management techniques and ServiceNow knowledge to use to help advance Sanofi&#x2019;s Digital Data operating model. Learn how our team connects data and AI to do what&#x2019;s never been done before." 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://www.linkedin.com/pulse/introducing-responsible-ai-reflections-ama-simons-masc/" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_ama.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:36" 
+      data-hub-date-created="05/28/2024 14:07:36"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_ama.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://www.linkedin.com/pulse/introducing-responsible-ai-reflections-ama-simons-masc/" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Ama" >Ama</a></h3>
+
+
+            <p class="hub-item__description">
+
+              &#x9;&#xD;&#xA;Ama puts her project management techniques and ServiceNow knowledge to use to help advance Sanofi&#x2019;s Digital Data operating model. Learn how our team connects data and AI to do what&#x2019;s never been done before.
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Cambridge Crossing" 
+      data-hub-meta-title=""  
+      data-hub-meta="We&#x27;re bringing together 2,500 people from across our organization &#x2014; R&amp;D, Medical, Commercial and Global colleagues all working to realize the power of collaboration.&#x9;" 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://cambridgecrossing.com/about" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-building.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:36" 
+      data-hub-date-created="05/28/2024 14:07:36"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-building.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://cambridgecrossing.com/about" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Cambridge Crossing" >Cambridge Crossing</a></h3>
+
+
+            <p class="hub-item__description">
+
+              We&#x27;re bringing together 2,500 people from across our organization &#x2014; R&amp;D, Medical, Commercial and Global colleagues all working to realize the power of collaboration.&#x9;
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Innovation in Action" 
+      data-hub-meta-title=""  
+      data-hub-meta="Our flexible lab of the future will transform how we conduct research, while our innovation center will be fully integrated with existing R&amp;D locations.&#x9;" 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://www.biospace.com/article/sanofi-unites-under-a-single-purpose-at-cambridge-crossing-/" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-lab-tech.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:37" 
+      data-hub-date-created="05/28/2024 14:07:37"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-lab-tech.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://www.biospace.com/article/sanofi-unites-under-a-single-purpose-at-cambridge-crossing-/" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Innovation in Action" >Innovation in Action</a></h3>
+
+
+            <p class="hub-item__description">
+
+              Our flexible lab of the future will transform how we conduct research, while our innovation center will be fully integrated with existing R&amp;D locations.&#x9;
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Sanofi&#x2019;s AI Centre of Excellence in Toronto" 
+      data-hub-meta-title=""  
+      data-hub-meta="The Centre is focused on using leading technologies to develop world-class data and artificial intelligence (AI) products to create value for the health sector." 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://www.newswire.ca/news-releases/sanofi-to-launch-artificial-intelligence-centre-of-excellence-in-toronto-895518807.html" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_ai-center.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:37" 
+      data-hub-date-created="05/28/2024 14:07:37"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_ai-center.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://www.newswire.ca/news-releases/sanofi-to-launch-artificial-intelligence-centre-of-excellence-in-toronto-895518807.html" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Sanofi&#x2019;s AI Centre of Excellence in Toronto" >Sanofi&#x2019;s AI Centre of Excellence in Toronto</a></h3>
+
+
+            <p class="hub-item__description">
+
+              The Centre is focused on using leading technologies to develop world-class data and artificial intelligence (AI) products to create value for the health sector.
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Sanofi Canada&#x27;s Philanthropic Efforts" 
+      data-hub-meta-title=""  
+      data-hub-meta="&#x9;&#xD;&#xA;By chasing the miracles of science to improve people&#x2019;s lives, we surprise ourselves with what we can achieve. Our team is humbled by the impact our efforts make." 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://www.sanofi.com/en/magazine" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_canada-philanthropy.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:37" 
+      data-hub-date-created="05/28/2024 14:07:37"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_canada-philanthropy.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://www.sanofi.com/en/magazine" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Sanofi Canada&#x27;s Philanthropic Efforts" >Sanofi Canada&#x27;s Philanthropic Efforts</a></h3>
+
+
+            <p class="hub-item__description">
+
+              &#x9;&#xD;&#xA;By chasing the miracles of science to improve people&#x2019;s lives, we surprise ourselves with what we can achieve. Our team is humbled by the impact our efforts make.
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="Sustainable and Green" 
+      data-hub-meta-title=""  
+      data-hub-meta="Our new facility was built to minimize the environmental impact &#x2014; helping protect our planet and people. Using resources efficiently, we&#x27;re providing greener, healthier workspaces. " 
+      data-hub-url="jobs.sanofi.cn/" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="https://www.sanofi.com/en/our-company/social-impact/environmental-sustainability-and-resilience" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-city.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="05/28/2024 14:07:38" 
+      data-hub-date-created="05/28/2024 14:07:38"
+      data-hub-date-override="04/22/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/image_cambridge-city.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="https://www.sanofi.com/en/our-company/social-impact/environmental-sustainability-and-resilience" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="Sustainable and Green" >Sustainable and Green</a></h3>
+
+
+            <p class="hub-item__description">
+
+              Our new facility was built to minimize the environmental impact &#x2014; helping protect our planet and people. Using resources efficiently, we&#x27;re providing greener, healthier workspaces. 
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="&#x60A8;&#x4FDD;&#x5B58;&#x7684;&#x804C;&#x4F4D;" 
+      data-hub-meta-title="&#x60A8;&#x4FDD;&#x5B58;&#x7684;&#x804C;&#x4F4D;"  
+      data-hub-meta="" 
+      data-hub-url="jobs.sanofi.cn/saved-jobs" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="/saved-jobs" data-hub-image="https://cdn.radancy.eu" data-hub-created-by="TMP created" 
+      data-hub-date-updated="09/11/2024 09:28:24" 
+      data-hub-date-created="05/28/2024 14:10:59"
+      data-hub-date-override="02/21/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="/saved-jobs" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="&#x60A8;&#x4FDD;&#x5B58;&#x7684;&#x804C;&#x4F4D;" >&#x60A8;&#x4FDD;&#x5B58;&#x7684;&#x804C;&#x4F4D;</a></h3>
+
+
+            <p class="hub-item__description">
+
+              
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="" 
+      data-hub-meta-title=""  
+      data-hub-meta="" 
+      data-hub-url="jobs.sanofi.cn/privacy-policy-starred" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="/privacy-policy-starred" data-hub-image="https://cdn.radancy.eu" data-hub-created-by="TMP created" 
+      data-hub-date-updated="10/29/2024 14:40:41" 
+      data-hub-date-created="10/29/2024 14:40:41"
+      data-hub-date-override="10/28/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="/privacy-policy-starred" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="" ></a></h3>
+
+
+            <p class="hub-item__description">
+
+              
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="True" 
+      data-hub-title="&#x5FC3;&#x6000;&#x68A6;&#x60F3;&#xFF0C;&#x6210;&#x5C31;&#x4E00;&#x756A;&#x4E8B;&#x4E1A;" 
+      data-hub-meta-title="&#x5FC3;&#x6000;&#x68A6;&#x60F3;&#xFF0C;&#x6210;&#x5C31;&#x4E00;&#x756A;&#x4E8B;&#x4E1A;"  
+      data-hub-meta="&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x60A8;&#x4EE5;&#x9971;&#x6EE1;&#x7684;&#x70ED;&#x60C5;&#x6295;&#x5165;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5C97;&#x4F4D;&#x4E2D;&#xFF0C;&#x7ED9;&#x5168;&#x7403;&#x6570;&#x767E;&#x4E07;&#x4EBA;&#x5E26;&#x6765;&#x7F8E;&#x597D;&#x751F;&#x6D3B;&#x3002;&#x60A8;&#x7684;&#x804C;&#x4E1A;&#x53D1;&#x5C55;&#x9053;&#x8DEF;&#x7531;&#x60A8;&#x81EA;&#x5DF1;&#x6765;&#x638C;&#x63A7;&#x3002;&#x60A8;&#x53EA;&#x7BA1;&#x5236;&#x5B9A;&#x76EE;&#x6807;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x63D0;&#x4F9B;&#x5145;&#x8DB3;&#x7684;&#x57F9;&#x8BAD;&#x673A;&#x4F1A;&#x548C;&#x652F;&#x6301;&#xFF0C;&#x8BA9;&#x60A8;&#x5F97;&#x507F;&#x6240;&#x613F;&#x3002; " 
+      data-hub-url="jobs.sanofi.cn/career-development" 
+      data-hub-isfallbackpage="True" 
+	  data-hub-order="1" 
+      data-hub-link="/career-development" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/min/carousel-6-min.jpg" data-hub-created-by="SS created" 
+      data-hub-date-updated="03/26/2026 15:46:58" 
+      data-hub-date-created="05/28/2024 13:43:58"
+      data-hub-date-override="04/09/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/min/carousel-6-min.jpg" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="/career-development" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="&#x5FC3;&#x6000;&#x68A6;&#x60F3;&#xFF0C;&#x6210;&#x5C31;&#x4E00;&#x756A;&#x4E8B;&#x4E1A;" >&#x5FC3;&#x6000;&#x68A6;&#x60F3;&#xFF0C;&#x6210;&#x5C31;&#x4E00;&#x756A;&#x4E8B;&#x4E1A;</a></h3>
+
+
+            <p class="hub-item__description">
+
+              &#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x60A8;&#x4EE5;&#x9971;&#x6EE1;&#x7684;&#x70ED;&#x60C5;&#x6295;&#x5165;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5C97;&#x4F4D;&#x4E2D;&#xFF0C;&#x7ED9;&#x5168;&#x7403;&#x6570;&#x767E;&#x4E07;&#x4EBA;&#x5E26;&#x6765;&#x7F8E;&#x597D;&#x751F;&#x6D3B;&#x3002;&#x60A8;&#x7684;&#x804C;&#x4E1A;&#x53D1;&#x5C55;&#x9053;&#x8DEF;&#x7531;&#x60A8;&#x81EA;&#x5DF1;&#x6765;&#x638C;&#x63A7;&#x3002;&#x60A8;&#x53EA;&#x7BA1;&#x5236;&#x5B9A;&#x76EE;&#x6807;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x63D0;&#x4F9B;&#x5145;&#x8DB3;&#x7684;&#x57F9;&#x8BAD;&#x673A;&#x4F1A;&#x548C;&#x652F;&#x6301;&#xFF0C;&#x8BA9;&#x60A8;&#x5F97;&#x507F;&#x6240;&#x613F;&#x3002; 
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+      <li class="js-hub-item hub-content__item showing-by-filter showing-by-load" 
+      data-hub-read-time="" 
+      data-hub-origin="False" 
+      data-hub-title="&#x6211;&#x4EEC;&#x7684;&#x6545;&#x4E8B;" 
+      data-hub-meta-title="&#x6211;&#x4EEC;&#x7684;&#x6545;&#x4E8B;"  
+      data-hub-meta="&#x6211;&#x4EEC;&#x5173;&#x6CE8;&#x6BCF;&#x4E00;&#x4E2A;&#x5458;&#x5DE5;&#x7684;&#x58F0;&#x97F3;&#x3002;&#x56E0;&#x4E3A;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x672A;&#x6765;&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x4ED8;&#x51FA;&#x4E0E;&#x52AA;&#x529B;&#x3002;&#x6B63;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x7684;&#x52A9;&#x529B;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x8FFD;&#x6C42;&#x8FDC;&#x5927;&#x7684;&#x7406;&#x60F3;&#x3002; " 
+      data-hub-url="jobs.sanofi.cn/sanofi-stories" 
+      data-hub-isfallbackpage="False" 
+	  data-hub-order="0" 
+      data-hub-link="/sanofi-stories" data-hub-image="https://cdn.radancy.eu/company/2649/cms/img/carousel-3.png" data-hub-created-by="TMP created" 
+      data-hub-date-updated="07/18/2024 12:16:15" 
+      data-hub-date-created="05/28/2024 14:10:22"
+      data-hub-date-override="04/15/2024 00:00:00">
+
+        
+
+          <div class="hub-item__image-wrapper">
+
+
+          <img class="js-hub-lazy hub-item__image" data-src="https://cdn.radancy.eu/company/2649/cms/img/carousel-3.png" src="https://tbcdn.talentbrew.com/company/3461/shared/img/transparent_1x1.png" width="600" height="338" alt="">
+
+        </div>
+
+        <div class="hub-item__text">
+
+          <h3 class="hub-item__title"><a href="/sanofi-stories" class="js-hub-item-link js-tb-click-tracking hub-item__link" data-custom-category="data-content-feed-068606af77" data-custom-label="&#x6211;&#x4EEC;&#x7684;&#x6545;&#x4E8B;" >&#x6211;&#x4EEC;&#x7684;&#x6545;&#x4E8B;</a></h3>
+
+
+            <p class="hub-item__description">
+
+              &#x6211;&#x4EEC;&#x5173;&#x6CE8;&#x6BCF;&#x4E00;&#x4E2A;&#x5458;&#x5DE5;&#x7684;&#x58F0;&#x97F3;&#x3002;&#x56E0;&#x4E3A;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x672A;&#x6765;&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x4ED8;&#x51FA;&#x4E0E;&#x52AA;&#x529B;&#x3002;&#x6B63;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x7684;&#x52A9;&#x529B;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x8FFD;&#x6C42;&#x8FDC;&#x5927;&#x7684;&#x7406;&#x60F3;&#x3002; 
+              
+            </p>
+            
+            <span class="hub-item__fake-button">&#x4E86;&#x89E3;&#x66F4;&#x591A;</span>
+
+          </div>
+
+
+
+        <ul class="js-hub-mappings" hidden>
+
+
+          
+
+        </ul>
+
+      </li>
+
+  </ul>
+
+  <div class="hub__bottom-nav">
+
+    <button class="js-hub-load-more-button hub__load-more-button enabled" data-hub-id="data-content-feed-068606af77" data-items-loaded-msg="new items have been loaded." data-items-finished-msg="new items have been loaded and all results are now showing.">Load more</button>
+
+  </div>
+
+  <div class="js-aria-hub-msg hub-visually-hidden" aria-live="polite"></div>
+
+</div>
+
+
+
+</div>
+
+        		  
+        	</main>
+        	<footer>
+                
+
+<div class=footer-top-wrap data-section-id="6569" data-layout-item-id="1645">
+    <section>
+        
+
+<div class="brand-logo">
+<a href="https://www.sanofi.com/" data-custom-event="true" data-custom-category="Footer" data-custom-label="Logo" aria-label="Sanofi (Home)">
+   <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1a8ug3n-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 80 22" xmlns="http://www.w3.org/2000/svg" width="80" height="22" fill="none" data-testid="logo">
+        <path d="M28.4057 7.29145C26.5895 6.58049 24.6556 6.21743 22.7051 6.22122C18.3338 6.22122 15.2656 9.14389 15.2656 13.7488C15.2656 18.4061 17.9277 21.2764 22.6461 21.2764C24.6249 21.2899 26.5854 20.8967 28.4057 20.1211C28.6384 20.0363 28.836 19.8762 28.9671 19.6663C29.0982 19.4563 29.1553 19.2086 29.1294 18.9625V8.45004C29.1294 7.78238 28.8707 7.46492 28.4057 7.29145ZM25.3671 16.75C25.3671 17.1853 25.1346 17.3882 24.6435 17.5322C24.0047 17.7139 23.3429 17.8021 22.6788 17.7941C20.8255 17.7941 19.077 16.6944 19.077 13.7423C19.077 10.7901 20.8124 9.69373 22.6788 9.69373C23.3428 9.68465 24.0045 9.77175 24.6435 9.95229C25.1346 10.0963 25.3671 10.2992 25.3671 10.7345V16.75Z" fill="#000"></path>
+        <path d="M4.03447 11.053C4.03447 10.1693 4.93163 9.60638 6.46732 9.60638C7.94407 9.60638 9.36187 10.0973 10.8386 10.9155C10.9694 10.9927 11.119 11.0324 11.2709 11.0301C11.4062 11.0283 11.5386 10.9899 11.6539 10.9191C11.7692 10.8482 11.8631 10.7474 11.9257 10.6275L12.8229 8.71615C12.8961 8.56268 12.9352 8.39521 12.9375 8.22522C12.9378 8.10625 12.9056 7.98945 12.8445 7.88738C12.7833 7.78532 12.6955 7.70183 12.5904 7.64591C10.76 6.62407 8.69484 6.09619 6.5983 6.11422C2.72143 6.11422 0.23291 8.19577 0.23291 11.3214C0.23291 17.4547 9.55181 15.0786 9.55181 19.3333C9.55488 19.6973 9.49619 20.0592 9.37825 20.4036C9.36067 20.4598 9.35076 20.5181 9.34879 20.577C9.34601 20.6336 9.35561 20.6901 9.37693 20.7426C9.39826 20.7951 9.4308 20.8424 9.47226 20.881C9.51373 20.9196 9.56315 20.9488 9.61704 20.9664C9.67093 20.9839 9.72798 20.9896 9.78427 20.9828H12.3874C12.8229 20.9828 12.9964 20.8388 13.1405 20.4036C13.3015 19.8732 13.38 19.3213 13.373 18.7671C13.3567 12.1821 4.03447 13.7629 4.03447 11.053Z" fill="#000"></path>
+        <path d="M39.2007 6.22119C37.2161 6.23484 35.2483 6.58681 33.3821 7.26196C33.1495 7.34674 32.9519 7.50684 32.8208 7.71677C32.6897 7.92671 32.6325 8.17442 32.6585 8.42055V20.396C32.6537 20.4733 32.6654 20.5507 32.6928 20.6232C32.7203 20.6956 32.7628 20.7614 32.8176 20.8162C32.8724 20.871 32.9382 20.9135 33.0107 20.9409C33.0832 20.9684 33.1607 20.9801 33.238 20.9753H35.8575C35.9349 20.9801 36.0124 20.9684 36.0849 20.9409C36.1574 20.9135 36.2232 20.871 36.278 20.8162C36.3328 20.7614 36.3753 20.6956 36.4028 20.6232C36.4302 20.5507 36.4419 20.4733 36.4371 20.396V10.6756C36.4371 10.2435 36.6663 10.0406 37.1313 9.9228C37.832 9.75321 38.552 9.67619 39.2727 9.6937C40.8346 9.6937 42.0789 10.417 42.0789 12.1516V20.396C42.0741 20.4733 42.0858 20.5507 42.1132 20.6232C42.1407 20.6956 42.1832 20.7614 42.238 20.8162C42.2928 20.871 42.3586 20.9135 42.4311 20.9409C42.5036 20.9684 42.5811 20.9801 42.6584 20.9753H45.278C45.355 20.9796 45.4322 20.9675 45.5043 20.9399C45.5764 20.9122 45.6418 20.8696 45.6962 20.8149C45.7507 20.7602 45.7929 20.6946 45.8201 20.6224C45.8474 20.5502 45.859 20.473 45.8543 20.396V11.6607C45.8281 8.12927 43.6572 6.22119 39.2007 6.22119Z" fill="#000"></path>
+        <path d="M55.7858 6.22119C51.444 6.22119 48.6084 9.37296 48.6084 13.7488C48.6084 18.1246 51.444 21.2764 55.9888 21.2764C60.3307 21.2764 63.1663 18.1246 63.1663 13.7488C63.1663 9.37296 60.3307 6.22119 55.7858 6.22119ZM55.9888 17.794C53.8474 17.794 52.4296 16.4031 52.4296 13.7422C52.4296 11.0814 53.8474 9.6937 55.7858 9.6937C57.9273 9.6937 59.3451 11.0814 59.3451 13.7422C59.3451 16.4031 57.9273 17.794 55.9888 17.794Z" fill="#000"></path>
+        <path d="M79.2862 6.5083H76.6831C76.363 6.5083 76.1035 6.76766 76.1035 7.0876V20.3951C76.1035 20.715 76.363 20.9744 76.6831 20.9744H79.2862C79.6063 20.9744 79.8658 20.715 79.8658 20.3951V7.0876C79.8658 6.76766 79.6063 6.5083 79.2862 6.5083Z" fill="#000"></path>
+        <path d="M73.7294 0.926411C73.1329 0.785744 72.5216 0.717613 71.9088 0.723495C68.307 0.723495 65.9756 2.63485 65.9756 6.80121V20.3967C65.9709 20.4737 65.9825 20.5509 66.0098 20.6231C66.037 20.6953 66.0792 20.7609 66.1337 20.8156C66.1881 20.8704 66.2535 20.913 66.3256 20.9406C66.3977 20.9682 66.4748 20.9803 66.5519 20.976H69.1289C69.2062 20.9808 69.2837 20.9691 69.3562 20.9416C69.4287 20.9142 69.4945 20.8717 69.5493 20.8169C69.6041 20.7622 69.6467 20.6964 69.6741 20.6239C69.7015 20.5515 69.7132 20.474 69.7084 20.3967V9.69441H73.3823C73.4602 9.70144 73.5387 9.69129 73.6122 9.66467C73.6857 9.63804 73.7524 9.59558 73.8077 9.54032C73.863 9.48505 73.9054 9.41833 73.9321 9.34485C73.9587 9.27137 73.9689 9.19296 73.9619 9.11513V7.11867C73.9718 7.03889 73.9639 6.95791 73.9387 6.88157C73.9135 6.80523 73.8717 6.73543 73.8162 6.6772C73.7608 6.61897 73.6931 6.57376 73.6181 6.54484C73.543 6.51591 73.4625 6.50398 73.3823 6.50992H69.7084V6.18263C69.7084 4.59202 70.4026 3.78034 72.0005 3.78034C72.5801 3.78034 73.2022 3.92762 73.4183 3.92762C73.7654 3.92762 73.9095 3.72471 73.9684 3.37778L74.2598 1.87227C74.2888 1.74857 74.3074 1.62267 74.3155 1.49589C74.309 1.18496 74.1354 1.01478 73.7294 0.926411Z" fill="#000"></path>
+        <path d="M1.96463 17.2759C0.779304 17.2759 0 18.0254 0 19.269C0 20.5127 0.782588 21.2655 2.05632 21.2655C3.24165 21.2655 4.02096 20.4865 4.02096 19.269C4.02096 18.0515 3.23837 17.2759 1.96463 17.2759Z" fill="#7a00e6"></path>
+        <path d="M77.9436 0.729004C76.755 0.729004 75.979 1.48177 75.979 2.72546C75.979 3.96915 76.7616 4.7219 78.0353 4.7219C79.2207 4.7219 80 3.9397 80 2.72546C80 1.51123 79.2141 0.729004 77.9436 0.729004Z" fill="#7a00e6"></path>
+      </svg>
+</a>
+</div>
+
+
+    	<div class="footer-right">
+    	    <div>
+
+<div class="social-media">
+    <h2>&#x5173;&#x6CE8;&#x6211;&#x4EEC;</h2>
+    <ul>
+                <li><a class="social-media-wechat" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA5ODkyOTYxNw==&amp;hid=9&amp;sn=c8be25b8eb4b34928f1b371dea33ccbb&amp;scene=18" data-custom-event="true" data-custom-category="Footer" data-custom-label="WeChat">WeChat</a></li>
+                <li><a class="social-media-tiktok" href="https://www.douyin.com/user/MS4wLjABAAAAD1va6zT5_jjCchcfhkayLNl8dXAdtWcg-3fhgpGDjZk?relation=0&amp;amp;vid=7352722715821788455" data-custom-event="true" data-custom-category="Footer" data-custom-label="TikTok">TikTok</a></li>
+                <li><a class="social-media-rss" href="//www.sanofi.com/en/rss" data-custom-event="true" data-custom-category="Footer" data-custom-label="RSS">RSS</a></li>
+    </ul>
+</div>
+
+
+
+</div>
+    	    <div>
+    <div id="back-to-top">
+       <p><a href="#content" data-custom-event="true" data-custom-category="Footer" data-custom-label="Back to top">返回顶部 <i class="fa-solid fa-arrow-up"></i></a></p>
+    </div>
+
+</div>
+    	</div>
+	</section>
+</div>
+
+
+<div class="footer-bottom-wrap" data-section-id="6570" data-layout-item-id="2151"> 
+    
+
+<div class="footer-bottom">
+    <div>
+        <ul>
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="&#x8054;&#x7CFB;&#x6211;&#x4EEC;" href="https://www.sanofi.cn/zh/contact-us">&#x8054;&#x7CFB;&#x6211;&#x4EEC;</a></li>
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="&#x6CD5;&#x5F8B;&#x58F0;&#x660E;" href="https://www.sanofi.cn/zh/legal-notice">&#x6CD5;&#x5F8B;&#x58F0;&#x660E;</a></li>
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="&#x9690;&#x79C1;&#x653F;&#x7B56;" href="https://www.sanofi.cn/zh/privacy-and-data-protection">&#x9690;&#x79C1;&#x653F;&#x7B56;</a></li>
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="cookie&#x6761;&#x6B3E;" href="/cookies">cookie&#x6761;&#x6B3E;</a></li>
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="Global T&amp;C" href="/en/global-terms-and-conditions">Global T&amp;C</a></li> 
+            
+            <li><a data-custom-event="true" data-custom-category="Footer" data-custom-label="&#x7F51;&#x7AD9;&#x5730;&#x56FE;" href="/sitemap">&#x7F51;&#x7AD9;&#x5730;&#x56FE;</a></li>
+        </ul>
+        <p>&copy; Sanofi 2004-2026 - &#x4FDD;&#x7559;&#x6240;&#x6709;&#x6743;&#x5229;</p>
+    </div>
+</div>
+
+</div>
+	            
+        	</footer>
+    	</div>
+        <script src="//cdn.radancy.eu/bundles/jquery-client.js" ></script>
+    	<script src="//cdn.radancy.eu/bundles/tb-corepack.js" ></script>
+    
+        	<script src="https://cdn.radancy.eu/company/2649/js/fancybox.min.js"></script>
+        	<script src="https://cdn.radancy.eu/company/2649/js/slick.min.js"></script>
+        	<script src="https://cdn.radancy.eu/company/2649/js/swiper-bundle.min.js"></script>
+        
+    	<script defer="defer" src="https://flows.beamery.eu/embedded-bootstrapper.js"></script>
+        <script src="//cdn.radancy.eu/company/2649/js/1605-GST.min.js" ></script>
+        <script src="//cdn.radancy.eu/js/client/job-details.js" ></script>
+<script src="//cdn.radancy.eu/js/client/social-share.js" ></script>
+<script src="//cdn.radancy.eu/js/client/recently-viewed-job-list.js" ></script>
+<script src="//cdn.radancy.eu/js/client/contentFeed.js" ></script>
+
+        
+        
+    	
+
+<script id="radancy-magicbullet" data-a11y="true" src="https://services.tmpwebeng.com/magicbullet/"></script> 
+    	
+    </body>
+</html>

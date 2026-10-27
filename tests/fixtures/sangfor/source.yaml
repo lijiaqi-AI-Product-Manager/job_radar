@@ -1,0 +1,20 @@
+id: sangfor
+company: 深信服
+adapter: sangfor
+params:
+  channel_id: 0
+  page_size: 20
+  max_pages: 2
+recruit_types:
+- campus
+- intern
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-27'
+  robots: none
+  terms: 深信服招聘官网 hr.sangfor.com：前端 config.js 明示的 WebAPI，匿名 GET /webapi/api/connect/token
+    取 token 后 POST /webapi/api/Jobs，无需登录/验证码/签名
+  notes: 2026-10-27 实测 channelId=0 全渠道 142 岗（社会招聘 102 / 27届校招 31 / 实习 2 / 博士 5 / X-STAR
+    2）；列表直接带 JD 全文

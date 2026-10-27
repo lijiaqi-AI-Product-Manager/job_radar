@@ -1,0 +1,24 @@
+{
+  "company": "智元机器人",
+  "careers_url": "https://agirobot.jobs.feishu.cn/campusrecruitment",
+  "host": "agirobot.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "欢迎加入智元AGIBOT！",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 15,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "欢迎加入智元AGIBOT！",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company": "安琪酵母",
+  "careers_url": "https://www.angelyeast.com/jobs.html",
+  "host": "www.angelyeast.com",
+  "ats": "unknown",
+  "page_title": "安琪酵母招聘岗位 - 多元职位空缺，职等你来展风采",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 4,
+  "roles": 12,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "安琪酵母招聘岗位 - 多元职位空缺，职等你来展风采",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

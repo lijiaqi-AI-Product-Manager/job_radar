@@ -1,0 +1,27 @@
+{
+  "company": "三峡集团",
+  "careers_url": "https://cqsxsl.zhiye.com/campus",
+  "host": "cqsxsl.zhiye.com",
+  "ats": "beisen",
+  "page_title": "三峡水利",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 7,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "三峡水利",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019829",
+      "https://career.csu.edu.cn/campus/view/id/590632"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "method": "POST",
+    "url": "https://talent.baidu.com/httservice/getPostListNew?recruitType=GRADUATE&curPage=1&pageSize=10",
+    "body": "{\"recruitType\":\"GRADUATE\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://talent.baidu.com/httservice/getPostListNew?recruitType=GRADUATE&curPage=2&pageSize=10",
+    "body": "{\"recruitType\":\"GRADUATE\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "002.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://talent.baidu.com/httservice/getPostListNew?recruitType=INTERN&curPage=1&pageSize=10",
+    "body": "{\"recruitType\":\"INTERN\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "003.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://talent.baidu.com/httservice/getPostListNew?recruitType=INTERN&curPage=2&pageSize=10",
+    "body": "{\"recruitType\":\"INTERN\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "004.json"
+  }
+]

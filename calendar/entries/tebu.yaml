@@ -1,0 +1,29 @@
+group: 特步
+entries:
+- id: tebu-campus-entry
+  company: 特步
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 运营类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://campus.niuqizp.com/job-vUy5ZLtaz.html
+  source:
+    type: official_site
+    name: 特步招聘官网
+    url: https://campus.niuqizp.com/job-vUy5ZLtaz.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：特步集团2026届春季全球校园招聘正式启动2027校园招聘,招聘城市有:泉州,特步官方招聘平台
+    - 牛企直聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

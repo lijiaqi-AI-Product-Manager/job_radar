@@ -1,0 +1,27 @@
+{
+  "company": "雀巢",
+  "careers_url": "",
+  "host": "career.gdut.edu.cn",
+  "ats": "none",
+  "page_title": "雀巢中国2027校园招聘正式启动 以梦入「巢」，与小雀共赴新程",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 13,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "雀巢中国2027校园招聘正式启动 以梦入「巢」，与小雀共赴新程",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020917",
+      "https://job.zzu.edu.cn/campus/view/id/1019110"
+    ]
+  }
+}

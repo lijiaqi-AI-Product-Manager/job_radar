@@ -1,0 +1,29 @@
+group: 众安保险
+entries:
+- id: zhonganbaoxian-campus-entry
+  company: 众安保险
+  grad_year: null
+  project_type: 暑期实习
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 职能类
+    roles: []
+  - direction: 金融类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://campus.niuqizp.com/job-vls5z5NnC.html
+  source:
+    type: official_site
+    name: 众安保险招聘官网
+    url: https://campus.niuqizp.com/job-vls5z5NnC.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：众安保险招聘27届HRAI暑期实习项目启动2027校园招聘,众安在线招聘,internship
+    - 牛企直聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

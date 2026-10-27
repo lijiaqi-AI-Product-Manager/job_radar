@@ -1,0 +1,28 @@
+{
+  "company": "贝壳",
+  "careers_url": "http://career.ke.com/",
+  "host": "career.ke.com",
+  "ats": "self_hosted",
+  "page_title": "贝壳平台房产经纪人招聘_2026贝壳平台房产经纪人招聘信息-贝壳校招",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "贝壳平台房产经纪人招聘_2026贝壳平台房产经纪人招聘信息-贝壳校招",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119810.html",
+      "https://career.gdut.edu.cn/campus/view/id/1020814",
+      "https://job.zzu.edu.cn/campus/view/id/1018899"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "company": "祖龙娱乐",
+  "careers_url": "https://www.zulong.com/html/job.html",
+  "host": "www.zulong.com",
+  "ats": "unknown",
+  "page_title": "社会招聘 - 祖龙娱乐",
+  "calendar_entries": 2,
+  "project_types": [
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 42,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "社会招聘 - 祖龙娱乐",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757963",
+      "https://job.zzu.edu.cn/campus/view/id/1019721"
+    ]
+  }
+}

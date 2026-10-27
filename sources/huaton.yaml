@@ -1,0 +1,13 @@
+id: huaton
+company: 华通集团
+adapter: self_hosted
+recruit_types: [campus, social]
+rate_limit_rps: 1
+params:
+  url: "https://www.ht-hvaton.cn/join-us/"
+  default_city: ""
+compliance:
+  checked_on: 2026-10-27
+  robots: "none"
+  terms: "华通集团官网招聘页（ht-hvaton.cn/join-us），公开 HTML 单页，无需登录"
+  notes: "2026-10-27 work/self_hosted.py 命中，12 个岗位块（技术/电气助理工程师、系统运维、国际贸易业务助理等），要求段完整、职责段部分缺失"

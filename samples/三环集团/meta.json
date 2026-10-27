@@ -1,0 +1,28 @@
+{
+  "company": "三环集团",
+  "careers_url": "https://career-dev.cctc.cc/",
+  "host": "career-dev.cctc.cc",
+  "ats": "unknown",
+  "page_title": "三环集团招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 48,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "三环集团招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020781",
+      "https://job.xidian.edu.cn/campus/view/id/757130"
+    ]
+  }
+}

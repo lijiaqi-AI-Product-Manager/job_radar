@@ -1,0 +1,24 @@
+{
+  "company": "匹克",
+  "careers_url": "https://www.peaksport.com/cn/jobs",
+  "host": "www.peaksport.com",
+  "ats": "unknown",
+  "page_title": "匹克招贤纳士",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 3,
+  "roles": 5,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "匹克招贤纳士",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

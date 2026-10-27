@@ -1,0 +1,28 @@
+{
+  "company": "碧桂园",
+  "careers_url": "https://www.bgy.com.cn/join/training",
+  "host": "www.bgy.com.cn",
+  "ats": "unknown",
+  "page_title": "碧桂园",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 38,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "碧桂园",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757666",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/997049"
+    ]
+  }
+}

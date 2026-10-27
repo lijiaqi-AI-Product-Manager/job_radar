@@ -1,0 +1,24 @@
+{
+  "company": "银轮股份",
+  "careers_url": "https://www.yinlun.cn/Recruit",
+  "host": "www.yinlun.cn",
+  "ats": "unknown",
+  "page_title": "浙江银轮机械股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "浙江银轮机械股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

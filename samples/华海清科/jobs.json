@@ -1,0 +1,20 @@
+[
+  {
+    "title": "工艺工程师",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 179
+  },
+  {
+    "title": "机械工程师",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 187
+  },
+  {
+    "title": "算法工程师",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 427
+  }
+]

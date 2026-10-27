@@ -1,0 +1,26 @@
+{
+  "company": "易观数科",
+  "careers_url": "https://www.analysys.cn/joinus",
+  "host": "www.analysys.cn",
+  "ats": "unknown",
+  "page_title": "加入我们-易观分析",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 12,
+  "roles": 27,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们-易观分析",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

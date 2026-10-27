@@ -1,0 +1,32 @@
+{
+  "company": "TCL",
+  "careers_url": "https://campus.tcl.com/",
+  "host": "campus.tcl.com",
+  "ats": "unknown",
+  "page_title": "TCL招聘",
+  "calendar_entries": 5,
+  "project_types": [
+    "实习",
+    "校园大使",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 25,
+  "roles": 135,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "TCL招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1021162",
+      "https://job.zzu.edu.cn/campus/view/id/1019099",
+      "https://job.zzu.edu.cn/campus/view/id/1019053"
+    ]
+  }
+}

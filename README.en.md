@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -16,16 +16,16 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 ![demo](docs/assets/demo-en.gif)
 
 > **Data snapshot (2026-10-24)**
-> **279 sources** · **~88.6k open jobs** (campus ~32k / intern ~5k / experienced ~52k) · **99.8% with full JD text**
-> **500 target companies**: 494 have calendar or job coverage (490 with calendar entries, 4 job-data only,
-> 6 documented as not compliantly reachable); 161 have job-level data.
+> **370 sources** · **97,607 open jobs** (campus 33,850 / intern 5,158 / experienced 58,599) · **99.8% with full JD text**
+> **1,014 target companies**: 891 have calendar coverage (1,337 curated entries + 1,088 auto-built),
+> 264 have job-level data, 895 covered in total; 17 documented as not compliantly reachable.
 
 ## What it is / is not
 
 - ✅ Jobs and JD text from **official** career sites (no aggregators)
 - ✅ Full re-crawl daily, history kept (open / close / change events)
 - ✅ Recruitment calendar: graduation year, programme type, tracks, application window, cities, apply URL, source
-- ❌ Not "every company": only 161 of the 500 targets expose job-level data
+- ❌ Not "every company": only 264 of the 1,014 targets expose job-level data
 - ❌ No applications, referrals, interview reports or salary data; no captcha/login/signature bypass
 
 ## Quick start
@@ -76,7 +76,7 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 |---|---|---|
 | `jobs.db.gz` | 20 MB | jobs, companies, events, source status |
 | `jd_text.db.gz` | 35 MB | JD responsibilities & requirements (full-text) |
-| `calendar.db.gz` | 300 KB | recruitment calendar, 500 targets |
+| `calendar.db.gz` | ~1.1 MB | recruitment calendar, 1,014 targets |
 | `crawl-summary.json` | 32 KB | per-source status, opened/closed counts |
 
 - Crawl runs daily at **19:17 UTC** (03:17 Beijing); Gitee mirror syncs the same day
@@ -86,7 +86,7 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 
 | Area | Reality |
 |---|---|
-| Calendar coverage | 494/500; the other 6 are robots/login/DNS-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
+| Calendar coverage | 891/1,014; 17 are robots/login/DNS-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
 | Job-level coverage | 161/500 targets; the rest are bespoke sites or encrypted platforms (Moka, Feishu ATSX) |
 | Big tech | Alibaba/Tencent/Meituan/NetEase/vivo/Chery/CICC/BOE have job data; ByteDance/JD/PDD/Huawei are calendar-only (captcha/signature) |
 | Calendar fields | 74.9% of entries carry ≥7 of 11 required fields; 60.7% by group; 38.0% of hand-curated entries |
@@ -108,7 +108,7 @@ uv run python scripts/release_check.py --home ~/.jobradar   # 8 release gates
 ```
 
 Architecture, naming rules and the adapter workflow live in [CLAUDE.md](CLAUDE.md);
-internal process docs (handover, milestones, review triage, coverage plan) are under
+internal process docs (milestones, progress notes, review triage, coverage plan) are under
 [docs/internal/](docs/internal/).
 
 ## Docs

@@ -1,0 +1,20 @@
+group: 中国建筑
+entries:
+- id: zhongguojianzhu-campus-entry
+  company: 中国建筑
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://recruit.cscec.com/
+  source:
+    type: official_site
+    name: 中国建筑招聘官网
+    url: https://recruit.cscec.com/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：中国建筑校园招聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

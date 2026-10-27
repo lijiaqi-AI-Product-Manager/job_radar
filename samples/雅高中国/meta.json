@@ -1,0 +1,24 @@
+{
+  "company": "雅高中国",
+  "careers_url": "https://careers.accor.com/cn/zh/accor-at-a-glance",
+  "host": "careers.accor.com",
+  "ats": "self_hosted",
+  "page_title": "&#x96C5;&#x9AD8;&#x96C6;&#x56E2;&#x6982;&#x89C8; | Accor CN/ZH",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 2,
+  "roles": 4,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "&#x96C5;&#x9AD8;&#x96C6;&#x56E2;&#x6982;&#x89C8; | Accor CN/ZH",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

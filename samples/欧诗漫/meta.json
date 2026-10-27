@@ -1,0 +1,24 @@
+{
+  "company": "欧诗漫",
+  "careers_url": "https://osmsw1.zhiye.com/",
+  "host": "osmsw1.zhiye.com",
+  "ats": "beisen",
+  "page_title": "欧诗漫生物股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 3,
+  "roles": 5,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "欧诗漫生物股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

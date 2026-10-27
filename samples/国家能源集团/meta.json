@@ -1,0 +1,31 @@
+{
+  "company": "国家能源集团",
+  "careers_url": "https://zhaopin.chnenergy.com.cn/planSerch?kinds=3",
+  "host": "zhaopin.chnenergy.com.cn",
+  "ats": "self_hosted",
+  "page_title": "国家能源集团人力资源招聘系统",
+  "calendar_entries": 5,
+  "project_types": [
+    "实习",
+    "春招",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 25,
+  "roles": 120,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国家能源集团人力资源招聘系统",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.shiep.edu.cn/campus/view/id/667380",
+      "https://career.csu.edu.cn/campus/view/id/590174"
+    ]
+  }
+}

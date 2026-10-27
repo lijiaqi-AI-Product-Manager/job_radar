@@ -1,0 +1,24 @@
+{
+  "company": "平高电气",
+  "careers_url": "https://www.pgcareers.com/global/en",
+  "host": "www.pgcareers.com",
+  "ats": "unknown",
+  "page_title": "Global Careers at Procter &amp; Gamble | P&amp;G Careers",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Global Careers at Procter &amp; Gamble | P&amp;G Careers",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

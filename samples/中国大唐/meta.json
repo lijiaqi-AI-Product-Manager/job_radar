@@ -1,0 +1,29 @@
+{
+  "company": "中国大唐",
+  "careers_url": "https://zhaopin.china-cdt.com/help",
+  "host": "zhaopin.china-cdt.com",
+  "ats": "self_hosted",
+  "page_title": "中国大唐集团有限公司人才招聘系统",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 36,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国大唐集团有限公司人才招聘系统",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758093",
+      "https://job.zzu.edu.cn/campus/view/id/1019777",
+      "https://career.csu.edu.cn/campus/view/id/590528"
+    ]
+  }
+}

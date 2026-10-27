@@ -1,0 +1,29 @@
+{
+  "company": "招商基金",
+  "careers_url": "https://www.fenbi.com/page/exam-information-detail/469976018083841",
+  "host": "www.fenbi.com",
+  "ats": "unknown",
+  "page_title": "“梦想，招之即来”招商基金2027届秋季校园招聘-广东-深圳市-上海-上海市-北京-北京市-国企-2026-实习生-招商基金-粉笔资讯",
+  "calendar_entries": 7,
+  "project_types": [
+    "日常实习",
+    "社招",
+    "秋招正式批",
+    "秋招补录"
+  ],
+  "tracks": 35,
+  "roles": 168,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "“梦想，招之即来”招商基金2027届秋季校园招聘-广东-深圳市-上海-上海市-北京-北京市-国企-2026-实习生-招商基金-粉笔资讯",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590418"
+    ]
+  }
+}

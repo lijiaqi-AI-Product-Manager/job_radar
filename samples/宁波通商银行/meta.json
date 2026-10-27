@@ -1,0 +1,28 @@
+{
+  "company": "宁波通商银行",
+  "careers_url": "https://www.tongshang.com/joinus/",
+  "host": "www.tongshang.com",
+  "ats": "unknown",
+  "page_title": "通商律师事务所",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "秋招正式批"
+  ],
+  "tracks": 8,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "通商律师事务所",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019412",
+      "https://career.csu.edu.cn/campus/view/id/589916"
+    ]
+  }
+}

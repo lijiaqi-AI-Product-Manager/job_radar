@@ -1,0 +1,29 @@
+group: 六福珠宝
+entries:
+- id: liufuzhubao-campus-entry
+  company: 六福珠宝
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://www.lukfook.com/sc/category/news-press-releases/post/grand-opening-of-lukfook-jewellerys-new-shop-in-vincom-dong-khoi-shopping-centre-jointly-celebrating-brands-35th-anniversary
+  source:
+    type: official_site
+    name: 六福珠宝招聘官网
+    url: https://www.lukfook.com/sc/category/news-press-releases/post/grand-opening-of-lukfook-jewellerys-new-shop-in-vincom-dong-khoi-shopping-centre-jointly-celebrating-brands-35th-anniversary
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：六福珠宝永琴同起购物中心新店盛大开业 共贺品牌成立35周年 | 六福珠宝Lukfook
+    Jewellery官方网站 | 香港著名珠宝品牌）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

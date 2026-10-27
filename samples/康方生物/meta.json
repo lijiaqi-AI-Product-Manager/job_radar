@@ -1,0 +1,28 @@
+{
+  "company": "康方生物",
+  "careers_url": "https://www.akesobio.com/cn/career/social-recruitment/",
+  "host": "www.akesobio.com",
+  "ats": "unknown",
+  "page_title": "康方生物 - Akeso, Inc | 首页",
+  "calendar_entries": 3,
+  "project_types": [
+    "日常实习",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 84,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "康方生物 - Akeso, Inc | 首页",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757698"
+    ]
+  }
+}

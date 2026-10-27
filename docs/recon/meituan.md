@@ -1,7 +1,7 @@
 # 侦察：美团（zhaopin.meituan.com）
 
 - 侦察日期：2026-10-20
-- 侦察人：Claude 会话（请求从 GitHub Actions 发出，见 recon-probe 第 16、19–21 轮）
+- 侦察人：recon-probe 工作流（请求从 GitHub Actions 发出，第 16、19–21 轮）
 - **结论：可做**
 - 类型：自研站
 

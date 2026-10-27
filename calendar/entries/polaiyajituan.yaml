@@ -1,0 +1,28 @@
+group: 珀莱雅集团
+entries:
+- id: polaiyajituan-campus-entry
+  company: 珀莱雅集团
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: http://www.proya-group.com/about
+  source:
+    type: official_site
+    name: 珀莱雅集团招聘官网
+    url: http://www.proya-group.com/about
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：珀莱雅股份_珀莱雅股份公司简介-珀莱雅股份官网）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

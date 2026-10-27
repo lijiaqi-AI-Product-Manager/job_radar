@@ -1,0 +1,3047 @@
+[
+ {
+  "host": "job.ahau.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 5385,
+  "title": ""
+ },
+ {
+  "host": "jiuye.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57057,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "zhaopin.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57060,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "career.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57058,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jy.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57057,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jobcareer.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57062,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jobs.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57057,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jyzx.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57057,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "zhaopin.ahjzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 30443,
+  "title": "404"
+ },
+ {
+  "host": "jyw.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57056,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jiuye.ahjzu.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.ahu.edu.cn",
+  "code": "412",
+  "items": 0,
+  "len": 2371,
+  "title": ""
+ },
+ {
+  "host": "scdc.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57058,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "employment.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57063,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "xsjy.ahau.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 57057,
+  "title": "Server Unavailiable"
+ },
+ {
+  "host": "jyzx.ahut.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "career.ahnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.bfsu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "len": 1896,
+  "title": "访问出错 - 403"
+ },
+ {
+  "host": "jy.ahu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.bit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1842,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "jobs.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.bit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1842,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "job.bjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1894,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "jobcareer.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.bfsu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.btbu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "career.bnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1843,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "job.bjfu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.bjfu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.btbu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "zhaopin.bjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.bjut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.bjut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.buaa.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 49,
+  "title": ""
+ },
+ {
+  "host": "job.buct.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.bupt.edu.cn",
+  "code": "412",
+  "items": 0,
+  "len": 2546,
+  "title": ""
+ },
+ {
+  "host": "career.buct.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "jy.buu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 10286,
+  "title": "404"
+ },
+ {
+  "host": "zhaopin.ccmusic.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 676,
+  "title": "The website is temporarily unavailable"
+ },
+ {
+  "host": "career.ccnu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 15641,
+  "title": "您的访问请求可能对网站造成安全威胁，请求已被阻断。"
+ },
+ {
+  "host": "jyw.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.ccnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 425,
+  "title": "404 页面"
+ },
+ {
+  "host": "employment.btbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.bucea.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.cau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.chd.edu.cn",
+  "code": "410",
+  "items": 0,
+  "len": 2200,
+  "title": "提示信息"
+ },
+ {
+  "host": "jy.cdutcm.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.chd.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "scdc.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.cqjtu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 4692,
+  "title": "50X"
+ },
+ {
+  "host": "job.cqu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 196,
+  "title": "502 Bad Gateway"
+ },
+ {
+  "host": "jyzx.cqjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.cqupt.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1868,
+  "title": "提示"
+ },
+ {
+  "host": "career.cqupt.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.cqupt.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1868,
+  "title": "提示"
+ },
+ {
+  "host": "career.csu.edu.cn",
+  "code": "200",
+  "items": 20,
+  "len": 34786,
+  "title": "中南大学就业信息网"
+ },
+ {
+  "host": "job.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.ccnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.cug.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "scdc.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.cug.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 545,
+  "title": "HTTP状态 404 - 未找到"
+ },
+ {
+  "host": "xsjy.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.cugb.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1950,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "zhaopin.cugb.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1949,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "job.cust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1525,
+  "title": "403"
+ },
+ {
+  "host": "jy.cuit.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 143,
+  "title": "502 Bad Gateway"
+ },
+ {
+  "host": "employment.csust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.ccut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.cdut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.dgut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 666,
+  "title": ""
+ },
+ {
+  "host": "career.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jy.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jiuye.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jyzx.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jobs.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "zhaopin.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jobcareer.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "jyw.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "scdc.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "xsjy.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "employment.dgut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4810,
+  "title": "访问受限页面-现代教育技术中心"
+ },
+ {
+  "host": "job.dlut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1893,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "career.dlut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1588,
+  "title": "404错误提示"
+ },
+ {
+  "host": "career.ecnu.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.ecust.edu.cn",
+  "code": "483",
+  "items": 0,
+  "len": 657,
+  "title": "华东理工大学"
+ },
+ {
+  "host": "jobs.ecnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 528,
+  "title": "404"
+ },
+ {
+  "host": "jiuye.fjut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.fudan.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 186,
+  "title": ""
+ },
+ {
+  "host": "career.fjnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 2208,
+  "title": "提示信息"
+ },
+ {
+  "host": "jy.fudan.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "career.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jy.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jiuye.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jyzx.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "zhaopin.cufe.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "zhaopin.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jobcareer.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jyw.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "scdc.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "job.cug.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "employment.fzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 184,
+  "title": "aTrust 2.0"
+ },
+ {
+  "host": "jy.gdmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1588,
+  "title": "404错误提示"
+ },
+ {
+  "host": "jiuye.gdou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.gdufs.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 667,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "job.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.gdut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 25721,
+  "title": "招聘公告 - 广东工业大学"
+ },
+ {
+  "host": "career.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.dlu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.gzhu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 318,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jy.gzhu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 25067,
+  "title": "404 - 找不到页面\n - 广州大学就业网"
+ },
+ {
+  "host": "zhaopin.gzhu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 447,
+  "title": "404"
+ },
+ {
+  "host": "job.gdufs.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.gdupt.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.gsau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.gzu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.hdu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 75,
+  "title": ""
+ },
+ {
+  "host": "job.hdu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 27119,
+  "title": "统一身份认证平台"
+ },
+ {
+  "host": "zhaopin.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.hebut.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 4270,
+  "title": "403"
+ },
+ {
+  "host": "career.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.henu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.haust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.hfit.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 291,
+  "title": ""
+ },
+ {
+  "host": "career.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10679,
+  "title": "aTrust"
+ },
+ {
+  "host": "jy.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10676,
+  "title": "aTrust"
+ },
+ {
+  "host": "jiuye.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10679,
+  "title": "aTrust"
+ },
+ {
+  "host": "jobs.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10678,
+  "title": "aTrust"
+ },
+ {
+  "host": "jobs.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10675,
+  "title": "aTrust"
+ },
+ {
+  "host": "zhaopin.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10682,
+  "title": "aTrust"
+ },
+ {
+  "host": "zhaopin.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10680,
+  "title": "aTrust"
+ },
+ {
+  "host": "jyw.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10676,
+  "title": "aTrust"
+ },
+ {
+  "host": "jyw.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10678,
+  "title": "aTrust"
+ },
+ {
+  "host": "xsjy.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10678,
+  "title": "aTrust"
+ },
+ {
+  "host": "scdc.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.hfit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 10684,
+  "title": "aTrust"
+ },
+ {
+  "host": "zhaopin.hhu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "len": 247953,
+  "title": "安全提示"
+ },
+ {
+  "host": "job.hit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 437,
+  "title": "系统提示"
+ },
+ {
+  "host": "career.hit.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 437,
+  "title": "系统提示"
+ },
+ {
+  "host": "job.hlju.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 151,
+  "title": "黑龙江大学信息与网络中心"
+ },
+ {
+  "host": "xsjy.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.henu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.hlju.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.hlju.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.hnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1588,
+  "title": "404错误提示"
+ },
+ {
+  "host": "jy.hnust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.hqu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 736,
+  "title": "404"
+ },
+ {
+  "host": "zhaopin.hqu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 152,
+  "title": "404 资源不存在"
+ },
+ {
+  "host": "zhaopin.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.hntou.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.hunnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jy.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jiuye.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jyzx.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2341,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jobs.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "zhaopin.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jobcareer.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jyw.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2341,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "scdc.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2341,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "xsjy.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "employment.hunnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "job.hrbeu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.hrbust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.hzau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.hznu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 32612,
+  "title": "招聘公告 - 杭州师范大学"
+ },
+ {
+  "host": "jy.jci.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jiuye.jmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1543,
+  "title": "系统维护中"
+ },
+ {
+  "host": "job.hunau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.jnu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "len": 2215,
+  "title": "提示信息"
+ },
+ {
+  "host": "career.hunau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.hunau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.jxufe.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.kmust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.jnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 26362,
+  "title": "招聘公告 - 暨南大学"
+ },
+ {
+  "host": "job.lnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.lzjtu.edu.cn",
+  "code": "412",
+  "items": 0,
+  "len": 7986,
+  "title": ""
+ },
+ {
+  "host": "job.lzu.edu.cn",
+  "code": "412",
+  "items": 0,
+  "len": 2542,
+  "title": ""
+ },
+ {
+  "host": "job.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.hust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.hzau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.nankai.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1489,
+  "title": "网页不存在"
+ },
+ {
+  "host": "zhaopin.nankai.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 528,
+  "title": "404"
+ },
+ {
+  "host": "zhaopin.nbu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1542,
+  "title": "403"
+ },
+ {
+  "host": "job.imu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.ncu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1176,
+  "title": "Not Found (#404)"
+ },
+ {
+  "host": "jyw.nchu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.ncu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2348,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jyzx.neuq.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 315,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "job.neuq.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 23769,
+  "title": "东北大学秦皇岛分校就业信息网"
+ },
+ {
+  "host": "job.nju.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 2876,
+  "title": "南京大学就业门户"
+ },
+ {
+  "host": "career.nju.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.jnu.edu.cn",
+  "code": "302",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.nuaa.edu.cn",
+  "code": "488",
+  "items": 0,
+  "len": 2343,
+  "title": "访问出错 - 488"
+ },
+ {
+  "host": "jy.kmust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.lzjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.nuaa.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 3624,
+  "title": ""
+ },
+ {
+  "host": "job.nwafu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 143,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "zhaopin.nwnu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 2003,
+  "title": "访问出错 - 403"
+ },
+ {
+  "host": "zhaopin.nwu.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.nwpu.edu.cn",
+  "code": "412",
+  "items": 0,
+  "len": 2408,
+  "title": ""
+ },
+ {
+  "host": "jobs.lzu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.qdu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 1032,
+  "title": "信息提示页"
+ },
+ {
+  "host": "jyw.qlu.edu.cn",
+  "code": "410",
+  "items": 0,
+  "len": 1942,
+  "title": "提示信息"
+ },
+ {
+  "host": "jyw.qhu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 86251,
+  "title": "首页-青海大学"
+ },
+ {
+  "host": "jiuye.qut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.neu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.neu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.ruc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "zhaopin.ruc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 30443,
+  "title": "404"
+ },
+ {
+  "host": "jobs.scnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.scnu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.scu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "len": 1860,
+  "title": "访问出错 - 483"
+ },
+ {
+  "host": "zhaopin.njau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.sdau.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 127,
+  "title": ""
+ },
+ {
+  "host": "jyzx.scut.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 2205,
+  "title": "提示信息"
+ },
+ {
+  "host": "job.sdu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1961,
+  "title": "404错误提示"
+ },
+ {
+  "host": "career.sdu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 3604,
+  "title": "山东大学生涯发展助手"
+ },
+ {
+  "host": "zhaopin.sdu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 447,
+  "title": "404"
+ },
+ {
+  "host": "jobcareer.sdu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "job.sdufe.edu.cn",
+  "code": "301",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "jy.njust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "jiuye.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 473,
+  "title": ""
+ },
+ {
+  "host": "jyzx.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 471,
+  "title": ""
+ },
+ {
+  "host": "jobs.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "jyw.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 473,
+  "title": ""
+ },
+ {
+  "host": "scdc.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 472,
+  "title": ""
+ },
+ {
+  "host": "xsjy.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 473,
+  "title": ""
+ },
+ {
+  "host": "employment.sdufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 473,
+  "title": ""
+ },
+ {
+  "host": "career.seu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1894,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "career.shisu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 196,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "zhaopin.shisu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.shmtu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 932,
+  "title": "就业系统"
+ },
+ {
+  "host": "career.shiep.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 38705,
+  "title": "招聘公告 - 上海电力大学"
+ },
+ {
+  "host": "job.shu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 932,
+  "title": "就业系统"
+ },
+ {
+  "host": "career.shu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.shu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1613,
+  "title": "无法找到资源。"
+ },
+ {
+  "host": "jyzx.shu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 2015,
+  "title": "平台维护与域名切换通知"
+ },
+ {
+  "host": "career.ouc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.shufe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 730,
+  "title": "页面不存在"
+ },
+ {
+  "host": "jy.pku.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.sicau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 666,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.shufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2339,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "job.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2343,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jiuye.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2343,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jy.sicnu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 8300,
+  "title": "四川师范大学-就业信息网"
+ },
+ {
+  "host": "jyzx.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2344,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jobs.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2341,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "zhaopin.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2343,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jyw.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jobcareer.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2339,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "scdc.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "xsjy.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "employment.sicnu.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jobs.sjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "career.sues.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 30,
+  "title": ""
+ },
+ {
+  "host": "career.sufe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 730,
+  "title": "页面不存在"
+ },
+ {
+  "host": "jyw.sues.edu.cn",
+  "code": "410",
+  "items": 0,
+  "len": 2213,
+  "title": "提示信息"
+ },
+ {
+  "host": "zhaopin.sufe.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.sus.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "job.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "career.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jy.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jiuye.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jyzx.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jiuye.sdtbu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jobcareer.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "zhaopin.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jyw.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "scdc.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "xsjy.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "employment.sust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 112,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jiuye.swjtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.swu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.swufe.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2341,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "zhaopin.swufe.edu.cn",
+  "code": "502",
+  "items": 0,
+  "len": 2342,
+  "title": "访问出错 - 502"
+ },
+ {
+  "host": "jy.szpu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "jiuye.szpu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1588,
+  "title": "404错误提示"
+ },
+ {
+  "host": "zhaopin.szpu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 4062,
+  "title": "深圳职业技术大学-安全提示"
+ },
+ {
+  "host": "job.tiangong.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 155,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "jobs.tiangong.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 155,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "career.sysu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 39430,
+  "title": "中山大学统一身份认证"
+ },
+ {
+  "host": "career.tjcu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1515,
+  "title": "网页不存在"
+ },
+ {
+  "host": "jy.tjcu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1515,
+  "title": "网页不存在"
+ },
+ {
+  "host": "job.tju.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.tjut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.tsinghua.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1588,
+  "title": "404错误提示"
+ },
+ {
+  "host": "jobs.tsinghua.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 447,
+  "title": "404"
+ },
+ {
+  "host": "jy.tust.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1373,
+  "title": "网站防火墙"
+ },
+ {
+  "host": "job.ucas.ac.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1893,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "jiuye.ucas.ac.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1949,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "zhaopin.ucas.ac.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1948,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "career.uibe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1516,
+  "title": ""
+ },
+ {
+  "host": "jiuye.uestc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2001,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "zhaopin.uibe.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "job.ustb.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1894,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "zhaopin.ustb.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 447,
+  "title": "404"
+ },
+ {
+  "host": "job.ustc.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2653,
+  "title": "404"
+ },
+ {
+  "host": "job.snnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.ustc.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.sues.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "career.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jy.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jiuye.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobcareer.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "scdc.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "xsjy.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "employment.wust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.wzu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 7,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.wzu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2002,
+  "title": "访问出错 - 404"
+ },
+ {
+  "host": "job.xaut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2315,
+  "title": "系统提示"
+ },
+ {
+  "host": "job.szu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.xjau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 582,
+  "title": "HTTP状态 404 - 未找到"
+ },
+ {
+  "host": "job.xidian.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 29347,
+  "title": "招聘公告 - 西安电子科技大学"
+ },
+ {
+  "host": "jyzx.tjut.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.xjtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 1893,
+  "title": "404 - 页面不存在"
+ },
+ {
+  "host": "job.xju.edu.cn",
+  "code": "ERR",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.xjut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "jy.xmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 6248,
+  "title": "页面未找到 - 404错误"
+ },
+ {
+  "host": "career.upc.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.usst.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.xmu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2027,
+  "title": "404错误提示"
+ },
+ {
+  "host": "job.xmut.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 6548,
+  "title": "您的访问请求可能对网站造成安全威胁，请求已被阻断。"
+ },
+ {
+  "host": "jobs.xmut.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 679,
+  "title": "HTTP Status 404 – Not Found"
+ },
+ {
+  "host": "job.xtu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 1908,
+  "title": "访问出错 - 403"
+ },
+ {
+  "host": "job.xsyu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 14391,
+  "title": "招聘"
+ },
+ {
+  "host": "career.xtu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 1908,
+  "title": "访问出错 - 403"
+ },
+ {
+  "host": "jy.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "xsjy.whu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jiuye.xtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.xtu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.xtu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 139,
+  "title": "404 Not Found"
+ },
+ {
+  "host": "jobcareer.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jyw.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "scdc.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "xsjy.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "employment.xtu.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 199,
+  "title": "403 Forbidden"
+ },
+ {
+  "host": "jy.xust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyzx.ynau.edu.cn",
+  "code": "403",
+  "items": 0,
+  "len": 1373,
+  "title": "网站防火墙"
+ },
+ {
+  "host": "jyw.ynau.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jobs.ynu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "jyw.zjgsu.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 2793,
+  "title": "404错误页面不存在"
+ },
+ {
+  "host": "career.zjnu.edu.cn",
+  "code": "483",
+  "items": 0,
+  "len": 1150,
+  "title": "访问受限"
+ },
+ {
+  "host": "job.zjut.edu.cn",
+  "code": "200",
+  "items": 10,
+  "len": 110607,
+  "title": "浙江工业大学毕业生就业信息网"
+ },
+ {
+  "host": "job.zust.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 209,
+  "title": "浙江科技大学就业网站"
+ },
+ {
+  "host": "job.zzu.edu.cn",
+  "code": "200",
+  "items": 0,
+  "len": 47683,
+  "title": "招聘公告 - 郑州大学"
+ },
+ {
+  "host": "jy.xjau.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.xjnu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.zzuli.edu.cn",
+  "code": "404",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.zzuli.edu.cn",
+  "code": "503",
+  "items": 0,
+  "len": 96,
+  "title": ""
+ },
+ {
+  "host": "jy.xju.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "zhaopin.xust.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ },
+ {
+  "host": "job.yzu.edu.cn",
+  "code": "000",
+  "items": 0,
+  "len": 0,
+  "title": ""
+ }
+]

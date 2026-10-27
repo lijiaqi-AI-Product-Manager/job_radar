@@ -1,0 +1,27 @@
+{
+  "company": "精进电动",
+  "careers_url": "https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus",
+  "host": "wecruit.hotjob.cn",
+  "ats": "dayee",
+  "page_title": "",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018873",
+      "https://job.xidian.edu.cn/campus/view/id/757200"
+    ]
+  }
+}

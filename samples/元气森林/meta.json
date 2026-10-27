@@ -1,0 +1,24 @@
+{
+  "company": "元气森林",
+  "careers_url": "https://k11pnjpvz1.jobs.feishu.cn/index",
+  "host": "k11pnjpvz1.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "加入元气森林",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 4,
+  "roles": 14,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入元气森林",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

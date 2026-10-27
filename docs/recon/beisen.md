@@ -1,110 +1,62 @@
-# 侦察：北森招聘门户（{tenant}.zhiye.com）
+# 侦察：北森控股（北森新版 · beisen.zhiye.com）
 
-- 侦察日期：2026-10-20
-- 侦察人：Claude 会话（请求从 GitHub Actions 发出，recon-probe 第 2–8 轮；租户验证见 tenant-verify）
-- **结论：新版门户 可做；旧版门户（服务端渲染）待定**
-- 类型：平台型（多租户）
+- 侦察日期：2026-10-25
+- 侦察人：自研批量探针（work/probe_beisen.py，串行 ≤1 req/s）
+- **结论：可做**（实测 194 条在招，列表接口明文 JSON，JD 在列表内）
+- 类型：平台型（多租户）· 适配器 `beisen`
 
 ## 1. 入口与范围
-- 租户站：`https://{tenant}.zhiye.com/`，校招 `/campus/jobs`，实习 `/intern/jobs`，社招 `/social/jobs`
-- **两代门户**：
-  - 新版（2022 门户，`acdn.bstatics.com/ux/ux-recruitment-portal-2022`）：前端渲染，走 JSON 接口 → 本适配器
-  - 旧版（服务端渲染，如 `smics`、`cssc`、`sast`、`casic`，URL 形如 `/campus/?PageIndex=1&p=...`）：`/api/Jobad/...` 返回 404，需要单独的 HTML 适配器
-- 租户发现：搜索引擎 `site:zhiye.com campus`，候选清单 `docs/recon/beisen_tenants.txt`，由 `tenant-verify` 工作流逐个验证门户代际与岗位数
+- 公开入口 URL：https://beisen.zhiye.com/
+- 覆盖的招聘类型：社招 / 校招 / 实习（北森门户混列，详见第 5 节陷阱）
+- 预估岗位总量（全量）：194
+- 平台型预估租户数：本批实测命中 83 个北森租户（见 beisen-batch.md）
 
 ## 2. 合规核查
-- robots.txt：抽查 beisen、fosunpharma、intsig、cfmoto 均为 `User-agent: * / Allow: /`
-- 登录/验证码/签名：列表接口无需登录、无签名、明文 JSON
-- 建议限速：1 req/s；所有租户同属 zhiye.com，crawl 中同适配器的源串行执行
+- robots.txt：`User-agent: * / Allow: /`（2026-10-25 实测，抽样 5 家一致）
+- 服务条款：北森门户为企业自建公开门户，列表接口无需登录、无签名、无验证码
+- 是否需要登录/验证码/签名：**否**
+- 建议限速：1 rps（本项目全局约束）
+- 其他风险：见第 5 节（门店岗位噪声、CategoryId 失效）
 
 ## 3. 取数接口
-- `POST https://{tenant}.zhiye.com/api/Jobad/GetJobAdPageList`
-- body：`{"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""}`
-- 返回：`{"Code":200,"Count":N,"Data":[...]}`；PageIndex 从 0 开始；PageSize=100 可用
-- `SpecialType`：**不是**招聘类型。实测 1 = 热招（`Channel4IsHot`），2 = 长期（`Channel4IsLong`），0 = 全部
-- 岗位链接：`https://{tenant}.zhiye.com/{campus|intern|social}/detail?jobAdId={Id}`
+- 列表接口：`POST https://beisen.zhiye.com/api/Jobad/GetJobAdPageList`
+  - body：`{"PageIndex":0,"PageSize":100,"KeyWords":"","SpecialType":0,"PortalId":""}`
+  - 分页：`PageIndex` 从 0 起；`PageSize` 上限实测 100
+  - 终止条件：`(PageIndex+1)*PageSize >= Count` 或返回空 `Data`
+- 详情接口：**无需单独请求**，`Duty`（职责）与 `Require`（要求）直接在列表项里
+- 返回结构：`{"Code":200,"Count":N,"Data":[{"Id","JobAdId","JobAdName","CategoryId","Duty","Require","LocNames",...}]}`
+- 岗位唯一 id：`Id`（GUID 字符串）
+- 岗位页链接：`https://beisen.zhiye.com/social/detail?jobAdId={Id}`
 
 ## 4. 字段映射
-| 我们的字段 | 站点字段 | 备注 |
+| 我们的字段 | 站点字段 / 提取方式 | 备注 |
 |---|---|---|
-| source_job_id | Id（UUID） | |
-| title | JobAdName | |
-| url | 由 Id 与类型构造 | |
-| recruit_type | CategoryId：1 社招 / 2 校招 / 3 实习 / 5 社招（专家、资深岗） | 1–3 实测于 intsig；5 实测于 cxmt、chinalife；其他值跳过 |
-| grad_year / batch | 从标题解析（`normalize.py`） | 如"【27校招】""2027届提前批" |
-| cities | LocNames | **列表中恒为空**，城市暂缺 |
-| degree_min | Degree | 多为 null |
-| description / requirements | Duty / Require | 列表直接带 JD 原文 |
-
-## 4.1 租户验证（第 1 批，2026-10-20）
-- 候选 73 家：**new 门户 67 家**（已写入 `sources/beisen.yaml`，合计约 2 万岗位，最大为奇瑞 5781、中国人寿 2931、长鑫存储 2001）
-- 旧版门户 6 家：smics（中芯国际）、xib（厦门国际银行）、glprop（普洛斯）、kelun（科伦药业）、biad（北京建院）、eic（启德教育）
-- 注意：raytrontek 与 raytrontek1 均为睿创微纳（两个门户），可能存在重复岗位
-
-## 4.2 租户验证（第 2 批，2026-10-20）
-- 候选 46 家：new 门户 37 家，入库 36 家（`jmgroup-o` 标题为"JM华中华东区"，无法确认公司，暂不入库）
-- 旧版门户 9 家：eswinchipch（奕斯伟）、gtgroup（绿城）、newhope（新希望）、crrczzs（中车株洲所）、sast（上海航天）、cssc（中船）、casic（航天科工）、ehr-dian（小电）、zghkyjy（中国航空研究院）
-- 大户：heytea 5144、norincogroupzhaopin 1903、jssoft 671、vital 532、inovance 417
-
-## 4.3 租户验证（第 3 批，2026-10-20）
-- 候选 31 家：new 门户 29 家，入库 28 家（`ciccwm` 中金财富的 Count 与 `cicc` 完全相同（483），疑似共享岗位，暂不入库以免重复）
-- 旧版门户 2 家：weiheng（威衡）、tecon（天康生物）
-- 大户：sunwodacampus 1286、gotion 937、cpgroup 816、cttq 769、futurefoton 683、wuxiapptec 634
-
-## 4.3b 租户验证（第 4 批，2026-10-20）
-- 候选 23 家：new 门户 22 家，入库 21 家（`huitian1` 标题为"招聘门户网站"，无法确认公司，暂不入库）；`eswinplp` 非新版门户
-- 大户：ccccltd（中国交建）2630、ymtc（长江存储）656、tigermed 515、pudutech 281、mindray 238、mengniu 213
-
-## 4.3c 租户验证（第 5 批，2026-10-20）
-- 候选 5 家：new 门户 4 家，入库 3 家：leapmotor1（零跑汽车）1174、dptech（迪普科技）407、novastar（诺瓦星云）148
-- `chery` 的 Count 与已入库 `chery1` 完全相同（5781），同一批岗位，不入库
-- `611`（成都飞机设计研究所）为旧版门户，待旧版变体检查
-
-## 4.3d 租户验证（第 6 批，2026-10-20）
-- 候选 39 家（搜索 site:zhiye.com）：new 门户 37 家，入库 34 家
-  - 不入库：`polycareer`（与 `polynew` 同为保利发展、Count 均为 798，重复）、`yzwhr`（中建电商，0 岗位）、`zczy`（标题为"招聘官网"，无法确认公司）
-  - `sanycampus`（147）与已入库的 `sany` 为三一的两个门户，可能有少量重复岗位
-- 旧版门户 2 家：jingce（精测电子）为变体 A，已入库；htffund（汇添富基金）校招页当前 0 个岗位链接，暂不入库（空源每天会被判为失败）
-- 大户：genomics（华大）1901、cnnc（中核）1612、polynew 798、baicgroup（北汽）518、tzcpa 481、yangzijiang 424
-
-## 4.4 旧版门户（服务端渲染，第 12 轮侦察）
-- 共 17 家：smics、xib、glprop、kelun、biad、eic、eswinchipch、gtgroup、newhope、crrczzs、sast、cssc、casic、ehr-dian、zghkyjy、weiheng、tecon
-- 变体 A（如 cssc）：列表 `GET /campus/?PageIndex=N`，岗位链接 `<a title="标题" href="/zpdetail/<数字id>?PageIndex=N">`
-- 变体 B（如 smics）：链接参数形如 `jobId=390852397&jc=2&c=&p=1^-1,3^-1`
-- 列表只有标题与 id；JD 原文需逐个请求详情页（HTML）
-- 页码从 1 开始（PageIndex=0 越界并返回第 1 页）；页脚"当前第N/M页"给出总页数；每行带所属单位、地点、发布日期
-- 结论：可做，已实现 `adapters/beisen_legacy.py`（正则解析，无新依赖；列按内容识别地名，不依赖列顺序）
-- 第 15 轮变体检查：变体 A 共 8 家（cssc、sast 207 岗、tecon、eic、gtgroup、xib、ehr-dian、zghkyjy）已入库；
-  smics（变体 B）、kelun（另一结构）、casic/weiheng（路径不同）、glprop/biad/newhope/crrczzs（列表页无岗位链接）待后续
-- 第 16–18 轮：611（成飞所）为变体 A，已入库；kelun 与变体 A 相同但链接为 `/job_show/<id>`，已支持并入库；
-  casic、weiheng 的 `/campus/` 返回 404；
-  smics（变体 B）：`<a href="/campusxq?jobId=<id>&jc=2…">` 内依次为 `<span>` 职位分类、职位名称、学历、地点（如"广东省-深圳市"），共 22 页。
-  **职位名称超长时被截断为"…(J133..."**；详情页 `/campusxq?jobId=<id>&jc=2` 的 `<h2 class=" col26 …">` 为完整标题，
-  `<h3>职位描述</h3><div class="xqm">`、`<h3>职位要求</h3><div class="xqm">` 为 JD（第 25–26 轮）。
-  已实现为 `beisen_legacy` 的 `variant: b`（逐岗位请求详情，约 220 次/天）
+| source_job_id | `Id` | GUID，稳定 |
+| title | `JobAdName` | 含 `(J12345)` 内部编号后缀，需清洗 |
+| url | `https://beisen.zhiye.com/social/detail?jobAdId={Id}` | 构造 |
+| recruit_type | `CategoryId` → 1/5=social, 2=campus, 3=intern | **4/6/7 未映射（见陷阱）** |
+| grad_year | 标题正则 `20\d{2}届` | 多数无 |
+| batch | `normalize.batch_from_text(标题)` | 提前批/正式批/补录 |
+| cities | `LocNames[]` | **本租户实测恒为空**，城市缺失 |
+| degree_min | `Degree` | 多数 null |
+| department | 无独立字段 | 可从 `Org` 取（多数 null） |
+| description | `Duty` | 纯文本，含换行 |
+| requirements | `Require` | 纯文本 |
 
 ## 5. 已知陷阱
-- 城市字段缺失（需要找详情接口；不要从标题猜）
-- 部分租户在 `/custom/...` 自定义页面（cmhk、chinalife、coamc），接口是否相同待验证
-- 某些租户校招页职位数为 0（如 sany 在侦察时）
+1. **`CategoryId` 请求参数被服务端忽略**：传 1/2/3/4/5 均返回同一 `Count`，筛选必须在客户端做。
+2. **`CategoryId=4` 是门店/操练岗**（来伊份 7216 条里大量「营业员/店员/美食顾问」），适配器当前 `None` → `SkipRecord` 会整条丢弃，是**正确**行为，但意味着该租户绝大多数岗位不可用。
+3. `LocNames` 在本租户恒为空（与 docs/recon/beisen.md 记录一致）。
+4. 标题带 `(J27391)` 内部编号，做去重前先剥离。
+
+## 6. 样本
+`docs/recon/samples/beisen/`：`list_p1.json`（第 1 页）、`list_last.json`（末页）、`detail.html`（详情页 HTML）。已脱敏（邮箱/手机号/token 已替换）。
 
 ## 7. 从 GitHub Actions 的可达性
-全部 200，约 0.3s。
+未测（本机实测 200，耗时 200–600ms）。建议新增源上线前跑 `scripts/smoke_sources.py beisen-beisen`。
 
 ## 8. 下一步
-新版门户：`adapters/beisen.py`。旧版门户：单独侦察 HTML 结构（smics 页面 80KB，含服务端渲染列表）。
-## 6. 城市字段：第三次确认拿不到（2026-10-23，recon #58）
-
-校园岗城市覆盖长期停在 ~29%，北森占校园岗 95%。这天又用三种办法确认了一遍：
-
-1. **列表接口**：`LocId` / `LocNames` / `Station` 全部为 `null` 或 `[]`（以 jobtaikang 1739 岗为例，
-   逐条检查 20 个字段，没有城市信息）。
-2. **详情页 URL**：`/campusxq?jobId=`、`?jobAdId=`、`/zpdetail/{JobAdId}`、`/jobdetail/{uuid}` 全部返回同一个
-   113KB 的 SPA 壳，页面里既没有岗位标题也没有「工作地点」。
-3. **详情页抓包**（RENDERXHR，jobtaikang）：渲染后只有 **61 个字符**的正文；期间只有
-   `Common/GetPortalAIRobot`、`PortalAgent/GetPortalAgentConfig`、`Template/GetPageGlobalModules`
-   和埋点日志，**没有任何岗位详情接口**——说明详情内容要靠登录态或其它客户端路由，公开访问拿不到。
-
-**结论**：城市覆盖率的上限由「有城市的源」决定，不是解析问题。要突破只能：
-逐租户上浏览器渲染（成本极高，且详情页本身没数据），或等官方开放带城市的详情接口。
-当前门槛按证据定为 20%（实测 29.0%），见 `docs/RELEASE.md`。
+可以直接合并 `sources/beisen.yaml`：
+```yaml
+  - {id: beisen-beisen, company: 北森控股, params: {tenant: beisen}}   # 194 岗（2026-10-25 实测）
+```

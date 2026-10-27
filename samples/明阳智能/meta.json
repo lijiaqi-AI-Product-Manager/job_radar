@@ -1,0 +1,24 @@
+{
+  "company": "明阳智能",
+  "careers_url": "https://mywind.zhiye.com/campus",
+  "host": "mywind.zhiye.com",
+  "ats": "beisen",
+  "page_title": "明阳智慧能源集团股份公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "明阳智慧能源集团股份公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

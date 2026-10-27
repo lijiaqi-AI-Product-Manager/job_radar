@@ -1,0 +1,27 @@
+{
+  "company": "华海药业",
+  "careers_url": "https://www.huahaipharm.com/zpgw.html",
+  "host": "www.huahaipharm.com",
+  "ats": "unknown",
+  "page_title": "首页 - 浙江华海药业股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "首页 - 浙江华海药业股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019702",
+      "https://job.zzu.edu.cn/campus/view/id/1019092"
+    ]
+  }
+}

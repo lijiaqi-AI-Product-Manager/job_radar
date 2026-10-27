@@ -1,0 +1,24 @@
+{
+  "company": "菜鸟网络",
+  "careers_url": "https://talent.cainiao.com/",
+  "host": "talent.cainiao.com",
+  "ats": "unknown",
+  "page_title": "【菜鸟招聘官网】菜鸟招聘_菜鸟校招_cainiao recruitment",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 9,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "【菜鸟招聘官网】菜鸟招聘_菜鸟校招_cainiao recruitment",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

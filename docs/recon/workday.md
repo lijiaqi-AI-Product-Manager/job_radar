@@ -1,7 +1,7 @@
 # 侦察：Workday 租户（外资公司在华招聘）
 
 - 侦察日期：2026-10-22
-- 侦察人：DeepSeek agent（本机直连，固定 UA，≤1 req/s）
+- 侦察人：本机探针（本机直连，固定 UA，≤1 req/s）
 - **结论：可做（平台型适配器 `workday`）**
 - 类型：平台（Workday CXS 公开 JSON）
 

@@ -1,0 +1,24 @@
+{
+  "company": "郎酒",
+  "careers_url": "https://langjiu3.zhiye.com/campus",
+  "host": "langjiu3.zhiye.com",
+  "ats": "beisen",
+  "page_title": "郎酒股份",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 4,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "郎酒股份",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

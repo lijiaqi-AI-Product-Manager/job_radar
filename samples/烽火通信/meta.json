@@ -1,0 +1,28 @@
+{
+  "company": "烽火通信",
+  "careers_url": "https://www.fiberhome.com/joinus.html",
+  "host": "www.fiberhome.com",
+  "ats": "unknown",
+  "page_title": "烽火通信官网 - 最大限度挖掘数字连接价值,造福人类社会",
+  "calendar_entries": 5,
+  "project_types": [
+    "实习",
+    "暑期实习",
+    "校园大使",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 25,
+  "roles": 70,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "烽火通信官网 - 最大限度挖掘数字连接价值,造福人类社会",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

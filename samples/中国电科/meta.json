@@ -1,0 +1,28 @@
+{
+  "company": "中国电科",
+  "careers_url": "https://campus.cec.com.cn/",
+  "host": "campus.cec.com.cn",
+  "ats": "unknown",
+  "page_title": "中国电子信息产业集团有限公司招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 21,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国电子信息产业集团有限公司招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 6,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/758184",
+      "https://job.xidian.edu.cn/campus/view/id/757889",
+      "https://job.xidian.edu.cn/campus/view/id/757663"
+    ]
+  }
+}

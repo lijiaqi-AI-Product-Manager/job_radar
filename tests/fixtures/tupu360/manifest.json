@@ -1,0 +1,66 @@
+[
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/positionTotal?recruitmentType=CAMPUSRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/detail?positionId=6aa37e3b7280da28da079988&recruitmentType=CAMPUSRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/detail?positionId=6aa22cf47280da28da0798ac&recruitmentType=CAMPUSRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/detail?positionId=6aa14c0d7280da28da07983f&recruitmentType=CAMPUSRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "005.txt"
+  },
+  {
+    "method": "POST",
+    "url": "https://jobs.siemens.com.cn/siemens/position/nextPageList",
+    "body": "recruitmentType=CAMPUSRECRUITMENT&offset=15&max=15",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "018.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/positionTotal?recruitmentType=INTERNSHIPRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "file": "034.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=INTERNSHIPRECRUITMENT",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "file": "035.txt"
+  }
+]

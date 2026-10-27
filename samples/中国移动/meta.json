@@ -1,0 +1,29 @@
+{
+  "company": "中国移动",
+  "careers_url": "https://job.10086.cn/personal/campus/",
+  "host": "job.10086.cn",
+  "ats": "self_hosted",
+  "page_title": "校园招聘_中国移动招聘网站",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 56,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘_中国移动招聘网站",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 24,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757730",
+      "https://job.xidian.edu.cn/campus/view/id/757476",
+      "https://job.xidian.edu.cn/campus/view/id/757456"
+    ]
+  }
+}

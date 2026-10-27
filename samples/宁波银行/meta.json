@@ -1,0 +1,29 @@
+{
+  "company": "宁波银行",
+  "careers_url": "",
+  "host": "career.hznu.edu.cn",
+  "ats": "none",
+  "page_title": "宁波银行金华分行2027届校园招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 46,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "宁波银行金华分行2027届校园招聘",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://career.hznu.edu.cn/campus/view/id/551368",
+      "https://career.hznu.edu.cn/campus/view/id/551322",
+      "https://career.hznu.edu.cn/campus/view/id/551260"
+    ]
+  }
+}

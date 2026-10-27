@@ -1,0 +1,26 @@
+group: 燧原科技
+entries:
+- id: suiyuankeji-campus-entry
+  company: 燧原科技
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  apply_url: https://campus.niuqizp.com/job-vkl5znLz5.html
+  source:
+    type: official_site
+    name: 燧原科技招聘官网
+    url: https://campus.niuqizp.com/job-vkl5znLz5.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：燧原科技2027全球校园人才燧曜寰宇芯STAR计划启动且将芯火试新芽，科技趁年华2027校园招聘,招聘城市有:上海,北京）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

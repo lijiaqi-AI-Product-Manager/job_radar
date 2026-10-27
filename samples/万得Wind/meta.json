@@ -1,0 +1,24 @@
+{
+  "company": "万得Wind",
+  "careers_url": "https://www.wind.com.cn/portal/zh/JoinUs/index.html",
+  "host": "www.wind.com.cn",
+  "ats": "unknown",
+  "page_title": "万得 - 招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "万得 - 招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

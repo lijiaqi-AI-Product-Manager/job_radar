@@ -1,0 +1,788 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobileUrl" content="//zszq.m.zhiye.com/campus" />
+    <link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_style.css?v=0.0.0.3" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+    <script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_jquery311.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_bgfull.js?v=0.0.0.3" ></script>
+<script type="text/javascript" src="//stc-cms.beisen.com/CmsPortal/6/6_themes_default_scripts_pagescripts.js?v=0.0.0.3" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+    <title>浙商证券招聘系统--校园招聘</title>
+</head>
+<body>
+
+  <div class="indexmain">
+<div class="header">
+    <div class="mainContent">
+         <div class="logo">
+  <img src="//stc-cms.beisen.com/CmsPortal/110194/110194_medias_2020722_2020722logo.png?v=637310222797970000"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item on"><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_blank" href="http://www.stocke.com.cn" >走进浙商</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin, .unLogin {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+    
+    <div class="isLogin" style="display:none">
+        <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+        <a href="/User/Account/LogOut"><span>退出</span></a>
+    </div>
+    
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fzszq.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fzszq.zhiye.com%2F%2Fcampus%3FPageIndex%3D1%26k%3D">注册</a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+<script>
+   // 初始化来也机器人
+    function initLaiye(){
+        var aiScript = document.createElement('script');
+        aiScript.type = 'text/javascript';
+        aiScript.src = 'https://cdn.wul.ai/IMLib-3.30.0.min.js';
+        document.body.insertBefore(aiScript, document.body.firstChild);
+        aiScript.onload = function () {
+            // 需要在这里写ajax异步操作，不然它可能在没加载之前调用然后报错
+            $.ajax({
+                url: '/User/Account/GetWulPubKey'
+                , type: 'get'
+                , success: function (resp) {
+                    // 获取来也机器人信息
+                    var isOpen = resp.Data.IsOpen;
+                    if (isOpen) {
+                        var key = resp.Data.PubKey;
+                        new websdk({
+                            data: {
+                                pubkey: key, // 吾来平台PubKey
+                                autoOpen: false, // 是否自动打开
+                                extra: {
+                                    tagValues: [],
+                                    presetTagValues: []
+                                }
+                            },
+                            el: 'body'
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    // 初始化天润机器
+    function initTianrun(robotKey){
+        (function(win, doc, src, opt) {
+            win[opt] = win[opt] || function () {
+            win[opt].options = arguments[0]};
+            var script = doc.createElement("script");
+            script.async = 1;
+            script.src = src;
+            doc.body.appendChild(script);
+            })(window, document, "https://webchat-sh.clink.cn/webchat.js?v="+Date.now(), "clinkWebchatOptions");
+        clinkWebchatOptions({
+            accessId: robotKey,
+            language: "zh_CN"
+        });
+    }
+
+    // 获取天润机器人灰度
+    $.ajax({
+            url: '/User/Account/GetPortalAIRobot'
+            , type: 'get'
+            , success: function (resp) {
+                if (resp.Data.IsOpen && resp.Data.PubKey) {
+                    initTianrun(resp.Data.PubKey)
+                }else{
+                    initLaiye();
+                }
+            }
+        })
+</script>
+
+    </div>
+</div>
+<!--module:login end-->
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+       <a class="internal" href="https://neitui.italent.cn/zszq/jobs" target="_blank">内部推荐</a>
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+    </div>
+</div>
+<div class="banner">
+      
+		<img src="//stc-cms.beisen.com/CmsPortal/110194/110194_medias_2020722_2020722bannercampus.jpg?v=637310283610970000"  draggable="false"/>
+
+</div>
+<div class="content">
+    <div class="mainContent">
+        <div class="narrow mr10">
+            
+<!--module:positioncategory begin-->
+<div class="bs-module">
+    <div class="positioncategory-smallblue ">
+        
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:positioncategory end-->
+            <div class="box">
+                
+<!--module:newslist begin-->
+<div class="bs-module">
+    <div class="newslist-template6simple ">
+        
+
+
+
+ 
+
+
+
+<div class="boxSupertitle"><span>招聘动态</span>                                                                           <a class="more" href="/newslist"></a>
+</div>
+
+<ul class="newsList">
+            <li><a>暂无内容</a></li>
+</ul>
+
+    </div>
+</div>
+<!--module:newslist end-->
+            </div>
+        </div>
+        <div class="wide">
+            <div class="box">
+                
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-smallblue ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+<div class="boxSupertitle"><span>职位搜索</span></div>
+<div class="searchCityList">
+            <div class="searchBoxl">
+                <div class="l"></div>
+				<div class="txtIn">
+					<input type="text" id="k" name="k" autocomplete="off" maxlength="50"/>
+				</div>
+				<a class="searchBtn" href="javascript:void(0)" id="searchlink"></a>
+            </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        <div class="mainTitle" title="职位类型">职位类型：</div>
+                        <div class="mainListWrap">
+                            <ul class="mainList">
+                                        <li><a href="/campus?r=&amp;p=1^-1&amp;c=&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                            </ul>
+                            <a class="viewMore" href="javascript:void(0);">更多</a>
+                        </div>
+                <div class="mainTitle">工作地点：</div>
+                <div class="mainListWrap">
+                    <ul class="mainList">
+                                <li><a href="/campus?r=&amp;p=&amp;c=-1&amp;d=&amp;k=#jlt" class="on" title="全部">全部</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=1&amp;d=&amp;k=#jlt" title="全国">全国</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3100&amp;d=&amp;k=#jlt" title="上海市">上海市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3109&amp;d=&amp;k=#jlt" title="浦东新区">浦东新区</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=3301&amp;d=&amp;k=#jlt" title="杭州市">杭州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4401&amp;d=&amp;k=#jlt" title="广州市">广州市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=4403&amp;d=&amp;k=#jlt" title="深圳市">深圳市</a></li>
+                                <li><a href="/campus?r=&amp;p=&amp;c=330101&amp;d=&amp;k=#jlt" title="上城区">上城区</a></li>
+                    </ul>
+                    <a class="viewMore" href="javascript:void(0);">更多</a>
+                </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <div class="mainTitle">发布时间：</div>
+                    <div class="mainListWrap">
+                        <ul class="mainList">
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=-1&amp;k=#jlt" class="on">全部</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=3&amp;k=#jlt" title="三天内">三天内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=7&amp;k=#jlt" title="一周内">一周内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=30&amp;k=#jlt" title="一个月内">一个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=90&amp;k=#jlt" title="三个月内">三个月内</a></li>
+                                    <li><a href="/campus?r=&amp;p=&amp;c=&amp;d=180&amp;k=#jlt" title="半年内">半年内</a></li>
+                        </ul>
+                        <a class="viewMore" href="javascript:void(0);">更多</a>
+                    </div>
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                    <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+                        </div>
+
+<script type="text/javascript">
+    function GetParam(key) {
+        return (document.location.search.match(new RegExp("(?:^\\?|&)" + key + "=(.*?)(?=&|$)")) || ['', null])[1];
+    }
+
+    function myHTMLEnCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&amp;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function myHTMLDeCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+    var defaultText = "请输入职位关键字";
+
+    $(document).ready(function () {
+        $("input[name='keyword']").click(function () {
+            $(this).val("");
+        });
+
+        var keyWord = GetParam("k");
+
+        if (keyWord != null) {
+            keyWord = decodeURIComponent(keyWord);
+            keyWord = myHTMLDeCode(keyWord);
+
+            $("input[name='k']").val(keyWord);
+        }
+
+        $("#searchlink").click(function () {
+            var r = GetParam("r");
+            r = (r == null ? -1 : r);
+            var p = GetParam("p");
+            p = (p == null ? "" : p);
+            var c = GetParam("c");
+            c = (c == null ? "" : c);
+            var d = GetParam("d");
+            d = (d == null ? "" : d);
+            var k = $.trim($("input[name='k']").val());
+
+            if (k == defaultText)
+                k = "";
+
+            k = myHTMLEnCode(k);
+            k = encodeURIComponent($.trim(k));
+
+            location.href = "/campus" + "?r=" + r + "&p=" + p + "&c=" + c + "&d=" + d + "&k=" + k + '#jlt';
+        });
+
+        var keyStr = $("#k").val();
+        if (!keyStr || keyStr == "") {
+            $("#k").css("color", "#d2cece");
+            $("#k").val(defaultText);
+        }
+
+        $("#k").focus(function () {
+            var v = $(this).val();
+            if (v == defaultText) {
+                $(this).val("");
+                $(this).css("color", "");
+            }
+        });
+
+        $("#k").blur(function () {
+            var v = $(this).val();
+            if (!v || v == "") {
+                $(this).val(defaultText);
+                $(this).css("color", "#d2cece");
+            }
+        });
+        //搜索区折叠处理
+        // 超过三行 折叠显示更多
+        $.each($('.mainList'), function (i, n) {
+            if ($(this).height() > 90) {
+                $(this).addClass('more');
+                $(this).next('.viewMore').show();
+            }
+        })
+        $('.viewMore').click(function (e) {
+            var target = $(e.currentTarget)
+            if (target.text() == "更多") {
+                target.text('收起')
+                target.prev('.mainList').removeClass('more')
+            } else {
+                target.text('更多')
+                target.prev('.mainList').addClass('more')
+            }
+
+        })
+    });
+</script>
+
+
+    </div>
+</div>
+<!--module:positionsearch end-->
+                
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-smallblue ">
+        
+
+
+
+
+
+
+
+<div class="joblist">
+	<table class="jobsTable" border="0" cellpadding="0" cellspacing="0">
+	    <tr class="title">
+                <td>职位名称</td>
+            <td>招聘人数</td>
+            <td>工作地点</td>
+
+        </tr>
+                <tr>
+
+
+            <td>
+                <a title="销售助理/区域助理(J10666)" href="/zpdetail/151244984?PageIndex=1&amp;k=" >销售助理/区域助理(J10666)</a>
+            </td>
+        
+
+
+
+            <td>若干</td>
+
+            <td title="全国">全国</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="财富管理专员(J10621)" href="/zpdetail/151245025?PageIndex=1&amp;k=" >财富管理专员(J10621)</a>
+            </td>
+        
+
+
+
+            <td>1</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="数字应用中心专员(J10626)" href="/zpdetail/151245024?PageIndex=1&amp;k=" >数字应用中心专员(J10626)</a>
+            </td>
+        
+
+
+
+            <td>3</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="信息技术开发专员(J10624)" href="/zpdetail/151245023?PageIndex=1&amp;k=" >信息技术开发专员(J10624)</a>
+            </td>
+        
+
+
+
+            <td>3</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="分支机构员工(J10622)" href="/zpdetail/151245022?PageIndex=1&amp;k=" >分支机构员工(J10622)</a>
+            </td>
+        
+
+
+
+            <td>若干</td>
+
+            <td title="全国">全国</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="信息技术运维专员(J10625)" href="/zpdetail/151245021?PageIndex=1&amp;k=" >信息技术运维专员(J10625)</a>
+            </td>
+        
+
+
+
+            <td>4</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="研究助理(J10623)" href="/zpdetail/151245020?PageIndex=1&amp;k=" >研究助理(J10623)</a>
+            </td>
+        
+
+
+
+            <td>若干</td>
+
+            <td title="全国">全国</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="公募权益投资策略开发岗/产品支持岗(J10631)" href="/zpdetail/151245019?PageIndex=1&amp;k=" >公募权益投资策略开发岗/产品支持岗(J10631)</a>
+            </td>
+        
+
+
+
+            <td>2</td>
+
+            <td title="上海市-浦东新区">上海市-浦东新区</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="发行岗(J10627)" href="/zpdetail/151245018?PageIndex=1&amp;k=" >发行岗(J10627)</a>
+            </td>
+        
+
+
+
+            <td>2</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="投行项目经理(J10628)" href="/zpdetail/151245017?PageIndex=1&amp;k=" >投行项目经理(J10628)</a>
+            </td>
+        
+
+
+
+            <td>若干</td>
+
+            <td title="全国">全国</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="投资经理助理(J10630)" href="/zpdetail/151245016?PageIndex=1&amp;k=" >投资经理助理(J10630)</a>
+            </td>
+        
+
+
+
+            <td>2</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="产品引进岗(J10634)" href="/zpdetail/151245015?PageIndex=1&amp;k=" >产品引进岗(J10634)</a>
+            </td>
+        
+
+
+
+            <td>1</td>
+
+            <td title="浙江省-杭州市">浙江省-杭州市</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="自营策略投资量化/宏观/行业研究员(J10636)" href="/zpdetail/151245014?PageIndex=1&amp;k=" >自营策略投资量化/宏观/行业研究员(J10636)</a>
+            </td>
+        
+
+
+
+            <td>2</td>
+
+            <td title="上海市-浦东新区">上海市-浦东新区</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="研究员(J10632)" href="/zpdetail/151245013?PageIndex=1&amp;k=" >研究员(J10632)</a>
+            </td>
+        
+
+
+
+            <td>1</td>
+
+            <td title="上海市-浦东新区">上海市-浦东新区</td>
+                        
+      
+
+                </tr>
+                <tr>
+
+
+            <td>
+                <a title="投顾助理(J10633)" href="/zpdetail/151245012?PageIndex=1&amp;k=" >投顾助理(J10633)</a>
+            </td>
+        
+
+
+
+            <td>1</td>
+
+            <td title="上海市-浦东新区">上海市-浦东新区</td>
+                        
+      
+
+                </tr>
+	</table>
+</div>
+
+
+<div class="pager">
+        <div class="counts">共44条记录</div>
+        <div class="tablefooter">
+        当前第1/3页
+	    <script language="javascript" type="text/javascript">function _MvcPager_Keydown(e){var _kc,_pib;if(window.event){_kc=e.keyCode;_pib=e.srcElement;}else if(e.which){_kc=e.which;_pib=e.target;}var validKey=(_kc==8||_kc==46||_kc==37||_kc==39||(_kc>=48&&_kc<=57)||(_kc>=96&&_kc<=105));if(!validKey){if(_kc==13){ _MvcPager_GoToPage(_pib,3);}if(e.preventDefault){e.preventDefault();}else{event.returnValue=false;}}}function _MvcPager_GoToPage(_pib,_mp){var pageIndex;if(_pib.tagName=="SELECT"){pageIndex=_pib.options[_pib.selectedIndex].value;}else{pageIndex=_pib.value;var r=new RegExp("^\\s*(\\d+)\\s*$");if(!r.test(pageIndex)){alert("当前页码错误");return;}else if(RegExp.$1<1||RegExp.$1>_mp){alert("当前页码超出范围");return;}}var _hl=document.getElementById(_pib.id+'link').childNodes[0];var _lh=_hl.href;_hl.href=_lh.replace('=0','='+pageIndex);_hl.click();_hl.href=_lh;}</script><div class="pager2"><span class="pitem"><a disabled="disabled" class="disabled next">首页</a></span><span class="pitem"><a disabled="disabled" class="disabled next"><span class="pre"></span>上一页</a></span><span class="pitem"><a href='/campus/?PageIndex=2' class="next">下一页<span class="nxt"></span></a></span><span class="pitem"><a href='/campus/?PageIndex=3' >尾页</a></span><span class="superGo"><input type="text" id="_MvcPager_Ctrl0_pib" value="1" onkeydown="_MvcPager_Keydown(event)"/><input type="button" value="跳转" onclick="_MvcPager_GoToPage(document.getElementById('_MvcPager_Ctrl0_pib'),3)"/><span id="_MvcPager_Ctrl0_piblink" style="display:none;width:0px;height:0px"><a href="/campus/?PageIndex=0" onclick="window.open(this.attributes.getNamedItem('href').value,'_self')"></a></span></span></div>
+            </div>
+
+</div>
+
+    </div>
+</div>
+<!--module:positionlist end-->
+<!--module:deliverystoredb begin-->
+<div class="bs-module">
+    <div class="deliverystoredb-smallblue ">
+        
+
+
+
+
+
+
+ 
+
+
+
+
+
+    </div>
+</div>
+<!--module:deliverystoredb end-->
+		
+            </div>
+        </div>
+      <div class="footer3">
+          &copy;2026&nbsp;&nbsp;浙商证券&nbsp;&nbsp;&nbsp<a target="_blank" href="http://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;">京ICP备05051632号-16</a>&nbsp<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802032024" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000;"><img src="//stc.beisen.com/ux/tms-recruit/release/app/images/beian.png" style="float:left;"/>京公网安备 11010802032024号</a><a href="/Portal/Apply/PrivacyPolicy" style="color:#1D86F0;padding-left:5px;" target="_blank">隐私政策</a>&nbsp;Powered by&nbsp;<a href="https://www.beisen.com" class="footerlogo" target="_blank"></a>
+	</div>
+    </div>
+</div>
+  </div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,110194,'new_zhiye_com');
+    });
+    </script>

@@ -1,0 +1,25 @@
+{
+  "company": "长江证券",
+  "careers_url": "https://cjzq.zhiye.com/",
+  "host": "cjzq.zhiye.com",
+  "ats": "beisen",
+  "page_title": "长江证券股份有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "日常实习"
+  ],
+  "tracks": 4,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "长江证券股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

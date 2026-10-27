@@ -1,0 +1,27 @@
+{
+  "company": "国轩高科",
+  "careers_url": "https://gotion.zhiye.com/campus",
+  "host": "gotion.zhiye.com",
+  "ats": "beisen",
+  "page_title": "国轩高科",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 24,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国轩高科",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757852",
+      "https://career.csu.edu.cn/campus/view/id/590290"
+    ]
+  }
+}

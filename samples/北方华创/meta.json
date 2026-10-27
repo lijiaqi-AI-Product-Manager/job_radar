@@ -1,0 +1,29 @@
+{
+  "company": "北方华创",
+  "careers_url": "https://career.naura.com/campus",
+  "host": "career.naura.com",
+  "ats": "self_hosted",
+  "page_title": "北方华创招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 36,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "北方华创招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119708.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119706.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119705.html"
+    ]
+  }
+}

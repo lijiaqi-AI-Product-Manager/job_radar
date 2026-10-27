@@ -1,0 +1,28 @@
+{
+  "company": "越秀地产",
+  "careers_url": "https://www.yuexiu-pm.com/zhaoxiannashi/xiaoyuanzhaopin/",
+  "host": "www.yuexiu-pm.com",
+  "ats": "unknown",
+  "page_title": "校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 20,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120085.html",
+      "https://job.xidian.edu.cn/campus/view/id/757770",
+      "https://career.csu.edu.cn/campus/view/id/590146"
+    ]
+  }
+}

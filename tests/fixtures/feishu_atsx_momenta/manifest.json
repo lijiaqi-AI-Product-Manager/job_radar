@@ -1,0 +1,18 @@
+[
+  {
+    "method": "POST",
+    "url": "https://momenta.jobs.feishu.cn/api/v1/csrf/token",
+    "body": "{\"portal_entrance\":1}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://momenta.jobs.feishu.cn/api/v1/search/job/posts?portal_type=3&limit=20&offset=0&portal_entrance=1",
+    "body": "{\"keyword\":\"\",\"limit\":20,\"offset\":0,\"job_category_id_list\":[],\"tag_id_list\":[],\"location_code_list\":[],\"subject_id_list\":[],\"recruitment_id_list\":[],\"portal_type\":3,\"job_function_id_list\":[],\"storefront_id_list\":[],\"portal_entrance\":1}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "002.json"
+  }
+]

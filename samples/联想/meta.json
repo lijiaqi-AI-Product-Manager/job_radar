@@ -1,0 +1,29 @@
+{
+  "company": "联想",
+  "careers_url": "https://talent.lenovo.com.cn/",
+  "host": "talent.lenovo.com.cn",
+  "ats": "unknown",
+  "page_title": "联想校园招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "暑期实习",
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 63,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "联想校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019667",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/997013"
+    ]
+  }
+}

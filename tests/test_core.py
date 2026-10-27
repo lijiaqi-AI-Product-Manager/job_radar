@@ -400,6 +400,20 @@ def test_field_coverage_reports_missing_city_and_grad_year(jobs_db):
     assert cov["campus_cities"] == 0.5 and cov["campus_grad_year"] == 0.5  # 只统计 campus 两条
 
 
+def test_field_coverage_reports_dates_too(jobs_db):
+    """日期覆盖率和城市一样要报：日历条目要「网申时间 X ~ Y」这一段。
+
+    之前只报 cities/grad_year/category/degree_min，agent 拿到的字段可靠性画像里
+    完全没有日期，会默认日期是全的——实测全库 publish_at 只有个位数百分比。
+    """
+    ingest_run(jobs_db, "s1", [
+        make_job(1, cities=["深圳"], publish_at="2026-09-01", apply_end="2026-12-31"),
+        make_job(2, cities=[], publish_at=None, apply_end=None),
+    ], ts=T(20))
+    cov = field_coverage(jobs_db)
+    assert cov["publish_at"] == 0.5 and cov["apply_end"] == 0.5
+
+
 def test_exclude_store_drops_retail_posts(jobs_db):
     """喜茶/星巴克门店帖约 8 千条；校招用户用 --exclude-store 排掉，但默认不过滤。"""
     ingest_run(jobs_db, "tea", [
@@ -409,3 +423,22 @@ def test_exclude_store_drops_retail_posts(jobs_db):
     assert len(search_jobs(jobs_db)) == 2
     rows = search_jobs(jobs_db, exclude_store=True)
     assert [r["title"] for r in rows] == ["品牌营销管培生"]
+
+
+def test_search_deadline_filters_only_known_deadlines(jobs_db):
+    """截止日筛选只作用在「确实写了截止日」的岗位上。
+
+    没有截止日的岗位（北森门户全部）不能被 deadline_after 当成「还在招」放进来，
+    也不能被 deadline_before 当成「已过期」排除——两种都会误导用户。
+    """
+    ingest_run(jobs_db, "s1", [
+        make_job(1, apply_end="2026-11-10"),
+        make_job(2, apply_end="2027-03-01"),
+        make_job(3),                      # 源没给截止日
+    ], ts=T(1))
+    soon = search_jobs(jobs_db, deadline_before="2026-12-31", limit=10)
+    assert [r["id"] for r in soon] == ["s1:1"]
+    later = search_jobs(jobs_db, deadline_after="2027-01-01", limit=10)
+    assert [r["id"] for r in later] == ["s1:2"]
+    # 不传截止日条件时三条都在（未知截止日 ≠ 已截止）
+    assert len(search_jobs(jobs_db, limit=10)) == 3

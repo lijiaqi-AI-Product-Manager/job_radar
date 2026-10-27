@@ -1,0 +1,210 @@
+[
+  {
+    "method": "POST",
+    "url": "https://hr.360.cn/v2/index/getlistsearch",
+    "body": "{\"page\":1,\"limit\":10000,\"keyword\":\"\"}",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a7d2317ea611e63afb37157",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "002.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a7bd6470a749a95e7a96720",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "003.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a7bd63dea611e63afb36b4f",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "004.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a6816ceeee9e000e37d27ef",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "005.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a75a21feee9e000e37dbcbf",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "006.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a8d2066d80d18cb5211dea2",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "007.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a0d033efd5a462f18dd7632",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "008.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69df3cc6e1f1aecc72eea7da",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "009.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a156fb3b45a2c1d5e6dd71f",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "010.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69e9e71f747a0e8be0d6716f",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "011.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a05780530b682653614b20f",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "012.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69bb5ad4bc1dba1463495d0b",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "013.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=6a0ece6830b682653614cf86",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "014.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69d49e5fe1f1aecc72ee874c",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "015.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69df4d06d9c93f65d4aa7140",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "016.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69ddfbbbe1f1aecc72eea31c",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "017.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=697c852ff879eafc74e06912",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "018.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=697c8633f879eafc74e0691a",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "019.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=698aa86abc1dba1463490221",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "020.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=698bdf934a1198fd29bd6a56",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "021.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=699fc1ef4a1198fd29bd78be",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "022.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69a10c50b976ab9a9975672e",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "023.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=695e3fa1f879eafc74e011d4",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "024.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=695e402aa7c8e66f72e3a77a",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "025.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hr.360.cn/v2/index/getjobone?id=69aaa129bc1dba1463493233",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "file": "026.json"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "company": "内外",
+  "careers_url": "https://neiwai.zhiye.com/",
+  "host": "neiwai.zhiye.com",
+  "ats": "beisen",
+  "page_title": "NEIWAI内外官方招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "NEIWAI内外官方招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757664"
+    ]
+  }
+}

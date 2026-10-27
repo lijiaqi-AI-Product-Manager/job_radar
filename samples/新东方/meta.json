@@ -1,0 +1,29 @@
+{
+  "company": "新东方",
+  "careers_url": "https://liuxue.xdf.cn/recruit/",
+  "host": "liuxue.xdf.cn",
+  "ats": "unknown",
+  "page_title": "招聘_新东方前途出国",
+  "calendar_entries": 2,
+  "project_types": [
+    "提前批",
+    "校招"
+  ],
+  "tracks": 10,
+  "roles": 50,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘_新东方前途出国",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 21,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119726.html",
+      "https://job.xidian.edu.cn/campus/view/id/758160",
+      "https://job.xidian.edu.cn/campus/view/id/757875"
+    ]
+  }
+}

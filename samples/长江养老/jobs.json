@@ -1,0 +1,20 @@
+[
+  {
+    "title": "投研方向实习生",
+    "recruit_type": "intern",
+    "has_jd": true,
+    "jd_len": 80
+  },
+  {
+    "title": "风险管理方向实习生",
+    "recruit_type": "intern",
+    "has_jd": true,
+    "jd_len": 149
+  },
+  {
+    "title": "金融AI方向实习生-AI数据工程",
+    "recruit_type": "intern",
+    "has_jd": true,
+    "jd_len": 79
+  }
+]

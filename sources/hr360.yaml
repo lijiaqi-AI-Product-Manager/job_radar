@@ -1,0 +1,17 @@
+# 360 招聘（hr.360.cn）——自建站，非 ATS。侦察记录在 src/jobradar/adapters/hr360.py 顶部。
+defaults:
+  adapter: hr360
+  rate_limit_rps: 1
+  recruit_types: [campus, intern, social]
+  compliance:
+    checked_on: 2026-10-27
+    robots: allowed            # hr.360.cn/robots.txt 无 Disallow，仅 sitemap 声明
+    terms: "公开招聘门户，匿名可读，列表/详情均为明文 JSON，无登录、无签名、无验证码"
+    notes: "详情需 GET + X-Requested-With + Referer，缺一 500；见适配器注释"
+
+sources:
+  - id: hr360-360
+    company: "360"
+    params: {list_limit: 10000, with_detail: true}
+    # 2026-10-27 实测列表 25 岗（技术/产品/营销/安全/设计/供应链/管理），
+    # 详情接口返回职责+要求同段正文，城市/发布日期字段齐。

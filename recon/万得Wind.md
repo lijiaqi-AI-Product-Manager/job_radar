@@ -1,0 +1,23 @@
+# 万得Wind
+
+- **行业**：互联网与软件
+- **投递入口**：https://www.wind.com.cn/portal/zh/JoinUs/index.html
+- **host**：`www.wind.com.cn`　**ATS**：`unknown`
+- **日历条目**：1 条　**方向**：4 个　**岗位名**：20 个
+- **批次**：社招
+- **届次**：-
+- **有网申窗口**：否　**有城市**：是
+- **JD**：official_page
+- **复核时间**：2026-10-26
+
+## 证据
+
+- 入口 HTTP：200
+- 站点标题：万得 - 招聘
+- 池来源：`careers_rescued`　等级：`A`
+- 判级理由：list_path
+- 简章命中：0 条
+
+## 日历条目
+
+- `wandewind-sz` 社招  ｜? ~ ?｜上海、中国香港、台北、东京、首尔

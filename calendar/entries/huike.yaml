@@ -1,0 +1,31 @@
+group: 惠科
+entries:
+- id: huike-campus-entry
+  company: 惠科
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 深圳
+  - 合肥
+  - 东莞
+  apply_url: https://campus.niuqizp.com/job-vUl5aLazN.html
+  source:
+    type: official_site
+    name: 惠科招聘官网
+    url: https://campus.niuqizp.com/job-vUl5aLazN.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：惠科股份有限公司惠科股份2027届校园招聘正式启动2027校园招聘,招聘城市有:深圳,合肥,宜昌,东莞,北海）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

@@ -1,0 +1,27 @@
+{
+  "company": "中建科工",
+  "careers_url": "https://sstr.cscec.com/rlzy/zjtd/",
+  "host": "sstr.cscec.com",
+  "ats": "unknown",
+  "page_title": "中建科工集团有限公司",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招补录"
+  ],
+  "tracks": 10,
+  "roles": 32,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中建科工集团有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019552"
+    ]
+  }
+}

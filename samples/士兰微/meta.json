@@ -1,0 +1,24 @@
+{
+  "company": "士兰微",
+  "careers_url": "https://www.silan.com.cn/index.php/about/social.html",
+  "host": "www.silan.com.cn",
+  "ats": "unknown",
+  "page_title": "杭州士兰微电子股份有限公司-杭州士兰微电子中英文官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 14,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "杭州士兰微电子股份有限公司-杭州士兰微电子中英文官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

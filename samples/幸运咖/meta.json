@@ -1,0 +1,29 @@
+{
+  "company": "幸运咖",
+  "careers_url": "https://campus.funplus.com.cn/",
+  "host": "campus.funplus.com.cn",
+  "ats": "unknown",
+  "page_title": "首页 - FunPlus校园招聘",
+  "calendar_entries": 6,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "春招",
+    "暑期实习",
+    "社招",
+    "秋招补录"
+  ],
+  "tracks": 18,
+  "roles": 30,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "首页 - FunPlus校园招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

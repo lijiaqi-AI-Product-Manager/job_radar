@@ -1,0 +1,26 @@
+{
+  "company": "银河通用",
+  "careers_url": "",
+  "host": "career.gdut.edu.cn",
+  "ats": "none",
+  "page_title": "银河通用机器人2027秋季校园招聘 具身领航者人才计划",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 4,
+  "roles": 10,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "银河通用机器人2027秋季校园招聘 具身领航者人才计划",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020743"
+    ]
+  }
+}

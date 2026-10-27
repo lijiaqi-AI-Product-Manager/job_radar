@@ -1,0 +1,28 @@
+{
+  "company": "湖南银行",
+  "careers_url": "https://www.hunan-bank.com/96599/2025-09/02/article_2026091711220911569.shtml",
+  "host": "www.hunan-bank.com",
+  "ats": "unknown",
+  "page_title": "人才招聘_湖南银行欢迎您",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 21,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "人才招聘_湖南银行欢迎您",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757798",
+      "https://job.zzu.edu.cn/campus/view/id/1019551",
+      "https://career.csu.edu.cn/campus/view/id/590160"
+    ]
+  }
+}

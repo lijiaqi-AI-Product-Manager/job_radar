@@ -1,0 +1,28 @@
+{
+  "company": "九号公司",
+  "careers_url": "https://join.ninebot.com/campus-recruitment/ninebot/45627",
+  "host": "join.ninebot.com",
+  "ats": "unknown",
+  "page_title": "九号公司 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 13,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "九号公司 - 校园招聘",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018891",
+      "https://job.zzu.edu.cn/campus/view/id/1018864",
+      "https://job.xidian.edu.cn/campus/view/id/757033"
+    ]
+  }
+}

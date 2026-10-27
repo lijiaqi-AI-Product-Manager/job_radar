@@ -1,0 +1,6992 @@
+{
+ "hao.360.com": {
+  "n": 1,
+  "companies": [
+   "360集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "c.gongkong.com": {
+  "n": 1,
+  "companies": [
+   "ABB中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.amd.com": {
+  "n": 1,
+  "companies": [
+   "AMD"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cndhl.com": {
+  "n": 1,
+  "companies": [
+   "DHL中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.dsv.com": {
+  "n": 1,
+  "companies": [
+   "DSV中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "career.gehealthcare.cn": {
+  "n": 1,
+  "companies": [
+   "GE医疗中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hm.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "H&M中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ibm.com": {
+  "n": 2,
+  "companies": [
+   "IBM",
+   "IBM中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "keep.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "Keep"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "mannercoffee.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "Manner咖啡"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "vrfi1sk8a0.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "MiniMax"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.mokahr.com": {
+  "n": 1,
+  "companies": [
+   "Moka"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "momenta.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "Momenta"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.oppo.com": {
+  "n": 1,
+  "companies": [
+   "OPPO"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.ultraai.site": {
+  "n": 2,
+  "companies": [
+   "OceanBase",
+   "得物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.picoxr.com": {
+  "n": 1,
+  "companies": [
+   "Pico"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.sap.com": {
+  "n": 1,
+  "companies": [
+   "SAP"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sap.cn": {
+  "n": 1,
+  "companies": [
+   "SAP中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.soulapp.cn": {
+  "n": 1,
+  "companies": [
+   "Soul"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.tcl.com": {
+  "n": 1,
+  "companies": [
+   "TCL"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.zarahome.cn": {
+  "n": 1,
+  "companies": [
+   "Zara中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr-campus.vivo.com": {
+  "n": 1,
+  "companies": [
+   "vivo"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "faw-zhaopin.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "一汽"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.duxiaoman.com": {
+  "n": 1,
+  "companies": [
+   "一点点"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "wandong.com.cn": {
+  "n": 1,
+  "companies": [
+   "万东医疗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.wind.com.cn": {
+  "n": 1,
+  "companies": [
+   "万得Wind"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.wk.com": {
+  "n": 1,
+  "companies": [
+   "万科"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sanyre.com.cn": {
+  "n": 1,
+  "companies": [
+   "三一重能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sany.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "三一集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "37wan.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "三七互娱"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sanyuan.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "三元食品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "app.mokahr.com": {
+  "n": 26,
+  "companies": [
+   "三只松鼠",
+   "东方证券",
+   "中兴微电子",
+   "中兴通讯",
+   "乐元素",
+   "作业帮",
+   "兆易创新",
+   "博世"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sanan-e.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "三安光电"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cqsxsl.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "三峡集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "dearsamsung.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "三星",
+   "三星电子中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career-dev.cctc.cc": {
+  "n": 1,
+  "companies": [
+   "三环集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sanhuamc.com": {
+  "n": 1,
+  "companies": [
+   "三花智控"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "csvw.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上汽大众"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sgm.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上汽通用"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "smpv.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上汽集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "shrcb.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海农商行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sph.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海医药"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jahwa.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海家化"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "liushen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海家化六神"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sh2j.scg.com.cn": {
+  "n": 1,
+  "companies": [
+   "上海建工集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sast.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海航天"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "raas.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海莱士"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "bosc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上海银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sph2.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "上药控股"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.shimaofuwu.com": {
+  "n": 1,
+  "companies": [
+   "世茂服务"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "neusoft-campus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东华软件"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "dwzq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东吴证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "dsbj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东山精密"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "easthope1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东方希望"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "risen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东方日升"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "dew.dongfang.com": {
+  "n": 1,
+  "companies": [
+   "东方电气"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.ceair.com": {
+  "n": 1,
+  "companies": [
+   "东方航空"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "neusoftmedical.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东软医疗"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "reachauto.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东软睿驰"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "dongfengnissan.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "东风日产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "citicprulife.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中信保诚人寿"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "csc108.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中信建投"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.citics.com": {
+  "n": 1,
+  "companies": [
+   "中信证券"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "famc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中信金融资产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.citicbank.com": {
+  "n": 1,
+  "companies": [
+   "中信银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.citic.com": {
+  "n": 1,
+  "companies": [
+   "中信集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zczy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中储粮"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "chinare.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中再集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sinochem.com.cn": {
+  "n": 1,
+  "companies": [
+   "中化集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ciecc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中咨公司"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.coamc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国东方资产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.wisdri.com": {
+  "n": 1,
+  "companies": [
+   "中国中冶"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.chinacoal.com": {
+  "n": 1,
+  "companies": [
+   "中国中煤"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ztjs.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "中国中铁"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.minmetals.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国五矿"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ccccltd.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国交建"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "portal-oss.zhiye.com": {
+  "n": 4,
+  "companies": [
+   "中国人保",
+   "中国同辐",
+   "广发银行",
+   "阳光保险"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "chinalife.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国人寿"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cinda.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国信达"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "norincogroupzhaopin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国兵器工业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sinosure.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国出口信用保险"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chinaecec.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国化学"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cncec.cn": {
+  "n": 1,
+  "companies": [
+   "中国化学工程"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "rencaishichang.chd.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国华电"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cits.net": {
+  "n": 1,
+  "companies": [
+   "中国国旅"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sinotrans-csc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国外运"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.china-cdt.com": {
+  "n": 1,
+  "companies": [
+   "中国大唐"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cntaiping.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "中国太保",
+   "太平人寿"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "china-an.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "中国安能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chinajushi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国巨石"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.pingan.com": {
+  "n": 1,
+  "companies": [
+   "中国平安"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.grgbanking.com": {
+  "n": 1,
+  "companies": [
+   "中国广电"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ctczhaopin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国建材"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "recruit.cscec.com": {
+  "n": 1,
+  "companies": [
+   "中国建筑"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "recruit.china-inv.cn": {
+  "n": 1,
+  "companies": [
+   "中国投资有限责任公司"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cnmc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国有色矿业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "nfc.cnmc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国有色金属建设"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cmbc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国民生银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.caeri.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国汽研"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ccgc.cn": {
+  "n": 1,
+  "companies": [
+   "中国煤炭地质总局"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zgwl.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "中国物流"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sbpgroup.com": {
+  "n": 2,
+  "companies": [
+   "中国生物",
+   "中国生物制药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.chinatelecom.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国电信"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.cec.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "gzgc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国电建"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "wecruit.hotjob.cn": {
+  "n": 20,
+  "companies": [
+   "中国电科院",
+   "中国航信",
+   "中移在线",
+   "中联重科",
+   "亿纬锂能",
+   "先声药业",
+   "华夏理财",
+   "华润"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.chinasalt.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国盐业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.sinopec.com": {
+  "n": 1,
+  "companies": [
+   "中国石化"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.10086.cn": {
+  "n": 1,
+  "companies": [
+   "中国移动"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zglt.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "中国联通"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.chnenergy.com.cn": {
+  "n": 2,
+  "companies": [
+   "中国能建",
+   "国家能源集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.aecc.cn": {
+  "n": 1,
+  "companies": [
+   "中国航发"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cnaf.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国航油"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.casc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国航空器材"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zghkyjy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国航空研究院"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cecep.cn": {
+  "n": 1,
+  "companies": [
+   "中国节能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.xdect.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国西电"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cctgroup.com.cn": {
+  "n": 1,
+  "companies": [
+   "中国诚通"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jinmao.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "中国金茂"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.chinatowercom.cn": {
+  "n": 1,
+  "companies": [
+   "中国铁塔"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.crccig.com": {
+  "n": 1,
+  "companies": [
+   "中国铁建"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.crm.com": {
+  "n": 1,
+  "companies": [
+   "中国铁物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zgyh.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国银河"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gwamcc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中国长城资产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hjzp.chinagoldgroup.com": {
+  "n": 1,
+  "companies": [
+   "中国黄金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.chinagoldgroup.com": {
+  "n": 1,
+  "companies": [
+   "中国黄金集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "m.ztt.cn": {
+  "n": 1,
+  "companies": [
+   "中天科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zszhcpa.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中审众环"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.cscec8b.com.cn": {
+  "n": 1,
+  "companies": [
+   "中建八局"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sstr.cscec.com": {
+  "n": 1,
+  "companies": [
+   "中建科工"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.cmge.com": {
+  "n": 1,
+  "companies": [
+   "中手游"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.supcon.com": {
+  "n": 1,
+  "companies": [
+   "中控技术"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhongwenzaixian.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中文在线"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zckj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中材科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cs2c.com": {
+  "n": 1,
+  "companies": [
+   "中标软件"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cnnc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中核集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zofund.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中欧基金"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zts.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "中泰证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.coli688.com": {
+  "n": 1,
+  "companies": [
+   "中海地产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.copm.com.cn": {
+  "n": 1,
+  "companies": [
+   "中海物业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cctegjob.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "中煤科工"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.chinacoal.com": {
+  "n": 1,
+  "companies": [
+   "中煤能源"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.zhlxsemicon.com": {
+  "n": 1,
+  "companies": [
+   "中环股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cethik.cetc.com.cn": {
+  "n": 1,
+  "companies": [
+   "中电海康"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "thundersoft.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "中科创达"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "geovis.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中科星图"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sugon.com": {
+  "n": 1,
+  "companies": [
+   "中科曙光"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bluetrum.com": {
+  "n": 1,
+  "companies": [
+   "中科蓝讯"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "wengegroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中科闻歌"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.skyverse.cn": {
+  "n": 1,
+  "companies": [
+   "中科飞测"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cmit.com": {
+  "n": 1,
+  "companies": [
+   "中移信息"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.aepc1.ceec.net.cn": {
+  "n": 1,
+  "companies": [
+   "中能建"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.airchina.com.cn": {
+  "n": 1,
+  "companies": [
+   "中航沈飞"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "smics.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中芯国际"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "smec.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中芯集成"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.aviva-cofco.com.cn": {
+  "n": 1,
+  "companies": [
+   "中英人寿"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.chinasoftinc.com": {
+  "n": 1,
+  "companies": [
+   "中软国际"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zyhy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中远海运"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.zto56.com": {
+  "n": 1,
+  "companies": [
+   "中通快运"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.zto.com": {
+  "n": 1,
+  "companies": [
+   "中通快递"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.chinapost-life.com": {
+  "n": 1,
+  "companies": [
+   "中邮保险"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cicc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "中金公司"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sinosteel.com": {
+  "n": 1,
+  "companies": [
+   "中钢集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.crceg.cn": {
+  "n": 1,
+  "companies": [
+   "中铁建工"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.boc.cn": {
+  "n": 1,
+  "companies": [
+   "中银保险"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cimc.cn": {
+  "n": 1,
+  "companies": [
+   "中集集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sinowealth.com": {
+  "n": 1,
+  "companies": [
+   "中颖电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "marubi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "丸美"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "join.ninebot.com": {
+  "n": 1,
+  "companies": [
+   "九号公司"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jiumaojiu.com": {
+  "n": 1,
+  "companies": [
+   "九毛九"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.jiuzhoupharma.com": {
+  "n": 1,
+  "companies": [
+   "九洲药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "joeone.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "九牧王"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.joyoung.com": {
+  "n": 1,
+  "companies": [
+   "九阳"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.cloudwalk.com": {
+  "n": 1,
+  "companies": [
+   "云从科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yunnanbaiyao.com.cn": {
+  "n": 1,
+  "companies": [
+   "云南白药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ynty.chinalco.com.cn": {
+  "n": 1,
+  "companies": [
+   "云南铜业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yythzb3.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "云天化"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.deeprobotics.cn": {
+  "n": 1,
+  "companies": [
+   "云深处"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "unisound.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "云知声"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.mmg.com": {
+  "n": 1,
+  "companies": [
+   "五矿资源"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "wuliangye.com.cn": {
+  "n": 1,
+  "companies": [
+   "五粮液"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.wuling.com": {
+  "n": 1,
+  "companies": [
+   "五菱"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "asiainfo-sec.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "亚信安全"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ascentage.cn": {
+  "n": 1,
+  "companies": [
+   "亚盛医药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jysld.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "交银施罗德"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.htgd.com.cn": {
+  "n": 1,
+  "companies": [
+   "亨通光电"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.jd.com": {
+  "n": 2,
+  "companies": [
+   "京东",
+   "京东物流"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "boe.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "京东方"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jingxinpharm.com": {
+  "n": 1,
+  "companies": [
+   "京新药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "liangdao-intelligence.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "亮道智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.kingbase.com.cn": {
+  "n": 1,
+  "companies": [
+   "人大金仓"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "renfu.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "人福医药"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yealink.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "亿联网络"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yihang.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "亿航"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jmlzp.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "今麦郎"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "seer-group.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "仙工智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "xjzy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "仙琚制药"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.yiling.cn": {
+  "n": 1,
+  "companies": [
+   "以岭药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yangwang-space.com": {
+  "n": 1,
+  "companies": [
+   "仰望"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.tencent.com": {
+  "n": 1,
+  "companies": [
+   "企业微信"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yili.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "伊利"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ubtrobot.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "优必选"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ucbchina.com": {
+  "n": 1,
+  "companies": [
+   "优时比中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yuxuan.com": {
+  "n": 1,
+  "companies": [
+   "优炫软件"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "youibot1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "优艾智合"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "transsion.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "传音控股",
+   "传音控股非洲"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.boteli.cn": {
+  "n": 1,
+  "companies": [
+   "伯特利"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "polycareer.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "保利"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "polynew.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "保利发展"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.polywuye.com": {
+  "n": 1,
+  "companies": [
+   "保利物业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.baolong.biz": {
+  "n": 1,
+  "companies": [
+   "保隆科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lcudcc.sdbys.com": {
+  "n": 1,
+  "companies": [
+   "信发集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.shinewing.com": {
+  "n": 1,
+  "companies": [
+   "信永中和"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "innoventbio.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "信达生物"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "k11pnjpvz1.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "元气森林"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.gigadevice.com": {
+  "n": 1,
+  "companies": [
+   "兆易创新存储"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "leadchina.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "先导智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ebscn.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "光大证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "liteon.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "光线传媒"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.accelink.com": {
+  "n": 1,
+  "companies": [
+   "光迅科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.allwinnertech.com": {
+  "n": 1,
+  "companies": [
+   "全志科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hbyangyuan.com": {
+  "n": 1,
+  "companies": [
+   "六个核桃"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.lukfook.com": {
+  "n": 1,
+  "companies": [
+   "六福珠宝"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.lzbank.com": {
+  "n": 1,
+  "companies": [
+   "兰州银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.xyyh.com.cn": {
+  "n": 1,
+  "companies": [
+   "兴业银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "neiwai.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "内外"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.yst.com.cn": {
+  "n": 1,
+  "companies": [
+   "农夫山泉"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.kantar.com": {
+  "n": 1,
+  "companies": [
+   "凯度"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "asymchem.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "凯莱英"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "mobvoi.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "出门问问"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.fenbeitong.com": {
+  "n": 1,
+  "companies": [
+   "分贝通"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ainnovation.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "创新奇智"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "idreamsky.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "创梦天地"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.skyworthdigital.com": {
+  "n": 1,
+  "companies": [
+   "创维"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lishen.libattery.net": {
+  "n": 1,
+  "companies": [
+   "力神电池"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jinzaifood.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "劲仔食品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jingpai.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "劲酒"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "s.i.bucg.com": {
+  "n": 1,
+  "companies": [
+   "北京城建"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bhmc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "北京现代"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "bankofbeijing.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "北京银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "bnbm.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "北新建材"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.naura.com": {
+  "n": 1,
+  "companies": [
+   "北方华创"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "beisen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "北森控股"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "baicgroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "北汽集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.peaksport.com": {
+  "n": 1,
+  "companies": [
+   "匹克"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.qianweiyangchu.com": {
+  "n": 1,
+  "companies": [
+   "千味央厨"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lehe.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "千禾味业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.huadongmedicine.com": {
+  "n": 1,
+  "companies": [
+   "华东医药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "huazhongcnc.com": {
+  "n": 1,
+  "companies": [
+   "华中数控"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "career.huawei.com": {
+  "n": 1,
+  "companies": [
+   "华为"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "huazhu1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华住集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.hualanbio.com": {
+  "n": 1,
+  "companies": [
+   "华兰生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.huashanglawyer.com": {
+  "n": 1,
+  "companies": [
+   "华商基金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.huatu.com": {
+  "n": 1,
+  "companies": [
+   "华图教育"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chinaamc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华夏基金"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "genomics.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华大集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.hbglobal.com": {
+  "n": 1,
+  "companies": [
+   "华宝基金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "accotest.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华峰测控"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "huafeng.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华峰集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "vatti.com.cn": {
+  "n": 1,
+  "companies": [
+   "华帝"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.htsc.com.cn": {
+  "n": 1,
+  "companies": [
+   "华泰证券"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hwatsing1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "华海清科"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.huahaipharm.com": {
+  "n": 1,
+  "companies": [
+   "华海药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.crmicro.com": {
+  "n": 1,
+  "companies": [
+   "华润微电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bloomagebioactive.com": {
+  "n": 1,
+  "companies": [
+   "华熙生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "offernotes.cn": {
+  "n": 1,
+  "companies": [
+   "华策影视"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.huahong.com.cn": {
+  "n": 1,
+  "companies": [
+   "华虹集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gcltech.com": {
+  "n": 1,
+  "companies": [
+   "协鑫科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "maxscend.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "卓胜微"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "itreshub.com": {
+  "n": 1,
+  "companies": [
+   "南大通用"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.nanshan.com.cn": {
+  "n": 2,
+  "companies": [
+   "南山铝业",
+   "南山集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.nffund.com": {
+  "n": 1,
+  "companies": [
+   "南方基金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.csair.cn": {
+  "n": 1,
+  "companies": [
+   "南方航空"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "csg.jobs.cz": {
+  "n": 1,
+  "companies": [
+   "南玻集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.sgepri.sgcc.com.cn": {
+  "n": 1,
+  "companies": [
+   "南瑞集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "nanxin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "南芯科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.naradapower.com": {
+  "n": 1,
+  "companies": [
+   "南都电源"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.beyondsoft.com": {
+  "n": 1,
+  "companies": [
+   "博彦科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "porton.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "博腾股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.wolong.com": {
+  "n": 1,
+  "companies": [
+   "卧龙电驱"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "weilongmeiwei.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "卫龙"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.scpgroup.com": {
+  "n": 1,
+  "companies": [
+   "印力集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xtc-xny1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "厦钨新能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "xib.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "厦门国际银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hf7l9aiqzx.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "去哪儿"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zp.friendtimes.cn": {
+  "n": 1,
+  "companies": [
+   "友谊时光"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "shuanghui.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "双汇"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.papegames.com": {
+  "n": 2,
+  "companies": [
+   "叠纸",
+   "叠纸游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ddmc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "叮咚买菜"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.coca-cola.com": {
+  "n": 1,
+  "companies": [
+   "可口可乐中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "comfy.org": {
+  "n": 1,
+  "companies": [
+   "可复美"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hotjob.cn": {
+  "n": 4,
+  "companies": [
+   "台州银行",
+   "海澜之家",
+   "联合电子",
+   "苏泊尔"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "intsig.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "合合信息"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hosecloud.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "合思"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.geely.com": {
+  "n": 1,
+  "companies": [
+   "吉利"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.geely.com": {
+  "n": 1,
+  "companies": [
+   "吉利银河"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jl.people.com.cn": {
+  "n": 1,
+  "companies": [
+   "吉林银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.g-bits.com": {
+  "n": 1,
+  "companies": [
+   "吉比特"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.trt.com": {
+  "n": 1,
+  "companies": [
+   "同仁堂"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.10jqka.com.cn": {
+  "n": 1,
+  "companies": [
+   "同花顺"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "miniso.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "名创优品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "junlebaoruye.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "君乐宝"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "junshibiosciences.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "君实生物"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.venusmedtech.com": {
+  "n": 1,
+  "companies": [
+   "启明医疗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "venustech.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "启明星辰"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.chowtaiseng.com": {
+  "n": 1,
+  "companies": [
+   "周大生"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ctf.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "周大福"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhouheiya.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "周黑鸭"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.harbourbiomed.cn": {
+  "n": 1,
+  "companies": [
+   "和铂医药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.codoon.com": {
+  "n": 1,
+  "companies": [
+   "咕咚"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hellobike.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "哈啰"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.bilibili.com": {
+  "n": 1,
+  "companies": [
+   "哔哩哔哩"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "app-tc.mokahr.com": {
+  "n": 1,
+  "companies": [
+   "唯品会"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sensecore.cn": {
+  "n": 1,
+  "companies": [
+   "商汤大装置"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.sensetime.com": {
+  "n": 1,
+  "companies": [
+   "商汤科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "heytea.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "喜茶"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.ximalaya.com": {
+  "n": 1,
+  "companies": [
+   "喜马拉雅"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sclqhdgs.com": {
+  "n": 1,
+  "companies": [
+   "四川路桥"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.warrior.com": {
+  "n": 1,
+  "companies": [
+   "回力"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "en.goodwe.com": {
+  "n": 1,
+  "companies": [
+   "固德威"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "guosen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国信证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gyzq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国元证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.pipechina.com.cn": {
+  "n": 1,
+  "companies": [
+   "国家管网"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.nice.com": {
+  "n": 1,
+  "companies": [
+   "国家能源技术经济研究院"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "gtzb.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "国投证券"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.sinomach.com.cn": {
+  "n": 1,
+  "companies": [
+   "国机集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "nsingtech.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "国民技术"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gtfund.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国泰基金"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "glsc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国联水产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gyzj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国药集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gotion.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国轩高科"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gjzq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "国金证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "seyond.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "图达通"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.joyson.com": {
+  "n": 1,
+  "companies": [
+   "均胜电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "efort.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "埃夫特"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.aion.com.cn": {
+  "n": 2,
+  "companies": [
+   "埃安",
+   "广汽埃安"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "estun1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "埃斯顿"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "keyence.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "基恩士"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "517tastien.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "塔斯汀"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.silan.com.cn": {
+  "n": 1,
+  "companies": [
+   "士兰微"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.camelgames.com": {
+  "n": 1,
+  "companies": [
+   "壳木游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "fosunpharma.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "复星医药"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.dfdchem.com": {
+  "n": 1,
+  "companies": [
+   "多氟多"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "live.duoyi.com": {
+  "n": 1,
+  "companies": [
+   "多益网络"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.volkswagen-group.com": {
+  "n": 1,
+  "companies": [
+   "大众"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "dahuacpa.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "大华会计师"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.dslyy.com": {
+  "n": 1,
+  "companies": [
+   "大参林"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.joycity.com": {
+  "n": 1,
+  "companies": [
+   "大悦城"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "rt-mart.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "大润发"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.dji.com": {
+  "n": 1,
+  "companies": [
+   "大疆"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.continental.com": {
+  "n": 1,
+  "companies": [
+   "大陆集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.tianyupharm.com": {
+  "n": 1,
+  "companies": [
+   "天宇股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.thfund.com.cn": {
+  "n": 1,
+  "companies": [
+   "天弘基金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ctyun.cn": {
+  "n": 1,
+  "companies": [
+   "天翼云"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "tzcpa.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "天职国际"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "topsec.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "天融信"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jhun.91wllm.cn": {
+  "n": 1,
+  "companies": [
+   "天马微电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "tianqilithium-hr.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "天齐锂业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.swireproperties.com": {
+  "n": 1,
+  "companies": [
+   "太古地产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "static.cntaiping.com": {
+  "n": 1,
+  "companies": [
+   "太平保险"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "shop.cpic.com.cn": {
+  "n": 1,
+  "companies": [
+   "太平洋人寿"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "peacebird.cnstaff.com": {
+  "n": 1,
+  "companies": [
+   "太平鸟"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cetctj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "太极股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.qianxin.com": {
+  "n": 1,
+  "companies": [
+   "奇安信"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "aldichina.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "奥乐齐中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "auxgroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "奥克斯"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ausunpharm.com": {
+  "n": 1,
+  "companies": [
+   "奥翔药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.haoxiangni.cn": {
+  "n": 1,
+  "companies": [
+   "好想你"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.tal.com": {
+  "n": 1,
+  "companies": [
+   "好未来"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.xueqiu.com": {
+  "n": 1,
+  "companies": [
+   "好未来学而思"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "milkground.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "妙可蓝多"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "apply.wahaha.com.cn": {
+  "n": 1,
+  "companies": [
+   "娃哈哈"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "farasisenergy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "孚能科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.farasis.com": {
+  "n": 1,
+  "companies": [
+   "孚能科技动力"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.atlbattery.com": {
+  "n": 1,
+  "companies": [
+   "宁德新能源"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "talent.catl.com": {
+  "n": 1,
+  "companies": [
+   "宁德时代"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.tongshang.com": {
+  "n": 1,
+  "companies": [
+   "宁波通商银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yusys-campus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "宇信科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "unitree.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "宇树科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sri.com": {
+  "n": 1,
+  "companies": [
+   "宇立仪器"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.anjoyfood.com": {
+  "n": 1,
+  "companies": [
+   "安井食品"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "anker-in.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "安克创新"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ahxz.dbappsecurity.com.cn": {
+  "n": 1,
+  "companies": [
+   "安恒信息"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.ey.com": {
+  "n": 1,
+  "companies": [
+   "安永"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.angelyeast.com": {
+  "n": 1,
+  "companies": [
+   "安琪酵母"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.embrygroup.com": {
+  "n": 1,
+  "companies": [
+   "安莉芳"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.anta.com": {
+  "n": 1,
+  "companies": [
+   "安踏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.anjimicro.com": {
+  "n": 1,
+  "companies": [
+   "安集科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.games.wanmei.com": {
+  "n": 1,
+  "companies": [
+   "完美世界"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "games.wanmei.com": {
+  "n": 1,
+  "companies": [
+   "完美世界游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.ikeachina.cn": {
+  "n": 1,
+  "companies": [
+   "宜家中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "babybus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "宝宝巴士"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.pg.com.cn": {
+  "n": 2,
+  "companies": [
+   "宝洁",
+   "宝洁中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "esales.baosteel.com": {
+  "n": 1,
+  "companies": [
+   "宝钢股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bmwgroup.jobs": {
+  "n": 1,
+  "companies": [
+   "宝马"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.kshbank.cn": {
+  "n": 1,
+  "companies": [
+   "客商银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "syamt.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "富创精密"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "htffund.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "富国基金",
+   "汇添富"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.fudian-bank.com": {
+  "n": 1,
+  "companies": [
+   "富滇银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bears.com.cn": {
+  "n": 1,
+  "companies": [
+   "小熊电器"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.xiaomawang.cn": {
+  "n": 1,
+  "companies": [
+   "小码王"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xiaomi.jobs.f.mioffice.cn": {
+  "n": 2,
+  "companies": [
+   "小米",
+   "小米汽车"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.xiaohongshu.com": {
+  "n": 1,
+  "companies": [
+   "小红书"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.pony.ai": {
+  "n": 1,
+  "companies": [
+   "小马智行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xiaopeng.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "小鹏汇天"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.xiaopeng.com": {
+  "n": 1,
+  "companies": [
+   "小鹏汽车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "nielseniq.cn": {
+  "n": 1,
+  "companies": [
+   "尼尔森IQ"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "spreadtrumusa.com": {
+  "n": 1,
+  "companies": [
+   "展讯"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "weigao.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "山东威高"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sd-gold.com": {
+  "n": 1,
+  "companies": [
+   "山东黄金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hillstonenet.com": {
+  "n": 1,
+  "companies": [
+   "山石网科"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "m.dsmp.voyah.com.cn": {
+  "n": 1,
+  "companies": [
+   "岚图汽车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.autoflight.com": {
+  "n": 1,
+  "companies": [
+   "峰飞航空"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yhks.cn": {
+  "n": 1,
+  "companies": [
+   "工银安盛"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.ztgame.com": {
+  "n": 1,
+  "companies": [
+   "巨人网络"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xajuzi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "巨子生物"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sequoiadb.com": {
+  "n": 1,
+  "companies": [
+   "巨杉数据库"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "join.fanruan.com": {
+  "n": 1,
+  "companies": [
+   "帆软"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hilton.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "希尔顿中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.pingan.com": {
+  "n": 1,
+  "companies": [
+   "平安银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.pgcareers.com": {
+  "n": 1,
+  "companies": [
+   "平高电气"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.funplus.com.cn": {
+  "n": 1,
+  "companies": [
+   "幸运咖"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gdnybank.com": {
+  "n": 1,
+  "companies": [
+   "广东南粤银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.gf.com.cn": {
+  "n": 1,
+  "companies": [
+   "广发证券"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gsk.com.cn": {
+  "n": 1,
+  "companies": [
+   "广州数控"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "gac-toyota.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "广汽丰田"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "gacrnd.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "广汽集团"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "kurogame.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "库洛游戏"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "i7drsi3tvf.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "库迪咖啡"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cnkh.com": {
+  "n": 1,
+  "companies": [
+   "康弘药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.akesobio.com": {
+  "n": 1,
+  "companies": [
+   "康方生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ccbfund.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "建信基金"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.yhks.cn": {
+  "n": 1,
+  "companies": [
+   "建信理财"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chinacdc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "建发房产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.zyloxmedical.com": {
+  "n": 1,
+  "companies": [
+   "归创通桥"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.insta360.com": {
+  "n": 1,
+  "companies": [
+   "影石Insta360"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yeestor.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "得一微电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "igetcool.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "得到"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.dewu.com": {
+  "n": 1,
+  "companies": [
+   "得物App"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "dikongjie.com": {
+  "n": 2,
+  "companies": [
+   "御风未来",
+   "航天彩虹"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.webank.com": {
+  "n": 1,
+  "companies": [
+   "微众银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.weimob.com": {
+  "n": 1,
+  "companies": [
+   "微盟"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.microsoft.com": {
+  "n": 2,
+  "companies": [
+   "微软",
+   "微软中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.deye.com.cn": {
+  "n": 1,
+  "companies": [
+   "德业股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.dicos.com.cn": {
+  "n": 1,
+  "companies": [
+   "德克士"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "dynanonic.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "德方纳米"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yesv-desaysv.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "德赛西威"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "deppon.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "德邦快递"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "rczp.hsbank.com.cn": {
+  "n": 1,
+  "companies": [
+   "徽商银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.china-chigo.com": {
+  "n": 1,
+  "companies": [
+   "志高空调"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaogongzuo.kuaishou.com": {
+  "n": 1,
+  "companies": [
+   "快手"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "aispeech.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "思必驰"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "synear.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "思念食品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.cisco.com": {
+  "n": 1,
+  "companies": [
+   "思科"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cn.smartmore.com": {
+  "n": 1,
+  "companies": [
+   "思谋科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bestechnic.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "恒玄科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hundsun.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "恒生电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.hundsun.com": {
+  "n": 1,
+  "companies": [
+   "恒生银行中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hanglung.com": {
+  "n": 1,
+  "companies": [
+   "恒隆地产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.semcorp.com": {
+  "n": 1,
+  "companies": [
+   "恩捷股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "kingnet.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "恺英网络"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.yuedong.cn": {
+  "n": 1,
+  "companies": [
+   "悦动圈"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hp.com": {
+  "n": 1,
+  "companies": [
+   "惠普中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.aptmed.com.cn": {
+  "n": 1,
+  "companies": [
+   "惠泰医疗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.vanchip.com": {
+  "n": 1,
+  "companies": [
+   "慧智微"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bocd.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "成都银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "5i5j.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "我爱我家"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yangzijiang.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "扬子江药业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.21yangjie.com": {
+  "n": 1,
+  "companies": [
+   "扬杰科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bxn.com": {
+  "n": 1,
+  "companies": [
+   "报喜鸟"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.tp-link.com.cn": {
+  "n": 1,
+  "companies": [
+   "拓普集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "piotech.cn": {
+  "n": 1,
+  "companies": [
+   "拓荆科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cmhk.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "招商局"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cmhijs.com": {
+  "n": 1,
+  "companies": [
+   "招商工业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cmpo.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "招商积余"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cmsk1979.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "招商蛇口"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.cmbchina.com": {
+  "n": 1,
+  "companies": [
+   "招商银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.bayer.com": {
+  "n": 1,
+  "companies": [
+   "拜耳中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.pddglobalhr.com": {
+  "n": 1,
+  "companies": [
+   "拼多多"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.changyou.com": {
+  "n": 2,
+  "companies": [
+   "搜狐",
+   "搜狐畅游"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mthreads.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "摩尔线程"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.morganstanleychina.com": {
+  "n": 1,
+  "companies": [
+   "摩根士丹利中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "keenonrobot.robot-china.com": {
+  "n": 1,
+  "companies": [
+   "擎朗智能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hrbs-voolga-net.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "敷尔佳"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.pactera.com": {
+  "n": 1,
+  "companies": [
+   "文思海辉"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.weride.ai": {
+  "n": 1,
+  "companies": [
+   "文远智行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.douyu.com": {
+  "n": 1,
+  "companies": [
+   "斗鱼"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "liuxue.xdf.cn": {
+  "n": 1,
+  "companies": [
+   "新东方"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.xdf.cn": {
+  "n": 1,
+  "companies": [
+   "新东方前途出国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xdf.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "新东方在线"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.h3c.com": {
+  "n": 1,
+  "companies": [
+   "新华三"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "nci.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "新华保险"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.capchem.com": {
+  "n": 1,
+  "companies": [
+   "新宙邦"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xwfintech.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "新希望"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "stepelectric.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "新时达"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "siasun.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "新松机器人"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.neolix.cn": {
+  "n": 1,
+  "companies": [
+   "新石器无人车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bj.xhd.cn": {
+  "n": 1,
+  "companies": [
+   "新航道"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "fotile.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "方太"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "foundersc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "方正证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.se.com": {
+  "n": 1,
+  "companies": [
+   "施耐德电气"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "infinigence.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "无问芯穹"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hitachienergy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "日立能源"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zztrp1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "时代新材"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.tec.crrczic.cc": {
+  "n": 1,
+  "companies": [
+   "时代电气"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.timesneighborhood.cn": {
+  "n": 1,
+  "companies": [
+   "时代邻里"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.tcabtech.com": {
+  "n": 1,
+  "companies": [
+   "时的科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.megvii.com": {
+  "n": 1,
+  "companies": [
+   "旷视科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "onlyedu.com": {
+  "n": 1,
+  "companies": [
+   "昂立教育"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "kunlunxin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "昆仑芯"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "mininglamp.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "明略科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "mywind.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "明阳智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.analysys.cn": {
+  "n": 1,
+  "companies": [
+   "易观数科"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.astribot.com": {
+  "n": 1,
+  "companies": [
+   "星尘智能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xingheng.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "星恒电源"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "szsenior.senior798.com": {
+  "n": 1,
+  "companies": [
+   "星源材质"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "starnet.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "星网锐捷"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.exeedcars.com": {
+  "n": 1,
+  "companies": [
+   "星途"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.puyasemi.com": {
+  "n": 1,
+  "companies": [
+   "普冉股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bridgestone.com.cn": {
+  "n": 1,
+  "companies": [
+   "普利司通中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "glprop.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "普洛斯"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.apeloa.com": {
+  "n": 1,
+  "companies": [
+   "普洛药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "invescogreatwall.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "景顺长城"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "bpsemi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "晶丰明源"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "nexchip.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "晶合集成"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "amlogicsh.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "晶晨股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "agirobot.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "智元机器人"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.agibot.cn": {
+  "n": 1,
+  "companies": [
+   "智元机器人AgiBot"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.immotors.com": {
+  "n": 1,
+  "companies": [
+   "智己汽车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "edm.zhaopin.cn": {
+  "n": 1,
+  "companies": [
+   "智联招聘"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.mclon.com": {
+  "n": 1,
+  "companies": [
+   "曼卡龙"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.kimi.com": {
+  "n": 1,
+  "companies": [
+   "月之暗面"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ruyuejian.com": {
+  "n": 1,
+  "companies": [
+   "月之暗面Kimi"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.youzan.com": {
+  "n": 1,
+  "companies": [
+   "有赞"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.weilairobotics.com": {
+  "n": 1,
+  "companies": [
+   "未来机器人"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.shanshantech.com": {
+  "n": 1,
+  "companies": [
+   "杉杉股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lining.com": {
+  "n": 1,
+  "companies": [
+   "李宁"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lining.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "李宁YOUNG"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.dupont.com": {
+  "n": 1,
+  "companies": [
+   "杜邦中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "laiyifen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "来伊份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "joulwatt.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "杰华特"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "panasonic.cn": {
+  "n": 1,
+  "companies": [
+   "松下电器"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.jtexpress.cn": {
+  "n": 1,
+  "companies": [
+   "极兔速递"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hetao101.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "核桃编程"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.gree.cn": {
+  "n": 1,
+  "companies": [
+   "格力电器"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gem.com.cn": {
+  "n": 1,
+  "companies": [
+   "格林美"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mechmind.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "梅卡曼德"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.semir.com": {
+  "n": 1,
+  "companies": [
+   "森马服饰"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "primarius.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "概伦电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jd.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "橘朵"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sunwodacampus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "欣旺达"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ocumension.com": {
+  "n": 1,
+  "companies": [
+   "欧康维视"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.loreal.com": {
+  "n": 1,
+  "companies": [
+   "欧莱雅"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.lorealchina.com": {
+  "n": 1,
+  "companies": [
+   "欧莱雅中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "osmsw1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "欧诗漫"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "njcttq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "正大天晴"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.chint.com": {
+  "n": 1,
+  "companies": [
+   "正泰"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bkhr.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "步科"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "maycur.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "每刻报销"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.byd.com": {
+  "n": 2,
+  "companies": [
+   "比亚迪",
+   "腾势"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.maogeping.com": {
+  "n": 1,
+  "companies": [
+   "毛戈平"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mintaibank.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "民泰银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.zhangjiakourc.com": {
+  "n": 1,
+  "companies": [
+   "水井坊"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "syounggroup.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "水羊股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.yonghongtech.com": {
+  "n": 1,
+  "companies": [
+   "永洪科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yhchaoshi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "永辉超市"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "inovance.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "汇川技术"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.huilianyi.com": {
+  "n": 1,
+  "companies": [
+   "汇联易"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "goodix.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "汇顶科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hand-china.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "汉得信息"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jnzhaopin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "江南造船"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "longsys.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "江波龙"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jac.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "江淮汽车"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "walmartchina.avature.cn": {
+  "n": 1,
+  "companies": [
+   "沃尔玛中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "walvax.com": {
+  "n": 1,
+  "companies": [
+   "沃森生物疫苗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.aerofugia.com": {
+  "n": 1,
+  "companies": [
+   "沃飞长空"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.shengu.com.cn": {
+  "n": 1,
+  "companies": [
+   "沈鼓集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "peijiamedical.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "沛嘉医疗"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "aunteajenny.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "沪上阿姨"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "sec.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "沪电股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "popmart.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "泡泡玛特"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "boke.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "波克城市"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobtaikang.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "泰康",
+   "泰康资产"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "tigermed.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "泰格医药"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zjtlcb.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "泰隆银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.lzlj.com": {
+  "n": 1,
+  "companies": [
+   "泸州老窖"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chinayanghe.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "洋河"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hongdu.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "洪都航空"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zszq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "浙商证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zp.czbank.com.cn": {
+  "n": 1,
+  "companies": [
+   "浙商银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.hisense.com": {
+  "n": 2,
+  "companies": [
+   "海信",
+   "海信视像"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hongxin.org": {
+  "n": 1,
+  "companies": [
+   "海南银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "maker.haier.net": {
+  "n": 1,
+  "companies": [
+   "海尔"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "talent.hikvision.com": {
+  "n": 1,
+  "companies": [
+   "海康威视"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.hikrobotics.com": {
+  "n": 1,
+  "companies": [
+   "海康机器人"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hairobotics.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "海柔创新"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hisunpharm.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "海正药业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.hytera.com": {
+  "n": 1,
+  "companies": [
+   "海能达"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hoperun.com": {
+  "n": 1,
+  "companies": [
+   "润和软件"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.sangfor.com": {
+  "n": 1,
+  "companies": [
+   "深信服"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "scc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "深南电路"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "talent.deepseek.com": {
+  "n": 1,
+  "companies": [
+   "深度求索DeepSeek"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "shenlan1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "深蓝汽车"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cbhb.com.cn": {
+  "n": 1,
+  "companies": [
+   "渤海银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "m.gemu.cn": {
+  "n": 1,
+  "companies": [
+   "湖北银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hunanyuneng.com": {
+  "n": 1,
+  "companies": [
+   "湖南裕能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hunan-bank.com": {
+  "n": 1,
+  "companies": [
+   "湖南银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.didiglobal.com": {
+  "n": 1,
+  "companies": [
+   "滴滴"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "talent.lenovo.com.cn": {
+  "n": 2,
+  "companies": [
+   "漫步者",
+   "联想"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "weichaidongli.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "潍柴动力"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "chjgroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "潮宏基"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ausnutria.com": {
+  "n": 1,
+  "companies": [
+   "澳优乳业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "vastaitech.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "瀚博半导体"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "highgo.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "瀚高数据库"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.huohua.cn": {
+  "n": 1,
+  "companies": [
+   "火花思维"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "linkhou.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "灵猴机器人"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.britesemi.com": {
+  "n": 1,
+  "companies": [
+   "灿芯股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.fiberhome.com": {
+  "n": 1,
+  "companies": [
+   "烽火通信"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hsh.com.cn": {
+  "n": 2,
+  "companies": [
+   "煌上煌",
+   "煌上煌食品"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yanjing.com.cn": {
+  "n": 1,
+  "companies": [
+   "燕京啤酒"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.iqiyi.com": {
+  "n": 1,
+  "companies": [
+   "爱奇艺"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zhaopin.aierchina.com": {
+  "n": 1,
+  "companies": [
+   "爱尔眼科"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "aimer.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "爱慕"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "aikosolar.com": {
+  "n": 1,
+  "companies": [
+   "爱旭股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "axera-tech.com": {
+  "n": 1,
+  "companies": [
+   "爱芯元智"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "aisphere.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "爱诗科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "pzhchina.com": {
+  "n": 1,
+  "companies": [
+   "片仔癀"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "en.tbea.com": {
+  "n": 1,
+  "companies": [
+   "特变电工"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.duomian.com": {
+  "n": 1,
+  "companies": [
+   "猎聘"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.mars.com": {
+  "n": 1,
+  "companies": [
+   "玛氏中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.usi.com": {
+  "n": 1,
+  "companies": [
+   "环旭电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.hqwx.org": {
+  "n": 1,
+  "companies": [
+   "环球网校"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ioniq.hyundai.com.cn": {
+  "n": 1,
+  "companies": [
+   "现代汽车中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "xiandaimuye.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "现代牧业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.proya.com": {
+  "n": 1,
+  "companies": [
+   "珀莱雅"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.proya-group.com": {
+  "n": 1,
+  "companies": [
+   "珀莱雅集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.zhujiangbeer.com": {
+  "n": 1,
+  "companies": [
+   "珠江啤酒"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cosmx.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "珠海冠宇"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.lixiang.com": {
+  "n": 1,
+  "companies": [
+   "理想汽车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.rock-chips.com": {
+  "n": 1,
+  "companies": [
+   "瑞芯微"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.putailai.com": {
+  "n": 1,
+  "companies": [
+   "璞泰来"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ganyuanfood.com": {
+  "n": 1,
+  "companies": [
+   "甘源食品"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "shengshu.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "生数科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.syst.com.cn": {
+  "n": 1,
+  "companies": [
+   "生益科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.dayee.com": {
+  "n": 1,
+  "companies": [
+   "用友"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "byszc.com": {
+  "n": 1,
+  "companies": [
+   "白云山"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "baixiangfood.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "白象食品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.pepsicojobs.com": {
+  "n": 2,
+  "companies": [
+   "百世集团",
+   "百事中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.belleintl.com": {
+  "n": 1,
+  "companies": [
+   "百丽国际"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.baichuan-inc.com": {
+  "n": 1,
+  "companies": [
+   "百川智能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.aeonlife.com.cn": {
+  "n": 1,
+  "companies": [
+   "百年人寿"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "talent.baidu.com": {
+  "n": 1,
+  "companies": [
+   "百度"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yumchina.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "百胜中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ipsos.com": {
+  "n": 1,
+  "companies": [
+   "益普索"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yishengtec.cn": {
+  "n": 1,
+  "companies": [
+   "益生股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yihetang.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "益禾堂"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.yanjinpuzi.com": {
+  "n": 1,
+  "companies": [
+   "盐津铺子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.alibabagroup.com": {
+  "n": 1,
+  "companies": [
+   "盒马鲜生"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gaiaworks.cn": {
+  "n": 1,
+  "companies": [
+   "盖雅工场"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.cxlithium.com": {
+  "n": 1,
+  "companies": [
+   "盛新锂能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sgssemi.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "盛美上海"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "wantwant.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "盼盼食品"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "roborock.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "石头科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.bgy.com.cn": {
+  "n": 1,
+  "companies": [
+   "碧桂园"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.bgyfw.com": {
+  "n": 1,
+  "companies": [
+   "碧桂园服务"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.zulong.com": {
+  "n": 1,
+  "companies": [
+   "祖龙娱乐"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "dcits.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "神州信息"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "thinkon.com": {
+  "n": 1,
+  "companies": [
+   "神工股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sensorsdata.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "神策数据"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cykj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "禅游科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "voss.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "福斯特"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.foton.com.cn": {
+  "n": 1,
+  "companies": [
+   "福田汽车"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "kwh0jtf778.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "禾赛科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.hoymiles.com": {
+  "n": 1,
+  "companies": [
+   "禾迈股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "kelun.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "科伦药业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "kexing.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "科兴生物"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "iflytek.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "科大讯飞"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hr.ecovacs.cn": {
+  "n": 1,
+  "companies": [
+   "科沃斯"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bdochina.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "立信"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.li-on.com": {
+  "n": 1,
+  "companies": [
+   "立昂微"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "luxshare-tech.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "立讯精密"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "michelin.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "米其林中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.mihoyo.com": {
+  "n": 1,
+  "companies": [
+   "米哈游"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jingce.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "精测电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "unicloud.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "紫光股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "join.zjky.cn": {
+  "n": 1,
+  "companies": [
+   "紫金矿业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hqgw-1300211780.faw.cn": {
+  "n": 1,
+  "companies": [
+   "红旗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.novosns.com": {
+  "n": 1,
+  "companies": [
+   "纳芯微"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.juewei.cn": {
+  "n": 1,
+  "companies": [
+   "绝味食品"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "faq.uniontech.com": {
+  "n": 1,
+  "companies": [
+   "统信软件"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "vcredit.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "维信诺"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.vvfood.cn": {
+  "n": 1,
+  "companies": [
+   "维维股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.luye.cn": {
+  "n": 1,
+  "companies": [
+   "绿叶制药"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "gtgroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "绿城中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "update.nsfocus.com": {
+  "n": 1,
+  "companies": [
+   "绿盟科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ugreen.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "绿联"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.lulian.cn": {
+  "n": 1,
+  "companies": [
+   "绿联科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.codemao.cn": {
+  "n": 1,
+  "companies": [
+   "编程猫"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ronbay.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "罗兰贝格"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zhaopin.meituan.com": {
+  "n": 1,
+  "companies": [
+   "美团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.meitu.com": {
+  "n": 1,
+  "companies": [
+   "美图"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.midea.com": {
+  "n": 1,
+  "companies": [
+   "美的"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.xyyl.com": {
+  "n": 1,
+  "companies": [
+   "翔宇医疗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.asrmicro.com": {
+  "n": 1,
+  "companies": [
+   "翱捷科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lxjchina1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "老乡鸡"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.robam.com": {
+  "n": 1,
+  "companies": [
+   "老板电器"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.lbxdrugs.com": {
+  "n": 1,
+  "companies": [
+   "老百姓大药房"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mediatek.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "联发科"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.unilever.com": {
+  "n": 1,
+  "companies": [
+   "联合利华"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "united-imaging.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "联影医疗"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.maxio-tech.com": {
+  "n": 1,
+  "companies": [
+   "联芸科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "giantec.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "聚辰股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "join.qq.com": {
+  "n": 1,
+  "companies": [
+   "腾讯"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.tencent.com": {
+  "n": 1,
+  "companies": [
+   "腾讯游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "join.tencentmusic.com": {
+  "n": 1,
+  "companies": [
+   "腾讯音乐"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chandogroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "自然堂"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "grantthornton.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "致同"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.seeyon.com": {
+  "n": 1,
+  "companies": [
+   "致远互联"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.tuopaishede.cn": {
+  "n": 1,
+  "companies": [
+   "舍得酒业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.sunnyoptical.cn": {
+  "n": 1,
+  "companies": [
+   "舜宇光学"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "gd.aisino.com": {
+  "n": 1,
+  "companies": [
+   "航天信息"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "galaxy.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "航天科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "avic-hr.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "航空工业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "lppz.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "良品铺子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "awinic1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "艾为电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "allist.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "艾力斯"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.iqvia.cn": {
+  "n": 1,
+  "companies": [
+   "艾昆纬"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jaka.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "节卡机器人"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.verisilicon.com": {
+  "n": 1,
+  "companies": [
+   "芯原微电子"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "chipsea.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "芯海科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cfmee.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "芯碁微装"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.kao.com": {
+  "n": 1,
+  "companies": [
+   "花王中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.suning.cn": {
+  "n": 1,
+  "companies": [
+   "苏宁易购"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "suzhoubank.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "苏州银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.nvidia.com": {
+  "n": 1,
+  "companies": [
+   "英伟达"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.injoinic.com": {
+  "n": 1,
+  "companies": [
+   "英集芯"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.apple.com": {
+  "n": 1,
+  "companies": [
+   "苹果"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "baichabaidao.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "茶百道"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.remegen.cn": {
+  "n": 1,
+  "companies": [
+   "荣昌生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "career.honor.com": {
+  "n": 1,
+  "companies": [
+   "荣耀"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "wuxiapptec.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "药明康德"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "job.wuxibiologics.com.cn": {
+  "n": 1,
+  "companies": [
+   "药明生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "lilithgames.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "莉莉丝"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cn.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "菜鸟"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "talent.cainiao.com": {
+  "n": 1,
+  "companies": [
+   "菜鸟网络"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.gzbsz.ceec.net.cn": {
+  "n": 1,
+  "companies": [
+   "葛洲坝地产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mengniu.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "蒙牛"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hnlens.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "蓝思科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.nio.com": {
+  "n": 1,
+  "companies": [
+   "蔚来"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bananain.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "蕉下"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.xinrenxinshi.com": {
+  "n": 1,
+  "companies": [
+   "薪人薪事"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "svolt.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "蜂巢能源"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "careers.mxbc.com": {
+  "n": 1,
+  "companies": [
+   "蜜雪冰城"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sunacservice.com": {
+  "n": 1,
+  "companies": [
+   "融创服务"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.seasungames.cn": {
+  "n": 1,
+  "companies": [
+   "西山居"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jobs.siemens.com.cn": {
+  "n": 2,
+  "companies": [
+   "西门子",
+   "西门子中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "guandata.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "观远数据"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "speedbot.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "视比特机器人"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ryytn.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "认养一头牛"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.archermind.com": {
+  "n": 1,
+  "companies": [
+   "诚迈科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "innocare.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "诺诚健华"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "himile.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "豪迈科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "beingmate.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "贝因美"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.ke.com": {
+  "n": 1,
+  "companies": [
+   "贝壳"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "btrchina.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "贝特瑞"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.bettapharma.com": {
+  "n": 1,
+  "companies": [
+   "贝达药业"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "corp.caixin.com": {
+  "n": 1,
+  "companies": [
+   "财新传媒"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "huolala.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "货拉拉"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.twyx.cn": {
+  "n": 1,
+  "companies": [
+   "贪玩游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.grn.cn": {
+  "n": 1,
+  "companies": [
+   "贵人鸟"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "zp.moutai.com.cn": {
+  "n": 1,
+  "companies": [
+   "贵州茅台"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sokon.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "赛力斯"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.sanofi.cn": {
+  "n": 1,
+  "companies": [
+   "赛诺菲中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ganfenglithium.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "赣锋锂业"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.dobot.cn": {
+  "n": 1,
+  "companies": [
+   "越疆科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yuexiu-pm.com": {
+  "n": 1,
+  "companies": [
+   "越秀地产"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.ky-express.com": {
+  "n": 1,
+  "companies": [
+   "跨越速运"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "kyligence.io": {
+  "n": 1,
+  "companies": [
+   "跬智信息"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "career.isoftstone.com": {
+  "n": 1,
+  "companies": [
+   "软通动力"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.isoftstone.com": {
+  "n": 1,
+  "companies": [
+   "软通动力信息"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.qcraft.ai": {
+  "n": 1,
+  "companies": [
+   "轻舟智航"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.daligroup.com": {
+  "n": 1,
+  "companies": [
+   "达利食品"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.dameng.com": {
+  "n": 1,
+  "companies": [
+   "达梦数据库"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.danone.com.cn": {
+  "n": 1,
+  "companies": [
+   "达能中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "about.imdada.cn": {
+  "n": 1,
+  "companies": [
+   "达达集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "mindrayanimal.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "迈瑞动物医疗"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.mindray.com": {
+  "n": 1,
+  "companies": [
+   "迈瑞医疗"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yingjia.cn": {
+  "n": 1,
+  "companies": [
+   "迎驾贡酒"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.chinawindey.com": {
+  "n": 1,
+  "companies": [
+   "运达股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "recruitment.decathlon.com.cn": {
+  "n": 1,
+  "companies": [
+   "迪卡侬中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "dreame.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "追觅科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.limxdynamics.com": {
+  "n": 1,
+  "companies": [
+   "逐际动力"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cug.91wllm.cn": {
+  "n": 1,
+  "companies": [
+   "途游游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "tongwei.zhiye.com": {
+  "n": 2,
+  "companies": [
+   "通威",
+   "通威股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.aubo-robotics.cn": {
+  "n": 1,
+  "companies": [
+   "遨博智能"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jsyc.iguopin.com": {
+  "n": 1,
+  "companies": [
+   "邮储银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "langjiu3.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "郎酒"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "zzbankcampus.hotjob.cn": {
+  "n": 1,
+  "companies": [
+   "郑州银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cowarobot.com": {
+  "n": 1,
+  "companies": [
+   "酷哇机器人"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "caf.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "采埃孚"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.cqcbank.com": {
+  "n": 1,
+  "companies": [
+   "重庆银行"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.jblfz.com": {
+  "n": 1,
+  "companies": [
+   "金佰利中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "jssoft.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "金山云"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "join.wps.cn": {
+  "n": 1,
+  "companies": [
+   "金山办公"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.kingdee.com": {
+  "n": 1,
+  "companies": [
+   "金蝶国际"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "goldwind.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "金风科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.jinlongyu.cn": {
+  "n": 1,
+  "companies": [
+   "金龙鱼"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "page.dingtalk.com": {
+  "n": 1,
+  "companies": [
+   "钉钉"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yinlun.cn": {
+  "n": 1,
+  "companies": [
+   "银轮股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.sxjbswyy.com": {
+  "n": 1,
+  "companies": [
+   "锦波生物"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ginlong.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "锦浪科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sunline.cn": {
+  "n": 1,
+  "companies": [
+   "长亮科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "changan.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长安汽车"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "career.hzcctech.com": {
+  "n": 1,
+  "companies": [
+   "长川科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "ccgx.com": {
+  "n": 1,
+  "companies": [
+   "长春高新"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cjpension1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长江养老"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ymtc-campus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长江存储"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cjzq.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长江证券"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "cscb.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长沙银行"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.ewpt.com": {
+  "n": 1,
+  "companies": [
+   "长盈精密"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.changhong-network.com": {
+  "n": 1,
+  "companies": [
+   "长虹"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "cxmt.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长鑫存储"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yofc2.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "长飞光纤"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "闻泰科技"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.yuewen.com": {
+  "n": 1,
+  "companies": [
+   "阅文集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "offerdao.ai": {
+  "n": 1,
+  "companies": [
+   "阶跃星辰Step"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.astrazeneca.com": {
+  "n": 1,
+  "companies": [
+   "阿斯利康中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "talent.avatr.com": {
+  "n": 1,
+  "companies": [
+   "阿维塔"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "adolph.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "阿道夫"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "mozi-login.alibaba-inc.com": {
+  "n": 2,
+  "companies": [
+   "阿里云",
+   "高德地图"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus-talent.alibaba.com": {
+  "n": 1,
+  "companies": [
+   "阿里巴巴"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.immomo.com": {
+  "n": 1,
+  "companies": [
+   "陌陌"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sxqc.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "陕汽控股"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.sxjgkg.com": {
+  "n": 1,
+  "companies": [
+   "陕西建工"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.shaangu.com": {
+  "n": 1,
+  "companies": [
+   "陕鼓动力"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.yh.cn": {
+  "n": 1,
+  "companies": [
+   "雅化集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.youngor.com": {
+  "n": 1,
+  "companies": [
+   "雅戈尔"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "careers.accor.com": {
+  "n": 1,
+  "companies": [
+   "雅高中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "01ai.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "零一万物"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "leapmotor1.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "零跑汽车"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "jobs.chagee.com": {
+  "n": 1,
+  "companies": [
+   "霸王茶姬"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "hr.g-bits.com": {
+  "n": 1,
+  "companies": [
+   "青瓷游戏"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.flexiv.cn": {
+  "n": 1,
+  "companies": [
+   "非夕科技"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "modelbest.jobs.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "面壁智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "ovt-omnivision.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "韦尔股份"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "chicmaxgroup.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "韩束"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "yd.com": {
+  "n": 1,
+  "companies": [
+   "韵达股份"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus.shokz.com.cn": {
+  "n": 1,
+  "companies": [
+   "韶音"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "campus-static.sf-express.com": {
+  "n": 1,
+  "companies": [
+   "顺丰"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "sunlord.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "顺络电子"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.xihang.com.cn": {
+  "n": 1,
+  "companies": [
+   "领克"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "yhgj.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "颐海国际"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "china-fenghuazp.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "风华高科"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "hire.feishu.cn": {
+  "n": 1,
+  "companies": [
+   "飞书"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.feihe.com": {
+  "n": 1,
+  "companies": [
+   "飞鹤"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.btg.com": {
+  "n": 1,
+  "companies": [
+   "首旅集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.mgjs.cn": {
+  "n": 1,
+  "companies": [
+   "马钢集团"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "portal.careers.hsbc.com": {
+  "n": 1,
+  "companies": [
+   "高盛中国"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.gaotu.cn": {
+  "n": 1,
+  "companies": [
+   "高途课堂"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "colgate.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "高露洁中国"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "www.luhua.cn": {
+  "n": 1,
+  "companies": [
+   "鲁花"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "job.phfund.com.cn": {
+  "n": 1,
+  "companies": [
+   "鹏华基金"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "avaryholding.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "鹏鼎控股"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "campus.hypergryph.com": {
+  "n": 1,
+  "companies": [
+   "鹰角网络"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.kylinsoft.com": {
+  "n": 1,
+  "companies": [
+   "麒麟软件"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "www.blacksesame.com": {
+  "n": 1,
+  "companies": [
+   "黑芝麻"
+  ],
+  "ats": false,
+  "aggregator": false
+ },
+ "bsthr.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "黑芝麻智能"
+  ],
+  "ats": true,
+  "aggregator": false
+ },
+ "qilu-pharma.zhiye.com": {
+  "n": 1,
+  "companies": [
+   "齐鲁制药"
+  ],
+  "ats": true,
+  "aggregator": false
+ }
+}

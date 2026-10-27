@@ -1,0 +1,20 @@
+[
+  {
+    "title": "领航海豚",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 192
+  },
+  {
+    "title": "运营规划岗",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 119
+  },
+  {
+    "title": "产品规划岗",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 128
+  }
+]

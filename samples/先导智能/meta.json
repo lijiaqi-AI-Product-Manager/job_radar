@@ -1,0 +1,30 @@
+{
+  "company": "先导智能",
+  "careers_url": "https://leadchina.zhiye.com/Campus/jobs?ActivityJumpPage=PortalPage",
+  "host": "leadchina.zhiye.com",
+  "ats": "beisen",
+  "page_title": "无锡先导智能装备股份有限公司",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "社招",
+    "秋招正式批",
+    "秋招补录"
+  ],
+  "tracks": 20,
+  "roles": 104,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "无锡先导智能装备股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019658",
+      "https://career.csu.edu.cn/campus/view/id/590199"
+    ]
+  }
+}

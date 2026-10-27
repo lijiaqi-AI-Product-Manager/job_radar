@@ -1,0 +1,1317 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="&#x641C;&#x7D22; AstraZeneca &#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x4F1A;"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<title>&#x641C;&#x7D22; AstraZeneca &#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x4F1A;</title>
+   
+   
+            <link rel="stylesheet" href="//tbcdn.talentbrew.com/company/7684/css/14641-Full.css">
+        
+        <link rel="stylesheet" href="//tbcdn.talentbrew.com/company/12977/css/18300-Full.css">
+        
+        
+
+    
+    
+        <link rel="shortcut icon" href="//tbcdn.talentbrew.com/company/12977/img/favicon/favicon-18300.png" type="image/png"/>
+    
+<meta name="pla" content="true" data-cmid="4" data-tm="M7F9G8" data-s="G-0CX8J7P6DT" data-ff-ga4tc="False">
+<meta name="meas" content="ga4">
+<meta name="ga4sid" content="G-0CX8J7P6DT">
+<meta name="ff-ga4tc" content="False" />
+<meta name="hostName" content="job-search.astrazeneca.cn">
+<meta name="career-site-full-domain" content="job-search.astrazeneca.cn">
+<meta name="cookie-management" content="DigitalControlRoom" data-cmid="4" data-stype="LocationBased" data-ae="Modal" data-cdnv="//tbcdn.talentbrew.com/" data-ct="" data-abt="" data-mpt="" data-xb="False" data-rb="False" data-rbt="" data-ulc="" data-gpc="False" data-ot-config="False">
+
+<script src="//tbcdn.talentbrew.com/js/client/headutil.js" ></script>
+
+<script src="//tbcdn.talentbrew.com/js/client/plumrnizr-a.js" ></script>
+
+<script src="//tbcdn.talentbrew.com/js/client/plumrnizr-b.js" ></script>
+
+
+	<meta name="career-site-platform-domain-id" content="1261">
+	<meta name="career-site-company-domain-id" content="885">
+
+<script src="//tbcdn.talentbrew.com/js/client/head-analytics.js" ></script>
+
+
+
+    <meta name="ff-client-sc" content="True" />
+    <meta name="ff-personalization-sc" content="True">
+    <meta name="ff-disable-source-fix" content="False">
+<script src="//tbcdn.talentbrew.com/js/client/js-featureflag.js" ></script>
+<script src="//tbcdn.talentbrew.com/bundles/cookiemanagement.js" ></script>
+
+<meta name="msapplication-config" content="none"> 
+
+		<meta property="og:title" content="&#x641C;&#x7D22; AstraZeneca &#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x4F1A;">
+		<meta name="twitter:title" content="&#x641C;&#x7D22; AstraZeneca &#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x4F1A;">
+		<meta property="og:description" content="&#x641C;&#x7D22; AstraZeneca &#x63D0;&#x4F9B;&#x7684;&#x804C;&#x4F4D;&#x7A7A;&#x7F3A;">
+		<meta name="twitter:description" content="&#x641C;&#x7D22; AstraZeneca &#x63D0;&#x4F9B;&#x7684;&#x804C;&#x4F4D;&#x7A7A;&#x7F3A;">
+	<meta name="site-page-timestamp" content="10/26/2026 4:51:34&#x202F;AM">
+	<meta name="icinga2-client-host" content="job-search.astrazeneca.cn">
+	<meta name="icinga2-machine-name" content="careersites-group39-64f4fd4b5d-5v8gl">
+	<meta name="get-tracking-site-type" content="Full">
+	<meta name="get-tracking-orgnaic-tags" content="" data-outmode="true">
+	<meta name="get-tracking-organic-tags" content="">
+	<meta name="get-tracking-optimized-tracking" content="True">
+	<meta name="search-importer-version" content="2">
+	<meta name="search-client-type" content="SearchAsService">
+	<meta name="search-visitor-id" content="SearchVisitorId">
+	<meta name="search-session-id" content="SearchSessionId">
+	<meta name="search-analytic-enabled" content="0">
+	<meta name="search-analytics-url" content="https://jobs-search-analytics.prod.use1.radancy.net">
+	<meta name="site-tenant-id" content="3845">
+	<meta name="site-organization-id" content="12977">
+	<meta name="site-id" content="18300">
+	<meta name="site-theme-id" content="62292">
+	<meta name="site-page-id" content="288094">
+	<meta name="site-type-id" content="Full">
+	<meta name="site-page-type" content="Search Results">
+	<meta name="career-site-page-type" content="KeywordSearchPage">
+	<meta name="site-admin-env" content="prod">
+	<meta name="site-current-language" content="zh-Hans">
+		<meta name="personalization-categories-locations" content="[{&quot;Category&quot;:null,&quot;Location&quot;:{&quot;Path&quot;:&quot;1814991&quot;,&quot;FacetType&quot;:3},&quot;CustomFacet&quot;:{&quot;CustomFacetValue&quot;:null,&quot;CustomFacetTerm&quot;:&quot;ALL&quot;}}]">
+		<meta name="tb-page-type" content="search">
+		<meta name="search-tracking-info-searchid" content="ac8435f1-91f1-45c2-a8e5-f60ea1e4ea81">
+			<meta name="search-analytics-orgIds" content="12977">
+			<meta name="search-analytics-total-jobs" content="279">
+			<meta name="search-analytics-applied-facets" content="{&quot;0&quot;:[&quot;1814991&quot;],&quot;1&quot;:[]}">
+			<meta name="search-analytics-skip" content="0">
+			<meta name="search-analytics-keyword" content="">
+			<meta name="search-analytics-jobIds" content="{&quot;97462189936&quot;:0.0,&quot;101856196240&quot;:0.0,&quot;100673432768&quot;:0.0,&quot;102237755232&quot;:0.0,&quot;101934855040&quot;:0.0,&quot;101856196544&quot;:0.0,&quot;102025954576&quot;:0.0,&quot;102232485136&quot;:0.0,&quot;102323432096&quot;:0.0,&quot;94245123536&quot;:0.0,&quot;101356268336&quot;:0.0,&quot;101742899264&quot;:0.0,&quot;102323432944&quot;:0.0,&quot;102323432912&quot;:0.0,&quot;102323432848&quot;:0.0}">
+			<meta name="search-analytics-latitude">
+			<meta name="search-analytics-longitude">
+			<meta name="search-analytics-distance" content="50">
+			<meta name="search-analytics-unit" content="0">
+
+
+
+
+
+
+
+
+	<meta name="site-gtm-id" content="M7F9G8">
+			<meta name="gtm_tenantid" content="3845" data-gtm-prop="TenantID">
+			<meta name="gtm_companysiteid" content="18300" data-gtm-prop="CompanySiteID">
+			<meta name="gtm_companydomainid" content="885" data-gtm-prop="CompanyDomainID">
+			<meta name="gtm_orgid" content="12977" data-gtm-prop="OrgID">
+			<meta name="gtm_tbcn_division" content="12977" data-gtm-prop="tbcn-division">
+			<meta name="gtm_pagetype" content="KeywordSearchPage" data-gtm-prop="pagetype">
+			<meta name="gtm_pillar_type" content="" data-gtm-prop="pillar_type">
+			<meta name="gtm_pillar_topic" content="" data-gtm-prop="pillar_topic">
+			<meta name="gtm_pillar_channel" content="" data-gtm-prop="pillar_channel">
+<script src="//tbcdn.talentbrew.com/js/client/headgtm.js" ></script>
+
+    
+    <script type="text/plain" data-consent-category="3" src="//script.crazyegg.com/pages/scripts/0021/2158.js" async="async"></script>
+    
+</head>
+<body id="search" class="search search--alexion" data-site-geolocation="true" data-location-geoType="ipambientonly" data-geolocation-url="/search-jobs/GetSearchRequestGeoLocation">
+	
+
+
+
+<script src="//tbcdn.talentbrew.com/js/client/xvalid.js"></script>
+
+	
+	<div id="page">
+    	<a id="skip-nav" class="access-link" href="#content">跳到主要内容</a>
+        
+    <a href="#search-results-list" class="access-link">跳到搜索结果</a>
+    <a href="#search-filters" class="access-link">跳到搜索筛选</a>
+
+        
+            <header class="header core-header">
+                <div class="black-shade black-shade--internal"></div>
+                <div class="header__navigation">
+                    
+                    <div class="wrapper">
+                        
+                        <div class="header__navigation-wrapper">
+                            
+                            <div class="logo-container header__navigation-logo">
+                	                <a href="/" class="header__navigation-az-logo"><img src="//tbcdn.talentbrew.com/company/12977/v2_0/img/icons/az-logo.svg" alt="AstraZeneca Careers" /></a>
+
+
+                	        </div>
+                	        
+                	        <div class="header__navigation-menu-save-lang-toggle">
+                	            
+                                
+
+<div class="header__navigation-menu">
+    
+    <ul class="header__navigation-ul">
+        
+        <li class="header__navigation-li">
+            <a href="/" class="header__navigation-a">主页</a>
+        </li>
+        
+        <li class="header__navigation-li">
+            <a href="/%E6%B1%82%E8%81%8C" class="header__navigation-a">搜索职位</a>
+        </li>
+        
+        <li class="header__navigation-li">
+            <a href="/%E5%B7%B2%E4%BF%9D%E5%AD%98%E7%9A%84%E8%81%8C%E4%BD%8D" class="header__navigation-a">您保存的职位</a>
+        </li>
+    </ul>
+    
+</div>
+	 
+                	            
+                	            <div class="header__navigation-hamburger-lang-save-wrapper">
+                	            
+                                    <div class="header__navigation-saved-jobs-container">
+                                        
+
+<section class="recently-viewed-job-list" data-recently-viewed-jobs="false" data-company-site-id="18300" data-ajax-url="//job-search.astrazeneca.cn/module/postmodule" data-module-name="Saved Jobs in Navigation" data-module-type="RecentlyViewedJobList" data-selector-name="recentlyviewedjoblist" data-content-type="UserSelected">
+
+<a href="/已保存的职位" title="已保存的职位">
+  <div class="recently-viewed-job-list__icon">
+
+    <div>
+       <?xml version="1.0" encoding="UTF-8"?>
+        <svg width="24px" height="30px" viewBox="0 0 22 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="bookmark-icon2" stroke="none" stroke-width="1" fill="#ffffff" fill-rule="evenodd">
+                <g transform="translate(-1404.000000, -82.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1404.000000, 82.000000)">
+                        <path d="M0,2.7 C0,1.215 1.2375,0 2.75,0 L19.25,0 C20.768935,0 22,1.208682 22,2.7 L22,27 L11,21.6 L0,27 L0,2.7 Z M2.75,2.7 L2.75,22.95 L11,18.9 L19.25,22.95 L19.25,2.7 L2.75,2.7 Z" ></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+  </div>
+</a>
+
+ <!--<div class="recently-viewed-job-list__dropdown">-->
+</section>
+
+	            
+                                    </div>
+        
+                                    <button class="header__navigation-globe-icon" tabindex="0" aria-label="Navigate to other languages" aria-expanded="false" title="Languages">
+                                        <span class="visually-hidden">Language Navigation</span>
+
+                                        <span class="header__navigation-language-menu">
+                                            <span class="header__navigation-language-menu-wrapper">
+                                                <ul>
+                                                    <li><a href="https://job-search.astrazeneca.com">English</a></li>
+                                                    <li><a href="https://job-search.astrazeneca.ru">русский</a></li>
+                                                    <li><a class="active" href="https://job-search.astrazeneca.de">Deutsch</a></li>
+                                                    <li><a href="https://job-search.astrazeneca.fr">Français</a></li>
+                                                    <li><a href="https://job-search.astrazeneca.cn">中文</a></li>
+                                                    <li><a href="https://job-search.astrazeneca.se">Svenska</a></li>
+                                                </ul>
+                                            </span>
+                                        </span>
+                                        
+                                    </button>
+                	            
+                                    <button class="header__navigation-burger-icon" tabindex="0" aria-expanded="false">
+                                        <span class="header__navigation-burger-text">MENU</span>
+                                        <div class="header__navigation-burger-hamburger">
+                                            <span class="header__navigation-burger-line header__navigation-burger-line--first"></span>
+                                            <span class="header__navigation-burger-line header__navigation-burger-line--second"></span>
+                                            <span class="header__navigation-burger-line header__navigation-burger-line--third"></span>
+                                        </div>
+                                    </button>
+                	                
+                	            </div>
+                	           
+                                
+                	            
+                	        </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+    	    
+    	    </header>
+    	    
+    	<main id="content">
+    		
+
+
+
+
+<div class="collapsible-form-container">
+<div class="wrapper">
+
+<form id="search-form-000b901caa" class="search-form" data-handle="expandable-toggle" data-expandable="false" action="/%e6%b1%82%e8%81%8c" data-selector-name="searchform" data-filtered-categories="" data-location-geoType="ipambientonly" data-geolocation-url="/search-jobs/GetSearchRequestGeoLocation" data-module-name="Collapsible search form" data-limited-facets="False" data-default-radius="50" data-location-cookie-lifespan="5" data-use-location-pin="true" data-ambient-search="true">
+	<a href="#search-form-fields" class="search-toggle expandable-toggle">&#x641C;&#x7D22;</a>
+	<div class="search-form-fields">
+        <p class="search-form-fields__child">
+		    <label for="search-keyword-000b901caa">&#x5173;&#x952E;&#x8BCD;&#x641C;&#x7D22;</label>
+		    <input type="search" id="search-keyword-000b901caa" class="search-keyword" placeholder="&#x5173;&#x952E;&#x8BCD;" autocomplete="off" required aria-required="true" name="k" value="" maxlength="150"/>
+        </p>
+        <p class="search-form-fields__child">
+            <label for="search-location-000b901caa">&#x5E02;&#x3001;&#x5DDE;&#x6216;&#x90AE;&#x653F;&#x7F16;&#x7801;</label>
+		    <input type="text" id="search-location-000b901caa" class="search-location" placeholder="&#x5E02;&#x3001;&#x5DDE;&#x6216;&#x90AE;&#x653F;&#x7F16;&#x7801;" autocomplete="off" name="l" value="" maxlength="150" data-lat="" data-lon="" data-kt="" data-lt="" data-lp="" data-ajax-url="/search-jobs/locations?term=" data-country-codes="" data-display-typeahead="true" data-error-message="请重试。从推荐列表中选择一个地点，或清除字段以提交您的搜索。"/>
+                <input type="button" id="search-location-pin-000b901caa" class="location-pin" value="&#x4F7F;&#x7528;&#x5730;&#x70B9;" aria-hidden="true"/>
+		</p>
+        <input id="search-org-ids-000b901caa" name="orgIds" type="hidden" value="12977" />
+        <button id="search-submit-000b901caa" class="search-form-fields__child btn btn--search">&#x641C;&#x7D22;</button>
+		<p class="search-location-error" aria-hidden="true"></p>
+	</div>
+	<!--<div class="btn"><span>Close search</span></div>-->
+
+</form>
+
+</div>
+    
+	<div class="form-toggle-button-container">
+    	<div class="wrapper">
+    	    <div class="form-toggle-button btn btn--purple btn--shadow" aria-expanded="false" tabindex="0">
+    	        <span>搜索职位</span>
+    	        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M19.652 18.028L13.624 12c.927-1.217 1.449-2.782 1.449-4.464A7.52 7.52 0 0 0 7.537 0 7.522 7.522 0 0 0 0 7.537a7.52 7.52 0 0 0 7.536 7.535A7.478 7.478 0 0 0 12 13.623l6.029 6.03c.231.23.522.347.812.347.29 0 .58-.116.812-.348a1.122 1.122 0 0 0-.001-1.624zM7.537 12.754A5.195 5.195 0 0 1 2.32 7.537a5.195 5.195 0 0 1 5.217-5.218 5.195 5.195 0 0 1 5.217 5.218 5.196 5.196 0 0 1-5.217 5.217z" fill="#FFF" fill-rule="nonzero"/></svg>
+    	    </div>
+	    </div>
+    </div>
+    	
+</div>
+
+
+
+<div class="wrapper">
+    
+    <h1>279  的结果</h1>
+
+
+
+           
+
+    <section id="search-filters" data-admin-expand="true" data-search-filters-module-name="Search Filters" data-selector-name="searchfilters" data-radius-unit-type="0" data-filtered-categories="" data-filtered-locations="" data-filtered-custom-facet="" data-filtered-advanced-categories="" data-filtered-advanced-locations="" data-filtered-advanced-custom-facet="" data-ajax-char-limit="4096" class="">
+        <p class="mobile-only looks-like-header centered">&#x7B5B;&#x9009;&#x7ED3;&#x679C;</p>
+        <div>
+
+
+                <section data-expandable="true" data-speed="0" data-enabled="true" data-filter-id="1">
+                    <button class="expandable-parent " id="category-toggle">&#x7C7B;&#x522B;</button>
+                    <ul class="search-filter-list  " aria-hidden="false" aria-expanded="true">
+                            <li >
+                                    <input type="checkbox" id="category-filter-0" class="filter-checkbox" data-facet-type="1" data-id="34693" data-count="2" data-display="Administration" data-field-name="" />
+                                    <label for="category-filter-0"><b class="filter">Administration</b> <b>2</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-1" class="filter-checkbox" data-facet-type="1" data-id="38387" data-count="1" data-display="Business Development" data-field-name="" />
+                                    <label for="category-filter-1"><b class="filter">Business Development</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-2" class="filter-checkbox" data-facet-type="1" data-id="40085" data-count="1" data-display="Commercial Non-Sales" data-field-name="" />
+                                    <label for="category-filter-2"><b class="filter">Commercial Non-Sales</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-3" class="filter-checkbox" data-facet-type="1" data-id="9436240" data-count="1" data-display="Commercial Non‑Sales" data-field-name="" />
+                                    <label for="category-filter-3"><b class="filter">Commercial Non&#x2011;Sales</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-4" class="filter-checkbox" data-facet-type="1" data-id="9395424" data-count="13" data-display="Commercial Strategy & Business Development" data-field-name="" />
+                                    <label for="category-filter-4"><b class="filter">Commercial Strategy &amp; Business Development</b> <b>13</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-5" class="filter-checkbox" data-facet-type="1" data-id="35260" data-count="3" data-display="Corporate Affairs" data-field-name="" />
+                                    <label for="category-filter-5"><b class="filter">Corporate Affairs</b> <b>3</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-6" class="filter-checkbox" data-facet-type="1" data-id="9392944" data-count="4" data-display="Data & AI" data-field-name="" />
+                                    <label for="category-filter-6"><b class="filter">Data &amp; AI</b> <b>4</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-7" class="filter-checkbox" data-facet-type="1" data-id="38389" data-count="21" data-display="Development" data-field-name="" />
+                                    <label for="category-filter-7"><b class="filter">Development</b> <b>21</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-8" class="filter-checkbox" data-facet-type="1" data-id="28256" data-count="3" data-display="Engineering" data-field-name="" />
+                                    <label for="category-filter-8"><b class="filter">Engineering</b> <b>3</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-9" class="filter-checkbox" data-facet-type="1" data-id="9397040" data-count="4" data-display="Facilities & Safety & Health & Environment & Sustainability" data-field-name="" />
+                                    <label for="category-filter-9"><b class="filter">Facilities &amp; Safety &amp; Health &amp; Environment &amp; Sustainability</b> <b>4</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-10" class="filter-checkbox" data-facet-type="1" data-id="40086" data-count="1" data-display="Facilities Management" data-field-name="" />
+                                    <label for="category-filter-10"><b class="filter">Facilities Management</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-11" class="filter-checkbox" data-facet-type="1" data-id="21707" data-count="3" data-display="Finance" data-field-name="" />
+                                    <label for="category-filter-11"><b class="filter">Finance</b> <b>3</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-12" class="filter-checkbox" data-facet-type="1" data-id="40087" data-count="1" data-display="Human Resources" data-field-name="" />
+                                    <label for="category-filter-12"><b class="filter">Human Resources</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-13" class="filter-checkbox" data-facet-type="1" data-id="21713" data-count="7" data-display="Information Technology" data-field-name="" />
+                                    <label for="category-filter-13"><b class="filter">Information Technology</b> <b>7</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-14" class="filter-checkbox" data-facet-type="1" data-id="9392560" data-count="1" data-display="Insights & Analytics" data-field-name="" />
+                                    <label for="category-filter-14"><b class="filter">Insights &amp; Analytics</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-15" class="filter-checkbox" data-facet-type="1" data-id="9396640" data-count="1" data-display="Legal & Compliance" data-field-name="" />
+                                    <label for="category-filter-15"><b class="filter">Legal &amp; Compliance</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-16" class="filter-checkbox" data-facet-type="1" data-id="9391200" data-count="2" data-display="LGY_Engineering" data-field-name="" />
+                                    <label for="category-filter-16"><b class="filter">LGY_Engineering</b> <b>2</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-17" class="filter-checkbox" data-facet-type="1" data-id="9391280" data-count="1" data-display="LGY_Sales" data-field-name="" />
+                                    <label for="category-filter-17"><b class="filter">LGY_Sales</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-18" class="filter-checkbox" data-facet-type="1" data-id="36563" data-count="9" data-display="Manufacturing" data-field-name="" />
+                                    <label for="category-filter-18"><b class="filter">Manufacturing</b> <b>9</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-19" class="filter-checkbox" data-facet-type="1" data-id="25898" data-count="52" data-display="Medical" data-field-name="" />
+                                    <label for="category-filter-19"><b class="filter">Medical</b> <b>52</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-20" class="filter-checkbox" data-facet-type="1" data-id="34829" data-count="2" data-display="Medical Affairs" data-field-name="" />
+                                    <label for="category-filter-20"><b class="filter">Medical Affairs</b> <b>2</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-21" class="filter-checkbox" data-facet-type="1" data-id="25094" data-count="2" data-display="Procurement" data-field-name="" />
+                                    <label for="category-filter-21"><b class="filter">Procurement</b> <b>2</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-22" class="filter-checkbox" data-facet-type="1" data-id="9396656" data-count="1" data-display="Project Management & Business Improvement" data-field-name="" />
+                                    <label for="category-filter-22"><b class="filter">Project Management &amp; Business Improvement</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-23" class="filter-checkbox" data-facet-type="1" data-id="40088" data-count="1" data-display="Project, Change, Business Improvement and Strategy Management" data-field-name="" />
+                                    <label for="category-filter-23"><b class="filter">Project, Change, Business Improvement and Strategy Management</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-24" class="filter-checkbox" data-facet-type="1" data-id="40082" data-count="11" data-display="Quality" data-field-name="" />
+                                    <label for="category-filter-24"><b class="filter">Quality</b> <b>11</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-25" class="filter-checkbox" data-facet-type="1" data-id="38385" data-count="1" data-display="Safety, Health and Environmental Science" data-field-name="" />
+                                    <label for="category-filter-25"><b class="filter">Safety, Health and Environmental Science</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-26" class="filter-checkbox" data-facet-type="1" data-id="40089" data-count="106" data-display="Sales" data-field-name="" />
+                                    <label for="category-filter-26"><b class="filter">Sales</b> <b>106</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-27" class="filter-checkbox" data-facet-type="1" data-id="8682080" data-count="19" data-display="Science" data-field-name="" />
+                                    <label for="category-filter-27"><b class="filter">Science</b> <b>19</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-28" class="filter-checkbox" data-facet-type="1" data-id="40091" data-count="2" data-display="Scientific" data-field-name="" />
+                                    <label for="category-filter-28"><b class="filter">Scientific</b> <b>2</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-29" class="filter-checkbox" data-facet-type="1" data-id="9378400" data-count="1" data-display="scientist" data-field-name="" />
+                                    <label for="category-filter-29"><b class="filter">scientist</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-30" class="filter-checkbox" data-facet-type="1" data-id="40084" data-count="1" data-display="Supply" data-field-name="" />
+                                    <label for="category-filter-30"><b class="filter">Supply</b> <b>1</b></label>
+
+
+                            </li>
+                            <li >
+                                    <input type="checkbox" id="category-filter-31" class="filter-checkbox" data-facet-type="1" data-id="40092" data-count="1" data-display="Training" data-field-name="" />
+                                    <label for="category-filter-31"><b class="filter">Training</b> <b>1</b></label>
+
+
+                            </li>
+                    </ul>
+                </section>
+
+                <section data-expandable="true" data-speed="0" data-enabled="true" data-filter-id="2">
+                    <button class="expandable-parent " id="country-toggle">&#x56FD;&#x5BB6;/&#x533A;&#x57DF;</button>
+                    <ul class="search-filter-list " aria-hidden="false" aria-expanded="true">
+                            <li>
+                                <input type="checkbox" id="country-filter-0" class="filter-checkbox" data-facet-type="2" data-id="1814991" data-count="279" data-display="中国" data-field-name="" checked="checked" />
+                                <label for="country-filter-0"><b class="filter">&#x4E2D;&#x56FD;</b> <b>279</b></label>
+                            </li>
+                    </ul>
+                </section>
+
+                <section data-expandable="true" data-speed="0" data-enabled="false" data-filter-id="3">
+                    <button class="expandable-parent " id="region-toggle">&#x5DDE;</button>
+                    <ul class="search-filter-list " aria-hidden="false" aria-expanded="true">
+                            <li>
+                                <input type="checkbox" id="region-filter-0" class="filter-checkbox" data-facet-type="3" data-id="1814991-1796231" data-count="156" data-display="上海, 中国" data-field-name="" />
+                                <label for="region-filter-0"><b class="filter">&#x4E0A;&#x6D77;</b> <b>156</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-1" class="filter-checkbox" data-facet-type="3" data-id="1814991-1785694" data-count="1" data-display="云南, 中国" data-field-name="" />
+                                <label for="region-filter-1"><b class="filter">&#x4E91;&#x5357;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-2" class="filter-checkbox" data-facet-type="3" data-id="1814991-2038349" data-count="37" data-display="北京, 中国" data-field-name="" />
+                                <label for="region-filter-2"><b class="filter">&#x5317;&#x4EAC;</b> <b>37</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-3" class="filter-checkbox" data-facet-type="3" data-id="1814991-2036500" data-count="1" data-display="吉林, 中国" data-field-name="" />
+                                <label for="region-filter-3"><b class="filter">&#x5409;&#x6797;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-4" class="filter-checkbox" data-facet-type="3" data-id="1814991-1794299" data-count="18" data-display="四川, 中国" data-field-name="" />
+                                <label for="region-filter-4"><b class="filter">&#x56DB;&#x5DDD;</b> <b>18</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-5" class="filter-checkbox" data-facet-type="3" data-id="1814991-1818058" data-count="3" data-display="安徽, 中国" data-field-name="" />
+                                <label for="region-filter-5"><b class="filter">&#x5B89;&#x5FBD;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-6" class="filter-checkbox" data-facet-type="3" data-id="1814991-1796328" data-count="15" data-display="山东, 中国" data-field-name="" />
+                                <label for="region-filter-6"><b class="filter">&#x5C71;&#x4E1C;</b> <b>15</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-7" class="filter-checkbox" data-facet-type="3" data-id="1814991-1809935" data-count="12" data-display="广东, 中国" data-field-name="" />
+                                <label for="region-filter-7"><b class="filter">&#x5E7F;&#x4E1C;</b> <b>12</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-8" class="filter-checkbox" data-facet-type="3" data-id="1814991-1809867" data-count="1" data-display="广西, 中国" data-field-name="" />
+                                <label for="region-filter-8"><b class="filter">&#x5E7F;&#x897F;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-9" class="filter-checkbox" data-facet-type="3" data-id="1814991-1806260" data-count="30" data-display="江苏, 中国" data-field-name="" />
+                                <label for="region-filter-9"><b class="filter">&#x6C5F;&#x82CF;</b> <b>30</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-10" class="filter-checkbox" data-facet-type="3" data-id="1814991-1806222" data-count="1" data-display="江西, 中国" data-field-name="" />
+                                <label for="region-filter-10"><b class="filter">&#x6C5F;&#x897F;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-11" class="filter-checkbox" data-facet-type="3" data-id="1814991-1808773" data-count="2" data-display="河北, 中国" data-field-name="" />
+                                <label for="region-filter-11"><b class="filter">&#x6CB3;&#x5317;</b> <b>2</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-12" class="filter-checkbox" data-facet-type="3" data-id="1814991-1808520" data-count="4" data-display="河南, 中国" data-field-name="" />
+                                <label for="region-filter-12"><b class="filter">&#x6CB3;&#x5357;</b> <b>4</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-13" class="filter-checkbox" data-facet-type="3" data-id="1814991-1784764" data-count="8" data-display="浙江, 中国" data-field-name="" />
+                                <label for="region-filter-13"><b class="filter">&#x6D59;&#x6C5F;</b> <b>8</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-14" class="filter-checkbox" data-facet-type="3" data-id="1814991-1806949" data-count="5" data-display="湖北, 中国" data-field-name="" />
+                                <label for="region-filter-14"><b class="filter">&#x6E56;&#x5317;</b> <b>5</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-15" class="filter-checkbox" data-facet-type="3" data-id="1814991-1806691" data-count="1" data-display="湖南, 中国" data-field-name="" />
+                                <label for="region-filter-15"><b class="filter">&#x6E56;&#x5357;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-16" class="filter-checkbox" data-facet-type="3" data-id="1814991-1811017" data-count="1" data-display="福建省, 中国" data-field-name="" />
+                                <label for="region-filter-16"><b class="filter">&#x798F;&#x5EFA;&#x7701;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-17" class="filter-checkbox" data-facet-type="3" data-id="1814991-1809445" data-count="1" data-display="贵州, 中国" data-field-name="" />
+                                <label for="region-filter-17"><b class="filter">&#x8D35;&#x5DDE;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-18" class="filter-checkbox" data-facet-type="3" data-id="1814991-2036115" data-count="3" data-display="辽宁, 中国" data-field-name="" />
+                                <label for="region-filter-18"><b class="filter">&#x8FBD;&#x5B81;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-19" class="filter-checkbox" data-facet-type="3" data-id="1814991-1814905" data-count="6" data-display="重庆, 中国" data-field-name="" />
+                                <label for="region-filter-19"><b class="filter">&#x91CD;&#x5E86;</b> <b>6</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-20" class="filter-checkbox" data-facet-type="3" data-id="1814991-1796480" data-count="3" data-display="陕西, 中国" data-field-name="" />
+                                <label for="region-filter-20"><b class="filter">&#x9655;&#x897F;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="region-filter-21" class="filter-checkbox" data-facet-type="3" data-id="1814991-2036965" data-count="2" data-display="黑龙江, 中国" data-field-name="" />
+                                <label for="region-filter-21"><b class="filter">&#x9ED1;&#x9F99;&#x6C5F;</b> <b>2</b></label>
+                            </li>
+                    </ul>
+                </section>
+                <section data-expandable="true" data-speed="0" data-enabled="true" data-filter-id="4">
+                    <button class="expandable-parent " id="city-toggle">&#x57CE;&#x5E02;</button>
+                    <ul class="search-filter-list " aria-hidden="false" aria-expanded="true">
+                            <li>
+                                <input type="checkbox" id="city-filter-0" class="filter-checkbox" data-facet-type="4" data-id="1814991-1796231-1796236" data-count="156" data-display="上海, 上海, 中国" data-field-name="" />
+                                <label for="city-filter-0"><b class="filter">&#x4E0A;&#x6D77;</b> <b>156</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-1" class="filter-checkbox" data-facet-type="4" data-id="1814991-2038349-1816670" data-count="37" data-display="北京, 北京, 中国" data-field-name="" />
+                                <label for="city-filter-1"><b class="filter">&#x5317;&#x4EAC;</b> <b>37</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-2" class="filter-checkbox" data-facet-type="4" data-id="1814991-1806260-1799962" data-count="4" data-display="南京, 江苏, 中国" data-field-name="" />
+                                <label for="city-filter-2"><b class="filter">&#x5357;&#x4EAC;</b> <b>4</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-3" class="filter-checkbox" data-facet-type="4" data-id="1814991-1794299-1800146" data-count="1" data-display="南充, 四川, 中国" data-field-name="" />
+                                <label for="city-filter-3"><b class="filter">&#x5357;&#x5145;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-4" class="filter-checkbox" data-facet-type="4" data-id="1814991-1809867-1799869" data-count="1" data-display="南宁市, 广西, 中国" data-field-name="" />
+                                <label for="city-filter-4"><b class="filter">&#x5357;&#x5B81;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-5" class="filter-checkbox" data-facet-type="4" data-id="1814991-1818058-1808722" data-count="3" data-display="合肥, 安徽, 中国" data-field-name="" />
+                                <label for="city-filter-5"><b class="filter">&#x5408;&#x80A5;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-6" class="filter-checkbox" data-facet-type="4" data-id="1814991-1796480-1790353" data-count="2" data-display="咸阳市, 陕西, 中国" data-field-name="" />
+                                <label for="city-filter-6"><b class="filter">&#x54B8;&#x9633;&#x5E02;</b> <b>2</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-7" class="filter-checkbox" data-facet-type="4" data-id="1814991-2036965-2037013" data-count="2" data-display="哈尔滨市, 黑龙江, 中国" data-field-name="" />
+                                <label for="city-filter-7"><b class="filter">&#x54C8;&#x5C14;&#x6EE8;&#x5E02;</b> <b>2</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-8" class="filter-checkbox" data-facet-type="4" data-id="1814991-1808520-1783934" data-count="1" data-display="商丘市, 河南, 中国" data-field-name="" />
+                                <label for="city-filter-8"><b class="filter">&#x5546;&#x4E18;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-9" class="filter-checkbox" data-facet-type="4" data-id="1814991-2036115-1814087" data-count="1" data-display="大连, 辽宁, 中国" data-field-name="" />
+                                <label for="city-filter-9"><b class="filter">&#x5927;&#x8FDE;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-10" class="filter-checkbox" data-facet-type="4" data-id="1814991-1784764-1799397" data-count="1" data-display="宁波市, 浙江, 中国" data-field-name="" />
+                                <label for="city-filter-10"><b class="filter">&#x5B81;&#x6CE2;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-11" class="filter-checkbox" data-facet-type="4" data-id="1814991-1809935-1809858" data-count="9" data-display="广州市, 广东, 中国" data-field-name="" />
+                                <label for="city-filter-11"><b class="filter">&#x5E7F;&#x5DDE;&#x5E02;</b> <b>9</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-12" class="filter-checkbox" data-facet-type="4" data-id="1814991-1794299-1815286" data-count="17" data-display="成都, 四川, 中国" data-field-name="" />
+                                <label for="city-filter-12"><b class="filter">&#x6210;&#x90FD;</b> <b>17</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-13" class="filter-checkbox" data-facet-type="4" data-id="1814991-1806260-1790923" data-count="20" data-display="无锡市, 江苏, 中国" data-field-name="" />
+                                <label for="city-filter-13"><b class="filter">&#x65E0;&#x9521;&#x5E02;</b> <b>20</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-14" class="filter-checkbox" data-facet-type="4" data-id="1814991-1785694-1804651" data-count="1" data-display="昆明, 云南, 中国" data-field-name="" />
+                                <label for="city-filter-14"><b class="filter">&#x6606;&#x660E;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-15" class="filter-checkbox" data-facet-type="4" data-id="1814991-1784764-1808926" data-count="5" data-display="杭州, 浙江, 中国" data-field-name="" />
+                                <label for="city-filter-15"><b class="filter">&#x676D;&#x5DDE;</b> <b>5</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-16" class="filter-checkbox" data-facet-type="4" data-id="1814991-1806949-1791247" data-count="5" data-display="武汉, 湖北, 中国" data-field-name="" />
+                                <label for="city-filter-16"><b class="filter">&#x6B66;&#x6C49;</b> <b>5</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-17" class="filter-checkbox" data-facet-type="4" data-id="1814991-2036115-2034937" data-count="3" data-display="沉阳市, 辽宁, 中国" data-field-name="" />
+                                <label for="city-filter-17"><b class="filter">&#x6C89;&#x9633;&#x5E02;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-18" class="filter-checkbox" data-facet-type="4" data-id="1814991-1796328-1805753" data-count="4" data-display="济南市, 山东, 中国" data-field-name="" />
+                                <label for="city-filter-18"><b class="filter">&#x6D4E;&#x5357;&#x5E02;</b> <b>4</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-19" class="filter-checkbox" data-facet-type="4" data-id="1814991-1809935-1795565" data-count="4" data-display="深圳, 广东, 中国" data-field-name="" />
+                                <label for="city-filter-19"><b class="filter">&#x6DF1;&#x5733;</b> <b>4</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-20" class="filter-checkbox" data-facet-type="4" data-id="1814991-1784764-1791388" data-count="1" data-display="温州市, 浙江, 中国" data-field-name="" />
+                                <label for="city-filter-20"><b class="filter">&#x6E29;&#x5DDE;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-21" class="filter-checkbox" data-facet-type="4" data-id="1814991-1796480-1791636" data-count="1" data-display="渭南, 陕西, 中国" data-field-name="" />
+                                <label for="city-filter-21"><b class="filter">&#x6E2D;&#x5357;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-22" class="filter-checkbox" data-facet-type="4" data-id="1814991-1808773-1795270" data-count="2" data-display="石家庄, 河北, 中国" data-field-name="" />
+                                <label for="city-filter-22"><b class="filter">&#x77F3;&#x5BB6;&#x5E84;</b> <b>2</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-23" class="filter-checkbox" data-facet-type="4" data-id="1814991-1811017-1810821" data-count="1" data-display="福州市, 福建省, 中国" data-field-name="" />
+                                <label for="city-filter-23"><b class="filter">&#x798F;&#x5DDE;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-24" class="filter-checkbox" data-facet-type="4" data-id="1814991-1806260-1886760" data-count="6" data-display="苏州市, 江苏, 中国" data-field-name="" />
+                                <label for="city-filter-24"><b class="filter">&#x82CF;&#x5DDE;&#x5E02;</b> <b>6</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-25" class="filter-checkbox" data-facet-type="4" data-id="1814991-1809445-1809461" data-count="1" data-display="贵阳市, 贵州, 中国" data-field-name="" />
+                                <label for="city-filter-25"><b class="filter">&#x8D35;&#x9633;&#x5E02;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-26" class="filter-checkbox" data-facet-type="4" data-id="1814991-1808520-1784658" data-count="3" data-display="郑州市, 河南, 中国" data-field-name="" />
+                                <label for="city-filter-26"><b class="filter">&#x90D1;&#x5DDE;&#x5E02;</b> <b>3</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-27" class="filter-checkbox" data-facet-type="4" data-id="1814991-1814905-1814906" data-count="6" data-display="重庆市, 重庆, 中国" data-field-name="" />
+                                <label for="city-filter-27"><b class="filter">&#x91CD;&#x5E86;&#x5E02;</b> <b>6</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-28" class="filter-checkbox" data-facet-type="4" data-id="1814991-1784764-1805528" data-count="1" data-display="金华, 浙江, 中国" data-field-name="" />
+                                <label for="city-filter-28"><b class="filter">&#x91D1;&#x534E;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-29" class="filter-checkbox" data-facet-type="4" data-id="1814991-2036500-2038180" data-count="1" data-display="长春, 吉林, 中国" data-field-name="" />
+                                <label for="city-filter-29"><b class="filter">&#x957F;&#x6625;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-30" class="filter-checkbox" data-facet-type="4" data-id="1814991-1806691-1815577" data-count="1" data-display="长沙, 湖南, 中国" data-field-name="" />
+                                <label for="city-filter-30"><b class="filter">&#x957F;&#x6C99;</b> <b>1</b></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="city-filter-31" class="filter-checkbox" data-facet-type="4" data-id="1814991-1796328-1797929" data-count="11" data-display="青岛市, 山东, 中国" data-field-name="" />
+                                <label for="city-filter-31"><b class="filter">&#x9752;&#x5C9B;&#x5E02;</b> <b>11</b></label>
+                            </li>
+                    </ul>
+                </section>
+
+                <section data-expandable="true" data-speed="0" data-enabled="false" data-filter-id="6">
+                    <button class="expandable-parent " id="companydivision-toggle">&#x5206;&#x90E8;</button>
+                    <ul class="search-filter-list " aria-hidden="false" aria-expanded="true">
+                            <li>
+                                <input type="checkbox" id="companydivision-filter-0" class="filter-checkbox" data-facet-type="6" data-id="12977" data-count="279" data-display="" data-field-name=""/>
+                                <label for="companydivision-filter-0"><b class="filter"></b> <b>279</b></label>
+                            </li>
+                    </ul>
+                </section>
+
+                <section data-expandable="true" data-speed="0" data-enabled="true" data-filter-id="5">
+                    <button class="expandable-parent " id="custom_fields.jobpostingsite-toggle">Company</button>
+                    <ul class="search-filter-list " aria-hidden="false" aria-expanded="true">
+                            <li>
+                                <input type="checkbox" id="custom_fields.jobpostingsite-filter-0" class="filter-checkbox" data-facet-type="5" data-id="Evinova" data-count="2" data-display="Evinova" data-field-name="custom_fields.jobPostingSite" />
+                                <label for="custom_fields.jobpostingsite-filter-0"><b class="filter">Evinova</b> <b>2</b></label>
+                            </li>
+                    </ul>
+                </section>
+                <section id="refined-search">
+                        <label for="keyword-tag" class="visually-hidden">&#x5173;&#x952E;&#x8BCD;</label>
+                    <input id="keyword-tag" name="keyword-tag" data-keyword-tag-error="This keyword has already been added." data-keyword-tag-no-result-error="搜索不到相应的关键字，请再次输入其他的查询词" placeholder="优化搜索" maxlength="150"/>
+                    <button id="add-keyword">&#x641C;&#x7D22;</button>
+                    <p class="keyword-tag-error" aria-hidden="true"></p>
+                </section>
+            <div id="search-filter-controls">
+                <button type="button" id="search-filter-clear">&#x5168;&#x90E8;&#x6E05;&#x9664;</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="search-results" class="search-results-section" data-keywords="" data-location="" data-distance="50" data-latitude="" data-longitude="" data-show-radius="False" data-total-results="279" data-total-job-results="279" data-total-pages="19" data-current-page="1" data-records-per-page="15" data-active-facet-id="0" data-custom-facet-name="" data-facet-term="" data-facet-type="0" data-search-results-module-name="Search Results" data-sort-criteria="0" data-sort-direction="0" data-search-type="6" data-ajax-url="/search-jobs/results" data-ajax-post-url="/search-jobs/resultspost" data-server-error-message="检索您的结果时出错。请刷新并重试。" data-keyword-type="" data-location-type="" data-location-path="" data-organization-ids="" data-selector-name="searchresults" data-refined-keywords="[]" data-postal-code="" data-save-jobs="true" data-results-type="0" data-use-noindex="true">
+    
+
+            <section id="search-results-list" class="search-results-list">
+	                <div id="applied-filters" class="search-results-options">
+                        <h2 id="applied-filters-label">&#x7B5B;&#x9009;&#x65B9;&#x5F0F;</h2>
+						<ul aria-labelledby="applied-filters-label">
+											<li><button class="filter-button" data-id="1814991" data-field-name="" data-facet-type="2">&#x4E2D;&#x56FD;</button></li>
+						</ul>
+	                </div>
+
+
+                <ul>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/innovation-product-management-%e5%88%9b%e6%96%b0%e4%ba%a7%e5%93%81%e7%bb%8f%e7%90%86/12977/97462189936" data-job-id="97462189936" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Innovation Product Management (&#x521B;&#x65B0;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;)</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/innovation-product-management-%e5%88%9b%e6%96%b0%e4%ba%a7%e5%93%81%e7%bb%8f%e7%90%86/12977/97462189936" data-job-id="97462189936" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="97462189936" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%99%8b%e4%b8%ad/12977/101856196240" data-job-id="101856196240" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-BC-&#x664B;&#x4E2D;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%99%8b%e4%b8%ad/12977/101856196240" data-job-id="101856196240" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="101856196240" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e6%97%a0%e9%94%a1%e5%b8%82/sr-engineer-production-maintenance/12977/100673432768" data-job-id="100673432768" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Sr. Engineer, Production Maintenance</h2>
+                                        <span class="job-location">
+                                        
+江苏 无锡市                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e6%97%a0%e9%94%a1%e5%b8%82/sr-engineer-production-maintenance/12977/100673432768" data-job-id="100673432768" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="100673432768" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%ad%a6%e6%b1%89/12977/102237755232" data-job-id="102237755232" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-BC-&#x6B66;&#x6C49;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%ad%a6%e6%b1%89/12977/102237755232" data-job-id="102237755232" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102237755232" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e6%9d%ad%e5%b7%9e/mr-rb-and-i-%e6%9d%ad%e5%b7%9e/12977/101934855040" data-job-id="101934855040" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-RB&amp;I-&#x676D;&#x5DDE;</h2>
+                                        <span class="job-location">
+                                        
+浙江 杭州                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e6%9d%ad%e5%b7%9e/mr-rb-and-i-%e6%9d%ad%e5%b7%9e/12977/101934855040" data-job-id="101934855040" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="101934855040" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e8%b4%b5%e6%b8%af/12977/101856196544" data-job-id="101856196544" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-BC-&#x8D35;&#x6E2F;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e8%b4%b5%e6%b8%af/12977/101856196544" data-job-id="101856196544" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="101856196544" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%b2%a7%e5%b7%9e/12977/102025954576" data-job-id="102025954576" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-BC-&#x6CA7;&#x5DDE;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-bc-%e6%b2%a7%e5%b7%9e/12977/102025954576" data-job-id="102025954576" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102025954576" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-%e9%a3%8e%e6%b9%bf%e5%85%8d%e7%96%ab%e4%b8%93%e9%98%9f-%e4%b8%8a%e6%b5%b7/12977/102232485136" data-job-id="102232485136" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-&#x98CE;&#x6E7F;&#x514D;&#x75AB;&#x4E13;&#x961F;-&#x4E0A;&#x6D77;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-%e9%a3%8e%e6%b9%bf%e5%85%8d%e7%96%ab%e4%b8%93%e9%98%9f-%e4%b8%8a%e6%b5%b7/12977/102232485136" data-job-id="102232485136" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102232485136" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/medical-science-liaison-nf1-shanghai/12977/102323432096" data-job-id="102323432096" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Medical Science Liaison-NF1-Shanghai</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/medical-science-liaison-nf1-shanghai/12977/102323432096" data-job-id="102323432096" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102323432096" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/director-ai-solution-consulting/12977/94245123536" data-job-id="94245123536" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Director, AI Solution Consulting</h2>
+                                        <span class="job-location">
+                                        
+Multiple locations                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/director-ai-solution-consulting/12977/94245123536" data-job-id="94245123536" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="94245123536" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/medical-science-liaison-biologics-copd-%e6%b5%8e%e5%8d%97/12977/101356268336" data-job-id="101356268336" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Medical Science Liaison-Biologics-COPD-&#x6D4E;&#x5357;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/medical-science-liaison-biologics-copd-%e6%b5%8e%e5%8d%97/12977/101356268336" data-job-id="101356268336" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="101356268336" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-lc-%e6%b1%9f%e9%97%a8/12977/101742899264" data-job-id="101742899264" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-LC-&#x6C5F;&#x95E8;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-lc-%e6%b1%9f%e9%97%a8/12977/101742899264" data-job-id="101742899264" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="101742899264" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-gugy-%e9%87%8d%e5%ba%86/12977/102323432944" data-job-id="102323432944" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>MR-GUGY-&#x91CD;&#x5E86;</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/mr-gugy-%e9%87%8d%e5%ba%86/12977/102323432944" data-job-id="102323432944" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102323432944" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/associate-principal-scientist-cell-therapy-clinical-pharmacologist/12977/102323432912" data-job-id="102323432912" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Associate Principal Scientist, Cell Therapy Clinical Pharmacologist</h2>
+                                        <span class="job-location">
+                                        
+上海 上海                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e4%b8%8a%e6%b5%b7/associate-principal-scientist-cell-therapy-clinical-pharmacologist/12977/102323432912" data-job-id="102323432912" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102323432912" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <a class="search-results-link" href="/%e5%b7%a5%e4%bd%9c/%e6%b5%8e%e5%8d%97%e5%b8%82/medical-science-liaison-biologics-severe-asthma-jinan/12977/102323432848" data-job-id="102323432848" class="left-link">
+ 
+                                 <div class="brand-logo-wrapper az-brand">
+                                    <img src="https://tbcdn.talentbrew.com/company/12977/v2_0/img/alexion-theme/az-brand.png" alt="az-brand logo" title="az-brand logo" class="logo-category" />
+                                </div>
+                            
+
+                                <div class="search-result-left-child">
+                                    <h2>Medical Science Liaison-Biologics-Severe Asthma-Jinan</h2>
+                                        <span class="job-location">
+                                        
+山东 济南市                                        
+                                            
+                                        </span>
+                                </div>
+                            </a>
+                                <div class="search-result-right-child">
+                                    <div class="search-result-right-child__view-role">
+                                        <a href="/%e5%b7%a5%e4%bd%9c/%e6%b5%8e%e5%8d%97%e5%b8%82/medical-science-liaison-biologics-severe-asthma-jinan/12977/102323432848" data-job-id="102323432848" aria-hidden="true">
+                                            <span>查看角色</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-result-right-child__save-role">
+                                            <button type="button" class="js-save-job-btn" data-job-id="102323432848" data-org-id="12977"><span>&#x4FDD;&#x5B58;&#x4F9B;&#x7A0D;&#x540E;&#x67E5;&#x770B;</span></button>
+                                    </div>
+                                </div>
+                        </li>
+                </ul>
+        <nav id="pagination-bottom" class="pagination">
+            <div class="pagination-page-count">
+                <label class="pagination-current-label" for="pagination-current-bottom"><b>&#x8F93;&#x5165;&#x6570;&#x5B57;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x3002;&#x60A8;&#x5F53;&#x524D;&#x6240;&#x5728;&#x9875;&#x9762;&#xFF1A; 1 / 19.</b>&#x9875;&#x7801;</label><input class="pagination-current" id="pagination-current-bottom" max="19" min="1" type="number" value="1" /><span class="pagination-total-pages">/ 19</span><button class="pagination-page-jump" type="button">&#x8DF3;&#x8F6C;</button>
+            </div>
+            <div class="pagination-paging">
+                <a aria-hidden="true" class="prev disabled" href="/%E6%B1%82%E8%81%8C&amp;p=1" rel="nofollow">&#x4E0A;&#x4E00;&#x9875;</a>
+                <a class="next" href="/%E6%B1%82%E8%81%8C&amp;p=2" rel="nofollow">&#x4E0B;&#x4E00;&#x9875;</a>
+            </div>
+        </nav>
+            </section>
+    </section>
+
+
+</div>
+
+
+    
+    <section class="glassdoor-banner">
+        <div class="wrapper narrower">
+            <div class="glassdoor-banner__images">
+                <img src="//tbcdn.talentbrew.com/company/7684/v2_0/img/glassdoor-logo.png" alt="Glassdoor logo">
+                <img src="//tbcdn.talentbrew.com/company/7684/v2_0/img/Glassdoor-four-stars.svg" alt="Rated four stars on Glassdoor">
+            </div>
+            <div class="glassdoor-banner__quote">
+                <p>优秀的文化，出色的工作任务，充满支持的管理模式。 公司内部的轮换机会。 他们重视包容性和多样性。</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+	
+	
+
+    	</main>
+    	<footer>
+            
+    
+        <div class="footer wrapper">
+            <div class="footer__logo">
+                <img src="//tbcdn.talentbrew.com/company/7684-preview-site/img/logo/logo-14641-17887.png" alt="AstraZeneca Logo"/>
+            </div>
+            <div class="footer__links">
+            
+                <a href="/网站地图" title="网站地图">网站地图</a>
+                
+                 <a href="https://policy.cookiereports.com/76cc70cc-zh-cn.html" class="CookieReportsLink">Cookie政策</a>  
+                <a href="https://www.azprivacy.astrazeneca.com/asia-pacific/china/cn-sim/privacy-notices.html" target="_blank" title="隐私政策">隐私政策</a>
+                <a href="https://www.astrazeneca.com.cn/zh/legal-issues.html" target="_blank" title="Legal Notice">法律事项</a>
+                <a href="https://www.astrazeneca.com" title="AstraZeneca global site" target="_blank">Astrazeneca.com</a>
+            </div>
+            <div class="footer__social-links">
+                <div class="instagram social-icons-container__child">
+                <a href="https://www.instagram.com/astrazeneca" title="Instagram" aria-label="AstraZeneca on Instagram" target="_blank"></a>
+                </div>
+                <div class="facebook social-icons-container__child">
+                    <a href="https://www.facebook.com/astrazenecacareers" title="facebook" aria-label="AstraZeneca on Facebook" target="_blank"></a>
+                </div>
+                <div class="linkedin social-icons-container__child">
+                    <a href="https://www.linkedin.com/company/astrazeneca" title="linkedin" aria-label="AstraZeneca on LinkedIn" target="_blank"></a>
+                </div>
+                <div class="twitter social-icons-container__child">
+                    <a href="https://twitter.com/astrazenecajobs" title="twitter" aria-label="Astrazenecajobs on Twitter" target="_blank"></a>
+                </div>
+                <div class="glassdoor social-icons-container__child">
+                    <a href="https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm" title="glassdoor" aria-label="AstraZeneca on Glassdoor" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+
+
+    	</footer>
+	
+	</div>
+	
+   	<script src="//tbcdn.talentbrew.com/bundles/jquery-client.js" ></script>
+    <script src="//tbcdn.talentbrew.com/bundles/tb-corepack.js" ></script>
+	
+    
+    
+    <script src="//tbcdn.talentbrew.com/company/12977/js/18300-Full.min.js" ></script>
+
+    <script src="//tbcdn.talentbrew.com/js/client/search.js" ></script>
+<script src="//tbcdn.talentbrew.com/js/client/recently-viewed-job-list.js" ></script>
+
+    
+    
+	
+
+
+	
+
+    <!-- new cookie banner -->
+    <script src="https://policy.cookiereports.com/76cc70cc_panel-zh-cn.js"></script>
+
+    <script>
+      
+        var slider = $('.header__hero-slider');
+         slider.slick({
+              infinite: true,
+              speed: 500,
+              dots: true,
+              arrows: true,
+              autoplay: true,
+              touchMove: false,
+              appendDots: $(".slide-m-dots"),
+              prevArrow: $(".slide-m-prev"),
+              nextArrow: $(".slide-m-next"),
+              slidesToShow: 1,
+              slidesToScroll: 1
+          });
+        </script>
+<script id="radancy-magicbullet" data-a11y src="https://services.tmpwebeng.com/magicbullet/" type="module"></script>
+</body>
+</html>
+ 

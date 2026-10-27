@@ -1,0 +1,25 @@
+{
+  "company": "豪迈科技",
+  "careers_url": "https://himile.zhiye.com/",
+  "host": "himile.zhiye.com",
+  "ats": "beisen",
+  "page_title": "豪迈招聘",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 8,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "豪迈招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

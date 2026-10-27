@@ -1,0 +1,24 @@
+{
+  "company": "中兴微电子",
+  "careers_url": "https://app.mokahr.com/social-recruitment/sanechips/76285",
+  "host": "app.mokahr.com",
+  "ats": "moka",
+  "page_title": "深圳市中兴微电子技术有限公司 - 社会招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 3,
+  "roles": 7,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "深圳市中兴微电子技术有限公司 - 社会招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

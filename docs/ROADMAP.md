@@ -14,8 +14,8 @@
 | 腾讯社招 + 校招 | 自研 | ✅ 2 个源 | 含职责/要求 |
 | 美团 / 阿里 / 网易×2 | 自研 | ✅ 4 个源 | 含职责/要求 |
 | Moka `app.mokahr.com` | 平台 | ⛔ blocked | 职位接口 AES 加密（`docs/recon/moka.md`）；渲染 35 页也拿不到岗位名 |
-| 飞书 ATSX（字节/大疆/蔚来/小鹏…） | 平台 | ⛔ blocked | 需前端 `_signature`，不逆向 |
-| 京东 campus.jd.com | 自研 | ⛔ blocked | 验证码 |
+| 飞书 ATSX（字节/蔚来/小鹏/Momenta/月之暗面） | 平台 | ✅ 已接入 | `adapters/feishu_atsx.py`（2026-10-26） |
+| 京东 campus.jd.com | 自研 | ✅ 已接入 | `zhaopin.jd.com` 是登录墙，`campus.jd.com` 匿名 200（`docs/recon/jd.md`） |
 | 小米 hr.xiaomi.com | 自研 | ⛔ 不做 | 只有品牌页，投递走公众号 |
 | 中国建筑 recruit.cscec.com | 自研 | ⛔ blocked | 请求/响应 `hcm_param` 加密 |
 
@@ -43,7 +43,7 @@
 3. 🟡 评测：已用真实数据跑查询（`eval-queries`），据此修复届别/城市/职类/表格输出；完整判分见 evals/
 4. ⬜ 北森城市字段（找详情接口）
 5. ✅ 北森旧版门户适配器（12 家，含中芯变体 B）
-6. 🟡 大厂自研站：✅ 腾讯社招、腾讯校招、美团、阿里（匿名会话）、网易（互联网 + 互娱）；⛔ 字节（飞书 ATSX 405 + 滑块）、小米（无公开岗位列表）、京东、拼多多（验证码）、百度/华为（匿名不可访问）、快手（robots 禁止）（`docs/recon/bigtech.md`）
+6. 🟡 大厂自研站：✅ 腾讯社招、腾讯校招、美团、阿里（匿名会话）、网易（互联网 + 互娱）；✅ 字节 / 京东 / 百度（公开接口，2026-10-26 起）、小米（无公开岗位列表）、⛔ 拼多多（验证码）、华为（403）、快手（robots 禁止）（`docs/recon/bigtech.md`）
 7. ✅ 职类归一化（`taxonomy/`，覆盖约 45%）
 8. ✅ 周报自动生成（每周一）；✅ 健康报告自动开/关 issue；✅ 国内下载镜像（Gitee Release，`mirror.yml`）
 

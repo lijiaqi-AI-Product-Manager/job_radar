@@ -1,0 +1,14 @@
+id: douban-read
+company: 豆瓣阅读
+adapter: nextdata
+params:
+  base_url: https://careers.arkread.com/
+recruit_types:
+- social
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-27'
+  robots: allowed
+  terms: 公开求职页，服务端渲染（__NEXT_DATA__），无需登录
+  notes: fixture 只保留前 3 个岗位

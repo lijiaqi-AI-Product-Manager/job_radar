@@ -1,7 +1,7 @@
 # 侦察：腾讯（careers.tencent.com 社招 / join.qq.com 校招）
 
 - 侦察日期：2026-10-20
-- 侦察人：Claude 会话（请求从 GitHub Actions 发出，见 recon-probe 第 1、4、5 轮）
+- 侦察人：recon-probe 工作流（请求从 GitHub Actions 发出，第 1、4、5 轮）
 - **结论：社招 可做；校招（join.qq.com）待定（接口未确认）**
 - 类型：自研站
 

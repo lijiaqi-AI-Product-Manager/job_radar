@@ -1,0 +1,24 @@
+{
+  "company": "中手游",
+  "careers_url": "https://hr.cmge.com/",
+  "host": "hr.cmge.com",
+  "ats": "self_hosted",
+  "page_title": "CMGE中手游招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 8,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "CMGE中手游招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

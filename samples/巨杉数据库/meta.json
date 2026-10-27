@@ -1,0 +1,24 @@
+{
+  "company": "巨杉数据库",
+  "careers_url": "https://www.sequoiadb.com/cn/recruit-campus",
+  "host": "www.sequoiadb.com",
+  "ats": "unknown",
+  "page_title": "校园招聘_SequoiaDB巨杉数据库",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘_SequoiaDB巨杉数据库",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

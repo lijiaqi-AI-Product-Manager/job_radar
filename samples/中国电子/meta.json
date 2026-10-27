@@ -1,0 +1,30 @@
+{
+  "company": "中国电子",
+  "careers_url": "https://campus.cec.com.cn/",
+  "host": "campus.cec.com.cn",
+  "ats": "unknown",
+  "page_title": "中国电子信息产业集团有限公司招聘",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 72,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中国电子信息产业集团有限公司招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 21,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119736.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119814.html",
+      "https://career.nankai.edu.cn/correcruit/content/id/119803.html"
+    ]
+  }
+}

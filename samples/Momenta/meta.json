@@ -1,0 +1,24 @@
+{
+  "company": "Momenta",
+  "careers_url": "https://momenta.jobs.feishu.cn/campus",
+  "host": "momenta.jobs.feishu.cn",
+  "ats": "unknown",
+  "page_title": "Momenta Campus",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 5,
+  "roles": 10,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Momenta Campus",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

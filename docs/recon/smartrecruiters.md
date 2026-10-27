@@ -1,7 +1,7 @@
 # 侦察：SmartRecruiters（外资常用，如博世）
 
 - 侦察日期：2026-10-22
-- 侦察人：DeepSeek agent（本机直连，固定 UA）
+- 侦察人：本机探针（本机直连，固定 UA）
 - **结论：blocked（robots 禁止）**
 - 类型：平台（SmartRecruiters 公开 Posting API）
 

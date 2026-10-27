@@ -1,0 +1,24 @@
+{
+  "company": "宝洁中国",
+  "careers_url": "https://careers.pg.com.cn/cn/zh/search-results",
+  "host": "careers.pg.com.cn",
+  "ats": "self_hosted",
+  "page_title": "发现宝洁中国的职位",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 3,
+  "roles": 6,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "发现宝洁中国的职位",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

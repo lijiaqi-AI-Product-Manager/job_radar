@@ -1,0 +1,30 @@
+{
+  "company": "好未来",
+  "careers_url": "https://job.tal.com/",
+  "host": "job.tal.com",
+  "ats": "self_hosted",
+  "page_title": "好未来招聘官网｜校园招聘、实习生招聘、社会招聘",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 48,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "好未来招聘官网｜校园招聘、实习生招聘、社会招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.neuq.edu.cn/campus/view/id/861575",
+      "https://job.zzu.edu.cn/campus/view/id/1018906"
+    ]
+  }
+}

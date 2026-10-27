@@ -1,0 +1,29 @@
+group: 美宜佳
+entries:
+- id: meiyijia-campus-entry
+  company: 美宜佳
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 运营类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 广州
+  apply_url: https://campus.niuqizp.com/job-vwr5ntNLa.html
+  source:
+    type: official_site
+    name: 美宜佳招聘官网
+    url: https://campus.niuqizp.com/job-vwr5ntNLa.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：美宜佳控股有限公司美宜佳2027届校园招聘正式启动2027校园招聘,招聘城市有:广东,湖南,湖北,江西,福建,安徽,四川）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

@@ -1,0 +1,24 @@
+{
+  "company": "舍得酒业",
+  "careers_url": "https://www.tuopaishede.cn/jobList_29.html",
+  "host": "www.tuopaishede.cn",
+  "ats": "unknown",
+  "page_title": "最新招聘_舍得酒业股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 11,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "最新招聘_舍得酒业股份有限公司",
+    "origin": "careers_rescued",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

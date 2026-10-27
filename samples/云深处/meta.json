@@ -1,0 +1,24 @@
+{
+  "company": "云深处",
+  "careers_url": "http://www.deeprobotics.cn/recruit/campus.html",
+  "host": "www.deeprobotics.cn",
+  "ats": "unknown",
+  "page_title": "校园招聘-云深处科技股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 5,
+  "roles": 12,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘-云深处科技股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

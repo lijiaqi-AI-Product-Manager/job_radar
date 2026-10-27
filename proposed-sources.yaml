@@ -1,0 +1,958 @@
+# 本批源清单（最后更新 2026-10-26）。一行一家公司，可整段粘进 sources/ 对应适配器文件。
+# 只收「公开、无需登录、无签名、无验证码」的入口；限速 1 rps，同 host 串行。
+# ats 字段是 host 指纹推断的结果，unknown 表示自行实现的官网投递页，需人工确认。
+defaults:
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-26
+    robots: allowed
+    terms: "企业自建公开招聘门户 / 高校就业网公开简章，无需登录、无签名、无验证码"
+    notes: "只读公开页面；同一 host 串行 1 rps；不碰第三方聚合站"
+sources:
+  - {id: "beisen--", company: "天职国际", adapter: "beisen", params: {url: "https://tzcpa.zhiye.com/Campus", host: "tzcpa.zhiye.com"}}   # 8 条日历｜实习、校园大使、校招、秋招正式批
+  - {id: "unknown--", company: "工银安盛", adapter: "unknown", params: {url: "https://yhks.cn/y.php/n?d3=3", host: "yhks.cn"}}   # 8 条日历｜实习、日常实习、春招、暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown---2", company: "建信理财", adapter: "unknown", params: {url: "http://www.yhks.cn/y.php/n?d3=3", host: "www.yhks.cn"}}   # 7 条日历｜实习、日常实习、春招、暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown---3", company: "招商基金", adapter: "unknown", params: {url: "https://www.fenbi.com/page/exam-information-detail/469976018083841", host: "www.fenbi.com"}}   # 7 条日历｜日常实习、社招、秋招正式批、秋招补录｜⚠ 需先实现适配器
+  - {id: "unknown---4", company: "幸运咖", adapter: "unknown", params: {url: "https://campus.funplus.com.cn/", host: "campus.funplus.com.cn"}}   # 6 条日历｜实习、日常实习、春招、暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown-tcl", company: "TCL", adapter: "unknown", params: {url: "https://campus.tcl.com/", host: "campus.tcl.com"}}   # 5 条日历｜实习、校园大使、校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---2", company: "卓胜微", adapter: "beisen", params: {url: "https://maxscend.zhiye.com/", host: "maxscend.zhiye.com"}}   # 5 条日历｜实习、校园大使、社招
+  - {id: "unknown---5", company: "国家能源集团", adapter: "unknown", params: {url: "https://zhaopin.chnenergy.com.cn/planSerch?kinds=3", host: "zhaopin.chnenergy.com.cn"}}   # 5 条日历｜实习、春招、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---6", company: "汽车之家", adapter: "unknown", params: {url: "https://talent.autohome.com.cn/campus_qa.html", host: "talent.autohome.com.cn"}}   # 5 条日历｜实习、日常实习、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---7", company: "海尔", adapter: "unknown", params: {url: "https://maker.haier.net/client/campus/index", host: "maker.haier.net"}}   # 5 条日历｜实习、提前批、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---8", company: "烽火通信", adapter: "unknown", params: {url: "https://www.fiberhome.com/joinus.html", host: "www.fiberhome.com"}}   # 5 条日历｜实习、暑期实习、校园大使、社招｜⚠ 需先实现适配器
+  - {id: "beisen---3", company: "绿城中国", adapter: "beisen", params: {url: "https://gtgroup.zhiye.com/", host: "gtgroup.zhiye.com"}}   # 5 条日历｜实习、日常实习、暑期实习、校园大使
+  - {id: "unknown---9", company: "西门子", adapter: "unknown", params: {url: "https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT", host: "jobs.siemens.com.cn"}}   # 5 条日历｜实习、校园大使、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---10", company: "飞鹤", adapter: "unknown", params: {url: "https://www.feihe.com/about/joinUs/", host: "www.feihe.com"}}   # 5 条日历｜日常实习、校园大使、校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown-moka", company: "Moka", adapter: "unknown", params: {url: "https://www.mokahr.com/solution/campus", host: "www.mokahr.com"}}   # 4 条日历｜实习、校园大使、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---4", company: "三一集团", adapter: "beisen", params: {url: "https://sany.zhiye.com/campus?c=1", host: "sany.zhiye.com"}}   # 4 条日历｜实习、校园大使、校招、秋招正式批
+  - {id: "beisen---5", company: "上海银行", adapter: "beisen", params: {url: "https://bosc.zhiye.com/campus", host: "bosc.zhiye.com"}}   # 4 条日历｜实习、日常实习、校招、秋招正式批
+  - {id: "beisen---6", company: "中国航空研究院", adapter: "beisen", params: {url: "https://zghkyjy.zhiye.com/", host: "zghkyjy.zhiye.com"}}   # 4 条日历｜实习、春招、校招、社招
+  - {id: "unknown---11", company: "中建一局", adapter: "unknown", params: {url: "https://www.fenbi.com/page/exam-information-detail/469978881223680", host: "www.fenbi.com"}}   # 4 条日历｜日常实习、校招、社招、秋招补录｜⚠ 需先实现适配器
+  - {id: "unknown---12", company: "中科飞测", adapter: "unknown", params: {url: "https://job.skyverse.cn/req/campus-list", host: "job.skyverse.cn"}}   # 4 条日历｜实习、校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---7", company: "中芯国际", adapter: "beisen", params: {url: "https://smics.zhiye.com/campus", host: "smics.zhiye.com"}}   # 4 条日历｜实习、校园大使、校招、社招
+  - {id: "beisen---8", company: "传音控股", adapter: "beisen", params: {url: "https://transsion.zhiye.com/Campus", host: "transsion.zhiye.com"}}   # 4 条日历｜实习、校园大使、校招、秋招正式批
+  - {id: "beisen---9", company: "保利发展", adapter: "beisen", params: {url: "https://polynew.zhiye.com/campus", host: "polynew.zhiye.com"}}   # 4 条日历｜校招、社招、秋招正式批
+  - {id: "beisen---10", company: "先导智能", adapter: "beisen", params: {url: "https://leadchina.zhiye.com/Campus/jobs?ActivityJumpPage=PortalPage", host: "leadchina.zhiye.com"}}   # 4 条日历｜实习、社招、秋招正式批、秋招补录
+  - {id: "unknown---13", company: "光大理财", adapter: "unknown", params: {url: "https://www.fenbi.com/page/exam-information-detail/469978881223680", host: "www.fenbi.com"}}   # 4 条日历｜日常实习、校招、社招、秋招补录｜⚠ 需先实现适配器
+  - {id: "unknown---14", company: "好未来", adapter: "unknown", params: {url: "https://job.tal.com/", host: "job.tal.com"}}   # 4 条日历｜实习、日常实习、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---15", company: "小马智行", adapter: "unknown", params: {url: "https://campus.pony.ai/", host: "campus.pony.ai"}}   # 4 条日历｜实习、校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---16", company: "施耐德电气", adapter: "unknown", params: {url: "https://careers.se.com/china", host: "careers.se.com"}}   # 4 条日历｜实习、日常实习、暑期实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "feishu_atsx--", company: "波克城市", adapter: "feishu_atsx", params: {url: "https://boke.jobs.feishu.cn/581609", host: "boke.jobs.feishu.cn"}}   # 4 条日历｜日常实习、校招
+  - {id: "beisen---11", company: "泰隆银行", adapter: "beisen", params: {url: "https://zjtlcb.zhiye.com/Campus", host: "zjtlcb.zhiye.com"}}   # 4 条日历｜实习、暑期实习、社招、秋招正式批
+  - {id: "unknown---17", company: "百世集团", adapter: "unknown", params: {url: "https://www.pepsicojobs.com/main/china?lang=zh-CN", host: "www.pepsicojobs.com"}}   # 4 条日历｜实习、日常实习、暑期实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---12", company: "立信", adapter: "beisen", params: {url: "https://bdochina.zhiye.com/campus", host: "bdochina.zhiye.com"}}   # 4 条日历｜实习、寒假实习、校招、秋招正式批
+  - {id: "unknown---18", company: "美团", adapter: "unknown", params: {url: "https://zhaopin.meituan.com/web/campus", host: "zhaopin.meituan.com"}}   # 4 条日历｜日常实习、春招｜⚠ 需先实现适配器
+  - {id: "unknown---19", company: "联通数字科技", adapter: "unknown", params: {url: "https://www.fenbi.com/page/exam-information-detail/469978881223680", host: "www.fenbi.com"}}   # 4 条日历｜日常实习、社招、秋招正式批、秋招补录｜⚠ 需先实现适配器
+  - {id: "unknown---20", company: "腾讯音乐", adapter: "unknown", params: {url: "https://join.tencentmusic.com/", host: "join.tencentmusic.com"}}   # 4 条日历｜实习、日常实习、校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---13", company: "菜鸟", adapter: "beisen", params: {url: "https://cn.zhiye.com/", host: "cn.zhiye.com"}}   # 4 条日历｜实习、提前批、日常实习、社招
+  - {id: "beisen---14", company: "三星", adapter: "beisen", params: {url: "https://dearsamsung.zhiye.com/campus/jobs5", host: "dearsamsung.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "beisen---15", company: "上汽通用", adapter: "beisen", params: {url: "https://sgm.zhiye.com/campus", host: "sgm.zhiye.com"}}   # 3 条日历｜校招、秋招正式批、秋招补录
+  - {id: "beisen---16", company: "中国交建", adapter: "beisen", params: {url: "https://ccccltd.zhiye.com/", host: "ccccltd.zhiye.com"}}   # 3 条日历｜实习、暑期实习、社招
+  - {id: "unknown---21", company: "中国电子", adapter: "unknown", params: {url: "https://campus.cec.com.cn/", host: "campus.cec.com.cn"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---22", company: "中国石化", adapter: "unknown", params: {url: "https://job.sinopec.com/", host: "job.sinopec.com"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---17", company: "中国银河", adapter: "beisen", params: {url: "https://zgyh.zhiye.com/", host: "zgyh.zhiye.com"}}   # 3 条日历｜实习、春招、校招
+  - {id: "beisen---18", company: "中核集团", adapter: "beisen", params: {url: "https://cnnc.zhiye.com/custom/campus?hideMenu=1&c1=19", host: "cnnc.zhiye.com"}}   # 3 条日历｜实习、日常实习、秋招正式批
+  - {id: "unknown---23", company: "中科曙光", adapter: "unknown", params: {url: "https://www.sugon.com/cut?id=2459&nav_id=160", host: "www.sugon.com"}}   # 3 条日历｜实习、校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---19", company: "传音控股非洲", adapter: "beisen", params: {url: "https://transsion.zhiye.com/", host: "transsion.zhiye.com"}}   # 3 条日历｜实习、校园大使、秋招正式批
+  - {id: "beisen---20", company: "保利", adapter: "beisen", params: {url: "https://polycareer.zhiye.com/", host: "polycareer.zhiye.com"}}   # 3 条日历｜校招、社招、秋招正式批
+  - {id: "unknown---24", company: "创维", adapter: "unknown", params: {url: "https://www.skyworthdigital.com/job2.html", host: "www.skyworthdigital.com"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---25", company: "华图教育", adapter: "unknown", params: {url: "http://zhaopin.huatu.com/campus/", host: "zhaopin.huatu.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---21", company: "厦门国际银行", adapter: "beisen", params: {url: "https://xib.zhiye.com/Campus", host: "xib.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "unknown---26", company: "台州银行", adapter: "unknown", params: {url: "https://www.hotjob.cn/wt/TZBANK/web/index/webPosition210!getPostListByConditionShowPic?columnId=1", host: "www.hotjob.cn"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---27", company: "商汤科技", adapter: "unknown", params: {url: "http://hr.sensetime.com/campus/", host: "hr.sensetime.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---22", company: "国信证券", adapter: "beisen", params: {url: "https://guosen.zhiye.com/campus/jobs", host: "guosen.zhiye.com"}}   # 3 条日历｜实习、日常实习、校招
+  - {id: "unknown---28", company: "完美世界", adapter: "unknown", params: {url: "https://jobs.games.wanmei.com/school.html", host: "jobs.games.wanmei.com"}}   # 3 条日历｜实习、日常实习、春招｜⚠ 需先实现适配器
+  - {id: "unknown---29", company: "宝马", adapter: "unknown", params: {url: "https://www.bmwgroup.jobs/cn/en.html", host: "www.bmwgroup.jobs"}}   # 3 条日历｜实习、校园大使、社招｜⚠ 需先实现适配器
+  - {id: "beisen---23", company: "广发银行", adapter: "beisen", params: {url: "https://portal-oss.zhiye.com/103577/resource/04592295-9d7a-44a8-89c9-99b34c55dbfd.html", host: "portal-oss.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "beisen---24", company: "广汽丰田", adapter: "beisen", params: {url: "https://gac-toyota.zhiye.com/home", host: "gac-toyota.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "unknown---30", company: "康方生物", adapter: "unknown", params: {url: "https://www.akesobio.com/cn/career/social-recruitment/", host: "www.akesobio.com"}}   # 3 条日历｜日常实习、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---31", company: "得物", adapter: "unknown", params: {url: "https://jobs.ultraai.site/sources/dewu_campus", host: "jobs.ultraai.site"}}   # 3 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---25", company: "新东方在线", adapter: "beisen", params: {url: "https://xdf.zhiye.com/campus", host: "xdf.zhiye.com"}}   # 3 条日历｜实习、提前批、秋招正式批
+  - {id: "beisen---26", company: "新华保险", adapter: "beisen", params: {url: "https://nci.zhiye.com/", host: "nci.zhiye.com"}}   # 3 条日历｜实习、日常实习、社招
+  - {id: "unknown---32", company: "新宙邦", adapter: "unknown", params: {url: "https://www.capchem.com/campus.html", host: "www.capchem.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---27", company: "新时达", adapter: "beisen", params: {url: "https://stepelectric.zhiye.com/Campus", host: "stepelectric.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "beisen---28", company: "方太", adapter: "beisen", params: {url: "https://fotile.zhiye.com/campus", host: "fotile.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "beisen---29", company: "日立能源", adapter: "beisen", params: {url: "https://hitachienergy.zhiye.com/", host: "hitachienergy.zhiye.com"}}   # 3 条日历｜实习、暑期实习、校园大使
+  - {id: "beisen---30", company: "昆仑芯", adapter: "beisen", params: {url: "https://kunlunxin.zhiye.com/campuslist/?PageIndex=1", host: "kunlunxin.zhiye.com"}}   # 3 条日历｜实习、社招、秋招正式批
+  - {id: "unknown---33", company: "易观数科", adapter: "unknown", params: {url: "https://www.analysys.cn/joinus", host: "www.analysys.cn"}}   # 3 条日历｜实习、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---31", company: "景顺长城", adapter: "beisen", params: {url: "https://invescogreatwall.zhiye.com/home", host: "invescogreatwall.zhiye.com"}}   # 3 条日历｜实习、暑期实习、社招
+  - {id: "unknown---34", company: "格力电器", adapter: "unknown", params: {url: "https://www.gree.cn/list/232.html", host: "www.gree.cn"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---32", company: "汇添富", adapter: "beisen", params: {url: "https://htffund.zhiye.com/", host: "htffund.zhiye.com"}}   # 3 条日历｜实习、日常实习、社招
+  - {id: "beisen---33", company: "汇顶科技", adapter: "beisen", params: {url: "https://goodix.zhiye.com/Campus", host: "goodix.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "beisen---34", company: "泰康", adapter: "beisen", params: {url: "https://jobtaikang.zhiye.com/campus/", host: "jobtaikang.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "unknown---35", company: "煌上煌", adapter: "unknown", params: {url: "https://www.hsh.com.cn/shehuizhaopin/", host: "www.hsh.com.cn"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---36", company: "煌上煌食品", adapter: "unknown", params: {url: "https://www.hsh.com.cn/shehuizhaopin/", host: "www.hsh.com.cn"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---35", company: "白象食品", adapter: "beisen", params: {url: "https://baixiangfood.zhiye.com/campus/jobs", host: "baixiangfood.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "unknown---37", company: "百川智能", adapter: "unknown", params: {url: "https://careers.baichuan-inc.com/", host: "careers.baichuan-inc.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---38", company: "盐津铺子", adapter: "unknown", params: {url: "https://www.yanjinpuzi.com/job.aspx?fid=t11:2:11&typeid=2", host: "www.yanjinpuzi.com"}}   # 3 条日历｜实习、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---39", company: "碧桂园服务", adapter: "unknown", params: {url: "https://www.bgyfw.com/cn/join.html", host: "www.bgyfw.com"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---36", company: "科大讯飞", adapter: "beisen", params: {url: "https://iflytek.zhiye.com/", host: "iflytek.zhiye.com"}}   # 3 条日历｜实习、校园大使、秋招正式批
+  - {id: "unknown---40", company: "米哈游", adapter: "unknown", params: {url: "https://jobs.mihoyo.com/", host: "jobs.mihoyo.com"}}   # 3 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---41", company: "绿盟科技", adapter: "unknown", params: {url: "https://update.nsfocus.com/", host: "update.nsfocus.com"}}   # 3 条日历｜实习、校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---42", company: "网易游戏", adapter: "unknown", params: {url: "https://op.campus.163.com/", host: "op.campus.163.com"}}   # 3 条日历｜实习、校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---43", company: "美图", adapter: "unknown", params: {url: "https://hr.meitu.com/jobCampus/40b3b050-2f05-49ba-af76-b80274537656", host: "hr.meitu.com"}}   # 3 条日历｜实习、暑期实习、校园大使｜⚠ 需先实现适配器
+  - {id: "unknown---44", company: "联想", adapter: "unknown", params: {url: "https://talent.lenovo.com.cn/", host: "talent.lenovo.com.cn"}}   # 3 条日历｜暑期实习、校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---45", company: "苏宁易购", adapter: "unknown", params: {url: "http://campus.suning.cn/rps-campus/", host: "campus.suning.cn"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---37", company: "药明康德", adapter: "beisen", params: {url: "https://wuxiapptec.zhiye.com/campus", host: "wuxiapptec.zhiye.com"}}   # 3 条日历｜实习、校招、社招
+  - {id: "unknown---46", company: "西门子中国", adapter: "unknown", params: {url: "https://jobs.siemens.com.cn/siemens/position/index", host: "jobs.siemens.com.cn"}}   # 3 条日历｜实习、校园大使、社招｜⚠ 需先实现适配器
+  - {id: "unknown---47", company: "软通动力信息", adapter: "unknown", params: {url: "https://www.isoftstone.com/zh-cn/htmls/campusRecruitment/index.html", host: "www.isoftstone.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---48", company: "达利食品", adapter: "unknown", params: {url: "https://www.daligroup.com/Jo_index_gci_6.html.html", host: "www.daligroup.com"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---49", company: "迎驾贡酒", adapter: "unknown", params: {url: "http://www.yingjia.cn/hr/index/45.html", host: "www.yingjia.cn"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---50", company: "长虹", adapter: "unknown", params: {url: "http://www.changhong-network.com/content/?306.html", host: "www.changhong-network.com"}}   # 3 条日历｜校招、社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown--step", company: "阶跃星辰Step", adapter: "unknown", params: {url: "https://offerdao.ai/#discover-jobs", host: "offerdao.ai"}}   # 3 条日历｜实习、日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---51", company: "顺丰", adapter: "unknown", params: {url: "https://campus-static.sf-express.com/", host: "campus-static.sf-express.com"}}   # 3 条日历｜实习、日常实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---38", company: "齐鲁制药", adapter: "beisen", params: {url: "https://qilu-pharma.zhiye.com/campus", host: "qilu-pharma.zhiye.com"}}   # 3 条日历｜实习、社招、秋招正式批
+  - {id: "unknown-oppo", company: "OPPO", adapter: "unknown", params: {url: "https://careers.oppo.com/campus", host: "careers.oppo.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown-sap", company: "SAP", adapter: "unknown", params: {url: "https://careers.sap.com/", host: "careers.sap.com"}}   # 2 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---52", company: "一汽", adapter: "unknown", params: {url: "https://faw-zhaopin.hotjob.cn/campusRecruitment", host: "faw-zhaopin.hotjob.cn"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---53", company: "三一重能", adapter: "unknown", params: {url: "https://www.sanyre.com.cn/concept/", host: "www.sanyre.com.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---39", company: "三星电子中国", adapter: "beisen", params: {url: "https://dearsamsung.zhiye.com/", host: "dearsamsung.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---54", company: "三环集团", adapter: "unknown", params: {url: "https://career-dev.cctc.cc/", host: "career-dev.cctc.cc"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---40", company: "上海航天", adapter: "beisen", params: {url: "https://sast.zhiye.com/", host: "sast.zhiye.com"}}   # 2 条日历｜校招、社招
+  - {id: "unknown---55", company: "东方电气", adapter: "unknown", params: {url: "https://dew.dongfang.com/rczp/xyzp.htm", host: "dew.dongfang.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---56", company: "东方航空", adapter: "unknown", params: {url: "https://job.ceair.com/campus/campusJobList.html", host: "job.ceair.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---41", company: "中信保诚人寿", adapter: "beisen", params: {url: "http://citicprulife.zhiye.com/", host: "citicprulife.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---57", company: "中信证券", adapter: "unknown", params: {url: "https://careers.citics.com/campus/branch", host: "careers.citics.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---58", company: "中信银行", adapter: "unknown", params: {url: "https://job.citicbank.com/", host: "job.citicbank.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---59", company: "中国中煤", adapter: "unknown", params: {url: "https://zhaopin.chinacoal.com/", host: "zhaopin.chinacoal.com"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---42", company: "中国人保", adapter: "beisen", params: {url: "https://portal-oss.zhiye.com/601659/resource/eee5af9e-6edd-486d-8692-fabdaa09162d.html", host: "portal-oss.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---43", company: "中国人寿", adapter: "beisen", params: {url: "https://chinalife.zhiye.com/login?goto=custom%2Fcampus%3FhideMenu%3D1", host: "chinalife.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---60", company: "中国华能", adapter: "unknown", params: {url: "https://www.chng.com.cn/list_zpxt/-/article/nIRkxmKOSFaS/list/23534.html", host: "www.chng.com.cn"}}   # 2 条日历｜春招、校招｜⚠ 需先实现适配器
+  - {id: "beisen---44", company: "中国同辐", adapter: "beisen", params: {url: "https://portal-oss.zhiye.com/605932/resource/800c496f-11f5-4c17-886f-9c89641f32e5.html", host: "portal-oss.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---61", company: "中国大唐", adapter: "unknown", params: {url: "https://zhaopin.china-cdt.com/help", host: "zhaopin.china-cdt.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---62", company: "中国广电", adapter: "unknown", params: {url: "https://hr.grgbanking.com/", host: "hr.grgbanking.com"}}   # 2 条日历｜校园大使、社招｜⚠ 需先实现适配器
+  - {id: "beisen---45", company: "中国建材", adapter: "beisen", params: {url: "https://ctczhaopin.zhiye.com/Campus", host: "ctczhaopin.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---63", company: "中国电信", adapter: "unknown", params: {url: "https://job.chinatelecom.com.cn/wt/TELE/web/index", host: "job.chinatelecom.com.cn"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---46", company: "中国电建", adapter: "beisen", params: {url: "https://gzgc.zhiye.com/", host: "gzgc.zhiye.com"}}   # 2 条日历｜校招、秋招正式批
+  - {id: "unknown---64", company: "中国移动", adapter: "unknown", params: {url: "https://job.10086.cn/personal/campus/", host: "job.10086.cn"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---65", company: "中国航发", adapter: "unknown", params: {url: "https://www.aecc.cn/", host: "www.aecc.cn"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---66", company: "中国铁塔", adapter: "unknown", params: {url: "https://zhaopin.chinatowercom.cn/recruit/", host: "zhaopin.chinatowercom.cn"}}   # 2 条日历｜提前批、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---67", company: "中建科工", adapter: "unknown", params: {url: "https://sstr.cscec.com/rlzy/zjtd/", host: "sstr.cscec.com"}}   # 2 条日历｜校招、秋招补录｜⚠ 需先实现适配器
+  - {id: "beisen---47", company: "中欧基金", adapter: "beisen", params: {url: "https://zofund.zhiye.com/campus", host: "zofund.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---68", company: "中汇", adapter: "unknown", params: {url: "https://hahazhao.com/square/3224", host: "hahazhao.com"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---69", company: "中海地产", adapter: "unknown", params: {url: "https://www.coli688.com/careers/hiring/", host: "www.coli688.com"}}   # 2 条日历｜暑期实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---70", company: "中海物业", adapter: "unknown", params: {url: "https://www.copm.com.cn/joinus", host: "www.copm.com.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---2", company: "中科创达", adapter: "feishu_atsx", params: {url: "https://thundersoft.jobs.feishu.cn/campus", host: "thundersoft.jobs.feishu.cn"}}   # 2 条日历｜日常实习、校招
+  - {id: "unknown---71", company: "中科蓝讯", adapter: "unknown", params: {url: "https://www.bluetrum.com/job/job.php?class2=77", host: "www.bluetrum.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---48", company: "中航光电", adapter: "beisen", params: {url: "https://avicoptronics.zhiye.com/Campus", host: "avicoptronics.zhiye.com"}}   # 2 条日历｜校招、社招
+  - {id: "beisen---49", company: "中远海运", adapter: "beisen", params: {url: "https://zyhy.zhiye.com/", host: "zyhy.zhiye.com"}}   # 2 条日历｜实习、日常实习
+  - {id: "unknown---72", company: "中邮保险", adapter: "unknown", params: {url: "https://www.chinapost-life.com/job/", host: "www.chinapost-life.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---50", company: "丸美", adapter: "beisen", params: {url: "https://marubi.zhiye.com/campus?c=1", host: "marubi.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---73", company: "乐元素", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/leyuansu/166186?locale=zh-CN#/", host: "app.mokahr.com"}}   # 2 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---74", company: "九阳", adapter: "unknown", params: {url: "https://zhaopin.joyoung.com/campus/", host: "zhaopin.joyoung.com"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---51", company: "交银施罗德", adapter: "beisen", params: {url: "https://jysld.zhiye.com/home", host: "jysld.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---52", company: "京东方", adapter: "beisen", params: {url: "https://boe.zhiye.com/campus", host: "boe.zhiye.com"}}   # 2 条日历｜校园大使、校招
+  - {id: "unknown---75", company: "人大金仓", adapter: "unknown", params: {url: "https://www.kingbase.com.cn/about/about.html?5", host: "www.kingbase.com.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---3", company: "仙工智能", adapter: "feishu_atsx", params: {url: "https://seer-group.jobs.feishu.cn/campus/", host: "seer-group.jobs.feishu.cn"}}   # 2 条日历｜日常实习、校招
+  - {id: "unknown---76", company: "伊利", adapter: "unknown", params: {url: "https://yili.hotjob.cn/wt/yili/web/index/CompyiliPageindex", host: "yili.hotjob.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---53", company: "优必选", adapter: "beisen", params: {url: "https://ubtrobot.zhiye.com/campus/jobs", host: "ubtrobot.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---54", company: "优艾智合", adapter: "beisen", params: {url: "https://youibot1.zhiye.com/campus/jobs", host: "youibot1.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---77", company: "信永中和", adapter: "unknown", params: {url: "https://job.shinewing.com/", host: "job.shinewing.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---55", company: "信达生物", adapter: "beisen", params: {url: "https://innoventbio.zhiye.com/Campus", host: "innoventbio.zhiye.com"}}   # 2 条日历｜实习、秋招正式批
+  - {id: "unknown---78", company: "全志科技", adapter: "unknown", params: {url: "https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/", host: "campus.allwinnertech.com"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---56", company: "内外", adapter: "beisen", params: {url: "https://neiwai.zhiye.com/", host: "neiwai.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---57", company: "创新奇智", adapter: "beisen", params: {url: "https://ainnovation.zhiye.com/", host: "ainnovation.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---58", company: "劲酒", adapter: "beisen", params: {url: "https://jingpai.zhiye.com/", host: "jingpai.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---79", company: "北方华创", adapter: "unknown", params: {url: "https://career.naura.com/campus", host: "career.naura.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---59", company: "北汽集团", adapter: "beisen", params: {url: "https://baicgroup.zhiye.com/", host: "baicgroup.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---60", company: "千禾味业", adapter: "beisen", params: {url: "https://lehe.zhiye.com/", host: "lehe.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "beisen---61", company: "华夏银行", adapter: "beisen", params: {url: "https://ghbank.zhiye.com/campus/jobs", host: "ghbank.zhiye.com"}}   # 2 条日历｜校招、秋招正式批
+  - {id: "beisen---62", company: "华大集团", adapter: "beisen", params: {url: "https://genomics.zhiye.com/Campus", host: "genomics.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---80", company: "华润", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU6149ff530dcad47003d01511/pb/school.html", host: "wecruit.hotjob.cn"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---81", company: "华润微电子", adapter: "unknown", params: {url: "https://www.crmicro.com/talent/index.html", host: "www.crmicro.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---82", company: "南山铝业", adapter: "unknown", params: {url: "https://www.nanshan.com.cn/talent-development-society.html", host: "www.nanshan.com.cn"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---83", company: "南山集团", adapter: "unknown", params: {url: "https://www.nanshan.com.cn/talent-development-society.html", host: "www.nanshan.com.cn"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---63", company: "南芯科技", adapter: "beisen", params: {url: "https://nanxin.zhiye.com/Campus", host: "nanxin.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---84", company: "卧龙电驱", adapter: "unknown", params: {url: "https://www.wolong.com/index.php/join/campus.html", host: "www.wolong.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---64", company: "叮咚买菜", adapter: "beisen", params: {url: "https://ddmc.zhiye.com/", host: "ddmc.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---65", company: "合合信息", adapter: "beisen", params: {url: "https://intsig.zhiye.com/Campus", host: "intsig.zhiye.com"}}   # 2 条日历｜实习、秋招正式批
+  - {id: "unknown---85", company: "吉利", adapter: "unknown", params: {url: "https://campus.geely.com/campus-recruitment/geely/78436/", host: "campus.geely.com"}}   # 2 条日历｜兼职、校招｜⚠ 需先实现适配器
+  - {id: "beisen---66", company: "君乐宝", adapter: "beisen", params: {url: "https://junlebaoruye.zhiye.com/Campus", host: "junlebaoruye.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---67", company: "周大福", adapter: "beisen", params: {url: "https://ctf.zhiye.com/campus/jobs", host: "ctf.zhiye.com"}}   # 2 条日历｜实习、春招
+  - {id: "beisen---68", company: "哈啰", adapter: "beisen", params: {url: "https://hellobike.zhiye.com/campus?p=1^11", host: "hellobike.zhiye.com"}}   # 2 条日历｜实习
+  - {id: "beisen---69", company: "国元证券", adapter: "beisen", params: {url: "https://gyzq.zhiye.com/", host: "gyzq.zhiye.com"}}   # 2 条日历｜校招、秋招正式批
+  - {id: "beisen---70", company: "国联水产", adapter: "beisen", params: {url: "https://glsc.zhiye.com/", host: "glsc.zhiye.com"}}   # 2 条日历｜实习、日常实习
+  - {id: "beisen---71", company: "国金证券", adapter: "beisen", params: {url: "https://gjzq.zhiye.com/campus/?p=3%5E-1&c=3100&PageIndex=0", host: "gjzq.zhiye.com"}}   # 2 条日历｜实习、日常实习
+  - {id: "unknown---86", company: "均胜电子", adapter: "unknown", params: {url: "https://www.joyson.com/index.php/join/media.html", host: "www.joyson.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---72", company: "基恩士", adapter: "beisen", params: {url: "https://keyence.zhiye.com/campus/jobs", host: "keyence.zhiye.com"}}   # 2 条日历｜社招、秋招正式批
+  - {id: "unknown---87", company: "多益网络", adapter: "unknown", params: {url: "https://live.duoyi.com/dy/xz/", host: "live.duoyi.com"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---88", company: "奇安信", adapter: "unknown", params: {url: "https://campus.qianxin.com/", host: "campus.qianxin.com"}}   # 2 条日历｜实习、日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---73", company: "孚能科技", adapter: "beisen", params: {url: "https://farasisenergy.zhiye.com/", host: "farasisenergy.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---89", company: "宁德时代", adapter: "unknown", params: {url: "https://talent.catl.com/social-recruitment/catlhr/96144/", host: "talent.catl.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---90", company: "宁波通商银行", adapter: "unknown", params: {url: "https://www.tongshang.com/joinus/", host: "www.tongshang.com"}}   # 2 条日历｜实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---74", company: "宇树科技", adapter: "beisen", params: {url: "https://unitree.zhiye.com/login?goto=campus%2Fjobs", host: "unitree.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---91", company: "安永", adapter: "unknown", params: {url: "https://careers.ey.com/?locale=zh_CN", host: "careers.ey.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---92", company: "安踏", adapter: "unknown", params: {url: "https://jobs.anta.com/social-recruitment/antahr/146041/", host: "jobs.anta.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---75", company: "宝宝巴士", adapter: "beisen", params: {url: "https://babybus.zhiye.com/Campus", host: "babybus.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---93", company: "宝洁", adapter: "unknown", params: {url: "https://careers.pg.com.cn/cn/zh/home", host: "careers.pg.com.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---94", company: "宝洁中国", adapter: "unknown", params: {url: "https://careers.pg.com.cn/cn/zh/search-results", host: "careers.pg.com.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---95", company: "小码王", adapter: "unknown", params: {url: "https://www.xiaomawang.cn/job/", host: "www.xiaomawang.cn"}}   # 2 条日历｜日常实习、暑期实习｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---4", company: "小鹏汇天", adapter: "feishu_atsx", params: {url: "https://xiaopeng.jobs.feishu.cn/campus", host: "xiaopeng.jobs.feishu.cn"}}   # 2 条日历｜暑期实习
+  - {id: "unknown---96", company: "岚图汽车", adapter: "unknown", params: {url: "https://m.dsmp.voyah.com.cn/joinus.html", host: "m.dsmp.voyah.com.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---97", company: "巨人网络", adapter: "unknown", params: {url: "https://hr.ztgame.com/campus/", host: "hr.ztgame.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---98", company: "帆软", adapter: "unknown", params: {url: "https://join.fanruan.com/campus", host: "join.fanruan.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---99", company: "平安银行", adapter: "unknown", params: {url: "https://www.pingan.com/w/66dfc646d8c387b3.shtml", host: "www.pingan.com"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---100", company: "广发证券", adapter: "unknown", params: {url: "https://job.gf.com.cn/", host: "job.gf.com.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---76", company: "广汽集团", adapter: "beisen", params: {url: "https://gacrnd.zhiye.com/", host: "gacrnd.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "feishu_atsx---5", company: "库洛游戏", adapter: "feishu_atsx", params: {url: "https://kurogame.jobs.feishu.cn/campus", host: "kurogame.jobs.feishu.cn"}}   # 2 条日历｜校招、秋招正式批
+  - {id: "unknown---101", company: "康龙化成", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/pharmaron/44352", host: "app.mokahr.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---77", company: "建发房产", adapter: "beisen", params: {url: "https://chinacdc.zhiye.com/", host: "chinacdc.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---78", company: "得到", adapter: "beisen", params: {url: "https://igetcool.zhiye.com/campus", host: "igetcool.zhiye.com"}}   # 2 条日历｜实习、春招
+  - {id: "unknown---102", company: "微软中国", adapter: "unknown", params: {url: "https://careers.microsoft.com/v2/global/en/locations/gcr.html", host: "careers.microsoft.com"}}   # 2 条日历｜实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---79", company: "扬子江药业", adapter: "beisen", params: {url: "https://yangzijiang.zhiye.com/Campus", host: "yangzijiang.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---103", company: "招商银行", adapter: "unknown", params: {url: "https://career.cmbchina.com/campus/home", host: "career.cmbchina.com"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---104", company: "搜狐畅游", adapter: "unknown", params: {url: "http://campus.changyou.com/", host: "campus.changyou.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---80", company: "摩尔线程", adapter: "beisen", params: {url: "https://mthreads.zhiye.com/campus", host: "mthreads.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---105", company: "新东方", adapter: "unknown", params: {url: "https://liuxue.xdf.cn/recruit/", host: "liuxue.xdf.cn"}}   # 2 条日历｜提前批、校招｜⚠ 需先实现适配器
+  - {id: "unknown---106", company: "新华三", adapter: "unknown", params: {url: "https://career.h3c.com/campus", host: "career.h3c.com"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---107", company: "时的科技", adapter: "unknown", params: {url: "https://www.tcabtech.com/join-us/", host: "www.tcabtech.com"}}   # 2 条日历｜暑期实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---81", company: "明略科技", adapter: "beisen", params: {url: "https://mininglamp.zhiye.com/", host: "mininglamp.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---108", company: "星尘智能", adapter: "unknown", params: {url: "https://www.astribot.com/careers/", host: "www.astribot.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---109", company: "普冉股份", adapter: "unknown", params: {url: "https://www.puyasemi.com/shehuizhaopin.html", host: "www.puyasemi.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---82", company: "普洛斯", adapter: "beisen", params: {url: "https://glprop.zhiye.com/Campus", host: "glprop.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---110", company: "普洛药业", adapter: "unknown", params: {url: "https://www.apeloa.com/join.html", host: "www.apeloa.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---111", company: "月之暗面", adapter: "unknown", params: {url: "https://careers.kimi.com/campus", host: "careers.kimi.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---112", company: "杜邦中国", adapter: "unknown", params: {url: "https://careers.dupont.com/cn/zh/home", host: "careers.dupont.com"}}   # 2 条日历｜实习、日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---113", company: "松下", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/panasonic/41989", host: "app.mokahr.com"}}   # 2 条日历｜校园大使、校招｜⚠ 需先实现适配器
+  - {id: "beisen---83", company: "核桃编程", adapter: "beisen", params: {url: "https://hetao101.zhiye.com/home", host: "hetao101.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---114", company: "森马服饰", adapter: "unknown", params: {url: "https://www.semir.com/join-us.html", host: "www.semir.com"}}   # 2 条日历｜校园大使、社招｜⚠ 需先实现适配器
+  - {id: "beisen---84", company: "欣旺达", adapter: "beisen", params: {url: "https://sunwodacampus.zhiye.com/", host: "sunwodacampus.zhiye.com"}}   # 2 条日历｜校招、秋招正式批
+  - {id: "unknown---115", company: "欧莱雅", adapter: "unknown", params: {url: "https://careers.loreal.com/en", host: "careers.loreal.com"}}   # 2 条日历｜实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---85", company: "每刻报销", adapter: "beisen", params: {url: "https://maycur.zhiye.com/", host: "maycur.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---116", company: "比亚迪", adapter: "unknown", params: {url: "https://job.byd.com/portal/pc/", host: "job.byd.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---117", company: "永洪科技", adapter: "unknown", params: {url: "https://www.yonghongtech.com/gy/gzjh/", host: "www.yonghongtech.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---86", company: "汇川技术", adapter: "beisen", params: {url: "https://inovance.zhiye.com/Campus", host: "inovance.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---87", company: "泡泡玛特", adapter: "beisen", params: {url: "https://popmart.zhiye.com/", host: "popmart.zhiye.com"}}   # 2 条日历｜实习、秋招正式批
+  - {id: "beisen---88", company: "泰康资产", adapter: "beisen", params: {url: "https://jobtaikang.zhiye.com/", host: "jobtaikang.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---118", company: "浙商银行", adapter: "unknown", params: {url: "https://zp.czbank.com.cn/zpweb/", host: "zp.czbank.com.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---119", company: "海信", adapter: "unknown", params: {url: "https://jobs.hisense.com/campus", host: "jobs.hisense.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---120", company: "海康机器人", adapter: "unknown", params: {url: "https://job.hikrobotics.com", host: "job.hikrobotics.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---121", company: "深信服", adapter: "unknown", params: {url: "https://hr.sangfor.com/campuszp", host: "hr.sangfor.com"}}   # 2 条日历｜校园大使、校招｜⚠ 需先实现适配器
+  - {id: "unknown---122", company: "渤海银行", adapter: "unknown", params: {url: "https://www.cbhb.com.cn/cbhbank/jrwm/zpxx/index.shtml", host: "www.cbhb.com.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---123", company: "灿芯股份", adapter: "unknown", params: {url: "https://www.britesemi.com/Join_Us/Campus_Recruitment.jsp", host: "www.britesemi.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---6", company: "爱诗科技", adapter: "feishu_atsx", params: {url: "https://aisphere.jobs.feishu.cn/join/position/7264458483567200549/detail", host: "aisphere.jobs.feishu.cn"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---124", company: "用友", adapter: "unknown", params: {url: "https://www.dayee.com/", host: "www.dayee.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---125", company: "百事中国", adapter: "unknown", params: {url: "https://www.pepsicojobs.com/applicant-help", host: "www.pepsicojobs.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---89", company: "百胜中国", adapter: "beisen", params: {url: "https://yumchina.zhiye.com/", host: "yumchina.zhiye.com"}}   # 2 条日历｜校招、社招
+  - {id: "beisen---90", company: "益禾堂", adapter: "beisen", params: {url: "https://yihetang.zhiye.com/", host: "yihetang.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---126", company: "盖雅工场", adapter: "unknown", params: {url: "https://www.gaiaworks.cn/solution/workforce-skills-development.html", host: "www.gaiaworks.cn"}}   # 2 条日历｜日常实习、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---127", company: "碧桂园", adapter: "unknown", params: {url: "https://www.bgy.com.cn/join/training", host: "www.bgy.com.cn"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---128", company: "祖龙娱乐", adapter: "unknown", params: {url: "https://www.zulong.com/html/job.html", host: "www.zulong.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---91", company: "神州信息", adapter: "beisen", params: {url: "https://dcits.zhiye.com/campus/jobs", host: "dcits.zhiye.com"}}   # 2 条日历｜实习、提前批
+  - {id: "unknown---129", company: "禾迈股份", adapter: "unknown", params: {url: "https://www.hoymiles.com/zh/talent-stories.html", host: "www.hoymiles.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---92", company: "科伦药业", adapter: "beisen", params: {url: "https://kelun.zhiye.com/", host: "kelun.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---93", company: "科兴生物", adapter: "beisen", params: {url: "https://kexing.zhiye.com/campus", host: "kexing.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---130", company: "科沃斯", adapter: "unknown", params: {url: "https://hr.ecovacs.cn/", host: "hr.ecovacs.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---94", company: "精测电子", adapter: "beisen", params: {url: "https://jingce.zhiye.com/Campus", host: "jingce.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---131", company: "纳芯微", adapter: "unknown", params: {url: "https://careers.novosns.com/campus", host: "careers.novosns.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---132", company: "维维股份", adapter: "unknown", params: {url: "https://www.vvfood.cn/join.html", host: "www.vvfood.cn"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---133", company: "绿联科技", adapter: "unknown", params: {url: "https://careers.lulian.cn", host: "careers.lulian.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---134", company: "美的", adapter: "unknown", params: {url: "https://careers.midea.com/schoolOut", host: "careers.midea.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---135", company: "翔宇医疗", adapter: "unknown", params: {url: "https://www.xyyl.com/jrwm.html", host: "www.xyyl.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---136", company: "联合电子", adapter: "unknown", params: {url: "https://www.hotjob.cn/wt/UAES/web/index", host: "www.hotjob.cn"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---137", company: "联芸科技", adapter: "unknown", params: {url: "https://www.maxio-tech.com/job/11647/", host: "www.maxio-tech.com"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "unknown---138", company: "腾讯", adapter: "unknown", params: {url: "https://join.qq.com/", host: "join.qq.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---95", company: "自然堂", adapter: "beisen", params: {url: "https://chandogroup.zhiye.com/Campus", host: "chandogroup.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "beisen---96", company: "致同", adapter: "beisen", params: {url: "https://grantthornton.zhiye.com/", host: "grantthornton.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---139", company: "致远互联", adapter: "unknown", params: {url: "https://www.seeyon.com/Index/job.html", host: "www.seeyon.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---140", company: "舜宇光学", adapter: "unknown", params: {url: "https://campus.sunnyoptical.cn/campus-recruitment/sunnyoptical/45602/", host: "campus.sunnyoptical.cn"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "beisen---97", company: "航天科技", adapter: "beisen", params: {url: "https://galaxy.zhiye.com/", host: "galaxy.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---98", company: "航空工业", adapter: "beisen", params: {url: "https://avic-hr.zhiye.com/campus/", host: "avic-hr.zhiye.com"}}   # 2 条日历｜校招、社招
+  - {id: "beisen---99", company: "艾力斯", adapter: "beisen", params: {url: "https://allist.zhiye.com/", host: "allist.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---141", company: "芯原微电子", adapter: "unknown", params: {url: "https://www.verisilicon.com/cn/Careers", host: "www.verisilicon.com"}}   # 2 条日历｜实习、秋招补录｜⚠ 需先实现适配器
+  - {id: "beisen---100", company: "芯碁微装", adapter: "beisen", params: {url: "https://cfmee.zhiye.com/campus/", host: "cfmee.zhiye.com"}}   # 2 条日历｜校招、社招
+  - {id: "unknown---142", company: "英集芯", adapter: "unknown", params: {url: "http://job.injoinic.com/schedule.html", host: "job.injoinic.com"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---143", company: "药明生物", adapter: "unknown", params: {url: "https://job.wuxibiologics.com.cn/campus-recruitment/wuxibiologics/99961/", host: "job.wuxibiologics.com.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---101", company: "认养一头牛", adapter: "beisen", params: {url: "https://ryytn.zhiye.com/Campus", host: "ryytn.zhiye.com"}}   # 2 条日历｜实习、校园大使
+  - {id: "unknown---144", company: "诚迈科技", adapter: "unknown", params: {url: "https://www.archermind.com/archermind-education/artificial-intelligence-industrial-talent-solutions", host: "www.archermind.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "beisen---102", company: "豪迈科技", adapter: "beisen", params: {url: "https://himile.zhiye.com/", host: "himile.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "beisen---103", company: "贝因美", adapter: "beisen", params: {url: "https://beingmate.zhiye.com/", host: "beingmate.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---145", company: "贝达药业", adapter: "unknown", params: {url: "https://www.bettapharma.com/Jobs/campus", host: "www.bettapharma.com"}}   # 2 条日历｜日常实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---146", company: "财新传媒", adapter: "unknown", params: {url: "https://corp.caixin.com/joinus/", host: "corp.caixin.com"}}   # 2 条日历｜实习、日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---104", company: "赛力斯", adapter: "beisen", params: {url: "https://sokon.zhiye.com/Campus", host: "sokon.zhiye.com"}}   # 2 条日历｜实习、秋招正式批
+  - {id: "unknown---147", company: "软通动力", adapter: "unknown", params: {url: "https://career.isoftstone.com/", host: "career.isoftstone.com"}}   # 2 条日历｜实习、社招｜⚠ 需先实现适配器
+  - {id: "unknown---148", company: "达能中国", adapter: "unknown", params: {url: "https://careers.danone.com.cn/zh_CN/campus", host: "careers.danone.com.cn"}}   # 2 条日历｜社招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---149", company: "迈瑞医疗", adapter: "unknown", params: {url: "https://career.mindray.com/campus", host: "career.mindray.com"}}   # 2 条日历｜日常实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---150", company: "酷哇机器人", adapter: "unknown", params: {url: "https://www.cowarobot.com/join", host: "www.cowarobot.com"}}   # 2 条日历｜实习、春招｜⚠ 需先实现适配器
+  - {id: "unknown---151", company: "金山办公", adapter: "unknown", params: {url: "https://join.wps.cn/campus-recruitment/wps/41436?sourceToken=8379ee777457c4d22fc65d4439f660b3#/", host: "join.wps.cn"}}   # 2 条日历｜校招、社招｜⚠ 需先实现适配器
+  - {id: "beisen---105", company: "金风科技", adapter: "beisen", params: {url: "https://goldwind.zhiye.com/campus", host: "goldwind.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "beisen---106", company: "长安汽车", adapter: "beisen", params: {url: "https://changan.zhiye.com/Campus", host: "changan.zhiye.com"}}   # 2 条日历｜实习
+  - {id: "beisen---107", company: "长江证券", adapter: "beisen", params: {url: "https://cjzq.zhiye.com/", host: "cjzq.zhiye.com"}}   # 2 条日历｜实习、日常实习
+  - {id: "beisen---108", company: "阳光保险", adapter: "beisen", params: {url: "https://portal-oss.zhiye.com/101153/resource/44846fb3-fe3d-429e-b230-b0435ab41a64.html", host: "portal-oss.zhiye.com"}}   # 2 条日历｜实习、社招
+  - {id: "unknown---152", company: "阿斯利康中国", adapter: "unknown", params: {url: "https://careers.astrazeneca.com/china-zh", host: "careers.astrazeneca.com"}}   # 2 条日历｜实习、校招｜⚠ 需先实现适配器
+  - {id: "unknown---153", company: "阿里巴巴", adapter: "unknown", params: {url: "https://campus-talent.alibaba.com/campus/index", host: "campus-talent.alibaba.com"}}   # 2 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---109", company: "零跑汽车", adapter: "beisen", params: {url: "https://leapmotor1.zhiye.com/login?goto=campus", host: "leapmotor1.zhiye.com"}}   # 2 条日历｜实习、校招
+  - {id: "unknown---154", company: "领益智造", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/lingyiitech/182049", host: "app.mokahr.com"}}   # 2 条日历｜校招、秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---155", company: "鹰角网络", adapter: "unknown", params: {url: "https://campus.hypergryph.com/campus_apply/hypergryph/26326/", host: "campus.hypergryph.com"}}   # 2 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown-360-", company: "360集团", adapter: "unknown", params: {url: "https://hao.360.com/", host: "hao.360.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-58-", company: "58同城", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vrY5aaNzN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown-amd", company: "AMD", adapter: "unknown", params: {url: "https://careers.amd.com/students/jobs", host: "careers.amd.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown-dhl-", company: "DHL中国", adapter: "unknown", params: {url: "https://www.cndhl.com/", host: "www.cndhl.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-dsv-", company: "DSV中国", adapter: "unknown", params: {url: "https://www.dsv.com/en/careers/meet-our-people", host: "www.dsv.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown-ge-", company: "GE医疗中国", adapter: "unknown", params: {url: "https://career.gehealthcare.cn/", host: "career.gehealthcare.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen-h-m-", company: "H&M中国", adapter: "beisen", params: {url: "https://hm.zhiye.com/", host: "hm.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown-ibm", company: "IBM", adapter: "unknown", params: {url: "https://www.ibm.com/us-en", host: "www.ibm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-ibm-", company: "IBM中国", adapter: "unknown", params: {url: "https://www.ibm.com/us-en", host: "www.ibm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx-keep", company: "Keep", adapter: "feishu_atsx", params: {url: "https://keep.jobs.feishu.cn/index", host: "keep.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "beisen-manner-", company: "Manner咖啡", adapter: "beisen", params: {url: "https://mannercoffee.zhiye.com/", host: "mannercoffee.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "feishu_atsx-minimax", company: "MiniMax", adapter: "feishu_atsx", params: {url: "https://vrfi1sk8a0.jobs.feishu.cn/index", host: "vrfi1sk8a0.jobs.feishu.cn"}}   # 1 条日历｜社招
+  - {id: "feishu_atsx-momenta", company: "Momenta", adapter: "feishu_atsx", params: {url: "https://momenta.jobs.feishu.cn/campus", host: "momenta.jobs.feishu.cn"}}   # 1 条日历｜日常实习
+  - {id: "unknown-oceanbase", company: "OceanBase", adapter: "unknown", params: {url: "https://jobs.ultraai.site/jobs/ant/26040109408563", host: "jobs.ultraai.site"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown-pico", company: "Pico", adapter: "unknown", params: {url: "https://www.picoxr.com/cn/", host: "www.picoxr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-sap-", company: "SAP中国", adapter: "unknown", params: {url: "https://www.sap.cn/index.html", host: "www.sap.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown-soul", company: "Soul", adapter: "unknown", params: {url: "https://www.soulapp.cn/", host: "www.soulapp.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-zara-", company: "Zara中国", adapter: "unknown", params: {url: "https://www.zarahome.cn/cn/careers-n5110", host: "www.zarahome.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown-vivo", company: "vivo", adapter: "unknown", params: {url: "https://hr-campus.vivo.com/jobs", host: "hr-campus.vivo.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---156", company: "一点点", adapter: "unknown", params: {url: "https://campus.duxiaoman.com/051736/", host: "campus.duxiaoman.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---157", company: "万东医疗", adapter: "unknown", params: {url: "http://wandong.com.cn/list-60-1.html", host: "wandong.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown--wind", company: "万得Wind", adapter: "unknown", params: {url: "https://www.wind.com.cn/portal/zh/JoinUs/index.html", host: "www.wind.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---158", company: "万科", adapter: "unknown", params: {url: "https://www.wk.com/jobs/", host: "www.wk.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---110", company: "三七互娱", adapter: "beisen", params: {url: "https://37wan.zhiye.com/", host: "37wan.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---111", company: "三元食品", adapter: "beisen", params: {url: "https://sanyuan.zhiye.com/", host: "sanyuan.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---112", company: "三全食品", adapter: "beisen", params: {url: "https://sanyuan.zhiye.com/campus/jobs", host: "sanyuan.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---159", company: "三只松鼠", adapter: "unknown", params: {url: "https://app.mokahr.com/campus_apply/3songshu/457#/job/79dc4b6b-80c0-45e7-b660-e2d79a2226ac/apply", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---113", company: "三安光电", adapter: "beisen", params: {url: "https://sanan-e.zhiye.com/campus/?d=-1&PageIndex=1", host: "sanan-e.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---114", company: "三峡集团", adapter: "beisen", params: {url: "https://cqsxsl.zhiye.com/campus", host: "cqsxsl.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---160", company: "三花智控", adapter: "unknown", params: {url: "https://www.sanhuamc.com/", host: "www.sanhuamc.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---115", company: "上汽大众", adapter: "beisen", params: {url: "https://csvw.zhiye.com/campus/jobs", host: "csvw.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---116", company: "上汽集团", adapter: "beisen", params: {url: "https://smpv.zhiye.com/", host: "smpv.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---117", company: "上海农商行", adapter: "beisen", params: {url: "https://shrcb.zhiye.com/Campus", host: "shrcb.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---118", company: "上海医药", adapter: "beisen", params: {url: "https://sph.zhiye.com/", host: "sph.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---119", company: "上海家化", adapter: "beisen", params: {url: "https://jahwa.zhiye.com/Campus", host: "jahwa.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "beisen---120", company: "上海家化六神", adapter: "beisen", params: {url: "https://liushen.zhiye.com/", host: "liushen.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---161", company: "上海建工集团", adapter: "unknown", params: {url: "https://sh2j.scg.com.cn/scg_ej_rlzy_xyzp/List/index.htm", host: "sh2j.scg.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---121", company: "上海莱士", adapter: "beisen", params: {url: "https://raas.zhiye.com/Campus", host: "raas.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "beisen---122", company: "上药控股", adapter: "beisen", params: {url: "https://sph2.zhiye.com/campus", host: "sph2.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---162", company: "世纪华通", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYl5aL5NZ.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---123", company: "东华软件", adapter: "beisen", params: {url: "https://neusoft-campus.zhiye.com/", host: "neusoft-campus.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---124", company: "东吴证券", adapter: "beisen", params: {url: "https://dwzq.zhiye.com/Campus", host: "dwzq.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---125", company: "东山精密", adapter: "beisen", params: {url: "https://dsbj.zhiye.com/", host: "dsbj.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---126", company: "东方希望", adapter: "beisen", params: {url: "https://easthope1.zhiye.com/", host: "easthope1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---127", company: "东方日升", adapter: "beisen", params: {url: "https://risen.zhiye.com/", host: "risen.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---163", company: "东方证券", adapter: "unknown", params: {url: "https://app.mokahr.com/campus_apply/dfzq/4928", host: "app.mokahr.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---128", company: "东软医疗", adapter: "beisen", params: {url: "https://neusoftmedical.zhiye.com/", host: "neusoftmedical.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---129", company: "东软睿驰", adapter: "beisen", params: {url: "https://reachauto.zhiye.com/login?goto=form%3F", host: "reachauto.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---130", company: "东风日产", adapter: "beisen", params: {url: "https://dongfengnissan.zhiye.com/", host: "dongfengnissan.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---164", company: "中交一公局", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vks5aCzCa.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---131", company: "中信建投", adapter: "beisen", params: {url: "https://csc108.zhiye.com/campus", host: "csc108.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---132", company: "中信金融资产", adapter: "beisen", params: {url: "https://famc.zhiye.com/campus", host: "famc.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---165", company: "中信集团", adapter: "unknown", params: {url: "https://job.citic.com/recruit", host: "job.citic.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---133", company: "中储粮", adapter: "beisen", params: {url: "https://zczy.zhiye.com/home", host: "zczy.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---166", company: "中兴微电子", adapter: "unknown", params: {url: "https://app.mokahr.com/social-recruitment/sanechips/76285", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---167", company: "中兴通讯", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/zte/46903", host: "app.mokahr.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---134", company: "中再集团", adapter: "beisen", params: {url: "https://chinare.zhiye.com/", host: "chinare.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "unknown---168", company: "中化集团", adapter: "unknown", params: {url: "https://www.sinochem.com.cn/zhjt/jrzh/zpjd/shzpzn/A044010005001Gone1.html", host: "www.sinochem.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---169", company: "中咨公司", adapter: "unknown", params: {url: "https://www.ciecc.com.cn/art/2026/9/10/art_1598_124773.html", host: "www.ciecc.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---170", company: "中国东方资产", adapter: "unknown", params: {url: "https://www.coamc.com.cn/rlzy_1816/rcdwu/", host: "www.coamc.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---171", company: "中国中冶", adapter: "unknown", params: {url: "https://job.wisdri.com/", host: "job.wisdri.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---172", company: "中国中铁", adapter: "unknown", params: {url: "https://ztjs.hotjob.cn/", host: "ztjs.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---173", company: "中国五矿", adapter: "unknown", params: {url: "https://zhaopin.minmetals.com.cn/", host: "zhaopin.minmetals.com.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---135", company: "中国信达", adapter: "beisen", params: {url: "https://cinda.zhiye.com/campus", host: "cinda.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---136", company: "中国兵器工业", adapter: "beisen", params: {url: "https://norincogroupzhaopin.zhiye.com/", host: "norincogroupzhaopin.zhiye.com"}}   # 1 条日历｜提前批
+  - {id: "unknown---174", company: "中国出口信用保险", adapter: "unknown", params: {url: "https://www.sinosure.com.cn/", host: "www.sinosure.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---137", company: "中国化学", adapter: "beisen", params: {url: "https://chinaecec.zhiye.com/campus", host: "chinaecec.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---175", company: "中国化学工程", adapter: "unknown", params: {url: "https://www.cncec.cn/human-resources/recruitment-info", host: "www.cncec.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---176", company: "中国华电", adapter: "unknown", params: {url: "https://rencaishichang.chd.com.cn/w3/", host: "rencaishichang.chd.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---177", company: "中国国航", adapter: "unknown", params: {url: "https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml", host: "zhaopin.airchina.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---138", company: "中国外运", adapter: "beisen", params: {url: "https://sinotrans-csc.zhiye.com/campus", host: "sinotrans-csc.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "beisen---139", company: "中国太保", adapter: "beisen", params: {url: "https://cntaiping.zhiye.com/", host: "cntaiping.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---178", company: "中国安能", adapter: "unknown", params: {url: "https://china-an.iguopin.com/", host: "china-an.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---140", company: "中国巨石", adapter: "beisen", params: {url: "https://chinajushi.zhiye.com/", host: "chinajushi.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---179", company: "中国平安", adapter: "unknown", params: {url: "https://campus.pingan.com/pacx", host: "campus.pingan.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---180", company: "中国建材总院", adapter: "unknown", params: {url: "https://www.cbma.com.cn/", host: "www.cbma.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---181", company: "中国建筑", adapter: "unknown", params: {url: "https://recruit.cscec.com/", host: "recruit.cscec.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---182", company: "中国投资有限责任公司", adapter: "unknown", params: {url: "https://recruit.china-inv.cn/china_inv/home/sytk.shtml", host: "recruit.china-inv.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---183", company: "中国有色矿业", adapter: "unknown", params: {url: "https://www.cnmc.com.cn/cnmc/rlzy/rczl/A002007005Gone1.html", host: "www.cnmc.com.cn"}}   # 1 条日历｜校园大使｜⚠ 需先实现适配器
+  - {id: "unknown---184", company: "中国煤炭地质总局", adapter: "unknown", params: {url: "https://www.ccgc.cn/?mod=zhaopin&tid=129", host: "www.ccgc.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---185", company: "中国物流", adapter: "unknown", params: {url: "https://zgwl.iguopin.com/", host: "zgwl.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---186", company: "中国电科", adapter: "unknown", params: {url: "https://campus.cec.com.cn/", host: "campus.cec.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---187", company: "中国电科院", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU6056b00a0dcad424d03e153c/pb/school.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---188", company: "中国盐业", adapter: "unknown", params: {url: "http://www.chinasalt.com.cn/xwzx/zytz/ff8080819d8a8bd6019ff8aa10682a2a.html", host: "www.chinasalt.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---189", company: "中国联通", adapter: "unknown", params: {url: "https://zglt.iguopin.com/", host: "zglt.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---190", company: "中国能建", adapter: "unknown", params: {url: "https://zhaopin.chnenergy.com.cn/recTypeSerch?kinds=1", host: "zhaopin.chnenergy.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---191", company: "中国航信", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU6358e2730dcad448466b54b0/mc/index", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---141", company: "中国航油", adapter: "beisen", params: {url: "https://cnaf.zhiye.com/Campus", host: "cnaf.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---192", company: "中国航空器材", adapter: "unknown", params: {url: "http://www.casc.com.cn/cas/", host: "www.casc.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---193", company: "中国节能", adapter: "unknown", params: {url: "https://www.cecep.cn/", host: "www.cecep.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---194", company: "中国诚通", adapter: "unknown", params: {url: "https://www.cctgroup.com.cn/cctgroup/2026-10/14/article_2026101417131125482.html", host: "www.cctgroup.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---195", company: "中国金茂", adapter: "unknown", params: {url: "https://jinmao.hotjob.cn", host: "jinmao.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---196", company: "中国铁建", adapter: "unknown", params: {url: "http://jobs.crccig.com/req/urgent", host: "jobs.crccig.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---197", company: "中国铁物", adapter: "unknown", params: {url: "https://www.crm.com/careers/", host: "www.crm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---142", company: "中国长城资产", adapter: "beisen", params: {url: "https://gwamcc.zhiye.com/", host: "gwamcc.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---198", company: "中国黄金", adapter: "unknown", params: {url: "https://hjzp.chinagoldgroup.com/recruit", host: "hjzp.chinagoldgroup.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---199", company: "中国黄金集团", adapter: "unknown", params: {url: "https://www.chinagoldgroup.com/zghj/xwzx/mtgz/2026/9/I1551173253865668608.html", host: "www.chinagoldgroup.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---200", company: "中天科技", adapter: "unknown", params: {url: "https://m.ztt.cn/job.html", host: "m.ztt.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---143", company: "中审众环", adapter: "beisen", params: {url: "https://zszhcpa.zhiye.com/campus", host: "zszhcpa.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---201", company: "中建八局", adapter: "unknown", params: {url: "https://job.cscec8b.com.cn/recruitment/job/detail/id/2759", host: "job.cscec8b.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---202", company: "中手游", adapter: "unknown", params: {url: "https://hr.cmge.com/", host: "hr.cmge.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---144", company: "中文在线", adapter: "beisen", params: {url: "https://zhongwenzaixian.zhiye.com/campus/jobs", host: "zhongwenzaixian.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---145", company: "中材科技", adapter: "beisen", params: {url: "https://zckj.zhiye.com/", host: "zckj.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---203", company: "中标软件", adapter: "unknown", params: {url: "https://www.cs2c.com/about/job.html", host: "www.cs2c.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---204", company: "中泰证券", adapter: "unknown", params: {url: "https://zts.hotjob.cn/", host: "zts.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---205", company: "中煤科工", adapter: "unknown", params: {url: "https://cctegjob.iguopin.com/campus", host: "cctegjob.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---206", company: "中环股份", adapter: "unknown", params: {url: "https://www.zhlxsemicon.com/", host: "www.zhlxsemicon.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---146", company: "中科星图", adapter: "beisen", params: {url: "https://geovis.zhiye.com/", host: "geovis.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---147", company: "中科闻歌", adapter: "beisen", params: {url: "https://wengegroup.zhiye.com/campus", host: "wengegroup.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---207", company: "中移信息", adapter: "unknown", params: {url: "https://cmit.com/careers/", host: "cmit.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---208", company: "中移在线", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU638844ea0dcad415783e055a/mc/position/campus?projectCode=111401&showProjectBanner=true", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---209", company: "中联重科", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU60a6449a2f9d2430fdc11a19/pb/custom.html?parentKey=campus&pageType=customize_1692618251827", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---210", company: "中能建", adapter: "unknown", params: {url: "http://www.aepc1.ceec.net.cn/art/2026/9/18/art_14574_2525944.html", host: "www.aepc1.ceec.net.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---211", company: "中航沈飞", adapter: "unknown", params: {url: "https://zhaopin.airchina.com.cn/index.shtml", host: "zhaopin.airchina.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---148", company: "中船重工", adapter: "beisen", params: {url: "https://csic.zhiye.com/", host: "csic.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---149", company: "中芯集成", adapter: "beisen", params: {url: "https://smec.zhiye.com/", host: "smec.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---212", company: "中软国际", adapter: "unknown", params: {url: "https://zhaopin.chinasoftinc.com/", host: "zhaopin.chinasoftinc.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---213", company: "中通快运", adapter: "unknown", params: {url: "https://www.zto56.com/recruitindex.html?type=1", host: "www.zto56.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---214", company: "中通快递", adapter: "unknown", params: {url: "https://hr.zto.com/Campus", host: "hr.zto.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---150", company: "中金公司", adapter: "beisen", params: {url: "https://cicc.zhiye.com/custom/campus?hideMenu=1", host: "cicc.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---215", company: "中钢集团", adapter: "unknown", params: {url: "https://www.sinosteel.com/", host: "www.sinosteel.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---216", company: "中铁十一局", adapter: "unknown", params: {url: "https://www.fenbi.com/page/positions/9/906264?quickPick=%7B%22examId%22%3A906264%7D", host: "www.fenbi.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---217", company: "中集集团", adapter: "unknown", params: {url: "https://www.cimc.cn/index.php?m=content&c=index&a=lists&catid=16", host: "www.cimc.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---218", company: "九号公司", adapter: "unknown", params: {url: "https://join.ninebot.com/campus-recruitment/ninebot/45627", host: "join.ninebot.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---219", company: "九毛九", adapter: "unknown", params: {url: "http://jiumaojiu.com/contact/job.html", host: "jiumaojiu.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---220", company: "九洲药业", adapter: "unknown", params: {url: "https://www.jiuzhoupharma.com/posts.html", host: "www.jiuzhoupharma.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---151", company: "九牧王", adapter: "beisen", params: {url: "https://joeone.zhiye.com/campus/jobs", host: "joeone.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "unknown---221", company: "云从科技", adapter: "unknown", params: {url: "http://campus.cloudwalk.com/campus_apply/cloudwalk/4872/", host: "campus.cloudwalk.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---222", company: "云南白药", adapter: "unknown", params: {url: "https://www.yunnanbaiyao.com.cn/view/ynbyPc/1/92/view/9087.html", host: "www.yunnanbaiyao.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---223", company: "云南铜业", adapter: "unknown", params: {url: "https://ynty.chinalco.com.cn/lxwm/zxns/", host: "ynty.chinalco.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---152", company: "云天化", adapter: "beisen", params: {url: "https://yythzb3.zhiye.com/campus/", host: "yythzb3.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "unknown---224", company: "云深处", adapter: "unknown", params: {url: "http://www.deeprobotics.cn/recruit/campus.html", host: "www.deeprobotics.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---153", company: "云知声", adapter: "beisen", params: {url: "https://unisound.zhiye.com/", host: "unisound.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---225", company: "云迹科技", adapter: "unknown", params: {url: "https://www.yunjichina.com.cn/news/79", host: "www.yunjichina.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---226", company: "五矿资源", adapter: "unknown", params: {url: "https://www.mmg.com/careers/", host: "www.mmg.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---227", company: "五粮液", adapter: "unknown", params: {url: "https://wuliangye.com.cn/zhaopin/", host: "wuliangye.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---7", company: "亚信安全", adapter: "feishu_atsx", params: {url: "https://asiainfo-sec.jobs.feishu.cn/campus", host: "asiainfo-sec.jobs.feishu.cn"}}   # 1 条日历｜社招
+  - {id: "unknown---228", company: "亚盛医药", adapter: "unknown", params: {url: "https://www.ascentage.cn/careers/our-stories/", host: "www.ascentage.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---229", company: "亨通光电", adapter: "unknown", params: {url: "https://www.htgd.com.cn/rcfz/lnzc.html", host: "www.htgd.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---230", company: "京东", adapter: "unknown", params: {url: "https://campus.jd.com/", host: "campus.jd.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---231", company: "京东物流", adapter: "unknown", params: {url: "https://campus.jd.com/home", host: "campus.jd.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---8", company: "亮道智能", adapter: "feishu_atsx", params: {url: "https://liangdao-intelligence.jobs.feishu.cn/index", host: "liangdao-intelligence.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "beisen---154", company: "人福医药", adapter: "beisen", params: {url: "https://renfu.zhiye.com/", host: "renfu.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---232", company: "亿纬锂能", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU630585190dcad45aa777eca1/mc/index", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---155", company: "亿联网络", adapter: "beisen", params: {url: "https://yealink.zhiye.com/campus", host: "yealink.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "beisen---156", company: "亿航", adapter: "beisen", params: {url: "https://yihang.zhiye.com/", host: "yihang.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---157", company: "今麦郎", adapter: "beisen", params: {url: "https://jmlzp.zhiye.com/", host: "jmlzp.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "beisen---158", company: "仙琚制药", adapter: "beisen", params: {url: "https://xjzy.zhiye.com/", host: "xjzy.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---233", company: "以岭药业", adapter: "unknown", params: {url: "https://www.yiling.cn/", host: "www.yiling.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---234", company: "众安保险", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vls5z5NnC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown---235", company: "优时比中国", adapter: "unknown", params: {url: "https://www.ucbchina.com/Careers", host: "www.ucbchina.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---236", company: "优炫软件", adapter: "unknown", params: {url: "https://www.yuxuan.com/?job/", host: "www.yuxuan.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---237", company: "伯特利", adapter: "unknown", params: {url: "https://www.boteli.cn/jrwm/zpzq/index.html", host: "www.boteli.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---238", company: "作业帮", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/zuoyebang/39595", host: "app.mokahr.com"}}   # 1 条日历｜暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown---239", company: "保隆科技", adapter: "unknown", params: {url: "https://www.baolong.biz/", host: "www.baolong.biz"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---240", company: "信发集团", adapter: "unknown", params: {url: "https://lcudcc.sdbys.com/campus/view/id/743437", host: "lcudcc.sdbys.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---241", company: "傅利叶", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vkl5z5zan.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---9", company: "元气森林", adapter: "feishu_atsx", params: {url: "https://k11pnjpvz1.jobs.feishu.cn/index", host: "k11pnjpvz1.jobs.feishu.cn"}}   # 1 条日历｜日常实习
+  - {id: "unknown---242", company: "兆易创新", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/gigadevice/92215", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---243", company: "兆易创新存储", adapter: "unknown", params: {url: "https://www.gigadevice.com/about/career", host: "www.gigadevice.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---244", company: "先声药业", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU61403c7e0dcad45880dcd7a9/mc/index", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---159", company: "光大证券", adapter: "beisen", params: {url: "https://ebscn.zhiye.com/Campus", host: "ebscn.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---160", company: "光线传媒", adapter: "beisen", params: {url: "https://liteon.zhiye.com/campus", host: "liteon.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---245", company: "六福珠宝", adapter: "unknown", params: {url: "https://www.lukfook.com/sc/category/news-press-releases/post/grand-opening-of-lukfook-jewellerys-new-shop-in-vincom-dong-khoi-shopping-centre-jointly-celebrating-brands-35th-anniversary", host: "www.lukfook.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---246", company: "兰州银行", adapter: "unknown", params: {url: "https://www.lzbank.com/public/pjiarulh/20261020/42412.html", host: "www.lzbank.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---247", company: "兴业证券", adapter: "unknown", params: {url: "https://www.xyzq.com.cn/xysec/info/article/6112cbe377114f30a9359e88cb576fed", host: "www.xyzq.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---248", company: "兴业银行", adapter: "unknown", params: {url: "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html", host: "www.xyyh.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---249", company: "农夫山泉", adapter: "unknown", params: {url: "https://jobs.yst.com.cn/campus-recruitment/yst/68367", host: "jobs.yst.com.cn"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---161", company: "凯莱英", adapter: "beisen", params: {url: "https://asymchem.zhiye.com/", host: "asymchem.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "feishu_atsx---10", company: "出门问问", adapter: "feishu_atsx", params: {url: "https://mobvoi.jobs.feishu.cn/index/", host: "mobvoi.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---250", company: "分贝通", adapter: "unknown", params: {url: "https://www.fenbeitong.com/joinus.php", host: "www.fenbeitong.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---11", company: "创梦天地", adapter: "feishu_atsx", params: {url: "https://idreamsky.jobs.feishu.cn/index", host: "idreamsky.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---251", company: "力神电池", adapter: "unknown", params: {url: "https://lishen.libattery.net/job.html", host: "lishen.libattery.net"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---162", company: "劲仔食品", adapter: "beisen", params: {url: "https://jinzaifood.zhiye.com/", host: "jinzaifood.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---163", company: "北京现代", adapter: "beisen", params: {url: "https://bhmc.zhiye.com/campus/", host: "bhmc.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---164", company: "北京银行", adapter: "beisen", params: {url: "https://bankofbeijing.zhiye.com/campus", host: "bankofbeijing.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---165", company: "北新建材", adapter: "beisen", params: {url: "https://bnbm.zhiye.com/", host: "bnbm.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---166", company: "北森控股", adapter: "beisen", params: {url: "https://beisen.zhiye.com/", host: "beisen.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---252", company: "匹克", adapter: "unknown", params: {url: "https://www.peaksport.com/cn/jobs", host: "www.peaksport.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---253", company: "千味央厨", adapter: "unknown", params: {url: "https://www.qianweiyangchu.com/job.html", host: "www.qianweiyangchu.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---254", company: "华东医药", adapter: "unknown", params: {url: "https://www.huadongmedicine.com/careers/", host: "www.huadongmedicine.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---255", company: "华中数控", adapter: "unknown", params: {url: "https://huazhongcnc.com/portal/list/index/cid/26.html", host: "huazhongcnc.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---256", company: "华为", adapter: "unknown", params: {url: "https://career.huawei.com/reccampportal/next/mini/index.html", host: "career.huawei.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---167", company: "华住集团", adapter: "beisen", params: {url: "https://huazhu1.zhiye.com/", host: "huazhu1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---257", company: "华侨城", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vUl5ZaLMN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---258", company: "华兰生物", adapter: "unknown", params: {url: "http://www.hualanbio.com/jobs", host: "www.hualanbio.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---259", company: "华商基金", adapter: "unknown", params: {url: "https://www.huashanglawyer.com/", host: "www.huashanglawyer.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---260", company: "华域汽车", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vyy5CNM5t.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---168", company: "华夏基金", adapter: "beisen", params: {url: "http://chinaamc.zhiye.com/", host: "chinaamc.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---261", company: "华夏理财", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU645b0d18bef57c0907e9fbc8/pb/posDetail.html?postId=6aa9e4bfb6fae46f6754c0a5&postType=campus", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---262", company: "华宝基金", adapter: "unknown", params: {url: "https://www.hbglobal.com/", host: "www.hbglobal.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---169", company: "华峰测控", adapter: "beisen", params: {url: "https://accotest.zhiye.com/", host: "accotest.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---170", company: "华峰集团", adapter: "beisen", params: {url: "https://huafeng.zhiye.com/", host: "huafeng.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---263", company: "华帝", adapter: "unknown", params: {url: "https://vatti.com.cn/", host: "vatti.com.cn"}}   # 1 条日历｜校园大使｜⚠ 需先实现适配器
+  - {id: "unknown---264", company: "华泰证券", adapter: "unknown", params: {url: "https://www.htsc.com.cn/recruit/", host: "www.htsc.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---171", company: "华海清科", adapter: "beisen", params: {url: "https://hwatsing1.zhiye.com/campus/jobs", host: "hwatsing1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---265", company: "华海药业", adapter: "unknown", params: {url: "https://www.huahaipharm.com/zpgw.html", host: "www.huahaipharm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---266", company: "华润啤酒", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU6047338a0dcad46d3e601b07/pb/index.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---267", company: "华熙生物", adapter: "unknown", params: {url: "https://www.bloomagebioactive.com/Job/List/1", host: "www.bloomagebioactive.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---268", company: "华虹集团", adapter: "unknown", params: {url: "https://www.huahong.com.cn/?m=channel&id=50", host: "www.huahong.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---269", company: "协鑫科技", adapter: "unknown", params: {url: "https://www.gcltech.com/join.html", host: "www.gcltech.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---270", company: "南方基金", adapter: "unknown", params: {url: "https://www.nffund.com/", host: "www.nffund.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---271", company: "南方航空", adapter: "unknown", params: {url: "https://job.csair.cn/", host: "job.csair.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---272", company: "南玻集团", adapter: "unknown", params: {url: "https://csg.jobs.cz", host: "csg.jobs.cz"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---273", company: "南瑞集团", adapter: "unknown", params: {url: "https://job.sgepri.sgcc.com.cn/nari-career-ui/empty", host: "job.sgepri.sgcc.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---274", company: "南都电源", adapter: "unknown", params: {url: "https://www.naradapower.com/", host: "www.naradapower.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---275", company: "博世", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/bosch/73873", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---276", company: "博彦科技", adapter: "unknown", params: {url: "https://www.beyondsoft.com/joinus/contactus.html", host: "www.beyondsoft.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---172", company: "博腾股份", adapter: "beisen", params: {url: "https://porton.zhiye.com/", host: "porton.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "feishu_atsx---12", company: "卫龙", adapter: "feishu_atsx", params: {url: "https://weilongmeiwei.jobs.feishu.cn/index/", host: "weilongmeiwei.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "beisen---173", company: "厦钨新能", adapter: "beisen", params: {url: "https://xtc-xny1.zhiye.com/campus/detail?jobAdId=6001feb8-1764-45c3-9436-f7154b3136bd", host: "xtc-xny1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "feishu_atsx---13", company: "去哪儿", adapter: "feishu_atsx", params: {url: "https://hf7l9aiqzx.jobs.feishu.cn/704852", host: "hf7l9aiqzx.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---277", company: "友谊时光", adapter: "unknown", params: {url: "https://zp.friendtimes.cn/", host: "zp.friendtimes.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---174", company: "双汇", adapter: "beisen", params: {url: "https://shuanghui.zhiye.com/campus/", host: "shuanghui.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---278", company: "叠纸", adapter: "unknown", params: {url: "https://career.papegames.com/campus", host: "career.papegames.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---279", company: "叠纸游戏", adapter: "unknown", params: {url: "https://career.papegames.com/campus", host: "career.papegames.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---280", company: "古茗", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/guming/39377", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---281", company: "可复美", adapter: "unknown", params: {url: "https://comfy.org/careers/", host: "comfy.org"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---175", company: "合思", adapter: "beisen", params: {url: "https://hosecloud.zhiye.com/", host: "hosecloud.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---282", company: "吉利银河", adapter: "unknown", params: {url: "https://job.geely.com/social-recruitment/geely/96123/", host: "job.geely.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---283", company: "吉林银行", adapter: "unknown", params: {url: "http://jl.people.com.cn/", host: "jl.people.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---284", company: "吉比特", adapter: "unknown", params: {url: "http://campus.g-bits.com/home", host: "campus.g-bits.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---285", company: "同仁堂", adapter: "unknown", params: {url: "https://www.trt.com/careers/", host: "www.trt.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---286", company: "同花顺", adapter: "unknown", params: {url: "http://campus.10jqka.com.cn/", host: "campus.10jqka.com.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---176", company: "名创优品", adapter: "beisen", params: {url: "https://miniso.zhiye.com/Campus", host: "miniso.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---287", company: "后摩智能", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vls5nnzzn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---177", company: "君实生物", adapter: "beisen", params: {url: "https://junshibiosciences.zhiye.com/campus?c=1", host: "junshibiosciences.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---288", company: "启明医疗", adapter: "unknown", params: {url: "https://www.venusmedtech.com/index.php/about/joinus", host: "www.venusmedtech.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---178", company: "启明星辰", adapter: "beisen", params: {url: "https://venustech.zhiye.com/Campus", host: "venustech.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---289", company: "周大生", adapter: "unknown", params: {url: "https://www.chowtaiseng.com/Recruitmentarea/", host: "www.chowtaiseng.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---179", company: "周黑鸭", adapter: "beisen", params: {url: "https://zhouheiya.zhiye.com/", host: "zhouheiya.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---290", company: "和辉光电", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vrl5aZt5L.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---291", company: "和铂医药", adapter: "unknown", params: {url: "https://www.harbourbiomed.cn/recruitment/zaoqiyanfa", host: "www.harbourbiomed.cn"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---292", company: "哔哩哔哩", adapter: "unknown", params: {url: "https://jobs.bilibili.com/campus/", host: "jobs.bilibili.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---180", company: "哪吒汽车", adapter: "beisen", params: {url: "https://changan.zhiye.com/campus?c=1", host: "changan.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---293", company: "唯品会", adapter: "unknown", params: {url: "https://app-tc.mokahr.com/campus-recruitment/vipshophr/10039?sourceToken=d7b00ea2471aaddd55b3f402bb4fcc19", host: "app-tc.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---294", company: "唯捷创芯", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vUk5a5ZLa.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---295", company: "商汤大装置", adapter: "unknown", params: {url: "https://www.sensecore.cn/", host: "www.sensecore.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---181", company: "喜茶", adapter: "beisen", params: {url: "https://heytea.zhiye.com/campus/", host: "heytea.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---296", company: "喜马拉雅", adapter: "unknown", params: {url: "http://jobs.ximalaya.com/", host: "jobs.ximalaya.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---297", company: "嘉实基金", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8y5aaNZZ.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---298", company: "四川路桥", adapter: "unknown", params: {url: "https://www.sclqhdgs.com/", host: "www.sclqhdgs.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---299", company: "四维图新", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYk5tMZa5.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---300", company: "国家电网", adapter: "unknown", params: {url: "https://job.sgepri.sgcc.com.cn/nari-career-ui/homepage", host: "job.sgepri.sgcc.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---301", company: "国家管网", adapter: "unknown", params: {url: "https://zhaopin.pipechina.com.cn/", host: "zhaopin.pipechina.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---302", company: "国家能源技术经济研究院", adapter: "unknown", params: {url: "https://www.nice.com/careers", host: "www.nice.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---303", company: "国投证券", adapter: "unknown", params: {url: "https://gtzb.iguopin.com/", host: "gtzb.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---304", company: "国机集团", adapter: "unknown", params: {url: "https://zhaopin.sinomach.com.cn/", host: "zhaopin.sinomach.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---14", company: "国民技术", adapter: "feishu_atsx", params: {url: "https://nsingtech.jobs.feishu.cn/campus", host: "nsingtech.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "beisen---182", company: "国泰基金", adapter: "beisen", params: {url: "https://gtfund.zhiye.com/campus/jobs?LocId=%5B%7B%22id%22%3A%223100%22%2C%22label%22%3A%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22%7D%5D", host: "gtfund.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---305", company: "国泰海通", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8Y5M5LCn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---306", company: "国电南自", adapter: "unknown", params: {url: "http://job.sgepri.sgcc.com.cn/nari-career-ui/homepage", host: "job.sgepri.sgcc.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---183", company: "国药集团", adapter: "beisen", params: {url: "https://gyzj.zhiye.com/", host: "gyzj.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---184", company: "国轩高科", adapter: "beisen", params: {url: "https://gotion.zhiye.com/campus", host: "gotion.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---185", company: "图达通", adapter: "beisen", params: {url: "https://seyond.zhiye.com/campus/jobs", host: "seyond.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---307", company: "地平线", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vmY5aNMnN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---186", company: "埃夫特", adapter: "beisen", params: {url: "https://efort.zhiye.com/", host: "efort.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---308", company: "埃安", adapter: "unknown", params: {url: "https://www.aion.com.cn/", host: "www.aion.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---187", company: "埃斯顿", adapter: "beisen", params: {url: "https://estun1.zhiye.com/campus", host: "estun1.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "feishu_atsx---15", company: "塔斯汀", adapter: "feishu_atsx", params: {url: "https://517tastien.jobs.feishu.cn/index/", host: "517tastien.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---309", company: "壁仞科技", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vmk5Z5tMn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---310", company: "士兰微", adapter: "unknown", params: {url: "https://www.silan.com.cn/index.php/about/social.html", host: "www.silan.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---311", company: "壳木游戏", adapter: "unknown", params: {url: "https://www.camelgames.com/plugins/simple-job-board/public/css/jquery-ui35d0.css?ver=1.12.1", host: "www.camelgames.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---188", company: "复星医药", adapter: "beisen", params: {url: "https://fosunpharma.zhiye.com/", host: "fosunpharma.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---312", company: "多氟多", adapter: "unknown", params: {url: "https://www.dfdchem.com/recruitment.html", host: "www.dfdchem.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---313", company: "大众", adapter: "unknown", params: {url: "https://jobs.volkswagen-group.com/", host: "jobs.volkswagen-group.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---189", company: "大华会计师", adapter: "beisen", params: {url: "https://dahuacpa.zhiye.com/", host: "dahuacpa.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---314", company: "大参林", adapter: "unknown", params: {url: "https://campus.dslyy.com/campus-recruitment/dslyy/136052", host: "campus.dslyy.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---315", company: "大悦城", adapter: "unknown", params: {url: "https://www.joycity.com/user/preTempJoinClause", host: "www.joycity.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---190", company: "大润发", adapter: "beisen", params: {url: "https://rt-mart.zhiye.com/", host: "rt-mart.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---316", company: "大疆", adapter: "unknown", params: {url: "https://careers.dji.com/zh-CN/campus", host: "careers.dji.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---317", company: "大陆集团", adapter: "unknown", params: {url: "https://jobs.continental.com/zh/", host: "jobs.continental.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---318", company: "天味食品", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8m5M5MCN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---319", company: "天宇股份", adapter: "unknown", params: {url: "https://www.tianyupharm.com/", host: "www.tianyupharm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---320", company: "天弘基金", adapter: "unknown", params: {url: "https://www.thfund.com.cn/", host: "www.thfund.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---321", company: "天翼云", adapter: "unknown", params: {url: "https://www.ctyun.cn/hr/", host: "www.ctyun.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---191", company: "天融信", adapter: "beisen", params: {url: "https://topsec.zhiye.com/", host: "topsec.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---322", company: "天马微电子", adapter: "unknown", params: {url: "https://jhun.91wllm.cn/campus/view/id/1002623", host: "jhun.91wllm.cn"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---192", company: "天齐锂业", adapter: "beisen", params: {url: "https://tianqilithium-hr.zhiye.com/jobs", host: "tianqilithium-hr.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---323", company: "太古地产", adapter: "unknown", params: {url: "https://careers.swireproperties.com/zh-cn/our-teams/", host: "careers.swireproperties.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---193", company: "太平人寿", adapter: "beisen", params: {url: "https://cntaiping.zhiye.com/", host: "cntaiping.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---324", company: "太平保险", adapter: "unknown", params: {url: "http://static.cntaiping.com/", host: "static.cntaiping.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---194", company: "太极股份", adapter: "beisen", params: {url: "https://cetctj.zhiye.com/campus/jobs", host: "cetctj.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---195", company: "奥乐齐中国", adapter: "beisen", params: {url: "https://aldichina.zhiye.com/", host: "aldichina.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---196", company: "奥克斯", adapter: "beisen", params: {url: "https://auxgroup.zhiye.com/campus", host: "auxgroup.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "unknown---325", company: "奥翔药业", adapter: "unknown", params: {url: "https://www.ausunpharm.com/Jobs.html", host: "www.ausunpharm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---326", company: "好想你", adapter: "unknown", params: {url: "https://www.haoxiangni.cn/contact/join.aspx", host: "www.haoxiangni.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---197", company: "妙可蓝多", adapter: "beisen", params: {url: "https://milkground.zhiye.com/home", host: "milkground.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---327", company: "娃哈哈", adapter: "unknown", params: {url: "https://apply.wahaha.com.cn/", host: "apply.wahaha.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---16", company: "字节跳动", adapter: "feishu_atsx", params: {url: "https://jobs.bytedance.com/campus", host: "jobs.bytedance.com"}}   # 1 条日历｜校招
+  - {id: "feishu_atsx---17", company: "字节跳动飞书", adapter: "feishu_atsx", params: {url: "https://jobs.bytedance.com/", host: "jobs.bytedance.com"}}   # 1 条日历｜校招
+  - {id: "unknown---328", company: "孚能科技动力", adapter: "unknown", params: {url: "https://www.farasis.com/index/contact-recruit/index.html", host: "www.farasis.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---329", company: "宁德新能源", adapter: "unknown", params: {url: "https://zhaopin.atlbattery.com/", host: "zhaopin.atlbattery.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---198", company: "宇信科技", adapter: "beisen", params: {url: "https://yusys-campus.zhiye.com/", host: "yusys-campus.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen--unitree", company: "宇树Unitree", adapter: "beisen", params: {url: "https://unitree.zhiye.com/", host: "unitree.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---330", company: "宇立仪器", adapter: "unknown", params: {url: "https://www.sri.com/careers/", host: "www.sri.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---331", company: "宇通客车", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU64a37a4dbef57c3af71c2478/pb/index.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---18", company: "安克创新", adapter: "feishu_atsx", params: {url: "https://anker-in.jobs.feishu.cn/campushirecn/login?redirect_path=%2Fposition%2Fapplication", host: "anker-in.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---332", company: "安恒信息", adapter: "unknown", params: {url: "https://ahxz.dbappsecurity.com.cn/jobs", host: "ahxz.dbappsecurity.com.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---333", company: "安琪酵母", adapter: "unknown", params: {url: "https://www.angelyeast.com/jobs.html", host: "www.angelyeast.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---334", company: "安集科技", adapter: "unknown", params: {url: "https://www.anjimicro.com/shehuizixun/133.html", host: "www.anjimicro.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---335", company: "宜家中国", adapter: "unknown", params: {url: "https://jobs.ikeachina.cn/", host: "jobs.ikeachina.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---336", company: "宝钢股份", adapter: "unknown", params: {url: "http://esales.baosteel.com/baosteel_bsi/sso/websiteGroup.jsp", host: "esales.baosteel.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---337", company: "客商银行", adapter: "unknown", params: {url: "https://www.kshbank.cn/", host: "www.kshbank.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---199", company: "富创精密", adapter: "beisen", params: {url: "https://syamt.zhiye.com/", host: "syamt.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---200", company: "富国基金", adapter: "beisen", params: {url: "http://htffund.zhiye.com/Campus", host: "htffund.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---338", company: "富民银行", adapter: "unknown", params: {url: "http://www.kmfm.gov.cn/zfxxgk/", host: "www.kmfm.gov.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---339", company: "富滇银行", adapter: "unknown", params: {url: "https://www.fudian-bank.com/gyfd/fdxw/zygg/202512/20251201_19256.html", host: "www.fudian-bank.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---340", company: "寒武纪", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/cambricon/44201", host: "app.mokahr.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---341", company: "小熊电器", adapter: "unknown", params: {url: "https://bears.com.cn/join.html?cid=69", host: "bears.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---342", company: "小米", adapter: "unknown", params: {url: "https://xiaomi.jobs.f.mioffice.cn/campus/", host: "xiaomi.jobs.f.mioffice.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---343", company: "小米汽车", adapter: "unknown", params: {url: "https://xiaomi.jobs.f.mioffice.cn/index/position/7362043473405558893/detail", host: "xiaomi.jobs.f.mioffice.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---344", company: "小鹏汽车", adapter: "unknown", params: {url: "https://www.xiaopeng.com/join.html", host: "www.xiaopeng.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---201", company: "山东威高", adapter: "beisen", params: {url: "https://weigao.zhiye.com/", host: "weigao.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---345", company: "峰飞航空", adapter: "unknown", params: {url: "https://jobs.autoflight.com/campus", host: "jobs.autoflight.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---202", company: "巨子生物", adapter: "beisen", params: {url: "https://xajuzi.zhiye.com/campus/detail?jobAdId=a6b924b8-5673-4bc4-a25d-e6e0249eca30", host: "xajuzi.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---346", company: "巨杉数据库", adapter: "unknown", params: {url: "https://www.sequoiadb.com/cn/recruit-campus", host: "www.sequoiadb.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---203", company: "希尔顿中国", adapter: "beisen", params: {url: "https://hilton.zhiye.com/campus/", host: "hilton.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---347", company: "平高电气", adapter: "unknown", params: {url: "https://www.pgcareers.com/global/en", host: "www.pgcareers.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---348", company: "广东南粤银行", adapter: "unknown", params: {url: "https://www.gdnybank.com/employee/index.html", host: "www.gdnybank.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---349", company: "广州数控", adapter: "unknown", params: {url: "https://www.gsk.com.cn/ypxz/index_939.aspx", host: "www.gsk.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---350", company: "广汽传祺", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU61407ecabef57c3b638d5e45/pb/index.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---351", company: "广汽埃安", adapter: "unknown", params: {url: "https://www.aion.com.cn/", host: "www.aion.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---204", company: "广银理财", adapter: "beisen", params: {url: "https://chinalife.zhiye.com/campus/detail?jobAdId=22b89947-1238-463e-ade1-a10f40e5ed17", host: "chinalife.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "feishu_atsx---19", company: "库迪咖啡", adapter: "feishu_atsx", params: {url: "https://i7drsi3tvf.jobs.feishu.cn/index", host: "i7drsi3tvf.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---352", company: "康师傅", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU66c83b1b1eb80543256c6529/pb/school.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---205", company: "建信基金", adapter: "beisen", params: {url: "https://ccbfund.zhiye.com/", host: "ccbfund.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---353", company: "归创通桥", adapter: "unknown", params: {url: "https://www.zyloxmedical.com/join-us", host: "www.zyloxmedical.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---354", company: "当升科技", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/easpring/102152", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown--insta360", company: "影石Insta360", adapter: "unknown", params: {url: "https://www.insta360.com/cn/jobs", host: "www.insta360.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---206", company: "得一微电子", adapter: "beisen", params: {url: "https://yeestor.zhiye.com/", host: "yeestor.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown--app", company: "得物App", adapter: "unknown", params: {url: "https://campus.dewu.com/", host: "campus.dewu.com"}}   # 1 条日历｜校园大使｜⚠ 需先实现适配器
+  - {id: "unknown---355", company: "微众银行", adapter: "unknown", params: {url: "https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN", host: "campus.webank.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---356", company: "微盟", adapter: "unknown", params: {url: "https://job.weimob.com/talent/", host: "job.weimob.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---357", company: "微软", adapter: "unknown", params: {url: "https://careers.microsoft.com/v2/global/en/home.html", host: "careers.microsoft.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---358", company: "德业股份", adapter: "unknown", params: {url: "https://www.deye.com.cn/join/campus.html", host: "www.deye.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---359", company: "德克士", adapter: "unknown", params: {url: "https://www.dicos.com.cn/join/apply.html", host: "www.dicos.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---360", company: "德勤", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU648133e50dcad45af15e3cb1/mc/position/campus", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---207", company: "德方纳米", adapter: "beisen", params: {url: "https://dynanonic.zhiye.com/", host: "dynanonic.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "feishu_atsx---20", company: "德赛西威", adapter: "feishu_atsx", params: {url: "https://yesv-desaysv.jobs.feishu.cn/campus/", host: "yesv-desaysv.jobs.feishu.cn"}}   # 1 条日历｜日常实习
+  - {id: "beisen---208", company: "德邦快递", adapter: "beisen", params: {url: "https://deppon.zhiye.com/", host: "deppon.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---361", company: "徽商银行", adapter: "unknown", params: {url: "http://rczp.hsbank.com.cn/", host: "rczp.hsbank.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---362", company: "志高空调", adapter: "unknown", params: {url: "http://www.china-chigo.com/cn/fulitixi/index.html", host: "www.china-chigo.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---363", company: "快手", adapter: "unknown", params: {url: "https://zhaogongzuo.kuaishou.com/", host: "zhaogongzuo.kuaishou.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---209", company: "思必驰", adapter: "beisen", params: {url: "https://aispeech.zhiye.com/Campus", host: "aispeech.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---210", company: "思念食品", adapter: "beisen", params: {url: "https://synear.zhiye.com/", host: "synear.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---364", company: "思瑞浦", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vkk5zatMC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---365", company: "思科", adapter: "unknown", params: {url: "https://careers.cisco.com/global/en/search-results?keywords=%E6%80%9D%E7%A7%91%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%E5%AE%98%E7%BD%91", host: "careers.cisco.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---366", company: "思谋科技", adapter: "unknown", params: {url: "https://cn.smartmore.com/", host: "cn.smartmore.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---367", company: "怡宝", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU636b6e722f9d2439ab23d358/pb/social.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---211", company: "恒玄科技", adapter: "beisen", params: {url: "https://bestechnic.zhiye.com/campus", host: "bestechnic.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---212", company: "恒生电子", adapter: "beisen", params: {url: "https://hundsun.zhiye.com/Campus", host: "hundsun.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---368", company: "恒生银行中国", adapter: "unknown", params: {url: "https://campus.hundsun.com/Campus", host: "campus.hundsun.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---369", company: "恒隆地产", adapter: "unknown", params: {url: "https://www.hanglung.com/en-us/careers", host: "www.hanglung.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---370", company: "恩捷股份", adapter: "unknown", params: {url: "https://www.semcorp.com/about/join-us/recruitment-position/campus-recruitment", host: "www.semcorp.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---21", company: "恺英网络", adapter: "feishu_atsx", params: {url: "https://kingnet.jobs.feishu.cn/", host: "kingnet.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---371", company: "悦动圈", adapter: "unknown", params: {url: "https://www.yuedong.cn/jobs.html", host: "www.yuedong.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---372", company: "惠普中国", adapter: "unknown", params: {url: "https://www.hp.com/cn-zh/hp-information.html", host: "www.hp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---373", company: "惠泰医疗", adapter: "unknown", params: {url: "https://www.aptmed.com.cn/join", host: "www.aptmed.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---374", company: "惠科", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vUl5aLazN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---375", company: "慧智微", adapter: "unknown", params: {url: "https://www.vanchip.com/recruitment/index", host: "www.vanchip.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---213", company: "成都银行", adapter: "beisen", params: {url: "https://bocd.zhiye.com/campus", host: "bocd.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---214", company: "我爱我家", adapter: "beisen", params: {url: "https://5i5j.zhiye.com/", host: "5i5j.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---376", company: "拓普集团", adapter: "unknown", params: {url: "https://hr.tp-link.com.cn/m/", host: "hr.tp-link.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---377", company: "拓荆科技", adapter: "unknown", params: {url: "https://piotech.cn/index.php/Join/join.html", host: "piotech.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---215", company: "招商局", adapter: "beisen", params: {url: "https://cmhk.zhiye.com/campus/detail", host: "cmhk.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---378", company: "招商工业", adapter: "unknown", params: {url: "https://www.cmhijs.com/index.php/joins/recruit.html", host: "www.cmhijs.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---216", company: "招商积余", adapter: "beisen", params: {url: "https://cmpo.zhiye.com/campus/", host: "cmpo.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---217", company: "招商蛇口", adapter: "beisen", params: {url: "https://cmsk1979.zhiye.com/", host: "cmsk1979.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---379", company: "拜耳中国", adapter: "unknown", params: {url: "https://jobs.bayer.com/", host: "jobs.bayer.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---380", company: "拼多多", adapter: "unknown", params: {url: "https://careers.pddglobalhr.com/campus", host: "careers.pddglobalhr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---381", company: "掌趣科技", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vlm5zMZCn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---382", company: "搜狐", adapter: "unknown", params: {url: "http://campus.changyou.com/", host: "campus.changyou.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---383", company: "摩根士丹利中国", adapter: "unknown", params: {url: "https://www.morganstanleychina.com/", host: "www.morganstanleychina.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---384", company: "擎朗智能", adapter: "unknown", params: {url: "https://keenonrobot.robot-china.com/job/", host: "keenonrobot.robot-china.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---385", company: "散爆网络", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8Y5nnMMC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---218", company: "敷尔佳", adapter: "beisen", params: {url: "https://hrbs-voolga-net.zhiye.com/campus/jobs", host: "hrbs-voolga-net.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---386", company: "文思海辉", adapter: "unknown", params: {url: "https://www.pactera.com/careers", host: "www.pactera.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---387", company: "文远知行", adapter: "unknown", params: {url: "https://app.mokahr.com/campus_apply/jingchi/2137", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---388", company: "斗鱼", adapter: "unknown", params: {url: "http://zhaopin.douyu.com/campus", host: "zhaopin.douyu.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---389", company: "斯达半导", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vll5a5aCn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---390", company: "新东方前途出国", adapter: "unknown", params: {url: "https://zhaopin.xdf.cn/campus", host: "zhaopin.xdf.cn"}}   # 1 条日历｜提前批｜⚠ 需先实现适配器
+  - {id: "unknown---391", company: "新安银行", adapter: "unknown", params: {url: "https://www.xinan.gov.cn/", host: "www.xinan.gov.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---219", company: "新希望", adapter: "beisen", params: {url: "https://xwfintech.zhiye.com/campus", host: "xwfintech.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---220", company: "新松机器人", adapter: "beisen", params: {url: "https://siasun.zhiye.com/", host: "siasun.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---392", company: "新浪", adapter: "unknown", params: {url: "https://career.sina.com.cn/social-recruitment/sina/43535/", host: "career.sina.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---393", company: "新石器无人车", adapter: "unknown", params: {url: "https://www.neolix.cn/joinUs", host: "www.neolix.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---394", company: "新航道", adapter: "unknown", params: {url: "https://bj.xhd.cn/topic/zhaopin/", host: "bj.xhd.cn"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---221", company: "方正证券", adapter: "beisen", params: {url: "https://foundersc.zhiye.com/", host: "foundersc.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "feishu_atsx---22", company: "无问芯穹", adapter: "feishu_atsx", params: {url: "https://infinigence.jobs.feishu.cn/infinigence", host: "infinigence.jobs.feishu.cn"}}   # 1 条日历｜社招
+  - {id: "beisen---222", company: "时代新材", adapter: "beisen", params: {url: "https://zztrp1.zhiye.com/jobs", host: "zztrp1.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "unknown---395", company: "时代邻里", adapter: "unknown", params: {url: "https://www.timesneighborhood.cn/join28.html", host: "www.timesneighborhood.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---396", company: "旷视科技", adapter: "unknown", params: {url: "http://zhaopin.megvii.com/apply/megviihr/38641/", host: "zhaopin.megvii.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---397", company: "明源云", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vUm5CNMzM.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---223", company: "明阳智能", adapter: "beisen", params: {url: "https://mywind.zhiye.com/campus", host: "mywind.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---224", company: "星恒电源", adapter: "beisen", params: {url: "https://xingheng.zhiye.com/", host: "xingheng.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---398", company: "星源材质", adapter: "unknown", params: {url: "http://szsenior.senior798.com:8881/szxy/gw.html", host: "szsenior.senior798.com:8881"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---225", company: "星网锐捷", adapter: "beisen", params: {url: "https://starnet.zhiye.com/", host: "starnet.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---399", company: "星途", adapter: "unknown", params: {url: "https://www.exeedcars.com/joinus/", host: "www.exeedcars.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---400", company: "普华永道", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/pwc/148260?locale=zh-CN", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---226", company: "晶丰明源", adapter: "beisen", params: {url: "https://bpsemi.zhiye.com/campus/jobs?queryId=b02ae0e6-78d7-4109-a187-0e387e1c53dd", host: "bpsemi.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---227", company: "晶合集成", adapter: "beisen", params: {url: "https://nexchip.zhiye.com/Campus", host: "nexchip.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "beisen---228", company: "晶晨股份", adapter: "beisen", params: {url: "https://amlogicsh.zhiye.com/campus?lang=zh_CN", host: "amlogicsh.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "feishu_atsx---23", company: "智元机器人", adapter: "feishu_atsx", params: {url: "https://agirobot.jobs.feishu.cn/campusrecruitment", host: "agirobot.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown--agibot", company: "智元机器人AgiBot", adapter: "unknown", params: {url: "https://www.agibot.cn/recruiting/campus.html", host: "www.agibot.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---401", company: "智加科技", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYU5a5nzM.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---402", company: "智己汽车", adapter: "unknown", params: {url: "https://www.immotors.com/website/join_us", host: "www.immotors.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---403", company: "智联招聘", adapter: "unknown", params: {url: "http://edm.zhaopin.cn/DM/jump/", host: "edm.zhaopin.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---404", company: "智谱", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8Y5ZCtaZ.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---405", company: "曼卡龙", adapter: "unknown", params: {url: "https://www.mclon.com/more-join.aspx", host: "www.mclon.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown--kimi", company: "月之暗面Kimi", adapter: "unknown", params: {url: "https://www.ruyuejian.com/company/moonshot-campus", host: "www.ruyuejian.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---406", company: "有赞", adapter: "unknown", params: {url: "https://job.youzan.com/", host: "job.youzan.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---407", company: "未来机器人", adapter: "unknown", params: {url: "https://www.weilairobotics.com/about/detail129.html", host: "www.weilairobotics.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---408", company: "杉杉股份", adapter: "unknown", params: {url: "https://www.shanshantech.com/talent-recruitment", host: "www.shanshantech.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---409", company: "李宁", adapter: "unknown", params: {url: "https://lining.com/", host: "lining.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown--young", company: "李宁YOUNG", adapter: "unknown", params: {url: "https://lining.hotjob.cn", host: "lining.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---229", company: "来伊份", adapter: "beisen", params: {url: "https://laiyifen.zhiye.com/", host: "laiyifen.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---230", company: "杰华特", adapter: "beisen", params: {url: "https://joulwatt.zhiye.com/campus/", host: "joulwatt.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---410", company: "松下电器", adapter: "unknown", params: {url: "https://panasonic.cn/", host: "panasonic.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---411", company: "极兔速递", adapter: "unknown", params: {url: "https://www.jtexpress.cn/distM/joinUs.html", host: "www.jtexpress.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---412", company: "极智嘉", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYU5a5tzN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---413", company: "格林美", adapter: "unknown", params: {url: "https://www.gem.com.cn/SchoolRecruitment/index.html", host: "www.gem.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---231", company: "梅卡曼德", adapter: "beisen", params: {url: "https://mechmind.zhiye.com/", host: "mechmind.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---232", company: "概伦电子", adapter: "beisen", params: {url: "https://primarius.zhiye.com/", host: "primarius.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---414", company: "橘朵", adapter: "unknown", params: {url: "https://jd.hotjob.cn/", host: "jd.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---415", company: "欧康维视", adapter: "unknown", params: {url: "https://www.ocumension.com/cn/career", host: "www.ocumension.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---233", company: "欧诗漫", adapter: "beisen", params: {url: "https://osmsw1.zhiye.com/", host: "osmsw1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---234", company: "正大天晴", adapter: "beisen", params: {url: "https://njcttq.zhiye.com/Campus", host: "njcttq.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---416", company: "正泰", adapter: "unknown", params: {url: "https://campus.chint.com/campus-recruitment/chint/40745/", host: "campus.chint.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---417", company: "步科", adapter: "unknown", params: {url: "https://bkhr.hotjob.cn/", host: "bkhr.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---418", company: "毛戈平", adapter: "unknown", params: {url: "https://www.maogeping.com/join.html", host: "www.maogeping.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---235", company: "民泰银行", adapter: "beisen", params: {url: "https://mintaibank.zhiye.com/", host: "mintaibank.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---419", company: "水井坊", adapter: "unknown", params: {url: "http://www.zhangjiakourc.com/job788112000.shtml", host: "www.zhangjiakourc.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---24", company: "水羊股份", adapter: "feishu_atsx", params: {url: "https://syounggroup.jobs.feishu.cn/career/position/7555348295137790247/detail", host: "syounggroup.jobs.feishu.cn"}}   # 1 条日历｜日常实习
+  - {id: "beisen---236", company: "永辉超市", adapter: "beisen", params: {url: "https://yhchaoshi.zhiye.com/Campus", host: "yhchaoshi.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---420", company: "汇联易", adapter: "unknown", params: {url: "https://www.huilianyi.com/other/joinus", host: "www.huilianyi.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---237", company: "汉得信息", adapter: "beisen", params: {url: "https://hand-china.zhiye.com/social/jobs", host: "hand-china.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "beisen---238", company: "江南造船", adapter: "beisen", params: {url: "https://jnzhaopin.zhiye.com/", host: "jnzhaopin.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---239", company: "江波龙", adapter: "beisen", params: {url: "https://longsys.zhiye.com/login?goto=campus", host: "longsys.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---240", company: "江淮汽车", adapter: "beisen", params: {url: "https://jac.zhiye.com/campus", host: "jac.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---421", company: "江西银行", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU64faea1b1c240e4e45d27d61/pb/index.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---422", company: "沃尔玛中国", adapter: "unknown", params: {url: "https://walmartchina.avature.cn/zh_CN/careers", host: "walmartchina.avature.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---423", company: "沃森生物", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU64ab6b940dcad465c3b17d1f/pb/school.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---424", company: "沃森生物疫苗", adapter: "unknown", params: {url: "https://walvax.com/employ_info/", host: "walvax.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---425", company: "沃飞长空", adapter: "unknown", params: {url: "https://www.aerofugia.com/recruit/", host: "www.aerofugia.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---426", company: "沈鼓集团", adapter: "unknown", params: {url: "https://www.shengu.com.cn/rencaizhaopin/", host: "www.shengu.com.cn"}}   # 1 条日历｜秋招补录｜⚠ 需先实现适配器
+  - {id: "beisen---241", company: "沛嘉医疗", adapter: "beisen", params: {url: "https://peijiamedical.zhiye.com/", host: "peijiamedical.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---427", company: "沪电股份", adapter: "unknown", params: {url: "https://sec.hotjob.cn/wt/SEC/web/index", host: "sec.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---428", company: "泛微网络", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v885an5tt.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---242", company: "泰格医药", adapter: "beisen", params: {url: "https://tigermed.zhiye.com/", host: "tigermed.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---429", company: "泸州老窖", adapter: "unknown", params: {url: "https://www.lzlj.com/", host: "www.lzlj.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---243", company: "洋河", adapter: "beisen", params: {url: "https://chinayanghe.zhiye.com/Campus", host: "chinayanghe.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---430", company: "洛阳钼业", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU67e513c01c240e188726a2e9/pb/index.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---244", company: "洪都航空", adapter: "beisen", params: {url: "https://hongdu.zhiye.com/campus/jobs", host: "hongdu.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---245", company: "浙商证券", adapter: "beisen", params: {url: "https://zszq.zhiye.com/campus/", host: "zszq.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---431", company: "海信视像", adapter: "unknown", params: {url: "https://jobs.hisense.com/", host: "jobs.hisense.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---432", company: "海底捞", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYy5nC5tC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---433", company: "海康威视", adapter: "unknown", params: {url: "https://talent.hikvision.com/", host: "talent.hikvision.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---246", company: "海柔创新", adapter: "beisen", params: {url: "https://hairobotics.zhiye.com/", host: "hairobotics.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---247", company: "海正药业", adapter: "beisen", params: {url: "https://hisunpharm.zhiye.com/campus", host: "hisunpharm.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---434", company: "海澜之家", adapter: "unknown", params: {url: "https://www.hotjob.cn/wt/HLA/web/index?brandCode=100001", host: "www.hotjob.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---435", company: "涂鸦智能", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vls5tZMna.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---436", company: "润和软件", adapter: "unknown", params: {url: "https://www.hoperun.com/talent/job", host: "www.hoperun.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "beisen---248", company: "深南电路", adapter: "beisen", params: {url: "https://scc.zhiye.com/Campus", host: "scc.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "unknown--deepseek", company: "深度求索DeepSeek", adapter: "unknown", params: {url: "https://talent.deepseek.com/", host: "talent.deepseek.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---249", company: "深蓝汽车", adapter: "beisen", params: {url: "https://shenlan1.zhiye.com/", host: "shenlan1.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---437", company: "温州银行", adapter: "unknown", params: {url: "https://www.wenzhou.gov.cn/", host: "www.wenzhou.gov.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---438", company: "温氏", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/wens/92366", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---439", company: "游族网络", adapter: "unknown", params: {url: "https://app.mokahr.com/social-recruitment/yoozoo/91950", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---440", company: "湖南裕能", adapter: "unknown", params: {url: "https://www.hunanyuneng.com/rlzy/1.html", host: "www.hunanyuneng.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---441", company: "湖南银行", adapter: "unknown", params: {url: "https://www.hunan-bank.com/96599/2025-09/02/article_2026091711220911569.shtml", host: "www.hunan-bank.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---442", company: "滴滴", adapter: "unknown", params: {url: "https://careers.didiglobal.com/", host: "careers.didiglobal.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---443", company: "漫步者", adapter: "unknown", params: {url: "https://talent.lenovo.com.cn/campus", host: "talent.lenovo.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---250", company: "潍柴动力", adapter: "beisen", params: {url: "https://weichaidongli.zhiye.com/", host: "weichaidongli.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---251", company: "潮宏基", adapter: "beisen", params: {url: "https://chjgroup.zhiye.com/campus/detail?jobAdId=aaf10c4a-2f12-4785-a51d-076ecc1c88f2", host: "chjgroup.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---444", company: "澜起科技", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vsk5zzzCZ.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---445", company: "澳优乳业", adapter: "unknown", params: {url: "https://www.ausnutria.com/joinus.html", host: "www.ausnutria.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---252", company: "瀚博半导体", adapter: "beisen", params: {url: "https://vastaitech.zhiye.com/campus", host: "vastaitech.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---253", company: "瀚高数据库", adapter: "beisen", params: {url: "https://highgo.zhiye.com/", host: "highgo.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---254", company: "灵猴机器人", adapter: "beisen", params: {url: "https://linkhou.zhiye.com/jobs", host: "linkhou.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---446", company: "燧原科技", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vkl5znLz5.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---447", company: "爱奇艺", adapter: "unknown", params: {url: "https://careers.iqiyi.com/campus/", host: "careers.iqiyi.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---448", company: "爱尔眼科", adapter: "unknown", params: {url: "https://zhaopin.aierchina.com/", host: "zhaopin.aierchina.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---255", company: "爱慕", adapter: "beisen", params: {url: "https://aimer.zhiye.com/", host: "aimer.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---449", company: "爱旭股份", adapter: "unknown", params: {url: "https://aikosolar.com/cn/careers/", host: "aikosolar.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---450", company: "爱芯元智", adapter: "unknown", params: {url: "https://axera-tech.com/join/1", host: "axera-tech.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---451", company: "片仔癀", adapter: "unknown", params: {url: "https://pzhchina.com/rczp/list_252.aspx", host: "pzhchina.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---452", company: "特步", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vUy5ZLtaz.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---453", company: "猿辅导", adapter: "unknown", params: {url: "https://job.xasyxy.com/news/view/aid/408985/tag/tzgg", host: "job.xasyxy.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---454", company: "玛氏中国", adapter: "unknown", params: {url: "https://careers.mars.com/cn/zh", host: "careers.mars.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---455", company: "环旭电子", adapter: "unknown", params: {url: "https://jobs.usi.com/", host: "jobs.usi.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---456", company: "环球网校", adapter: "unknown", params: {url: "https://www.hqwx.com/web_news/html/2020-7/15946215923271.html", host: "www.hqwx.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---256", company: "现代牧业", adapter: "beisen", params: {url: "https://xiandaimuye.zhiye.com/", host: "xiandaimuye.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---457", company: "珀莱雅", adapter: "unknown", params: {url: "https://jobs.proya.com/campus", host: "jobs.proya.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---458", company: "珀莱雅集团", adapter: "unknown", params: {url: "http://www.proya-group.com/about", host: "www.proya-group.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---257", company: "珠海冠宇", adapter: "beisen", params: {url: "https://cosmx.zhiye.com/campus/jobs", host: "cosmx.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "unknown---459", company: "理想汽车", adapter: "unknown", params: {url: "https://www.lixiang.com/employ/campus.html?fromJob=1", host: "www.lixiang.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---460", company: "璞泰来", adapter: "unknown", params: {url: "https://www.putailai.com/about/join", host: "www.putailai.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---461", company: "甘源食品", adapter: "unknown", params: {url: "https://www.ganyuanfood.com/rczp", host: "www.ganyuanfood.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---25", company: "生数科技", adapter: "feishu_atsx", params: {url: "https://shengshu.jobs.feishu.cn/index/", host: "shengshu.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---462", company: "生益科技", adapter: "unknown", params: {url: "https://www.syst.com.cn/", host: "www.syst.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---463", company: "申通快递", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/sto/126265", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---464", company: "电魂网络", adapter: "unknown", params: {url: "https://app.mokahr.com/social-recruitment/dianhun/55952", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---465", company: "界面新闻", adapter: "unknown", params: {url: "https://www.jiemian.com/about/advert.html", host: "www.jiemian.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---26", company: "番茄小说", adapter: "feishu_atsx", params: {url: "https://jobs.bytedance.com/campus/position?type=2&keywords=%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4", host: "jobs.bytedance.com"}}   # 1 条日历｜校招
+  - {id: "unknown---466", company: "白云山", adapter: "unknown", params: {url: "https://byszc.com/", host: "byszc.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---467", company: "百草味", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vky5aNZZL.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---258", company: "盛美上海", adapter: "beisen", params: {url: "https://sgssemi.zhiye.com/campus/jobs", host: "sgssemi.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---259", company: "盼盼食品", adapter: "beisen", params: {url: "https://wantwant.zhiye.com/campus/", host: "wantwant.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---468", company: "知乎", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/zhihu/68321", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---260", company: "石头科技", adapter: "beisen", params: {url: "https://roborock.zhiye.com/", host: "roborock.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---469", company: "神工股份", adapter: "unknown", params: {url: "https://thinkon.com/careers/", host: "thinkon.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---261", company: "神策数据", adapter: "beisen", params: {url: "https://sensorsdata.zhiye.com/", host: "sensorsdata.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---262", company: "禅游科技", adapter: "beisen", params: {url: "https://cykj.zhiye.com/", host: "cykj.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---263", company: "福斯特", adapter: "beisen", params: {url: "https://voss.zhiye.com/campus", host: "voss.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---264", company: "福特中国", adapter: "beisen", params: {url: "https://caf.zhiye.com/campus", host: "caf.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---470", company: "福田汽车", adapter: "unknown", params: {url: "https://www.foton.com.cn/webback/job/index.html", host: "www.foton.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---27", company: "禾赛科技", adapter: "feishu_atsx", params: {url: "https://kwh0jtf778.jobs.feishu.cn/229043", host: "kwh0jtf778.jobs.feishu.cn"}}   # 1 条日历｜日常实习
+  - {id: "unknown---471", company: "科华数据", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/kehua/92510", host: "app.mokahr.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---472", company: "立昂微", adapter: "unknown", params: {url: "https://www.li-on.com/index.php/contact/recruit.html", host: "www.li-on.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---265", company: "立讯精密", adapter: "beisen", params: {url: "https://luxshare-tech.zhiye.com/campus", host: "luxshare-tech.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---266", company: "米其林中国", adapter: "beisen", params: {url: "https://michelin.zhiye.com/campus/", host: "michelin.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---473", company: "粉笔", adapter: "unknown", params: {url: "http://www.fenbicx.com/", host: "www.fenbicx.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---474", company: "精进电动", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---475", company: "紫光展锐", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU650d409e6202cc7d7a295264/pb/social.html", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---267", company: "紫光股份", adapter: "beisen", params: {url: "https://unicloud.zhiye.com/", host: "unicloud.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---476", company: "紫燕食品", adapter: "unknown", params: {url: "https://www.ziyanfoods.com/news/4/", host: "www.ziyanfoods.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---477", company: "紫金矿业", adapter: "unknown", params: {url: "https://join.zjky.cn/campus-recruitment/zijinmining/117957/", host: "join.zjky.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---478", company: "红旗", adapter: "unknown", params: {url: "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment.js", host: "hqgw-1300211780.faw.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---479", company: "红星新闻", adapter: "unknown", params: {url: "https://hongxingxinwen.com/2026/10/21/ultrasonic-welding-doubles-metal-joint-strength/", host: "hongxingxinwen.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---480", company: "绝味食品", adapter: "unknown", params: {url: "https://www.juewei.cn/page/join/join.html", host: "www.juewei.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---481", company: "统信软件", adapter: "unknown", params: {url: "https://faq.uniontech.com/1111/f349", host: "faq.uniontech.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---268", company: "维信诺", adapter: "beisen", params: {url: "https://vcredit.zhiye.com/", host: "vcredit.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---482", company: "绿叶制药", adapter: "unknown", params: {url: "https://www.luye.cn/lvye/joinUs.php", host: "www.luye.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---269", company: "绿联", adapter: "beisen", params: {url: "https://ugreen.zhiye.com/campus", host: "ugreen.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---483", company: "网易", adapter: "unknown", params: {url: "https://campus.163.com/", host: "campus.163.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---270", company: "罗兰贝格", adapter: "beisen", params: {url: "https://ronbay.zhiye.com/campus/jobs", host: "ronbay.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---484", company: "美宜佳", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vwr5ntNLa.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---485", company: "翰森制药", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vm85Cz5LC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---486", company: "翱捷科技", adapter: "unknown", params: {url: "https://www.asrmicro.com/join.html", host: "www.asrmicro.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---271", company: "老乡鸡", adapter: "beisen", params: {url: "https://lxjchina1.zhiye.com/campus/detail?jobAdId=4c674964-ea34-4aed-9f0c-1629352400ff", host: "lxjchina1.zhiye.com"}}   # 1 条日历｜校园大使
+  - {id: "unknown---487", company: "老板电器", adapter: "unknown", params: {url: "https://www.robam.com/", host: "www.robam.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---488", company: "老百姓大药房", adapter: "unknown", params: {url: "https://www.lbxdrugs.com/rcyj.html", host: "www.lbxdrugs.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---272", company: "联发科", adapter: "beisen", params: {url: "https://mediatek.zhiye.com/", host: "mediatek.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---489", company: "联合利华", adapter: "unknown", params: {url: "https://careers.unilever.com/en/", host: "careers.unilever.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---273", company: "联影医疗", adapter: "beisen", params: {url: "https://united-imaging.zhiye.com/Campus", host: "united-imaging.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---274", company: "聚辰股份", adapter: "beisen", params: {url: "https://giantec.zhiye.com/", host: "giantec.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---490", company: "腾势", adapter: "unknown", params: {url: "https://job.byd.com/", host: "job.byd.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---491", company: "腾讯游戏", adapter: "unknown", params: {url: "https://careers.tencent.com/campusrecruit.html", host: "careers.tencent.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---492", company: "舍得酒业", adapter: "unknown", params: {url: "https://www.tuopaishede.cn/jobList_29.html", host: "www.tuopaishede.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---493", company: "航天信息", adapter: "unknown", params: {url: "https://gd.aisino.com/", host: "gd.aisino.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---275", company: "良品铺子", adapter: "beisen", params: {url: "https://lppz.zhiye.com/Campus", host: "lppz.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---276", company: "艾为电子", adapter: "beisen", params: {url: "https://awinic1.zhiye.com/campus/", host: "awinic1.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---494", company: "艾昆纬", adapter: "unknown", params: {url: "https://jobs.iqvia.cn/", host: "jobs.iqvia.cn"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---277", company: "节卡机器人", adapter: "beisen", params: {url: "https://jaka.zhiye.com/", host: "jaka.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---278", company: "芯海科技", adapter: "beisen", params: {url: "https://chipsea.zhiye.com/Campus", host: "chipsea.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---495", company: "芯源微", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vkm5aNtCZ.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---496", company: "花王中国", adapter: "unknown", params: {url: "https://www.kao.com/cn/careers/position/", host: "www.kao.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---497", company: "花西子", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYm5CL5Lt.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---279", company: "苏州银行", adapter: "beisen", params: {url: "https://suzhoubank.zhiye.com/", host: "suzhoubank.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "unknown---498", company: "苏泊尔", adapter: "unknown", params: {url: "https://www.hotjob.cn/wt/suporcw/web/index/campus", host: "www.hotjob.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---499", company: "英伟达", adapter: "unknown", params: {url: "https://jobs.nvidia.com/careers", host: "jobs.nvidia.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---500", company: "苹果", adapter: "unknown", params: {url: "https://jobs.apple.com/zh-cn/search?location=china-CHNC", host: "jobs.apple.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---280", company: "茶百道", adapter: "beisen", params: {url: "https://baichabaidao.zhiye.com/", host: "baichabaidao.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---501", company: "茶颜悦色", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vYmNNa5zM.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---502", company: "荣昌生物", adapter: "unknown", params: {url: "https://www.remegen.cn/index.php?v=listing&cid=27#rcdw", host: "www.remegen.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---503", company: "荣耀", adapter: "unknown", params: {url: "https://career.honor.com/SU60ee9e002f9d247b98da489e/mc/position/campus", host: "career.honor.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---504", company: "药明合联", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8y5a5aCC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---28", company: "莉莉丝", adapter: "feishu_atsx", params: {url: "https://lilithgames.jobs.feishu.cn/campus", host: "lilithgames.jobs.feishu.cn"}}   # 1 条日历｜秋招正式批
+  - {id: "unknown---505", company: "菜鸟网络", adapter: "unknown", params: {url: "https://talent.cainiao.com/", host: "talent.cainiao.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---506", company: "葛洲坝地产", adapter: "unknown", params: {url: "http://www.gzbsz.ceec.net.cn/art/2026/8/3/art_8736_2519364.html", host: "www.gzbsz.ceec.net.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---281", company: "蒙牛", adapter: "beisen", params: {url: "https://mengniu.zhiye.com/custom/campus?hideMenu=1", host: "mengniu.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---282", company: "蓝思科技", adapter: "beisen", params: {url: "https://hnlens.zhiye.com/campus/", host: "hnlens.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---507", company: "蔚来", adapter: "unknown", params: {url: "https://campus.nio.com/", host: "campus.nio.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---283", company: "蕉下", adapter: "beisen", params: {url: "https://bananain.zhiye.com/Campus", host: "bananain.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---508", company: "薪人薪事", adapter: "unknown", params: {url: "https://www.xinrenxinshi.com/feature/recruit", host: "www.xinrenxinshi.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---284", company: "蜂巢能源", adapter: "beisen", params: {url: "https://svolt.zhiye.com/campus/jobs", host: "svolt.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---509", company: "蜜雪冰城", adapter: "unknown", params: {url: "https://careers.mxbc.com/Campus", host: "careers.mxbc.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---510", company: "西山居", adapter: "unknown", params: {url: "https://job.seasungames.cn/", host: "job.seasungames.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---285", company: "观远数据", adapter: "beisen", params: {url: "https://guandata.zhiye.com/", host: "guandata.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---286", company: "视比特机器人", adapter: "beisen", params: {url: "https://speedbot.zhiye.com/", host: "speedbot.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---287", company: "诺诚健华", adapter: "beisen", params: {url: "https://innocare.zhiye.com/", host: "innocare.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---511", company: "贝壳", adapter: "unknown", params: {url: "http://career.ke.com/", host: "career.ke.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---512", company: "贝恩", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vsr5zCLzz.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---513", company: "贝泰妮", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-v8r5atzzn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---288", company: "贝特瑞", adapter: "beisen", params: {url: "https://btrchina.zhiye.com/campus/", host: "btrchina.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---514", company: "财通证券", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vly5zZC5z.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---289", company: "货拉拉", adapter: "beisen", params: {url: "https://huolala.zhiye.com/Campus", host: "huolala.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---515", company: "贪玩游戏", adapter: "unknown", params: {url: "http://www.twyx.cn/", host: "www.twyx.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---516", company: "贵州茅台", adapter: "unknown", params: {url: "https://zp.moutai.com.cn/", host: "zp.moutai.com.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---517", company: "贵州银行", adapter: "unknown", params: {url: "https://whhly.guizhou.gov.cn/", host: "whhly.guizhou.gov.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---518", company: "赛诺菲中国", adapter: "unknown", params: {url: "https://jobs.sanofi.cn/china", host: "jobs.sanofi.cn"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---290", company: "赣锋锂业", adapter: "beisen", params: {url: "https://ganfenglithium.zhiye.com/", host: "ganfenglithium.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---519", company: "越疆科技", adapter: "unknown", params: {url: "https://www.dobot.cn/", host: "www.dobot.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---520", company: "越秀地产", adapter: "unknown", params: {url: "https://www.yuexiu-pm.com/zhaoxiannashi/xiaoyuanzhaopin/", host: "www.yuexiu-pm.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---521", company: "轻舟智航", adapter: "unknown", params: {url: "https://www.qcraft.ai/en", host: "www.qcraft.ai"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---522", company: "达梦数据库", adapter: "unknown", params: {url: "https://www.dameng.com/about/join.html", host: "www.dameng.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---291", company: "迈瑞动物医疗", adapter: "beisen", params: {url: "https://mindrayanimal.zhiye.com/", host: "mindrayanimal.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---523", company: "运达股份", adapter: "unknown", params: {url: "https://hr.chinawindey.com:7443/r.do?method=portal&o=082443E1C6E8E566F4F3D5A79EC7D5B6B3B81D60B422AE60&p=6B1FBE97912F34475EBD1C3D250F3A163A012333B0230C2E&oursInWindowDialog=true&windowId=win_532757689329137108", host: "hr.chinawindey.com:7443"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---292", company: "追觅科技", adapter: "beisen", params: {url: "https://dreame.zhiye.com/Campus", host: "dreame.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---524", company: "逐际动力", adapter: "unknown", params: {url: "https://www.limxdynamics.com/zh", host: "www.limxdynamics.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---525", company: "途游游戏", adapter: "unknown", params: {url: "https://cug.91wllm.cn/campus/view/id/1002147", host: "cug.91wllm.cn"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "beisen---293", company: "通威", adapter: "beisen", params: {url: "https://tongwei.zhiye.com/", host: "tongwei.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---294", company: "通威股份", adapter: "beisen", params: {url: "https://tongwei.zhiye.com/", host: "tongwei.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---526", company: "速腾聚创", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/robosense/69887", host: "app.mokahr.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---527", company: "遨博智能", adapter: "unknown", params: {url: "https://www.aubo-robotics.cn/career/53.html", host: "www.aubo-robotics.cn"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---528", company: "邮储银行", adapter: "unknown", params: {url: "https://jsyc.iguopin.com/notice", host: "jsyc.iguopin.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---295", company: "郎酒", adapter: "beisen", params: {url: "https://langjiu3.zhiye.com/campus", host: "langjiu3.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---529", company: "郑州银行", adapter: "unknown", params: {url: "https://zzbankcampus.hotjob.cn/", host: "zzbankcampus.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---296", company: "采埃孚", adapter: "beisen", params: {url: "https://caf.zhiye.com/", host: "caf.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---530", company: "重庆银行", adapter: "unknown", params: {url: "https://www.cqcbank.com/cn/jrch/rczp/index.html", host: "www.cqcbank.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---531", company: "金佰利中国", adapter: "unknown", params: {url: "https://www.jblfz.com/join/", host: "www.jblfz.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---297", company: "金山云", adapter: "beisen", params: {url: "https://jssoft.zhiye.com/campus/jobs?silence=1", host: "jssoft.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---532", company: "金蝶国际", adapter: "unknown", params: {url: "https://www.kingdee.com/cn", host: "www.kingdee.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---533", company: "金龙鱼", adapter: "unknown", params: {url: "https://www.jinlongyu.cn/join/xiaoyuanzhaopin", host: "www.jinlongyu.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---534", company: "钉钉", adapter: "unknown", params: {url: "https://page.dingtalk.com/wow/z/dingtalk/default/9TYZ4Q2IBSO", host: "page.dingtalk.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---535", company: "钛媒体", adapter: "unknown", params: {url: "https://www.tmtpost.com/about/jobs", host: "www.tmtpost.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---536", company: "银华基金", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vry5aZzCC.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---537", company: "银轮股份", adapter: "unknown", params: {url: "https://www.yinlun.cn/Recruit", host: "www.yinlun.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---538", company: "锐捷网络", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/ruijie/136206", host: "app.mokahr.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---539", company: "锦波生物", adapter: "unknown", params: {url: "https://www.sxjbswyy.com/", host: "www.sxjbswyy.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---298", company: "锦浪科技", adapter: "beisen", params: {url: "https://ginlong.zhiye.com/campus/jobs", host: "ginlong.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---540", company: "长亮科技", adapter: "unknown", params: {url: "https://www.sunline.cn/join/campus-recruiting.html", host: "www.sunline.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---541", company: "长城汽车", adapter: "unknown", params: {url: "https://wecruit.hotjob.cn/SU64eebc341eb80519a80a1b2e/mc/index", host: "wecruit.hotjob.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---542", company: "长川科技", adapter: "unknown", params: {url: "https://career.hzcctech.com/", host: "career.hzcctech.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---543", company: "长春高新", adapter: "unknown", params: {url: "https://ccgx.com/careers", host: "ccgx.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "beisen---299", company: "长江养老", adapter: "beisen", params: {url: "https://cjpension1.zhiye.com/", host: "cjpension1.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---300", company: "长江存储", adapter: "beisen", params: {url: "https://ymtc-campus.zhiye.com/jobs", host: "ymtc-campus.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---301", company: "长沙银行", adapter: "beisen", params: {url: "https://cscb.zhiye.com/", host: "cscb.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---302", company: "长鑫存储", adapter: "beisen", params: {url: "https://cxmt.zhiye.com/campus/jobs", host: "cxmt.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---303", company: "长飞光纤", adapter: "beisen", params: {url: "https://yofc2.zhiye.com/", host: "yofc2.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "beisen---304", company: "闻泰科技", adapter: "beisen", params: {url: "https://campus.zhiye.com/", host: "campus.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---544", company: "阅文集团", adapter: "unknown", params: {url: "https://campus.yuewen.com/fieldwork", host: "campus.yuewen.com"}}   # 1 条日历｜日常实习｜⚠ 需先实现适配器
+  - {id: "unknown---545", company: "阳光电源", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/sungrow/94416", host: "app.mokahr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---546", company: "阿维塔", adapter: "unknown", params: {url: "https://talent.avatr.com/915151", host: "talent.avatr.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---305", company: "阿道夫", adapter: "beisen", params: {url: "https://adolph.zhiye.com/", host: "adolph.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---547", company: "阿里云", adapter: "unknown", params: {url: "https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Fcareers.aliyun.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", host: "mozi-login.alibaba-inc.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---548", company: "陌陌", adapter: "unknown", params: {url: "https://www.immomo.com/mm_downloads", host: "www.immomo.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "beisen---306", company: "陕汽控股", adapter: "beisen", params: {url: "https://sxqc.zhiye.com/", host: "sxqc.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---549", company: "陕鼓动力", adapter: "unknown", params: {url: "http://www.shaangu.com/job/ren-cai-zhao-pin.htm", host: "www.shaangu.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---550", company: "雅化集团", adapter: "unknown", params: {url: "https://www.yh.cn/jobsyh.html", host: "www.yh.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---551", company: "雅戈尔", adapter: "unknown", params: {url: "https://www.youngor.com/zp/31.html", host: "www.youngor.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---552", company: "雅高中国", adapter: "unknown", params: {url: "https://careers.accor.com/cn/zh/accor-at-a-glance", host: "careers.accor.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---29", company: "零一万物", adapter: "feishu_atsx", params: {url: "https://01ai.jobs.feishu.cn/index/", host: "01ai.jobs.feishu.cn"}}   # 1 条日历｜校招
+  - {id: "unknown---553", company: "雷赛智能", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vll5CMMLL.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "unknown---554", company: "霸王茶姬", adapter: "unknown", params: {url: "https://jobs.chagee.com/640739/", host: "jobs.chagee.com"}}   # 1 条日历｜校园大使｜⚠ 需先实现适配器
+  - {id: "unknown---555", company: "青岛啤酒", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vkl5z5CNn.html", host: "campus.niuqizp.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---556", company: "青瓷游戏", adapter: "unknown", params: {url: "https://hr.g-bits.com/web/index.html", host: "hr.g-bits.com"}}   # 1 条日历｜秋招正式批｜⚠ 需先实现适配器
+  - {id: "unknown---557", company: "非夕科技", adapter: "unknown", params: {url: "https://www.flexiv.cn/join", host: "www.flexiv.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "feishu_atsx---30", company: "面壁智能", adapter: "feishu_atsx", params: {url: "https://modelbest.jobs.feishu.cn/campus/", host: "modelbest.jobs.feishu.cn"}}   # 1 条日历｜社招
+  - {id: "beisen---307", company: "韦尔股份", adapter: "beisen", params: {url: "https://ovt-omnivision.zhiye.com/Campus", host: "ovt-omnivision.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---308", company: "韩束", adapter: "beisen", params: {url: "https://chicmaxgroup.zhiye.com/", host: "chicmaxgroup.zhiye.com"}}   # 1 条日历｜实习
+  - {id: "unknown---558", company: "韵达股份", adapter: "unknown", params: {url: "https://yd.com/careers", host: "yd.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---559", company: "韶音", adapter: "unknown", params: {url: "https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/", host: "campus.shokz.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---309", company: "顺络电子", adapter: "beisen", params: {url: "https://sunlord.zhiye.com/", host: "sunlord.zhiye.com"}}   # 1 条日历｜秋招正式批
+  - {id: "beisen---310", company: "颐海国际", adapter: "beisen", params: {url: "https://yhgj.zhiye.com/", host: "yhgj.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "beisen---311", company: "风华高科", adapter: "beisen", params: {url: "http://china-fenghuazp.zhiye.com/", host: "china-fenghuazp.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "unknown---560", company: "飞书", adapter: "unknown", params: {url: "https://hire.feishu.cn/", host: "hire.feishu.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---561", company: "首旅集团", adapter: "unknown", params: {url: "https://www.btg.com/careers/", host: "www.btg.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---562", company: "马钢集团", adapter: "unknown", params: {url: "http://www.mgjs.cn/", host: "www.mgjs.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---563", company: "高德地图", adapter: "unknown", params: {url: "https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Ftalent.amap.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", host: "mozi-login.alibaba-inc.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---564", company: "高盛中国", adapter: "unknown", params: {url: "https://portal.careers.hsbc.com/careers?location=China", host: "portal.careers.hsbc.com"}}   # 1 条日历｜实习｜⚠ 需先实现适配器
+  - {id: "unknown---565", company: "高途", adapter: "unknown", params: {url: "https://app.mokahr.com/campus-recruitment/bjhl/102145", host: "app.mokahr.com"}}   # 1 条日历｜暑期实习｜⚠ 需先实现适配器
+  - {id: "unknown---566", company: "高途课堂", adapter: "unknown", params: {url: "https://job.gaotu.cn/", host: "job.gaotu.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---312", company: "高露洁中国", adapter: "beisen", params: {url: "https://colgate.zhiye.com/jobs", host: "colgate.zhiye.com"}}   # 1 条日历｜校招
+  - {id: "unknown---567", company: "鲁花", adapter: "unknown", params: {url: "https://www.luhua.cn/join.html", host: "www.luhua.cn"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---568", company: "鹏华基金", adapter: "unknown", params: {url: "https://job.phfund.com.cn/", host: "job.phfund.com.cn"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "unknown---569", company: "鹏辉能源", adapter: "unknown", params: {url: "https://campus.niuqizp.com/job-vrkNLtzZN.html", host: "campus.niuqizp.com"}}   # 1 条日历｜秋招｜⚠ 需先实现适配器
+  - {id: "beisen---313", company: "鹏鼎控股", adapter: "beisen", params: {url: "http://avaryholding.zhiye.com/", host: "avaryholding.zhiye.com"}}   # 1 条日历｜社招
+  - {id: "unknown---570", company: "麒麟软件", adapter: "unknown", params: {url: "https://www.kylinsoft.com/videojoiner/", host: "www.kylinsoft.com"}}   # 1 条日历｜校招｜⚠ 需先实现适配器
+  - {id: "unknown---571", company: "黑芝麻", adapter: "unknown", params: {url: "https://www.blacksesame.com/zh/join-us", host: "www.blacksesame.com"}}   # 1 条日历｜社招｜⚠ 需先实现适配器
+  - {id: "beisen---314", company: "黑芝麻智能", adapter: "beisen", params: {url: "https://bsthr.zhiye.com/campus", host: "bsthr.zhiye.com"}}   # 1 条日历｜校招

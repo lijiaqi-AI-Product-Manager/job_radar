@@ -1,0 +1,28 @@
+{
+  "company": "盐津铺子",
+  "careers_url": "https://www.yanjinpuzi.com/job.aspx?fid=t11:2:11&typeid=2",
+  "host": "www.yanjinpuzi.com",
+  "ats": "unknown",
+  "page_title": "校园招聘 - 盐津铺子食品股份有限公司",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 57,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "校园招聘 - 盐津铺子食品股份有限公司",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590631"
+    ]
+  }
+}

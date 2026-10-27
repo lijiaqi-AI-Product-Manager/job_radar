@@ -1,0 +1,30 @@
+group: 地平线
+entries:
+- id: dipingxian-campus-entry
+  company: 地平线
+  grad_year: null
+  project_type: 秋招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  - 深圳
+  - 杭州
+  - 成都
+  - 南京
+  apply_url: https://campus.niuqizp.com/job-vmY5aNMnN.html
+  source:
+    type: official_site
+    name: 地平线招聘官网
+    url: https://campus.niuqizp.com/job-vmY5aNMnN.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：地平线（Horizon Robotics）招聘27届秋招2027校园招聘,招聘城市有:北京,上海,南京,成都,杭州,深圳）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

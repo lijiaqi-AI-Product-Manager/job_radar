@@ -1,0 +1,30 @@
+{
+  "company": "小马智行",
+  "careers_url": "https://campus.pony.ai/",
+  "host": "campus.pony.ai",
+  "ats": "unknown",
+  "page_title": "小马智行",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 68,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "小马智行",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757489",
+      "https://career.gdut.edu.cn/campus/view/id/1021006"
+    ]
+  }
+}

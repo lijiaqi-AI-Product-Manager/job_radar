@@ -1,0 +1,20 @@
+group: 娃哈哈
+entries:
+- id: wahaha-campus-entry
+  company: 娃哈哈
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://apply.wahaha.com.cn/
+  source:
+    type: official_site
+    name: 娃哈哈招聘官网
+    url: https://apply.wahaha.com.cn/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：娃哈哈招聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

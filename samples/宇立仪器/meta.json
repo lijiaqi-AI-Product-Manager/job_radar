@@ -1,0 +1,24 @@
+{
+  "company": "宇立仪器",
+  "careers_url": "https://www.sri.com/careers/",
+  "host": "www.sri.com",
+  "ats": "unknown",
+  "page_title": "Careers - SRI",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 3,
+  "roles": 5,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Careers - SRI",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "title_and_url",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

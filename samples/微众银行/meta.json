@@ -1,0 +1,24 @@
+{
+  "company": "微众银行",
+  "careers_url": "https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN",
+  "host": "campus.webank.com",
+  "ats": "unknown",
+  "page_title": "微众银行 - 校园招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "日常实习"
+  ],
+  "tracks": 3,
+  "roles": 3,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "微众银行 - 校园招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

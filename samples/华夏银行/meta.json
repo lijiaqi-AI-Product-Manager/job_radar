@@ -1,0 +1,28 @@
+{
+  "company": "华夏银行",
+  "careers_url": "",
+  "host": "career.csu.edu.cn",
+  "ats": "none",
+  "page_title": "华夏银行股份有限公司温州分行",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 8,
+  "roles": 18,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "华夏银行股份有限公司温州分行",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590576",
+      "https://career.csu.edu.cn/campus/view/id/590391"
+    ]
+  }
+}

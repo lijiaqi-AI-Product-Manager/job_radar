@@ -1,0 +1,29 @@
+{
+  "company": "数字中国",
+  "careers_url": "",
+  "host": "job.xidian.edu.cn",
+  "ats": "none",
+  "page_title": "筑梦电科网安，护航数字中国 ——电科网安2027届秋季校园招聘简章",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "秋招正式批"
+  ],
+  "tracks": 10,
+  "roles": 42,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": null,
+    "page_title": "筑梦电科网安，护航数字中国 ——电科网安2027届秋季校园招聘简章",
+    "origin": "edu_notice_only",
+    "grade": "",
+    "grade_why": "仅高校就业网简章可见，无企业自有投递页",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757570",
+      "https://job.xidian.edu.cn/campus/view/id/757389",
+      "https://job.zzu.edu.cn/campus/view/id/1019234"
+    ]
+  }
+}

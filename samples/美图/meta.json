@@ -1,0 +1,26 @@
+{
+  "company": "美图",
+  "careers_url": "https://hr.meitu.com/jobCampus/40b3b050-2f05-49ba-af76-b80274537656",
+  "host": "hr.meitu.com",
+  "ats": "self_hosted",
+  "page_title": "正在招聘-美图公司",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "暑期实习",
+    "校园大使"
+  ],
+  "tracks": 15,
+  "roles": 21,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "正在招聘-美图公司",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

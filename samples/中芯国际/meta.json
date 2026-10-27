@@ -1,0 +1,31 @@
+{
+  "company": "中芯国际",
+  "careers_url": "https://smics.zhiye.com/campus",
+  "host": "smics.zhiye.com",
+  "ats": "beisen",
+  "page_title": "中芯国际",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "校园大使",
+    "校招",
+    "社招"
+  ],
+  "tracks": 20,
+  "roles": 84,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "中芯国际",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020768",
+      "https://career.shiep.edu.cn/campus/view/id/667324",
+      "https://job.zzu.edu.cn/campus/view/id/1018741"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+group: 泛微网络
+entries:
+- id: fanweiwangluo-campus-entry
+  company: 泛微网络
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  apply_url: https://campus.niuqizp.com/job-v885an5tt.html
+  source:
+    type: official_site
+    name: 泛微网络招聘官网
+    url: https://campus.niuqizp.com/job-v885an5tt.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：泛微网络科技股份有限公司招聘27届实施管培生（毕业可转正+住宿津贴）2027校园招聘,招聘城市有:北京市朝阳区）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

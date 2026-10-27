@@ -1,0 +1,28 @@
+group: 富民银行
+entries:
+- id: fuminyinhang-campus-entry
+  company: 富民银行
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 产品类
+    roles: []
+  - direction: 设计类
+    roles: []
+  - direction: 运营类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: http://www.kmfm.gov.cn/zfxxgk/
+  source:
+    type: official_site
+    name: 富民银行招聘官网
+    url: http://www.kmfm.gov.cn/zfxxgk/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：政府信息公开_富民县人民政府）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

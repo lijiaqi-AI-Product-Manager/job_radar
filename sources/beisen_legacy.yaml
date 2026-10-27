@@ -38,3 +38,39 @@ sources:
     company: 新华保险
     recruit_types: [campus]
     params: {tenant: nci, portal: campus, max_pages: 30, page_size: 10}
+  - id: beisen-legacy-yumchina
+    company: 百胜中国
+    params: {tenant: yumchina, portal: campus}  # 96 岗实测（百胜中国招聘系统--校园招聘）
+  - id: beisen-legacy-zszq
+    company: 浙商证券
+    params: {tenant: zszq, portal: campus}  # 44 岗实测（浙商证券招聘系统--校园招聘）
+  - id: beisen-legacy-jmlzp
+    company: 今麦郎
+    params: {tenant: jmlzp, portal: campus}  # 10 岗实测（今麦郎招聘系统--校园招聘）
+  - id: beisen-legacy-maycur
+    company: 每刻报销
+    params: {tenant: maycur, portal: campus}  # 7 岗实测（杭州每刻科技有限公司招聘系统--校园招聘）
+  - id: beisen-legacy-allist
+    company: 艾力斯
+    params: {tenant: allist, portal: campus}  # 4 岗实测（上海艾力斯医药科技股份有限公司招聘系统-）
+  - id: beisen-legacy-ainnovation
+    company: 创新奇智
+    params: {tenant: ainnovation, portal: campus}  # 3 岗实测（创新奇智（北京）科技有限公司招聘系统--）
+  - id: beisen-legacy-marubi
+    company: 丸美
+    params: {tenant: marubi, portal: campus}  # 3 岗实测（广东丸美生物技术股份有限公司招聘系统--）
+  - id: beisen-legacy-beingmate
+    company: 贝因美
+    params: {tenant: beingmate, portal: campus}  # 1 岗实测（贝因美股份有限公司招聘系统--校园招聘）
+
+  # ---- 2026-10-27 官网反查新增。变体 C（variant: c）是本轮新支持的形态：
+  #      社招门户的详情是 `/socialxq?jobId=<id>`、章节标题在 <h2> 里，旧正则一行都匹配不到，
+  #      所以这些门户此前一直被当成「空租户」（接口 302 到 /404）。见 tests/adapters/test_beisen_legacy_c.py。
+  - id: beisen-legacy-zofund
+    company: 中欧基金
+    params: {tenant: zofund, portal: social, variant: c}
+    recruit_types: [social]
+  - {id: beisen-legacy-ahhl, company: 安徽合力, params: {tenant: ahhl, portal: social}}      # 13 岗，JD 全
+  - {id: beisen-legacy-chinaamc, company: 华夏基金, params: {tenant: chinaamc, portal: social}}  # 15 岗（详情页无 JD 正文）
+  - {id: beisen-legacy-sczq, company: 首创证券, params: {tenant: sczq, portal: campus}}      # 15 岗，JD 全
+  - {id: beisen-legacy-gac-toyota, company: 广汽丰田, params: {tenant: gac-toyota, portal: campus}}  # 15 岗，JD 全

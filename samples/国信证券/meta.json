@@ -1,0 +1,28 @@
+{
+  "company": "国信证券",
+  "careers_url": "https://guosen.zhiye.com/campus/jobs",
+  "host": "guosen.zhiye.com",
+  "ats": "beisen",
+  "page_title": "国信证券招聘官网",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "日常实习",
+    "校招"
+  ],
+  "tracks": 15,
+  "roles": 51,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国信证券招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590233"
+    ]
+  }
+}

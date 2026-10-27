@@ -1,0 +1,27 @@
+{
+  "company": "思科",
+  "careers_url": "https://careers.cisco.com/global/en/search-results?keywords=%E6%80%9D%E7%A7%91%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%E5%AE%98%E7%BD%91",
+  "host": "careers.cisco.com",
+  "ats": "self_hosted",
+  "page_title": "思科校园招聘官网 Job Openings - Cisco Careers",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "思科校园招聘官网 Job Openings - Cisco Careers",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1021126",
+      "https://job.zzu.edu.cn/campus/view/id/1019505"
+    ]
+  }
+}

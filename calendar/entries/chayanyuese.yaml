@@ -1,0 +1,24 @@
+group: 茶颜悦色
+entries:
+- id: chayanyuese-campus-entry
+  company: 茶颜悦色
+  grad_year: null
+  project_type: 秋招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://campus.niuqizp.com/job-vYmNNa5zM.html
+  source:
+    type: official_site
+    name: 茶颜悦色招聘官网
+    url: https://campus.niuqizp.com/job-vYmNNa5zM.html
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: none
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：茶颜悦色招聘茶颜校招丨2027秋招实习生开启招募2027校园招聘,微信公众号茶颜家族招聘,internship）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

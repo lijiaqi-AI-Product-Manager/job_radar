@@ -1,0 +1,29 @@
+{
+  "company": "泰康",
+  "careers_url": "https://jobtaikang.zhiye.com/campus/",
+  "host": "jobtaikang.zhiye.com",
+  "ats": "beisen",
+  "page_title": "泰康招聘门户",
+  "calendar_entries": 3,
+  "project_types": [
+    "实习",
+    "校招",
+    "社招"
+  ],
+  "tracks": 15,
+  "roles": 51,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "泰康招聘门户",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.neuq.edu.cn/campus/view/id/861719",
+      "https://career.csu.edu.cn/campus/view/id/590455"
+    ]
+  }
+}

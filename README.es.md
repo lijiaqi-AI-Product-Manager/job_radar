@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | Español | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,15 +14,15 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datos (2026-10-24)**: **279 fuentes** · **~88.600 vacantes abiertas** · **99,8% con texto completo del JD**
-> De las **500 empresas objetivo**, 494 tienen calendario o vacantes (solo 161 con datos a nivel de vacante).
+> **Datos (2026-10-26)**: **370 fuentes** · **97.607 vacantes abiertas** · **99,8% con texto completo del JD**
+> De las **1.014 empresas objetivo**, 891 tienen calendario (264 con datos a nivel de vacante), 895 en total.
 
 ## Qué es y qué no es
 
 - ✅ Vacantes y texto del JD de portales **oficiales** (sin agregadores de terceros)
 - ✅ Rastreo completo diario con historial (apertura, cierre, cambios)
 - ✅ Calendario de reclutamiento: promoción, tipo de programa, áreas, ventana de solicitud, ciudades, enlace y fuente
-- ❌ No cubre «todas las empresas»: solo 161 de las 500 objetivo publican datos por vacante
+- ❌ No cubre «todas las empresas»: solo 264 de las 1.014 objetivo publican datos por vacante
 - ❌ No gestiona solicitudes, referidos, entrevistas ni salarios; no evade captchas, logins ni firmas
 
 ## Inicio rápido
@@ -66,8 +66,8 @@ devuelve un bloque `calendar` con `jobradar calendar --group <empresa> --table` 
 
 | Área | Realidad |
 |---|---|
-| Cobertura de calendario | 494/500; las otras 6 están bloqueadas por robots/login/DNS |
-| Cobertura por vacante | 161/500; el resto son portales propios o plataformas cifradas (Moka, Feishu ATSX) |
+| Cobertura de calendario | 891/1.014; las otras 17 están bloqueadas por robots/login/DNS |
+| Cobertura por vacante | 264/1.014; el resto son portales propios o plataformas cifradas (Moka, Feishu ATSX) |
 | Grandes tecnológicas | Alibaba/Tencent/Meituan/NetEase… con vacantes; ByteDance/JD/Huawei solo calendario |
 | Ventanas de solicitud | solo 8/1372 entradas (0,6%) con inicio y fin |
 | Duplicados | 9,2% son misma empresa+título+ciudad; usa `--dedupe` |

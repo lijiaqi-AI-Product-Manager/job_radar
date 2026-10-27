@@ -42,11 +42,15 @@ def _emit(args, payload: dict):
             for r in rows:
                 _print_calendar_row(r)
         elif rows and "title" in rows[0]:  # 岗位 / 事件
+            print("截止日 | 公司 | 岗位 | 城市 | 类型 | 届次 | URL")
             for r in rows:
                 cities = "/".join(r.get("cities") or [])
+                # 截止日：用户最先想知道的就是「还能不能投」。没有截止日写「未知」而不是空，
+                # 也不能写成「已截止」——源没说就是没说。
                 print(" | ".join(str(x) for x in (
-                    r.get("company"), r.get("title"), cities, r.get("type") or r.get("recruit_type"),
-                    r.get("grad_year") or "", r.get("ts") or r.get("first_seen"), r.get("url"))))
+                    r.get("apply_end") or "未知", r.get("company"), r.get("title"), cities or "-",
+                    r.get("type") or r.get("recruit_type"),
+                    r.get("grad_year") or "-", r.get("url"))))
         elif rows:  # 其他（数据源状态、趋势）：按字段输出
             cols = list(rows[0].keys())
             print(" | ".join(cols))
@@ -402,7 +406,9 @@ def cmd_search(args):
                              recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
                              text=args.text, text_conn=text, include_closed=args.include_closed,
                              limit=args.limit, contains=args.contains, meta=meta,
-                             dedupe=args.dedupe, exclude_store=args.exclude_store)
+                             dedupe=args.dedupe, exclude_store=args.exclude_store,
+                             deadline_before=getattr(args, "deadline_before", None),
+                             deadline_after=getattr(args, "deadline_after", None))
         payload = envelope(conn, rows, **meta)
         hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
                                      grad_year=args.grad_year, city=args.city, category=args.category)
@@ -416,7 +422,7 @@ def cmd_search(args):
         if cal_hint:
             payload["calendar"] = cal_hint
             hints = [h for h in hints if "公司名没有唯一确定" not in h]   # 名字是对的，只是没岗位数据
-            hints.append(f"岗位数据里没有，但日历里有 {cal_hint['entries']} 条：`{cal_hint['cmd']}`")
+            hints.append(f"岗位数据里没有，但日历里有 {cal_hint['entries']} 条：`{cal_hint['cli_hint']}`")
             if cal_hint.get("hint"):
                 hints.append(cal_hint["hint"])
         if hints:
@@ -484,6 +490,9 @@ def cmd_sources(args):
 
 
 def cmd_doctor(args):
+    if getattr(args, "robots", False):
+        _doctor_robots(args)
+        return
     out = {"home": str(home()),
            "jobs_db": _local_db_ok(home() / DB_FILES["jobs"]),
            "jd_text_db": _local_db_ok(home() / DB_FILES["text"]),
@@ -507,10 +516,52 @@ def cmd_doctor(args):
             advice.append("JD 原文库与岗位库对不上（镜像可能没同步完），再运行一次 `jobradar update`")
         if campus_city is not None and campus_city < 0.25:
             advice.append(f"校园岗城市覆盖只有 {campus_city:.0%}：多数北森门户不返回城市，搜城市时结果会偏少")
+        # 日期同理：覆盖率低时搜「最近截止/最近发布」会漏掉大批岗位，最好提前说清。
+        for key, label in (("publish_at", "发布日期"), ("apply_end", "截止日")):
+            rate = (out["fields"] or {}).get(key)
+            if rate is not None and rate < 0.25:
+                advice.append(f"{label}覆盖只有 {rate:.0%}：多数来源不提供，按时间排序时结果会偏少")
         out["advice"] = "；".join(advice) or "ok"
     else:
         out["advice"] = "运行 `jobradar update`"
     print(json.dumps(out, ensure_ascii=False, indent=2))
+
+
+def _doctor_robots(args) -> None:
+    """逐个源检查 robots.txt。**抓新站之前必跑** —— 2026-10-26 一天内两次
+    因没读全 robots 而抓了不该抓的页面（radancy 欧莱雅 351 岗、tupu360 共享域 774 岗）。"""
+    from jobradar.adapters.base import make_client
+    from jobradar.robots import check, source_urls
+    from jobradar.sources import load_sources
+
+    sources = load_sources(Path(args.sources))
+    if not sources:
+        raise SystemExit(f"没匹配到任何源（--sources {args.sources}）")
+    rows = []
+    with make_client() as client:
+        for s in sources:
+            urls = [u for u in source_urls(s.params, s.adapter) if u.startswith("http")]
+            if not urls:
+                rows.append({"id": s.id, "company": s.company, "verdict": "unknown",
+                             "detail": "无法从 params 推断列表页 URL，需人工确认"})
+                continue
+            verdicts = [check(client, u) for u in urls]
+            blocked = [v for v in verdicts if not v.allowed]
+            rows.append({
+                "id": s.id, "company": s.company,
+                "verdict": "blocked" if blocked else "ok",
+                "detail": str(blocked[0]) if blocked else "；".join(f"{v.url} OK" for v in verdicts),
+            })
+    blocked = [r for r in rows if r["verdict"] == "blocked"]
+    unknown = [r for r in rows if r["verdict"] == "unknown"]
+    print(f"# {len(rows)} 源：{len(rows) - len(blocked) - len(unknown)} 允许，"
+          f"{len(blocked)} 被 robots 禁止，{len(unknown)} 无法判断")
+    for r in blocked:
+        print(f"BLOCKED  {r['id']:<28} {r['company']:<12} {r['detail']}")
+    for r in unknown:
+        print(f"UNKNOWN  {r['id']:<28} {r['company']:<12} {r['detail']}")
+    if blocked:
+        raise SystemExit(1)
 
 
 def cmd_calendar(args):
@@ -518,12 +569,23 @@ def cmd_calendar(args):
         rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
                                   grad_year=args.grad_year, origin=args.origin, open_on=args.open_on,
                                   has_tracks=getattr(args, "has_tracks", False),
-                                  has_window=getattr(args, "has_window", False), limit=args.limit)
+                                  has_window=getattr(args, "has_window", False),
+                                  city=getattr(args, "city", None),
+                                  direction=getattr(args, "direction", None),
+                                  deadline_before=getattr(args, "deadline_before", None),
+                                  deadline_after=getattr(args, "deadline_after", None),
+                                  limit=args.limit)
         env = envelope(None, rows, as_of=q.calendar_as_of(conn))
         if not rows and args.group:
             reason = q.calendar_blocked_reason(conn, args.group)
             if reason:
                 env["hint"] = f"{args.group}：{reason}。{args.group}希望你去他们的招聘页逛一逛哦~"
+        if not rows and (getattr(args, "city", None) or getattr(args, "direction", None)):
+            # 城市/方向是"只命中写了该字段的条目"，空结果往往不是真没有，而是字段没写。
+            # 不解释的话，agent 会把这个说成"北京没有岗位"，属于事实性错误。
+            env["hint"] = q.calendar_filter_advice(
+                conn, city=getattr(args, "city", None),
+                direction=getattr(args, "direction", None))
         _emit(args, env)
 
 
@@ -559,6 +621,12 @@ def cmd_calendar_build(args):
             # 探活只看状态码：超时给 8s/连接 5s（部分国内站点在 Actions 上根本连不上，等 20s 是浪费）
             with httpx.Client(timeout=httpx.Timeout(8, connect=5)) as client:
                 counts["links"] = cal.check_links(cal_conn, client, ts=now_ts())
+        # 导出证据必须**在 with 块里**：`jobs_conn` 由上面那个 closing() 管理，
+        # 出了 with 就已经 close()，再传进去会抛 `Cannot operate on a closed database`
+        # （2026-10-26 实测，`calendar-build --evidence-out` 一直是坏的）。
+        if args.evidence_out:
+            counts["evidence_companies"] = cal.export_job_evidence(
+                jobs_conn, Path(args.evidence_out), ts=now_ts())
     print(json.dumps(counts, ensure_ascii=False))
 
 
@@ -571,7 +639,16 @@ def cmd_crawl(args):
     out.mkdir(parents=True, exist_ok=True)
     sources = load_sources(Path(args.sources))
     if args.only:
-        sources = [s for s in sources if s.id in set(args.only.split(","))]
+        wanted = [x.strip() for x in args.only.split(",") if x.strip()]
+        known = {s.id for s in sources}
+        missing = [x for x in wanted if x not in known]
+        if missing:
+            # --only 里写了不存在的 id 却静默跳过，是最容易把「一批源没抓」看成「抓完了」的地方
+            raise SystemExit(f"--only 里这些 source id 不存在：{', '.join(missing[:10])}"
+                             f"{' …' if len(missing) > 10 else ''}")
+        sources = [s for s in sources if s.id in set(wanted)]
+    if not sources:
+        raise SystemExit(f"没匹配到任何源（--sources {args.sources}）")
     with closing(connect(out / DB_FILES["jobs"], "jobs")) as jobs_conn, \
             closing(connect(out / DB_FILES["text"], "text")) as text_conn:
         results = crawl(sources, jobs_conn, text_conn, ts=now_ts(), budget_seconds=args.budget_seconds,
@@ -612,7 +689,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--company", help="公司名（支持简称映射；只差一个字的前缀延伸不猜，如 京东≠京东方）")
     sp.add_argument("--contains", action="store_true", help="--company 按子串匹配（会命中多家，如 --company 中国）")
     sp.add_argument("--dedupe", action="store_true",
-                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants（全库约 9.2% 是这种重复）")
+                    # 注意：argparse 对 help 文本做 % 插值，裸 `%` 会让 `search --help` 直接抛
+                    # ValueError: unsupported format character（2026-10-27 实测）→ 写成 `%%`
+                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants（全库约 9.2%% 是这种重复）")
     sp.add_argument("--exclude-store", action="store_true",
                     help="排除门店/零售岗（门店/店员/导购/收银/咖啡师/店长…；喜茶、星巴克门店帖约 8 千条）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
@@ -621,6 +700,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--grad-year", type=int)
     sp.add_argument("--keyword", help="标题关键词")
     sp.add_argument("--text", help="全文检索：标题 + JD 原文，多个词用空格分隔（都须出现），如 \"PyTorch 大模型\"")
+    sp.add_argument("--deadline-before", help="YYYY-MM-DD：只看截止日不晚于该日的岗位（找快截止的）")
+    sp.add_argument("--deadline-after", help="YYYY-MM-DD：只看截止日不早于该日的岗位（排除已过期）")
     sp.add_argument("--include-closed", action="store_true")
     sp.add_argument("--limit", type=int, default=50)
 
@@ -655,13 +736,20 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--open-on", help="YYYY-MM-DD：该日可能在投的（没写起止的条目也会返回，带 window_status=unknown）")
     sp.add_argument("--has-tracks", action="store_true", help="只看有方向（track）的条目")
     sp.add_argument("--has-window", action="store_true", help="只看写了网申起止的条目")
+    sp.add_argument("--city", help="城市，如 北京 / 杭州（只命中写了城市的条目）")
+    sp.add_argument("--direction", help="方向，如 技术类 / 产品类 / 职能类（只命中写了方向的条目）")
+    sp.add_argument("--deadline-before", help="YYYY-MM-DD：截止日不晚于该日（找快截止的）")
+    sp.add_argument("--deadline-after", help="YYYY-MM-DD：截止日不早于该日（排除已过期）")
     sp.add_argument("--limit", type=int, default=100)
 
     add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
     sp = add("sources", cmd_sources, "各数据源的抓取状态与新鲜度")
     sp.add_argument("--problems", action="store_true", help="只看上次未成功或已过期的源")
     sp.add_argument("--summary", action="store_true", help="只给计数与有问题的源（277 行整表约 52KB）")
-    add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
+    sp = add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
+    sp.add_argument("--robots", action="store_true",
+                    help="逐个源检查 robots.txt 是否允许抓它的列表页（抓新站前必跑）")
+    sp.add_argument("--sources", default="sources", help="--robots 用的源目录")
 
     sp = add("crawl", cmd_crawl, "（开发/CI）抓取并写库")
     sp.add_argument("--sources", default="sources")
@@ -678,7 +766,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--entries", default="calendar/entries")
     sp.add_argument("--sources", default="sources")
     sp.add_argument("--targets", default="targets/top_companies.yaml")
-    sp.add_argument("--check-links", action="store_true", help="对全部链接各发一次请求探活")
+    sp.add_argument("--check-links", action="store_true", help="对全部链接各发一次探活请求")
+    sp.add_argument("--evidence-out", default=None,
+                    help="把 jobs.db 里的结构化职位证据（城市/截止日/届次）导成 JSONL，"
+                         "供日历生成使用（把接口字段的城市/截止日带进日历）")
     return p
 
 

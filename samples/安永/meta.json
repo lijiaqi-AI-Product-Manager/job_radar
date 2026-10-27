@@ -1,0 +1,25 @@
+{
+  "company": "安永",
+  "careers_url": "https://careers.ey.com/?locale=zh_CN",
+  "host": "careers.ey.com",
+  "ats": "self_hosted",
+  "page_title": "Careers at EY: search jobs",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 4,
+  "roles": 12,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "Careers at EY: search jobs",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

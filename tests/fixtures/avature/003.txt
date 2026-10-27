@@ -1,0 +1,545 @@
+
+
+        
+    
+                                         
+    
+                
+                <!DOCTYPE html>
+<html lang="zh_CN" xml:lang="zh_CN" xmlns="http://www.w3.org/1999/xhtml">
+    <head><meta name="csp-nonce-style" content="8999d861be15465684df345f45e77b412a651b27754d17be92475c3cc358c961"/><meta name="csp-nonce-script" content="8999d861be15465684df345f45e77b412a651b27754d17be92475c3cc358c961"/><meta name="avature.portal.id" content="4"/><meta name="avature.portal.name" content="Careers"/><meta name="avature.portal.urlPath" content="careers"/><meta name="avature.portal.lang" content="zh_CN"/><meta name="avature.portal.page" content="JobDetail"/><meta name="avature.portallist.search" content/>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5, user-scalable=1" />
+                                                <meta property="og:title" content="Project Manager - IPRO" />
+        
+                    <meta property="og:type" content="website" />
+        
+                    <meta property="og:url" content="https://careers.danone.com.cn/zh_CN/careers/JobDetail/Project-Manager-IPRO/10283" />
+        
+                    <meta property="og:description" content="Key Responsibility 1. Maximise Your Pipeline: i) Act as IPRO business partner for BU Marketing to shape a robust, future-proof portfolio, ii) proactively identify synergies, risks and trade-offs..." />
+        
+                    <meta property="og:image" content="https://careers.danone.com.cn/portal/4/images/logo--hiring-organization.png" />
+            
+    <meta name="Description" content="Project Manager - IPRO at  created 21-Oct-2026" />
+            <title>
+        Project Manager - IPRO
+    </title>
+        <link href="/ASSET/portal/jquery/UI/1.13.2/jquery-ui.min.css?version=10.85.97-stable" rel="stylesheet"></link><link href="/portalpacks/web/assets/session-popup._xa4D8v5.css" rel="stylesheet"></link><link href="/portalpacks/web/assets/index.CoB8YEta.css" rel="stylesheet"></link><link rel="stylesheet" href="/portalpacks/web/assets/body.C9CX2Y2H.css"><link rel="stylesheet" href="/portalpacks/web/assets/index.CoB8YEta.css"><link rel="stylesheet" href="/portalpacks/web/assets/vendor-fortawesome-fontawesome-svg-core.DuaSt5cF.css"><link id="dynamic-styles-marker">
+
+<link type="text/css" rel="stylesheet" media="all" href="https://templates-static-assets.avacdn.net/assets/fonts/NotoSans/NotoSans.css"/>
+<style type="text/css">
+/* ==========================================================================
+   LIBRARY THEME (Version: 22.4)
+   --------------------------------------------------------------------------
+   * ELEMENTS
+      : Logo
+      : Actions
+      : Fields
+
+   * COMPONENTS
+      : Mobile menu
+      : Form item types
+         : FileField/FileSchemaField
+      : Expired session
+
+   * MODULES
+      : Banner
+
+   * PAGETYPES
+      : Blocking login
+   ========================================================================== */
+
+/* Logo
+-------------------------------------------------------------------------- */
+
+:root {
+    --logo--background--image: url(https://careers.danone.com.cn/portal/4/images/logo--default.png);
+}
+
+/* MODULES: Home Banner
+   -------------------------------------------------------------------------- */
+
+:root {
+    --home__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/homeBannerMainDesktop/10?version=3162334);
+    --search__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/searchBannerMainDesktop/10?version=5078554);
+    --jobDetail__background--image: url(https://careers.danone.com.cn/_cms/4/image/jobDetailBannerDetailDesktop/10?version=5078583);
+    --default__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/defaulthBannerMainDesktop/10?version=4255279);
+}
+
+/* Media query to target only mobile */
+@media all and (max-width:750px) {
+    :root {
+        --home__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/homeBannerMainMobile/10?version=3162335);
+        --search__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/searchBannerMainMobile/10?version=5078555);
+        --default__banner--background--image: url(https://careers.danone.com.cn/_cms/4/image/defaulthBannerMainMobile/10?version=4255280);
+    }
+
+}
+
+/* MODULES: Home background images
+   -------------------------------------------------------------------------- */
+:root {
+    --background--ourpeople: url(https://careers.danone.com.cn/portal/4/images/home/aboutus--workmate.png);
+    --background--ourbusiness: url(https://careers.danone.com.cn/_cms/4/image/backgroundOurBusiness/10?version=2857934);
+    --background--ourculture: url(https://careers.danone.com.cn/portal/4/images/home/aboutus--culture.png);
+}
+
+/* MODULES: Home details icons
+   -------------------------------------------------------------------------- */
+:root {
+    --icon--ourpeople: url(https://careers.danone.com.cn/portal/4/images/home/icon--people.svg);
+    --icon--ourbusiness: url(https://careers.danone.com.cn/portal/4/images/home/icon--business.svg);
+    --icon--ourculture: url(https://careers.danone.com.cn/portal/4/images/home/icon--culture.svg);
+    --icon--ourpeople--white: url(https://careers.danone.com.cn/portal/4/images/home/icon--people--white.png);
+    --icon--ourbusiness--white: url(https://careers.danone.com.cn/portal/4/images/home/icon--business--white.png);
+    --icon--ourculture--white: url(https://careers.danone.com.cn/portal/4/images/home/icon--culture--white.png);
+    --icon--arrow--down: url(https://careers.danone.com.cn/portal/4/images/home/icon--arrow--down.svg);
+    --icon--ball: url(https://careers.danone.com.cn/portal/4/images/home/icon--ball.png);
+}
+
+/* MODULES: Employee Story background images
+   -------------------------------------------------------------------------- */
+:root {
+    --background--employee-a: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-a.png);
+    --background--employee-b: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-b.png);
+    --background--employee-c: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-c.png);
+    --background--employee-a-mobile: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-a-mobile.png);
+    --background--employee-b-mobile: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-b-mobile.png);
+    --background--employee-c-mobile: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee-c-mobile.png);
+    --background--story-a: url(https://careers.danone.com.cn/portal/4/images/employee_story/story-1.png);
+    --background--story-b: url(https://careers.danone.com.cn/portal/4/images/employee_story/story-2.png);
+    --background--story-c: url(https://careers.danone.com.cn/portal/4/images/employee_story/story-3.png);
+    --background--element-a: url(https://careers.danone.com.cn/portal/4/images/employee_story/element-1.png);
+    --background--element-b: url(https://careers.danone.com.cn/portal/4/images/employee_story/element-2.png);
+    --background--element-c: url(https://careers.danone.com.cn/portal/4/images/employee_story/element-3.png);
+}
+
+/* MODULES: Employee Story details icons
+   -------------------------------------------------------------------------- */
+:root {
+    --employee--story--icon--ball: url(https://careers.danone.com.cn/portal/4/images/employee_story/icon--ball.png);
+    --employee--story--elements-panel: url(https://careers.danone.com.cn/portal/4/images/employee_story/article--elements-panel.png);
+    --employee--story--stories-panel: url(https://careers.danone.com.cn/portal/4/images/employee_story/article--stories-panel.png);
+    --employee--story--elements-panel-hover: url(https://careers.danone.com.cn/portal/4/images/employee_story/article--elements-panel-hover.png);
+    --employee--story--stories-panel-hover: url(https://careers.danone.com.cn/portal/4/images/employee_story/article--stories-panel-hover.png);
+    --employee--name-card-background: url(https://careers.danone.com.cn/portal/4/images/employee_story/employee--name-card-background.png);
+    --swiper--buttons-background: url(https://careers.danone.com.cn/portal/4/images/employee_story/swiper--buttons-background.png);
+    --swiper--buttons-click: url(https://careers.danone.com.cn/portal/4/images/employee_story/swiper--buttons-click.svg);
+    --swiper--buttons-unclick: url(https://careers.danone.com.cn/portal/4/images/employee_story/swiper--buttons-unclick.svg);
+    --swiper--popup-panel: url(https://careers.danone.com.cn/portal/4/images/employee_story/swiper--popup-panel.png);
+    --lity--mobile-closer: url(https://careers.danone.com.cn/portal/4/images/employee_story/lity--mobile-closer.svg);
+    --lity--mobile-number-background: url(https://careers.danone.com.cn/portal/4/images/employee_story/lity--mobile-number-background.png);
+}
+
+/* MODULES: Rebrand icons
+   -------------------------------------------------------------------------- */
+:root {
+   --icon--danone: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--danone.svg);
+   --icon--redbook: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--redbook.svg);
+   --icon--wechat: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--wechat.svg);
+   --icon--job--family: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--job-family.svg);
+   --icon--job--family-black: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--job-family-black.svg);
+   --icon--job--location: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--job-location.svg);
+   --icon--job--location-black: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--job-location-black.svg);
+   --icon--job--time: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--job-time.svg);
+   --icon--forward: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--forward.svg);
+   --icon--atom: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--atom.svg);
+   --icon--danone--similar--job: url(https://careers.danone.com.cn/portal/4/images/rebrand/logo--footer.webp);
+   --icon--arrow--left-disabled: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--arrow-left-disabled.svg);
+   --icon--arrow--right-active: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--arrow-right-active.svg);
+   --icon--arrow--top: url(https://careers.danone.com.cn/portal/4/images/rebrand/icon--arrow-top.svg);
+}
+
+/* ELEMENTS: Bg
+   -------------------------------------------------------------------------- */
+
+:root {
+   --bg--bubble--bottom: url(https://careers.danone.com.cn/portal/4/images/rebrand/bg--bubble-bottom.svg);
+   --bg--bubble--footer: url(https://careers.danone.com.cn/portal/4/images/rebrand/footer--bg.png);
+   --bg--bubble--right: url(https://careers.danone.com.cn/portal/4/images/rebrand/bg--bubble-right.svg);
+   --bg--bubble--left: url(https://careers.danone.com.cn/portal/4/images/rebrand/bg--bubble-left.svg);
+}
+
+</style><link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/01__library__sanitize.css?v=1698375500" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/02__library__reset.css?v=1698375500" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/03__library__generals__site.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/04__library__navigation__main.css?v=1605595792" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/05__library__navigation__internal.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/06__library__layout__grid-and-columns.css?v=1698375500" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/07__library__generals__section.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/08__library__generals__aside.css?v=1597169662" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/09__library__generals__article.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/10__library__info-organization.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/11__library__form__elements.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/12__library__form__layout.css?v=1698375500" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/13__library__snippets-and-helper-classes.css?v=1698375500" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/14__library__icons.css?v=1597169662" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/15__library__common-pagetypes.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/16__specifics__careers.css?v=1739259049" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/css/17__rebrand__careers.css?v=1739414155" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/tooltip/tooltip.css?v=1597169662" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/lity/lity.min.css?v=1692961651" />
+<link rel="stylesheet" type="text/css" media="all" href="/portal/4/select2/select2.css?v=1597169662" />
+<link rel="stylesheet" type="text/css" media="all" href="https://templates-static-assets.avacdn.net/jsLibrary/plugins/swiper/swiper-bundle.min.css" />
+        <script src="/ASSET/portal/jquery/jquerycore/3.7.1/jquery.min.js?version=10.85.97-stable"></script><script src="/ASSET/portal/jquery/UI/1.13.2/jquery-ui.min.js?version=10.85.97-stable"></script><script src="/ASSET/portal/pjquery/pjQueryDeclaration.js?version=10.85.97-stable"></script><script src="/portalpacks/web/js/head/head.D99csnyB.iife.js"></script><script src="/portalpacks/web/js/body.DmIiuvlh.js" type="module"></script>
+
+<script src="/portal/4/js/jquery-3.4.1.min.js?v=1597169662"></script>
+
+<script src="/portal/4/js/tptCore.js?v=1597169662"></script>
+
+<script>
+    tpt.backend = {
+        "browser": {
+            "name": "unknown",
+            "version": null,
+            "isMobile": false
+        },
+        "pageParameters": {
+            "personSort": null,
+            "personSortDirection": null,
+            "jobSort": null,
+            "jobSortDirection": null
+        },
+        "jobLabel": "job"
+    };
+</script>
+
+
+<script src="/portal/4/js/tptBrowserTests.js?v=1597169662" defer="defer"></script>
+<script src="/portal/4/js/tptMenu.js?v=1597169662" defer="defer"></script>
+<script src="/portal/4/js/tptLists.js?v=1597169662" defer="defer"></script>
+<script src="/portal/4/tooltip/tooltip.min.js?v=1597169662" defer="defer"></script>
+<script src="/portal/4/lity/lity.min.js?v=1692961651" defer="defer"></script>
+<script src="/portal/4/js/tptAttachmentsManager.js?v=1597169662" defer="defer"></script>
+<script src="https://templates-static-assets.avacdn.net/jsLibrary/plugins/swiper/swiper-bundle.min.js" defer="defer"></script>
+
+<script src="/portal/4/js/tptImplementation.js?v=1739259051" defer="defer"></script>
+        <link href="/portal/4/favicon.ico" rel="shortcut icon" id="favico" type="image/vnd.microsoft.icon"></link>
+                    <script type="module">
+    EventManager.getInstance().addEventHandler(EventManager.EVENT_LOAD_NAME, function () {
+
+
+
+    }, EventManager.PRIORITY_HIGH);
+</script></head>
+
+    <body class="body body--unknown body--unknown  body--job-detail body--header-fixed-on-scroll body--footer-sticky body--zh_CN">
+        <div class="body__content">
+                            <header class="header header--mobile-menu--from-right">
+                    <div class="header__wrapper">
+                        <div class="header__content clearfix">
+                            <a class="visibility--visually-hidden skip-content focusable tpt_localAnchor" href="#main">
+                                跳转到内容                            </a>
+
+                                                        <a class="header__logo" href="https://careersite.danone.com.cn/zh_CN/careers/">
+                                <h1>
+                                    达能中国
+                                </h1>
+                            </a>
+
+                                                            
+
+<div class="header__nav">
+    <a class="tpt_mobile-menu--from-right--moves-over__trigger" aria-expanded="false" aria-haspopup="true" tabindex="0">
+        <span class="visibility--visually-hidden focusable">
+            菜单        </span>
+    </a>
+
+    <div class="tpt_mobile-menu--from-right--moves-over">
+        <nav class="nav clearfix" aria-label="主站导航">
+            <ul class="nav__list clearfix">
+                <li class="nav__item " >
+                    <a class="nav__item__link" href="https://careersite.danone.com.cn/zh_CN/careers/">
+                        首页                    </a>
+                </li>
+
+                <li class="nav__item " >
+                    <a class="nav__item__link" href="https://careers.danone.com.cn/zh_CN/careers/SearchJobs">
+                        搜索职位                    </a>
+                </li>
+
+                <li class="nav__item" role="menuitem">
+                    <a class="nav__item__link" href="https://careersite.danone.com.cn/zh_CN/careers/Campus/index.html" target="_blank">
+                        达能校招                    </a>
+                </li>
+
+                <li class="nav__item" role="menuitem">
+                    <a class="nav__item__link" href="https://www.danone.com.cn/" target="_blank">
+                        达能中国                    </a>
+                </li>
+
+                <li class="nav__item" role="menuitem">
+                    <a class="nav__item__link" href="https://jobs.danone.com/" target="_blank">
+                        达能全球招聘网站                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav__list nav__list--separator-left clearfix">
+                                    
+                                            <li class="nav__item " >
+                            <a class="nav__item__link" href="https://careers.danone.com.cn/zh_CN/careers/Login">
+                                登录                            </a>
+                        </li>
+                                                </ul>
+
+                            <ul class="nav__list nav__list--overflows-not clearfix">
+                    <li class="nav__item nav__item--has-subnav nav__item--has-subnav--overflows-not nav__item--has-subnav--with-arrow">
+                        <a class="nav__item__link portalLanguages__placeholder" href="#" aria-expanded="false" aria-haspopup="true">
+                            <img src="/portal/4/images/icon--internationalization.svg?v=1597169662" alt="">
+
+                            <span>
+                                当前语言                            </span>
+                        </a>
+
+                        <ul class="portalLanguages" role="menu" id="portalLanguagesMenu"><li class="portalLanguages__item portalLanguages__item--en_US" role="none"><a class="portalLanguages__link" role="menuitem" lang="en" aria-current="false" href="https://careers.danone.com.cn/en_US/careers/JobDetail/Project-Manager-IPRO/10283">English - US</a></li><li class="portalLanguages__item portalLanguages__item--zh_CN portalLanguages__item--selected" role="none"><a class="portalLanguages__link" role="menuitem" lang="zh" aria-current="page" href="https://careers.danone.com.cn/zh_CN/careers/JobDetail/Project-Manager-IPRO/10283">中文 - 简体</a></li></ul>
+                    </li>
+
+                    <script>
+                        $(document).ready(function() {
+                            var langSelected = $(".portalLanguages__item--selected a");
+                            if(langSelected.length){
+                                var txtSelected = langSelected.text();
+                                $(".portalLanguages__placeholder span").text(txtSelected);
+                            }
+                        });
+                    </script>
+                </ul>
+                    </nav>
+    </div>
+</div>
+                                                    </div>
+                    </div>
+                </header>
+            
+                            <div class="banner banner--main">
+                    <div class="banner__wrapper">
+                        <div class="banner__content">
+                                                        
+                                <div class="banner__text">
+        <div class="banner__text__subtitle">
+            Project / Programme Management
+        </div>
+
+        <h2 class="banner__title">
+            Project Manager - IPRO
+        </h2>
+
+        <div class="banner__text__fields">
+                                                                                    <p class="banner--field">
+                            <span class="banner--field--icon banner--field--icon-location"></span>
+                            上海
+                        </p>
+                                            <p class="banner--field">
+                            <span class="banner--field--icon banner--field--icon-time"></span>
+                            全职
+                        </p>
+                                            <p class="banner--field">
+                            <span class="banner--field--icon banner--field--icon-time"></span>
+                            有经验的专业人士
+                        </p>
+                                            <p class="banner--field">
+                            <span class="banner--field--icon "></span>
+                            10月 21, 2026
+                        </p>
+                                                                                                                </div>
+    </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <main class="main" id="main" role="main">
+                <div class="main__wrapper">
+                    <div class="main__content clearfix">
+                                
+                    
+                        <div class="" id="main-panel">
+        <div class="grid grid--with-sidebar">
+            <div class="grid__item">
+                                
+<section class="section">
+    
+                                                            <div class="section__content tf_description">
+                    <article class="article article--details">
+                                                <div class="article__content">
+                            <div class="fluid-cols">
+                                                                                                            <p class="paragraph ">
+                                                                                        <span data-map="item-value">
+                                                <h3 class="article__header__text__title article__header__text__title--6">
+                                                        岗位<span class="title--bg">职责</span>和<span class="title--bg">要求</span>
+                                                    </h3>
+                                            </span>
+                                        </p>
+                                                                                                                                                <div class="complexField"><p class="MsoNormal"><strong><span lang="EN-US" style="font-family: 'Aptos',sans-serif;">Key Responsibility</span></strong></p> <p class="MsoNormal"><span lang="EN-US" style="font-family: 'Aptos',sans-serif;">1. Maximise Your Pipeline: i) Act as IPRO business partner for BU Marketing to shape a robust, future-proof portfolio, ii) proactively identify synergies, risks and trade-offs across projects to optimise cross-functional resources and iii) maintain clear portfolio governance, data accuracy and reporting to support decisions in LIM, and relevant SteerCo forums.</span></p> <p class="MsoNormal"><span lang="EN-US" style="font-family: 'Aptos',sans-serif;">2. Project Management: i) Lead complex innovation/renovation and pack/medical device projects end-to-end through the IPRO process, ii) drive acceleration opportunities through a clear risk-based approach, balancing business value, technical feasibility, compliance and supply impact and iii) escalate with maturity, providing concise options, mitigation plans and decision needs to senior stakeholders.</span></p> <p class="MsoNormal"><span lang="EN-US" style="font-family: 'Aptos',sans-serif;">3. Transformation: i) Lead the evolution from F4G towards a stronger Technical Validation Meeting (TVM) model, ii) own the EU / NZ change-management pipeline linked to China products manufactured and iii) build a structured governance that improves technical decision-making, issue anticipation and cross-project visibility.</span></p> <p class="MsoNormal"><span lang="EN-US" style="font-family: 'Aptos',sans-serif;"> </span></p> <p class="MsoNormal"><strong><span lang="EN-US" style="font-family: 'Aptos',sans-serif;">KEY PERFORMANCES INDICATOR</span></strong></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">1. Pipeline Business Partner:</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">Anticipate portfolio risks, regulatory/business constraints and cross-project dependencies; propose options and trade-offs for decision.</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">Partner with brand teams to shape portfolio choices with clear IPRO, technical, supply and timing implications.</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB; mso-bidi-font-weight: bold;">2. Project Leader:</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">Deliver projects according to brief, timeline, quality, compliance and business ambition, while keeping stakeholders aligned on decisions and changes.</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">Use risk-based project leadership to unlock acceleration, clarify mitigation, and secure timely support from LIM, or SteerCo when needed.</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB; mso-bidi-font-weight: bold;">3. Transformation:</span></p> <p class="MsoNormal"><span lang="EN-GB" style="font-family: 'Aptos',sans-serif; mso-ansi-language: EN-GB;">Drive F4G / TVM transformation as a strategic technical governance pillar: structure EU / NZ / China supply point topics, own the EU / NZ change-management pipeline for China products, enable decision-making on technical challenges and formalise validation to support project gate progression.</span></p></div>
+                                                                                                </div>
+                        </div>
+                    </article>
+                </div>
+                                                <div class="section__content tf_description">
+                    <article class="article article--details">
+                                                <div class="article__content">
+                            <div class="fluid-cols">
+                                                                                                            <p class="paragraph ">
+                                                                                        <span data-map="item-value">
+                                                <h3 class="article__header__text__title article__header__text__title--6">
+                                                        关于<span class="title--bg">达能</span>
+                                                    </h3>
+                                            </span>
+                                        </p>
+                                                                                                                                                <p class="paragraph ">
+                                                                                        <span data-map="item-value">
+                                                想了解更多达能中国信息，请访问：<a href="https://careersite.danone.com.cn/zh_CN/careers/" target="_blank" rel="noreferrer noopener">https://careersite.danone.com.cn/zh_CN/careers/</a><br><div><br></div><div>想了解更多达能全球信息，请访问：<a href="https://www.danone.com/">https://www.danone.com/</a></div><br>
+                                            </span>
+                                        </p>
+                                                                                                </div>
+                        </div>
+                    </article>
+                </div>
+                        
+    
+    <div class="section__content section__content--action">
+                    <div class="article__content">
+                <div class="button-bar">
+                    <a class="button button--custom button--forward" href="https://careers.danone.com.cn/zh_CN/careers/Login?jobId=10283" tabindex="0">
+                        立即申请                    </a>
+                </div>
+            </div>
+            <div class="cmp-job-popup-sticky">
+    <div class="cmp-job-popup-logo">
+        <img src="https://careers.danone.com.cn/portal/4/images/rebrand/logo--footer.webp" alt="Brand icon">
+    </div>
+    <div class="cmp-job-popup-desc">
+        <span>Project Manager - IPRO</span>
+    </div>
+    <div class="cmp-job-popup-apply">
+        <div class="dn-jobdetails__apply">
+            <a class="dn-jobdetails__apply-btn" target="_blank" rel="nofollow external noopener" href="https://careers.danone.com.cn/zh_CN/careers/Login?jobId=10283">立即申请</a>
+        </div>
+    </div>
+</div>            </div>
+</section>
+            </div>
+
+            <div class="grid__item grid__item--aside-right">
+                <aside class="aside" role="presentation">
+                                            <article class="article article--view-more--aside will-load-content awaiting-content" id="relatedJobs">
+        
+        
+        
+        
+<script>
+    tpt.queue.add(
+        function () {
+            "use strict";
+            (function ($) {
+                $.get(
+                    "https://careers.danone.com.cn/zh_CN/careers/RelatedJobs?jobId=10283",
+                    function (data) {
+                        var data = $.trim(data);
+                        if(data){
+                            $('#relatedJobs').append(data).removeClass('awaiting-content');
+                        } else {
+                            $('#relatedJobs').addClass('visibility--hidden');
+                        }
+                        tpt.queue.next();
+                    }
+                );
+            }($ || avajQuery));
+        }
+    );
+</script>    </article>
+                </aside>
+            </div>
+        </div>
+
+        <div class="breadcrumbs breadcrumbs--bottom">
+            <a class="link" href="https://careers.danone.com.cn/zh_CN/careers/SearchJobs">
+                &lt; 返回搜索结果            </a>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </main>
+
+                            <footer class="footer">
+    <div class="footer__wrapper">
+        <div class="footer__content footer__content--information clearfix">
+            <div class="footer__info">
+                <img class="footer__info__logo visibility--only-desktop" src="https://careers.danone.com.cn/portal/4/images/rebrand/logo--footer.webp" alt="Danone Logo" loading="lazy" aria-hidden="true">
+                <div class="footer__info__links visibility--only-desktop">
+                    <a class="footer__links__item link" href="https://www.danone.com.cn/" target="_blank" rel="noopener noreferrer">
+                        达能业务                    </a>
+                    <a class="footer__links__item link" href="https://careersite.danone.com.cn/zh_CN/careers/Campus/index.html" target="_blank" rel="noopener noreferrer">
+                        达能校招                    </a>
+                    <a class="footer__links__item link" href="https://careersite.danone.com.cn/zh_CN/careers/EmployeeStory/index.html" target="_blank" rel="noopener noreferrer">
+                        达人故事                    </a>
+                    <a class="footer__links__item link" href="#" target="_blank" rel="noopener noreferrer">
+                        达能团队                    </a>
+                </div>
+                <div class="footer__info__social">
+                    <span class="visibility--only-desktop">关注我们！</span>
+                    <div class="footer__social__box">
+                        <a class="footer__social__item" data-lity href="#wechat" rel="noopener noreferrer" aria-label="Wechat">
+                            <img class="footer__social__item__icon" src="https://careers.danone.com.cn/portal/4/images/rebrand/icon--wechat.svg" alt="Wechat Logo" loading="lazy" aria-hidden="true">
+                        </a>
+                        <a class="footer__social__item" data-lity href="#redbook" rel="noopener noreferrer" aria-label="Redbook">
+                            <img class="footer__social__item__icon" src="https://careers.danone.com.cn/portal/4/images/rebrand/icon--redbook.svg" alt="Redbook Logo" loading="lazy" aria-hidden="true">
+                        </a>
+                        <a class="footer__social__item" href="https://www.danone.com.cn/" target="_blank" rel="noopener noreferrer" aria-label="Danone">
+                            <img class="footer__social__item__icon" src="https://careers.danone.com.cn/portal/4/images/rebrand/icon--danone.webp" alt="Danone Logo" loading="lazy" aria-hidden="true">
+                        </a>
+                    </div>
+                    <div class="footer__social__QR lity-hide" id="wechat">
+                        <img class="footer__social__item__icon" src="https://careers.danone.com.cn/portal/4/images/rebrand/qr--wechat.jpg" alt="Wechat QR" loading="lazy" aria-hidden="true">
+                    </div>
+                    <div class="footer__social__QR lity-hide" id="redbook">
+                        <img class="footer__social__item__icon" src="https://careers.danone.com.cn/portal/4/images/rebrand/qr--redbook.png" alt="Redbook QR" loading="lazy" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__content footer__content--links clearfix">
+            <div class="footer__rights">
+                <span>版权所有&copy; 2026
+                    <span class="visibility--only-desktop">
+                        保留所有权利                    </span>
+                </span>
+
+                <span class="footer__links__divider visibility--only-desktop" aria-hidden="true">|</span>
+
+                <a class="footer__links__item link" href="https://www.danone.com.cn/footer/Legal.html" target="_blank" rel="noopener noreferrer">
+                    条款 & 条件                </a>
+
+                <span class="footer__links__divider visibility--only-desktop" aria-hidden="true">|</span>
+
+                <a class="footer__links__item link" href="https://www.danone.com.cn/footer/privacy.html" target="_blank" rel="noopener noreferrer">
+                    隐私政策                </a>
+
+                <span class="footer__links__divider visibility--only-desktop" aria-hidden="true">|</span>
+
+                <br class="visibility--only-mobile">
+
+                <a id="icplicenseurl" target="_blank" class="link link--icplicenseurl" href= "https://beian.miit.gov.cn/#/Integrated/index">沪ICP备11005190号-7</a>
+            </div>
+
+            <div class="footer__langs">
+                <a class="footer__links__item link" href="https://www.danone.com/" target="_blank" rel="noopener noreferrer">
+                    Danone.com                </a>
+            </div>
+        </div>
+    </div>
+</footer>                    </div>
+    <script src="/portalpacks/web/js/session-popup.WW7-Ji2q.js" type="module"></script><script>pjQuery(function() { var domManager = new DomManager(); domManager.run(); });</script><script type="text/javascript">
+        var service = EventManager.getInstance();
+</script><portal-data id="synapserBootstrap" data-enabled data-usePermanentConnection="true" data-pageSessionId data-applicationName="customPortal" data-applicationCode="customPortal_4" data-logoutUrl data-publicSessionName="gdVNrtVZIb1G5aDUKnIMJr3gdXhi" data-cortex="4" data-trackerCode="83pXf9TjOnve-gwQbkH1VXE9JYx_" data-packVersion="4053403219a06f7cf7401d1d86c3b89b754a467f"></portal-data><portal-data id="showAlertOnSessionIdleTimeout" data-title="您的登录状态已失效" data-message="出于保护隐私与信息安全，如果较长一段时间没有活动，会话就会自动终止。" data-mainButton="返回首页" data-timeout="3601000" data-portalUrl="https://careers.danone.com.cn/zh_CN/careers"></portal-data><portal-data id="showAlertOnSessionMaxLifetime" data-title="您的登录状态已失效" data-message="出于隐私和安全考虑，您的用户会话因达到最长时限而已经过期。" data-mainButton="返回首页" data-timeout="86401000" data-portalUrl="https://careers.danone.com.cn/zh_CN/careers"></portal-data><portal-data id="sessionConfigData" data-checkInterval="600000" data-interceptorCheckInterval="1000" data-maxLifetimeVerificationMode="local" data-interceptorEnabled="1"></portal-data></body>
+</html>
+                                                    
+
+        
+
+        
+
+        
+
+        
+        

@@ -1,0 +1,24 @@
+{
+  "company": "奥乐齐中国",
+  "careers_url": "https://aldichina.zhiye.com/",
+  "host": "aldichina.zhiye.com",
+  "ats": "beisen",
+  "page_title": "奥乐齐中国",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 3,
+  "roles": 8,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "奥乐齐中国",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

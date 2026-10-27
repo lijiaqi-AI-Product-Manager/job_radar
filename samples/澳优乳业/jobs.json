@@ -1,0 +1,20 @@
+[
+  {
+    "title": "物流培训生",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 169
+  },
+  {
+    "title": "质检培训生",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 273
+  },
+  {
+    "title": "生产管培生",
+    "recruit_type": "campus",
+    "has_jd": true,
+    "jd_len": 175
+  }
+]

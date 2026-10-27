@@ -1,0 +1,31 @@
+group: 中国国航
+entries:
+- id: zhongguoguohang-campus-entry
+  company: 中国国航
+  grad_year: null
+  project_type: 校招
+  tracks:
+  - direction: 技术类
+    roles: []
+  - direction: 市场与销售类
+    roles: []
+  - direction: 职能类
+    roles: []
+  apply_start: null
+  apply_end: null
+  cities:
+  - 北京
+  - 上海
+  - 伦敦
+  apply_url: https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml
+  source:
+    type: official_site
+    name: 中国国航招聘官网
+    url: https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: official_page
+    url: https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：校园招聘 - 中国航空集团招聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。（原记录的截止日
+    2025-12-31 已过期，不再作为网申窗口发布，仅保留入口。）

@@ -1,0 +1,30 @@
+{
+  "company": "小红书",
+  "careers_url": "",
+  "host": "",
+  "ats": "unknown",
+  "page_title": "小红书",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 26,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "小红书",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 3,
+    "edu_notice_sample": [
+      "https://job.xidian.edu.cn/campus/view/id/757479",
+      "https://career.gdut.edu.cn/campus/view/id/1020986",
+      "https://job.zzu.edu.cn/campus/view/id/1019217"
+    ],
+    "careers_url_rejected": "第三方聚合站，已剔除"
+  }
+}

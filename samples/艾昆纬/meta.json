@@ -1,0 +1,24 @@
+{
+  "company": "艾昆纬",
+  "careers_url": "https://jobs.iqvia.cn/",
+  "host": "jobs.iqvia.cn",
+  "ats": "self_hosted",
+  "page_title": "在IQVIA工作 | IQVIA的职位和职业发展",
+  "calendar_entries": 1,
+  "project_types": [
+    "实习"
+  ],
+  "tracks": 5,
+  "roles": 11,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "在IQVIA工作 | IQVIA的职位和职业发展",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

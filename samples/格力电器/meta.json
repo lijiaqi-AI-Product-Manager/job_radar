@@ -1,0 +1,30 @@
+{
+  "company": "格力电器",
+  "careers_url": "https://www.gree.cn/list/232.html",
+  "host": "www.gree.cn",
+  "ats": "unknown",
+  "page_title": "珠海格力集团有限公司",
+  "calendar_entries": 3,
+  "project_types": [
+    "校招",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 15,
+  "roles": 63,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "珠海格力集团有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 5,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/119671.html",
+      "https://career.gdut.edu.cn/campus/view/id/1020954",
+      "https://job.zzu.edu.cn/campus/view/id/1019124"
+    ]
+  }
+}

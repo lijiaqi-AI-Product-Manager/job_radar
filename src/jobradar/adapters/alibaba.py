@@ -18,7 +18,7 @@ import httpx
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import cities_from_text, grad_year_from_text
+from jobradar.normalize import cities_from_text, date_only, grad_year_from_text
 
 BASE_URL = "https://campus-talent.alibaba.com"
 CHANNEL = "campus_group_official_site"
@@ -112,6 +112,9 @@ class AlibabaAdapter(Adapter):
             grad_year=grad_year_from_text(batch_name),
             cities=cities,
             department=" / ".join(raw.get("circleNames") or []) or None,
+            # publishTime 实测恒为 null，modifyTime 是"最近修改"（数量级上按天分布，不是批量刷新），
+            # 只能当"最晚上架日"的弱证据——所以填 publish_at 而不是当截止日。
+            publish_at=date_only(raw.get("publishTime") or raw.get("modifyTime")),
             description=(raw.get("description") or "").strip() or None,
             requirements=(raw.get("requirement") or "").strip() or None,
         )

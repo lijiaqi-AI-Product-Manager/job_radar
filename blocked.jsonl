@@ -1,0 +1,835 @@
+{"company": "361度", "sector_source": "消费零售与食品", "brand": "361 Degrees", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "36氪", "sector_source": "游戏与内容", "brand": "36Kr", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "3M中国", "sector_source": "外资在华", "brand": "3M China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "ABB", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "AMD中国", "sector_source": "外资在华", "brand": "AMD China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Adobe中国", "sector_source": "外资在华", "brand": "Adobe China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "BOSS直聘", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "BOSS直聘海外", "sector_source": "互联网与软件", "brand": "Kanzhun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "CoCo都可中国", "sector_source": "消费零售与食品", "brand": "CoCo China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "GrowingIO", "sector_source": "企业服务", "brand": "GrowingIO", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "LG生活健康中国", "sector_source": "外资在华", "brand": "LG H&H China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "LG电子中国", "sector_source": "外资在华", "brand": "LG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "M Stand咖啡", "sector_source": "消费零售与食品", "brand": "M Stand", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Meta中国", "sector_source": "外资在华", "brand": "Meta China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Power BI中国", "sector_source": "企业服务", "brand": "Power BI China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Seesaw咖啡", "sector_source": "消费零售与食品", "brand": "Seesaw", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "TDK中国", "sector_source": "外资在华", "brand": "TDK China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Tableau中国", "sector_source": "企业服务", "brand": "Tableau China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "UPS中国", "sector_source": "地产建筑与物流", "brand": "UPS China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "Ubras", "sector_source": "消费零售与食品", "brand": "Ubras", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "一心堂", "sector_source": "医药医疗", "brand": "Yixintang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "一汽丰田", "sector_source": "汽车与出行", "brand": "FAW Toyota", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "一汽大众", "sector_source": "汽车与出行", "brand": "FAW-Volkswagen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "七猫小说", "sector_source": "互联网与软件", "brand": "Qimao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万业企业", "sector_source": "半导体", "brand": "Wanye", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万华化学", "sector_source": "央企与国企", "brand": "Wanhua Chemical", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万宁中国", "sector_source": "互联网与软件", "brand": "Mannings China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万科物业", "sector_source": "地产建筑与物流", "brand": "Vanke Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万豪中国", "sector_source": "外资在华", "brand": "Marriott China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万达商管", "sector_source": "地产建筑与物流", "brand": "Wanda Commercial", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "万达电影", "sector_source": "游戏与内容", "brand": "Wanda Film", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "三井住友海上", "sector_source": "保险", "brand": "MSIG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "三峡能源", "sector_source": "央企与国企", "brand": "CTGR", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "三湘银行", "sector_source": "银行", "brand": "Sanxiang Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "三菱日联银行中国", "sector_source": "银行", "brand": "MUFG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "三菱电机中国", "sector_source": "外资在华", "brand": "Mitsubishi Electric China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上汽乘用车", "sector_source": "汽车与出行", "brand": "SAIC Motor Passenger", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上海建工", "sector_source": "地产建筑与物流", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上海浦东发展银行", "sector_source": "银行", "brand": "SPDB", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上海电影", "sector_source": "游戏与内容", "brand": "Shanghai Film", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上海电气", "sector_source": "新能源与先进制造", "brand": "Shanghai Electric", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "上能电气", "sector_source": "新能源与先进制造", "brand": "Sineng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "世茂服务", "sector_source": "地产建筑与物流", "brand": "Shimao Services", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东亚银行中国", "sector_source": "银行", "brand": "Bank of East Asia China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东京海上日动", "sector_source": "保险", "brand": "Tokio Marine China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东方红资管", "sector_source": "证券基金与资管", "brand": "Orient Red", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东方财富", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东方财富证券", "sector_source": "互联网与软件", "brand": "Eastmoney Securities", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东芯股份", "sector_source": "半导体", "brand": "Dosilicon", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东莞农商行", "sector_source": "银行", "brand": "Dongguan Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东证资管", "sector_source": "证券基金与资管", "brand": "Orient Securities Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东软集团", "sector_source": "企业服务", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东阳光药", "sector_source": "医药医疗", "brand": "HEC Pharm", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东风本田", "sector_source": "汽车与出行", "brand": "Dongfeng Honda", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东风风神", "sector_source": "汽车与出行", "brand": "Dongfeng Aeolus", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东鹏特饮", "sector_source": "消费零售与食品", "brand": "Eastroc", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "东鹏饮料", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中交地产", "sector_source": "地产建筑与物流", "brand": "CCCC Real Estate", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中伟股份", "sector_source": "新能源与先进制造", "brand": "CNGR", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中信保诚基金", "sector_source": "证券基金与资管", "brand": "CITIC Prudential Fund", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中信泰富特钢", "sector_source": "央企与国企", "brand": "CITIC Pacific Special Steel", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中公教育", "sector_source": "教育", "brand": "Offcn", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中关村银行", "sector_source": "银行", "brand": "Zhongguancun Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中原银行", "sector_source": "银行", "brand": "Zhongyuan Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国一汽研发总院", "sector_source": "央企与国企", "brand": "FAW R&D", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国一重", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国中免", "sector_source": "央企与国企", "brand": "China Tourism Group Duty Free", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国中材国际", "sector_source": "央企与国企", "brand": "Sinoma International", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国中车", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国中车株机", "sector_source": "央企与国企", "brand": "CRRC Zhuzhou", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国人保资产", "sector_source": "证券基金与资管", "brand": "PICC Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国人寿财险", "sector_source": "保险", "brand": "China Life P&C", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国兵器装备", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国出版集团", "sector_source": "央企与国企", "brand": "China Publishing Group", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国医药", "sector_source": "央企与国企", "brand": "China Meheco", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国商飞", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国国旅", "sector_source": "央企与国企", "brand": "CITS", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国宏桥", "sector_source": "央企与国企", "brand": "China Hongqiao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国宝武", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国对外翻译", "sector_source": "央企与国企", "brand": "CTPC", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国教育出版传媒", "sector_source": "央企与国企", "brand": "China Education Publishing", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国有色", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国海关传媒", "sector_source": "央企与国企", "brand": "China Customs Media", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国海外发展", "sector_source": "地产建筑与物流", "brand": "COLI", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国海油", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国环保", "sector_source": "央企与国企", "brand": "China Environmental", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国珠宝", "sector_source": "央企与国企", "brand": "China Jewellery", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国生物", "sector_source": "央企与国企", "brand": "China National Biotec", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国生物制药", "sector_source": "医药医疗", "brand": "Sino Biopharm", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国电子云", "sector_source": "央企与国企", "brand": "CECloud", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国电影", "sector_source": "游戏与内容", "brand": "China Film", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国直升机设计研究所", "sector_source": "央企与国企", "brand": "CHRDI", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国稀土", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国稀土集团", "sector_source": "央企与国企", "brand": "China Rare Earth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国空空导弹研究院", "sector_source": "央企与国企", "brand": "CLAMRI", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国系统", "sector_source": "央企与国企", "brand": "China System", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国船舶设计研究院", "sector_source": "央企与国企", "brand": "MARIC", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国西电", "sector_source": "央企与国企", "brand": "XD Group", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国软件", "sector_source": "央企与国企", "brand": "China National Software", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国邮电器材", "sector_source": "央企与国企", "brand": "PTAC", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国重工", "sector_source": "央企与国企", "brand": "China Shipbuilding Industry", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国重燃", "sector_source": "央企与国企", "brand": "China Gas Turbine", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中国黄金珠宝", "sector_source": "消费零售与食品", "brand": "China Gold Jewellery", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中复连众", "sector_source": "新能源与先进制造", "brand": "Zhongfu Lianzhong", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中天运", "sector_source": "咨询会计与专业服务", "brand": "Zhongtianyuan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中广核", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中广核研究院", "sector_source": "央企与国企", "brand": "CGN Research", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中建三局", "sector_source": "地产建筑与物流", "brand": "CSCEC 3rd Bureau", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中微公司", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中意人寿", "sector_source": "保险", "brand": "Generali China Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中旭未来", "sector_source": "游戏与内容", "brand": "Zhongxu Future", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中来股份", "sector_source": "新能源与先进制造", "brand": "Jolywood", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中核北方", "sector_source": "央企与国企", "brand": "CNNC North", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中核工程", "sector_source": "央企与国企", "brand": "CNPE", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中核建中", "sector_source": "央企与国企", "brand": "CNNC Jianzhong", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中汇会计师", "sector_source": "咨询会计与专业服务", "brand": "Zhonghui CPA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中汽中心", "sector_source": "央企与国企", "brand": "CATARC", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中油瑞飞", "sector_source": "央企与国企", "brand": "Riifeng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中海庭", "sector_source": "汽车与出行", "brand": "Zhonghaition", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中炬高新", "sector_source": "消费零售与食品", "brand": "Zhongju High-tech", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中电信量子", "sector_source": "央企与国企", "brand": "QuantumCTek", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中电太极", "sector_source": "央企与国企", "brand": "CETC Taiji", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中电海康", "sector_source": "央企与国企", "brand": "CETHIK", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中石化易派客", "sector_source": "央企与国企", "brand": "Easygathering", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中石化炼化工程", "sector_source": "央企与国企", "brand": "SINOPEC Engineering", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中粮福临门", "sector_source": "消费零售与食品", "brand": "COFCO Fulinmen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中船黄埔文冲", "sector_source": "央企与国企", "brand": "Huangpu Wenchong", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中英人寿", "sector_source": "保险", "brand": "Aviva-COFCO Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中荷人寿", "sector_source": "保险", "brand": "BOB-Cardif Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车四方", "sector_source": "央企与国企", "brand": "CRRC Sifang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车大连", "sector_source": "央企与国企", "brand": "CRRC Dalian", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车时代半导体", "sector_source": "半导体", "brand": "Times Semiconductor", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车株洲所", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车长客", "sector_source": "央企与国企", "brand": "CRRC Changchun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中车风电", "sector_source": "新能源与先进制造", "brand": "CRRC Wind", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中软国际科技", "sector_source": "企业服务", "brand": "Chinasoft", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中邮理财", "sector_source": "证券基金与资管", "brand": "PSBC Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中铁置业", "sector_source": "地产建筑与物流", "brand": "CR Land", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中银保险", "sector_source": "保险", "brand": "BOC Insurance", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中银基金", "sector_source": "证券基金与资管", "brand": "BOC Fund", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中银证券", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中颖电子", "sector_source": "半导体", "brand": "Sino Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "中鼎股份", "sector_source": "汽车与出行", "brand": "Zhongding", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "丰添", "sector_source": "美妆与服饰", "brand": "Foltène China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "丰田中国", "sector_source": "外资在华", "brand": "Toyota China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "丰网", "sector_source": "地产建筑与物流", "brand": "Fengwang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "丹纳赫中国", "sector_source": "外资在华", "brand": "Danaher China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "丽珠集团", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "久谦咨询", "sector_source": "咨询会计与专业服务", "brand": "MergeLane", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "乐普医疗", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "乐购中国", "sector_source": "外资在华", "brand": "Tesco China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "乐逗游戏", "sector_source": "游戏与内容", "brand": "LeDou", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "乐鑫科技", "sector_source": "半导体", "brand": "Espressif", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "乡村基", "sector_source": "消费零售与食品", "brand": "Country Style Cooking", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "书亦烧仙草", "sector_source": "消费零售与食品", "brand": "Shuyi Tea", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "云鲸智能", "sector_source": "通信与电子硬件", "brand": "Narwal", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亚太会计师", "sector_source": "咨询会计与专业服务", "brand": "Asia Pacific CPA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亚朵集团", "sector_source": "央企与国企", "brand": "Atour", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亚马逊", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亚马逊中国", "sector_source": "外资在华", "brand": "Amazon China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "交通银行信用卡", "sector_source": "银行", "brand": "BOCOM Credit Card", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "交银人寿", "sector_source": "保险", "brand": "BOCOM Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "交银康联", "sector_source": "保险", "brand": "BOCOM MSIG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "交银理财", "sector_source": "证券基金与资管", "brand": "BOCOM Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "京东方精电", "sector_source": "通信与电子硬件", "brand": "BOE Varitronix", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "京东物流仓储", "sector_source": "地产建筑与物流", "brand": "JD Logistics Warehouse", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "京东科技", "sector_source": "互联网与软件", "brand": "JD Technology", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "京瓷中国", "sector_source": "外资在华", "brand": "Kyocera China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "人保财险", "sector_source": "保险", "brand": "PICC P&C", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亿滋中国", "sector_source": "外资在华", "brand": "Mondelēz China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亿联银行", "sector_source": "银行", "brand": "Yillion Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "亿航智能", "sector_source": "人工智能与机器人", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "仰望", "sector_source": "汽车与出行", "brand": "Yangwang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "企业微信", "sector_source": "企业服务", "brand": "WeCom", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "众惠相互", "sector_source": "保险", "brand": "Zhonghui Mutual", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "众邦银行", "sector_source": "银行", "brand": "Z-Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "优必选Walker", "sector_source": "人工智能与机器人", "brand": "UBTech", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "优衣库中国", "sector_source": "消费零售与食品", "brand": "Uniqlo China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "传奇生物", "sector_source": "医药医疗", "brand": "Legend Biotech", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "佛瑞亚中国", "sector_source": "外资在华", "brand": "Forvia China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "作业帮直播课", "sector_source": "教育", "brand": "Zuoyebang Live", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "佳得乐中国", "sector_source": "消费零售与食品", "brand": "Gatorade China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "佳能中国", "sector_source": "外资在华", "brand": "Canon China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "便利蜂", "sector_source": "互联网与软件", "brand": "Bianlifeng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "保利物业", "sector_source": "地产建筑与物流", "brand": "Poly Property Services", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "保时捷中国", "sector_source": "外资在华", "brand": "Porsche China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "信义光能", "sector_source": "新能源与先进制造", "brand": "Xinyi Solar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "信美相互", "sector_source": "保险", "brand": "Xinmei Mutual", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "信银理财", "sector_source": "证券基金与资管", "brand": "CITIC Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "倍思", "sector_source": "通信与电子硬件", "brand": "Baseus", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "偶数科技", "sector_source": "企业服务", "brand": "Oushu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "傅利叶智能", "sector_source": "人工智能与机器人", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "傲梦编程", "sector_source": "教育", "brand": "Aomeng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "元戎启行", "sector_source": "汽车与出行", "brand": "DeepRoute", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "元气森林研究院", "sector_source": "消费零售与食品", "brand": "Genki Forest", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "光云科技", "sector_source": "互联网与软件", "brand": "Guangyun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "光大集团", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "光弘科技", "sector_source": "通信与电子硬件", "brand": "DBG Technology", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "光明乳业", "sector_source": "消费零售与食品", "brand": "Bright Dairy", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "全家便利店", "sector_source": "互联网与软件", "brand": "FamilyMart China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "全聚德", "sector_source": "消费零售与食品", "brand": "Quanjude", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "六个核桃", "sector_source": "消费零售与食品", "brand": "Yangyuan Zhihui", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "兴业银行信用卡", "sector_source": "银行", "brand": "CIB Credit Card", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "兴全基金", "sector_source": "证券基金与资管", "brand": "Aegon Industrial Fund", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "兴银理财", "sector_source": "证券基金与资管", "brand": "CIB Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "再鼎医药", "sector_source": "医药医疗", "brand": "Zai Lab", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "农业发展银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "农夫山泉茶π", "sector_source": "消费零售与食品", "brand": "Nongfu Tea", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "农银人寿", "sector_source": "保险", "brand": "ABC Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "农银汇理", "sector_source": "证券基金与资管", "brand": "ABC CA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "凌志软件", "sector_source": "企业服务", "brand": "Lingzhi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "凯叔讲故事", "sector_source": "教育", "brand": "Kaishu Story", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "凯度", "sector_source": "咨询会计与专业服务", "brand": "Kantar China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "凯悦中国", "sector_source": "外资在华", "brand": "Hyatt China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "凯撒文化", "sector_source": "游戏与内容", "brand": "Kaiser Culture", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "创世纪", "sector_source": "新能源与先进制造", "brand": "Chuangshiji", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "前海人寿", "sector_source": "保险", "brand": "Qianhai Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "前程无忧", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "剑南春", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "加加食品", "sector_source": "消费零售与食品", "brand": "Jiajia Food", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "勃林格殷格翰中国", "sector_source": "外资在华", "brand": "Boehringer China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "北京农商行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "北京城建", "sector_source": "地产建筑与物流", "brand": "BUCG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "北京建工", "sector_source": "地产建筑与物流", "brand": "BCEG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "北部湾银行", "sector_source": "银行", "brand": "Guangxi Beibu Gulf Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "十点读书", "sector_source": "游戏与内容", "brand": "Ten O'Clock", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "千挂科技", "sector_source": "汽车与出行", "brand": "QianGua", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华为云GaussDB", "sector_source": "企业服务", "brand": "GaussDB", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华为车BU", "sector_source": "汽车与出行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华兴银行", "sector_source": "银行", "brand": "Guangdong Huaxing Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华友钴业", "sector_source": "新能源与先进制造", "brand": "Huayou Cobalt", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华发股份", "sector_source": "地产建筑与物流", "brand": "Huafa", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华安基金", "sector_source": "证券基金与资管", "brand": "Hua An Fund", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华星光电", "sector_source": "通信与电子硬件", "brand": "CSOT", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华泰资管", "sector_source": "证券基金与资管", "brand": "Huatai Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华润万象生活", "sector_source": "地产建筑与物流", "brand": "CR Mixc", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华润医药", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华润医药商业", "sector_source": "央企与国企", "brand": "CR Pharma", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华硕中国", "sector_source": "外资在华", "brand": "ASUS China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华策影视", "sector_source": "游戏与内容", "brand": "Huace Film", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华莱士", "sector_source": "消费零售与食品", "brand": "Wallace", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华谊兄弟", "sector_source": "游戏与内容", "brand": "Huayi Brothers", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "华通银行", "sector_source": "银行", "brand": "Huatong Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "南京银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "南大通用", "sector_source": "企业服务", "brand": "GBase", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "南微医学", "sector_source": "医药医疗", "brand": "Micro-Tech", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "南方周末", "sector_source": "游戏与内容", "brand": "Nanfang Weekly", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博世中国", "sector_source": "外资在华", "brand": "Bosch China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博时基金", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博格华纳中国", "sector_source": "外资在华", "brand": "BorgWarner China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博纳影业", "sector_source": "游戏与内容", "brand": "Bona Film", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博通中国", "sector_source": "外资在华", "brand": "Broadcom China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "博雅生物", "sector_source": "医药医疗", "brand": "Boya Bio", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "卡夫亨氏中国", "sector_source": "外资在华", "brand": "Kraft Heinz China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "卫岗乳业", "sector_source": "消费零售与食品", "brand": "Weigang Dairy", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "卫材中国", "sector_source": "外资在华", "brand": "Eisai China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "印力集团", "sector_source": "地产建筑与物流", "brand": "SCPG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "友邦保险", "sector_source": "保险", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "口子窖", "sector_source": "消费零售与食品", "brand": "Kouzijiao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "古井贡酒", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "可口可乐中国", "sector_source": "外资在华", "brand": "Coca-Cola China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "司太立", "sector_source": "医药医疗", "brand": "Starry Pharma", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "叽里呱啦", "sector_source": "教育", "brand": "Jiliguala", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "叽里呱啦英语", "sector_source": "教育", "brand": "Jiliguala English", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "同方全球人寿", "sector_source": "保险", "brand": "Aegon THTF Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "同程旅行", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "同花顺iFinD", "sector_source": "互联网与软件", "brand": "Hithink", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "名爵", "sector_source": "汽车与出行", "brand": "MG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "名臣健康", "sector_source": "美妆与服饰", "brand": "Mingchen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "启德教育", "sector_source": "教育", "brand": "EIC Education", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "周生生", "sector_source": "消费零售与食品", "brand": "Chow Sang Sang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "和君咨询", "sector_source": "咨询会计与专业服务", "brand": "Hejun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "和府捞面", "sector_source": "消费零售与食品", "brand": "HeFu Noodle", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "咕咚", "sector_source": "互联网与软件", "brand": "Codoon", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "哈尔滨银行", "sector_source": "银行", "brand": "Harbin Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "哈电集团", "sector_source": "新能源与先进制造", "brand": "Harbin Electric", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "哔哩哔哩漫画", "sector_source": "游戏与内容", "brand": "Bilibili Comics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "唐人神", "sector_source": "消费零售与食品", "brand": "Tangrenshen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "唯品会物流", "sector_source": "互联网与软件", "brand": "Vipshop Logistics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "商汤日日新", "sector_source": "人工智能与机器人", "brand": "SenseNova", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "嘉亨家化", "sector_source": "美妆与服饰", "brand": "Jiaheng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "嘉里建设", "sector_source": "地产建筑与物流", "brand": "Kerry Properties", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "回力", "sector_source": "消费零售与食品", "brand": "Warrior", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "固特异中国", "sector_source": "外资在华", "brand": "Goodyear China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国华人寿", "sector_source": "保险", "brand": "Guohua Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国家电投", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国家电投研究院", "sector_source": "央企与国企", "brand": "SPIC Research", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国寿资产", "sector_source": "保险", "brand": "China Life Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国网经研院", "sector_source": "央企与国企", "brand": "SGCC Economic Research", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国药中生", "sector_source": "医药医疗", "brand": "China National Biotec", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国药控股", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国药控股分销", "sector_source": "央企与国企", "brand": "Sinopharm Distribution", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "国铁集团", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "圆通速递", "sector_source": "地产建筑与物流", "brand": "YTO Express", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "圣农发展", "sector_source": "消费零售与食品", "brand": "Sunner", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "圣牧高科", "sector_source": "消费零售与食品", "brand": "Shengmu Organic", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "圣邦股份", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "地平线机器人", "sector_source": "半导体", "brand": "Horizon Robotics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "埃森哲", "sector_source": "咨询会计与专业服务", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "基石药业", "sector_source": "医药医疗", "brand": "CStone", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "壁仞科技GPU", "sector_source": "人工智能与机器人", "brand": "Biren GPU", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "声通科技", "sector_source": "人工智能与机器人", "brand": "Voicecomm", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "壹米滴答", "sector_source": "地产建筑与物流", "brand": "Yimidida", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "复星凯特", "sector_source": "医药医疗", "brand": "Fosun Kite", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "大众中国", "sector_source": "外资在华", "brand": "Volkswagen China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "大华机器人", "sector_source": "通信与电子硬件", "brand": "Dahua Robot", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "大朋VR", "sector_source": "通信与电子硬件", "brand": "DPVR", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "大疆创新车载", "sector_source": "通信与电子硬件", "brand": "DJI Automotive", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "大连造船", "sector_source": "央企与国企", "brand": "Dalian Shipbuilding", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "天坛生物", "sector_source": "医药医疗", "brand": "Tiantan Bio", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "天境生物", "sector_source": "医药医疗", "brand": "I-Mab", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "天强咨询", "sector_source": "咨询会计与专业服务", "brand": "TQ Consulting", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "天数智芯", "sector_source": "半导体", "brand": "Iluvatar CoreX", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "天翼数字生活", "sector_source": "央企与国企", "brand": "CT Digital Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "太二酸菜鱼", "sector_source": "消费零售与食品", "brand": "Tai Er", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "太平洋人寿", "sector_source": "保险", "brand": "CPIC Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "太平鸟", "sector_source": "消费零售与食品", "brand": "Peacebird", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "太钢集团", "sector_source": "央企与国企", "brand": "TISCO", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "太阳诱电中国", "sector_source": "外资在华", "brand": "Taiyo Yuden China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "夸迪", "sector_source": "美妆与服饰", "brand": "QuadHA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奇瑞捷途", "sector_source": "汽车与出行", "brand": "Jetour", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奇瑞汽车", "sector_source": "汽车与出行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奈飞中国", "sector_source": "外资在华", "brand": "Netflix China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奔驰", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奔驰中国", "sector_source": "外资在华", "brand": "Mercedes-Benz China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奥康鞋业", "sector_source": "消费零售与食品", "brand": "Aokang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "奥纬咨询", "sector_source": "咨询会计与专业服务", "brand": "Oliver Wyman China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "好当家", "sector_source": "消费零售与食品", "brand": "Haodangjia", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "好时中国", "sector_source": "外资在华", "brand": "Hershey China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "好未来学而思", "sector_source": "教育", "brand": "TAL", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "学大教育", "sector_source": "教育", "brand": "Xueda", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "宁银理财", "sector_source": "证券基金与资管", "brand": "NBCB Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安井食品", "sector_source": "消费零售与食品", "brand": "Anjoy Foods", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安居客", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安川电机", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安得智联", "sector_source": "地产建筑与物流", "brand": "Annto", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安斯泰来中国", "sector_source": "外资在华", "brand": "Astellas China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安永华明", "sector_source": "咨询会计与专业服务", "brand": "EY China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安波福中国", "sector_source": "外资在华", "brand": "Aptiv China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安盛天平", "sector_source": "保险", "brand": "AXA Tianping", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安能物流", "sector_source": "地产建筑与物流", "brand": "Ane Logistics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "安莉芳", "sector_source": "消费零售与食品", "brand": "Embry Form", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "完美世界影视", "sector_source": "游戏与内容", "brand": "Perfect World Pictures", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "完美世界游戏", "sector_source": "游戏与内容", "brand": "Perfect World Games", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "完美日记", "sector_source": "美妆与服饰", "brand": "Perfect Diary", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "宏碁中国", "sector_source": "外资在华", "brand": "Acer China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "宝信软件", "sector_source": "互联网与软件", "brand": "Baosight", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "宝马中国", "sector_source": "外资在华", "brand": "BMW China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "宝骏", "sector_source": "汽车与出行", "brand": "Baojun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "家乐氏中国", "sector_source": "外资在华", "brand": "Kellanova China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "家得宝中国", "sector_source": "外资在华", "brand": "Home Depot China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "容百科技", "sector_source": "新能源与先进制造", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "容诚会计师", "sector_source": "咨询会计与专业服务", "brand": "Rongcheng CPA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "富士电机中国", "sector_source": "外资在华", "brand": "Fuji Electric China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "富士胶片中国", "sector_source": "外资在华", "brand": "Fujifilm China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "封面新闻", "sector_source": "游戏与内容", "brand": "Cover News", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "小冰", "sector_source": "人工智能与机器人", "brand": "Xiaoice", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "小红书社区", "sector_source": "互联网与软件", "brand": "Xiaohongshu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "尼尔森IQ", "sector_source": "咨询会计与专业服务", "brand": "NielsenIQ China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "尼康中国", "sector_source": "外资在华", "brand": "Nikon China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "屈臣氏中国", "sector_source": "互联网与软件", "brand": "Watsons China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "展讯", "sector_source": "半导体", "brand": "Spreadtrum", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "山东路桥", "sector_source": "地产建筑与物流", "brand": "SDRB", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "山东黄金", "sector_source": "央企与国企", "brand": "Shandong Gold", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "山姆会员店", "sector_source": "互联网与软件", "brand": "Sam's Club China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "山石网科", "sector_source": "互联网与软件", "brand": "Hillstone", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "山西汾酒", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "工银理财", "sector_source": "证券基金与资管", "brand": "ICBC Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "工银瑞信", "sector_source": "证券基金与资管", "brand": "ICBC Credit Suisse", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "巨人移动", "sector_source": "游戏与内容", "brand": "Giant Mobile", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "巴斯夫中国", "sector_source": "外资在华", "brand": "BASF China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "希捷中国", "sector_source": "外资在华", "brand": "Seagate China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "希望学", "sector_source": "教育", "brand": "Xiwangxue", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "常熟农商行", "sector_source": "银行", "brand": "Changshu Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "平安产险", "sector_source": "保险", "brand": "Ping An P&C", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "平安人寿", "sector_source": "保险", "brand": "Ping An Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "平安理财", "sector_source": "证券基金与资管", "brand": "Ping An Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "平安资管", "sector_source": "证券基金与资管", "brand": "Ping An Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "平安银行零售", "sector_source": "银行", "brand": "Ping An Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "广发基金", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "广州农商行", "sector_source": "银行", "brand": "Guangzhou Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "广州酒家", "sector_source": "消费零售与食品", "brand": "GZ Restaurant", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康佳", "sector_source": "通信与电子硬件", "brand": "Konka", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康师傅控股", "sector_source": "消费零售与食品", "brand": "Tingyi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康希诺", "sector_source": "医药医疗", "brand": "CanSino", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康弘药业", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康泰生物", "sector_source": "医药医疗", "brand": "Kangtai Bio", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "康诺思腾", "sector_source": "医药医疗", "brand": "Cornerstone Robotics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "建业新生活", "sector_source": "地产建筑与物流", "brand": "Central China New Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "建信人寿", "sector_source": "保险", "brand": "CCB Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "建发国际", "sector_source": "地产建筑与物流", "brand": "C&D International", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "开市客中国", "sector_source": "外资在华", "brand": "Costco China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "开立医疗", "sector_source": "医药医疗", "brand": "Sonoscape", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "弘康人寿", "sector_source": "保险", "brand": "Hongkang Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "张家港农商行", "sector_source": "银行", "brand": "Zhangjiagang Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "强生中国", "sector_source": "外资在华", "brand": "Johnson & Johnson China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "强生消费品中国", "sector_source": "外资在华", "brand": "J&J Consumer China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "当当", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "彩棠", "sector_source": "美妆与服饰", "brand": "Timage", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "徐工集团", "sector_source": "新能源与先进制造", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "御风未来", "sector_source": "人工智能与机器人", "brand": "Vertaxi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微创医疗", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微创机器人", "sector_source": "医药医疗", "brand": "MicroPort MedBot", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微创机器人腹腔", "sector_source": "人工智能与机器人", "brand": "MicroPort MedBot Surgical", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微博", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微星中国", "sector_source": "外资在华", "brand": "MSI China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微芯生物", "sector_source": "医药医疗", "brand": "Chipscreen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "微软亚洲研究院", "sector_source": "外资在华", "brand": "MSRA", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "德勤华永", "sector_source": "咨询会计与专业服务", "brand": "Deloitte China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "德州仪器中国", "sector_source": "外资在华", "brand": "TI China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "德意志银行中国", "sector_source": "银行", "brand": "Deutsche Bank China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "德迅中国", "sector_source": "地产建筑与物流", "brand": "Kuehne+Nagel China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "心动网络", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "心脉医疗", "sector_source": "医药医疗", "brand": "MicroPort Endovascular", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "必胜客中国", "sector_source": "外资在华", "brand": "Pizza Hut China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "快仓智能", "sector_source": "人工智能与机器人", "brand": "Quicktron", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "快看", "sector_source": "游戏与内容", "brand": "Kuaikan Comics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "快看漫画", "sector_source": "游戏与内容", "brand": "Kuaikan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "思灵机器人", "sector_source": "新能源与先进制造", "brand": "Agile Robots", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "思科中国", "sector_source": "外资在华", "brand": "Cisco China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "恒天然中国", "sector_source": "外资在华", "brand": "Fonterra China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "恒顺醋业", "sector_source": "消费零售与食品", "brand": "Hengshun Vinegar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "恩智浦中国", "sector_source": "外资在华", "brand": "NXP China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "悦达起亚", "sector_source": "汽车与出行", "brand": "Kia China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "意法半导体中国", "sector_source": "外资在华", "brand": "ST China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "懒人听书", "sector_source": "游戏与内容", "brand": "Lazy Audio", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "成都飞机设计研究所", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "戴尔中国", "sector_source": "外资在华", "brand": "Dell China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "扬杰科技", "sector_source": "半导体", "brand": "Yangjie", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "承德露露", "sector_source": "消费零售与食品", "brand": "Lolo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "技嘉中国", "sector_source": "外资在华", "brand": "Gigabyte China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "报喜鸟", "sector_source": "消费零售与食品", "brand": "Boshiwa", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "拉芳家化", "sector_source": "美妆与服饰", "brand": "Lafang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "招商证券", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "招商资管", "sector_source": "证券基金与资管", "brand": "CMS Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "招商银行信用卡", "sector_source": "银行", "brand": "CMB Credit Card", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "招银保险", "sector_source": "保险", "brand": "CMB Insurance", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "招银理财", "sector_source": "证券基金与资管", "brand": "CMB Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "拼多多国际Temu", "sector_source": "互联网与软件", "brand": "Temu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "振兴银行", "sector_source": "银行", "brand": "Zhenxing Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "掌阅科技", "sector_source": "互联网与软件", "brand": "iReader", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "探探", "sector_source": "互联网与软件", "brand": "Tantan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "携程", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "摩根大通中国", "sector_source": "银行", "brand": "JPMorgan China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "文远智行", "sector_source": "汽车与出行", "brand": "WeRide", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "斑马AI课", "sector_source": "教育", "brand": "Zebra AI", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "斯坦德机器人", "sector_source": "人工智能与机器人", "brand": "Standard Robots", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "斯坦星球", "sector_source": "教育", "brand": "STEM Planet", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "斯特兰蒂斯中国", "sector_source": "外资在华", "brand": "Stellantis China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新丽传媒", "sector_source": "游戏与内容", "brand": "New Classics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新乳业", "sector_source": "消费零售与食品", "brand": "New Hope Dairy", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新五丰", "sector_source": "消费零售与食品", "brand": "Xinwufeng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新京报", "sector_source": "游戏与内容", "brand": "The Beijing News", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新华人寿", "sector_source": "保险", "brand": "New China Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新华资产", "sector_source": "证券基金与资管", "brand": "Xinhua Asset", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新城悦服务", "sector_source": "地产建筑与物流", "brand": "S-Enjoy Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新洁能", "sector_source": "半导体", "brand": "NCE Power", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新网银行", "sector_source": "银行", "brand": "XW Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "新鸿基地产", "sector_source": "地产建筑与物流", "brand": "Sun Hung Kai", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "方程豹", "sector_source": "汽车与出行", "brand": "Fang Cheng Bao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "施乐中国", "sector_source": "外资在华", "brand": "Xerox China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "施维雅中国", "sector_source": "外资在华", "brand": "Servier China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "施耐德中国", "sector_source": "外资在华", "brand": "Schneider China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "无锡农商行", "sector_source": "银行", "brand": "Wuxi Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "日产中国", "sector_source": "外资在华", "brand": "Nissan China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "日日顺", "sector_source": "地产建筑与物流", "brand": "RRS", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "旭辉永升服务", "sector_source": "地产建筑与物流", "brand": "Ever Sunshine", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "时代电气", "sector_source": "半导体", "brand": "CRRC Times Electric", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "旷视", "sector_source": "人工智能与机器人", "brand": "Megvii", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "旷视机器人", "sector_source": "人工智能与机器人", "brand": "Megvii Robotics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "昂立教育", "sector_source": "教育", "brand": "Only Education", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "昆仑山矿泉水", "sector_source": "消费零售与食品", "brand": "Kunlun Mountain", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "昆仑游戏", "sector_source": "游戏与内容", "brand": "Kunlun Games", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "昊海生科", "sector_source": "医药医疗", "brand": "Haohai Bio", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "昌河飞机", "sector_source": "央企与国企", "brand": "Changhe Aircraft", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "明牌珠宝", "sector_source": "消费零售与食品", "brand": "Ming Jewelry", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "易方达基金", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "易鲸捷", "sector_source": "企业服务", "brand": "Esgyn", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "星展银行中国", "sector_source": "银行", "brand": "DBS China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "星巴克中国", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "星巴克供应链中国", "sector_source": "外资在华", "brand": "Starbucks Supply Chain China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "星环科技", "sector_source": "企业服务", "brand": "Transwarp", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "普利司通中国", "sector_source": "外资在华", "brand": "Bridgestone China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "普华基础软件", "sector_source": "企业服务", "brand": "Puhua Base Software", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "普华永道中天", "sector_source": "咨询会计与专业服务", "brand": "PwC China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "普渡科技", "sector_source": "人工智能与机器人", "brand": "Pudu Robotics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "景田百岁山", "sector_source": "消费零售与食品", "brand": "Ganten", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "晶澳科技", "sector_source": "新能源与先进制造", "brand": "JA Solar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "晶科能源", "sector_source": "新能源与先进制造", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "智谱清言", "sector_source": "人工智能与机器人", "brand": "ChatGLM", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "智飞龙科马", "sector_source": "医药医疗", "brand": "Zhifei Longcom", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "有研硅", "sector_source": "半导体", "brand": "Gritek", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "本田中国", "sector_source": "外资在华", "brand": "Honda China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "朴朴超市", "sector_source": "互联网与软件", "brand": "Pupu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "李尔中国", "sector_source": "外资在华", "brand": "Lear China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "村田中国", "sector_source": "外资在华", "brand": "Murata China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "杭氧股份", "sector_source": "新能源与先进制造", "brand": "Hangyang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "杭银理财", "sector_source": "证券基金与资管", "brand": "HZ Bank Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "松下电器中国", "sector_source": "外资在华", "brand": "Panasonic China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "极星", "sector_source": "汽车与出行", "brand": "Polestar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "极氪", "sector_source": "汽车与出行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "林清轩", "sector_source": "美妆与服饰", "brand": "Forest Cabin", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "果壳", "sector_source": "游戏与内容", "brand": "Guokr", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "柏睿数据", "sector_source": "企业服务", "brand": "Brilliance", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "柠季", "sector_source": "消费零售与食品", "brand": "Ningji", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "柠檬微趣", "sector_source": "游戏与内容", "brand": "Microfun", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "柠萌影视", "sector_source": "游戏与内容", "brand": "Linmon", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "柯尼卡美能达中国", "sector_source": "外资在华", "brand": "Konica Minolta China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "桃李面包", "sector_source": "消费零售与食品", "brand": "Toly Bread", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "梅卡曼德视觉", "sector_source": "人工智能与机器人", "brand": "Mech-Mind Vision", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "樊登读书", "sector_source": "游戏与内容", "brand": "Fandeng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "欢喜传媒", "sector_source": "游戏与内容", "brand": "Huanxi Media", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "欧姆龙中国", "sector_source": "外资在华", "brand": "Omron China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "欧尚中国", "sector_source": "外资在华", "brand": "Auchan China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "欧莱雅中国", "sector_source": "外资在华", "brand": "L'Oréal China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "正保远程", "sector_source": "教育", "brand": "CDEL", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "正午阳光", "sector_source": "游戏与内容", "brand": "Daylight Entertainment", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "正略咨询", "sector_source": "咨询会计与专业服务", "brand": "Adfaith", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "武田中国", "sector_source": "外资在华", "brand": "Takeda China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "每日优鲜", "sector_source": "互联网与软件", "brand": "Missfresh", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "毕马威", "sector_source": "咨询会计与专业服务", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "毕马威华振", "sector_source": "咨询会计与专业服务", "brand": "KPMG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "民生理财", "sector_source": "证券基金与资管", "brand": "CMBC Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "民生银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "永赢基金", "sector_source": "证券基金与资管", "brand": "Yongying Fund", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汇丰银行中国", "sector_source": "银行", "brand": "HSBC China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汇川伺服", "sector_source": "新能源与先进制造", "brand": "Inovance Servo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汇川联合动力", "sector_source": "汽车与出行", "brand": "Inovance Auto", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汇添富基金", "sector_source": "证券基金与资管", "brand": "China Universal", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汉堡王", "sector_source": "外资在华", "brand": "Burger King", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汉堡王中国", "sector_source": "消费零售与食品", "brand": "Burger King China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "汉高中国", "sector_source": "外资在华", "brand": "Henkel China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "江丰电子", "sector_source": "半导体", "brand": "KONFOONG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "江南农商行", "sector_source": "银行", "brand": "Jiangnan Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "江淮大众", "sector_source": "汽车与出行", "brand": "JAC Volkswagen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "江苏银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "江西铜业", "sector_source": "央企与国企", "brand": "Jiangxi Copper", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沃尔沃", "sector_source": "汽车与出行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沃尔沃汽车中国", "sector_source": "外资在华", "brand": "Volvo Cars China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沈阳飞机工业", "sector_source": "央企与国企", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沪上阿姨", "sector_source": "消费零售与食品", "brand": "Auntea Jenny", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沪东中华", "sector_source": "央企与国企", "brand": "Hudong-Zhonghua", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沪农商行", "sector_source": "银行", "brand": "Shanghai Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "沪硅产业", "sector_source": "半导体", "brand": "NSIG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "法国巴黎银行中国", "sector_source": "银行", "brand": "BNP Paribas China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "法雷奥中国", "sector_source": "外资在华", "brand": "Valeo China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "波士顿咨询", "sector_source": "咨询会计与专业服务", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "波士顿咨询中国", "sector_source": "外资在华", "brand": "BCG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "波士顿科学中国", "sector_source": "外资在华", "brand": "Boston Scientific China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "泰康人寿", "sector_source": "保险", "brand": "Taikang Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "泽璟制药", "sector_source": "医药医疗", "brand": "Zelgen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "洁美科技", "sector_source": "半导体", "brand": "Jiemei", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "洲际中国", "sector_source": "外资在华", "brand": "IHG China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "洽洽食品", "sector_source": "消费零售与食品", "brand": "Chacha Food", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浙江建投", "sector_source": "地产建筑与物流", "brand": "Zhejiang Construction", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浦发银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浦银安盛", "sector_source": "证券基金与资管", "brand": "Axa SPDB", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浪潮", "sector_source": "通信与电子硬件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浪潮云", "sector_source": "企业服务", "brand": "Inspur Cloud", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "浪潮信息", "sector_source": "企业服务", "brand": "Inspur", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海光信息", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海南银行", "sector_source": "银行", "brand": "Bank of Hainan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海大集团", "sector_source": "消费零售与食品", "brand": "Haida Group", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海天精工", "sector_source": "新能源与先进制造", "brand": "Haitian Precision", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海欣食品", "sector_source": "消费零售与食品", "brand": "Haixin Food", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "海王星辰", "sector_source": "医药医疗", "brand": "China Nepstar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "涛思数据", "sector_source": "企业服务", "brand": "TDengine", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "润百颜", "sector_source": "美妆与服饰", "brand": "Biohyalux", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "涪陵榨菜", "sector_source": "消费零售与食品", "brand": "Fuling Zhacai", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "深度求索", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "深言科技", "sector_source": "人工智能与机器人", "brand": "DeepLang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "渣打银行中国", "sector_source": "银行", "brand": "Standard Chartered China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "游卡桌游", "sector_source": "游戏与内容", "brand": "Yoozoo Card", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "湖北银行", "sector_source": "银行", "brand": "Hubei Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "湖南建工", "sector_source": "地产建筑与物流", "brand": "Hu'nan Construction", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "湾仔码头中国", "sector_source": "消费零售与食品", "brand": "Wanchai Ferry China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "滋源", "sector_source": "美妆与服饰", "brand": "Ziyuan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "滨江服务", "sector_source": "地产建筑与物流", "brand": "Binjiang Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "潞晨科技", "sector_source": "人工智能与机器人", "brand": "Colossal-AI", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "澎湃新闻", "sector_source": "游戏与内容", "brand": "The Paper", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "澳际教育", "sector_source": "教育", "brand": "Aoji", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "火花思维", "sector_source": "教育", "brand": "Huohua", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "燕京啤酒", "sector_source": "消费零售与食品", "brand": "Yanjing Beer", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "燧原智能", "sector_source": "半导体", "brand": "Enflame", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "爱信中国", "sector_source": "外资在华", "brand": "Aisin China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "爱博医疗", "sector_source": "医药医疗", "brand": "Alcon Eye Care China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "爱茉莉太平洋中国", "sector_source": "外资在华", "brand": "Amorepacific China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "牛栏山", "sector_source": "消费零售与食品", "brand": "Niulanshan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "特斯拉", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "特斯拉中国", "sector_source": "外资在华", "brand": "Tesla China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "猎户星空", "sector_source": "人工智能与机器人", "brand": "OrionStar", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "猎聘", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "猫眼娱乐", "sector_source": "游戏与内容", "brand": "Maoyan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "猿辅导斑马", "sector_source": "教育", "brand": "Zebra", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "獐子岛", "sector_source": "消费零售与食品", "brand": "Zhangzidao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "玉泽", "sector_source": "美妆与服饰", "brand": "Dr.Yu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "玛泽", "sector_source": "咨询会计与专业服务", "brand": "Mazars China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "环球雅思", "sector_source": "教育", "brand": "GEDU", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "现代汽车中国", "sector_source": "外资在华", "brand": "Hyundai China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "珠江人寿", "sector_source": "保险", "brand": "Pearl River Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "珠江啤酒", "sector_source": "消费零售与食品", "brand": "Pearl River Beer", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "理光中国", "sector_source": "外资在华", "brand": "Ricoh China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞幸咖啡", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞思教育", "sector_source": "教育", "brand": "Rise Education", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞昱中国", "sector_source": "半导体", "brand": "Realtek China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞浦兰钧", "sector_source": "汽车与出行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞穗银行中国", "sector_source": "银行", "brand": "Mizuho China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞萨电子中国", "sector_source": "外资在华", "brand": "Renesas China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "瑞银中国", "sector_source": "银行", "brand": "UBS China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "璧仞科技", "sector_source": "半导体", "brand": "Biren", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "用友网络", "sector_source": "企业服务", "brand": "Yonyou", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "甲骨文", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "甲骨文中国", "sector_source": "外资在华", "brand": "Oracle China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "申万宏源", "sector_source": "证券基金与资管", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "电建地产", "sector_source": "地产建筑与物流", "brand": "PowerChina Real Estate", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "电装中国", "sector_source": "外资在华", "brand": "Denso China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "白犀牛", "sector_source": "人工智能与机器人", "brand": "White Rhino", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百丽国际", "sector_source": "消费零售与食品", "brand": "Belle International", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百信银行", "sector_source": "银行", "brand": "aiBank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百川大模型", "sector_source": "人工智能与机器人", "brand": "Baichuan", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百年人寿", "sector_source": "保险", "brand": "Aeon Life China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百度智能云", "sector_source": "互联网与软件", "brand": "Baidu Cloud", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百济神州", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百特中国", "sector_source": "外资在华", "brand": "Baxter China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "百雀羚", "sector_source": "美妆与服饰", "brand": "Pechoin", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "皮爷咖啡中国", "sector_source": "消费零售与食品", "brand": "Peet's China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "益丰药房", "sector_source": "医药医疗", "brand": "Yifeng Pharmacy", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "益普生中国", "sector_source": "外资在华", "brand": "Ipsen China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "益普索", "sector_source": "咨询会计与专业服务", "brand": "Ipsos China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "益生股份", "sector_source": "消费零售与食品", "brand": "Yisheng", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "盐湖股份", "sector_source": "新能源与先进制造", "brand": "Qinghai Salt Lake", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "盒马鲜生", "sector_source": "互联网与软件", "brand": "Freshippo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "盛京银行", "sector_source": "银行", "brand": "Shengjing Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "盛新锂能", "sector_source": "新能源与先进制造", "brand": "Chengxin Lithium", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "盛趣游戏", "sector_source": "游戏与内容", "brand": "Shengqu Games", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "眉州东坡", "sector_source": "消费零售与食品", "brand": "Meizhou Dongpo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "真功夫", "sector_source": "消费零售与食品", "brand": "Kungfu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "知乎盐选", "sector_source": "游戏与内容", "brand": "Zhihu Salt", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "石药集团", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "硅基流动", "sector_source": "人工智能与机器人", "brand": "SiliconFlow", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "礼来中国", "sector_source": "外资在华", "brand": "Eli Lilly China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "神华工程", "sector_source": "央企与国企", "brand": "Shenhua Engineering", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "神舟通用", "sector_source": "企业服务", "brand": "Shenzhou General", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "福耀玻璃", "sector_source": "汽车与出行", "brand": "Fuyao Glass", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "福莱特", "sector_source": "新能源与先进制造", "brand": "Flat Glass", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "科尔尼", "sector_source": "咨询会计与专业服务", "brand": "Kearney China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "科思创中国", "sector_source": "外资在华", "brand": "Covestro China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "童程童美", "sector_source": "教育", "brand": "Tongcheng Tongmei", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "竹间智能", "sector_source": "人工智能与机器人", "brand": "Emotibot", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "第一三共中国", "sector_source": "外资在华", "brand": "Daiichi Sankyo China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "第一财经", "sector_source": "游戏与内容", "brand": "Yicai", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "第四范式", "sector_source": "人工智能与机器人", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "第四范式先知", "sector_source": "人工智能与机器人", "brand": "4Paradigm", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "米哈游原神", "sector_source": "游戏与内容", "brand": "Genshin", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "米蓓尔", "sector_source": "美妆与服饰", "brand": "MedRepair", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "粉笔职教", "sector_source": "教育", "brand": "Fenbi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "精锐教育", "sector_source": "教育", "brand": "OneSmart", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "索尼", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "索尼中国", "sector_source": "外资在华", "brand": "Sony China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "红星二锅头", "sector_source": "消费零售与食品", "brand": "Hongxing", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "红蜻蜓", "sector_source": "消费零售与食品", "brand": "Red Dragonfly", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "统一企业中国", "sector_source": "消费零售与食品", "brand": "Uni-President China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "维他奶", "sector_source": "消费零售与食品", "brand": "Vitasoy China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "绿城服务", "sector_source": "地产建筑与物流", "brand": "Greentown Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "编程猫", "sector_source": "教育", "brand": "Codemao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "网商银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "网易盘古", "sector_source": "游戏与内容", "brand": "NetEase Pangu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "网易雷火", "sector_source": "游戏与内容", "brand": "NetEase Leihuo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "罗克韦尔中国", "sector_source": "外资在华", "brand": "Rockwell China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "罗森中国", "sector_source": "互联网与软件", "brand": "Lawson China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "罗氏", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美亚财险", "sector_source": "保险", "brand": "Chartis China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美光中国", "sector_source": "外资在华", "brand": "Micron China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美团优选", "sector_source": "互联网与软件", "brand": "Meituan Select", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美敦力中国", "sector_source": "外资在华", "brand": "Medtronic China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美特斯邦威", "sector_source": "消费零售与食品", "brand": "Metersbonwe", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "美诺华", "sector_source": "医药医疗", "brand": "Menovo", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "老凤祥", "sector_source": "消费零售与食品", "brand": "Lao Feng Xiang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "耐克中国", "sector_source": "消费零售与食品", "brand": "Nike China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "联合利华中国", "sector_source": "外资在华", "brand": "Unilever China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "联影智能", "sector_source": "医药医疗", "brand": "United Imaging Intelligence", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "联想集团全球", "sector_source": "外资在华", "brand": "Lenovo Global", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "联邦快递中国", "sector_source": "地产建筑与物流", "brand": "FedEx China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "肯耐珂萨", "sector_source": "企业服务", "brand": "KNX", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "腾讯云", "sector_source": "互联网与软件", "brand": "Tencent Cloud", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "腾讯云TDSQL", "sector_source": "企业服务", "brand": "TDSQL", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "腾讯动漫", "sector_source": "游戏与内容", "brand": "Tencent Comics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "自如", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "舍弗勒中国", "sector_source": "外资在华", "brand": "Schaeffler China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "舒蕾", "sector_source": "美妆与服饰", "brand": "Slek", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "航发动力", "sector_source": "央企与国企", "brand": "AECC Aviation Power", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "航天宏图", "sector_source": "央企与国企", "brand": "PIESAT", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "航天彩虹", "sector_source": "央企与国企", "brand": "CH UAV", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "艾默生中国", "sector_source": "外资在华", "brand": "Emerson China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "芯原股份", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "芯驰科技", "sector_source": "半导体", "brand": "SemiDrive", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "花旗银行中国", "sector_source": "银行", "brand": "Citi China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "花花牛", "sector_source": "消费零售与食品", "brand": "Huahua Niu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "苏农银行", "sector_source": "银行", "brand": "Suzhou Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "苏宁银行", "sector_source": "银行", "brand": "Suning Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "苏银理财", "sector_source": "证券基金与资管", "brand": "JS Bank Wealth", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "英伟达中国", "sector_source": "外资在华", "brand": "NVIDIA China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "英孚教育中国", "sector_source": "教育", "brand": "EF China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "英特尔", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "英特尔中国", "sector_source": "外资在华", "brand": "Intel China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "英飞凌中国", "sector_source": "外资在华", "brand": "Infineon China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "苹果中国", "sector_source": "外资在华", "brand": "Apple China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "荔枝FM", "sector_source": "互联网与软件", "brand": "Lizhi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "荣威", "sector_source": "汽车与出行", "brand": "Roewe", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "菜百股份", "sector_source": "消费零售与食品", "brand": "Caibai", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "葛兰素史克中国", "sector_source": "外资在华", "brand": "GSK China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蒂花之秀", "sector_source": "美妆与服饰", "brand": "Distinctive", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蓝凌软件", "sector_source": "企业服务", "brand": "Landray", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蓝海银行", "sector_source": "银行", "brand": "Blue Ocean Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "薇诺娜", "sector_source": "美妆与服饰", "brand": "Winona", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "薇诺娜baby", "sector_source": "美妆与服饰", "brand": "Winona Baby", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "虎嗅", "sector_source": "游戏与内容", "brand": "Huxiu", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "虎牙", "sector_source": "互联网与软件", "brand": "Huya", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蚂蚁数科", "sector_source": "互联网与软件", "brand": "Ant Digital", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蚂蚁集团", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蜂巢易创", "sector_source": "汽车与出行", "brand": "HYCET", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蜂花", "sector_source": "美妆与服饰", "brand": "Fenghua", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蜜雪冰城供应链", "sector_source": "消费零售与食品", "brand": "Mixue Supply Chain", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "蜻蜓FM", "sector_source": "互联网与软件", "brand": "Qingting", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "融创中国", "sector_source": "地产建筑与物流", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "融创服务", "sector_source": "地产建筑与物流", "brand": "Sunac Services", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西安银行", "sector_source": "银行", "brand": "Bank of Xi'an", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西安飞机工业", "sector_source": "央企与国企", "brand": "XAC", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西王食品", "sector_source": "消费零售与食品", "brand": "Xi Wang Food", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西贝莜面村", "sector_source": "消费零售与食品", "brand": "Xibei", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西部数据中国", "sector_source": "外资在华", "brand": "Western Digital China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "西门子医疗中国", "sector_source": "外资在华", "brand": "Siemens Healthineers China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "许继集团", "sector_source": "央企与国企", "brand": "XJ Group", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "诸葛io", "sector_source": "企业服务", "brand": "Zhuge", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "诺华中国", "sector_source": "外资在华", "brand": "Novartis China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "诺和诺德中国", "sector_source": "外资在华", "brand": "Novo Nordisk China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "谢瑞麟", "sector_source": "消费零售与食品", "brand": "Tse Sui Luen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "谷歌中国", "sector_source": "外资在华", "brand": "Google China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "豆神教育", "sector_source": "教育", "brand": "DouShen", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "豌豆思维", "sector_source": "教育", "brand": "Pea Thinking", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "贝乐英语", "sector_source": "教育", "brand": "Best Learning", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "贝恩中国", "sector_source": "外资在华", "brand": "Bain China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "贝朗中国", "sector_source": "外资在华", "brand": "B. Braun China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "贝泰妮薇诺娜", "sector_source": "美妆与服饰", "brand": "Betaini", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "贵人鸟", "sector_source": "消费零售与食品", "brand": "Guirenniao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "费列罗中国", "sector_source": "外资在华", "brand": "Ferrero China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "费森尤斯卡比中国", "sector_source": "外资在华", "brand": "Fresenius Kabi China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "资生堂中国", "sector_source": "外资在华", "brand": "Shiseido China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "赛百味中国", "sector_source": "外资在华", "brand": "Subway China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "赛默飞中国", "sector_source": "外资在华", "brand": "Thermo Fisher China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "起亚中国", "sector_source": "外资在华", "brand": "Kia China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "越秀服务", "sector_source": "地产建筑与物流", "brand": "Yuexiu Services", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "跨越速运", "sector_source": "地产建筑与物流", "brand": "Kye Express", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "跬智信息", "sector_source": "企业服务", "brand": "Kyligence", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "路虎中国", "sector_source": "外资在华", "brand": "JLR China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "辉瑞", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "达芙妮", "sector_source": "消费零售与食品", "brand": "Daphne", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "达达集团", "sector_source": "地产建筑与物流", "brand": "Dada Group", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "达飞中国", "sector_source": "地产建筑与物流", "brand": "CMA CGM China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "进出口银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "远景能源", "sector_source": "新能源与先进制造", "brand": "Envision Energy", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "远洋服务", "sector_source": "地产建筑与物流", "brand": "Sino-Ocean Services", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "迪卡侬中国", "sector_source": "消费零售与食品", "brand": "Decathlon China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "迪哲医药", "sector_source": "医药医疗", "brand": "Dizal", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "通富微电", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "通用汽车中国", "sector_source": "外资在华", "brand": "GM China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "通用磨坊中国", "sector_source": "外资在华", "brand": "General Mills China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "都市丽人", "sector_source": "消费零售与食品", "brand": "Cosmo Lady", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "配天机器人", "sector_source": "新能源与先进制造", "brand": "Peitian", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "采埃孚中国", "sector_source": "外资在华", "brand": "ZF China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "重庆农商行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "重庆啤酒", "sector_source": "消费零售与食品", "brand": "Chongqing Brewery", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金吉列", "sector_source": "教育", "brand": "JJL", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金地集团", "sector_source": "地产建筑与物流", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金城银行", "sector_source": "银行", "brand": "Kincheng Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金山办公WPS", "sector_source": "互联网与软件", "brand": "WPS", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金星啤酒", "sector_source": "消费零售与食品", "brand": "Jinxing Beer", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "金科服务", "sector_source": "地产建筑与物流", "brand": "Jinke Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "铠侠中国", "sector_source": "外资在华", "brand": "Kioxia China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "锦州银行", "sector_source": "银行", "brand": "Bank of Jinzhou", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "锦江国际", "sector_source": "央企与国企", "brand": "Jin Jiang International", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长安福特", "sector_source": "汽车与出行", "brand": "Changan Ford", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长安马自达", "sector_source": "汽车与出行", "brand": "Changan Mazda", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长生人寿", "sector_source": "保险", "brand": "ChangSheng Life", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长电科技", "sector_source": "半导体", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长盈精密", "sector_source": "通信与电子硬件", "brand": "Everwin", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "长荣海运中国", "sector_source": "地产建筑与物流", "brand": "Evergreen China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阳光新能源", "sector_source": "新能源与先进制造", "brand": "Sungrow Renewables", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阶跃星辰", "sector_source": "互联网与软件", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阿尔卑斯中国", "sector_source": "外资在华", "brand": "Alps Alpine China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阿迪达斯中国", "sector_source": "消费零售与食品", "brand": "Adidas China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阿里云PolarDB", "sector_source": "企业服务", "brand": "PolarDB", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "阿里影业", "sector_source": "游戏与内容", "brand": "Alibaba Pictures", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "陕西建工", "sector_source": "地产建筑与物流", "brand": "SXJG", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "陶氏中国", "sector_source": "外资在华", "brand": "Dow China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "隆基绿能", "sector_source": "新能源与先进制造", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "雅生活", "sector_source": "地产建筑与物流", "brand": "A-Living", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "雅诗兰黛中国", "sector_source": "外资在华", "brand": "Estée Lauder China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "零一万物Yi", "sector_source": "人工智能与机器人", "brand": "Yi", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "雷诺中国", "sector_source": "外资在华", "brand": "Renault China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "霍尼韦尔中国", "sector_source": "外资在华", "brand": "Honeywell China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "霸王洗发水", "sector_source": "美妆与服饰", "brand": "Bawang Hair", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "霸王集团", "sector_source": "美妆与服饰", "brand": "Bawang", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "青岛农商行", "sector_source": "银行", "brand": "Qingdao Rural Commercial Bank", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "青岛银行", "sector_source": "银行", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "青松股份", "sector_source": "美妆与服饰", "brand": "Qingsong", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "面壁智能MiniCPM", "sector_source": "人工智能与机器人", "brand": "MiniCPM", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "顺丰同城", "sector_source": "地产建筑与物流", "brand": "SF Intra-city", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "领克", "sector_source": "汽车与出行", "brand": "Lynk & Co", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "飞书HR", "sector_source": "企业服务", "brand": "Feishu HR", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "飞凡汽车", "sector_source": "汽车与出行", "brand": "Rising Auto", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "飞利浦中国", "sector_source": "外资在华", "brand": "Philips China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "飞利浦医疗中国", "sector_source": "外资在华", "brand": "Philips Healthcare China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "香格里拉中国", "sector_source": "外资在华", "brand": "Shangri-La China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "马士基中国", "sector_source": "地产建筑与物流", "brand": "Maersk China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "马牌轮胎中国", "sector_source": "外资在华", "brand": "Continental Tires China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "高丝中国", "sector_source": "外资在华", "brand": "Kosé China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "高仙机器人", "sector_source": "人工智能与机器人", "brand": "Gaussian Robotics", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "高通", "sector_source": "外资在华", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "高通中国", "sector_source": "外资在华", "brand": "Qualcomm China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "魏桥创业", "sector_source": "央企与国企", "brand": "Weiqiao", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "鱼跃医疗", "sector_source": "医药医疗", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "鱼跃医疗设备", "sector_source": "医药医疗", "brand": "Yuwell Devices", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "鸿星尔克", "sector_source": "消费零售与食品", "brand": "Erke", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "鹰角明日方舟", "sector_source": "游戏与内容", "brand": "Arknights", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦当劳中国", "sector_source": "消费零售与食品", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦当劳供应链", "sector_source": "消费零售与食品", "brand": "McDonald's Supply Chain", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦德龙中国", "sector_source": "外资在华", "brand": "Metro China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦格纳中国", "sector_source": "外资在华", "brand": "Magna China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦肯锡", "sector_source": "咨询会计与专业服务", "brand": "", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "麦肯锡中国", "sector_source": "外资在华", "brand": "McKinsey China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "默克中国", "sector_source": "外资在华", "brand": "Merck China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "默沙东中国", "sector_source": "外资在华", "brand": "MSD China", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "龙湖智创生活", "sector_source": "地产建筑与物流", "brand": "Longfor Smart Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
+{"company": "龙腾光电", "sector_source": "通信与电子硬件", "brand": "IVO", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}

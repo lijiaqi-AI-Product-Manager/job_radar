@@ -2,7 +2,7 @@
 
 简体中文 | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,17 +14,17 @@
 
 ![demo](docs/assets/demo-zh.gif)
 
-> **当前数据（2026-10-24 发布）**
-> **279 个数据源** · **约 8.9 万个在招岗位**（校园约 3.2 万 / 实习约 5 千 / 社招约 5.2 万）· **JD 正文 99.8%**
-> 目标公司 **500 家**：日历/数据覆盖 **494 家**（其中 490 家有日历条目，4 家只有岗位数据；其余 6 家已注明不可合规覆盖），数据源覆盖 **161 家**
-> 自检：`uv run python scripts/release_check.py --home ~/.jobradar`（8 项门槛全绿）
+> **当前数据（2026-10-26 发布）**
+> **465 个数据源** · **147,656 个在招岗位**（校园 40,104 / 实习 11,286 / 社招 96,266）· **JD 正文 100.0%** · **55,138 个岗位带城市** · **2,511 个岗位带截止日**
+> 目标公司 **1,014 家**：日历覆盖 **891 家**（1,474 条人工条目 + 786 条数据层自动条目），数据源覆盖 **387 家**，覆盖合计 **895 家**
+> 自检：`uv run python scripts/release_check.py --home ~/.cache/jobradar`（8 项门槛全绿）
 
 ## 这是什么 / 不是什么
 
 - ✅ 各公司**官方**招聘页的岗位与 JD 原文（不含第三方聚合站）
 - ✅ 每天全量重采、保留历史（下架、新开、变更都能回溯）
 - ✅ 招聘日历：届次、项目类型、方向、网申时间、城市、投递入口、来源
-- ❌ 不是「所有公司」：500 家目标里只有 161 家能拿到岗位级数据（见[已知限制](#覆盖与已知限制诚实版)）
+- ❌ 不是「所有公司」：1,014 家目标里只有 264 家能拿到岗位级数据；其余靠日历覆盖，未覆盖的 119 家如实列出（见[已知限制](#覆盖与已知限制诚实版)）
 - ❌ 不做投递、内推、面经、薪资；不绕过验证码/登录/签名
 
 ## 30 秒上手
@@ -101,7 +101,7 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 |---|---|---|
 | `jobs.db.gz` | 20 MB | 岗位主库（岗位、公司、事件、数据源状态） |
 | `jd_text.db.gz` | 35 MB | 岗位职责与要求原文（全文检索用） |
-| `calendar.db.gz` | 300 KB | 招聘日历（500 家目标公司） |
+| `calendar.db.gz` | 约 1.1 MB | 招聘日历（1,014 家目标公司，2,425 条条目） |
 | `crawl-summary.json` | 32 KB | 每个源的状态、新增/下架数 |
 
 - 每日 UTC 19:17（北京时间 03:17）采集，采集完成后自动发布新 Release；Gitee 镜像同日同步
@@ -113,9 +113,9 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 
 | 维度 | 现状 |
 |---|---|
-| 目标公司日历 | 494/500；6 家（BOSS直聘/猎聘/智联/前程无忧/微博/招商蛇口）因 robots/登录墙/域名失效不可合规覆盖，证据见 [docs/internal/COVERAGE-PLAN.md](docs/internal/COVERAGE-PLAN.md) |
-| 数据源 | 161/500 家能抓到岗位级数据；其余多为自研站、加密平台（Moka/飞书 ATSX）或 Workday 之外的外企系统 |
-| 头部大厂 | 阿里/腾讯/美团/网易/vivo/奇瑞/中金/京东方等有岗位数据；字节、京东、拼多多、华为目前只有日历（验证码/签名拦截） |
+| 目标公司日历 | 891/1,014；17 家（BOSS直聘/猎聘/智联/前程无忧/微博/招商蛇口等）因 robots/登录墙/域名失效不可合规覆盖，证据见 [docs/internal/COVERAGE-PLAN.md](docs/internal/COVERAGE-PLAN.md) |
+| 数据源 | 387/1,014 家能抓到岗位级数据；其余多为自研站、加密平台（Moka/飞书 ATSX）或 Workday 之外的外企系统 |
+| 头部大厂 | 阿里/腾讯/美团/网易/百度/京东/字节/vivo/奇瑞/中金/京东方/海信/中国人保等有岗位数据；华为目前只有日历（WAF 403） |
 | JD 正文 | 99.8%（抓不到正文的源不进数据集；比例按在招岗位算） |
 | 日历字段完整度 | 全部条目 **74.9%** 达到「11 个必填字段里 ≥7 个」；按集团 **60.7%（362/596 个集团）**；纯人工条目 38.0% |
 | 网申时间 | 只有 **8/1372 条（0.6%）** 带完整网申起止（纯人工条目 1.8%）：官网多数只写「9 月起」 |
@@ -129,7 +129,7 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 
 ```text
 GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
-  ├─ crawl        279 个源 → 适配器（北森 / 大易 / Workday / 自研站）→ SQLite
+  ├─ crawl        465 个源 → 适配器（北森 / 大易 / Workday / 自研站）→ SQLite
   ├─ calendar     日历库：人工条目（A/B/C 三档）+ 数据层自动条目
   ├─ release      打包 gzip 上传 Release data-latest（+ 每周归档，保留 8 周）
   └─ mirror       同步到 Gitee 发行版（国内加速）
@@ -151,7 +151,7 @@ uv run python scripts/release_check.py --home ~/.jobradar   # 8 项发布门槛
 
 - 新增一家北森门户公司：在 [sources/beisen.yaml](sources/beisen.yaml) 加一行（`id/company/params.tenant`）
 - 新增适配器：按 [CLAUDE.md](CLAUDE.md) 的流程（侦察 → fixtures → 专属测试），一个适配器一次提交
-- 内部过程文档（阶段验收、交接、评审处置、覆盖计划）在 [docs/internal/](docs/internal/)，不面向使用者
+- 内部过程文档（阶段验收、进度记录、评审处置、覆盖计划）在 [docs/internal/](docs/internal/)，不面向使用者
 
 ## 合规
 

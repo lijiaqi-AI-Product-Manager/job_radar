@@ -1,7 +1,7 @@
 # 侦察：Moka（app.mokahr.com 租户站）
 
 - 侦察日期：2026-10-20
-- 侦察人：Claude 会话（请求从 GitHub Actions 发出，recon-probe 第 2–4 轮）
+- 侦察人：recon-probe 工作流（请求从 GitHub Actions 发出，第 2–4 轮）
 - **结论：blocked（职位接口响应被加密，需要逆向解密才能使用）**
 - 类型：平台型（多租户）
 

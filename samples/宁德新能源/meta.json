@@ -1,0 +1,28 @@
+{
+  "company": "宁德新能源",
+  "careers_url": "https://zhaopin.atlbattery.com/",
+  "host": "zhaopin.atlbattery.com",
+  "ats": "self_hosted",
+  "page_title": "招聘官网",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 14,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "招聘官网",
+    "origin": "careers_rescued",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 4,
+    "edu_notice_sample": [
+      "https://career.gdut.edu.cn/campus/view/id/1020789",
+      "https://job.neuq.edu.cn/campus/view/id/861558",
+      "https://xsjyzd.jmu.edu.cn/campus/view/id/996900"
+    ]
+  }
+}

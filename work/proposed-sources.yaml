@@ -1,0 +1,135 @@
+# 本批新增源（2026-10-25 实测）。一行一家公司，可整段粘进 sources/ 对应适配器文件。
+# 每条注释里的「N 岗」是列表接口 Count 实测值；JD 覆盖率见 docs/recon/<公司>.md。
+# 限速 1 rps，同一 host 串行；只读公开接口，无登录/签名/验证码。
+defaults:
+  adapter: beisen
+  recruit_types: [campus, intern, social]
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-25
+    robots: allowed
+    terms: "企业自建公开招聘门户的公开 JSON/HTML 接口，无需登录、无签名、无验证码"
+    notes: "只读公开列表接口；同一 host 串行 1 rps"
+sources:
+  - {id: beisen-laiyifen, company: 来伊份, adapter: beisen, params: {tenant: laiyifen}}   # 7216 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dreame, company: 追觅科技, adapter: beisen, params: {tenant: dreame}}   # 2199 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-transsion-2, company: 传音控股非洲, adapter: beisen, params: {tenant: transsion}}   # 985 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-zhonghuan, company: 中环股份, adapter: beisen, params: {tenant: zhonghuan}}   # 759 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-huolala-2, company: 货拉拉, adapter: beisen, params: {tenant: huolala}}   # 532 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-asymchem, company: 凯莱英, adapter: beisen, params: {tenant: asymchem}}   # 424 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-himile, company: 豪迈科技, adapter: beisen, params: {tenant: himile}}   # 408 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-gjzq-2, company: 国金证券, adapter: beisen, params: {tenant: gjzq}}   # 403 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-changanqiche-2, company: 长安汽车, adapter: beisen, params: {tenant: changanqiche}}   # 375 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-goldwind, company: 金风科技, adapter: beisen, params: {tenant: goldwind}}   # 347 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-bfhc, company: 北方华创, adapter: beisen, params: {tenant: bfhc}}   # 322 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-baixiangfood, company: 白象食品, adapter: beisen, params: {tenant: baixiangfood}}   # 297 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-yusys, company: 宇信科技, adapter: beisen, params: {tenant: yusys}}   # 278 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-easthope1, company: 东方希望, adapter: beisen, params: {tenant: easthope1}}   # 278 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dynanonic, company: 德方纳米, adapter: beisen, params: {tenant: dynanonic}}   # 257 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-weichaidongli, company: 潍柴动力, adapter: beisen, params: {tenant: weichaidongli}}   # 246 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mengniu-2, company: 蒙牛, adapter: beisen, params: {tenant: mengniu}}   # 211 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-nanxin-2, company: 南芯科技, adapter: beisen, params: {tenant: nanxin}}   # 205 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-piotech, company: 拓荆科技, adapter: beisen, params: {tenant: piotech}}   # 194 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-beisen-2, company: 北森控股, adapter: beisen, params: {tenant: beisen}}   # 194 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-hairobotics-2, company: 海柔创新, adapter: beisen, params: {tenant: hairobotics}}   # 169 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-nexchip-2, company: 晶合集成, adapter: beisen, params: {tenant: nexchip}}   # 165 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dobot, company: 越疆科技, adapter: beisen, params: {tenant: dobot}}   # 143 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-yuewen-2, company: 阅文集团, adapter: beisen, params: {tenant: yuewen}}   # 138 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-longsys, company: 江波龙, adapter: beisen, params: {tenant: longsys}}   # 129 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-weigao, company: 山东威高, adapter: beisen, params: {tenant: weigao}}   # 127 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mintaibank, company: 民泰银行, adapter: beisen, params: {tenant: mintaibank}}   # 122 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-roborock-2, company: 石头科技, adapter: beisen, params: {tenant: roborock}}   # 113 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-shuanghui-2, company: 双汇, adapter: beisen, params: {tenant: shuanghui}}   # 107 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-yumchina, company: 百胜中国, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: yumchina, portal: campus}}   # 105 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-porton, company: 博腾股份, adapter: beisen, params: {tenant: porton}}   # 103 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-scc, company: 深南电路, adapter: beisen, params: {tenant: scc}}   # 93 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dahuacpa, company: 大华会计师, adapter: beisen, params: {tenant: dahuacpa}}   # 92 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-chipsea, company: 芯海科技, adapter: beisen, params: {tenant: chipsea}}   # 90 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-huafeng-2, company: 华峰集团, adapter: beisen, params: {tenant: huafeng}}   # 86 岗（2026-10-25 实测），JD 99%
+  - {id: beisen-unitree, company: 宇树Unitree, adapter: beisen, params: {tenant: unitree}}   # 86 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-youibot1, company: 优艾智合, adapter: beisen, params: {tenant: youibot1}}   # 85 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-gyzq-2, company: 国元证券, adapter: beisen, params: {tenant: gyzq}}   # 85 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-ddmc, company: 叮咚买菜, adapter: beisen, params: {tenant: ddmc}}   # 84 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-innocare, company: 诺诚健华, adapter: beisen, params: {tenant: innocare}}   # 83 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-jinzaifood, company: 劲仔食品, adapter: beisen, params: {tenant: jinzaifood}}   # 74 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-aikosolar, company: 爱旭股份, adapter: beisen, params: {tenant: aikosolar}}   # 70 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-yanjinpuzi, company: 盐津铺子, adapter: beisen, params: {tenant: yanjinpuzi}}   # 70 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-efort, company: 埃夫特, adapter: beisen, params: {tenant: efort}}   # 68 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-capchem, company: 新宙邦, adapter: beisen, params: {tenant: capchem}}   # 65 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-glsc, company: 国联水产, adapter: beisen, params: {tenant: glsc}}   # 63 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-kunlunxin1, company: 昆仑芯, adapter: beisen, params: {tenant: kunlunxin1}}   # 62 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-aispeech, company: 思必驰, adapter: beisen, params: {tenant: aispeech}}   # 62 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-hm, company: H&M中国, adapter: beisen, params: {tenant: hm}}   # 59 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mechmind, company: 梅卡曼德, adapter: beisen, params: {tenant: mechmind}}   # 57 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-aldichina, company: 奥乐齐中国, adapter: beisen, params: {tenant: aldichina}}   # 55 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-babybus, company: 宝宝巴士, adapter: beisen, params: {tenant: babybus}}   # 55 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-zhongwenzaixian, company: 中文在线, adapter: beisen, params: {tenant: zhongwenzaixian}}   # 54 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-deppon, company: 德邦快递, adapter: beisen, params: {tenant: deppon}}   # 52 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-edan, company: 理邦仪器, adapter: beisen, params: {tenant: edan}}   # 50 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su668b8b251c240e2e76ea71d8, company: 创维, adapter: hotjob, recruit_types: [campus], params: {tenant: SU668b8b251c240e2e76ea71d8, host: skyworth.hotjob.cn}}   # 50 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-ryytn-2, company: 认养一头牛, adapter: beisen, params: {tenant: ryytn}}   # 50 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-venustech, company: 启明星辰, adapter: beisen, params: {tenant: venustech}}   # 48 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-seyond, company: 图达通, adapter: beisen, params: {tenant: seyond}}   # 47 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mindrayanimal, company: 迈瑞动物医疗, adapter: beisen, params: {tenant: mindrayanimal}}   # 46 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dwzq-2, company: 东吴证券, adapter: beisen, params: {tenant: dwzq}}   # 46 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-zszq, company: 浙商证券, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: zszq, portal: campus}}   # 45 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-cfmee, company: 芯碁微装, adapter: beisen, params: {tenant: cfmee}}   # 44 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su68fb2499b7da1347a9dd852c, company: 兴业证券, adapter: hotjob, recruit_types: [campus], params: {tenant: SU68fb2499b7da1347a9dd852c, host: xyzq.hotjob.cn}}   # 43 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dsbj-2, company: 东山精密, adapter: beisen, params: {tenant: dsbj}}   # 41 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-jaka, company: 节卡机器人, adapter: beisen, params: {tenant: jaka}}   # 39 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-unisound, company: 云知声, adapter: beisen, params: {tenant: unisound}}   # 39 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-siasun-2, company: 新松机器人, adapter: beisen, params: {tenant: siasun}}   # 37 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-synear-2, company: 思念食品, adapter: beisen, params: {tenant: synear}}   # 33 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-ugreen-2, company: 绿联, adapter: beisen, params: {tenant: ugreen}}   # 31 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-yeestor, company: 得一微电子, adapter: beisen, params: {tenant: yeestor}}   # 30 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-jingce-2, company: 精测电子, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: jingce, portal: campus}}   # 30 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-langjiu-2, company: 郎酒, adapter: beisen, params: {tenant: langjiu}}   # 30 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-rt-mart, company: 大润发, adapter: beisen, params: {tenant: rt-mart}}   # 29 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-ganfenglithium, company: 赣锋锂业, adapter: beisen, params: {tenant: ganfenglithium}}   # 29 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-guandata, company: 观远数据, adapter: beisen, params: {tenant: guandata}}   # 26 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-primarius, company: 概伦电子, adapter: beisen, params: {tenant: primarius}}   # 25 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-vivo, company: vivo, adapter: beisen, params: {tenant: vivo}}   # 25 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-joeone, company: 九牧王, adapter: beisen, params: {tenant: joeone}}   # 24 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mininglamp, company: 明略科技, adapter: beisen, params: {tenant: mininglamp}}   # 24 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-dongfengnissan, company: 东风日产, adapter: beisen, params: {tenant: dongfengnissan}}   # 21 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-aimer-2, company: 爱慕, adapter: beisen, params: {tenant: aimer}}   # 21 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-speedbot, company: 视比特机器人, adapter: beisen, params: {tenant: speedbot}}   # 18 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-hwatsing, company: 华海清科, adapter: beisen, params: {tenant: hwatsing}}   # 17 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-xiandaimuye, company: 现代牧业, adapter: beisen, params: {tenant: xiandaimuye}}   # 17 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-yihetang, company: 益禾堂, adapter: beisen, params: {tenant: yihetang}}   # 17 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-topsec, company: 天融信, adapter: beisen, params: {tenant: topsec}}   # 15 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su5ff30f5b9b0d78e6f4283a0b, company: 宁德新能源, adapter: hotjob, recruit_types: [campus], params: {tenant: SU5ff30f5b9b0d78e6f4283a0b, host: atl.hotjob.cn}}   # 15 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-neiwai, company: 内外, adapter: beisen, params: {tenant: neiwai}}   # 14 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-accotest, company: 华峰测控, adapter: beisen, params: {tenant: accotest}}   # 13 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-hisun, company: 海正药业, adapter: beisen, params: {tenant: hisun}}   # 13 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-tongwei-2, company: 通威股份, adapter: beisen, params: {tenant: tongwei}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su630a3a0e2f9d2406b4f6c5f1, company: 固德威, adapter: hotjob, recruit_types: [campus], params: {tenant: SU630a3a0e2f9d2406b4f6c5f1, host: goodwe.hotjob.cn}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su62c3b55d2f9d241e4c8e260f, company: 天赐材料, adapter: hotjob, recruit_types: [campus], params: {tenant: SU62c3b55d2f9d241e4c8e260f, host: tinci.hotjob.cn}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su69294dabe3842960d1a72594, company: 中国化学工程, adapter: hotjob, recruit_types: [campus], params: {tenant: SU69294dabe3842960d1a72594, host: cncec.hotjob.cn}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-tongwei-3, company: 通威, adapter: beisen, params: {tenant: tongwei}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su6136b970bef57c3b638162c4, company: 云南白药, adapter: hotjob, recruit_types: [campus], params: {tenant: SU6136b970bef57c3b638162c4, host: ynby.hotjob.cn}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-lppz-2, company: 良品铺子, adapter: beisen, params: {tenant: lppz}}   # 12 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-geovis, company: 中科星图, adapter: beisen, params: {tenant: geovis}}   # 11 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-sensorsdata, company: 神策数据, adapter: beisen, params: {tenant: sensorsdata}}   # 11 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-hosecloud, company: 合思, adapter: beisen, params: {tenant: hosecloud}}   # 11 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-cjzq-2, company: 长江证券, adapter: beisen, params: {tenant: cjzq}}   # 11 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su66f3c75a6202cc1a0cba3202, company: 澳优乳业, adapter: hotjob, recruit_types: [campus], params: {tenant: SU66f3c75a6202cc1a0cba3202, host: ausnutria.hotjob.cn}}   # 10 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-jmlzp, company: 今麦郎, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: jmlzp, portal: campus}}   # 10 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-xjzy, company: 仙琚制药, adapter: beisen, params: {tenant: xjzy}}   # 9 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-peijiamedical, company: 沛嘉医疗, adapter: beisen, params: {tenant: peijiamedical}}   # 8 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-highgo, company: 瀚高数据库, adapter: beisen, params: {tenant: highgo}}   # 8 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-maycur, company: 每刻报销, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: maycur, portal: campus}}   # 7 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-mannercoffee, company: Manner咖啡, adapter: beisen, params: {tenant: mannercoffee}}   # 6 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-zghkyjy-2, company: 中国航空研究院, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: zghkyjy, portal: campus}}   # 6 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su63e34a270dcad474881066a5, company: 五菱, adapter: hotjob, recruit_types: [campus], params: {tenant: SU63e34a270dcad474881066a5, host: wuling.hotjob.cn}}   # 5 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-cjpension1, company: 长江养老, adapter: beisen, params: {tenant: cjpension1}}   # 4 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-neusoftmedical, company: 东软医疗, adapter: beisen, params: {tenant: neusoftmedical}}   # 4 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-allist, company: 艾力斯, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: allist, portal: campus}}   # 4 岗（2026-10-25 实测），JD 100%
+  - {id: hotjob-su652251308ac1ca0dbbc521c3, company: 中集集团, adapter: hotjob, recruit_types: [campus], params: {tenant: SU652251308ac1ca0dbbc521c3, host: cimc.hotjob.cn}}   # 4 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-giantec, company: 聚辰股份, adapter: beisen, params: {tenant: giantec}}   # 3 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-jac, company: 江淮汽车, adapter: beisen, params: {tenant: jac}}   # 3 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-ainnovation, company: 创新奇智, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: ainnovation, portal: campus}}   # 3 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-marubi, company: 丸美, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: marubi, portal: campus}}   # 3 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-bnbm, company: 北新建材, adapter: beisen, params: {tenant: bnbm}}   # 2 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-adolph, company: 阿道夫, adapter: beisen, params: {tenant: adolph}}   # 2 岗（2026-10-25 实测），JD 100%
+  - {id: beisen-legacy-beingmate, company: 贝因美, adapter: beisen_legacy, recruit_types: [campus], params: {tenant: beingmate, portal: campus}}   # 1 岗（2026-10-25 实测），JD 100%

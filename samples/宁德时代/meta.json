@@ -1,0 +1,27 @@
+{
+  "company": "宁德时代",
+  "careers_url": "https://talent.catl.com/social-recruitment/catlhr/96144/",
+  "host": "talent.catl.com",
+  "ats": "unknown",
+  "page_title": "宁德时代校招 | 宁德时代社招 | 宁德时代招聘官网",
+  "calendar_entries": 2,
+  "project_types": [
+    "校招",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 40,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "宁德时代校招 | 宁德时代社招 | 宁德时代招聘官网",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1018796"
+    ]
+  }
+}

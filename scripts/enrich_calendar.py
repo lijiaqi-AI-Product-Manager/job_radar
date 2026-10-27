@@ -24,7 +24,9 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 ENTRIES = ROOT / "calendar" / "entries"
-UA = "jobradar/0.1 (+https://github.com/lijiaqimun-coder/job_radar; open dataset, polite crawler; contact via GitHub issues)"
+# 与 wechat_parse.py / wechat_entries.py 同一个 UA：带 URL 的 UA 会被 mp.weixin.qq.com
+# 判为抓取器、回 18 KB「环境异常」壳页（2026-10-26 实测四篇全拦），短 UA 正常。
+UA = "Mozilla/5.0 (compatible; jobradar-bot/0.1)"
 
 YEAR = re.compile(r"(20\d{2})\s*届")
 RANGE = re.compile(
@@ -40,6 +42,9 @@ def fetch(url: str) -> str:
     with httpx.Client(headers={"User-Agent": UA}, timeout=20, follow_redirects=True) as c:
         r = c.get(url)
         if r.status_code != 200:
+            return ""
+        # 公众号/门户的验证页当正文解析会抽出"版权年份"之类假日期，宁可不填
+        if any(k in r.text for k in ("环境异常", "完成验证后即可继续访问", "请输入验证码")):
             return ""
         return r.text
 

@@ -2,7 +2,7 @@
   {
     "method": "POST",
     "url": "https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList",
-    "body": "{\"PageIndex\":0,\"PageSize\":20,\"KeyWords\":\"\",\"SpecialType\":0,\"PortalId\":\"\"}",
+    "body": "{\"PageIndex\":0,\"PageSize\":20,\"KeyWords\":\"\",\"SpecialType\":0,\"PortalId\":\"\",\"DisplayFields\":[\"Category\",\"LocId\",\"PostDate\",\"EndTime\",\"Degree\",\"ClassificationOne\",\"LocNames\"]}",
     "status": 200,
     "content_type": "application/json; charset=utf-8",
     "file": "001.json"
@@ -10,7 +10,7 @@
   {
     "method": "POST",
     "url": "https://fosunpharma.zhiye.com/api/Jobad/GetJobAdPageList",
-    "body": "{\"PageIndex\":1,\"PageSize\":20,\"KeyWords\":\"\",\"SpecialType\":0,\"PortalId\":\"\"}",
+    "body": "{\"PageIndex\":1,\"PageSize\":20,\"KeyWords\":\"\",\"SpecialType\":0,\"PortalId\":\"\",\"DisplayFields\":[\"Category\",\"LocId\",\"PostDate\",\"EndTime\",\"Degree\",\"ClassificationOne\",\"LocNames\"]}",
     "status": 200,
     "content_type": "application/json; charset=utf-8",
     "file": "002.json"

@@ -1,0 +1,25 @@
+{
+  "company": "人大金仓",
+  "careers_url": "https://www.kingbase.com.cn/about/about.html?5",
+  "host": "www.kingbase.com.cn",
+  "ats": "unknown",
+  "page_title": "关于我们 - 电科金仓官网 | 国产数据库国家队，20余年自主研发，服务100万套部署 - 电科金仓-成为世界卓越的数据库产品与服务提供商",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "社招"
+  ],
+  "tracks": 10,
+  "roles": 36,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "关于我们 - 电科金仓官网 | 国产数据库国家队，20余年自主研发，服务100万套部署 - 电科金仓-成为世界卓越的数据库产品与服务提供商",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "navigated",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

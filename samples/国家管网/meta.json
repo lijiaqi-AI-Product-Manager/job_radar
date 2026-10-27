@@ -1,0 +1,24 @@
+{
+  "company": "国家管网",
+  "careers_url": "https://zhaopin.pipechina.com.cn/",
+  "host": "zhaopin.pipechina.com.cn",
+  "ats": "self_hosted",
+  "page_title": "国家管网招聘系统",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 0,
+  "roles": 0,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "国家管网招聘系统",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

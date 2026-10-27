@@ -1,0 +1,16 @@
+id: xpeng
+company: 小鹏汽车
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://xiaopeng.jobs.feishu.cn"
+  website_path: campus     # 校招门户在 /campus；/index 是社招主站（1588 条里校招只占极少数）
+  portal_type: 3
+  page_size: 100
+  job_url: "https://xiaopeng.jobs.feishu.cn/campus/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-26
+  robots: "none"            # xiaopeng.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）
+  terms: "飞书招聘 ATSX 门户匿名接口；/campus 站点本身就是校招门户，列表只返回校招/实习岗。无需登录、无验证码、无签名。"
+  notes: "侦察：docs/recon/feishu-atsx.md §2。注意：官网 join 页链到的是 /index（社招），校招要改走 /campus；/index 下 300 条抽样里 293 条是社招，直接抓会把社招当校招。"

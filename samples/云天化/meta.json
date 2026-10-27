@@ -1,0 +1,27 @@
+{
+  "company": "云天化",
+  "careers_url": "https://yythzb3.zhiye.com/campus/",
+  "host": "yythzb3.zhiye.com",
+  "ats": "beisen",
+  "page_title": "云南云天化股份有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "秋招正式批"
+  ],
+  "tracks": 5,
+  "roles": 17,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "云南云天化股份有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 2,
+    "edu_notice_sample": [
+      "https://job.zzu.edu.cn/campus/view/id/1019792",
+      "https://career.csu.edu.cn/campus/view/id/590561"
+    ]
+  }
+}

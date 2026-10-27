@@ -3,7 +3,8 @@
     "0001_init.sql": "c3fb0de232385967a1694fa5a00b1760333cd9f38b621f4daddba9f3c0baecaa"
   },
   "jobs": {
-    "0001_init.sql": "8cc382f2628b9f974053c0234bca3b4ae55f7f88ce9baa7317b1f662f6bdd373"
+    "0001_init.sql": "8cc382f2628b9f974053c0234bca3b4ae55f7f88ce9baa7317b1f662f6bdd373",
+    "0002_job_window.sql": "71cd163bad80de97fcdcae7983685984a6a30849e75485a12063c55d421d63b9"
   },
   "text": {
     "0001_init.sql": "cb509a2841c143f8c7385a1221c84a335bd76a2a28b091b8009f477b8ec59e6b"

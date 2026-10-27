@@ -1,10 +1,13 @@
 """从岗位标题等文本中提取校招字段。规则保守：拿不准就返回 None（CLAUDE.md：不要猜）。"""
 
 import re
+from datetime import datetime, timedelta, timezone
 from functools import cache
 from pathlib import Path
 
 import yaml
+
+_CST = timezone(timedelta(hours=8))
 
 _GRAD = re.compile(
     r"(?<![\dA-Za-z])(?:20)?(2[4-9]|3[0-2])\s*年?\s*(?:届|(?:秋季|春季)?(?:校招|校园招聘|秋招|春招|暑期实习|实习))"
@@ -117,7 +120,66 @@ _PROVINCE_PREFIX = re.compile(r"^(?:北京|上海|天津|重庆|河北|山西|�
 # 这些都是明写，不是推测；后缀必须是机构/地点类词，避免「北京烤鸭」这类误判。
 _CITY_SUFFIXES = ("分所", "总所", "分公司", "子公司", "分厂", "工厂", "基地", "园区", "办公区", "战区",
                   "大区", "区域", "研究所", "研究院", "研发中心", "总部", "办事处", "代表处", "分行", "支行", "校区", "公司")
+# 门店类后缀：零售/餐饮/茶饮的岗位标题几乎都是「城市 + 门店名 + 店」。
+# 2026-10-26 实测喜茶 748 条实习岗城市覆盖 0%，标题形如「实习生（上海新嘉中心店）」
+# 「实习生烘焙师（杭州湖滨88Lab店）」——「店」是明写的工作地点，不是推测。
+_CITY_STORE_SUFFIX = "店"
 _CITY_AFTER_LATIN = re.compile(r"^[A-Za-z0-9]+(?P<city>" + "|".join(sorted(KNOWN_CITIES, key=len, reverse=True)) + r")$")
+_TITLE_STORE = re.compile(
+    r"^(?P<city>" + "|".join(sorted(KNOWN_CITIES, key=len, reverse=True)) + r")[^，,、；;]{0,14}店$")
+
+# 「城市 + 岗位类词」是招聘标题里最常见的写法之一，但它**不是**「城市 + 机构」：
+# 「27届校招北京-高中语文教师」「北京-销售管培生」「上海客服专员」。
+# 这类标题里的城市是明确的办公地点，可是上面那套「后缀必须是机构词」的规则会漏掉，
+# 因为「北京」后面跟的是「-」或者直接接了岗位名。
+# 判据收紧到「城市是片段的**开头**，且片段里还包含明确的岗位类词」——
+# 这样「北京烤鸭」不会命中（没有岗位词），「上海大众汽车」也不会。
+_TITLE_PREFIX = re.compile(r"^(?:20\d{2}届?|\d{2}届|20\d{2}|校招|社招|春招|秋招|提前批|实习|暑期|寒假|"
+                           r"日常|全职|兼职|应届|海外|\d{1,2}月)+")
+_JOB_WORDS = ("教师", "讲师", "顾问", "工程师", "经理", "专员", "管培生", "培训生", "实习生", "研究员",
+              "设计师", "分析师", "开发", "运营", "销售", "客服", "店长", "店员", "助理", "秘书",
+              "会计", "审计", "出纳", "法务", "程序员", "架构师", "科学家", "主管",
+              "总监", "leader", "Leader", "实习", "校招", "岗位", "岗", "医师", "药师", "护士",
+              "技师", "技术员", "实验员", "编辑", "记者", "主播", "策划", "文案", "翻译", "律师",
+              "文员", "操作工", "技工", "维修", "司机", "业务员", "客户经理", "代表", "专家")
+
+# 反例闸门：命中这些词时，即使城市后面挂着岗位类词也**不采信**。
+# 「上海大众汽车工程师」「北京大学合作项目专员」「深圳湾实验室研究员」——这里城市是专有名词的
+# 一部分（上汽大众、北大、深圳湾实验室），不是办公地点。判错会把岗位挂到错误城市的日历条目上，
+# 比留空更糟：用户按城市筛会看到自己投不了的岗。
+_CITY_FALSE_FRIENDS = ("大学", "学院", "中学", "小学", "实验室", "汽车", "湾", "交易所", "电视台",
+                       "航空", "地铁", "银行", "医院", "研究院", "本部", "先驱")
+
+
+def _city_prefix_with_jobword(tok: str) -> str | None:
+    """「北京-高中语文教师」这类：城市打头 + 片段里有岗位类词 → 判为城市。
+
+    城市前面常挂着届次/批次前缀（「27届校招北京」「2027暑期实习上海」），所以不能只试
+    `startswith(city)`，要先剥掉「届次/校招/实习」这类前缀——这一步不能省，实测不剥会导致
+    3.3 万条北森校招标题里实打实写了城市的那些全被漏掉。
+    另外「城市独占整个片段」也算：delims 已经把「-」「（）」切开，
+    「27届校招北京-高中语文教师」切出来的就是裸的「北京」，片段里根本没有岗位词可看。
+
+    三道闸门缺一不可：①前缀能剥/裸城市；②片段里有岗位类词；③没有专有名词反例。
+    """
+    orig = tok
+    stripped = _TITLE_PREFIX.sub("", tok)
+    if stripped != tok and stripped:
+        tok = stripped
+    for city in sorted(KNOWN_CITIES, key=len, reverse=True):
+        if not tok.startswith(city):
+            continue
+        rest = tok[len(city):]
+        # 裸城市片段（tok 原样就是城市，或剥完前缀正好是城市）
+        if not rest and (tok in KNOWN_CITIES or orig in KNOWN_CITIES):
+            return city
+        if not rest:
+            continue
+        if any(bad in rest for bad in _CITY_FALSE_FRIENDS):
+            continue
+        if any(w in rest for w in _JOB_WORDS):
+            return city
+    return None
 
 
 def _city_of_token(tok: str) -> str | None:
@@ -140,24 +202,38 @@ def _city_of_token(tok: str) -> str | None:
                                          or any(rest.startswith(s) or rest.endswith(s) for s in _CITY_SUFFIXES)):
             return city
     m = _CITY_AFTER_LATIN.match(tok)
-    return m.group("city") if m else None
+    if m:
+        return m.group("city")
+    return _city_prefix_with_jobword(tok)
 
 
 def cities_from_title(title: str | None) -> list[str]:
     if not title:
         return []
     out: list[str] = []
-    for tok in _TITLE_DELIMS.split(title):
-        tok = tok.strip()
+    for raw_tok in _TITLE_DELIMS.split(title):
+        tok = raw_tok.strip()
         if tok.endswith("市") and len(tok) > 2:
             tok = tok[:-1]
         city = _city_of_token(tok)
         if city is None:
             stripped = _PROVINCE_PREFIX.sub("", tok)
+            # 注意这里**不能**把 tok 覆盖掉：覆盖之后下面的门店规则只看被剥了省份前缀的
+            # 后半段（「上海新嘉中心店」→「新嘉中心店」），城市就丢了。
             tok = stripped[:-1] if stripped.endswith("市") and len(stripped) > 2 else stripped
             city = _city_of_token(tok)
+            if city and city not in out:
+                out.append(city)
+                continue
+            tok = raw_tok.strip()
         if city and city not in out:
             out.append(city)
+            continue
+        # 「城市 + 门店名 + 店」：城市必须在片段**开头**，且整段以「店」结尾、长度有限。
+        # 「北京烤鸭店」这类也会命中——但它在招聘标题里出现时，说的就是北京的门店，可以接受。
+        m = _TITLE_STORE.match(tok)
+        if m and m.group("city") not in out:
+            out.append(m.group("city"))
     return out
 
 
@@ -185,6 +261,60 @@ def degree_min_from_text(text: str | None) -> str | None:
     if not text:
         return None
     return next((d for d in DEGREES if d in text), None)
+
+
+# 「长期开放」哨兵：平台用 2100 年之后（甚至 3000-01-01、9999-12-31）表示"没有截止日"。
+# 当成真日期会让"找快截止的岗位"筛出一堆 3000 年，必须归一成 None。
+_LONG_TERM_YEAR = 2100
+
+
+def date_only(value, *, floor_year: int = 2000) -> str | None:
+    """把各平台五花八门的日期表示归一成 'YYYY-MM-DD'；取不到可信日期就返回 None。
+
+    覆盖 2026-10-26 实测的几种形态（都是公开列表接口原值，不是猜的）：
+      - 大易 `'2026-11-17 23:59:59'`         → '2026-11-17'
+      - 北森 `'0001-01-01T00:00:00'`          → None（未填）
+      - 飞书/美团毫秒时间戳 `1786960999000`   → '2026-08-17'（按东八区）
+      - ISO 串带时区 `'2026-10-26T13:15:00+08:00'`
+    越界时间戳（99999999999999999 之类）不能让 `datetime.fromtimestamp` 抛 ValueError。
+    """
+    if value is None or value == "":
+        return None
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)) or (isinstance(value, str) and value.isdigit()):
+        try:
+            n = float(value)
+        except (TypeError, ValueError):
+            return None
+        # 10 位是秒，13 位是毫秒；再往外就是脏数据
+        ms = n if n > 1e11 else n * 1000
+        if ms <= 0 or ms > 2_208_988_800_000:  # 2040-01-01 之后一律不认
+            return None
+        try:
+            return datetime.fromtimestamp(ms / 1000, _CST).date().isoformat()
+        except (ValueError, OverflowError, OSError):
+            return None
+    if not isinstance(value, str):
+        return None
+    s = value.strip()
+    # 腾讯列表接口给的是中文日期「2026年10月21日」，先归一成 ISO 再走下面的解析
+    m = re.fullmatch(r"(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日?", s)
+    if m:
+        y, mo, d = (int(x) for x in m.groups())
+        if 2000 <= y < _LONG_TERM_YEAR and 1 <= mo <= 12 and 1 <= d <= 31:
+            return f"{y:04d}-{mo:02d}-{d:02d}"
+        return None
+    head = s[:10]
+    if len(head) != 10 or head[4] != "-" or head[7] != "-":
+        return None
+    try:
+        y, m, d = (int(x) for x in head.split("-"))
+    except ValueError:
+        return None
+    if not (floor_year <= y < _LONG_TERM_YEAR and 1 <= m <= 12 and 1 <= d <= 31):
+        return None
+    return head
 
 
 # 外资 ATS（Workday / SmartRecruiters）的城市是英文；只映射确定的中文城市名
@@ -295,3 +425,51 @@ CITY_EN = {
 
 def city_from_english(name: str | None) -> str | None:
     return CITY_EN.get((name or "").strip().lower())
+
+
+# 地级市里常见、但 CITY_EN 还没收的几十个 —— 外企英文站点（Avature / Workday / Radancy）
+# 把地点写成 `Chengdu` / `Xi'an` / `Hohhot`，缺映射就只能给英文，本地用户读起来别扭。
+# 只收**确定对应**的地级市；同名异写（`Xian`/`Xi'an`、`Hohhot`/`Huhehaote`）两条都收。
+CITY_EN_EXTRA = {
+    "anqing": "安庆", "anshan": "鞍山", "anyang": "安阳", "baoji": "宝鸡", "baotou": "包头",
+    "benxi": "本溪", "cangzhou": "沧州", "changde": "常德", "chaozhou": "潮州",
+    "chenzhou": "郴州", "chifeng": "赤峰", "dalian": "大连", "dandong": "丹东",
+    "daqing": "大庆", "datong": "大同", "dazhou": "达州", "deyang": "德阳",
+    "dezhou": "德州", "dongying": "东营", "eerduosi": "鄂尔多斯", "ordos": "鄂尔多斯",
+    "fushun": "抚顺", "fuyang": "阜阳", "guigang": "贵港", "haerbin": "哈尔滨",
+    "harbin": "哈尔滨", "handan": "邯郸", "hangzhou": "杭州", "hanzhong": "汉中",
+    "hefei": "合肥", "hengshui": "衡水", "hengyang": "衡阳", "heyuan": "河源",
+    "heze": "菏泽", "hezhou": "贺州", "huaian": "淮安", "huaibei": "淮北",
+    "huaihua": "怀化", "huainan": "淮南", "huanggang": "黄冈", "huangshi": "黄石",
+    "hohhot": "呼和浩特", "huhehaote": "呼和浩特", "huizhou": "惠州", "jiayuguan": "嘉峪关",
+    "jian": "吉安", "jiaozuo": "焦作", "jiaxing": "嘉兴", "jieyang": "揭阳",
+    "jilin": "吉林", "jinan": "济南", "jingdezhen": "景德镇", "jingmen": "荆门",
+    "jingzhou": "荆州", "jinhua": "金华", "jining": "济宁", "jinzhong": "晋中",
+    "jinzhou": "锦州", "jiujiang": "九江", "kaifeng": "开封", "kunming": "昆明",
+    "laiwu": "莱芜", "langfang": "廊坊", "lanzhou": "兰州", "leshan": "乐山",
+    "lijiang": "丽江", "linfen": "临汾", "linyi": "临沂", "lishui": "丽水",
+    "liuzhou": "柳州", "luohe": "漯河", "luoyang": "洛阳", "luzhou": "泸州",
+    "maanshan": "马鞍山", "maoming": "茂名", "meishan": "眉山", "meizhou": "梅州",
+    "mianyang": "绵阳", "mudanjiang": "牡丹江", "nanchang": "南昌", "nanchong": "南充",
+    "nanjing": "南京", "nanning": "南宁", "nantong": "南通", "nanyang": "南阳",
+    "ningbo": "宁波", "panzhihua": "攀枝花", "pingdingshan": "平顶山", "putian": "莆田",
+    "qingdao": "青岛", "qingyuan": "清远", "qinhuangdao": "秦皇岛", "qinzhou": "钦州",
+    "qiqihaer": "齐齐哈尔", "quanzhou": "泉州", "qujing": "曲靖", "rizhao": "日照",
+    "sanmenxia": "三门峡", "sanya": "三亚", "shanghai": "上海", "shangqiu": "商丘",
+    "shantou": "汕头", "shaoguan": "韶关", "shaoxing": "绍兴", "shaoyang": "邵阳",
+    "shenyang": "沈阳", "shenzhen": "深圳", "shijiazhuang": "石家庄", "shiyan": "十堰",
+    "siping": "四平", "suining": "遂宁", "suqian": "宿迁", "suzhou": "苏州", "tai'an": "泰安",
+    "taian": "泰安", "taicang": "太仓", "taizhou": "台州", "taiyuan": "太原",
+    "tangshan": "唐山", "tianjin": "天津", "tieling": "铁岭", "tongliao": "通辽",
+    "weifang": "潍坊", "weihai": "威海", "wenzhou": "温州", "wuhan": "武汉",
+    "wuhu": "芜湖", "wuxi": "无锡", "xianyang": "咸阳", "xiangyang": "襄阳",
+    "xingtai": "邢台", "xining": "西宁", "xinxiang": "新乡", "xinyang": "信阳",
+    "xuchang": "许昌", "xuzhou": "徐州", "yancheng": "盐城", "yangzhou": "扬州",
+    "yantai": "烟台", "yibin": "宜宾", "yichang": "宜昌", "yinchuan": "银川",
+    "yueyang": "岳阳", "yuncheng": "运城", "yuxi": "玉溪", "zaozhuang": "枣庄",
+    "zhangjiakou": "张家口", "zhangzhou": "漳州", "zhanjiang": "湛江", "zhaoqing": "肇庆",
+    "zhengzhou": "郑州", "zhenjiang": "镇江", "zhongshan": "中山", "zhoushan": "舟山",
+    "zhuhai": "珠海", "zhumadian": "驻马店", "zhuzhou": "株洲", "zibo": "淄博",
+    "zigong": "自贡", "zunyi": "遵义",
+}
+CITY_EN = {**CITY_EN_EXTRA, **CITY_EN}  # 原有条目优先（已有的写法/简称要保住）

@@ -1,0 +1,164 @@
+);
+      
+      $(function(){
+          var keyword = $(".ss_input").val();
+          $(document).keypress(function (e){
+            if(e.keyCode == 13){
+                window.location.href = "/social?k="+keyword+"&c=&p=&d=&PageIndex=1&class=1#zw";
+            }
+          })
+      })
+</script> 
+ 
+<div class="cb pv20"></div>
+<div class="xqbox">
+	<div class="flex-between align-center pb30">
+		<span class="col000 f25 lh25">AI研究员（固收投研）</span>
+          <a href="javascript:;" class="icon8" id="collect" >加入收藏</a>
+	</div>
+	<div class="zwbq mb40">
+		<ul>
+			<li>职位类别：市场体系</li>
+			<li>工作性质：全职 </li>
+			<li>工作地址：上海市</li>
+			<li>薪酬范围：面议</li>
+			<li>招聘人数：1</li>
+			<li>发布时间：2026-09-28</li>
+			<li>需求公司：基础研究及投资支持部</li>
+			<li>招聘类型：社会招聘</li>
+		</ul>
+	</div><!--zwbq end-->
+	<h2 class="f14 col333 lh16 pb15">工作职责：</h2>
+	<div class="col333 f14 lh25">
+		1、与固收投研团队紧密合作，理解信用研究、利率策略和主观投研的业务逻辑，在公司已上线的智能体投研平台上开发 AI 应用和可验证的量化信号。开展信用舆情跟踪等应用，包括从发行人公告、新闻和监管动态中抽取事件、匹配主体并进行分级预警。<br />2、围绕固收量化、信用量化和主观投研量化辅助开展工作，具体包括舆情事件抽取与分级、信用利差与隐含评级分析、中债估值偏离监测、久期曲线分析、组合限额与归因等。上线使用前，以历史人工判断为基准进行测试，评估覆盖率、误报率和漏报率。<br />3、接入并整理估值、条款、舆情、持仓等固收数据，根据任务特点安排确定性计算与大模型的分工。跟进投研团队的使用情况，根据一线反馈持续改进，让工具用到日常研究中。
+	</div>
+	<h2 class="f14 col333 lh16 pb15 pt40">任职资格：</h2>
+	<div class="col333 f14 lh25">
+          1、具有 2-3 年相关工作经验，硕士及以上优先。有固收量化、信用量化、固收研究、金融工程或债券数据服务等方向的经历，具备数理统计和机器学习基础。利率量化、信用量化、主观投研量化辅助三个方向中，至少在一个方向做过实际项目，并了解另外两个方向的基本框架。<br />2、熟练使用 Python，有自己编写并交付代码的经历。对大模型应用（Agent、RAG、评测）有实践经验。<br />3、沟通表达清晰，愿意长期贴近固收投研一线，对用 AI 改进固收投研流程有持续兴趣。
+  	</div>
+<div class="pv40"><a href="/Portal/Resume/ResumeItem?jid=621150144" class="ljsq">立即申请</a></div>
+<a href="/social" class="col999 f16 pl10">返回列表</a>
+
+</div><!--xqbox end-->
+
+<div class="cb pv20"></div>
+
+<script>
+  $(function(){
+	$('.bname').hide()
+	})
+  
+  
+  
+  	 var htmlSuccess = ['<div class="dl_dialog1">',
+                    '	<div class="dl_dialog_wrap" style="text-align:center">',
+                    '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                    //'	<div class="dl_dialog_btn">',
+                    //' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                    //'		<div>',
+                    '	</div>',
+                    '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '	<div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '	<div class="dl_dialog_btn">',
+                        ' <a href="javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '		<div>',
+                        '	</div>',
+                        '</div>'].join("");
+
+	$.ajax({
+        url: '/User/Account/GetUserLoginInfo?v='+Math.random()
+        , data: {
+            'jobAdId': "621150144"
+        }
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+            var args = resp.Model;
+
+            var hasA = args.HasApplyedFoJs;
+            var isAllow = args.Allow;
+            var allowCount = args.AllowCount;
+            var jobCategory = "社会招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = args.IntAllowApplyInfinity;
+          
+
+            $(document).ready(function () {
+                //根据用户的登陆状态给收藏按钮绑定事件
+                var collectBtn = $("#collect");
+                if (isLogin){
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function(){
+                            $.post("/Portal/Apply/JobAdCollect", { "jId": "621150144" }, function(data) {
+                                if (!data) {
+                                    htmlSuccess = htmlError;
+                                }
+                                $.modal(htmlSuccess, {
+                                    containerCss: {
+                                        backgroundColor: "transparent",
+                                        borderColor: "transparent",
+                                        padding: 0,
+                                        width:'150px'
+                                    },
+                                    onShow: function () {
+                                        $("#okbtn1").click(function() {
+                                            $.modal.close();
+                                        });
+                                    }
+                                });
+                                function a() {
+                                    $.modal.close();
+                                }
+                                setTimeout(a, 2000);
+                            }, "json");
+                        });
+                }
+                else {
+                    collectBtn
+                        .unbind('click')
+                        .bind('click', function () {
+                            window.location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                        });
+                }
+            })
+         }
+    })
+</script>
+    <div class="footer"><div class="wrap">
+	<div class="flex-between pb35">
+		<div class="flex-start align-center f14">
+			<a href="/index" class="colfff mr50">首页</a>
+			<a href="/social" class="colfff ml10 mr50">社会招聘</a>
+			<a href="/campus" class="colfff ml10 mr50">校园招聘</a>
+			<a href="/intern" class="colfff ml10 mr50">实习生招聘</a>
+			<a href="/why" class="colfff ml10">why zofund</a>
+		</div>
+		<div class="footerr flex-start align-center">
+			<span class="cola3 f14 mr10">关注我们</span>
+			<div class="iconwx"><div class="tcwx"><img src="//stc-cms.beisen.com/cmsportal/602033/602033_themes_theme2_images_imgwx.png" width="156" alt=""></div></div>
+		</div>
+	</div><!---->
+	<div class="flex-between align-center lh22 cola3 f14 lh25">
+		<div>
+			&copy;沪ICP备06048031号-5 | 沪公网安备 31011502014260号<br/>
+			2013 中欧基金管理有限公司 Zhong Ou Asset Management Co., Ltd. 版权所有
+		</div>
+		<div class="footerr">地址：上海市浦东新区陆家嘴环路479号上海中心大厦8层<br/>
+邮编：200120 传真：021-33830351</div>
+	</div>
+</div></div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,602033,'new_zhiye_com');
+    });
+    </script>

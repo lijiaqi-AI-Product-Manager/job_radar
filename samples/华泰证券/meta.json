@@ -1,0 +1,28 @@
+{
+  "company": "华泰证券",
+  "careers_url": "https://www.htsc.com.cn/recruit/",
+  "host": "www.htsc.com.cn",
+  "ats": "unknown",
+  "page_title": "华泰证券招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 16,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "华泰证券招聘",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 12,
+    "edu_notice_sample": [
+      "https://career.nankai.edu.cn/correcruit/content/id/120094.html",
+      "https://job.xidian.edu.cn/campus/view/id/758267",
+      "https://job.xidian.edu.cn/campus/view/id/757922"
+    ]
+  }
+}

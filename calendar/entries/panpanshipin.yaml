@@ -1,0 +1,21 @@
+group: 盼盼食品
+entries:
+- id: panpanshipin-campus-entry
+  company: 盼盼食品
+  grad_year: null
+  project_type: 校招
+  tracks: []
+  apply_start: null
+  apply_end: null
+  cities: []
+  apply_url: https://wantwant.zhiye.com/campus/
+  source:
+    type: official_site
+    name: 盼盼食品招聘官网
+    url: https://wantwant.zhiye.com/campus/
+    date: null
+  as_of: '2026-10-26'
+  jd:
+    status: official_page
+    url: https://wantwant.zhiye.com/campus/
+  notes: 官方招聘入口（2026-10-26 实测可访问；页面标题：旺旺招聘）。入口页与数据层都未写明网申时间，留空，以官网为准。未写明的届次一律留空。

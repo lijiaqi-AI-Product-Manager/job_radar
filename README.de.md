@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | Deutsch | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,15 +14,15 @@ eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datenstand (2026-10-24)**: **279 Quellen** · **~88.600 offene Stellen** · **99,8 % mit vollständigem JD-Text**
-> Von den **500 Zielunternehmen** haben 494 Kalender- oder Stellendaten (nur 161 auf Stellenebene).
+> **Datenstand (2026-10-26)**: **370 Quellen** · **97.607 offene Stellen** · **99,8 % mit vollständigem JD-Text**
+> Von den **1.014 Zielunternehmen** haben 891 Kalenderdaten (264 auf Stellenebene), 895 insgesamt abgedeckt.
 
 ## Was es ist / was nicht
 
 - ✅ Stellen und JD-Text von **offiziellen** Karriereseiten (keine Aggregatoren)
 - ✅ Täglicher Voll-Crawl, Historie bleibt erhalten (neu, geschlossen, geändert)
 - ✅ Rekrutierungskalender: Jahrgang, Programmtyp, Fachrichtungen, Bewerbungsfenster, Städte, Link, Quelle
-- ❌ Nicht „alle Unternehmen": nur 161 der 500 Ziele liefern Stellenebene
+- ❌ Nicht „alle Unternehmen": nur 264 der 1.014 Ziele liefern Stellenebene
 - ❌ Keine Bewerbungen, Empfehlungen, Interviewberichte oder Gehälter; keine Captcha-/Login-/Signatur-Umgehung
 
 ## Schnellstart
@@ -65,8 +65,8 @@ inklusive des Hinweises `{Name}希望你去他们的招聘页逛一逛哦~`.
 
 | Bereich | Realität |
 |---|---|
-| Kalenderabdeckung | 494/500; die übrigen 6 sind durch robots/Login/DNS blockiert |
-| Abdeckung je Stelle | 161/500; Rest sind eigene Portale oder verschlüsselte Plattformen (Moka, Feishu ATSX) |
+| Kalenderabdeckung | 891/1.014; 17 sind durch robots/Login/DNS blockiert |
+| Abdeckung je Stelle | 264/1.014; Rest sind eigene Portale oder verschlüsselte Plattformen (Moka, Feishu ATSX) |
 | Große Tech-Firmen | Alibaba/Tencent/Meituan/NetEase… mit Stellen; ByteDance/JD/Huawei nur Kalender |
 | Bewerbungsfenster | nur 8 von 1372 Einträgen (0,6 %) mit Beginn und Ende |
 | Duplikate | 9,2 % gleiches Unternehmen+Titel+Stadt; `--dedupe` nutzen |

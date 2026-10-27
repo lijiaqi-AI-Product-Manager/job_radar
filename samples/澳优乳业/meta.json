@@ -1,0 +1,26 @@
+{
+  "company": "澳优乳业",
+  "careers_url": "https://www.ausnutria.com/joinus.html",
+  "host": "www.ausnutria.com",
+  "ats": "unknown",
+  "page_title": "加入我们 - 澳优乳业(中国)有限公司",
+  "calendar_entries": 1,
+  "project_types": [
+    "校招"
+  ],
+  "tracks": 5,
+  "roles": 25,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "加入我们 - 澳优乳业(中国)有限公司",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "list_path",
+    "edu_notice_hits": 1,
+    "edu_notice_sample": [
+      "https://career.csu.edu.cn/campus/view/id/590737"
+    ]
+  }
+}

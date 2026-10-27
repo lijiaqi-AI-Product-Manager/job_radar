@@ -1,0 +1,21 @@
+id: radancy-sanofi
+company: 赛诺菲
+adapter: radancy
+params:
+  base: https://jobs.sanofi.cn
+  lang: ''
+  country: ''
+  fetch_detail: true
+  url_filter: /[^/]+/[^/]+/[^/]+/\d+/\d+$
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- social
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-26'
+  robots: allowed
+  terms: 服务端渲染 HTML，匿名可读，无登录/签名/验证码；未使用 Cookie。用户协议待人工复核
+  notes: 65 页 × 15 条 + 每条 1 次详情 ≈ 1040 次/天，1 req/s ≈ 18 分钟/轮（只在全量轮跑）

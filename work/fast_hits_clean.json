@@ -1,0 +1,2247 @@
+[
+ {
+  "company": "启明星辰",
+  "sector": "互联网与软件",
+  "brand": "Venustech",
+  "tried": [
+   "venustech"
+  ],
+  "ats": "beisen",
+  "tenant": "venustech",
+  "host": "venustech.zhiye.com",
+  "url": "https://venustech.zhiye.com/",
+  "title": "启明星辰-门户",
+  "count": 48,
+  "name_match": true,
+  "jobs": [
+   "实习生-IT桌面运维(J13810)",
+   "【2027校招】软件开发工程师(J13936)",
+   "【2027校招】产品经理(J13935)"
+  ]
+ },
+ {
+  "company": "天融信",
+  "sector": "互联网与软件",
+  "brand": "Topsec",
+  "tried": [
+   "topsec"
+  ],
+  "ats": "beisen",
+  "tenant": "topsec",
+  "host": "topsec.zhiye.com",
+  "url": "https://topsec.zhiye.com/",
+  "title": "天融信科技集团",
+  "count": 15,
+  "name_match": true,
+  "jobs": [
+   "安全运营专家(J14064)",
+   "高级渗透测试工程师（红队方向）(J13630)",
+   "Linux C开发工程师（数据安全方向）(J14406)"
+  ]
+ },
+ {
+  "company": "宇信科技",
+  "sector": "互联网与软件",
+  "brand": "Yusys",
+  "tried": [
+   "yusys"
+  ],
+  "ats": "beisen",
+  "tenant": "yusys",
+  "host": "yusys.zhiye.com",
+  "url": "https://yusys.zhiye.com/",
+  "title": "【社招】北京宇信科技集团股份有限公司",
+  "count": 278,
+  "name_match": true,
+  "jobs": [
+   "业务专家(J11899)",
+   "业务专家(J11899)",
+   "测试工程师（广州工行/珠海工行）(J11597)"
+  ]
+ },
+ {
+  "company": "中文在线",
+  "sector": "互联网与软件",
+  "brand": "ChineseAll",
+  "tried": [
+   "chineseall",
+   "chineseallhr",
+   "chineseall1",
+   "zhongwenzaixian"
+  ],
+  "ats": "beisen",
+  "tenant": "zhongwenzaixian",
+  "host": "zhongwenzaixian.zhiye.com",
+  "url": "https://zhongwenzaixian.zhiye.com/",
+  "title": "中文在线",
+  "count": 54,
+  "name_match": true,
+  "jobs": [
+   "AI Native 全栈开发实习生(J11062)",
+   "版权商务助理(J11129)",
+   "AI漫剧制作师实习生(J11124)"
+  ]
+ },
+ {
+  "company": "叮咚买菜",
+  "sector": "互联网与软件",
+  "brand": "Dingdong",
+  "tried": [
+   "dingdong",
+   "dingdonghr",
+   "dingdong1",
+   "dingdongmaicai",
+   "dingdongmaicaihr",
+   "dingdongmaicai1",
+   "ddmc"
+  ],
+  "ats": "beisen",
+  "tenant": "ddmc",
+  "host": "ddmc.zhiye.com",
+  "url": "https://ddmc.zhiye.com/",
+  "title": "上海壹佰米网络科技有限公司-社招",
+  "count": 84,
+  "name_match": true,
+  "jobs": [
+   "高级 Agent Native 开发工程师（智能体平台与应用方向）(J15304)",
+   "客服与售后 Agent 技术专家(J15303)",
+   "资深包耗材采购(J15291)"
+  ],
+  "note": "上海壹佰米网络科技有限公司（叮咚买菜）已被公开资料确认为同一主体"
+ },
+ {
+  "company": "长飞光纤",
+  "sector": "通信与电子硬件",
+  "brand": "YOFC",
+  "tried": [
+   "yofc",
+   "yofchr",
+   "yofc1"
+  ],
+  "ats": "beisen",
+  "tenant": "yofc1",
+  "host": "yofc1.zhiye.com",
+  "url": "https://yofc1.zhiye.com/",
+  "title": "芯博创2025年校园春招",
+  "count": 4,
+  "name_match": false,
+  "jobs": [
+   "2025年校园春招-驻印尼工艺工程师",
+   "2025年校园春招-工艺工程师",
+   "2025年校园春招-驻印尼工艺工程师"
+  ]
+ },
+ {
+  "company": "深南电路",
+  "sector": "通信与电子硬件",
+  "brand": "SCC",
+  "tried": [
+   "scc"
+  ],
+  "ats": "beisen",
+  "tenant": "scc",
+  "host": "scc.zhiye.com",
+  "url": "https://scc.zhiye.com/",
+  "title": "深南电路招聘",
+  "count": 93,
+  "name_match": true,
+  "jobs": [
+   "AI项目管理",
+   "工艺工程师",
+   "客户经理"
+  ]
+ },
+ {
+  "company": "东山精密",
+  "sector": "通信与电子硬件",
+  "brand": "DSBJ",
+  "tried": [
+   "dsbj"
+  ],
+  "ats": "beisen",
+  "tenant": "dsbj",
+  "host": "dsbj.zhiye.com",
+  "url": "https://dsbj.zhiye.com/",
+  "title": "苏州东山精密制造股份有限公司",
+  "count": 41,
+  "name_match": true,
+  "jobs": [
+   "2027届校园行程",
+   "财务专员",
+   "测试工程师"
+  ]
+ },
+ {
+  "company": "传音控股非洲",
+  "sector": "通信与电子硬件",
+  "brand": "Transsion",
+  "tried": [
+   "transsion"
+  ],
+  "ats": "beisen",
+  "tenant": "transsion",
+  "host": "transsion.zhiye.com",
+  "url": "https://transsion.zhiye.com/",
+  "title": "深圳传音控股股份有限公司",
+  "count": 985,
+  "name_match": true,
+  "jobs": [
+   "印尼电商负责人(J20590)",
+   "软件应用研发工程师（AI方向）(J20210)",
+   "AI全栈开发工程师（重庆）(J20347)"
+  ]
+ },
+ {
+  "company": "创维",
+  "sector": "通信与电子硬件",
+  "brand": "Skyworth",
+  "tried": [
+   "skyworth"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU668b8b251c240e2e76ea71d8",
+  "host": "skyworth.hotjob.cn",
+  "url": "https://skyworth.hotjob.cn/SU668b8b251c240e2e76ea71d8/pb/index.html",
+  "title": "Skyworth创维招聘官网",
+  "count": 50,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "方太",
+  "sector": "通信与电子硬件",
+  "brand": "Fotile",
+  "tried": [
+   "fotile"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "fotile",
+  "host": "fotile.zhiye.com",
+  "url": "https://fotile.zhiye.com/campus",
+  "title": "方太集团招聘官网--校园招聘",
+  "count": 10,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "石头科技",
+  "sector": "通信与电子硬件",
+  "brand": "Roborock",
+  "tried": [
+   "roborock"
+  ],
+  "ats": "beisen",
+  "tenant": "roborock",
+  "host": "roborock.zhiye.com",
+  "url": "https://roborock.zhiye.com/",
+  "title": "石头科技招聘",
+  "count": 113,
+  "name_match": true,
+  "jobs": [
+   "研发质量工程师",
+   "算法工程师",
+   "导航算法工程师"
+  ]
+ },
+ {
+  "company": "追觅科技",
+  "sector": "通信与电子硬件",
+  "brand": "Dreame",
+  "tried": [
+   "dreame"
+  ],
+  "ats": "beisen",
+  "tenant": "dreame",
+  "host": "dreame.zhiye.com",
+  "url": "https://dreame.zhiye.com/",
+  "title": "追觅招聘",
+  "count": 2199,
+  "name_match": true,
+  "jobs": [
+   "预研总监",
+   "软件项目经理(J14096)",
+   "北美多平台运营(J65134)"
+  ]
+ },
+ {
+  "company": "绿联",
+  "sector": "通信与电子硬件",
+  "brand": "UGREEN",
+  "tried": [
+   "ugreen"
+  ],
+  "ats": "beisen",
+  "tenant": "ugreen",
+  "host": "ugreen.zhiye.com",
+  "url": "https://ugreen.zhiye.com/",
+  "title": "绿联招聘",
+  "count": 31,
+  "name_match": true,
+  "jobs": [
+   "合规工程师-研发",
+   "算法工程师-自然语言方向",
+   "算法工程师-图像方向"
+  ]
+ },
+ {
+  "company": "中芯集成",
+  "sector": "半导体",
+  "brand": "SMEC",
+  "tried": [
+   "smec"
+  ],
+  "ats": "beisen",
+  "tenant": "smec",
+  "host": "smec.zhiye.com",
+  "url": "https://smec.zhiye.com/",
+  "title": "芯联集成电路制造股份有限公司",
+  "count": 203,
+  "name_match": false,
+  "jobs": [
+   "销售(晶圆)/Sales(Wafer)",
+   "客户工程工程师/Customer Engineering",
+   "封装研发工程师/PIE(J10278)"
+  ]
+ },
+ {
+  "company": "顺络电子",
+  "sector": "半导体",
+  "brand": "Sunlord",
+  "tried": [
+   "sunlord"
+  ],
+  "ats": "beisen",
+  "tenant": "sunlord",
+  "host": "sunlord.zhiye.com",
+  "url": "https://sunlord.zhiye.com/",
+  "title": "南京商络电子股份有限公司",
+  "count": 22,
+  "name_match": false,
+  "jobs": [
+   "大客户销售",
+   "DFAE/FAE",
+   "销售工程师(J10554)"
+  ]
+ },
+ {
+  "company": "华海清科",
+  "sector": "半导体",
+  "brand": "Hwatsing",
+  "tried": [
+   "hwatsing"
+  ],
+  "ats": "beisen",
+  "tenant": "hwatsing",
+  "host": "hwatsing.zhiye.com",
+  "url": "https://hwatsing.zhiye.com/",
+  "title": "华海清科",
+  "count": 17,
+  "name_match": true,
+  "jobs": [
+   "工艺工程师",
+   "机械工程师",
+   "算法工程师"
+  ]
+ },
+ {
+  "company": "精测电子",
+  "sector": "半导体",
+  "brand": "Jingce",
+  "tried": [
+   "jingce"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "jingce",
+  "host": "jingce.zhiye.com",
+  "url": "https://jingce.zhiye.com/campus",
+  "title": "武汉精测电子集团股份有限公司招聘系统--校园招聘",
+  "count": 30,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "芯碁微装",
+  "sector": "半导体",
+  "brand": "CFMEE",
+  "tried": [
+   "cfmee"
+  ],
+  "ats": "beisen",
+  "tenant": "cfmee",
+  "host": "cfmee.zhiye.com",
+  "url": "https://cfmee.zhiye.com/",
+  "title": "芯碁微装",
+  "count": 44,
+  "name_match": true,
+  "jobs": [
+   "（27届校招）流程与数字化管培生",
+   "（27届校招）碁耀管培生",
+   "（27届校招）AI应用工程师"
+  ]
+ },
+ {
+  "company": "拓荆科技",
+  "sector": "半导体",
+  "brand": "Piotech",
+  "tried": [
+   "piotech"
+  ],
+  "ats": "beisen",
+  "tenant": "piotech",
+  "host": "piotech.zhiye.com",
+  "url": "https://piotech.zhiye.com/",
+  "title": "拓荆科技",
+  "count": 194,
+  "name_match": true,
+  "jobs": [
+   "电气工程师",
+   "厂务技术员（弱电）",
+   "机械工程师"
+  ]
+ },
+ {
+  "company": "华峰测控",
+  "sector": "半导体",
+  "brand": "Accotest",
+  "tried": [
+   "accotest"
+  ],
+  "ats": "beisen",
+  "tenant": "accotest",
+  "host": "accotest.zhiye.com",
+  "url": "https://accotest.zhiye.com/",
+  "title": "华峰测控-2027届校招",
+  "count": 13,
+  "name_match": true,
+  "jobs": [
+   "法务-2027届校招",
+   "硬件工程师-2027届校招",
+   "软件工程师（驱动、中间件方向）-2027届校招"
+  ]
+ },
+ {
+  "company": "概伦电子",
+  "sector": "半导体",
+  "brand": "Primarius",
+  "tried": [
+   "primarius"
+  ],
+  "ats": "beisen",
+  "tenant": "primarius",
+  "host": "primarius.zhiye.com",
+  "url": "https://primarius.zhiye.com/",
+  "title": "概伦电子",
+  "count": 25,
+  "name_match": true,
+  "jobs": [
+   "存储IP设计工程师",
+   "模拟IC设计工程师  方向：ADC",
+   "模拟IC设计工程师   方向：PLL"
+  ]
+ },
+ {
+  "company": "芯海科技",
+  "sector": "半导体",
+  "brand": "Chipsea",
+  "tried": [
+   "chipsea"
+  ],
+  "ats": "beisen",
+  "tenant": "chipsea",
+  "host": "chipsea.zhiye.com",
+  "url": "https://chipsea.zhiye.com/",
+  "title": "芯海科技",
+  "count": 90,
+  "name_match": true,
+  "jobs": [
+   "行政专员(J10793)",
+   "法务专员(J10792)",
+   "学习发展与企业文化COE(J10791)"
+  ]
+ },
+ {
+  "company": "晶合集成",
+  "sector": "半导体",
+  "brand": "Nexchip",
+  "tried": [
+   "nexchip"
+  ],
+  "ats": "beisen",
+  "tenant": "nexchip",
+  "host": "nexchip.zhiye.com",
+  "url": "https://nexchip.zhiye.com/",
+  "title": "合肥晶合集成电路股份有限公司招聘官网",
+  "count": 165,
+  "name_match": true,
+  "jobs": [
+   "招聘专家（高招）",
+   "可靠性工程师",
+   "招聘专员"
+  ]
+ },
+ {
+  "company": "昆仑芯",
+  "sector": "半导体",
+  "brand": "Kunlunxin",
+  "tried": [
+   "kunlunxin",
+   "kunlunxinhr",
+   "kunlunxin1"
+  ],
+  "ats": "beisen",
+  "tenant": "kunlunxin1",
+  "host": "kunlunxin1.zhiye.com",
+  "url": "https://kunlunxin1.zhiye.com/",
+  "title": "昆仑芯招聘门户",
+  "count": 62,
+  "name_match": true,
+  "jobs": [
+   "2027届-AI infra与芯片架构工程师-超芯人才计划专项",
+   "2027届-处理器研发工程师-超芯人才计划专项",
+   "AI Infra集群保障专家"
+  ]
+ },
+ {
+  "company": "得一微电子",
+  "sector": "半导体",
+  "brand": "YEESTOR",
+  "tried": [
+   "yeestor"
+  ],
+  "ats": "beisen",
+  "tenant": "yeestor",
+  "host": "yeestor.zhiye.com",
+  "url": "https://yeestor.zhiye.com/",
+  "title": "得一微电子",
+  "count": 30,
+  "name_match": true,
+  "jobs": [
+   "硬件工程师（芯片系统工程师）",
+   "IC设计工程师",
+   "AI存力芯片工程师（校招）(J10186)"
+  ]
+ },
+ {
+  "company": "江波龙",
+  "sector": "半导体",
+  "brand": "Longsys",
+  "tried": [
+   "longsys"
+  ],
+  "ats": "beisen",
+  "tenant": "longsys",
+  "host": "longsys.zhiye.com",
+  "url": "https://longsys.zhiye.com/",
+  "title": "江波龙招聘官网",
+  "count": 129,
+  "name_match": true,
+  "jobs": [
+   "2027届-IC算法工程师（上海）(J11612)",
+   "产品主管(J11527)",
+   "技术支持工程师(J11526)"
+  ]
+ },
+ {
+  "company": "聚辰股份",
+  "sector": "半导体",
+  "brand": "Giantec",
+  "tried": [
+   "giantec"
+  ],
+  "ats": "beisen",
+  "tenant": "giantec",
+  "host": "giantec.zhiye.com",
+  "url": "https://giantec.zhiye.com/",
+  "title": "聚辰半导体股份有限公司",
+  "count": 3,
+  "name_match": true,
+  "jobs": [
+   "资深数字设计工程师",
+   "资深NVW设计工程师",
+   "Sr. Assembly Engineer（传统封装/WLCSP）"
+  ]
+ },
+ {
+  "company": "东风日产",
+  "sector": "汽车与出行",
+  "brand": "Dongfeng Nissan",
+  "tried": [
+   "dongfengnissan"
+  ],
+  "ats": "beisen",
+  "tenant": "dongfengnissan",
+  "host": "dongfengnissan.zhiye.com",
+  "url": "https://dongfengnissan.zhiye.com/",
+  "title": "东风日产乘用车公司",
+  "count": 21,
+  "name_match": true,
+  "jobs": [
+   "硬件评审(J11642)",
+   "法务合规科科长(J11695)",
+   "法务管理(J11615)"
+  ]
+ },
+ {
+  "company": "五菱",
+  "sector": "汽车与出行",
+  "brand": "Wuling",
+  "tried": [
+   "wuling"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU63e34a270dcad474881066a5",
+  "host": "wuling.hotjob.cn",
+  "url": "https://wuling.hotjob.cn/SU63e34a270dcad474881066a5/pb/index.html",
+  "title": "广西汽车招聘官网",
+  "count": 5,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "江淮汽车",
+  "sector": "汽车与出行",
+  "brand": "JAC",
+  "tried": [
+   "jac"
+  ],
+  "ats": "beisen",
+  "tenant": "jac",
+  "host": "jac.zhiye.com",
+  "url": "https://jac.zhiye.com/",
+  "title": "安徽江淮汽车集团股份有限公司",
+  "count": 3,
+  "name_match": true,
+  "jobs": [
+   "试验开发",
+   "软件开发（架构设计方向）",
+   "智能驾驶控制算法设计专家"
+  ]
+ },
+ {
+  "company": "宁德新能源",
+  "sector": "汽车与出行",
+  "brand": "ATL",
+  "tried": [
+   "atl"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU5ff30f5b9b0d78e6f4283a0b",
+  "host": "atl.hotjob.cn",
+  "url": "https://atl.hotjob.cn/SU5ff30f5b9b0d78e6f4283a0b/pb/index.html",
+  "title": "ATL招聘官网",
+  "count": 15,
+  "name_match": true,
+  "jobs": [],
+  "note": "ATL 即新能源科技（宁德新能源科技），站点标题「ATL招聘官网」"
+ },
+ {
+  "company": "图达通",
+  "sector": "汽车与出行",
+  "brand": "Seyond",
+  "tried": [
+   "seyond"
+  ],
+  "ats": "beisen",
+  "tenant": "seyond",
+  "host": "seyond.zhiye.com",
+  "url": "https://seyond.zhiye.com/",
+  "title": "Seyond图达通",
+  "count": 47,
+  "name_match": true,
+  "jobs": [
+   "物料计划工程师",
+   "客户质量工程师",
+   "前期质量工程师"
+  ]
+ },
+ {
+  "company": "爱旭股份",
+  "sector": "新能源与先进制造",
+  "brand": "Aiko Solar",
+  "tried": [
+   "aikosolar"
+  ],
+  "ats": "beisen",
+  "tenant": "aikosolar",
+  "host": "aikosolar.zhiye.com",
+  "url": "https://aikosolar.zhiye.com/",
+  "title": "爱旭太阳能",
+  "count": 70,
+  "name_match": true,
+  "jobs": [
+   "滁州生产操作工",
+   "技工",
+   "品质巡检"
+  ]
+ },
+ {
+  "company": "固德威",
+  "sector": "新能源与先进制造",
+  "brand": "GoodWe",
+  "tried": [
+   "goodwe"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU630a3a0e2f9d2406b4f6c5f1",
+  "host": "goodwe.hotjob.cn",
+  "url": "https://goodwe.hotjob.cn/SU630a3a0e2f9d2406b4f6c5f1/pb/index.html",
+  "title": "固德威招聘官网",
+  "count": 12,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "天赐材料",
+  "sector": "新能源与先进制造",
+  "brand": "Tinci",
+  "tried": [
+   "tinci"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU62c3b55d2f9d241e4c8e260f",
+  "host": "tinci.hotjob.cn",
+  "url": "https://tinci.hotjob.cn/SU62c3b55d2f9d241e4c8e260f/pb/index.html",
+  "title": "天赐招聘官网",
+  "count": 12,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "德方纳米",
+  "sector": "新能源与先进制造",
+  "brand": "Dynanonic",
+  "tried": [
+   "dynanonic"
+  ],
+  "ats": "beisen",
+  "tenant": "dynanonic",
+  "host": "dynanonic.zhiye.com",
+  "url": "https://dynanonic.zhiye.com/",
+  "title": "德方纳米",
+  "count": 257,
+  "name_match": true,
+  "jobs": [
+   "MC主管（四川上班）",
+   "动力主管（四川上班）",
+   "维修主管-四川上班"
+  ]
+ },
+ {
+  "company": "新宙邦",
+  "sector": "新能源与先进制造",
+  "brand": "Capchem",
+  "tried": [
+   "capchem"
+  ],
+  "ats": "beisen",
+  "tenant": "capchem",
+  "host": "capchem.zhiye.com",
+  "url": "https://capchem.zhiye.com/",
+  "title": "深圳新宙邦科技股份有限公司",
+  "count": 65,
+  "name_match": true,
+  "jobs": [
+   "研发工程师(J10116)",
+   "研发工程师(J10096)",
+   "工艺工程师(J10098)"
+  ]
+ },
+ {
+  "company": "赣锋锂业",
+  "sector": "新能源与先进制造",
+  "brand": "Ganfeng Lithium",
+  "tried": [
+   "ganfenglithium"
+  ],
+  "ats": "beisen",
+  "tenant": "ganfenglithium",
+  "host": "ganfenglithium.zhiye.com",
+  "url": "https://ganfenglithium.zhiye.com/",
+  "title": "赣锋锂业",
+  "count": 29,
+  "name_match": true,
+  "jobs": [
+   "PACK-电气经理/主任",
+   "PACK-系统主任/经理",
+   "选矿工程师（蒙金矿业）"
+  ]
+ },
+ {
+  "company": "金风科技",
+  "sector": "新能源与先进制造",
+  "brand": "Goldwind",
+  "tried": [
+   "goldwind"
+  ],
+  "ats": "beisen",
+  "tenant": "goldwind",
+  "host": "goldwind.zhiye.com",
+  "url": "https://goldwind.zhiye.com/",
+  "title": "金风科技",
+  "count": 347,
+  "name_match": true,
+  "jobs": [
+   "产品经理(J24426)",
+   "27届国际校招-项目工程师(全球派遣)(J24399)",
+   "27届校招-算法助理工程师(J24401)"
+  ]
+ },
+ {
+  "company": "中材科技",
+  "sector": "新能源与先进制造",
+  "brand": "Sinoma Science",
+  "tried": [
+   "sinomascience",
+   "sinomasciencehr",
+   "sinomascience1",
+   "zhongcaikeji",
+   "zhongcaikejihr",
+   "zhongcaikeji1",
+   "zckj"
+  ],
+  "ats": "beisen",
+  "tenant": "zckj",
+  "host": "zckj.zhiye.com",
+  "url": "https://zckj.zhiye.com/",
+  "title": "珠城科技",
+  "count": 5,
+  "name_match": false,
+  "jobs": [
+   "职能管理类管培生",
+   "运营主管",
+   "生产质量类管培生"
+  ]
+ },
+ {
+  "company": "豪迈科技",
+  "sector": "新能源与先进制造",
+  "brand": "Himile",
+  "tried": [
+   "himile"
+  ],
+  "ats": "beisen",
+  "tenant": "himile",
+  "host": "himile.zhiye.com",
+  "url": "https://himile.zhiye.com/",
+  "title": "豪迈招聘",
+  "count": 408,
+  "name_match": true,
+  "jobs": [
+   "高级管理储备",
+   "高级管理储备",
+   "高级管理储备"
+  ]
+ },
+ {
+  "company": "埃夫特",
+  "sector": "新能源与先进制造",
+  "brand": "EFORT",
+  "tried": [
+   "efort"
+  ],
+  "ats": "beisen",
+  "tenant": "efort",
+  "host": "efort.zhiye.com",
+  "url": "https://efort.zhiye.com/",
+  "title": "埃夫特智能机器人股份有限公司",
+  "count": 68,
+  "name_match": true,
+  "jobs": [
+   "27校招- 技术平台管理",
+   "27校招-工业驱控硬件工程师",
+   "27校招-具身操作算法工程师"
+  ]
+ },
+ {
+  "company": "新松机器人",
+  "sector": "新能源与先进制造",
+  "brand": "SIASUN",
+  "tried": [
+   "siasun"
+  ],
+  "ats": "beisen",
+  "tenant": "siasun",
+  "host": "siasun.zhiye.com",
+  "url": "https://siasun.zhiye.com/",
+  "title": "沈阳新松机器人自动化股份有限公司",
+  "count": 37,
+  "name_match": true,
+  "jobs": [
+   "投资经理(J10368)",
+   "机械仿真工程师(J10391)",
+   "硬件工程师(J10396)"
+  ]
+ },
+ {
+  "company": "节卡机器人",
+  "sector": "新能源与先进制造",
+  "brand": "JAKA",
+  "tried": [
+   "jaka"
+  ],
+  "ats": "beisen",
+  "tenant": "jaka",
+  "host": "jaka.zhiye.com",
+  "url": "https://jaka.zhiye.com/",
+  "title": "节卡机器人股份有限公司",
+  "count": 39,
+  "name_match": true,
+  "jobs": [
+   "销售总监",
+   "销售总监",
+   "销售经理"
+  ]
+ },
+ {
+  "company": "越疆科技",
+  "sector": "新能源与先进制造",
+  "brand": "Dobot",
+  "tried": [
+   "dobot"
+  ],
+  "ats": "beisen",
+  "tenant": "dobot",
+  "host": "dobot.zhiye.com",
+  "url": "https://dobot.zhiye.com/",
+  "title": "越疆机器人",
+  "count": 143,
+  "name_match": true,
+  "jobs": [
+   "电机电磁设计工程师（2027届）(J10938)",
+   "C端产品销售管培生（2027届）(J10928)",
+   "全球工业销售管培生（2027届）(J10929)"
+  ]
+ },
+ {
+  "company": "梅卡曼德",
+  "sector": "新能源与先进制造",
+  "brand": "Mech-Mind",
+  "tried": [
+   "mechmind"
+  ],
+  "ats": "beisen",
+  "tenant": "mechmind",
+  "host": "mechmind.zhiye.com",
+  "url": "https://mechmind.zhiye.com/",
+  "title": "梅卡曼德",
+  "count": 57,
+  "name_match": true,
+  "jobs": [
+   "结构工程师(J10498)",
+   "电气工程师(J10936)",
+   "上位机工程师（运控方向）(J11112)"
+  ]
+ },
+ {
+  "company": "中国化学工程",
+  "sector": "央企与国企",
+  "brand": "CNCEC",
+  "tried": [
+   "cncec"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU69294dabe3842960d1a72594",
+  "host": "cncec.hotjob.cn",
+  "url": "https://cncec.hotjob.cn/SU69294dabe3842960d1a72594/pb/index.html",
+  "title": "化学工程招聘官网",
+  "count": 12,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "中科星图",
+  "sector": "央企与国企",
+  "brand": "GEOVIS",
+  "tried": [
+   "geovis"
+  ],
+  "ats": "beisen",
+  "tenant": "geovis",
+  "host": "geovis.zhiye.com",
+  "url": "https://geovis.zhiye.com/",
+  "title": "中科星图股份有限公司",
+  "count": 11,
+  "name_match": true,
+  "jobs": [
+   "销售副总裁(J13613)",
+   "生态运营实习生(J14123)",
+   "低空经济省区销售总经理（南宁）(J14276)"
+  ]
+ },
+ {
+  "company": "中船重工",
+  "sector": "央企与国企",
+  "brand": "CSIC",
+  "tried": [
+   "csic"
+  ],
+  "ats": "beisen",
+  "tenant": "csic",
+  "host": "csic.zhiye.com",
+  "url": "https://csic.zhiye.com/",
+  "title": "中国船舶集团有限公司第七一一研究所",
+  "count": 1,
+  "name_match": false,
+  "jobs": [
+   "设计工程师（低温装备）"
+  ]
+ },
+ {
+  "company": "中集集团",
+  "sector": "央企与国企",
+  "brand": "CIMC",
+  "tried": [
+   "cimc"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU652251308ac1ca0dbbc521c3",
+  "host": "cimc.hotjob.cn",
+  "url": "https://cimc.hotjob.cn/SU652251308ac1ca0dbbc521c3/pb/index.html",
+  "title": "中集集团招聘官网",
+  "count": 4,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "北新建材",
+  "sector": "央企与国企",
+  "brand": "BNBM",
+  "tried": [
+   "bnbm"
+  ],
+  "ats": "beisen",
+  "tenant": "bnbm",
+  "host": "bnbm.zhiye.com",
+  "url": "https://bnbm.zhiye.com/",
+  "title": "北新建材--招聘门户",
+  "count": 2,
+  "name_match": true,
+  "jobs": [
+   "新材生",
+   "博士后研究员"
+  ]
+ },
+ {
+  "company": "东方希望",
+  "sector": "央企与国企",
+  "brand": "East Hope",
+  "tried": [
+   "easthope",
+   "easthopehr",
+   "easthope1"
+  ],
+  "ats": "beisen",
+  "tenant": "easthope1",
+  "host": "easthope1.zhiye.com",
+  "url": "https://easthope1.zhiye.com/",
+  "title": "东方希望",
+  "count": 278,
+  "name_match": true,
+  "jobs": [
+   "电解工",
+   "电解工",
+   "选矿工艺专员"
+  ]
+ },
+ {
+  "company": "民泰银行",
+  "sector": "银行",
+  "brand": "Mintai Bank",
+  "tried": [
+   "mintaibank"
+  ],
+  "ats": "beisen",
+  "tenant": "mintaibank",
+  "host": "mintaibank.zhiye.com",
+  "url": "https://mintaibank.zhiye.com/",
+  "title": "浙江民泰商业银行股份有限公司",
+  "count": 122,
+  "name_match": true,
+  "jobs": [
+   "【杭州桐庐支行】理财经理",
+   "分行安全保卫岗",
+   "【杭州分行】风险经理"
+  ]
+ },
+ {
+  "company": "长江养老",
+  "sector": "证券基金与资管",
+  "brand": "CJ Pension",
+  "tried": [
+   "cjpension",
+   "cjpensionhr",
+   "cjpension1"
+  ],
+  "ats": "beisen",
+  "tenant": "cjpension1",
+  "host": "cjpension1.zhiye.com",
+  "url": "https://cjpension1.zhiye.com/",
+  "title": "长江养老保险股份有限公司实习生招聘",
+  "count": 4,
+  "name_match": true,
+  "jobs": [
+   "投研方向实习生",
+   "风险管理方向实习生",
+   "金融AI方向实习生-AI数据工程"
+  ]
+ },
+ {
+  "company": "中再集团",
+  "sector": "保险",
+  "brand": "China Re",
+  "tried": [
+   "chinare"
+  ],
+  "ats": "beisen",
+  "tenant": "chinare",
+  "host": "chinare.zhiye.com",
+  "url": "https://chinare.zhiye.com/",
+  "title": "中国再保",
+  "count": 9,
+  "name_match": false,
+  "jobs": [
+   "2026社招-人力资源管理岗",
+   "2026社招-信息科技风险管理岗",
+   "2026社招-国际定价与量化风险管理岗"
+  ]
+ },
+ {
+  "company": "大华会计师",
+  "sector": "咨询会计与专业服务",
+  "brand": "Da Hua CPA",
+  "tried": [
+   "dahuacpa"
+  ],
+  "ats": "beisen",
+  "tenant": "dahuacpa",
+  "host": "dahuacpa.zhiye.com",
+  "url": "https://dahuacpa.zhiye.com/",
+  "title": "大华会计",
+  "count": 92,
+  "name_match": true,
+  "jobs": [
+   "审计实习生（北京总部）(J10709)",
+   "项目经理(J10687)",
+   "审计助理(J10624)"
+  ]
+ },
+ {
+  "company": "凯莱英",
+  "sector": "医药医疗",
+  "brand": "Asymchem",
+  "tried": [
+   "asymchem"
+  ],
+  "ats": "beisen",
+  "tenant": "asymchem",
+  "host": "asymchem.zhiye.com",
+  "url": "https://asymchem.zhiye.com/",
+  "title": "凯莱英",
+  "count": 424,
+  "name_match": true,
+  "jobs": [
+   "2027届-药物合成研发岗（有机合成方向）(J13507)",
+   "2027届-药物合成研发岗（寡核苷酸、多肽、ADC、脂质、糖、制备纯化方向）(J13509)",
+   "2027届-制剂类岗位(J13508)"
+  ]
+ },
+ {
+  "company": "博腾股份",
+  "sector": "医药医疗",
+  "brand": "Porton",
+  "tried": [
+   "porton"
+  ],
+  "ats": "beisen",
+  "tenant": "porton",
+  "host": "porton.zhiye.com",
+  "url": "https://porton.zhiye.com/",
+  "title": "博腾制药",
+  "count": 103,
+  "name_match": true,
+  "jobs": [
+   "酶催化研究员（多肽合成方向）(J12042)",
+   "分析工程师(J11679)",
+   "结晶工程师(J11720)"
+  ]
+ },
+ {
+  "company": "海正药业",
+  "sector": "医药医疗",
+  "brand": "Hisun",
+  "tried": [
+   "hisun"
+  ],
+  "ats": "beisen",
+  "tenant": "hisun",
+  "host": "hisun.zhiye.com",
+  "url": "https://hisun.zhiye.com/",
+  "title": "浙江海正药业股份有限公司",
+  "count": 13,
+  "name_match": true,
+  "jobs": [
+   "辅助工(J10203)",
+   "化验员(J10196)",
+   "装卸工(J10191)"
+  ]
+ },
+ {
+  "company": "仙琚制药",
+  "sector": "医药医疗",
+  "brand": "Xianju Pharma",
+  "tried": [
+   "xianjupharma",
+   "xianjupharmahr",
+   "xianjupharma1",
+   "xianjuzhiyao",
+   "xianjuzhiyaohr",
+   "xianjuzhiyao1",
+   "xjzy"
+  ],
+  "ats": "beisen",
+  "tenant": "xjzy",
+  "host": "xjzy.zhiye.com",
+  "url": "https://xjzy.zhiye.com/",
+  "title": "仙琚制药",
+  "count": 9,
+  "name_match": true,
+  "jobs": [
+   "QC",
+   "设备员",
+   "生产管理岗"
+  ]
+ },
+ {
+  "company": "诺诚健华",
+  "sector": "医药医疗",
+  "brand": "InnoCare",
+  "tried": [
+   "innocare"
+  ],
+  "ats": "beisen",
+  "tenant": "innocare",
+  "host": "innocare.zhiye.com",
+  "url": "https://innocare.zhiye.com/",
+  "title": "诺诚健华",
+  "count": 83,
+  "name_match": true,
+  "jobs": [
+   "高级QA工程师",
+   "临床监查员-杭州",
+   "项目协调专员"
+  ]
+ },
+ {
+  "company": "艾力斯",
+  "sector": "医药医疗",
+  "brand": "Allist",
+  "tried": [
+   "allist"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "allist",
+  "host": "allist.zhiye.com",
+  "url": "https://allist.zhiye.com/campus",
+  "title": "上海艾力斯医药科技股份有限公司招聘系统--校园招聘",
+  "count": 4,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "迈瑞动物医疗",
+  "sector": "医药医疗",
+  "brand": "Mindray Animal",
+  "tried": [
+   "mindrayanimal"
+  ],
+  "ats": "beisen",
+  "tenant": "mindrayanimal",
+  "host": "mindrayanimal.zhiye.com",
+  "url": "https://mindrayanimal.zhiye.com/",
+  "title": "迈瑞动物医疗招聘",
+  "count": 46,
+  "name_match": true,
+  "jobs": [
+   "销售工程师(J16687)",
+   "学术临床专家(J18055)",
+   "产品市场经理(J16210)"
+  ]
+ },
+ {
+  "company": "理邦仪器",
+  "sector": "医药医疗",
+  "brand": "Edan",
+  "tried": [
+   "edan"
+  ],
+  "ats": "beisen",
+  "tenant": "edan",
+  "host": "edan.zhiye.com",
+  "url": "https://edan.zhiye.com/",
+  "title": "深圳市理邦精密仪器股份有限公司",
+  "count": 50,
+  "name_match": true,
+  "jobs": [
+   "人力资源专员(J10668)",
+   "客户经理（民营）(J10663)",
+   "客户经理(J10661)"
+  ]
+ },
+ {
+  "company": "山东威高",
+  "sector": "医药医疗",
+  "brand": "Weigao",
+  "tried": [
+   "weigao"
+  ],
+  "ats": "beisen",
+  "tenant": "weigao",
+  "host": "weigao.zhiye.com",
+  "url": "https://weigao.zhiye.com/",
+  "title": "威高集团有限公司",
+  "count": 127,
+  "name_match": true,
+  "jobs": [
+   "【宜凯德】医学事务专员(J15238)",
+   "项目主管(J15237)",
+   "网络工程师(J15236)"
+  ]
+ },
+ {
+  "company": "沛嘉医疗",
+  "sector": "医药医疗",
+  "brand": "Peijia Medical",
+  "tried": [
+   "peijiamedical"
+  ],
+  "ats": "beisen",
+  "tenant": "peijiamedical",
+  "host": "peijiamedical.zhiye.com",
+  "url": "https://peijiamedical.zhiye.com/",
+  "title": "沛嘉招聘",
+  "count": 8,
+  "name_match": true,
+  "jobs": [
+   "品质工程师(J10981)",
+   "供应商质量工程师(J10739)",
+   "设备工程师(J10898)"
+  ]
+ },
+ {
+  "company": "东软医疗",
+  "sector": "医药医疗",
+  "brand": "Neusoft Medical",
+  "tried": [
+   "neusoftmedical"
+  ],
+  "ats": "beisen",
+  "tenant": "neusoftmedical",
+  "host": "neusoftmedical.zhiye.com",
+  "url": "https://neusoftmedical.zhiye.com/",
+  "title": "东软医疗校招",
+  "count": 4,
+  "name_match": true,
+  "jobs": [
+   "销售助理实习生(J10618)",
+   "技术工人--实习生(J10256)",
+   "财务实习生（base上海）(J10167)"
+  ]
+ },
+ {
+  "company": "白象食品",
+  "sector": "消费零售与食品",
+  "brand": "Baixiang Food",
+  "tried": [
+   "baixiangfood"
+  ],
+  "ats": "beisen",
+  "tenant": "baixiangfood",
+  "host": "baixiangfood.zhiye.com",
+  "url": "https://baixiangfood.zhiye.com/",
+  "title": "白象食品集团",
+  "count": 297,
+  "name_match": true,
+  "jobs": [
+   "采购管培生（山东工厂）",
+   "营销会计员",
+   "快销品城市经理（华中区域）"
+  ]
+ },
+ {
+  "company": "盐津铺子",
+  "sector": "消费零售与食品",
+  "brand": "Yanjin Shop",
+  "tried": [
+   "yanjinshop",
+   "yanjinshophr",
+   "yanjinshop1",
+   "yanjinpuzi"
+  ],
+  "ats": "beisen",
+  "tenant": "yanjinpuzi",
+  "host": "yanjinpuzi.zhiye.com",
+  "url": "https://yanjinpuzi.zhiye.com/",
+  "title": "盐津铺子食品股份有限公司",
+  "count": 70,
+  "name_match": true,
+  "jobs": [
+   "高级财务分析师(J12375)",
+   "质量改进工程师(J12370)",
+   "品控员(J11802)"
+  ]
+ },
+ {
+  "company": "劲仔食品",
+  "sector": "消费零售与食品",
+  "brand": "Jinzai Food",
+  "tried": [
+   "jinzaifood"
+  ],
+  "ats": "beisen",
+  "tenant": "jinzaifood",
+  "host": "jinzaifood.zhiye.com",
+  "url": "https://jinzaifood.zhiye.com/",
+  "title": "劲仔食品",
+  "count": 74,
+  "name_match": true,
+  "jobs": [
+   "食品研发高级工程师 /全职博士后(J11150)",
+   "生产主管（北海劲仔）(J10663)",
+   "稽核经理(J10565)"
+  ]
+ },
+ {
+  "company": "周黑鸭",
+  "sector": "消费零售与食品",
+  "brand": "Zhou Hei Ya",
+  "tried": [
+   "zhouheiya"
+  ],
+  "ats": "beisen",
+  "tenant": "zhouheiya",
+  "host": "zhouheiya.zhiye.com",
+  "url": "https://zhouheiya.zhiye.com/",
+  "title": "招聘门户",
+  "count": 27,
+  "name_match": false,
+  "jobs": [
+   "华东工厂-生产员工(J11519)",
+   "华东工厂-工艺设备维修工(J11665)",
+   "华北工厂-生产员工(J11518)"
+  ]
+ },
+ {
+  "company": "来伊份",
+  "sector": "消费零售与食品",
+  "brand": "Laiyifen",
+  "tried": [
+   "laiyifen"
+  ],
+  "ats": "beisen",
+  "tenant": "laiyifen",
+  "host": "laiyifen.zhiye.com",
+  "url": "https://laiyifen.zhiye.com/",
+  "title": "来伊份招聘门户",
+  "count": 7216,
+  "name_match": true,
+  "jobs": [
+   "大区运营总监(J27391)",
+   "美食顾问(J20841)",
+   "财务经理（南京）(J34193)"
+  ]
+ },
+ {
+  "company": "现代牧业",
+  "sector": "消费零售与食品",
+  "brand": "Modern Farming",
+  "tried": [
+   "modernfarming",
+   "modernfarminghr",
+   "modernfarming1",
+   "xiandaimuye"
+  ],
+  "ats": "beisen",
+  "tenant": "xiandaimuye",
+  "host": "xiandaimuye.zhiye.com",
+  "url": "https://xiandaimuye.zhiye.com/",
+  "title": "现代牧业",
+  "count": 17,
+  "name_match": true,
+  "jobs": [
+   "海外管培生(J10184)",
+   "人力资源类管培生(J10183)",
+   "工程类管培生(J10182)"
+  ]
+ },
+ {
+  "company": "贝因美",
+  "sector": "消费零售与食品",
+  "brand": "Beingmate",
+  "tried": [
+   "beingmate"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "beingmate",
+  "host": "beingmate.zhiye.com",
+  "url": "https://beingmate.zhiye.com/campus",
+  "title": "贝因美股份有限公司招聘系统--校园招聘",
+  "count": 1,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "澳优乳业",
+  "sector": "消费零售与食品",
+  "brand": "Ausnutria",
+  "tried": [
+   "ausnutria"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU66f3c75a6202cc1a0cba3202",
+  "host": "ausnutria.hotjob.cn",
+  "url": "https://ausnutria.hotjob.cn/SU66f3c75a6202cc1a0cba3202/pb/index.html",
+  "title": "澳优乳业招聘官网",
+  "count": 10,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "思念食品",
+  "sector": "消费零售与食品",
+  "brand": "Synear",
+  "tried": [
+   "synear"
+  ],
+  "ats": "beisen",
+  "tenant": "synear",
+  "host": "synear.zhiye.com",
+  "url": "https://synear.zhiye.com/",
+  "title": "思念食品",
+  "count": 33,
+  "name_match": true,
+  "jobs": [
+   "电商分销经理",
+   "生产经理",
+   "自动化应用工程师"
+  ]
+ },
+ {
+  "company": "颐海国际",
+  "sector": "消费零售与食品",
+  "brand": "Yihai International",
+  "tried": [
+   "yihaiinternational",
+   "yihaiinternationalhr",
+   "yihaiinternational1",
+   "yihaiguoji",
+   "yihaiguojihr",
+   "yihaiguoji1",
+   "yhgj"
+  ],
+  "ats": "beisen",
+  "tenant": "yhgj",
+  "host": "yhgj.zhiye.com",
+  "url": "https://yhgj.zhiye.com/",
+  "title": "远海国际旅行社",
+  "count": 2,
+  "name_match": false,
+  "jobs": [
+   "旅游操作计调-俄语/意大利语/法语/韩语/西班牙语(J10284)",
+   "数据主管(J10204)"
+  ]
+ },
+ {
+  "company": "国联水产",
+  "sector": "消费零售与食品",
+  "brand": "Guolian Aquatic",
+  "tried": [
+   "guolianaquatic",
+   "guolianaquatichr",
+   "guolianaquatic1",
+   "guolianshuichan",
+   "guolianshuichanhr",
+   "guolianshuichan1",
+   "glsc"
+  ],
+  "ats": "beisen",
+  "tenant": "glsc",
+  "host": "glsc.zhiye.com",
+  "url": "https://glsc.zhiye.com/",
+  "title": "国联民生证券",
+  "count": 63,
+  "name_match": true,
+  "jobs": [
+   "财富规划师",
+   "财富规划师",
+   "数据开发工程师(J10770)"
+  ]
+ },
+ {
+  "company": "百胜中国",
+  "sector": "消费零售与食品",
+  "brand": "Yum China",
+  "tried": [
+   "yumchina"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "yumchina",
+  "host": "yumchina.zhiye.com",
+  "url": "https://yumchina.zhiye.com/campus",
+  "title": "百胜中国招聘系统--校园招聘",
+  "count": 105,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "益禾堂",
+  "sector": "消费零售与食品",
+  "brand": "Yihetang",
+  "tried": [
+   "yihetang"
+  ],
+  "ats": "beisen",
+  "tenant": "yihetang",
+  "host": "yihetang.zhiye.com",
+  "url": "https://yihetang.zhiye.com/",
+  "title": "益禾堂",
+  "count": 17,
+  "name_match": true,
+  "jobs": [
+   "东北招商营建负责人",
+   "外卖运营岗（品牌名：找茶）",
+   "益禾堂校园大使"
+  ]
+ },
+ {
+  "company": "茶颜悦色",
+  "sector": "消费零售与食品",
+  "brand": "Sexy Tea",
+  "tried": [
+   "sexytea",
+   "sexyteahr",
+   "sexytea1",
+   "chayanyuese",
+   "chayanyuesehr",
+   "chayanyuese1",
+   "cyys"
+  ],
+  "ats": "beisen",
+  "tenant": "cyys",
+  "host": "cyys.zhiye.com",
+  "url": "https://cyys.zhiye.com/",
+  "title": "湖南茶悦文化发展集团有限公司",
+  "count": 1429,
+  "name_match": true,
+  "jobs": [
+   "古德墨柠-学生用工-长沙",
+   "茶颜鲜食-门店理货员-长沙",
+   "茶颜家族-学生用工-广州"
+  ]
+ },
+ {
+  "company": "Manner咖啡",
+  "sector": "消费零售与食品",
+  "brand": "Manner Coffee",
+  "tried": [
+   "mannercoffee"
+  ],
+  "ats": "beisen",
+  "tenant": "mannercoffee",
+  "host": "mannercoffee.zhiye.com",
+  "url": "https://mannercoffee.zhiye.com/",
+  "title": "Manner Coffee",
+  "count": 6,
+  "name_match": true,
+  "jobs": [
+   "全职精品咖啡师（城市可选）(J12481)",
+   "校招-咖啡师（全国）",
+   "兼职伙伴（城市可选，公众号投递）(J12680)"
+  ]
+ },
+ {
+  "company": "九牧王",
+  "sector": "消费零售与食品",
+  "brand": "Joeone",
+  "tried": [
+   "joeone"
+  ],
+  "ats": "beisen",
+  "tenant": "joeone",
+  "host": "joeone.zhiye.com",
+  "url": "https://joeone.zhiye.com/",
+  "title": "九牧王股份有限公司",
+  "count": 24,
+  "name_match": true,
+  "jobs": [
+   "空间形象开发执行副总监",
+   "会员运营专业经理(J11522)",
+   "HRBP（人才发展方向）(J11521)"
+  ]
+ },
+ {
+  "company": "爱慕",
+  "sector": "消费零售与食品",
+  "brand": "Aimer",
+  "tried": [
+   "aimer"
+  ],
+  "ats": "beisen",
+  "tenant": "aimer",
+  "host": "aimer.zhiye.com",
+  "url": "https://aimer.zhiye.com/",
+  "title": "爱慕集团",
+  "count": 21,
+  "name_match": true,
+  "jobs": [
+   "2027届视觉展陈管培生(J11495)",
+   "2027届行政管理管培生(J11493)",
+   "2027届供应链管理管培生(J11468)"
+  ]
+ },
+ {
+  "company": "内外",
+  "sector": "消费零售与食品",
+  "brand": "Neiwai",
+  "tried": [
+   "neiwai"
+  ],
+  "ats": "beisen",
+  "tenant": "neiwai",
+  "host": "neiwai.zhiye.com",
+  "url": "https://neiwai.zhiye.com/",
+  "title": "NEIWAI内外官方招聘",
+  "count": 14,
+  "name_match": true,
+  "jobs": [
+   "见习主播",
+   "电商运营实习生",
+   "NEIWAI服装店长——河西金鹰"
+  ]
+ },
+ {
+  "company": "德邦快递",
+  "sector": "地产建筑与物流",
+  "brand": "Deppon",
+  "tried": [
+   "deppon"
+  ],
+  "ats": "beisen",
+  "tenant": "deppon",
+  "host": "deppon.zhiye.com",
+  "url": "https://deppon.zhiye.com/",
+  "title": "德邦快递",
+  "count": 52,
+  "name_match": true,
+  "jobs": [
+   "领航海豚",
+   "运营规划岗",
+   "产品规划岗"
+  ]
+ },
+ {
+  "company": "奥乐齐中国",
+  "sector": "外资在华",
+  "brand": "Aldi China",
+  "tried": [
+   "aldichina"
+  ],
+  "ats": "beisen",
+  "tenant": "aldichina",
+  "host": "aldichina.zhiye.com",
+  "url": "https://aldichina.zhiye.com/",
+  "title": "奥乐齐中国",
+  "count": 55,
+  "name_match": true,
+  "jobs": [
+   "副店长",
+   "店长",
+   "HR Manager （TA + HRBP）"
+  ]
+ },
+ {
+  "company": "云知声",
+  "sector": "人工智能与机器人",
+  "brand": "Unisound",
+  "tried": [
+   "unisound"
+  ],
+  "ats": "beisen",
+  "tenant": "unisound",
+  "host": "unisound.zhiye.com",
+  "url": "https://unisound.zhiye.com/",
+  "title": "云知声",
+  "count": 39,
+  "name_match": true,
+  "jobs": [
+   "智慧营销项目经理(J11123)",
+   "大模型研究员（博士后）(J10968)",
+   "医疗销售经理(J11036)"
+  ]
+ },
+ {
+  "company": "思必驰",
+  "sector": "人工智能与机器人",
+  "brand": "AISpeech",
+  "tried": [
+   "aispeech"
+  ],
+  "ats": "beisen",
+  "tenant": "aispeech",
+  "host": "aispeech.zhiye.com",
+  "url": "https://aispeech.zhiye.com/",
+  "title": "思必驰科技股份有限公司",
+  "count": 62,
+  "name_match": true,
+  "jobs": [
+   "商务管培生-2027届",
+   "语音算法实习生",
+   "安卓开发工程师"
+  ]
+ },
+ {
+  "company": "生数科技",
+  "sector": "人工智能与机器人",
+  "brand": "Shengshu",
+  "tried": [
+   "shengshu",
+   "shengshuhr",
+   "shengshu1",
+   "shengshukeji",
+   "shengshukejihr",
+   "shengshukeji1",
+   "sskj"
+  ],
+  "ats": "beisen",
+  "tenant": "sskj",
+  "host": "sskj.zhiye.com",
+  "url": "https://sskj.zhiye.com/",
+  "title": "善水科技",
+  "count": 3,
+  "name_match": false,
+  "jobs": [
+   "电工",
+   "保安",
+   "中控员"
+  ]
+ },
+ {
+  "company": "明略科技",
+  "sector": "人工智能与机器人",
+  "brand": "MiningLamp",
+  "tried": [
+   "mininglamp"
+  ],
+  "ats": "beisen",
+  "tenant": "mininglamp",
+  "host": "mininglamp.zhiye.com",
+  "url": "https://mininglamp.zhiye.com/",
+  "title": "明略科技招聘官网",
+  "count": 24,
+  "name_match": true,
+  "jobs": [
+   "大模型Agent应用工程师(J16338)",
+   "AIGC 多模态算法实习生(J16337)",
+   "具身Agent算法工程师(J16336)"
+  ]
+ },
+ {
+  "company": "创新奇智",
+  "sector": "人工智能与机器人",
+  "brand": "AInnovation",
+  "tried": [
+   "ainnovation"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "ainnovation",
+  "host": "ainnovation.zhiye.com",
+  "url": "https://ainnovation.zhiye.com/campus",
+  "title": "创新奇智（北京）科技有限公司招聘系统--校园招聘",
+  "count": 3,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "宇树Unitree",
+  "sector": "人工智能与机器人",
+  "brand": "Unitree",
+  "tried": [
+   "unitree"
+  ],
+  "ats": "beisen",
+  "tenant": "unitree",
+  "host": "unitree.zhiye.com",
+  "url": "https://unitree.zhiye.com/",
+  "title": "宇树科技招聘官网",
+  "count": 86,
+  "name_match": true,
+  "jobs": [
+   "嵌入式硬件工程师（校招）",
+   "高级研发项目经理",
+   "高级机器人测试工程师"
+  ]
+ },
+ {
+  "company": "极智嘉",
+  "sector": "人工智能与机器人",
+  "brand": "Geek+",
+  "tried": [
+   "geek"
+  ],
+  "ats": "beisen",
+  "tenant": "geek",
+  "host": "geek.zhiye.com",
+  "url": "https://geek.zhiye.com/",
+  "title": "极客未来招聘门户（新）",
+  "count": 28,
+  "name_match": false,
+  "jobs": [
+   "小学数学班课教师（校招）(J13032)",
+   "小学数学班课教师(J13033)",
+   "物资采购专员(J13060)"
+  ]
+ },
+ {
+  "company": "海柔创新",
+  "sector": "人工智能与机器人",
+  "brand": "Hai Robotics",
+  "tried": [
+   "hairobotics"
+  ],
+  "ats": "beisen",
+  "tenant": "hairobotics",
+  "host": "hairobotics.zhiye.com",
+  "url": "https://hairobotics.zhiye.com/",
+  "title": "海柔创新",
+  "count": 169,
+  "name_match": true,
+  "jobs": [
+   "解决方案岗（制造业）(J12974)",
+   "PIE工程师/PIE Engineer(J13205)",
+   "计划工程师/Planning Engineer(J13204)"
+  ]
+ },
+ {
+  "company": "亿航",
+  "sector": "人工智能与机器人",
+  "brand": "EHang",
+  "tried": [
+   "ehang",
+   "ehanghr",
+   "ehang1",
+   "yihang"
+  ],
+  "ats": "beisen",
+  "tenant": "yihang",
+  "host": "yihang.zhiye.com",
+  "url": "https://yihang.zhiye.com/",
+  "title": "易航智能",
+  "count": 12,
+  "name_match": false,
+  "jobs": [
+   "中级硬件工程师",
+   "MCU底层开发工程师",
+   "PCB layout"
+  ]
+ },
+ {
+  "company": "优艾智合",
+  "sector": "人工智能与机器人",
+  "brand": "Youibot",
+  "tried": [
+   "youibot",
+   "youibothr",
+   "youibot1"
+  ],
+  "ats": "beisen",
+  "tenant": "youibot1",
+  "host": "youibot1.zhiye.com",
+  "url": "https://youibot1.zhiye.com/",
+  "title": "优艾智合",
+  "count": 85,
+  "name_match": true,
+  "jobs": [
+   "海外项目经理",
+   "信息安全工程师",
+   "总务助理（日本）"
+  ]
+ },
+ {
+  "company": "视比特机器人",
+  "sector": "人工智能与机器人",
+  "brand": "SpeedBot",
+  "tried": [
+   "speedbot"
+  ],
+  "ats": "beisen",
+  "tenant": "speedbot",
+  "host": "speedbot.zhiye.com",
+  "url": "https://speedbot.zhiye.com/",
+  "title": "视比特",
+  "count": 18,
+  "name_match": true,
+  "jobs": [
+   "前端开发工程师(J10064)",
+   "算法工程师（3D引导检测）(J10071)",
+   "算法工程师（深度学习）(J10069)"
+  ]
+ },
+ {
+  "company": "橘朵",
+  "sector": "美妆与服饰",
+  "brand": "Judydoll",
+  "tried": [
+   "judydoll",
+   "judydollhr",
+   "judydoll1",
+   "juduo",
+   "juduohr",
+   "juduo1",
+   "jd"
+  ],
+  "ats": "hotjob",
+  "tenant": "SU6923bd7fd14e321454349e91",
+  "host": "jd.hotjob.cn",
+  "url": "https://jd.hotjob.cn/SU6923bd7fd14e321454349e91/pb/index.html",
+  "title": "精雕科技招聘官网",
+  "count": 33,
+  "name_match": false,
+  "jobs": []
+ },
+ {
+  "company": "上海家化六神",
+  "sector": "美妆与服饰",
+  "brand": "Liushen",
+  "tried": [
+   "liushen"
+  ],
+  "ats": "beisen",
+  "tenant": "liushen",
+  "host": "liushen.zhiye.com",
+  "url": "https://liushen.zhiye.com/",
+  "title": "北京市柳沈律师事务所",
+  "count": 18,
+  "name_match": false,
+  "jobs": [
+   "【成都-电学英语】专利工程师/代理师(J10031)",
+   "【成都-机械日语】专利工程师/代理师(J10034)",
+   "【成都-电学日语】专利工程师/代理师(J10032)"
+  ]
+ },
+ {
+  "company": "丸美",
+  "sector": "美妆与服饰",
+  "brand": "Marubi",
+  "tried": [
+   "marubi"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "marubi",
+  "host": "marubi.zhiye.com",
+  "url": "https://marubi.zhiye.com/campus",
+  "title": "广东丸美生物技术股份有限公司招聘系统--校园招聘",
+  "count": 3,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "阿道夫",
+  "sector": "美妆与服饰",
+  "brand": "ADolph",
+  "tried": [
+   "adolph"
+  ],
+  "ats": "beisen",
+  "tenant": "adolph",
+  "host": "adolph.zhiye.com",
+  "url": "https://adolph.zhiye.com/",
+  "title": "广州阿道夫个人护理用品有限公司",
+  "count": 2,
+  "name_match": true,
+  "jobs": [
+   "高级HRBP专员",
+   "直播达人媒介/商务BD"
+  ]
+ },
+ {
+  "company": "宝宝巴士",
+  "sector": "教育",
+  "brand": "BabyBus",
+  "tried": [
+   "babybus"
+  ],
+  "ats": "beisen",
+  "tenant": "babybus",
+  "host": "babybus.zhiye.com",
+  "url": "https://babybus.zhiye.com/",
+  "title": "宝宝巴士招聘",
+  "count": 55,
+  "name_match": true,
+  "jobs": [
+   "绘本编辑（校招）",
+   "儿童故事编剧（校招）",
+   "原画师（校招）"
+  ]
+ },
+ {
+  "company": "瀚高数据库",
+  "sector": "企业服务",
+  "brand": "HighGo",
+  "tried": [
+   "highgo"
+  ],
+  "ats": "beisen",
+  "tenant": "highgo",
+  "host": "highgo.zhiye.com",
+  "url": "https://highgo.zhiye.com/",
+  "title": "瀚高数据库",
+  "count": 8,
+  "name_match": true,
+  "jobs": [
+   "生态发展岗",
+   "教育行业销售（数据库软件）",
+   "乌鲁木齐软件大客户销售"
+  ]
+ },
+ {
+  "company": "神策数据",
+  "sector": "企业服务",
+  "brand": "Sensors Data",
+  "tried": [
+   "sensorsdata"
+  ],
+  "ats": "beisen",
+  "tenant": "sensorsdata",
+  "host": "sensorsdata.zhiye.com",
+  "url": "https://sensorsdata.zhiye.com/",
+  "title": "神策数据",
+  "count": 11,
+  "name_match": true,
+  "jobs": [
+   "KA销售顾问-国际化业务(J11342)",
+   "海外渠道销售经理-深圳(J11371)",
+   "AI 技术解决方案专家（售前）-深圳(J11370)"
+  ]
+ },
+ {
+  "company": "观远数据",
+  "sector": "企业服务",
+  "brand": "Guandata",
+  "tried": [
+   "guandata"
+  ],
+  "ats": "beisen",
+  "tenant": "guandata",
+  "host": "guandata.zhiye.com",
+  "url": "https://guandata.zhiye.com/",
+  "title": "观远数据",
+  "count": 26,
+  "name_match": true,
+  "jobs": [
+   "「大消费品行业」销售经理（上海）",
+   "业务顾问（上海交付）",
+   "资深BA顾问（杭州）"
+  ]
+ },
+ {
+  "company": "每刻报销",
+  "sector": "企业服务",
+  "brand": "Maycur",
+  "tried": [
+   "maycur"
+  ],
+  "ats": "beisen_legacy",
+  "tenant": "maycur",
+  "host": "maycur.zhiye.com",
+  "url": "https://maycur.zhiye.com/campus",
+  "title": "杭州每刻科技有限公司招聘系统--校园招聘",
+  "count": 7,
+  "name_match": true,
+  "jobs": []
+ },
+ {
+  "company": "合思",
+  "sector": "企业服务",
+  "brand": "Hosecloud",
+  "tried": [
+   "hosecloud"
+  ],
+  "ats": "beisen",
+  "tenant": "hosecloud",
+  "host": "hosecloud.zhiye.com",
+  "url": "https://hosecloud.zhiye.com/",
+  "title": "合思",
+  "count": 11,
+  "name_match": true,
+  "jobs": [
+   "AI测试开发工程师(J10490)",
+   "商旅服务专员(J10510)",
+   "华东商旅销售专家(J10499)"
+  ]
+ },
+ {
+  "company": "北森控股",
+  "sector": "企业服务",
+  "brand": "Beisen",
+  "tried": [
+   "beisen"
+  ],
+  "ats": "beisen",
+  "tenant": "beisen",
+  "host": "beisen.zhiye.com",
+  "url": "https://beisen.zhiye.com/",
+  "title": "北森招聘",
+  "count": 194,
+  "name_match": true,
+  "jobs": [
+   "销售总监/经理（CBG/全国）(J13700)",
+   "软件客户经理（华中战区/武汉）(J14892)",
+   "2027届校招-服务管培生(J14861)"
+  ]
+ },
+ {
+  "company": "钉钉",
+  "sector": "企业服务",
+  "brand": "DingTalk",
+  "tried": [
+   "dingtalk"
+  ],
+  "ats": "beisen",
+  "tenant": "dingtalk",
+  "host": "dingtalk.zhiye.com",
+  "url": "https://dingtalk.zhiye.com/",
+  "title": "左庭右院",
+  "count": 3,
+  "name_match": false,
+  "jobs": [
+   "供应链专员",
+   "外卖经理",
+   "HRBP"
+  ]
+ },
+ {
+  "company": "禅游科技",
+  "sector": "游戏与内容",
+  "brand": "Zenith",
+  "tried": [
+   "zenith",
+   "zenithhr",
+   "zenith1",
+   "chanyoukeji",
+   "chanyoukejihr",
+   "chanyoukeji1",
+   "cykj"
+  ],
+  "ats": "beisen",
+  "tenant": "cykj",
+  "host": "cykj.zhiye.com",
+  "url": "https://cykj.zhiye.com/",
+  "title": "诚易科技",
+  "count": 5,
+  "name_match": false,
+  "jobs": [
+   "出口跟单专员",
+   "车辆交付专员",
+   "销售顾问"
+  ]
+ }
+]

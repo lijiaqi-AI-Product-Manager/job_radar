@@ -1,0 +1,24 @@
+{
+  "company": "海康威视",
+  "careers_url": "https://talent.hikvision.com/",
+  "host": "talent.hikvision.com",
+  "ats": "unknown",
+  "page_title": "社会招聘",
+  "calendar_entries": 1,
+  "project_types": [
+    "社招"
+  ],
+  "tracks": 2,
+  "roles": 2,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "社会招聘",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

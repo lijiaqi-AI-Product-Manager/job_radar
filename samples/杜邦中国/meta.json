@@ -1,0 +1,25 @@
+{
+  "company": "杜邦中国",
+  "careers_url": "https://careers.dupont.com/cn/zh/home",
+  "host": "careers.dupont.com",
+  "ats": "self_hosted",
+  "page_title": "杜邦招聘信息",
+  "calendar_entries": 2,
+  "project_types": [
+    "实习",
+    "日常实习"
+  ],
+  "tracks": 10,
+  "roles": 24,
+  "jd_status": "blocked",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "杜邦招聘信息",
+    "origin": "careers_final",
+    "grade": "B",
+    "grade_why": "career_subdomain",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

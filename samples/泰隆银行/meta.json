@@ -1,0 +1,27 @@
+{
+  "company": "泰隆银行",
+  "careers_url": "https://zjtlcb.zhiye.com/Campus",
+  "host": "zjtlcb.zhiye.com",
+  "ats": "beisen",
+  "page_title": "浙江泰隆商业银行",
+  "calendar_entries": 4,
+  "project_types": [
+    "实习",
+    "暑期实习",
+    "社招",
+    "秋招正式批"
+  ],
+  "tracks": 20,
+  "roles": 68,
+  "jd_status": "official_page",
+  "verified_at": "2026-10-26",
+  "evidence": {
+    "careers_url_http": 200,
+    "page_title": "浙江泰隆商业银行",
+    "origin": "careers_final",
+    "grade": "A",
+    "grade_why": "ats_portal",
+    "edu_notice_hits": 0,
+    "edu_notice_sample": []
+  }
+}

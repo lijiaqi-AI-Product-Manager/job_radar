@@ -13,7 +13,7 @@ from jobradar.timeutil import parse_ts
 
 _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category, j.subcategory,
     j.recruit_type, j.grad_year, j.batch, j.cities, j.degree_min, j.department,
-    j.first_seen, j.last_seen, j.closed_at"""
+    j.apply_end, j.publish_at, j.first_seen, j.last_seen, j.closed_at"""
 
 # 门店/零售岗的标题特征：喜茶、星巴克一家就 2,900+ 条，校招用户搜「在招岗位」时基本是噪声。
 # 只用于 `--exclude-store`（默认不过滤），避免替用户做决定。
@@ -126,7 +126,8 @@ def _company_sql(match: CompanyMatch) -> tuple[str, list]:
 def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=None,
                 grad_year=None, keyword=None, text=None, text_conn=None,
                 include_closed=False, limit=50, contains=False, meta=None,
-                dedupe=False, exclude_store=False) -> list[dict]:
+                dedupe=False, exclude_store=False, deadline_before=None,
+                deadline_after=None) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
@@ -162,6 +163,15 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if keyword:
         where.append("j.title LIKE ?")
         args.append(f"%{keyword}%")
+    # 截止日筛选：只有「确实知道截止日」的岗位才参与比较。
+    # 没有截止日的岗位（北森门户全部、大易的长期开放岗）不能被当成「已过期」排除，
+    # 也不能被当成「还在招」放进 --deadline-after 的结果——两种都会误导用户。
+    if deadline_before:
+        where.append("j.apply_end IS NOT NULL AND j.apply_end <= ?")
+        args.append(deadline_before)
+    if deadline_after:
+        where.append("j.apply_end IS NOT NULL AND j.apply_end >= ?")
+        args.append(deadline_after)
     terms = text.split() if text else []
     if terms and text_conn is None:
         raise ValueError("全文检索需要 JD 原文库 jd_text.db")
@@ -394,6 +404,7 @@ def _cal_dict(r) -> dict:
 
 def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
                      origin=None, open_on=None, has_tracks=None, has_window=None,
+                     city=None, direction=None, deadline_before=None, deadline_after=None,
                      limit=100) -> list[dict]:
     """日历条目。
 
@@ -405,6 +416,14 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     没写起止的也保留（否则等于把 99% 的校招藏起来），但会标 `window_status: unknown`——
     回答时不能说"确定还能投"（2026-10-24 外部评审：不加标记等于把未知当已知）。
     has_tracks/has_window：只返回「有方向」/「有网申起止」的条目（None 表示不过滤）。
+
+    city：按城市筛。cities 是 JSON 数组存文本，用 json_each 精确比对一个元素，
+    避免 `LIKE '%北京%'` 把「北京」误配到「北京市朝阳区」这类脏值上。
+    direction：按方向名筛（`技术类` / `产品类` …），同样走 json_each 比 tracks 里的
+    `direction` 字段，不做全文 LIKE——否则 `产品` 会命中岗位名里的「产品经理」。
+    deadline_before / deadline_after：按**截止日**筛（YYYY-MM-DD）。只看 apply_end 有值的条目，
+    `--deadline-before` 用来找「快截止的」，`--deadline-after` 用来排除已过的。
+    没写截止日的条目**不会**被这两个筛选返回——语义是"我知道它什么时候截止，且符合范围"。
     """
     def run(exact: bool) -> list[dict]:
         where, args = [], []
@@ -433,14 +452,51 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         if has_tracks:
             where.append("tracks IS NOT NULL AND tracks NOT IN ('', '[]')")
         if has_window:
-            where.append("apply_start IS NOT NULL AND apply_end IS NOT NULL")
+            # 「有网申时间」= 起止任一有值。以前要求两端都必须有，于是写着
+            # 「截止 12-31、开始未公布」的批次被判定成"没有网申时间"——
+            # 对用户来说恰恰相反：他知道什么时候截止，这正是最有用的一半。
+            # 与 release_check.calendar_ratios 的口径保持一致。
+            where.append("((apply_start IS NOT NULL AND TRIM(CAST(apply_start AS TEXT)) != '') "
+                         "OR (apply_end IS NOT NULL AND TRIM(CAST(apply_end AS TEXT)) != ''))")
+        if city:
+            where.append(
+                "EXISTS (SELECT 1 FROM json_each(entry.cities) c "
+                "WHERE c.value = ? OR c.value = ?)")
+            args += [city, city.removesuffix("市")]
+        if direction:
+            where.append(
+                "EXISTS (SELECT 1 FROM json_each(entry.tracks) t "
+                "WHERE json_extract(t.value, '$.direction') LIKE ?)")
+            args.append(f"%{direction}%")
+        if deadline_before:
+            where.append("apply_end IS NOT NULL AND apply_end <= ?")
+            args.append(deadline_before)
+        if deadline_after:
+            where.append("apply_end IS NOT NULL AND apply_end >= ?")
+            args.append(deadline_after)
         if open_on:
             where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
             args += [open_on, open_on]
+            # 明确问「某天还在开放」时，已经过了截止日的条目绝不能算进来。
+            # 上面那个条件对 apply_end 为 NULL 的条目是放行的（没写截止日 ≠ 已截止），
+            # 但写了截止日且早于那天的必须挡掉——否则「今天还能投什么」会返回去年的批次。
+            where.append("(apply_end IS NULL OR apply_end >= ?)")
+            args.append(open_on)
         sql = "SELECT * FROM entry"
         if where:
             sql += " WHERE " + " AND ".join(where)
-        sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
+        # 排序：问到「截止日」的问题就按截止日排，问到「什么时候开放」就按开放日排。
+        # 原来一律按 group_name 排，`--deadline-before 2026-12-31` 会把 ABB 排在前面、
+        # 而一周内截止的 TCL/三峡 沉在 200 条之后——用户在问「最紧迫的是哪个」，
+        # 按字母序回答等于没回答。没有相关日期的条目排最后（NULLS LAST），不占头部。
+        if deadline_before or deadline_after or (open_on and not (group or company)):
+            sql += (" ORDER BY (apply_end IS NULL), apply_end, group_name, grad_year DESC, "
+                    "project_type, id LIMIT ?")
+        elif open_on:
+            sql += (" ORDER BY (apply_start IS NULL), apply_start DESC, group_name, grad_year DESC, "
+                    "project_type, id LIMIT ?")
+        else:
+            sql += " ORDER BY origin DESC, group_name, grad_year DESC, project_type, id LIMIT ?"
         rows = [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
         if open_on:
             for d in rows:
@@ -455,12 +511,52 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     return run(exact=False)
 
 
+def calendar_filter_advice(cal_conn, *, city=None, direction=None) -> str:
+    """城市/方向筛选为空时说清楚「为什么空」。
+
+    这两个字段只在简章或职位列表里明写时才有值，空结果里既有"确实没有"也有"没写"。
+    把两者的数量摆出来，调用方才知道能不能下结论。
+
+    措辞不带 `--city` 这种命令行写法：这段文字既给 CLI 用户看、也给 MCP 的 AI 助手看，
+    对后者来说「去掉 --city 再查」是一句它做不到的指令。统一说成「去掉城市条件」。
+    """
+    parts = []
+    if city:
+        c = city.removesuffix("市")
+        n = cal_conn.execute(
+            "SELECT COUNT(*) FROM entry WHERE EXISTS (SELECT 1 FROM json_each(entry.cities) x "
+            "WHERE x.value = ? OR x.value = ?)", (c, city)).fetchone()[0]
+        total = cal_conn.execute("SELECT COUNT(*) FROM entry").fetchone()[0]
+        withcity = cal_conn.execute(
+            "SELECT COUNT(*) FROM entry WHERE cities IS NOT NULL AND cities NOT IN ('','[]')").fetchone()[0]
+        if n == 0:
+            parts.append(
+                f"没有条目写了「{c}」这个城市。注意：只有 {withcity}/{total} 条写了城市，"
+                f"所以这不等于「{c} 没有岗位」——去掉城市条件再查一次，或直接看该公司条目的入口")
+        else:
+            parts.append(f"「{c}」命中 {n} 条")
+    if direction:
+        n = cal_conn.execute(
+            "SELECT COUNT(*) FROM entry WHERE EXISTS (SELECT 1 FROM json_each(entry.tracks) t "
+            "WHERE json_extract(t.value,'$.direction') LIKE ?)", (f"%{direction}%",)).fetchone()[0]
+        if n == 0:
+            dirs = [r[0] for r in cal_conn.execute(
+                "SELECT DISTINCT json_extract(t.value,'$.direction') FROM entry, "
+                "json_each(entry.tracks) t WHERE json_extract(t.value,'$.direction') IS NOT NULL "
+                "ORDER BY 1")]
+            parts.append(f"没有「{direction}」方向。现有方向：{'、'.join(dirs)}")
+    return "；".join(parts)
+
+
 def empty_result_hints(rows, *, company_match=None, grad_year=None, city=None,
                        category=None) -> list[str]:
     """结果为空时告诉调用方「下一步怎么查」。
 
     有结果时返回空列表。空结果最常见的两个原因是：字段没写（届别/城市/职类来自标题或 JD，
     很多岗位两处都不写）和公司名没唯一确定——不提示的话，agent 会把它们说成「没有岗位」。
+
+    措辞里写「条件」而不是 `--flag`：这段文字同时出现在 CLI 输出和 MCP 返回给 AI 助手的
+    `hints` 里，对后者「加 --contains」是它做不到的指令，只会被原样念给用户。
     """
     if rows:
         return []
@@ -469,10 +565,11 @@ def empty_result_hints(rows, *, company_match=None, grad_year=None, city=None,
     if cm.get("match") in ("none", "ambiguous"):
         cands = "、".join(cm.get("candidates") or [])
         out.append(f"公司名没有唯一确定（{cm['match']}）" + (f"，候选：{cands}" if cands else "")
-                   + "；换完整公司名，或加 --contains 按子串搜")
-    for flag, label in ((grad_year, "--grad-year"), (city, "--city"), (category, "--category")):
+                   + "；换完整公司名，或用子串匹配再搜一次")
+    for flag, label in ((grad_year, "届别"), (city, "城市"), (category, "职类")):
         if flag:
-            out.append(f"{label} 只命中该字段有值的岗位（很多校招岗位不写届别/城市）；去掉它再查一次")
+            out.append(f"按{label}筛只命中写了{label}的岗位（很多校招岗位不写届别/城市）；"
+                       f"去掉{label}条件再查一次")
     return out
 
 
@@ -496,7 +593,9 @@ def calendar_hint(cal_conn, term: str) -> dict | None:
         "grad_years": years,
         "project_types": types[:6],
         "apply_url": next((r["apply_url"] for r in rows if r.get("apply_url")), None),
-        "cmd": f"jobradar calendar --group {term} --table",
+        # cmd 只是「想看完整条目时在终端里怎么敲」，MCP 的 AI 助手用不上也不该照念，
+        # 所以字段名写清楚用途，避免被当作用户可执行的下一步。
+        "cli_hint": f"jobradar calendar --group {term} --table",
     }
     if reason:
         out["blocked_reason"] = reason
@@ -539,6 +638,40 @@ def calendar_stats(cal_conn) -> dict:
     covered_any = sum(
         1 for t in targets
         if t["name"] in with_cal or (t["data_companies"] or "[]") not in ("[]", "", None))
+
+    # 字段完整度：10 个用户要求的字段各自填了多少条。
+    # 只报总数没用——「覆盖率 62%」看不出到底是缺截止日还是缺城市，
+    # 而这两个缺口的成因完全不同（前者是源不说，后者是门户不返回城市字段）。
+    total = cal_conn.execute("SELECT COUNT(*) FROM entry").fetchone()[0]
+    def _filled(col: str) -> int:
+        return cal_conn.execute(
+            f"SELECT COUNT(*) FROM entry WHERE {col} IS NOT NULL "
+            f"AND TRIM(CAST({col} AS TEXT)) NOT IN ('', '[]', 'null', '{{}}')").fetchone()[0]
+    fields = {
+        "company": _filled("company"),
+        "grad_year": _filled("grad_year"),
+        "project_type": _filled("project_type"),
+        "tracks": _filled("tracks"),
+        "apply_start": _filled("apply_start"),
+        "apply_end": _filled("apply_end"),
+        "cities": _filled("cities"),
+        "apply_url": _filled("apply_url"),
+        "source": _filled("source_name"),
+        "as_of": _filled("as_of"),
+    }
+    # 「≥7/10 字段填满」是发布门槛用的口径，这里直接把分数给出来，省得用户自己数
+    complete = cal_conn.execute(
+        "SELECT COUNT(*) FROM entry WHERE "
+        "(company IS NOT NULL AND TRIM(company) != '') + "
+        "(grad_year IS NOT NULL) + "
+        "(project_type IS NOT NULL AND TRIM(project_type) != '') + "
+        "(tracks IS NOT NULL AND TRIM(tracks) NOT IN ('', '[]')) + "
+        "(apply_start IS NOT NULL) + (apply_end IS NOT NULL) + "
+        "(cities IS NOT NULL AND TRIM(cities) NOT IN ('', '[]')) + "
+        "(apply_url IS NOT NULL AND TRIM(apply_url) != '') + "
+        "(source_name IS NOT NULL AND TRIM(source_name) != '') + "
+        "(as_of IS NOT NULL AND TRIM(as_of) != '') >= 7").fetchone()[0]
+
     return {
         "targets": len(targets),
         "calendar_covered": sum(t["name"] in with_cal for t in targets),
@@ -549,6 +682,10 @@ def calendar_stats(cal_conn) -> dict:
         "jd_page_covered": sum(t["name"] in with_jd for t in targets),
         "jd_covered": sum(t["name"] in with_jd for t in targets),
         "entries": {"manual": origin.get("manual", 0), "auto": origin.get("auto", 0)},
+        "entries_total": total,
+        "field_filled": fields,
+        "entries_complete_7of10": complete,
+        "field_ratio": {k: (round(v / total, 3) if total else 0.0) for k, v in fields.items()},
         "by_sector": list(sectors.values()),
         "missing_calendar": [t["name"] for t in targets if t["name"] not in with_cal],
         "jd_blocked": [{"name": t["name"], "reason": t["blocked_reason"]} for t in targets if t["blocked_reason"]],
@@ -580,7 +717,7 @@ def field_coverage(jobs_conn) -> dict:
 
     城市/届次缺失是"来源没给"，不是"没有"——见 skill/jobradar/references/fields.md。
     """
-    n, city, gy, cat, deg, campus, campus_city, campus_gy = jobs_conn.execute("""
+    n, city, gy, cat, deg, campus, campus_city, campus_gy, pub, end = jobs_conn.execute("""
         SELECT COUNT(*),
                SUM(cities IS NOT NULL AND cities NOT IN ('', '[]')),
                SUM(grad_year IS NOT NULL),
@@ -588,7 +725,9 @@ def field_coverage(jobs_conn) -> dict:
                SUM(degree_min IS NOT NULL),
                SUM(recruit_type = 'campus'),
                SUM(recruit_type = 'campus' AND cities IS NOT NULL AND cities NOT IN ('', '[]')),
-               SUM(recruit_type = 'campus' AND grad_year IS NOT NULL)
+               SUM(recruit_type = 'campus' AND grad_year IS NOT NULL),
+               SUM(publish_at IS NOT NULL),
+               SUM(apply_end IS NOT NULL)
         FROM job WHERE closed_at IS NULL""").fetchone()
 
     def ratio(x, base):
@@ -596,6 +735,9 @@ def field_coverage(jobs_conn) -> dict:
 
     return {"cities": ratio(city, n), "grad_year": ratio(gy, n), "category": ratio(cat, n),
             "degree_min": ratio(deg, n),
+            # 日历要「网申时间: X ~ Y」这一段，所以这两个字段的覆盖率和城市一样关键：
+            # 只报城市不报日期，agent 会以为日期是全的（实测全库 publish_at 只有个位数百分比）。
+            "publish_at": ratio(pub, n), "apply_end": ratio(end, n),
             "campus_cities": ratio(campus_city, campus), "campus_grad_year": ratio(campus_gy, campus)}
 
 

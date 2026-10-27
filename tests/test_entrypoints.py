@@ -15,8 +15,10 @@ def test_python_m_jobradar_works():
     回归背景：2026-10-23 用 wheel 装进干净 venv 才发现 `python -m jobradar` 报
     "No module named jobradar.__main__"——之前只有 `jobradar` 命令行入口。
     """
+    # stdin 显式给 DEVNULL：父进程 stdin 若是「永不关闭的管道」（后台任务、部分 CI/沙箱），
+    # 子进程会一直等输入，在 capture_output 下表现为挂住 60s+（2026-10-27 实测）。
     r = subprocess.run([sys.executable, "-m", "jobradar", "--version"],
-                       capture_output=True, text=True, timeout=60)
+                       capture_output=True, text=True, timeout=60, stdin=subprocess.DEVNULL)
     assert r.returncode == 0, r.stderr
     assert "jobradar" in r.stdout.lower()
 
@@ -28,7 +30,7 @@ def test_mcp_server_prints_help_instead_of_hanging():
     用户配 MCP 客户端时完全不知道自己命令写对没有。
     """
     r = subprocess.run([sys.executable, "-m", "jobradar.mcp_server", "--help"],
-                       capture_output=True, text=True, timeout=30)
+                       capture_output=True, text=True, timeout=30, stdin=subprocess.DEVNULL)
     assert r.returncode == 0, r.stderr
     assert "MCP" in r.stdout
 
