@@ -6,10 +6,12 @@
 - SQLite 写入只在主线程进行：抓取并行，入库串行。
 """
 
+import random
 import time
 from collections import defaultdict
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 
 import httpx
 
@@ -82,7 +84,8 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           client_factory: Callable[[], httpx.Client] = make_client,
           adapters: dict[str, type[Adapter]] | None = None,
           sleep: Callable[[float], None] = time.sleep,
-          max_workers: int = 4, budget_seconds: float | None = None) -> dict[str, RunResult]:
+          max_workers: int = 4, budget_seconds: float | None = None,
+          order_seed: int | None = None) -> dict[str, RunResult]:
     adapters = adapters if adapters is not None else load_all()
     deadline = time.monotonic() + budget_seconds if budget_seconds else None
     # 并行单位从「适配器」改成「适配器 + 站点」：北森几百个租户各自是不同子域，
@@ -99,9 +102,16 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
             continue
         groups[(s.adapter, _site_key(s))].append(s)
 
+    # 组顺序每天轮换一次：站点组比预算多得多，固定顺序会让排在 5,400 秒之后的源
+    # 永远抢不到预算（源数从 738 涨到 1,125 之后尾部已经占三成）。用日期做种子，
+    # 同一天内顺序稳定、跨天整体轮转，跑满 K 天每个源都会被轮到。
+    items = list(groups.items())
+    seed = order_seed if order_seed is not None else int(datetime.now().strftime("%Y%m%d"))
+    random.Random(seed).shuffle(items)
+
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)
-                   for (aid, _site), srcs in groups.items()]
+                   for (aid, _site), srcs in items]
         for fut in as_completed(futures):
             for source, jobs, error, elapsed in fut.result():
                 if jobs is None:

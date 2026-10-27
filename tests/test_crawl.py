@@ -129,3 +129,29 @@ def test_site_key_separates_tenants_but_keeps_shared_hosts_serial():
     assert _site_key(src("b", tenant="beta")) == "beta"          # 不同租户 → 不同组 → 可并行
     assert _site_key(src("c", host="wecruit.hotjob.cn", tenant="SU1")) == "wecruit.hotjob.cn"
     assert _site_key(src("d", host="wecruit.hotjob.cn", tenant="SU2")) == "wecruit.hotjob.cn"  # 同站 → 同组
+
+
+class Recording(ExampleAdapter):
+    """按开始顺序记下被调度的源（每源单独一个站点组）。"""
+
+    order: list[str] = []
+
+    def fetch_raw(self):
+        Recording.order.append(self.source.id)
+        return super().fetch_raw()
+
+
+def test_crawl_rotates_site_group_order_by_seed(jobs_db, text_db):
+    """站点组比预算多得多，固定顺序会让尾部源永远跑不到：不同日期种子要换一批排头。"""
+    def run(seed):
+        Recording.order = []
+        sources = [example_source(id=f"s{i}", params={"tenant": f"t{i}", "path": "jobs"})
+                   for i in range(8)]
+        crawl(sources, jobs_db, text_db, ts=T(1), client_factory=replay_client,
+              adapters={"example": Recording}, sleep=lambda s: None,
+              max_workers=1, order_seed=seed)
+        return list(Recording.order)
+
+    a, b = run(1), run(2)
+    assert sorted(a) == sorted(b) == [f"s{i}" for i in range(8)]  # 每个源都跑到，只是顺序不同
+    assert a != b
