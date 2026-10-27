@@ -2,6 +2,22 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.4.2] - 2026-10-28
+
+### 改进
+
+- **公司清单合并别名行**：`companies.jsonl` 1,664 → 1,649 行。15 组“同一家公司写成两行”
+  （西门子 / 西门子中国、通威 / 通威股份、三一集团 / 三一集团（校招门户）、三星 / 中国三星、
+  大华股份 / 大华、阿斯利康 / 阿斯利康中国 等）按“指向同一个招聘门户”或“去掉集团/股份/有限公司
+  与前后‘中国’后同名”合并；保留 ATS 入口与岗位数更全的一行，被合并的别名记进
+  `evidence.grade_why`。覆盖目标数与源清单不受影响（源仍 1,125 个）。
+- 公司名归一化抽成 `work/company_keys.py`（`key()` / `score()`），`work/append_companies.py`
+  与 `work/merge_companies.py` 共用，后续追加新公司不会再长出“西门子中国”这类变体；
+  `work/merge_companies.py` 默认 dry-run 逐组打印，人工确认后再 `--write`。
+
+### 测试
+
+- 新增 `tests/test_companies_jsonl.py`：字段齐全、归一化后公司名不重复、入口不指向聚合站、版本号格式。
 ## [1.4.1] - 2026-10-28
 
 ### 改进

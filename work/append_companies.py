@@ -18,15 +18,11 @@ WORK = ROOT / "work"
 sys.path.insert(0, str(ROOT / "src"))
 
 import yaml  # noqa: E402
+from company_keys import key as core  # noqa: E402  与 merge_companies 共用同一套归一化
 
 from jobradar.sources import load_sources  # noqa: E402
 
-CORE = re.compile(r"(股份有限公司|有限责任公司|有限公司|集团控股|集团|控股|公司)$")
 KIND = {"beisen_host": "beisen"}
-
-
-def core(name: str) -> str:
-    return CORE.sub("", (name or "").strip())
 
 
 def load_counts() -> dict[tuple[str, str], dict]:
