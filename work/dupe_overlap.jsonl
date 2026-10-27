@@ -1,0 +1,16 @@
+{"company": "中国外运", "a": "beisen-sinotrans", "b": "beisen-sinotrans-csc", "count_a": 520, "count_b": 20, "overlap": 0.0}
+{"company": "北方华创", "a": "beisen-bfhc3", "b": "beisen-bfhc", "count_a": 22, "count_b": 321, "overlap": 0.0}
+{"company": "华海清科", "a": "beisen-hwatsing", "b": "beisen-hwatsing1", "count_a": 17, "count_b": 31, "overlap": 0.294}
+{"company": "宇信科技", "a": "beisen-yusys", "b": "beisen-yusys-campus", "count_a": 278, "count_b": 10, "overlap": 0.0}
+{"company": "德力西", "a": "beisen-delixi-electric3", "b": "beisen-delixi", "count_a": 51, "count_b": 21, "overlap": 0.0}
+{"company": "新大陆", "a": "beisen-newland", "b": "beisen-newlandpayment", "count_a": 43, "count_b": 21, "overlap": 0.231}
+{"company": "正大天晴", "a": "beisen-cttq", "b": "beisen-njcttq", "count_a": 779, "count_b": 155, "overlap": 0.0}
+{"company": "正海生物", "a": "beisen-zh-tech", "b": "beisen-zhbio", "count_a": 19, "count_b": 1, "overlap": 0.0}
+{"company": "海正药业", "a": "beisen-hisun", "b": "beisen-hisunpharm", "count_a": 13, "count_b": 34, "overlap": 0.0}
+{"company": "潍柴动力", "a": "beisen-weichai", "b": "beisen-weichaidongli", "count_a": 246, "count_b": 246, "overlap": 1.0}
+{"company": "灵猴机器人", "a": "beisen-bozhon4", "b": "beisen-linkhou", "count_a": 79, "count_b": 87, "overlap": 0.0}
+{"company": "睿创微纳", "a": "beisen-raytrontek", "b": "beisen-raytrontek1", "count_a": 240, "count_b": 309, "overlap": 0.045}
+{"company": "贝壳", "a": "beisen-campuske", "b": "beisen-ke", "count_a": 56, "count_b": 56, "overlap": 1.0}
+{"company": "郎酒", "a": "beisen-langjiu", "b": "beisen-langjiu3", "count_a": 30, "count_b": 30, "overlap": 1.0}
+{"company": "长安汽车", "a": "beisen-changan", "b": "beisen-changanqiche", "count_a": 373, "count_b": 373, "overlap": 1.0}
+{"company": "长江证券", "a": "beisen-cjzq", "b": "beisen-cjzq1", "count_a": 11, "count_b": 44, "overlap": 0.0}

@@ -6,4 +6,4 @@ PyPI 发布名从 jobradar 改成 jobsearchradar 后，CLI 还在按旧 distribu
 --version 直接退回到 0.1.0）。
 """
 
-__version__ = "1.4.0"
+__version__ = "1.4.1"
