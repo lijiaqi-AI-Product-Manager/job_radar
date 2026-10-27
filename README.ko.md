@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.4.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,8 +14,9 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 
 ![demo](docs/assets/demo-en.gif)
 
-> **데이터(2026-10-26)**: **370개 소스** · **97,607개 오픈 공고** · **JD 원문 99.8%**
-> 목표 1,014개 기업 중 **891개**가 캘린더 보유(공고 단위는 **264개**, 총 **895개**).
+> **커버리지(2026-10-28)**: **1,131개 소스**(베이센 870 / 다이이 94 / Feishu ATSX 51 / Tupu360 32 / Workday 25 등) ·
+> **1,099개 기업** · **23개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **547개(33%)** 확보.
+> 공고 수와 JD 커버리지는 매일 크롤링 후 갱신됩니다(최신 Release 기준).
 
 ## 특징
 
@@ -64,11 +65,13 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 읽기 쉬운 �
 
 | 항목 | 현황 |
 |---|---|
-| 캘린더 커버리지 | 891/1,014 (나머지 17개는 robots/로그인/DNS 로 불가) |
-| 공고 단위 | 264/1,014 (나머지는 자체 사이트 또는 암호화 플랫폼) |
-| 대형 테크 | 알리바바·텐센트·메이투안 등은 공고 있음. 바이트댄스·징둥·화웨이는 캘린더만 |
-| 지원 기간 | 1,372건 중 8건(0.6%)만 시작·마감 모두 기재 |
-| 중복 | 9.2% 가 동일 기업·제목·도시(`--dedupe` 로 통합) |
+| 목표 커버리지 | **547/1,655(33%)** (나머지 12개는 robots/로그인/암호화로 불가) |
+| 소스 | **1,131개 소스 / 1,099개 기업** (베이센 870, 다이이 94, Feishu ATSX 51, Tupu360 32, 구 베이센 28, Workday 25, 구 다이이 12, 자체 사이트 19) |
+| 성별 커버리지 | 광둥 18/49(37%), 저장 13/44(30%), 장쑤 9/34(26%), 쓰촨 9/30(30%), 산둥 7/26(27%). 전체 표는 `scripts/coverage_report.py` |
+| 대형 테크 | 알리바바·텐센트·메이투안·넷이즈·바이두·징둥·바이트댄스·vivo·체리·CICC·BOE·하이센스·PICC 는 공고 있음. 화웨이는 캘린더만(WAF 403) |
+| 캘린더 항목 | 2026-10-26 전체 크롤 기준 74.9% 가 11개 항목 중 7개 이상 보유 |
+| 지원 기간 | 가장 약한 항목(2026-10-26 기준 완전한 기간은 0.6%). `apply_end` 는 공고의 최빈 날짜 |
+| 중복 | 2026-10-26 기준 9.2% 가 동일 기업·제목·도시(`--dedupe` 로 통합) |
 | 이력 | 2026-10-19 부터 누적, 추세 분석은 아직 5~7일 |
 
 내부 프로세스 문서는 [docs/internal/](docs/internal/) 에 있습니다.

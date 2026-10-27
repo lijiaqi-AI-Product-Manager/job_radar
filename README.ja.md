@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | 日本語 | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.4.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,8 +14,9 @@ CLI・MCP・Skill を同梱しているので、AI エージェントは API キ
 
 ![demo](docs/assets/demo-en.gif)
 
-> **データ（2026-10-26 時点）**：**370 ソース** · **97,607 件の募集中求人** ·
-> **JD 全文 99.8%** · 目標 1,014 社のうち **891 社**がカレンダーを保有（求人レベルは **264 社**、合計 **895 社**）。
+> **カバレッジ（2026-10-28 時点）**：**1,131 ソース**（北森 870 / 大易 94 / Feishu ATSX 51 / Tupu360 32 / Workday 25 ほか）·
+> **1,099 社** · **23 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **547 社（33%）** が取得可能。
+> 求人数・JD カバレッジは毎日のクロールで更新されます（最新の Release を参照）。
 
 ## 特長
 
@@ -64,11 +65,13 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 読みやすい
 
 | 項目 | 現状 |
 |---|---|
-| カレンダー網羅 | 891/1,014（残り 17 社は robots／ログイン／DNS で不可） |
-| 求人レベル | 264/1,014（残りは独自サイトか暗号化プラットフォーム） |
-| 大手 | 阿里・騰訊・美団・網易などは求人あり。字節跳動・京東・華為はカレンダーのみ |
-| 応募期間 | 1,372 件中 8 件（0.6%）だけが開始・締切の両方を記載 |
-| 重複 | 9.2% が同一会社・同一タイトル・同一都市（`--dedupe` で集約） |
+| 目標網羅 | **547/1,655（33%）**（残り 12 社は robots／ログイン／暗号化で不可） |
+| ソース | **1,131 ソース / 1,099 社**（北森 870、大易 94、Feishu ATSX 51、Tupu360 32、旧北森 28、Workday 25、旧大易 12、独自サイト 19） |
+| 省別網羅 | 広東 18/49（37%）、浙江 13/44（30%）、江蘇 9/34（26%）、四川 9/30（30%）、山東 7/26（27%）。全表は `scripts/coverage_report.py` |
+| 大手 | 阿里・騰訊・美団・網易・百度・京東・字節跳動・vivo・奇瑞・中金・BOE・海信・中国人保などは求人あり。華為はカレンダーのみ（WAF 403） |
+| カレンダー項目 | 2026-10-26 の全クロール時点で 74.9% が 11 項目中 7 項目以上 |
+| 応募期間 | 最も弱い項目（2026-10-26 時点で完全な期間は 0.6%）。`apply_end` は募集の最頻日を採用 |
+| 重複 | 2026-10-26 時点で 9.2% が同一会社・同一タイトル・同一都市（`--dedupe` で集約） |
 | 履歴 | 2026-10-19 以降。トレンド分析はまだ 5〜7 日分 |
 
 詳細は [CLAUDE.md](CLAUDE.md)、社内プロセス文書は [docs/internal/](docs/internal/)。

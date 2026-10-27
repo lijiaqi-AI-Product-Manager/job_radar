@@ -34,3 +34,27 @@ sources:
     company: 奇安信
     recruit_types: [social]
     params: {host: www.hotjob.cn, tenant: qianxin, max_pages: 7, page_size: 10}
+  - id: hotjob-legacy-szjc
+    company: HTTP状态404
+    params: {host: szjc.hotjob.cn, tenant: szjc, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 10 岗
+  - id: hotjob-legacy-wanda
+    company: 万达
+    params: {host: wanda.hotjob.cn, tenant: wanda, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 10 岗
+  - id: hotjob-legacy-uaes
+    company: 联合电子
+    params: {host: www.hotjob.cn, tenant: uaes, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 10 岗
+  - id: hotjob-legacy-suporcw
+    company: 苏泊尔
+    params: {host: www.hotjob.cn, tenant: suporcw, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 10 岗
+  - id: hotjob-legacy-gyasset
+    company: 高毅资产
+    params: {host: gyasset.hotjob.cn, tenant: gyasset, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 5 岗
+  - id: hotjob-legacy-wistron
+    company: 纬创资通
+    params: {host: wistron.hotjob.cn, tenant: wistron, max_pages: 5, page_size: 10}
+    # 2026-10-28 subdomain.center 枚举；首页 6 岗

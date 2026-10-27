@@ -328,3 +328,51 @@ sources:
     company: 河南能源
     params: {host: wecruit.hotjob.cn, tenant: SU62c3f8b42f9d241e4c8e84de}
     # 2026-10-27 搜索反查新增：校招 73 岗；城市 50/50、发布日 50/50；岗位代码前缀 HNEC
+  - id: hotjob-su6149ff530dcad47003d01511
+    company: 华润
+    params: {host: wecruit.hotjob.cn, tenant: SU6149FF530DCAD47003D01511, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 30 岗
+  - id: hotjob-su66c83b1b1eb80543256c6529
+    company: 康师傅
+    params: {host: wecruit.hotjob.cn, tenant: SU66C83B1B1EB80543256C6529, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 30 岗
+  - id: hotjob-su66d7f4aa6202cc2d4991438b
+    company: 精进电动
+    params: {host: wecruit.hotjob.cn, tenant: SU66D7F4AA6202CC2D4991438B, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 30 岗
+  - id: hotjob-su650d409e6202cc7d7a295264
+    company: 紫光展锐
+    params: {host: wecruit.hotjob.cn, tenant: SU650D409E6202CC7D7A295264, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 30 岗
+  - id: hotjob-su6056b00a0dcad424d03e153c
+    company: 中国电科院
+    params: {host: wecruit.hotjob.cn, tenant: SU6056B00A0DCAD424D03E153C, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 27 岗
+  - id: hotjob-su64faea1b1c240e4e45d27d61
+    company: 江西银行
+    params: {host: wecruit.hotjob.cn, tenant: SU64FAEA1B1C240E4E45D27D61, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 20 岗
+  - id: hotjob-su629dbc0c0dcad452299bc0f7
+    company: cms
+    params: {host: cms.hotjob.cn, tenant: SU629DBC0C0DCAD452299BC0F7, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 15 岗
+  - id: hotjob-su6212eaf20dcad466450cc295
+    company: fcsc
+    params: {host: fcsc.hotjob.cn, tenant: SU6212EAF20DCAD466450CC295, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 10 岗
+  - id: hotjob-su61f12a51bef57c632bf1a7ab
+    company: sinocare
+    params: {host: sinocare.hotjob.cn, tenant: SU61F12A51BEF57C632BF1A7AB, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 10 岗
+  - id: hotjob-su638844ea0dcad415783e055a
+    company: 中移在线
+    params: {host: wecruit.hotjob.cn, tenant: SU638844EA0DCAD415783E055A, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 10 岗
+  - id: hotjob-su6347a98c0dcad41245ec8ac6
+    company: minmetalssteel
+    params: {host: minmetalssteel.hotjob.cn, tenant: SU6347A98C0DCAD41245EC8AC6, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 3 岗
+  - id: hotjob-su62b2ae672f9d24458d72f9cc
+    company: ctyun
+    params: {host: ctyun.hotjob.cn, tenant: SU62B2AE672F9D24458D72F9CC, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 1 岗

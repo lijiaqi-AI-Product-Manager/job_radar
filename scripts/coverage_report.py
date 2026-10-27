@@ -38,6 +38,19 @@ def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | 
     for sector, names in targets["sectors"].items():
         c = sum(1 for n in names if matched[n] and n not in blocked)
         lines.append(f"| {sector} | {len(names)} | {c} | {c / len(names):.0%} |")
+    prov = targets.get("provinces") or {}
+    if prov:
+        lines += ["", f"## 分省覆盖率（{len(prov)} 个省级行政区）", "",
+                  "| 省份 | 目标 | 已覆盖 | 覆盖率 |", "|---|---|---|---|"]
+        empty = []
+        for p, names in prov.items():
+            uniq = list(dict.fromkeys(names))
+            c = sum(1 for n in uniq if matched.get(n) and n not in blocked)
+            lines.append(f"| {p} | {len(uniq)} | {c} | {c / len(uniq):.0%} |")
+            if c == 0:
+                empty.append(p)
+        if empty:
+            lines.append(f"\n零覆盖省份 {len(empty)} 个：{'、'.join(empty)}")
     lines += ["", "## 已覆盖", ""]
     for sector, names in targets["sectors"].items():
         got = [n for n in names if matched[n] and n not in blocked]

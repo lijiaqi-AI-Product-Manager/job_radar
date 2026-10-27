@@ -1,0 +1,914 @@
+{"company": "拼多多", "sector": "互联网与软件", "found": null, "tried": ["https://careers.pddglobalhr.com/campus", "https://careers.pddglobalhr.com/campus/grad", "https://www.pinduoduo.com/home/campus/", "https://careers.pddglobalhr.com/jobs"]}
+{"company": "快手", "sector": "互联网与软件", "found": null, "tried": ["https://zhaogongzuo.kuaishou.com/", "https://zhaogongzuo.kuaishou.com/login", "https://zhaopin.kuaishou.cn/recruit/e/", "https://www.kuaishou.com/joinus.he.html"]}
+{"company": "小米", "sector": "互联网与软件", "found": null, "tried": ["https://xiaomi.jobs.f.mioffice.cn/campus/", "https://xiaomi.jobs.f.mioffice.cn/campus/?location=CT_154&current=1&limit=10", "https://xiaomi.jobs.f.mioffice.cn/campus/login?redirect_path=%2Fposition%2Fapplication", "https://hr.xiaomi.com/website/campus.html"]}
+{"company": "蚂蚁集团", "sector": "互联网与软件", "found": null, "tried": ["https://talent.alibaba.com"]}
+{"company": "滴滴", "sector": "互联网与软件", "found": null, "tried": ["https://careers.didiglobal.com/"]}
+{"company": "携程", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://careers.trip.com/index.html"}, "tried": ["https://careers.ctrip.com/", "https://job.ctrip.com/", "https://careers.trip.com/index.html"]}
+{"company": "哔哩哔哩", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.bilibili.com/campus/", "https://jobs.bilibili.com/campus/positions?type=0", "https://jobs.bilibili.com/campus/positions?type=1", "https://jobs.bilibili.com/"]}
+{"company": "小红书", "sector": "互联网与软件", "found": null, "tried": ["https://job.xiaohongshu.com/campus/position", "https://job.xiaohongshu.com/campus/position?campusRecruitTypes=term_regular&referer_code=PCKVEFW7D9K1", "https://job.xiaohongshu.com/campus/position?jobProjects=campus_autumn_25", "https://job.xiaohongshu.com/campus/position?jobTypes=pro"]}
+{"company": "米哈游", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.mihoyo.com/", "https://jobs.mihoyo.com/?channelToken=xzfed5b781-b80340af90a7-26b712707267", "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=3B98FD4D82EE8A34E0653A68DD0E9B18", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/35327229235957760"]}
+{"company": "莉莉丝", "sector": "互联网与软件", "found": {"kind": "feishu_atsx", "slug": "lilithgames", "via": "url", "url": "https://lilithgames.jobs.feishu.cn/campus"}, "tried": ["https://lilithgames.jobs.feishu.cn/campus"]}
+{"company": "鹰角网络", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "public-cdn.mokahr.com", "via": "page", "url": "https://campus.hypergryph.com/campus_apply/hypergryph/26326/"}, "tried": ["https://campus.hypergryph.com/campus_apply/hypergryph/26326/"]}
+{"company": "叠纸", "sector": "互联网与软件", "found": null, "tried": ["https://career.papegames.com/campus", "https://career.papegames.com/referral/campus/position?token=MzsxNzI1NTA4NjI5MTA0OzcwOTU2NDA5MTkxMTQ1OTYzNTM7MDsxLzE", "https://career.papegames.com/social", "https://career.papegames.com/PaperStar"]}
+{"company": "完美世界", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://jobs.games.wanmei.com/school.html"}, "tried": ["https://jobs.games.wanmei.com/school.html"]}
+{"company": "金山办公", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://join.wps.cn/campus-recruitment/wps/41436?sourceToken=8379ee777457c4d22fc65d4439f660b3#/"}, "tried": ["https://join.wps.cn/campus-recruitment/wps/41436?sourceToken=8379ee777457c4d22fc65d4439f660b3#/"]}
+{"company": "旷视科技", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "http://zhaopin.megvii.com/apply/megviihr/38641/"}, "tried": ["http://zhaopin.megvii.com/apply/megviihr/38641/"]}
+{"company": "唯品会", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app-tc.mokahr.com/campus-recruitment/vipshophr/10039?sourceToken=d7b00ea2471aaddd55b3f402bb4fcc19"}, "tried": ["https://app-tc.mokahr.com/campus-recruitment/vipshophr/10039?sourceToken=d7b00ea2471aaddd55b3f402bb4fcc19"]}
+{"company": "好未来", "sector": "互联网与软件", "found": null, "tried": ["https://job.tal.com/", "https://job.tal.com/campus/home", "https://job.tal.com/campus/positions/8402f44d-2eab-4ab9-b9a2-979269ffedb0", "https://jobs.tal.com/"]}
+{"company": "作业帮", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/zuoyebang/39595"}, "tried": ["https://app.mokahr.com/campus-recruitment/zuoyebang/39595"]}
+{"company": "猿辅导", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/"}, "tried": ["https://job.xasyxy.com/news/view/aid/408985/tag/tzgg", "https://hr.yuanfudao.com/campus-recruitment/fenbi/47742/"]}
+{"company": "知乎", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/zhihu/68321"}, "tried": ["https://app.mokahr.com/campus-recruitment/zhihu/68321"]}
+{"company": "微博", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://career.sina.com.cn/social-recruitment/sina/43535/"}, "tried": ["https://campus.163.com/", "https://career.sina.com.cn/social-recruitment/sina/43535/"]}
+{"company": "搜狐", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "http://campus.changyou.com/"}, "tried": ["http://campus.changyou.com/"]}
+{"company": "新浪", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://career.sina.com.cn/social-recruitment/sina/43535/"}, "tried": ["https://career.sina.com.cn/social-recruitment/sina/43535/"]}
+{"company": "月之暗面", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://careers.kimi.com/campus"}, "tried": ["https://careers.kimi.com/campus"]}
+{"company": "智谱", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-v8Y5ZCtaZ.html"}, "tried": ["https://campus.niuqizp.com/job-v8Y5ZCtaZ.html"]}
+{"company": "阶跃星辰", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/119440.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/119440.html"]}
+{"company": "深度求索", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "数字中国", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "同花顺", "sector": "互联网与软件", "found": null, "tried": ["http://campus.10jqka.com.cn/", "https://campus.10jqka.com.cn/", "http://campus.10jqka.com.cn/login", "https://campus.10jqka.com.cn/helps/qa"]}
+{"company": "东方财富", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/eastmoney/92400?locale=zh-CN"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/117244.html", "https://app.mokahr.com/campus-recruitment/eastmoney/92400?locale=zh-CN"]}
+{"company": "汇丰科技", "sector": "互联网与软件", "found": null, "tried": ["https://job.xidian.edu.cn/campus/view/id/757921", "https://apply.careers.hsbc.com/?locale=zh_CN", "https://recruit.inovance.com/", "https://portal.careers.hsbc.com/careers?location=China"]}
+{"company": "BOSS直聘", "sector": "互联网与软件", "found": null, "tried": ["https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/230983696444952576"]}
+{"company": "猎聘", "sector": "互联网与软件", "found": null, "tried": ["https://www.liepin.com/job/1986195649.shtml", "https://www.liepin.com/job/1986200315.shtml", "https://www.liepin.com/job/1986236609.shtml", "https://www.liepin.com/job/1986251859.shtml"]}
+{"company": "智联招聘", "sector": "互联网与软件", "found": null, "tried": ["http://edm.zhaopin.cn/DM/jump/"]}
+{"company": "前程无忧", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "苏宁易购", "sector": "互联网与软件", "found": null, "tried": ["http://campus.suning.cn/rps-campus/", "https://careers.suning.cn/rps-web/ftl/campus/index.htm", "http://campus.suning.cn/rps-campus/ftl/campus/managePlan.htm?type=manage", "https://careers.suning.cn/rps-web/ftl/campus/personInSuning.htm"]}
+{"company": "昆仑万维", "sector": "互联网与软件", "found": {"kind": "beisen", "slug": "kunlunxin", "via": "url", "url": "https://kunlunxin.zhiye.com/campuslist/?PageIndex=1"}, "tried": ["https://career.cup.edu.cn/user/login?referer=/campus/view/id/460305", "https://kunlunxin.zhiye.com/campuslist/?PageIndex=1"]}
+{"company": "吉比特", "sector": "互联网与软件", "found": null, "tried": ["http://campus.g-bits.com/home", "https://hr.g-bits.com/web/index.html", "https://join.g-bits.com/"]}
+{"company": "心动网络", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://hr.ztgame.com/campus/"}, "tried": ["https://hr.ztgame.com/campus/"]}
+{"company": "同程旅行", "sector": "互联网与软件", "found": null, "tried": ["https://careers.ctrip.com/"]}
+{"company": "满帮", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.fulltruckalliance.com/campus-recruitment/manbang/94191/"}, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=34649&zpxxId=30248", "https://campus.fulltruckalliance.com/campus-recruitment/manbang/94191/"]}
+{"company": "自如", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "58同城", "sector": "互联网与软件", "found": null, "tried": ["https://campus.niuqizp.com/job-vrY5aaNzN.html"]}
+{"company": "汽车之家", "sector": "互联网与软件", "found": null, "tried": ["https://talent.autohome.com.cn/campus_qa.html", "https://talent.autohome.com.cn/campus_news.html", "https://talent.autohome.com.cn/campus_index.html", "https://talent.autohome.com.cn/"]}
+{"company": "安居客", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "当当", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "华为", "sector": "通信与电子硬件", "found": null, "tried": ["https://career.huawei.com/reccampportal/next/mini/index.html", "https://career.huawei.com/reccampportal/next/mini/index_h5.html?language=cn", "https://career.huawei.com/reccampportal/portal5/campus-recruitment.html", "https://career.huawei.com/reccampportal/joinUs.html"]}
+{"company": "荣耀", "sector": "通信与电子硬件", "found": null, "tried": ["https://career.honor.com/SU60ee9e002f9d247b98da489e/mc/position/campus", "https://career.huawei.com/cn", "https://sso.hdu.edu.cn/login?service=https%3A%2F%2Fjob.hdu.edu.cn%2Fdefault%2Fhdu", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/232203970091814912"]}
+{"company": "OPPO", "sector": "通信与电子硬件", "found": null, "tried": ["https://careers.oppo.com/campus", "https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=37717&zpxxId=31798", "https://career.oppo.com/", "https://career.oppo.com/pc/"]}
+{"company": "联想", "sector": "通信与电子硬件", "found": null, "tried": ["https://talent.lenovo.com.cn/", "https://talent.lenovo.com.cn/index", "https://talent.lenovo.com.cn/campus", "https://talent.lenovo.com.cn/trainee"]}
+{"company": "中兴通讯", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/zte/46903"}, "tried": ["https://app.mokahr.com/campus-recruitment/zte/46903"]}
+{"company": "浪潮", "sector": "通信与电子硬件", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/117451.html"]}
+{"company": "海康威视", "sector": "通信与电子硬件", "found": null, "tried": ["https://talent.hikvision.com/", "https://career.nankai.edu.cn/correcruit/content/id/118370.html"]}
+{"company": "大疆", "sector": "通信与电子硬件", "found": null, "tried": ["https://careers.dji.com/zh-CN/campus", "https://careers.dji.com/zh-CN/campus/hot-jobs", "https://careers.dji.com/zh-CN/campus/recruitment?from=sec_nav", "https://careers.dji.com/zh-CN/campus/digital-recruitment"]}
+{"company": "TCL", "sector": "通信与电子硬件", "found": {"kind": "hotjob", "slug": "wecruit", "via": "page", "url": "https://campus.tcl.com/"}, "tried": ["https://campus.tcl.com/"]}
+{"company": "海尔", "sector": "通信与电子硬件", "found": null, "tried": ["https://maker.haier.net/client/campus/index", "https://maker.haier.net/client/campus/index.html", "https://maker.haier.net/", "https://www.haier.com/careers/"]}
+{"company": "美的", "sector": "通信与电子硬件", "found": null, "tried": ["https://careers.midea.com/schoolOut", "https://careers.midea.com/schoolOut/home", "https://careers.midea.com/schoolOut/about", "https://careers.midea.com/schoolOut/about?about=%E4%B8%AD%E5%9B%BD%E5%8C%BA%E5%9F%9F"]}
+{"company": "格力", "sector": "通信与电子硬件", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020954", "https://zhaopin.greeyun.com/job", "https://zhaopin.greeyun.com/home", "https://zhaopin.greeyun.com/home?navSelect=2"]}
+{"company": "舜宇光学", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.sunnyoptical.cn/campus-recruitment/sunnyoptical/45602/"}, "tried": ["https://campus.sunnyoptical.cn/campus-recruitment/sunnyoptical/45602/"]}
+{"company": "华虹集团", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.huahong.com.cn/?m=channel&id=50"}, "tried": ["https://www.huahong.com.cn/?m=channel&id=50"]}
+{"company": "紫光展锐", "sector": "半导体", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU650d409e6202cc7d7a295264/pb/social.html"}, "tried": ["https://wecruit.hotjob.cn/SU650d409e6202cc7d7a295264/pb/social.html"]}
+{"company": "海光信息", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116697.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116697.html"]}
+{"company": "寒武纪", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/cambricon/44201"}, "tried": ["https://app.mokahr.com/campus-recruitment/cambricon/44201"]}
+{"company": "壁仞科技", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vmy5aLtaC.html"}, "tried": ["https://campus.niuqizp.com/job-vmk5Z5tMn.html", "https://campus.niuqizp.com/job-vmy5aLtaC.html"]}
+{"company": "兆易创新", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/gigadevice/92215"}, "tried": ["https://app.mokahr.com/campus-recruitment/gigadevice/92215"]}
+{"company": "中微公司", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116861.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116861.html"]}
+{"company": "晶晨股份", "sector": "半导体", "found": {"kind": "beisen", "slug": "amlogicsh", "via": "url", "url": "https://amlogicsh.zhiye.com/campus?lang=zh_CN"}, "tried": ["https://amlogicsh.zhiye.com/campus?lang=zh_CN"]}
+{"company": "芯原股份", "sector": "半导体", "found": null, "tried": []}
+{"company": "澜起科技", "sector": "半导体", "found": null, "tried": ["https://campus.niuqizp.com/job-vsk5zzzCZ.html", "https://campus.niuqizp.com/job-vyl5zzN55.html"]}
+{"company": "圣邦股份", "sector": "半导体", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116690.html"]}
+{"company": "长电科技", "sector": "半导体", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118373.html", "https://job.bit.edu.cn/frontpage/bit/html/recruitmentinfoForm.html?positionDetailId=8804163714874baba755514af5c72be3&"]}
+{"company": "通富微电", "sector": "半导体", "found": null, "tried": []}
+{"company": "比亚迪", "sector": "汽车与出行", "found": null, "tried": ["https://job.byd.com/portal/pc/", "https://job.byd.com/portal/mobile/", "https://job.byd.com/portal/mobile/schoolSangfor?1wdfb1LbMwhz4TymXhCJbg==", "https://careers.byd.com/"]}
+{"company": "吉利", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.geelycv.com/campus-recruitment/geely/100151/"}, "tried": ["https://campus.geely.com/campus-recruitment/geely/78436/", "https://campus.geelycv.com/campus-recruitment/geely/100151/"]}
+{"company": "东风汽车", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html"}, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020837", "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html"]}
+{"company": "极氪", "sector": "汽车与出行", "found": {"kind": "feishu_atsx", "slug": "jtexpress", "via": "url", "url": "https://jtexpress.jobs.feishu.cn/478610"}, "tried": ["https://campus.geely.com/campus-recruitment/geely/78436/", "https://jtexpress.jobs.feishu.cn/478610"]}
+{"company": "华为车BU", "sector": "汽车与出行", "found": null, "tried": ["https://career.huawei.com/cn/campus-recruitment"]}
+{"company": "福田汽车", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "宇通客车", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU64a37a4dbef57c3af71c2478/pb/index.html"}, "tried": ["https://wecruit.hotjob.cn/SU64a37a4dbef57c3af71c2478/pb/index.html"]}
+{"company": "瑞浦兰钧", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "沃尔沃", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "大陆集团", "sector": "汽车与出行", "found": null, "tried": ["https://jobs.continental.com/zh/", "https://www.dlhope.com/join-us.html"]}
+{"company": "采埃孚", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "caf", "via": "url", "url": "https://caf.zhiye.com/"}, "tried": ["https://caf.zhiye.com/"]}
+{"company": "阳光电源", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/sungrow/94416"}, "tried": ["https://app.mokahr.com/campus-recruitment/sungrow/94416"]}
+{"company": "天合光能", "sector": "新能源与先进制造", "found": null, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=35967&zpxxId=30928"]}
+{"company": "晶科能源", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "徐工集团", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "正泰", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.chint.com/campus-recruitment/chint/40745/"}, "tried": ["https://campus.chint.com/campus-recruitment/chint/40745/"]}
+{"company": "国家电网", "sector": "央企与国企", "found": null, "tried": ["https://job.sgepri.sgcc.com.cn/nari-career-ui/homepage"]}
+{"company": "中国石油", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国石化", "sector": "央企与国企", "found": null, "tried": ["https://job.sinopec.com/"]}
+{"company": "中国海油", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国移动", "sector": "央企与国企", "found": null, "tried": ["https://job.10086.cn/personal/campus/", "https://job.10086.cn/personal/campus/campus_job_list.html?cId=3", "https://job.10086.cn/personal/campus/campus_job_list.html?cId=9", "https://job.10086.cn/"]}
+{"company": "中国联通", "sector": "央企与国企", "found": null, "tried": ["https://zglt.iguopin.com/", "https://zglt.iguopin.com/job"]}
+{"company": "中国铁塔", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.chinatowercom.cn/recruit/", "https://zhaopin.chinatowercom.cn/Portal/Account/Login"]}
+{"company": "中国建筑", "sector": "央企与国企", "found": null, "tried": ["https://recruit.cscec.com/", "https://recruit.cscec.com/recrui", "https://recruit.cscec.com/recruit", "https://recruit.cscec.com/recruit%23/"]}
+{"company": "中国中铁", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "ztjs", "via": "url", "url": "https://ztjs.hotjob.cn/"}, "tried": ["https://ztjs.hotjob.cn/"]}
+{"company": "中国能建", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.chnenergy.com.cn/recTypeSerch?kinds=1"]}
+{"company": "中国中冶", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "ceri", "via": "url", "url": "https://ceri.zhiye.com/custom/index"}, "tried": ["https://job.wisdri.com/", "https://ceri.zhiye.com/custom/index"]}
+{"company": "国家能源集团", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.chnenergy.com.cn/planSerch?kinds=3", "https://zhaopin.chnenergy.com.cn/recTypeSerch?kinds=3", "https://gjny.iguopin.com/", "https://zhaopin.pipechina.com.cn/"]}
+{"company": "中国华能", "sector": "央企与国企", "found": null, "tried": ["https://www.chng.com.cn/list_zpxt/-/article/nIRkxmKOSFaS/list/23534.html", "https://www.chng.com.cn/list_zpxx/-/article/cQQKaBtwslFy/list/23524.html", "https://www.chng.com.cn/detail_zpxx/-/article/YjJqG0pRRQU6/v/1324715.html", "https://www.chng.com.cn/list_zpxx/-/article/cQQKaBtwslFy/list/23524/2.html"]}
+{"company": "中国大唐", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.china-cdt.com/help?sid=3", "https://www.china-cdt.com/dtwz/xxgk/jtgg/rczp/A024006003001Gone1.html", "https://www.china-cdt.com/dtwz/xwzx/jtxw/2026/9/I1552059660066881536.html"]}
+{"company": "中国华电", "sector": "央企与国企", "found": null, "tried": ["https://rencaishichang.chd.com.cn/w3/", "https://chdjob.iguopin.com/", "https://chdjob.iguopin.com/job", "https://rencaishichang.chd.com.cn/mw3/"]}
+{"company": "国家电投", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中广核", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "cgn", "via": "page", "url": "https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=38210&zpxxId=32058"}, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=38210&zpxxId=32058"]}
+{"company": "航天科工", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国船舶", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "cssc", "via": "url", "url": "https://cssc.zhiye.com/campus/?PageIndex=0"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/117585.html", "https://cssc.zhiye.com/campus/?PageIndex=0"]}
+{"company": "中国兵器工业", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "norincogroupzhaopin", "via": "url", "url": "https://norincogroupzhaopin.zhiye.com/"}, "tried": ["https://norincogroupzhaopin.zhiye.com/"]}
+{"company": "中国兵器装备", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国商飞", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国宝武", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "鞍钢集团", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国铝业", "sector": "央企与国企", "found": null, "tried": ["https://mhr.ly.com/recruit/portal/", "https://www.ly.com/dujia/pczt/join/promotion.html"]}
+{"company": "招商局", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "cmhk", "via": "url", "url": "https://cmhk.zhiye.com/campus/detail"}, "tried": ["https://cmhk.zhiye.com/campus/detail"]}
+{"company": "华润", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU6149ff530dcad47003d01511/pb/school.html"}, "tried": ["https://wecruit.hotjob.cn/SU6149ff530dcad47003d01511/pb/school.html"]}
+{"company": "中粮", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国邮政", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国烟草", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国国航", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml", "https://zhaopin.airchina.com.cn/"]}
+{"company": "东方航空", "sector": "央企与国企", "found": null, "tried": ["https://job.ceair.com/campus/campusJobList.html", "https://job.ceair.com/mobile/campus/campusList.html", "https://job.ceair.com/jobSearch.html", "https://job.ceair.com/mobile/index.html"]}
+{"company": "南方航空", "sector": "央企与国企", "found": null, "tried": ["https://job.csair.cn/", "https://job.csair.com/"]}
+{"company": "中信集团", "sector": "央企与国企", "found": null, "tried": ["https://job.citic.com/recruit", "https://job.citic.com/recruit%23/", "https://careers.citics.com/campus/headquarters", "https://job.citicbank.com/CustStyle/zpmhys/schoolRecruit.html"]}
+{"company": "光大集团", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国诚通", "sector": "央企与国企", "found": null, "tried": ["https://www.cctgroup.com.cn/", "https://tv.cctv.com/2023/10/23/VIDAKdLhhbzgZNHzSHloJl6w231023.shtml"]}
+{"company": "上海航天", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "sast", "via": "url", "url": "https://sast.zhiye.com/"}, "tried": ["https://sast.zhiye.com/"]}
+{"company": "成都飞机设计研究所", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国建材", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "ctczhaopin", "via": "url", "url": "https://ctczhaopin.zhiye.com/Campus"}, "tried": ["https://ctczhaopin.zhiye.com/Campus"]}
+{"company": "中国中煤", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.chinacoal.com/", "https://zhaopin.chinacoal.com/jobs", "https://zhaopin.chinacoal.com/personalHomepage-home"]}
+{"company": "中国稀土", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国黄金", "sector": "央企与国企", "found": null, "tried": ["https://hjzp.chinagoldgroup.com/recruit"]}
+{"company": "中国旅游集团", "sector": "央企与国企", "found": null, "tried": ["https://mhr.ly.com/recruit/portal/", "https://www.ly.com/dujia/pczt/join/promotion.html"]}
+{"company": "国铁集团", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国电气装备", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国有色", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "工商银行", "sector": "银行", "found": null, "tried": []}
+{"company": "建设银行", "sector": "银行", "found": null, "tried": []}
+{"company": "农业银行", "sector": "银行", "found": null, "tried": []}
+{"company": "中国银行", "sector": "银行", "found": {"kind": "beisen", "slug": "chinalife", "via": "url", "url": "https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1"}, "tried": ["https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1"]}
+{"company": "交通银行", "sector": "银行", "found": null, "tried": []}
+{"company": "邮储银行", "sector": "银行", "found": null, "tried": ["https://jsyc.iguopin.com/notice"]}
+{"company": "国家开发银行", "sector": "银行", "found": null, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=38582&zpxxId=32231"]}
+{"company": "进出口银行", "sector": "银行", "found": null, "tried": []}
+{"company": "农业发展银行", "sector": "银行", "found": null, "tried": ["https://career.uibe.edu.cn/front/zpxx.jspa?tid=1968567414216048641"]}
+{"company": "招商银行", "sector": "银行", "found": null, "tried": ["https://career.cmbchina.com/campus/home", "https://career.cmbchina.com/", "https://career.cmbchina.com/register", "https://career.cmbchina.com/notice/sch"]}
+{"company": "中信银行", "sector": "银行", "found": null, "tried": ["https://job.citicbank.com/", "https://job.citicbank.com/CustStyle/zpmhys/schoolRecruit.html", "https://job.citicbank.com/CustStyle/zpmhys/schoolRecruit.html?t=172809076892521974391", "https://job.citic.com/recruit"]}
+{"company": "浦发银行", "sector": "银行", "found": {"kind": "beisen", "slug": "chinalife", "via": "url", "url": "https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1"}, "tried": ["https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1"]}
+{"company": "兴业银行", "sector": "银行", "found": null, "tried": ["https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html", "https://job.cib.com.cn/mobile/", "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260714.html", "https://job.cib.com.cn/portal/"]}
+{"company": "民生银行", "sector": "银行", "found": null, "tried": ["https://career.xujc.com/2026/0924/c3959a173084/page.htm"]}
+{"company": "光大银行", "sector": "银行", "found": null, "tried": []}
+{"company": "平安银行", "sector": "银行", "found": null, "tried": ["https://www.pingan.com/w/66dfc646d8c387b3.shtml", "https://campus.pingan.com/", "https://campus.pingan.com/freshGraduates", "https://campus.pingan.com/pab/freshgraduates"]}
+{"company": "广发银行", "sector": "银行", "found": {"kind": "beisen", "slug": "portal-oss", "via": "url", "url": "https://portal-oss.zhiye.com/103577/resource/04592295-9d7a-44a8-89c9-99b34c55dbfd.html"}, "tried": ["https://portal-oss.zhiye.com/103577/resource/04592295-9d7a-44a8-89c9-99b34c55dbfd.html"]}
+{"company": "江苏银行", "sector": "银行", "found": null, "tried": []}
+{"company": "宁波银行", "sector": "银行", "found": null, "tried": []}
+{"company": "南京银行", "sector": "银行", "found": null, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=35425&zpxxId=30585", "https://job.njcb.com.cn/"]}
+{"company": "杭州银行", "sector": "银行", "found": null, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=38528&zpxxId=32209", "https://career.xujc.com/2026/0929/c3959a173121/page.htm", "https://career.nankai.edu.cn/correcruit/content/id/118884.html"]}
+{"company": "微众银行", "sector": "银行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN"}, "tried": ["https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN"]}
+{"company": "网商银行", "sector": "银行", "found": null, "tried": []}
+{"company": "浙商银行", "sector": "银行", "found": null, "tried": ["https://zp.czbank.com.cn/zpweb/", "https://zp.czbank.com.cn/zpweb/planController/gotoIndex.mvc?pageType=1", "https://zp.czbank.com.cn/zpweb/planController/checkPage.mvc?pageType=1", "https://zp.czbank.com.cn/zpweb/zpPostController/planDetailPage.mvc?planId=8a8340e9981867140198f540a8330085"]}
+{"company": "渤海银行", "sector": "银行", "found": null, "tried": ["https://www.cbhb.com.cn/cbhbank/jrwm/zx/index.shtml", "https://www.cbhb.com.cn/cbhbank/jrwm/zpxx/index.shtml", "https://www.cbhb.com.cn/cbhbank/jrwm/zwsq/index.shtml"]}
+{"company": "恒丰银行", "sector": "银行", "found": null, "tried": []}
+{"company": "北京农商行", "sector": "银行", "found": null, "tried": []}
+{"company": "重庆农商行", "sector": "银行", "found": null, "tried": []}
+{"company": "青岛银行", "sector": "银行", "found": null, "tried": ["https://fw.rc.qingdao.gov.cn/jeecms/htmlrc/gqzp/zpjh/20260827/16619.html"]}
+{"company": "国泰海通", "sector": "证券基金与资管", "found": null, "tried": ["https://campus.niuqizp.com/job-v8Y5M5LCn.html"]}
+{"company": "中信建投", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "csc108", "via": "url", "url": "https://csc108.zhiye.com/campus"}, "tried": ["https://csc108.zhiye.com/campus"]}
+{"company": "申万宏源", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU64464d3abef57c46aff3357c/pb/social.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/117519.html", "https://wecruit.hotjob.cn/SU64464d3abef57c46aff3357c/pb/social.html"]}
+{"company": "东方证券", "sector": "证券基金与资管", "found": {"kind": "moka_blocked", "host": "static-ats.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus_apply/dfzq/4928"}, "tried": ["https://app.mokahr.com/campus_apply/dfzq/4928"]}
+{"company": "中泰证券", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "zts", "via": "url", "url": "https://zts.hotjob.cn/"}, "tried": ["https://zts.hotjob.cn/"]}
+{"company": "南方基金", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "wecruit", "via": "page", "url": "https://www.nffund.com/"}, "tried": ["https://www.nffund.com/"]}
+{"company": "博时基金", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "bosera", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/118089.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118089.html"]}
+{"company": "嘉实基金", "sector": "证券基金与资管", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-v8y5aaNZZ.html"}, "tried": ["https://campus.niuqizp.com/job-v8y5aaNZZ.html"]}
+{"company": "广发基金", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "gf", "via": "page", "url": "https://job.gf.com.cn/"}, "tried": ["https://job.gf.com.cn/"]}
+{"company": "汇添富", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "htffund", "via": "url", "url": "https://htffund.zhiye.com/"}, "tried": ["https://htffund.zhiye.com/"]}
+{"company": "富国基金", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "htffund", "via": "url", "url": "http://htffund.zhiye.com/Campus"}, "tried": ["http://htffund.zhiye.com/Campus"]}
+{"company": "中国投资有限责任公司", "sector": "证券基金与资管", "found": null, "tried": ["https://recruit.china-inv.cn/china_inv/home/sytk.shtml", "https://recruit.china-inv.cn/china_inv/gszl/organization.shtml", "https://career.uibe.edu.cn/front/zpxx.jspa?tid=1843822422818660354"]}
+{"company": "中国东方资产", "sector": "证券基金与资管", "found": null, "tried": []}
+{"company": "中国长城资产", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "gwamcc", "via": "url", "url": "https://gwamcc.zhiye.com/"}, "tried": ["https://gwamcc.zhiye.com/"]}
+{"company": "华西证券", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU614049aebef57c3b638d207c/pb/school.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/119790.html", "https://career.bnuzh.edu.cn/index.php/web/Index/jobs-brief-detail?id=9457", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/117948967752437760", "https://wecruit.hotjob.cn/SU614049aebef57c3b638d207c/pb/school.html"]}
+{"company": "中银证券", "sector": "证券基金与资管", "found": null, "tried": ["https://www.zy.com/recruit.html"]}
+{"company": "中国平安", "sector": "保险", "found": null, "tried": ["https://campus.pingan.com/pacx", "https://campus.pingan.com/freshGraduates", "https://www.pingan.com/w/67e588d26d033a15.shtml", "https://career.nankai.edu.cn/correcruit/content/id/117679.html"]}
+{"company": "中国太保", "sector": "保险", "found": {"kind": "beisen", "slug": "cntaiping", "via": "url", "url": "https://cntaiping.zhiye.com/"}, "tried": ["https://cntaiping.zhiye.com/"]}
+{"company": "阳光保险", "sector": "保险", "found": {"kind": "beisen", "slug": "portal-oss", "via": "url", "url": "https://portal-oss.zhiye.com/101153/resource/44846fb3-fe3d-429e-b230-b0435ab41a64.html"}, "tried": ["https://portal-oss.zhiye.com/101153/resource/44846fb3-fe3d-429e-b230-b0435ab41a64.html"]}
+{"company": "瑞众保险", "sector": "保险", "found": null, "tried": []}
+{"company": "众安保险", "sector": "保险", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vls5z5NnC.html"}, "tried": ["https://campus.niuqizp.com/job-vls5z5NnC.html"]}
+{"company": "友邦保险", "sector": "保险", "found": null, "tried": []}
+{"company": "普华永道", "sector": "咨询会计与专业服务", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/pwc/148260?locale=zh-CN"}, "tried": ["https://app.mokahr.com/campus-recruitment/pwc/148260?locale=zh-CN"]}
+{"company": "安永", "sector": "咨询会计与专业服务", "found": null, "tried": ["https://careers.ey.com/?locale=zh_CN", "https://careers.ey.com/sgv/?locale=zh_CN", "https://careers.ey.com/viewalljobs/?locale=zh_CN"]}
+{"company": "毕马威", "sector": "咨询会计与专业服务", "found": null, "tried": []}
+{"company": "麦肯锡", "sector": "咨询会计与专业服务", "found": null, "tried": []}
+{"company": "波士顿咨询", "sector": "咨询会计与专业服务", "found": null, "tried": []}
+{"company": "贝恩", "sector": "咨询会计与专业服务", "found": null, "tried": ["https://campus.niuqizp.com/job-vsr5zCLzz.html"]}
+{"company": "信永中和", "sector": "咨询会计与专业服务", "found": null, "tried": ["https://job.shinewing.com/", "https://job.shinewing.com/zp/", "https://job.shinewing.com/job/detail?id=168", "https://job.shinewing.com/job/detail?id=219"]}
+{"company": "恒瑞医药", "sector": "医药医疗", "found": null, "tried": ["https://job.zzu.edu.cn/campus/view/id/1015919", "https://job.zzu.edu.cn/campus/view/id/1019631", "https://career.nankai.edu.cn/correcruit/content/id/119730.html", "https://www.hengrui.com/development/recruit.html"]}
+{"company": "百济神州", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "石药集团", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "爱尔眼科", "sector": "医药医疗", "found": null, "tried": ["https://zhaopin.aierchina.com/"]}
+{"company": "华润医药", "sector": "医药医疗", "found": null, "tried": ["https://career.uibe.edu.cn/front/zpxx.jspa?tid=2100083403671007234"]}
+{"company": "智飞生物", "sector": "医药医疗", "found": null, "tried": ["https://job.zzu.edu.cn/campus/view/id/1017262", "https://www.zhifeishengwu.com/zh_CN", "https://www.zhifeishengwu.com/zh_CN/recruitment.html"]}
+{"company": "长春高新", "sector": "医药医疗", "found": null, "tried": ["https://ccgx.com/careers"]}
+{"company": "片仔癀", "sector": "医药医疗", "found": null, "tried": ["https://pzhchina.com/index_288.aspx"]}
+{"company": "同仁堂", "sector": "医药医疗", "found": null, "tried": ["https://www.trt.com/careers/"]}
+{"company": "华东医药", "sector": "医药医疗", "found": null, "tried": ["https://www.huadongmedicine.com/careers/"]}
+{"company": "丽珠集团", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "乐普医疗", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "微创医疗", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "宝洁", "sector": "消费零售与食品", "found": null, "tried": ["https://careers.pg.com.cn/cn/zh/home", "https://careers.pg.com.cn/cn/zh/recent-grads"]}
+{"company": "联合利华", "sector": "消费零售与食品", "found": {"kind": "workday", "slug": "unilever", "wd": "wd3", "via": "page", "url": "https://careers.unilever.com/en/"}, "tried": ["https://careers.unilever.com/en/"]}
+{"company": "欧莱雅", "sector": "消费零售与食品", "found": null, "tried": ["https://careers.loreal.com/en", "https://careers.loreal.com/en/"]}
+{"company": "雀巢", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.uibe.edu.cn/front/zpxx.jspa?tid=2095522801220894722"}, "tried": ["https://career.uibe.edu.cn/front/zpxx.jspa?tid=2095522801220894722"]}
+{"company": "农夫山泉", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://jobs.yst.com.cn/campus-recruitment/yst/68367"}, "tried": ["https://jobs.yst.com.cn/campus-recruitment/yst/68367"]}
+{"company": "娃哈哈", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "cnnc", "via": "url", "url": "https://cnnc.zhiye.com/custom/xiaoyuan?hideAll=true"}, "tried": ["https://apply.wahaha.com.cn/", "https://applymobile.wahaha.com.cn/", "https://applysale.wahaha.com.cn/", "https://cnnc.zhiye.com/custom/xiaoyuan?hideAll=true"]}
+{"company": "华润啤酒", "sector": "消费零售与食品", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU6047338a0dcad46d3e601b07/pb/index.html"}, "tried": ["https://wecruit.hotjob.cn/SU6047338a0dcad46d3e601b07/pb/index.html"]}
+{"company": "贵州茅台", "sector": "消费零售与食品", "found": null, "tried": ["https://zp.moutai.com.cn/"]}
+{"company": "五粮液", "sector": "消费零售与食品", "found": null, "tried": ["https://wuliangye.com.cn/zhaopin/", "https://wuliangye.com.cn/zhaopin/home&lt", "https://www.wuliangye.com.cn/zhaopin/announcement"]}
+{"company": "洋河", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "chinayanghe", "via": "url", "url": "https://chinayanghe.zhiye.com/Campus"}, "tried": ["https://chinayanghe.zhiye.com/Campus"]}
+{"company": "安踏", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://jobs.anta.com/social-recruitment/antahr/146041/"}, "tried": ["https://jobs.anta.com/social-recruitment/antahr/146041/"]}
+{"company": "瑞幸咖啡", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.uibe.edu.cn/front/zwxx.jspa?xqzwId=45572&zpxxId=130435"}, "tried": ["https://career.uibe.edu.cn/front/zwxx.jspa?xqzwId=45572&zpxxId=130435"]}
+{"company": "牧原", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/muyuan/145076?locale=zh-CN"}, "tried": ["https://job.zzu.edu.cn/campus/view/id/1019951", "https://app.mokahr.com/campus-recruitment/muyuan/145076?locale=zh-CN"]}
+{"company": "温氏", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/wens/92366"}, "tried": ["https://app.mokahr.com/campus-recruitment/wens/92366"]}
+{"company": "山西汾酒", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "古井贡酒", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "剑南春", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "康师傅", "sector": "消费零售与食品", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU66c83b1b1eb80543256c6529/pb/school.html"}, "tried": ["https://wecruit.hotjob.cn/SU66c83b1b1eb80543256c6529/pb/school.html"]}
+{"company": "三只松鼠", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus_apply/3songshu/457#/job/79dc4b6b-80c0-45e7-b660-e2d79a2226ac/apply?email=a15755193427@163.com"}, "tried": ["https://app.mokahr.com/campus_apply/3songshu/457#/job/79dc4b6b-80c0-45e7-b660-e2d79a2226ac/apply?email=a15755193427@163.com"]}
+{"company": "麦当劳中国", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "霸王茶姬", "sector": "消费零售与食品", "found": null, "tried": ["https://jobs.chagee.com/640739/", "https://jobs.chagee.com/640739/m/", "https://jobs.chagee.com/640739/page-K5SCCE", "https://join.chagee.com/"]}
+{"company": "古茗", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/guming/39377"}, "tried": ["https://app.mokahr.com/campus-recruitment/guming/39377"]}
+{"company": "特步", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.anta.com/campus-recruitment/antahr/142914/"}, "tried": ["https://campus.niuqizp.com/job-vUy5ZLtaz.html", "https://campus.anta.com/campus-recruitment/antahr/142914/"]}
+{"company": "万科", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.wk.com/jobs/"]}
+{"company": "龙湖", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "华润置地", "sector": "地产建筑与物流", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/118029.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118029.html"]}
+{"company": "招商蛇口", "sector": "地产建筑与物流", "found": {"kind": "beisen", "slug": "cmsk1979", "via": "url", "url": "https://cmsk1979.zhiye.com/"}, "tried": ["https://cmsk1979.zhiye.com/"]}
+{"company": "顺丰", "sector": "地产建筑与物流", "found": null, "tried": ["https://campus-static.sf-express.com/", "https://campus.sf-express.com/", "https://www.sf-tech.com.cn/join/", "https://hr.sf-express.com/index.jsp"]}
+{"company": "京东物流", "sector": "地产建筑与物流", "found": null, "tried": ["https://campus.jd.com/home", "https://zhaopin.jd.com/web/job/job_info_list/3", "https://zhaopin.jd.com/home;jsessionid=68BB053A5995CDFDFDA55C4B4F79591E.s1"]}
+{"company": "中通快递", "sector": "地产建筑与物流", "found": null, "tried": ["https://hr.zto.com/Campus", "https://hr.zto.com/ecologyDetail?active=2", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/232496356613296128"]}
+{"company": "普洛斯", "sector": "地产建筑与物流", "found": {"kind": "beisen", "slug": "glprop", "via": "url", "url": "https://glprop.zhiye.com/Campus"}, "tried": ["https://glprop.zhiye.com/Campus"]}
+{"company": "融创中国", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "金地集团", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "新城控股", "sector": "地产建筑与物流", "found": {"kind": "hotjob", "slug": "www", "via": "page", "url": "http://xcere.xincheng.com:8181/ats/xckg/"}, "tried": ["https://job.zzu.edu.cn/campus/view/id/1019602", "http://xcere.xincheng.com:8181/ats/xckg/"]}
+{"company": "越秀地产", "sector": "地产建筑与物流", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU5f2a75379b0d7882cc5135c2/pb/social.html"}, "tried": ["https://www.yuexiu-pm.com/zhaoxiannashi/xiaoyuanzhaopin/", "https://www.yuexiu.gov.cn/", "https://career.uibe.edu.cn/front/zpxx.jspa?tid=2101595289365266434", "https://wecruit.hotjob.cn/SU5f2a75379b0d7882cc5135c2/pb/social.html"]}
+{"company": "建发房产", "sector": "地产建筑与物流", "found": {"kind": "beisen", "slug": "chinacdc", "via": "url", "url": "https://chinacdc.zhiye.com/"}, "tried": ["https://chinacdc.zhiye.com/"]}
+{"company": "上海建工", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "微软", "sector": "外资在华", "found": null, "tried": ["https://careers.microsoft.com/v2/global/en/home.html"]}
+{"company": "苹果", "sector": "外资在华", "found": null, "tried": ["https://jobs.apple.com/zh-cn/search?location=china-CHNC", "https://jobs.apple.com/zh-cn/search?location=china-CHNC&team=%25E5%2585%25AC%25E5%258F%25B8-STDNT-CORP"]}
+{"company": "亚马逊", "sector": "外资在华", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116983.html"]}
+{"company": "高通", "sector": "外资在华", "found": null, "tried": ["https://job.eet-china.com/"]}
+{"company": "AMD", "sector": "外资在华", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://cn-amd.com/news-detail/956.html"}, "tried": ["https://careers.amd.com/students/jobs", "https://careers.amd.com/careers-home/jobs", "https://cn-amd.com/news-detail/956.html"]}
+{"company": "博世", "sector": "外资在华", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/bosch/73873"}, "tried": ["https://app.mokahr.com/campus-recruitment/bosch/73873"]}
+{"company": "施耐德电气", "sector": "外资在华", "found": null, "tried": ["https://careers.se.com/china", "https://careers.se.com/professionals?lang=zh-CN"]}
+{"company": "特斯拉", "sector": "外资在华", "found": null, "tried": ["https://sso.hdu.edu.cn/login?service=https%3A%2F%2Fjob.hdu.edu.cn%2Fdefault%2Fhdu"]}
+{"company": "宝马", "sector": "外资在华", "found": null, "tried": ["https://www.bmwgroup.jobs/cn/en.html", "https://www.bmwgroup.jobs/cn/en/opportunities.html"]}
+{"company": "奔驰", "sector": "外资在华", "found": null, "tried": []}
+{"company": "三星", "sector": "外资在华", "found": {"kind": "beisen", "slug": "dearsamsung", "via": "url", "url": "https://dearsamsung.zhiye.com/campus/jobs5"}, "tried": ["https://dearsamsung.zhiye.com/campus/jobs5"]}
+{"company": "索尼", "sector": "外资在华", "found": null, "tried": []}
+{"company": "松下", "sector": "外资在华", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/panasonic/41989"}, "tried": ["https://app.mokahr.com/campus-recruitment/panasonic/41989"]}
+{"company": "联发科", "sector": "外资在华", "found": {"kind": "beisen", "slug": "mediatek", "via": "url", "url": "https://mediatek.zhiye.com/"}, "tried": ["https://mediatek.zhiye.com/"]}
+{"company": "安川电机", "sector": "外资在华", "found": null, "tried": []}
+{"company": "基恩士", "sector": "外资在华", "found": {"kind": "beisen", "slug": "keyence", "via": "url", "url": "https://keyence.zhiye.com/campus/jobs"}, "tried": ["https://keyence.zhiye.com/campus/jobs"]}
+{"company": "甲骨文", "sector": "外资在华", "found": null, "tried": []}
+{"company": "SAP", "sector": "外资在华", "found": null, "tried": ["https://careers.sap.com/", "https://careers.sap.com/?locale=zh_CN", "https://www.sap.cn/index.html", "https://careers.sap.com/go/SAP-Jobs-in-China/881201/"]}
+{"company": "罗氏", "sector": "外资在华", "found": null, "tried": []}
+{"company": "宇树科技", "sector": "人工智能与机器人", "found": {"kind": "beisen", "slug": "unitree", "via": "url", "url": "https://unitree.zhiye.com/login?goto=campus%2Fjobs"}, "tried": ["https://unitree.zhiye.com/login?goto=campus%2Fjobs"]}
+{"company": "傅利叶智能", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "第四范式", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "云从科技", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "static-ats.mokahr.com", "via": "page", "url": "http://campus.cloudwalk.com/campus_apply/cloudwalk/4872/"}, "tried": ["http://campus.cloudwalk.com/campus_apply/cloudwalk/4872/"]}
+{"company": "燧原科技", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.cic.tsinghua.edu.cn/xsglxt/f/jyxt/anony/showZwxx?zpxxid=564723144"}, "tried": ["https://campus.niuqizp.com/job-vkl5znLz5.html", "https://career.cic.tsinghua.edu.cn/xsglxt/f/jyxt/anony/showZwxx?zpxxid=564723144"]}
+{"company": "沐曦", "sector": "人工智能与机器人", "found": {"kind": "feishu_atsx", "slug": "moonton", "via": "url", "url": "https://moonton.jobs.feishu.cn/campus"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/756785", "https://moonton.jobs.feishu.cn/campus"]}
+{"company": "文远知行", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus_apply/jingchi/2137"}, "tried": ["https://app.mokahr.com/campus_apply/jingchi/2137"]}
+{"company": "亿航智能", "sector": "人工智能与机器人", "found": {"kind": "beisen", "slug": "yealink", "via": "url", "url": "https://yealink.zhiye.com/campus"}, "tried": ["https://yealink.zhiye.com/campus"]}
+{"company": "小鹏汇天", "sector": "人工智能与机器人", "found": {"kind": "feishu_atsx", "slug": "xiaopeng", "via": "url", "url": "https://xiaopeng.jobs.feishu.cn/campus"}, "tried": ["https://xiaopeng.jobs.feishu.cn/campus"]}
+{"company": "银河通用", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116497.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116497.html"]}
+{"company": "波司登", "sector": "美妆与服饰", "found": null, "tried": ["https://job.xidian.edu.cn/campus/view/id/757723", "https://www.bosideng.com/en/"]}
+{"company": "珀莱雅", "sector": "美妆与服饰", "found": null, "tried": ["https://jobs.proya.com/campus", "https://campus.niuqizp.com/job-vk85Ctt5L.html", "http://jobs.proya.com/jobs/"]}
+{"company": "贝泰妮", "sector": "美妆与服饰", "found": null, "tried": ["https://campus.niuqizp.com/job-v8r5atzzn.html", "https://jobs.ynu.edu.cn/detail/job?id=3253863&online_id=3612739", "https://jobs.ynu.edu.cn/detail/online?id=3612739"]}
+{"company": "上海家化", "sector": "美妆与服饰", "found": {"kind": "beisen", "slug": "jahwa", "via": "url", "url": "https://jahwa.zhiye.com/Campus"}, "tried": ["https://jahwa.zhiye.com/Campus"]}
+{"company": "高途", "sector": "教育", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/bjhl/102145"}, "tried": ["https://app.mokahr.com/campus-recruitment/bjhl/102145"]}
+{"company": "网易有道", "sector": "教育", "found": null, "tried": ["https://campus.163.com/", "https://campus.163.com/app/job/position?id=103", "https://campus.163.com/app/job/position?id=61", "https://campus.163.com/app/job/position?id=67"]}
+{"company": "贝泰妮", "sector": "美妆与服饰", "found": null, "tried": ["https://campus.niuqizp.com/job-v8r5atzzn.html", "https://jobs.ynu.edu.cn/detail/job?id=3253863&online_id=3612739", "https://jobs.ynu.edu.cn/detail/online?id=3612739"]}
+{"company": "上海家化", "sector": "美妆与服饰", "found": {"kind": "beisen", "slug": "jahwa", "via": "url", "url": "https://jahwa.zhiye.com/Campus"}, "tried": ["https://jahwa.zhiye.com/Campus"]}
+{"company": "高途", "sector": "教育", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/bjhl/102145"}, "tried": ["https://app.mokahr.com/campus-recruitment/bjhl/102145"]}
+{"company": "网易有道", "sector": "教育", "found": null, "tried": ["https://campus.163.com/", "https://campus.163.com/app/job/position?id=103", "https://campus.163.com/app/job/position?id=61", "https://campus.163.com/app/job/position?id=67"]}
+{"company": "粉笔", "sector": "教育", "found": null, "tried": ["http://www.fenbicx.com/"]}
+{"company": "金蝶", "sector": "企业服务", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.kingdee.com/campus-recruitment/kingdeehr/166565?locale=zh-CN/"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118458.html", "https://campus.kingdee.com/campus-recruitment/kingdeehr/166565?locale=zh-CN/"]}
+{"company": "中软国际", "sector": "企业服务", "found": null, "tried": ["https://zhaopin.chinasoftinc.com/"]}
+{"company": "软通动力", "sector": "企业服务", "found": null, "tried": ["https://career.isoftstone.com/", "https://career.isoftstone.com/talent/htmls/shehuizhaopin/index.html"]}
+{"company": "恒生电子", "sector": "企业服务", "found": {"kind": "beisen", "slug": "hundsun", "via": "url", "url": "https://hundsun.zhiye.com/Campus"}, "tried": ["https://hundsun.zhiye.com/Campus"]}
+{"company": "腾讯音乐", "sector": "互联网与软件", "found": null, "tried": ["https://join.tencentmusic.com/", "https://join.qq.com/", "https://join.qq.com/post.html", "https://careers.tencent.com/campusrecruit.html"]}
+{"company": "网易游戏", "sector": "互联网与软件", "found": null, "tried": ["https://op.campus.163.com/", "https://hr.game.163.com/index.html", "https://campus.163.com/", "https://campus.game.163.com/"]}
+{"company": "字节跳动飞书", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.bytedance.com/"]}
+{"company": "阿里云", "sector": "互联网与软件", "found": null, "tried": ["https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Fcareers.aliyun.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", "https://careers.aliyun.com/campus/home", "https://talent.alibaba.com", "https://careers.aliyun.com/bte"]}
+{"company": "菜鸟网络", "sector": "互联网与软件", "found": null, "tried": ["https://talent.cainiao.com/", "https://cn-jobs.cainiao.com/home?lang=zh", "https://jobs.cainiao.com/off-campus/", "https://talent.cainiao.com/campus/home?lang=zh"]}
+{"company": "粉笔", "sector": "教育", "found": null, "tried": ["http://www.fenbicx.com/"]}
+{"company": "金蝶", "sector": "企业服务", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.kingdee.com/campus-recruitment/kingdeehr/166565?locale=zh-CN/"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118458.html", "https://campus.kingdee.com/campus-recruitment/kingdeehr/166565?locale=zh-CN/"]}
+{"company": "中软国际", "sector": "企业服务", "found": null, "tried": ["https://zhaopin.chinasoftinc.com/"]}
+{"company": "软通动力", "sector": "企业服务", "found": null, "tried": ["https://career.isoftstone.com/", "https://career.isoftstone.com/talent/htmls/shehuizhaopin/index.html"]}
+{"company": "恒生电子", "sector": "企业服务", "found": {"kind": "beisen", "slug": "hundsun", "via": "url", "url": "https://hundsun.zhiye.com/Campus"}, "tried": ["https://hundsun.zhiye.com/Campus"]}
+{"company": "腾讯音乐", "sector": "互联网与软件", "found": null, "tried": ["https://join.tencentmusic.com/", "https://join.qq.com/", "https://join.qq.com/post.html", "https://careers.tencent.com/campusrecruit.html"]}
+{"company": "网易游戏", "sector": "互联网与软件", "found": null, "tried": ["https://op.campus.163.com/", "https://hr.game.163.com/index.html", "https://campus.163.com/", "https://campus.game.163.com/"]}
+{"company": "字节跳动飞书", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.bytedance.com/"]}
+{"company": "阿里云", "sector": "互联网与软件", "found": null, "tried": ["https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Fcareers.aliyun.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", "https://careers.aliyun.com/campus/home", "https://talent.alibaba.com", "https://careers.aliyun.com/bte"]}
+{"company": "菜鸟网络", "sector": "互联网与软件", "found": null, "tried": ["https://talent.cainiao.com/", "https://cn-jobs.cainiao.com/home?lang=zh", "https://jobs.cainiao.com/off-campus/", "https://talent.cainiao.com/campus/home?lang=zh"]}
+{"company": "涂鸦智能", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://job.tuya.com/"}, "tried": ["https://campus.niuqizp.com/job-vls5tZMna.html", "https://career.hznu.edu.cn/campus/view/id/550686", "https://job.xidian.edu.cn/campus/view/id/755785", "https://job.tuya.com/"]}
+{"company": "明源云", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vUm5CNMzM.html"}, "tried": ["https://campus.niuqizp.com/job-vUm5CNMzM.html"]}
+{"company": "微盟", "sector": "互联网与软件", "found": null, "tried": ["https://job.weimob.com/talent/"]}
+{"company": "有赞", "sector": "互联网与软件", "found": {"kind": "beisen", "slug": "youzan", "via": "url", "url": "https://youzan.zhiye.com/404?errorpath=%2fcampus%2f"}, "tried": ["https://job.youzan.com/", "https://youzan.zhiye.com/404?errorpath=%2fcampus%2f"]}
+{"company": "绿盟科技", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus_apply/nsfocus/29118"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757920", "https://career.gdut.edu.cn/campus/view/id/1021172", "https://job.zzu.edu.cn/campus/view/id/1019661", "https://app.mokahr.com/campus_apply/nsfocus/29118"]}
+{"company": "安恒信息", "sector": "互联网与软件", "found": {"kind": "beisen_host", "host": "ahxz.dbappsecurity.com.cn", "count": 22, "title": "安恒信息校园招聘官网", "sample": ["AI Agent安全博士实习生", "【28届校招】算法实习生", "【28届校招】自动化测试实习生"], "via": "page+host", "url": "https://ahxz.dbappsecurity.com.cn/jobs"}, "tried": ["https://ahxz.dbappsecurity.com.cn/jobs"]}
+{"company": "中控技术", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/119053.html"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757551", "https://career.nankai.edu.cn/correcruit/content/id/119053.html"]}
+{"company": "长亮科技", "sector": "互联网与软件", "found": null, "tried": ["https://www.sunline.cn/join/campus-recruiting.html", "https://www.sunline.cn/join-us.html", "https://join.chaitin.cn/plugins/career_site/sites/default"]}
+{"company": "万得Wind", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "涂鸦智能", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://job.tuya.com/"}, "tried": ["https://campus.niuqizp.com/job-vls5tZMna.html", "https://career.hznu.edu.cn/campus/view/id/550686", "https://job.xidian.edu.cn/campus/view/id/755785", "https://job.tuya.com/"]}
+{"company": "明源云", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vUm5CNMzM.html"}, "tried": ["https://campus.niuqizp.com/job-vUm5CNMzM.html"]}
+{"company": "微盟", "sector": "互联网与软件", "found": null, "tried": ["https://job.weimob.com/talent/"]}
+{"company": "有赞", "sector": "互联网与软件", "found": {"kind": "beisen", "slug": "youzan", "via": "url", "url": "https://youzan.zhiye.com/404?errorpath=%2fcampus%2f"}, "tried": ["https://job.youzan.com/", "https://youzan.zhiye.com/404?errorpath=%2fcampus%2f"]}
+{"company": "绿盟科技", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus_apply/nsfocus/29118"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757920", "https://career.gdut.edu.cn/campus/view/id/1021172", "https://job.zzu.edu.cn/campus/view/id/1019661", "https://app.mokahr.com/campus_apply/nsfocus/29118"]}
+{"company": "安恒信息", "sector": "互联网与软件", "found": {"kind": "beisen_host", "host": "ahxz.dbappsecurity.com.cn", "count": 22, "title": "安恒信息校园招聘官网", "sample": ["AI Agent安全博士实习生", "【28届校招】算法实习生", "【28届校招】自动化测试实习生"], "via": "page+host", "url": "https://ahxz.dbappsecurity.com.cn/jobs"}, "tried": ["https://ahxz.dbappsecurity.com.cn/jobs"]}
+{"company": "中控技术", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/119053.html"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757551", "https://career.nankai.edu.cn/correcruit/content/id/119053.html"]}
+{"company": "长亮科技", "sector": "互联网与软件", "found": null, "tried": ["https://www.sunline.cn/join/campus-recruiting.html", "https://www.sunline.cn/join-us.html", "https://join.chaitin.cn/plugins/career_site/sites/default"]}
+{"company": "万得Wind", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "番茄小说", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.bytedance.com/campus/position?type=2&keywords=%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4", "https://jobs.bytedance.com/campus/position/7572130394674858245/detail", "https://join.yuewen.com/", "https://join.yuewen.com/school"]}
+{"company": "悦动圈", "sector": "互联网与软件", "found": null, "tried": ["https://www.yuedong.cn/jobs.html"]}
+{"company": "斗鱼", "sector": "互联网与软件", "found": null, "tried": ["http://zhaopin.douyu.com/campus", "https://zhaopin.douyu.com/Campus", "https://zhaopin.douyu.com/home", "https://zhaopin.douyu.com/aile2016/"]}
+{"company": "虎牙", "sector": "互联网与软件", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020900", "https://hr.huya.com/campusRecruit/index?showMark=true", "http://hr.huya.com/campusRecruit/baseInfo/1", "https://hr.huya.com/campusRecruit/information"]}
+{"company": "陌陌", "sector": "互联网与软件", "found": null, "tried": ["https://www.immomo.com/mm_downloads", "https://www.immomo.com/jobs/join/index", "https://campus.hellogroup.com/campus-recruitment/immomo/54299/", "https://www.immomo.com/jobs"]}
+{"company": "得物App", "sector": "互联网与软件", "found": {"kind": "feishu_atsx", "slug": "poizon", "via": "page", "url": "https://campus.dewu.com/"}, "tried": ["https://campus.dewu.com/"]}
+{"company": "沃尔玛中国", "sector": "互联网与软件", "found": null, "tried": ["https://walmartchina.avature.cn/zh_CN/careers", "https://walmartchina.avature.cn/zh_CN/careers/Register?jobId=24124"]}
+{"company": "山姆会员店", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "中兴微电子", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/social-recruitment/sanechips/76285"}, "tried": ["https://app.mokahr.com/social-recruitment/sanechips/76285"]}
+{"company": "烽火通信", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/whfhtx/73922"}, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=37675&zpxxId=31786", "https://app.mokahr.com/campus-recruitment/whfhtx/73922"]}
+{"company": "番茄小说", "sector": "互联网与软件", "found": null, "tried": ["https://jobs.bytedance.com/campus/position?type=2&keywords=%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4", "https://jobs.bytedance.com/campus/position/7572130394674858245/detail", "https://join.yuewen.com/", "https://join.yuewen.com/school"]}
+{"company": "悦动圈", "sector": "互联网与软件", "found": null, "tried": ["https://www.yuedong.cn/jobs.html"]}
+{"company": "斗鱼", "sector": "互联网与软件", "found": null, "tried": ["http://zhaopin.douyu.com/campus", "https://zhaopin.douyu.com/Campus", "https://zhaopin.douyu.com/home", "https://zhaopin.douyu.com/aile2016/"]}
+{"company": "虎牙", "sector": "互联网与软件", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020900", "https://hr.huya.com/campusRecruit/index?showMark=true", "http://hr.huya.com/campusRecruit/baseInfo/1", "https://hr.huya.com/campusRecruit/information"]}
+{"company": "陌陌", "sector": "互联网与软件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.hellogroup.com/campus-recruitment/immomo/54299/"}, "tried": ["https://www.immomo.com/mm_downloads", "https://www.immomo.com/jobs/join/index", "https://campus.hellogroup.com/campus-recruitment/immomo/54299/"]}
+{"company": "得物App", "sector": "互联网与软件", "found": {"kind": "feishu_atsx", "slug": "poizon", "via": "page", "url": "https://campus.dewu.com/"}, "tried": ["https://campus.dewu.com/"]}
+{"company": "亨通光电", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.htgd.com.cn/", "https://www.hengtonggroup.com/", "https://www.hengtonggroup.com/rcfz/xyzp.html", "http://www.hengtongzhineng.com/hengtongjituan/"]}
+{"company": "中天科技", "sector": "通信与电子硬件", "found": null, "tried": ["https://m.ztt.cn/", "https://www.ztt.cn/", "https://www.zt.net.cn/index.html"]}
+{"company": "光迅科技", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/accelink/139973"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118815.html", "https://app.mokahr.com/campus-recruitment/accelink/139973"]}
+{"company": "锐捷网络", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/ruijie/136206"}, "tried": ["https://app.mokahr.com/campus-recruitment/ruijie/136206"]}
+{"company": "环旭电子", "sector": "通信与电子硬件", "found": null, "tried": ["https://jobs.usi.com/", "https://www.usi.com/about-usi/the-power-of-one/developing-talent-careers/"]}
+{"company": "沪电股份", "sector": "通信与电子硬件", "found": {"kind": "hotjob", "slug": "sec", "via": "url", "url": "https://sec.hotjob.cn/wt/SEC/web/index"}, "tried": ["https://sec.hotjob.cn/wt/SEC/web/index"]}
+{"company": "生益科技", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.syst.com.cn/", "https://www.syst.com.cn/cn/jtjs/index_29.aspx"]}
+{"company": "鹏鼎控股", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "avaryholding", "via": "url", "url": "http://avaryholding.zhiye.com/"}, "tried": ["http://avaryholding.zhiye.com/"]}
+{"company": "领益智造", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/lingyiitech/182049"}, "tried": ["https://app.mokahr.com/campus-recruitment/lingyiitech/182049"]}
+{"company": "传音控股非洲", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "transsion", "via": "url", "url": "https://transsion.zhiye.com/"}, "tried": ["https://transsion.zhiye.com/"]}
+{"company": "天马微电子", "sector": "通信与电子硬件", "found": null, "tried": []}
+{"company": "沃尔玛中国", "sector": "互联网与软件", "found": null, "tried": ["https://walmartchina.avature.cn/zh_CN/careers", "https://walmartchina.avature.cn/zh_CN/careers/Register?jobId=24124"]}
+{"company": "山姆会员店", "sector": "互联网与软件", "found": null, "tried": []}
+{"company": "中兴微电子", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/social-recruitment/sanechips/76285"}, "tried": ["https://app.mokahr.com/social-recruitment/sanechips/76285"]}
+{"company": "烽火通信", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/whfhtx/73922"}, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=37675&zpxxId=31786", "https://app.mokahr.com/campus-recruitment/whfhtx/73922"]}
+{"company": "和辉光电", "sector": "通信与电子硬件", "found": null, "tried": ["https://campus.niuqizp.com/job-vrl5aZt5L.html", "https://campus.niuqizp.com/schedule-7mklNNatz.html", "https://www.everdisplay.com/JoinUs.html", "https://www.everdisplay.com/Recruit.html"]}
+{"company": "惠科", "sector": "通信与电子硬件", "found": null, "tried": ["https://campus.niuqizp.com/job-vUl5aLazN.html", "http://www.qdhkc.com.cn/", "http://recruit.hkcqjy.com.cn/pc/recruit/recruitList2"]}
+{"company": "海信视像", "sector": "通信与电子硬件", "found": {"kind": "beisen_host", "host": "jobs.hisense.com", "count": 1198, "title": "海信招聘—海信集团招聘官网", "sample": ["全国营销中心-零售管理（市场推广方向）(J46015)", "全国营销中心-财务管理(J46013)", "全国营销中心-销售经理(J46012)"], "via": "page+host", "url": "https://jobs.hisense.com/"}, "tried": ["https://jobs.hisense.com/"]}
+{"company": "亨通光电", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.htgd.com.cn/", "https://www.hengtonggroup.com/", "https://www.hengtonggroup.com/rcfz/xyzp.html", "http://www.hengtongzhineng.com/hengtongjituan/"]}
+{"company": "中天科技", "sector": "通信与电子硬件", "found": null, "tried": ["https://m.ztt.cn/", "https://www.ztt.cn/", "https://www.zt.net.cn/index.html"]}
+{"company": "光迅科技", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/accelink/139973"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118815.html", "https://app.mokahr.com/campus-recruitment/accelink/139973"]}
+{"company": "锐捷网络", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/ruijie/136206"}, "tried": ["https://app.mokahr.com/campus-recruitment/ruijie/136206"]}
+{"company": "环旭电子", "sector": "通信与电子硬件", "found": null, "tried": ["https://jobs.usi.com/", "https://www.usi.com/about-usi/the-power-of-one/developing-talent-careers/"]}
+{"company": "沪电股份", "sector": "通信与电子硬件", "found": {"kind": "hotjob", "slug": "sec", "via": "url", "url": "https://sec.hotjob.cn/wt/SEC/web/index"}, "tried": ["https://sec.hotjob.cn/wt/SEC/web/index"]}
+{"company": "生益科技", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.syst.com.cn/", "https://www.syst.com.cn/cn/jtjs/index_29.aspx"]}
+{"company": "鹏鼎控股", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "avaryholding", "via": "url", "url": "http://avaryholding.zhiye.com/"}, "tried": ["http://avaryholding.zhiye.com/"]}
+{"company": "领益智造", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/lingyiitech/182049"}, "tried": ["https://app.mokahr.com/campus-recruitment/lingyiitech/182049"]}
+{"company": "传音控股非洲", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "transsion", "via": "url", "url": "https://transsion.zhiye.com/"}, "tried": ["https://transsion.zhiye.com/"]}
+{"company": "天马微电子", "sector": "通信与电子硬件", "found": null, "tried": []}
+{"company": "和辉光电", "sector": "通信与电子硬件", "found": null, "tried": ["https://campus.niuqizp.com/job-vrl5aZt5L.html", "https://campus.niuqizp.com/schedule-7mklNNatz.html", "https://www.everdisplay.com/JoinUs.html", "https://www.everdisplay.com/Recruit.html"]}
+{"company": "惠科", "sector": "通信与电子硬件", "found": null, "tried": ["https://campus.niuqizp.com/job-vUl5aLazN.html", "http://www.qdhkc.com.cn/", "http://recruit.hkcqjy.com.cn/pc/recruit/recruitList2"]}
+{"company": "海信视像", "sector": "通信与电子硬件", "found": {"kind": "beisen_host", "host": "jobs.hisense.com", "count": 1198, "title": "海信招聘—海信集团招聘官网", "sample": ["全国营销中心-零售管理（市场推广方向）(J46015)", "全国营销中心-财务管理(J46013)", "全国营销中心-销售经理(J46012)"], "via": "page+host", "url": "https://jobs.hisense.com/"}, "tried": ["https://jobs.hisense.com/"]}
+{"company": "长虹", "sector": "通信与电子硬件", "found": null, "tried": ["http://www.changhong-network.com/list/?58_1.html", "https://job.xidian.edu.cn/campus/view/id/757297", "https://group.changhong.com/", "https://www.changhong.com.cn/"]}
+{"company": "格力电器", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.gree.cn/?lang=zh-cn"]}
+{"company": "志高空调", "sector": "通信与电子硬件", "found": null, "tried": []}
+{"company": "方太", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "fotile", "via": "url", "url": "https://fotile.zhiye.com/campus"}, "tried": ["https://fotile.zhiye.com/campus"]}
+{"company": "老板电器", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.robam.com/"]}
+{"company": "华帝", "sector": "通信与电子硬件", "found": null, "tried": ["https://vatti.com.cn/", "https://www.vatti.com.cn/about", "https://www.vatti.com.cn/article-list"]}
+{"company": "苏泊尔", "sector": "通信与电子硬件", "found": {"kind": "hotjob", "slug": "www", "via": "url", "url": "https://www.hotjob.cn/wt/suporcw/web/index/campus"}, "tried": ["https://www.hotjob.cn/wt/suporcw/web/index/campus"]}
+{"company": "小熊电器", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://bears.com.cn/join.html?cid=69"}, "tried": ["https://bears.com.cn/join.html?cid=69"]}
+{"company": "科沃斯", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://hr.ecovacs.cn/"}, "tried": ["https://hr.ecovacs.cn/"]}
+{"company": "绿联", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "ugreen", "via": "url", "url": "https://ugreen.zhiye.com/campus"}, "tried": ["https://ugreen.zhiye.com/campus"]}
+{"company": "漫步者", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "mova", "via": "url", "url": "https://mova.zhiye.com/campus/jobs"}, "tried": ["https://talent.lenovo.com.cn/campus", "https://mova.zhiye.com/campus/jobs"]}
+{"company": "韶音", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/"}, "tried": ["https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/"]}
+{"company": "Pico", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.picoxr.com/cn/", "https://www.picoxr.com/cn/products/pico4/", "https://www.picoxr.com/cn/products/pico4e", "https://www.picoxr.com/cn/software/pico-os"]}
+{"company": "影石Insta360", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.insta360.com/cn/jobs"]}
+{"company": "海康机器人", "sector": "通信与电子硬件", "found": null, "tried": ["https://job.hikrobotics.com"]}
+{"company": "长虹", "sector": "通信与电子硬件", "found": null, "tried": ["http://www.changhong-network.com/list/?58_1.html", "https://job.xidian.edu.cn/campus/view/id/757297", "https://group.changhong.com/", "https://www.changhong.com.cn/"]}
+{"company": "格力电器", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.gree.cn/?lang=zh-cn"]}
+{"company": "志高空调", "sector": "通信与电子硬件", "found": null, "tried": []}
+{"company": "方太", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "fotile", "via": "url", "url": "https://fotile.zhiye.com/campus"}, "tried": ["https://fotile.zhiye.com/campus"]}
+{"company": "老板电器", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.robam.com/"]}
+{"company": "华帝", "sector": "通信与电子硬件", "found": null, "tried": ["https://vatti.com.cn/", "https://www.vatti.com.cn/about", "https://www.vatti.com.cn/article-list"]}
+{"company": "苏泊尔", "sector": "通信与电子硬件", "found": {"kind": "hotjob", "slug": "www", "via": "url", "url": "https://www.hotjob.cn/wt/suporcw/web/index/campus"}, "tried": ["https://www.hotjob.cn/wt/suporcw/web/index/campus"]}
+{"company": "小熊电器", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://bears.com.cn/join.html?cid=69"}, "tried": ["https://bears.com.cn/join.html?cid=69"]}
+{"company": "科沃斯", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://hr.ecovacs.cn/"}, "tried": ["https://hr.ecovacs.cn/"]}
+{"company": "绿联", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "ugreen", "via": "url", "url": "https://ugreen.zhiye.com/campus"}, "tried": ["https://ugreen.zhiye.com/campus"]}
+{"company": "漫步者", "sector": "通信与电子硬件", "found": {"kind": "beisen", "slug": "mova", "via": "url", "url": "https://mova.zhiye.com/campus/jobs"}, "tried": ["https://talent.lenovo.com.cn/campus", "https://mova.zhiye.com/campus/jobs"]}
+{"company": "华润微电子", "sector": "半导体", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1021114", "https://www.crmicro.com/talent/index.html"]}
+{"company": "斯达半导", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vmm5tC5tL.html"}, "tried": ["https://campus.niuqizp.com/job-vll5a5aCn.html", "https://campus.niuqizp.com/job-vmm5tC5tL.html"]}
+{"company": "时代电气", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://talent.catl.com/social-recruitment/catlhr/96144/"}, "tried": ["https://talent.catl.com/social-recruitment/catlhr/96144/"]}
+{"company": "三环集团", "sector": "半导体", "found": null, "tried": ["https://career-dev.cctc.cc/", "https://hr.cctc.cc/", "https://hr.cctc.cc/school", "https://hr.cctc.cc/index/home.html"]}
+{"company": "风华高科", "sector": "半导体", "found": null, "tried": []}
+{"company": "江丰电子", "sector": "半导体", "found": null, "tried": []}
+{"company": "中科飞测", "sector": "半导体", "found": null, "tried": []}
+{"company": "芯源微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/688037/144533?locale=zh-CN"}, "tried": ["https://campus.niuqizp.com/job-vkm5aNtCZ.html", "https://app.mokahr.com/campus-recruitment/688037/144533?locale=zh-CN"]}
+{"company": "万业企业", "sector": "半导体", "found": null, "tried": []}
+{"company": "立昂微", "sector": "半导体", "found": null, "tried": []}
+{"company": "神工股份", "sector": "半导体", "found": null, "tried": ["https://thinkon.com/careers/"]}
+{"company": "长川科技", "sector": "半导体", "found": null, "tried": ["https://career.hzcctech.com/", "http://hrm-out.hzcctech.com:8083/RedseaPlatform/ZpPeopleBaseinfo.mob?method=sweepCodeFillBYPC&rootId=hzcctech&recruitWay=2", "http://hrm-out.hzcctech.com:8083/RedseaPlatform/ZpPeopleBaseinfo.mob?method=sweepCodeFillBYPC&rootId=hzcctech&recruitWay=4"]}
+{"company": "芯原微电子", "sector": "半导体", "found": null, "tried": ["https://www.verisilicon.com/cn/Careers", "https://www.verisilicon.com/cn/Recruit"]}
+{"company": "韶音", "sector": "通信与电子硬件", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/"}, "tried": ["https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/"]}
+{"company": "Pico", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.picoxr.com/cn/", "https://www.picoxr.com/cn/products/pico4/", "https://www.picoxr.com/cn/products/pico4e", "https://www.picoxr.com/cn/software/pico-os"]}
+{"company": "影石Insta360", "sector": "通信与电子硬件", "found": null, "tried": ["https://www.insta360.com/cn/jobs"]}
+{"company": "海康机器人", "sector": "通信与电子硬件", "found": null, "tried": ["https://job.hikrobotics.com"]}
+{"company": "灿芯股份", "sector": "半导体", "found": null, "tried": ["https://www.britesemi.com/Join_Us/Campus_Recruitment.jsp", "https://www.britesemi.com/", "https://www.britesemi.com/Join_Us/Join_Us.htm"]}
+{"company": "翱捷科技", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.asrmicro.com/join.html"}, "tried": ["https://www.asrmicro.com/join.html"]}
+{"company": "中颖电子", "sector": "半导体", "found": null, "tried": []}
+{"company": "纳芯微", "sector": "半导体", "found": null, "tried": ["https://careers.novosns.com/campus", "https://careers.novosns.com/campus/rd", "https://careers.novosns.com/campus/sales", "https://careers.novosns.com/campus/functional"]}
+{"company": "思瑞浦", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/3peakic/67894"}, "tried": ["https://campus.niuqizp.com/job-vkk5zatMC.html", "https://app.mokahr.com/campus-recruitment/3peakic/67894"]}
+{"company": "华润微电子", "sector": "半导体", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1021114", "https://www.crmicro.com/talent/index.html"]}
+{"company": "斯达半导", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vmm5tC5tL.html"}, "tried": ["https://campus.niuqizp.com/job-vll5a5aCn.html", "https://campus.niuqizp.com/job-vmm5tC5tL.html"]}
+{"company": "时代电气", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://talent.catl.com/social-recruitment/catlhr/96144/"}, "tried": ["https://talent.catl.com/social-recruitment/catlhr/96144/"]}
+{"company": "三环集团", "sector": "半导体", "found": null, "tried": ["https://career-dev.cctc.cc/", "https://hr.cctc.cc/", "https://hr.cctc.cc/school", "https://hr.cctc.cc/index/home.html"]}
+{"company": "风华高科", "sector": "半导体", "found": null, "tried": []}
+{"company": "江丰电子", "sector": "半导体", "found": null, "tried": []}
+{"company": "中科飞测", "sector": "半导体", "found": null, "tried": []}
+{"company": "芯源微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/688037/144533?locale=zh-CN"}, "tried": ["https://campus.niuqizp.com/job-vkm5aNtCZ.html", "https://app.mokahr.com/campus-recruitment/688037/144533?locale=zh-CN"]}
+{"company": "万业企业", "sector": "半导体", "found": null, "tried": []}
+{"company": "立昂微", "sector": "半导体", "found": null, "tried": []}
+{"company": "神工股份", "sector": "半导体", "found": null, "tried": ["https://thinkon.com/careers/"]}
+{"company": "长川科技", "sector": "半导体", "found": null, "tried": ["https://career.hzcctech.com/", "http://hrm-out.hzcctech.com:8083/RedseaPlatform/ZpPeopleBaseinfo.mob?method=sweepCodeFillBYPC&rootId=hzcctech&recruitWay=2", "http://hrm-out.hzcctech.com:8083/RedseaPlatform/ZpPeopleBaseinfo.mob?method=sweepCodeFillBYPC&rootId=hzcctech&recruitWay=4"]}
+{"company": "芯原微电子", "sector": "半导体", "found": null, "tried": ["https://www.verisilicon.com/cn/Careers", "https://www.verisilicon.com/cn/Recruit"]}
+{"company": "灿芯股份", "sector": "半导体", "found": null, "tried": ["https://www.britesemi.com/Join_Us/Campus_Recruitment.jsp", "https://www.britesemi.com/", "https://www.britesemi.com/Join_Us/Join_Us.htm"]}
+{"company": "翱捷科技", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.asrmicro.com/join.html"}, "tried": ["https://www.asrmicro.com/join.html"]}
+{"company": "中颖电子", "sector": "半导体", "found": null, "tried": []}
+{"company": "纳芯微", "sector": "半导体", "found": null, "tried": ["https://careers.novosns.com/campus", "https://careers.novosns.com/campus/rd", "https://careers.novosns.com/campus/sales", "https://careers.novosns.com/campus/functional"]}
+{"company": "思瑞浦", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/3peakic/67894"}, "tried": ["https://campus.niuqizp.com/job-vkk5zatMC.html", "https://app.mokahr.com/campus-recruitment/3peakic/67894"]}
+{"company": "英集芯", "sector": "半导体", "found": null, "tried": ["http://job.injoinic.com/schedule.html", "https://career.gdut.edu.cn/campus/view/id/1019992", "http://mjob.injoinic.com/", "http://job.injoinic.com/index.html"]}
+{"company": "全志科技", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/"}, "tried": ["https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/"]}
+{"company": "瑞芯微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://hr.rock-chips.com/social-recruitment/rock-chips/44101"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757494", "https://www.rock-chips.com/a/cn/jobs/xiaoyuanzhaopin/index.html", "https://www.rock-chips.com/a/cn/jobs/yingpinzhinan/index.html", "https://hr.rock-chips.com/social-recruitment/rock-chips/44101"]}
+{"company": "中科蓝讯", "sector": "半导体", "found": null, "tried": ["https://www.bluetrum.com/job/job.php?class2=77", "https://www.bluetrum.com/joinus/show.php?id=70", "https://campus.niuqizp.com/job-vrk5a5naM.html", "https://campus.niuqizp.com/archivejob-v8s55t5N5.html"]}
+{"company": "慧智微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.vanchip.com/recruitment/index"}, "tried": ["https://www.vanchip.com/recruitment/index"]}
+{"company": "唯捷创芯", "sector": "半导体", "found": null, "tried": ["https://campus.niuqizp.com/job-vUk5a5ZLa.html", "https://job.xidian.edu.cn/campus/view/id/756894"]}
+{"company": "爱芯元智", "sector": "半导体", "found": null, "tried": ["https://axera-tech.com/join/1", "https://www.axera-tech.com/join/1", "https://axera-tech.com/"]}
+{"company": "后摩智能", "sector": "半导体", "found": {"kind": "feishu_atsx", "slug": "houmo", "via": "page", "url": "https://campus.niuqizp.com/job-vls5nnzzn.html"}, "tried": ["https://campus.niuqizp.com/job-vls5nnzzn.html"]}
+{"company": "黑芝麻", "sector": "半导体", "found": null, "tried": []}
+{"company": "兆易创新存储", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "hire-r1.mokahr.com", "via": "page", "url": "https://www.gigadevice.com/about/career"}, "tried": ["https://www.gigadevice.com/about/career"]}
+{"company": "普冉股份", "sector": "半导体", "found": null, "tried": ["https://www.puyasemi.com/"]}
+{"company": "广汽埃安", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "gacrnd", "via": "url", "url": "https://gacrnd.zhiye.com/Campus"}, "tried": ["https://www.aion.com.cn/", "https://www.aion.com.cn/show/join", "https://gacrnd.zhiye.com/Campus"]}
+{"company": "广汽传祺", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU61407ecabef57c3b638d5e45/pb/index.html"}, "tried": ["https://wecruit.hotjob.cn/SU61407ecabef57c3b638d5e45/pb/index.html"]}
+{"company": "一汽大众", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "东风本田", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "吉利银河", "sector": "汽车与出行", "found": null, "tried": ["https://job.geely.com/social-recruitment/geely/96123/"]}
+{"company": "腾势", "sector": "汽车与出行", "found": null, "tried": ["https://job.byd.com/"]}
+{"company": "仰望", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "飞凡汽车", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "岚图汽车", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116662.html"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/756828", "https://career.nankai.edu.cn/correcruit/content/id/116662.html"]}
+{"company": "阿维塔", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "aiva", "via": "url", "url": "https://aiva.zhiye.com/"}, "tried": ["https://talent.avatr.com/915151", "https://talent.avatr.com/915151/page-vlnFO0", "https://talent.avatr.com/index", "https://aiva.zhiye.com/"]}
+{"company": "埃安", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "gacrnd", "via": "url", "url": "https://gacrnd.zhiye.com/Campus"}, "tried": ["https://www.aion.com.cn/", "https://www.aion.com.cn/show/join", "https://www.aion.com.cn/show/joindetail?id=31&type=2", "https://gacrnd.zhiye.com/Campus"]}
+{"company": "哪吒汽车", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "changan", "via": "url", "url": "https://changan.zhiye.com/campus?c=1"}, "tried": ["https://changan.zhiye.com/campus?c=1"]}
+{"company": "小米汽车", "sector": "汽车与出行", "found": null, "tried": ["https://xiaomi.jobs.f.mioffice.cn/index/position/7362043473405558893/detail", "https://xiaomi.jobs.f.mioffice.cn/campus/", "https://hr.xiaomi.com/website/campus.html", "https://xiaomi.jobs.f.mioffice.cn/index"]}
+{"company": "星途", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "chery", "via": "page", "url": "https://www.exeedcars.com/joinus/"}, "tried": ["https://www.exeedcars.com/joinus/"]}
+{"company": "红旗", "sector": "汽车与出行", "found": null, "tried": ["https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-WapDealerRecruitment.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitmentApply.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment~venueInformation.js"]}
+{"company": "福耀玻璃", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "均胜电子", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.joyson.com/index.php/join.html"}, "tried": ["https://www.joyson.com/index.php/join.html"]}
+{"company": "华域汽车", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "hascovision", "via": "url", "url": "https://hascovision.zhiye.com/campus/jobs?LocId=[{%22id%22:%223100%22,%22label%22:%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22}]"}, "tried": ["https://campus.niuqizp.com/job-vyy5CNM5t.html", "https://hascovision.zhiye.com/campus/jobs?LocId=[{%22id%22:%223100%22,%22label%22:%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22}]"]}
+{"company": "伯特利", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "xablt", "via": "url", "url": "https://xablt.zhiye.com/campus"}, "tried": ["https://www.boteli.cn/jrwm/zpzq/index.html", "https://xablt.zhiye.com/campus"]}
+{"company": "拓普集团", "sector": "汽车与出行", "found": null, "tried": ["https://hr.tp-link.com.cn/m/", "https://hr.tp-link.com.cn/", "https://www.tuopu.com/", "https://www.tuopu.com/why-join-us/"]}
+{"company": "三花智控", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://commercial.sanhuagroup.com/Careers/"}, "tried": ["https://www.sanhuamc.com/", "https://www.sanhuamc.com/join/", "https://commercial.sanhuagroup.com/Careers/"]}
+{"company": "银轮股份", "sector": "汽车与出行", "found": null, "tried": ["https://www.yinlun.cn/Recruit"]}
+{"company": "中鼎股份", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "保隆科技", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.baolong.biz/"}, "tried": ["https://www.baolong.biz/"]}
+{"company": "联合电子", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "www", "via": "url", "url": "https://www.hotjob.cn/wt/UAES/web/index"}, "tried": ["https://www.hotjob.cn/wt/UAES/web/index"]}
+{"company": "宁德新能源", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://talent.catl.com/social-recruitment/catlhr/96144/"}, "tried": ["https://talent.catl.com/social-recruitment/catlhr/96144/"]}
+{"company": "精进电动", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus"}, "tried": ["https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus"]}
+{"company": "英集芯", "sector": "半导体", "found": null, "tried": ["http://job.injoinic.com/schedule.html", "https://career.gdut.edu.cn/campus/view/id/1019992", "http://mjob.injoinic.com/", "http://job.injoinic.com/index.html"]}
+{"company": "全志科技", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/"}, "tried": ["https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/"]}
+{"company": "瑞芯微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://hr.rock-chips.com/social-recruitment/rock-chips/44101"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/757494", "https://www.rock-chips.com/a/cn/jobs/xiaoyuanzhaopin/index.html", "https://www.rock-chips.com/a/cn/jobs/yingpinzhinan/index.html", "https://hr.rock-chips.com/social-recruitment/rock-chips/44101"]}
+{"company": "中科蓝讯", "sector": "半导体", "found": null, "tried": ["https://www.bluetrum.com/job/job.php?class2=77", "https://www.bluetrum.com/joinus/show.php?id=70", "https://campus.niuqizp.com/job-vrk5a5naM.html", "https://campus.niuqizp.com/archivejob-v8s55t5N5.html"]}
+{"company": "慧智微", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.vanchip.com/recruitment/index"}, "tried": ["https://www.vanchip.com/recruitment/index"]}
+{"company": "唯捷创芯", "sector": "半导体", "found": null, "tried": ["https://campus.niuqizp.com/job-vUk5a5ZLa.html", "https://job.xidian.edu.cn/campus/view/id/756894"]}
+{"company": "爱芯元智", "sector": "半导体", "found": null, "tried": ["https://axera-tech.com/join/1", "https://www.axera-tech.com/join/1", "https://axera-tech.com/"]}
+{"company": "后摩智能", "sector": "半导体", "found": {"kind": "feishu_atsx", "slug": "houmo", "via": "page", "url": "https://campus.niuqizp.com/job-vls5nnzzn.html"}, "tried": ["https://campus.niuqizp.com/job-vls5nnzzn.html"]}
+{"company": "黑芝麻", "sector": "半导体", "found": null, "tried": []}
+{"company": "兆易创新存储", "sector": "半导体", "found": {"kind": "moka_blocked", "host": "hire-r1.mokahr.com", "via": "page", "url": "https://www.gigadevice.com/about/career"}, "tried": ["https://www.gigadevice.com/about/career"]}
+{"company": "普冉股份", "sector": "半导体", "found": null, "tried": ["https://www.puyasemi.com/"]}
+{"company": "广汽埃安", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "gacrnd", "via": "url", "url": "https://gacrnd.zhiye.com/Campus"}, "tried": ["https://www.aion.com.cn/", "https://www.aion.com.cn/show/join", "https://gacrnd.zhiye.com/Campus"]}
+{"company": "广汽传祺", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU61407ecabef57c3b638d5e45/pb/index.html"}, "tried": ["https://wecruit.hotjob.cn/SU61407ecabef57c3b638d5e45/pb/index.html"]}
+{"company": "一汽大众", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "东风本田", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "吉利银河", "sector": "汽车与出行", "found": null, "tried": ["https://job.geely.com/social-recruitment/geely/96123/"]}
+{"company": "腾势", "sector": "汽车与出行", "found": null, "tried": ["https://job.byd.com/"]}
+{"company": "仰望", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "飞凡汽车", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "岚图汽车", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116662.html"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/756828", "https://career.nankai.edu.cn/correcruit/content/id/116662.html"]}
+{"company": "阿维塔", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "aiva", "via": "url", "url": "https://aiva.zhiye.com/"}, "tried": ["https://talent.avatr.com/915151", "https://talent.avatr.com/915151/page-vlnFO0", "https://talent.avatr.com/index", "https://aiva.zhiye.com/"]}
+{"company": "埃安", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "gacrnd", "via": "url", "url": "https://gacrnd.zhiye.com/Campus"}, "tried": ["https://www.aion.com.cn/", "https://www.aion.com.cn/show/join", "https://www.aion.com.cn/show/joindetail?id=31&type=2", "https://gacrnd.zhiye.com/Campus"]}
+{"company": "哪吒汽车", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "changan", "via": "url", "url": "https://changan.zhiye.com/campus?c=1"}, "tried": ["https://changan.zhiye.com/campus?c=1"]}
+{"company": "小米汽车", "sector": "汽车与出行", "found": null, "tried": ["https://xiaomi.jobs.f.mioffice.cn/index/position/7362043473405558893/detail", "https://xiaomi.jobs.f.mioffice.cn/campus/", "https://hr.xiaomi.com/website/campus.html", "https://xiaomi.jobs.f.mioffice.cn/index"]}
+{"company": "星途", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "chery", "via": "page", "url": "https://www.exeedcars.com/joinus/"}, "tried": ["https://www.exeedcars.com/joinus/"]}
+{"company": "红旗", "sector": "汽车与出行", "found": null, "tried": ["https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-WapDealerRecruitment.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitmentApply.js", "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment~venueInformation.js"]}
+{"company": "福耀玻璃", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "均胜电子", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.joyson.com/index.php/join.html"}, "tried": ["https://www.joyson.com/index.php/join.html"]}
+{"company": "华域汽车", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "hascovision", "via": "url", "url": "https://hascovision.zhiye.com/campus/jobs?LocId=[{%22id%22:%223100%22,%22label%22:%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22}]"}, "tried": ["https://campus.niuqizp.com/job-vyy5CNM5t.html", "https://hascovision.zhiye.com/campus/jobs?LocId=[{%22id%22:%223100%22,%22label%22:%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22}]"]}
+{"company": "伯特利", "sector": "汽车与出行", "found": {"kind": "beisen", "slug": "xablt", "via": "url", "url": "https://xablt.zhiye.com/campus"}, "tried": ["https://www.boteli.cn/jrwm/zpzq/index.html", "https://xablt.zhiye.com/campus"]}
+{"company": "拓普集团", "sector": "汽车与出行", "found": null, "tried": ["https://hr.tp-link.com.cn/m/", "https://hr.tp-link.com.cn/", "https://www.tuopu.com/", "https://www.tuopu.com/why-join-us/"]}
+{"company": "三花智控", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://commercial.sanhuagroup.com/Careers/"}, "tried": ["https://www.sanhuamc.com/", "https://www.sanhuamc.com/join/", "https://commercial.sanhuagroup.com/Careers/"]}
+{"company": "银轮股份", "sector": "汽车与出行", "found": null, "tried": ["https://www.yinlun.cn/Recruit"]}
+{"company": "中鼎股份", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "保隆科技", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.baolong.biz/"}, "tried": ["https://www.baolong.biz/"]}
+{"company": "联合电子", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "www", "via": "url", "url": "https://www.hotjob.cn/wt/UAES/web/index"}, "tried": ["https://www.hotjob.cn/wt/UAES/web/index"]}
+{"company": "宁德新能源", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://talent.catl.com/social-recruitment/catlhr/96144/"}, "tried": ["https://talent.catl.com/social-recruitment/catlhr/96144/"]}
+{"company": "精进电动", "sector": "汽车与出行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus"}, "tried": ["https://wecruit.hotjob.cn/SU66d7f4aa6202cc2d4991438b/pb/posDetail.html?postId=6a4733c29d291a0d3581ab45&postType=campus"]}
+{"company": "卧龙电驱", "sector": "汽车与出行", "found": null, "tried": ["https://www.wolong.com/index.php/join/campus.html", "https://www.wolong.com/", "https://www.wolong.com/index.php/join.html", "https://www.wolong.com/index.php/join/career.html"]}
+{"company": "禾赛科技", "sector": "汽车与出行", "found": {"kind": "feishu_atsx", "slug": "kwh0jtf778", "via": "url", "url": "https://kwh0jtf778.jobs.feishu.cn/229043"}, "tried": ["https://kwh0jtf778.jobs.feishu.cn/229043"]}
+{"company": "速腾聚创", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/robosense/69887"}, "tried": ["https://app.mokahr.com/campus-recruitment/robosense/69887"]}
+{"company": "亮道智能", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "高德地图", "sector": "汽车与出行", "found": null, "tried": ["https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Ftalent.amap.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", "https://lbs.amap.com/talent", "https://talent.amap.com/campus/home", "https://talent.amap.com/campus/notice?code=1&&tab=notice"]}
+{"company": "轻舟智航", "sector": "汽车与出行", "found": null, "tried": ["https://www.qcraft.ai/en"]}
+{"company": "智加科技", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vYU5a5nzM.html"}, "tried": ["https://campus.niuqizp.com/job-vYU5a5nzM.html"]}
+{"company": "晶澳科技", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "协鑫科技", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.gcltech.com/join.html"}, "tried": ["https://www.gcltech.com/join.html"]}
+{"company": "南玻集团", "sector": "新能源与先进制造", "found": null, "tried": ["https://csg.jobs.cz", "https://csg.jobs.cz/", "https://csg.com/en/career", "https://csg.com/en/career/top-managers"]}
+{"company": "禾迈股份", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.hoymiles.com/zh/"}, "tried": ["https://career.shiep.edu.cn/campus/view/id/667343", "https://www.hoymiles.com/zh/"]}
+{"company": "卧龙电驱", "sector": "汽车与出行", "found": null, "tried": ["https://www.wolong.com/index.php/join/campus.html", "https://www.wolong.com/", "https://www.wolong.com/index.php/join.html", "https://www.wolong.com/index.php/join/career.html"]}
+{"company": "禾赛科技", "sector": "汽车与出行", "found": {"kind": "feishu_atsx", "slug": "kwh0jtf778", "via": "url", "url": "https://kwh0jtf778.jobs.feishu.cn/229043"}, "tried": ["https://kwh0jtf778.jobs.feishu.cn/229043"]}
+{"company": "速腾聚创", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/robosense/69887"}, "tried": ["https://app.mokahr.com/campus-recruitment/robosense/69887"]}
+{"company": "亮道智能", "sector": "汽车与出行", "found": null, "tried": []}
+{"company": "高德地图", "sector": "汽车与出行", "found": null, "tried": ["https://mozi-login.alibaba-inc.com/ssoLogin.htm?APP_NAME=recruit-careers&BACK_URL=http%3A%2F%2Ftalent.amap.com%2Fpersonal%2Fcampus-application%3Flang%3Dzh", "https://lbs.amap.com/talent", "https://talent.amap.com/campus/home", "https://talent.amap.com/campus/notice?code=1&&tab=notice"]}
+{"company": "轻舟智航", "sector": "汽车与出行", "found": null, "tried": ["https://www.qcraft.ai/en"]}
+{"company": "智加科技", "sector": "汽车与出行", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vYU5a5nzM.html"}, "tried": ["https://campus.niuqizp.com/job-vYU5a5nzM.html"]}
+{"company": "晶澳科技", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "协鑫科技", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.gcltech.com/join.html"}, "tried": ["https://www.gcltech.com/join.html"]}
+{"company": "南玻集团", "sector": "新能源与先进制造", "found": null, "tried": ["https://csg.jobs.cz", "https://csg.jobs.cz/", "https://csg.com/en/career", "https://csg.com/en/career/top-managers"]}
+{"company": "禾迈股份", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.hoymiles.com/zh/"}, "tried": ["https://career.shiep.edu.cn/campus/view/id/667343", "https://www.hoymiles.com/zh/"]}
+{"company": "上能电气", "sector": "新能源与先进制造", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020831", "https://www.si-neng.com/about/join", "https://www.si-neng.com/about/join_2", "https://www.si-neng.com/cn/index/listview/catid/39/m/cn/place/22/wd/1/tp/1/p/1.html"]}
+{"company": "科华数据", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/kehua/92510"}, "tried": ["https://app.mokahr.com/campus-recruitment/kehua/92510"]}
+{"company": "南都电源", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.naradapower.com/"}, "tried": ["https://www.naradapower.com/"]}
+{"company": "力神电池", "sector": "新能源与先进制造", "found": null, "tried": ["https://lishen.libattery.net/job.html", "https://www.lishen.com.cn/category/join.html"]}
+{"company": "孚能科技动力", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.farasis.com/index/contact-recruit/index.html"]}
+{"company": "格林美", "sector": "新能源与先进制造", "found": null, "tried": ["https://career.buct.edu.cn/Zhaopin/zuijin.html?id=af39bd91-1987-e157-1901-8d1d4e471544&hold_date=2026-10-23", "https://www.gem.com.cn/SchoolRecruitment/index.html"]}
+{"company": "恩捷股份", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.semcorp.com/about/join-us/recruitment-position/campus-recruitment", "https://www.semcorp.com/about/company-profile", "https://career.shiep.edu.cn/teachin/view/id/110035"]}
+{"company": "星源材质", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "璞泰来", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.putailai.com/about/join"]}
+{"company": "上能电气", "sector": "新能源与先进制造", "found": null, "tried": ["https://career.gdut.edu.cn/campus/view/id/1020831", "https://www.si-neng.com/about/join", "https://www.si-neng.com/about/join_2", "https://www.si-neng.com/cn/index/listview/catid/39/m/cn/place/22/wd/1/tp/1/p/1.html"]}
+{"company": "科华数据", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/kehua/92510"}, "tried": ["https://app.mokahr.com/campus-recruitment/kehua/92510"]}
+{"company": "南都电源", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.naradapower.com/"}, "tried": ["https://www.naradapower.com/"]}
+{"company": "力神电池", "sector": "新能源与先进制造", "found": null, "tried": ["https://lishen.libattery.net/job.html", "https://www.lishen.com.cn/category/join.html"]}
+{"company": "孚能科技动力", "sector": "新能源与先进制造", "found": {"kind": "beisen", "slug": "farasisenergy", "via": "page", "url": "https://www.farasis.com/index/contact-recruit/index.html"}, "tried": ["https://www.farasis.com/index/contact-recruit/index.html"]}
+{"company": "格林美", "sector": "新能源与先进制造", "found": null, "tried": ["https://career.buct.edu.cn/Zhaopin/zuijin.html?id=af39bd91-1987-e157-1901-8d1d4e471544&hold_date=2026-10-23", "https://www.gem.com.cn/SchoolRecruitment/index.html"]}
+{"company": "恩捷股份", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.semcorp.com/about/join-us/recruitment-position/campus-recruitment", "https://www.semcorp.com/about/company-profile", "https://career.shiep.edu.cn/teachin/view/id/110035"]}
+{"company": "星源材质", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "璞泰来", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.putailai.com/about/join"]}
+{"company": "杉杉股份", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.shanshantech.com/"]}
+{"company": "当升科技", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/easpring/102152"}, "tried": ["https://app.mokahr.com/campus-recruitment/easpring/102152"]}
+{"company": "湖南裕能", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.hunanyuneng.com/rlzy/1.html", "https://www.hunanyuneng.com/jobs_1.html"]}
+{"company": "杉杉股份", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.shanshantech.com/"]}
+{"company": "当升科技", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/easpring/102152"}, "tried": ["https://app.mokahr.com/campus-recruitment/easpring/102152"]}
+{"company": "湖南裕能", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.hunanyuneng.com/rlzy/1.html", "https://www.hunanyuneng.com/jobs_1.html"]}
+{"company": "雅化集团", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.yh.cn/job_transfer.html"}, "tried": ["https://www.yh.cn/jobsyh.html", "https://www.yh.cn/job_transfer.html"]}
+{"company": "盐湖股份", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "三一重能", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "远景能源", "sector": "新能源与先进制造", "found": {"kind": "beisen", "slug": "aesc-group", "via": "url", "url": "https://aesc-group.zhiye.com/campus/"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116772.html", "https://aesc-group.zhiye.com/campus/"]}
+{"company": "雅化集团", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.yh.cn/job_transfer.html"}, "tried": ["https://www.yh.cn/jobsyh.html", "https://www.yh.cn/job_transfer.html"]}
+{"company": "盐湖股份", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "三一重能", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "远景能源", "sector": "新能源与先进制造", "found": {"kind": "beisen", "slug": "aesc-group", "via": "url", "url": "https://aesc-group.zhiye.com/campus/"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116772.html", "https://aesc-group.zhiye.com/campus/"]}
+{"company": "运达股份", "sector": "新能源与先进制造", "found": null, "tried": ["https://hr.chinawindey.com:7443/r.do?method=portal&o=082443E1C6E8E566F4F3D5A79EC7D5B6B3B81D60B422AE60&p=6B1FBE97912F34475EBD1C3D250F3A163A012333B0230C2E&oursInWindowDialog=true&windowId=win_532757689329137108", "http://www.yd-tec.com/", "https://windeyenergy.com/", "https://hr.chinawindey.com:7443/r.do?method=portal&o=082443E1C6E8E566F4F3D5A79EC7D5B6B3B81D60B422AE60&oursInWindowDialog=true&windowId=win_730924200726380086"]}
+{"company": "东方电气", "sector": "新能源与先进制造", "found": null, "tried": ["https://dew.dongfang.com/rczp/xyzp.htm", "https://www.dongfang.com/", "https://dew.dongfang.com/rczp/shzp.htm"]}
+{"company": "哈电集团", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "杭氧股份", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "陕鼓动力", "sector": "新能源与先进制造", "found": null, "tried": []}
+{"company": "沈鼓集团", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.shengu.com.cn/rencaizhaopin/", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/8991663430318426155"]}
+{"company": "广州数控", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.gsk.com.cn/", "https://www.gsk.com.cn/ypxz/index_939.aspx", "https://www.gsk.com.cn/xyzp/index_1018.aspx"]}
+{"company": "雷赛智能", "sector": "新能源与先进制造", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vll5CMMLL.html"}, "tried": ["https://campus.niuqizp.com/job-vll5CMMLL.html"]}
+{"company": "步科", "sector": "新能源与先进制造", "found": {"kind": "hotjob", "slug": "bkhr", "via": "url", "url": "https://bkhr.hotjob.cn/"}, "tried": ["https://bkhr.hotjob.cn/"]}
+{"company": "新时达", "sector": "新能源与先进制造", "found": {"kind": "beisen", "slug": "stepelectric", "via": "url", "url": "https://stepelectric.zhiye.com/Campus"}, "tried": ["https://stepelectric.zhiye.com/Campus"]}
+{"company": "遨博智能", "sector": "新能源与先进制造", "found": null, "tried": ["https://www.aubo-robotics.cn/career/53.html"]}
+{"company": "非夕科技", "sector": "新能源与先进制造", "found": {"kind": "feishu_atsx", "slug": "flexivrobotics", "via": "page", "url": "https://www.flexiv.cn/join"}, "tried": ["https://www.flexiv.cn/join"]}
+{"company": "中移信息", "sector": "央企与国企", "found": null, "tried": ["https://cmit.com/careers/"]}
+{"company": "中移在线", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU638844ea0dcad415783e055a/mc/position/campus?projectCode=111401&showProjectBanner=true"}, "tried": ["https://wecruit.hotjob.cn/SU638844ea0dcad415783e055a/mc/position/campus?projectCode=111401&showProjectBanner=true"]}
+{"company": "联通数字科技", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "天翼云", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "tyslchinatelecom", "via": "url", "url": "https://tyslchinatelecom.zhiye.com/campus"}, "tried": ["https://www.ctyun.cn/hr/", "https://tyslchinatelecom.zhiye.com/campus"]}
+{"company": "中国广电", "sector": "央企与国企", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://hr.grgbanking.com/"}, "tried": ["https://hr.grgbanking.com/"]}
+{"company": "国家管网", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.pipechina.com.cn/", "https://www.pipechina.com.cn/index.html", "https://zhaopin.pipechina.com.cn/static/recruit/pc/style-dd4a4b2e85d994a5e9b8.css?theme=007FBA&os=not_windows"]}
+{"company": "中化集团", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "www", "via": "page", "url": "https://www.sinochem.com/zhjtwap/index.html"}, "tried": ["https://www.sinochem.com.cn/", "https://www.sinochem.com/zhjtwap/index.html"]}
+{"company": "三峡能源", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中能建", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国安能", "sector": "央企与国企", "found": null, "tried": ["https://china-an.iguopin.com/", "https://china-an.iguopin.com/job"]}
+{"company": "中国铁物", "sector": "央企与国企", "found": null, "tried": ["https://www.crm.com/careers/"]}
+{"company": "中国航油", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "cnaf", "via": "url", "url": "https://cnaf.zhiye.com/Campus"}, "tried": ["https://cnaf.zhiye.com/Campus"]}
+{"company": "中国节能", "sector": "央企与国企", "found": null, "tried": ["https://www.cecep.cn/", "https://www.cecep.cn/cecep/zyly/rczp/jngs/2026/2/I1477346602589880320.html", "https://www.cecep.cn/cecep/zyly/rczp/jngs/2026/10/phoneI1561731335792361472.html", "https://zhaopin.chnenergy.com.cn/recTypeSerch?kinds=1"]}
+{"company": "中咨公司", "sector": "央企与国企", "found": null, "tried": ["https://www.ciecc.com.cn/"]}
+{"company": "中国电科院", "sector": "央企与国企", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU6056b00a0dcad424d03e153c/pb/school.html"}, "tried": ["https://wecruit.hotjob.cn/SU6056b00a0dcad424d03e153c/pb/school.html"]}
+{"company": "南瑞集团", "sector": "央企与国企", "found": null, "tried": ["https://job.sgepri.sgcc.com.cn/nari-career-ui/empty", "https://job.sgepri.sgcc.com.cn/nari-career-ui/homepage", "https://job.sgepri.sgcc.com.cn/nari-career-ui/schoolrecurit?pageNum=1", "http://www.naritech.cn/index.html"]}
+{"company": "平高电气", "sector": "央企与国企", "found": null, "tried": ["https://www.pgcareers.com/global/en"]}
+{"company": "国电南自", "sector": "央企与国企", "found": null, "tried": ["http://job.sgepri.sgcc.com.cn/nari-career-ui/homepage"]}
+{"company": "中国西电", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "宝钢股份", "sector": "央企与国企", "found": null, "tried": ["http://esales.baosteel.com/baosteel_bsi/sso/websiteGroup.jsp"]}
+{"company": "太钢集团", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "马钢集团", "sector": "央企与国企", "found": null, "tried": ["http://www.mgjs.cn/", "http://www.mgjs.cn/Content/1961331.html"]}
+{"company": "中汽中心", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "航天信息", "sector": "央企与国企", "found": null, "tried": ["https://gd.aisino.com/", "https://www.aisino.com/"]}
+{"company": "中航光电", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "avicoptronics", "via": "url", "url": "https://avicoptronics.zhiye.com/Campus"}, "tried": ["https://avicoptronics.zhiye.com/Campus"]}
+{"company": "中航沈飞", "sector": "央企与国企", "found": null, "tried": ["https://zhaopin.airchina.com.cn/index.shtml"]}
+{"company": "昌河飞机", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "航发动力", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中船重工", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "csic", "via": "url", "url": "https://csic.zhiye.com/"}, "tried": ["https://csic.zhiye.com/"]}
+{"company": "中国重工", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "招商工业", "sector": "央企与国企", "found": null, "tried": ["https://www.cmhijs.com/", "https://www.cmhijs.com/index.php/joins.html", "https://www.cmhijs.com/index.php/joins/recruit.html"]}
+{"company": "中国建材总院", "sector": "央企与国企", "found": null, "tried": ["https://www.cbma.com.cn/"]}
+{"company": "中国巨石", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "chinajushi", "via": "url", "url": "https://chinajushi.zhiye.com/"}, "tried": ["https://chinajushi.zhiye.com/"]}
+{"company": "中车大连", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "国家能源技术经济研究院", "sector": "央企与国企", "found": null, "tried": ["https://www.nice.com/careers"]}
+{"company": "中煤科工", "sector": "央企与国企", "found": null, "tried": ["https://cctegjob.iguopin.com/campus", "https://cctegjob.iguopin.com/", "https://zhaopin.chinacoal.com/", "https://ccteg.iguopin.com/job"]}
+{"company": "中国煤炭地质总局", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中煤能源", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国有色矿业", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "五矿资源", "sector": "央企与国企", "found": null, "tried": ["https://www.mmg.com/careers/", "https://careers.mmg.com/jobs/search", "https://www.mmg.com/careers/careers-at-dugald-river/", "https://www.mmg.com/careers/corporate-office-careers/"]}
+{"company": "中钢集团", "sector": "央企与国企", "found": null, "tried": ["https://www.sinosteel.com/"]}
+{"company": "中国有色金属建设", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "中国黄金集团", "sector": "央企与国企", "found": null, "tried": ["https://www.chinagoldgroup.com/", "https://hjzp.chinagoldgroup.com/recruit", "https://www.chinagoldgroup.com/zghj/rlzy/zczp/A080008001Gone1.html", "https://zjzc.chinagoldgroup.com/zjzc/rczp/gzjh/A076005001Gone1.html"]}
+{"company": "紫金矿业", "sector": "央企与国企", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://join.zjky.cn/campus-recruitment/zijinmining/117957/"}, "tried": ["https://join.zjky.cn/campus-recruitment/zijinmining/117957/"]}
+{"company": "江西铜业", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "云南铜业", "sector": "央企与国企", "found": null, "tried": ["https://ynty.chinalco.com.cn/lxwm/zxns/"]}
+{"company": "南山铝业", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "信发集团", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "魏桥创业", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "万华化学", "sector": "央企与国企", "found": null, "tried": ["https://job.xidian.edu.cn/campus/view/id/757512", "https://job.zzu.edu.cn/campus/view/id/1019186", "https://career.nankai.edu.cn/recruitment/content/type/2/id/6046.html"]}
+{"company": "中国盐业", "sector": "央企与国企", "found": null, "tried": ["http://www.chinasalt.com.cn/xwzx/zytz/ff8080819d8a8bd6019ff8aa10682a2a.html"]}
+{"company": "中国同辐", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "portal-oss", "via": "url", "url": "https://portal-oss.zhiye.com/605932/resource/800c496f-11f5-4c17-886f-9c89641f32e5.html"}, "tried": ["https://portal-oss.zhiye.com/605932/resource/800c496f-11f5-4c17-886f-9c89641f32e5.html"]}
+{"company": "中国航空器材", "sector": "央企与国企", "found": null, "tried": ["http://www.casc.com.cn/cas/", "http://www.casc.com.cn/cas/?cat=16", "https://www.cascpooling.com/cn/rlzy/rczp/index.html", "https://casc.iguopin.com/"]}
+{"company": "中国中免", "sector": "央企与国企", "found": null, "tried": []}
+{"company": "华侨城", "sector": "央企与国企", "found": null, "tried": ["https://campus.niuqizp.com/job-vUl5ZaLMN.html", "https://www.chinaoct.com/hqc/rlzy84/643457/index.html", "https://www.chinaoct.com/"]}
+{"company": "首旅集团", "sector": "央企与国企", "found": null, "tried": ["https://www.btg.com/careers/"]}
+{"company": "华住集团", "sector": "央企与国企", "found": {"kind": "beisen", "slug": "huazhu1", "via": "url", "url": "https://huazhu1.zhiye.com/"}, "tried": ["https://huazhu1.zhiye.com/"]}
+{"company": "中国民生银行", "sector": "银行", "found": null, "tried": ["https://career.xujc.com/2026/0924/c3959a173084/page.htm", "https://www.cmbc.com.cn/", "https://www.cmbc.com.cn/index.htm", "https://www.cmbc.com.cn/sy/hd/2023/08/2074311719114940.htm"]}
+{"company": "温州银行", "sector": "银行", "found": null, "tried": ["https://www.wenzhou.gov.cn/", "https://www.wenzhou.gov.cn/?grooveToken=null"]}
+{"company": "广州农商行", "sector": "银行", "found": null, "tried": ["https://career.gdufs.edu.cn/web/Index/jobs-brief-detail?id=VQUXSNF"]}
+{"company": "中原银行", "sector": "银行", "found": {"kind": "beisen", "slug": "zybank", "via": "url", "url": "https://zybank.zhiye.com/404"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/753918", "https://job.zzu.edu.cn/campus/view/id/1016241", "https://zybank.zhiye.com/404"]}
+{"company": "郑州银行", "sector": "银行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "page", "url": "https://www.zzbank.cn/"}, "tried": ["https://job.zzu.edu.cn/campus/view/id/1017722", "https://www.zzbank.cn/"]}
+{"company": "徽商银行", "sector": "银行", "found": null, "tried": ["http://rczp.hsbank.com.cn/", "https://www.hsbank.com.cn/Channel/15412", "https://www.hsbank.com.cn/Site/Huishang/CN"]}
+{"company": "湖北银行", "sector": "银行", "found": null, "tried": ["https://job.bbc.edu.cn/2025/1124/c1666a123416/page.htm"]}
+{"company": "湖南银行", "sector": "银行", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/119106.html"]}
+{"company": "江西银行", "sector": "银行", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU64faea1b1c240e4e45d27d61/pb/index.html"}, "tried": ["https://wecruit.hotjob.cn/SU64faea1b1c240e4e45d27d61/pb/index.html"]}
+{"company": "贵州银行", "sector": "银行", "found": null, "tried": ["https://whhly.guizhou.gov.cn/", "https://www.guizhou.gov.cn/"]}
+{"company": "兰州银行", "sector": "银行", "found": null, "tried": ["https://www.lzbank.com/public/pjiarulh/", "https://www.lzbank.com/public/pjiarulh/20250324/36507.html"]}
+{"company": "西安银行", "sector": "银行", "found": null, "tried": []}
+{"company": "重庆银行", "sector": "银行", "found": null, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=35744&zpxxId=30786", "https://career.nankai.edu.cn/correcruit/content/id/119596.html"]}
+{"company": "盛京银行", "sector": "银行", "found": null, "tried": []}
+{"company": "锦州银行", "sector": "银行", "found": null, "tried": []}
+{"company": "哈尔滨银行", "sector": "银行", "found": null, "tried": []}
+{"company": "吉林银行", "sector": "银行", "found": null, "tried": ["http://jl.people.com.cn/"]}
+{"company": "富滇银行", "sector": "银行", "found": {"kind": "beisen", "slug": "fii-foxconn", "via": "url", "url": "https://fii-foxconn.zhiye.com/campus"}, "tried": ["https://www.fudian-bank.com/gyfd/fdxw/zygg/202512/20251201_19256.html", "https://fii-foxconn.zhiye.com/campus"]}
+{"company": "北部湾银行", "sector": "银行", "found": null, "tried": []}
+{"company": "海南银行", "sector": "银行", "found": null, "tried": []}
+{"company": "宁波通商银行", "sector": "银行", "found": null, "tried": ["https://www.tongshang.com/joinus/"]}
+{"company": "富民银行", "sector": "银行", "found": null, "tried": ["http://www.kmfm.gov.cn/zfxxgk/"]}
+{"company": "新安银行", "sector": "银行", "found": null, "tried": ["https://www.xinan.gov.cn/"]}
+{"company": "客商银行", "sector": "银行", "found": {"kind": "moka_blocked", "host": "kshbank.mokahr.com", "via": "page", "url": "https://www.kshbank.cn/"}, "tried": ["https://www.kshbank.cn/"]}
+{"company": "恒生银行中国", "sector": "银行", "found": {"kind": "beisen_host", "host": "campus.hundsun.com", "count": 4, "title": "恒生校招", "sample": ["C/C++开发工程师(J10358)", "职能管培生(J10379)", "维护工程师(J10360)"], "via": "page+host", "url": "https://campus.hundsun.com/Campus"}, "tried": ["https://campus.hundsun.com/Campus"]}
+{"company": "摩根士丹利中国", "sector": "银行", "found": null, "tried": ["https://www.morganstanleychina.com/", "https://careers.morganstanley.com.cn/", "https://careers.morganstanley.com.cn/lp/Join%20Our%20Talent%20Community/f5f876b3bcae8363/?locale=en_US"]}
+{"company": "高盛中国", "sector": "银行", "found": null, "tried": ["https://portal.careers.hsbc.com/careers?location=China", "https://www.gs-icbcwm.com/career.html"]}
+{"company": "华宝基金", "sector": "证券基金与资管", "found": null, "tried": ["https://www.hbglobal.com/"]}
+{"company": "银华基金", "sector": "证券基金与资管", "found": null, "tried": ["https://campus.niuqizp.com/job-vry5aZzCC.html"]}
+{"company": "鹏华基金", "sector": "证券基金与资管", "found": null, "tried": ["https://job.phfund.com.cn/", "https://jobm.phfund.com.cn/", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/103117060908912640"]}
+{"company": "建信基金", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "ccbfund", "via": "url", "url": "https://ccbfund.zhiye.com/"}, "tried": ["https://ccbfund.zhiye.com/"]}
+{"company": "交银施罗德", "sector": "证券基金与资管", "found": null, "tried": []}
+{"company": "景顺长城", "sector": "证券基金与资管", "found": null, "tried": []}
+{"company": "天弘基金", "sector": "证券基金与资管", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.thfund.com.cn/"}, "tried": ["https://www.thfund.com.cn/"]}
+{"company": "华商基金", "sector": "证券基金与资管", "found": null, "tried": ["https://www.huashanglawyer.com/"]}
+{"company": "泰康资产", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "jobtaikang", "via": "url", "url": "https://jobtaikang.zhiye.com/"}, "tried": ["https://jobtaikang.zhiye.com/"]}
+{"company": "建信理财", "sector": "证券基金与资管", "found": null, "tried": []}
+{"company": "光大理财", "sector": "证券基金与资管", "found": null, "tried": []}
+{"company": "华夏理财", "sector": "证券基金与资管", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU645b0d18bef57c0907e9fbc8/pb/posDetail.html?postId=6aa9e4bfb6fae46f6754c0a5&postType=campus"}, "tried": ["https://wecruit.hotjob.cn/SU645b0d18bef57c0907e9fbc8/pb/posDetail.html?postId=6aa9e4bfb6fae46f6754c0a5&postType=campus"]}
+{"company": "广银理财", "sector": "证券基金与资管", "found": {"kind": "beisen", "slug": "chinalife", "via": "url", "url": "https://chinalife.zhiye.com/campus/detail?jobAdId=22b89947-1238-463e-ade1-a10f40e5ed17"}, "tried": ["https://chinalife.zhiye.com/campus/detail?jobAdId=22b89947-1238-463e-ade1-a10f40e5ed17"]}
+{"company": "中邮保险", "sector": "保险", "found": null, "tried": []}
+{"company": "工银安盛", "sector": "保险", "found": null, "tried": ["https://jobs.ynu.edu.cn/detail/online?id=3603285"]}
+{"company": "中银保险", "sector": "保险", "found": null, "tried": []}
+{"company": "太平洋人寿", "sector": "保险", "found": null, "tried": []}
+{"company": "太平人寿", "sector": "保险", "found": {"kind": "beisen", "slug": "cntaiping", "via": "url", "url": "https://cntaiping.zhiye.com/"}, "tried": ["https://cntaiping.zhiye.com/"]}
+{"company": "中国出口信用保险", "sector": "保险", "found": null, "tried": ["https://www.sinosure.com.cn/"]}
+{"company": "中信保诚人寿", "sector": "保险", "found": null, "tried": ["https://job.citic.com/recruit"]}
+{"company": "罗兰贝格", "sector": "咨询会计与专业服务", "found": {"kind": "beisen", "slug": "ronbay", "via": "url", "url": "https://ronbay.zhiye.com/campus/jobs"}, "tried": ["https://ronbay.zhiye.com/campus/jobs"]}
+{"company": "药明生物", "sector": "医药医疗", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://job.wuxibiologics.com.cn/campus-recruitment/wuxibiologics/99961/"}, "tried": ["https://job.wuxibiologics.com.cn/campus-recruitment/wuxibiologics/99961/"]}
+{"company": "药明合联", "sector": "医药医疗", "found": {"kind": "beisen", "slug": "wuxiapptec", "via": "url", "url": "https://wuxiapptec.zhiye.com/campus"}, "tried": ["https://campus.niuqizp.com/job-v8y5a5aCC.html", "https://wuxiapptec.zhiye.com/campus"]}
+{"company": "华海药业", "sector": "医药医疗", "found": null, "tried": ["https://www.huahaipharm.com/", "https://www.huahaipharm.com/zpgw.html", "https://www.huahaipharm.com/zyfz.html", "https://www.career.zju.edu.cn/jyxt/sczp/xjhgl/ckXjhgwXq.zf?dwxxid=761C0E153A7524AFE055000000000001&xjhbh=2fdc1f635912e17fb035f49f5f109a97"]}
+{"company": "天宇股份", "sector": "医药医疗", "found": {"kind": "beisen", "slug": "tianyupharm", "via": "page", "url": "https://www.tianyupharm.com/"}, "tried": ["https://www.tianyupharm.com/"]}
+{"company": "奥翔药业", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "美诺华", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "中国生物制药", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "绿叶制药", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "康方生物", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "荣昌生物", "sector": "医药医疗", "found": null, "tried": ["https://www.remegen.cn/"]}
+{"company": "贝达药业", "sector": "医药医疗", "found": {"kind": "beisen", "slug": "bettapharma", "via": "page", "url": "https://www.bettapharma.com/Jobs/campus"}, "tried": ["https://www.bettapharma.com/Jobs/campus"]}
+{"company": "和铂医药", "sector": "医药医疗", "found": null, "tried": ["https://www.harbourbiomed.cn/recruitment", "https://www.harbourbiomed.com/recruitment"]}
+{"company": "欧康维视", "sector": "医药医疗", "found": null, "tried": ["https://www.ocumension.com/cn/career"]}
+{"company": "科兴生物", "sector": "医药医疗", "found": {"kind": "beisen", "slug": "kexing", "via": "url", "url": "https://kexing.zhiye.com/campus"}, "tried": ["https://kexing.zhiye.com/campus"]}
+{"company": "沃森生物疫苗", "sector": "医药医疗", "found": null, "tried": ["https://walvax.com/"]}
+{"company": "华兰生物", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "博雅生物", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "天坛生物", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "上海莱士", "sector": "医药医疗", "found": {"kind": "beisen", "slug": "raas", "via": "url", "url": "https://raas.zhiye.com/Campus"}, "tried": ["https://raas.zhiye.com/Campus"]}
+{"company": "开立医疗", "sector": "医药医疗", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.sonoscape.com/campus-recruitment/sonoscape/94392/"}, "tried": ["https://job.xidian.edu.cn/campus/view/id/756896", "https://campus.sonoscape.com/campus-recruitment/sonoscape/94392/"]}
+{"company": "惠泰医疗", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "启明医疗", "sector": "医药医疗", "found": null, "tried": ["https://www.venusmedtech.com/index.php/about/joinus"]}
+{"company": "归创通桥", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "锦波生物", "sector": "医药医疗", "found": null, "tried": ["https://www.sxjbswyy.com/"]}
+{"company": "万东医疗", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "翔宇医疗", "sector": "医药医疗", "found": null, "tried": ["https://www.xyyl.com/", "https://www.xyyl.com/qyjj.html", "https://www.xyyl.com/join_us/10.html", "https://www.xyyl.com/products_list.html"]}
+{"company": "一心堂", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "老百姓大药房", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "益丰药房", "sector": "医药医疗", "found": null, "tried": []}
+{"company": "大参林", "sector": "医药医疗", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.dslyy.com/campus-recruitment/dslyy/136052"}, "tried": ["https://campus.dslyy.com/campus-recruitment/dslyy/136052"]}
+{"company": "绝味食品", "sector": "消费零售与食品", "found": null, "tried": ["https://www.juewei.cn/page/join/join.html", "https://www.juewei.cn/page/resource/recruit.html"]}
+{"company": "煌上煌", "sector": "消费零售与食品", "found": null, "tried": ["https://www.hsh.com.cn/", "https://www.hsh.com.cn/mobile/index/init.html"]}
+{"company": "紫燕食品", "sector": "消费零售与食品", "found": null, "tried": ["https://www.ziyanfoods.com/news/4/", "https://www.ziyanfoods.com/Culture.html", "https://www.ziyanuas.cn/"]}
+{"company": "桃李面包", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "达利食品", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "盼盼食品", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "wantwant", "via": "url", "url": "https://wantwant.zhiye.com/campus/"}, "tried": ["https://wantwant.zhiye.com/campus/"]}
+{"company": "好想你", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "haoxiangni", "via": "page", "url": "https://www.haoxiangni.cn/contact/join.aspx"}, "tried": ["https://www.haoxiangni.cn/contact/join.aspx"]}
+{"company": "百草味", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vky5aNZZL.html"}, "tried": ["https://campus.niuqizp.com/job-vky5aNZZL.html"]}
+{"company": "甘源食品", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "sanyuan", "via": "url", "url": "https://sanyuan.zhiye.com/campus/jobs"}, "tried": ["https://www.ganyuanfood.com/rczp", "https://sanyuan.zhiye.com/campus/jobs"]}
+{"company": "迎驾贡酒", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "口子窖", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "舍得酒业", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "水井坊", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "珠江啤酒", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "重庆啤酒", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "维维股份", "sector": "消费零售与食品", "found": null, "tried": ["https://www.vvfood.cn/"]}
+{"company": "光明乳业", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "三全食品", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "sanyuan", "via": "url", "url": "https://sanyuan.zhiye.com/campus/jobs"}, "tried": ["https://sanyuan.zhiye.com/campus/jobs"]}
+{"company": "千味央厨", "sector": "消费零售与食品", "found": null, "tried": ["https://www.qianweiyangchu.com/job.html"]}
+{"company": "天味食品", "sector": "消费零售与食品", "found": null, "tried": ["https://campus.niuqizp.com/job-v8m5M5MCN.html"]}
+{"company": "中炬高新", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "恒顺醋业", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "涪陵榨菜", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "安琪酵母", "sector": "消费零售与食品", "found": null, "tried": ["https://www.angelyeast.com/jobs.html"]}
+{"company": "鲁花", "sector": "消费零售与食品", "found": null, "tried": ["https://www.luhua.cn/", "https://www.luhua.cn/join.html", "https://www.luhua.cn/prodduct.html"]}
+{"company": "新五丰", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "海大集团", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "haid1", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/116944.html"}, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/116944.html"]}
+{"company": "通威股份", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "tongwei", "via": "url", "url": "https://tongwei.zhiye.com/"}, "tried": ["https://tongwei.zhiye.com/"]}
+{"company": "德克士", "sector": "消费零售与食品", "found": null, "tried": ["https://www.dicos.com.cn/join/apply.html", "https://www.dicos.com.cn/join/process.html", "https://www.dicos.com.tw/about/career-dicos", "https://www.dicos.com.cn/join/introduce.html"]}
+{"company": "乡村基", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "九毛九", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "煌上煌食品", "sector": "消费零售与食品", "found": null, "tried": ["https://www.hsh.com.cn/", "https://www.hsh.com.cn/mobile/index/init.html"]}
+{"company": "沪上阿姨", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "一点点", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://campus.anta.com/campus-recruitment/antahr/142914/"}, "tried": ["https://campus.duxiaoman.com/051736/", "https://career.centurygames.cn/campus/", "https://campus.anta.com/campus-recruitment/antahr/142914/"]}
+{"company": "库迪咖啡", "sector": "消费零售与食品", "found": {"kind": "feishu_atsx", "slug": "i7drsi3tvf", "via": "url", "url": "https://i7drsi3tvf.jobs.feishu.cn/index"}, "tried": ["https://i7drsi3tvf.jobs.feishu.cn/index"]}
+{"company": "幸运咖", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.funplus.com.cn/"}, "tried": ["https://campus.funplus.com.cn/"]}
+{"company": "耐克中国", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "阿迪达斯中国", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "Zara中国", "sector": "消费零售与食品", "found": {"kind": "hotjob", "slug": "wecruit", "via": "url", "url": "https://wecruit.hotjob.cn/SU66a30e5a1eb8050c72d5a5f6/pb/index.html"}, "tried": ["https://www.zarahome.cn/cn/careers-n5110", "https://wecruit.hotjob.cn/SU66a30e5a1eb8050c72d5a5f6/pb/index.html"]}
+{"company": "太平鸟", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "cntaiping", "via": "url", "url": "https://cntaiping.zhiye.com/"}, "tried": ["https://cntaiping.zhiye.com/"]}
+{"company": "森马服饰", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.semir.com/join-us.html"}, "tried": ["https://www.semir.com/join-us.html"]}
+{"company": "雅戈尔", "sector": "消费零售与食品", "found": null, "tried": ["https://www.youngor.com/zp/31.html", "https://www.youngor.com/mobile/zp/1083.html", "http://www.youngorfabric.com.cn/", "https://www.youngor.com/"]}
+{"company": "爱慕", "sector": "消费零售与食品", "found": {"kind": "beisen", "slug": "aimer", "via": "url", "url": "https://aimer.zhiye.com/"}, "tried": ["https://aimer.zhiye.com/"]}
+{"company": "鸿星尔克", "sector": "消费零售与食品", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/archivejob-vly55taNM.html"}, "tried": ["https://campus.niuqizp.com/archivejob-vly55taNM.html"]}
+{"company": "361度", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "匹克", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "李宁YOUNG", "sector": "消费零售与食品", "found": {"kind": "hotjob", "slug": "lining", "via": "url", "url": "https://lining.hotjob.cn"}, "tried": ["https://lining.hotjob.cn"]}
+{"company": "老凤祥", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "六福珠宝", "sector": "消费零售与食品", "found": null, "tried": ["https://www.lukfook.com/sc/category/news-press-releases/post/grand-opening-of-lukfook-jewellerys-new-shop-in-vincom-dong-khoi-shopping-centre-jointly-celebrating-brands-35th-anniversary"]}
+{"company": "周大生", "sector": "消费零售与食品", "found": null, "tried": ["https://www.chowtaiseng.com/Recruitmentarea/"]}
+{"company": "菜百股份", "sector": "消费零售与食品", "found": null, "tried": []}
+{"company": "曼卡龙", "sector": "消费零售与食品", "found": null, "tried": ["https://www.mclon.com/more-join.aspx"]}
+{"company": "碧桂园服务", "sector": "地产建筑与物流", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.bgyfw.com/cn/"}, "tried": ["https://www.bgyfw.com/cn/"]}
+{"company": "保利物业", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "时代邻里", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.timesneighborhood.cn/join28.html", "https://www.timesneighborhood.cn/join31.html"]}
+{"company": "华发股份", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "葛洲坝地产", "sector": "地产建筑与物流", "found": null, "tried": ["http://www.gzbsz.ceec.net.cn/"]}
+{"company": "大悦城", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.joycity.com/user/preTempJoinClause"]}
+{"company": "恒隆地产", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.hanglung.com/en-us/careers", "https://careers.hanglung.com/go/All-Jobs/9154401/", "https://www.hanglung.com/en-us/careers/internship-program", "https://www.hanglung.com/en-us/careers/management-trainee-program"]}
+{"company": "太古地产", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.swireproperties.com/zh-cn/"]}
+{"company": "上海建工集团", "sector": "地产建筑与物流", "found": null, "tried": ["https://sh2j.scg.com.cn/scg_ej_rlzy_xyzp/List/index.htm"]}
+{"company": "北京建工", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "陕西建工", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "湖南建工", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "浙江建投", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "四川路桥", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.sclqhdgs.com/", "https://www.sclqhdgs.com/recruit_list.aspx?category_id=64"]}
+{"company": "山东路桥", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "中交一公局", "sector": "地产建筑与物流", "found": null, "tried": ["https://campus.niuqizp.com/job-vks5aCzCa.html"]}
+{"company": "中铁十一局", "sector": "地产建筑与物流", "found": null, "tried": ["https://job.zzu.edu.cn/campus/view/id/1019159"]}
+{"company": "中铁建工", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "中建八局", "sector": "地产建筑与物流", "found": null, "tried": ["https://recruit.cscec.com/", "https://job.cscec8b.com.cn/campus", "https://recruit.cscec.com/recruit", "https://job.cscec8b.com.cn/jzb"]}
+{"company": "中建一局", "sector": "地产建筑与物流", "found": null, "tried": ["https://recruit.cscec.com/", "https://recruit.cscec.com/recruit"]}
+{"company": "中建科工", "sector": "地产建筑与物流", "found": null, "tried": ["https://recruit.cscec.com/", "https://recruit.cscec.com/recruit"]}
+{"company": "达达集团", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "申通快递", "sector": "地产建筑与物流", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/sto/126265"}, "tried": ["https://app.mokahr.com/campus-recruitment/sto/126265"]}
+{"company": "圆通速递", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "韵达股份", "sector": "地产建筑与物流", "found": null, "tried": ["https://yd.com/careers", "https://yd.com/core/modules/system/css/components/position-container.module.css?tnh0g1"]}
+{"company": "百世集团", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.pepsicojobs.com/main/china?lang=zh-CN"]}
+{"company": "安能物流", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "日日顺", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "中通快运", "sector": "地产建筑与物流", "found": null, "tried": []}
+{"company": "DSV中国", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.dsv.com/en", "https://www.dsv.com/mydsv/tracking-public/"]}
+{"company": "DHL中国", "sector": "地产建筑与物流", "found": null, "tried": ["https://www.cndhl.com/"]}
+{"company": "三星电子中国", "sector": "外资在华", "found": {"kind": "beisen", "slug": "dearsamsung", "via": "url", "url": "https://dearsamsung.zhiye.com/"}, "tried": ["https://dearsamsung.zhiye.com/"]}
+{"company": "惠普中国", "sector": "外资在华", "found": null, "tried": ["https://www.hp.com/cn-zh/hp-information.html", "https://www.hp.com/cn-zh/contact-hp/contact.html"]}
+{"company": "GE医疗中国", "sector": "外资在华", "found": null, "tried": ["https://career.gehealthcare.cn/", "https://careers.gehealthcare.com/global/en/home"]}
+{"company": "赛诺菲中国", "sector": "外资在华", "found": null, "tried": ["https://jobs.sanofi.cn/china"]}
+{"company": "拜耳中国", "sector": "外资在华", "found": null, "tried": ["https://jobs.bayer.com/", "https://jobs.bayer.com/?locale=zh_CN"]}
+{"company": "优时比中国", "sector": "外资在华", "found": null, "tried": ["https://www.ucbchina.com/Careers"]}
+{"company": "宝洁中国", "sector": "外资在华", "found": null, "tried": ["https://careers.pg.com.cn/cn/zh/search-results", "https://careers.pg.com.cn/cn/zh/recent-grads"]}
+{"company": "花王中国", "sector": "外资在华", "found": null, "tried": []}
+{"company": "金佰利中国", "sector": "外资在华", "found": null, "tried": ["https://www.jblfz.com/join/"]}
+{"company": "玛氏中国", "sector": "外资在华", "found": null, "tried": ["https://careers.mars.com/cn/zh", "https://careers.mars.com/cn/zh/students-graduates"]}
+{"company": "亿滋中国", "sector": "外资在华", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/118588.html", "https://campus.niuqizp.com/job-vyU5CttLa.html"]}
+{"company": "百事中国", "sector": "外资在华", "found": null, "tried": ["https://www.pepsicojobs.com/china?lang=zh-CN", "https://www.pepsicojobs.com/main/china?lang=zh-CN", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/238004966386700288"]}
+{"company": "可口可乐中国", "sector": "外资在华", "found": null, "tried": []}
+{"company": "达能中国", "sector": "外资在华", "found": null, "tried": []}
+{"company": "宜家中国", "sector": "外资在华", "found": null, "tried": ["https://jobs.ikeachina.cn/", "https://jobs.ikeachina.cn/zh-hans/%E6%B1%82%E8%81%8C?acm=59691&alrpm=ALL&ascf=[%7B%22key%22:%22custom_fields.JobFamily%22,%22value%22:%22People%2c+Projects+%26+Support%22%7D]"]}
+{"company": "万豪中国", "sector": "外资在华", "found": null, "tried": []}
+{"company": "雅高中国", "sector": "外资在华", "found": null, "tried": ["https://careers.accor.com/cn/zh/accor-at-a-glance"]}
+{"company": "IBM中国", "sector": "外资在华", "found": null, "tried": ["https://www.ibm.com/us-en"]}
+{"company": "SAP中国", "sector": "外资在华", "found": null, "tried": ["https://www.sap.cn/index.html"]}
+{"company": "微软中国", "sector": "外资在华", "found": null, "tried": ["https://careers.microsoft.com/v2/global/en/locations/gcr.html"]}
+{"company": "特斯拉中国", "sector": "外资在华", "found": null, "tried": []}
+{"company": "福特中国", "sector": "外资在华", "found": {"kind": "beisen", "slug": "caf", "via": "url", "url": "https://caf.zhiye.com/campus"}, "tried": ["https://caf.zhiye.com/campus"]}
+{"company": "杜邦中国", "sector": "外资在华", "found": null, "tried": ["https://careers.dupont.com/cn/zh/home", "https://careers.dupont.com/cn/zh/students"]}
+{"company": "松下电器", "sector": "外资在华", "found": null, "tried": ["https://panasonic.cn/", "https://panasonic.cn/about/"]}
+{"company": "生数科技", "sector": "人工智能与机器人", "found": {"kind": "feishu_atsx", "slug": "shengshu", "via": "url", "url": "https://shengshu.jobs.feishu.cn/index/"}, "tried": ["https://shengshu.jobs.feishu.cn/index/"]}
+{"company": "无问芯穹", "sector": "人工智能与机器人", "found": {"kind": "feishu_atsx", "slug": "infinigence", "via": "url", "url": "https://infinigence.jobs.feishu.cn/infinigence"}, "tried": ["https://infinigence.jobs.feishu.cn/infinigence"]}
+{"company": "中科闻歌", "sector": "人工智能与机器人", "found": {"kind": "beisen", "slug": "wengegroup", "via": "url", "url": "https://wengegroup.zhiye.com/campus"}, "tried": ["https://wengegroup.zhiye.com/campus"]}
+{"company": "思谋科技", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://cn.smartmore.com/"}, "tried": ["https://cn.smartmore.com/"]}
+{"company": "月之暗面Kimi", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "阶跃星辰Step", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "深度求索DeepSeek", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "商汤大装置", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "智元机器人AgiBot", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.agibot.cn/recruiting/campus.html"}, "tried": ["https://www.agibot.cn/recruiting/campus.html"]}
+{"company": "傅利叶", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.niuqizp.com/job-vkl5z5zan.html"}, "tried": ["https://campus.niuqizp.com/job-vkl5z5zan.html"]}
+{"company": "星尘智能", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.astribot.com/careers/"}, "tried": ["https://www.astribot.com/careers/"]}
+{"company": "逐际动力", "sector": "人工智能与机器人", "found": null, "tried": ["https://www.limxdynamics.com/zh", "https://career.limxdynamics.com/index", "https://career.limxdynamics.com/index/position/7379568764038662409/detail", "https://career.limxdynamics.com/index/position/7436212279131687178/detail"]}
+{"company": "云深处", "sector": "人工智能与机器人", "found": null, "tried": ["http://www.deeprobotics.cn/recruit/campus.html", "https://www.deeprobotics.cn/", "https://career.cic.tsinghua.edu.cn/xsglxt/f/jyxt/anony/showZwxx?zpxxid=543802060", "https://career.cic.tsinghua.edu.cn/xsglxt/f/jyxt/anony/showZwxx?zpxxid=564723130"]}
+{"company": "宇立仪器", "sector": "人工智能与机器人", "found": null, "tried": ["https://www.sri.com/careers/"]}
+{"company": "极智嘉", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.nankai.edu.cn/correcruit/content/id/117046.html"}, "tried": ["https://campus.niuqizp.com/job-vYU5a5tzN.html", "https://career.nankai.edu.cn/correcruit/content/id/117046.html"]}
+{"company": "擎朗智能", "sector": "人工智能与机器人", "found": {"kind": "beisen", "slug": "longsys", "via": "url", "url": "https://longsys.zhiye.com/campus"}, "tried": ["https://keenonrobot.robot-china.com/job/", "https://longsys.zhiye.com/campus"]}
+{"company": "云迹科技", "sector": "人工智能与机器人", "found": null, "tried": ["https://www.yunjichina.com.cn/news/79", "https://campus.niuqizp.com/job-vyr5aNMtz.html"]}
+{"company": "峰飞航空", "sector": "人工智能与机器人", "found": null, "tried": ["https://jobs.autoflight.com/campus", "https://jobs.autoflight.com/campus/login"]}
+{"company": "沃飞长空", "sector": "人工智能与机器人", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.aerofugia.com/recruit/"}, "tried": ["https://www.aerofugia.com/recruit/"]}
+{"company": "时的科技", "sector": "人工智能与机器人", "found": null, "tried": ["https://www.tcabtech.com/join-us/"]}
+{"company": "新石器无人车", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "酷哇机器人", "sector": "人工智能与机器人", "found": null, "tried": ["https://www.cowarobot.com/join"]}
+{"company": "未来机器人", "sector": "人工智能与机器人", "found": null, "tried": []}
+{"company": "花西子", "sector": "美妆与服饰", "found": {"kind": "beisen", "slug": "yige-group", "via": "page", "url": "https://campus.niuqizp.com/job-vYm5CL5Lt.html"}, "tried": ["https://campus.niuqizp.com/job-vYm5CL5Lt.html"]}
+{"company": "毛戈平", "sector": "美妆与服饰", "found": null, "tried": ["https://www.maogeping.com/join.html", "https://www.maogeping.com/join/staff.html"]}
+{"company": "橘朵", "sector": "美妆与服饰", "found": {"kind": "hotjob", "slug": "jd", "via": "url", "url": "https://jd.hotjob.cn/"}, "tried": ["https://jd.hotjob.cn/"]}
+{"company": "珀莱雅集团", "sector": "美妆与服饰", "found": null, "tried": ["http://www.proya-group.com/about"]}
+{"company": "可复美", "sector": "美妆与服饰", "found": null, "tried": ["https://comfy.org/careers/"]}
+{"company": "新东方在线", "sector": "教育", "found": {"kind": "beisen", "slug": "xdf", "via": "url", "url": "https://xdf.zhiye.com/campus"}, "tried": ["https://xdf.zhiye.com/campus"]}
+{"company": "高途课堂", "sector": "教育", "found": null, "tried": ["https://job.gaotu.cn/"]}
+{"company": "豆神教育", "sector": "教育", "found": null, "tried": []}
+{"company": "中公教育", "sector": "教育", "found": null, "tried": []}
+{"company": "华图教育", "sector": "教育", "found": null, "tried": ["http://zhaopin.huatu.com/campus/", "https://zhaopin.huatu.com/", "https://m.huatu.com/jiaoshi/", "https://www.huatu.com/z/job/"]}
+{"company": "环球网校", "sector": "教育", "found": null, "tried": ["http://www.hqwx.org/"]}
+{"company": "新东方前途出国", "sector": "教育", "found": {"kind": "beisen_host", "host": "zhaopin.xdf.cn", "count": 4449, "title": "招聘官网", "sample": ["【27届校招】素质全能班教师(J66208)", "27届校招北京-高中语文一对一教师(J55560)", "27届校招北京-高中数学一对一教师(J55562)"], "via": "page+host", "url": "https://zhaopin.xdf.cn/campus"}, "tried": ["https://zhaopin.xdf.cn/campus"]}
+{"company": "新航道", "sector": "教育", "found": null, "tried": []}
+{"company": "小码王", "sector": "教育", "found": null, "tried": ["https://www.xiaomawang.cn/job/"]}
+{"company": "用友网络", "sector": "企业服务", "found": null, "tried": []}
+{"company": "金蝶国际", "sector": "企业服务", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.kingdee.com/cn"}, "tried": ["https://www.kingdee.com/cn"]}
+{"company": "浪潮信息", "sector": "企业服务", "found": null, "tried": []}
+{"company": "东软睿驰", "sector": "企业服务", "found": {"kind": "beisen", "slug": "neusoft-campus", "via": "url", "url": "https://neusoft-campus.zhiye.com/jobs"}, "tried": ["https://neusoft-campus.zhiye.com/jobs"]}
+{"company": "软通动力信息", "sector": "企业服务", "found": null, "tried": ["https://www.isoftstone.com/zh-cn/htmls/campusRecruitment/index.html", "https://career.isoftstone.com/", "https://www.isoftstone.com/zh-cn/htmls/talentRecruitment/index.html"]}
+{"company": "博彦科技", "sector": "企业服务", "found": null, "tried": ["https://www.beyondsoft.com/joinus/contactus.html", "https://www.beyondsoft.com/joinus/life-culture.html", "https://www.beyondsoft.com/css/joinus.css?v=20201217180450"]}
+{"company": "文思海辉", "sector": "企业服务", "found": null, "tried": ["https://www.pactera.com/careers", "https://www.pactera.com/careers/work-life-harmony", "https://www.pactera.com/careers/compensation-benefits", "https://www.pactera.com/careers/development-opportunities"]}
+{"company": "润和软件", "sector": "企业服务", "found": {"kind": "beisen", "slug": "polyharmony", "via": "url", "url": "https://polyharmony.zhiye.com/campus/jobs"}, "tried": ["https://www.hoperun.com/", "https://www.hoperun.com/talent/job", "https://polyharmony.zhiye.com/campus/jobs"]}
+{"company": "诚迈科技", "sector": "企业服务", "found": null, "tried": ["https://www.archermind.com/recruiting"]}
+{"company": "中标软件", "sector": "企业服务", "found": null, "tried": ["https://www.cs2c.com/about/job.html", "https://www.cs2c.com/about/job/1168.html"]}
+{"company": "统信软件", "sector": "企业服务", "found": null, "tried": ["https://faq.uniontech.com/1111/f349", "https://career.gdut.edu.cn/campus/view/id/1020265", "https://www.uniontech.com/Recruitment.html", "https://uniontech.com/m/Recruitment.html"]}
+{"company": "达梦数据库", "sector": "企业服务", "found": null, "tried": []}
+{"company": "人大金仓", "sector": "企业服务", "found": null, "tried": ["https://www.kingbase.com.cn/about/about.html?5"]}
+{"company": "南大通用", "sector": "企业服务", "found": null, "tried": []}
+{"company": "优炫软件", "sector": "企业服务", "found": null, "tried": ["https://www.yuxuan.com/?job/"]}
+{"company": "巨杉数据库", "sector": "企业服务", "found": null, "tried": []}
+{"company": "OceanBase", "sector": "企业服务", "found": null, "tried": ["https://jobs.ultraai.site/jobs/ant/26040109408563"]}
+{"company": "易观数科", "sector": "企业服务", "found": null, "tried": ["https://www.analysys.cn/joinus"]}
+{"company": "永洪科技", "sector": "企业服务", "found": {"kind": "beisen", "slug": "winline", "via": "url", "url": "https://winline.zhiye.com/campus/jobs"}, "tried": ["https://www.yonghongtech.com/gy/gzjh/", "https://winline.zhiye.com/campus/jobs"]}
+{"company": "汇联易", "sector": "企业服务", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://www.huilianyi.com/other/joinus"}, "tried": ["https://www.huilianyi.com/other/joinus"]}
+{"company": "泛微网络", "sector": "企业服务", "found": null, "tried": ["https://campus.niuqizp.com/job-v885an5tt.html", "https://www.weaver.com.cn/recruit/campus.html", "https://www.weaver.com.cn/recruit/weaveru.html", "https://sso.hdu.edu.cn/login?service=https%3A%2F%2Fjob.hdu.edu.cn%2Fdefault%2Fhdu"]}
+{"company": "致远互联", "sector": "企业服务", "found": null, "tried": ["https://www.seeyon.com/Index/job.html", "https://wap.seeyon.com/Index/jobs.html", "https://www.seeyon.com/Index/jobs.html", "https://www.seeyon.com/Index/job/p/2.html"]}
+{"company": "北森控股", "sector": "企业服务", "found": {"kind": "beisen", "slug": "beisen", "via": "url", "url": "https://beisen.zhiye.com/"}, "tried": ["https://beisen.zhiye.com/"]}
+{"company": "Moka", "sector": "企业服务", "found": {"kind": "moka_blocked", "host": "www.mokahr.com", "via": "page", "url": "https://www.mokahr.com/blog/tag/%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98"}, "tried": ["https://www.mokahr.com/solution/campus", "https://www.mokahr.com/blog/tag/%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98"]}
+{"company": "盖雅工场", "sector": "企业服务", "found": null, "tried": []}
+{"company": "薪人薪事", "sector": "企业服务", "found": null, "tried": ["https://www.xinrenxinshi.com/feature/recruit"]}
+{"company": "钉钉", "sector": "企业服务", "found": null, "tried": ["https://page.dingtalk.com/wow/z/dingtalk/default/9TYZ4Q2IBSO", "https://talent.dingtalk.com/campus/home", "https://talent.dingtalk.com/campus/position-list?campusType=internship&", "https://talent.dingtalk.com/campus/position-list?campusType=talentPlan&"]}
+{"company": "飞书", "sector": "企业服务", "found": null, "tried": ["https://hire.feishu.cn/", "https://future.feishu.cn/recruit", "https://hire.feishu.cn/index__abtest", "https://www.feishu.cn/paid/hire-new"]}
+{"company": "腾讯游戏", "sector": "游戏与内容", "found": null, "tried": ["https://careers.tencent.com/campusrecruit.html", "https://careers.tencent.com/", "https://careers.tencent.com/home.html", "https://careers.tencent.com/jobopportunity.html"]}
+{"company": "库洛游戏", "sector": "游戏与内容", "found": {"kind": "feishu_atsx", "slug": "kurogame", "via": "url", "url": "https://kurogame.jobs.feishu.cn/campus"}, "tried": ["https://kurogame.jobs.feishu.cn/campus"]}
+{"company": "散爆网络", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://jobs.sunborngame.com/campus-recruitment/micateam/146166"}, "tried": ["https://campus.niuqizp.com/job-v8Y5nnMMC.html", "https://campus.niuqizp.com/job-vrk5zMLZ5.html", "https://jobs.sunborngame.com/campus-recruitment/micateam/146166"]}
+{"company": "叠纸游戏", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "世纪华通", "sector": "游戏与内容", "found": null, "tried": ["https://campus.niuqizp.com/job-vYl5aL5NZ.html", "https://www.job.sjtu.edu.cn/career/zpxx/view/zpxx/231876509130952704"]}
+{"company": "巨人网络", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://hr.ztgame.com/campus/"}, "tried": ["https://hr.ztgame.com/campus/"]}
+{"company": "盛趣游戏", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "恺英网络", "sector": "游戏与内容", "found": {"kind": "feishu_atsx", "slug": "kingnet", "via": "url", "url": "https://kingnet.jobs.feishu.cn/"}, "tried": ["https://kingnet.jobs.feishu.cn/"]}
+{"company": "游族网络", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/social-recruitment/yoozoo/91950"}, "tried": ["https://app.mokahr.com/social-recruitment/yoozoo/91950"]}
+{"company": "祖龙娱乐", "sector": "游戏与内容", "found": null, "tried": ["https://career.nankai.edu.cn/correcruit/content/id/119035.html", "https://career.cic.tsinghua.edu.cn/xsglxt/f/jyxt/anony/showZwxx?zpxxid=564723139"]}
+{"company": "青瓷游戏", "sector": "游戏与内容", "found": null, "tried": ["https://hr.g-bits.com/web/index.html"]}
+{"company": "波克城市", "sector": "游戏与内容", "found": {"kind": "feishu_atsx", "slug": "boke", "via": "url", "url": "https://boke.jobs.feishu.cn/581609"}, "tried": ["https://boke.jobs.feishu.cn/581609"]}
+{"company": "途游游戏", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=34505&zpxxId=30175"}, "tried": ["https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=34505&zpxxId=30175"]}
+{"company": "乐元素", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/campus-recruitment/leyuansu/166186?locale=zh-CN#/"}, "tried": ["https://app.mokahr.com/campus-recruitment/leyuansu/166186?locale=zh-CN#/"]}
+{"company": "壳木游戏", "sector": "游戏与内容", "found": null, "tried": ["https://www.camelgames.com/plugins/simple-job-board/public/css/jquery-ui35d0.css?ver=1.12.1", "https://www.camelgames.com/plugins/simple-job-board/public/css/font-awesome.min1849.css?ver=4.7.0", "https://www.camelgames.com/plugins/simple-job-board/sjb-block/dist/blocks.style.build.css", "https://www.camelgames.com/plugins/simple-job-board/public/css/simple-job-board-public6e0e.css?ver=3.0.0"]}
+{"company": "贪玩游戏", "sector": "游戏与内容", "found": null, "tried": ["http://www.twyx.cn/"]}
+{"company": "多益网络", "sector": "游戏与内容", "found": null, "tried": ["https://live.duoyi.com/dy/xz/", "https://sz.duoyi.com/wechat/", "https://career.tjcu.edu.cn/correcruit/content/id/14263.html", "https://www.duoyi.com/"]}
+{"company": "友谊时光", "sector": "游戏与内容", "found": null, "tried": ["https://zp.friendtimes.cn/", "https://www.friendtimes.cn/careers/index.html", "https://zp.friendtimes.cn/school/list.html", "https://zp.friendtimes.cn/society/list.html"]}
+{"company": "西山居", "sector": "游戏与内容", "found": null, "tried": ["https://job.seasungames.cn/", "https://www.xishanju.com/index/", "https://sc.seasungames.cn/"]}
+{"company": "掌趣科技", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "https://campus.funplus.com.cn/"}, "tried": ["https://campus.niuqizp.com/job-vlm5zMZCn.html", "http://ourpalm.com/t2/107/2305.html", "https://campus.funplus.com.cn/"]}
+{"company": "电魂网络", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "sentry-fe.mokahr.com", "via": "page", "url": "https://app.mokahr.com/social-recruitment/dianhun/55952"}, "tried": ["https://app.mokahr.com/social-recruitment/dianhun/55952"]}
+{"company": "搜狐畅游", "sector": "游戏与内容", "found": {"kind": "moka_blocked", "host": "app.mokahr.com", "via": "page", "url": "http://campus.changyou.com/"}, "tried": ["http://campus.changyou.com/"]}
+{"company": "华策影视", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "博纳影业", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "万达电影", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "中国电影", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "阿里影业", "sector": "游戏与内容", "found": null, "tried": ["https://talent.alibaba.com"]}
+{"company": "樊登读书", "sector": "游戏与内容", "found": null, "tried": []}
+{"company": "钛媒体", "sector": "游戏与内容", "found": null, "tried": ["https://www.tmtpost.com/about/jobs"]}
+{"company": "界面新闻", "sector": "游戏与内容", "found": null, "tried": ["https://www.jiemian.com/about/advert.html"]}
+{"company": "财新传媒", "sector": "游戏与内容", "found": null, "tried": ["https://corp.caixin.com/joinus/"]}
+{"company": "红星新闻", "sector": "游戏与内容", "found": null, "tried": ["https://hongxingxinwen.com/2026/10/21/ultrasonic-welding-doubles-metal-joint-strength/"]}

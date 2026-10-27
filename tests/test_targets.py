@@ -10,10 +10,26 @@ spec.loader.exec_module(cov)
 def test_targets_file_is_consistent():
     t = cov.load_targets()
     names = [n for ns in t["sectors"].values() for n in ns]
-    assert len(names) == len(set(names)), "目标公司重复"
-    assert len(names) >= 200
+    assert len(names) == len(set(names)), "行业清单内目标公司重复"
+    prov = t.get("provinces") or {}
+    assert prov, "缺少省域目标清单"
+    for p, ns in prov.items():
+        assert len(ns) == len(set(ns)), f"{p} 省内目标重复"
+    # 同一家公司可以同时在行业清单和省域清单里（只算一次目标），但总数要够到「1500 家」阶段目标
+    assert len(set(names) | {n for ns in prov.values() for n in ns}) >= 1500
+    all_names = set(names) | {n for ns in prov.values() for n in ns}
     for key in [*(t.get("aliases") or {}), *(t.get("blocked") or {})]:
-        assert key in names, f"{key} 不在 sectors 中"
+        assert key in all_names, f"{key} 不在目标清单中"
+
+
+def test_target_names_counts_cross_section_company_once():
+    """腾讯既是互联网目标也是广东重点企业：匹配结果只能有一份，不能算两次。"""
+    from jobradar.pipeline.calendar import target_names
+
+    t = {"sectors": {"互联网": ["腾讯"]}, "provinces": {"广东": ["腾讯", "华为"]}}
+    names = [n for n, _ in target_names(t)]
+    assert names == ["腾讯", "华为"]
+    assert dict(target_names(t))["华为"] == "省域·广东"
 
 
 def test_match_uses_aliases_and_substrings():

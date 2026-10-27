@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | Español | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.4.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,15 +14,17 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datos (2026-10-26)**: **370 fuentes** · **97.607 vacantes abiertas** · **99,8% con texto completo del JD**
-> De las **1.014 empresas objetivo**, 891 tienen calendario (264 con datos a nivel de vacante), 895 en total.
+> **Datos (2026-10-28)**: **1.131 fuentes** · **1.099 empresas** · **23 adaptadores**
+> (Beisen 870 / Dayee 94 / Feishu ATSX 51 / Tupu360 32 / Beisen antiguo 28 / Workday 25 / Dayee antiguo 12 / sitios propios 19)
+> De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **547 están cubiertas (33 %)** y 12 no son accesibles por cumplimiento.
+> Las cifras de vacantes y cobertura de campos se actualizan en cada rastreo diario (ver última versión).
 
 ## Qué es y qué no es
 
 - ✅ Vacantes y texto del JD de portales **oficiales** (sin agregadores de terceros)
 - ✅ Rastreo completo diario con historial (apertura, cierre, cambios)
 - ✅ Calendario de reclutamiento: promoción, tipo de programa, áreas, ventana de solicitud, ciudades, enlace y fuente
-- ❌ No cubre «todas las empresas»: solo 264 de las 1.014 objetivo publican datos por vacante
+- ❌ No cubre «todas las empresas»: 547 de las 1.655 objetivo tienen fuente; las otras 1.096 están en la lista abierta
 - ❌ No gestiona solicitudes, referidos, entrevistas ni salarios; no evade captchas, logins ni firmas
 
 ## Inicio rápido
@@ -66,10 +68,11 @@ devuelve un bloque `calendar` con `jobradar calendar --group <empresa> --table` 
 
 | Área | Realidad |
 |---|---|
-| Cobertura de calendario | 891/1.014; las otras 17 están bloqueadas por robots/login/DNS |
-| Cobertura por vacante | 264/1.014; el resto son portales propios o plataformas cifradas (Moka, Feishu ATSX) |
+| Cobertura de objetivos | **547/1.655 (33 %)**; 12 no se pueden cubrir de forma conforme (robots/login/cifrado) |
+| Fuentes | **1.131 fuentes / 1.099 empresas** con 23 adaptadores |
 | Grandes tecnológicas | Alibaba/Tencent/Meituan/NetEase… con vacantes; ByteDance/JD/Huawei solo calendario |
-| Ventanas de solicitud | solo 8/1372 entradas (0,6%) con inicio y fin |
+| Cobertura provincial | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tabla completa: `scripts/coverage_report.py` |
+| Ventanas de solicitud | solo una parte de las entradas de calendario tiene inicio y fin; cifra exacta: jobradar stats |
 | Duplicados | 9,2% son misma empresa+título+ciudad; usa `--dedupe` |
 | Historial | desde 2026-10-19, las tendencias cubren 5–7 días |
 

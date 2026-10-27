@@ -1,0 +1,23 @@
+总计 547 条：可入库 15，待人工 3，跳过 529
+
+== 可入库 ==
+  5763  beisen      chery                        奇瑞                     0.00  奇瑞招聘
+  1198  beisen_host jobs.hisense.com             海信                     0.70  海信招聘—海信集团招聘官网
+   171  beisen      aiva                         AIVA汽车校园               0.00  AIVA汽车校园招聘门户网
+   115  beisen      camzhaopin                   国机集团                   0.70  中国机械总院
+    62  beisen      idea                         数字中国                   0.70  IDEA数字经济研究院
+     4  beisen_host campus.hundsun.com           恒生校招                   0.00  恒生校招
+     4  beisen      itcast1                      大学                     0.00  大学招聘门户
+     3  beisen      careers                      北京北大方正电子               0.00  北京北大方正电子有限公司
+     0  feishu_atsx arashivision                 360集团                  0.95  Join Insta360!
+     0  feishu_atsx cgvc2019                     碧桂园                    0.95  碧桂园创投
+     0  feishu_atsx daodaoquan                   道道全                    0.95  道道全电子商务有限公司
+     0  feishu_atsx gffunds                      广发基金                   0.95  广发基金招聘
+     0  feishu_atsx moka                         Moka                   0.95  Moka
+     0  feishu_atsx mthreads                     摩尔线程                   0.95  摩尔线程智能科技（北京）有限责任公司
+     0  feishu_atsx owm6ymi5v9b                  银河通用                   0.95  银河通用机器人
+
+== 待人工 ==
+  4449  beisen_host zhaopin.xdf.cn               招聘                     0.00  招聘官网
+   138  beisen      thunisoft                    招聘                     0.00  招聘门户
+    58  beisen      ahccs                        门户                     0.00  门户网站

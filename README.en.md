@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.3.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.4.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -15,17 +15,17 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Data snapshot (2026-10-24)**
-> **370 sources** · **97,607 open jobs** (campus 33,850 / intern 5,158 / experienced 58,599) · **99.8% with full JD text**
-> **1,014 target companies**: 891 have calendar coverage (1,337 curated entries + 1,088 auto-built),
-> 264 have job-level data, 895 covered in total; 17 documented as not compliantly reachable.
+> **Coverage snapshot (2026-10-28)**
+> **1,131 sources** (Beisen 870 / Dayee 94 / Feishu ATSX 51 / Tupu360 32 / Workday 25 / others) · **1,099 companies** · **23 adapters**
+> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **547 covered (33%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
+> Job counts and field coverage refresh with each daily crawl — see the latest Release for current numbers.
 
 ## What it is / is not
 
 - ✅ Jobs and JD text from **official** career sites (no aggregators)
 - ✅ Full re-crawl daily, history kept (open / close / change events)
 - ✅ Recruitment calendar: graduation year, programme type, tracks, application window, cities, apply URL, source
-- ❌ Not "every company": only 264 of the 1,014 targets expose job-level data
+- ❌ Not "every company": 547 of the 1,655 targets have a working source; the other 1,096 are listed as pending reconnaissance
 - ❌ No applications, referrals, interview reports or salary data; no captcha/login/signature bypass
 
 ## Quick start
@@ -76,7 +76,7 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 |---|---|---|
 | `jobs.db.gz` | 20 MB | jobs, companies, events, source status |
 | `jd_text.db.gz` | 35 MB | JD responsibilities & requirements (full-text) |
-| `calendar.db.gz` | ~1.1 MB | recruitment calendar, 1,014 targets |
+| `calendar.db.gz` | ~1.1 MB | recruitment calendar, 1,655 targets |
 | `crawl-summary.json` | 32 KB | per-source status, opened/closed counts |
 
 - Crawl runs daily at **19:17 UTC** (03:17 Beijing); Gitee mirror syncs the same day
@@ -86,12 +86,13 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 
 | Area | Reality |
 |---|---|
-| Calendar coverage | 891/1,014; 17 are robots/login/DNS-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
-| Job-level coverage | 161/500 targets; the rest are bespoke sites or encrypted platforms (Moka, Feishu ATSX) |
-| Big tech | Alibaba/Tencent/Meituan/NetEase/vivo/Chery/CICC/BOE have job data; ByteDance/JD/PDD/Huawei are calendar-only (captcha/signature) |
-| Calendar fields | 74.9% of entries carry ≥7 of 11 required fields; 60.7% by group; 38.0% of hand-curated entries |
-| Application windows | only 8/1372 entries (0.6%) have a full window — most sites just say "from September" |
-| Duplicates | 9.2% are same company+title+city requisitions; use `--dedupe` |
+| Target coverage | **547/1,655 (33%)**; 12 are robots/login/encryption-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
+| Sources | **1,131 sources / 1,099 companies**: Beisen 870, Dayee 94, Feishu ATSX 51, Tupu360 32, legacy Beisen 28, Workday 25, legacy Dayee 12, plus 19 bespoke sites |
+| Provincial coverage | Guangdong 18/49 (37%), Zhejiang 13/44 (30%), Jiangsu 9/34 (26%), Sichuan 9/30 (30%), Shandong 7/26 (27%); full table via `scripts/coverage_report.py` |
+| Big tech | Alibaba/Tencent/Meituan/NetEase/Baidu/JD/ByteDance/vivo/Chery/CICC/BOE/Hisense/PICC have job data; Huawei is calendar-only (WAF 403) |
+| Calendar fields | 2026-10-26 full-crawl snapshot: 74.9% of entries carry ≥7 of 11 required fields; 60.7% by group; 38.0% of hand-curated entries |
+| Application windows | weakest field (0.6% full windows on the 2026-10-26 snapshot) — most sites just say "from September"; `apply_end` takes the modal date across requisitions |
+| Duplicates | 2026-10-26 snapshot: 9.2% are same company+title+city requisitions; use `--dedupe` |
 | History | accumulating since 2026-10-19, so trend answers are currently 5–7 days long |
 
 Never done: third-party aggregators, captcha/login/signature bypass, UA spoofing, LLMs in the pipeline,

@@ -196,7 +196,19 @@ def match_entry_company(entry: ManualEntry, companies: set[str]) -> list[str]:
 
 
 def target_names(targets: dict) -> list[tuple[str, str]]:
-    return [(n, sector) for sector, names in targets["sectors"].items() for n in names]
+    """目标名 -> 分组名。sectors 是行业口径，provinces 是省域口径（2026-10-27 新增）。
+
+    同一家公司可能既在行业清单又在某省清单里（腾讯既在「互联网」也是广东重点企业），
+    **只算一次目标**：分组取先出现的行业；省域名单保持完整，覆盖率报表按省单独统计。
+    """
+    out = [(n, sector) for sector, names in targets["sectors"].items() for n in names]
+    seen = {n for n, _ in out}
+    for prov, names in (targets.get("provinces") or {}).items():
+        for n in names:
+            if n not in seen:
+                out.append((n, f"省域·{prov}"))
+                seen.add(n)
+    return out
 
 
 def match_targets(targets: dict, companies: set[str]) -> dict[str, list[str]]:
