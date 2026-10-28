@@ -2,6 +2,24 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.7.3] - 2026-10-29
+
+### 新增
+
+- **数据源 1,749 → 1,750**：中海油服（北森 `cosl`，2 岗）、芯恩（青岛）集成电路
+  （大易 `SU685b4aa23c659c425a4dfce1`，22 岗）。来源是页面级搜索引擎发现
+  （`site:zhiye.com 2027届校园招聘` / `site:wecruit.hotjob.cn 校园招聘`）+ 逐条探活。
+- **可采公司 1,720 → 1,721**，`companies.jsonl` 2,172 → 2,173 行。
+
+### 修复
+
+- `work/probe_search_candidates.py`：大易列表接口裸 `httpx` 请求一律 405（缺项目
+  client 的 UA/Accept 头），改用 `make_client()`；`recruitType` 语义纠正为
+  1=校园、2=社招、3=实习（旧代码把 2 当校招，导致全部 0 岗）；
+  `pageForm.total` 多数租户为 null，改为逐页累加 `pageData` 长度。
+- 飞书候选改用 `recruit_type_of()` 只数校招/实习——门户总条数不等于校招条数
+  （他石智航 142 条全是社招/全职/外包，实际入库 0）。
+
 ## [1.7.2] - 2026-10-29
 
 ### 新增

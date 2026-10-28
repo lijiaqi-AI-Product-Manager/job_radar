@@ -2,7 +2,7 @@
 
 简体中文 | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.7.2-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.3-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -15,7 +15,7 @@
 ![demo](docs/assets/demo-zh.gif)
 
 > **当前覆盖（2026-10-29）**
-> **1,749 个数据源**（北森 1,145 / 大易 309 / 飞书 ATSX 140 / 图普惠 32 / Workday 45 / 其余平台与自研站）· **1,720 家可采公司** · **23 个适配器**
+> **1,750 个数据源**（北森 1,145 / 大易 310 / 飞书 ATSX 140 / 图普惠 32 / Workday 45 / 其余平台与自研站）· **1,721 家可采公司** · **23 个适配器**
 > 目标清单 **1,655 家**（20 个行业 1,117 家 + 31 个省级行政区 808 家，去重后 1,655）：已覆盖 **581 家（35%）**，不可合规覆盖 12 家；招聘日历 **1,383 个文件 / 2,078 条条目**
 > 岗位数、JD 覆盖率、城市与截止日覆盖每天抓取后刷新，以最新 Release 为准；自检：`uv run python scripts/release_check.py`（8 项门槛全绿）
 
@@ -114,7 +114,7 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 | 维度 | 现状 |
 |---|---|
 | 目标公司覆盖 | **579/1,655（35%）**；12 家（大疆、拼多多、快手、微博等）因 robots/登录墙/加密不可合规覆盖，证据见 [docs/internal/COVERAGE-PLAN.md](docs/internal/COVERAGE-PLAN.md) |
-| 数据源 | **1,749 个源 / 1,720 家公司**：北森 1,145、大易 309、飞书 ATSX 140、图普惠 32、旧版北森 44、Workday 45、旧版大易 15，其余 19 个自研站/门户按公司各一条 |
+| 数据源 | **1,750 个源 / 1,721 家公司**：北森 1,145、大易 310、飞书 ATSX 140、图普惠 32、旧版北森 44、Workday 45、旧版大易 15，其余 19 个自研站/门户按公司各一条 |
 | 分省覆盖 | 广东 18/49（37%）、浙江 13/44（30%）、江苏 9/34（26%）、四川 9/30（30%）、山东 7/26（27%）；西藏/海南等仍偏低，全表见 `uv run python scripts/coverage_report.py` |
 | 头部大厂 | 阿里/腾讯/美团/网易/百度/京东/字节/vivo/奇瑞/中金/京东方/海信/中国人保等有岗位数据；华为目前只有日历（WAF 403） |
 | JD 正文 | 契约测试要求 ≥90%，最近一轮实测 99.8%（抓不到正文的源不进数据集；比例按在招岗位算） |
@@ -130,7 +130,7 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 
 ```text
 GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
-  ├─ crawl        1,749 个源 → 适配器（北森 / 大易 / 飞书 ATSX / Workday / 自研站）→ SQLite
+  ├─ crawl        1,750 个源 → 适配器（北森 / 大易 / 飞书 ATSX / Workday / 自研站）→ SQLite
   ├─ calendar     日历库：人工条目（A/B/C 三档）+ 数据层自动条目
   ├─ release      打包 gzip 上传 Release data-latest（+ 每周归档，保留 8 周）
   └─ mirror       同步到 Gitee 发行版（国内加速）

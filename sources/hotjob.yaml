@@ -1239,3 +1239,7 @@ sources:
     company: 中国电信国际
     params: {host: wecruit.hotjob.cn, tenant: SU66e002f31eb8056010bbc32d, page_size: 50}
     # 2026-10-29 新增：3 岗
+  - id: hotjob-su685b4aa23c659c425a4dfce1
+    company: 芯恩（青岛）集成电路
+    params: {host: wecruit.hotjob.cn, tenant: SU685b4aa23c659c425a4dfce1, page_size: 50}
+    # 2026-10-29 新增：22 岗
