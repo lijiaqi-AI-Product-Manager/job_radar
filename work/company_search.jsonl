@@ -1,0 +1,1313 @@
+{"engine": "so360", "company": "58同城", "query": "58同城 招聘", "hits": []}
+{"engine": "so360", "company": "58同城", "query": "58同城 校园招聘", "hits": []}
+{"engine": "so360", "company": "BV", "query": "BV 招聘", "hits": []}
+{"engine": "so360", "company": "BV", "query": "BV 校园招聘", "hits": []}
+{"engine": "so360", "company": "Costco中国", "query": "Costco中国 招聘", "hits": []}
+{"engine": "so360", "company": "Costco中国", "query": "Costco中国 校园招聘", "hits": []}
+{"engine": "so360", "company": "DHL中国", "query": "DHL中国 招聘", "hits": []}
+{"engine": "so360", "company": "DHL中国", "query": "DHL中国 校园招聘", "hits": []}
+{"engine": "so360", "company": "DSV中国", "query": "DSV中国 招聘", "hits": []}
+{"engine": "so360", "company": "DSV中国", "query": "DSV中国 校园招聘", "hits": []}
+{"engine": "so360", "company": "EMS", "query": "EMS 招聘", "hits": []}
+{"engine": "so360", "company": "EMS", "query": "EMS 校园招聘", "hits": []}
+{"engine": "sogou", "company": "58同城", "query": "58同城 招聘", "hits": []}
+{"engine": "sogou", "company": "58同城", "query": "58同城 校园招聘", "hits": []}
+{"company": "拼多多", "engine": "yahoo", "query": "拼多多 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "拼多多", "engine": "yahoo", "query": "拼多多 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "快手", "engine": "yahoo", "query": "快手 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "快手", "engine": "yahoo", "query": "快手 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "小米", "engine": "yahoo", "query": "小米 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "小米", "engine": "yahoo", "query": "小米 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "蚂蚁集团", "engine": "yahoo", "query": "蚂蚁集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "蚂蚁集团", "engine": "yahoo", "query": "蚂蚁集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "滴滴", "engine": "yahoo", "query": "滴滴 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "滴滴", "engine": "yahoo", "query": "滴滴 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "携程", "engine": "yahoo", "query": "携程 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "携程", "engine": "yahoo", "query": "携程 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "哔哩哔哩", "engine": "yahoo", "query": "哔哩哔哩 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "哔哩哔哩", "engine": "yahoo", "query": "哔哩哔哩 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "小红书", "engine": "yahoo", "query": "小红书 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "小红书", "engine": "yahoo", "query": "小红书 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "米哈游", "engine": "yahoo", "query": "米哈游 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "米哈游", "engine": "yahoo", "query": "米哈游 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "莉莉丝", "engine": "yahoo", "query": "莉莉丝 校园招聘", "status": 200, "hosts": ["lilithgames.jobs.feishu.cn"], "urls": ["https://lilithgames.jobs.feishu.cn/intern/m/", "https://lilithgames.jobs.feishu.cn", "https://lilithgames.jobs.feishu.cn/s/ir83CLDU."]}
+{"company": "莉莉丝", "engine": "yahoo", "query": "莉莉丝 招聘 官网", "status": 200, "hosts": ["lilithgames.jobs.feishu.cn"], "urls": ["https://lilithgames.jobs.feishu.cn/intern/m/", "https://lilithgames.jobs.feishu.cn", "https://lilithgames.jobs.feishu.cn/"]}
+{"company": "鹰角网络", "engine": "yahoo", "query": "鹰角网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "鹰角网络", "engine": "yahoo", "query": "鹰角网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "叠纸", "engine": "yahoo", "query": "叠纸 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "叠纸", "engine": "yahoo", "query": "叠纸 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "完美世界", "engine": "yahoo", "query": "完美世界 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "完美世界", "engine": "yahoo", "query": "完美世界 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "金山办公", "engine": "yahoo", "query": "金山办公 校园招聘", "status": 200, "hosts": ["jssoft.zhiye.com"], "urls": ["https://jssoft.zhiye.com/campus/jobs?memory=&amp;silence=1", "https://jssoft.zhiye.com/campus/jobs?memory=\\u0026silence=1", "https://jssoft.zhiye.com"]}
+{"company": "金山办公", "engine": "yahoo", "query": "金山办公 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "旷视科技", "engine": "yahoo", "query": "旷视科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "旷视科技", "engine": "yahoo", "query": "旷视科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "唯品会", "engine": "yahoo", "query": "唯品会 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "唯品会", "engine": "yahoo", "query": "唯品会 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "好未来", "engine": "yahoo", "query": "好未来 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "好未来", "engine": "yahoo", "query": "好未来 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "作业帮", "engine": "yahoo", "query": "作业帮 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "作业帮", "engine": "yahoo", "query": "作业帮 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "猿辅导", "engine": "yahoo", "query": "猿辅导 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "猿辅导", "engine": "yahoo", "query": "猿辅导 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "知乎", "engine": "yahoo", "query": "知乎 校园招聘", "status": 200, "hosts": ["chinajack.zhiye.com"], "urls": ["https://chinajack.zhiye.com/Campus", "https://chinajack.zhiye.com"]}
+{"company": "知乎", "engine": "yahoo", "query": "知乎 招聘 官网", "status": 200, "hosts": ["chinajack.zhiye.com"], "urls": ["https://chinajack.zhiye.com/Campus", "https://chinajack.zhiye.com"]}
+{"company": "微博", "engine": "yahoo", "query": "微博 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "微博", "engine": "yahoo", "query": "微博 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "搜狐", "engine": "yahoo", "query": "搜狐 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "搜狐", "engine": "yahoo", "query": "搜狐 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "新浪", "engine": "yahoo", "query": "新浪 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "新浪", "engine": "yahoo", "query": "新浪 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "月之暗面", "engine": "yahoo", "query": "月之暗面 校园招聘", "status": 200, "hosts": ["moonshot.jobs.feishu.cn"], "urls": ["https://moonshot.jobs.feishu.cn/s/iFdosECp", "https://moonshot.jobs.feishu.cn"]}
+{"company": "月之暗面", "engine": "yahoo", "query": "月之暗面 招聘 官网", "status": 200, "hosts": ["moonshot.jobs.feishu.cn"], "urls": ["https://moonshot.jobs.feishu.cn/s/iFdosECp", "https://moonshot.jobs.feishu.cn"]}
+{"company": "智谱", "engine": "yahoo", "query": "智谱 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "智谱", "engine": "yahoo", "query": "智谱 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "阶跃星辰", "engine": "yahoo", "query": "阶跃星辰 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "阶跃星辰", "engine": "yahoo", "query": "阶跃星辰 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "深度求索", "engine": "yahoo", "query": "深度求索 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "深度求索", "engine": "yahoo", "query": "深度求索 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "数字中国", "engine": "yahoo", "query": "数字中国 校园招聘", "status": 200, "hosts": ["bicheng.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://bicheng.zhiye.com/campus", "https://wecruit.hotjob.cn/SU604743430dcad46d3e602155/pb/index.html", "https://wecruit.hotjob.cn", "https://bicheng.zhiye.com"]}
+{"company": "数字中国", "engine": "yahoo", "query": "数字中国 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU604743430dcad46d3e602155/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "同花顺", "engine": "yahoo", "query": "同花顺 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "同花顺", "engine": "yahoo", "query": "同花顺 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "东方财富", "engine": "yahoo", "query": "东方财富 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "东方财富", "engine": "yahoo", "query": "东方财富 招聘 官网", "status": 200, "hosts": ["eastmoney.zhiye.com"], "urls": []}
+{"company": "汇丰科技", "engine": "yahoo", "query": "汇丰科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "汇丰科技", "engine": "yahoo", "query": "汇丰科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "BOSS直聘", "engine": "yahoo", "query": "BOSS直聘 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "BOSS直聘", "engine": "yahoo", "query": "BOSS直聘 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "猎聘", "engine": "yahoo", "query": "猎聘 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "猎聘", "engine": "yahoo", "query": "猎聘 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "智联招聘", "engine": "yahoo", "query": "智联招聘 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "智联招聘", "engine": "yahoo", "query": "智联招聘 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "前程无忧", "engine": "yahoo", "query": "前程无忧 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "前程无忧", "engine": "yahoo", "query": "前程无忧 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "苏宁易购", "engine": "yahoo", "query": "苏宁易购 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "苏宁易购", "engine": "yahoo", "query": "苏宁易购 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "昆仑万维", "engine": "yahoo", "query": "昆仑万维 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "昆仑万维", "engine": "yahoo", "query": "昆仑万维 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "吉比特", "engine": "yahoo", "query": "吉比特 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "吉比特", "engine": "yahoo", "query": "吉比特 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "心动网络", "engine": "yahoo", "query": "心动网络 校园招聘", "status": 200, "hosts": ["xd-legacy.jobs.feishu.cn"], "urls": ["https://xd-legacy.jobs.feishu.cn/117745/m/position/list", "https://xd-legacy.jobs.feishu.cn"]}
+{"company": "心动网络", "engine": "yahoo", "query": "心动网络 招聘 官网", "status": 200, "hosts": ["xd-legacy.jobs.feishu.cn"], "urls": ["https://xd-legacy.jobs.feishu.cn/117745/m/position/list", "https://xd-legacy.jobs.feishu.cn"]}
+{"company": "同程旅行", "engine": "yahoo", "query": "同程旅行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "同程旅行", "engine": "yahoo", "query": "同程旅行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "满帮", "engine": "yahoo", "query": "满帮 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "满帮", "engine": "yahoo", "query": "满帮 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "自如", "engine": "yahoo", "query": "自如 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "自如", "engine": "yahoo", "query": "自如 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "58同城", "engine": "yahoo", "query": "58同城 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "58同城", "engine": "yahoo", "query": "58同城 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "汽车之家", "engine": "yahoo", "query": "汽车之家 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "汽车之家", "engine": "yahoo", "query": "汽车之家 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "安居客", "engine": "yahoo", "query": "安居客 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "安居客", "engine": "yahoo", "query": "安居客 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "当当", "engine": "yahoo", "query": "当当 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "当当", "engine": "yahoo", "query": "当当 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中标软件", "engine": "yahoo", "query": "中标软件 校园招聘", "status": 200, "hosts": ["kylinos.zhiye.com"], "urls": ["https://kylinos.zhiye.com/Campus", "https://kylinos.zhiye.com/campus/jobs", "https://kylinos.zhiye.com"]}
+{"company": "中标软件", "engine": "yahoo", "query": "中标软件 招聘 官网", "status": 200, "hosts": ["kylinos.zhiye.com"], "urls": ["https://kylinos.zhiye.com/Campus", "https://kylinos.zhiye.com/Campus\\u003c/b\\u003e", "https://kylinos.zhiye.com"]}
+{"company": "优炫软件", "engine": "yahoo", "query": "优炫软件 校园招聘", "status": 200, "hosts": ["epoint.zhiye.com"], "urls": ["https://epoint.zhiye.com/campus", "https://epoint.zhiye.com"]}
+{"company": "优炫软件", "engine": "yahoo", "query": "优炫软件 招聘 官网", "status": 200, "hosts": ["ucloud.zhiye.com"], "urls": ["https://ucloud.zhiye.com", "https://ucloud.zhiye.com\\u003c/b\\u003e/."]}
+{"company": "叠纸游戏", "engine": "yahoo", "query": "叠纸游戏 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "叠纸游戏", "engine": "yahoo", "query": "叠纸游戏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "巨杉数据库", "engine": "yahoo", "query": "巨杉数据库 校园招聘", "status": 200, "hosts": ["watchdata.zhiye.com"], "urls": ["https://watchdata.zhiye.com/campus", "https://watchdata.zhiye.com"]}
+{"company": "巨杉数据库", "engine": "yahoo", "query": "巨杉数据库 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "有赞", "engine": "yahoo", "query": "有赞 校园招聘", "status": 200, "hosts": ["youzan.zhiye.com"], "urls": ["https://youzan.zhiye.com/campus", "https://youzan.zhiye.com/campus/jobs", "https://youzan.zhiye.com"]}
+{"company": "有赞", "engine": "yahoo", "query": "有赞 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "润和软件", "engine": "yahoo", "query": "润和软件 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "润和软件", "engine": "yahoo", "query": "润和软件 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "电魂网络", "engine": "yahoo", "query": "电魂网络 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "电魂网络", "engine": "yahoo", "query": "电魂网络 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "科华数据", "engine": "yahoo", "query": "科华数据 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "科华数据", "engine": "yahoo", "query": "科华数据 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "统信软件", "engine": "yahoo", "query": "统信软件 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "统信软件", "engine": "yahoo", "query": "统信软件 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "网易游戏", "engine": "yahoo", "query": "网易游戏 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "网易游戏", "engine": "yahoo", "query": "网易游戏 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "联通数字科技", "engine": "yahoo", "query": "联通数字科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "联通数字科技", "engine": "yahoo", "query": "联通数字科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "腾讯游戏", "engine": "yahoo", "query": "腾讯游戏 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "腾讯游戏", "engine": "yahoo", "query": "腾讯游戏 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "腾讯音乐", "engine": "yahoo", "query": "腾讯音乐 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "腾讯音乐", "engine": "yahoo", "query": "腾讯音乐 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "致远互联", "engine": "yahoo", "query": "致远互联 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "致远互联", "engine": "yahoo", "query": "致远互联 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "薪人薪事", "engine": "yahoo", "query": "薪人薪事 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "薪人薪事", "engine": "yahoo", "query": "薪人薪事 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "财新传媒", "engine": "yahoo", "query": "财新传媒 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "财新传媒", "engine": "yahoo", "query": "财新传媒 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "达梦数据库", "engine": "yahoo", "query": "达梦数据库 校园招聘", "status": 200, "hosts": ["sdata.zhiye.com"], "urls": ["https://sdata.zhiye.com/campus/jobs", "https://sdata.zhiye.com"]}
+{"company": "达梦数据库", "engine": "yahoo", "query": "达梦数据库 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "途游游戏", "engine": "yahoo", "query": "途游游戏 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "途游游戏", "engine": "yahoo", "query": "途游游戏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "长虹", "engine": "yahoo", "query": "长虹 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "长虹", "engine": "yahoo", "query": "长虹 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "青瓷游戏", "engine": "yahoo", "query": "青瓷游戏 校园招聘", "status": 200, "hosts": ["nd.zhiye.com"], "urls": ["https://nd.zhiye.com/campus", "https://nd.zhiye.com"]}
+{"company": "青瓷游戏", "engine": "yahoo", "query": "青瓷游戏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "明源云", "engine": "yahoo", "query": "明源云 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "明源云", "engine": "yahoo", "query": "明源云 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "涂鸦智能", "engine": "yahoo", "query": "涂鸦智能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "涂鸦智能", "engine": "yahoo", "query": "涂鸦智能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "陌陌", "engine": "yahoo", "query": "陌陌 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "陌陌", "engine": "yahoo", "query": "陌陌 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华为", "engine": "yahoo", "query": "华为 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华为", "engine": "yahoo", "query": "华为 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "荣耀", "engine": "yahoo", "query": "荣耀 校园招聘", "status": 200, "hosts": ["sc.hotjob.cn"], "urls": ["https://sc.hotjob.cn/wt/HONOR/mobweb/jsonp/applyFlow/statusLogin", "https://sc.hotjob.cn"]}
+{"company": "荣耀", "engine": "yahoo", "query": "荣耀 招聘 官网", "status": 200, "hosts": ["sc.hotjob.cn"], "urls": ["https://sc.hotjob.cn/wt/HONOR/mobweb/jsonp/applyFlow/statusLogin", "https://sc.hotjob.cn"]}
+{"company": "OPPO", "engine": "yahoo", "query": "OPPO 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "OPPO", "engine": "yahoo", "query": "OPPO 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "联想", "engine": "yahoo", "query": "联想 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "联想", "engine": "yahoo", "query": "联想 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中兴通讯", "engine": "yahoo", "query": "中兴通讯 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中兴通讯", "engine": "yahoo", "query": "中兴通讯 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "浪潮", "engine": "yahoo", "query": "浪潮 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "浪潮", "engine": "yahoo", "query": "浪潮 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "海康威视", "engine": "yahoo", "query": "海康威视 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "海康威视", "engine": "yahoo", "query": "海康威视 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "大疆", "engine": "yahoo", "query": "大疆 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "大疆", "engine": "yahoo", "query": "大疆 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "TCL", "engine": "yahoo", "query": "TCL 校园招聘", "status": 200, "hosts": ["zhonghuan.zhiye.com"], "urls": ["https://zhonghuan.zhiye.com/campus", "https://zhonghuan.zhiye.com"]}
+{"company": "TCL", "engine": "yahoo", "query": "TCL 招聘 官网", "status": 200, "hosts": ["tcl.hotjob.cn"], "urls": ["https://tcl.hotjob.cn/", "https://tcl.hotjob.cn"]}
+{"company": "海尔", "engine": "yahoo", "query": "海尔 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "海尔", "engine": "yahoo", "query": "海尔 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "美的", "engine": "yahoo", "query": "美的 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "美的", "engine": "yahoo", "query": "美的 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "格力", "engine": "yahoo", "query": "格力 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "格力", "engine": "yahoo", "query": "格力 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "舜宇光学", "engine": "yahoo", "query": "舜宇光学 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "舜宇光学", "engine": "yahoo", "query": "舜宇光学 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "三星电子中国", "engine": "yahoo", "query": "三星电子中国 校园招聘", "status": 200, "hosts": ["dearsamsung.zhiye.com"], "urls": ["https://dearsamsung.zhiye.com/", "https://dearsamsung.zhiye.com"]}
+{"company": "三星电子中国", "engine": "yahoo", "query": "三星电子中国 招聘 官网", "status": 200, "hosts": ["dearsamsung.zhiye.com"], "urls": ["https://dearsamsung.zhiye.com/", "https://dearsamsung.zhiye.com", "https://dearsamsung.zhiye.com/home"]}
+{"company": "三环集团", "engine": "yahoo", "query": "三环集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "三环集团", "engine": "yahoo", "query": "三环集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国广电", "engine": "yahoo", "query": "中国广电 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国广电", "engine": "yahoo", "query": "中国广电 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中天科技", "engine": "yahoo", "query": "中天科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中天科技", "engine": "yahoo", "query": "中天科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中移信息", "engine": "yahoo", "query": "中移信息 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6405420f2f9d246c37a12677/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "中移信息", "engine": "yahoo", "query": "中移信息 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中航光电", "engine": "yahoo", "query": "中航光电 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中航光电", "engine": "yahoo", "query": "中航光电 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "亨通光电", "engine": "yahoo", "query": "亨通光电 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "亨通光电", "engine": "yahoo", "query": "亨通光电 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "均胜电子", "engine": "yahoo", "query": "均胜电子 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "均胜电子", "engine": "yahoo", "query": "均胜电子 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "志高空调", "engine": "yahoo", "query": "志高空调 校园招聘", "status": 200, "hosts": ["auxgroup.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://auxgroup.zhiye.com/campus/jobs", "https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn", "https://auxgroup.zhiye.com"]}
+{"company": "志高空调", "engine": "yahoo", "query": "志高空调 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "烽火通信", "engine": "yahoo", "query": "烽火通信 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "烽火通信", "engine": "yahoo", "query": "烽火通信 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "环旭电子", "engine": "yahoo", "query": "环旭电子 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "环旭电子", "engine": "yahoo", "query": "环旭电子 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "Pico", "engine": "yahoo", "query": "Pico 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "Pico", "engine": "yahoo", "query": "Pico 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "和辉光电", "engine": "yahoo", "query": "和辉光电 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "和辉光电", "engine": "yahoo", "query": "和辉光电 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "惠科", "engine": "yahoo", "query": "惠科 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "惠科", "engine": "yahoo", "query": "惠科 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "生益科技", "engine": "yahoo", "query": "生益科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "生益科技", "engine": "yahoo", "query": "生益科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "老板电器", "engine": "yahoo", "query": "老板电器 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "老板电器", "engine": "yahoo", "query": "老板电器 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "华虹集团", "engine": "yahoo", "query": "华虹集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华虹集团", "engine": "yahoo", "query": "华虹集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "海光信息", "engine": "yahoo", "query": "海光信息 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "海光信息", "engine": "yahoo", "query": "海光信息 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "寒武纪", "engine": "yahoo", "query": "寒武纪 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "寒武纪", "engine": "yahoo", "query": "寒武纪 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "壁仞科技", "engine": "yahoo", "query": "壁仞科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "壁仞科技", "engine": "yahoo", "query": "壁仞科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "兆易创新", "engine": "yahoo", "query": "兆易创新 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "兆易创新", "engine": "yahoo", "query": "兆易创新 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中微公司", "engine": "yahoo", "query": "中微公司 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中微公司", "engine": "yahoo", "query": "中微公司 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "晶晨股份", "engine": "yahoo", "query": "晶晨股份 校园招聘", "status": 200, "hosts": ["amlogicsh.zhiye.com"], "urls": ["https://amlogicsh.zhiye.com/campus/jobs", "https://amlogicsh.zhiye.com", "https://amlogicsh.zhiye.com/home"]}
+{"company": "晶晨股份", "engine": "yahoo", "query": "晶晨股份 招聘 官网", "status": 200, "hosts": ["amlogicsh.zhiye.com"], "urls": ["https://amlogicsh.zhiye.com/campus/jobs", "https://amlogicsh.zhiye.com", "https://amlogicsh.zhiye.com/home"]}
+{"company": "芯原股份", "engine": "yahoo", "query": "芯原股份 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "芯原股份", "engine": "yahoo", "query": "芯原股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "澜起科技", "engine": "yahoo", "query": "澜起科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "澜起科技", "engine": "yahoo", "query": "澜起科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "圣邦股份", "engine": "yahoo", "query": "圣邦股份 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "圣邦股份", "engine": "yahoo", "query": "圣邦股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "长电科技", "engine": "yahoo", "query": "长电科技 校园招聘", "status": 200, "hosts": ["vital.zhiye.com"], "urls": ["https://vital.zhiye.com/campus/jobs", "https://vital.zhiye.com"]}
+{"company": "长电科技", "engine": "yahoo", "query": "长电科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "通富微电", "engine": "yahoo", "query": "通富微电 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "通富微电", "engine": "yahoo", "query": "通富微电 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中兴微电子", "engine": "yahoo", "query": "中兴微电子 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中兴微电子", "engine": "yahoo", "query": "中兴微电子 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中科蓝讯", "engine": "yahoo", "query": "中科蓝讯 校园招聘", "status": 200, "hosts": ["iflytek.zhiye.com"], "urls": ["https://iflytek.zhiye.com/", "https://iflytek.zhiye.com"]}
+{"company": "中科蓝讯", "engine": "yahoo", "query": "中科蓝讯 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中科飞测", "engine": "yahoo", "query": "中科飞测 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中科飞测", "engine": "yahoo", "query": "中科飞测 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华润微电子", "engine": "yahoo", "query": "华润微电子 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华润微电子", "engine": "yahoo", "query": "华润微电子 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "天马微电子", "engine": "yahoo", "query": "天马微电子 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "天马微电子", "engine": "yahoo", "query": "天马微电子 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "普冉股份", "engine": "yahoo", "query": "普冉股份 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "普冉股份", "engine": "yahoo", "query": "普冉股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "灿芯股份", "engine": "yahoo", "query": "灿芯股份 校园招聘", "status": 200, "hosts": ["britesemi.zhiye.com"], "urls": ["https://britesemi.zhiye.com/jobs", "https://britesemi.zhiye.com"]}
+{"company": "灿芯股份", "engine": "yahoo", "query": "灿芯股份 招聘 官网", "status": 200, "hosts": ["britesemi.zhiye.com"], "urls": ["https://britesemi.zhiye.com/campus/detail?jobAdId=9a2fe3e6-8f50-4984-875f-ea495323eb0f", "https://britesemi.zhiye.com"]}
+{"company": "爱芯元智", "engine": "yahoo", "query": "爱芯元智 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "爱芯元智", "engine": "yahoo", "query": "爱芯元智 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "瑞芯微", "engine": "yahoo", "query": "瑞芯微 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "瑞芯微", "engine": "yahoo", "query": "瑞芯微 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "立昂微", "engine": "yahoo", "query": "立昂微 校园招聘", "status": 200, "hosts": ["tsingmicro.zhiye.com"], "urls": ["https://tsingmicro.zhiye.com/", "https://tsingmicro.zhiye.com"]}
+{"company": "立昂微", "engine": "yahoo", "query": "立昂微 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "芯原微电子", "engine": "yahoo", "query": "芯原微电子 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "芯原微电子", "engine": "yahoo", "query": "芯原微电子 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "黑芝麻", "engine": "yahoo", "query": "黑芝麻 校园招聘", "status": 200, "hosts": ["bsthr.zhiye.com"], "urls": ["https://bsthr.zhiye.com/campus", "https://bsthr.zhiye.com"]}
+{"company": "黑芝麻", "engine": "yahoo", "query": "黑芝麻 招聘 官网", "status": 200, "hosts": ["bsthr.zhiye.com"], "urls": ["https://bsthr.zhiye.com/campus", "https://bsthr.zhiye.com"]}
+{"company": "唯捷创芯", "engine": "yahoo", "query": "唯捷创芯 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "唯捷创芯", "engine": "yahoo", "query": "唯捷创芯 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "思瑞浦", "engine": "yahoo", "query": "思瑞浦 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "思瑞浦", "engine": "yahoo", "query": "思瑞浦 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "慧智微", "engine": "yahoo", "query": "慧智微 校园招聘", "status": 200, "hosts": ["tsingmicro.zhiye.com"], "urls": ["https://tsingmicro.zhiye.com/", "https://tsingmicro.zhiye.com"]}
+{"company": "慧智微", "engine": "yahoo", "query": "慧智微 招聘 官网", "status": 200, "hosts": ["smartermicro.zhiye.com"], "urls": ["https://smartermicro.zhiye.com/campus/detail?jobAdId=e6dffd0d-95ee-46d1-a849-a6e69c456a3a", "https://smartermicro.zhiye.com"]}
+{"company": "斯达半导", "engine": "yahoo", "query": "斯达半导 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "斯达半导", "engine": "yahoo", "query": "斯达半导 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "翱捷科技", "engine": "yahoo", "query": "翱捷科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "翱捷科技", "engine": "yahoo", "query": "翱捷科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "芯源微", "engine": "yahoo", "query": "芯源微 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "芯源微", "engine": "yahoo", "query": "芯源微 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "比亚迪", "engine": "yahoo", "query": "比亚迪 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "比亚迪", "engine": "yahoo", "query": "比亚迪 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "吉利", "engine": "yahoo", "query": "吉利 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "吉利", "engine": "yahoo", "query": "吉利 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "东风汽车", "engine": "yahoo", "query": "东风汽车 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "东风汽车", "engine": "yahoo", "query": "东风汽车 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "极氪", "engine": "yahoo", "query": "极氪 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "极氪", "engine": "yahoo", "query": "极氪 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华为车BU", "engine": "yahoo", "query": "华为车BU 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华为车BU", "engine": "yahoo", "query": "华为车BU 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "福田汽车", "engine": "yahoo", "query": "福田汽车 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "福田汽车", "engine": "yahoo", "query": "福田汽车 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "宇通客车", "engine": "yahoo", "query": "宇通客车 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "宇通客车", "engine": "yahoo", "query": "宇通客车 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "瑞浦兰钧", "engine": "yahoo", "query": "瑞浦兰钧 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "瑞浦兰钧", "engine": "yahoo", "query": "瑞浦兰钧 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沃尔沃", "engine": "yahoo", "query": "沃尔沃 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沃尔沃", "engine": "yahoo", "query": "沃尔沃 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "大陆集团", "engine": "yahoo", "query": "大陆集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "大陆集团", "engine": "yahoo", "query": "大陆集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "采埃孚", "engine": "yahoo", "query": "采埃孚 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "采埃孚", "engine": "yahoo", "query": "采埃孚 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "东软睿驰", "engine": "yahoo", "query": "东软睿驰 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "东软睿驰", "engine": "yahoo", "query": "东软睿驰 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "伯特利", "engine": "yahoo", "query": "伯特利 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "伯特利", "engine": "yahoo", "query": "伯特利 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "哪吒汽车", "engine": "yahoo", "query": "哪吒汽车 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "哪吒汽车", "engine": "yahoo", "query": "哪吒汽车 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "小米汽车", "engine": "yahoo", "query": "小米汽车 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "小米汽车", "engine": "yahoo", "query": "小米汽车 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "岚图汽车", "engine": "yahoo", "query": "岚图汽车 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "岚图汽车", "engine": "yahoo", "query": "岚图汽车 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "峰飞航空", "engine": "yahoo", "query": "峰飞航空 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "峰飞航空", "engine": "yahoo", "query": "峰飞航空 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "星途", "engine": "yahoo", "query": "星途 校园招聘", "status": 200, "hosts": ["chery.zhiye.com"], "urls": ["https://chery.zhiye.com/Campus", "https://chery.zhiye.com"]}
+{"company": "星途", "engine": "yahoo", "query": "星途 招聘 官网", "status": 200, "hosts": ["chery.zhiye.com"], "urls": ["https://chery.zhiye.com/Campus", "https://chery.zhiye.com"]}
+{"company": "申通快递", "engine": "yahoo", "query": "申通快递 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "申通快递", "engine": "yahoo", "query": "申通快递 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "保隆科技", "engine": "yahoo", "query": "保隆科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "保隆科技", "engine": "yahoo", "query": "保隆科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华域汽车", "engine": "yahoo", "query": "华域汽车 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华域汽车", "engine": "yahoo", "query": "华域汽车 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "埃安", "engine": "yahoo", "query": "埃安 校园招聘", "status": 200, "hosts": ["gacrnd.zhiye.com"], "urls": ["https://gacrnd.zhiye.com/campus/jobs", "https://gacrnd.zhiye.com"]}
+{"company": "埃安", "engine": "yahoo", "query": "埃安 招聘 官网", "status": 200, "hosts": ["gacrnd.zhiye.com"], "urls": ["https://gacrnd.zhiye.com/campus/jobs", "https://gacrnd.zhiye.com"]}
+{"company": "广汽埃安", "engine": "yahoo", "query": "广汽埃安 校园招聘", "status": 200, "hosts": ["gacrnd.zhiye.com"], "urls": ["https://gacrnd.zhiye.com/campus/jobs", "https://gacrnd.zhiye.com"]}
+{"company": "广汽埃安", "engine": "yahoo", "query": "广汽埃安 招聘 官网", "status": 200, "hosts": ["gacrnd.zhiye.com"], "urls": ["https://gacrnd.zhiye.com/campus/jobs", "https://gacrnd.zhiye.com"]}
+{"company": "智加科技", "engine": "yahoo", "query": "智加科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "智加科技", "engine": "yahoo", "query": "智加科技 招聘 官网", "status": 200, "hosts": ["kengic.jobs.feishu.cn"], "urls": ["https://kengic.jobs.feishu.cn/talent", "https://kengic.jobs.feishu.cn"]}
+{"company": "红旗", "engine": "yahoo", "query": "红旗 校园招聘", "status": 200, "hosts": ["faw-zhaopin.hotjob.cn"], "urls": ["https://faw-zhaopin.hotjob.cn/campusRecruitment", "https://faw-zhaopin.hotjob.cn", "https://faw-zhaopin.hotjob.cn/positionList?recruitType=1&amp;projectId=203501", "https://faw-zhaopin.hotjob.cn/", "https://faw-zhaopin.hotjob.cn/positionList?recruitType=1\\u0026projectId=203501"]}
+{"company": "红旗", "engine": "yahoo", "query": "红旗 招聘 官网", "status": 200, "hosts": ["faw-zhaopin.hotjob.cn"], "urls": ["https://faw-zhaopin.hotjob.cn/campusRecruitment", "https://faw-zhaopin.hotjob.cn", "https://faw-zhaopin.hotjob.cn/positionList?recruitType=1&amp;projectId=203501", "https://faw-zhaopin.hotjob.cn/", "https://faw-zhaopin.hotjob.cn/positionList?recruitType=1\\u0026projectId=203501"]}
+{"company": "阳光电源", "engine": "yahoo", "query": "阳光电源 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "阳光电源", "engine": "yahoo", "query": "阳光电源 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "天合光能", "engine": "yahoo", "query": "天合光能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "天合光能", "engine": "yahoo", "query": "天合光能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "晶科能源", "engine": "yahoo", "query": "晶科能源 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "晶科能源", "engine": "yahoo", "query": "晶科能源 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "徐工集团", "engine": "yahoo", "query": "徐工集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "徐工集团", "engine": "yahoo", "query": "徐工集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "正泰", "engine": "yahoo", "query": "正泰 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "正泰", "engine": "yahoo", "query": "正泰 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "三一重能", "engine": "yahoo", "query": "三一重能 校园招聘", "status": 200, "hosts": ["sanycampus.zhiye.com", "sany.zhiye.com"], "urls": ["https://sanycampus.zhiye.com/campus", "https://sanycampus.zhiye.com", "https://sany.zhiye.com/jobs?activityGuid=62e6487b-9aea-4328-8ea6-abeac9362217", "https://sany.zhiye.com"]}
+{"company": "三一重能", "engine": "yahoo", "query": "三一重能 招聘 官网", "status": 200, "hosts": ["sanycampus.zhiye.com", "sany.zhiye.com"], "urls": ["https://sanycampus.zhiye.com/campus", "https://sanycampus.zhiye.com", "https://sany.zhiye.com/jobs?activityGuid=62e6487b-9aea-4328-8ea6-abeac9362217", "https://sany.zhiye.com"]}
+{"company": "三花智控", "engine": "yahoo", "query": "三花智控 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "三花智控", "engine": "yahoo", "query": "三花智控 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "东方电气", "engine": "yahoo", "query": "东方电气 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "东方电气", "engine": "yahoo", "query": "东方电气 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国巨石", "engine": "yahoo", "query": "中国巨石 校园招聘", "status": 200, "hosts": ["chinacuc.zhiye.com"], "urls": ["https://chinacuc.zhiye.com/campus/jobs", "https://chinacuc.zhiye.com"]}
+{"company": "中国巨石", "engine": "yahoo", "query": "中国巨石 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国有色矿业", "engine": "yahoo", "query": "中国有色矿业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国有色矿业", "engine": "yahoo", "query": "中国有色矿业 招聘 官网", "status": 200, "hosts": ["cnmc.zhiye.com"], "urls": ["http://cnmc.zhiye.com/"]}
+{"company": "中控技术", "engine": "yahoo", "query": "中控技术 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中控技术", "engine": "yahoo", "query": "中控技术 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中煤能源", "engine": "yahoo", "query": "中煤能源 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中煤能源", "engine": "yahoo", "query": "中煤能源 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中航沈飞", "engine": "yahoo", "query": "中航沈飞 校园招聘", "status": 200, "hosts": ["sacavic.zhiye.com"], "urls": ["https://sacavic.zhiye.com/", "https://sacavic.zhiye.com"]}
+{"company": "中航沈飞", "engine": "yahoo", "query": "中航沈飞 招聘 官网", "status": 200, "hosts": ["sacavic.zhiye.com"], "urls": ["https://sacavic.zhiye.com/", "https://sacavic.zhiye.com"]}
+{"company": "中钢集团", "engine": "yahoo", "query": "中钢集团 校园招聘", "status": 200, "hosts": ["gangyan.zhiye.com"], "urls": ["https://gangyan.zhiye.com/jobs", "https://gangyan.zhiye.com"]}
+{"company": "中钢集团", "engine": "yahoo", "query": "中钢集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "南山铝业", "engine": "yahoo", "query": "南山铝业 校园招聘", "status": 200, "hosts": ["cndi.zhiye.com"], "urls": ["https://cndi.zhiye.com/campus/jobs", "https://cndi.zhiye.com"]}
+{"company": "南山铝业", "engine": "yahoo", "query": "南山铝业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国家能源技术经济研究院", "engine": "yahoo", "query": "国家能源技术经济研究院 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国家能源技术经济研究院", "engine": "yahoo", "query": "国家能源技术经济研究院 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "宁德新能源", "engine": "yahoo", "query": "宁德新能源 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU612e24992f9d247d0f41930e/mc/position/campus", "https://wecruit.hotjob.cn"]}
+{"company": "宁德新能源", "engine": "yahoo", "query": "宁德新能源 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU612e24992f9d247d0f41930e/mc/position/campus", "https://wecruit.hotjob.cn"]}
+{"company": "平高电气", "engine": "yahoo", "query": "平高电气 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "平高电气", "engine": "yahoo", "query": "平高电气 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "招商工业", "engine": "yahoo", "query": "招商工业 校园招聘", "status": 200, "hosts": ["cmhk.zhiye.com", "cmi.zhiye.com"], "urls": ["https://cmhk.zhiye.com/custom/xiaoyuan?hideAll=true", "https://cmhk.zhiye.com", "https://cmhk.zhiye.com/", "https://cmi.zhiye.com/."]}
+{"company": "招商工业", "engine": "yahoo", "query": "招商工业 招聘 官网", "status": 200, "hosts": ["cmhk.zhiye.com"], "urls": ["https://cmhk.zhiye.com/", "https://cmhk.zhiye.com", "https://cmhk.zhiye.com/custom/xiaoyuan?hideAll=true"]}
+{"company": "新时达", "engine": "yahoo", "query": "新时达 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "新时达", "engine": "yahoo", "query": "新时达 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "禾迈股份", "engine": "yahoo", "query": "禾迈股份 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "禾迈股份", "engine": "yahoo", "query": "禾迈股份 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "紫金矿业", "engine": "yahoo", "query": "紫金矿业 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "紫金矿业", "engine": "yahoo", "query": "紫金矿业 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "银轮股份", "engine": "yahoo", "query": "银轮股份 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "银轮股份", "engine": "yahoo", "query": "银轮股份 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "力神电池", "engine": "yahoo", "query": "力神电池 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "力神电池", "engine": "yahoo", "query": "力神电池 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "南都电源", "engine": "yahoo", "query": "南都电源 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "南都电源", "engine": "yahoo", "query": "南都电源 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "孚能科技动力", "engine": "yahoo", "query": "孚能科技动力 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "孚能科技动力", "engine": "yahoo", "query": "孚能科技动力 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "湖南裕能", "engine": "yahoo", "query": "湖南裕能 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "湖南裕能", "engine": "yahoo", "query": "湖南裕能 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "雅化集团", "engine": "yahoo", "query": "雅化集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "雅化集团", "engine": "yahoo", "query": "雅化集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "雷赛智能", "engine": "yahoo", "query": "雷赛智能 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "雷赛智能", "engine": "yahoo", "query": "雷赛智能 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "国家电网", "engine": "yahoo", "query": "国家电网 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "国家电网", "engine": "yahoo", "query": "国家电网 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国石油", "engine": "yahoo", "query": "中国石油 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国石油", "engine": "yahoo", "query": "中国石油 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国石化", "engine": "yahoo", "query": "中国石化 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国石化", "engine": "yahoo", "query": "中国石化 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国海油", "engine": "yahoo", "query": "中国海油 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国海油", "engine": "yahoo", "query": "中国海油 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国移动", "engine": "yahoo", "query": "中国移动 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国移动", "engine": "yahoo", "query": "中国移动 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国联通", "engine": "yahoo", "query": "中国联通 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国联通", "engine": "yahoo", "query": "中国联通 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国铁塔", "engine": "yahoo", "query": "中国铁塔 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国铁塔", "engine": "yahoo", "query": "中国铁塔 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国建筑", "engine": "yahoo", "query": "中国建筑 校园招聘", "status": 200, "hosts": ["csci.zhiye.com"], "urls": ["https://csci.zhiye.com/", "https://csci.zhiye.com"]}
+{"company": "中国建筑", "engine": "yahoo", "query": "中国建筑 招聘 官网", "status": 200, "hosts": ["csci.zhiye.com"], "urls": ["https://csci.zhiye.com/", "https://csci.zhiye.com"]}
+{"company": "中国中铁", "engine": "yahoo", "query": "中国中铁 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国中铁", "engine": "yahoo", "query": "中国中铁 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国能建", "engine": "yahoo", "query": "中国能建 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国能建", "engine": "yahoo", "query": "中国能建 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国中冶", "engine": "yahoo", "query": "中国中冶 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国中冶", "engine": "yahoo", "query": "中国中冶 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国家能源集团", "engine": "yahoo", "query": "国家能源集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国家能源集团", "engine": "yahoo", "query": "国家能源集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国华能", "engine": "yahoo", "query": "中国华能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国华能", "engine": "yahoo", "query": "中国华能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国大唐", "engine": "yahoo", "query": "中国大唐 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国大唐", "engine": "yahoo", "query": "中国大唐 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国华电", "engine": "yahoo", "query": "中国华电 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国华电", "engine": "yahoo", "query": "中国华电 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国家电投", "engine": "yahoo", "query": "国家电投 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国家电投", "engine": "yahoo", "query": "国家电投 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中广核", "engine": "yahoo", "query": "中广核 校园招聘", "status": 200, "hosts": ["cgn.hotjob.cn", "sc.hotjob.cn"], "urls": ["https://cgn.hotjob.cn/", "https://cgn.hotjob.cn", "https://cgn.hotjob.cn/intoPreHire", "https://sc.hotjob.cn/wt/CGN/web/index/CompCGNPageindex", "https://sc.hotjob.cn/wt/CGN/web/index/CompCGNPagecompanyList?projectId=100001", "https://sc.hotjob.cn/wt/CGN/mobweb/v8/accountBindingIndex", "https://cgn.hotjob.cn/wt/CGN/mobweb/v8/cgnCareerFair", "https://cgn.hotjob.cn."]}
+{"company": "中广核", "engine": "yahoo", "query": "中广核 招聘 官网", "status": 200, "hosts": ["cgn.hotjob.cn", "sc.hotjob.cn"], "urls": ["https://cgn.hotjob.cn/", "https://cgn.hotjob.cn", "https://cgn.hotjob.cn/intoPreHire", "https://sc.hotjob.cn/wt/CGN/web/index/CompCGNPageindex", "https://sc.hotjob.cn/wt/CGN/web/index/CompCGNPagecompanyList?projectId=100001", "https://sc.hotjob.cn/wt/CGN/mobweb/v8/accountBindingIndex", "https://cgn.hotjob.cn."]}
+{"company": "航天科工", "engine": "yahoo", "query": "航天科工 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "航天科工", "engine": "yahoo", "query": "航天科工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国兵器装备", "engine": "yahoo", "query": "中国兵器装备 校园招聘", "status": 200, "hosts": ["norincogroupzhaopin.zhiye.com"], "urls": ["https://norincogroupzhaopin.zhiye.com/", "https://norincogroupzhaopin.zhiye.com"]}
+{"company": "中国兵器装备", "engine": "yahoo", "query": "中国兵器装备 招聘 官网", "status": 200, "hosts": ["norincogroupzhaopin.zhiye.com"], "urls": ["https://norincogroupzhaopin.zhiye.com/", "https://norincogroupzhaopin.zhiye.com"]}
+{"company": "中国商飞", "engine": "yahoo", "query": "中国商飞 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国商飞", "engine": "yahoo", "query": "中国商飞 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国宝武", "engine": "yahoo", "query": "中国宝武 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国宝武", "engine": "yahoo", "query": "中国宝武 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "鞍钢集团", "engine": "yahoo", "query": "鞍钢集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "鞍钢集团", "engine": "yahoo", "query": "鞍钢集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国铝业", "engine": "yahoo", "query": "中国铝业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国铝业", "engine": "yahoo", "query": "中国铝业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中粮", "engine": "yahoo", "query": "中粮 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中粮", "engine": "yahoo", "query": "中粮 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国邮政", "engine": "yahoo", "query": "中国邮政 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国邮政", "engine": "yahoo", "query": "中国邮政 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国烟草", "engine": "yahoo", "query": "中国烟草 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国烟草", "engine": "yahoo", "query": "中国烟草 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国国航", "engine": "yahoo", "query": "中国国航 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国国航", "engine": "yahoo", "query": "中国国航 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "东方航空", "engine": "yahoo", "query": "东方航空 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "东方航空", "engine": "yahoo", "query": "东方航空 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "南方航空", "engine": "yahoo", "query": "南方航空 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "南方航空", "engine": "yahoo", "query": "南方航空 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中信集团", "engine": "yahoo", "query": "中信集团 校园招聘", "status": 200, "hosts": ["csc108.zhiye.com"], "urls": ["https://csc108.zhiye.com/campus/jobs", "https://csc108.zhiye.com"]}
+{"company": "中信集团", "engine": "yahoo", "query": "中信集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "光大集团", "engine": "yahoo", "query": "光大集团 校园招聘", "status": 200, "hosts": ["ebscn.zhiye.com"], "urls": ["https://ebscn.zhiye.com/campus", "https://ebscn.zhiye.com"]}
+{"company": "光大集团", "engine": "yahoo", "query": "光大集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国诚通", "engine": "yahoo", "query": "中国诚通 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国诚通", "engine": "yahoo", "query": "中国诚通 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "上海航天", "engine": "yahoo", "query": "上海航天 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "上海航天", "engine": "yahoo", "query": "上海航天 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "成都飞机设计研究所", "engine": "yahoo", "query": "成都飞机设计研究所 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "成都飞机设计研究所", "engine": "yahoo", "query": "成都飞机设计研究所 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国建材", "engine": "yahoo", "query": "中国建材 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国建材", "engine": "yahoo", "query": "中国建材 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国中煤", "engine": "yahoo", "query": "中国中煤 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国中煤", "engine": "yahoo", "query": "中国中煤 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国稀土", "engine": "yahoo", "query": "中国稀土 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国稀土", "engine": "yahoo", "query": "中国稀土 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国黄金", "engine": "yahoo", "query": "中国黄金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国黄金", "engine": "yahoo", "query": "中国黄金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国旅游集团", "engine": "yahoo", "query": "中国旅游集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国旅游集团", "engine": "yahoo", "query": "中国旅游集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "国铁集团", "engine": "yahoo", "query": "国铁集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "国铁集团", "engine": "yahoo", "query": "国铁集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国电气装备", "engine": "yahoo", "query": "中国电气装备 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国电气装备", "engine": "yahoo", "query": "中国电气装备 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国有色", "engine": "yahoo", "query": "中国有色 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国有色", "engine": "yahoo", "query": "中国有色 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中化集团", "engine": "yahoo", "query": "中化集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中化集团", "engine": "yahoo", "query": "中化集团 招聘 官网", "status": 200, "hosts": ["sinochem.hotjob.cn"], "urls": ["https://sinochem.hotjob.cn/", "https://sinochem.hotjob.cn", "https://www.hotjob.cn/wt/Sinochem/web/index/webPosition210!getPostListByConditionShowPic?operational=99bb8024227c7954b1ee345b41ac39a67f3b0762efcc358d350d9cbd439bb6135e20668775af3f3b9383744dd0511d2a3e6c01e081402e06fe481d575490e4966494dbd749ce6050c7ac1d9ca40c504b821cefc82f438694ec5fc73471457721&amp;positionType=0&amp;comPart=&amp;sicCorpCode=&amp;brandCode=1&amp;releaseTime=0&amp;trademark=0&amp;useForm=0&amp;recruitType=1&amp;lanType=&amp;positionName=&amp;workPlace=0%2F4%2F455%2F456&amp;keyWord=&amp;columnId=1&amp;siteId=&amp;projectId=&amp;isTypeOfSiteSerch=false&amp;orderInt=0", "http://www.hotjob.cn/wt/Sinochem/web/index/webPosition210!getPostListByConditionShowPic?operational=856b28db5050df3ea49e92e3d80dff73a15d27e3f77c4b9e4038109294b0ce1b1c9d26a1a231585b8345610cb369d4e84eb6497395f6679a74886ad12ca56df6fc1072548ca4d5633a9067d644bd26bfcd829162e3e04a203effbec139f18327&amp;positionType=0&amp;comPart=&amp;sicCorpCode=&amp;brandCode=1&amp;releaseTime=0&amp;trademark=0&amp;useForm=0&amp;recruitType=1&amp;lanType=&amp;positionName=&amp;workPlace=0%2F4%2F10%2F11&amp;keyWord=&amp;columnId=1", "https://sinochem.hotjob.cn/SU610b91ee0dcad4106ff11c21/pb/school.html", "https://www.hotjob.cn/wt/Sinochem/web/index/webPosition210!getPostListByConditionShowPic?operational=e598c62128655fea59dd7383423a2c9cbeb1774b9fcc92e3888d9073f3dca7fce25978c4f4941ed38f799a15a6c99fdc08e39613eb96f42ed3c917650180e626086a0883aa49f7be8e5c596792e987236d21a2ae9372febb", "https://sinochem.hotjob.cn/SU610b91ee0dcad4106ff11c21/pb/school.html?workPlaceCode=0/4/17", "https://www.hotjob.cn/wt/Sinochem/web/index/webPosition210!getPostListByConditionShowPic?operational=99bb8024227c7954b1ee345b41ac39a67f3b0762efcc358d350d9cbd439bb6135e20668775af3f3b9383744dd0511d2a3e6c01e081402e06fe481d575490e4966494dbd749ce6050c7ac1d9ca40c504b821cefc82f438694ec5fc73471457721\\u0026positionType=0\\u0026comPart=\\u0026sicCorpCode=\\u0026brandCode=1\\u0026releaseTime=0\\u0026trademark=0\\u0026useForm=0\\u0026recruitType=1\\u0026lanType=\\u0026positionName=\\u0026workPlace=0%2F4%2F455%2F456\\u0026keyWord=\\u0026columnId=1\\u0026siteId=\\u0026projectId=\\u0026isTypeOfSiteSerch=false\\u0026orderInt=0"]}
+{"company": "中国煤炭地质总局", "engine": "yahoo", "query": "中国煤炭地质总局 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国煤炭地质总局", "engine": "yahoo", "query": "中国煤炭地质总局 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国航油", "engine": "yahoo", "query": "中国航油 校园招聘", "status": 200, "hosts": ["cnaf.zhiye.com"], "urls": ["http://cnaf.zhiye.com/Campus（手机报名二维码见下），每位应聘者可申请2个职位，&nbsp;...", "https://cnaf.zhiye.com/campus", "http://cnaf.zhiye.com/Campus（手机报名二维码见下），每位应聘者可申请2个职位，\\u0026nbsp;...", "https://cnaf.zhiye.com"]}
+{"company": "中国航油", "engine": "yahoo", "query": "中国航油 招聘 官网", "status": 200, "hosts": ["cnaf.zhiye.com"], "urls": ["http://cnaf.zhiye.com/Campus（手机报名二维码见下），每位应聘者可申请2个职位，&nbsp;...", "https://cnaf.zhiye.com/campus", "https://cnaf.zhiye.com/Campus或", "http://cnaf.zhiye.com/Campus（手机报名二维码见下），每位应聘者可申请2个职位，\\u0026nbsp;...", "https://cnaf.zhiye.com/Campus或\\u003cb\\u003e中国\\u003c/b\\u003e航空油料集团有限公司\\u003cb\\u003e官网\\u003c/b\\u003e查询。", "https://cnaf.zhiye.com"]}
+{"company": "中建一局", "engine": "yahoo", "query": "中建一局 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中建一局", "engine": "yahoo", "query": "中建一局 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中建八局", "engine": "yahoo", "query": "中建八局 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中建八局", "engine": "yahoo", "query": "中建八局 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中建科工", "engine": "yahoo", "query": "中建科工 校园招聘", "status": 200, "hosts": ["zjggzp.zhiye.com"], "urls": ["http://zjggzp.zhiye.com/，按要求填写提交简历。"]}
+{"company": "中建科工", "engine": "yahoo", "query": "中建科工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中铁十一局", "engine": "yahoo", "query": "中铁十一局 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中铁十一局", "engine": "yahoo", "query": "中铁十一局 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中铁建工", "engine": "yahoo", "query": "中铁建工 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中铁建工", "engine": "yahoo", "query": "中铁建工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国安能", "engine": "yahoo", "query": "中国安能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国安能", "engine": "yahoo", "query": "中国安能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国建材总院", "engine": "yahoo", "query": "中国建材总院 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国建材总院", "engine": "yahoo", "query": "中国建材总院 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国航空器材", "engine": "yahoo", "query": "中国航空器材 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国航空器材", "engine": "yahoo", "query": "中国航空器材 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国节能", "engine": "yahoo", "query": "中国节能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国节能", "engine": "yahoo", "query": "中国节能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中煤科工", "engine": "yahoo", "query": "中煤科工 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中煤科工", "engine": "yahoo", "query": "中煤科工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中船重工", "engine": "yahoo", "query": "中船重工 校园招聘", "status": 200, "hosts": ["cssc.zhiye.com"], "urls": ["https://cssc.zhiye.com/", "https://cssc.zhiye.com"]}
+{"company": "中船重工", "engine": "yahoo", "query": "中船重工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "云南铜业", "engine": "yahoo", "query": "云南铜业 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU663c2abe1eb8053acd9c0e34/mc/index", "https://wecruit.hotjob.cn"]}
+{"company": "云南铜业", "engine": "yahoo", "query": "云南铜业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华侨城", "engine": "yahoo", "query": "华侨城 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华侨城", "engine": "yahoo", "query": "华侨城 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "天翼云", "engine": "yahoo", "query": "天翼云 校园招聘", "status": 200, "hosts": ["ctyun.hotjob.cn"], "urls": ["https://ctyun.hotjob.cn/", "https://ctyun.hotjob.cn"]}
+{"company": "天翼云", "engine": "yahoo", "query": "天翼云 招聘 官网", "status": 200, "hosts": ["ctyun.hotjob.cn"], "urls": ["https://ctyun.hotjob.cn/", "https://ctyun.hotjob.cn", "https://ctyun.hotjob.cn（建议通过PC端投递）."]}
+{"company": "宝钢股份", "engine": "yahoo", "query": "宝钢股份 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "宝钢股份", "engine": "yahoo", "query": "宝钢股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "航天信息", "engine": "yahoo", "query": "航天信息 校园招聘", "status": 200, "hosts": ["uq1h428xyc.jobs.feishu.cn"], "urls": ["https://uq1h428xyc.jobs.feishu.cn/522146/m/position/list", "https://uq1h428xyc.jobs.feishu.cn"]}
+{"company": "航天信息", "engine": "yahoo", "query": "航天信息 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "马钢集团", "engine": "yahoo", "query": "马钢集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "马钢集团", "engine": "yahoo", "query": "马钢集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "工商银行", "engine": "yahoo", "query": "工商银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "工商银行", "engine": "yahoo", "query": "工商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "建设银行", "engine": "yahoo", "query": "建设银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "建设银行", "engine": "yahoo", "query": "建设银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "农业银行", "engine": "yahoo", "query": "农业银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "农业银行", "engine": "yahoo", "query": "农业银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国银行", "engine": "yahoo", "query": "中国银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国银行", "engine": "yahoo", "query": "中国银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "交通银行", "engine": "yahoo", "query": "交通银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "交通银行", "engine": "yahoo", "query": "交通银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "邮储银行", "engine": "yahoo", "query": "邮储银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "邮储银行", "engine": "yahoo", "query": "邮储银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国家开发银行", "engine": "yahoo", "query": "国家开发银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国家开发银行", "engine": "yahoo", "query": "国家开发银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "进出口银行", "engine": "yahoo", "query": "进出口银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "进出口银行", "engine": "yahoo", "query": "进出口银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "农业发展银行", "engine": "yahoo", "query": "农业发展银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "农业发展银行", "engine": "yahoo", "query": "农业发展银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "招商银行", "engine": "yahoo", "query": "招商银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "招商银行", "engine": "yahoo", "query": "招商银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中信银行", "engine": "yahoo", "query": "中信银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中信银行", "engine": "yahoo", "query": "中信银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "浦发银行", "engine": "yahoo", "query": "浦发银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "浦发银行", "engine": "yahoo", "query": "浦发银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "兴业银行", "engine": "yahoo", "query": "兴业银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "兴业银行", "engine": "yahoo", "query": "兴业银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "光大银行", "engine": "yahoo", "query": "光大银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "光大银行", "engine": "yahoo", "query": "光大银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "平安银行", "engine": "yahoo", "query": "平安银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "平安银行", "engine": "yahoo", "query": "平安银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "广发银行", "engine": "yahoo", "query": "广发银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "广发银行", "engine": "yahoo", "query": "广发银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "江苏银行", "engine": "yahoo", "query": "江苏银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "江苏银行", "engine": "yahoo", "query": "江苏银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "宁波银行", "engine": "yahoo", "query": "宁波银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "宁波银行", "engine": "yahoo", "query": "宁波银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "南京银行", "engine": "yahoo", "query": "南京银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "南京银行", "engine": "yahoo", "query": "南京银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "杭州银行", "engine": "yahoo", "query": "杭州银行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "杭州银行", "engine": "yahoo", "query": "杭州银行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "微众银行", "engine": "yahoo", "query": "微众银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "微众银行", "engine": "yahoo", "query": "微众银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "网商银行", "engine": "yahoo", "query": "网商银行 校园招聘", "status": 200, "hosts": ["shrcb.zhiye.com"], "urls": ["https://shrcb.zhiye.com/", "https://shrcb.zhiye.com"]}
+{"company": "网商银行", "engine": "yahoo", "query": "网商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "浙商银行", "engine": "yahoo", "query": "浙商银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "浙商银行", "engine": "yahoo", "query": "浙商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "渤海银行", "engine": "yahoo", "query": "渤海银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "渤海银行", "engine": "yahoo", "query": "渤海银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "恒丰银行", "engine": "yahoo", "query": "恒丰银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "恒丰银行", "engine": "yahoo", "query": "恒丰银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "北京农商行", "engine": "yahoo", "query": "北京农商行 校园招聘", "status": 200, "hosts": ["shrcb.zhiye.com"], "urls": ["https://shrcb.zhiye.com/", "https://shrcb.zhiye.com"]}
+{"company": "北京农商行", "engine": "yahoo", "query": "北京农商行 招聘 官网", "status": 200, "hosts": ["shrcb.zhiye.com"], "urls": ["https://shrcb.zhiye.com/", "https://shrcb.zhiye.com"]}
+{"company": "重庆农商行", "engine": "yahoo", "query": "重庆农商行 校园招聘", "status": 200, "hosts": ["shrcb.zhiye.com"], "urls": ["https://shrcb.zhiye.com/", "https://shrcb.zhiye.com"]}
+{"company": "重庆农商行", "engine": "yahoo", "query": "重庆农商行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "青岛银行", "engine": "yahoo", "query": "青岛银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "青岛银行", "engine": "yahoo", "query": "青岛银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国民生银行", "engine": "yahoo", "query": "中国民生银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国民生银行", "engine": "yahoo", "query": "中国民生银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "兰州银行", "engine": "yahoo", "query": "兰州银行 校园招聘", "status": 200, "hosts": ["chinalife.zhiye.com"], "urls": ["https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1", "https://chinalife.zhiye.com"]}
+{"company": "兰州银行", "engine": "yahoo", "query": "兰州银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "吉林银行", "engine": "yahoo", "query": "吉林银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "吉林银行", "engine": "yahoo", "query": "吉林银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "宁波通商银行", "engine": "yahoo", "query": "宁波通商银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "宁波通商银行", "engine": "yahoo", "query": "宁波通商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "富滇银行", "engine": "yahoo", "query": "富滇银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "富滇银行", "engine": "yahoo", "query": "富滇银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "工银安盛", "engine": "yahoo", "query": "工银安盛 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "工银安盛", "engine": "yahoo", "query": "工银安盛 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "徽商银行", "engine": "yahoo", "query": "徽商银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "徽商银行", "engine": "yahoo", "query": "徽商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "恒生银行中国", "engine": "yahoo", "query": "恒生银行中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "恒生银行中国", "engine": "yahoo", "query": "恒生银行中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "海南银行", "engine": "yahoo", "query": "海南银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "海南银行", "engine": "yahoo", "query": "海南银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "湖南银行", "engine": "yahoo", "query": "湖南银行 校园招聘", "status": 200, "hosts": ["cscb.zhiye.com"], "urls": ["https://cscb.zhiye.com/", "https://cscb.zhiye.com"]}
+{"company": "湖南银行", "engine": "yahoo", "query": "湖南银行 招聘 官网", "status": 200, "hosts": ["cscb.zhiye.com"], "urls": ["https://cscb.zhiye.com/recruitFeed/detail?id=fbd928ea-a215-4ace-b23f-31f9e721b8d4&amp;lang=1", "https://cscb.zhiye.com/recruitFeed/detail?id=fbd928ea-a215-4ace-b23f-31f9e721b8d4\\u0026lang=1", "https://cscb.zhiye.com"]}
+{"company": "郑州银行", "engine": "yahoo", "query": "郑州银行 校园招聘", "status": 200, "hosts": ["zzbank.hotjob.cn", "ampace.hotjob.cn"], "urls": ["https://zzbank.hotjob.cn/", "https://zzbank.hotjob.cn", "https://ampace.hotjob.cn/", "https://ampace.hotjob.cn"]}
+{"company": "郑州银行", "engine": "yahoo", "query": "郑州银行 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn", "zzbank.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU64f9783c1eb8051fabaf3fbc/pb/news.html?pageType=0", "https://wecruit.hotjob.cn", "https://zzbank.hotjob.cn/", "https://zzbank.hotjob.cn"]}
+{"company": "重庆银行", "engine": "yahoo", "query": "重庆银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "重庆银行", "engine": "yahoo", "query": "重庆银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "客商银行", "engine": "yahoo", "query": "客商银行 校园招聘", "status": 200, "hosts": ["cmbcn.zhiye.com"], "urls": ["https://cmbcn.zhiye.com/", "https://cmbcn.zhiye.com"]}
+{"company": "客商银行", "engine": "yahoo", "query": "客商银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "富民银行", "engine": "yahoo", "query": "富民银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "富民银行", "engine": "yahoo", "query": "富民银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "摩根士丹利中国", "engine": "yahoo", "query": "摩根士丹利中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "摩根士丹利中国", "engine": "yahoo", "query": "摩根士丹利中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "新安银行", "engine": "yahoo", "query": "新安银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "新安银行", "engine": "yahoo", "query": "新安银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "温州银行", "engine": "yahoo", "query": "温州银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "温州银行", "engine": "yahoo", "query": "温州银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "贵州银行", "engine": "yahoo", "query": "贵州银行 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "贵州银行", "engine": "yahoo", "query": "贵州银行 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国泰海通", "engine": "yahoo", "query": "国泰海通 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国泰海通", "engine": "yahoo", "query": "国泰海通 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中信建投", "engine": "yahoo", "query": "中信建投 校园招聘", "status": 200, "hosts": ["csc108.zhiye.com"], "urls": ["https://csc108.zhiye.com/campus/jobs", "https://csc108.zhiye.com/jobs", "https://csc108.zhiye.com", "https://csc108.zhiye.com/"]}
+{"company": "中信建投", "engine": "yahoo", "query": "中信建投 招聘 官网", "status": 200, "hosts": ["csc108.zhiye.com"], "urls": ["https://csc108.zhiye.com/campus/jobs", "https://csc108.zhiye.com", "https://csc108.zhiye.com/"]}
+{"company": "申万宏源", "engine": "yahoo", "query": "申万宏源 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "申万宏源", "engine": "yahoo", "query": "申万宏源 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "东方证券", "engine": "yahoo", "query": "东方证券 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "东方证券", "engine": "yahoo", "query": "东方证券 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中泰证券", "engine": "yahoo", "query": "中泰证券 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中泰证券", "engine": "yahoo", "query": "中泰证券 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "南方基金", "engine": "yahoo", "query": "南方基金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "南方基金", "engine": "yahoo", "query": "南方基金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "博时基金", "engine": "yahoo", "query": "博时基金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "博时基金", "engine": "yahoo", "query": "博时基金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "嘉实基金", "engine": "yahoo", "query": "嘉实基金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "嘉实基金", "engine": "yahoo", "query": "嘉实基金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "广发基金", "engine": "yahoo", "query": "广发基金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "广发基金", "engine": "yahoo", "query": "广发基金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "汇添富", "engine": "yahoo", "query": "汇添富 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "汇添富", "engine": "yahoo", "query": "汇添富 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "富国基金", "engine": "yahoo", "query": "富国基金 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "富国基金", "engine": "yahoo", "query": "富国基金 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国投资有限责任公司", "engine": "yahoo", "query": "中国投资有限责任公司 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国投资有限责任公司", "engine": "yahoo", "query": "中国投资有限责任公司 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国东方资产", "engine": "yahoo", "query": "中国东方资产 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国东方资产", "engine": "yahoo", "query": "中国东方资产 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中国长城资产", "engine": "yahoo", "query": "中国长城资产 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中国长城资产", "engine": "yahoo", "query": "中国长城资产 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "华西证券", "engine": "yahoo", "query": "华西证券 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华西证券", "engine": "yahoo", "query": "华西证券 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中银证券", "engine": "yahoo", "query": "中银证券 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中银证券", "engine": "yahoo", "query": "中银证券 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "交银施罗德", "engine": "yahoo", "query": "交银施罗德 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "交银施罗德", "engine": "yahoo", "query": "交银施罗德 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "光大理财", "engine": "yahoo", "query": "光大理财 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "光大理财", "engine": "yahoo", "query": "光大理财 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华夏理财", "engine": "yahoo", "query": "华夏理财 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn", "chinaamc.zhiye.com"], "urls": ["https://wecruit.hotjob.cn/SU645b1c2ebef57c0907ea0622/mc/position/campus", "https://wecruit.hotjob.cn", "https://wecruit.hotjob.cn/SU645b0d18bef57c0907e9fbc8/pb/school.html?orgCode=0/128", "https://chinaamc.zhiye.com/gsjs", "https://chinaamc.zhiye.com"]}
+{"company": "华夏理财", "engine": "yahoo", "query": "华夏理财 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn", "chinaamc.zhiye.com", "hxb.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU645b0d18bef57c0907e9fbc8/pb/school.html?orgCode=0/128", "https://wecruit.hotjob.cn", "https://hxb.hotjob.cn/", "https://hxb.hotjob.cn", "https://chinaamc.zhiye.com/gsjs", "https://chinaamc.zhiye.com"]}
+{"company": "广银理财", "engine": "yahoo", "query": "广银理财 校园招聘", "status": 200, "hosts": ["chinalife.zhiye.com"], "urls": ["https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1", "https://chinalife.zhiye.com"]}
+{"company": "广银理财", "engine": "yahoo", "query": "广银理财 招聘 官网", "status": 200, "hosts": ["chinalife.zhiye.com"], "urls": ["https://chinalife.zhiye.com/custom/gfcampus?hideMenu=1", "https://chinalife.zhiye.com"]}
+{"company": "建信基金", "engine": "yahoo", "query": "建信基金 校园招聘", "status": 200, "hosts": ["ccbfund.zhiye.com"], "urls": ["https://ccbfund.zhiye.com/", "https://ccbfund.zhiye.com"]}
+{"company": "建信基金", "engine": "yahoo", "query": "建信基金 招聘 官网", "status": 200, "hosts": ["ccbfund.zhiye.com"], "urls": ["https://ccbfund.zhiye.com/social/jobs）。报名截止时间为2026年6月21日24时。", "https://ccbfund.zhiye.com/", "https://ccbfund.zhiye.com"]}
+{"company": "建信理财", "engine": "yahoo", "query": "建信理财 校园招聘", "status": 200, "hosts": ["ccbfund.zhiye.com"], "urls": ["https://ccbfund.zhiye.com/", "https://ccbfund.zhiye.com"]}
+{"company": "建信理财", "engine": "yahoo", "query": "建信理财 招聘 官网", "status": 200, "hosts": ["ccbfund.zhiye.com"], "urls": ["https://ccbfund.zhiye.com/", "https://ccbfund.zhiye.com"]}
+{"company": "景顺长城", "engine": "yahoo", "query": "景顺长城 校园招聘", "status": 200, "hosts": ["invescogreatwall.zhiye.com"], "urls": ["https://invescogreatwall.zhiye.com/Campus", "https://invescogreatwall.zhiye.com"]}
+{"company": "景顺长城", "engine": "yahoo", "query": "景顺长城 招聘 官网", "status": 200, "hosts": ["invescogreatwall.zhiye.com"], "urls": ["https://invescogreatwall.zhiye.com/Campus", "https://invescogreatwall.zhiye.com"]}
+{"company": "鹏华基金", "engine": "yahoo", "query": "鹏华基金 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "鹏华基金", "engine": "yahoo", "query": "鹏华基金 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华商基金", "engine": "yahoo", "query": "华商基金 校园招聘", "status": 200, "hosts": ["hkaco.zhiye.com", "cmbcn.zhiye.com", "sc.hotjob.cn"], "urls": ["https://hkaco.zhiye.com/campus/jobs", "https://sc.hotjob.cn/wt/AIFMC/mobweb/v8/index", "https://sc.hotjob.cn", "https://hkaco.zhiye.com", "https://cmbcn.zhiye.com", "https://cmbcn.zhiye.com\\u003c/b\\u003e"]}
+{"company": "华商基金", "engine": "yahoo", "query": "华商基金 招聘 官网", "status": 200, "hosts": ["hkaco.zhiye.com", "sc.hotjob.cn"], "urls": ["https://hkaco.zhiye.com/campus/jobs", "https://sc.hotjob.cn/wt/AIFMC/mobweb/v8/index", "https://sc.hotjob.cn", "https://hkaco.zhiye.com"]}
+{"company": "华宝基金", "engine": "yahoo", "query": "华宝基金 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华宝基金", "engine": "yahoo", "query": "华宝基金 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "天弘基金", "engine": "yahoo", "query": "天弘基金 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "天弘基金", "engine": "yahoo", "query": "天弘基金 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "银华基金", "engine": "yahoo", "query": "银华基金 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "银华基金", "engine": "yahoo", "query": "银华基金 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国平安", "engine": "yahoo", "query": "中国平安 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国平安", "engine": "yahoo", "query": "中国平安 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国太保", "engine": "yahoo", "query": "中国太保 校园招聘", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["https://cntp.zhiye.com/campus", "https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "中国太保", "engine": "yahoo", "query": "中国太保 招聘 官网", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "瑞众保险", "engine": "yahoo", "query": "瑞众保险 校园招聘", "status": 200, "hosts": ["ruiinsurance.zhiye.com"], "urls": ["https://ruiinsurance.zhiye.com/campus/jobs", "https://ruiinsurance.zhiye.com", "https://portal-oss.zhiye.com/103498/resource/82e0af3e-9854-445e-b0ac-657d325327c8.html", "https://portal-oss.zhiye.com"]}
+{"company": "瑞众保险", "engine": "yahoo", "query": "瑞众保险 招聘 官网", "status": 200, "hosts": ["ruiinsurance.zhiye.com"], "urls": ["https://ruiinsurance.zhiye.com/campus/jobs", "https://ruiinsurance.zhiye.com", "https://ruiinsurance.zhiye.com/。"]}
+{"company": "众安保险", "engine": "yahoo", "query": "众安保险 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "众安保险", "engine": "yahoo", "query": "众安保险 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "友邦保险", "engine": "yahoo", "query": "友邦保险 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "友邦保险", "engine": "yahoo", "query": "友邦保险 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中信保诚人寿", "engine": "yahoo", "query": "中信保诚人寿 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中信保诚人寿", "engine": "yahoo", "query": "中信保诚人寿 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国出口信用保险", "engine": "yahoo", "query": "中国出口信用保险 校园招聘", "status": 200, "hosts": [], "urls": ["https://portal-oss.zhiye.com/100972/resource/19b83fe7-930f-49dc-ab84-8d5ca5f55203.html", "https://portal-oss.zhiye.com", "https://portal-oss.zhiye.com/100972/resource/afe65abf-9c74-4fc0-8aa3-d687fe7a974c.html"]}
+{"company": "中国出口信用保险", "engine": "yahoo", "query": "中国出口信用保险 招聘 官网", "status": 200, "hosts": ["sinosure.zhiye.com"], "urls": ["https://portal-oss.zhiye.com/100972/resource/19b83fe7-930f-49dc-ab84-8d5ca5f55203.html", "https://portal-oss.zhiye.com", "https://portal-oss.zhiye.com/100972/resource/afe65abf-9c74-4fc0-8aa3-d687fe7a974c.html"]}
+{"company": "中邮保险", "engine": "yahoo", "query": "中邮保险 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中邮保险", "engine": "yahoo", "query": "中邮保险 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中银保险", "engine": "yahoo", "query": "中银保险 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中银保险", "engine": "yahoo", "query": "中银保险 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "太平人寿", "engine": "yahoo", "query": "太平人寿 校园招聘", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["https://cntp.zhiye.com/Campus", "https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "太平人寿", "engine": "yahoo", "query": "太平人寿 招聘 官网", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["http://cntp.zhiye.com/campus.", "https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "太平洋人寿", "engine": "yahoo", "query": "太平洋人寿 校园招聘", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "太平洋人寿", "engine": "yahoo", "query": "太平洋人寿 招聘 官网", "status": 200, "hosts": ["cntp.zhiye.com"], "urls": ["https://cntp.zhiye.com/", "https://cntp.zhiye.com"]}
+{"company": "普华永道", "engine": "yahoo", "query": "普华永道 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "普华永道", "engine": "yahoo", "query": "普华永道 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "安永", "engine": "yahoo", "query": "安永 校园招聘", "status": 200, "hosts": ["slab.hotjob.cn"], "urls": ["https://slab.hotjob.cn/", "https://slab.hotjob.cn"]}
+{"company": "安永", "engine": "yahoo", "query": "安永 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "毕马威", "engine": "yahoo", "query": "毕马威 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "毕马威", "engine": "yahoo", "query": "毕马威 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "麦肯锡", "engine": "yahoo", "query": "麦肯锡 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "麦肯锡", "engine": "yahoo", "query": "麦肯锡 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "波士顿咨询", "engine": "yahoo", "query": "波士顿咨询 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "波士顿咨询", "engine": "yahoo", "query": "波士顿咨询 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "贝恩", "engine": "yahoo", "query": "贝恩 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "贝恩", "engine": "yahoo", "query": "贝恩 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "信永中和", "engine": "yahoo", "query": "信永中和 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "信永中和", "engine": "yahoo", "query": "信永中和 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中咨公司", "engine": "yahoo", "query": "中咨公司 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中咨公司", "engine": "yahoo", "query": "中咨公司 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "罗兰贝格", "engine": "yahoo", "query": "罗兰贝格 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "罗兰贝格", "engine": "yahoo", "query": "罗兰贝格 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "恒瑞医药", "engine": "yahoo", "query": "恒瑞医药 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "恒瑞医药", "engine": "yahoo", "query": "恒瑞医药 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "百济神州", "engine": "yahoo", "query": "百济神州 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "百济神州", "engine": "yahoo", "query": "百济神州 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "石药集团", "engine": "yahoo", "query": "石药集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "石药集团", "engine": "yahoo", "query": "石药集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "爱尔眼科", "engine": "yahoo", "query": "爱尔眼科 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "爱尔眼科", "engine": "yahoo", "query": "爱尔眼科 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "华润医药", "engine": "yahoo", "query": "华润医药 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华润医药", "engine": "yahoo", "query": "华润医药 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "智飞生物", "engine": "yahoo", "query": "智飞生物 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "智飞生物", "engine": "yahoo", "query": "智飞生物 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "长春高新", "engine": "yahoo", "query": "长春高新 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "长春高新", "engine": "yahoo", "query": "长春高新 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "片仔癀", "engine": "yahoo", "query": "片仔癀 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "片仔癀", "engine": "yahoo", "query": "片仔癀 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "同仁堂", "engine": "yahoo", "query": "同仁堂 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "同仁堂", "engine": "yahoo", "query": "同仁堂 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华东医药", "engine": "yahoo", "query": "华东医药 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华东医药", "engine": "yahoo", "query": "华东医药 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "丽珠集团", "engine": "yahoo", "query": "丽珠集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "丽珠集团", "engine": "yahoo", "query": "丽珠集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "乐普医疗", "engine": "yahoo", "query": "乐普医疗 校园招聘", "status": 200, "hosts": ["sifary.zhiye.com"], "urls": ["https://sifary.zhiye.com/campus/jobs", "https://sifary.zhiye.com"]}
+{"company": "乐普医疗", "engine": "yahoo", "query": "乐普医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "微创医疗", "engine": "yahoo", "query": "微创医疗 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "微创医疗", "engine": "yahoo", "query": "微创医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "GE医疗中国", "engine": "yahoo", "query": "GE医疗中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "GE医疗中国", "engine": "yahoo", "query": "GE医疗中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "万东医疗", "engine": "yahoo", "query": "万东医疗 校园招聘", "status": 200, "hosts": ["medcaptain.zhiye.com"], "urls": ["https://medcaptain.zhiye.com/campus/jobs", "https://medcaptain.zhiye.com"]}
+{"company": "万东医疗", "engine": "yahoo", "query": "万东医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "上海莱士", "engine": "yahoo", "query": "上海莱士 校园招聘", "status": 200, "hosts": ["asymchem.zhiye.com"], "urls": ["https://asymchem.zhiye.com/campus/jobs", "https://asymchem.zhiye.com"]}
+{"company": "上海莱士", "engine": "yahoo", "query": "上海莱士 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国同辐", "engine": "yahoo", "query": "中国同辐 校园招聘", "status": 200, "hosts": [], "urls": ["https://portal-oss.zhiye.com/605932/resource/b77cb6ae-cc67-42d5-9e9a-b5eb515e26f5.html", "https://portal-oss.zhiye.com"]}
+{"company": "中国同辐", "engine": "yahoo", "query": "中国同辐 招聘 官网", "status": 200, "hosts": [], "urls": ["https://portal-oss.zhiye.com/605932/resource/b77cb6ae-cc67-42d5-9e9a-b5eb515e26f5.html", "https://portal-oss.zhiye.com"]}
+{"company": "华兰生物", "engine": "yahoo", "query": "华兰生物 校园招聘", "status": 200, "hosts": ["skhb3.zhiye.com"], "urls": ["https://skhb3.zhiye.com/campus/jobs", "https://skhb3.zhiye.com"]}
+{"company": "华兰生物", "engine": "yahoo", "query": "华兰生物 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华海药业", "engine": "yahoo", "query": "华海药业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华海药业", "engine": "yahoo", "query": "华海药业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "启明医疗", "engine": "yahoo", "query": "启明医疗 校园招聘", "status": 200, "hosts": ["medcaptain.zhiye.com"], "urls": ["https://medcaptain.zhiye.com/campus/jobs", "https://medcaptain.zhiye.com"]}
+{"company": "启明医疗", "engine": "yahoo", "query": "启明医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "和铂医药", "engine": "yahoo", "query": "和铂医药 校园招聘", "status": 200, "hosts": ["asymchem.zhiye.com"], "urls": ["https://asymchem.zhiye.com/campus/jobs", "https://asymchem.zhiye.com"]}
+{"company": "和铂医药", "engine": "yahoo", "query": "和铂医药 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "大参林", "engine": "yahoo", "query": "大参林 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "大参林", "engine": "yahoo", "query": "大参林 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "奥翔药业", "engine": "yahoo", "query": "奥翔药业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "奥翔药业", "engine": "yahoo", "query": "奥翔药业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "惠泰医疗", "engine": "yahoo", "query": "惠泰医疗 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "惠泰医疗", "engine": "yahoo", "query": "惠泰医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "沃森生物疫苗", "engine": "yahoo", "query": "沃森生物疫苗 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU65dedb821c240e4b11c7832d/mc/index", "https://wecruit.hotjob.cn"]}
+{"company": "沃森生物疫苗", "engine": "yahoo", "query": "沃森生物疫苗 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU65dedb821c240e4b11c7832d/mc/index", "https://wecruit.hotjob.cn"]}
+{"company": "科兴生物", "engine": "yahoo", "query": "科兴生物 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "科兴生物", "engine": "yahoo", "query": "科兴生物 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "绿叶制药", "engine": "yahoo", "query": "绿叶制药 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6279c916bef57c3ac0d49671/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "绿叶制药", "engine": "yahoo", "query": "绿叶制药 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6279c916bef57c3ac0d49671/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "翔宇医疗", "engine": "yahoo", "query": "翔宇医疗 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "翔宇医疗", "engine": "yahoo", "query": "翔宇医疗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "老百姓大药房", "engine": "yahoo", "query": "老百姓大药房 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "老百姓大药房", "engine": "yahoo", "query": "老百姓大药房 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "荣昌生物", "engine": "yahoo", "query": "荣昌生物 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "荣昌生物", "engine": "yahoo", "query": "荣昌生物 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "药明生物", "engine": "yahoo", "query": "药明生物 校园招聘", "status": 200, "hosts": ["wuxiapptec.zhiye.com"], "urls": ["https://wuxiapptec.zhiye.com/campus/jobs", "https://wuxiapptec.zhiye.com", "https://wuxiapptec.zhiye.com/"]}
+{"company": "药明生物", "engine": "yahoo", "query": "药明生物 招聘 官网", "status": 200, "hosts": ["wuxiapptec.zhiye.com"], "urls": ["https://wuxiapptec.zhiye.com/campus/jobs", "https://wuxiapptec.zhiye.com"]}
+{"company": "贝达药业", "engine": "yahoo", "query": "贝达药业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "贝达药业", "engine": "yahoo", "query": "贝达药业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "康方生物", "engine": "yahoo", "query": "康方生物 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "康方生物", "engine": "yahoo", "query": "康方生物 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "归创通桥", "engine": "yahoo", "query": "归创通桥 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "归创通桥", "engine": "yahoo", "query": "归创通桥 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "欧康维视", "engine": "yahoo", "query": "欧康维视 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "欧康维视", "engine": "yahoo", "query": "欧康维视 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "药明合联", "engine": "yahoo", "query": "药明合联 校园招聘", "status": 200, "hosts": ["wuxiapptec.zhiye.com"], "urls": ["https://wuxiapptec.zhiye.com/campus/jobs", "https://wuxiapptec.zhiye.com"]}
+{"company": "药明合联", "engine": "yahoo", "query": "药明合联 招聘 官网", "status": 200, "hosts": ["wuxiapptec.zhiye.com"], "urls": ["https://wuxiapptec.zhiye.com/", "https://wuxiapptec.zhiye.com"]}
+{"company": "锦波生物", "engine": "yahoo", "query": "锦波生物 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "锦波生物", "engine": "yahoo", "query": "锦波生物 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "宝洁", "engine": "yahoo", "query": "宝洁 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "宝洁", "engine": "yahoo", "query": "宝洁 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "联合利华", "engine": "yahoo", "query": "联合利华 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "联合利华", "engine": "yahoo", "query": "联合利华 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "欧莱雅", "engine": "yahoo", "query": "欧莱雅 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "欧莱雅", "engine": "yahoo", "query": "欧莱雅 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "雀巢", "engine": "yahoo", "query": "雀巢 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "雀巢", "engine": "yahoo", "query": "雀巢 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "农夫山泉", "engine": "yahoo", "query": "农夫山泉 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "农夫山泉", "engine": "yahoo", "query": "农夫山泉 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "娃哈哈", "engine": "yahoo", "query": "娃哈哈 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "娃哈哈", "engine": "yahoo", "query": "娃哈哈 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "华润啤酒", "engine": "yahoo", "query": "华润啤酒 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华润啤酒", "engine": "yahoo", "query": "华润啤酒 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "贵州茅台", "engine": "yahoo", "query": "贵州茅台 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "贵州茅台", "engine": "yahoo", "query": "贵州茅台 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "五粮液", "engine": "yahoo", "query": "五粮液 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "五粮液", "engine": "yahoo", "query": "五粮液 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "洋河", "engine": "yahoo", "query": "洋河 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "洋河", "engine": "yahoo", "query": "洋河 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "安踏", "engine": "yahoo", "query": "安踏 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "安踏", "engine": "yahoo", "query": "安踏 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "瑞幸咖啡", "engine": "yahoo", "query": "瑞幸咖啡 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "瑞幸咖啡", "engine": "yahoo", "query": "瑞幸咖啡 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "牧原", "engine": "yahoo", "query": "牧原 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "牧原", "engine": "yahoo", "query": "牧原 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "温氏", "engine": "yahoo", "query": "温氏 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "温氏", "engine": "yahoo", "query": "温氏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "山西汾酒", "engine": "yahoo", "query": "山西汾酒 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "山西汾酒", "engine": "yahoo", "query": "山西汾酒 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "古井贡酒", "engine": "yahoo", "query": "古井贡酒 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "古井贡酒", "engine": "yahoo", "query": "古井贡酒 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "剑南春", "engine": "yahoo", "query": "剑南春 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU61027bb10dcad47a7e23e040/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "剑南春", "engine": "yahoo", "query": "剑南春 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "三只松鼠", "engine": "yahoo", "query": "三只松鼠 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "三只松鼠", "engine": "yahoo", "query": "三只松鼠 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "麦当劳中国", "engine": "yahoo", "query": "麦当劳中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "麦当劳中国", "engine": "yahoo", "query": "麦当劳中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "霸王茶姬", "engine": "yahoo", "query": "霸王茶姬 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "霸王茶姬", "engine": "yahoo", "query": "霸王茶姬 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "古茗", "engine": "yahoo", "query": "古茗 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "古茗", "engine": "yahoo", "query": "古茗 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "特步", "engine": "yahoo", "query": "特步 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "特步", "engine": "yahoo", "query": "特步 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国盐业", "engine": "yahoo", "query": "中国盐业 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国盐业", "engine": "yahoo", "query": "中国盐业 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "千味央厨", "engine": "yahoo", "query": "千味央厨 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "千味央厨", "engine": "yahoo", "query": "千味央厨 招聘 官网", "status": 200, "hosts": ["yumchina.zhiye.com"], "urls": ["https://yumchina.zhiye.com/", "https://yumchina.zhiye.com"]}
+{"company": "水井坊", "engine": "yahoo", "query": "水井坊 校园招聘", "status": 200, "hosts": ["tuopaishede.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://tuopaishede.zhiye.com/campus/jobs", "https://wecruit.hotjob.cn/SU61027bb10dcad47a7e23e040/pb/school.html", "https://wecruit.hotjob.cn", "https://tuopaishede.zhiye.com"]}
+{"company": "水井坊", "engine": "yahoo", "query": "水井坊 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "煌上煌", "engine": "yahoo", "query": "煌上煌 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "煌上煌", "engine": "yahoo", "query": "煌上煌 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "煌上煌食品", "engine": "yahoo", "query": "煌上煌食品 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "煌上煌食品", "engine": "yahoo", "query": "煌上煌食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "维维股份", "engine": "yahoo", "query": "维维股份 校园招聘", "status": 200, "hosts": ["vinda.zhiye.com", "wecruit.hotjob.cn", "worthfind.jobs.feishu.cn"], "urls": ["https://vinda.zhiye.com/Campus", "https://wecruit.hotjob.cn/SU61027bb10dcad47a7e23e040/pb/school.html", "https://wecruit.hotjob.cn", "https://worthfind.jobs.feishu.cn/471883", "https://worthfind.jobs.feishu.cn", "https://vinda.zhiye.com"]}
+{"company": "维维股份", "engine": "yahoo", "query": "维维股份 招聘 官网", "status": 200, "hosts": ["xinhecheng1.zhiye.com"], "urls": ["https://xinhecheng1.zhiye.com/campus/jobs", "https://xinhecheng1.zhiye.com"]}
+{"company": "达利食品", "engine": "yahoo", "query": "达利食品 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "达利食品", "engine": "yahoo", "query": "达利食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "一点点", "engine": "yahoo", "query": "一点点 校园招聘", "status": 200, "hosts": ["epoint.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://epoint.zhiye.com/campus", "https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html", "https://wecruit.hotjob.cn", "https://epoint.zhiye.com"]}
+{"company": "一点点", "engine": "yahoo", "query": "一点点 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "三全食品", "engine": "yahoo", "query": "三全食品 校园招聘", "status": 200, "hosts": ["sanyuan.zhiye.com"], "urls": ["https://sanyuan.zhiye.com/jobs?KeyWords=", "https://sanyuan.zhiye.com"]}
+{"company": "三全食品", "engine": "yahoo", "query": "三全食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "六福珠宝", "engine": "yahoo", "query": "六福珠宝 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "六福珠宝", "engine": "yahoo", "query": "六福珠宝 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "天味食品", "engine": "yahoo", "query": "天味食品 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "天味食品", "engine": "yahoo", "query": "天味食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "甘源食品", "engine": "yahoo", "query": "甘源食品 校园招聘", "status": 200, "hosts": ["wantwant.zhiye.com"], "urls": ["https://wantwant.zhiye.com/", "https://wantwant.zhiye.com"]}
+{"company": "甘源食品", "engine": "yahoo", "query": "甘源食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "百草味", "engine": "yahoo", "query": "百草味 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "百草味", "engine": "yahoo", "query": "百草味 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "盼盼食品", "engine": "yahoo", "query": "盼盼食品 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "盼盼食品", "engine": "yahoo", "query": "盼盼食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "紫燕食品", "engine": "yahoo", "query": "紫燕食品 校园招聘", "status": 200, "hosts": ["qiaqiafood.zhiye.com"], "urls": ["https://qiaqiafood.zhiye.com/campus/jobs", "https://qiaqiafood.zhiye.com"]}
+{"company": "紫燕食品", "engine": "yahoo", "query": "紫燕食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "绝味食品", "engine": "yahoo", "query": "绝味食品 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "绝味食品", "engine": "yahoo", "query": "绝味食品 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "雅戈尔", "engine": "yahoo", "query": "雅戈尔 校园招聘", "status": 200, "hosts": ["mxbc1997.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://mxbc1997.zhiye.com/campus", "https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn", "https://mxbc1997.zhiye.com"]}
+{"company": "雅戈尔", "engine": "yahoo", "query": "雅戈尔 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "鸿星尔克", "engine": "yahoo", "query": "鸿星尔克 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "鸿星尔克", "engine": "yahoo", "query": "鸿星尔克 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "万科", "engine": "yahoo", "query": "万科 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "万科", "engine": "yahoo", "query": "万科 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "龙湖", "engine": "yahoo", "query": "龙湖 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "龙湖", "engine": "yahoo", "query": "龙湖 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "华润置地", "engine": "yahoo", "query": "华润置地 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "华润置地", "engine": "yahoo", "query": "华润置地 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "招商蛇口", "engine": "yahoo", "query": "招商蛇口 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "招商蛇口", "engine": "yahoo", "query": "招商蛇口 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "顺丰", "engine": "yahoo", "query": "顺丰 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "顺丰", "engine": "yahoo", "query": "顺丰 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "京东物流", "engine": "yahoo", "query": "京东物流 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "京东物流", "engine": "yahoo", "query": "京东物流 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中通快递", "engine": "yahoo", "query": "中通快递 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中通快递", "engine": "yahoo", "query": "中通快递 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "普洛斯", "engine": "yahoo", "query": "普洛斯 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "普洛斯", "engine": "yahoo", "query": "普洛斯 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "融创中国", "engine": "yahoo", "query": "融创中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "融创中国", "engine": "yahoo", "query": "融创中国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "金地集团", "engine": "yahoo", "query": "金地集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "金地集团", "engine": "yahoo", "query": "金地集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "新城控股", "engine": "yahoo", "query": "新城控股 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "新城控股", "engine": "yahoo", "query": "新城控股 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "越秀地产", "engine": "yahoo", "query": "越秀地产 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "越秀地产", "engine": "yahoo", "query": "越秀地产 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "建发房产", "engine": "yahoo", "query": "建发房产 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "建发房产", "engine": "yahoo", "query": "建发房产 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "上海建工", "engine": "yahoo", "query": "上海建工 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "上海建工", "engine": "yahoo", "query": "上海建工 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "DSV中国", "engine": "yahoo", "query": "DSV中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "DSV中国", "engine": "yahoo", "query": "DSV中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中国有色金属建设", "engine": "yahoo", "query": "中国有色金属建设 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中国有色金属建设", "engine": "yahoo", "query": "中国有色金属建设 招聘 官网", "status": 200, "hosts": ["cnmc.zhiye.com"], "urls": ["http://cnmc.zhiye.com/"]}
+{"company": "中国铁物", "engine": "yahoo", "query": "中国铁物 校园招聘", "status": 200, "hosts": ["chinalogisticsgroup.hotjob.cn"], "urls": ["https://chinalogisticsgroup.hotjob.cn/", "https://chinalogisticsgroup.hotjob.cn"]}
+{"company": "中国铁物", "engine": "yahoo", "query": "中国铁物 招聘 官网", "status": 200, "hosts": ["chinalogisticsgroup.hotjob.cn"], "urls": ["https://chinalogisticsgroup.hotjob.cn/", "https://chinalogisticsgroup.hotjob.cn"]}
+{"company": "中能建", "engine": "yahoo", "query": "中能建 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中能建", "engine": "yahoo", "query": "中能建 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中通快运", "engine": "yahoo", "query": "中通快运 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "中通快运", "engine": "yahoo", "query": "中通快运 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "保利物业", "engine": "yahoo", "query": "保利物业 校园招聘", "status": 200, "hosts": ["polycareer.zhiye.com"], "urls": ["https://polycareer.zhiye.com/campus", "https://polycareer.zhiye.com"]}
+{"company": "保利物业", "engine": "yahoo", "query": "保利物业 招聘 官网", "status": 200, "hosts": ["polynew.zhiye.com"], "urls": ["https://polynew.zhiye.com/jobs?activityGuid=11a510bd-edba-4b59-aa99-9de2f27c4833", "https://polynew.zhiye.com/jobs?activityGuid=11a510bd-edba-4b59-aa99&nbsp;...", "https://polynew.zhiye.com/jobs?activityGuid=11a510bd-edba-4b59-aa99\\u0026nbsp;...", "https://polynew.zhiye.com"]}
+{"company": "恒隆地产", "engine": "yahoo", "query": "恒隆地产 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "恒隆地产", "engine": "yahoo", "query": "恒隆地产 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "葛洲坝地产", "engine": "yahoo", "query": "葛洲坝地产 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "葛洲坝地产", "engine": "yahoo", "query": "葛洲坝地产 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "DHL中国", "engine": "yahoo", "query": "DHL中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "DHL中国", "engine": "yahoo", "query": "DHL中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中交一公局", "engine": "yahoo", "query": "中交一公局 校园招聘", "status": 200, "hosts": [], "urls": ["https://portal-oss.zhiye.com/107092/resource/dddae665-b884-43c3-a392-085a942766a5.html", "https://portal-oss.zhiye.com"]}
+{"company": "中交一公局", "engine": "yahoo", "query": "中交一公局 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "四川路桥", "engine": "yahoo", "query": "四川路桥 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "四川路桥", "engine": "yahoo", "query": "四川路桥 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "大悦城", "engine": "yahoo", "query": "大悦城 校园招聘", "status": 200, "hosts": ["heytea.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://heytea.zhiye.com/campus/jobs", "https://wecruit.hotjob.cn/SU66e2aea81c240e0e35e0add0/mc/position/campus?postTypeCode=0/1227/310005,0/1227/108902,0/1227/310004&amp;projectId=100103,201201", "https://wecruit.hotjob.cn", "https://wecruit.hotjob.cn/SU66e2aea81c240e0e35e0add0/mc/position/campus?postTypeCode=0/1227/310005,0/1227/108902,0/1227/310004\\u0026projectId=100103,201201", "https://wecruit.hotjob.cn/SU66e2aea81c240e0e35e0add0/mc/position/campus?postTypeCode=0/1227/310005,0%2", "https://heytea.zhiye.com"]}
+{"company": "大悦城", "engine": "yahoo", "query": "大悦城 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "微软", "engine": "yahoo", "query": "微软 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "微软", "engine": "yahoo", "query": "微软 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "苹果", "engine": "yahoo", "query": "苹果 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "苹果", "engine": "yahoo", "query": "苹果 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "亚马逊", "engine": "yahoo", "query": "亚马逊 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "亚马逊", "engine": "yahoo", "query": "亚马逊 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "高通", "engine": "yahoo", "query": "高通 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "高通", "engine": "yahoo", "query": "高通 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "AMD", "engine": "yahoo", "query": "AMD 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "AMD", "engine": "yahoo", "query": "AMD 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "博世", "engine": "yahoo", "query": "博世 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "博世", "engine": "yahoo", "query": "博世 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "施耐德电气", "engine": "yahoo", "query": "施耐德电气 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "施耐德电气", "engine": "yahoo", "query": "施耐德电气 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "特斯拉", "engine": "yahoo", "query": "特斯拉 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "特斯拉", "engine": "yahoo", "query": "特斯拉 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "奔驰", "engine": "yahoo", "query": "奔驰 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "奔驰", "engine": "yahoo", "query": "奔驰 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "三星", "engine": "yahoo", "query": "三星 校园招聘", "status": 200, "hosts": ["dearsamsung.zhiye.com"], "urls": ["https://dearsamsung.zhiye.com/", "https://dearsamsung.zhiye.com", "https://dearsamsung.zhiye.com/home"]}
+{"company": "三星", "engine": "yahoo", "query": "三星 招聘 官网", "status": 200, "hosts": ["dearsamsung.zhiye.com"], "urls": ["https://dearsamsung.zhiye.com/", "https://dearsamsung.zhiye.com", "https://dearsamsung.zhiye.com/home"]}
+{"company": "索尼", "engine": "yahoo", "query": "索尼 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "索尼", "engine": "yahoo", "query": "索尼 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "松下", "engine": "yahoo", "query": "松下 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "松下", "engine": "yahoo", "query": "松下 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "联发科", "engine": "yahoo", "query": "联发科 校园招聘", "status": 200, "hosts": ["mediatek.zhiye.com"], "urls": ["https://mediatek.zhiye.com/campus", "https://mediatek.zhiye.com/campus/jobs", "https://mediatek.zhiye.com", "https://mediatek.zhiye.com/"]}
+{"company": "联发科", "engine": "yahoo", "query": "联发科 招聘 官网", "status": 200, "hosts": ["mediatek.zhiye.com"], "urls": ["https://mediatek.zhiye.com/campus", "https://mediatek.zhiye.com/campus/jobs", "https://mediatek.zhiye.com", "https://mediatek.zhiye.com/"]}
+{"company": "安川电机", "engine": "yahoo", "query": "安川电机 校园招聘", "status": 200, "hosts": ["yaskawa.zhiye.com"], "urls": ["https://yaskawa.zhiye.com/jobs?3=[{", "https://yaskawa.zhiye.com/", "https://yaskawa.zhiye.com"]}
+{"company": "安川电机", "engine": "yahoo", "query": "安川电机 招聘 官网", "status": 200, "hosts": ["yaskawa.zhiye.com"], "urls": ["https://yaskawa.zhiye.com/", "https://yaskawa.zhiye.com"]}
+{"company": "基恩士", "engine": "yahoo", "query": "基恩士 校园招聘", "status": 200, "hosts": ["keyence.zhiye.com"], "urls": ["https://keyence.zhiye.com/jobs", "https://keyence.zhiye.com/", "https://keyence.zhiye.com"]}
+{"company": "基恩士", "engine": "yahoo", "query": "基恩士 招聘 官网", "status": 200, "hosts": ["keyence.zhiye.com"], "urls": ["https://keyence.zhiye.com/jobs", "https://keyence.zhiye.com/", "https://keyence.zhiye.com"]}
+{"company": "甲骨文", "engine": "yahoo", "query": "甲骨文 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "甲骨文", "engine": "yahoo", "query": "甲骨文 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "罗氏", "engine": "yahoo", "query": "罗氏 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "罗氏", "engine": "yahoo", "query": "罗氏 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "松下电器", "engine": "yahoo", "query": "松下电器 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "松下电器", "engine": "yahoo", "query": "松下电器 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "SAP", "engine": "yahoo", "query": "SAP 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "SAP", "engine": "yahoo", "query": "SAP 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "金佰利中国", "engine": "yahoo", "query": "金佰利中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "金佰利中国", "engine": "yahoo", "query": "金佰利中国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "宇树科技", "engine": "yahoo", "query": "宇树科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "宇树科技", "engine": "yahoo", "query": "宇树科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "傅利叶智能", "engine": "yahoo", "query": "傅利叶智能 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "傅利叶智能", "engine": "yahoo", "query": "傅利叶智能 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "第四范式", "engine": "yahoo", "query": "第四范式 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "第四范式", "engine": "yahoo", "query": "第四范式 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "云从科技", "engine": "yahoo", "query": "云从科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "云从科技", "engine": "yahoo", "query": "云从科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "燧原科技", "engine": "yahoo", "query": "燧原科技 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "燧原科技", "engine": "yahoo", "query": "燧原科技 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沐曦", "engine": "yahoo", "query": "沐曦 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沐曦", "engine": "yahoo", "query": "沐曦 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "文远知行", "engine": "yahoo", "query": "文远知行 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "文远知行", "engine": "yahoo", "query": "文远知行 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "亿航智能", "engine": "yahoo", "query": "亿航智能 校园招聘", "status": 200, "hosts": ["yealink.zhiye.com"], "urls": ["https://yealink.zhiye.com/campus/jobs?shareId=cfd2705b-bfbc-4357-90d1-1f6aec1f5aa3", "https://yealink.zhiye.com"]}
+{"company": "亿航智能", "engine": "yahoo", "query": "亿航智能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "小鹏汇天", "engine": "yahoo", "query": "小鹏汇天 校园招聘", "status": 200, "hosts": ["xiaopeng.jobs.feishu.cn"], "urls": ["https://xiaopeng.jobs.feishu.cn/campus/", "https://xiaopeng.jobs.feishu.cn", "https://xiaopeng.jobs.feishu.cn/campus"]}
+{"company": "小鹏汇天", "engine": "yahoo", "query": "小鹏汇天 招聘 官网", "status": 200, "hosts": ["xiaopeng.jobs.feishu.cn"], "urls": ["https://xiaopeng.jobs.feishu.cn/campus/", "https://xiaopeng.jobs.feishu.cn"]}
+{"company": "银河通用", "engine": "yahoo", "query": "银河通用 校园招聘", "status": 200, "hosts": ["owm6ymi5v9b.jobs.feishu.cn"], "urls": ["https://owm6ymi5v9b.jobs.feishu.cn/584984/", "https://owm6ymi5v9b.jobs.feishu.cn", "https://owm6ymi5v9b.jobs.feishu.cn/584984/m/position/list", "https://owm6ymi5v9b.jobs.feishu.cn/584984/page-pGc7k2"]}
+{"company": "银河通用", "engine": "yahoo", "query": "银河通用 招聘 官网", "status": 200, "hosts": ["owm6ymi5v9b.jobs.feishu.cn"], "urls": ["https://owm6ymi5v9b.jobs.feishu.cn/584984/", "https://owm6ymi5v9b.jobs.feishu.cn", "https://owm6ymi5v9b.jobs.feishu.cn/584984/m/position/list", "https://owm6ymi5v9b.jobs.feishu.cn/584984/page-pGc7k2", "https://owm6ymi5v9b.jobs.feishu.cn/584984&nbsp;...", "https://owm6ymi5v9b.jobs.feishu.cn/870797/", "https://owm6ymi5v9b.jobs.feishu.cn/584984\\u0026nbsp;..."]}
+{"company": "OceanBase", "engine": "yahoo", "query": "OceanBase 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "OceanBase", "engine": "yahoo", "query": "OceanBase 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "中科闻歌", "engine": "yahoo", "query": "中科闻歌 校园招聘", "status": 200, "hosts": ["wengegroup.zhiye.com"], "urls": ["https://wengegroup.zhiye.com/", "https://wengegroup.zhiye.com"]}
+{"company": "中科闻歌", "engine": "yahoo", "query": "中科闻歌 招聘 官网", "status": 200, "hosts": ["wengegroup.zhiye.com"], "urls": ["https://wengegroup.zhiye.com/", "https://wengegroup.zhiye.com"]}
+{"company": "商汤大装置", "engine": "yahoo", "query": "商汤大装置 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "商汤大装置", "engine": "yahoo", "query": "商汤大装置 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "智元机器人AgiBot", "engine": "yahoo", "query": "智元机器人AgiBot 校园招聘", "status": 200, "hosts": ["agirobot.jobs.feishu.cn"], "urls": ["https://agirobot.jobs.feishu.cn/", "https://agirobot.jobs.feishu.cn"]}
+{"company": "智元机器人AgiBot", "engine": "yahoo", "query": "智元机器人AgiBot 招聘 官网", "status": 200, "hosts": ["agirobot.jobs.feishu.cn"], "urls": ["https://agirobot.jobs.feishu.cn/", "https://agirobot.jobs.feishu.cn"]}
+{"company": "未来机器人", "engine": "yahoo", "query": "未来机器人 校园招聘", "status": 200, "hosts": ["pudutech.zhiye.com"], "urls": ["https://pudutech.zhiye.com/campus/jobs", "https://pudutech.zhiye.com"]}
+{"company": "未来机器人", "engine": "yahoo", "query": "未来机器人 招聘 官网", "status": 200, "hosts": ["pudutech.zhiye.com"], "urls": ["https://pudutech.zhiye.com/", "https://pudutech.zhiye.com"]}
+{"company": "海康机器人", "engine": "yahoo", "query": "海康机器人 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "海康机器人", "engine": "yahoo", "query": "海康机器人 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "科沃斯", "engine": "yahoo", "query": "科沃斯 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "科沃斯", "engine": "yahoo", "query": "科沃斯 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "遨博智能", "engine": "yahoo", "query": "遨博智能 校园招聘", "status": 200, "hosts": ["estun1.zhiye.com"], "urls": ["https://estun1.zhiye.com/campus/jobs", "https://estun1.zhiye.com"]}
+{"company": "遨博智能", "engine": "yahoo", "query": "遨博智能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "酷哇机器人", "engine": "yahoo", "query": "酷哇机器人 校园招聘", "status": 200, "hosts": ["woanhome.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://woanhome.zhiye.com/campus/jobs", "https://wecruit.hotjob.cn/SU6409ef49bef57c635fd390a6/pb/school.html", "https://wecruit.hotjob.cn", "https://woanhome.zhiye.com"]}
+{"company": "酷哇机器人", "engine": "yahoo", "query": "酷哇机器人 招聘 官网", "status": 200, "hosts": ["pudutech.zhiye.com"], "urls": ["https://pudutech.zhiye.com/campus/jobs", "https://pudutech.zhiye.com"]}
+{"company": "思谋科技", "engine": "yahoo", "query": "思谋科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "思谋科技", "engine": "yahoo", "query": "思谋科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "云迹科技", "engine": "yahoo", "query": "云迹科技 校园招聘", "status": 200, "hosts": ["ikingtec.zhiye.com"], "urls": ["https://ikingtec.zhiye.com/campus/jobs", "https://ikingtec.zhiye.com"]}
+{"company": "云迹科技", "engine": "yahoo", "query": "云迹科技 招聘 官网", "status": 200, "hosts": ["ikingtec.zhiye.com"], "urls": ["https://ikingtec.zhiye.com/campus/jobs", "https://ikingtec.zhiye.com"]}
+{"company": "傅利叶", "engine": "yahoo", "query": "傅利叶 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "傅利叶", "engine": "yahoo", "query": "傅利叶 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "极智嘉", "engine": "yahoo", "query": "极智嘉 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "极智嘉", "engine": "yahoo", "query": "极智嘉 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "逐际动力", "engine": "yahoo", "query": "逐际动力 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "逐际动力", "engine": "yahoo", "query": "逐际动力 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "波司登", "engine": "yahoo", "query": "波司登 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "波司登", "engine": "yahoo", "query": "波司登 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "珀莱雅", "engine": "yahoo", "query": "珀莱雅 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "珀莱雅", "engine": "yahoo", "query": "珀莱雅 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "贝泰妮", "engine": "yahoo", "query": "贝泰妮 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "贝泰妮", "engine": "yahoo", "query": "贝泰妮 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "上海家化", "engine": "yahoo", "query": "上海家化 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "上海家化", "engine": "yahoo", "query": "上海家化 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "Zara中国", "engine": "yahoo", "query": "Zara中国 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU66a30e5a1eb8050c72d5a5f6/pb/interns.html", "https://wecruit.hotjob.cn", "https://wecruit.hotjob.cn/SU66a30e5a1eb8050c72d5a5f6/pb/social.html"]}
+{"company": "Zara中国", "engine": "yahoo", "query": "Zara中国 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU66a30e5a1eb8050c72d5a5f6/pb/interns.html", "https://wecruit.hotjob.cn"]}
+{"company": "森马服饰", "engine": "yahoo", "query": "森马服饰 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "森马服饰", "engine": "yahoo", "query": "森马服饰 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "毛戈平", "engine": "yahoo", "query": "毛戈平 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "毛戈平", "engine": "yahoo", "query": "毛戈平 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "花西子", "engine": "yahoo", "query": "花西子 校园招聘", "status": 200, "hosts": ["yige-group.zhiye.com"], "urls": ["https://yige-group.zhiye.com/campus/jobs", "https://yige-group.zhiye.com"]}
+{"company": "花西子", "engine": "yahoo", "query": "花西子 招聘 官网", "status": 200, "hosts": ["yige-group.zhiye.com"], "urls": ["https://yige-group.zhiye.com/campus/jobs", "https://yige-group.zhiye.com"]}
+{"company": "高途", "engine": "yahoo", "query": "高途 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "高途", "engine": "yahoo", "query": "高途 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "网易有道", "engine": "yahoo", "query": "网易有道 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "网易有道", "engine": "yahoo", "query": "网易有道 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "粉笔", "engine": "yahoo", "query": "粉笔 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU61027bb10dcad47a7e23e040/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "粉笔", "engine": "yahoo", "query": "粉笔 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华图教育", "engine": "yahoo", "query": "华图教育 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华图教育", "engine": "yahoo", "query": "华图教育 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "小码王", "engine": "yahoo", "query": "小码王 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "小码王", "engine": "yahoo", "query": "小码王 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "环球网校", "engine": "yahoo", "query": "环球网校 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "环球网校", "engine": "yahoo", "query": "环球网校 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "新东方前途出国", "engine": "yahoo", "query": "新东方前途出国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "新东方前途出国", "engine": "yahoo", "query": "新东方前途出国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "新航道", "engine": "yahoo", "query": "新航道 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "新航道", "engine": "yahoo", "query": "新航道 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "高途课堂", "engine": "yahoo", "query": "高途课堂 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "高途课堂", "engine": "yahoo", "query": "高途课堂 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "新东方在线", "engine": "yahoo", "query": "新东方在线 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "新东方在线", "engine": "yahoo", "query": "新东方在线 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "金蝶", "engine": "yahoo", "query": "金蝶 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "金蝶", "engine": "yahoo", "query": "金蝶 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "中软国际", "engine": "yahoo", "query": "中软国际 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "中软国际", "engine": "yahoo", "query": "中软国际 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "软通动力", "engine": "yahoo", "query": "软通动力 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "软通动力", "engine": "yahoo", "query": "软通动力 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "恒生电子", "engine": "yahoo", "query": "恒生电子 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "恒生电子", "engine": "yahoo", "query": "恒生电子 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "Moka", "engine": "yahoo", "query": "Moka 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "Moka", "engine": "yahoo", "query": "Moka 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "万得Wind", "engine": "yahoo", "query": "万得Wind 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "万得Wind", "engine": "yahoo", "query": "万得Wind 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "泛微网络", "engine": "yahoo", "query": "泛微网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "泛微网络", "engine": "yahoo", "query": "泛微网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "钉钉", "engine": "yahoo", "query": "钉钉 校园招聘", "status": 200, "hosts": ["iflytek.zhiye.com"], "urls": ["https://iflytek.zhiye.com/", "https://iflytek.zhiye.com"]}
+{"company": "钉钉", "engine": "yahoo", "query": "钉钉 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "九毛九", "engine": "yahoo", "query": "九毛九 校园招聘", "status": 200, "hosts": ["999.zhiye.com", "xinhecheng1.zhiye.com"], "urls": ["http://999.zhiye.com/campus上选择相关的岗位&nbsp;...", "https://xinhecheng1.zhiye.com/campus/jobs", "http://999.zhiye.com/campus上选择相关的岗位\\u0026nbsp;...", "https://xinhecheng1.zhiye.com"]}
+{"company": "九毛九", "engine": "yahoo", "query": "九毛九 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "云深处", "engine": "yahoo", "query": "云深处 校园招聘", "status": 200, "hosts": ["ikingtec.zhiye.com"], "urls": ["https://ikingtec.zhiye.com/campus/jobs", "https://ikingtec.zhiye.com"]}
+{"company": "云深处", "engine": "yahoo", "query": "云深处 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "五矿资源", "engine": "yahoo", "query": "五矿资源 校园招聘", "status": 200, "hosts": ["minmetals.hotjob.cn", "wecruit.hotjob.cn"], "urls": ["https://minmetals.hotjob.cn/", "https://minmetals.hotjob.cn", "https://wecruit.hotjob.cn/SU63045367bef57c3179e6fb63/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "五矿资源", "engine": "yahoo", "query": "五矿资源 招聘 官网", "status": 200, "hosts": ["minmetals.hotjob.cn"], "urls": ["https://minmetals.hotjob.cn/", "https://minmetals.hotjob.cn"]}
+{"company": "人大金仓", "engine": "yahoo", "query": "人大金仓 校园招聘", "status": 200, "hosts": ["bjzkj.zhiye.com"], "urls": ["https://bjzkj.zhiye.com/campus", "https://bjzkj.zhiye.com"]}
+{"company": "人大金仓", "engine": "yahoo", "query": "人大金仓 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "仰望", "engine": "yahoo", "query": "仰望 校园招聘", "status": 200, "hosts": ["uq1h428xyc.jobs.feishu.cn", "wecruit.hotjob.cn"], "urls": ["https://uq1h428xyc.jobs.feishu.cn/522146/m", "https://uq1h428xyc.jobs.feishu.cn", "https://wecruit.hotjob.cn/SU625d4a0b2f9d24287db127c8/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "仰望", "engine": "yahoo", "query": "仰望 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "优时比中国", "engine": "yahoo", "query": "优时比中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "优时比中国", "engine": "yahoo", "query": "优时比中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "传音控股非洲", "engine": "yahoo", "query": "传音控股非洲 校园招聘", "status": 200, "hosts": ["transsion.zhiye.com"], "urls": ["https://transsion.zhiye.com/jobs", "https://transsion.zhiye.com"]}
+{"company": "传音控股非洲", "engine": "yahoo", "query": "传音控股非洲 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "信发集团", "engine": "yahoo", "query": "信发集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "信发集团", "engine": "yahoo", "query": "信发集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "兆易创新存储", "engine": "yahoo", "query": "兆易创新存储 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "兆易创新存储", "engine": "yahoo", "query": "兆易创新存储 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "光迅科技", "engine": "yahoo", "query": "光迅科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "光迅科技", "engine": "yahoo", "query": "光迅科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "全志科技", "engine": "yahoo", "query": "全志科技 校园招聘", "status": 200, "hosts": ["sgssemi.zhiye.com"], "urls": ["https://sgssemi.zhiye.com/campus", "https://sgssemi.zhiye.com"]}
+{"company": "全志科技", "engine": "yahoo", "query": "全志科技 招聘 官网", "status": 200, "hosts": ["sgssemi.zhiye.com"], "urls": ["https://sgssemi.zhiye.com/campus", "https://sgssemi.zhiye.com"]}
+{"company": "出门问问", "engine": "yahoo", "query": "出门问问 校园招聘", "status": 200, "hosts": ["tsingmicro.zhiye.com"], "urls": ["https://tsingmicro.zhiye.com/", "https://tsingmicro.zhiye.com"]}
+{"company": "出门问问", "engine": "yahoo", "query": "出门问问 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "匹克", "engine": "yahoo", "query": "匹克 校园招聘", "status": 200, "hosts": ["boke.jobs.feishu.cn", "wecruit.hotjob.cn"], "urls": ["https://boke.jobs.feishu.cn/581609/", "https://boke.jobs.feishu.cn", "https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "匹克", "engine": "yahoo", "query": "匹克 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华住集团", "engine": "yahoo", "query": "华住集团 校园招聘", "status": 200, "hosts": ["huazhu1.zhiye.com"], "urls": ["https://huazhu1.zhiye.com/", "https://huazhu1.zhiye.com"]}
+{"company": "华住集团", "engine": "yahoo", "query": "华住集团 招聘 官网", "status": 200, "hosts": ["huazhu1.zhiye.com"], "urls": ["https://huazhu1.zhiye.com/", "https://huazhu1.zhiye.com"]}
+{"company": "华帝", "engine": "yahoo", "query": "华帝 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华帝", "engine": "yahoo", "query": "华帝 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华策影视", "engine": "yahoo", "query": "华策影视 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华策影视", "engine": "yahoo", "query": "华策影视 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "协鑫科技", "engine": "yahoo", "query": "协鑫科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "协鑫科技", "engine": "yahoo", "query": "协鑫科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "南大通用", "engine": "yahoo", "query": "南大通用 校园招聘", "status": 200, "hosts": ["sgm.zhiye.com"], "urls": ["https://sgm.zhiye.com/campus", "https://sgm.zhiye.com"]}
+{"company": "南大通用", "engine": "yahoo", "query": "南大通用 招聘 官网", "status": 200, "hosts": ["owm6ymi5v9b.jobs.feishu.cn", "sgm.zhiye.com"], "urls": ["https://owm6ymi5v9b.jobs.feishu.cn/584984/", "https://owm6ymi5v9b.jobs.feishu.cn", "https://sgm.zhiye.com/campus", "https://sgm.zhiye.com"]}
+{"company": "博彦科技", "engine": "yahoo", "query": "博彦科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "博彦科技", "engine": "yahoo", "query": "博彦科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "卧龙电驱", "engine": "yahoo", "query": "卧龙电驱 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "卧龙电驱", "engine": "yahoo", "query": "卧龙电驱 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "友谊时光", "engine": "yahoo", "query": "友谊时光 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn", "leetx.zhiye.com"], "urls": ["https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn", "https://leetx.zhiye.com/campus/jobs", "https://leetx.zhiye.com"]}
+{"company": "友谊时光", "engine": "yahoo", "query": "友谊时光 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "可复美", "engine": "yahoo", "query": "可复美 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "可复美", "engine": "yahoo", "query": "可复美 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "吉利银河", "engine": "yahoo", "query": "吉利银河 校园招聘", "status": 200, "hosts": ["galaxy.hotjob.cn"], "urls": ["https://galaxy.hotjob.cn/", "https://galaxy.hotjob.cn"]}
+{"company": "吉利银河", "engine": "yahoo", "query": "吉利银河 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国家管网", "engine": "yahoo", "query": "国家管网 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国家管网", "engine": "yahoo", "query": "国家管网 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "国电南自", "engine": "yahoo", "query": "国电南自 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "国电南自", "engine": "yahoo", "query": "国电南自 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "多益网络", "engine": "yahoo", "query": "多益网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "多益网络", "engine": "yahoo", "query": "多益网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "太平鸟", "engine": "yahoo", "query": "太平鸟 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "太平鸟", "engine": "yahoo", "query": "太平鸟 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "好想你", "engine": "yahoo", "query": "好想你 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "好想你", "engine": "yahoo", "query": "好想你 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "字节跳动飞书", "engine": "yahoo", "query": "字节跳动飞书 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "字节跳动飞书", "engine": "yahoo", "query": "字节跳动飞书 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "宇立仪器", "engine": "yahoo", "query": "宇立仪器 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "宇立仪器", "engine": "yahoo", "query": "宇立仪器 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "安琪酵母", "engine": "yahoo", "query": "安琪酵母 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "安琪酵母", "engine": "yahoo", "query": "安琪酵母 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "宜家中国", "engine": "yahoo", "query": "宜家中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "宜家中国", "engine": "yahoo", "query": "宜家中国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "小熊电器", "engine": "yahoo", "query": "小熊电器 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "小熊电器", "engine": "yahoo", "query": "小熊电器 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "巨人网络", "engine": "yahoo", "query": "巨人网络 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "巨人网络", "engine": "yahoo", "query": "巨人网络 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "幸运咖", "engine": "yahoo", "query": "幸运咖 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "幸运咖", "engine": "yahoo", "query": "幸运咖 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "广州数控", "engine": "yahoo", "query": "广州数控 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "广州数控", "engine": "yahoo", "query": "广州数控 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "广汽传祺", "engine": "yahoo", "query": "广汽传祺 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "广汽传祺", "engine": "yahoo", "query": "广汽传祺 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "当升科技", "engine": "yahoo", "query": "当升科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "当升科技", "engine": "yahoo", "query": "当升科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "影石Insta360", "engine": "yahoo", "query": "影石Insta360 校园招聘", "status": 200, "hosts": ["arashivision.jobs.feishu.cn"], "urls": ["https://arashivision.jobs.feishu.cn/campus", "https://arashivision.jobs.feishu.cn"]}
+{"company": "影石Insta360", "engine": "yahoo", "query": "影石Insta360 招聘 官网", "status": 200, "hosts": ["arashivision.jobs.feishu.cn"], "urls": ["https://arashivision.jobs.feishu.cn/campus", "https://arashivision.jobs.feishu.cn"]}
+{"company": "得物App", "engine": "yahoo", "query": "得物App 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "得物App", "engine": "yahoo", "query": "得物App 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "微盟", "engine": "yahoo", "query": "微盟 校园招聘", "status": 200, "hosts": ["maxscend.zhiye.com"], "urls": ["https://maxscend.zhiye.com/campus", "https://maxscend.zhiye.com"]}
+{"company": "微盟", "engine": "yahoo", "query": "微盟 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "德克士", "engine": "yahoo", "query": "德克士 校园招聘", "status": 200, "hosts": ["csc108.zhiye.com"], "urls": ["https://csc108.zhiye.com/campus/jobs?sessionid=", "https://csc108.zhiye.com"]}
+{"company": "德克士", "engine": "yahoo", "query": "德克士 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "恩捷股份", "engine": "yahoo", "query": "恩捷股份 校园招聘", "status": 200, "hosts": ["estun1.zhiye.com"], "urls": ["https://estun1.zhiye.com/campus", "https://estun1.zhiye.com"]}
+{"company": "恩捷股份", "engine": "yahoo", "query": "恩捷股份 招聘 官网", "status": 200, "hosts": ["estun1.zhiye.com"], "urls": ["https://estun1.zhiye.com/campus", "https://estun1.zhiye.com"]}
+{"company": "悦动圈", "engine": "yahoo", "query": "悦动圈 校园招聘", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn"]}
+{"company": "悦动圈", "engine": "yahoo", "query": "悦动圈 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "拓普集团", "engine": "yahoo", "query": "拓普集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "拓普集团", "engine": "yahoo", "query": "拓普集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "拜耳中国", "engine": "yahoo", "query": "拜耳中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "拜耳中国", "engine": "yahoo", "query": "拜耳中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "搜狐畅游", "engine": "yahoo", "query": "搜狐畅游 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "搜狐畅游", "engine": "yahoo", "query": "搜狐畅游 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "擎朗智能", "engine": "yahoo", "query": "擎朗智能 校园招聘", "status": 200, "hosts": ["ikingtec.zhiye.com"], "urls": ["https://ikingtec.zhiye.com/campus/jobs", "https://ikingtec.zhiye.com"]}
+{"company": "擎朗智能", "engine": "yahoo", "query": "擎朗智能 招聘 官网", "status": 200, "hosts": ["wecruit.hotjob.cn"], "urls": ["https://wecruit.hotjob.cn/SU6212eaf20dcad466450cc295/pb/index.html", "https://wecruit.hotjob.cn"]}
+{"company": "文思海辉", "engine": "yahoo", "query": "文思海辉 校园招聘", "status": 200, "hosts": ["chipsea.zhiye.com"], "urls": ["https://chipsea.zhiye.com/campus/jobs", "https://chipsea.zhiye.com"]}
+{"company": "文思海辉", "engine": "yahoo", "query": "文思海辉 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "斗鱼", "engine": "yahoo", "query": "斗鱼 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "斗鱼", "engine": "yahoo", "query": "斗鱼 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "新石器无人车", "engine": "yahoo", "query": "新石器无人车 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "新石器无人车", "engine": "yahoo", "query": "新石器无人车 招聘 官网", "status": 200, "hosts": ["r3c0qt6yjw.jobs.feishu.cn"], "urls": ["https://r3c0qt6yjw.jobs.feishu.cn/", "https://r3c0qt6yjw.jobs.feishu.cn"]}
+{"company": "方太", "engine": "yahoo", "query": "方太 校园招聘", "status": 200, "hosts": ["fotile.zhiye.com"], "urls": ["https://fotile.zhiye.com/campus", "https://fotile.zhiye.com/campus选择应聘岗位，在线网申。", "https://fotile.zhiye.com", "https://fotile.zhiye.com，选择“", "https://fotile.zhiye.com，选择“\\u003cb\\u003e校园招聘\\u003c/b\\u003e-应届生-应聘岗位”，在线网申。"]}
+{"company": "方太", "engine": "yahoo", "query": "方太 招聘 官网", "status": 200, "hosts": ["fotile.zhiye.com"], "urls": ["https://fotile.zhiye.com/campus", "https://fotile.zhiye.com", "https://fotile.zhiye.com/zpdetail/561299965"]}
+{"company": "时代邻里", "engine": "yahoo", "query": "时代邻里 校园招聘", "status": 200, "hosts": [], "urls": ["https://www.hotjob.cn/wt/timesgroup/web/index/webPosition210!getPostListByConditionShowPic?columnId=&amp;operational=c0722c59d18c237baa697cf655c3517a21c84a63fe87331d079dbbb78ff271099c14ebd49167f5b52f17ff81da7790a2d1755c58f3537555c46742456f7f3dc5439c4a228c95ea7de8ac2e4532371c27bbad6e900f5661099227b6c0167f26b916e904a0726e6cf8", "https://www.hotjob.cn", "https://www.hotjob.cn/wt/timesgroup/web/index/webPosition210!getPostListByConditionShowPic?columnId=\\u0026operational=c0722c59d18c237baa697cf655c3517a21c84a63fe87331d079dbbb78ff271099c14ebd49167f5b52f17ff81da7790a2d1755c58f3537555c46742456f7f3dc5439c4a228c95ea7de8ac2e4532371c27bbad6e900f5661099227b6c0167f26b916e904a0726e6cf8", "https://www.hotjob.cn/wt/timesgroup/web/index/webPosition210!getPostListByConditionShowPic?columnId=\\u0026operati"]}
+{"company": "时代邻里", "engine": "yahoo", "query": "时代邻里 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "时的科技", "engine": "yahoo", "query": "时的科技 校园招聘", "status": 200, "hosts": ["positec.hotjob.cn"], "urls": ["https://positec.hotjob.cn/", "https://positec.hotjob.cn"]}
+{"company": "时的科技", "engine": "yahoo", "query": "时的科技 招聘 官网", "status": 200, "hosts": ["positec.hotjob.cn"], "urls": ["https://positec.hotjob.cn/", "https://positec.hotjob.cn"]}
+{"company": "易观数科", "engine": "yahoo", "query": "易观数科 校园招聘", "status": 200, "hosts": ["cudt.zhiye.com", "shengshu.jobs.feishu.cn"], "urls": ["https://cudt.zhiye.com/intern/jobs", "https://shengshu.jobs.feishu.cn/", "https://shengshu.jobs.feishu.cn", "https://cudt.zhiye.com"]}
+{"company": "易观数科", "engine": "yahoo", "query": "易观数科 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "星尘智能", "engine": "yahoo", "query": "星尘智能 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "星尘智能", "engine": "yahoo", "query": "星尘智能 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "星源材质", "engine": "yahoo", "query": "星源材质 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "星源材质", "engine": "yahoo", "query": "星源材质 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "曼卡龙", "engine": "yahoo", "query": "曼卡龙 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "曼卡龙", "engine": "yahoo", "query": "曼卡龙 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "月之暗面Kimi", "engine": "yahoo", "query": "月之暗面Kimi 校园招聘", "status": 200, "hosts": ["moonshot.jobs.feishu.cn"], "urls": ["https://moonshot.jobs.feishu.cn/", "https://moonshot.jobs.feishu.cn"]}
+{"company": "月之暗面Kimi", "engine": "yahoo", "query": "月之暗面Kimi 招聘 官网", "status": 200, "hosts": ["moonshot.jobs.feishu.cn"], "urls": ["https://moonshot.jobs.feishu.cn/", "https://moonshot.jobs.feishu.cn"]}
+{"company": "杉杉股份", "engine": "yahoo", "query": "杉杉股份 校园招聘", "status": 200, "hosts": ["hongshan.jobs.feishu.cn"], "urls": ["https://hongshan.jobs.feishu.cn/674992", "https://hongshan.jobs.feishu.cn"]}
+{"company": "杉杉股份", "engine": "yahoo", "query": "杉杉股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "李宁YOUNG", "engine": "yahoo", "query": "李宁YOUNG 校园招聘", "status": 200, "hosts": ["lining.hotjob.cn", "wecruit.hotjob.cn"], "urls": ["https://lining.hotjob.cn/", "https://lining.hotjob.cn", "https://wecruit.hotjob.cn&nbsp;...", "https://wecruit.hotjob.cn\\u0026nbsp;..."]}
+{"company": "李宁YOUNG", "engine": "yahoo", "query": "李宁YOUNG 招聘 官网", "status": 200, "hosts": ["lining.hotjob.cn"], "urls": ["https://lining.hotjob.cn/listRecommendPosition", "https://lining.hotjob.cn"]}
+{"company": "格力电器", "engine": "yahoo", "query": "格力电器 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "格力电器", "engine": "yahoo", "query": "格力电器 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "格林美", "engine": "yahoo", "query": "格林美 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "格林美", "engine": "yahoo", "query": "格林美 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "橘朵", "engine": "yahoo", "query": "橘朵 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "橘朵", "engine": "yahoo", "query": "橘朵 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "步科", "engine": "yahoo", "query": "步科 校园招聘", "status": 200, "hosts": ["estun1.zhiye.com"], "urls": ["https://estun1.zhiye.com/campus/jobs", "https://estun1.zhiye.com"]}
+{"company": "步科", "engine": "yahoo", "query": "步科 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "永洪科技", "engine": "yahoo", "query": "永洪科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "永洪科技", "engine": "yahoo", "query": "永洪科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "汇联易", "engine": "yahoo", "query": "汇联易 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "汇联易", "engine": "yahoo", "query": "汇联易 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沃尔玛中国", "engine": "yahoo", "query": "沃尔玛中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沃尔玛中国", "engine": "yahoo", "query": "沃尔玛中国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沃飞长空", "engine": "yahoo", "query": "沃飞长空 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沃飞长空", "engine": "yahoo", "query": "沃飞长空 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沈鼓集团", "engine": "yahoo", "query": "沈鼓集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沈鼓集团", "engine": "yahoo", "query": "沈鼓集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "沪电股份", "engine": "yahoo", "query": "沪电股份 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "沪电股份", "engine": "yahoo", "query": "沪电股份 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "波克城市", "engine": "yahoo", "query": "波克城市 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "波克城市", "engine": "yahoo", "query": "波克城市 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "泰康资产", "engine": "yahoo", "query": "泰康资产 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "泰康资产", "engine": "yahoo", "query": "泰康资产 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "海信视像", "engine": "yahoo", "query": "海信视像 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "海信视像", "engine": "yahoo", "query": "海信视像 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "深度求索DeepSeek", "engine": "yahoo", "query": "深度求索DeepSeek 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "深度求索DeepSeek", "engine": "yahoo", "query": "深度求索DeepSeek 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "游族网络", "engine": "yahoo", "query": "游族网络 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "游族网络", "engine": "yahoo", "query": "游族网络 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "漫步者", "engine": "yahoo", "query": "漫步者 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "漫步者", "engine": "yahoo", "query": "漫步者 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "玛氏中国", "engine": "yahoo", "query": "玛氏中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "玛氏中国", "engine": "yahoo", "query": "玛氏中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "璞泰来", "engine": "yahoo", "query": "璞泰来 校园招聘", "status": 200, "hosts": ["pylontech1.zhiye.com"], "urls": ["https://pylontech1.zhiye.com/campus/jobs", "https://pylontech1.zhiye.com"]}
+{"company": "璞泰来", "engine": "yahoo", "query": "璞泰来 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "番茄小说", "engine": "yahoo", "query": "番茄小说 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "番茄小说", "engine": "yahoo", "query": "番茄小说 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "百世集团", "engine": "yahoo", "query": "百世集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "百世集团", "engine": "yahoo", "query": "百世集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "百事中国", "engine": "yahoo", "query": "百事中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "百事中国", "engine": "yahoo", "query": "百事中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "盖雅工场", "engine": "yahoo", "query": "盖雅工场 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "盖雅工场", "engine": "yahoo", "query": "盖雅工场 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "碧桂园服务", "engine": "yahoo", "query": "碧桂园服务 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "碧桂园服务", "engine": "yahoo", "query": "碧桂园服务 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "祖龙娱乐", "engine": "yahoo", "query": "祖龙娱乐 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "祖龙娱乐", "engine": "yahoo", "query": "祖龙娱乐 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "神工股份", "engine": "yahoo", "query": "神工股份 校园招聘", "status": 200, "hosts": ["fullsemi.zhiye.com"], "urls": ["https://fullsemi.zhiye.com/campus", "https://fullsemi.zhiye.com"]}
+{"company": "神工股份", "engine": "yahoo", "query": "神工股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "福特中国", "engine": "yahoo", "query": "福特中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "福特中国", "engine": "yahoo", "query": "福特中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "禾赛科技", "engine": "yahoo", "query": "禾赛科技 校园招聘", "status": 200, "hosts": ["kwh0jtf778.jobs.feishu.cn"], "urls": ["https://kwh0jtf778.jobs.feishu.cn/229043", "https://kwh0jtf778.jobs.feishu.cn", "https://kwh0jtf778.jobs.feishu.cn/229043/m/position/list"]}
+{"company": "禾赛科技", "engine": "yahoo", "query": "禾赛科技 招聘 官网", "status": 200, "hosts": ["kwh0jtf778.jobs.feishu.cn"], "urls": ["https://kwh0jtf778.jobs.feishu.cn/229043", "https://kwh0jtf778.jobs.feishu.cn", "https://kwh0jtf778.jobs.feishu.cn/229043/m/position/list"]}
+{"company": "纳芯微", "engine": "yahoo", "query": "纳芯微 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "纳芯微", "engine": "yahoo", "query": "纳芯微 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "绿盟科技", "engine": "yahoo", "query": "绿盟科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "绿盟科技", "engine": "yahoo", "query": "绿盟科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "绿联", "engine": "yahoo", "query": "绿联 校园招聘", "status": 200, "hosts": ["ugreen.zhiye.com"], "urls": ["https://ugreen.zhiye.com/campus", "https://ugreen.zhiye.com/campus/jobs", "https://ugreen.zhiye.com"]}
+{"company": "绿联", "engine": "yahoo", "query": "绿联 招聘 官网", "status": 200, "hosts": ["ugreen.zhiye.com"], "urls": ["https://ugreen.zhiye.com/campus", "https://ugreen.zhiye.com"]}
+{"company": "腾势", "engine": "yahoo", "query": "腾势 校园招聘", "status": 200, "hosts": ["sokon.zhiye.com"], "urls": ["https://sokon.zhiye.com/campus/jobs", "https://sokon.zhiye.com"]}
+{"company": "腾势", "engine": "yahoo", "query": "腾势 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "花王中国", "engine": "yahoo", "query": "花王中国 校园招聘", "status": 200, "hosts": ["sinochem.hotjob.cn"], "urls": ["https://sinochem.hotjob.cn/", "https://sinochem.hotjob.cn"]}
+{"company": "花王中国", "engine": "yahoo", "query": "花王中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "英集芯", "engine": "yahoo", "query": "英集芯 校园招聘", "status": 200, "hosts": ["fullsemi.zhiye.com"], "urls": ["https://fullsemi.zhiye.com/campus", "https://fullsemi.zhiye.com"]}
+{"company": "英集芯", "engine": "yahoo", "query": "英集芯 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "菜鸟网络", "engine": "yahoo", "query": "菜鸟网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "菜鸟网络", "engine": "yahoo", "query": "菜鸟网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "西山居", "engine": "yahoo", "query": "西山居 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "西山居", "engine": "yahoo", "query": "西山居 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "诚迈科技", "engine": "yahoo", "query": "诚迈科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "诚迈科技", "engine": "yahoo", "query": "诚迈科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "软通动力信息", "engine": "yahoo", "query": "软通动力信息 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "软通动力信息", "engine": "yahoo", "query": "软通动力信息 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "迎驾贡酒", "engine": "yahoo", "query": "迎驾贡酒 校园招聘", "status": 200, "hosts": ["tuopaishede.zhiye.com"], "urls": ["https://tuopaishede.zhiye.com/campus/jobs", "https://tuopaishede.zhiye.com"]}
+{"company": "迎驾贡酒", "engine": "yahoo", "query": "迎驾贡酒 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "运达股份", "engine": "yahoo", "query": "运达股份 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "运达股份", "engine": "yahoo", "query": "运达股份 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "速腾聚创", "engine": "yahoo", "query": "速腾聚创 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "速腾聚创", "engine": "yahoo", "query": "速腾聚创 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "金蝶国际", "engine": "yahoo", "query": "金蝶国际 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "金蝶国际", "engine": "yahoo", "query": "金蝶国际 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "锐捷网络", "engine": "yahoo", "query": "锐捷网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "锐捷网络", "engine": "yahoo", "query": "锐捷网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "长亮科技", "engine": "yahoo", "query": "长亮科技 校园招聘", "status": 200, "hosts": ["hailiang8.zhiye.com"], "urls": ["https://hailiang8.zhiye.com/campus/jobs", "https://hailiang8.zhiye.com"]}
+{"company": "长亮科技", "engine": "yahoo", "query": "长亮科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "长川科技", "engine": "yahoo", "query": "长川科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "长川科技", "engine": "yahoo", "query": "长川科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "阶跃星辰Step", "engine": "yahoo", "query": "阶跃星辰Step 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "阶跃星辰Step", "engine": "yahoo", "query": "阶跃星辰Step 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "阿里云", "engine": "yahoo", "query": "阿里云 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "阿里云", "engine": "yahoo", "query": "阿里云 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "陕西建工", "engine": "yahoo", "query": "陕西建工 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "陕西建工", "engine": "yahoo", "query": "陕西建工 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "陕鼓动力", "engine": "yahoo", "query": "陕鼓动力 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "陕鼓动力", "engine": "yahoo", "query": "陕鼓动力 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "雅高中国", "engine": "yahoo", "query": "雅高中国 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "雅高中国", "engine": "yahoo", "query": "雅高中国 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "韵达股份", "engine": "yahoo", "query": "韵达股份 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "韵达股份", "engine": "yahoo", "query": "韵达股份 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "韶音", "engine": "yahoo", "query": "韶音 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "韶音", "engine": "yahoo", "query": "韶音 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "领益智造", "engine": "yahoo", "query": "领益智造 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "领益智造", "engine": "yahoo", "query": "领益智造 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "风华高科", "engine": "yahoo", "query": "风华高科 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "风华高科", "engine": "yahoo", "query": "风华高科 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "飞书", "engine": "yahoo", "query": "飞书 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "飞书", "engine": "yahoo", "query": "飞书 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "首旅集团", "engine": "yahoo", "query": "首旅集团 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "首旅集团", "engine": "yahoo", "query": "首旅集团 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "高德地图", "engine": "yahoo", "query": "高德地图 校园招聘", "status": 429, "hosts": [], "urls": []}
+{"company": "高德地图", "engine": "yahoo", "query": "高德地图 招聘 官网", "status": 429, "hosts": [], "urls": []}
+{"company": "高盛中国", "engine": "yahoo", "query": "高盛中国 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "高盛中国", "engine": "yahoo", "query": "高盛中国 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "鲁花", "engine": "yahoo", "query": "鲁花 校园招聘", "status": 200, "hosts": ["qilu-pharma.zhiye.com"], "urls": ["https://qilu-pharma.zhiye.com/campus", "https://qilu-pharma.zhiye.com"]}
+{"company": "鲁花", "engine": "yahoo", "query": "鲁花 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "鹏鼎控股", "engine": "yahoo", "query": "鹏鼎控股 校园招聘", "status": 200, "hosts": ["avaryholding.zhiye.com"], "urls": ["http://avaryholding.zhiye.com/szxz", "http://avaryholding.zhiye.com", "https://avaryholding.zhiye.com/", "https://avaryholding.zhiye.com", "https://avaryholding.zhiye.com/szsz?sub=sz"]}
+{"company": "鹏鼎控股", "engine": "yahoo", "query": "鹏鼎控股 招聘 官网", "status": 200, "hosts": ["avaryholding.zhiye.com"], "urls": ["https://avaryholding.zhiye.com/szsz?sub=sz", "https://avaryholding.zhiye.com", "https://avaryholding.zhiye.com/"]}
+{"company": "南玻集团", "engine": "yahoo", "query": "南玻集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "南玻集团", "engine": "yahoo", "query": "南玻集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "周大生", "engine": "yahoo", "query": "周大生 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "周大生", "engine": "yahoo", "query": "周大生 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "乐元素", "engine": "yahoo", "query": "乐元素 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "乐元素", "engine": "yahoo", "query": "乐元素 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "世纪华通", "engine": "yahoo", "query": "世纪华通 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "世纪华通", "engine": "yahoo", "query": "世纪华通 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "壳木游戏", "engine": "yahoo", "query": "壳木游戏 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "壳木游戏", "engine": "yahoo", "query": "壳木游戏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "掌趣科技", "engine": "yahoo", "query": "掌趣科技 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "掌趣科技", "engine": "yahoo", "query": "掌趣科技 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "散爆网络", "engine": "yahoo", "query": "散爆网络 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "散爆网络", "engine": "yahoo", "query": "散爆网络 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "界面新闻", "engine": "yahoo", "query": "界面新闻 校园招聘", "status": 200, "hosts": ["denso.zhiye.com"], "urls": ["https://denso.zhiye.com/campus", "https://denso.zhiye.com"]}
+{"company": "界面新闻", "engine": "yahoo", "query": "界面新闻 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "红星新闻", "engine": "yahoo", "query": "红星新闻 校园招聘", "status": 200, "hosts": ["yizumi.zhiye.com"], "urls": ["https://yizumi.zhiye.com/campus", "https://yizumi.zhiye.com"]}
+{"company": "红星新闻", "engine": "yahoo", "query": "红星新闻 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "贪玩游戏", "engine": "yahoo", "query": "贪玩游戏 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "贪玩游戏", "engine": "yahoo", "query": "贪玩游戏 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "钛媒体", "engine": "yahoo", "query": "钛媒体 校园招聘", "status": 200, "hosts": ["ti5robot1.zhiye.com"], "urls": ["https://ti5robot1.zhiye.com/campus/jobs", "https://ti5robot1.zhiye.com"]}
+{"company": "钛媒体", "engine": "yahoo", "query": "钛媒体 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "亿生堂", "engine": "yahoo", "query": "亿生堂 校园招聘", "status": 200, "hosts": ["emdoor1.zhiye.com"], "urls": ["https://emdoor1.zhiye.com/campus/jobs", "https://emdoor1.zhiye.com"]}
+{"company": "亿生堂", "engine": "yahoo", "query": "亿生堂 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "冀东水泥", "engine": "yahoo", "query": "冀东水泥 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "冀东水泥", "engine": "yahoo", "query": "冀东水泥 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "冀中能源", "engine": "yahoo", "query": "冀中能源 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "冀中能源", "engine": "yahoo", "query": "冀中能源 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "华北制药", "engine": "yahoo", "query": "华北制药 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "华北制药", "engine": "yahoo", "query": "华北制药 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "唐山三友", "engine": "yahoo", "query": "唐山三友 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "唐山三友", "engine": "yahoo", "query": "唐山三友 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "常山北明", "engine": "yahoo", "query": "常山北明 校园招聘", "status": 200, "hosts": ["maxscend.zhiye.com", "wecruit.hotjob.cn"], "urls": ["https://maxscend.zhiye.com/campus", "https://wecruit.hotjob.cn/SU6132e87abef57c3b637dcb71/pb/school.html", "https://wecruit.hotjob.cn", "https://maxscend.zhiye.com"]}
+{"company": "常山北明", "engine": "yahoo", "query": "常山北明 招聘 官网", "status": 200, "hosts": ["streamax.zhiye.com"], "urls": ["https://streamax.zhiye.com/home", "https://streamax.zhiye.com"]}
+{"company": "开滦集团", "engine": "yahoo", "query": "开滦集团 校园招聘", "status": 200, "hosts": [], "urls": []}
+{"company": "开滦集团", "engine": "yahoo", "query": "开滦集团 招聘 官网", "status": 200, "hosts": [], "urls": []}
+{"company": "敬业集团", "engine": "yahoo", "query": "敬业集团 校园招聘", "status": 200, "hosts": [], "urls": []}

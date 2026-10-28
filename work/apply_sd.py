@@ -66,11 +66,13 @@ def main() -> None:
 
     cands: list[dict] = []
     for fn, kind_default in (
+        ("careers_verified.jsonl", None),
         ("sd_hits.jsonl", None),
         ("code_hits.jsonl", None),
         ("wayback_hits.jsonl", None),
         ("hotjob_candidates.jsonl", None),
         ("beisen_customer_hits.jsonl", None),
+        ("careers_sd_hits.jsonl", None),
     ):
         p = WORK / fn
         if not p.exists():

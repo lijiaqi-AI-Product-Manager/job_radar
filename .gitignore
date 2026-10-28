@@ -22,3 +22,5 @@ data/
 calendar/enrich-report.json
 
 pytest-of-*/
+
+tmp_*
