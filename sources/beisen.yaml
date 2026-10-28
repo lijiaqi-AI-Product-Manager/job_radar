@@ -1358,3 +1358,11 @@ sources:
   - {id: beisen-maitianzhaopinjjr, company: 麦田, params: {tenant: maitianzhaopinjjr}}  # 2026-10-29 新增：1 岗
   - {id: beisen-huapontcq, company: 重庆华邦制药, params: {tenant: huapontcq}}  # 2026-10-29 新增：2 岗
   - {id: beisen-crsec, company: 国新证券, params: {tenant: crsec}}  # 2026-10-29 新增：1 岗
+
+# 2026-10-29 新增：目标清单里已知平台入口、按门户标题核过公司名，逐源实测有岗
+  - {id: beisen-raas, company: 上海莱士, params: {tenant: raas}}  # 2026-10-29 新增：24 岗
+  - {id: beisen-htffund, company: 汇添富, params: {tenant: htffund}}  # 2026-10-29 新增：23 岗
+  - {id: beisen-avaryholding, company: 鹏鼎控股, params: {tenant: avaryholding}}  # 2026-10-29 新增：21 岗
+  - {id: beisen-fotile, company: 方太, params: {tenant: fotile}}  # 2026-10-29 新增：19 岗
+  - {id: beisen-glprop, company: 普洛斯, params: {tenant: glprop}}  # 2026-10-29 新增：15 岗
+  - {id: beisen-hundsun, company: 恒生电子, params: {tenant: hundsun}}  # 2026-10-29 新增：1 岗
