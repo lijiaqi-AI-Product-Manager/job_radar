@@ -1,0 +1,16 @@
+id: daodaoquan
+company: 道道全
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://daodaoquan.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://daodaoquan.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-28
+  robots: "none"            # robots.txt 404（平台层无站点级规则）；只读公开职位列表
+  terms: 飞书招聘门户公开 JSON，匿名 GET
+  notes: 2026-10-28 由 province_gap 拼音探测命中，门户 title「加入道道全电子商务有限公司」核实归属

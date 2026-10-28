@@ -1,0 +1,16 @@
+{"kind": "feishu", "slug": "hh", "ok": true, "token_len": 44, "company": "海航集团", "title": "加入高瓴慕远（北京）咨询有限公司", "match": false}
+{"kind": "feishu", "slug": "daodaoquan", "ok": true, "token_len": 44, "company": "道道全", "title": "加入道道全电子商务有限公司", "match": true}
+{"kind": "beisen", "slug": "szgd", "ok": true, "count": 227, "sample": ["自动化博士后研究员", "先进储能变流系统博士后研究员", "机电控制博士后研究员", "储能安全技术博士后研究员", "电力人工智能研究员"], "codes": [], "company": "苏州固锝", "title": "北森云计算（南网引才项目）", "match": false}
+{"kind": "hotjob", "slug": "hdgt", "ok": true, "final_url": "https://hdgt.hotjob.cn/", "company": "邯郸钢铁", "title": "招聘官网", "match": false}
+{"kind": "hotjob", "slug": "xg", "ok": true, "final_url": "https://xg.hotjob.cn/", "company": "徐工集团", "title": "招聘官网", "match": false}
+{"kind": "feishu", "slug": "lanqikeji", "ok": true, "token_len": 44, "company": "澜起科技", "title": "加入北京蓝齐科技有限公司", "match": false}
+{"kind": "beisen", "slug": "sxqc", "ok": true, "count": 157, "sample": ["机电维修工(J11823)", "整车设计(J11795)", "底盘设计(J11798)", "产品设计(J11801)", "工艺技术(J11805)"], "codes": [], "company": "陕西汽车", "title": "陕汽控股招聘门户", "match": false}
+{"kind": "beisen", "slug": "shqc", "ok": true, "count": 1, "sample": ["测试技师（QS）"], "codes": [], "company": "上海汽车", "title": "上海氢晨新能源科技有限公司", "match": false}
+{"kind": "beisen", "slug": "dongpeng", "ok": true, "count": 100, "sample": ["海外营销业务员(J11113)", "设备动力负责人(J12021)", "窑炉技术员（重庆）(J12014)", "窑炉技术员（湖南澧县）(J12013)", "窑炉技术员（江西宜春）(J12012)"], "codes": [], "company": "东鹏控股", "title": "广东东鹏控股股份有限公司", "match": true}
+{"kind": "hotjob", "slug": "ghzq", "ok": true, "final_url": "https://ghzq.hotjob.cn/", "company": "国海证券", "title": "招聘官网", "match": false}
+{"kind": "beisen", "slug": "ys", "ok": true, "count": 57, "sample": ["人事行政主管999", "北部销售经理", "北部销售经理", "销售经理", "北部销售经理"], "codes": [], "company": "椰树集团", "title": "多品牌门户", "match": false}
+{"kind": "feishu", "slug": "wushang", "ok": true, "token_len": 44, "company": "武商集团", "title": "加入长沙五商文化传播有限公司", "match": false}
+{"kind": "hotjob", "slug": "xg", "ok": true, "final_url": "https://xg.hotjob.cn/", "company": "新钢集团", "title": "招聘官网", "match": false}
+{"kind": "hotjob", "slug": "htzq", "ok": true, "final_url": "https://wecruit.hotjob.cn/SU68245c3ad9c14f2a7d99fcc1/pb/index.html", "company": "海通证券", "title": "", "match": false}
+{"kind": "feishu", "slug": "huya", "ok": true, "token_len": 44, "company": "虎牙", "title": "加入虎牙直播", "match": true}
+{"kind": "beisen", "slug": "gyyx", "ok": true, "count": 2, "sample": ["游戏市场营销策划", "全案策划"], "codes": [], "company": "贵阳银行", "title": "光宇在线", "match": false}

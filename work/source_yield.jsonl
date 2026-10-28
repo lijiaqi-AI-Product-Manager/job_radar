@@ -1,9 +1,8 @@
-{"id": "babycare", "company": "Babycare", "adapter": "feishu_atsx", "count": 2, "capped": false, "seconds": 1.6, "error": null}
-{"id": "beisen-picc1", "company": "中国人民保险", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.5, "error": null}
-{"id": "beisen-dzwy", "company": "新大正物业", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.4, "error": null}
-{"id": "beisen-tongwei3", "company": "永祥股份", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.3, "error": null}
-{"id": "beisen-hnlshm4", "company": "鸣鸣很忙", "adapter": "beisen", "count": 80, "capped": true, "seconds": 3.5, "error": null}
-{"id": "leiniao-ibg", "company": "雷鸟创新", "adapter": "feishu_atsx", "count": 17, "capped": false, "seconds": 3.6, "error": null}
-{"id": "sii-czxy", "company": "上海创智学院", "adapter": "feishu_atsx", "count": 80, "capped": true, "seconds": 2.0, "error": null}
-{"id": "beisen-ihghotel", "company": "洲际酒店", "adapter": "beisen", "count": 48, "capped": false, "seconds": 29.9, "error": null}
-{"id": "hotjob-whchem", "company": "万华化学", "adapter": "hotjob", "count": 59, "capped": false, "seconds": 62.4, "error": null}
+{"id": "beisen-picc1", "company": "中国人民保险", "adapter": "beisen", "count": 40, "capped": true, "seconds": 4.1, "error": null}
+{"id": "hotjob-su62f471180dcad433c097a790", "company": "福建海峡银行", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 43.4, "error": null}
+{"id": "hotjob-su670788cc6202cc7666c0bc7e", "company": "杭州杰牌传动科技有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 42.5, "error": null}
+{"id": "hotjob-su6013d14e5d83dc11e4a8ae4d", "company": "华泰证券（上海）资产管理有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 41.4, "error": null}
+{"id": "hotjob-su67ac68866202cc7916aea66e", "company": "易方达基金管理有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 41.4, "error": null}
+{"id": "hotjob-su6164fa892f9d244de1513582", "company": "安利(中国)日用品有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 46.0, "error": null}
+{"id": "hotjob-su618ca9732f9d242b12d420a7", "company": "银河基金", "adapter": "hotjob", "count": 15, "capped": false, "seconds": 16.4, "error": null}
+{"id": "hotjob-su61bc040c0dcad45571a5e8fc", "company": "华润数科控股有限公司", "adapter": "hotjob", "count": 19, "capped": false, "seconds": 20.4, "error": null}

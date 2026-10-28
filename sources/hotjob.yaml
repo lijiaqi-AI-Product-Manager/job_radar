@@ -384,3 +384,841 @@ sources:
     company: 万华化学
     params: {host: whchem.hotjob.cn, tenant: SU6a7ad69c43154813049755d7, page_size: 50}
     # 2026-10-28 官网招聘入口反查（dayee 门户 getSLD 接口）拿到的租户 id
+
+  # 2026-10-28 Wayback CDX 枚举 wecruit.hotjob.cn 存档路径里的 SU 租户（逐条取 listPosition 的 company 字段定归属）
+  - id: hotjob-su62f471180dcad433c097a790
+    company: 福建海峡银行
+    params: {host: wecruit.hotjob.cn, tenant: SU62f471180dcad433c097a790, page_size: 50}
+    # 2026-10-28 新增：50 岗
+  - id: hotjob-su670788cc6202cc7666c0bc7e
+    company: 杭州杰牌传动科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU670788cc6202cc7666c0bc7e, page_size: 50}
+    # 2026-10-28 新增：48 岗
+  - id: hotjob-su6013d14e5d83dc11e4a8ae4d
+    company: 华泰证券（上海）资产管理有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6013d14e5d83dc11e4a8ae4d, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su60867bdc2f9d2403ab74fbf7
+    company: 中证信用增进股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60867bdc2f9d2403ab74fbf7, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su6138665dbef57c3b63841399
+    company: 南方基金管理股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6138665dbef57c3b63841399, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su63660d2d2f9d2439ab1be619
+    company: 苏州金龙客车
+    params: {host: wecruit.hotjob.cn, tenant: SU63660d2d2f9d2439ab1be619, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su6426c1e1bef57c1e26962897
+    company: 中国物流集团广西有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6426c1e1bef57c1e26962897, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su67ac68866202cc7916aea66e
+    company: 易方达基金管理有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67ac68866202cc7916aea66e, page_size: 50}
+    # 2026-10-28 新增：15 岗
+  - id: hotjob-su6164fa892f9d244de1513582
+    company: 安利(中国)日用品有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6164fa892f9d244de1513582, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su618ca9732f9d242b12d420a7
+    company: 银河基金
+    params: {host: wecruit.hotjob.cn, tenant: SU618ca9732f9d242b12d420a7, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su61bc040c0dcad45571a5e8fc
+    company: 华润数科控股有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU61bc040c0dcad45571a5e8fc, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su6405420f2f9d246c37a12677
+    company: 中移互联网
+    params: {host: wecruit.hotjob.cn, tenant: SU6405420f2f9d246c37a12677, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su64893571bef57c16d356b99e
+    company: 欧洲营销本部
+    params: {host: wecruit.hotjob.cn, tenant: SU64893571bef57c16d356b99e, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su64fc56d41eb8055068d32f12
+    company: 北京大学口腔医学院
+    params: {host: wecruit.hotjob.cn, tenant: SU64fc56d41eb8055068d32f12, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su656d3e316202cc326c226ff7
+    company: 广东省电子信息产业集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU656d3e316202cc326c226ff7, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su6619d98e1eb8053acd618afb
+    company: 厦门新能安（XMC
+    params: {host: wecruit.hotjob.cn, tenant: SU6619d98e1eb8053acd618afb, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su66babaf11eb8054b1a5ae3b4
+    company: 深圳信步科技
+    params: {host: wecruit.hotjob.cn, tenant: SU66babaf11eb8054b1a5ae3b4, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su66cbd0481c240e39b5d804a8
+    company: 上海电气上重碾磨特装设备有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66cbd0481c240e39b5d804a8, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su66f3c08b1eb80555eea071d2
+    company: 内蒙古卓正煤化工有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66f3c08b1eb80555eea071d2, page_size: 50}
+    # 2026-10-28 新增：12 岗
+  - id: hotjob-su622c6ce72f9d244b1b4a3f28
+    company: 财通证券资产管理有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU622c6ce72f9d244b1b4a3f28, page_size: 50}
+    # 2026-10-28 新增：11 岗
+  - id: hotjob-su5f1c3c8e9b0d787ebc06a2e8
+    company: 蜂巢汽车科技集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU5f1c3c8e9b0d787ebc06a2e8, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su5f2a67129b0d7882cc51332b
+    company: 广州农发
+    params: {host: wecruit.hotjob.cn, tenant: SU5f2a67129b0d7882cc51332b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su5f2a75379b0d7882cc5135c2
+    company: 越秀服务集团
+    params: {host: wecruit.hotjob.cn, tenant: SU5f2a75379b0d7882cc5135c2, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su5fbf206844e80013a876a1a5
+    company: 广东邦普循环科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU5fbf206844e80013a876a1a5, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su600f83f45d83dc11e4a54ed4
+    company: 合肥美亚光电技术股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU600f83f45d83dc11e4a54ed4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su602f5f172f9d240e519f6869
+    company: 前沿团队
+    params: {host: wecruit.hotjob.cn, tenant: SU602f5f172f9d240e519f6869, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su604743430dcad46d3e602155
+    company: 总部（广州
+    params: {host: wecruit.hotjob.cn, tenant: SU604743430dcad46d3e602155, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6073dcb80dcad451044fd472
+    company: 中化资本有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6073dcb80dcad451044fd472, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60a36363bef57c11896121b2
+    company: 赛维时代科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60a36363bef57c11896121b2, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60a4b6f20dcad46f85904c40
+    company: 物业集团
+    params: {host: wecruit.hotjob.cn, tenant: SU60a4b6f20dcad46f85904c40, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60ace1dbbef57c118964b4fa
+    company: 北新嘉宝莉
+    params: {host: wecruit.hotjob.cn, tenant: SU60ace1dbbef57c118964b4fa, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60b08b700dcad46f85953ac4
+    company: 宁波博威合金材料股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60b08b700dcad46f85953ac4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60ecfd9b2f9d2456451dcdd7
+    company: 粤开证券
+    params: {host: wecruit.hotjob.cn, tenant: SU60ecfd9b2f9d2456451dcdd7, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su60f7ea37bef57c1023fae849
+    company: 江苏润阳新能源科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60f7ea37bef57c1023fae849, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61075bbabef57c43d825d671
+    company: 台积电（南京）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU61075bbabef57c43d825d671, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su611374bbbef57c653306500d
+    company: 众合科技（本级
+    params: {host: wecruit.hotjob.cn, tenant: SU611374bbbef57c653306500d, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su611644d82f9d24229efa4b48
+    company: 华润建材科技
+    params: {host: wecruit.hotjob.cn, tenant: SU611644d82f9d24229efa4b48, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su611a641a0dcad4106f04950e
+    company: 先正达集团
+    params: {host: wecruit.hotjob.cn, tenant: SU611a641a0dcad4106f04950e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su611f442abef57c653318da34
+    company: 纬创资通(重庆)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU611f442abef57c653318da34, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61274d270dcad4106f13e9e1
+    company: 深圳和睦家医院
+    params: {host: wecruit.hotjob.cn, tenant: SU61274d270dcad4106f13e9e1, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su612e24992f9d247d0f41930e
+    company: 宁德新能源（ATL-ND
+    params: {host: wecruit.hotjob.cn, tenant: SU612e24992f9d247d0f41930e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su612f5c9a0dcad44b8580e479
+    company: 后勤公司
+    params: {host: wecruit.hotjob.cn, tenant: SU612f5c9a0dcad44b8580e479, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6132e87abef57c3b637dcb71
+    company: 广西柳工机械股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6132e87abef57c3b637dcb71, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6135d6092f9d245c993d009e
+    company: 上海电气集团数字科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6135d6092f9d245c993d009e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6135e2ee2f9d245c993d0bc0
+    company: 广州维力医疗器械股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6135e2ee2f9d245c993d0bc0, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su613b2c5c0dcad45880d7d486
+    company: 广州好莱客创意家居股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU613b2c5c0dcad45880d7d486, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su614b299cbef57c54dcb9ccca
+    company: 华润电力控股有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU614b299cbef57c54dcb9ccca, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6155141d0dcad47003e16afe
+    company: 深圳震有科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6155141d0dcad47003e16afe, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6173aef0bef57c4414103348
+    company: 三棵树
+    params: {host: wecruit.hotjob.cn, tenant: SU6173aef0bef57c4414103348, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61b014752f9d24431f48422c
+    company: 密码技术研究所
+    params: {host: wecruit.hotjob.cn, tenant: SU61b014752f9d24431f48422c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61d3e044bef57c13bcba2c23
+    company: 项目组织架构
+    params: {host: wecruit.hotjob.cn, tenant: SU61d3e044bef57c13bcba2c23, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61d53a790dcad45571b98c91
+    company: 德康集团
+    params: {host: wecruit.hotjob.cn, tenant: SU61d53a790dcad45571b98c91, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61d79b670dcad45571bada7b
+    company: 宁波金田铜业（集团）股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU61d79b670dcad45571bada7b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su61f10828bef57c632bf1a3b9
+    company: 三诺生物传感股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU61f10828bef57c632bf1a3b9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62061b902f9d245151c61b30
+    company: 第一创业证券
+    params: {host: wecruit.hotjob.cn, tenant: SU62061b902f9d245151c61b30, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6209b717bef57c632bfd5f71
+    company: 爱夫迪（沈阳）自动化科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6209b717bef57c632bfd5f71, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62302d11bef57c4972f79a6b
+    company: 安图实验仪器（郑州）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62302d11bef57c4972f79a6b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su623d608e0dcad4729000da88
+    company: 深圳科创学院
+    params: {host: wecruit.hotjob.cn, tenant: SU623d608e0dcad4729000da88, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6242b64d0dcad42194799479
+    company: 广州环亚化妆品科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6242b64d0dcad42194799479, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6247c114bef57c783e4b30df
+    company: 甘青藏行销公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6247c114bef57c783e4b30df, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62760948bef57c796a8ee466
+    company: 老百姓大药房集团股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62760948bef57c796a8ee466, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6282075e0dcad413c09efe26
+    company: 深圳麦格米特电气股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6282075e0dcad413c09efe26, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62973d62bef57c6df7b50a54
+    company: 恒洁卫浴集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62973d62bef57c6df7b50a54, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6298e4f10dcad45229985fd0
+    company: 浙江云尖迅创技术有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6298e4f10dcad45229985fd0, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62a69e91bef57c6df7c796ba
+    company: 香港科技大学（广州
+    params: {host: wecruit.hotjob.cn, tenant: SU62a69e91bef57c6df7c796ba, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62bd5e680dcad406d143cff9
+    company: 中泰期货股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62bd5e680dcad406d143cff9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62bd6a972f9d24458d80d767
+    company: 北京联东投资(集团)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62bd6a972f9d24458d80d767, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62c3ea6b2f9d241e4c8e45ba
+    company: 广州天赐高新材料股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62c3ea6b2f9d241e4c8e45ba, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62d26fa80dcad42fc9958ed9
+    company: 华数传媒网络有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62d26fa80dcad42fc9958ed9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62d665a0bef57c0f7dbab930
+    company: 台积电（中国）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62d665a0bef57c0f7dbab930, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62d669e0bef57c0f7dbabacf
+    company: 顶点软件
+    params: {host: wecruit.hotjob.cn, tenant: SU62d669e0bef57c0f7dbabacf, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62d7ff10bef57c58929dbfdb
+    company: 一汽出行
+    params: {host: wecruit.hotjob.cn, tenant: SU62d7ff10bef57c58929dbfdb, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62d915040dcad43c775ec12c
+    company: 北京地平线信息技术有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62d915040dcad43c775ec12c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62de11c9bef57c63469824fd
+    company: 广东公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62de11c9bef57c63469824fd, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62e0f5dd0dcad44de6f2662a
+    company: 联储证券
+    params: {host: wecruit.hotjob.cn, tenant: SU62e0f5dd0dcad44de6f2662a, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62e1fc77bef57c63469f7b6f
+    company: 荣芯半导体(宁波)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62e1fc77bef57c63469f7b6f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62e91ef42f9d2406f5226f61
+    company: 南京世和基因生物技术股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62e91ef42f9d2406f5226f61, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62f3786ebef57c29ead8adba
+    company: 五矿发展股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62f3786ebef57c29ead8adba, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su62fc4b650dcad44f7a1ed0c5
+    company: 北京辰安科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62fc4b650dcad44f7a1ed0c5, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6302f2a90dcad45aa7736463
+    company: 江苏正力新能电池技术股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6302f2a90dcad45aa7736463, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su630839dd0dcad4076def608e
+    company: 易唯思商务咨询（上海）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU630839dd0dcad4076def608e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su630eeddabef57c3179ff51e9
+    company: 国泰世华银行（中国）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU630eeddabef57c3179ff51e9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su631722400dcad45d8178a329
+    company: 万联证券股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU631722400dcad45d8178a329, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su631ffe842f9d2403a0acdceb
+    company: 绿叶生命科学集团
+    params: {host: wecruit.hotjob.cn, tenant: SU631ffe842f9d2403a0acdceb, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6333ebe20dcad44b2f7297cc
+    company: 长沙城市发展集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6333ebe20dcad44b2f7297cc, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6336a22e2f9d246ff77214b9
+    company: 深圳康佳电子科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6336a22e2f9d246ff77214b9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su634e56fcbef57c77d5c5a0b7
+    company: 宁波绿时进出口有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU634e56fcbef57c77d5c5a0b7, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su634f62f80dcad4155404e89f
+    company: 广州环保投资集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU634f62f80dcad4155404e89f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63524aae2f9d242d638969a3
+    company: 美心集团
+    params: {host: wecruit.hotjob.cn, tenant: SU63524aae2f9d242d638969a3, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su635f48010dcad4484676f0ac
+    company: 职能公司
+    params: {host: wecruit.hotjob.cn, tenant: SU635f48010dcad4484676f0ac, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su636c5503bef57c649c178637
+    company: 润华汽车控股有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU636c5503bef57c649c178637, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su637b4ad00dcad415782e836c
+    company: 中国检验认证集团辽宁有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU637b4ad00dcad415782e836c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6397cdde2f9d244fe2715e92
+    company: 华创建投
+    params: {host: wecruit.hotjob.cn, tenant: SU6397cdde2f9d244fe2715e92, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63ae861ebef57c0c2eb75da1
+    company: 台州银行总行
+    params: {host: wecruit.hotjob.cn, tenant: SU63ae861ebef57c0c2eb75da1, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63b637862f9d244fe28f93a4
+    company: 小华半导体有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU63b637862f9d244fe28f93a4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63be89aabef57c620087b658
+    company: 东莞市奥海科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU63be89aabef57c620087b658, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63e33df0bef57c62009492b4
+    company: 嘉兴双环
+    params: {host: wecruit.hotjob.cn, tenant: SU63e33df0bef57c62009492b4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63e5f2362f9d2414bbf056fd
+    company: 化纤板块
+    params: {host: wecruit.hotjob.cn, tenant: SU63e5f2362f9d2414bbf056fd, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63eed9fd2f9d246c468eb43d
+    company: 北方集成电路技术创新中心（北京）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU63eed9fd2f9d246c468eb43d, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su63fdaf4a2f9d240675de3ec9
+    company: 苏美达国际技术贸易有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU63fdaf4a2f9d240675de3ec9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64004c6dbef57c71d90a1ee9
+    company: 赢家时尚控股有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64004c6dbef57c71d90a1ee9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6407e1620dcad470d9ae9633
+    company: 华金证券股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6407e1620dcad470d9ae9633, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su641d034b2f9d246c37bb1704
+    company: 远东智慧能源股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU641d034b2f9d246c37bb1704, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su641d3c5a0dcad470d9c4543b
+    company: 华夏幸福基业股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU641d3c5a0dcad470d9c4543b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su642a32182f9d246e231f0b3a
+    company: 南高齿集团
+    params: {host: wecruit.hotjob.cn, tenant: SU642a32182f9d246e231f0b3a, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64365f882f9d245a5ba373a9
+    company: 华润化学材料科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64365f882f9d245a5ba373a9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64464d3abef57c46aff3357c
+    company: 上海申银万国证券研究所有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64464d3abef57c46aff3357c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6454b39dbef57c46af0e7d3b
+    company: 非洲资源产业集团
+    params: {host: wecruit.hotjob.cn, tenant: SU6454b39dbef57c46af0e7d3b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su645cde90bef57c0907ebd1b4
+    company: 格科微电子（上海）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU645cde90bef57c0907ebd1b4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6474230c0dcad45af14d7963
+    company: 车好多集团
+    params: {host: wecruit.hotjob.cn, tenant: SU6474230c0dcad45af14d7963, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64786fe02f9d2433ba801436
+    company: 集团办公室及筹开项目
+    params: {host: wecruit.hotjob.cn, tenant: SU64786fe02f9d2433ba801436, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su647d9470bef57c09070e0965
+    company: 东曜药业有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU647d9470bef57c09070e0965, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su648980fc0dcad412ce899514
+    company: 浙江永青人力资源服务有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU648980fc0dcad412ce899514, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su649d30920dcad4644b43e39b
+    company: 隆基绿能.质量与环安管理部
+    params: {host: wecruit.hotjob.cn, tenant: SU649d30920dcad4644b43e39b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64a3c539bef57c3af71c9dcd
+    company: 恒逸能源科技(吐鲁番)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64a3c539bef57c3af71c9dcd, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64ae431b2f9d24760adab44f
+    company: 宝时得
+    params: {host: wecruit.hotjob.cn, tenant: SU64ae431b2f9d24760adab44f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64ca15396202cc125d482ab0
+    company: 中车长春轨道客车股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64ca15396202cc125d482ab0, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64ccc27b1c240e7cb6c4677f
+    company: 上海铭沣科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64ccc27b1c240e7cb6c4677f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64d47c466202cc36e27a52d4
+    company: 中车成型科技（青岛）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64d47c466202cc36e27a52d4, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64db2d3a6202cc36e28a688e
+    company: 荣盛房地产发展股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64db2d3a6202cc36e28a688e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64f573b21eb8056cba0ef349
+    company: 北京北元电器有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64f573b21eb8056cba0ef349, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64fae9bd1c240e4e45d27c01
+    company: 九江银行股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64fae9bd1c240e4e45d27c01, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6513bedd1eb8054296dc453c
+    company: 广发期货有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6513bedd1eb8054296dc453c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6513d4281c240e3d6804d22d
+    company: 广州康养集团有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6513d4281c240e3d6804d22d, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65435dd83538bc6c4d1b995f
+    company: 大连银行
+    params: {host: wecruit.hotjob.cn, tenant: SU65435dd83538bc6c4d1b995f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65543e198ac1ca6f32e91f08
+    company: 江苏众钠能源科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU65543e198ac1ca6f32e91f08, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6556c50e6202cc6e3ab55b81
+    company: 深圳中山妇产医院
+    params: {host: wecruit.hotjob.cn, tenant: SU6556c50e6202cc6e3ab55b81, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su655b0b181c240e66c67f4d5b
+    company: 宜宾锂宝新材料股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU655b0b181c240e66c67f4d5b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su656444c96202cc6e3ae93dee
+    company: 维达力科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU656444c96202cc6e3ae93dee, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su656e980e1c240e7aa8f75b53
+    company: 量子集团
+    params: {host: wecruit.hotjob.cn, tenant: SU656e980e1c240e7aa8f75b53, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su658a367d1c240e6503ec1691
+    company: 正弦电气
+    params: {host: wecruit.hotjob.cn, tenant: SU658a367d1c240e6503ec1691, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65b060031eb80519dfb36c8e
+    company: 播恩集团股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU65b060031eb80519dfb36c8e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65ea7f881eb80541008d76ae
+    company: 太平洋网络
+    params: {host: wecruit.hotjob.cn, tenant: SU65ea7f881eb80541008d76ae, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65f940241c240e0a2275bda8
+    company: 博时基金管理有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU65f940241c240e0a2275bda8, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su65fba2e21c240e0a227cf96f
+    company: 歌尔微电子
+    params: {host: wecruit.hotjob.cn, tenant: SU65fba2e21c240e0a227cf96f, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6611ebfe1c240e3c2a3b0188
+    company: 江苏宏微科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6611ebfe1c240e3c2a3b0188, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su661f37091eb8053acd6cdf3d
+    company: 中联传动科技公司
+    params: {host: wecruit.hotjob.cn, tenant: SU661f37091eb8053acd6cdf3d, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6629d2ce1eb8053acd8065ac
+    company: 上海高仙自动化科技发展股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6629d2ce1eb8053acd8065ac, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66b4725d1eb8054b1a510c60
+    company: 赛诺威盛科技(北京)股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66b4725d1eb8054b1a510c60, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66c1ffa81eb8054b1a691126
+    company: 国机重型装备集团股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66c1ffa81eb8054b1a691126, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66c7f6ea1c240e39b5d172ea
+    company: 中国蓝星（集团）股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66c7f6ea1c240e39b5d172ea, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66d9447f6202cc2d499483c3
+    company: 广州兴森快捷电路科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66d9447f6202cc2d499483c3, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66dff1b81eb8056010bb9626
+    company: 翼威科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66dff1b81eb8056010bb9626, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su66f8ecb66202cc7666ab8016
+    company: 天地伟业技术有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66f8ecb66202cc7666ab8016, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su670cd8866202cc7666cd4439
+    company: 曙光数创电子设备科技发展(青岛)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU670cd8866202cc7666cd4439, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67345ea51c240e0191eabe5b
+    company: 坤泰车辆系统（常州）股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67345ea51c240e0191eabe5b, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67511bbc1c240e019115c138
+    company: 昆山联滔
+    params: {host: wecruit.hotjob.cn, tenant: SU67511bbc1c240e019115c138, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67ae970d1c240e7028d24c81
+    company: 东莞欧陆通电子有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67ae970d1c240e7028d24c81, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67b689391eb80555b7a914d0
+    company: 中国科学院力学研究所
+    params: {host: wecruit.hotjob.cn, tenant: SU67b689391eb80555b7a914d0, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67c16ad06202cc7916cf6b59
+    company: 深圳市沐腾科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67c16ad06202cc7916cf6b59, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su67e36b586202cc6571f90b45
+    company: 山东万图高分子材料股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67e36b586202cc6571f90b45, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su68196fc21c240e07d7835dc9
+    company: 宏工科技股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU68196fc21c240e07d7835dc9, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su697c132891532c730e349f1c
+    company: 安东石油技术（集团）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU697c132891532c730e349f1c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su689ecec0b8fdf84cde356917
+    company: 无锡影微创新科技发展有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU689ecec0b8fdf84cde356917, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su68a400ef1343c325ffa8379c
+    company: 上海交通大学医学院附属瑞金医院
+    params: {host: wecruit.hotjob.cn, tenant: SU68a400ef1343c325ffa8379c, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su68be5169720ec026828fae5a
+    company: 浙江瑞丰光电有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU68be5169720ec026828fae5a, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su68f73ea3b7da1347a9d3dd64
+    company: 公立学校
+    params: {host: wecruit.hotjob.cn, tenant: SU68f73ea3b7da1347a9d3dd64, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su695e1c542ceb467a554d7cd5
+    company: 易方达财富管理基金销售（广州）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU695e1c542ceb467a554d7cd5, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su696dd1b22ceb467a5557d76e
+    company: 深圳市南山区荟同学校
+    params: {host: wecruit.hotjob.cn, tenant: SU696dd1b22ceb467a5557d76e, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su6a3b6eb5e49e0e559f9406a1
+    company: 东来涂料技术（上海）股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6a3b6eb5e49e0e559f9406a1, page_size: 50}
+    # 2026-10-28 新增：10 岗
+  - id: hotjob-su64db2e681eb805110fdb44f9
+    company: 中水北方勘测设计研究有限责任公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64db2e681eb805110fdb44f9, page_size: 50}
+    # 2026-10-28 新增：9 岗
+  - id: hotjob-su64e2bba41c240e5fa7625519
+    company: 服务型制造研究院（杭州）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64e2bba41c240e5fa7625519, page_size: 50}
+    # 2026-10-28 新增：9 岗
+  - id: hotjob-su65274c6a3538bc1102b183df
+    company: 甘棠明善
+    params: {host: wecruit.hotjob.cn, tenant: SU65274c6a3538bc1102b183df, page_size: 50}
+    # 2026-10-28 新增：9 岗
+  - id: hotjob-su6603c2441c240e0a2291abed
+    company: 新浦化学（泰兴）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6603c2441c240e0a2291abed, page_size: 50}
+    # 2026-10-28 新增：9 岗
+  - id: hotjob-su61b806392f9d24431f4edeeb
+    company: 建明(中国)科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU61b806392f9d24431f4edeeb, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su634145430dcad41245cc06ae
+    company: 广东好太太科技集团股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU634145430dcad41245cc06ae, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su6474ae002f9d2433ba7b3b22
+    company: 眉山琏升光伏科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6474ae002f9d2433ba7b3b22, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su655d95021eb805776cb6f5d9
+    company: 南光置业有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU655d95021eb805776cb6f5d9, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su65dc3d7f1c240e4b11c15cb2
+    company: 中冶长天国际工程有限责任公司
+    params: {host: wecruit.hotjob.cn, tenant: SU65dc3d7f1c240e4b11c15cb2, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su6646d5201c240e071a43d63b
+    company: 珠海亿胜生物制药有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6646d5201c240e071a43d63b, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su67a9b71a1eb80559cd5aceac
+    company: 银联国际有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU67a9b71a1eb80559cd5aceac, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su682468e6d9c14f2a7d9a02f0
+    company: 青岛汉缆股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU682468e6d9c14f2a7d9a02f0, page_size: 50}
+    # 2026-10-28 新增：8 岗
+  - id: hotjob-su62feff93bef57c3179e09a34
+    company: 研究所
+    params: {host: wecruit.hotjob.cn, tenant: SU62feff93bef57c3179e09a34, page_size: 50}
+    # 2026-10-28 新增：7 岗
+  - id: hotjob-su64e73f346202cc142a93fed5
+    company: 北京智芯微电子科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU64e73f346202cc142a93fed5, page_size: 50}
+    # 2026-10-28 新增：7 岗
+  - id: hotjob-su653a0c011c240e66c6e3f507
+    company: 上海乐高乐园有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU653a0c011c240e66c6e3f507, page_size: 50}
+    # 2026-10-28 新增：7 岗
+  - id: hotjob-su66d55b511c240e39b5f3c0a7
+    company: 输送及电控部
+    params: {host: wecruit.hotjob.cn, tenant: SU66d55b511c240e39b5f3c0a7, page_size: 50}
+    # 2026-10-28 新增：7 岗
+  - id: hotjob-su67c0063d6202cc7916cd7f76
+    company: TATA木门
+    params: {host: wecruit.hotjob.cn, tenant: SU67c0063d6202cc7916cd7f76, page_size: 50}
+    # 2026-10-28 新增：7 岗
+  - id: hotjob-su61e0e24fbef57c796ed27ff3
+    company: 云康集团
+    params: {host: wecruit.hotjob.cn, tenant: SU61e0e24fbef57c796ed27ff3, page_size: 50}
+    # 2026-10-28 新增：6 岗
+  - id: hotjob-su625e7a562f9d24287db2303f
+    company: 巴斯夫（中国）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU625e7a562f9d24287db2303f, page_size: 50}
+    # 2026-10-28 新增：6 岗
+  - id: hotjob-su68c12a96778ced4f39347c39
+    company: 中煤三建投资运营有限责任公司
+    params: {host: wecruit.hotjob.cn, tenant: SU68c12a96778ced4f39347c39, page_size: 50}
+    # 2026-10-28 新增：6 岗
+  - id: hotjob-su612c9ae02f9d247d0f3f917c
+    company: 宁波亚虎进出口有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU612c9ae02f9d247d0f3f917c, page_size: 50}
+    # 2026-10-28 新增：5 岗
+  - id: hotjob-su68c8d05289a3b937c18d55ad
+    company: 江苏仅三生物科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU68c8d05289a3b937c18d55ad, page_size: 50}
+    # 2026-10-28 新增：5 岗
+  - id: hotjob-su62e1f6152f9d243810148ff5
+    company: 上海赛科
+    params: {host: wecruit.hotjob.cn, tenant: SU62e1f6152f9d243810148ff5, page_size: 50}
+    # 2026-10-28 新增：4 岗
+  - id: hotjob-su668678961eb8056fdea8565e
+    company: 河南投资集团
+    params: {host: wecruit.hotjob.cn, tenant: SU668678961eb8056fdea8565e, page_size: 50}
+    # 2026-10-28 新增：4 岗
+  - id: hotjob-su678f4e116202cc5bfb83d72e
+    company: 海兴控股
+    params: {host: wecruit.hotjob.cn, tenant: SU678f4e116202cc5bfb83d72e, page_size: 50}
+    # 2026-10-28 新增：4 岗
+  - id: hotjob-su60fa4d4e2f9d247b98de3fdc
+    company: 中移九天人工智能科技(北京)有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60fa4d4e2f9d247b98de3fdc, page_size: 50}
+    # 2026-10-28 新增：3 岗
+  - id: hotjob-su61025e262f9d247b98e0a2c2
+    company: 招联金融
+    params: {host: wecruit.hotjob.cn, tenant: SU61025e262f9d247b98e0a2c2, page_size: 50}
+    # 2026-10-28 新增：3 岗
+  - id: hotjob-su611394092f9d24229ef55ca2
+    company: 中国机械设备工程股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU611394092f9d24229ef55ca2, page_size: 50}
+    # 2026-10-28 新增：3 岗
+  - id: hotjob-su65de81ac1c240e4b11c6e6d5
+    company: 福建联合石油化工有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU65de81ac1c240e4b11c6e6d5, page_size: 50}
+    # 2026-10-28 新增：3 岗
+  - id: hotjob-su601ce262bef57c66a91d41fa
+    company: 深圳农村商业银行股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU601ce262bef57c66a91d41fa, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su616d95e3bef57c1af3dc6bbb
+    company: 一汽奥迪销售
+    params: {host: wecruit.hotjob.cn, tenant: SU616d95e3bef57c1af3dc6bbb, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su6266796a0dcad47b9fd6fb2e
+    company: 深圳爱博合创医疗机器人有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6266796a0dcad47b9fd6fb2e, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su6535c6701c240e5299cb039b
+    company: 上海镭镆科技有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU6535c6701c240e5299cb039b, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su660c170a1c240e3c2a3132f6
+    company: 薪宝信息科技（广州）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU660c170a1c240e3c2a3132f6, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su66c7fbca1eb80543256be6fc
+    company: 国光电器股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU66c7fbca1eb80543256be6fc, page_size: 50}
+    # 2026-10-28 新增：2 岗
+  - id: hotjob-su6018f8695d83dc072073e990
+    company: 执行董事兼联席CEO管辖
+    params: {host: wecruit.hotjob.cn, tenant: SU6018f8695d83dc072073e990, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su607ce93abef57c36add15764
+    company: 中国对外经济贸易信托有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU607ce93abef57c36add15764, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su60b4f642bef57c118967f505
+    company: 深圳市机场（集团）有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU60b4f642bef57c118967f505, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su628a3fcb0dcad41af3872068
+    company: 永赢基金
+    params: {host: wecruit.hotjob.cn, tenant: SU628a3fcb0dcad41af3872068, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su62d139692f9d2470a6e6e052
+    company: 北京金隅物业服务有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU62d139692f9d2470a6e6e052, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su630f4750bef57c3179000f50
+    company: 五矿期货有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU630f4750bef57c3179000f50, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su638d5aea0dcad444a273632b
+    company: 华润信托
+    params: {host: wecruit.hotjob.cn, tenant: SU638d5aea0dcad444a273632b, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su6396cdcc0dcad40b2a419d69
+    company: 泉峰集团
+    params: {host: wecruit.hotjob.cn, tenant: SU6396cdcc0dcad40b2a419d69, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su6397f53c2f9d244fe271ba42
+    company: 華潤物流
+    params: {host: wecruit.hotjob.cn, tenant: SU6397f53c2f9d244fe271ba42, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su64c87d8f1c240e7cb6b9e8eb
+    company: 云汇能源
+    params: {host: wecruit.hotjob.cn, tenant: SU64c87d8f1c240e7cb6b9e8eb, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su66c447a01eb805432564cfaf
+    company: 中国电子科技集团公司第三十二研究所
+    params: {host: wecruit.hotjob.cn, tenant: SU66c447a01eb805432564cfaf, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su67be73066202cc7916c5a0ed
+    company: 桥水中国
+    params: {host: wecruit.hotjob.cn, tenant: SU67be73066202cc7916c5a0ed, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su68ee0bf8affb624602fe4043
+    company: 北京大学第一医院
+    params: {host: wecruit.hotjob.cn, tenant: SU68ee0bf8affb624602fe4043, page_size: 50}
+    # 2026-10-28 新增：1 岗
+  - id: hotjob-su694baf9806f91c23473fcb2f
+    company: 湘潭电机股份有限公司
+    params: {host: wecruit.hotjob.cn, tenant: SU694baf9806f91c23473fcb2f, page_size: 50}
+    # 2026-10-28 新增：1 岗

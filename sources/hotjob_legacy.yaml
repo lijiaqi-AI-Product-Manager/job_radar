@@ -58,3 +58,13 @@ sources:
     company: 纬创资通
     params: {host: wistron.hotjob.cn, tenant: wistron, max_pages: 5, page_size: 10}
     # 2026-10-28 subdomain.center 枚举；首页 6 岗
+  # 2026-10-28 Wayback CDX 枚举的大易 /wt/ 租户（逐条用门户 title 核实归属）
+  - id: hotjob-legacy-yungu
+    company: 云谷学校
+    params: {host: yungu.hotjob.cn, tenant: yungu, max_pages: 5, page_size: 10}
+  - id: hotjob-legacy-263group
+    company: 二六三网络通信
+    params: {host: www.hotjob.cn, tenant: 263group, max_pages: 10, page_size: 10}
+  - id: hotjob-legacy-bjkjpress
+    company: 北京科学技术出版社
+    params: {host: www.hotjob.cn, tenant: bjkjpress, max_pages: 10, page_size: 10}
