@@ -33,14 +33,24 @@ SKIP_SLUG = {"chery", "venustech2", "hand-china1", "maccura1", "szkingdom1",
              "ciczp", "careers", "itcast1", "nrec1", "kuangchi", "ehuatai"}
 
 
+TAIL = re.compile(r"(招聘官网|招聘网站|招聘门户|招聘中心|招聘平台|人才招聘|校园招聘|社会招聘|招聘|官网|人才)$")
+GENERIC = {"业务", "财险", "大学", "招聘", "首页", "校园招聘", "社会招聘", "集团"}
+MANUAL = {"uni-president": "统一企业"}
+
+
 def core(name: str) -> str:
     return CORE.sub("", (name or "").strip())
 
 
 def clean(name: str) -> str:
     name = re.sub(r"\s+", "", name or "")
-    name = re.split(r"[（(]", name)[0] if name.count("（") + name.count("(") else name
-    return name[:28]
+    name = re.sub(r"[（(][^)）]*[)）]", "", name)  # 去掉全部括号补充语
+    while True:  # 「招聘官网」「人才」这类尾巴可能叠两层
+        n = TAIL.sub("", name)
+        if n == name:
+            break
+        name = n
+    return name.strip("-_·| ")[:28]
 
 
 def main() -> None:
@@ -57,6 +67,7 @@ def main() -> None:
     cands: list[dict] = []
     for fn, kind_default in (
         ("sd_hits.jsonl", None),
+        ("code_hits.jsonl", None),
         ("hotjob_candidates.jsonl", None),
         ("beisen_customer_hits.jsonl", None),
     ):
@@ -80,10 +91,10 @@ def main() -> None:
             if re.fullmatch(r"su[0-9a-f]{20,}", slug):
                 slug = "SU" + slug[2:].upper()
             slug_l = slug.lower()
-            company = clean(d.get("company") or "")
+            company = MANUAL.get(slug_l) or clean(d.get("company") or "")
             if not kind or not slug_l or slug_l in BLACK or slug_l in SKIP_SLUG:
                 continue
-            if not company or len(company) < 2:
+            if not company or len(company) < 2 or company in GENERIC:
                 continue
             if (kind, slug_l) in have_key or core(company) in have_co:
                 continue

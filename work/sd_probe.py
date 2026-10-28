@@ -151,8 +151,26 @@ def probe_feishu(host: str) -> dict | None:
             "count": 0, "title": title, "host": host}
 
 
+def load_hosts(*names: str) -> dict[str, list[str]]:
+    """合并多个来源的域名清单（sd_center.json 来自 subdomain.center，code_hosts.json 来自公开代码搜索）。"""
+    merged: dict[str, list[str]] = {}
+    for name in names:
+        p = WORK / name
+        if not p.exists():
+            continue
+        for domain, hosts in json.loads(p.read_text(encoding="utf-8")).items():
+            bucket = merged.setdefault(domain, [])
+            for h in hosts or []:
+                if h not in bucket:
+                    bucket.append(h)
+    return merged
+
+
 def main() -> None:
-    data = json.loads((WORK / "sd_center.json").read_text(encoding="utf-8"))
+    out_name = "sd_hits.jsonl"
+    if len(sys.argv) > 1:
+        out_name = sys.argv[1]
+    data = load_hosts("sd_center.json", "code_hosts.json")
     existing = load_sources(ROOT / "sources")
     have_b = {str(s.params.get("tenant", "")).lower() for s in existing}
     have_h = set()
@@ -175,7 +193,7 @@ def main() -> None:
     print(f"任务 {len(tasks)}（beisen/hotjob/feishu）", flush=True)
 
     fn = {"beisen": probe_beisen, "hotjob": probe_hotjob, "feishu": probe_feishu}
-    out = WORK / "sd_hits.jsonl"
+    out = WORK / out_name
     t0 = time.time()
     ok = 0
     with open(out, "w", encoding="utf-8") as fh, ThreadPoolExecutor(10) as ex:

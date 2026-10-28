@@ -114,6 +114,7 @@ def main() -> None:
     with open(ROOT / "companies.jsonl", encoding="utf-8") as fh:
         rows = [json.loads(line) for line in fh if line.strip()]
     have = {core(r.get("company")) for r in rows}
+    have_names = {(r.get("company") or "").strip() for r in rows}
     targets = yaml.safe_load((ROOT / "targets" / "top_companies.yaml").read_text(encoding="utf-8"))
     sector = sector_of(targets)
     counts = load_counts()
@@ -124,10 +125,11 @@ def main() -> None:
         adapter = KIND.get(s.adapter, s.adapter)
         if adapter not in ("beisen", "feishu_atsx", "hotjob", "hotjob_legacy"):
             continue
-        co = (s.company or "").strip()
-        if not co or len(co) < 2 or core(co) in have:
+        co = clean_company((s.company or "").strip())
+        if not co or len(co) < 2 or core(co) in have or co in have_names:
             continue
         have.add(core(co))
+        have_names.add(co)
         tenant = str(s.params.get("tenant") or "").lower()
         info = counts.get((adapter, tenant)) or {}
         url, host = careers_for(adapter, s.params)

@@ -241,6 +241,11 @@ class FeishuAtsxAdapter(Adapter):
         rtype = recruit_type_of(raw)
         if rtype is None:
             raise SkipRecord(f"招聘类型无法判定（recruit_type={raw.get('recruit_type')}）")
+        # 与 beisen/hotjob 保持一致：只收 source.recruit_types 里声明的类型。
+        # 2026-10-28 之前这里没过滤，只配了 [campus, intern] 的飞书源照样把社招岗写进库
+        # （度小满 49 条里 41 条是社招），同一份数据集里两类源的口径不一致。
+        if rtype not in self.source.recruit_types:
+            raise SkipRecord(f"招聘类型 {rtype} 不在 source.recruit_types 里")
         subject = _name_of((raw.get("job_subject") or {}).get("name"))
         # 届别只认项目名里写明的（"2027届校园招聘"）。
         grad = grad_year_from_text(subject)

@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 WORK = ROOT / "work"
 sys.path.insert(0, str(ROOT / "src"))
 
+from jobradar.adapters.feishu_atsx import recruit_type_of  # noqa: E402
 from jobradar.sources import load_sources  # noqa: E402
 
 UA = {
@@ -25,6 +26,8 @@ UA = {
                   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
 }
 CORE = re.compile(r"(股份有限公司|有限责任公司|有限公司|集团控股|集团|控股|公司)$")
+SLOGAN = re.compile(r"(欢迎加入|加入我们|加入|诚聘|招聘中|等你来|Join us|JOIN US|我们|一起|冠军|匠心|精品|首页|官网)")
+BADC = re.compile(r"[！!，,、。；;：:？?~～|｜]")
 
 # 人工核准：slug → 公司名（只收能确定归属的；口号型标题不自动猜）
 NAMES = {
@@ -58,6 +61,30 @@ def core(name: str) -> str:
     return CORE.sub("", (name or "").strip())
 
 
+def pick_company(slug: str, raw: str) -> str:
+    """人工核准表优先；其次用门户 <title> 清洗出来的名字，口号型标题一律不收。"""
+    if slug in NAMES:
+        return NAMES[slug]
+    name = (raw or "").strip()
+    if len(name) < 2 or SLOGAN.search(name) or BADC.search(name):
+        return ""
+    return name
+
+
+def _posts(c: httpx.Client, base: str, token: str, pt: int, path: str | None) -> tuple[int, list]:
+    """按适配器的头部规则取一页：`path=None` 不发 website-path（门店挂在 /index 时的口径）。"""
+    hdrs = {"x-csrf-token": token, "Content-Type": "application/json",
+            "Accept": "application/json", "Referer": base + "/" + (path or "index")}
+    if path:
+        hdrs["website-path"] = path
+    payload = {"portal_type": pt, "limit": 100, "offset": 0, "portal_entrance": 1,
+               "keyword": "", "job_category_id_list": [], "location_code_list": [],
+               "subject_id_list": [], "recruitment_id_list": []}
+    rr = c.post(base + "/api/v1/search/job/posts", json=payload, headers=hdrs, timeout=25)
+    data = rr.json().get("data") or {}
+    return int(data.get("count") or 0), data.get("job_post_list") or []
+
+
 def probe(c: httpx.Client, slug: str) -> dict | None:
     base = f"https://{slug}.jobs.feishu.cn"
     try:
@@ -76,57 +103,90 @@ def probe(c: httpx.Client, slug: str) -> dict | None:
     if not token:
         return None
     best = 0
+    campus = 0
     ptype = 3
-    for pt in (3, 2):
-        try:
-            payload = {"portal_type": pt, "limit": 10, "offset": 0,
-                       "job_category_id_list": [], "location_code_list": [],
-                       "subject_id_list": [], "recruitment_id_list": [], "keywords": ""}
-            rr = c.post(
-                base + "/api/v1/search/job/posts", json=payload,
-                headers={"x-csrf-token": token, "Content-Type": "application/json",
-                         "Accept": "application/json", "Referer": base + "/campus"},
-                timeout=25,
-            )
-            d = rr.json()
-            n = int((d.get("data") or {}).get("count") or 0)
-            if n > best:
-                best, ptype = n, pt
-        except Exception:
+    path: str | None = None
+    # `website_path: campus` 的门户必须带 `website-path: campus` 头；挂在 `/index` 的门户带了就
+    # 回 `{"code": -9000003, "message": "site not exist"}`（2026-10-28 度小满等 21 个门户实测）。
+    # 选口径按「校招岗数优先」：蔚来用 campus 口径是 863 条全校招，用 index 口径是 2050 条混排
+    # 但第一页 0 条校招——只看总数会选错口径。纯社招门户入不了库（2026-10-28 删过 57 个）。
+    for cand_path in ("campus", None):
+        for pt in (3, 2):
+            try:
+                n, posts = _posts(c, base, token, pt, cand_path)
+            except Exception:
+                continue
+            n_campus = sum(1 for p in posts if recruit_type_of(p) in ("campus", "intern"))
+            if (n_campus, n) > (campus, best):
+                best, campus, ptype, path = n, n_campus, pt, cand_path
+    return {"title": title, "count": best, "portal_type": ptype, "campus": campus,
+            "website_path": path or "index"}
+
+
+def load_hits() -> list[dict]:
+    """两路发现结果：subdomain.center 枚举（sd_hits.jsonl）与公开代码搜索（code_hits.jsonl）。"""
+    rows: list[dict] = []
+    seen: set[str] = set()
+    for name in ("sd_hits.jsonl", "code_hits.jsonl"):
+        p = WORK / name
+        if not p.exists():
             continue
-    return {"title": title, "count": best, "portal_type": ptype}
+        for ln in p.read_text(encoding="utf-8").splitlines():
+            if not ln.strip():
+                continue
+            d = json.loads(ln)
+            if d.get("platform") != "feishu_atsx" or not d.get("slug"):
+                continue
+            if d["slug"] in seen:
+                continue
+            seen.add(d["slug"])
+            rows.append(d)
+    return rows
 
 
 def main() -> None:
     write = "--write" in sys.argv
-    hits = [json.loads(ln) for ln in open(WORK / "sd_hits.jsonl", encoding="utf-8") if ln.strip()]
-    slugs = []
+    refresh = "--refresh" in sys.argv
+    hits = load_hits()
+    names: dict[str, str] = {}
     for h in hits:
-        if h.get("platform") != "feishu_atsx":
-            continue
-        s = h.get("slug")
-        if s and s in NAMES and s not in slugs:
-            slugs.append(s)
+        s = h["slug"]
+        co = pick_company(s, h.get("company") or "")
+        if len(co) >= 2:
+            names[s] = co
+    slugs = list(names)
     existing = load_sources(ROOT / "sources")
     have_co = {core(s.company) for s in existing}
     have_id = {s.id for s in existing}
 
-    todo = [s for s in slugs if s not in have_id and core(NAMES[s]) not in have_co]
+    # --refresh：上一轮由本脚本写过、但门户其实挂在 /index 而错写成 campus 的那批，重探覆盖
+    prev: set[str] = set()
+    if refresh:
+        p = WORK / "feishu_counts.jsonl"
+        if p.exists():
+            for ln in p.read_text(encoding="utf-8").splitlines():
+                if ln.strip():
+                    d = json.loads(ln)
+                    if d.get("campus", 0) > 0:
+                        prev.add(d["slug"])
+
+    todo = [s for s in slugs
+            if (s not in have_id and core(names[s]) not in have_co) or s in prev]
     print(f"候选飞书门户 {len(slugs)} 个，去重后待探活 {len(todo)} 个")
     rows = []
     with httpx.Client(headers=UA, follow_redirects=True, timeout=25) as c:
         for i, s in enumerate(todo, 1):
             info = probe(c, s)
             if info:
-                rows.append({"slug": s, "company": NAMES[s], **info})
+                rows.append({"slug": s, "company": names[s], **info})
                 if i % 10 == 0:
                     print(f"  ... {i}/{len(todo)} 有岗 {sum(1 for x in rows if x['count'] > 0)}")
     open(WORK / "feishu_counts.jsonl", "w", encoding="utf-8").write(
         "".join(json.dumps({"platform": "feishu_atsx", **r}, ensure_ascii=False) + "\n" for r in rows))
-    live = [r for r in rows if r["count"] > 0]
-    print(f"存活 {len(rows)} 个，其中有岗 {len(live)} 个")
+    live = [r for r in rows if r["campus"] > 0]
+    print(f"存活 {len(rows)} 个，其中有校招/实习岗 {len(live)} 个（纯社招门户不入库）")
     for r in live[:12]:
-        print(f"  {r['slug']:<24} {r['company']:<14} {r['count']:>5}  {r['title'][:26]}")
+        print(f"  {r['slug']:<24} {r['company']:<14} {r['campus']:>4}/{r['count']:<5} {r['title'][:24]}")
     if not write:
         print("（dry-run，加 --write 落盘）")
         return
@@ -136,19 +196,19 @@ def main() -> None:
         body = f"""id: {slug}
 company: {r['company']}
 adapter: feishu_atsx
-recruit_types: [campus, intern, social]
+recruit_types: [campus, intern]
 rate_limit_rps: 1
 params:
   base_url: "https://{slug}.jobs.feishu.cn"
-  website_path: campus
+  website_path: {r['website_path']}
   portal_type: {r['portal_type']}
   page_size: 100
-  job_url: "https://{slug}.jobs.feishu.cn/campus/position/{{id}}/detail"
+  job_url: "https://{slug}.jobs.feishu.cn/{r['website_path']}/position/{{id}}/detail"
 compliance:
   checked_on: 2026-10-28
   robots: "none"            # robots.txt 404（平台层无站点级规则）；只读公开职位列表，不触达 /referral
   terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无登录、无验证码、无签名校验。会话 token 只在内存中使用（CLAUDE.md 铁律 1）。用户协议待人工复核"
-  notes: "2026-10-28 子域枚举（subdomain.center）发现 {slug} 门户；门户 <title> 为「{r['title'][:40]}」，portal_type={r['portal_type']} 时公开职位 {r['count']} 条。"
+  notes: "2026-10-28 子域枚举（subdomain.center）与公开代码搜索发现 {slug} 门户；门户 <title> 为「{r['title'][:40]}」，portal_type={r['portal_type']} 时公开职位 {r['count']} 条（其中校招/实习 {r['campus']} 条）。"
 """
         open(ROOT / "sources" / f"{slug}.yaml", "w", encoding="utf-8").write(body)
     after = load_sources(ROOT / "sources")

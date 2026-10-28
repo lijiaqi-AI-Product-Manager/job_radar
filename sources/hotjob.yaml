@@ -376,3 +376,7 @@ sources:
     company: ctyun
     params: {host: ctyun.hotjob.cn, tenant: SU62B2AE672F9D24458D72F9CC, page_size: 50}
     # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 1 岗
+  - id: hotjob-su628a429c0dcad41af38720c0
+    company: maxwealthfund
+    params: {host: maxwealthfund.hotjob.cn, tenant: SU628A429C0DCAD41AF38720C0, page_size: 50}
+    # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 16 岗
