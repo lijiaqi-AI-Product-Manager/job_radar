@@ -1,0 +1,428 @@
+[
+ {
+  "company": "中科院空间应用中心",
+  "host": "csu",
+  "portal": "campus",
+  "jobs": 40
+ },
+ {
+  "company": "建发集团",
+  "host": "chinacdc",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "中机国际工程设计研究院有限责任公司",
+  "host": "cmie",
+  "portal": "campus",
+  "jobs": 40
+ },
+ {
+  "company": "研究中车株洲电力机车研究所有限公司",
+  "host": "crrczzs",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "奕斯伟芯片中文",
+  "host": "eswinchipch",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "高博医疗集团",
+  "host": "gobroadhealthcare",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "中国建筑工程（香港）有限公司",
+  "host": "jobcsci",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "苏州科达科技股份有限公司",
+  "host": "kedacom",
+  "portal": "campus",
+  "jobs": 40
+ },
+ {
+  "company": "百度昆仑芯定制",
+  "host": "kunlunxin",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "新希望集团新",
+  "host": "newhope",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "南京药石定制",
+  "host": "pharmablock",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "金地物业集团有限公司",
+  "host": "pmgemdale",
+  "portal": "social",
+  "jobs": 40
+ },
+ {
+  "company": "上海南方模式生物科技股份有限公司",
+  "host": "smoc",
+  "portal": "campus",
+  "jobs": 40
+ },
+ {
+  "company": "华安财产保险股份有限公司",
+  "host": "sinosafe",
+  "portal": "alljob",
+  "jobs": 40
+ },
+ {
+  "company": "杰克缝纫机股份有限公司",
+  "host": "chinajack",
+  "portal": "campus",
+  "jobs": 39
+ },
+ {
+  "company": "厦门国贸控股集团有限公司",
+  "host": "itg",
+  "portal": "alljob",
+  "jobs": 37
+ },
+ {
+  "company": "生益电子股份有限公司",
+  "host": "sye",
+  "portal": "campus",
+  "jobs": 34
+ },
+ {
+  "company": "中航（成都）无人机系统股份有限公司",
+  "host": "avicuas",
+  "portal": "campus",
+  "jobs": 32
+ },
+ {
+  "company": "上海良信电器股份有限公司",
+  "host": "nader",
+  "portal": "campus",
+  "jobs": 29
+ },
+ {
+  "company": "中电科网络安全科技股份有限公司",
+  "host": "westone",
+  "portal": "campus",
+  "jobs": 26
+ },
+ {
+  "company": "杭州中恒电气股份有限公司",
+  "host": "hzzh",
+  "portal": "campus",
+  "jobs": 25
+ },
+ {
+  "company": "雨润控股集团有限公司",
+  "host": "yurun",
+  "portal": "campus",
+  "jobs": 25
+ },
+ {
+  "company": "宏发股份",
+  "host": "hongfa",
+  "portal": "campus",
+  "jobs": 24
+ },
+ {
+  "company": "正中投资集团有限公司",
+  "host": "genzon",
+  "portal": "campus",
+  "jobs": 23
+ },
+ {
+  "company": "科兴制药",
+  "host": "kexing",
+  "portal": "campus",
+  "jobs": 22
+ },
+ {
+  "company": "中国电子科技集团公司第二十一研究所",
+  "host": "motor",
+  "portal": "campus",
+  "jobs": 22
+ },
+ {
+  "company": "广州同文教育投资有限公司",
+  "host": "scnufl",
+  "portal": "campus",
+  "jobs": 22
+ },
+ {
+  "company": "中国建材检验集团",
+  "host": "ctczhaopin",
+  "portal": "campus",
+  "jobs": 21
+ },
+ {
+  "company": "中国飞行试验研究院",
+  "host": "cfte",
+  "portal": "campus",
+  "jobs": 19
+ },
+ {
+  "company": "原构国际设计顾问",
+  "host": "yuangous",
+  "portal": "campus",
+  "jobs": 19
+ },
+ {
+  "company": "广东恒兴饲料实业股份有限公司",
+  "host": "gdhxgf",
+  "portal": "campus",
+  "jobs": 18
+ },
+ {
+  "company": "美年大健康产业控股股份有限公司",
+  "host": "health-100",
+  "portal": "campus",
+  "jobs": 16
+ },
+ {
+  "company": "舒泰神（北京）生物制药股份有限公司",
+  "host": "staidson",
+  "portal": "campus",
+  "jobs": 16
+ },
+ {
+  "company": "深圳盈达信息科技有限公司",
+  "host": "idata",
+  "portal": "campus",
+  "jobs": 14
+ },
+ {
+  "company": "天邦食品股份有限公司",
+  "host": "tianbang",
+  "portal": "campus",
+  "jobs": 14
+ },
+ {
+  "company": "白帆",
+  "host": "dragonsailpharma",
+  "portal": "campus",
+  "jobs": 13
+ },
+ {
+  "company": "新时达电气股份有限公司",
+  "host": "stepelectric",
+  "portal": "campus",
+  "jobs": 13
+ },
+ {
+  "company": "宋都集团",
+  "host": "songdu",
+  "portal": "campus",
+  "jobs": 11
+ },
+ {
+  "company": "福建省建筑科学研究院",
+  "host": "fjjky",
+  "portal": "campus",
+  "jobs": 10
+ },
+ {
+  "company": "爱朋医疗",
+  "host": "apon",
+  "portal": "campus",
+  "jobs": 10
+ },
+ {
+  "company": "四川蓝润集团有限公司",
+  "host": "landarun",
+  "portal": "campus",
+  "jobs": 9
+ },
+ {
+  "company": "金地（集团）股份有限公司",
+  "host": "gemdale",
+  "portal": "alljob",
+  "jobs": 8
+ },
+ {
+  "company": "深圳思为科技有限公司",
+  "host": "ideamake",
+  "portal": "campus",
+  "jobs": 8
+ },
+ {
+  "company": "芯讯通",
+  "host": "simcom",
+  "portal": "campus",
+  "jobs": 7
+ },
+ {
+  "company": "同方计算机有限公司",
+  "host": "thtfpc",
+  "portal": "campus",
+  "jobs": 7
+ },
+ {
+  "company": "华恒集团",
+  "host": "ehuaheng",
+  "portal": "campus",
+  "jobs": 7
+ },
+ {
+  "company": "北京中交兴路信息科技有限公司",
+  "host": "zhongjiaoxinglu",
+  "portal": "campus",
+  "jobs": 7
+ },
+ {
+  "company": "上海富瀚微电子股份有限公司",
+  "host": "fullhan",
+  "portal": "campus",
+  "jobs": 6
+ },
+ {
+  "company": "东方剑桥教育集团",
+  "host": "oceg",
+  "portal": "campus",
+  "jobs": 5
+ },
+ {
+  "company": "中国航空工业集团公司洛阳电光设备研究所",
+  "host": "avicoptronics",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "申港证劵股份有限公司",
+  "host": "shgsec",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "国都证券股份有限公司",
+  "host": "guodu",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "北京泰德制药股份有限公司",
+  "host": "tidepharm",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "杭州朱丽燕网络科技有限公司",
+  "host": "ihappygroup",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "银鹭食品集团",
+  "host": "yinlu",
+  "portal": "campus",
+  "jobs": 4
+ },
+ {
+  "company": "中建投信托股份有限公司",
+  "host": "jictrust",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "上海家化",
+  "host": "shjahwa",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "北京分子互动文化传播有限公司",
+  "host": "fen-z",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "辽宁安井",
+  "host": "lnajxt",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "电子工业出版社有限公司",
+  "host": "phei",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "无锡安井",
+  "host": "wxajxt",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "天津市松正电动汽车技术股份有限公司",
+  "host": "santroll",
+  "portal": "campus",
+  "jobs": 3
+ },
+ {
+  "company": "东江环保股份有限公司",
+  "host": "dongjiang",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "深圳市艾比森光电股份有限公司",
+  "host": "absen",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "天津安捷物联科技股份有限公司",
+  "host": "ajiot",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "中国建筑高校毕业生接收考试网",
+  "host": "cscec",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "ESWINEN",
+  "host": "eswinen",
+  "portal": "alljob",
+  "jobs": 2
+ },
+ {
+  "company": "宝宝树",
+  "host": "babytree-inc",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "路劲地产集团有限公司",
+  "host": "rkph",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "湖北安井",
+  "host": "hbajxt",
+  "portal": "campus",
+  "jobs": 2
+ },
+ {
+  "company": "圣奥集团有限公司",
+  "host": "sunon-china",
+  "portal": "campus",
+  "jobs": 2
+ }
+]

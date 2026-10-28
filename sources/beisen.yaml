@@ -1433,3 +1433,6 @@ sources:
   - {id: beisen-cscnrczp, company: 中国星网, params: {tenant: cscnrczp}}  # 2026-10-29 新增：56 岗
   - {id: beisen-donson, company: 东信时代, params: {tenant: donson}}  # 2026-10-29 新增：51 岗
   - {id: beisen-cnoocshell, company: 中海壳牌, params: {tenant: cnoocshell}}  # 2026-10-29 新增：3 岗
+
+# 2026-10-29 新增：官网反查拿到的白标北森域（接口挂在自有域名下，tenant 猜不到）
+  - {id: beisen-xdfqt, company: 新东方前途出国, params: {tenant: xdfqt, host: zhaopin.xdf.cn}}  # 2026-10-29 新增：首屏 4447 岗（白标，robots.txt Allow: /）

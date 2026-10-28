@@ -2,6 +2,29 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.9.0] - 2026-10-29
+
+### 新增
+
+- **139 个数据源**（1,759 → 1,898），公司 1,730 → **1,860**，`companies.jsonl` 2,237 → **2,325**。
+  本轮最大的来源是「老版北森网申系统」：
+  1. 把 `work/` 里历史侦察文件中的 1,392 个北森主机逐个扫 `/campus` `/social` `/alljob` 三类门户，
+     找到 148 个服务端渲染的老版站点；再用 `beisen_legacy` 适配器逐站抓一页验证，
+     **84 个候选里 72 个真的有岗**，按门户 `<title>` 定名、与已有公司去重后收 **68 家**
+     （新希望集团、厦门国贸、新华三、雨润、宏发股份、良信电器、中飞院、中科院空间应用中心等）。
+  2. 官网反查白标北森：把 `companies.jsonl` 里 455 个招聘域名逐个试 `/api/Jobad/GetJobAdPageList`，
+     找到 5 个白标门户，其中 4 家已有源，新增 **新东方前途出国**（首屏 4,447 岗）。
+
+### 修复
+
+- `work/append_companies.py` 之前只认 `beisen/feishu_atsx/hotjob/hotjob_legacy` 四类适配器，
+  `beisen_legacy` 的新公司**永远进不了 `companies.jsonl`**（干跑会显示「可补 0 家」，不报错）。
+  补上 adapter 分支与 careers_url 拼接后，一次补进 88 行。
+- 同批把 `work/zhiye_leftover_probe.py`、`work/self_site_scan.py` 的多语句单行写法改掉（ruff E701/E702）。
+
+### 说明
+
+- 目标覆盖率仍是 **599/1,655（36%）**：这批公司多数不在目标清单里，涨的是「源 / 可采公司」两个绝对数。
 ## [1.8.0] - 2026-10-29
 
 ### 新增

@@ -92,3 +92,902 @@ sources:
   - {id: beisen-legacy-tendcloud, company: 腾云天下, params: {tenant: tendcloud, portal: campus}}  # 2026-10-29 新增：2 岗
   - {id: beisen-legacy-ankki, company: 昂楷科技, params: {tenant: ankki, portal: campus}}  # 2026-10-29 新增：1 岗
   - {id: beisen-legacy-linklogis, company: 联易融, params: {tenant: linklogis, portal: campus}}  # 2026-10-29 新增：1 岗
+# 2026-10-29 新增：老版北森「网申系统」形态（服务端渲染列表，非 JSON API）。
+# 来源：work/ 历史侦察文件里的 1,392 个北森主机，按列表页 <title> 定名后逐站验证有岗。
+  - id: beisen-legacy-csu
+    company: 中科院空间应用工程与技术中心
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: csu, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-chinacdc
+    company: 建发集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: chinacdc, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-cmie
+    company: 中机国际
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: cmie, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-crrczzs
+    company: 中车株洲电力机车研究所
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: crrczzs, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-eswinchipch
+    company: 奕斯伟计算
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: eswinchipch, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-gobroadhealthcare
+    company: 高博医疗集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: gobroadhealthcare, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-jobcsci
+    company: 中建香港
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: jobcsci, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-kedacom
+    company: 苏州科达
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: kedacom, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-kunlunxin
+    company: 昆仑芯
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: kunlunxin, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-newhope
+    company: 新希望集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: newhope, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-pharmablock
+    company: 药石科技
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: pharmablock, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-pmgemdale
+    company: 金地物业
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [social]
+    rate_limit_rps: 1.0
+    params: {tenant: pmgemdale, portal: social}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-smoc
+    company: 南方模式生物
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: smoc, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-sinosafe
+    company: 华安保险
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: sinosafe, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 40 岗
+  - id: beisen-legacy-chinajack
+    company: 杰克缝纫机股份有限公司
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: chinajack, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 39 岗
+  - id: beisen-legacy-itg
+    company: 厦门国贸控股集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: itg, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 37 岗
+  - id: beisen-legacy-sye
+    company: 生益电子
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: sye, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 34 岗
+  - id: beisen-legacy-avicuas
+    company: 中航无人机
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: avicuas, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 32 岗
+  - id: beisen-legacy-nader
+    company: 良信电器
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: nader, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 29 岗
+  - id: beisen-legacy-westone
+    company: 中电科网络安全
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: westone, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 26 岗
+  - id: beisen-legacy-hzzh
+    company: 中恒电气
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: hzzh, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 25 岗
+  - id: beisen-legacy-yurun
+    company: 雨润控股
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: yurun, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 25 岗
+  - id: beisen-legacy-hongfa
+    company: 宏发股份
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: hongfa, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 24 岗
+  - id: beisen-legacy-genzon
+    company: 正中投资集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: genzon, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 23 岗
+  - id: beisen-legacy-kexing
+    company: 科兴制药
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: kexing, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 22 岗
+  - id: beisen-legacy-motor
+    company: 中电科第二十一研究所
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: motor, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 22 岗
+  - id: beisen-legacy-scnufl
+    company: 同文教育
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: scnufl, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 22 岗
+  - id: beisen-legacy-ctczhaopin
+    company: 中国建材检验集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: ctczhaopin, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 21 岗
+  - id: beisen-legacy-cfte
+    company: 中国飞行试验研究院
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: cfte, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 19 岗
+  - id: beisen-legacy-yuangous
+    company: 原构国际设计
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: yuangous, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 19 岗
+  - id: beisen-legacy-gdhxgf
+    company: 恒兴饲料
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: gdhxgf, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 18 岗
+  - id: beisen-legacy-health-100
+    company: 美年大健康
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: health-100, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 16 岗
+  - id: beisen-legacy-staidson
+    company: 舒泰神
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: staidson, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 16 岗
+  - id: beisen-legacy-idata
+    company: 盈达信息
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: idata, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 14 岗
+  - id: beisen-legacy-tianbang
+    company: 天邦食品
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: tianbang, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 14 岗
+  - id: beisen-legacy-dragonsailpharma
+    company: 白帆生物
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: dragonsailpharma, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 13 岗
+  - id: beisen-legacy-stepelectric
+    company: 新时达电气
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: stepelectric, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 13 岗
+  - id: beisen-legacy-songdu
+    company: 宋都集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: songdu, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 11 岗
+  - id: beisen-legacy-fjjky
+    company: 福建省建筑科学研究院
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: fjjky, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 10 岗
+  - id: beisen-legacy-apon
+    company: 爱朋医疗
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: apon, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 10 岗
+  - id: beisen-legacy-landarun
+    company: 蓝润集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: landarun, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 9 岗
+  - id: beisen-legacy-gemdale
+    company: 金地集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus, intern, social]
+    rate_limit_rps: 1.0
+    params: {tenant: gemdale, portal: alljob}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 8 岗
+  - id: beisen-legacy-ideamake
+    company: 思为科技
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: ideamake, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 8 岗
+  - id: beisen-legacy-simcom
+    company: 芯讯通
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: simcom, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 7 岗
+  - id: beisen-legacy-thtfpc
+    company: 同方计算机
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: thtfpc, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 7 岗
+  - id: beisen-legacy-ehuaheng
+    company: 华恒集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: ehuaheng, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 7 岗
+  - id: beisen-legacy-zhongjiaoxinglu
+    company: 中交兴路
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: zhongjiaoxinglu, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 7 岗
+  - id: beisen-legacy-fullhan
+    company: 富瀚微
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: fullhan, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 6 岗
+  - id: beisen-legacy-oceg
+    company: 东方剑桥教育集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: oceg, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 5 岗
+  - id: beisen-legacy-avicoptronics
+    company: 洛阳电光设备研究所
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: avicoptronics, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-shgsec
+    company: 申港证券
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: shgsec, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-guodu
+    company: 国都证券
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: guodu, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-tidepharm
+    company: 泰德制药
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: tidepharm, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-ihappygroup
+    company: 朱丽燕网络科技
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: ihappygroup, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-yinlu
+    company: 银鹭食品
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: yinlu, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 4 岗
+  - id: beisen-legacy-jictrust
+    company: 中建投信托
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: jictrust, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-shjahwa
+    company: 上海家化
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: shjahwa, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-fen-z
+    company: 分子互动
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: fen-z, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-lnajxt
+    company: 辽宁安井
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: lnajxt, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-phei
+    company: 电子工业出版社
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: phei, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-wxajxt
+    company: 无锡安井
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: wxajxt, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-santroll
+    company: 松正电动汽车
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: santroll, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 3 岗
+  - id: beisen-legacy-dongjiang
+    company: 东江环保
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: dongjiang, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-absen
+    company: 艾比森
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: absen, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-ajiot
+    company: 安捷物联
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: ajiot, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-babytree-inc
+    company: 宝宝树
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: babytree-inc, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-rkph
+    company: 路劲地产
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: rkph, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-hbajxt
+    company: 湖北安井
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: hbajxt, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗
+  - id: beisen-legacy-sunon-china
+    company: 圣奥集团
+    adapter: beisen_legacy
+    enabled: true
+    recruit_types: [campus]
+    rate_limit_rps: 1.0
+    params: {tenant: sunon-china, portal: campus}
+    compliance:
+      checked_on: 2026-10-29
+      robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
+      terms: "公开招聘门户列表页，无需登录、无验证码"
+      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+    # 2026-10-29 新增：首屏至少 2 岗

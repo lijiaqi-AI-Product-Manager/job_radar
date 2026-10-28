@@ -49,6 +49,19 @@ def load_counts() -> dict[tuple[str, str], dict]:
                 out[(kind, slug)] = {"count": int(d.get("count") or 0),
                                      "title": d.get("title") or d.get("company") or "",
                                      "found": fn}
+    legacy = WORK / "zhiye_legacy_verified.jsonl"
+    if legacy.exists():
+        for ln in open(legacy, encoding="utf-8"):
+            if not ln.strip():
+                continue
+            d = json.loads(ln)
+            if int(d.get("jobs") or 0) <= 0:
+                continue
+            out[("beisen_legacy", str(d.get("host") or "").lower())] = {
+                "count": int(d.get("jobs") or 0),
+                "title": d.get("title") or "",
+                "found": legacy.name,
+            }
     return out
 
 
@@ -100,6 +113,9 @@ def careers_for(adapter: str, params: dict) -> tuple[str, str]:
         base = str(params.get("base_url") or "").rstrip("/")
         path = str(params.get("website_path") or "campus")
         return f"{base}/{path}", base.replace("https://", "")
+    if adapter == "beisen_legacy":
+        portal = str(params.get("portal") or "campus")
+        return f"https://{tenant}.zhiye.com/{portal}/", f"{tenant}.zhiye.com"
     if adapter == "hotjob":
         h = host or "wecruit.hotjob.cn"
         return f"https://{h}/wt/{tenant}/", h
@@ -123,7 +139,7 @@ def main() -> None:
     new_rows = []
     for s in load_sources(ROOT / "sources"):
         adapter = KIND.get(s.adapter, s.adapter)
-        if adapter not in ("beisen", "feishu_atsx", "hotjob", "hotjob_legacy"):
+        if adapter not in ("beisen", "beisen_legacy", "feishu_atsx", "hotjob", "hotjob_legacy"):
             continue
         co = clean_company((s.company or "").strip())
         if not co or len(co) < 2 or core(co) in have or co in have_names:
