@@ -74,3 +74,21 @@ sources:
   - {id: beisen-legacy-chinaamc, company: 华夏基金, params: {tenant: chinaamc, portal: social}}  # 15 岗（详情页无 JD 正文）
   - {id: beisen-legacy-sczq, company: 首创证券, params: {tenant: sczq, portal: campus}}      # 15 岗，JD 全
   - {id: beisen-legacy-gac-toyota, company: 广汽丰田, params: {tenant: gac-toyota, portal: campus}}  # 15 岗，JD 全
+
+# 第 7 批（2026-10-29 搜索引擎发现 + 逐源回灌验证）
+  - {id: beisen-legacy-jingbo, company: 京博控股, params: {tenant: jingbo, portal: campus}}  # 2026-10-29 新增：199 岗
+  - {id: beisen-legacy-aoya-hk, company: 奥雅设计, params: {tenant: aoya-hk, portal: campus}}  # 2026-10-29 新增：101 岗
+  - {id: beisen-legacy-deyi, company: 得益乳业, params: {tenant: deyi, portal: campus}}  # 2026-10-29 新增：44 岗
+  - {id: beisen-legacy-lovol, company: 雷沃重工, params: {tenant: lovol, portal: campus}}  # 2026-10-29 新增：41 岗
+  - {id: beisen-legacy-kelunbotai, company: 科伦博泰, params: {tenant: kelunbotai, portal: campus}}  # 2026-10-29 新增：34 岗
+  - {id: beisen-legacy-zhdgps, company: 中海达, params: {tenant: zhdgps, portal: campus}}  # 2026-10-29 新增：21 岗
+  - {id: beisen-legacy-china-fenghuaxyzp, company: 风华高科, params: {tenant: china-fenghuaxyzp, portal: campus}}  # 2026-10-29 新增：18 岗
+  - {id: beisen-legacy-eshore, company: 亿迅科技, params: {tenant: eshore, portal: campus}}  # 2026-10-29 新增：13 岗
+  - {id: beisen-legacy-invescogreatwall, company: 景顺长城基金, params: {tenant: invescogreatwall, portal: campus}}  # 2026-10-29 新增：11 岗
+  - {id: beisen-legacy-hrtitcgroup, company: 钛和集团, params: {tenant: hrtitcgroup, portal: campus}}  # 2026-10-29 新增：11 岗
+  - {id: beisen-legacy-602, company: 中国直升机设计研究所, params: {tenant: 602, portal: campus}}  # 2026-10-29 新增：11 岗
+  - {id: beisen-legacy-onechance, company: 壹网壹创, params: {tenant: onechance, portal: campus}}  # 2026-10-29 新增：9 岗
+  - {id: beisen-legacy-acrobiosystems, company: 百普赛斯, params: {tenant: acrobiosystems, portal: campus}}  # 2026-10-29 新增：3 岗
+  - {id: beisen-legacy-tendcloud, company: 腾云天下, params: {tenant: tendcloud, portal: campus}}  # 2026-10-29 新增：2 岗
+  - {id: beisen-legacy-ankki, company: 昂楷科技, params: {tenant: ankki, portal: campus}}  # 2026-10-29 新增：1 岗
+  - {id: beisen-legacy-linklogis, company: 联易融, params: {tenant: linklogis, portal: campus}}  # 2026-10-29 新增：1 岗

@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | Русский
 
-[![version](https://img.shields.io/badge/version-1.7.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.2-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,9 +14,9 @@
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Данные (2026-10-28)**: **1 131 источник** · **1 099 компаний** · **23 адаптера**
-> (Beisen 1,143 / Dayee 305 / Feishu ATSX 139 / Tupu360 32 / старый Beisen 28 / Workday 45 / старый Dayee 15 / собственные сайты 19)
-> Из **1 655 целей** (1 117 в 20 отраслях + 808 в 31 провинциальном регионе) **577 покрыты (35 %)**, ещё 12 недоступны по требованиям комплаенса.
+> **Данные (2026-10-29)**: **1 749 источников** · **1 720 компаний** · **23 адаптера**
+> (Beisen 1,145 / Dayee 309 / Feishu ATSX 140 / Tupu360 32 / старый Beisen 44 / Workday 45 / старый Dayee 15 / собственные сайты 19)
+> Из **1 655 целей** (1 117 в 20 отраслях + 808 в 31 провинциальном регионе) **581 покрыты (35 %)**, ещё 12 недоступны по требованиям комплаенса.
 > Число вакансий и покрытие полей обновляются при каждом ежедневном сборе (см. последний релиз).
 
 ## Что это и чем не является

@@ -1,0 +1,16 @@
+id: qianxun-zhineng
+company: 千寻智能
+adapter: feishu_atsx
+recruit_types: [campus, intern, social]
+rate_limit_rps: 1
+params:
+  base_url: "https://nwd4iy9rd2s.jobs.feishu.cn"
+  website_path: campus
+  portal_type: 3
+  page_size: 100
+  job_url: "https://nwd4iy9rd2s.jobs.feishu.cn/campus/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-29
+  robots: "none"            # jobs.feishu.cn 平台层无站点级 robots；只读公开职位列表
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验"
+  notes: "2026-10-29 搜索引擎命中 nwd4iy9rd2s.jobs.feishu.cn，门户 <title> 自报「加入千寻智能」；API count=55（campus）"

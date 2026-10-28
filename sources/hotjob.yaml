@@ -1222,3 +1222,20 @@ sources:
     company: 湘潭电机股份有限公司
     params: {host: wecruit.hotjob.cn, tenant: SU694baf9806f91c23473fcb2f, page_size: 50}
     # 2026-10-28 新增：1 岗
+
+  - id: hotjob-su646ed9920dcad45af14821b4
+    company: 欧普照明
+    params: {host: wecruit.hotjob.cn, tenant: SU646ed9920dcad45af14821b4, page_size: 50}
+    # 2026-10-29 新增：56 岗
+  - id: hotjob-su642fbf5fbef57c1e269fa798
+    company: 中国信息通信研究院
+    params: {host: wecruit.hotjob.cn, tenant: SU642fbf5fbef57c1e269fa798, page_size: 50}
+    # 2026-10-29 新增：160 岗
+  - id: hotjob-su64b9e0c92f9d24760af2123c
+    company: 一汽-大众
+    params: {host: wecruit.hotjob.cn, tenant: SU64b9e0c92f9d24760af2123c, page_size: 50}
+    # 2026-10-29 新增：17 岗
+  - id: hotjob-su66e002f31eb8056010bbc32d
+    company: 中国电信国际
+    params: {host: wecruit.hotjob.cn, tenant: SU66e002f31eb8056010bbc32d, page_size: 50}
+    # 2026-10-29 新增：3 岗
