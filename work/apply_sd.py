@@ -68,6 +68,7 @@ def main() -> None:
     for fn, kind_default in (
         ("sd_hits.jsonl", None),
         ("code_hits.jsonl", None),
+        ("wayback_hits.jsonl", None),
         ("hotjob_candidates.jsonl", None),
         ("beisen_customer_hits.jsonl", None),
     ):

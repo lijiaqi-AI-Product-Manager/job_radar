@@ -1,0 +1,2492 @@
+{
+ "河北": [
+  {
+   "company": "亿生堂",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "冀东水泥",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "冀中能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华北制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "唐山三友",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "常山北明",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "开滦集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "敬业集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新奥集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "沧州大化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河北一诺",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河北联通",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河北银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "石家庄以岭",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "石家庄四药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "石药集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "神威药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "科林电气",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "秦皇岛港",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "邯郸钢铁",
+   "in_companies_jsonl": false
+  }
+ ],
+ "山东": [
+  {
+   "company": "万华化学",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国重汽",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中集来福士",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "信发集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "国网山东",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山东能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山东高速",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "恒丰银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "新华制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "日照钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "浪潮",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海尔",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "西王集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青岛银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "魏桥创业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鲁南制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鲁泰纺织",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鲁花集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "齐鲁银行",
+   "in_companies_jsonl": false
+  }
+ ],
+ "江苏": [
+  {
+   "company": "中天科技",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中天钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "亨通集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "今世缘",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "协鑫集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "南京银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "南钢",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "常州天合",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "徐工集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "恒力集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "恒瑞医药",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "扬子石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "无锡先导",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "江苏省国信",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "江苏银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "沙钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "法尔胜",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "波司登",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "洋河股份",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "红豆集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "苏宁易购",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "苏州固锝",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "通富微电",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金陵石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "长电科技",
+   "in_companies_jsonl": false
+  }
+ ],
+ "浙江": [
+  {
+   "company": "万事利",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "万向集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中策橡胶",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "传化集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "农夫山泉",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "华东医药",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "华海药业",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "卧龙电驱",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "古茗",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "吉利控股",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "吉利汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "均胜电子",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "天能控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "太平鸟",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "娃哈哈",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "宁波银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "杭州钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "杭州银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "森马",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "正泰集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "浙商银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "浙江交投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "浙江能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海康威视",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "温州银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "舜宇光学",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "蚂蚁集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贝达药业",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "超威集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "雅戈尔",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "香飘飘",
+   "in_companies_jsonl": false
+  }
+ ],
+ "广东": [
+  {
+   "company": "TCL",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "万和电气",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "万科",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "东鹏控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中兴通讯",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "丽珠医药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华为",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "华大基因",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华帝股份",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "唯品会",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "平安集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广发银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "广州农商行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广新控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "微众银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "招商银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "星河湾",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "格力电器",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "欢聚集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "欧派家居",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "比亚迪",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "燕塘乳业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "珠江啤酒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "粤电集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "索菲亚",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "网易游戏",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "美的集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "蓝月亮",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "虎牙",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "雅居乐",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "顺丰控股",
+   "in_companies_jsonl": true
+  }
+ ],
+ "福建": [
+  {
+   "company": "361度",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "七匹狼",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "兴业银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "厦门航空",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "厦门象屿",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "厦门钨业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "厦门银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "国贸控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天马科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁德新能源",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "安踏体育",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "建发集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新华都",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "特步",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "盼盼食品",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "福耀玻璃",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "紫金矿业",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "美亚柏科",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "达利食品",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "鸿星尔克",
+   "in_companies_jsonl": false
+  }
+ ],
+ "四川": [
+  {
+   "company": "中国东方电气",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "五粮液",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "剑南春",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华西证券",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "四川九洲",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "四川能投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "四川航空",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "四川银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "地奥集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宏达集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宜宾天原",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "成都先导",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "成都兴城",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "攀钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "水井坊",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "舍得酒业",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "蓝光发展",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "蜀道集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "领地集团",
+   "in_companies_jsonl": false
+  }
+ ],
+ "湖北": [
+  {
+   "company": "东风本田",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "东风汽车",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中交二航局",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国信科",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中百集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "九州通",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "健民集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华工科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "卓尔控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "卷皮",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "斗鱼",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "武商集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "武汉光谷",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "武汉新芯",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "武汉钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "汉口银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖北能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖北银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "烽火通信",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "神龙汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "葛洲坝",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "铁四院",
+   "in_companies_jsonl": false
+  }
+ ],
+ "湖南": [
+  {
+   "company": "九芝堂",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "五矿有色",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "兴盛优选",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "千金药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华菱钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华融湘江银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "尔康制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山河智能",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "文和友",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "景嘉微",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "步步高",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖南中烟",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖南卫视",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖南海利",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湖南钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "湘财证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "爱尔眼科",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "绝味食品",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "芒果超媒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "道道全",
+   "in_companies_jsonl": false
+  }
+ ],
+ "河南": [
+  {
+   "company": "三全食品",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中信重工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中原证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中原银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国一拖",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华兰生物",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "南阳防爆",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "双汇发展",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "好想你",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "宇通客车",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "安阳钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "平煤神马",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "平高电气",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "建业地产",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河南交投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河南投资",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "洛阳LYC",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "牧原股份",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "神火股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "许继电气",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "豫园股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "郑州银行",
+   "in_companies_jsonl": true
+  }
+ ],
+ "安徽": [
+  {
+   "company": "三只松鼠",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中鼎股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "全柴动力",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华安证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华米科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "口子窖",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "古井贡酒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "安徽建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "应流股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "徽商银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "海螺水泥",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "淮北矿业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "皖能集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "迎驾贡酒",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "金种子",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "铜陵有色",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "阳光电源",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "马钢集团",
+   "in_companies_jsonl": true
+  }
+ ],
+ "陕西": [
+  {
+   "company": "中国西电",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "延长石油",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "彩虹股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "必康制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "曲江文旅",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "步长制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "爱菊集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "美光西安",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西安力邦",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西安地铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西安杨森",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西安银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西安饮食",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西部材料",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西部超导",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金花股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "长安银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "陕西建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "陕西汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "陕西煤业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "陕鼓动力",
+   "in_companies_jsonl": true
+  }
+ ],
+ "辽宁": [
+  {
+   "company": "一汽解放大连",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "东北制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中车大连",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "亿达信息",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北方重工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连万达",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连华信",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连港",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连船舶",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连重工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大连银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "恒力石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "成大生物",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "本钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "桃李面包",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "沈阳机床",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "沈阳药大",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "沈鼓集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "盛京银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "辉山乳业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "辽宁忠旺",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "辽宁港口",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "逸盛大化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "锦州银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鞍钢集团",
+   "in_companies_jsonl": true
+  }
+ ],
+ "吉林": [
+  {
+   "company": "一汽大众",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "亚泰集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "修正药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "吉林化纤",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "吉林敖东",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "吉林森工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "吉林石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "吉林银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "敖东药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "泉阳泉",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "皓月集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "迪瑞医疗",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金赛药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "长客股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "长春欧亚",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "长春高新",
+   "in_companies_jsonl": true
+  }
+ ],
+ "黑龙江": [
+  {
+   "company": "东安发动机",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国北车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "九三粮油",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北大荒集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "哈尔滨啤酒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "哈尔滨银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "哈电集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "哈飞工业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大庆油田",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大庆石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "完达山乳业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "江海证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "珍宝岛药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "秋林里道斯",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "葵花药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "龙江银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "龙煤集团",
+   "in_companies_jsonl": false
+  }
+ ],
+ "山西": [
+  {
+   "company": "中条山有色",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华阳新材料",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大运集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "太原重工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "太钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西建投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西振东",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西文旅",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西杏花村",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西焦煤",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "山西证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "晋商银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "晋能控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "水塔醋业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "汾酒集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "潞安化工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "紫林醋业",
+   "in_companies_jsonl": false
+  }
+ ],
+ "内蒙古": [
+  {
+   "company": "亿利资源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "伊泰集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "内蒙古电力",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "内蒙古银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "包商银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "包头钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北方稀土",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "君正集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "小肥羊",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "河套酒业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "草原红太阳",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "蒙能集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "蒙草生态",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鄂尔多斯",
+   "in_companies_jsonl": false
+  }
+ ],
+ "江西": [
+  {
+   "company": "九江银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "仁和药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华润江中",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "方大特钢",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "昌河飞机",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "景德镇陶瓷",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "晶科能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "正邦科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "江中药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "江西铜业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "济民可信",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "煌上煌",
+   "in_companies_jsonl": true
+  }
+ ],
+ "广西": [
+  {
+   "company": "北部湾港",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北部湾银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "南方锰业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "国海证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广西交投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广西建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广西玉柴",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广西糖业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "柳钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "桂林三金",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "桂林南药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "桂林银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "梧州制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "皇氏乳业",
+   "in_companies_jsonl": false
+  }
+ ],
+ "云南": [
+  {
+   "company": "一心堂",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云南中烟",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云南城投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云南投控",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云南能投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云南铜业",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "云南锗业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "云锡集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "富滇银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "昆钢控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "红塔集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵研铂业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "龙津药业",
+   "in_companies_jsonl": false
+  }
+ ],
+ "贵州": [
+  {
+   "company": "习酒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "信邦制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华创证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "振华新材",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "振华集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "益佰制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "盘江煤电",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "老干妈",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "航天电器",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵州建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵州燃气",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵州百灵",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵州茅台",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "贵州轮胎",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "贵州银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "贵阳银行",
+   "in_companies_jsonl": false
+  }
+ ],
+ "甘肃": [
+  {
+   "company": "佛慈制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "兰州石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "兰州银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "兰石重装",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华龙证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "庄园牧场",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "甘肃建投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "甘肃电投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "甘肃能化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "甘肃银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "白银有色",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "莫高股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "读者出版",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "酒钢集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金川集团",
+   "in_companies_jsonl": false
+  }
+ ],
+ "青海": [
+  {
+   "company": "西宁特钢",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金诃藏药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青海华鼎",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青海国投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青海春天",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青海盐湖",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青海银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "黄河水电",
+   "in_companies_jsonl": false
+  }
+ ],
+ "宁夏": [
+  {
+   "company": "伊品生物",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "共享装备",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "国网宁夏",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁东能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁夏天元锰业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁夏宝塔",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁夏建材",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁夏红",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宁夏银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "青铜峡铝业",
+   "in_companies_jsonl": false
+  }
+ ],
+ "新疆": [
+  {
+   "company": "中泰化学",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "八一钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天山股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "广汇集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆交建",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆众和",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆天业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆天润",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆有色",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "新疆银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "麦趣尔",
+   "in_companies_jsonl": false
+  }
+ ],
+ "重庆": [
+  {
+   "company": "力帆科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华邦健康",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宗申摩托",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "智飞生物",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "有友食品",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "涪陵榨菜",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西南证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西南铝业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆农商行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆化医",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆啤酒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆机电",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆水务",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆百货",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "重庆银行",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "金科股份",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "龙湖集团",
+   "in_companies_jsonl": true
+  }
+ ],
+ "天津": [
+  {
+   "company": "中新药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "大冢制药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天保基建",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天士力",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津一汽",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津农商行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津力神",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津同仁堂",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津港",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津钢管",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "天津食品",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "渤海化工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "渤海银行",
+   "in_companies_jsonl": true
+  }
+ ],
+ "北京": [
+  {
+   "company": "东方航空",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中信集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中化集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国中冶",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国中铁",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国兵器",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国商飞",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国国航",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国太平",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国平安",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国建材",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国建筑",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国电子科技",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中国能建",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国远洋",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中广核",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中石化",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中石油",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "中粮",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中粮集团",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "京能集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北京农商行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北京医药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北京建工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北京汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "北汽新能源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华电集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华能集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "南方航空",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "同仁堂",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "国家电投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "国家电网",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "大唐集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "小米",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "快手",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "拜耳中国",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "搜狐",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "新浪",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "泰康保险",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "滴滴",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "用友网络",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "联想",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "航天科工",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "诺基亚贝尔",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金蝶",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "银河证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "首创集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "首钢集团",
+   "in_companies_jsonl": false
+  }
+ ],
+ "上海": [
+  {
+   "company": "上海家化",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "上海建工",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "上海机场",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "上海汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "东方证券",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中国太保",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "中微公司",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "众安保险",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "光明集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "分众传媒",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华虹半导体",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "叠纸",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "哔哩哔哩",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "国泰君安",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "外高桥造船",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宝武钢铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "宝钢股份",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "小红书",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "巨人网络",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "微创医疗",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "恒瑞上海",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "拼多多",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "振华重工",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "携程",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "浦发银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海通证券",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "澜起科技",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "申万宏源",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "申通地铁",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "百联集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "盛美半导体",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "盛趣游戏",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "米哈游",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "绿地控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "药明生物",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "莉莉丝",
+   "in_companies_jsonl": true
+  },
+  {
+   "company": "陆金所",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "鹰角网络",
+   "in_companies_jsonl": true
+  }
+ ],
+ "海南": [
+  {
+   "company": "双成药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "春光食品",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "椰树集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南农商行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南发展控股",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南旅投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南椰岛",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南橡胶",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南生态软件园",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南矿业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南航空",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海南银行",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海航集团",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海马汽车",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "金盘科技",
+   "in_companies_jsonl": false
+  }
+ ],
+ "西藏": [
+  {
+   "company": "西藏天路",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "奇正藏药",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏矿业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏城投",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏珠峰",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "海思科",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "灵康药业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "卫信康",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏旅游",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "华钰矿业",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "高争民爆",
+   "in_companies_jsonl": false
+  },
+  {
+   "company": "西藏发展",
+   "in_companies_jsonl": false
+  }
+ ]
+}

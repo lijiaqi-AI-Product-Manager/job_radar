@@ -1,1 +1,9 @@
-{"id": "beisen-zhuanzhuan", "company": "转转", "adapter": "beisen", "count": 30, "capped": true, "seconds": 2.4, "error": null}
+{"id": "babycare", "company": "Babycare", "adapter": "feishu_atsx", "count": 2, "capped": false, "seconds": 1.6, "error": null}
+{"id": "beisen-picc1", "company": "中国人民保险", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.5, "error": null}
+{"id": "beisen-dzwy", "company": "新大正物业", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.4, "error": null}
+{"id": "beisen-tongwei3", "company": "永祥股份", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.3, "error": null}
+{"id": "beisen-hnlshm4", "company": "鸣鸣很忙", "adapter": "beisen", "count": 80, "capped": true, "seconds": 3.5, "error": null}
+{"id": "leiniao-ibg", "company": "雷鸟创新", "adapter": "feishu_atsx", "count": 17, "capped": false, "seconds": 3.6, "error": null}
+{"id": "sii-czxy", "company": "上海创智学院", "adapter": "feishu_atsx", "count": 80, "capped": true, "seconds": 2.0, "error": null}
+{"id": "beisen-ihghotel", "company": "洲际酒店", "adapter": "beisen", "count": 48, "capped": false, "seconds": 29.9, "error": null}
+{"id": "hotjob-whchem", "company": "万华化学", "adapter": "hotjob", "count": 59, "capped": false, "seconds": 62.4, "error": null}

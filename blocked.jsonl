@@ -834,3 +834,6 @@
 {"company": "龙湖智创生活", "sector_source": "地产建筑与物流", "brand": "Longfor Smart Service", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
 {"company": "龙腾光电", "sector_source": "通信与电子硬件", "brand": "IVO", "reason_code": "no_entry", "evidence": "北森/大易/旧版三套平台各 6-14 个 slug 组合均无命中（2026-10-25 实测）"}
 {"company": "出门问问", "sector_source": "", "brand": "", "reason_code": "society_only", "evidence": "飞书 ATS 门户 https://mobvoi.jobs.feishu.cn 只有社招岗位，校招/实习列表为空（2026-10-28 实测 0 条，接口 job_post_list 非空但类型全是社招）"}
+{"company": "古茗", "sector_source": "消费零售与食品", "brand": "Guming", "reason_code": "moka_encrypted", "evidence": "2026-10-28 官网反查：招聘页走 Moka（app.mokahr.com），职位接口加密，不可合规抓取"}
+{"company": "紫金矿业", "sector_source": "能源与先进制造", "brand": "Zijin Mining", "reason_code": "moka_encrypted", "evidence": "2026-10-28 官网反查：招聘页走 Moka（app.mokahr.com），职位接口加密，不可合规抓取"}
+{"company": "神龙汽车", "sector_source": "汽车与出行", "brand": "Dongfeng Peugeot Citroen", "reason_code": "moka_encrypted", "evidence": "2026-10-28 官网反查：招聘页走 Moka（app.mokahr.com），职位接口加密，不可合规抓取"}

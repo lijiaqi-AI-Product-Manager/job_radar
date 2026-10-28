@@ -170,7 +170,7 @@ def main() -> None:
     out_name = "sd_hits.jsonl"
     if len(sys.argv) > 1:
         out_name = sys.argv[1]
-    data = load_hosts("sd_center.json", "code_hosts.json")
+    data = load_hosts("sd_center.json", "code_hosts.json", "wayback_hosts.json")
     existing = load_sources(ROOT / "sources")
     have_b = {str(s.params.get("tenant", "")).lower() for s in existing}
     have_h = set()

@@ -1,0 +1,16 @@
+id: xingyun
+company: 行云集团
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://xingyun.jobs.feishu.cn"
+  website_path: index
+  portal_type: 3
+  page_size: 100
+  job_url: "https://xingyun.jobs.feishu.cn/index/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-28
+  robots: "none"            # robots.txt 404（平台层无站点级规则）；只读公开职位列表，不触达 /referral
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无登录、无验证码、无签名校验。会话 token 只在内存中使用（CLAUDE.md 铁律 1）。用户协议待人工复核"
+  notes: "2026-10-28 子域枚举（subdomain.center）与公开代码搜索发现 xingyun 门户；门户 <title> 为「加入行云集团」，portal_type=3 时公开职位 23 条（其中校招/实习 5 条）。"

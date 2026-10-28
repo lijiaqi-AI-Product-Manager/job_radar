@@ -2,6 +2,28 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.5.0] - 2026-10-28
+
+### 新增
+
+- **Wayback Machine 的 CDX 索引成为第三条拓源渠道**：`web.archive.org/cdx/search/cdx`
+  能按域名反查出被存档过的全部主机（`*.zhiye.com` 1,649 个、`*.jobs.feishu.cn` 138 个，
+  以及 `www.hotjob.cn/wt/{tenant}/` 路径下的 60 个大易租户）。对这批主机逐个探活、按门户
+  `<title>` 定归属后入库，数据源 1,310 → **1,490 个 / 1,461 家公司**
+  （北森 1,140、飞书 ATSX 138、大易 96、图普惠 32、旧版北森 28、Workday 25、旧版大易 12）。
+- `companies.jsonl` 1,778 → **1,955 行**；覆盖目标 557 → **564 家（34%）**。
+- `work/province_gap.py`：把目标池按行业/省份减去已有源，输出 `work/province_gap.json`，
+  用来看下一步该补哪个省的哪些公司。
+- 万华化学（大易 `whchem`，首页 59 岗）：官网招聘入口走的 `getSLD` 接口能直接拿到租户 id，
+  已入库；新增 `blocked.jsonl` 三条 Moka 加密门户记录（古茗、紫金矿业、神龙汽车）。
+
+### 修复
+
+- `work/source_yield_fast.py` 的 `--only` 只收单个子串，改逗号分隔并优先精确匹配 id，
+  抽样验收终于能一次测多个源。
+- 飞书门户归属表补 16 条人工核准（原先标题是「加入 juzibot」「今天你投简历了嘛」这类口号，
+  会被清洗成空名或错名）。
+
 ## [1.4.3] - 2026-10-28
 
 ### 新增

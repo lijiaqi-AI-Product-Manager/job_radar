@@ -81,12 +81,17 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--cap", type=int, default=300)
     ap.add_argument("--hard-timeout", type=float, default=90.0)
-    ap.add_argument("--only", default="", help="只测 id 里含该子串的源")
+    ap.add_argument("--only", default="", help="只测 id 匹配的源（逗号分隔，精确匹配优先、否则子串）")
     args = ap.parse_args()
 
     sources = [s for s in load_sources(args.sources) if s.enabled]
     if args.only:
-        sources = [s for s in sources if args.only in s.id]
+        want = {x.strip() for x in args.only.split(",") if x.strip()}
+        exact = {s.id for s in sources if s.id in want}
+        if exact:
+            sources = [s for s in sources if s.id in exact]
+        else:
+            sources = [s for s in sources if any(w in s.id for w in want)]
     adapters = load_all()
     OUT = open(args.out, "w", encoding="utf-8")  # noqa: SIM115 - 全程持有，脚本末尾关闭
 

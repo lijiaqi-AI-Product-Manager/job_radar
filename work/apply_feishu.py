@@ -54,6 +54,13 @@ NAMES = {
     "yekk33cgru": "南讯股份", "yftech2012": "远峰科技", "yimiandata": "一面数据",
     "ying-dao": "分叉智能", "yizhisec": "一知安全", "z1zgmci7a8s": "桂林啄木鸟医疗",
     "zva7hqcdq1o": "江苏丽王新材料",
+    # 2026-10-28 Wayback 批次：标题是口号/英文品牌，按公开信息核准
+    "aez5tpi4f5": "深知未来", "babycare": "Babycare", "dptechnology": "深势科技",
+    "houmo": "后摩智能", "huanle": "欢乐互娱", "iairnznqr8": "懂球帝",
+    "iwhih7is28": "北京发那科", "juzihudong": "句子互动", "leiniao-ibg": "雷鸟创新",
+    "mediastorm": "影视飓风", "phigentai": "鉴智机器人", "sii-czxy": "上海创智学院",
+    "tigertech": "老虎国际", "w0bmksui7q": "顽岩资产", "xingyun": "行云集团",
+    "xxx0an5xw1s": "江波龙",
 }
 
 
@@ -124,10 +131,10 @@ def probe(c: httpx.Client, slug: str) -> dict | None:
 
 
 def load_hits() -> list[dict]:
-    """两路发现结果：subdomain.center 枚举（sd_hits.jsonl）与公开代码搜索（code_hits.jsonl）。"""
+    """三路发现结果：subdomain.center / 公开代码搜索 / Wayback CDX 主机枚举。"""
     rows: list[dict] = []
     seen: set[str] = set()
-    for name in ("sd_hits.jsonl", "code_hits.jsonl"):
+    for name in ("sd_hits.jsonl", "code_hits.jsonl", "wayback_hits.jsonl"):
         p = WORK / name
         if not p.exists():
             continue

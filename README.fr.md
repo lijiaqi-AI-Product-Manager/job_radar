@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | Français | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.4.3-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.5.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -15,8 +15,8 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 ![demo](docs/assets/demo-en.gif)
 
 > **Données (2026-10-28)** : **1 131 sources** · **1 099 entreprises** · **23 adaptateurs**
-> (Beisen 976 / Dayee 95 / Feishu ATSX 123 / Tupu360 32 / ancien Beisen 28 / Workday 25 / ancien Dayee 12 / sites maison 19)
-> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **557 sont couvertes (33 %)** et 12 ne sont pas accessibles pour raisons de conformité.
+> (Beisen 1,168 / Dayee 108 / Feishu ATSX 138 / Tupu360 32 / ancien Beisen 28 / Workday 25 / ancien Dayee 12 / sites maison 19)
+> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **564 sont couvertes (33 %)** et 12 ne sont pas accessibles pour raisons de conformité.
 > Les volumes d'offres et la couverture des champs sont mis à jour à chaque collecte quotidienne (voir la dernière version).
 
 ## Ce que c'est / ce que ce n'est pas
@@ -24,7 +24,7 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 - ✅ Offres et texte du JD issus des sites **officiels** (aucun agrégateur tiers)
 - ✅ Recollecte complète quotidienne, historique conservé (ouverture, fermeture, changement)
 - ✅ Calendrier de recrutement : promotion, type de programme, domaines, fenêtre de candidature, villes, lien, source
-- ❌ Pas « toutes les entreprises » : 557 des 1 655 cibles ont une source ; les 1 098 autres sont sur la liste ouverte
+- ❌ Pas « toutes les entreprises » : 564 des 1 655 cibles ont une source ; les 1 098 autres sont sur la liste ouverte
 - ❌ Pas de candidature, cooptation, retours d'entretien ni salaires ; aucun contournement de captcha/login/signature
 
 ## Démarrage
@@ -68,7 +68,7 @@ renvoie un bloc `calendar` avec `jobradar calendar --group <entreprise> --table`
 
 | Domaine | Réalité |
 |---|---|
-| Couverture des cibles | **557/1 655 (33 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
+| Couverture des cibles | **564/1 655 (33 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
 | Sources | **1 131 sources / 1 099 entreprises** via 23 adaptateurs |
 | Grandes technologiques | Alibaba/Tencent/Meituan/NetEase… avec offres ; ByteDance/JD/Huawei : calendrier seulement |
 | Couverture provinciale | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tableau complet : `scripts/coverage_report.py` |

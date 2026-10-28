@@ -380,3 +380,7 @@ sources:
     company: maxwealthfund
     params: {host: maxwealthfund.hotjob.cn, tenant: SU628A429C0DCAD41AF38720C0, page_size: 50}
     # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 16 岗
+  - id: hotjob-whchem
+    company: 万华化学
+    params: {host: whchem.hotjob.cn, tenant: SU6a7ad69c43154813049755d7, page_size: 50}
+    # 2026-10-28 官网招聘入口反查（dayee 门户 getSLD 接口）拿到的租户 id
