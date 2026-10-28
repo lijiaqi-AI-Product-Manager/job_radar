@@ -28,9 +28,9 @@ ENDPOINT = "https://sourcegraph.com/.api/search/stream"
 
 # platform → (域名后缀, 提取正则, 额外查询词)
 PLATFORMS = {
-    "zhiye.com":        ("zhiye.com",        r"\b([a-z0-9][a-z0-9-]{0,40})\.zhiye\.com\b", ["zhiye.com/campus", "zhiye.com/alljob"]),
-    "hotjob.cn":        ("hotjob.cn",        r"\b([a-z0-9][a-z0-9-]{0,40})\.hotjob\.cn\b", ["hotjob.cn/wt"]),
-    "jobs.feishu.cn":   ("jobs.feishu.cn",   r"\b([a-z0-9][a-z0-9-]{0,40})\.jobs\.feishu\.cn\b", ["jobs.feishu.cn/api/v1"]),
+    "zhiye.com":        ("zhiye.com",        r"\b([a-z0-9][a-z0-9-]{0,40})\.zhiye\.com\b", ["zhiye.com/campus", "zhiye.com/alljob", "zhiye.com/social", "zhiye.com/portal"]),
+    "hotjob.cn":        ("hotjob.cn",        r"\b([a-z0-9][a-z0-9-]{0,40})\.hotjob\.cn\b", ["hotjob.cn/wt", "wecruit.hotjob.cn/SU"]),
+    "jobs.feishu.cn":   ("jobs.feishu.cn",   r"\b([a-z0-9][a-z0-9-]{0,40})\.jobs\.feishu\.cn\b", ["jobs.feishu.cn/api/v1", "jobs.feishu.cn/campus"]),
 }
 WORKDAY = r"\b([a-z0-9-]+\.wd\d+\.myworkdayjobs\.com)(/[A-Za-z0-9_-]{2,40})?"
 
