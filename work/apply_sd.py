@@ -55,6 +55,9 @@ def clean(name: str) -> str:
 
 def main() -> None:
     write = "--write" in sys.argv
+    only = ""
+    if "--only-file" in sys.argv:
+        only = sys.argv[sys.argv.index("--only-file") + 1]
     existing = load_sources(ROOT / "sources")
     have_key = set()
     have_co = set()
@@ -73,7 +76,10 @@ def main() -> None:
         ("hotjob_candidates.jsonl", None),
         ("beisen_customer_hits.jsonl", None),
         ("careers_sd_hits.jsonl", None),
+        ("search_verified_clean.jsonl", None),
     ):
+        if only and fn != only:
+            continue
         p = WORK / fn
         if not p.exists():
             continue
@@ -97,6 +103,12 @@ def main() -> None:
             company = MANUAL.get(slug_l) or clean(d.get("company") or "")
             if not kind or not slug_l or slug_l in BLACK or slug_l in SKIP_SLUG:
                 continue
+            if int(d.get("count") or 0) <= 0:
+                continue  # 没岗的入口不入库（岗数取门户首页 Count）
+            if kind == "beisen" and "." in slug_l:
+                continue  # 白标域名（如 career.xxx.cn）归属需人工复核，不自动入库
+            if kind == "hotjob" and not slug_l.startswith("su"):
+                continue  # 新版大易只认 SU 租户 id，品牌名不是租户
             if not company or len(company) < 2 or company in GENERIC:
                 continue
             if (kind, slug_l) in have_key or core(company) in have_co:
@@ -146,3 +158,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

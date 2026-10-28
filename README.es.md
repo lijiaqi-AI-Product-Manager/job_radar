@@ -15,8 +15,8 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 ![demo](docs/assets/demo-en.gif)
 
 > **Datos (2026-10-28)**: **1.310 fuentes** · **1.281 empresas** · **23 adaptadores**
-> (Beisen 1,168 / Dayee 320 / Feishu ATSX 139 / Tupu360 32 / Beisen antiguo 28 / Workday 25 / Dayee antiguo 12 / sitios propios 19)
-> De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **573 están cubiertas (33 %)** y 12 no son accesibles por cumplimiento.
+> (Beisen 1,143 / Dayee 305 / Feishu ATSX 139 / Tupu360 32 / Beisen antiguo 28 / Workday 25 / Dayee antiguo 15 / sitios propios 19)
+> De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **577 están cubiertas (35 %)** y 12 no son accesibles por cumplimiento.
 > Las cifras de vacantes y cobertura de campos se actualizan en cada rastreo diario (ver última versión).
 
 ## Qué es y qué no es
@@ -24,7 +24,7 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 - ✅ Vacantes y texto del JD de portales **oficiales** (sin agregadores de terceros)
 - ✅ Rastreo completo diario con historial (apertura, cierre, cambios)
 - ✅ Calendario de reclutamiento: promoción, tipo de programa, áreas, ventana de solicitud, ciudades, enlace y fuente
-- ❌ No cubre «todas las empresas»: 573 de las 1.655 objetivo tienen fuente; las otras 1.098 están en la lista abierta
+- ❌ No cubre «todas las empresas»: 577 de las 1.655 objetivo tienen fuente; las otras 1.078 están en la lista abierta
 - ❌ No gestiona solicitudes, referidos, entrevistas ni salarios; no evade captchas, logins ni firmas
 
 ## Inicio rápido
@@ -68,7 +68,7 @@ devuelve un bloque `calendar` con `jobradar calendar --group <empresa> --table` 
 
 | Área | Realidad |
 |---|---|
-| Cobertura de objetivos | **573/1.655 (33 %)**; 12 no se pueden cubrir de forma conforme (robots/login/cifrado) |
+| Cobertura de objetivos | **577/1.655 (35 %)**; 12 no se pueden cubrir de forma conforme (robots/login/cifrado) |
 | Fuentes | **1.310 fuentes / 1.281 empresas** con 23 adaptadores |
 | Grandes tecnológicas | Alibaba/Tencent/Meituan/NetEase… con vacantes; ByteDance/JD/Huawei solo calendario |
 | Cobertura provincial | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tabla completa: `scripts/coverage_report.py` |

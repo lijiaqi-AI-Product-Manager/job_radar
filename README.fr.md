@@ -15,8 +15,8 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 ![demo](docs/assets/demo-en.gif)
 
 > **Données (2026-10-28)** : **1 131 sources** · **1 099 entreprises** · **23 adaptateurs**
-> (Beisen 1,168 / Dayee 320 / Feishu ATSX 139 / Tupu360 32 / ancien Beisen 28 / Workday 25 / ancien Dayee 12 / sites maison 19)
-> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **573 sont couvertes (33 %)** et 12 ne sont pas accessibles pour raisons de conformité.
+> (Beisen 1,143 / Dayee 305 / Feishu ATSX 139 / Tupu360 32 / ancien Beisen 28 / Workday 25 / ancien Dayee 15 / sites maison 19)
+> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **577 sont couvertes (35 %)** et 12 ne sont pas accessibles pour raisons de conformité.
 > Les volumes d'offres et la couverture des champs sont mis à jour à chaque collecte quotidienne (voir la dernière version).
 
 ## Ce que c'est / ce que ce n'est pas
@@ -24,7 +24,7 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 - ✅ Offres et texte du JD issus des sites **officiels** (aucun agrégateur tiers)
 - ✅ Recollecte complète quotidienne, historique conservé (ouverture, fermeture, changement)
 - ✅ Calendrier de recrutement : promotion, type de programme, domaines, fenêtre de candidature, villes, lien, source
-- ❌ Pas « toutes les entreprises » : 573 des 1 655 cibles ont une source ; les 1 098 autres sont sur la liste ouverte
+- ❌ Pas « toutes les entreprises » : 577 des 1 655 cibles ont une source ; les 1 078 autres sont sur la liste ouverte
 - ❌ Pas de candidature, cooptation, retours d'entretien ni salaires ; aucun contournement de captcha/login/signature
 
 ## Démarrage
@@ -68,7 +68,7 @@ renvoie un bloc `calendar` avec `jobradar calendar --group <entreprise> --table`
 
 | Domaine | Réalité |
 |---|---|
-| Couverture des cibles | **573/1 655 (33 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
+| Couverture des cibles | **577/1 655 (35 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
 | Sources | **1 131 sources / 1 099 entreprises** via 23 adaptateurs |
 | Grandes technologiques | Alibaba/Tencent/Meituan/NetEase… avec offres ; ByteDance/JD/Huawei : calendrier seulement |
 | Couverture provinciale | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tableau complet : `scripts/coverage_report.py` |

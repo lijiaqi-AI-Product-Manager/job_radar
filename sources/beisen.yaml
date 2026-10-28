@@ -1345,3 +1345,10 @@ sources:
   - {id: beisen-huaqingzhaopin, company: 华青科技, params: {tenant: huaqingzhaopin}}  # 2026-10-28 新增：1 岗
   - {id: beisen-pweg, company: 中电建生态环境, params: {tenant: pweg}}  # 2026-10-28 新增：1 岗
   - {id: beisen-wenergy1, company: 安徽省能源, params: {tenant: wenergy1}}  # 2026-10-28 新增：1 岗
+# 2026-10-28 subdomain.center 子域枚举 + 门户 <title> 定归属（逐条探活，岗数取首页 Count）
+  - {id: beisen-britesemi, company: 灿芯股份, params: {tenant: britesemi}}  # 2026-10-28 新增：33 岗
+  - {id: beisen-smartermicro, company: 慧智微, params: {tenant: smartermicro}}  # 2026-10-28 新增：33 岗
+# 2026-10-28 subdomain.center 子域枚举 + 门户 <title> 定归属（逐条探活，岗数取首页 Count）
+  - {id: beisen-sdata, company: 达梦数据库, params: {tenant: sdata}}  # 2026-10-28 新增：4 岗
+# 2026-10-28 subdomain.center 子域枚举 + 门户 <title> 定归属（逐条探活，岗数取首页 Count）
+  - {id: beisen-kechina, company: 科林电气, params: {tenant: kechina}}  # 2026-10-28 新增：11 岗
