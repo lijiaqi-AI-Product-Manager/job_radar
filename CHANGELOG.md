@@ -2,6 +2,26 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.7.1] - 2026-10-29
+
+### 新增
+
+- **Workday 的 site 段可以从 robots.txt 反解**：之前从 Common Crawl 只拿到 1,161 个
+  Workday 主机名、缺 `/wday/cxs/{tenant}/{site}/` 里的 `site`，整批主机用不了。
+  实测 `robots.txt` 第一行就是 `Sitemap: https://{host}/{site}/siteMap.xml`，
+  一个请求就能补全：1,161 个主机里 **1,034 个**解析出 site。
+- 逐个问中国分面（`locations` 里 descriptor 以 `China, ` 开头的 id）：111 个租户有中国
+  分面，其中 **25 个确有中国岗位**（合计 556 个岗）。去掉已有源的辉瑞、安进、礼来、
+  腾讯后新增 **20 个 Workday 源**（爱恩康、亚德诺、励讯、壳牌、皮尔法伯、安讯士、
+  珀金埃尔默、布鲁克斯、索理思、博通、科睿唯安、博思艾伦、嘉德诺、柯蒂斯-莱特、
+  G Adventures、PATH、飞利浦、罗氏、罗克韦尔自动化、索尼）。
+- 数据源 1,707 → **1,727 个 / 1,698 家公司**（Workday 25 → 45）；目标覆盖 577 → **579（35%）**。
+
+### 验证
+
+- 抽 4 个新源跑抓取：`workday-analogdevices` 46 岗、`workday-shell` 7、`workday-broadcom` 2、
+  `workday-roche` 1，共 56 岗；JD 正文 56/56（100%）、城市 53/56（95%）。
+
 ## [1.7.0] - 2026-10-29
 
 ### 新增

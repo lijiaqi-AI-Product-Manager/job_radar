@@ -268,3 +268,126 @@ sources:
       country: China
       search_text: China
       max_pages: 8
+
+# 2026-10-29 新增：Workday 的 site 段从 robots.txt 的 siteMap 地址反解（1,161 个 CC 主机里 1,034 个可用），
+# 再按 locations 分面的 China 维度筛出确有中国岗位的 20 家。仅收中国分面岗位，1 req/s。
+  - id: workday-icon
+    company: 爱恩康
+    params:
+      host: icon.wd3.myworkdayjobs.com
+      tenant: icon
+      site: broadbean_external   # 中国分面 60 岗（2026-10-29 实测）
+  - id: workday-analogdevices
+    company: 亚德诺
+    params:
+      host: analogdevices.wd1.myworkdayjobs.com
+      tenant: analogdevices
+      site: External   # 中国分面 46 岗（2026-10-29 实测）
+  - id: workday-relx
+    company: 励讯集团
+    params:
+      host: relx.wd3.myworkdayjobs.com
+      tenant: relx
+      site: relx   # 中国分面 10 岗（2026-10-29 实测）
+  - id: workday-shell
+    company: 壳牌
+    params:
+      host: shell.wd3.myworkdayjobs.com
+      tenant: shell
+      site: ShellCareers   # 中国分面 7 岗（2026-10-29 实测）
+  - id: workday-pierrefabre
+    company: 皮尔法伯
+    params:
+      host: pierrefabre.wd3.myworkdayjobs.com
+      tenant: pierrefabre
+      site: External_Career_Site   # 中国分面 6 岗（2026-10-29 实测）
+  - id: workday-axis
+    company: 安讯士
+    params:
+      host: axis.wd3.myworkdayjobs.com
+      tenant: axis
+      site: External_Career_Site   # 中国分面 4 岗（2026-10-29 实测）
+  - id: workday-newperkinelmer
+    company: 珀金埃尔默
+    params:
+      host: newperkinelmer.wd1.myworkdayjobs.com
+      tenant: newperkinelmer
+      site: External   # 中国分面 4 岗（2026-10-29 实测）
+  - id: workday-brooksauto
+    company: 布鲁克斯自动化
+    params:
+      host: brooksauto.wd1.myworkdayjobs.com
+      tenant: brooksauto
+      site: Brooks_External_Site   # 中国分面 3 岗（2026-10-29 实测）
+  - id: workday-solenis
+    company: 索理思
+    params:
+      host: solenis.wd1.myworkdayjobs.com
+      tenant: solenis
+      site: Solenis   # 中国分面 3 岗（2026-10-29 实测）
+  - id: workday-broadcom
+    company: 博通
+    params:
+      host: broadcom.wd1.myworkdayjobs.com
+      tenant: broadcom
+      site: External_Career   # 中国分面 2 岗（2026-10-29 实测）
+  - id: workday-clarivate
+    company: 科睿唯安
+    params:
+      host: clarivate.wd3.myworkdayjobs.com
+      tenant: clarivate
+      site: Clarivate_Careers   # 中国分面 2 岗（2026-10-29 实测）
+  - id: workday-bah
+    company: 博思艾伦
+    params:
+      host: bah.wd1.myworkdayjobs.com
+      tenant: bah
+      site: BAH_Jobs   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-cardinalhealth
+    company: 嘉德诺
+    params:
+      host: cardinalhealth.wd1.myworkdayjobs.com
+      tenant: cardinalhealth
+      site: EXT   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-curtisswright
+    company: 柯蒂斯-莱特
+    params:
+      host: curtisswright.wd1.myworkdayjobs.com
+      tenant: curtisswright
+      site: CW_External_Career_Site   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-gadventures
+    company: G Adventures
+    params:
+      host: gadventures.wd3.myworkdayjobs.com
+      tenant: gadventures
+      site: GAdventures   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-path
+    company: PATH
+    params:
+      host: path.wd1.myworkdayjobs.com
+      tenant: path
+      site: External   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-philips
+    company: 飞利浦
+    params:
+      host: philips.wd3.myworkdayjobs.com
+      tenant: philips
+      site: jobs-and-careers   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-roche
+    company: 罗氏
+    params:
+      host: roche.wd3.myworkdayjobs.com
+      tenant: roche
+      site: roche-ext   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-rockwellautomation
+    company: 罗克韦尔自动化
+    params:
+      host: rockwellautomation.wd1.myworkdayjobs.com
+      tenant: rockwellautomation
+      site: External_Rockwell_Automation   # 中国分面 1 岗（2026-10-29 实测）
+  - id: workday-sonyglobal
+    company: 索尼
+    params:
+      host: sonyglobal.wd1.myworkdayjobs.com
+      tenant: sonyglobal
+      site: SonyGlobalCareers   # 中国分面 1 岗（2026-10-29 实测）
