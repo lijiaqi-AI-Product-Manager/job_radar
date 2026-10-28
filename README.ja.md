@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | 日本語 | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.7.5-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.6-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -15,7 +15,7 @@ CLI・MCP・Skill を同梱しているので、AI エージェントは API キ
 ![demo](docs/assets/demo-en.gif)
 
 > **カバレッジ（2026-10-29 時点）**：**1,759 ソース**（北森 1,149 / 大易 310 / Feishu ATSX 145 / Tupu360 32 / Workday 45 ほか）·
-> **1,730 社** · **23 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **582 社（35%）** が取得可能。
+> **1,730 社** · **23 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **588 社（35%）** が取得可能。
 > 求人数・JD カバレッジは毎日のクロールで更新されます（最新の Release を参照）。
 
 ## 特長

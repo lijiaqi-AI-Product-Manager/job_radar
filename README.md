@@ -2,7 +2,7 @@
 
 简体中文 | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.7.5-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.6-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -16,7 +16,7 @@
 
 > **当前覆盖（2026-10-29）**
 > **1,759 个数据源**（北森 1,149 / 大易 310 / 飞书 ATSX 145 / 图普惠 32 / Workday 45 / 其余平台与自研站）· **1,730 家可采公司** · **23 个适配器**
-> 目标清单 **1,655 家**（20 个行业 1,117 家 + 31 个省级行政区 808 家，去重后 1,655）：已覆盖 **582 家（35%）**，不可合规覆盖 12 家；招聘日历 **1,383 个文件 / 2,078 条条目**
+> 目标清单 **1,655 家**（20 个行业 1,117 家 + 31 个省级行政区 808 家，去重后 1,655）：已覆盖 **588 家（35%）**，不可合规覆盖 12 家；招聘日历 **1,383 个文件 / 2,078 条条目**
 > 岗位数、JD 覆盖率、城市与截止日覆盖每天抓取后刷新，以最新 Release 为准；自检：`uv run python scripts/release_check.py`（8 项门槛全绿）
 
 ## 这是什么 / 不是什么

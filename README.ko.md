@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.7.5-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.6-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -15,7 +15,7 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 ![demo](docs/assets/demo-en.gif)
 
 > **커버리지(2026-10-29)**: **1,759개 소스**(베이센 1,145 / 다이이 309 / Feishu ATSX 145 / Tupu360 32 / Workday 45 등) ·
-> **1,730개 기업** · **23개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **582개(35%)** 확보.
+> **1,730개 기업** · **23개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **588개(35%)** 확보.
 > 공고 수와 JD 커버리지는 매일 크롤링 후 갱신됩니다(최신 Release 기준).
 
 ## 특징

@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.7.5-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.7.6-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -17,7 +17,7 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 
 > **Coverage snapshot (2026-10-29)**
 > **1,759 sources** (Beisen 1,149 / Dayee 310 / Feishu ATSX 145 / Tupu360 32 / Workday 45 / others) · **1,730 companies** · **23 adapters**
-> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **582 covered (35%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
+> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **588 covered (35%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
 > Job counts and field coverage refresh with each daily crawl — see the latest Release for current numbers.
 
 ## What it is / is not
