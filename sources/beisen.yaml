@@ -1354,3 +1354,5 @@ sources:
   - {id: beisen-kechina, company: 科林电气, params: {tenant: kechina}}  # 2026-10-28 新增：11 岗
 
   - {id: beisen-avicmti, company: 中国航空制造技术研究院, params: {tenant: avicmti}}  # 2026-10-29 新增：23 岗（搜索引擎命中后按门户 <title> 定归属）
+  - {id: beisen-huaan, company: 华安基金, params: {tenant: huaan}}  # 2026-10-29 新增：6 岗
+  - {id: beisen-maitianzhaopinjjr, company: 麦田, params: {tenant: maitianzhaopinjjr}}  # 2026-10-29 新增：1 岗

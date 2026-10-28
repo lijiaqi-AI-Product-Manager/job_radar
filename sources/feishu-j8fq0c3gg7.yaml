@@ -1,0 +1,14 @@
+id: feishu-j8fq0c3gg7
+company: 梅花集团
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+params:
+  base_url: "https://j8fq0c3gg7.jobs.feishu.cn"
+  website_path: "905946"
+  portal_type: 3
+  page_size: 100
+compliance:
+  checked_on: "2026-10-29"
+  robots: none-404
+  terms: 公开校招门户
+notes: 2026-10-29 新增：5 岗，同上

@@ -1,0 +1,14 @@
+id: feishu-ninedragonspaper
+company: 玖龙纸业
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+params:
+  base_url: "https://ninedragonspaper.jobs.feishu.cn"
+  website_path: "502309"
+  portal_type: 3
+  page_size: 100
+compliance:
+  checked_on: "2026-10-29"
+  robots: none-404
+  terms: 公开校招门户
+notes: 2026-10-29 新增：17 岗，同上
