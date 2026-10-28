@@ -5,10 +5,12 @@ from jobradar.normalize import (
     cities_from_text,
     cities_from_title,
     date_only,
+    degree_min_from_jd,
     degree_min_from_text,
     grad_year_from_jd,
     grad_year_from_text,
     looks_like_location,
+    normalize_degree,
 )
 
 
@@ -145,6 +147,43 @@ def test_looks_like_location(text, ok):
 ])
 def test_degree_min(text, degree):
     assert degree_min_from_text(text) == degree
+
+
+@pytest.mark.parametrize("text,degree", [
+    ("任职要求：本科及以上学历，计算机相关专业", "本科"),
+    ("1. 硕士及以上学历；2. 有实习经历优先", "硕士"),
+    ("学历：大专", "大专"),
+    ("2024 年毕业于荷兰莱顿大学获博士学位", None),   # 描述经历，不是岗位要求
+    ("团队由 30 位博士组成", None),                  # 描述团队，不是岗位要求
+    ("统招本科毕业，3 年以上经验", "本科"),
+    ("岗位要求：\n1、本科及以上；\n2、熟练使用 Python", "本科"),
+    ("五险一金，提供班车", None),
+])
+def test_degree_min_from_jd_needs_context(text, degree):
+    """JD 正文必须带上下文锚点，否则"博士团队"这类描述会把统计拉高。"""
+    assert degree_min_from_jd(text) == degree
+
+
+def test_degree_min_from_jd_prefers_lowest_listed():
+    assert degree_min_from_jd("学历要求：硕士、博士") == "硕士"
+    assert degree_min_from_jd("任职资格：大专以上，本科优先") == "大专"
+
+
+@pytest.mark.parametrize("raw,degree", [
+    ("大专", "大专"), ("专科", "大专"), ("专科及以上", "大专"), ("大专及以上", "大专"),
+    ("本科", "本科"), ("本科及以上", "本科"), ("本科及以上或预备技师", "本科"),
+    ("硕士研究生", "硕士"), ("硕士", "硕士"), ("研究生", "硕士"),
+    ("博士研究生", "博士"), ("博士", "博士"),
+    ("不限", None), ("高中", None), ("中技（中专/技校/职高）", None), (None, None), ("", None),
+])
+def test_normalize_degree_folds_platform_spellings(raw, degree):
+    """平台原值同一字段 26 种写法，必须折成四档，否则筛选既漏又错。"""
+    assert normalize_degree(raw) == degree
+
+
+def test_normalize_degree_prefers_highest_specific_word():
+    # 「博士研究生」里既有 博士 也有 研究生，不能落到 硕士
+    assert normalize_degree("博士研究生及以上") == "博士"
 
 @pytest.mark.parametrize("en,city", [
     ("Lianyungang", "连云港"),   # Workday 真实写法（pypinyin 生成）

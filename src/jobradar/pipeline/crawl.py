@@ -17,7 +17,12 @@ import httpx
 
 from jobradar.adapters.base import Adapter, load_all, make_client
 from jobradar.models import Job, SourceConfig
-from jobradar.normalize import categorize, cities_from_title
+from jobradar.normalize import (
+    categorize,
+    cities_from_title,
+    degree_min_from_jd,
+    normalize_degree,
+)
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
@@ -47,6 +52,13 @@ def _enrich(j: Job) -> None:
         j.category, j.subcategory = categorize(j.title)
     if not j.cities:
         j.cities = cities_from_title(j.title)
+    # 学历：平台原值先归一到四档；平台没给（或只写"不限"）时才从 JD 正文用带锚点的规则补。
+    # degree_min 参与 content_hash，这一条上线后受影响的岗位会在下一轮产生一次 changed 事件，
+    # 之后稳定；不补的话约三分之一的岗位永远没有学历字段。
+    if j.degree_min:
+        j.degree_min = normalize_degree(j.degree_min)
+    elif j.description or j.requirements:
+        j.degree_min = degree_min_from_jd(f"{j.description or ''}\n{j.requirements or ''}")
 
 
 def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):

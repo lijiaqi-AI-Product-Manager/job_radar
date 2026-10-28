@@ -263,6 +263,53 @@ def degree_min_from_text(text: str | None) -> str | None:
     return next((d for d in DEGREES if d in text), None)
 
 
+# JD 正文里的学历常常不是结构化字段，而是散在"任职要求"里。直接按关键字抓会把
+# "团队由 30 位博士组成" 误判成博士岗，所以必须带上下文锚点：
+#   ① 学历/学位/教育背景/岗位要求/任职资格 之后 12 字内的学历词；
+#   ② 学历词后面紧跟"研究生/学历/学位/及以上/以上/毕业"。
+_JD_DEGREE_ANCHOR = re.compile(
+    r"(?:学历|学位|教育(?:背景|经历)|任职(?:要求|资格)|岗位要求|招聘要求)[^\n。；]{0,12}?(博士|硕士|本科|大专)"
+)
+_JD_DEGREE_SUFFIX = re.compile(
+    r"(?<![获取授])(博士|硕士|本科|大专)(?:研究生|学历|学位|及以上|以上|毕业)"
+)
+
+
+def normalize_degree(value: str | None) -> str | None:
+    """把各平台五花八门的学历字段归一到四档（大专/本科/硕士/博士），认不出返回 None。
+
+    2026-10-28 抽样实测（16,103 条）：适配器把平台原值直接塞进 degree_min，
+    出现 `本科及以上`、`硕士研究生`、`专科及以上`、`中技（中专/技校/职高）`、`不限`
+    ——同一个字段 26 种写法，按它做「本科及以上」筛选会同时漏掉和错放。
+    低于大专的（高中/中专/初中/小学）不在四档里，按"无学历门槛"记 None。
+    """
+    if not value:
+        return None
+    s = value.strip()
+    for d in DEGREES:  # 「博士研究生」先命中博士，不会被 硕士 抢走
+        if d in s:
+            return d
+    if "专科" in s:
+        return "大专"
+    if "研究生" in s:
+        return "硕士"
+    return None
+
+
+def degree_min_from_jd(text: str | None) -> str | None:
+    """从 JD 正文推断最低学历要求；没有可信的上下文时返回 None（宁缺勿错）。
+
+    degree_min_from_text 只适合平台的结构化学历字段（本身就是学历值），
+    正文必须用带锚点的规则，否则描述性文字（"博士团队""本科院校"）会污染统计。
+    """
+    if not text:
+        return None
+    found = _JD_DEGREE_ANCHOR.findall(text) or _JD_DEGREE_SUFFIX.findall(text)
+    if not found:
+        return None
+    return min(found, key=DEGREES.index)
+
+
 # 「长期开放」哨兵：平台用 2100 年之后（甚至 3000-01-01、9999-12-31）表示"没有截止日"。
 # 当成真日期会让"找快截止的岗位"筛出一堆 3000 年，必须归一成 None。
 _LONG_TERM_YEAR = 2100
