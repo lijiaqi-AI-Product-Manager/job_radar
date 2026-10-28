@@ -1356,3 +1356,5 @@ sources:
   - {id: beisen-avicmti, company: 中国航空制造技术研究院, params: {tenant: avicmti}}  # 2026-10-29 新增：23 岗（搜索引擎命中后按门户 <title> 定归属）
   - {id: beisen-huaan, company: 华安基金, params: {tenant: huaan}}  # 2026-10-29 新增：6 岗
   - {id: beisen-maitianzhaopinjjr, company: 麦田, params: {tenant: maitianzhaopinjjr}}  # 2026-10-29 新增：1 岗
+  - {id: beisen-huapontcq, company: 重庆华邦制药, params: {tenant: huapontcq}}  # 2026-10-29 新增：2 岗
+  - {id: beisen-crsec, company: 国新证券, params: {tenant: crsec}}  # 2026-10-29 新增：1 岗
