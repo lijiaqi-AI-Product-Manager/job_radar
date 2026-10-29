@@ -1,0 +1,170 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/interns?keyword=%E5%BF%AB%E6%89%8B&city=%E5%85%A8%E5%9B%BD&type=intern&page=1",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "001.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_93nlott6b9fb",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_9dqymt2vwhxo",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_uxgaexjpy2li",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_vroifrce8y2v",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "005.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_aomuvzvg7i9v",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "006.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_loerxqig8qqn",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "007.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_8mwrh8vxafdk",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "008.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_19r5s3lltgii",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "009.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_yrjshkycqc7o",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "010.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_8ddekagkomoo",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "011.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_zjjjaagafyno",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "012.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_3xq1lsuudcl2",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "013.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_25qb0wgynfsx",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "014.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_yjei980kdtkj",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "015.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_hmhctorct61i",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "016.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_yslhw6hqk2k0",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "017.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_6s6lapkdqkka",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "018.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_rzml8lhvdbjm",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "019.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_qjsv4tbeqjhq",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "020.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.shixiseng.com/intern/inn_3cjus2bpdivw",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "file": "021.txt"
+  }
+]

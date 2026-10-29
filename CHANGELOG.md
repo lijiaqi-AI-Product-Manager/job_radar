@@ -2,6 +2,26 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.10.0] - 2026-10-30
+
+### 新增
+- 新增公开聚合渠道适配器 shixiseng（实习僧）与 sources/shixiseng.yaml 104 条源。站点 robots.txt
+  为 0 字节（全放行），无登录、无验证码、无签名，只读列表页与详情页，默认 1 rps；JD 正文、城市、
+  学历、截止日期都能拿到。这是第一条「聚合口径」通道，与官方直连分开统计。
+- 新增 src/jobradar/nuxt.py：纯 Python 求值 Nuxt 压缩载荷（返回式与语句式两种），不引入 node 运行时；
+  不是通用 JS 解释器，遇到真表达式直接抛 NuxtParseError，宁可失败也不静默产出错数据。
+- scripts/coverage_report.py 增加「分口径」小节：官方直连 / 聚合渠道 / 合计三个数分开报，
+  --json 增补 ggregator_companies 字段。
+
+### 变更
+- 覆盖率口径拆分后：官方直连 606/1,655（37%）、聚合渠道 100 家（6%）、合计 **706/1,655（43%）**。
+  聚合源在公司维度仍需 cname 严格归一才入库（SkipRecord 兜底），避免把别家岗位算到目标公司头上。
+- 版本号与 8 个 README 徽章同步到 1.10.0。
+
+### 说明
+- 聚合渠道单独标 grade C，scripts/release_check.py 里「入口不得指向聚合站」的约束只对官方源生效。
+- 新增 	ests/adapters/test_shixiseng.py（6 条）与回放 fixtures（23 个文件 219 KB，裁剪后低于 300 KB 上限）。
+
 ## [1.9.5] - 2026-10-29
 
 ### 新增

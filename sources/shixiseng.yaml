@@ -1,0 +1,330 @@
+# 实习僧（shixiseng）公开岗位页。一行一家公司，按公司名搜岗位列表。
+# 2026-10-29 新增：聚合渠道（grade C），只收「列表里确实出现本公司岗位」的公司。
+# 合规：robots.txt 为空（全放行）；无登录、无签名、无验证码；只读列表 + 详情页；1 req/s。
+# 口径：聚合源单独标记 source_kind=aggregator，覆盖率报告里与官方直连分开统计。
+defaults:
+  adapter: shixiseng
+  recruit_types: [intern]
+  rate_limit_rps: 1
+  params:
+    fetch_detail: true
+    url_filter: "/intern/[^/]+$"
+  compliance:
+    checked_on: 2026-10-29
+    robots: allowed            # https://www.shixiseng.com/robots.txt 返回 200、0 字节
+    terms: "公开岗位检索页与详情页，无需登录；不调用投递/简历/消息接口"
+    notes: "聚合渠道 grade C：岗位来自实习僧平台，不等于公司官网直发；1 req/s。"
+
+sources:
+  - id: shixiseng-dhlzhongguo
+    company: DHL中国
+    params: {keyword: "DHL中国"}
+  - id: shixiseng-oppo
+    company: OPPO
+    params: {keyword: "OPPO"}
+  - id: shixiseng-wanke
+    company: 万科
+    params: {keyword: "万科"}
+  - id: shixiseng-dongfangzhengquan
+    company: 东方证券
+    params: {keyword: "东方证券"}
+  - id: shixiseng-dongruanruichi
+    company: 东软睿驰
+    params: {keyword: "东软睿驰"}
+  - id: shixiseng-zhongguopingan
+    company: 中国平安
+    params: {keyword: "中国平安"}
+  - id: shixiseng-zhongtaizhengquan
+    company: 中泰证券
+    params: {keyword: "中泰证券"}
+  - id: shixiseng-zhongyinzhengquan
+    company: 中银证券
+    params: {keyword: "中银证券"}
+  - id: shixiseng-yunjikeji
+    company: 云迹科技
+    params: {keyword: "云迹科技"}
+  - id: shixiseng-jingdongwuliu
+    company: 京东物流
+    params: {keyword: "京东物流"}
+  - id: shixiseng-zhonganbaoxian
+    company: 众安保险
+    params: {keyword: "众安保险"}
+  - id: shixiseng-baoliwuye
+    company: 保利物业
+    params: {keyword: "保利物业"}
+  - id: shixiseng-fuliye
+    company: 傅利叶
+    params: {keyword: "傅利叶"}
+  - id: shixiseng-qianchengwuyou
+    company: 前程无忧
+    params: {keyword: "前程无忧"}
+  - id: shixiseng-huazhujituan
+    company: 华住集团
+    params: {keyword: "华住集团"}
+  - id: shixiseng-huachuangzhengquan
+    company: 华创证券
+    params: {keyword: "华创证券"}
+  - id: shixiseng-huatujiaoyu
+    company: 华图教育
+    params: {keyword: "华图教育"}
+  - id: shixiseng-huadajiyin
+    company: 华大基因
+    params: {keyword: "华大基因"}
+  - id: shixiseng-huaanzhengquan
+    company: 华安证券
+    params: {keyword: "华安证券"}
+  - id: shixiseng-huarunzhidi
+    company: 华润置地
+    params: {keyword: "华润置地"}
+  - id: shixiseng-hualongzhengquan
+    company: 华龙证券
+    params: {keyword: "华龙证券"}
+  - id: shixiseng-boshi
+    company: 博世
+    params: {keyword: "博世"}
+  - id: shixiseng-diezhi
+    company: 叠纸
+    params: {keyword: "叠纸"}
+  - id: shixiseng-diezhiyouxi
+    company: 叠纸游戏
+    params: {keyword: "叠纸游戏"}
+  - id: shixiseng-heboyiyao
+    company: 和铂医药
+    params: {keyword: "和铂医药"}
+  - id: shixiseng-bilibili
+    company: 哔哩哔哩
+    params: {keyword: "哔哩哔哩"}
+  - id: shixiseng-jiashijijin
+    company: 嘉实基金
+    params: {keyword: "嘉实基金"}
+  - id: shixiseng-guohaizhengquan
+    company: 国海证券
+    params: {keyword: "国海证券"}
+  - id: shixiseng-tianweishipin
+    company: 天味食品
+    params: {keyword: "天味食品"}
+  - id: shixiseng-tianhongjijin
+    company: 天弘基金
+    params: {keyword: "天弘基金"}
+  - id: shixiseng-haoweilai
+    company: 好未来
+    params: {keyword: "好未来"}
+  - id: shixiseng-wanmeishijie
+    company: 完美世界
+    params: {keyword: "完美世界"}
+  - id: shixiseng-fuguojijin
+    company: 富国基金
+    params: {keyword: "富国基金"}
+  - id: shixiseng-xiaomi
+    company: 小米
+    params: {keyword: "小米"}
+  - id: shixiseng-xiaohongshu
+    company: 小红书
+    params: {keyword: "小红书"}
+  - id: shixiseng-xiaopenghuitian
+    company: 小鹏汇天
+    params: {keyword: "小鹏汇天"}
+  - id: shixiseng-shanxizhengquan
+    company: 山西证券
+    params: {keyword: "山西证券"}
+  - id: shixiseng-gongyinansheng
+    company: 工银安盛
+    params: {keyword: "工银安盛"}
+  - id: shixiseng-pinganjituan
+    company: 平安集团
+    params: {keyword: "平安集团"}
+  - id: shixiseng-yingshiinsta360
+    company: 影石Insta360
+    params: {keyword: "影石Insta360"}
+  - id: shixiseng-dewuapp
+    company: 得物App
+    params: {keyword: "得物App"}
+  - id: shixiseng-weichuangyiliao
+    company: 微创医疗
+    params: {keyword: "微创医疗"}
+  - id: shixiseng-xindongwangluo
+    company: 心动网络
+    params: {keyword: "心动网络"}
+  - id: shixiseng-kuaishou
+    company: 快手
+    params: {keyword: "快手"}
+  - id: shixiseng-huitaiyiliao
+    company: 惠泰医疗
+    params: {keyword: "惠泰医疗"}
+  - id: shixiseng-baierzhongguo
+    company: 拜耳中国
+    params: {keyword: "拜耳中国"}
+  - id: shixiseng-zhenhuazhonggong
+    company: 振华重工
+    params: {keyword: "振华重工"}
+  - id: shixiseng-souhu
+    company: 搜狐
+    params: {keyword: "搜狐"}
+  - id: shixiseng-xiecheng
+    company: 携程
+    params: {keyword: "携程"}
+  - id: shixiseng-qinglangzhineng
+    company: 擎朗智能
+    params: {keyword: "擎朗智能"}
+  - id: shixiseng-xindongfangzaixian
+    company: 新东方在线
+    params: {keyword: "新东方在线"}
+  - id: shixiseng-xinlang
+    company: 新浪
+    params: {keyword: "新浪"}
+  - id: shixiseng-jingkenengyuan
+    company: 晶科能源
+    params: {keyword: "晶科能源"}
+  - id: shixiseng-zhilianzhaopin
+    company: 智联招聘
+    params: {keyword: "智联招聘"}
+  - id: shixiseng-weilaijiqiren
+    company: 未来机器人
+    params: {keyword: "未来机器人"}
+  - id: shixiseng-oulaiya
+    company: 欧莱雅
+    params: {keyword: "欧莱雅"}
+  - id: shixiseng-zhengtai
+    company: 正泰
+    params: {keyword: "正泰"}
+  - id: shixiseng-zhengtaijituan
+    company: 正泰集团
+    params: {keyword: "正泰集团"}
+  - id: shixiseng-bimawei
+    company: 毕马威
+    params: {keyword: "毕马威"}
+  - id: shixiseng-qichezhijia
+    company: 汽车之家
+    params: {keyword: "汽车之家"}
+  - id: shixiseng-woerwo
+    company: 沃尔沃
+    params: {keyword: "沃尔沃"}
+  - id: shixiseng-taikangzichan
+    company: 泰康资产
+    params: {keyword: "泰康资产"}
+  - id: shixiseng-zheshangyinxing
+    company: 浙商银行
+    params: {keyword: "浙商银行"}
+  - id: shixiseng-haikangweishi
+    company: 海康威视
+    params: {keyword: "海康威视"}
+  - id: shixiseng-haitongzhengquan
+    company: 海通证券
+    params: {keyword: "海通证券"}
+  - id: shixiseng-youzuwangluo
+    company: 游族网络
+    params: {keyword: "游族网络"}
+  - id: shixiseng-didi
+    company: 滴滴
+    params: {keyword: "滴滴"}
+  - id: shixiseng-baishizhongguo
+    company: 百事中国
+    params: {keyword: "百事中国"}
+  - id: shixiseng-baicaowei
+    company: 百草味
+    params: {keyword: "百草味"}
+  - id: shixiseng-gaiyagongchang
+    company: 盖雅工场
+    params: {keyword: "盖雅工场"}
+  - id: shixiseng-shengquyouxi
+    company: 盛趣游戏
+    params: {keyword: "盛趣游戏"}
+  - id: shixiseng-zhihu
+    company: 知乎
+    params: {keyword: "知乎"}
+  - id: shixiseng-disifanshi
+    company: 第四范式
+    params: {keyword: "第四范式"}
+  - id: shixiseng-suofeiya
+    company: 索菲亚
+    params: {keyword: "索菲亚"}
+  - id: shixiseng-wangyiyoudao
+    company: 网易有道
+    params: {keyword: "网易有道"}
+  - id: shixiseng-wangyiyouxi
+    company: 网易游戏
+    params: {keyword: "网易游戏"}
+  - id: shixiseng-meide
+    company: 美的
+    params: {keyword: "美的"}
+  - id: shixiseng-meidejituan
+    company: 美的集团
+    params: {keyword: "美的集团"}
+  - id: shixiseng-lianhelihua
+    company: 联合利华
+    params: {keyword: "联合利华"}
+  - id: shixiseng-lianxiang
+    company: 联想
+    params: {keyword: "联想"}
+  - id: shixiseng-tengxunyouxi
+    company: 腾讯游戏
+    params: {keyword: "腾讯游戏"}
+  - id: shixiseng-suningyigou
+    company: 苏宁易购
+    params: {keyword: "苏宁易购"}
+  - id: shixiseng-yaomingshengwu
+    company: 药明生物
+    params: {keyword: "药明生物"}
+  - id: shixiseng-languangfazhan
+    company: 蓝光发展
+    params: {keyword: "蓝光发展"}
+  - id: shixiseng-xishanju
+    company: 西山居
+    params: {keyword: "西山居"}
+  - id: shixiseng-beidayaoye
+    company: 贝达药业
+    params: {keyword: "贝达药业"}
+  - id: shixiseng-tanwanyouxi
+    company: 贪玩游戏
+    params: {keyword: "贪玩游戏"}
+  - id: shixiseng-ruantongdongli
+    company: 软通动力
+    params: {keyword: "软通动力"}
+  - id: shixiseng-ruantongdonglixinxi
+    company: 软通动力信息
+    params: {keyword: "软通动力信息"}
+  - id: shixiseng-jinshanbangong
+    company: 金山办公
+    params: {keyword: "金山办公"}
+  - id: shixiseng-jindie
+    company: 金蝶
+    params: {keyword: "金蝶"}
+  - id: shixiseng-ruijiewangluo
+    company: 锐捷网络
+    params: {keyword: "锐捷网络"}
+  - id: shixiseng-yangguangdianyuan
+    company: 阳光电源
+    params: {keyword: "阳光电源"}
+  - id: shixiseng-jieyuexingchen
+    company: 阶跃星辰
+    params: {keyword: "阶跃星辰"}
+  - id: shixiseng-quechao
+    company: 雀巢
+    params: {keyword: "雀巢"}
+  - id: shixiseng-yajule
+    company: 雅居乐
+    params: {keyword: "雅居乐"}
+  - id: shixiseng-bawangchaji
+    company: 霸王茶姬
+    params: {keyword: "霸王茶姬"}
+  - id: shixiseng-shaoyin
+    company: 韶音
+    params: {keyword: "韶音"}
+  - id: shixiseng-shunfeng
+    company: 顺丰
+    params: {keyword: "顺丰"}
+  - id: shixiseng-shunfengkonggu
+    company: 顺丰控股
+    params: {keyword: "顺丰控股"}
+  - id: shixiseng-gaotu
+    company: 高途
+    params: {keyword: "高途"}
+  - id: shixiseng-maidanglaozhongguo
+    company: 麦当劳中国
+    params: {keyword: "麦当劳中国"}
+  - id: shixiseng-longhu
+    company: 龙湖
+    params: {keyword: "龙湖"}
+  - id: shixiseng-longhujituan
+    company: 龙湖集团
+    params: {keyword: "龙湖集团"}

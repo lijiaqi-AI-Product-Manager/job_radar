@@ -91,14 +91,24 @@ def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
 
 
 def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | None = None,
-           companies: set[str] | None = None) -> str:
+           companies: set[str] | None = None, aggregator: set[str] | None = None) -> str:
     blocked = targets.get("blocked") or {}
     total = len(matched)
     # blocked 的公司即使被子串误匹配（「京东」in「京东方」）也不能算已覆盖
     covered = sum(1 for k, v in matched.items() if v and k not in blocked)
     lines = ["# 覆盖率报告", "",
              f"目标 {total} 家：已覆盖 **{covered}**（{covered / total:.0%}），"
-             f"不可合规覆盖 {len(blocked)}，待侦察 {total - covered - len(blocked)}。", "",
+             f"不可合规覆盖 {len(blocked)}，待侦察 {total - covered - len(blocked)}。", ""]
+    if aggregator:
+        agg_matched = match(targets, aggregator)
+        agg_covered = {k for k, v in agg_matched.items() if v and k not in blocked}
+        official = covered - len(agg_covered)
+        lines += ["## 分口径", "",
+                  "| 口径 | 已覆盖 | 覆盖率 | 说明 |", "|---|---|---|---|",
+                  f"| 官方直连 | {official} | {official / total:.0%} | 公司自有招聘系统（北森/大易/飞书/Workday 等） |",
+                  f"| 聚合渠道 | {len(agg_covered)} | {len(agg_covered) / total:.0%} | 实习僧等公开聚合站，grade C |",
+                  f"| 合计 | {covered} | {covered / total:.0%} | 去重后 |", ""]
+    lines += [
              "| 行业 | 目标 | 已覆盖 | 覆盖率 |", "|---|---|---|---|"]
     for sector, names in targets["sectors"].items():
         c = sum(1 for n in names if matched[n] and n not in blocked)
@@ -189,7 +199,9 @@ def main() -> int:
     ap.add_argument("--json", action="store_true", help="只输出摘要 JSON（给脚本/看板用）")
     args = ap.parse_args()
     targets = load_targets()
-    companies = {s.company for s in load_sources(ROOT / "sources")}
+    sources = load_sources(ROOT / "sources")
+    companies = {s.company for s in sources}
+    aggregator = {s.company for s in sources if s.adapter == "shixiseng"}
     jobs = None
     if args.db:
         conn = sqlite3.connect(args.db)
@@ -211,10 +223,10 @@ def main() -> int:
                     hit += 1
         print(json.dumps({"targets": total, "covered": covered, "blocked": len(blocked),
                           "sources": len({s.id for s in load_sources(ROOT / "sources")}),
-                          "companies": len(companies), "industry_rows": rows,
+                          "companies": len(companies), "aggregator_companies": len(aggregator), "industry_rows": rows,
                           "industry_covered": hit}, ensure_ascii=False))
         return 0
-    print(render(targets, matched, jobs, companies), end="")
+    print(render(targets, matched, jobs, companies, aggregator), end="")
     return 0
 
 

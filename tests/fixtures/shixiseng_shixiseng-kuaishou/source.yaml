@@ -1,0 +1,18 @@
+id: shixiseng-kuaishou
+company: 快手
+adapter: shixiseng
+params:
+  fetch_detail: true
+  url_filter: /intern/[^/]+$
+  keyword: 快手
+  max_pages: 1
+  page_size: 20
+recruit_types:
+- intern
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-29'
+  robots: allowed
+  terms: 公开岗位检索页与详情页，无需登录；不调用投递/简历/消息接口
+  notes: 聚合渠道 grade C：岗位来自实习僧平台，不等于公司官网直发；1 req/s。
