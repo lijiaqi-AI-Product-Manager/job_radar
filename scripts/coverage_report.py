@@ -26,6 +26,13 @@ def load_industries(path: Path = ROOT / "targets" / "industries.yaml") -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8"))["sectors"] if path.exists() else {}
 
 
+def load_industry_aliases(path: Path = ROOT / "targets" / "industry_targets.yaml") -> dict:
+    """行业池自己的别名表（只作用于行业代表企业，不污染核心池）。"""
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")).get("aliases") or {}
+
+
 def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
     """与日历共用同一套匹配（精确匹配优先，别名生效），避免两处规则漂移。"""
     return match_targets(targets, companies)
@@ -80,6 +87,29 @@ def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | 
             lines.append(f"| {sec} | {len(rows)} | {hit} | {hit / len(rows):.0%} |")
         lines.append(f"\n合计 {hit_rows + miss_rows} 行：有覆盖 **{hit_rows}**（{hit_rows / (hit_rows + miss_rows):.0%}），"
                      f"零覆盖 {miss_rows}。")
+        # 行有覆盖 ≠ 代表企业有源：一行 2-4 家，只要一家有源就算「这行有覆盖」。
+        # 这段单独按「代表企业」算一遍，避免看报告的人把两个口径混在一起。
+        names_all = sorted({str(c) for rows in ind.values() for names in rows.values() for c in names})
+        # 行业池有自己的别名表（targets/industry_targets.yaml 的 aliases），
+        # 例如 TCL中环←中环股份、威高股份←山东威高——不并进来会把这些算成没覆盖。
+        ind_aliases = load_industry_aliases()
+        pseudo = {"sectors": {"行业细分": names_all},
+                  "aliases": {**(targets.get("aliases") or {}), **ind_aliases}}
+        m_ind = match_targets(pseudo, comp)
+        cov_ind = [n for n in names_all if m_ind.get(n)]
+        core_names = set(matched)
+        core_cov = {k for k, v in matched.items() if v and k not in blocked}
+        extra = [n for n in names_all if n not in core_names]
+        extra_cov = [n for n in extra if m_ind.get(n)]
+        union = core_names | set(names_all)
+        union_cov = core_cov | set(extra_cov)
+        lines += [
+            "",
+            f"代表企业口径：{len(names_all)} 家里有源 **{len(cov_ind)}**"
+            f"（{len(cov_ind) / len(names_all):.0%}）；核心池没有的 {len(extra)} 家里有源 {len(extra_cov)} 家。",
+            f"两池合计目标 **{len(union)}** 家，已覆盖 **{len(union_cov)}**"
+            f"（{len(union_cov) / len(union):.0%}）。",
+        ]
     lines += ["", "## 不可合规覆盖", ""] + [f"- {n}：{r}" for n, r in blocked.items()]
     lines += ["", "## 待侦察", ""]
     for sector, names in targets["sectors"].items():

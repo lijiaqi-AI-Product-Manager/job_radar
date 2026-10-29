@@ -1,0 +1,185 @@
+[
+ {
+  "company": "日月股份",
+  "kind": "beisen",
+  "slug": "riyue",
+  "count": 67,
+  "title": "日月股份",
+  "samples": [
+   "老员工推荐人才储备池",
+   "电炉班长"
+  ]
+ },
+ {
+  "company": "滴滴出行",
+  "kind": "beisen",
+  "slug": "ddcx",
+  "count": 581,
+  "title": "中国大地财产保险股份有限公司",
+  "samples": [
+   "国企车险续保客户经理接受实习生(J20421)",
+   "国企电话客服接受实习生小白(J20419)"
+  ]
+ },
+ {
+  "company": "尼尔森IQ",
+  "kind": "feishu",
+  "slug": "iq",
+  "count": null,
+  "title": "",
+  "samples": []
+ },
+ {
+  "company": "渝三峡A",
+  "kind": "beisen",
+  "slug": "sanxia",
+  "count": 3,
+  "title": "三峡油漆",
+  "samples": [
+   "市场分析岗(J10011)",
+   "技术研发岗(J10000)"
+  ]
+ },
+ {
+  "company": "巨化股份",
+  "kind": "beisen",
+  "slug": "juhua",
+  "count": 82,
+  "title": "巨化集团",
+  "samples": [
+   "高级研发工程师（2027衢州/杭州校招）",
+   "工艺工程师（2027甘肃校招）"
+  ]
+ },
+ {
+  "company": "威高股份",
+  "kind": "beisen",
+  "slug": "weigao",
+  "count": 127,
+  "title": "威高集团有限公司",
+  "samples": [
+   "【宜凯德】医学事务专员(J15238)",
+   "项目管理主管(J15237)"
+  ]
+ },
+ {
+  "company": "隆鑫通用",
+  "kind": "beisen",
+  "slug": "lxty",
+  "count": 111,
+  "title": "隆鑫通用动力股份有限公司",
+  "samples": [
+   "外贸业务销售",
+   "机加工艺工程师"
+  ]
+ },
+ {
+  "company": "名雕股份",
+  "kind": "feishu",
+  "slug": "ming",
+  "count": null,
+  "title": "",
+  "samples": []
+ },
+ {
+  "company": "益生股份",
+  "kind": "beisen",
+  "slug": "ys",
+  "count": 57,
+  "title": "多品牌门户",
+  "samples": [
+   "人事行政主管999",
+   "北部销售经理"
+  ]
+ },
+ {
+  "company": "创耀科技",
+  "kind": "beisen",
+  "slug": "cykj",
+  "count": 5,
+  "title": "诚易科技",
+  "samples": [
+   "出口跟单专员",
+   "车辆交付专员"
+  ]
+ },
+ {
+  "company": "童程童美",
+  "kind": "feishu",
+  "slug": "chengmei",
+  "count": null,
+  "title": "",
+  "samples": []
+ },
+ {
+  "company": "多点Dmall",
+  "kind": "feishu",
+  "slug": "duodian",
+  "count": null,
+  "title": "",
+  "samples": []
+ },
+ {
+  "company": "菲利华",
+  "kind": "beisen",
+  "slug": "feilihua",
+  "count": 49,
+  "title": "菲利华",
+  "samples": [
+   "AI工程师（27届校招）",
+   "能源管理工程师（27届校招）"
+  ]
+ },
+ {
+  "company": "历峰集团",
+  "kind": "beisen",
+  "slug": "feng1",
+  "count": 32,
+  "title": "丰e足食招聘",
+  "samples": [
+   "丰e店主",
+   "HRBP（流失方向）"
+  ]
+ },
+ {
+  "company": "水星家纺",
+  "kind": "feishu",
+  "slug": "shuixingjiafang",
+  "count": null,
+  "title": "",
+  "samples": []
+ },
+ {
+  "company": "TCL中环",
+  "kind": "beisen",
+  "slug": "zhonghuan",
+  "count": 760,
+  "title": "TCL中环",
+  "samples": [
+   "技术操作员(J11529)",
+   "大客户销售高级经理（北京）(J13459)"
+  ]
+ },
+ {
+  "company": "智齿科技",
+  "kind": "beisen",
+  "slug": "zckj",
+  "count": 5,
+  "title": "珠城科技",
+  "samples": [
+   "职能管理类管培生",
+   "运营主管"
+  ]
+ },
+ {
+  "company": "中科三环",
+  "kind": "beisen",
+  "slug": "zksh",
+  "count": 6,
+  "title": "中科三环",
+  "samples": [
+   "销售助理",
+   "总部财务管理岗（外派储备）"
+  ]
+ }
+]

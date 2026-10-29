@@ -50,3 +50,17 @@ def test_blocked_company_is_not_counted_as_covered():
     assert "- **x**：京东方、腾讯" in report        # 已覆盖列表里没有京东
     assert "- 京东：验证码" in report
     assert "待侦察 0" in report                     # 京东方/腾讯已覆盖，京东在 blocked
+
+
+def test_industry_targets_pool_is_consistent():
+    """行业细分池：365 行、别名只能指向池内公司、同一行里不重复。"""
+    ind = cov.load_industries(Path(__file__).parent.parent / "targets" / "industry_targets.yaml")
+    assert sum(len(rows) for rows in ind.values()) == 365
+    names = {str(c) for rows in ind.values() for cs in rows.values() for c in cs}
+    for sec, rows in ind.items():
+        for line, cs in rows.items():
+            assert len(cs) == len({str(c) for c in cs}), f"{sec}/{line} 代表企业重复"
+    aliases = cov.load_industry_aliases()
+    assert aliases, "行业池别名表为空"
+    for key in aliases:
+        assert key in names, f"{key} 不在行业池里"

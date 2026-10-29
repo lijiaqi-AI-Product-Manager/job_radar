@@ -1441,3 +1441,8 @@ sources:
   - {id: beisen-nader, company: 上海良信电器, params: {tenant: nader}}  # 2026-10-29 新增：1 岗（JSON 接口关闭，走 /alljob 服务端渲染）
   - {id: beisen-gdh, company: 粤海集团, params: {tenant: gdh}}  # 2026-10-29 新增：1 岗（门户标题「粤海招聘」，岗位来自粤海资本等成员公司）
   - {id: beisen-dfyanmei1, company: 东方妍美, params: {tenant: dfyanmei1}}  # 2026-10-29 新增：18 岗（校招 + 实习）
+  - {id: beisen-riyue, company: 日月股份, params: {tenant: riyue}}  # 2026-10-29 新增：67 岗
+  - {id: beisen-lxty, company: 隆鑫通用, params: {tenant: lxty}}  # 2026-10-29 新增：111 岗
+  - {id: beisen-feilihua, company: 菲利华, params: {tenant: feilihua}}  # 2026-10-29 新增：49 岗
+  - {id: beisen-zksh, company: 中科三环, params: {tenant: zksh}}  # 2026-10-29 新增：6 岗
+  - {id: beisen-ddcx, company: 中国大地财产保险, params: {tenant: ddcx}}  # 2026-10-29 新增：581 岗
