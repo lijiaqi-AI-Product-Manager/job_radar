@@ -1440,3 +1440,4 @@ sources:
   - {id: beisen-xadzgc, company: 西安电子工程研究所, params: {tenant: xadzgc}}  # 2026-10-29 新增：47 岗（exa 搜索命中门户，标题定归属）
   - {id: beisen-nader, company: 上海良信电器, params: {tenant: nader}}  # 2026-10-29 新增：1 岗（JSON 接口关闭，走 /alljob 服务端渲染）
   - {id: beisen-gdh, company: 粤海集团, params: {tenant: gdh}}  # 2026-10-29 新增：1 岗（门户标题「粤海招聘」，岗位来自粤海资本等成员公司）
+  - {id: beisen-dfyanmei1, company: 东方妍美, params: {tenant: dfyanmei1}}  # 2026-10-29 新增：18 岗（校招 + 实习）

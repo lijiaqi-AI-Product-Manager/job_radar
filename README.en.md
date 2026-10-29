@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.9.2-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.9.3-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -16,8 +16,8 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 ![demo](docs/assets/demo-en.gif)
 
 > **Coverage snapshot (2026-10-29)**
-> **1,905 sources** (Beisen 1,223 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 / others) · **1,864 companies** · **23 adapters**
-> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **604 covered (36%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
+> **1,906 sources** (Beisen 1,224 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 / others) · **1,865 companies** · **23 adapters**
+> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **606 covered (37%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
 > Job counts and field coverage refresh with each daily crawl — see the latest Release for current numbers.
 
 ## What it is / is not
@@ -86,8 +86,8 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 
 | Area | Reality |
 |---|---|
-| Target coverage | **604/1,655 (36%)**; 12 are robots/login/encryption-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
-| Sources | **1,905 sources / 1,864 companies**: Beisen 1,223, Dayee 310, Feishu ATSX 148, Tupu360 32, legacy Beisen 44, Workday 45, legacy Dayee 15, plus 19 bespoke sites |
+| Target coverage | **606/1,655 (37%)**; 12 are robots/login/encryption-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
+| Sources | **1,906 sources / 1,865 companies**: Beisen 1,224, Dayee 310, Feishu ATSX 148, Tupu360 32, legacy Beisen 113, Workday 45, legacy Dayee 15, plus 19 bespoke sites |
 | Provincial coverage | Guangdong 18/49 (37%), Zhejiang 13/44 (30%), Jiangsu 9/34 (26%), Sichuan 9/30 (30%), Shandong 7/26 (27%); full table via `scripts/coverage_report.py` |
 | Big tech | Alibaba/Tencent/Meituan/NetEase/Baidu/JD/ByteDance/vivo/Chery/CICC/BOE/Hisense/PICC have job data; Huawei is calendar-only (WAF 403) |
 | Calendar fields | 2026-10-26 full-crawl snapshot: 74.9% of entries carry ≥7 of 11 required fields; 60.7% by group; 38.0% of hand-curated entries |
