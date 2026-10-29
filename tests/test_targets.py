@@ -64,3 +64,21 @@ def test_industry_targets_pool_is_consistent():
     assert aliases, "行业池别名表为空"
     for key in aliases:
         assert key in names, f"{key} 不在行业池里"
+
+
+def test_uncovered_reasons_classifies_known_portals():
+    """未覆盖原因只按记录过的入口 URL 归类，没记录过的算 unknown。"""
+    assert cov.reason_of("https://foo.mokahr.com/x") == "moka"
+    assert cov.reason_of("https://jobs.zhaopin.com/123.htm") == "aggregator"
+    assert cov.reason_of("https://chinajushi.zhiye.com/") == "platform"
+    assert cov.reason_of("https://careers.example.com/campus") == "self"
+    assert cov.reason_of("") == "unknown"
+
+
+def test_uncovered_reasons_counts_only_uncovered():
+    targets = {"sectors": {"x": ["甲公司", "乙公司"]}, "provinces": {"某省": ["乙公司", "丙公司"]},
+               "blocked": {}}
+    matched = {"甲公司": ["甲公司"], "乙公司": [], "丙公司": []}
+    careers = {"乙公司": "https://a.zhiye.com/"}
+    counts = cov.uncovered_reasons(targets, matched, careers)
+    assert counts == {"platform": 1, "unknown": 1}

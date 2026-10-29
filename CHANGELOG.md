@@ -2,6 +2,24 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.9.5] - 2026-10-29
+
+### 新增
+- `scripts/coverage_report.py` 增加「未覆盖原因」小节：按 `work/careers_confirmed.jsonl` 里记录过的
+  招聘入口 URL，把 1,037 家未覆盖目标分成 平台入口已知 / 自建站 / 仅 Moka / 聚合站 / 无记录 五类，
+  让「覆盖率为什么是 37%」每次跑报告都能复核，而不是只在文档里论证。
+- 新增两个单元测试守着这套分类（`test_uncovered_reasons_classifies_known_portals`、
+  `test_uncovered_reasons_counts_only_uncovered`）。
+
+### 变更
+- 版本号、8 个 README 徽章同步到 1.9.5；数据源与覆盖率数字不变（本轮只加可观测性）。
+
+### 说明
+- 本轮复核了「入口已知但没建成源」的 44 家：逐个拉门户标题，7 家标题对得上，但 JSON 接口
+  `Count=0`、老版 HTML 三种门户也都是 0 行，属于「门户在、岗位空了」的历史链接，不建源。
+- 拼音租户探测对剩余 746 家行业池公司再跑一遍（2,195 秒、34 个原始命中），按标题核对后真命中
+  3 家且全部已有源——这条路已经跑干。
+
 ## [1.9.4] - 2026-10-29
 
 - 新增「行业细分池」口径：`targets/industry_targets.yaml` 收录 365 行细分行业的 983 家代表企业，

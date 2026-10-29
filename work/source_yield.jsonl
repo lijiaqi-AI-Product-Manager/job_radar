@@ -1,8 +1,67 @@
-{"id": "beisen-picc1", "company": "中国人民保险", "adapter": "beisen", "count": 40, "capped": true, "seconds": 4.1, "error": null}
-{"id": "hotjob-su62f471180dcad433c097a790", "company": "福建海峡银行", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 43.4, "error": null}
-{"id": "hotjob-su670788cc6202cc7666c0bc7e", "company": "杭州杰牌传动科技有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 42.5, "error": null}
-{"id": "hotjob-su6013d14e5d83dc11e4a8ae4d", "company": "华泰证券（上海）资产管理有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 41.4, "error": null}
-{"id": "hotjob-su67ac68866202cc7916aea66e", "company": "易方达基金管理有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 41.4, "error": null}
-{"id": "hotjob-su6164fa892f9d244de1513582", "company": "安利(中国)日用品有限公司", "adapter": "hotjob", "count": 40, "capped": true, "seconds": 46.0, "error": null}
-{"id": "hotjob-su618ca9732f9d242b12d420a7", "company": "银河基金", "adapter": "hotjob", "count": 15, "capped": false, "seconds": 16.4, "error": null}
-{"id": "hotjob-su61bc040c0dcad45571a5e8fc", "company": "华润数科控股有限公司", "adapter": "hotjob", "count": 19, "capped": false, "seconds": 20.4, "error": null}
+{"id": "beisen-hibr", "company": "翰博高新", "adapter": "beisen", "count": 75, "capped": false, "seconds": 1.7, "error": null}
+{"id": "beisen-nonfemet", "company": "中金岭南", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.2, "error": null}
+{"id": "beisen-yijiahe", "company": "亿嘉和", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.6, "error": null}
+{"id": "beisen-cictmobile", "company": "中信科移动", "adapter": "beisen", "count": 61, "capped": false, "seconds": 2.8, "error": null}
+{"id": "beisen-tsingmicro", "company": "清微智能", "adapter": "beisen", "count": 80, "capped": true, "seconds": 3.0, "error": null}
+{"id": "beisen-wasionelectric", "company": "威胜能源", "adapter": "beisen", "count": 80, "capped": true, "seconds": 3.9, "error": null}
+{"id": "beisen-sciyon", "company": "南京科远", "adapter": "beisen", "count": 53, "capped": false, "seconds": 2.2, "error": null}
+{"id": "beisen-ti5robot1", "company": "钛虎机器人", "adapter": "beisen", "count": 51, "capped": false, "seconds": 2.1, "error": null}
+{"id": "beisen-bjzkj", "company": "中科金", "adapter": "beisen", "count": 54, "capped": false, "seconds": 3.3, "error": null}
+{"id": "beisen-snowvalleyfood", "company": "雪川农业", "adapter": "beisen", "count": 58, "capped": false, "seconds": 5.3, "error": null}
+{"id": "beisen-ucloud", "company": "UCloud", "adapter": "beisen", "count": 44, "capped": false, "seconds": 2.2, "error": null}
+{"id": "beisen-smee", "company": "上海微电子装备", "adapter": "beisen", "count": 46, "capped": false, "seconds": 2.5, "error": null}
+{"id": "beisen-anmei", "company": "安美科技", "adapter": "beisen", "count": 28, "capped": false, "seconds": 2.3, "error": null}
+{"id": "beisen-huawutang1", "company": "半亩花田", "adapter": "beisen", "count": 38, "capped": false, "seconds": 3.1, "error": null}
+{"id": "beisen-geek", "company": "极客未来", "adapter": "beisen", "count": 28, "capped": false, "seconds": 2.3, "error": null}
+{"id": "beisen-baichabaidao1", "company": "茶百道", "adapter": "beisen", "count": 29, "capped": false, "seconds": 2.8, "error": null}
+{"id": "beisen-crealights", "company": "海光芯正", "adapter": "beisen", "count": 36, "capped": false, "seconds": 3.5, "error": null}
+{"id": "beisen-autochips", "company": "杰发科技", "adapter": "beisen", "count": 41, "capped": false, "seconds": 5.0, "error": null}
+{"id": "beisen-jusha", "company": "巨鲨医疗", "adapter": "beisen", "count": 27, "capped": false, "seconds": 1.8, "error": null}
+{"id": "beisen-daxinoppo", "company": "大信集团", "adapter": "beisen", "count": 30, "capped": false, "seconds": 4.5, "error": null}
+{"id": "beisen-sskj", "company": "善水科技", "adapter": "beisen", "count": 3, "capped": false, "seconds": 1.6, "error": null}
+{"id": "beisen-canaan-creative", "company": "嘉楠科技", "adapter": "beisen", "count": 5, "capped": false, "seconds": 1.9, "error": null}
+{"id": "beisen-bankofbeijingwealth", "company": "北银理财", "adapter": "beisen", "count": 7, "capped": false, "seconds": 2.4, "error": null}
+{"id": "beisen-yofc1", "company": "芯博创", "adapter": "beisen", "count": 4, "capped": false, "seconds": 1.6, "error": null}
+{"id": "beisen-01zp", "company": "中国船舶集团第七〇一研究所", "adapter": "beisen", "count": 30, "capped": false, "seconds": 1.7, "error": null}
+{"id": "beisen-dobot1", "company": "越疆科技", "adapter": "beisen", "count": 23, "capped": false, "seconds": 3.7, "error": null}
+{"id": "beisen-caic-china", "company": "凯天电子", "adapter": "beisen", "count": 10, "capped": false, "seconds": 1.5, "error": null}
+{"id": "beisen-cimm", "company": "航空工业计量所", "adapter": "beisen", "count": 39, "capped": false, "seconds": 2.5, "error": null}
+{"id": "beisen-cnoocshell", "company": "中海壳牌", "adapter": "beisen", "count": 3, "capped": false, "seconds": 2.0, "error": null}
+{"id": "beisen-lxty", "company": "隆鑫通用", "adapter": "beisen", "count": 80, "capped": true, "seconds": 2.2, "error": null}
+{"id": "beisen-feilihua", "company": "菲利华", "adapter": "beisen", "count": 49, "capped": false, "seconds": 3.2, "error": null}
+{"id": "beisen-riyue", "company": "日月股份", "adapter": "beisen", "count": 67, "capped": false, "seconds": 5.1, "error": null}
+{"id": "beisen-legacy-eshore", "company": "亿迅科技", "adapter": "beisen_legacy", "count": 13, "capped": false, "seconds": 16.6, "error": null}
+{"id": "beisen-avaryholding", "company": "鹏鼎控股", "adapter": "beisen", "count": 21, "capped": false, "seconds": 28.7, "error": null}
+{"id": "beisen-legacy-aoya-hk", "company": "奥雅设计", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-lovol", "company": "雷沃重工", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-csu", "company": "中科院空间应用工程与技术中心", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-eswinchipch", "company": "奕斯伟计算", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-jobcsci", "company": "中建香港", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-kunlunxin", "company": "昆仑芯", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-newhope", "company": "新希望集团", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-sinosafe", "company": "华安保险", "adapter": "beisen_legacy", "count": -2, "capped": false, "seconds": 45.0, "error": "wall timeout > 45s"}
+{"id": "beisen-legacy-idata", "company": "盈达信息", "adapter": "beisen_legacy", "count": 14, "capped": false, "seconds": 23.6, "error": null}
+{"id": "beisen-legacy-landarun", "company": "蓝润集团", "adapter": "beisen_legacy", "count": 9, "capped": false, "seconds": 12.7, "error": null}
+{"id": "beisen-legacy-westone", "company": "中电科网络安全", "adapter": "beisen_legacy", "count": 26, "capped": false, "seconds": 29.4, "error": null}
+{"id": "beisen-legacy-hongfa", "company": "宏发股份", "adapter": "beisen_legacy", "count": 24, "capped": false, "seconds": 27.6, "error": null}
+{"id": "beisen-legacy-yurun", "company": "雨润控股", "adapter": "beisen_legacy", "count": 25, "capped": false, "seconds": 30.1, "error": null}
+{"id": "beisen-legacy-nader", "company": "良信电器", "adapter": "beisen_legacy", "count": 29, "capped": false, "seconds": 34.1, "error": null}
+{"id": "beisen-legacy-songdu", "company": "宋都集团", "adapter": "beisen_legacy", "count": 11, "capped": false, "seconds": 17.3, "error": null}
+{"id": "beisen-legacy-oceg", "company": "东方剑桥教育集团", "adapter": "beisen_legacy", "count": 5, "capped": false, "seconds": 7.9, "error": null}
+{"id": "beisen-legacy-tidepharm", "company": "泰德制药", "adapter": "beisen_legacy", "count": 4, "capped": false, "seconds": 8.0, "error": null}
+{"id": "beisen-legacy-jictrust", "company": "中建投信托", "adapter": "beisen_legacy", "count": 3, "capped": false, "seconds": 5.1, "error": null}
+{"id": "beisen-legacy-ideamake", "company": "思为科技", "adapter": "beisen_legacy", "count": 8, "capped": false, "seconds": 11.9, "error": null}
+{"id": "beisen-legacy-ihappygroup", "company": "朱丽燕网络科技", "adapter": "beisen_legacy", "count": 4, "capped": false, "seconds": 7.8, "error": null}
+{"id": "daodaoquan", "company": "道道全", "adapter": "feishu_atsx", "count": 0, "capped": false, "seconds": 1.8, "error": null}
+{"id": "beisen-legacy-simcom", "company": "芯讯通", "adapter": "beisen_legacy", "count": 7, "capped": false, "seconds": 9.8, "error": null}
+{"id": "beisen-legacy-wxajxt", "company": "无锡安井", "adapter": "beisen_legacy", "count": 3, "capped": false, "seconds": 6.0, "error": null}
+{"id": "feishu-j8fq0c3gg7", "company": "梅花集团", "adapter": "feishu_atsx", "count": 5, "capped": false, "seconds": 1.6, "error": null}
+{"id": "feishu-ninedragonspaper", "company": "玖龙纸业", "adapter": "feishu_atsx", "count": 17, "capped": false, "seconds": 1.7, "error": null}
+{"id": "feishu-tianzhulingshan", "company": "舒客电商", "adapter": "feishu_atsx", "count": 7, "capped": false, "seconds": 1.6, "error": null}
+{"id": "meihua-group", "company": "梅花集团", "adapter": "feishu_atsx", "count": 5, "capped": false, "seconds": 1.6, "error": null}
+{"id": "workday-gadventures", "company": "G Adventures", "adapter": "workday", "count": 1, "capped": false, "seconds": 2.5, "error": null}
+{"id": "workday-clarivate", "company": "科睿唯安", "adapter": "workday", "count": 2, "capped": false, "seconds": 3.4, "error": null}
+{"id": "workday-rockwellautomation", "company": "罗克韦尔自动化", "adapter": "workday", "count": 1, "capped": false, "seconds": 3.2, "error": null}
+{"id": "beisen-legacy-chinajack", "company": "杰克缝纫机股份有限公司", "adapter": "beisen_legacy", "count": 39, "capped": false, "seconds": 44.8, "error": null}
+{"id": "workday-shell", "company": "壳牌", "adapter": "workday", "count": 7, "capped": false, "seconds": 8.9, "error": null}
+{"id": "workday-relx", "company": "励讯集团", "adapter": "workday", "count": 10, "capped": false, "seconds": 11.9, "error": null}

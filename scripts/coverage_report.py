@@ -4,6 +4,7 @@
 """
 
 import argparse
+import json
 import sqlite3
 import sys
 from pathlib import Path
@@ -31,6 +32,57 @@ def load_industry_aliases(path: Path = ROOT / "targets" / "industry_targets.yaml
     if not path.exists():
         return {}
     return yaml.safe_load(path.read_text(encoding="utf-8")).get("aliases") or {}
+
+
+CAREERS_PATH = ROOT / "work" / "careers_confirmed.jsonl"
+
+# 「没覆盖」的原因分类：只按我们记录过的招聘入口 URL 归类，没记录过的一律 unknown。
+REASON_PATTERNS = (
+    ("moka", ("mokahr.com",)),
+    ("aggregator", ("zhaopin.com", "liepin.com", "51job.com", "yingjiesheng.com", "nowcoder.com")),
+    ("platform", ("zhiye.com", "hotjob.cn", "jobs.feishu.cn", "myworkdayjobs.com", "tupu360.com", "gllue.com")),
+)
+
+
+def load_careers(path: Path = CAREERS_PATH) -> dict[str, str]:
+    """读过 `work/careers_confirmed.jsonl`，返回 公司名 -> 已确认的招聘页 URL。"""
+    if not path.exists():
+        return {}
+    out: dict[str, str] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        try:
+            row = json.loads(line)
+        except ValueError:
+            continue
+        best = row.get("best") or {}
+        url = best.get("url")
+        if row.get("company") and url:
+            out.setdefault(str(row["company"]), str(url))
+    return out
+
+
+def reason_of(url: str) -> str:
+    low = url.lower()
+    for reason, needles in REASON_PATTERNS:
+        if any(n in low for n in needles):
+            return reason
+    return "self" if low.startswith("http") else "unknown"
+
+
+def uncovered_reasons(targets: dict, matched: dict[str, list[str]],
+                      careers: dict[str, str]) -> dict[str, int]:
+    """未覆盖目标的入口类型分布，用来解释覆盖率为什么上不去。"""
+    blocked = targets.get("blocked") or {}
+    counts: dict[str, int] = {}
+    seen: set[str] = set()
+    for names in list(targets["sectors"].values()) + list((targets.get("provinces") or {}).values()):
+        for n in names:
+            if n in seen or matched.get(n) or n in blocked:
+                continue
+            seen.add(n)
+            reason = reason_of(careers.get(n, ""))
+            counts[reason] = counts.get(reason, 0) + 1
+    return counts
 
 
 def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
@@ -110,6 +162,18 @@ def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | 
             f"两池合计目标 **{len(union)}** 家，已覆盖 **{len(union_cov)}**"
             f"（{len(union_cov) / len(union):.0%}）。",
         ]
+    reasons = uncovered_reasons(targets, matched, load_careers())
+    if reasons:
+        label = {"moka": "只用 Moka（正文加密，红线不碰）", "aggregator": "只在智联/猎聘/前程等聚合站",
+                 "platform": "平台入口已知但没建成源", "self": "自建站或普通企业页",
+                 "unknown": "没有记录过任何招聘入口"}
+        total_un = sum(reasons.values())
+        lines += ["", "## 未覆盖原因（按记录到的招聘入口）", "",
+                  "| 原因 | 家数 | 占比 |", "|---|---|---|"]
+        for key in ("platform", "self", "moka", "aggregator", "unknown"):
+            if reasons.get(key):
+                n = reasons[key]
+                lines.append(f"| {label[key]} | {n} | {n / total_un:.0%} |")
     lines += ["", "## 不可合规覆盖", ""] + [f"- {n}：{r}" for n, r in blocked.items()]
     lines += ["", "## 待侦察", ""]
     for sector, names in targets["sectors"].items():

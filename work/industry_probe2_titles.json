@@ -1,0 +1,308 @@
+[
+ {
+  "company": "蒙牛乳业",
+  "kind": "beisen",
+  "slug": "mengniu",
+  "count": 219,
+  "status": 200,
+  "title": "蒙牛招聘官网",
+  "match": true
+ },
+ {
+  "company": "飞书",
+  "kind": "feishu",
+  "slug": "feishu",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "尼尔森IQ",
+  "kind": "feishu",
+  "slug": "iq",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "创耀科技",
+  "kind": "beisen",
+  "slug": "cykj",
+  "count": 5,
+  "status": 200,
+  "title": "诚易科技",
+  "match": false
+ },
+ {
+  "company": "童程童美",
+  "kind": "feishu",
+  "slug": "chengmei",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "历峰集团",
+  "kind": "beisen",
+  "slug": "feng1",
+  "count": 32,
+  "status": 200,
+  "title": "丰e足食招聘",
+  "match": false
+ },
+ {
+  "company": "泰康资产",
+  "kind": "feishu",
+  "slug": "tkzc",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "明源云",
+  "kind": "feishu",
+  "slug": "mingyuanyun",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "智齿科技",
+  "kind": "beisen",
+  "slug": "zckj",
+  "count": 5,
+  "status": 200,
+  "title": "珠城科技",
+  "match": false
+ },
+ {
+  "company": "金蝶",
+  "kind": "hotjob",
+  "slug": "jd",
+  "count": null,
+  "status": 200,
+  "title": "招聘官网",
+  "match": false
+ },
+ {
+  "company": "瑞幸咖啡",
+  "kind": "feishu",
+  "slug": "luckin",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "水星家纺",
+  "kind": "feishu",
+  "slug": "shuixingjiafang",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "多点Dmall",
+  "kind": "feishu",
+  "slug": "duodian",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "滴滴出行",
+  "kind": "beisen",
+  "slug": "ddcx",
+  "count": 581,
+  "status": 200,
+  "title": "中国大地财产保险股份有限公司",
+  "match": false
+ },
+ {
+  "company": "希音",
+  "kind": "beisen",
+  "slug": "xyzp",
+  "count": 1,
+  "status": 200,
+  "title": "校园招聘",
+  "match": false
+ },
+ {
+  "company": "用友网络",
+  "kind": "hotjob",
+  "slug": "yonyou",
+  "count": null,
+  "status": 200,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "海信家电",
+  "kind": "feishu",
+  "slug": "hisense",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "销售易",
+  "kind": "beisen",
+  "slug": "xyzp",
+  "count": 1,
+  "status": 200,
+  "title": "校园招聘",
+  "match": false
+ },
+ {
+  "company": "小米",
+  "kind": "feishu",
+  "slug": "mi",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "益生股份",
+  "kind": "beisen",
+  "slug": "ys",
+  "count": 57,
+  "status": 200,
+  "title": "多品牌门户",
+  "match": false
+ },
+ {
+  "company": "唯捷创芯",
+  "kind": "feishu",
+  "slug": "wjcx",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "双汇发展",
+  "kind": "beisen",
+  "slug": "shuanghui",
+  "count": 104,
+  "status": 200,
+  "title": "双汇招聘",
+  "match": true
+ },
+ {
+  "company": "渝三峡A",
+  "kind": "beisen",
+  "slug": "sanxia",
+  "count": 3,
+  "status": 200,
+  "title": "三峡油漆",
+  "match": false
+ },
+ {
+  "company": "义翘神州",
+  "kind": "beisen",
+  "slug": "shenzhou",
+  "count": 57,
+  "status": 200,
+  "title": "申洲集团招聘官网",
+  "match": false
+ },
+ {
+  "company": "搜狐",
+  "kind": "beisen",
+  "slug": "shzp",
+  "count": 1,
+  "status": 200,
+  "title": "社会招聘",
+  "match": false
+ },
+ {
+  "company": "名雕股份",
+  "kind": "feishu",
+  "slug": "ming",
+  "count": null,
+  "status": 404,
+  "title": "",
+  "match": false
+ },
+ {
+  "company": "海光信息",
+  "kind": "hotjob",
+  "slug": "hygon",
+  "count": null,
+  "status": 200,
+  "title": "招聘官网",
+  "match": false
+ },
+ {
+  "company": "盛弘股份",
+  "kind": "beisen",
+  "slug": "shzp",
+  "count": 1,
+  "status": 200,
+  "title": "社会招聘",
+  "match": false
+ },
+ {
+  "company": "领益智造",
+  "kind": "hotjob",
+  "slug": "lyzz",
+  "count": null,
+  "status": 200,
+  "title": "招聘官网",
+  "match": false
+ },
+ {
+  "company": "生物股份",
+  "kind": "beisen",
+  "slug": "swzp",
+  "count": 164,
+  "status": 200,
+  "title": "世外教育集团招聘官网",
+  "match": false
+ },
+ {
+  "company": "芯原股份",
+  "kind": "beisen",
+  "slug": "xinyuan",
+  "count": 8,
+  "status": 200,
+  "title": "安徽新远科技股份有限公司",
+  "match": false
+ },
+ {
+  "company": "君合",
+  "kind": "beisen",
+  "slug": "jhzp",
+  "count": 16,
+  "status": 200,
+  "title": "君海招聘",
+  "match": false
+ },
+ {
+  "company": "三环集团",
+  "kind": "beisen",
+  "slug": "shzp",
+  "count": 1,
+  "status": 200,
+  "title": "社会招聘",
+  "match": false
+ },
+ {
+  "company": "三一重工",
+  "kind": "beisen",
+  "slug": "sany",
+  "count": 148,
+  "status": 200,
+  "title": "三一集团有限公司",
+  "match": true
+ }
+]

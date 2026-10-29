@@ -1,0 +1,746 @@
+{"company": "中国重工", "tried": ["zhongguozhonggong", "zhongguozhonggong1", "zhongguozhonggongzp", "zgzg", "zgzg1", "zgzgzp"], "hits": []}
+{"company": "华人文化", "tried": ["huarenwenhua", "huarenwenhua1", "huarenwenhuazp", "hrwh", "hrwh1", "hrwhzp"], "hits": []}
+{"company": "绿城管理", "tried": ["lvchengguanli", "lvchengguanli1", "lvchengguanlizp", "lcgl", "lcgl1", "lcglzp"], "hits": []}
+{"company": "蒙牛乳业", "tried": ["mengniuruye", "mengniuruye1", "mengniuruyezp", "mnry", "mnry1", "mnryzp", "mengniu"], "hits": [{"kind": "beisen", "slug": "mengniu", "ok": true, "count": 219, "sample": ["设备运行技师(J68704)", "业务代表(J68753)", "业务代表(J68754)", "微生物检验员-常温唐山工厂(J68688)", "理化检验员(J68622)"], "codes": []}]}
+{"company": "海南免税", "tried": ["hainanmian", "hainanmian1", "hainanmianzp", "hnm", "hnm1", "hnmzp"], "hits": []}
+{"company": "谷歌", "tried": ["guge", "guge1", "gugezp", "gg", "gg1", "ggzp"], "hits": []}
+{"company": "飞猪", "tried": ["feizhu", "feizhu1", "feizhuzp", "fz", "fz1", "fzzp"], "hits": []}
+{"company": "大参林", "tried": ["dacanlin", "dacanlin1", "dacanlinzp", "dcl", "dcl1", "dclzp"], "hits": []}
+{"company": "马上消费金融", "tried": ["mashangjinrong", "mashangjinrong1", "mashangjinrongzp", "msjr", "msjr1", "msjrzp"], "hits": []}
+{"company": "华为", "tried": ["huawei", "huawei1", "huaweizp", "hw", "hw1", "hwzp"], "hits": []}
+{"company": "中免日上", "tried": ["zhongmianrishang", "zhongmianrishang1", "zhongmianrishangzp", "zmrs", "zmrs1", "zmrszp"], "hits": []}
+{"company": "瑞普生物", "tried": ["ruipushengwu", "ruipushengwu1", "ruipushengwuzp", "rpsw", "rpsw1", "rpswzp"], "hits": []}
+{"company": "纽威数控", "tried": ["weishukong", "weishukong1", "weishukongzp", "wsk", "wsk1", "wskzp"], "hits": []}
+{"company": "北大荒", "tried": ["beidahuang", "beidahuang1", "beidahuangzp", "bdh", "bdh1", "bdhzp"], "hits": []}
+{"company": "兴发集团", "tried": ["xingfa", "xingfa1", "xingfazp", "xf", "xf1", "xfzp"], "hits": []}
+{"company": "网易七鱼", "tried": ["wangyiqiyu", "wangyiqiyu1", "wangyiqiyuzp", "wyqy", "wyqy1", "wyqyzp", "netease", "netease1"], "hits": []}
+{"company": "万物云", "tried": ["wanwuyun", "wanwuyun1", "wanwuyunzp", "wwy", "wwy1", "wwyzp"], "hits": []}
+{"company": "太平养老", "tried": ["taipingyanglao", "taipingyanglao1", "taipingyanglaozp", "tpyl", "tpyl1", "tpylzp"], "hits": []}
+{"company": "艾瑞咨询", "tried": ["airuizixun", "airuizixun1", "airuizixunzp", "arzx", "arzx1", "arzxzp"], "hits": []}
+{"company": "老百姓", "tried": ["laobaixing", "laobaixing1", "laobaixingzp", "lbx", "lbx1", "lbxzp"], "hits": []}
+{"company": "致远互联", "tried": ["zhiyuanhulian", "zhiyuanhulian1", "zhiyuanhulianzp", "zyhl", "zyhl1", "zyhlzp"], "hits": []}
+{"company": "玉禾田", "tried": ["yuhetian", "yuhetian1", "yuhetianzp", "yht", "yht1", "yhtzp"], "hits": []}
+{"company": "联创电子", "tried": ["lianchuangdianzi", "lianchuangdianzi1", "lianchuangdianzizp", "lcdz", "lcdz1", "lcdzzp"], "hits": []}
+{"company": "重庆农商行", "tried": ["zhongqingnongshangxing", "zhongqingnongshangxing1", "zhongqingnongshangxingzp", "zqnsx", "zqnsx1", "zqnsxzp"], "hits": []}
+{"company": "上港集团", "tried": ["shanggang", "shanggang1", "shanggangzp", "sg", "sg1", "sgzp"], "hits": []}
+{"company": "华能水电", "tried": ["huanengshuidian", "huanengshuidian1", "huanengshuidianzp", "hnsd", "hnsd1", "hnsdzp"], "hits": []}
+{"company": "冀东水泥", "tried": ["jidongshuini", "jidongshuini1", "jidongshuinizp", "jdsn", "jdsn1", "jdsnzp"], "hits": []}
+{"company": "天王表", "tried": ["tianwang", "tianwang1", "tianwangzp", "tw", "tw1", "twzp"], "hits": []}
+{"company": "五粮液", "tried": ["wuliangye", "wuliangye1", "wuliangyezp", "wly", "wly1", "wlyzp"], "hits": []}
+{"company": "罗兰贝格", "tried": ["luolanbeige", "luolanbeige1", "luolanbeigezp", "llbg", "llbg1", "llbgzp"], "hits": []}
+{"company": "新莱应材", "tried": ["xinlaiyingcai", "xinlaiyingcai1", "xinlaiyingcaizp", "xlyc", "xlyc1", "xlyczp"], "hits": []}
+{"company": "同程旅行", "tried": ["tongchenglvxing", "tongchenglvxing1", "tongchenglvxingzp", "tclx", "tclx1", "tclxzp"], "hits": []}
+{"company": "开润股份", "tried": ["kairun", "kairun1", "kairunzp", "kr", "kr1", "krzp"], "hits": []}
+{"company": "协和教育", "tried": ["xiehejiaoyu", "xiehejiaoyu1", "xiehejiaoyuzp", "xhjy", "xhjy1", "xhjyzp"], "hits": []}
+{"company": "飞书", "tried": ["feishu"], "hits": [{"kind": "feishu", "slug": "feishu", "ok": true, "token_len": 44}]}
+{"company": "知乎", "tried": ["zhihu", "zhihu1", "zhihuzp", "zh", "zh1", "zhzp"], "hits": []}
+{"company": "一汽解放", "tried": ["yiqijiefang", "yiqijiefang1", "yiqijiefangzp", "yqjf", "yqjf1", "yqjfzp"], "hits": []}
+{"company": "中伦", "tried": ["zhonglun", "zhonglun1", "zhonglunzp", "zl", "zl1", "zlzp"], "hits": []}
+{"company": "山鹰国际", "tried": ["shanyingguoji", "shanyingguoji1", "shanyingguojizp", "sygj", "sygj1", "sygjzp"], "hits": []}
+{"company": "东方财富", "tried": ["dongfangcaifu", "dongfangcaifu1", "dongfangcaifuzp", "dfcf", "dfcf1", "dfcfzp", "eastmoney", "eastmoney1"], "hits": []}
+{"company": "米哈游", "tried": ["mihayou", "mihayou1", "mihayouzp", "mhy", "mhy1", "mhyzp"], "hits": []}
+{"company": "花旗银行", "tried": ["huaqiyinxing", "huaqiyinxing1", "huaqiyinxingzp", "hqyx", "hqyx1", "hqyxzp"], "hits": []}
+{"company": "盖雅工场", "tried": ["gaiyagongchang", "gaiyagongchang1", "gaiyagongchangzp", "gygc", "gygc1", "gygczp"], "hits": []}
+{"company": "亿航智能", "tried": ["yihangzhineng", "yihangzhineng1", "yihangzhinengzp", "yhzn", "yhzn1", "yhznzp"], "hits": []}
+{"company": "安居客", "tried": ["anjuke", "anjuke1", "anjukezp", "ajk", "ajk1", "ajkzp"], "hits": []}
+{"company": "中国邮政", "tried": ["zhongguoyouzheng", "zhongguoyouzheng1", "zhongguoyouzhengzp", "zgyz", "zgyz1", "zgyzzp"], "hits": []}
+{"company": "乐普医疗", "tried": ["lepuyiliao", "lepuyiliao1", "lepuyiliaozp", "lpyl", "lpyl1", "lpylzp"], "hits": []}
+{"company": "博纳影业", "tried": ["bonayingye", "bonayingye1", "bonayingyezp", "bnyy", "bnyy1", "bnyyzp"], "hits": []}
+{"company": "乖宝宠物", "tried": ["baowu", "baowu1", "baowuzp", "bw", "bw1", "bwzp"], "hits": []}
+{"company": "北方导航", "tried": ["beifangdaohang", "beifangdaohang1", "beifangdaohangzp", "bfdh", "bfdh1", "bfdhzp"], "hits": []}
+{"company": "海天精工", "tried": ["haitianjinggong", "haitianjinggong1", "haitianjinggongzp", "htjg", "htjg1", "htjgzp"], "hits": []}
+{"company": "侨银股份", "tried": ["qiaoyin", "qiaoyin1", "qiaoyinzp", "qy", "qy1", "qyzp"], "hits": []}
+{"company": "阳光电源", "tried": ["yangguangdianyuan", "yangguangdianyuan1", "yangguangdianyuanzp", "ygdy", "ygdy1", "ygdyzp", "sungrow", "sungrow1"], "hits": []}
+{"company": "快手", "tried": ["kuaishou", "kuaishou1", "kuaishouzp", "ks", "ks1", "kszp"], "hits": []}
+{"company": "智飞生物", "tried": ["zhifeishengwu", "zhifeishengwu1", "zhifeishengwuzp", "zfsw", "zfsw1", "zfswzp"], "hits": []}
+{"company": "先河环保", "tried": ["xianhehuanbao", "xianhehuanbao1", "xianhehuanbaozp", "xhhb", "xhhb1", "xhhbzp"], "hits": []}
+{"company": "上海证券交易所", "tried": ["shanghaizhengquanjiaoyisuo", "shanghaizhengquanjiaoyisuo1", "shanghaizhengquanjiaoyisuozp", "shzqjys", "shzqjys1", "shzqjyszp"], "hits": []}
+{"company": "中国石化", "tried": ["zhongguoshihua", "zhongguoshihua1", "zhongguoshihuazp", "zgsh", "zgsh1", "zgshzp", "sinopec", "sinopec1"], "hits": []}
+{"company": "星环科技", "tried": ["xinghuankeji", "xinghuankeji1", "xinghuankejizp", "xhkj", "xhkj1", "xhkjzp"], "hits": []}
+{"company": "招商银行", "tried": ["zhaoshangyinxing", "zhaoshangyinxing1", "zhaoshangyinxingzp", "zsyx", "zsyx1", "zsyxzp", "cmbchina", "cmbchina1"], "hits": []}
+{"company": "中国结算", "tried": ["zhongguo", "zhongguo1", "zhongguozp", "zg", "zg1", "zgzp"], "hits": []}
+{"company": "中国移动", "tried": ["zhongguoyidong", "zhongguoyidong1", "zhongguoyidongzp", "zgyd", "zgyd1", "zgydzp", "chinamobile", "chinamobile1"], "hits": []}
+{"company": "康希诺", "tried": ["kangxinuo", "kangxinuo1", "kangxinuozp", "kxn", "kxn1", "kxnzp"], "hits": []}
+{"company": "中细软", "tried": ["zhongruan", "zhongruan1", "zhongruanzp", "zr", "zr1", "zrzp"], "hits": []}
+{"company": "德勤税务", "tried": ["deqinwu", "deqinwu1", "deqinwuzp", "dqw", "dqw1", "dqwzp"], "hits": []}
+{"company": "凤凰传媒", "tried": ["fengchuanmei", "fengchuanmei1", "fengchuanmeizp", "fcm", "fcm1", "fcmzp"], "hits": []}
+{"company": "三全食品", "tried": ["sanquanshipin", "sanquanshipin1", "sanquanshipinzp", "sqsp", "sqsp1", "sqspzp"], "hits": []}
+{"company": "当升科技", "tried": ["dangshengkeji", "dangshengkeji1", "dangshengkejizp", "dskj", "dskj1", "dskjzp"], "hits": []}
+{"company": "雀巢", "tried": ["quechao", "quechao1", "quechaozp", "qc", "qc1", "qczp"], "hits": []}
+{"company": "舜宇光学", "tried": ["shunyuguangxue", "shunyuguangxue1", "shunyuguangxuezp", "sygx", "sygx1", "sygxzp"], "hits": []}
+{"company": "平安健康险", "tried": ["pinganjiankangxian", "pinganjiankangxian1", "pinganjiankangxianzp", "pajkx", "pajkx1", "pajkxzp"], "hits": []}
+{"company": "华润医药", "tried": ["huarunyiyao", "huarunyiyao1", "huarunyiyaozp", "hryy", "hryy1", "hryyzp"], "hits": []}
+{"company": "天禾股份", "tried": ["tianhe", "tianhe1", "tianhezp", "th", "th1", "thzp"], "hits": []}
+{"company": "中南传媒", "tried": ["zhongnanchuanmei", "zhongnanchuanmei1", "zhongnanchuanmeizp", "zncm", "zncm1", "zncmzp"], "hits": []}
+{"company": "大众汽车", "tried": ["dazhongqiche", "dazhongqiche1", "dazhongqichezp", "dzqc", "dzqc1", "dzqczp"], "hits": []}
+{"company": "毕马威", "tried": ["bimawei", "bimawei1", "bimaweizp", "bmw", "bmw1", "bmwzp"], "hits": []}
+{"company": "安图生物", "tried": ["antushengwu", "antushengwu1", "antushengwuzp", "atsw", "atsw1", "atswzp"], "hits": []}
+{"company": "快意电梯", "tried": ["kuaidian", "kuaidian1", "kuaidianzp", "kd", "kd1", "kdzp"], "hits": []}
+{"company": "Unity中国", "tried": ["unity"], "hits": []}
+{"company": "中国农业发展银行", "tried": ["zhongguonongyefazhanyinxing", "zhongguonongyefazhanyinxing1", "zhongguonongyefazhanyinxingzp", "zgnyfzyx", "zgnyfzyx1", "zgnyfzyxzp"], "hits": []}
+{"company": "中国进出口银行", "tried": ["zhongguojinchukouyinxing", "zhongguojinchukouyinxing1", "zhongguojinchukouyinxingzp", "zgjckyx", "zgjckyx1", "zgjckyxzp"], "hits": []}
+{"company": "河钢集团", "tried": ["hegang", "hegang1", "hegangzp", "hg", "hg1", "hgzp"], "hits": []}
+{"company": "科沃斯", "tried": ["kewosi", "kewosi1", "kewosizp", "kws", "kws1", "kwszp"], "hits": []}
+{"company": "泰康之家", "tried": ["taikangzhijia", "taikangzhijia1", "taikangzhijiazp", "tkzj", "tkzj1", "tkzjzp"], "hits": []}
+{"company": "元戎启行", "tried": ["yuanqixing", "yuanqixing1", "yuanqixingzp", "yqx", "yqx1", "yqxzp"], "hits": []}
+{"company": "科锐国际", "tried": ["keruiguoji", "keruiguoji1", "keruiguojizp", "krgj", "krgj1", "krgjzp"], "hits": []}
+{"company": "蓝城代建", "tried": ["lanchengdaijian", "lanchengdaijian1", "lanchengdaijianzp", "lcdj", "lcdj1", "lcdjzp"], "hits": []}
+{"company": "高德地图", "tried": ["gaodeditu", "gaodeditu1", "gaodedituzp", "gddt", "gddt1", "gddtzp"], "hits": []}
+{"company": "广发基金", "tried": ["guangfajijin", "guangfajijin1", "guangfajijinzp", "gfjj", "gfjj1", "gfjjzp"], "hits": []}
+{"company": "TCL科技", "tried": ["tcl", "keji", "keji1", "kejizp", "kj", "kj1", "kjzp", "tcl1"], "hits": []}
+{"company": "云从科技", "tried": ["yuncongkeji", "yuncongkeji1", "yuncongkejizp", "yckj", "yckj1", "yckjzp", "cloudwalk", "cloudwalk1"], "hits": []}
+{"company": "雅迪", "tried": ["yadi", "yadi1", "yadizp", "yd", "yd1", "ydzp"], "hits": []}
+{"company": "青岛港", "tried": ["qingdaogang", "qingdaogang1", "qingdaogangzp", "qdg", "qdg1", "qdgzp"], "hits": []}
+{"company": "首创环保", "tried": ["shouchuanghuanbao", "shouchuanghuanbao1", "shouchuanghuanbaozp", "schb", "schb1", "schbzp"], "hits": []}
+{"company": "尼尔森IQ", "tried": ["iq"], "hits": [{"kind": "feishu", "slug": "iq", "ok": true, "token_len": 44}]}
+{"company": "月之暗面", "tried": ["yuezhianmian", "yuezhianmian1", "yuezhianmianzp", "yzam", "yzam1", "yzamzp"], "hits": []}
+{"company": "拉卡拉", "tried": ["lakala", "lakala1", "lakalazp", "lkl", "lkl1", "lklzp"], "hits": []}
+{"company": "高途", "tried": ["gaotu", "gaotu1", "gaotuzp", "gt", "gt1", "gtzp"], "hits": []}
+{"company": "易普力", "tried": ["yipuli", "yipuli1", "yipulizp", "ypl", "ypl1", "yplzp"], "hits": []}
+{"company": "宝洁", "tried": ["baojie", "baojie1", "baojiezp", "bj", "bj1", "bjzp"], "hits": []}
+{"company": "人大金仓", "tried": ["rendajincang", "rendajincang1", "rendajincangzp", "rdjc", "rdjc1", "rdjczp"], "hits": []}
+{"company": "创耀科技", "tried": ["chuangyaokeji", "chuangyaokeji1", "chuangyaokejizp", "cykj"], "hits": [{"kind": "beisen", "slug": "cykj", "ok": true, "count": 5, "sample": ["出口跟单专员", "车辆交付专员", "销售顾问", "二手车销售顾问（青岛）", "出口业务员"], "codes": []}]}
+{"company": "华大智造", "tried": ["huadazhizao", "huadazhizao1", "huadazhizaozp", "hdzz", "hdzz1", "hdzzzp"], "hits": []}
+{"company": "华大九天", "tried": ["huadajiutian", "huadajiutian1", "huadajiutianzp", "hdjt", "hdjt1", "hdjtzp"], "hits": []}
+{"company": "人保财险", "tried": ["renbaocaixian", "renbaocaixian1", "renbaocaixianzp", "rbcx", "rbcx1", "rbcxzp"], "hits": []}
+{"company": "上海环交所", "tried": ["shanghaihuanjiaosuo", "shanghaihuanjiaosuo1", "shanghaihuanjiaosuozp", "shhjs", "shhjs1", "shhjszp"], "hits": []}
+{"company": "华尔街英语", "tried": ["huaerying", "huaerying1", "huaeryingzp", "hey", "hey1", "heyzp"], "hits": []}
+{"company": "一汽丰田", "tried": ["yiqifengtian", "yiqifengtian1", "yiqifengtianzp", "yqft", "yqft1", "yqftzp"], "hits": []}
+{"company": "中船重工", "tried": ["zhongchuanzhonggong", "zhongchuanzhonggong1", "zhongchuanzhonggongzp", "zczg", "zczg1", "zczgzp"], "hits": []}
+{"company": "寒武纪", "tried": ["hanwuji", "hanwuji1", "hanwujizp", "hwj", "hwj1", "hwjzp", "cambricon", "cambricon1"], "hits": []}
+{"company": "新洋丰", "tried": ["xinyangfeng", "xinyangfeng1", "xinyangfengzp", "xyf", "xyf1", "xyfzp"], "hits": []}
+{"company": "丰疆智能", "tried": ["fengjiangzhineng", "fengjiangzhineng1", "fengjiangzhinengzp", "fjzn", "fjzn1", "fjznzp"], "hits": []}
+{"company": "紫光同创", "tried": ["ziguangtongchuang", "ziguangtongchuang1", "ziguangtongchuangzp", "zgtc", "zgtc1", "zgtczp"], "hits": []}
+{"company": "火花思维", "tried": ["huohuasiwei", "huohuasiwei1", "huohuasiweizp", "hhsw", "hhsw1", "hhswzp"], "hits": []}
+{"company": "云测数据", "tried": ["yunceshuju", "yunceshuju1", "yunceshujuzp", "ycsj", "ycsj1", "ycsjzp"], "hits": []}
+{"company": "斑马智行", "tried": ["mazhixing", "mazhixing1", "mazhixingzp", "mzx", "mzx1", "mzxzp"], "hits": []}
+{"company": "中煤能源", "tried": ["zhongmeinengyuan", "zhongmeinengyuan1", "zhongmeinengyuanzp", "zmny", "zmny1", "zmnyzp"], "hits": []}
+{"company": "前程无忧", "tried": ["qianchengwuyou", "qianchengwuyou1", "qianchengwuyouzp", "qcwy", "qcwy1", "qcwyzp"], "hits": []}
+{"company": "腾讯游戏", "tried": ["tengxunyouxi", "tengxunyouxi1", "tengxunyouxizp", "txyx", "txyx1", "txyxzp", "tencent", "tencent1"], "hits": []}
+{"company": "中国石油", "tried": ["zhongguoshiyou", "zhongguoshiyou1", "zhongguoshiyouzp", "zgsy", "zgsy1", "zgsyzp", "cnpc", "cnpc1"], "hits": []}
+{"company": "金锣", "tried": ["jinluo", "jinluo1", "jinluozp", "jl", "jl1", "jlzp"], "hits": []}
+{"company": "童程童美", "tried": ["chengmei"], "hits": [{"kind": "feishu", "slug": "chengmei", "ok": true, "token_len": 44}]}
+{"company": "路维光电", "tried": ["luweiguangdian", "luweiguangdian1", "luweiguangdianzp", "lwgd", "lwgd1", "lwgdzp"], "hits": []}
+{"company": "历峰集团", "tried": ["feng", "feng1"], "hits": [{"kind": "beisen", "slug": "feng1", "ok": true, "count": 32, "sample": ["丰e店主", "HRBP（流失方向）", "销售管理", "中北战区-高级培训bp", "BD-华西战区"], "codes": []}]}
+{"company": "宇华教育", "tried": ["yuhuajiaoyu", "yuhuajiaoyu1", "yuhuajiaoyuzp", "yhjy", "yhjy1", "yhjyzp"], "hits": []}
+{"company": "泰康资产", "tried": ["taikangzichan", "taikangzichan1", "taikangzichanzp", "tkzc"], "hits": [{"kind": "feishu", "slug": "tkzc", "ok": true, "token_len": 44}]}
+{"company": "国电南瑞", "tried": ["guodiannanrui", "guodiannanrui1", "guodiannanruizp", "gdnr", "gdnr1", "gdnrzp"], "hits": []}
+{"company": "宝马金融", "tried": ["baomajinrong", "baomajinrong1", "baomajinrongzp", "bmjr", "bmjr1", "bmjrzp"], "hits": []}
+{"company": "中邮速递", "tried": ["zhongyousudi", "zhongyousudi1", "zhongyousudizp", "zysd", "zysd1", "zysdzp"], "hits": []}
+{"company": "立昂微", "tried": ["liangwei", "liangwei1", "liangweizp", "law", "law1", "lawzp"], "hits": []}
+{"company": "太平洋人寿", "tried": ["taipingyangrenshou", "taipingyangrenshou1", "taipingyangrenshouzp", "tpyrs", "tpyrs1", "tpyrszp"], "hits": []}
+{"company": "江南化工", "tried": ["jiangnanhuagong", "jiangnanhuagong1", "jiangnanhuagongzp", "jnhg", "jnhg1", "jnhgzp"], "hits": []}
+{"company": "联合资信", "tried": ["lianhezixin", "lianhezixin1", "lianhezixinzp", "lhzx", "lhzx1", "lhzxzp"], "hits": []}
+{"company": "明源云", "tried": ["mingyuanyun"], "hits": [{"kind": "feishu", "slug": "mingyuanyun", "ok": true, "token_len": 44}]}
+{"company": "楚天科技", "tried": ["tiankeji", "tiankeji1", "tiankejizp", "tkj", "tkj1", "tkjzp"], "hits": []}
+{"company": "中国教育集团", "tried": ["zhongguojiaoyu", "zhongguojiaoyu1", "zhongguojiaoyuzp", "zgjy", "zgjy1", "zgjyzp"], "hits": []}
+{"company": "宇视科技", "tried": ["yushikeji", "yushikeji1", "yushikejizp", "yskj", "yskj1", "yskjzp"], "hits": []}
+{"company": "金螳螂", "tried": ["jin", "jin1", "jinzp", "j1", "jzp"], "hits": []}
+{"company": "川恒股份", "tried": ["chuanheng", "chuanheng1", "chuanhengzp", "ch", "ch1", "chzp"], "hits": []}
+{"company": "璞泰来", "tried": ["putailai", "putailai1", "putailaizp", "ptl", "ptl1", "ptlzp"], "hits": []}
+{"company": "瑞士再保险", "tried": ["ruishizaibaoxian", "ruishizaibaoxian1", "ruishizaibaoxianzp", "rszbx", "rszbx1", "rszbxzp"], "hits": []}
+{"company": "东富龙", "tried": ["dongfulong", "dongfulong1", "dongfulongzp", "dfl", "dfl1", "dflzp"], "hits": []}
+{"company": "星星充电", "tried": ["xingxingdian", "xingxingdian1", "xingxingdianzp", "xxd", "xxd1", "xxdzp"], "hits": []}
+{"company": "华阳集团", "tried": ["huayang", "huayang1", "huayangzp", "hy", "hy1", "hyzp"], "hits": []}
+{"company": "奥飞娱乐", "tried": ["aofeiyule", "aofeiyule1", "aofeiyulezp", "afyl", "afyl1", "afylzp"], "hits": []}
+{"company": "LVMH", "tried": ["lvmh"], "hits": []}
+{"company": "德明利", "tried": ["demingli", "demingli1", "deminglizp", "dml", "dml1", "dmlzp"], "hits": []}
+{"company": "微医", "tried": ["weiyi", "weiyi1", "weiyizp", "wy", "wy1", "wyzp"], "hits": []}
+{"company": "罗莱生活", "tried": ["luolaisheng", "luolaisheng1", "luolaishengzp", "lls", "lls1", "llszp"], "hits": []}
+{"company": "粉笔", "tried": ["fenbi", "fenbi1", "fenbizp", "fb", "fb1", "fbzp"], "hits": []}
+{"company": "比亚迪", "tried": ["biyadi", "biyadi1", "biyadizp", "byd", "byd1", "bydzp"], "hits": []}
+{"company": "万泰生物", "tried": ["wantaishengwu", "wantaishengwu1", "wantaishengwuzp", "wtsw", "wtsw1", "wtswzp"], "hits": []}
+{"company": "味知香", "tried": ["weizhixiang", "weizhixiang1", "weizhixiangzp", "wzx", "wzx1", "wzxzp"], "hits": []}
+{"company": "京东健康", "tried": ["jingdongjiankang", "jingdongjiankang1", "jingdongjiankangzp", "jdjk", "jdjk1", "jdjkzp"], "hits": []}
+{"company": "智齿科技", "tried": ["zhichikeji", "zhichikeji1", "zhichikejizp", "zckj"], "hits": [{"kind": "beisen", "slug": "zckj", "ok": true, "count": 5, "sample": ["职能管理类管培生", "运营主管", "生产质量类管培生", "市场营销类管培生", "技术研发类管培生"], "codes": []}]}
+{"company": "辉隆股份", "tried": ["huilong", "huilong1", "huilongzp", "hl", "hl1", "hlzp"], "hits": []}
+{"company": "时代电气", "tried": ["shidaidianqi", "shidaidianqi1", "shidaidianqizp", "sddq", "sddq1", "sddqzp"], "hits": []}
+{"company": "金力永磁", "tried": ["jinliyong", "jinliyong1", "jinliyongzp", "jly", "jly1", "jlyzp"], "hits": []}
+{"company": "中国卫通", "tried": ["zhongguoweitong", "zhongguoweitong1", "zhongguoweitongzp", "zgwt", "zgwt1", "zgwtzp"], "hits": []}
+{"company": "华建集团", "tried": ["huajian", "huajian1", "huajianzp", "hj", "hj1", "hjzp"], "hits": []}
+{"company": "光明乳业", "tried": ["guangmingruye", "guangmingruye1", "guangmingruyezp", "gmry", "gmry1", "gmryzp"], "hits": []}
+{"company": "拓普集团", "tried": ["tuopu", "tuopu1", "tuopuzp", "tp", "tp1", "tpzp"], "hits": []}
+{"company": "新网银行", "tried": ["xinwangyinxing", "xinwangyinxing1", "xinwangyinxingzp", "xwyx", "xwyx1", "xwyxzp"], "hits": []}
+{"company": "平安产险", "tried": ["pinganchanxian", "pinganchanxian1", "pinganchanxianzp", "pacx", "pacx1", "pacxzp"], "hits": []}
+{"company": "高通", "tried": ["gaotong", "gaotong1", "gaotongzp", "gt", "gt1", "gtzp"], "hits": []}
+{"company": "依视路", "tried": ["yishilu", "yishilu1", "yishiluzp", "ysl", "ysl1", "yslzp"], "hits": []}
+{"company": "新东方前途", "tried": ["xindongfangqiantu", "xindongfangqiantu1", "xindongfangqiantuzp", "xdfqt", "xdfqt1", "xdfqtzp"], "hits": []}
+{"company": "安琪酵母", "tried": ["anqijiaomu", "anqijiaomu1", "anqijiaomuzp", "aqjm", "aqjm1", "aqjmzp"], "hits": []}
+{"company": "雷电微力", "tried": ["leidianweili", "leidianweili1", "leidianweilizp", "ldwl", "ldwl1", "ldwlzp"], "hits": []}
+{"company": "百度Apollo", "tried": ["apollo", "baidu", "baidu1", "baiduzp", "bd", "bd1", "bdzp"], "hits": []}
+{"company": "致欧科技", "tried": ["zhioukeji", "zhioukeji1", "zhioukejizp", "zokj", "zokj1", "zokjzp"], "hits": []}
+{"company": "中国广核", "tried": ["zhongguoguanghe", "zhongguoguanghe1", "zhongguoguanghezp", "zggh", "zggh1", "zgghzp"], "hits": []}
+{"company": "飞利浦医疗", "tried": ["feilipuyiliao", "feilipuyiliao1", "feilipuyiliaozp", "flpyl", "flpyl1", "flpylzp"], "hits": []}
+{"company": "南方航空", "tried": ["nanfanghangkong", "nanfanghangkong1", "nanfanghangkongzp", "nfhk", "nfhk1", "nfhkzp", "csair", "csair1"], "hits": []}
+{"company": "编程猫", "tried": ["biancheng", "biancheng1", "bianchengzp", "bc", "bc1", "bczp"], "hits": []}
+{"company": "海尔智家", "tried": ["haierzhijia", "haierzhijia1", "haierzhijiazp", "hezj", "hezj1", "hezjzp", "haier", "haier1"], "hits": []}
+{"company": "千味央厨", "tried": ["qianweiyangchu", "qianweiyangchu1", "qianweiyangchuzp", "qwyc", "qwyc1", "qwyczp"], "hits": []}
+{"company": "深天马", "tried": ["shentianma", "shentianma1", "shentianmazp", "stm", "stm1", "stmzp"], "hits": []}
+{"company": "1919", "tried": [], "hits": []}
+{"company": "东方国信", "tried": ["dongfangguoxin", "dongfangguoxin1", "dongfangguoxinzp", "dfgx", "dfgx1", "dfgxzp"], "hits": []}
+{"company": "玄机科技", "tried": ["xuanjikeji", "xuanjikeji1", "xuanjikejizp", "xjkj", "xjkj1", "xjkjzp"], "hits": []}
+{"company": "上汽通用金融", "tried": ["shangqitongyongjinrong", "shangqitongyongjinrong1", "shangqitongyongjinrongzp", "sqtyjr", "sqtyjr1", "sqtyjrzp"], "hits": []}
+{"company": "昇兴股份", "tried": ["xing", "xing1", "xingzp", "x1", "xzp"], "hits": []}
+{"company": "招商银行信用卡", "tried": ["zhaoshangyinxingxinyongka", "zhaoshangyinxingxinyongka1", "zhaoshangyinxingxinyongkazp", "zsyxxyk", "zsyxxyk1", "zsyxxykzp", "cmbchina", "cmbchina1"], "hits": []}
+{"company": "南大光电", "tried": ["nandaguangdian", "nandaguangdian1", "nandaguangdianzp", "ndgd", "ndgd1", "ndgdzp"], "hits": []}
+{"company": "泰坦科技", "tried": ["taikeji", "taikeji1", "taikejizp", "tkj", "tkj1", "tkjzp"], "hits": []}
+{"company": "沃尔玛", "tried": ["woerma", "woerma1", "woermazp", "wem", "wem1", "wemzp"], "hits": []}
+{"company": "博士眼镜", "tried": ["boshiyan", "boshiyan1", "boshiyanzp", "bsy", "bsy1", "bsyzp"], "hits": []}
+{"company": "联美控股", "tried": ["lianmei", "lianmei1", "lianmeizp", "lm", "lm1", "lmzp"], "hits": []}
+{"company": "湖南尔康", "tried": ["hunanerkang", "hunanerkang1", "hunanerkangzp", "hnek", "hnek1", "hnekzp"], "hits": []}
+{"company": "美格智能", "tried": ["meigezhineng", "meigezhineng1", "meigezhinengzp", "mgzn", "mgzn1", "mgznzp"], "hits": []}
+{"company": "贵州茅台", "tried": ["guizhoumaotai", "guizhoumaotai1", "guizhoumaotaizp", "gzmt", "gzmt1", "gzmtzp", "moutai", "moutai1"], "hits": []}
+{"company": "大众点评", "tried": ["dazhongdianping", "dazhongdianping1", "dazhongdianpingzp", "dzdp", "dzdp1", "dzdpzp"], "hits": []}
+{"company": "中国建筑", "tried": ["zhongguojianzhu", "zhongguojianzhu1", "zhongguojianzhuzp", "zgjz", "zgjz1", "zgjzzp", "cscec", "cscec1"], "hits": []}
+{"company": "兴业银行", "tried": ["xingyeyinxing", "xingyeyinxing1", "xingyeyinxingzp", "xyyx", "xyyx1", "xyyxzp"], "hits": []}
+{"company": "益丰药房", "tried": ["yifengyaofang", "yifengyaofang1", "yifengyaofangzp", "yfyf", "yfyf1", "yfyfzp"], "hits": []}
+{"company": "中信出版", "tried": ["zhongxinchuban", "zhongxinchuban1", "zhongxinchubanzp", "zxcb", "zxcb1", "zxcbzp"], "hits": []}
+{"company": "昆仑健康", "tried": ["kunlunjiankang", "kunlunjiankang1", "kunlunjiankangzp", "kljk", "kljk1", "kljkzp"], "hits": []}
+{"company": "诺唯赞", "tried": ["nuoweizan", "nuoweizan1", "nuoweizanzp", "nwz", "nwz1", "nwzzp"], "hits": []}
+{"company": "施耐德电气", "tried": ["shinaidedianqi", "shinaidedianqi1", "shinaidedianqizp", "snddq", "snddq1", "snddqzp"], "hits": []}
+{"company": "西贝餐饮", "tried": ["xibeiyin", "xibeiyin1", "xibeiyinzp", "xby", "xby1", "xbyzp"], "hits": []}
+{"company": "国投电力", "tried": ["guotoudianli", "guotoudianli1", "guotoudianlizp", "gtdl", "gtdl1", "gtdlzp"], "hits": []}
+{"company": "清新环境", "tried": ["qingxinhuanjing", "qingxinhuanjing1", "qingxinhuanjingzp", "qxhj", "qxhj1", "qxhjzp"], "hits": []}
+{"company": "贝恩咨询", "tried": ["beienzixun", "beienzixun1", "beienzixunzp", "bezx", "bezx1", "bezxzp"], "hits": []}
+{"company": "简道云", "tried": ["daoyun", "daoyun1", "daoyunzp", "dy", "dy1", "dyzp"], "hits": []}
+{"company": "中体产业", "tried": ["zhongtichanye", "zhongtichanye1", "zhongtichanyezp", "ztcy", "ztcy1", "ztcyzp"], "hits": []}
+{"company": "中颖电子", "tried": ["zhongyingdianzi", "zhongyingdianzi1", "zhongyingdianzizp", "zydz", "zydz1", "zydzzp"], "hits": []}
+{"company": "中国货运航空", "tried": ["zhongguohuoyunhangkong", "zhongguohuoyunhangkong1", "zhongguohuoyunhangkongzp", "zghyhk", "zghyhk1", "zghyhkzp"], "hits": []}
+{"company": "金蝶", "tried": ["jindie", "jindie1", "jindiezp", "jd"], "hits": [{"kind": "hotjob", "slug": "jd", "ok": true, "final_url": "https://jd.hotjob.cn/"}]}
+{"company": "京粮控股", "tried": ["jingliang", "jingliang1", "jingliangzp", "jl", "jl1", "jlzp"], "hits": []}
+{"company": "瑞幸咖啡", "tried": ["ruixingkafei", "ruixingkafei1", "ruixingkafeizp", "rxkf", "rxkf1", "rxkfzp", "luckin"], "hits": [{"kind": "feishu", "slug": "luckin", "ok": true, "token_len": 44}]}
+{"company": "腾讯音乐", "tried": ["tengxunyinle", "tengxunyinle1", "tengxunyinlezp", "txyl", "txyl1", "txylzp", "tencent", "tencent1"], "hits": []}
+{"company": "顾家家居", "tried": ["jiajiaju", "jiajiaju1", "jiajiajuzp", "jjj", "jjj1", "jjjzp"], "hits": []}
+{"company": "圆通航空", "tried": ["yuantonghangkong", "yuantonghangkong1", "yuantonghangkongzp", "ythk", "ythk1", "ythkzp"], "hits": []}
+{"company": "湖南中烟", "tried": ["hunanzhongyan", "hunanzhongyan1", "hunanzhongyanzp", "hnzy", "hnzy1", "hnzyzp"], "hits": []}
+{"company": "烽火通信", "tried": ["fenghuotongxin", "fenghuotongxin1", "fenghuotongxinzp", "fhtx", "fhtx1", "fhtxzp"], "hits": []}
+{"company": "中原建业", "tried": ["zhongyuanjianye", "zhongyuanjianye1", "zhongyuanjianyezp", "zyjy", "zyjy1", "zyjyzp"], "hits": []}
+{"company": "明汯投资", "tried": ["mingtouzi", "mingtouzi1", "mingtouzizp", "mtz", "mtz1", "mtzzp"], "hits": []}
+{"company": "顺丰科技", "tried": ["shunfengkeji", "shunfengkeji1", "shunfengkejizp", "sfkj", "sfkj1", "sfkjzp", "sfexpress", "sfexpress1"], "hits": []}
+{"company": "新浪", "tried": ["xinlang", "xinlang1", "xinlangzp", "xl", "xl1", "xlzp"], "hits": []}
+{"company": "美吉姆", "tried": ["meijimu", "meijimu1", "meijimuzp", "mjm", "mjm1", "mjmzp"], "hits": []}
+{"company": "航发动力", "tried": ["hangfadongli", "hangfadongli1", "hangfadonglizp", "hfdl", "hfdl1", "hfdlzp"], "hits": []}
+{"company": "水星家纺", "tried": ["shuixingjiafang"], "hits": [{"kind": "feishu", "slug": "shuixingjiafang", "ok": true, "token_len": 44}]}
+{"company": "福莱特", "tried": ["fulaite", "fulaite1", "fulaitezp", "flt", "flt1", "fltzp"], "hits": []}
+{"company": "深睿医疗", "tried": ["shenruiyiliao", "shenruiyiliao1", "shenruiyiliaozp", "sryl", "sryl1", "srylzp"], "hits": []}
+{"company": "周大生", "tried": ["zhoudasheng", "zhoudasheng1", "zhoudashengzp", "zds", "zds1", "zdszp"], "hits": []}
+{"company": "沪硅产业", "tried": ["huguichanye", "huguichanye1", "huguichanyezp", "hgcy", "hgcy1", "hgcyzp"], "hits": []}
+{"company": "一拖股份", "tried": ["yituo", "yituo1", "yituozp", "yt", "yt1", "ytzp"], "hits": []}
+{"company": "拓维信息", "tried": ["tuoweixinxi", "tuoweixinxi1", "tuoweixinxizp", "twxx", "twxx1", "twxxzp"], "hits": []}
+{"company": "诺亚财富", "tried": ["nuoyacaifu", "nuoyacaifu1", "nuoyacaifuzp", "nycf", "nycf1", "nycfzp"], "hits": []}
+{"company": "阿里云", "tried": ["aliyun", "aliyun1", "aliyunzp", "aly", "aly1", "alyzp"], "hits": []}
+{"company": "中国联通", "tried": ["zhongguoliantong", "zhongguoliantong1", "zhongguoliantongzp", "zglt", "zglt1", "zgltzp", "chinaunicom", "chinaunicom1"], "hits": []}
+{"company": "大唐发电", "tried": ["datangfadian", "datangfadian1", "datangfadianzp", "dtfd", "dtfd1", "dtfdzp"], "hits": []}
+{"company": "旷视科技", "tried": ["kuangshikeji", "kuangshikeji1", "kuangshikejizp", "kskj", "kskj1", "kskjzp", "megvii", "megvii1"], "hits": []}
+{"company": "多点Dmall", "tried": ["dmall", "duodian"], "hits": [{"kind": "feishu", "slug": "duodian", "ok": true, "token_len": 44}]}
+{"company": "法大大", "tried": ["fadada", "fadada1", "fadadazp", "fdd", "fdd1", "fddzp"], "hits": []}
+{"company": "巴斯夫", "tried": ["basifu", "basifu1", "basifuzp", "bsf", "bsf1", "bsfzp"], "hits": []}
+{"company": "莱伯泰科", "tried": ["laibotaike", "laibotaike1", "laibotaikezp", "lbtk", "lbtk1", "lbtkzp"], "hits": []}
+{"company": "微盟", "tried": ["weimeng", "weimeng1", "weimengzp", "wm", "wm1", "wmzp"], "hits": []}
+{"company": "中核钛白", "tried": ["zhonghetaibai", "zhonghetaibai1", "zhonghetaibaizp", "zhtb", "zhtb1", "zhtbzp"], "hits": []}
+{"company": "国鸿氢能", "tried": ["guohongneng", "guohongneng1", "guohongnengzp", "ghn", "ghn1", "ghnzp"], "hits": []}
+{"company": "华海药业", "tried": ["huahaiyaoye", "huahaiyaoye1", "huahaiyaoyezp", "hhyy", "hhyy1", "hhyyzp"], "hits": []}
+{"company": "滴滴出行", "tried": ["didichuxing", "didichuxing1", "didichuxingzp", "ddcx"], "hits": [{"kind": "beisen", "slug": "ddcx", "ok": true, "count": 581, "sample": ["国企车险续保客户经理接受实习生(J20421)", "国企电话客服接受实习生小白(J20419)", "国企用户运营岗接受实习生(J20395)", "国企客服专员/五险/带薪培训(J20314)", "国企客服专员/五险/带薪培训(J20314)"], "codes": []}]}
+{"company": "德勤咨询", "tried": ["deqinzixun", "deqinzixun1", "deqinzixunzp", "dqzx", "dqzx1", "dqzxzp"], "hits": []}
+{"company": "华润雪花", "tried": ["huarunxuehua", "huarunxuehua1", "huarunxuehuazp", "hrxh", "hrxh1", "hrxhzp"], "hits": []}
+{"company": "普华永道", "tried": ["puhuayongdao", "puhuayongdao1", "puhuayongdaozp", "phyd", "phyd1", "phydzp"], "hits": []}
+{"company": "荣庆物流", "tried": ["rongqingwuliu", "rongqingwuliu1", "rongqingwuliuzp", "rqwl", "rqwl1", "rqwlzp"], "hits": []}
+{"company": "中国中免", "tried": ["zhongguozhongmian", "zhongguozhongmian1", "zhongguozhongmianzp", "zgzm", "zgzm1", "zgzmzp"], "hits": []}
+{"company": "毛戈平", "tried": ["maogeping", "maogeping1", "maogepingzp", "mgp", "mgp1", "mgpzp"], "hits": []}
+{"company": "圆通速递", "tried": ["yuantongsudi", "yuantongsudi1", "yuantongsudizp", "ytsd", "ytsd1", "ytsdzp", "yto", "yto1"], "hits": []}
+{"company": "迈为股份", "tried": ["maiwei", "maiwei1", "maiweizp", "mw", "mw1", "mwzp"], "hits": []}
+{"company": "众惠相互", "tried": ["zhonghuihu", "zhonghuihu1", "zhonghuihuzp", "zhh", "zhh1", "zhhzp"], "hits": []}
+{"company": "硅宝科技", "tried": ["guibaokeji", "guibaokeji1", "guibaokejizp", "gbkj", "gbkj1", "gbkjzp"], "hits": []}
+{"company": "房天下", "tried": ["fangtianxia", "fangtianxia1", "fangtianxiazp", "ftx", "ftx1", "ftxzp"], "hits": []}
+{"company": "百丽国际", "tried": ["bailiguoji", "bailiguoji1", "bailiguojizp", "blgj", "blgj1", "blgjzp"], "hits": []}
+{"company": "平高电气", "tried": ["pinggaodianqi", "pinggaodianqi1", "pinggaodianqizp", "pgdq", "pgdq1", "pgdqzp"], "hits": []}
+{"company": "鲁花", "tried": ["luhua", "luhua1", "luhuazp", "lh", "lh1", "lhzp"], "hits": []}
+{"company": "广汇汽车", "tried": ["guanghuiqiche", "guanghuiqiche1", "guanghuiqichezp", "ghqc", "ghqc1", "ghqczp"], "hits": []}
+{"company": "微博", "tried": ["weibo", "weibo1", "weibozp", "wb", "wb1", "wbzp"], "hits": []}
+{"company": "飞亚达", "tried": ["feiyada", "feiyada1", "feiyadazp", "fyd", "fyd1", "fydzp"], "hits": []}
+{"company": "农业银行", "tried": ["nongyeyinxing", "nongyeyinxing1", "nongyeyinxingzp", "nyyx", "nyyx1", "nyyxzp"], "hits": []}
+{"company": "幻方量化", "tried": ["fanglianghua", "fanglianghua1", "fanglianghuazp", "flh", "flh1", "flhzp"], "hits": []}
+{"company": "钱江摩托", "tried": ["jiangmotuo", "jiangmotuo1", "jiangmotuozp", "jmt", "jmt1", "jmtzp"], "hits": []}
+{"company": "新凤鸣", "tried": ["xinfengming", "xinfengming1", "xinfengmingzp", "xfm", "xfm1", "xfmzp"], "hits": []}
+{"company": "保利文化", "tried": ["baoliwenhua", "baoliwenhua1", "baoliwenhuazp", "blwh", "blwh1", "blwhzp"], "hits": []}
+{"company": "中华联合财险", "tried": ["zhonghualianhecaixian", "zhonghualianhecaixian1", "zhonghualianhecaixianzp", "zhlhcx", "zhlhcx1", "zhlhcxzp"], "hits": []}
+{"company": "饿了么", "tried": ["eleme", "eleme1", "elemezp", "elm", "elm1", "elmzp"], "hits": []}
+{"company": "陶氏化学", "tried": ["taoshihuaxue", "taoshihuaxue1", "taoshihuaxuezp", "tshx", "tshx1", "tshxzp"], "hits": []}
+{"company": "宏大爆破", "tried": ["hongdabao", "hongdabao1", "hongdabaozp", "hdb", "hdb1", "hdbzp"], "hits": []}
+{"company": "交个朋友", "tried": ["jiaoyou", "jiaoyou1", "jiaoyouzp", "jy", "jy1", "jyzp"], "hits": []}
+{"company": "平安人寿", "tried": ["pinganrenshou", "pinganrenshou1", "pinganrenshouzp", "pars", "pars1", "parszp"], "hits": []}
+{"company": "爱婴室", "tried": ["aiyingshi", "aiyingshi1", "aiyingshizp", "ays", "ays1", "ayszp"], "hits": []}
+{"company": "同花顺", "tried": ["tonghuashun", "tonghuashun1", "tonghuashunzp", "ths", "ths1", "thszp", "10jqka", "10jqka1"], "hits": []}
+{"company": "中复神鹰", "tried": ["zhongfushenying", "zhongfushenying1", "zhongfushenyingzp", "zfsy", "zfsy1", "zfsyzp"], "hits": []}
+{"company": "传智教育", "tried": ["chuanzhijiaoyu", "chuanzhijiaoyu1", "chuanzhijiaoyuzp", "czjy", "czjy1", "czjyzp"], "hits": []}
+{"company": "完美日记", "tried": ["wanmeiri", "wanmeiri1", "wanmeirizp", "wmr", "wmr1", "wmrzp"], "hits": []}
+{"company": "恩捷股份", "tried": ["enjie", "enjie1", "enjiezp", "ej", "ej1", "ejzp"], "hits": []}
+{"company": "中铁特货", "tried": ["zhongtietehuo", "zhongtietehuo1", "zhongtietehuozp", "ztth", "ztth1", "ztthzp"], "hits": []}
+{"company": "中信银行信用卡", "tried": ["zhongxinyinxingxinyongka", "zhongxinyinxingxinyongka1", "zhongxinyinxingxinyongkazp", "zxyxxyk", "zxyxxyk1", "zxyxxykzp"], "hits": []}
+{"company": "中国建筑设计研究院", "tried": ["zhongguojianzhusheji", "zhongguojianzhusheji1", "zhongguojianzhushejizp", "zgjzsj", "zgjzsj1", "zgjzsjzp", "cscec", "cscec1"], "hits": []}
+{"company": "光迅科技", "tried": ["guangxunkeji", "guangxunkeji1", "guangxunkejizp", "gxkj", "gxkj1", "gxkjzp", "accelink", "accelink1"], "hits": []}
+{"company": "徐工机械", "tried": ["xugongji", "xugongji1", "xugongjizp", "xgj", "xgj1", "xgjzp", "xcmg", "xcmg1"], "hits": []}
+{"company": "爱玛科技", "tried": ["aimakeji", "aimakeji1", "aimakejizp", "amkj", "amkj1", "amkjzp"], "hits": []}
+{"company": "微创医疗", "tried": ["weichuangyiliao", "weichuangyiliao1", "weichuangyiliaozp", "wcyl", "wcyl1", "wcylzp"], "hits": []}
+{"company": "通富微电", "tried": ["tongfuweidian", "tongfuweidian1", "tongfuweidianzp", "tfwd", "tfwd1", "tfwdzp", "tfme", "tfme1"], "hits": []}
+{"company": "顺丰航空", "tried": ["shunfenghangkong", "shunfenghangkong1", "shunfenghangkongzp", "sfhk", "sfhk1", "sfhkzp", "sfexpress", "sfexpress1"], "hits": []}
+{"company": "华电国际", "tried": ["huadianguoji", "huadianguoji1", "huadianguojizp", "hdgj", "hdgj1", "hdgjzp"], "hits": []}
+{"company": "华策影视", "tried": ["huaceyingshi", "huaceyingshi1", "huaceyingshizp", "hcys", "hcys1", "hcyszp"], "hits": []}
+{"company": "农夫山泉", "tried": ["nongfushanquan", "nongfushanquan1", "nongfushanquanzp", "nfsq", "nfsq1", "nfsqzp", "nongfuspring", "nongfuspring1"], "hits": []}
+{"company": "太阳纸业", "tried": ["taiyangzhiye", "taiyangzhiye1", "taiyangzhiyezp", "tyzy", "tyzy1", "tyzyzp"], "hits": []}
+{"company": "吉利汽车", "tried": ["jiliqiche", "jiliqiche1", "jiliqichezp", "jlqc", "jlqc1", "jlqczp", "geely", "geely1"], "hits": []}
+{"company": "泰康在线", "tried": ["taikangzaixian", "taikangzaixian1", "taikangzaixianzp", "tkzx", "tkzx1", "tkzxzp"], "hits": []}
+{"company": "大疆", "tried": ["dajiang", "dajiang1", "dajiangzp", "dj", "dj1", "djzp", "dji", "dji1"], "hits": []}
+{"company": "希音", "tried": ["xiyin", "xiyin1", "xiyinzp", "xy", "xy1", "xyzp"], "hits": [{"kind": "beisen", "slug": "xyzp", "ok": true, "count": 1, "sample": ["管理辅助岗"], "codes": []}]}
+{"company": "百信银行", "tried": ["baixinyinxing", "baixinyinxing1", "baixinyinxingzp", "bxyx", "bxyx1", "bxyxzp"], "hits": []}
+{"company": "光大养老", "tried": ["guangdayanglao", "guangdayanglao1", "guangdayanglaozp", "gdyl", "gdyl1", "gdylzp"], "hits": []}
+{"company": "华特气体", "tried": ["huateqiti", "huateqiti1", "huateqitizp", "htqt", "htqt1", "htqtzp"], "hits": []}
+{"company": "泛华保险", "tried": ["fanhuabaoxian", "fanhuabaoxian1", "fanhuabaoxianzp", "fhbx", "fhbx1", "fhbxzp"], "hits": []}
+{"company": "捷佳伟创", "tried": ["jiejiaweichuang", "jiejiaweichuang1", "jiejiaweichuangzp", "jjwc", "jjwc1", "jjwczp"], "hits": []}
+{"company": "东岳集团", "tried": ["dong", "dong1", "dongzp", "d1", "dzp"], "hits": []}
+{"company": "上海清算所", "tried": ["shanghaiqingsuo", "shanghaiqingsuo1", "shanghaiqingsuozp", "shqs", "shqs1", "shqszp"], "hits": []}
+{"company": "荣盛石化", "tried": ["rongshengshihua", "rongshengshihua1", "rongshengshihuazp", "rssh", "rssh1", "rsshzp"], "hits": []}
+{"company": "广汽本田", "tried": ["guangqibentian", "guangqibentian1", "guangqibentianzp", "gqbt", "gqbt1", "gqbtzp"], "hits": []}
+{"company": "蚂蚁集团", "tried": ["mayi", "mayi1", "mayizp", "my", "my1", "myzp"], "hits": []}
+{"company": "欧菲光", "tried": ["oufeiguang", "oufeiguang1", "oufeiguangzp", "ofg", "ofg1", "ofgzp"], "hits": []}
+{"company": "苏宁易购", "tried": ["suningyigou", "suningyigou1", "suningyigouzp", "snyg", "snyg1", "snygzp", "suning", "suning1"], "hits": []}
+{"company": "信美人寿相互", "tried": ["xinmeirenshouhu", "xinmeirenshouhu1", "xinmeirenshouhuzp", "xmrsh", "xmrsh1", "xmrshzp"], "hits": []}
+{"company": "招银金租", "tried": ["zhaoyinjin", "zhaoyinjin1", "zhaoyinjinzp", "zyj", "zyj1", "zyjzp"], "hits": []}
+{"company": "格科微", "tried": ["gekewei", "gekewei1", "gekeweizp", "gkw", "gkw1", "gkwzp"], "hits": []}
+{"company": "中广核", "tried": ["zhongguanghe", "zhongguanghe1", "zhongguanghezp", "zgh", "zgh1", "zghzp", "cgnpc", "cgnpc1"], "hits": []}
+{"company": "国家电投", "tried": ["guojiadiantou", "guojiadiantou1", "guojiadiantouzp", "gjdt", "gjdt1", "gjdtzp", "spic", "spic1"], "hits": []}
+{"company": "枫叶教育", "tried": ["yejiaoyu", "yejiaoyu1", "yejiaoyuzp", "yjy", "yjy1", "yjyzp"], "hits": []}
+{"company": "分众传媒", "tried": ["fenzhongchuanmei", "fenzhongchuanmei1", "fenzhongchuanmeizp", "fzcm", "fzcm1", "fzcmzp"], "hits": []}
+{"company": "华康股份", "tried": ["huakang", "huakang1", "huakangzp", "hk", "hk1", "hkzp"], "hits": []}
+{"company": "用友网络", "tried": ["yongyouwangluo", "yongyouwangluo1", "yongyouwangluozp", "yywl", "yywl1", "yywlzp", "yonyou"], "hits": [{"kind": "hotjob", "slug": "yonyou", "ok": true, "final_url": "https://wecruit.hotjob.cn/SU61108d5b0dcad4106ff62e80/pb/index.html"}]}
+{"company": "航天科工", "tried": ["hangtiankegong", "hangtiankegong1", "hangtiankegongzp", "htkg", "htkg1", "htkgzp"], "hits": []}
+{"company": "中国中铁", "tried": ["zhongguozhongtie", "zhongguozhongtie1", "zhongguozhongtiezp", "zgzt", "zgzt1", "zgztzp", "crec", "crec1"], "hits": []}
+{"company": "诺华", "tried": ["nuohua", "nuohua1", "nuohuazp", "nh", "nh1", "nhzp"], "hits": []}
+{"company": "永安期货", "tried": ["yonganhuo", "yonganhuo1", "yonganhuozp", "yah", "yah1", "yahzp"], "hits": []}
+{"company": "露笑科技", "tried": ["lukeji", "lukeji1", "lukejizp", "lkj", "lkj1", "lkjzp"], "hits": []}
+{"company": "国银金租", "tried": ["guoyinjin", "guoyinjin1", "guoyinjinzp", "gyj", "gyj1", "gyjzp"], "hits": []}
+{"company": "天合光能", "tried": ["tianheguangneng", "tianheguangneng1", "tianheguangnengzp", "thgn", "thgn1", "thgnzp", "trina", "trina1"], "hits": []}
+{"company": "万豪国际", "tried": ["wanhaoguoji", "wanhaoguoji1", "wanhaoguojizp", "whgj", "whgj1", "whgjzp"], "hits": []}
+{"company": "速腾聚创", "tried": ["sutengjuchuang", "sutengjuchuang1", "sutengjuchuangzp", "stjc", "stjc1", "stjczp"], "hits": []}
+{"company": "完美世界", "tried": ["wanmeishijie", "wanmeishijie1", "wanmeishijiezp", "wmsj", "wmsj1", "wmsjzp"], "hits": []}
+{"company": "佩蒂股份", "tried": [], "hits": []}
+{"company": "普华永道税务", "tried": ["puhuayongdaowu", "puhuayongdaowu1", "puhuayongdaowuzp", "phydw", "phydw1", "phydwzp"], "hits": []}
+{"company": "惠天热电", "tried": ["huitiandian", "huitiandian1", "huitiandianzp", "htd", "htd1", "htdzp"], "hits": []}
+{"company": "小天才", "tried": ["xiaotian", "xiaotian1", "xiaotianzp", "xt", "xt1", "xtzp"], "hits": []}
+{"company": "凯度", "tried": ["kaidu", "kaidu1", "kaiduzp", "kd", "kd1", "kdzp"], "hits": []}
+{"company": "中银消费金融", "tried": ["zhongyinjinrong", "zhongyinjinrong1", "zhongyinjinrongzp", "zyjr", "zyjr1", "zyjrzp"], "hits": []}
+{"company": "工银科技", "tried": ["gongyinkeji", "gongyinkeji1", "gongyinkejizp", "gykj", "gykj1", "gykjzp"], "hits": []}
+{"company": "兴森科技", "tried": ["xingsenkeji", "xingsenkeji1", "xingsenkejizp", "xskj", "xskj1", "xskjzp"], "hits": []}
+{"company": "启迪设计", "tried": ["qidisheji", "qidisheji1", "qidishejizp", "qdsj", "qdsj1", "qdsjzp"], "hits": []}
+{"company": "金吉列", "tried": ["jinji", "jinji1", "jinjizp", "jj", "jj1", "jjzp"], "hits": []}
+{"company": "索菲亚", "tried": ["suofeiya", "suofeiya1", "suofeiyazp", "sfy", "sfy1", "sfyzp"], "hits": []}
+{"company": "网易游戏", "tried": ["wangyiyouxi", "wangyiyouxi1", "wangyiyouxizp", "wyyx", "wyyx1", "wyyxzp", "netease", "netease1"], "hits": []}
+{"company": "漫步者", "tried": ["manbuzhe", "manbuzhe1", "manbuzhezp", "mbz", "mbz1", "mbzzp"], "hits": []}
+{"company": "平安好医生", "tried": ["pinganhaoyisheng", "pinganhaoyisheng1", "pinganhaoyishengzp", "pahys", "pahys1", "pahyszp"], "hits": []}
+{"company": "昆仑能源", "tried": ["kunlunnengyuan", "kunlunnengyuan1", "kunlunnengyuanzp", "klny", "klny1", "klnyzp"], "hits": []}
+{"company": "郑明物流", "tried": ["zhengmingwuliu", "zhengmingwuliu1", "zhengmingwuliuzp", "zmwl", "zmwl1", "zmwlzp"], "hits": []}
+{"company": "景林资产", "tried": ["jinglinzichan", "jinglinzichan1", "jinglinzichanzp", "jlzc", "jlzc1", "jlzczp"], "hits": []}
+{"company": "海信家电", "tried": ["haixinjiadian", "haixinjiadian1", "haixinjiadianzp", "hxjd", "hxjd1", "hxjdzp", "hisense"], "hits": [{"kind": "feishu", "slug": "hisense", "ok": true, "token_len": 44}]}
+{"company": "博实乐", "tried": ["boshile", "boshile1", "boshilezp", "bsl", "bsl1", "bslzp"], "hits": []}
+{"company": "中国通号", "tried": ["zhongguotonghao", "zhongguotonghao1", "zhongguotonghaozp", "zgth", "zgth1", "zgthzp"], "hits": []}
+{"company": "彤程新材", "tried": ["tongchengxincai", "tongchengxincai1", "tongchengxincaizp", "tcxc", "tcxc1", "tcxczp"], "hits": []}
+{"company": "中联重机", "tried": ["zhonglianzhongji", "zhonglianzhongji1", "zhonglianzhongjizp", "zlzj", "zlzj1", "zlzjzp"], "hits": []}
+{"company": "中证指数", "tried": ["zhongzhengzhishu", "zhongzhengzhishu1", "zhongzhengzhishuzp", "zzzs", "zzzs1", "zzzszp"], "hits": []}
+{"company": "广立微", "tried": ["guangliwei", "guangliwei1", "guangliweizp", "glw", "glw1", "glwzp"], "hits": []}
+{"company": "渣打银行", "tried": ["yinxing", "yinxing1", "yinxingzp", "yx", "yx1", "yxzp"], "hits": []}
+{"company": "曹操出行", "tried": ["chuxing", "chuxing1", "chuxingzp", "cx", "cx1", "cxzp"], "hits": []}
+{"company": "王府井", "tried": ["wangfujing", "wangfujing1", "wangfujingzp", "wfj", "wfj1", "wfjzp"], "hits": []}
+{"company": "中航光电", "tried": ["zhonghangguangdian", "zhonghangguangdian1", "zhonghangguangdianzp", "zhgd", "zhgd1", "zhgdzp"], "hits": []}
+{"company": "BOSS直聘", "tried": ["boss", "zhipin", "zhipin1", "zhipinzp", "zp1", "zpzp"], "hits": []}
+{"company": "中青旅", "tried": ["zhongqinglv", "zhongqinglv1", "zhongqinglvzp", "zql", "zql1", "zqlzp"], "hits": []}
+{"company": "纳芯微", "tried": ["naxinwei", "naxinwei1", "naxinweizp", "nxw", "nxw1", "nxwzp"], "hits": []}
+{"company": "天健", "tried": ["tianjian", "tianjian1", "tianjianzp", "tj", "tj1", "tjzp"], "hits": []}
+{"company": "北方工业", "tried": ["beifanggongye", "beifanggongye1", "beifanggongyezp", "bfgy", "bfgy1", "bfgyzp"], "hits": []}
+{"company": "万得信息", "tried": ["wandexinxi", "wandexinxi1", "wandexinxizp", "wdxx", "wdxx1", "wdxxzp"], "hits": []}
+{"company": "销售易", "tried": ["xiaoyi", "xiaoyi1", "xiaoyizp", "xy", "xy1", "xyzp"], "hits": [{"kind": "beisen", "slug": "xyzp", "ok": true, "count": 1, "sample": ["管理辅助岗"], "codes": []}]}
+{"company": "外服控股", "tried": ["waifu", "waifu1", "waifuzp", "wf", "wf1", "wfzp"], "hits": []}
+{"company": "康力电梯", "tried": ["kanglidian", "kanglidian1", "kanglidianzp", "kld", "kld1", "kldzp"], "hits": []}
+{"company": "新秀丽", "tried": ["xinxiuli", "xinxiuli1", "xinxiulizp", "xxl", "xxl1", "xxlzp"], "hits": []}
+{"company": "中软国际", "tried": ["zhongruanguoji", "zhongruanguoji1", "zhongruanguojizp", "zrgj", "zrgj1", "zrgjzp"], "hits": []}
+{"company": "创业慧康", "tried": ["chuangyehuikang", "chuangyehuikang1", "chuangyehuikangzp", "cyhk", "cyhk1", "cyhkzp"], "hits": []}
+{"company": "中国商飞", "tried": ["zhongguoshangfei", "zhongguoshangfei1", "zhongguoshangfeizp", "zgsf", "zgsf1", "zgsfzp"], "hits": []}
+{"company": "四创电子", "tried": ["sichuangdianzi", "sichuangdianzi1", "sichuangdianzizp", "scdz", "scdz1", "scdzzp"], "hits": []}
+{"company": "小米", "tried": ["xiaomi", "xiaomi1", "xiaomizp", "xm", "xm1", "xmzp", "mi"], "hits": [{"kind": "feishu", "slug": "mi", "ok": true, "token_len": 44}]}
+{"company": "金宏气体", "tried": ["jinhongqiti", "jinhongqiti1", "jinhongqitizp", "jhqt", "jhqt1", "jhqtzp"], "hits": []}
+{"company": "红蜻蜓", "tried": ["hong", "hong1", "hongzp", "h1", "hzp"], "hits": []}
+{"company": "华工科技", "tried": ["huagongkeji", "huagongkeji1", "huagongkejizp", "hgkj", "hgkj1", "hgkjzp"], "hits": []}
+{"company": "安踏体育", "tried": ["antatiyu", "antatiyu1", "antatiyuzp", "atty", "atty1", "attyzp", "anta", "anta1"], "hits": []}
+{"company": "拓尔思", "tried": ["tuoersi", "tuoersi1", "tuoersizp", "tes", "tes1", "teszp"], "hits": []}
+{"company": "广电计量", "tried": ["guangdianjiliang", "guangdianjiliang1", "guangdianjiliangzp", "gdjl", "gdjl1", "gdjlzp"], "hits": []}
+{"company": "斯达半导", "tried": ["sidabandao", "sidabandao1", "sidabandaozp", "sdbd", "sdbd1", "sdbdzp"], "hits": []}
+{"company": "鼎龙股份", "tried": ["dinglong", "dinglong1", "dinglongzp", "dl", "dl1", "dlzp"], "hits": []}
+{"company": "清溢光电", "tried": ["qingguangdian", "qingguangdian1", "qingguangdianzp", "qgd", "qgd1", "qgdzp"], "hits": []}
+{"company": "太平鸟", "tried": ["taipingniao", "taipingniao1", "taipingniaozp", "tpn", "tpn1", "tpnzp", "peacebird", "peacebird1"], "hits": []}
+{"company": "云鲸智能", "tried": ["yunzhineng", "yunzhineng1", "yunzhinengzp", "yzn", "yzn1", "yznzp"], "hits": []}
+{"company": "许继电气", "tried": ["xujidianqi", "xujidianqi1", "xujidianqizp", "xjdq", "xjdq1", "xjdqzp"], "hits": []}
+{"company": "华兰生物", "tried": ["hualanshengwu", "hualanshengwu1", "hualanshengwuzp", "hlsw", "hlsw1", "hlswzp"], "hits": []}
+{"company": "全家便利", "tried": ["quanjiali", "quanjiali1", "quanjializp", "qjl", "qjl1", "qjlzp"], "hits": []}
+{"company": "登海种业", "tried": ["denghaizhongye", "denghaizhongye1", "denghaizhongyezp", "dhzy", "dhzy1", "dhzyzp"], "hits": []}
+{"company": "电连技术", "tried": ["dianlianjishu", "dianlianjishu1", "dianlianjishuzp", "dljs", "dljs1", "dljszp"], "hits": []}
+{"company": "中国兵器装备", "tried": ["zhongguobingqizhuangbei", "zhongguobingqizhuangbei1", "zhongguobingqizhuangbeizp", "zgbqzb", "zgbqzb1", "zgbqzbzp"], "hits": []}
+{"company": "华润医疗", "tried": ["huarunyiliao", "huarunyiliao1", "huarunyiliaozp", "hryl", "hryl1", "hrylzp"], "hits": []}
+{"company": "裕同科技", "tried": ["yutongkeji", "yutongkeji1", "yutongkejizp", "ytkj", "ytkj1", "ytkjzp"], "hits": []}
+{"company": "工商银行", "tried": ["gongshangyinxing", "gongshangyinxing1", "gongshangyinxingzp", "gsyx", "gsyx1", "gsyxzp"], "hits": []}
+{"company": "益生股份", "tried": ["yisheng", "yisheng1", "yishengzp", "ys"], "hits": [{"kind": "beisen", "slug": "ys", "ok": true, "count": 57, "sample": ["人事行政主管999", "北部销售经理", "北部销售经理", "销售经理", "北部销售经理"], "codes": []}]}
+{"company": "国寿资产", "tried": ["guoshouzichan", "guoshouzichan1", "guoshouzichanzp", "gszc", "gszc1", "gszczp"], "hits": []}
+{"company": "明道云", "tried": ["mingdaoyun", "mingdaoyun1", "mingdaoyunzp", "mdy", "mdy1", "mdyzp"], "hits": []}
+{"company": "同仁堂", "tried": ["tongrentang", "tongrentang1", "tongrentangzp", "trt", "trt1", "trtzp"], "hits": []}
+{"company": "国元农险", "tried": ["guoyuannongxian", "guoyuannongxian1", "guoyuannongxianzp", "gynx", "gynx1", "gynxzp"], "hits": []}
+{"company": "微众银行", "tried": ["weizhongyinxing", "weizhongyinxing1", "weizhongyinxingzp", "wzyx", "wzyx1", "wzyxzp"], "hits": []}
+{"company": "万宝盛华", "tried": ["wanbaoshenghua", "wanbaoshenghua1", "wanbaoshenghuazp", "wbsh", "wbsh1", "wbshzp"], "hits": []}
+{"company": "平安信托", "tried": ["pinganxintuo", "pinganxintuo1", "pinganxintuozp", "paxt", "paxt1", "paxtzp"], "hits": []}
+{"company": "思特威", "tried": ["sitewei", "sitewei1", "siteweizp", "stw", "stw1", "stwzp"], "hits": []}
+{"company": "首都机场", "tried": ["shoudoujichang", "shoudoujichang1", "shoudoujichangzp", "sdjc", "sdjc1", "sdjczp"], "hits": []}
+{"company": "北方稀土", "tried": ["beifangxitu", "beifangxitu1", "beifangxituzp", "bfxt", "bfxt1", "bfxtzp", "reht", "reht1"], "hits": []}
+{"company": "腾竞体育", "tried": ["tengtiyu", "tengtiyu1", "tengtiyuzp", "tty", "tty1", "ttyzp"], "hits": []}
+{"company": "金禾实业", "tried": ["jinheshiye", "jinheshiye1", "jinheshiyezp", "jhsy", "jhsy1", "jhsyzp"], "hits": []}
+{"company": "阿里健康", "tried": ["alijiankang", "alijiankang1", "alijiankangzp", "aljk", "aljk1", "aljkzp"], "hits": []}
+{"company": "明月镜片", "tried": ["mingyuepian", "mingyuepian1", "mingyuepianzp", "myp", "myp1", "mypzp"], "hits": []}
+{"company": "中粮福临门", "tried": ["zhongliangfulinmen", "zhongliangfulinmen1", "zhongliangfulinmenzp", "zlflm", "zlflm1", "zlflmzp"], "hits": []}
+{"company": "中船防务", "tried": ["zhongchuanfangwu", "zhongchuanfangwu1", "zhongchuanfangwuzp", "zcfw", "zcfw1", "zcfwzp"], "hits": []}
+{"company": "唯捷创芯", "tried": ["weijiechuangxin", "weijiechuangxin1", "weijiechuangxinzp", "wjcx"], "hits": [{"kind": "feishu", "slug": "wjcx", "ok": true, "token_len": 44}]}
+{"company": "中国生物制药", "tried": ["zhongguoshengwuzhiyao", "zhongguoshengwuzhiyao1", "zhongguoshengwuzhiyaozp", "zgswzy", "zgswzy1", "zgswzyzp", "sinobiopharm", "sinobiopharm1"], "hits": []}
+{"company": "格林美", "tried": ["gelinmei", "gelinmei1", "gelinmeizp", "glm", "glm1", "glmzp"], "hits": []}
+{"company": "扬农化工", "tried": ["yangnonghuagong", "yangnonghuagong1", "yangnonghuagongzp", "ynhg", "ynhg1", "ynhgzp"], "hits": []}
+{"company": "北京外企", "tried": ["beijingwaiqi", "beijingwaiqi1", "beijingwaiqizp", "bjwq", "bjwq1", "bjwqzp"], "hits": []}
+{"company": "华鲁恒升", "tried": ["hualuhengsheng", "hualuhengsheng1", "hualuhengshengzp", "hlhs", "hlhs1", "hlhszp"], "hits": []}
+{"company": "华能国际", "tried": ["huanengguoji", "huanengguoji1", "huanengguojizp", "hngj", "hngj1", "hngjzp"], "hits": []}
+{"company": "圣邦股份", "tried": ["shengbang", "shengbang1", "shengbangzp", "sb", "sb1", "sbzp", "sgmicro", "sgmicro1"], "hits": []}
+{"company": "大族激光", "tried": ["dazuguang", "dazuguang1", "dazuguangzp", "dzg", "dzg1", "dzgzp"], "hits": []}
+{"company": "桃李面包", "tried": ["taolimianbao", "taolimianbao1", "taolimianbaozp", "tlmb", "tlmb1", "tlmbzp"], "hits": []}
+{"company": "文远知行", "tried": ["wenyuanzhixing", "wenyuanzhixing1", "wenyuanzhixingzp", "wyzx", "wyzx1", "wyzxzp"], "hits": []}
+{"company": "SGS", "tried": ["sgs"], "hits": []}
+{"company": "中炬高新", "tried": ["zhongjugaoxin", "zhongjugaoxin1", "zhongjugaoxinzp", "zjgx", "zjgx1", "zjgxzp"], "hits": []}
+{"company": "复旦微电", "tried": ["fudanweidian", "fudanweidian1", "fudanweidianzp", "fdwd", "fdwd1", "fdwdzp"], "hits": []}
+{"company": "金山办公", "tried": ["jinshanbangong", "jinshanbangong1", "jinshanbangongzp", "jsbg", "jsbg1", "jsbgzp", "wps", "wps1"], "hits": []}
+{"company": "T3出行", "tried": ["t3", "chuxing", "chuxing1", "chuxingzp", "cx", "cx1", "cxzp"], "hits": []}
+{"company": "西陇科学", "tried": ["xikexue", "xikexue1", "xikexuezp", "xkx", "xkx1", "xkxzp"], "hits": []}
+{"company": "新时达", "tried": ["xinshida", "xinshida1", "xinshidazp", "xsd", "xsd1", "xsdzp"], "hits": []}
+{"company": "菜鸟网络", "tried": ["cainiaowangluo", "cainiaowangluo1", "cainiaowangluozp", "cnwl", "cnwl1", "cnwlzp"], "hits": []}
+{"company": "安永税务", "tried": ["anyongwu", "anyongwu1", "anyongwuzp", "ayw", "ayw1", "aywzp"], "hits": []}
+{"company": "安博中国", "tried": ["anbo", "anbo1", "anbozp", "ab", "ab1", "abzp"], "hits": []}
+{"company": "玲珑轮胎", "tried": ["luntai", "luntai1", "luntaizp", "lt", "lt1", "ltzp"], "hits": []}
+{"company": "保利物业", "tried": ["baoliwuye", "baoliwuye1", "baoliwuyezp", "blwy", "blwy1", "blwyzp"], "hits": []}
+{"company": "双汇发展", "tried": ["shuanghuifazhan", "shuanghuifazhan1", "shuanghuifazhanzp", "shfz", "shfz1", "shfzzp", "shuanghui"], "hits": [{"kind": "beisen", "slug": "shuanghui", "ok": true, "count": 104, "sample": ["双汇26&27届-企业管理类管培生", "双汇26&27届-物流类管培生", "双汇26&27届-食品科学类管培生", "双汇26&27届-市场营销类管培生", "双汇26&27届-人力资源类管培生"], "codes": []}]}
+{"company": "携程", "tried": ["xiecheng", "xiecheng1", "xiechengzp", "xc", "xc1", "xczp", "ctrip", "ctrip1"], "hits": []}
+{"company": "渝三峡A", "tried": ["sanxia"], "hits": [{"kind": "beisen", "slug": "sanxia", "ok": true, "count": 3, "sample": ["市场分析岗(J10011)", "技术研发岗(J10000)", "化工技术员(J10006)"], "codes": []}]}
+{"company": "中牧股份", "tried": ["zhongmu", "zhongmu1", "zhongmuzp", "zm", "zm1", "zmzp"], "hits": []}
+{"company": "罗西尼", "tried": ["luoxini", "luoxini1", "luoxinizp", "lxn", "lxn1", "lxnzp"], "hits": []}
+{"company": "红黄蓝", "tried": ["honghuanglan", "honghuanglan1", "honghuanglanzp", "hhl", "hhl1", "hhlzp"], "hits": []}
+{"company": "华新水泥", "tried": ["huaxinshuini", "huaxinshuini1", "huaxinshuinizp", "hxsn", "hxsn1", "hxsnzp"], "hits": []}
+{"company": "中铁快运", "tried": ["zhongtiekuaiyun", "zhongtiekuaiyun1", "zhongtiekuaiyunzp", "ztky", "ztky1", "ztkyzp"], "hits": []}
+{"company": "汇友相互", "tried": ["huiyouhu", "huiyouhu1", "huiyouhuzp", "hyh", "hyh1", "hyhzp"], "hits": []}
+{"company": "中兴通讯", "tried": ["zhongxingtongxun", "zhongxingtongxun1", "zhongxingtongxunzp", "zxtx", "zxtx1", "zxtxzp", "zte", "zte1"], "hits": []}
+{"company": "薪人薪事", "tried": ["xinrenxinshi", "xinrenxinshi1", "xinrenxinshizp", "xrxs", "xrxs1", "xrxszp"], "hits": []}
+{"company": "科思创", "tried": ["kesichuang", "kesichuang1", "kesichuangzp", "ksc", "ksc1", "ksczp"], "hits": []}
+{"company": "锐捷网络", "tried": ["ruijiewangluo", "ruijiewangluo1", "ruijiewangluozp", "rjwl", "rjwl1", "rjwlzp"], "hits": []}
+{"company": "孩子王", "tried": ["haiziwang", "haiziwang1", "haiziwangzp", "hzw", "hzw1", "hzwzp"], "hits": []}
+{"company": "富安娜", "tried": ["fuanna", "fuanna1", "fuannazp", "fan", "fan1", "fanzp"], "hits": []}
+{"company": "华力创通", "tried": ["hualichuangtong", "hualichuangtong1", "hualichuangtongzp", "hlct", "hlct1", "hlctzp"], "hits": []}
+{"company": "长盈精密", "tried": ["zhangyingjingmi", "zhangyingjingmi1", "zhangyingjingmizp", "zyjm", "zyjm1", "zyjmzp"], "hits": []}
+{"company": "宁波港", "tried": ["ningbogang", "ningbogang1", "ningbogangzp", "nbg", "nbg1", "nbgzp"], "hits": []}
+{"company": "奥康国际", "tried": ["aokangguoji", "aokangguoji1", "aokangguojizp", "akgj", "akgj1", "akgjzp"], "hits": []}
+{"company": "碳排放权登记结算", "tried": ["fangdeng", "fangdeng1", "fangdengzp", "fd", "fd1", "fdzp"], "hits": []}
+{"company": "纳爱斯", "tried": ["naaisi", "naaisi1", "naaisizp", "nas", "nas1", "naszp"], "hits": []}
+{"company": "绿色动力", "tried": ["lvsedongli", "lvsedongli1", "lvsedonglizp", "lsdl", "lsdl1", "lsdlzp"], "hits": []}
+{"company": "网易云音乐", "tried": ["wangyiyunyinle", "wangyiyunyinle1", "wangyiyunyinlezp", "wyyyl", "wyyyl1", "wyyylzp", "netease", "netease1"], "hits": []}
+{"company": "翱捷科技", "tried": ["aojiekeji", "aojiekeji1", "aojiekejizp", "ajkj", "ajkj1", "ajkjzp"], "hits": []}
+{"company": "海螺水泥", "tried": ["hailuoshuini", "hailuoshuini1", "hailuoshuinizp", "hlsn", "hlsn1", "hlsnzp", "conch", "conch1"], "hits": []}
+{"company": "网易有道", "tried": ["wangyiyoudao", "wangyiyoudao1", "wangyiyoudaozp", "wyyd", "wyyd1", "wyydzp", "netease", "netease1"], "hits": []}
+{"company": "国美电器", "tried": ["guomeidianqi", "guomeidianqi1", "guomeidianqizp", "gmdq", "gmdq1", "gmdqzp"], "hits": []}
+{"company": "天岳先进", "tried": ["tianxianjin", "tianxianjin1", "tianxianjinzp", "txj", "txj1", "txjzp"], "hits": []}
+{"company": "特步国际", "tried": ["tebuguoji", "tebuguoji1", "tebuguojizp", "tbgj", "tbgj1", "tbgjzp", "xtep", "xtep1"], "hits": []}
+{"company": "金宝贝", "tried": ["jinbaobei", "jinbaobei1", "jinbaobeizp", "jbb", "jbb1", "jbbzp"], "hits": []}
+{"company": "安道麦", "tried": ["andaomai", "andaomai1", "andaomaizp", "adm", "adm1", "admzp"], "hits": []}
+{"company": "百济神州", "tried": ["baijishenzhou", "baijishenzhou1", "baijishenzhouzp", "bjsz", "bjsz1", "bjszzp", "beigene", "beigene1"], "hits": []}
+{"company": "洪城环境", "tried": ["hongchenghuanjing", "hongchenghuanjing1", "hongchenghuanjingzp", "hchj", "hchj1", "hchjzp"], "hits": []}
+{"company": "上海机场", "tried": ["shanghaijichang", "shanghaijichang1", "shanghaijichangzp", "shjc", "shjc1", "shjczp"], "hits": []}
+{"company": "大众汽车金融", "tried": ["dazhongqichejinrong", "dazhongqichejinrong1", "dazhongqichejinrongzp", "dzqcjr", "dzqcjr1", "dzqcjrzp"], "hits": []}
+{"company": "振华科技", "tried": ["zhenhuakeji", "zhenhuakeji1", "zhenhuakejizp", "zhkj", "zhkj1", "zhkjzp"], "hits": []}
+{"company": "大秦铁路", "tried": ["daqintielu", "daqintielu1", "daqintieluzp", "dqtl", "dqtl1", "dqtlzp"], "hits": []}
+{"company": "恒天财富", "tried": ["hengtiancaifu", "hengtiancaifu1", "hengtiancaifuzp", "htcf", "htcf1", "htcfzp"], "hits": []}
+{"company": "深圳证券交易所", "tried": ["shenzhenzhengquanjiaoyisuo", "shenzhenzhengquanjiaoyisuo1", "shenzhenzhengquanjiaoyisuozp", "szzqjys", "szzqjys1", "szzqjyszp"], "hits": []}
+{"company": "义翘神州", "tried": ["shenzhou"], "hits": [{"kind": "beisen", "slug": "shenzhou", "ok": true, "count": 57, "sample": ["面料研发（染整轻化）", "集团法务总监", "校园招聘主管", "战略财务总监", "基建管培生"], "codes": []}]}
+{"company": "罗森", "tried": ["luosen", "luosen1", "luosenzp", "ls", "ls1", "lszp"], "hits": []}
+{"company": "广日股份", "tried": ["guangri", "guangri1", "guangrizp", "gr", "gr1", "grzp"], "hits": []}
+{"company": "麦肯锡", "tried": ["maikenxi", "maikenxi1", "maikenxizp", "mkx", "mkx1", "mkxzp"], "hits": []}
+{"company": "江西铜业", "tried": ["jiangxitongye", "jiangxitongye1", "jiangxitongyezp", "jxty", "jxty1", "jxtyzp"], "hits": []}
+{"company": "珠海免税", "tried": ["zhuhaimian", "zhuhaimian1", "zhuhaimianzp", "zhm", "zhm1", "zhmzp"], "hits": []}
+{"company": "国邦医药", "tried": ["guobangyiyao", "guobangyiyao1", "guobangyiyaozp", "gbyy", "gbyy1", "gbyyzp"], "hits": []}
+{"company": "中宠股份", "tried": ["zhong", "zhong1", "zhongzp", "z1", "zzp"], "hits": []}
+{"company": "国家能源集团", "tried": ["guojianengyuan", "guojianengyuan1", "guojianengyuanzp", "gjny", "gjny1", "gjnyzp", "chnenergy", "chnenergy1"], "hits": []}
+{"company": "永达汽车", "tried": ["yongdaqiche", "yongdaqiche1", "yongdaqichezp", "ydqc", "ydqc1", "ydqczp"], "hits": []}
+{"company": "广州农商行", "tried": ["guangzhounongshangxing", "guangzhounongshangxing1", "guangzhounongshangxingzp", "gznsx", "gznsx1", "gznsxzp"], "hits": []}
+{"company": "运达股份", "tried": ["yunda", "yunda1", "yundazp", "yd", "yd1", "ydzp"], "hits": []}
+{"company": "伯特利", "tried": ["boteli", "boteli1", "botelizp", "btl", "btl1", "btlzp"], "hits": []}
+{"company": "复星医疗", "tried": ["fuxingyiliao", "fuxingyiliao1", "fuxingyiliaozp", "fxyl", "fxyl1", "fxylzp"], "hits": []}
+{"company": "江苏银行", "tried": ["jiangsuyinxing", "jiangsuyinxing1", "jiangsuyinxingzp", "jsyx", "jsyx1", "jsyxzp"], "hits": []}
+{"company": "扬子江船业", "tried": ["yangzijiangchuanye", "yangzijiangchuanye1", "yangzijiangchuanyezp", "yzjcy", "yzjcy1", "yzjcyzp"], "hits": []}
+{"company": "沪电股份", "tried": ["hudian", "hudian1", "hudianzp", "hd", "hd1", "hdzp", "wus", "wus1"], "hits": []}
+{"company": "杭可科技", "tried": ["hangkekeji", "hangkekeji1", "hangkekejizp", "hkkj", "hkkj1", "hkkjzp"], "hits": []}
+{"company": "搜狐", "tried": ["souhu", "souhu1", "souhuzp", "sh", "sh1", "shzp"], "hits": [{"kind": "beisen", "slug": "shzp", "ok": true, "count": 1, "sample": ["辅助类劳务派遣岗位"], "codes": []}]}
+{"company": "中国重汽", "tried": ["zhongguozhongqi", "zhongguozhongqi1", "zhongguozhongqizp", "zgzq", "zgzq1", "zgzqzp"], "hits": []}
+{"company": "航天信息", "tried": ["hangtianxinxi", "hangtianxinxi1", "hangtianxinxizp", "htxx", "htxx1", "htxxzp"], "hits": []}
+{"company": "杭氧股份", "tried": ["hangyang", "hangyang1", "hangyangzp", "hy", "hy1", "hyzp"], "hits": []}
+{"company": "万科", "tried": ["wanke", "wanke1", "wankezp", "wk", "wk1", "wkzp", "vanke", "vanke1"], "hits": []}
+{"company": "景嘉微", "tried": ["jingjiawei", "jingjiawei1", "jingjiaweizp", "jjw", "jjw1", "jjwzp"], "hits": []}
+{"company": "阿拉丁", "tried": ["ala", "ala1", "alazp", "al", "al1", "alzp"], "hits": []}
+{"company": "家乐福", "tried": ["jialefu", "jialefu1", "jialefuzp", "jlf", "jlf1", "jlfzp"], "hits": []}
+{"company": "汇丰银行", "tried": ["huifengyinxing", "huifengyinxing1", "huifengyinxingzp", "hfyx", "hfyx1", "hfyxzp"], "hits": []}
+{"company": "绿盟科技", "tried": ["lvmengkeji", "lvmengkeji1", "lvmengkejizp", "lmkj", "lmkj1", "lmkjzp"], "hits": []}
+{"company": "宜信财富", "tried": ["yixincaifu", "yixincaifu1", "yixincaifuzp", "yxcf", "yxcf1", "yxcfzp"], "hits": []}
+{"company": "名雕股份", "tried": ["ming"], "hits": [{"kind": "feishu", "slug": "ming", "ok": true, "token_len": 44}]}
+{"company": "腾讯云", "tried": ["tengxunyun", "tengxunyun1", "tengxunyunzp", "txy", "txy1", "txyzp", "tencent", "tencent1"], "hits": []}
+{"company": "开云集团", "tried": ["kaiyun", "kaiyun1", "kaiyunzp", "ky", "ky1", "kyzp"], "hits": []}
+{"company": "bp", "tried": ["bp"], "hits": []}
+{"company": "碧桂园服务", "tried": ["biguiyuanfuwu", "biguiyuanfuwu1", "biguiyuanfuwuzp", "bgyfw", "bgyfw1", "bgyfwzp", "countrygarden", "countrygarden1"], "hits": []}
+{"company": "片仔癀", "tried": ["pianzaihuang", "pianzaihuang1", "pianzaihuangzp", "pzh", "pzh1", "pzhzp"], "hits": []}
+{"company": "东方航空", "tried": ["dongfanghangkong", "dongfanghangkong1", "dongfanghangkongzp", "dfhk", "dfhk1", "dfhkzp", "ceair", "ceair1"], "hits": []}
+{"company": "老凤祥", "tried": ["laofengxiang", "laofengxiang1", "laofengxiangzp", "lfx", "lfx1", "lfxzp"], "hits": []}
+{"company": "交银金租", "tried": ["jiaoyinjin", "jiaoyinjin1", "jiaoyinjinzp", "jyj", "jyj1", "jyjzp"], "hits": []}
+{"company": "山河药辅", "tried": ["shanheyaofu", "shanheyaofu1", "shanheyaofuzp", "shyf", "shyf1", "shyfzp"], "hits": []}
+{"company": "亿华通", "tried": ["yihuatong", "yihuatong1", "yihuatongzp", "yht", "yht1", "yhtzp"], "hits": []}
+{"company": "科森科技", "tried": ["kesenkeji", "kesenkeji1", "kesenkejizp", "kskj", "kskj1", "kskjzp"], "hits": []}
+{"company": "海光信息", "tried": ["haiguangxinxi", "haiguangxinxi1", "haiguangxinxizp", "hgxx", "hgxx1", "hgxxzp", "hygon"], "hits": [{"kind": "hotjob", "slug": "hygon", "ok": true, "final_url": "https://hygon.hotjob.cn/"}]}
+{"company": "华润燃气", "tried": ["huarunranqi", "huarunranqi1", "huarunranqizp", "hrrq", "hrrq1", "hrrqzp"], "hits": []}
+{"company": "莱特光电", "tried": ["laiteguangdian", "laiteguangdian1", "laiteguangdianzp", "ltgd", "ltgd1", "ltgdzp"], "hits": []}
+{"company": "保利科技", "tried": ["baolikeji", "baolikeji1", "baolikejizp", "blkj", "blkj1", "blkjzp"], "hits": []}
+{"company": "浪潮", "tried": ["langchao", "langchao1", "langchaozp", "lc", "lc1", "lczp"], "hits": []}
+{"company": "光大环境", "tried": ["guangdahuanjing", "guangdahuanjing1", "guangdahuanjingzp", "gdhj", "gdhj1", "gdhjzp"], "hits": []}
+{"company": "陕西煤业", "tried": ["shanximeiye", "shanximeiye1", "shanximeiyezp", "sxmy", "sxmy1", "sxmyzp"], "hits": []}
+{"company": "圣农发展", "tried": ["shengnongfazhan", "shengnongfazhan1", "shengnongfazhanzp", "snfz", "snfz1", "snfzzp"], "hits": []}
+{"company": "燧原科技", "tried": ["suiyuankeji", "suiyuankeji1", "suiyuankejizp", "sykj", "sykj1", "sykjzp"], "hits": []}
+{"company": "獐子岛", "tried": ["zidao", "zidao1", "zidaozp", "zd", "zd1", "zdzp"], "hits": []}
+{"company": "中创碳投", "tried": ["zhongchuangtou", "zhongchuangtou1", "zhongchuangtouzp", "zct", "zct1", "zctzp"], "hits": []}
+{"company": "晶瑞电材", "tried": ["jingruidiancai", "jingruidiancai1", "jingruidiancaizp", "jrdc", "jrdc1", "jrdczp"], "hits": []}
+{"company": "龙芯中科", "tried": ["longxinzhongke", "longxinzhongke1", "longxinzhongkezp", "lxzk", "lxzk1", "lxzkzp"], "hits": []}
+{"company": "民和股份", "tried": ["minhe", "minhe1", "minhezp", "mh", "mh1", "mhzp"], "hits": []}
+{"company": "海旅免税", "tried": ["hailvmian", "hailvmian1", "hailvmianzp", "hlm", "hlm1", "hlmzp"], "hits": []}
+{"company": "盛弘股份", "tried": ["shenghong", "shenghong1", "shenghongzp", "sh", "sh1", "shzp"], "hits": [{"kind": "beisen", "slug": "shzp", "ok": true, "count": 1, "sample": ["辅助类劳务派遣岗位"], "codes": []}]}
+{"company": "数据堂", "tried": ["shujutang", "shujutang1", "shujutangzp", "sjt", "sjt1", "sjtzp"], "hits": []}
+{"company": "东易日盛", "tried": ["dongyirisheng", "dongyirisheng1", "dongyirishengzp", "dyrs", "dyrs1", "dyrszp"], "hits": []}
+{"company": "华致酒行", "tried": ["huazhijiuxing", "huazhijiuxing1", "huazhijiuxingzp", "hzjx", "hzjx1", "hzjxzp"], "hits": []}
+{"company": "京能热力", "tried": ["jingnengli", "jingnengli1", "jingnenglizp", "jnl", "jnl1", "jnlzp"], "hits": []}
+{"company": "国泰君安期货", "tried": ["guotaijunanhuo", "guotaijunanhuo1", "guotaijunanhuozp", "gtjah", "gtjah1", "gtjahzp", "gtja", "gtja1"], "hits": []}
+{"company": "小红书", "tried": ["xiaohongshu", "xiaohongshu1", "xiaohongshuzp", "xhs", "xhs1", "xhszp"], "hits": []}
+{"company": "回天新材", "tried": ["tianxincai", "tianxincai1", "tianxincaizp", "txc", "txc1", "txczp"], "hits": []}
+{"company": "极飞科技", "tried": ["jifeikeji", "jifeikeji1", "jifeikejizp", "jfkj", "jfkj1", "jfkjzp"], "hits": []}
+{"company": "中国卫星", "tried": ["zhongguoweixing", "zhongguoweixing1", "zhongguoweixingzp", "zgwx", "zgwx1", "zgwxzp"], "hits": []}
+{"company": "领益智造", "tried": ["lingyizhizao", "lingyizhizao1", "lingyizhizaozp", "lyzz"], "hits": [{"kind": "hotjob", "slug": "lyzz", "ok": true, "final_url": "https://lyzz.hotjob.cn/"}]}
+{"company": "新乳业", "tried": ["xinruye", "xinruye1", "xinruyezp", "xry", "xry1", "xryzp"], "hits": []}
+{"company": "大童保险", "tried": ["dabaoxian", "dabaoxian1", "dabaoxianzp", "dbx", "dbx1", "dbxzp"], "hits": []}
+{"company": "星动纪元", "tried": ["xingdongjiyuan", "xingdongjiyuan1", "xingdongjiyuanzp", "xdjy", "xdjy1", "xdjyzp"], "hits": []}
+{"company": "华虹半导体", "tried": ["huahongbandaoti", "huahongbandaoti1", "huahongbandaotizp", "hhbdt", "hhbdt1", "hhbdtzp", "huahong", "huahong1"], "hits": []}
+{"company": "广发银行信用卡", "tried": ["guangfayinxingxinyongka", "guangfayinxingxinyongka1", "guangfayinxingxinyongkazp", "gfyxxyk", "gfyxxyk1", "gfyxxykzp"], "hits": []}
+{"company": "中微公司", "tried": ["zhongwei", "zhongwei1", "zhongweizp", "zw", "zw1", "zwzp", "amec", "amec1"], "hits": []}
+{"company": "长江电力", "tried": ["zhangjiangdianli", "zhangjiangdianli1", "zhangjiangdianlizp", "zjdl", "zjdl1", "zjdlzp"], "hits": []}
+{"company": "太保产险", "tried": ["taibaochanxian", "taibaochanxian1", "taibaochanxianzp", "tbcx", "tbcx1", "tbcxzp"], "hits": []}
+{"company": "中晶科技", "tried": ["zhongjingkeji", "zhongjingkeji1", "zhongjingkejizp", "zjkj", "zjkj1", "zjkjzp"], "hits": []}
+{"company": "猎聘", "tried": ["liepin", "liepin1", "liepinzp", "lp", "lp1", "lpzp"], "hits": []}
+{"company": "中农集团", "tried": ["zhongnong", "zhongnong1", "zhongnongzp", "zn", "zn1", "znzp"], "hits": []}
+{"company": "九坤投资", "tried": ["jiutouzi", "jiutouzi1", "jiutouzizp", "jtz", "jtz1", "jtzzp"], "hits": []}
+{"company": "酒仙网", "tried": ["jiuxianwang", "jiuxianwang1", "jiuxianwangzp", "jxw", "jxw1", "jxwzp"], "hits": []}
+{"company": "朝聚眼科", "tried": ["juyanke", "juyanke1", "juyankezp", "jyk", "jyk1", "jykzp"], "hits": []}
+{"company": "思瑞浦", "tried": ["siruipu", "siruipu1", "siruipuzp", "srp", "srp1", "srpzp"], "hits": []}
+{"company": "都市丽人", "tried": ["doushiliren", "doushiliren1", "doushilirenzp", "dslr", "dslr1", "dslrzp"], "hits": []}
+{"company": "顺丰控股", "tried": ["shunfeng", "shunfeng1", "shunfengzp", "sf", "sf1", "sfzp", "sfexpress", "sfexpress1"], "hits": []}
+{"company": "朗姿股份", "tried": ["lang", "lang1", "langzp", "l1", "lzp"], "hits": []}
+{"company": "华域汽车", "tried": ["huayuqiche", "huayuqiche1", "huayuqichezp", "hyqc", "hyqc1", "hyqczp"], "hits": []}
+{"company": "如祺出行", "tried": ["ruqichuxing", "ruqichuxing1", "ruqichuxingzp", "rqcx", "rqcx1", "rqcxzp"], "hits": []}
+{"company": "安路科技", "tried": ["anlukeji", "anlukeji1", "anlukejizp", "alkj", "alkj1", "alkjzp"], "hits": []}
+{"company": "GE医疗", "tried": ["ge", "yiliao", "yiliao1", "yiliaozp", "yl", "yl1", "ylzp"], "hits": []}
+{"company": "中升控股", "tried": ["zhongsheng", "zhongsheng1", "zhongshengzp", "zs", "zs1", "zszp"], "hits": []}
+{"company": "森马服饰", "tried": ["senmafushi", "senmafushi1", "senmafushizp", "smfs", "smfs1", "smfszp", "semir", "semir1"], "hits": []}
+{"company": "中航技", "tried": ["zhonghangji", "zhonghangji1", "zhonghangjizp", "zhj", "zhj1", "zhjzp"], "hits": []}
+{"company": "中公教育", "tried": ["zhonggongjiaoyu", "zhonggongjiaoyu1", "zhonggongjiaoyuzp", "zgjy", "zgjy1", "zgjyzp"], "hits": []}
+{"company": "招银网络科技", "tried": ["zhaoyinwangluokeji", "zhaoyinwangluokeji1", "zhaoyinwangluokejizp", "zywlkj", "zywlkj1", "zywlkjzp"], "hits": []}
+{"company": "长光卫星", "tried": ["zhangguangweixing", "zhangguangweixing1", "zhangguangweixingzp", "zgwx", "zgwx1", "zgwxzp"], "hits": []}
+{"company": "阳谷华泰", "tried": ["yangguhuatai", "yangguhuatai1", "yangguhuataizp", "yght", "yght1", "yghtzp"], "hits": []}
+{"company": "奥美", "tried": ["aomei", "aomei1", "aomeizp", "am", "am1", "amzp"], "hits": []}
+{"company": "晶科能源", "tried": ["jingkenengyuan", "jingkenengyuan1", "jingkenengyuanzp", "jkny", "jkny1", "jknyzp", "jinko", "jinko1"], "hits": []}
+{"company": "华润置地", "tried": ["huarunzhidi", "huarunzhidi1", "huarunzhidizp", "hrzd", "hrzd1", "hrzdzp", "crland", "crland1"], "hits": []}
+{"company": "中国西电", "tried": ["zhongguoxidian", "zhongguoxidian1", "zhongguoxidianzp", "zgxd", "zgxd1", "zgxdzp"], "hits": []}
+{"company": "白云机场", "tried": ["baiyunjichang", "baiyunjichang1", "baiyunjichangzp", "byjc", "byjc1", "byjczp"], "hits": []}
+{"company": "博彦科技", "tried": ["boyankeji", "boyankeji1", "boyankejizp", "bykj", "bykj1", "bykjzp"], "hits": []}
+{"company": "邮惠万家", "tried": ["youhuiwanjia", "youhuiwanjia1", "youhuiwanjiazp", "yhwj", "yhwj1", "yhwjzp"], "hits": []}
+{"company": "迪桑特", "tried": ["dite", "dite1", "ditezp", "dt", "dt1", "dtzp"], "hits": []}
+{"company": "东风商用车", "tried": ["dongfengshangyongche", "dongfengshangyongche1", "dongfengshangyongchezp", "dfsyc", "dfsyc1", "dfsyczp"], "hits": []}
+{"company": "明亚保险经纪", "tried": ["mingyabaoxianjingji", "mingyabaoxianjingji1", "mingyabaoxianjingjizp", "mybxjj", "mybxjj1", "mybxjjzp"], "hits": []}
+{"company": "内蒙一机", "tried": ["neimengyiji", "neimengyiji1", "neimengyijizp", "nmyj", "nmyj1", "nmyjzp"], "hits": []}
+{"company": "华天科技", "tried": ["huatiankeji", "huatiankeji1", "huatiankejizp", "htkj", "htkj1", "htkjzp"], "hits": []}
+{"company": "生物股份", "tried": ["shengwu", "shengwu1", "shengwuzp", "sw", "sw1", "swzp"], "hits": [{"kind": "beisen", "slug": "swzp", "ok": true, "count": 164, "sample": ["智慧公司-高级产品经理", "智慧公司-客服经理", "智慧公司-产品原型开发工程师", "智慧公司-AI/大模型技术研究员", "智慧公司-全栈开发工程师"], "codes": []}]}
+{"company": "华测检测", "tried": ["huacejiance", "huacejiance1", "huacejiancezp", "hcjc", "hcjc1", "hcjczp"], "hits": []}
+{"company": "芯原股份", "tried": ["xinyuan"], "hits": [{"kind": "beisen", "slug": "xinyuan", "ok": true, "count": 8, "sample": ["电子材料销售经理", "工艺专家", "外贸销售员", "研发专家", "特化工艺岗"], "codes": []}]}
+{"company": "赛轮轮胎", "tried": ["sailunluntai", "sailunluntai1", "sailunluntaizp", "sllt", "sllt1", "slltzp"], "hits": []}
+{"company": "拼多多", "tried": ["pinduoduo", "pinduoduo1", "pinduoduozp", "pdd", "pdd1", "pddzp"], "hits": []}
+{"company": "宇树科技", "tried": ["yushukeji", "yushukeji1", "yushukejizp", "yskj", "yskj1", "yskjzp"], "hits": []}
+{"company": "万纬物流", "tried": ["wanweiwuliu", "wanweiwuliu1", "wanweiwuliuzp", "wwwl", "wwwl1", "wwwlzp"], "hits": []}
+{"company": "九如城", "tried": ["jiurucheng", "jiurucheng1", "jiuruchengzp", "jrc", "jrc1", "jrczp"], "hits": []}
+{"company": "中国核电", "tried": ["zhongguohedian", "zhongguohedian1", "zhongguohedianzp", "zghd", "zghd1", "zghdzp"], "hits": []}
+{"company": "万达体育", "tried": ["wandatiyu", "wandatiyu1", "wandatiyuzp", "wdty", "wdty1", "wdtyzp"], "hits": []}
+{"company": "药明生物", "tried": ["yaomingshengwu", "yaomingshengwu1", "yaomingshengwuzp", "ymsw", "ymsw1", "ymswzp", "wuxibiologics", "wuxibiologics1"], "hits": []}
+{"company": "众安保险", "tried": ["zhonganbaoxian", "zhonganbaoxian1", "zhonganbaoxianzp", "zabx", "zabx1", "zabxzp"], "hits": []}
+{"company": "东方甄选", "tried": ["dongfangxuan", "dongfangxuan1", "dongfangxuanzp", "dfx", "dfx1", "dfxzp"], "hits": []}
+{"company": "猿辅导", "tried": ["yuanfudao", "yuanfudao1", "yuanfudaozp", "yfd", "yfd1", "yfdzp"], "hits": []}
+{"company": "亿滋", "tried": ["yizi", "yizi1", "yizizp", "yz", "yz1", "yzzp"], "hits": []}
+{"company": "星光农机", "tried": ["xingguangnongji", "xingguangnongji1", "xingguangnongjizp", "xgnj", "xgnj1", "xgnjzp"], "hits": []}
+{"company": "中国国航", "tried": ["zhongguoguohang", "zhongguoguohang1", "zhongguoguohangzp", "zggh", "zggh1", "zgghzp", "airchina", "airchina1"], "hits": []}
+{"company": "得利斯", "tried": ["delisi", "delisi1", "delisizp", "dls", "dls1", "dlszp"], "hits": []}
+{"company": "晶泰科技", "tried": ["jingtaikeji", "jingtaikeji1", "jingtaikejizp", "jtkj", "jtkj1", "jtkjzp"], "hits": []}
+{"company": "水滴保", "tried": ["shuidibao", "shuidibao1", "shuidibaozp", "sdb", "sdb1", "sdbzp"], "hits": []}
+{"company": "航天电器", "tried": ["hangtiandianqi", "hangtiandianqi1", "hangtiandianqizp", "htdq", "htdq1", "htdqzp"], "hits": []}
+{"company": "建设银行", "tried": ["jiansheyinxing", "jiansheyinxing1", "jiansheyinxingzp", "jsyx", "jsyx1", "jsyxzp"], "hits": []}
+{"company": "微软", "tried": ["weiruan", "weiruan1", "weiruanzp", "wr", "wr1", "wrzp"], "hits": []}
+{"company": "钉钉宜搭", "tried": ["dingdingyi", "dingdingyi1", "dingdingyizp", "ddy", "ddy1", "ddyzp"], "hits": []}
+{"company": "菲达环保", "tried": ["feidahuanbao", "feidahuanbao1", "feidahuanbaozp", "fdhb", "fdhb1", "fdhbzp"], "hits": []}
+{"company": "奥瑞金", "tried": ["aoruijin", "aoruijin1", "aoruijinzp", "arj", "arj1", "arjzp"], "hits": []}
+{"company": "超凡知识产权", "tried": ["chaofanzhichan", "chaofanzhichan1", "chaofanzhichanzp", "cfzc", "cfzc1", "cfzczp"], "hits": []}
+{"company": "光威复材", "tried": ["guangweifucai", "guangweifucai1", "guangweifucaizp", "gwfc", "gwfc1", "gwfczp"], "hits": []}
+{"company": "贝泰妮", "tried": ["beitaini", "beitaini1", "beitainizp", "btn", "btn1", "btnzp"], "hits": []}
+{"company": "容联云", "tried": ["ronglianyun", "ronglianyun1", "ronglianyunzp", "rly", "rly1", "rlyzp"], "hits": []}
+{"company": "平安资管", "tried": ["pinganziguan", "pinganziguan1", "pinganziguanzp", "pazg", "pazg1", "pazgzp"], "hits": []}
+{"company": "有赞", "tried": ["youzan", "youzan1", "youzanzp", "yz", "yz1", "yzzp"], "hits": []}
+{"company": "百图生科", "tried": ["baitushengke", "baitushengke1", "baitushengkezp", "btsk", "btsk1", "btskzp"], "hits": []}
+{"company": "希望教育", "tried": ["xiwangjiaoyu", "xiwangjiaoyu1", "xiwangjiaoyuzp", "xwjy", "xwjy1", "xwjyzp"], "hits": []}
+{"company": "牧原股份", "tried": ["muyuan", "muyuan1", "muyuanzp", "my", "my1", "myzp", "muyuanmy"], "hits": []}
+{"company": "中国能建", "tried": ["zhongguonengjian", "zhongguonengjian1", "zhongguonengjianzp", "zgnj", "zgnj1", "zgnjzp", "ceec", "ceec1"], "hits": []}
+{"company": "中粮集团", "tried": ["zhongliang", "zhongliang1", "zhongliangzp", "zl", "zl1", "zlzp", "cofco", "cofco1"], "hits": []}
+{"company": "宜家", "tried": ["yijia", "yijia1", "yijiazp", "yj", "yj1", "yjzp"], "hits": []}
+{"company": "浪潮信息", "tried": ["langchaoxinxi", "langchaoxinxi1", "langchaoxinxizp", "lcxx", "lcxx1", "lcxxzp", "inspur", "inspur1"], "hits": []}
+{"company": "宝武钢铁", "tried": ["baowugangtie", "baowugangtie1", "baowugangtiezp", "bwgt", "bwgt1", "bwgtzp", "baowu", "baowu1"], "hits": []}
+{"company": "特斯拉中国", "tried": ["tesila", "tesila1", "tesilazp", "tsl", "tsl1", "tslzp"], "hits": []}
+{"company": "康达新材", "tried": ["kangdaxincai", "kangdaxincai1", "kangdaxincaizp", "kdxc", "kdxc1", "kdxczp"], "hits": []}
+{"company": "金浦钛业", "tried": ["jinputaiye", "jinputaiye1", "jinputaiyezp", "jpty", "jpty1", "jptyzp"], "hits": []}
+{"company": "中信期货", "tried": ["zhongxinhuo", "zhongxinhuo1", "zhongxinhuozp", "zxh", "zxh1", "zxhzp"], "hits": []}
+{"company": "中通快递", "tried": ["zhongtongkuaidi", "zhongtongkuaidi1", "zhongtongkuaidizp", "ztkd", "ztkd1", "ztkdzp", "zto", "zto1"], "hits": []}
+{"company": "利尔化学", "tried": ["lierhuaxue", "lierhuaxue1", "lierhuaxuezp", "lehx", "lehx1", "lehxzp"], "hits": []}
+{"company": "泛微网络", "tried": ["fanweiwangluo", "fanweiwangluo1", "fanweiwangluozp", "fwwl", "fwwl1", "fwwlzp"], "hits": []}
+{"company": "密尔克卫", "tried": ["mierkewei", "mierkewei1", "mierkeweizp", "mekw", "mekw1", "mekwzp"], "hits": []}
+{"company": "集慧智佳", "tried": ["jihuizhijia", "jihuizhijia1", "jihuizhijiazp", "jhzj", "jhzj1", "jhzjzp"], "hits": []}
+{"company": "上海建工", "tried": ["shanghaijiangong", "shanghaijiangong1", "shanghaijiangongzp", "shjg", "shjg1", "shjgzp"], "hits": []}
+{"company": "智谱AI", "tried": ["ai", "zhipu", "zhipu1", "zhipuzp", "zp1", "zpzp"], "hits": []}
+{"company": "中国铝业", "tried": ["zhongguolvye", "zhongguolvye1", "zhongguolvyezp", "zgly", "zgly1", "zglyzp", "chalco", "chalco1"], "hits": []}
+{"company": "推想医疗", "tried": ["tuixiangyiliao", "tuixiangyiliao1", "tuixiangyiliaozp", "txyl", "txyl1", "txylzp"], "hits": []}
+{"company": "宋城演艺", "tried": ["chengyi", "chengyi1", "chengyizp", "cy", "cy1", "cyzp"], "hits": []}
+{"company": "移远通信", "tried": ["yiyuantongxin", "yiyuantongxin1", "yiyuantongxinzp", "yytx", "yytx1", "yytxzp"], "hits": []}
+{"company": "哔哩哔哩", "tried": ["bilibili", "bilibili1", "bilibilizp", "blbl", "blbl1", "blblzp"], "hits": []}
+{"company": "凌云光", "tried": ["yunguang", "yunguang1", "yunguangzp", "yg", "yg1", "ygzp"], "hits": []}
+{"company": "银河通用", "tried": ["yinhetongyong", "yinhetongyong1", "yinhetongyongzp", "yhty", "yhty1", "yhtyzp"], "hits": []}
+{"company": "亚马逊", "tried": ["yamaxun", "yamaxun1", "yamaxunzp", "ymx", "ymx1", "ymxzp"], "hits": []}
+{"company": "联合利华", "tried": ["lianhelihua", "lianhelihua1", "lianhelihuazp", "lhlh", "lhlh1", "lhlhzp"], "hits": []}
+{"company": "建信金科", "tried": ["jianxinjinke", "jianxinjinke1", "jianxinjinkezp", "jxjk", "jxjk1", "jxjkzp"], "hits": []}
+{"company": "君合", "tried": ["junhe", "junhe1", "junhezp", "jh", "jh1", "jhzp"], "hits": [{"kind": "beisen", "slug": "jhzp", "ok": true, "count": 16, "sample": ["海外投放", "广告投放专员", "高级海外运营/海外运营主管", "系统策划-SZ-X", "商业化策划-SZ"], "codes": []}]}
+{"company": "叮当健康", "tried": ["dingdangjiankang", "dingdangjiankang1", "dingdangjiankangzp", "ddjk", "ddjk1", "ddjkzp"], "hits": []}
+{"company": "中船特气", "tried": ["zhongchuanteqi", "zhongchuanteqi1", "zhongchuanteqizp", "zctq", "zctq1", "zctqzp"], "hits": []}
+{"company": "华侨城", "tried": ["huaqiaocheng", "huaqiaocheng1", "huaqiaochengzp", "hqc", "hqc1", "hqczp"], "hits": []}
+{"company": "华宏科技", "tried": ["huahongkeji", "huahongkeji1", "huahongkejizp", "hhkj", "hhkj1", "hhkjzp"], "hits": []}
+{"company": "尔康制药", "tried": ["erkangzhiyao", "erkangzhiyao1", "erkangzhiyaozp", "ekzy", "ekzy1", "ekzyzp"], "hits": []}
+{"company": "爱尔眼科", "tried": ["aieryanke", "aieryanke1", "aieryankezp", "aeyk", "aeyk1", "aeykzp", "aier", "aier1"], "hits": []}
+{"company": "安永", "tried": ["anyong", "anyong1", "anyongzp", "ay", "ay1", "ayzp"], "hits": []}
+{"company": "海天瑞声", "tried": ["haitianruisheng", "haitianruisheng1", "haitianruishengzp", "htrs", "htrs1", "htrszp"], "hits": []}
+{"company": "平安养老", "tried": ["pinganyanglao", "pinganyanglao1", "pinganyanglaozp", "payl", "payl1", "paylzp"], "hits": []}
+{"company": "镁佳科技", "tried": ["jiakeji", "jiakeji1", "jiakejizp", "jkj", "jkj1", "jkjzp"], "hits": []}
+{"company": "百望股份", "tried": ["baiwang", "baiwang1", "baiwangzp", "bw", "bw1", "bwzp"], "hits": []}
+{"company": "海康威视", "tried": ["haikangweishi", "haikangweishi1", "haikangweishizp", "hkws", "hkws1", "hkwszp", "hikvision", "hikvision1"], "hits": []}
+{"company": "北京建工", "tried": ["beijingjiangong", "beijingjiangong1", "beijingjiangongzp", "bjjg", "bjjg1", "bjjgzp"], "hits": []}
+{"company": "紫金矿业", "tried": ["zijinkuangye", "zijinkuangye1", "zijinkuangyezp", "zjky", "zjky1", "zjkyzp", "zijin", "zijin1"], "hits": []}
+{"company": "步步高", "tried": ["bubugao", "bubugao1", "bubugaozp", "bbg", "bbg1", "bbgzp"], "hits": []}
+{"company": "航发控制", "tried": ["hangfakongzhi", "hangfakongzhi1", "hangfakongzhizp", "hfkz", "hfkz1", "hfkzzp"], "hits": []}
+{"company": "天奇股份", "tried": ["tianqi", "tianqi1", "tianqizp", "tq", "tq1", "tqzp"], "hits": []}
+{"company": "英孚教育", "tried": ["yingfujiaoyu", "yingfujiaoyu1", "yingfujiaoyuzp", "yfjy", "yfjy1", "yfjyzp"], "hits": []}
+{"company": "中信建投", "tried": ["zhongxinjiantou", "zhongxinjiantou1", "zhongxinjiantouzp", "zxjt", "zxjt1", "zxjtzp"], "hits": []}
+{"company": "中国烟草", "tried": ["zhongguoyancao", "zhongguoyancao1", "zhongguoyancaozp", "zgyc", "zgyc1", "zgyczp"], "hits": []}
+{"company": "芯驰科技", "tried": ["xinchikeji", "xinchikeji1", "xinchikejizp", "xckj", "xckj1", "xckjzp"], "hits": []}
+{"company": "花西子", "tried": ["huaxizi", "huaxizi1", "huaxizizp", "hxz", "hxz1", "hxzzp"], "hits": []}
+{"company": "生益科技", "tried": ["shengyikeji", "shengyikeji1", "shengyikejizp", "sykj", "sykj1", "sykjzp", "shengyi", "shengyi1"], "hits": []}
+{"company": "怡亚通", "tried": ["yiyatong", "yiyatong1", "yiyatongzp", "yyt", "yyt1", "yytzp"], "hits": []}
+{"company": "华为云", "tried": ["huaweiyun", "huaweiyun1", "huaweiyunzp", "hwy", "hwy1", "hwyzp", "huawei", "huawei1"], "hits": []}
+{"company": "鞍钢集团", "tried": ["angang", "angang1", "angangzp", "ag", "ag1", "agzp", "ansteel", "ansteel1"], "hits": []}
+{"company": "美的集团", "tried": ["meide", "meide1", "meidezp", "md", "md1", "mdzp", "midea", "midea1"], "hits": []}
+{"company": "太合音乐", "tried": ["taiheyinle", "taiheyinle1", "taiheyinlezp", "thyl", "thyl1", "thylzp"], "hits": []}
+{"company": "奥普特", "tried": ["aopute", "aopute1", "aoputezp", "apt", "apt1", "aptzp"], "hits": []}
+{"company": "力盛体育", "tried": ["lishengtiyu", "lishengtiyu1", "lishengtiyuzp", "lsty", "lsty1", "lstyzp"], "hits": []}
+{"company": "英矽智能", "tried": ["yingxizhineng", "yingxizhineng1", "yingxizhinengzp", "yxzn", "yxzn1", "yxznzp"], "hits": []}
+{"company": "OPPO", "tried": ["oppo"], "hits": []}
+{"company": "莉莉丝", "tried": ["lilisi", "lilisi1", "lilisizp", "lls", "lls1", "llszp"], "hits": []}
+{"company": "锐科激光", "tried": ["ruikeguang", "ruikeguang1", "ruikeguangzp", "rkg", "rkg1", "rkgzp"], "hits": []}
+{"company": "华兴资本", "tried": ["huaxingziben", "huaxingziben1", "huaxingzibenzp", "hxzb", "hxzb1", "hxzbzp"], "hits": []}
+{"company": "波士顿咨询", "tried": ["boshidunzixun", "boshidunzixun1", "boshidunzixunzp", "bsdzx", "bsdzx1", "bsdzxzp"], "hits": []}
+{"company": "道达尔", "tried": ["daodaer", "daodaer1", "daodaerzp", "dde", "dde1", "ddezp"], "hits": []}
+{"company": "天坛生物", "tried": ["tiantanshengwu", "tiantanshengwu1", "tiantanshengwuzp", "ttsw", "ttsw1", "ttswzp"], "hits": []}
+{"company": "云南中烟", "tried": ["yunnanzhongyan", "yunnanzhongyan1", "yunnanzhongyanzp", "ynzy", "ynzy1", "ynzyzp"], "hits": []}
+{"company": "财付通", "tried": ["caitong", "caitong1", "caitongzp", "ct", "ct1", "ctzp"], "hits": []}
+{"company": "均胜电子", "tried": ["junshengdianzi", "junshengdianzi1", "junshengdianzizp", "jsdz", "jsdz1", "jsdzzp"], "hits": []}
+{"company": "软通动力", "tried": ["ruantongdongli", "ruantongdongli1", "ruantongdonglizp", "rtdl", "rtdl1", "rtdlzp"], "hits": []}
+{"company": "中信信托", "tried": ["zhongxinxintuo", "zhongxinxintuo1", "zhongxinxintuozp", "zxxt", "zxxt1", "zxxtzp"], "hits": []}
+{"company": "哔哩哔哩电竞", "tried": ["bilibilidian", "bilibilidian1", "bilibilidianzp", "blbld", "blbld1", "blbldzp", "bilibili", "bilibili1"], "hits": []}
+{"company": "欧派家居", "tried": ["oupaijiaju", "oupaijiaju1", "oupaijiajuzp", "opjj", "opjj1", "opjjzp"], "hits": []}
+{"company": "米高蒲志", "tried": ["migaozhi", "migaozhi1", "migaozhizp", "mgz", "mgz1", "mgzzp"], "hits": []}
+{"company": "东方锆业", "tried": ["dongfangye", "dongfangye1", "dongfangyezp", "dfy", "dfy1", "dfyzp"], "hits": []}
+{"company": "恒力石化", "tried": ["henglishihua", "henglishihua1", "henglishihuazp", "hlsh", "hlsh1", "hlshzp"], "hits": []}
+{"company": "伟明环保", "tried": ["weiminghuanbao", "weiminghuanbao1", "weiminghuanbaozp", "wmhb", "wmhb1", "wmhbzp"], "hits": []}
+{"company": "桐昆股份", "tried": ["tongkun", "tongkun1", "tongkunzp", "tk", "tk1", "tkzp"], "hits": []}
+{"company": "慧算账", "tried": ["hui", "hui1", "huizp", "h1", "hzp"], "hits": []}
+{"company": "好未来", "tried": ["haoweilai", "haoweilai1", "haoweilaizp", "hwl", "hwl1", "hwlzp"], "hits": []}
+{"company": "温氏股份", "tried": ["wenshi", "wenshi1", "wenshizp", "ws", "ws1", "wszp", "wens", "wens1"], "hits": []}
+{"company": "兆易创新", "tried": ["zhaoyichuangxin", "zhaoyichuangxin1", "zhaoyichuangxinzp", "zycx", "zycx1", "zycxzp", "gigadevice", "gigadevice1"], "hits": []}
+{"company": "雪迪龙", "tried": ["xuedilong", "xuedilong1", "xuedilongzp", "xdl", "xdl1", "xdlzp"], "hits": []}
+{"company": "恒瑞医药", "tried": ["hengruiyiyao", "hengruiyiyao1", "hengruiyiyaozp", "hryy", "hryy1", "hryyzp", "hengrui", "hengrui1"], "hits": []}
+{"company": "佳发教育", "tried": ["jiafajiaoyu", "jiafajiaoyu1", "jiafajiaoyuzp", "jfjy", "jfjy1", "jfjyzp"], "hits": []}
+{"company": "慕尼黑再保险", "tried": ["muniheizaibaoxian", "muniheizaibaoxian1", "muniheizaibaoxianzp", "mnhzbx", "mnhzbx1", "mnhzbxzp"], "hits": []}
+{"company": "环球医疗", "tried": ["huanqiuyiliao", "huanqiuyiliao1", "huanqiuyiliaozp", "hqyl", "hqyl1", "hqylzp"], "hits": []}
+{"company": "天准科技", "tried": ["tiankeji", "tiankeji1", "tiankejizp", "tkj", "tkj1", "tkjzp"], "hits": []}
+{"company": "科博达", "tried": ["keboda", "keboda1", "kebodazp", "kbd", "kbd1", "kbdzp"], "hits": []}
+{"company": "中诚信", "tried": ["zhongchengxin", "zhongchengxin1", "zhongchengxinzp", "zcx", "zcx1", "zcxzp"], "hits": []}
+{"company": "三环集团", "tried": ["sanhuan", "sanhuan1", "sanhuanzp", "sh", "sh1", "shzp"], "hits": [{"kind": "beisen", "slug": "shzp", "ok": true, "count": 1, "sample": ["辅助类劳务派遣岗位"], "codes": []}]}
+{"company": "中邮邮惠万家", "tried": ["zhongyouyouhuiwanjia", "zhongyouyouhuiwanjia1", "zhongyouyouhuiwanjiazp", "zyyhwj", "zyyhwj1", "zyyhwjzp"], "hits": []}
+{"company": "三一重工", "tried": ["sanyizhonggong", "sanyizhonggong1", "sanyizhonggongzp", "syzg", "syzg1", "syzgzp", "sany"], "hits": [{"kind": "beisen", "slug": "sany", "ok": true, "count": 148, "sample": ["塔筒结构设计工程师", "风机前沿技术研究工程师（算法）", "海外产品解决方案工程师", "嵌入式软件工程师", "软件测试工程师"], "codes": []}]}
+{"company": "英雄体育VSPO", "tried": ["vspo", "yingtiyu", "yingtiyu1", "yingtiyuzp", "yty", "yty1", "ytyzp"], "hits": []}
+{"company": "珀莱雅", "tried": ["polaiya", "polaiya1", "polaiyazp", "ply", "ply1", "plyzp", "proya", "proya1"], "hits": []}
+{"company": "黑猫股份", "tried": ["hei", "hei1", "heizp", "h1", "hzp"], "hits": []}
+{"company": "菜百股份", "tried": ["caibai", "caibai1", "caibaizp", "cb", "cb1", "cbzp"], "hits": []}
+{"company": "中央结算", "tried": ["zhongyang", "zhongyang1", "zhongyangzp", "zy", "zy1", "zyzp"], "hits": []}
+{"company": "网商银行", "tried": ["wangshangyinxing", "wangshangyinxing1", "wangshangyinxingzp", "wsyx", "wsyx1", "wsyxzp"], "hits": []}
+{"company": "中国海油", "tried": ["zhongguohaiyou", "zhongguohaiyou1", "zhongguohaiyouzp", "zghy", "zghy1", "zghyzp", "cnooc", "cnooc1"], "hits": []}
+{"company": "道恩股份", "tried": ["daoen", "daoen1", "daoenzp", "de", "de1", "dezp"], "hits": []}
+{"company": "神工股份", "tried": ["shengong", "shengong1", "shengongzp", "sg", "sg1", "sgzp"], "hits": []}
+{"company": "作业帮", "tried": ["zuoyebang", "zuoyebang1", "zuoyebangzp", "zyb", "zyb1", "zybzp"], "hits": []}
+{"company": "万润股份", "tried": ["wanrun", "wanrun1", "wanrunzp", "wr", "wr1", "wrzp"], "hits": []}
+{"company": "人保健康", "tried": ["renbaojiankang", "renbaojiankang1", "renbaojiankangzp", "rbjk", "rbjk1", "rbjkzp"], "hits": []}
+{"company": "石药集团", "tried": ["shiyao", "shiyao1", "shiyaozp", "sy", "sy1", "syzp", "cspc", "cspc1"], "hits": []}
+{"company": "国家开发银行", "tried": ["guojiakaifayinxing", "guojiakaifayinxing1", "guojiakaifayinxingzp", "gjkfyx", "gjkfyx1", "gjkfyxzp"], "hits": []}
+{"company": "宝钢包装", "tried": ["baogangbaozhuang", "baogangbaozhuang1", "baogangbaozhuangzp", "bgbz", "bgbz1", "bgbzzp"], "hits": []}
+{"company": "迦南科技", "tried": ["nankeji", "nankeji1", "nankejizp", "nkj", "nkj1", "nkjzp"], "hits": []}
+{"company": "江泰保险经纪", "tried": ["jiangtaibaoxianjingji", "jiangtaibaoxianjingji1", "jiangtaibaoxianjingjizp", "jtbxjj", "jtbxjj1", "jtbxjjzp"], "hits": []}
+{"company": "万纬冷链", "tried": ["wanwei", "wanwei1", "wanweizp", "ww", "ww1", "wwzp"], "hits": []}
+{"company": "奥特维", "tried": ["aotewei", "aotewei1", "aoteweizp", "atw", "atw1", "atwzp"], "hits": []}
+{"company": "新强联", "tried": ["xinlian", "xinlian1", "xinlianzp", "xl", "xl1", "xlzp"], "hits": []}
+{"company": "通策医疗", "tried": ["tongceyiliao", "tongceyiliao1", "tongceyiliaozp", "tcyl", "tcyl1", "tcylzp", "topchoice", "topchoice1"], "hits": []}
+{"company": "中信银行", "tried": ["zhongxinyinxing", "zhongxinyinxing1", "zhongxinyinxingzp", "zxyx", "zxyx1", "zxyxzp"], "hits": []}
+{"company": "格力电器", "tried": ["gelidianqi", "gelidianqi1", "gelidianqizp", "gldq", "gldq1", "gldqzp", "gree", "gree1"], "hits": []}
+{"company": "隆平高科", "tried": ["longpinggaoke", "longpinggaoke1", "longpinggaokezp", "lpgk", "lpgk1", "lpgkzp"], "hits": []}
+{"company": "丰田中国", "tried": ["fengtian", "fengtian1", "fengtianzp", "ft", "ft1", "ftzp"], "hits": []}
+{"company": "国家电网", "tried": ["guojiadianwang", "guojiadianwang1", "guojiadianwangzp", "gjdw", "gjdw1", "gjdwzp", "sgcc", "sgcc1"], "hits": []}
+{"company": "京东家电", "tried": ["jingdongjiadian", "jingdongjiadian1", "jingdongjiadianzp", "jdjd", "jdjd1", "jdjdzp"], "hits": []}
+{"company": "国睿科技", "tried": ["guoruikeji", "guoruikeji1", "guoruikejizp", "grkj", "grkj1", "grkjzp"], "hits": []}
+{"company": "京东物流", "tried": ["jingdongwuliu", "jingdongwuliu1", "jingdongwuliuzp", "jdwl", "jdwl1", "jdwlzp", "jdlogistics", "jdlogistics1"], "hits": []}
+{"company": "汇洁股份", "tried": ["huijie", "huijie1", "huijiezp", "hj", "hj1", "hjzp"], "hits": []}
+{"company": "三只松鼠", "tried": ["sanzhisongshu", "sanzhisongshu1", "sanzhisongshuzp", "szss", "szss1", "szsszp"], "hits": []}
+{"company": "安井食品", "tried": ["anjingshipin", "anjingshipin1", "anjingshipinzp", "ajsp", "ajsp1", "ajspzp"], "hits": []}
+{"company": "玛氏", "tried": ["mashi", "mashi1", "mashizp", "ms", "ms1", "mszp"], "hits": []}
+{"company": "达梦数据", "tried": ["damengshuju", "damengshuju1", "damengshujuzp", "dmsj", "dmsj1", "dmsjzp"], "hits": []}
+{"company": "钉钉", "tried": ["dingding", "dingding1", "dingdingzp", "dd", "dd1", "ddzp"], "hits": []}
+{"company": "中国建材", "tried": ["zhongguojiancai", "zhongguojiancai1", "zhongguojiancaizp", "zgjc", "zgjc1", "zgjczp", "cnbm", "cnbm1"], "hits": []}
+{"company": "长电科技", "tried": ["zhangdiankeji", "zhangdiankeji1", "zhangdiankejizp", "zdkj", "zdkj1", "zdkjzp", "jcet", "jcet1"], "hits": []}
+{"company": "卫宁健康", "tried": ["weiningjiankang", "weiningjiankang1", "weiningjiankangzp", "wnjk", "wnjk1", "wnjkzp"], "hits": []}
+{"company": "保变电气", "tried": ["baobiandianqi", "baobiandianqi1", "baobiandianqizp", "bbdq", "bbdq1", "bbdqzp"], "hits": []}
+{"company": "上上签", "tried": ["shangshang", "shangshang1", "shangshangzp", "ss", "ss1", "sszp"], "hits": []}
+{"company": "创世纪", "tried": ["chuangshiji", "chuangshiji1", "chuangshijizp", "csj", "csj1", "csjzp"], "hits": []}
+{"company": "正帆科技", "tried": ["zhengfankeji", "zhengfankeji1", "zhengfankejizp", "zfkj", "zfkj1", "zfkjzp"], "hits": []}
+{"company": "每日互动", "tried": ["meirihudong", "meirihudong1", "meirihudongzp", "mrhd", "mrhd1", "mrhdzp"], "hits": []}
+{"company": "中策橡胶", "tried": ["zhongcexiangjiao", "zhongcexiangjiao1", "zhongcexiangjiaozp", "zcxj", "zcxj1", "zcxjzp"], "hits": []}
