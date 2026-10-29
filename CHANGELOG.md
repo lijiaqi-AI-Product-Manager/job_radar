@@ -2,6 +2,15 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.9.1] - 2026-10-29
+
+- 数据源 1,898 → 1,902：新增北森 `hsingchen`（湖北星辰 52 岗）、`intsig`（合合信息 62 岗）、
+  `babycare`（148 岗），飞书 `tianzhulingshan`（舒客电商 7 岗）、`j8fq0c3gg7`（梅花集团 5 岗）、
+  `mammotion`（松灵机器人 3 岗）。
+- 公司清单 `companies.jsonl` 2,325 → 2,326 行；目标覆盖 599 → 604。
+- Common Crawl 2026-43 新批次投入枚举（2,321 个平台主机），未产生新源，已确认渠道饱和；
+  新写 `work/cc_new_probe.py` 用于后续批次增量巡检。
+
 ## [1.9.0] - 2026-10-29
 
 ### 新增

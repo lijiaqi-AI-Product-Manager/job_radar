@@ -1,0 +1,16 @@
+﻿id: meihua-group
+company: 梅花集团
+adapter: feishu_atsx
+recruit_types: [campus, intern]
+rate_limit_rps: 1
+params:
+  base_url: "https://j8fq0c3gg7.jobs.feishu.cn"
+  website_path: "905946"
+  portal_type: 3
+  page_size: 100
+  job_url: "https://j8fq0c3gg7.jobs.feishu.cn/905946/position/{id}/detail"
+compliance:
+  checked_on: 2026-10-29
+  robots: "none"            # jobs.feishu.cn 平台层无站点级规则
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验"
+  notes: "2026-10-29 exa 搜 site:jobs.feishu.cn 校园招聘 命中；门户标题「梅花集团-校园招聘」，实测 5 岗"

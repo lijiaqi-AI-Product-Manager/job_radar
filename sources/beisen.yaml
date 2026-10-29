@@ -1436,3 +1436,4 @@ sources:
 
 # 2026-10-29 新增：官网反查拿到的白标北森域（接口挂在自有域名下，tenant 猜不到）
   - {id: beisen-xdfqt, company: 新东方前途出国, params: {tenant: xdfqt, host: zhaopin.xdf.cn}}  # 2026-10-29 新增：首屏 4447 岗（白标，robots.txt Allow: /）
+  - {id: beisen-babycare, company: Babycare, params: {tenant: babycare}}  # 2026-10-29 新增：148 岗

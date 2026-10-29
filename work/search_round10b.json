@@ -1,0 +1,26 @@
+[
+ {
+  "kind": "beisen",
+  "tenant": "babycare",
+  "company": "Babycare招聘官网-今天你投简历了吗？",
+  "count": 279
+ },
+ {
+  "kind": "beisen",
+  "tenant": "nesc",
+  "company": "东北证券股份有限公司",
+  "count": 418
+ },
+ {
+  "kind": "beisen",
+  "tenant": "innosilicon",
+  "company": "芯动科技",
+  "count": 84
+ },
+ {
+  "kind": "beisen",
+  "tenant": "svolt",
+  "company": "蜂巢能源",
+  "count": 319
+ }
+]

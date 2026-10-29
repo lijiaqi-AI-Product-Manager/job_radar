@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.9.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.9.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,8 +14,8 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 
 ![demo](docs/assets/demo-en.gif)
 
-> **커버리지(2026-10-29)**: **1,898개 소스**(베이센 1,145 / 다이이 309 / Feishu ATSX 145 / Tupu360 32 / Workday 45 등) ·
-> **1,860개 기업** · **23개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **592개(35%)** 확보.
+> **커버리지(2026-10-29)**: **1,902개 소스**(베이센 1,220 / 다이이 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 등) ·
+> **1,861개 기업** · **23개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **604개(36%)** 확보.
 > 공고 수와 JD 커버리지는 매일 크롤링 후 갱신됩니다(최신 Release 기준).
 
 ## 특징
@@ -65,8 +65,8 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 읽기 쉬운 �
 
 | 항목 | 현황 |
 |---|---|
-| 목표 커버리지 | **579/1,655(35%)** (나머지 12개는 robots/로그인/암호화로 불가) |
-| 소스 | **1,898개 소스 / 1,860개 기업** (베이센 1,145, 다이이 309, Feishu ATSX 145, Tupu360 32, 구 베이센 44, Workday 45, 구 다이이 15, 자체 사이트 19) |
+| 목표 커버리지 | **604/1,655(36%)** (나머지 12개는 robots/로그인/암호화로 불가) |
+| 소스 | **1,902개 소스 / 1,861개 기업** (베이센 1,220, 다이이 310, Feishu ATSX 148, Tupu360 32, 구 베이센 44, Workday 45, 구 다이이 15, 자체 사이트 19) |
 | 성별 커버리지 | 광둥 18/49(37%), 저장 13/44(30%), 장쑤 9/34(26%), 쓰촨 9/30(30%), 산둥 7/26(27%). 전체 표는 `scripts/coverage_report.py` |
 | 대형 테크 | 알리바바·텐센트·메이투안·넷이즈·바이두·징둥·바이트댄스·vivo·체리·CICC·BOE·하이센스·PICC 는 공고 있음. 화웨이는 캘린더만(WAF 403) |
 | 캘린더 항목 | 2026-10-26 전체 크롤 기준 74.9% 가 11개 항목 중 7개 이상 보유 |
