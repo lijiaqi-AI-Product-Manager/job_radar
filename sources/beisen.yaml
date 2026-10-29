@@ -1437,3 +1437,6 @@ sources:
 # 2026-10-29 新增：官网反查拿到的白标北森域（接口挂在自有域名下，tenant 猜不到）
   - {id: beisen-xdfqt, company: 新东方前途出国, params: {tenant: xdfqt, host: zhaopin.xdf.cn}}  # 2026-10-29 新增：首屏 4447 岗（白标，robots.txt Allow: /）
   - {id: beisen-babycare, company: Babycare, params: {tenant: babycare}}  # 2026-10-29 新增：148 岗
+  - {id: beisen-xadzgc, company: 西安电子工程研究所, params: {tenant: xadzgc}}  # 2026-10-29 新增：47 岗（exa 搜索命中门户，标题定归属）
+  - {id: beisen-nader, company: 上海良信电器, params: {tenant: nader}}  # 2026-10-29 新增：1 岗（JSON 接口关闭，走 /alljob 服务端渲染）
+  - {id: beisen-gdh, company: 粤海集团, params: {tenant: gdh}}  # 2026-10-29 新增：1 岗（门户标题「粤海招聘」，岗位来自粤海资本等成员公司）

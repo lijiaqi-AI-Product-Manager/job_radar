@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | Deutsch | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.9.1-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.9.2-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,8 +14,8 @@ eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datenstand (2026-10-29)**: **1,902 Quellen** · **1,861 Unternehmen** · **23 Adapter**
-> (Beisen 1,220 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Alt-Beisen 44 / Workday 45 / Alt-Dayee 15 / eigene Seiten 19)
+> **Datenstand (2026-10-29)**: **1,905 Quellen** · **1,864 Unternehmen** · **23 Adapter**
+> (Beisen 1,223 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Alt-Beisen 44 / Workday 45 / Alt-Dayee 15 / eigene Seiten 19)
 > Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **604 abgedeckt (36 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
 > Stellenzahlen und Feldabdeckung werden bei jedem täglichen Crawl aktualisiert (siehe neuestes Release).
 

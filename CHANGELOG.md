@@ -2,6 +2,20 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号用 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.9.2] - 2026-10-29
+
+- 数据源 1,902 → 1,905：新增北森 `xadzgc`（西安电子工程研究所 47 岗）、`nader`（上海良信电器 1 岗，
+  JSON 接口关闭、走 `/alljob` 服务端渲染）、`gdh`（粤海集团 1 岗）。
+- `companies.jsonl` 2,326 → 2,329 行。
+- 渠道复核，均为可复现的负结果（证据补进 `docs/internal/COVERAGE-CEILING.md`）：
+  - 自建站：523 个招聘页逐个扫描，单页最多命中 3 个岗位链接（0 个的 329 页），通用抓取无收益；
+  - Workday：1,161 个主机逐个查 Wayback CDX 取 `tenant/site`，1,055 个连接失败、20 个拿到站点位，
+    逐个探活后中国区分面为 0；
+  - Common Crawl 2026-43 批次与新过滤条件未产出新主机；
+  - exa 单问法（`site:zhiye.com` + 城市/届别）每轮只带回 1-3 个未入库门户。
+- 顺带核对：北森 `CategoryId` 的「应届生招聘」（如蜂巢能源 `svolt` 317 岗）编号仍是 2，
+  现有 `RECRUIT_TYPE` 已按校招处理，无需改映射。
+
 ## [1.9.1] - 2026-10-29
 
 - 数据源 1,898 → 1,902：新增北森 `hsingchen`（湖北星辰 52 岗）、`intsig`（合合信息 62 岗）、
