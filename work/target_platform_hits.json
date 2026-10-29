@@ -1,0 +1,229 @@
+{
+ "rows": [],
+ "skipped": [
+  {
+   "company": "莉莉丝",
+   "why": "feishu-exists"
+  },
+  {
+   "company": "三星电子中国",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中航光电",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "晶晨股份",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "宇通客车",
+   "why": "su-no-jobs"
+  },
+  {
+   "company": "采埃孚",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "东软睿驰",
+   "why": "no-jobs"
+  },
+  {
+   "company": "中国巨石",
+   "why": "no-jobs"
+  },
+  {
+   "company": "新时达",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国中铁",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "上海航天",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国建材",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国航油",
+   "why": "no-jobs"
+  },
+  {
+   "company": "中船重工",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "广发银行",
+   "why": "portal-oss"
+  },
+  {
+   "company": "郑州银行",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "中信建投",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中泰证券",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "富国基金",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国长城资产",
+   "why": "no-jobs"
+  },
+  {
+   "company": "交银施罗德",
+   "why": "no-jobs"
+  },
+  {
+   "company": "华夏理财",
+   "why": "su-exists"
+  },
+  {
+   "company": "广银理财",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "建信基金",
+   "why": "no-jobs"
+  },
+  {
+   "company": "景顺长城",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国太保",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中信保诚人寿",
+   "why": "no-jobs"
+  },
+  {
+   "company": "太平人寿",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "罗兰贝格",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "中国同辐",
+   "why": "portal-oss"
+  },
+  {
+   "company": "科兴生物",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "华润啤酒",
+   "why": "su-no-jobs"
+  },
+  {
+   "company": "洋河",
+   "why": "no-jobs"
+  },
+  {
+   "company": "三全食品",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "盼盼食品",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "招商蛇口",
+   "why": "no-jobs"
+  },
+  {
+   "company": "建发房产",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "联发科",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "宇树科技",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "小鹏汇天",
+   "why": "feishu-exists"
+  },
+  {
+   "company": "中科闻歌",
+   "why": "no-jobs"
+  },
+  {
+   "company": "新东方在线",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "传音控股非洲",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "出门问问",
+   "why": "feishu-no-campus"
+  },
+  {
+   "company": "华住集团",
+   "why": "no-jobs"
+  },
+  {
+   "company": "广汽传祺",
+   "why": "su-no-jobs"
+  },
+  {
+   "company": "李宁YOUNG",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "橘朵",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "步科",
+   "why": "wecruit-generic"
+  },
+  {
+   "company": "沪电股份",
+   "why": "legacy-dead"
+  },
+  {
+   "company": "波克城市",
+   "why": "feishu-no-campus"
+  },
+  {
+   "company": "泰康资产",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "福特中国",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "绿联",
+   "why": "tenant-exists"
+  },
+  {
+   "company": "洋河股份",
+   "why": "no-jobs"
+  },
+  {
+   "company": "中国太平",
+   "why": "tenant-exists"
+  }
+ ]
+}
