@@ -18,6 +18,8 @@ pytest-cache-files-*/
 data/
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
 *.parquet
 calendar/enrich-report.json
 
