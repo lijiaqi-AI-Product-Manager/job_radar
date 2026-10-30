@@ -18,12 +18,12 @@
 ## 开始使用
 
 ```bash
-pip install --upgrade jobsearchradar
+pip install --upgrade "https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/download/v2.0.0/jobsearchradar-2.0.0-py3-none-any.whl"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
 
-需要 MCP 时安装 `jobsearchradar[mcp]`，在客户端中以 stdio 运行 `jobradar-mcp`。完整示例见 [项目首页](../README.md)。PyPI 的实际可用版本以包索引为准；也可从本版本 GitHub Release 下载 wheel 安装。
+需要 MCP 时以 `jobsearchradar[mcp] @ 安装包URL` 形式安装可选依赖，在客户端中以 stdio 运行 `jobradar-mcp`。完整示例见 [项目首页](../README.md)。PyPI 的实际可用版本以包索引为准；也可从本版本 GitHub Release 下载 wheel 安装。
 
 ## 数据与兼容
 

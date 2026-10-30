@@ -6,6 +6,12 @@
 `jobradar` 这个名字在 PyPI 上与已有的 `job-radar` 过于接近、无法注册，所以 distribution 叫
 `jobsearchradar`；import 包名、命令行（`jobradar` / `jobradar-mcp`）都不变。
 
+## 当前渠道状态
+
+GitHub 正式版为 `v2.0.0`，包含已验证的 wheel 与源码包。PyPI 当前发行版为 `1.1.1`；该服务尚未登记当前仓库的 Trusted Publisher，因此 `PYPI_ENABLED` 暂设为 `false`。用户通过 README 中的 GitHub 安装包地址安装 2.0。
+
+维护账号完成下表授权、核实项目归属后，再把 GitHub 仓库变量 `PYPI_ENABLED` 设为 `true` 并执行发布。
+
 ## 一次性配置（需要仓库所有者操作，约 5 分钟）
 
 1. 注册/登录 <https://pypi.org>，进入 **Account settings → Publishing → Add a new pending publisher**
