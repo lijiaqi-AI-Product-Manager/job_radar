@@ -1,43 +1,217 @@
 schema_version: 1
 checks:
-  - source_id: beisen-tongwei
-    company: 通威股份
-    registered_company: 通威股份有限公司
-    checked_at: '2026-10-30T16:15:14Z'
-    current_jobs: 5
-    jobs_with_jd: 5
-    samples:
-      - source_job_id: 7e95cbc1-e456-4b04-b591-92f54d461237
-        url: https://tongwei.zhiye.com/social/detail?jobAdId=7e95cbc1-e456-4b04-b591-92f54d461237
-        title: 储能系统集成工程师(J12201)
-        publish_at: '2026-10-21'
-        apply_end: null
-      - source_job_id: 96b523ea-3e89-43b7-8cc0-20549e0d9d48
-        url: https://tongwei.zhiye.com/campus/detail?jobAdId=96b523ea-3e89-43b7-8cc0-20549e0d9d48
-        title: 通威校招生-商务类(J12041)
-        publish_at: '2026-08-26'
-        apply_end: null
-  - source_id: yunjiuye-zhongtiangangtie
-    company: 中天钢铁
-    registered_company: 中天钢铁集团有限公司
-    checked_at: '2026-10-30T15:57:09Z'
-    current_jobs: 1
-    jobs_with_jd: 1
-    samples:
-      - source_job_id: '2266135'
-        url: https://lnkjdx.bysjy.com.cn/detail/job?id=2266135
-        title: 电气技术员
-        publish_at: '2026-09-28'
-        apply_end: '2026-12-17'
-  - source_id: yunjiuye-shenweiyaoye
-    company: 神威药业
-    registered_company: 神威药业集团有限公司
-    checked_at: '2026-10-30T15:57:15Z'
-    current_jobs: 1
-    jobs_with_jd: 1
-    samples:
-      - source_job_id: '3270319'
-        url: https://hbgc.bysjy.com.cn/detail/job?id=3270319
-        title: 信息管理
-        publish_at: '2026-10-15'
-        apply_end: '2027-10-15'
+- source_id: beisen-tongwei
+  company: 通威股份
+  registered_company: 通威股份有限公司
+  checked_at: '2026-10-30T16:15:14Z'
+  current_jobs: 5
+  jobs_with_jd: 5
+  samples:
+  - source_job_id: 7e95cbc1-e456-4b04-b591-92f54d461237
+    url: https://tongwei.zhiye.com/social/detail?jobAdId=7e95cbc1-e456-4b04-b591-92f54d461237
+    title: 储能系统集成工程师(J12201)
+    publish_at: '2026-10-21'
+    apply_end: null
+  - source_job_id: 96b523ea-3e89-43b7-8cc0-20549e0d9d48
+    url: https://tongwei.zhiye.com/campus/detail?jobAdId=96b523ea-3e89-43b7-8cc0-20549e0d9d48
+    title: 通威校招生-商务类(J12041)
+    publish_at: '2026-08-26'
+    apply_end: null
+- source_id: yunjiuye-zhongtiangangtie
+  company: 中天钢铁
+  registered_company: 中天钢铁集团有限公司
+  checked_at: '2026-10-30T15:57:09Z'
+  current_jobs: 1
+  jobs_with_jd: 1
+  samples:
+  - source_job_id: '2266135'
+    url: https://lnkjdx.bysjy.com.cn/detail/job?id=2266135
+    title: 电气技术员
+    publish_at: '2026-09-28'
+    apply_end: '2026-12-17'
+- source_id: yunjiuye-shenweiyaoye
+  company: 神威药业
+  registered_company: 神威药业集团有限公司
+  checked_at: '2026-10-30T15:57:15Z'
+  current_jobs: 1
+  jobs_with_jd: 1
+  samples:
+  - source_job_id: '3270319'
+    url: https://hbgc.bysjy.com.cn/detail/job?id=3270319
+    title: 信息管理
+    publish_at: '2026-10-15'
+    apply_end: '2027-10-15'
+- source_id: jysd-zzu-kunlun
+  company: 昆仑万维科技股份有限公司
+  registered_company: 昆仑万维科技股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:38Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019971'
+    url: https://job.zzu.edu.cn/campus/view/id/1019971
+    title: 昆仑万维科技股份有限公司2027届校园招聘
+    publish_at: '2026-10-21'
+    apply_end: null
+    listing_end: '2026-12-31'
+- source_id: jysd-zzu-09d0286f9f
+  company: 中铁十一局集团有限公司
+  registered_company: 中铁十一局集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:41Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019159'
+    url: https://job.zzu.edu.cn/campus/view/id/1019159
+    title: 中铁十一局集团有限公司2027届校园招聘
+    publish_at: '2026-09-07'
+    apply_end: null
+    listing_end: '2026-11-07'
+- source_id: jysd-zzu-50ef08e444
+  company: 浙江华海药业股份有限公司
+  registered_company: 浙江华海药业股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:43Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019702'
+    url: https://job.zzu.edu.cn/campus/view/id/1019702
+    title: 浙江华海药业股份有限公司2027校园招聘
+    publish_at: '2026-09-28'
+    apply_end: null
+    listing_end: '2026-12-27'
+- source_id: jysd-zzu-04de37e841
+  company: 绿盟科技集团股份有限公司
+  registered_company: 绿盟科技集团股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:44Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019661'
+    url: https://job.zzu.edu.cn/campus/view/id/1019661
+    title: 【绿盟科技】2027届校园招聘正式启动 新生破浪 守护未来
+    publish_at: '2026-09-24'
+    apply_end: null
+    listing_end: '2026-12-23'
+- source_id: jysd-zzu-cae035551e
+  company: 交通银行股份有限公司
+  registered_company: 交通银行股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:50Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019502'
+    url: https://job.zzu.edu.cn/campus/view/id/1019502
+    title: 交通银行2027年度校园招聘正式启动！
+    publish_at: '2026-09-18'
+    apply_end: null
+    listing_end: '2026-12-17'
+- source_id: jysd-zzu-ee7302476c
+  company: 宁波通商银行股份有限公司
+  registered_company: 宁波通商银行股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:52Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019412'
+    url: https://job.zzu.edu.cn/campus/view/id/1019412
+    title: 宁波通商银行2027届秋季校园招聘
+    publish_at: '2026-09-15'
+    apply_end: null
+    listing_end: '2026-12-14'
+- source_id: jysd-zzu-4b526cb8bc
+  company: 厦门航空有限公司
+  registered_company: 厦门航空有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:55Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019121'
+    url: https://job.zzu.edu.cn/campus/view/id/1019121
+    title: “鹭”启新程，逐梦未来！ 厦门航空 2027 届校园招聘简章
+    publish_at: '2026-09-04'
+    apply_end: null
+    listing_end: '2026-11-04'
+- source_id: jysd-zzu-f362af9b64
+  company: 万向集团公司
+  registered_company: 万向集团公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:57Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019032'
+    url: https://job.zzu.edu.cn/campus/view/id/1019032
+    title: 万有可为，循光向上｜万向集团2027届秋季校园招聘正式启动
+    publish_at: '2026-09-02'
+    apply_end: null
+    listing_end: '2026-11-30'
+- source_id: jysd-zzu-3637570527
+  company: 浙江吉利控股集团有限公司
+  registered_company: 浙江吉利控股集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:41:59Z'
+  current_records: 2
+  records_with_jd: 2
+  samples:
+  - source_job_id: '1019023'
+    url: https://job.zzu.edu.cn/campus/view/id/1019023
+    title: 吉利控股集团2027届秋季全球校园招聘
+    publish_at: '2026-09-02'
+    apply_end: null
+    listing_end: '2026-11-30'
+  - source_job_id: '1018780'
+    url: https://job.zzu.edu.cn/campus/view/id/1018780
+    title: 吉利控股集团2027届秋季全球校园招聘
+    publish_at: '2026-08-18'
+    apply_end: null
+    listing_end: '2026-11-16'
+- source_id: jysd-zzu-2639aec89e
+  company: 苏州智加科技有限公司
+  registered_company: 苏州智加科技有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:42:00Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1018922'
+    url: https://job.zzu.edu.cn/campus/view/id/1018922
+    title: 智加科技 2027 届校园招聘简章
+    publish_at: '2026-08-31'
+    apply_end: null
+    listing_end: '2026-11-29'
+- source_id: jysd-zzu-e11bfe150b
+  company: 比亚迪股份有限公司
+  registered_company: 比亚迪股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:42:03Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1018826'
+    url: https://job.zzu.edu.cn/campus/view/id/1018826
+    title: 寻找爱“迪”生——比亚迪2027届秋季校园招聘简章
+    publish_at: '2026-08-21'
+    apply_end: null
+    listing_end: '2026-11-19'
+- source_id: jysd-zzu-16636858c2
+  company: 新城控股集团股份有限公司上海分公司
+  registered_company: 新城控股集团股份有限公司上海分公司
+  record_kind: recruitment_notice
+  checked_at: '2026-10-30T17:42:04Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1019602'
+    url: https://job.zzu.edu.cn/campus/view/id/1019602
+    title: 新城控股2027届【新睿】校园招聘
+    publish_at: '2026-09-22'
+    apply_end: null
+    listing_end: '2026-11-22'

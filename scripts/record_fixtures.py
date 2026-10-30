@@ -35,6 +35,7 @@ def main() -> int:
     ap.add_argument("--page-size", type=int, default=20, help="适配器支持 params.page_size 时生效")
     ap.add_argument("--multi-source", action="store_true",
                     help="该适配器服务多家公司时加此参数，fixtures 写到 tests/fixtures/<adapter>_<source>/")
+    ap.add_argument("--allow-partial", action="store_true", help="明确只录制有限页样本，不冒充完整索引")
     ap.add_argument("--truncate", type=int, default=0,
                     help="录完把响应截到 N 字节（0=不截）。未命中 --anchor 的文件不截")
     ap.add_argument("--anchor", default="",
@@ -64,13 +65,16 @@ def main() -> int:
         print(f"source {args.source_id} not found in sources/")
         return 1
     source.params = {**source.params, "max_pages": args.max_pages, "page_size": args.page_size}
+    if args.allow_partial:
+        source.params["allow_partial"] = True
     # 一个适配器可以服务多家公司（如 feishu_atsx 服务蔚来/小鹏/Momenta，各自域名不同）。
     # 这时 fixtures 必须按 **source** 分目录，否则后录的会覆盖先录的、契约测试也回放不到自己的域名。
     # 约定：只服务一家公司的适配器仍用 <adapter_id>/（历史 fixtures 路径不变）。
     multi = args.multi_source
     out = ROOT / "tests" / "fixtures" / (f"{source.adapter}_{source.id}" if multi else source.adapter)
     cls = load_all(include_drafts=True)[source.adapter]
-    transport = RecordingTransport(out, secret_patterns=cls.secret_patterns)
+    transport = RecordingTransport(out, secret_patterns=cls.secret_patterns,
+                                   fixture_transform=getattr(cls, "fixture_transform", None))
     adapter = cls(source, make_client(transport, policy=RobotsPolicy()))
     jobs = list(adapter.fetch_all())
     (out / "source.yaml").write_text(

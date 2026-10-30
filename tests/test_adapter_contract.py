@@ -43,6 +43,12 @@ CASES = cases()
 IDS = [f"{aid}:{d.name}" for aid, d in CASES]
 
 
+def fixture_adapter(aid, source, client):
+    # 公告有效期是业务字段；历史录制须按核查日回放，避免真实样本到期后 CI 随日历漂移。
+    kwargs = {"reference_date": source.compliance.checked_on} if aid == "jysd" else {}
+    return ADAPTERS[aid](source, client, sleep=lambda s: None, **kwargs)
+
+
 def test_there_is_at_least_one_adapter():
     assert ADAPTERS
 
@@ -77,7 +83,7 @@ def test_adapter_contract(aid, fx):
     source = SourceConfig(**yaml.safe_load((fx / "source.yaml").read_text(encoding="utf-8")))
     assert source.adapter == aid
     client = httpx.Client(transport=ReplayTransport(fx))
-    jobs = list(ADAPTERS[aid](source, client, sleep=lambda s: None).fetch_all())
+    jobs = list(fixture_adapter(aid, source, client).fetch_all())
 
     assert jobs, "回放后一条岗位都没有"
     assert all(isinstance(j, Job) for j in jobs)
@@ -97,7 +103,7 @@ _DETAIL_ONLY = {"tupu360:tupu360", "radancy:radancy"}
 def test_adapter_stores_jd_text(aid, fx):
     """JD 正文必须入库（2026-10-21 起的硬性要求）：≥90% 的岗位要有职责或要求原文。列表里没有就请求详情页。"""
     source = SourceConfig(**yaml.safe_load((fx / "source.yaml").read_text(encoding="utf-8")))
-    jobs = list(ADAPTERS[aid](source, httpx.Client(transport=ReplayTransport(fx)), sleep=lambda s: None).fetch_all())
+    jobs = list(fixture_adapter(aid, source, httpx.Client(transport=ReplayTransport(fx))).fetch_all())
     with_jd = [j for j in jobs if (j.description or "").strip() or (j.requirements or "").strip()]
     if f"{aid}:{fx.name}" in _DETAIL_ONLY:
         # 回放里录了几个详情，就必须解出几个正文；一个都没解出来说明正文抽取正则坏了

@@ -110,9 +110,14 @@ def audit_source_checks(payload: object, sources: list[SourceConfig]) -> list[st
         except (ValueError, TypeError):
             day = None
             problems.append(f"{context}: checked_at 必须为 UTC 时间戳")
-        current, jd = row.get("current_jobs"), row.get("jobs_with_jd")
+        kind = row.get("record_kind", "position")
+        if not isinstance(kind, str) or kind not in {"position", "recruitment_notice"}:
+            problems.append(f"{context}: 未知 record_kind")
+        count_field, jd_field = ("current_records", "records_with_jd") if kind == "recruitment_notice" else (
+            "current_jobs", "jobs_with_jd")
+        current, jd = row.get(count_field), row.get(jd_field)
         if type(current) is not int or type(jd) is not int or not 0 < jd <= current:
-            problems.append(f"{context}: 抽样岗位数必须满足 0 < jobs_with_jd <= current_jobs")
+            problems.append(f"{context}: 抽样数必须满足 0 < {jd_field} <= {count_field}")
         samples = row.get("samples")
         if not isinstance(samples, list) or not samples:
             problems.append(f"{context}: 缺少真实岗位样本")
@@ -131,7 +136,7 @@ def audit_source_checks(payload: object, sources: list[SourceConfig]) -> list[st
                 problems.extend(_secrets(dict(parse_qsl(url.query)), context))
             except ValueError:
                 problems.append(f"{context}: 岗位链接格式错误")
-            for field in ("publish_at", "apply_end"):
+            for field in ("publish_at", "apply_end", "listing_end"):
                 value = sample.get(field)
                 if value is None:
                     continue
@@ -141,6 +146,6 @@ def audit_source_checks(payload: object, sources: list[SourceConfig]) -> list[st
                 except (ValueError, TypeError):
                     problems.append(f"{context}: {field} 必须为日期或 null")
                     continue
-                if field == "apply_end" and day is not None and value < day:
-                    problems.append(f"{context}: 核查时岗位已截止，不能作为在招样本")
+                if field in {"apply_end", "listing_end"} and day is not None and value < day:
+                    problems.append(f"{context}: 核查时记录已截止（{field}），不能作为当前样本")
     return problems

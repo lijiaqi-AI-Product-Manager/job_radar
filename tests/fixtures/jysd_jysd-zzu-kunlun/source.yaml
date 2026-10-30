@@ -1,0 +1,22 @@
+id: jysd-zzu-kunlun
+company: 昆仑万维科技股份有限公司
+adapter: jysd
+source_kind: aggregator
+params:
+  host: job.zzu.edu.cn
+  max_pages: 6
+  match:
+  - 昆仑万维科技股份有限公司
+  title_terms:
+  - 昆仑万维
+  page_size: 20
+  allow_partial: true
+recruit_types:
+- campus
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-31'
+  robots: absent
+  terms: 高校公开招聘公告栏目与原始招聘文案；只读匿名列表、翻页和详情，不调用登录检索或投递/简历接口
+  notes: 来源为聚合招聘公告，一条记录可能含多个岗位；保留实际登记主体全名。公告过期时间不当作网申截止日；侦察见 docs/recon/jysd.md。

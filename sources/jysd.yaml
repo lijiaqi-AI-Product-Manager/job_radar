@@ -1,0 +1,125 @@
+# 实际登记主体全名；公告可含多岗，不将分支数据冒充集团全量岗位。
+defaults:
+  adapter: jysd
+  source_kind: aggregator
+  recruit_types:
+  - campus
+  rate_limit_rps: 1
+  params:
+    host: job.zzu.edu.cn
+    max_pages: 200
+  compliance:
+    checked_on: '2026-10-31'
+    robots: absent
+    terms: 高校公开招聘公告栏目与原始招聘文案；只读匿名列表、翻页和详情，不调用登录检索或投递/简历接口
+    notes: 来源为聚合招聘公告，一条记录可能含多个岗位；保留实际登记主体全名。公告过期时间不当作网申截止日；侦察见 docs/recon/jysd.md。
+sources:
+- id: jysd-zzu-kunlun
+  company: 昆仑万维科技股份有限公司
+  params:
+    match:
+    - 昆仑万维科技股份有限公司
+    title_terms:
+    - 昆仑万维
+  enabled: true
+- id: jysd-zzu-09d0286f9f
+  company: 中铁十一局集团有限公司
+  params:
+    match:
+    - 中铁十一局集团有限公司
+    title_terms:
+    - 中铁十一局
+  enabled: true
+- id: jysd-zzu-50ef08e444
+  company: 浙江华海药业股份有限公司
+  params:
+    match:
+    - 浙江华海药业股份有限公司
+    title_terms:
+    - 华海药业
+  enabled: true
+- id: jysd-zzu-04de37e841
+  company: 绿盟科技集团股份有限公司
+  params:
+    match:
+    - 绿盟科技集团股份有限公司
+    title_terms:
+    - 绿盟科技
+  enabled: true
+- id: jysd-zzu-cae035551e
+  company: 交通银行股份有限公司
+  params:
+    match:
+    - 交通银行股份有限公司
+    title_terms:
+    - 交通银行
+  enabled: true
+- id: jysd-zzu-ee7302476c
+  company: 宁波通商银行股份有限公司
+  params:
+    match:
+    - 宁波通商银行股份有限公司
+    title_terms:
+    - 宁波通商银行
+  enabled: true
+- id: jysd-zzu-2bbfb61c91
+  company: 厦门钨业股份有限公司
+  params:
+    match:
+    - 厦门钨业股份有限公司
+    title_terms:
+    - 厦门钨业
+  enabled: false
+  compliance:
+    checked_on: '2026-10-31'
+    robots: absent
+    terms: 高校公开招聘公告栏目与原始招聘文案；只读匿名列表、翻页和详情，不调用登录检索或投递/简历接口
+    notes: 完整索引核验未得到未截止且有正文的合格当前公告；保持停用，不计覆盖。
+- id: jysd-zzu-4b526cb8bc
+  company: 厦门航空有限公司
+  params:
+    match:
+    - 厦门航空有限公司
+    title_terms:
+    - 厦门航空
+  enabled: true
+- id: jysd-zzu-f362af9b64
+  company: 万向集团公司
+  params:
+    match:
+    - 万向集团公司
+    title_terms:
+    - 万向集团
+  enabled: true
+- id: jysd-zzu-3637570527
+  company: 浙江吉利控股集团有限公司
+  params:
+    match:
+    - 浙江吉利控股集团有限公司
+    title_terms:
+    - 吉利控股
+  enabled: true
+- id: jysd-zzu-2639aec89e
+  company: 苏州智加科技有限公司
+  params:
+    match:
+    - 苏州智加科技有限公司
+    title_terms:
+    - 智加科技
+  enabled: true
+- id: jysd-zzu-e11bfe150b
+  company: 比亚迪股份有限公司
+  params:
+    match:
+    - 比亚迪股份有限公司
+    title_terms:
+    - 比亚迪
+  enabled: true
+- id: jysd-zzu-16636858c2
+  company: 新城控股集团股份有限公司上海分公司
+  params:
+    match:
+    - 新城控股集团股份有限公司上海分公司
+    title_terms:
+    - 新城控股
+  enabled: true

@@ -71,3 +71,17 @@ def test_source_checks_reject_malformed_and_duplicate_rows():
 
 def test_audit_rejects_configured_user_agent_override():
     assert any("UA" in p for p in audit_sources([source(params={"user_agent": "different-agent"})]))
+
+
+def test_announcement_evidence_uses_record_counts_without_claiming_single_jobs():
+    payload = evidence(record_kind="recruitment_notice", current_records=1, records_with_jd=1)
+    payload["checks"][0].pop("current_jobs")
+    payload["checks"][0].pop("jobs_with_jd")
+    assert audit_source_checks(payload, [source()]) == []
+    assert audit_source_checks(evidence(record_kind="advertisement"), [source()])
+
+
+def test_expired_school_notice_is_not_valid_current_evidence():
+    payload = evidence(record_kind="recruitment_notice", current_records=1, records_with_jd=1)
+    payload["checks"][0]["samples"][0]["listing_end"] = "2026-10-30"
+    assert any("截止" in p for p in audit_source_checks(payload, [source()]))

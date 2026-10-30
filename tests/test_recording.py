@@ -9,7 +9,7 @@ PATTERNS = [r'__token__["\']?\s*:\s*["\']([^"\']+)']
 
 
 def test_recording_scrubs_session_tokens_and_replay_still_matches(tmp_path):
-    # 匿名会话 token 只能在内存里：录制时从响应体、后续请求的 URL/请求体里统一替换成占位符（CLAUDE.md 铁律 1）
+    # 匿名会话 token 只能在内存里：录制时从响应体、后续请求的 URL/请求体里统一替换成占位符（docs/DEVELOPMENT.md 铁律 1）
     def real(req):
         if req.url.path == "/page":
             return httpx.Response(200, text=PAGE, headers={"content-type": "text/html"})
@@ -53,3 +53,15 @@ def test_recording_without_patterns_is_unchanged(tmp_path):
     with httpx.Client(transport=rec) as c:
         c.get("https://x.invalid/page")
     assert "abc-123-secret" in (tmp_path / "001.txt").read_text(encoding="utf-8")
+
+
+def test_fixture_transform_runs_before_any_body_is_written_and_keeps_live_response(tmp_path):
+    original = '<p>private contact</p>'
+    recorder = RecordingTransport(tmp_path,
+                                  inner=httpx.MockTransport(lambda r: httpx.Response(200, text=original)),
+                                  fixture_transform=lambda body, content_type: b'<p>public fixture</p>')
+    with httpx.Client(transport=recorder) as client:
+        assert client.get('https://example.invalid/jobs').text == original
+    assert 'private contact' not in ''.join(p.read_text(encoding='utf-8') for p in tmp_path.iterdir())
+    with httpx.Client(transport=ReplayTransport(tmp_path)) as client:
+        assert client.get('https://example.invalid/jobs').text == '<p>public fixture</p>'

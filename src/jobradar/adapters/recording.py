@@ -7,6 +7,7 @@
 
 import json
 import re
+from collections.abc import Callable
 from pathlib import Path
 
 import httpx
@@ -62,13 +63,15 @@ class RecordingTransport(httpx.BaseTransport):
     写入 fixtures 前在响应体、请求 URL、请求体里一律替换成 REDACTED；适配器拿到的仍是真值。"""
 
     def __init__(self, directory: Path, inner: httpx.BaseTransport | None = None,
-                 secret_patterns: list[str] | None = None):
+                 secret_patterns: list[str] | None = None,
+                 fixture_transform: Callable[[bytes, str], bytes] | None = None):
         self.dir = Path(directory)
         self.dir.mkdir(parents=True, exist_ok=True)
         self.inner = inner or httpx.HTTPTransport()
         self.entries: list[dict] = []
         self.patterns = [re.compile(p) for p in secret_patterns or []]
         self.secrets: set[str] = set()
+        self.fixture_transform = fixture_transform
 
     def _scrub(self, text: str) -> str:
         for s in sorted(self.secrets, key=len, reverse=True):
@@ -87,6 +90,8 @@ class RecordingTransport(httpx.BaseTransport):
             for p in self.patterns:
                 self.secrets.update(m for m in p.findall(text) if m)
             stored = self._scrub(text).encode("utf-8")
+        if self.fixture_transform is not None:
+            stored = self.fixture_transform(stored, ctype)
         (self.dir / name).write_bytes(stored)
         entry = {
             "method": request.method, "url": self._scrub(str(request.url)), "body": self._scrub(_body(request)),

@@ -1,0 +1,66 @@
+[
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/robots.txt",
+    "body": "",
+    "status": 404,
+    "content_type": "text/html; charset=iso-8859-1",
+    "file": "001.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index/do123/job.zzu.edu.cn/domain/zzu/city//page/2",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index/do123/job.zzu.edu.cn/domain/zzu/city//page/3",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index/do123/job.zzu.edu.cn/domain/zzu/city//page/4",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "005.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index/do123/job.zzu.edu.cn/domain/zzu/city//page/5",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "006.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/index/do123/job.zzu.edu.cn/domain/zzu/city//page/6",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "007.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://job.zzu.edu.cn/campus/view/id/1019971",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "file": "008.txt"
+  }
+]

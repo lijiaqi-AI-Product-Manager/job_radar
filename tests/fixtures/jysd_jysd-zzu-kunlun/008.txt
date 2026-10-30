@@ -1,0 +1,54 @@
+<div class="details-title clearfix">
+            <div class="info-left">
+                <div class="title-message">
+                    <h5>昆仑万维科技股份有限公司2027届校园招聘</h5>
+                    <a target="_blank" class="name text-primary" href="/company/view/id/1116700">昆仑万维科技股份有限公司</a>                    <span class="expired_time">过期时间：2026-12-31 </span>
+                </div>
+                <div class="operation">
+                                            <a class="btn btn-default" id="yw0" data-collect="0" href="#"><i class="icon icon-shoucang"></i> 收藏</a>                                                                <div class="share">
+                        <ul>
+                            
+                            <li>发布时间：2026-10-21 16:16 </li>
+                            <li>浏览次数：419</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div><div class="title-message">
+                    <h5>昆仑万维科技股份有限公司2027届校园招聘</h5>
+                    <a target="_blank" class="name text-primary" href="/company/view/id/1116700">昆仑万维科技股份有限公司</a>                    <span class="expired_time">过期时间：2026-12-31 </span>
+                </div><div class="aContent">昆仑万维2027届校园招聘
+CEO管理培训生计划
+——为金字塔尖1%的AI人才设计
+痛点共鸣
+毕业在即，你面前有很多Offer——
+有的给钱多，有的给Title，有的给户口。
+但有一个问题很少有人能回答你：
+“我五年后能成为什么样的人？”
+解决方案
+这一次，我们让CEO亲自回答这个问题。
+昆仑万维CEO管理培训生
+直接汇报：昆仑万维董事长兼CEO方汉先生
+不是挂名，是真的带你做战略决策的那种。
+我们在找谁
+2027届优秀高校毕业生
+计算机/人工智能/软件工程/数据科学
+大模型算法 / AI Infra / 强化学习 / 神经网络 / 模型训练
+顶会论文优先 / 开源项目优先 / 竞赛获奖优先
+你要来做什么
+昆仑万维的AI版图——四大SOTA模型 × 三大AI Native平台
+SkyReels - 视频生成全球领先
+Mureka - 音乐模型双项第一
+Matrix-Game - 世界模型第一梯队
+Skywork - 基座多模态模型
+DramaWave海外最大AI短剧平台
+GameWave海外最大AI游戏平台
+Skywork海外最大电商Agent平台
+投递入口
+扫码投递
+或访问昆仑万维校招官网投递简历：https://www.nowcoder.com/jobs/jump/WlDpjz
+邮件标题格式：【CEO管培生】-姓名-学校-学历-研究方向
+“伟大的公司，就是给所有参与其中的人荣耀感的公司。”
+—— 昆仑万维创始人周亚辉
+“战略落地的技术、产品和组织依托，每一个环节都特别费时间。一定要珍惜团队，珍惜组织。”
+—— 昆仑万维创始人周亚辉</div>
