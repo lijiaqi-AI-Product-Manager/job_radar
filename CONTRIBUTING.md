@@ -34,7 +34,7 @@ uv run python scripts/check_compliance.py
 4. 运行相关测试和上述检查。影响数据发布时，再运行 [真实数据与打包检查](docs/RELEASE.md)。
 5. 在 PR 中写清变更后的行为、验证结果与已知限制；统计使用 [统一口径](docs/COVERAGE.md)。
 
-提交信息描述改动，例如 `adapter(jysd): add public campus notices`、`core: preserve explicit application deadlines`、`docs: improve quick start`。不添加工具署名或会话链接。
+提交主题保持简短，优先说明文件包含的内容或提供的能力，例如“招聘数据源 · 公开来源与核验记录”“查询引擎 · CLI 与 MCP”。具体变更、原因与验证写在正文，不添加工具署名或会话链接。
 
 ## 来源要求
 
