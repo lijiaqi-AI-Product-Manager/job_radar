@@ -78,6 +78,7 @@ mcp = [
 ]
 
 [project.urls]
+Documentation = "https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/README.md"
 Homepage = "https://github.com/lijiaqi-AI-Product-Manager/job_radar"
 Repository = "https://github.com/lijiaqi-AI-Product-Manager/job_radar"
 Changelog = "https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CHANGELOG.md"
