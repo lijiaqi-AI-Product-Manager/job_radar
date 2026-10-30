@@ -2,7 +2,6 @@
 
 <p align="center">
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.0.0"><img src="https://img.shields.io/badge/release-v2.0.0-58bfa5" alt="Release 2.0.0"></a>
-  <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.11%2B-7bb7ff" alt="Python 3.11+"></a>
@@ -42,8 +41,10 @@ Turn scattered public recruitment information into a traceable SQLite dataset. F
 
 Requires **Python 3.11+**. Supports Windows, macOS and Linux.
 
+These commands install the **2.0.0 GitHub release**. Other distribution channels may carry different versions.
+
 ```bash
-pip install jobsearchradar
+pip install "https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/download/v2.0.0/jobsearchradar-2.0.0-py3-none-any.whl"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -81,7 +82,7 @@ Omit `--table` for JSON output. Use `jobradar show <job_id>` for a listing and i
 ## Connect with MCP
 
 ```bash
-pip install "jobsearchradar[mcp]"
+pip install "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/download/v2.0.0/jobsearchradar-2.0.0-py3-none-any.whl"
 jobradar update
 ```
 
