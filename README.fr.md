@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | Français | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.10.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.11.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,9 +14,9 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Données (2026-10-29)** : **1 749 sources** · **1 720 entreprises** · **23 adaptateurs**
+> **Données (2026-10-29)** : **1 749 sources** · **1 720 entreprises** · **25 adaptateurs**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / ancien Beisen 113 / Workday 45 / ancien Dayee 15 / sites maison 19)
-> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **606 sont couvertes (37 %)** et 12 ne sont pas accessibles pour raisons de conformité.
+> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **814 sont couvertes (49 %)** et 12 ne sont pas accessibles pour raisons de conformité.
 > Les volumes d'offres et la couverture des champs sont mis à jour à chaque collecte quotidienne (voir la dernière version).
 
 ## Ce que c'est / ce que ce n'est pas
@@ -69,7 +69,7 @@ renvoie un bloc `calendar` avec `jobradar calendar --group <entreprise> --table`
 | Domaine | Réalité |
 |---|---|
 | Couverture des cibles | **577/1 655 (35 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
-| Sources | **1 131 sources / 1 099 entreprises** via 23 adaptateurs |
+| Sources | **1 131 sources / 1 099 entreprises** via 25 adaptateurs |
 | Grandes technologiques | Alibaba/Tencent/Meituan/NetEase… avec offres ; ByteDance/JD/Huawei : calendrier seulement |
 | Couverture provinciale | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tableau complet : `scripts/coverage_report.py` |
 | Fenêtres de candidature | seules une partie des entrées de calendrier ont un début et une fin ; chiffre exact : jobradar stats |

@@ -1,0 +1,354 @@
+# 高校就业网「招聘信息」源（聚合口径 grade C）。
+# 该 CMS（路径 /correcruit/）至少三种皮肤，解析见 src/jobradar/adapters/campus.py。
+# 第一批 2026-10-30：南开大学（1,000 条 -> 34 家目标）；
+# 第二批 2026-10-30：天津工业大学、河北工业大学、天津科技大学（3,600 条 -> 63 家目标）。
+# 合规：公开 HTML、无登录/验证码/签名；只读招聘信息栏目；1 req/s。
+# 归属：params.match 是该企业在就业网登记的**公司全名**，必须归一后完全相等才入库，
+#       模糊匹配会把「迪卡侬…大悦城分公司」错认成「大悦城」、把「步步高实验学校」认成步步高。
+defaults:
+  adapter: campus
+  recruit_types: ["campus"]
+  rate_limit_rps: 1
+  params:
+    school: nankai
+    max_pages: 60
+    list_cache_ttl: 600
+  compliance:
+    checked_on: 2026-10-30
+    robots: allowed
+    terms: "公开招聘信息栏目（企业投递给学校的岗位信息），无需登录；不碰学生简历/投递接口"
+    notes: "聚合渠道 grade C：岗位由学校就业网发布，不等于公司官网直发；1 req/s。"
+
+sources:
+  # hebut
+  - id: campus-hebut-zhongguoshiyou
+    company: 中国石油
+    params: {school: hebut, match: ["中国石油化工股份有限公司茂名分公司", "中国石油天然气股份有限公司吉林石化分公司", "中国石油天然气股份有限公司塔里木油田分公司", "中国石油天然气股份有限公司独山子石化分公司", "中国石油集团测井有限公司天津分公司", "中国石油集团渤海钻探工程有限公司"]}
+  - id: campus-hebut-zhongguoshihua
+    company: 中国石化
+    params: {school: hebut, match: ["中国石化仪征化纤有限责任公司", "中国石化润滑油有限公司北京研究院", "中国石化集团胜利石油管理局有限公司", "中国石化集团重庆川维化工有限公司"]}
+  - id: campus-hebut-zhongshihua
+    company: 中石化
+    params: {school: hebut, match: ["中石化中原石油工程有限公司", "中石化中原石油工程设计有限公司", "中石化第四建设有限公司", "中石化经纬有限公司"]}
+  - id: campus-hebut-zhongtiejiangong
+    company: 中铁建工
+    params: {school: hebut, match: ["中铁建工集团发展有限公司", "中铁建工集团有限公司", "中铁建工集团有限公司北京基础设施建设分公司"]}
+  - id: campus-hebut-guojiaguanwang
+    company: 国家管网
+    params: {school: hebut, match: ["国家管网集团北京管道有限公司河北输油气分公司"]}
+  - id: campus-hebut-tcl
+    company: TCL
+    params: {school: hebut, match: ["惠州TCL电器销售有限公司"]}
+  - id: campus-hebut-guangdayinxing
+    company: 光大银行
+    params: {school: hebut, match: ["中国光大银行股份有限公司", "中国光大银行股份有限公司北京分行", "中国光大银行股份有限公司武汉分行", "中国光大银行股份有限公司石家庄分行", "中国光大银行零售与财富管理部远程银行中心"]}
+  - id: campus-hebut-jiangzhongyaoye
+    company: 江中药业
+    params: {school: hebut, match: ["华润江中药业股份有限公司"]}
+  - id: campus-hebut-zhongguominshengyinxing
+    company: 中国民生银行
+    params: {school: hebut, match: ["中国民生银行股份有限公司北京分行", "中国民生银行股份有限公司天津分行", "中国民生银行股份有限公司苏州分行"]}
+  - id: campus-hebut-beijingjiangong
+    company: 北京建工
+    params: {school: hebut, match: ["北京建工一建工程建设有限公司", "北京建工土木工程有限公司"]}
+  - id: campus-hebut-mingyuanyun
+    company: 明源云
+    params: {school: hebut, match: ["深圳市明源云科技有限公司"]}
+  - id: campus-hebut-guangfayinxing
+    company: 广发银行
+    params: {school: hebut, match: ["广发银行股份有限公司", "广发银行股份有限公司长沙分行"]}
+  - id: campus-hebut-songxia
+    company: 松下
+    params: {school: hebut, match: ["唐山松下产业机器有限公司"]}
+  - id: campus-hebut-zhongguoyituo
+    company: 中国一拖
+    params: {school: hebut, match: ["中国一拖集团有限公司"]}
+  - id: campus-hebut-tianjingang
+    company: 天津港
+    params: {school: hebut, match: ["天津港（集团）有限公司"]}
+  - id: campus-hebut-rizhaogangtie
+    company: 日照钢铁
+    params: {school: hebut, match: ["日照钢铁控股集团有限公司"]}
+  - id: campus-hebut-shijiazhuangyiling
+    company: 石家庄以岭
+    params: {school: hebut, match: ["石家庄以岭药业股份有限公司"]}
+  - id: campus-hebut-dongfanghangkong
+    company: 东方航空
+    params: {school: hebut, match: ["中国东方航空股份有限公司"]}
+  - id: campus-hebut-zhongjianbaju
+    company: 中建八局
+    params: {school: hebut, match: ["中建八局浙江建设有限公司", "中建八局第二建设有限公司"]}
+  - id: campus-hebut-hadianjituan
+    company: 哈电集团
+    params: {school: hebut, match: ["哈电集团（秦皇岛）重型装备有限公司"]}
+  - id: campus-hebut-shijiazhuangsiyao
+    company: 石家庄四药
+    params: {school: hebut, match: ["石家庄四药有限公司"]}
+  - id: campus-hebut-shougangjituan
+    company: 首钢集团
+    params: {school: hebut, match: ["首钢集团有限公司矿业公司"]}
+  - id: campus-hebut-zhongjiankegong
+    company: 中建科工
+    params: {school: hebut, match: ["中建科工集团有限公司"]}
+  - id: campus-hebut-xinyongzhonghe
+    company: 信永中和
+    params: {school: hebut, match: ["信永中和会计师事务所（特殊普通合伙）"]}
+  - id: campus-hebut-jilinshihua
+    company: 吉林石化
+    params: {school: hebut, match: ["中国石油天然气股份有限公司吉林石化分公司"]}
+  - id: campus-hebut-taipingyangrenshou
+    company: 太平洋人寿
+    params: {school: hebut, match: ["中国太平洋人寿保险股份有限公司河北分公司"]}
+  - id: campus-hebut-jiangsushengguoxin
+    company: 江苏省国信
+    params: {school: hebut, match: ["江苏省国信集团有限公司"]}
+  - id: campus-hebut-angangjituan
+    company: 鞍钢集团
+    params: {school: hebut, match: ["鞍钢集团工程技术有限公司"]}
+  # nankai
+  - id: campus-nankai-lanyueliang
+    company: 蓝月亮
+    params: {school: nankai, match: ["蓝月亮（中国）有限公司"]}
+  - id: campus-nankai-xingyeyinxing
+    company: 兴业银行
+    params: {school: nankai, match: ["兴业银行股份有限公司天津分行"]}
+  - id: campus-nankai-huawei
+    company: 华为
+    params: {school: nankai, match: ["华为技术有限公司"]}
+  - id: campus-nankai-lunanzhiyao
+    company: 鲁南制药
+    params: {school: nankai, match: ["鲁南制药集团股份有限公司"]}
+  - id: campus-nankai-huanengjituan
+    company: 华能集团
+    params: {school: nankai, match: ["华能天成融资租赁有限公司", "华能山东石岛湾核电有限公司"]}
+  - id: campus-nankai-zhongguohuaneng
+    company: 中国华能
+    params: {school: nankai, match: ["中国华能集团有限公司"]}
+  - id: campus-nankai-shandonggaosu
+    company: 山东高速
+    params: {school: nankai, match: ["山东高速齐鲁号欧亚班列运营有限公司"]}
+  - id: campus-nankai-pinganyinxing
+    company: 平安银行
+    params: {school: nankai, match: ["平安银行股份有限公司长沙分行"]}
+  - id: campus-nankai-xinaojituan
+    company: 新奥集团
+    params: {school: nankai, match: ["新奥集团股份有限公司"]}
+  - id: campus-nankai-zhongxinjituan
+    company: 中信集团
+    params: {school: nankai, match: ["中信证券股份有限公司深圳分公司", "中信金融租赁有限公司", "中信信托有限责任公司"]}
+  - id: campus-nankai-zhongguozhongmei
+    company: 中国中煤
+    params: {school: nankai, match: ["中国中煤能源集团有限公司"]}
+  - id: campus-nankai-zhongguochukouxinyongbaoxian
+    company: 中国出口信用保险
+    params: {school: nankai, match: ["中国出口信用保险公司"]}
+  - id: campus-nankai-zhongguodatang
+    company: 中国大唐
+    params: {school: nankai, match: ["中国大唐集团数字科技有限公司"]}
+  - id: campus-nankai-zhongguolvyoujituan
+    company: 中国旅游集团
+    params: {school: nankai, match: ["中国旅游集团有限公司"]}
+  - id: campus-nankai-zhongguotieta
+    company: 中国铁塔
+    params: {school: nankai, match: ["中国铁塔股份有限公司浙江省分公司"]}
+  - id: campus-nankai-zhongguanghe
+    company: 中广核
+    params: {school: nankai, match: ["中广核（北京）新能源科技有限公司"]}
+  - id: campus-nankai-jingnengjituan
+    company: 京能集团
+    params: {school: nankai, match: ["京能数字产业有限公司"]}
+  - id: campus-nankai-baolijituan
+    company: 保利集团
+    params: {school: nankai, match: ["保利和润房地产投资顾问有限公司"]}
+  - id: campus-nankai-huarunjiangzhong
+    company: 华润江中
+    params: {school: nankai, match: ["华润江中药业股份有限公司"]}
+  - id: campus-nankai-huarunjituan
+    company: 华润集团
+    params: {school: nankai, match: ["华润雪花啤酒（中国）投资有限公司", "华润江中药业股份有限公司"]}
+  - id: campus-nankai-sichuanjiuzhou
+    company: 四川九洲
+    params: {school: nankai, match: ["四川九洲投资控股集团有限公司"]}
+  - id: campus-nankai-guojiadiantou
+    company: 国家电投
+    params: {school: nankai, match: ["国家电投集团天津电力有限公司"]}
+  - id: campus-nankai-guotaihaitong
+    company: 国泰海通
+    params: {school: nankai, match: ["国泰海通证券股份有限公司湖南分公司"]}
+  - id: campus-nankai-tianheguangneng
+    company: 天合光能
+    params: {school: nankai, match: ["天合光能股份有限公司"]}
+  - id: campus-nankai-tianshili
+    company: 天士力
+    params: {school: nankai, match: ["天士力医药集团股份有限公司"]}
+  - id: campus-nankai-hengfengyinxing
+    company: 恒丰银行
+    params: {school: nankai, match: ["恒丰银行股份有限公司"]}
+  - id: campus-nankai-gelinmei
+    company: 格林美
+    params: {school: nankai, match: ["格林美股份有限公司"]}
+  - id: campus-nankai-wenzhouyinxing
+    company: 温州银行
+    params: {school: nankai, match: ["温州银行股份有限公司"]}
+  - id: campus-nankai-xianyinxing
+    company: 西安银行
+    params: {school: nankai, match: ["西安银行股份有限公司"]}
+  - id: campus-nankai-zhongqingyinxing
+    company: 重庆银行
+    params: {school: nankai, match: ["重庆银行股份有限公司"]}
+  - id: campus-nankai-zhongkewenge
+    company: 中科闻歌
+    params: {school: nankai, match: ["北京中科闻歌科技股份有限公司"]}
+  - id: campus-nankai-aoxiangyaoye
+    company: 奥翔药业
+    params: {school: nankai, match: ["浙江奥翔药业股份有限公司"]}
+  - id: campus-nankai-huya
+    company: 虎牙
+    params: {school: nankai, match: ["广州虎牙科技有限公司"]}
+  - id: campus-nankai-hengruiyiyao
+    company: 恒瑞医药
+    params: {school: nankai, match: ["江苏恒瑞医药股份有限公司"]}
+  # tiangong
+  - id: campus-tiangong-jiansheyinxing
+    company: 建设银行
+    params: {school: tiangong, match: ["中国建设银行股份有限公司", "中国建设银行股份有限公司四川省分行", "中国建设银行股份有限公司江西省分行", "中国建设银行股份有限公司浙江省分行", "中国建设银行股份有限公司深圳市分行", "中国建设银行股份有限公司湖南省分行", "中国建设银行股份有限公司福建省分行"]}
+  - id: campus-tiangong-gongshangyinxing
+    company: 工商银行
+    params: {school: tiangong, match: ["中国工商银行湖北省分行", "中国工商银行股份有限公司宁波市分行", "中国工商银行股份有限公司广东省分行", "中国工商银行股份有限公司广西壮族自治区分行", "中国工商银行股份有限公司成都分行", "中国工商银行股份有限公司湖北省分行", "中国工商银行股份有限公司苏州分行"]}
+  - id: campus-tiangong-beijingqiche
+    company: 北京汽车
+    params: {school: tiangong, match: ["北京汽车国际发展有限公司", "北京汽车销售有限公司", "北京汽车集团有限公司"]}
+  - id: campus-tiangong-zhaoshangyinxing
+    company: 招商银行
+    params: {school: tiangong, match: ["招商银行股份有限公司上海分行", "招商银行股份有限公司兰州分行", "招商银行股份有限公司南昌分行", "招商银行股份有限公司贵阳分行", "招商银行股份有限公司长沙分行"]}
+  - id: campus-tiangong-geli
+    company: 格力
+    params: {school: tiangong, match: ["珠海格力智能装备有限公司", "珠海格力电器股份有限公司"]}
+  - id: campus-tiangong-zhongguoyinxing
+    company: 中国银行
+    params: {school: tiangong, match: ["中国银行股份有限公司广东省分行", "中国银行股份有限公司新疆维吾尔自治区分行", "中国银行股份有限公司江苏省分行", "中国银行股份有限公司深圳市分行"]}
+  - id: campus-tiangong-xinyuanwei
+    company: 芯源微
+    params: {school: tiangong, match: ["沈阳芯源微电子设备股份有限公司"]}
+  - id: campus-tiangong-nongyeyinxing
+    company: 农业银行
+    params: {school: tiangong, match: ["中国农业银行股份有限公司广西壮族自治区分行", "中国农业银行股份有限公司甘肃省分行"]}
+  - id: campus-tiangong-dazhongzhiyao
+    company: 大冢制药
+    params: {school: tiangong, match: ["中国大冢制药有限公司"]}
+  - id: campus-tiangong-hangtiandianqi
+    company: 航天电器
+    params: {school: tiangong, match: ["贵州航天电器股份有限公司"]}
+  - id: campus-tiangong-zhongkongjishu
+    company: 中控技术
+    params: {school: tiangong, match: ["中控技术股份有限公司", "浙江中控技术股份有限公司"]}
+  - id: campus-tiangong-lanzhouyinxing
+    company: 兰州银行
+    params: {school: tiangong, match: ["兰州银行股份有限公司"]}
+  - id: campus-tiangong-qiluyinxing
+    company: 齐鲁银行
+    params: {school: tiangong, match: ["齐鲁银行股份有限公司天津分行"]}
+  - id: campus-tiangong-dongfengqiche
+    company: 东风汽车
+    params: {school: tiangong, match: ["东风汽车集团股份有限公司人事共享服务中心"]}
+  - id: campus-tiangong-zhongguohuadian
+    company: 中国华电
+    params: {school: tiangong, match: ["中国华电集团有限公司天津分公司"]}
+  - id: campus-tiangong-zhongguodianqizhuangbei
+    company: 中国电气装备
+    params: {school: tiangong, match: ["中国电气装备集团储能科技有限公司"]}
+  - id: campus-tiangong-zhongliang
+    company: 中粮
+    params: {school: tiangong, match: ["中粮集团有限公司"]}
+  - id: campus-tiangong-zhongliangjituan
+    company: 中粮集团
+    params: {school: tiangong, match: ["中粮集团有限公司"]}
+  - id: campus-tiangong-huadianjituan
+    company: 华电集团
+    params: {school: tiangong, match: ["中国华电集团有限公司天津分公司"]}
+  - id: campus-tiangong-nanjingyinxing
+    company: 南京银行
+    params: {school: tiangong, match: ["南京银行股份有限公司"]}
+  - id: campus-tiangong-guojiakaifayinxing
+    company: 国家开发银行
+    params: {school: tiangong, match: ["国家开发银行新疆维吾尔自治区分行"]}
+  - id: campus-tiangong-ningboyinxing
+    company: 宁波银行
+    params: {school: tiangong, match: ["宁波银行股份有限公司北京分行"]}
+  - id: campus-tiangong-anta
+    company: 安踏
+    params: {school: tiangong, match: ["厦门安踏服饰有限公司"]}
+  - id: campus-tiangong-kangfangshengwu
+    company: 康方生物
+    params: {school: tiangong, match: ["中山康方生物医药有限公司"]}
+  - id: campus-tiangong-hangzhouyinxing
+    company: 杭州银行
+    params: {school: tiangong, match: ["杭州银行股份有限公司"]}
+  - id: campus-tiangong-gelidianqi
+    company: 格力电器
+    params: {school: tiangong, match: ["珠海格力电器股份有限公司"]}
+  - id: campus-tiangong-jiangsuyinxing
+    company: 江苏银行
+    params: {school: tiangong, match: ["江苏银行股份有限公司常州分行"]}
+  - id: campus-tiangong-zhejiangjiaotou
+    company: 浙江交投
+    params: {school: tiangong, match: ["浙江交投人才发展集团有限公司"]}
+  - id: campus-tiangong-hunanyinxing
+    company: 湖南银行
+    params: {school: tiangong, match: ["湖南银行股份有限公司"]}
+  # tjcu
+  - id: campus-tjcu-muyuan
+    company: 牧原
+    params: {school: tjcu, match: ["牧原食品股份有限公司"]}
+  - id: campus-tjcu-huaxizhengquan
+    company: 华西证券
+    params: {school: tjcu, match: ["华西证券股份有限公司天津友谊路证券营业部"]}
+  - id: campus-tjcu-shenwanhongyuan
+    company: 申万宏源
+    params: {school: tjcu, match: ["申万宏源证券有限公司天津分公司"]}
+  - id: campus-tjcu-fenbi
+    company: 粉笔
+    params: {school: tjcu, match: ["北京粉笔天下教育科技有限公司天津分公司"]}
+  - id: campus-tjcu-xinanzhengquan
+    company: 西南证券
+    params: {school: tjcu, match: ["西南证券股份有限公司"]}
+  - id: campus-tjcu-zhongguoyancao
+    company: 中国烟草
+    params: {school: tjcu, match: ["中国烟草总公司内蒙古自治区公司"]}
+  - id: campus-tjcu-weipinhui
+    company: 唯品会
+    params: {school: tjcu, match: ["唯品会（天津）电子商务有限公司"]}
+  - id: campus-tjcu-tianjinyinxing
+    company: 天津银行
+    params: {school: tjcu, match: ["天津银行股份有限公司"]}
+  - id: campus-tjcu-taipingrenshou
+    company: 太平人寿
+    params: {school: tjcu, match: ["太平人寿保险有限公司天津分公司"]}
+  - id: campus-tjcu-lantuqiche
+    company: 岚图汽车
+    params: {school: tjcu, match: ["岚图汽车销售服务有限公司"]}
+  - id: campus-tjcu-ruixingkafei
+    company: 瑞幸咖啡
+    params: {school: tjcu, match: ["瑞幸咖啡食品（天津）有限公司"]}
+  - id: campus-tjcu-jueweishipin
+    company: 绝味食品
+    params: {school: tjcu, match: ["绝味食品股份有限公司"]}
+  # tust
+  - id: campus-tust-zhongxinyinxing
+    company: 中信银行
+    params: {school: tust, match: ["中信银行股份有限公司信用卡中心", "中信银行股份有限公司武汉分行"]}
+  - id: campus-tust-sanzhisongshu
+    company: 三只松鼠
+    params: {school: tust, match: ["三只松鼠股份有限公司"]}
+  - id: campus-tust-nongyefazhanyinxing
+    company: 农业发展银行
+    params: {school: tust, match: ["中国农业发展银行"]}
+  - id: campus-tust-duoyiwangluo
+    company: 多益网络
+    params: {school: tust, match: ["多益网络有限公司"]}
+  - id: campus-tust-anqijiaomu
+    company: 安琪酵母
+    params: {school: tust, match: ["安琪酵母股份有限公司"]}
+  - id: campus-tust-bohaiyinxing
+    company: 渤海银行
+    params: {school: tust, match: ["渤海银行股份有限公司"]}

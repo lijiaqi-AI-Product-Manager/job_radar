@@ -1,0 +1,2330 @@
+[
+ {
+  "company": "小米",
+  "url": "https://xiaomi.jobs.f.mioffice.cn/campus/",
+  "kind": "ssr",
+  "host": "xiaomi.jobs.f.mioffice.cn",
+  "title": "小米校园招聘",
+  "bytes": 122573
+ },
+ {
+  "company": "哔哩哔哩",
+  "url": "https://jobs.bilibili.com/campus/",
+  "kind": "ssr",
+  "host": "jobs.bilibili.com",
+  "title": "哔哩哔哩-招聘",
+  "bytes": 4601
+ },
+ {
+  "company": "鹰角网络",
+  "url": "https://campus.hypergryph.com/campus_apply/hypergryph/26326/",
+  "kind": "mokahr",
+  "host": "campus.hypergryph.com",
+  "title": "鹰角网络校园招聘",
+  "bytes": 105865
+ },
+ {
+  "company": "叠纸",
+  "url": "https://career.papegames.com/campus",
+  "kind": "ssr",
+  "host": "career.papegames.com",
+  "title": "叠纸游戏校园招聘",
+  "bytes": 159500
+ },
+ {
+  "company": "完美世界",
+  "url": "https://jobs.games.wanmei.com/school.html",
+  "kind": "mokahr",
+  "host": "jobs.games.wanmei.com",
+  "title": "校园招聘 - 完美世界招聘",
+  "bytes": 6414
+ },
+ {
+  "company": "金山办公",
+  "url": "https://join.wps.cn/campus-recruitment/wps/41436?sourceToken=8379ee777457c4d22fc65d4439f660b3#/",
+  "kind": "mokahr",
+  "host": "join.wps.cn",
+  "title": "金山办公软件 - 校园招聘",
+  "bytes": 85504
+ },
+ {
+  "company": "旷视科技",
+  "url": "http://zhaopin.megvii.com/apply/megviihr/38641/",
+  "kind": "mokahr",
+  "host": "zhaopin.megvii.com",
+  "title": "旷视MEGVII社会招聘",
+  "bytes": 64178
+ },
+ {
+  "company": "唯品会",
+  "url": "https://app-tc.mokahr.com/campus-recruitment/vipshophr/10039?sourceToken=d7b00ea2471aaddd55b3f402bb4fcc19",
+  "kind": "mokahr",
+  "host": "app-tc.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "作业帮",
+  "url": "https://app.mokahr.com/campus-recruitment/zuoyebang/39595",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "猿辅导",
+  "url": "https://job.xasyxy.com/news/view/aid/408985/tag/tzgg",
+  "kind": "ssr",
+  "host": "job.xasyxy.com",
+  "title": "猿辅导2027校园招聘",
+  "bytes": 32693
+ },
+ {
+  "company": "知乎",
+  "url": "https://app.mokahr.com/campus-recruitment/zhihu/68321",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "新浪",
+  "url": "https://career.sina.com.cn/social-recruitment/sina/43535/",
+  "kind": "mokahr",
+  "host": "career.sina.com.cn",
+  "title": "新浪集团 - 社会招聘",
+  "bytes": 240149
+ },
+ {
+  "company": "月之暗面",
+  "url": "https://careers.kimi.com/campus",
+  "kind": "mokahr",
+  "host": "careers.kimi.com",
+  "title": "月之暗面校园招聘 | Kimi 应届 | Moonshot 实习",
+  "bytes": 35092
+ },
+ {
+  "company": "智谱",
+  "url": "https://campus.niuqizp.com/job-v8Y5ZCtaZ.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "58同城",
+  "url": "https://campus.niuqizp.com/job-vrY5aaNzN.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "汽车之家",
+  "url": "https://talent.autohome.com.cn/campus_qa.html",
+  "kind": "ssr",
+  "host": "talent.autohome.com.cn",
+  "title": "汽车之家校园招聘-校招QA",
+  "bytes": 12129
+ },
+ {
+  "company": "叠纸游戏",
+  "url": "https://career.papegames.com/campus",
+  "kind": "ssr",
+  "host": "career.papegames.com",
+  "title": "叠纸游戏校园招聘",
+  "bytes": 159761
+ },
+ {
+  "company": "润和软件",
+  "url": "https://www.hoperun.com/talent/job",
+  "kind": "dead",
+  "host": "www.hoperun.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "电魂网络",
+  "url": "https://app.mokahr.com/social-recruitment/dianhun/55952",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "科华数据",
+  "url": "https://app.mokahr.com/campus-recruitment/kehua/92510",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "统信软件",
+  "url": "https://faq.uniontech.com/1111/f349",
+  "kind": "spa",
+  "host": "faq.uniontech.com",
+  "title": "面向全球！统信软件2025届校园招聘&amp;博士后招聘启动 | 统信软件-知识",
+  "bytes": 47126
+ },
+ {
+  "company": "腾讯游戏",
+  "url": "https://careers.tencent.com/campusrecruit.html",
+  "kind": "ssr",
+  "host": "careers.tencent.com",
+  "title": "校招招聘 | 腾讯招聘",
+  "bytes": 1899
+ },
+ {
+  "company": "薪人薪事",
+  "url": "https://www.xinrenxinshi.com/feature/recruit",
+  "kind": "ssr",
+  "host": "www.xinrenxinshi.com",
+  "title": "招聘管理系统|人力资源管理系统|企业招聘系统|招聘管理软件-薪人薪事",
+  "bytes": 89084
+ },
+ {
+  "company": "财新传媒",
+  "url": "https://corp.caixin.com/joinus/",
+  "kind": "ssr",
+  "host": "corp.caixin.com",
+  "title": "加入我们_关于我们_财新网",
+  "bytes": 30448
+ },
+ {
+  "company": "途游游戏",
+  "url": "https://cug.91wllm.cn/campus/view/id/1002147",
+  "kind": "thin",
+  "host": "cug.91wllm.cn",
+  "title": "",
+  "bytes": 122
+ },
+ {
+  "company": "长虹",
+  "url": "http://www.changhong-network.com/content/?306.html",
+  "kind": "ssr",
+  "host": "www.changhong-network.com",
+  "title": "2025届校园招聘启示-四川长虹网络科技有限责任公司",
+  "bytes": 34416
+ },
+ {
+  "company": "明源云",
+  "url": "https://campus.niuqizp.com/job-vUm5CNMzM.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "涂鸦智能",
+  "url": "https://campus.niuqizp.com/job-vls5tZMna.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "陌陌",
+  "url": "https://www.immomo.com/mm_downloads",
+  "kind": "ssr",
+  "host": "www.immomo.com",
+  "title": "下载陌陌",
+  "bytes": 24093
+ },
+ {
+  "company": "荣耀",
+  "url": "https://career.honor.com/SU60ee9e002f9d247b98da489e/mc/position/campus",
+  "kind": "spa",
+  "host": "career.honor.com",
+  "title": "",
+  "bytes": 4053
+ },
+ {
+  "company": "OPPO",
+  "url": "https://careers.oppo.com/campus",
+  "kind": "ssr",
+  "host": "careers.oppo.com",
+  "title": "OPPO招聘 - 加入我们 join us",
+  "bytes": 4582
+ },
+ {
+  "company": "中兴通讯",
+  "url": "https://app.mokahr.com/campus-recruitment/zte/46903",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "美的",
+  "url": "https://careers.midea.com/schoolOut",
+  "kind": "ssr",
+  "host": "careers.midea.com",
+  "title": "美的集团-校园招聘官网",
+  "bytes": 7464
+ },
+ {
+  "company": "舜宇光学",
+  "url": "https://campus.sunnyoptical.cn/campus-recruitment/sunnyoptical/45602/",
+  "kind": "mokahr",
+  "host": "campus.sunnyoptical.cn",
+  "title": "舜宇集团有限公司 - 校园招聘",
+  "bytes": 114445
+ },
+ {
+  "company": "中天科技",
+  "url": "https://m.ztt.cn/job.html",
+  "kind": "ssr",
+  "host": "m.ztt.cn",
+  "title": "人才招聘 - 中天科技集团",
+  "bytes": 15399
+ },
+ {
+  "company": "亨通光电",
+  "url": "https://www.htgd.com.cn/rcfz/lnzc.html",
+  "kind": "ssr",
+  "host": "www.htgd.com.cn",
+  "title": "理念政策",
+  "bytes": 37531
+ },
+ {
+  "company": "均胜电子",
+  "url": "https://www.joyson.com/index.php/join/media.html",
+  "kind": "mokahr",
+  "host": "www.joyson.com",
+  "title": "宁波均胜电子股份有限公司-",
+  "bytes": 41493
+ },
+ {
+  "company": "志高空调",
+  "url": "http://www.china-chigo.com/cn/fulitixi/index.html",
+  "kind": "ssr",
+  "host": "www.china-chigo.com",
+  "title": "校园招聘-志高空调—好空调 选志高",
+  "bytes": 80621
+ },
+ {
+  "company": "烽火通信",
+  "url": "https://www.fiberhome.com/joinus.html",
+  "kind": "mokahr",
+  "host": "www.fiberhome.com",
+  "title": "加入我们 - 烽火通信官网",
+  "bytes": 300540
+ },
+ {
+  "company": "Pico",
+  "url": "https://www.picoxr.com/cn/",
+  "kind": "spa",
+  "host": "www.picoxr.com",
+  "title": "PICO 虚拟现实 | 官方网站 - PICO",
+  "bytes": 97048
+ },
+ {
+  "company": "和辉光电",
+  "url": "https://campus.niuqizp.com/job-vrl5aZt5L.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "惠科",
+  "url": "https://campus.niuqizp.com/job-vUl5aLazN.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "生益科技",
+  "url": "https://www.syst.com.cn/",
+  "kind": "spa",
+  "host": "www.syst.com.cn",
+  "title": "生益科技",
+  "bytes": 27498
+ },
+ {
+  "company": "老板电器",
+  "url": "https://www.robam.com/",
+  "kind": "spa",
+  "host": "www.robam.com",
+  "title": "老板电器官网 你的AI烹饪伙伴",
+  "bytes": 29790
+ },
+ {
+  "company": "华虹集团",
+  "url": "https://www.huahong.com.cn/?m=channel&id=50",
+  "kind": "mokahr",
+  "host": "www.huahong.com.cn",
+  "title": "校园招聘-华虹集团官网",
+  "bytes": 9997
+ },
+ {
+  "company": "寒武纪",
+  "url": "https://app.mokahr.com/campus-recruitment/cambricon/44201",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "壁仞科技",
+  "url": "https://campus.niuqizp.com/job-vmk5Z5tMn.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "兆易创新",
+  "url": "https://app.mokahr.com/campus-recruitment/gigadevice/92215",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "澜起科技",
+  "url": "https://campus.niuqizp.com/job-vsk5zzzCZ.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中兴微电子",
+  "url": "https://app.mokahr.com/social-recruitment/sanechips/76285",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中科蓝讯",
+  "url": "https://www.bluetrum.com/job/job.php?class2=77",
+  "kind": "ssr",
+  "host": "www.bluetrum.com",
+  "title": "校园招聘-深圳市中科蓝讯科技股份有限公司(股票代码:688332)",
+  "bytes": 68673
+ },
+ {
+  "company": "中科飞测",
+  "url": "https://job.skyverse.cn/req/campus-list",
+  "kind": "ssr",
+  "host": "job.skyverse.cn",
+  "title": "校园招聘 - 中科飞测",
+  "bytes": 60872
+ },
+ {
+  "company": "华润微电子",
+  "url": "https://www.crmicro.com/talent/index.html",
+  "kind": "spa",
+  "host": "www.crmicro.com",
+  "title": "华润微电子欢迎您--人才发展",
+  "bytes": 55918
+ },
+ {
+  "company": "天马微电子",
+  "url": "https://jhun.91wllm.cn/campus/view/id/1002623",
+  "kind": "thin",
+  "host": "jhun.91wllm.cn",
+  "title": "",
+  "bytes": 122
+ },
+ {
+  "company": "普冉股份",
+  "url": "https://www.puyasemi.com/shehuizhaopin.html",
+  "kind": "ssr",
+  "host": "www.puyasemi.com",
+  "title": "社会招聘_普冉半导体（上海）股份有限公司",
+  "bytes": 153475
+ },
+ {
+  "company": "立昂微",
+  "url": "https://www.li-on.com/index.php/contact/recruit.html",
+  "kind": "ssr",
+  "host": "www.li-on.com",
+  "title": "杭州立昂微电子股份有限公司-杭州立昂微电子股份有限公司",
+  "bytes": 25642
+ },
+ {
+  "company": "唯捷创芯",
+  "url": "https://campus.niuqizp.com/job-vUk5a5ZLa.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "思瑞浦",
+  "url": "https://campus.niuqizp.com/job-vkk5zatMC.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "斯达半导",
+  "url": "https://campus.niuqizp.com/job-vll5a5aCn.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "翱捷科技",
+  "url": "https://www.asrmicro.com/join.html",
+  "kind": "mokahr",
+  "host": "www.asrmicro.com",
+  "title": "招贤纳士",
+  "bytes": 36948
+ },
+ {
+  "company": "芯源微",
+  "url": "https://campus.niuqizp.com/job-vkm5aNtCZ.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "伯特利",
+  "url": "https://www.boteli.cn/jrwm/zpzq/index.html",
+  "kind": "dead",
+  "host": "www.boteli.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "小米汽车",
+  "url": "https://xiaomi.jobs.f.mioffice.cn/index/position/7362043473405558893/detail",
+  "kind": "ssr",
+  "host": "xiaomi.jobs.f.mioffice.cn",
+  "title": "小米汽车-生产制造-总装生产trainer - 小米社会招聘",
+  "bytes": 110393
+ },
+ {
+  "company": "岚图汽车",
+  "url": "https://m.dsmp.voyah.com.cn/joinus.html",
+  "kind": "mokahr",
+  "host": "m.dsmp.voyah.com.cn",
+  "title": "加入我们-岚图汽车官网",
+  "bytes": 8679
+ },
+ {
+  "company": "峰飞航空",
+  "url": "https://jobs.autoflight.com/campus",
+  "kind": "ssr",
+  "host": "jobs.autoflight.com",
+  "title": "加入峰飞航空",
+  "bytes": 219930
+ },
+ {
+  "company": "星途",
+  "url": "https://www.exeedcars.com/joinus/",
+  "kind": "zhiye",
+  "host": "www.exeedcars.com",
+  "title": "加入星途_EXEED星途汽车官网",
+  "bytes": 31436
+ },
+ {
+  "company": "申通快递",
+  "url": "https://app.mokahr.com/campus-recruitment/sto/126265",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "保隆科技",
+  "url": "https://www.baolong.biz/",
+  "kind": "mokahr",
+  "host": "www.baolong.biz",
+  "title": "保隆科技 让更多人受益于汽车科技的发展",
+  "bytes": 42080
+ },
+ {
+  "company": "华域汽车",
+  "url": "https://campus.niuqizp.com/job-vyy5CNM5t.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "埃安",
+  "url": "https://www.aion.com.cn/",
+  "kind": "spa",
+  "host": "www.aion.com.cn",
+  "title": "广汽埃安",
+  "bytes": 28322
+ },
+ {
+  "company": "广汽埃安",
+  "url": "https://www.aion.com.cn/",
+  "kind": "dead",
+  "host": "www.aion.com.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "智加科技",
+  "url": "https://campus.niuqizp.com/job-vYU5a5nzM.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "红旗",
+  "url": "https://hqgw-1300211780.faw.cn/build/2026-10-10-01:56:12/js/chunk-DealerRecruitment.js",
+  "kind": "spa",
+  "host": "hqgw-1300211780.faw.cn",
+  "title": "",
+  "bytes": 116787
+ },
+ {
+  "company": "阳光电源",
+  "url": "https://app.mokahr.com/campus-recruitment/sungrow/94416",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "正泰",
+  "url": "https://campus.chint.com/campus-recruitment/chint/40745/",
+  "kind": "mokahr",
+  "host": "campus.chint.com",
+  "title": "正泰 - 校园招聘",
+  "bytes": 141411
+ },
+ {
+  "company": "三一重能",
+  "url": "https://www.sanyre.com.cn/concept/",
+  "kind": "zhiye",
+  "host": "www.sanyre.com.cn",
+  "title": "人才理念",
+  "bytes": 120131
+ },
+ {
+  "company": "三花智控",
+  "url": "https://www.sanhuamc.com/",
+  "kind": "spa",
+  "host": "www.sanhuamc.com",
+  "title": "杭州三花微通道换热器有限公司",
+  "bytes": 17473
+ },
+ {
+  "company": "东方电气",
+  "url": "https://dew.dongfang.com/rczp/xyzp.htm",
+  "kind": "ssr",
+  "host": "dew.dongfang.com",
+  "title": "校园招聘-东方电气风电股份有限公司",
+  "bytes": 29241
+ },
+ {
+  "company": "中国有色矿业",
+  "url": "https://www.cnmc.com.cn/cnmc/rlzy/rczl/A002007005Gone1.html",
+  "kind": "iguopin",
+  "host": "www.cnmc.com.cn",
+  "title": "人才战略",
+  "bytes": 38085
+ },
+ {
+  "company": "中钢集团",
+  "url": "https://www.sinosteel.com/",
+  "kind": "spa",
+  "host": "www.sinosteel.com",
+  "title": "首页",
+  "bytes": 31585
+ },
+ {
+  "company": "南山铝业",
+  "url": "https://www.nanshan.com.cn/talent-development-society.html",
+  "kind": "ssr",
+  "host": "www.nanshan.com.cn",
+  "title": "人才发展-南山集团",
+  "bytes": 89106
+ },
+ {
+  "company": "招商工业",
+  "url": "https://www.cmhijs.com/index.php/joins/recruit.html",
+  "kind": "ssr",
+  "host": "www.cmhijs.com",
+  "title": "加入我们-招商局重工(江苏)有限公司",
+  "bytes": 38583
+ },
+ {
+  "company": "禾迈股份",
+  "url": "https://www.hoymiles.com/zh/talent-stories.html",
+  "kind": "mokahr",
+  "host": "www.hoymiles.com",
+  "title": "人才故事_CN-Hoymiles",
+  "bytes": 52225
+ },
+ {
+  "company": "紫金矿业",
+  "url": "https://join.zjky.cn/campus-recruitment/zijinmining/117957/",
+  "kind": "mokahr",
+  "host": "join.zjky.cn",
+  "title": "紫金矿业集团全球招聘",
+  "bytes": 103218
+ },
+ {
+  "company": "银轮股份",
+  "url": "https://www.yinlun.cn/Recruit",
+  "kind": "ssr",
+  "host": "www.yinlun.cn",
+  "title": "浙江银轮机械股份有限公司",
+  "bytes": 91238
+ },
+ {
+  "company": "力神电池",
+  "url": "https://lishen.libattery.net/job.html",
+  "kind": "spa",
+  "host": "lishen.libattery.net",
+  "title": "诚聘英才_天津力神电池股份有限公司",
+  "bytes": 10714
+ },
+ {
+  "company": "南都电源",
+  "url": "https://www.naradapower.com/",
+  "kind": "mokahr",
+  "host": "www.naradapower.com",
+  "title": "南都电源-储能电源-新能源储能-储能电源品牌-电化学储能-锂电池回收",
+  "bytes": 22391
+ },
+ {
+  "company": "湖南裕能",
+  "url": "https://www.hunanyuneng.com/rlzy/1.html",
+  "kind": "ssr",
+  "host": "www.hunanyuneng.com",
+  "title": "校招网申通道-湖南裕能新能源电池材料股份有限公司_锂离子电池正极材料研发、生产和",
+  "bytes": 63249
+ },
+ {
+  "company": "雅化集团",
+  "url": "https://www.yh.cn/jobsyh.html",
+  "kind": "ssr",
+  "host": "www.yh.cn",
+  "title": "银汉游戏 - 创造精彩游戏生活 引领手机游戏潮流",
+  "bytes": 7351
+ },
+ {
+  "company": "雷赛智能",
+  "url": "https://campus.niuqizp.com/job-vll5CMMLL.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中国铁塔",
+  "url": "https://zhaopin.chinatowercom.cn/recruit/",
+  "kind": "ssr",
+  "host": "zhaopin.chinatowercom.cn",
+  "title": "中国铁塔股份有限公司网申系统",
+  "bytes": 14550
+ },
+ {
+  "company": "中国华能",
+  "url": "https://www.chng.com.cn/list_zpxt/-/article/nIRkxmKOSFaS/list/23534.html",
+  "kind": "spa",
+  "host": "www.chng.com.cn",
+  "title": "招聘系统 - 中国华能集团有限公司",
+  "bytes": 21616
+ },
+ {
+  "company": "中国华电",
+  "url": "https://rencaishichang.chd.com.cn/w3/",
+  "kind": "ssr",
+  "host": "rencaishichang.chd.com.cn",
+  "title": "中国华电集团有限公司招聘官网-人才市场信息系统",
+  "bytes": 3097
+ },
+ {
+  "company": "中国国航",
+  "url": "https://zhaopin.airchina.com.cn/campus/jobs/2026/10/185662.shtml",
+  "kind": "zhaopin",
+  "host": "zhaopin.airchina.com.cn",
+  "title": "校园招聘 - 中国航空集团招聘",
+  "bytes": 25283
+ },
+ {
+  "company": "东方航空",
+  "url": "https://job.ceair.com/campus/campusJobList.html",
+  "kind": "ssr",
+  "host": "job.ceair.com",
+  "title": "校园招聘-职位列表",
+  "bytes": 6627
+ },
+ {
+  "company": "中信集团",
+  "url": "https://job.citic.com/recruit",
+  "kind": "ssr",
+  "host": "job.citic.com",
+  "title": "中信集团人才招聘系统",
+  "bytes": 22478
+ },
+ {
+  "company": "中国诚通",
+  "url": "https://www.cctgroup.com.cn/cctgroup/2026-10/14/article_2026101417131125482.html",
+  "kind": "ssr",
+  "host": "www.cctgroup.com.cn",
+  "title": "中国诚通关于谨防虚假招聘信息的声明_中国诚通控股集团有限公司",
+  "bytes": 19457
+ },
+ {
+  "company": "中国黄金",
+  "url": "https://hjzp.chinagoldgroup.com/recruit",
+  "kind": "spa",
+  "host": "hjzp.chinagoldgroup.com",
+  "title": "中国黄金集团HRM系统",
+  "bytes": 33757
+ },
+ {
+  "company": "中国黄金集团",
+  "url": "https://www.chinagoldgroup.com/zghj/xwzx/mtgz/2026/9/I1551173253865668608.html",
+  "kind": "ssr",
+  "host": "www.chinagoldgroup.com",
+  "title": "媒体关注",
+  "bytes": 37411
+ },
+ {
+  "company": "中建一局",
+  "url": "https://www.fenbi.com/page/exam-information-detail/469978881223680",
+  "kind": "ssr",
+  "host": "www.fenbi.com",
+  "title": "出错啦-粉笔资讯",
+  "bytes": 115121
+ },
+ {
+  "company": "中建八局",
+  "url": "https://job.cscec8b.com.cn/recruitment/job/detail/id/2759",
+  "kind": "ssr",
+  "host": "job.cscec8b.com.cn",
+  "title": "中建八局二公司2027届校园招聘 - 中国建筑第八工程局有限公司",
+  "bytes": 14336
+ },
+ {
+  "company": "中建科工",
+  "url": "https://sstr.cscec.com/rlzy/zjtd/",
+  "kind": "ssr",
+  "host": "sstr.cscec.com",
+  "title": "人才团队",
+  "bytes": 24807
+ },
+ {
+  "company": "中铁十一局",
+  "url": "https://www.fenbi.com/page/positions/9/906264?quickPick=%7B%22examId%22%3A906264%7D",
+  "kind": "ssr",
+  "host": "www.fenbi.com",
+  "title": "国企快速选岗-粉笔职位库",
+  "bytes": 169837
+ },
+ {
+  "company": "中国安能",
+  "url": "https://china-an.iguopin.com/",
+  "kind": "iguopin",
+  "host": "china-an.iguopin.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中国建材总院",
+  "url": "https://www.cbma.com.cn/",
+  "kind": "dead",
+  "host": "www.cbma.com.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中国航空器材",
+  "url": "http://www.casc.com.cn/cas/",
+  "kind": "dead",
+  "host": "www.casc.com.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中国节能",
+  "url": "https://www.cecep.cn/",
+  "kind": "spa",
+  "host": "www.cecep.cn",
+  "title": "中国节能环保集团有限公司 &gt; 首页",
+  "bytes": 173092
+ },
+ {
+  "company": "中煤科工",
+  "url": "https://cctegjob.iguopin.com/campus",
+  "kind": "iguopin",
+  "host": "cctegjob.iguopin.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "云南铜业",
+  "url": "https://ynty.chinalco.com.cn/lxwm/zxns/",
+  "kind": "spa",
+  "host": "ynty.chinalco.com.cn",
+  "title": "云南铜业股份有限公司",
+  "bytes": 19322
+ },
+ {
+  "company": "华侨城",
+  "url": "https://campus.niuqizp.com/job-vUl5ZaLMN.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "宝钢股份",
+  "url": "http://esales.baosteel.com/baosteel_bsi/sso/websiteGroup.jsp",
+  "kind": "spa",
+  "host": "esales.baosteel.com",
+  "title": "宝钢股份有限公司欢迎您",
+  "bytes": 5994
+ },
+ {
+  "company": "航天信息",
+  "url": "https://gd.aisino.com/",
+  "kind": "http405",
+  "host": "gd.aisino.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "马钢集团",
+  "url": "http://www.mgjs.cn/",
+  "kind": "spa",
+  "host": "www.mgjs.cn",
+  "title": "错误提示",
+  "bytes": 2483
+ },
+ {
+  "company": "邮储银行",
+  "url": "https://jsyc.iguopin.com/notice",
+  "kind": "iguopin",
+  "host": "jsyc.iguopin.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "招商银行",
+  "url": "https://career.cmbchina.com/campus/home",
+  "kind": "dead",
+  "host": "career.cmbchina.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "兴业银行",
+  "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html",
+  "kind": "ssr",
+  "host": "www.xyyh.com.cn",
+  "title": "兴业银行总行2027校园招聘公告 -- 兴业银行官方网站",
+  "bytes": 4991
+ },
+ {
+  "company": "平安银行",
+  "url": "https://www.pingan.com/w/66dfc646d8c387b3.shtml",
+  "kind": "ssr",
+  "host": "www.pingan.com",
+  "title": "平安银行 招聘官网",
+  "bytes": 127417
+ },
+ {
+  "company": "微众银行",
+  "url": "https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN",
+  "kind": "mokahr",
+  "host": "campus.webank.com",
+  "title": "微众银行 - 校园招聘",
+  "bytes": 206684
+ },
+ {
+  "company": "渤海银行",
+  "url": "https://www.cbhb.com.cn/cbhbank/jrwm/zpxx/index.shtml",
+  "kind": "ssr",
+  "host": "www.cbhb.com.cn",
+  "title": "渤海银行-招聘信息",
+  "bytes": 176352
+ },
+ {
+  "company": "兰州银行",
+  "url": "https://www.lzbank.com/public/pjiarulh/20261020/42412.html",
+  "kind": "ssr",
+  "host": "www.lzbank.com",
+  "title": "兰州银行门户网站",
+  "bytes": 56961
+ },
+ {
+  "company": "吉林银行",
+  "url": "http://jl.people.com.cn/",
+  "kind": "spa",
+  "host": "jl.people.com.cn",
+  "title": "吉林频道--人民网_网上的人民日报",
+  "bytes": 50910
+ },
+ {
+  "company": "宁波通商银行",
+  "url": "https://www.tongshang.com/joinus/",
+  "kind": "spa",
+  "host": "www.tongshang.com",
+  "title": "通商律师事务所",
+  "bytes": 20384
+ },
+ {
+  "company": "富滇银行",
+  "url": "https://www.fudian-bank.com/gyfd/fdxw/zygg/202512/20251201_19256.html",
+  "kind": "ssr",
+  "host": "www.fudian-bank.com",
+  "title": "富滇银行官网",
+  "bytes": 42640
+ },
+ {
+  "company": "工银安盛",
+  "url": "https://yhks.cn/y.php/n?d3=3",
+  "kind": "ssr",
+  "host": "yhks.cn",
+  "title": "考试信息-2027银行校园招聘_秋招公告_春招公告_笔试面试真题-银行考试网",
+  "bytes": 55251
+ },
+ {
+  "company": "徽商银行",
+  "url": "http://rczp.hsbank.com.cn/",
+  "kind": "thin",
+  "host": "rczp.hsbank.com.cn",
+  "title": "徽商银行招聘系统",
+  "bytes": 875
+ },
+ {
+  "company": "恒生银行中国",
+  "url": "https://campus.hundsun.com/Campus",
+  "kind": "zhiye",
+  "host": "campus.hundsun.com",
+  "title": "恒生校招",
+  "bytes": 25924
+ },
+ {
+  "company": "湖南银行",
+  "url": "https://www.hunan-bank.com/96599/2025-09/02/article_2026091711220911569.shtml",
+  "kind": "ssr",
+  "host": "www.hunan-bank.com",
+  "title": "湖南银行2026年社会招聘启事_湖南银行欢迎您",
+  "bytes": 191722
+ },
+ {
+  "company": "重庆银行",
+  "url": "https://www.cqcbank.com/cn/jrch/rczp/index.html",
+  "kind": "ssr",
+  "host": "www.cqcbank.com",
+  "title": "重庆银行——重行招聘",
+  "bytes": 50191
+ },
+ {
+  "company": "客商银行",
+  "url": "https://www.kshbank.cn/",
+  "kind": "mokahr",
+  "host": "www.kshbank.cn",
+  "title": "客商银行门户网站",
+  "bytes": 17200
+ },
+ {
+  "company": "富民银行",
+  "url": "http://www.kmfm.gov.cn/zfxxgk/",
+  "kind": "dead",
+  "host": "www.kmfm.gov.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "摩根士丹利中国",
+  "url": "https://www.morganstanleychina.com/",
+  "kind": "spa",
+  "host": "www.morganstanleychina.com",
+  "title": "摩根士丹利中国",
+  "bytes": 47145
+ },
+ {
+  "company": "新安银行",
+  "url": "https://www.xinan.gov.cn/",
+  "kind": "dead",
+  "host": "www.xinan.gov.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "温州银行",
+  "url": "https://www.wenzhou.gov.cn/",
+  "kind": "dead",
+  "host": "www.wenzhou.gov.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "贵州银行",
+  "url": "https://whhly.guizhou.gov.cn/",
+  "kind": "dead",
+  "host": "whhly.guizhou.gov.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "国泰海通",
+  "url": "https://campus.niuqizp.com/job-v8Y5M5LCn.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "东方证券",
+  "url": "https://app.mokahr.com/campus_apply/dfzq/4928",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "嘉实基金",
+  "url": "https://campus.niuqizp.com/job-v8y5aaNZZ.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "光大理财",
+  "url": "https://www.fenbi.com/page/exam-information-detail/469978881223680",
+  "kind": "ssr",
+  "host": "www.fenbi.com",
+  "title": "出错啦-粉笔资讯",
+  "bytes": 115123
+ },
+ {
+  "company": "建信理财",
+  "url": "http://www.yhks.cn/y.php/n?d3=3",
+  "kind": "ssr",
+  "host": "www.yhks.cn",
+  "title": "考试信息-2027银行校园招聘_秋招公告_春招公告_笔试面试真题-银行考试网",
+  "bytes": 55251
+ },
+ {
+  "company": "华商基金",
+  "url": "https://www.huashanglawyer.com/",
+  "kind": "spa",
+  "host": "www.huashanglawyer.com",
+  "title": "首页-华商律师事务所",
+  "bytes": 67633
+ },
+ {
+  "company": "华宝基金",
+  "url": "https://www.hbglobal.com/",
+  "kind": "gllue",
+  "host": "www.hbglobal.com",
+  "title": "华宝-华宝官网",
+  "bytes": 10734
+ },
+ {
+  "company": "天弘基金",
+  "url": "https://www.thfund.com.cn/",
+  "kind": "mokahr",
+  "host": "www.thfund.com.cn",
+  "title": "天弘基金管理有限公司 | 稳健理财，值得信赖！",
+  "bytes": 107714
+ },
+ {
+  "company": "银华基金",
+  "url": "https://campus.niuqizp.com/job-vry5aZzCC.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "众安保险",
+  "url": "https://campus.niuqizp.com/job-vls5z5NnC.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中国出口信用保险",
+  "url": "https://www.sinosure.com.cn/",
+  "kind": "spa",
+  "host": "www.sinosure.com.cn",
+  "title": "中国出口信用保险公司",
+  "bytes": 26319
+ },
+ {
+  "company": "中邮保险",
+  "url": "https://www.chinapost-life.com/job/",
+  "kind": "zhaopin",
+  "host": "www.chinapost-life.com",
+  "title": "中邮保险_人力招聘",
+  "bytes": 76390
+ },
+ {
+  "company": "普华永道",
+  "url": "https://app.mokahr.com/campus-recruitment/pwc/148260?locale=zh-CN",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "贝恩",
+  "url": "https://campus.niuqizp.com/job-vsr5zCLzz.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "中咨公司",
+  "url": "https://www.ciecc.com.cn/art/2026/9/10/art_1598_124773.html",
+  "kind": "ssr",
+  "host": "www.ciecc.com.cn",
+  "title": "中国国际工程咨询有限公司 通知公告 中国国际工程咨询有限公司社会招聘公告",
+  "bytes": 81159
+ },
+ {
+  "company": "片仔癀",
+  "url": "https://pzhchina.com/rczp/list_252.aspx",
+  "kind": "spa",
+  "host": "pzhchina.com",
+  "title": "漳州片仔癀药业股份有限公司",
+  "bytes": 29901
+ },
+ {
+  "company": "华东医药",
+  "url": "https://www.huadongmedicine.com/careers/",
+  "kind": "http403",
+  "host": "www.huadongmedicine.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "万东医疗",
+  "url": "http://wandong.com.cn/list-60-1.html",
+  "kind": "ssr",
+  "host": "wandong.com.cn",
+  "title": "社会招聘 - 万东医疗",
+  "bytes": 81200
+ },
+ {
+  "company": "华兰生物",
+  "url": "http://www.hualanbio.com/jobs",
+  "kind": "spa",
+  "host": "www.hualanbio.com",
+  "title": "人才招聘 - 华兰生物工程股份有限公司",
+  "bytes": 84536
+ },
+ {
+  "company": "华海药业",
+  "url": "https://www.huahaipharm.com/zpgw.html",
+  "kind": "liepin",
+  "host": "www.huahaipharm.com",
+  "title": "招聘岗位 - 浙江华海药业股份有限公司",
+  "bytes": 20924
+ },
+ {
+  "company": "启明医疗",
+  "url": "https://www.venusmedtech.com/index.php/about/joinus",
+  "kind": "dead",
+  "host": "www.venusmedtech.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "和铂医药",
+  "url": "https://www.harbourbiomed.cn/recruitment/zaoqiyanfa",
+  "kind": "ssr",
+  "host": "www.harbourbiomed.cn",
+  "title": "早期研发 - 职位分类 - 人才招聘 - 和铂医药",
+  "bytes": 116785
+ },
+ {
+  "company": "大参林",
+  "url": "https://campus.dslyy.com/campus-recruitment/dslyy/136052",
+  "kind": "mokahr",
+  "host": "campus.dslyy.com",
+  "title": "大参林医药集团-校园招聘",
+  "bytes": 103272
+ },
+ {
+  "company": "奥翔药业",
+  "url": "https://www.ausunpharm.com/Jobs.html",
+  "kind": "liepin",
+  "host": "www.ausunpharm.com",
+  "title": "人才中心- 浙江奥翔药业股份有限公司从事药物制剂、特色原料药、医药关键中间体的研",
+  "bytes": 136369
+ },
+ {
+  "company": "绿叶制药",
+  "url": "https://www.luye.cn/lvye/joinUs.php",
+  "kind": "dead",
+  "host": "www.luye.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "翔宇医疗",
+  "url": "https://www.xyyl.com/jrwm.html",
+  "kind": "ssr",
+  "host": "www.xyyl.com",
+  "title": "社会招聘-河南翔宇医疗设备股份有限公司",
+  "bytes": 375142
+ },
+ {
+  "company": "荣昌生物",
+  "url": "https://www.remegen.cn/index.php?v=listing&cid=27#rcdw",
+  "kind": "dead",
+  "host": "www.remegen.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "药明生物",
+  "url": "https://job.wuxibiologics.com.cn/campus-recruitment/wuxibiologics/99961/",
+  "kind": "mokahr",
+  "host": "job.wuxibiologics.com.cn",
+  "title": "药明生物招聘官网",
+  "bytes": 110902
+ },
+ {
+  "company": "贝达药业",
+  "url": "https://www.bettapharma.com/Jobs/campus",
+  "kind": "zhiye",
+  "host": "www.bettapharma.com",
+  "title": "校园招聘-贝达药业股份有限公司【官网】",
+  "bytes": 21327
+ },
+ {
+  "company": "康方生物",
+  "url": "https://www.akesobio.com/cn/career/social-recruitment/",
+  "kind": "ssr",
+  "host": "www.akesobio.com",
+  "title": "康方生物 - Akeso, Inc | 社会招聘",
+  "bytes": 125495
+ },
+ {
+  "company": "归创通桥",
+  "url": "https://www.zyloxmedical.com/join-us",
+  "kind": "liepin",
+  "host": "www.zyloxmedical.com",
+  "title": "职位探索 - 加入我们 - 归创通桥 Zylox-Tonbridge",
+  "bytes": 35283
+ },
+ {
+  "company": "欧康维视",
+  "url": "https://www.ocumension.com/cn/career",
+  "kind": "ssr",
+  "host": "www.ocumension.com",
+  "title": "欧康维视&mdash;联系我们,OcuMension,欧康维视生物",
+  "bytes": 12471
+ },
+ {
+  "company": "药明合联",
+  "url": "https://campus.niuqizp.com/job-v8y5a5aCC.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "锦波生物",
+  "url": "https://www.sxjbswyy.com/",
+  "kind": "spa",
+  "host": "www.sxjbswyy.com",
+  "title": "山西锦波生物医药股份有限公司",
+  "bytes": 322162
+ },
+ {
+  "company": "农夫山泉",
+  "url": "https://jobs.yst.com.cn/campus-recruitment/yst/68367",
+  "kind": "mokahr",
+  "host": "jobs.yst.com.cn",
+  "title": "养生堂·农夫山泉·万泰 - 校园招聘",
+  "bytes": 108521
+ },
+ {
+  "company": "娃哈哈",
+  "url": "https://apply.wahaha.com.cn/",
+  "kind": "spa",
+  "host": "apply.wahaha.com.cn",
+  "title": "娃哈哈招聘",
+  "bytes": 8254
+ },
+ {
+  "company": "安踏",
+  "url": "https://jobs.anta.com/social-recruitment/antahr/146041/",
+  "kind": "mokahr",
+  "host": "jobs.anta.com",
+  "title": "安踏集团招聘官网",
+  "bytes": 124701
+ },
+ {
+  "company": "温氏",
+  "url": "https://app.mokahr.com/campus-recruitment/wens/92366",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "三只松鼠",
+  "url": "https://app.mokahr.com/campus_apply/3songshu/457#/job/79dc4b6b-80c0-45e7-b660-e2d79a2226ac/apply",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "古茗",
+  "url": "https://app.mokahr.com/campus-recruitment/guming/39377",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "特步",
+  "url": "https://campus.niuqizp.com/job-vUy5ZLtaz.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "水井坊",
+  "url": "http://www.zhangjiakourc.com/job788112000.shtml",
+  "kind": "http403",
+  "host": "www.zhangjiakourc.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "煌上煌",
+  "url": "https://www.hsh.com.cn/shehuizhaopin/",
+  "kind": "liepin",
+  "host": "www.hsh.com.cn",
+  "title": "社会招聘_江西煌上煌集团食品股份有限公司",
+  "bytes": 44660
+ },
+ {
+  "company": "煌上煌食品",
+  "url": "https://www.hsh.com.cn/shehuizhaopin/",
+  "kind": "liepin",
+  "host": "www.hsh.com.cn",
+  "title": "社会招聘_江西煌上煌集团食品股份有限公司",
+  "bytes": 44660
+ },
+ {
+  "company": "维维股份",
+  "url": "https://www.vvfood.cn/join.html",
+  "kind": "liepin",
+  "host": "www.vvfood.cn",
+  "title": "加入维维-维维食品饮料股份有限公司",
+  "bytes": 8566
+ },
+ {
+  "company": "达利食品",
+  "url": "https://www.daligroup.com/Jo_index_gci_6.html.html",
+  "kind": "dead",
+  "host": "www.daligroup.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "一点点",
+  "url": "https://campus.duxiaoman.com/051736/",
+  "kind": "dead",
+  "host": "campus.duxiaoman.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "六福珠宝",
+  "url": "https://www.lukfook.com/sc/category/news-press-releases/post/grand-opening-of-lukfook-jewellerys-new-shop-in-vincom-dong-khoi-shopping-centre-jointly-celebrating-brands-35th-anniversary",
+  "kind": "ssr",
+  "host": "www.lukfook.com",
+  "title": "六福珠宝永琴同起购物中心新店盛大开业 共贺品牌成立35周年 | 六福珠宝Lukf",
+  "bytes": 114303
+ },
+ {
+  "company": "天味食品",
+  "url": "https://campus.niuqizp.com/job-v8m5M5MCN.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "甘源食品",
+  "url": "https://www.ganyuanfood.com/rczp",
+  "kind": "thin",
+  "host": "www.ganyuanfood.com",
+  "title": "人才招聘-甘源食品股份有限公司",
+  "bytes": 927
+ },
+ {
+  "company": "百草味",
+  "url": "https://campus.niuqizp.com/job-vky5aNZZL.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "紫燕食品",
+  "url": "https://www.ziyanfoods.com/news/4/",
+  "kind": "spa",
+  "host": "www.ziyanfoods.com",
+  "title": "紫燕百味鸡官网,夫妻肺片,百味鸡,藤椒鸡,熟食加盟,卤味加盟,紫燕食品有限公司官",
+  "bytes": 63784
+ },
+ {
+  "company": "绝味食品",
+  "url": "https://www.juewei.cn/page/join/join.html",
+  "kind": "spa",
+  "host": "www.juewei.cn",
+  "title": "绝味食品",
+  "bytes": 12206
+ },
+ {
+  "company": "雅戈尔",
+  "url": "https://www.youngor.com/zp/31.html",
+  "kind": "dead",
+  "host": "www.youngor.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "万科",
+  "url": "https://www.wk.com/jobs/",
+  "kind": "spa",
+  "host": "www.wk.com",
+  "title": "Jobs | Wieden+Kennedy",
+  "bytes": 299421
+ },
+ {
+  "company": "中通快递",
+  "url": "https://hr.zto.com/Campus",
+  "kind": "ssr",
+  "host": "hr.zto.com",
+  "title": "中通招聘",
+  "bytes": 3829
+ },
+ {
+  "company": "DSV中国",
+  "url": "https://www.dsv.com/en/careers/meet-our-people",
+  "kind": "spa",
+  "host": "www.dsv.com",
+  "title": "Meet our people from all over the world ",
+  "bytes": 184723
+ },
+ {
+  "company": "中能建",
+  "url": "http://www.aepc1.ceec.net.cn/art/2026/9/18/art_14574_2525944.html",
+  "kind": "ssr",
+  "host": "www.aepc1.ceec.net.cn",
+  "title": "中能建建筑集团有限公司 人才招聘 中能建建筑集团2027年校园招聘简章",
+  "bytes": 8054
+ },
+ {
+  "company": "中通快运",
+  "url": "https://www.zto56.com/recruitindex.html?type=1",
+  "kind": "ssr",
+  "host": "www.zto56.com",
+  "title": "热招岗位 - 中通快运",
+  "bytes": 30292
+ },
+ {
+  "company": "葛洲坝地产",
+  "url": "http://www.gzbsz.ceec.net.cn/art/2026/8/3/art_8736_2519364.html",
+  "kind": "mokahr",
+  "host": "www.gzbsz.ceec.net.cn",
+  "title": "中国葛洲坝集团市政工程有限公司（中能建葛洲坝轨道交通建设有限公司） 企业告示 中",
+  "bytes": 8788
+ },
+ {
+  "company": "DHL中国",
+  "url": "https://www.cndhl.com/",
+  "kind": "spa",
+  "host": "www.cndhl.com",
+  "title": "中外运—敦豪国际航空快件有限公司",
+  "bytes": 4467
+ },
+ {
+  "company": "上海建工集团",
+  "url": "https://sh2j.scg.com.cn/scg_ej_rlzy_xyzp/List/index.htm",
+  "kind": "ssr",
+  "host": "sh2j.scg.com.cn",
+  "title": "上海建工二建集团有限公司",
+  "bytes": 9724
+ },
+ {
+  "company": "中交一公局",
+  "url": "https://campus.niuqizp.com/job-vks5aCzCa.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "四川路桥",
+  "url": "https://www.sclqhdgs.com/",
+  "kind": "ssr",
+  "host": "www.sclqhdgs.com",
+  "title": "四川路桥桥梁工程集团有限公司",
+  "bytes": 38373
+ },
+ {
+  "company": "大悦城",
+  "url": "https://www.joycity.com/user/preTempJoinClause",
+  "kind": "spa",
+  "host": "www.joycity.com",
+  "title": "약관동의",
+  "bytes": 41032
+ },
+ {
+  "company": "苹果",
+  "url": "https://jobs.apple.com/zh-cn/search?location=china-CHNC",
+  "kind": "ssr",
+  "host": "jobs.apple.com",
+  "title": "Search Jobs - 中国内地 - 招贤纳才 (中国)",
+  "bytes": 294351
+ },
+ {
+  "company": "AMD",
+  "url": "https://careers.amd.com/students/jobs",
+  "kind": "spa",
+  "host": "careers.amd.com",
+  "title": "AMD Student Jobs | Internships and Co-op",
+  "bytes": 430071
+ },
+ {
+  "company": "松下",
+  "url": "https://app.mokahr.com/campus-recruitment/panasonic/41989",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "松下电器",
+  "url": "https://panasonic.cn/",
+  "kind": "spa",
+  "host": "panasonic.cn",
+  "title": "松下电器（中国）有限公司 - 松下中国官网",
+  "bytes": 267702
+ },
+ {
+  "company": "宝洁中国",
+  "url": "https://careers.pg.com.cn/cn/zh/search-results",
+  "kind": "ssr",
+  "host": "careers.pg.com.cn",
+  "title": "发现宝洁中国的职位",
+  "bytes": 102058
+ },
+ {
+  "company": "金佰利中国",
+  "url": "https://www.jblfz.com/join/",
+  "kind": "ssr",
+  "host": "www.jblfz.com",
+  "title": "加入金佰利集团 - 金佰利",
+  "bytes": 6731
+ },
+ {
+  "company": "云从科技",
+  "url": "http://campus.cloudwalk.com/campus_apply/cloudwalk/4872/",
+  "kind": "mokahr",
+  "host": "campus.cloudwalk.com",
+  "title": "云从 - 校园招聘",
+  "bytes": 50003
+ },
+ {
+  "company": "燧原科技",
+  "url": "https://campus.niuqizp.com/job-vkl5znLz5.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "文远知行",
+  "url": "https://app.mokahr.com/campus_apply/jingchi/2137",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "OceanBase",
+  "url": "https://jobs.ultraai.site/jobs/ant/26040109408563",
+  "kind": "ssr",
+  "host": "jobs.ultraai.site",
+  "title": "OceanBase-AI解决方案专家-行业-OceanBase（社招）- Oce",
+  "bytes": 19052
+ },
+ {
+  "company": "商汤大装置",
+  "url": "https://www.sensecore.cn/",
+  "kind": "spa",
+  "host": "www.sensecore.cn",
+  "title": "SenseCore 商汤大装置-AI基础设施新范式",
+  "bytes": 272711
+ },
+ {
+  "company": "未来机器人",
+  "url": "https://www.weilairobotics.com/about/detail129.html",
+  "kind": "ssr",
+  "host": "www.weilairobotics.com",
+  "title": "智能搬运机器人厂家招聘感知算法工程师",
+  "bytes": 29872
+ },
+ {
+  "company": "思谋科技",
+  "url": "https://cn.smartmore.com/",
+  "kind": "mokahr",
+  "host": "cn.smartmore.com",
+  "title": "SmartMore思谋科技官网 - 全球领先的工业AI智能体公司",
+  "bytes": 111345
+ },
+ {
+  "company": "云迹科技",
+  "url": "https://www.yunjichina.com.cn/news/79",
+  "kind": "spa",
+  "host": "www.yunjichina.com.cn",
+  "title": "云迹科技2027届校园招聘全面启动！-北京云迹科技股份有限公司",
+  "bytes": 32716
+ },
+ {
+  "company": "傅利叶",
+  "url": "https://campus.niuqizp.com/job-vkl5z5zan.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "极智嘉",
+  "url": "https://campus.niuqizp.com/job-vYU5a5tzN.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "逐际动力",
+  "url": "https://www.limxdynamics.com/zh",
+  "kind": "ssr",
+  "host": "www.limxdynamics.com",
+  "title": "逐际动力 LimX Dynamics丨官方网站",
+  "bytes": 187780
+ },
+ {
+  "company": "珀莱雅",
+  "url": "https://jobs.proya.com/campus",
+  "kind": "ssr",
+  "host": "jobs.proya.com",
+  "title": "加入珀莱雅",
+  "bytes": 189543
+ },
+ {
+  "company": "贝泰妮",
+  "url": "https://campus.niuqizp.com/job-v8r5atzzn.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "森马服饰",
+  "url": "https://www.semir.com/join-us.html",
+  "kind": "mokahr",
+  "host": "www.semir.com",
+  "title": "加入我们 - 森马集团",
+  "bytes": 18981
+ },
+ {
+  "company": "毛戈平",
+  "url": "https://www.maogeping.com/join.html",
+  "kind": "ssr",
+  "host": "www.maogeping.com",
+  "title": "招贤纳士-毛戈平化妆品股份有限公司",
+  "bytes": 68808
+ },
+ {
+  "company": "珀莱雅集团",
+  "url": "http://www.proya-group.com/about",
+  "kind": "spa",
+  "host": "www.proya-group.com",
+  "title": "珀莱雅股份_珀莱雅股份公司简介-珀莱雅股份官网",
+  "bytes": 78063
+ },
+ {
+  "company": "花西子",
+  "url": "https://campus.niuqizp.com/job-vYm5CL5Lt.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "高途",
+  "url": "https://app.mokahr.com/campus-recruitment/bjhl/102145",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "粉笔",
+  "url": "http://www.fenbicx.com/",
+  "kind": "spa",
+  "host": "www.fenbicx.com",
+  "title": "粉笔初心",
+  "bytes": 190556
+ },
+ {
+  "company": "华图教育",
+  "url": "http://zhaopin.huatu.com/campus/",
+  "kind": "ssr",
+  "host": "zhaopin.huatu.com",
+  "title": "职位招聘_校园招聘-华图教育招聘平台",
+  "bytes": 24107
+ },
+ {
+  "company": "小码王",
+  "url": "https://www.xiaomawang.cn/job/",
+  "kind": "ssr",
+  "host": "www.xiaomawang.cn",
+  "title": "小码王招聘-小码教育公司工作岗位招聘|校园人才招聘-小码王",
+  "bytes": 22012
+ },
+ {
+  "company": "环球网校",
+  "url": "https://www.hqwx.com/web_news/html/2020-7/15946215923271.html",
+  "kind": "dead",
+  "host": "www.hqwx.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "Moka",
+  "url": "https://www.mokahr.com/solution/campus",
+  "kind": "mokahr",
+  "host": "www.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "SAP中国",
+  "url": "https://www.sap.cn/index.html",
+  "kind": "spa",
+  "host": "www.sap.cn",
+  "title": "SAP中国官网（思爱普） - ERP系统与企业管理解决方案提供商",
+  "bytes": 175760
+ },
+ {
+  "company": "万得Wind",
+  "url": "https://www.wind.com.cn/portal/zh/JoinUs/index.html",
+  "kind": "ssr",
+  "host": "www.wind.com.cn",
+  "title": "万得 - 招聘",
+  "bytes": 6704
+ },
+ {
+  "company": "泛微网络",
+  "url": "https://campus.niuqizp.com/job-v885an5tt.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "钉钉",
+  "url": "https://page.dingtalk.com/wow/z/dingtalk/default/9TYZ4Q2IBSO",
+  "kind": "ssr",
+  "host": "page.dingtalk.com",
+  "title": "一站式招聘服务平台-智能招聘-钉钉官网",
+  "bytes": 336586
+ },
+ {
+  "company": "云深处",
+  "url": "http://www.deeprobotics.cn/recruit/campus.html",
+  "kind": "ssr",
+  "host": "www.deeprobotics.cn",
+  "title": "校园招聘-云深处科技股份有限公司",
+  "bytes": 67215
+ },
+ {
+  "company": "人大金仓",
+  "url": "https://www.kingbase.com.cn/about/about.html?5",
+  "kind": "ssr",
+  "host": "www.kingbase.com.cn",
+  "title": "关于我们 - 电科金仓官网 | 国产数据库国家队，20余年自主研发，服务100万",
+  "bytes": 137883
+ },
+ {
+  "company": "信发集团",
+  "url": "https://lcudcc.sdbys.com/campus/view/id/743437",
+  "kind": "ssr",
+  "host": "lcudcc.sdbys.com",
+  "title": "信发集团2026招聘",
+  "bytes": 25695
+ },
+ {
+  "company": "全志科技",
+  "url": "https://campus.allwinnertech.com/campus-recruitment/allwinnertech/43436/",
+  "kind": "mokahr",
+  "host": "campus.allwinnertech.com",
+  "title": "珠海全志科技股份有限公司 - 校园招聘",
+  "bytes": 98210
+ },
+ {
+  "company": "匹克",
+  "url": "https://www.peaksport.com/cn/jobs",
+  "kind": "ssr",
+  "host": "www.peaksport.com",
+  "title": "匹克招贤纳士",
+  "bytes": 118767
+ },
+ {
+  "company": "华帝",
+  "url": "https://vatti.com.cn/",
+  "kind": "spa",
+  "host": "vatti.com.cn",
+  "title": "华帝官网-时尚科学厨电-高端厨电品牌-Vatti",
+  "bytes": 234038
+ },
+ {
+  "company": "协鑫科技",
+  "url": "https://www.gcltech.com/join.html",
+  "kind": "mokahr",
+  "host": "www.gcltech.com",
+  "title": "职业与发展-协鑫科技 | 全球领先的零碳能源高科技材料研发智造商 | 协鑫科技控",
+  "bytes": 44417
+ },
+ {
+  "company": "博彦科技",
+  "url": "https://www.beyondsoft.com/joinus/contactus.html",
+  "kind": "spa",
+  "host": "www.beyondsoft.com",
+  "title": "Life at Beyondsoft - Beyondsoft Consulti",
+  "bytes": 123685
+ },
+ {
+  "company": "卧龙电驱",
+  "url": "https://www.wolong.com/index.php/join/campus.html",
+  "kind": "ssr",
+  "host": "www.wolong.com",
+  "title": "加入我们-校园招聘-卧龙控股集团有限公司",
+  "bytes": 51882
+ },
+ {
+  "company": "吉利银河",
+  "url": "https://job.geely.com/social-recruitment/geely/96123/",
+  "kind": "dead",
+  "host": "job.geely.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "多益网络",
+  "url": "https://live.duoyi.com/dy/xz/",
+  "kind": "ssr",
+  "host": "live.duoyi.com",
+  "title": "多益网络校招在线宣讲会-多益网络",
+  "bytes": 26032
+ },
+ {
+  "company": "巨人网络",
+  "url": "https://hr.ztgame.com/campus/",
+  "kind": "mokahr",
+  "host": "hr.ztgame.com",
+  "title": "巨人网络校园招聘",
+  "bytes": 67456
+ },
+ {
+  "company": "广州数控",
+  "url": "https://www.gsk.com.cn/ypxz/index_939.aspx",
+  "kind": "ssr",
+  "host": "www.gsk.com.cn",
+  "title": "广州数控设备有限公司",
+  "bytes": 20782
+ },
+ {
+  "company": "当升科技",
+  "url": "https://app.mokahr.com/campus-recruitment/easpring/102152",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "影石Insta360",
+  "url": "https://www.insta360.com/cn/jobs",
+  "kind": "feishu",
+  "host": "www.insta360.com",
+  "title": "影石Insta360招聘",
+  "bytes": 166572
+ },
+ {
+  "company": "德克士",
+  "url": "https://www.dicos.com.cn/join/apply.html",
+  "kind": "http403",
+  "host": "www.dicos.com.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "恩捷股份",
+  "url": "https://www.semcorp.com/about/join-us/recruitment-position/campus-recruitment",
+  "kind": "ssr",
+  "host": "www.semcorp.com",
+  "title": "校园招聘-全球领先的锂电池隔膜供应商",
+  "bytes": 74487
+ },
+ {
+  "company": "擎朗智能",
+  "url": "https://keenonrobot.robot-china.com/job/",
+  "kind": "dead",
+  "host": "keenonrobot.robot-china.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "斗鱼",
+  "url": "http://zhaopin.douyu.com/campus",
+  "kind": "thin",
+  "host": "zhaopin.douyu.com",
+  "title": "斗鱼招聘",
+  "bytes": 1362
+ },
+ {
+  "company": "时的科技",
+  "url": "https://www.tcabtech.com/join-us/",
+  "kind": "ssr",
+  "host": "www.tcabtech.com",
+  "title": "招贤纳士",
+  "bytes": 189634
+ },
+ {
+  "company": "易观数科",
+  "url": "https://www.analysys.cn/joinus",
+  "kind": "ssr",
+  "host": "www.analysys.cn",
+  "title": "加入我们-易观分析",
+  "bytes": 15791
+ },
+ {
+  "company": "星尘智能",
+  "url": "https://www.astribot.com/careers/",
+  "kind": "mokahr",
+  "host": "www.astribot.com",
+  "title": "招贤纳士 | 星尘智能",
+  "bytes": 64749
+ },
+ {
+  "company": "星源材质",
+  "url": "http://szsenior.senior798.com:8881/szxy/gw.html",
+  "kind": "ssr",
+  "host": "szsenior.senior798.com:8881",
+  "title": "星源材质校招岗位",
+  "bytes": 14877
+ },
+ {
+  "company": "杉杉股份",
+  "url": "https://www.shanshantech.com/talent-recruitment",
+  "kind": "dead",
+  "host": "www.shanshantech.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "格力电器",
+  "url": "https://www.gree.cn/list/232.html",
+  "kind": "dead",
+  "host": "www.gree.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "格林美",
+  "url": "https://www.gem.com.cn/SchoolRecruitment/index.html",
+  "kind": "spa",
+  "host": "www.gem.com.cn",
+  "title": "",
+  "bytes": 12022
+ },
+ {
+  "company": "永洪科技",
+  "url": "https://www.yonghongtech.com/gy/gzjh/",
+  "kind": "ssr",
+  "host": "www.yonghongtech.com",
+  "title": "招聘信息_社招|校招岗位信息 - 永洪科技",
+  "bytes": 55521
+ },
+ {
+  "company": "汇联易",
+  "url": "https://www.huilianyi.com/other/joinus",
+  "kind": "mokahr",
+  "host": "www.huilianyi.com",
+  "title": "招聘 | 汇联易",
+  "bytes": 38671
+ },
+ {
+  "company": "沃飞长空",
+  "url": "https://www.aerofugia.com/recruit/",
+  "kind": "mokahr",
+  "host": "www.aerofugia.com",
+  "title": "沃飞长空招聘 - 在沃飞长空工作怎么样 - 沃飞长空",
+  "bytes": 30150
+ },
+ {
+  "company": "游族网络",
+  "url": "https://app.mokahr.com/social-recruitment/yoozoo/91950",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "百事中国",
+  "url": "https://www.pepsicojobs.com/applicant-help",
+  "kind": "spa",
+  "host": "www.pepsicojobs.com",
+  "title": "PepsiCo Careers",
+  "bytes": 1078753
+ },
+ {
+  "company": "盖雅工场",
+  "url": "https://www.gaiaworks.cn/solution/workforce-skills-development.html",
+  "kind": "mokahr",
+  "host": "www.gaiaworks.cn",
+  "title": "盖雅技能发展平台｜技能管理系统与人岗匹配解决方案",
+  "bytes": 256091
+ },
+ {
+  "company": "碧桂园服务",
+  "url": "https://www.bgyfw.com/cn/join.html",
+  "kind": "mokahr",
+  "host": "www.bgyfw.com",
+  "title": "加入我们 | 碧桂园服务",
+  "bytes": 86805
+ },
+ {
+  "company": "纳芯微",
+  "url": "https://careers.novosns.com/campus",
+  "kind": "ssr",
+  "host": "careers.novosns.com",
+  "title": "校园招聘 - 纳芯微招聘官网",
+  "bytes": 139980
+ },
+ {
+  "company": "绿盟科技",
+  "url": "https://update.nsfocus.com/",
+  "kind": "spa",
+  "host": "update.nsfocus.com",
+  "title": "售后服务_客户支持_服务与支持_绿盟科技",
+  "bytes": 22324
+ },
+ {
+  "company": "花王中国",
+  "url": "https://www.kao.com/cn/careers/position/",
+  "kind": "spa",
+  "host": "www.kao.com",
+  "title": "花王中国 | 主要业务部门信息",
+  "bytes": 139565
+ },
+ {
+  "company": "诚迈科技",
+  "url": "https://www.archermind.com/archermind-education/artificial-intelligence-industrial-talent-solutions",
+  "kind": "ssr",
+  "host": "www.archermind.com",
+  "title": "基于人工智能产业实践的数智化人才培养解决方案 - 诚迈科技",
+  "bytes": 350937
+ },
+ {
+  "company": "软通动力信息",
+  "url": "https://www.isoftstone.com/zh-cn/htmls/campusRecruitment/index.html",
+  "kind": "ssr",
+  "host": "www.isoftstone.com",
+  "title": "校园招聘-isoftstone软通动力",
+  "bytes": 146815
+ },
+ {
+  "company": "迎驾贡酒",
+  "url": "http://www.yingjia.cn/hr/index/45.html",
+  "kind": "dead",
+  "host": "www.yingjia.cn",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "速腾聚创",
+  "url": "https://app.mokahr.com/campus-recruitment/robosense/69887",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "锐捷网络",
+  "url": "https://app.mokahr.com/campus-recruitment/ruijie/136206",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "长亮科技",
+  "url": "https://www.sunline.cn/join/campus-recruiting.html",
+  "kind": "spa",
+  "host": "www.sunline.cn",
+  "title": "校园招聘",
+  "bytes": 49978
+ },
+ {
+  "company": "阶跃星辰Step",
+  "url": "https://offerdao.ai/#discover-jobs",
+  "kind": "ssr",
+  "host": "offerdao.ai",
+  "title": "Offer岛 · 为 AI Native 团队与人才而生",
+  "bytes": 272598
+ },
+ {
+  "company": "陕鼓动力",
+  "url": "http://www.shaangu.com/job/ren-cai-zhao-pin.htm",
+  "kind": "liepin",
+  "host": "www.shaangu.com",
+  "title": "人才招聘-西安陕鼓动力股份有限公司",
+  "bytes": 41641
+ },
+ {
+  "company": "韶音",
+  "url": "https://campus.shokz.com.cn/campus_apply/aftershokzhr/36940/",
+  "kind": "mokahr",
+  "host": "campus.shokz.com.cn",
+  "title": "韶音科技校园招聘",
+  "bytes": 164147
+ },
+ {
+  "company": "领益智造",
+  "url": "https://app.mokahr.com/campus-recruitment/lingyiitech/182049",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "飞书",
+  "url": "https://hire.feishu.cn/",
+  "kind": "spa",
+  "host": "hire.feishu.cn",
+  "title": "懂招聘，更懂人才- 飞书招聘 - 飞书官网",
+  "bytes": 309041
+ },
+ {
+  "company": "鲁花",
+  "url": "https://www.luhua.cn/join.html",
+  "kind": "ssr",
+  "host": "www.luhua.cn",
+  "title": "工作机会-山东鲁花集团官方网站 - 食用油行业领导品牌",
+  "bytes": 114385
+ },
+ {
+  "company": "南玻集团",
+  "url": "https://csg.jobs.cz",
+  "kind": "spa",
+  "host": "csg.jobs.cz",
+  "title": "Volné pozice | CSG",
+  "bytes": 65295
+ },
+ {
+  "company": "周大生",
+  "url": "https://www.chowtaiseng.com/Recruitmentarea/",
+  "kind": "http404",
+  "host": "www.chowtaiseng.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "乐元素",
+  "url": "https://app.mokahr.com/campus-recruitment/leyuansu/166186?locale=zh-CN#/",
+  "kind": "mokahr",
+  "host": "app.mokahr.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "世纪华通",
+  "url": "https://campus.niuqizp.com/job-vYl5aL5NZ.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "壳木游戏",
+  "url": "https://www.camelgames.com/plugins/simple-job-board/public/css/jquery-ui35d0.css?ver=1.12.1",
+  "kind": "spa",
+  "host": "www.camelgames.com",
+  "title": "",
+  "bytes": 37309
+ },
+ {
+  "company": "掌趣科技",
+  "url": "https://campus.niuqizp.com/job-vlm5zMZCn.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "散爆网络",
+  "url": "https://campus.niuqizp.com/job-v8Y5nnMMC.html",
+  "kind": "http403",
+  "host": "campus.niuqizp.com",
+  "title": "",
+  "bytes": 0
+ },
+ {
+  "company": "界面新闻",
+  "url": "https://www.jiemian.com/about/advert.html",
+  "kind": "ssr",
+  "host": "www.jiemian.com",
+  "title": "加入我们_界面新闻",
+  "bytes": 114540
+ },
+ {
+  "company": "红星新闻",
+  "url": "https://hongxingxinwen.com/2026/10/21/ultrasonic-welding-doubles-metal-joint-strength/",
+  "kind": "spa",
+  "host": "hongxingxinwen.com",
+  "title": "超声波焊接技术的进步提升了关键行业金属接头的性能 - 红星新闻",
+  "bytes": 67332
+ },
+ {
+  "company": "贪玩游戏",
+  "url": "http://www.twyx.cn/",
+  "kind": "spa",
+  "host": "www.twyx.cn",
+  "title": "江西贪玩信息技术有限公司",
+  "bytes": 12951
+ },
+ {
+  "company": "钛媒体",
+  "url": "https://www.tmtpost.com/about/jobs",
+  "kind": "ssr",
+  "host": "www.tmtpost.com",
+  "title": "加入我们-钛媒体官方网站",
+  "bytes": 232176
+ }
+]

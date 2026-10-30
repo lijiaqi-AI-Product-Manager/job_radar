@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | Deutsch | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.10.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.11.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,9 +14,9 @@ eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datenstand (2026-10-29)**: **1,911 Quellen** · **1,870 Unternehmen** · **23 Adapter**
+> **Datenstand (2026-10-29)**: **2,124 Quellen** · **2,083 Unternehmen** · **25 Adapter**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Alt-Beisen 113 / Workday 45 / Alt-Dayee 15 / eigene Seiten 19)
-> Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **606 abgedeckt (37 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
+> Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **814 abgedeckt (49 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
 > Stellenzahlen und Feldabdeckung werden bei jedem täglichen Crawl aktualisiert (siehe neuestes Release).
 
 ## Was es ist / was nicht
@@ -68,7 +68,7 @@ inklusive des Hinweises `{Name}希望你去他们的招聘页逛一逛哦~`.
 | Bereich | Realität |
 |---|---|
 | Zielabdeckung | **577/1.655 (35 %)**; 12 Ziele sind wegen robots/Login/Verschlüsselung nicht konform erreichbar |
-| Quellen | **1.310 Quellen / 1.281 Unternehmen** über 23 Adapter |
+| Quellen | **1.310 Quellen / 1.281 Unternehmen** über 25 Adapter |
 | Große Tech-Firmen | Alibaba/Tencent/Meituan/NetEase… mit Stellen; ByteDance/JD/Huawei nur Kalender |
 | Provinzabdeckung | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — vollständige Tabelle: `scripts/coverage_report.py` |
 | Bewerbungsfenster | Beginn und Ende sind nur bei einem Teil der Kalendereinträge gesetzt; genaue Zahl: jobradar stats |

@@ -24,3 +24,10 @@ calendar/enrich-report.json
 pytest-of-*/
 
 tmp_*
+
+# work/ 下的一次性抓取产物：脚本入库，数据可重跑生成，不入库
+work/_*
+work/*.jsonl
+work/coverage_*.txt
+work/portal_hunted.txt
+work/sxs_index_page.txt

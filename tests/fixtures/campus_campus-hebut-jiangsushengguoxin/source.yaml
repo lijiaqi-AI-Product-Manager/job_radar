@@ -1,0 +1,19 @@
+id: campus-hebut-jiangsushengguoxin
+company: 江苏省国信
+adapter: campus
+params:
+  school: hebut
+  max_pages: 1
+  list_cache_ttl: 600
+  match:
+  - 江苏省国信集团有限公司
+  page_size: 20
+recruit_types:
+- campus
+enabled: true
+rate_limit_rps: 1.0
+compliance:
+  checked_on: '2026-10-30'
+  robots: allowed
+  terms: 公开招聘信息栏目（企业投递给学校的岗位信息），无需登录；不碰学生简历/投递接口
+  notes: 聚合渠道 grade C：岗位由学校就业网发布，不等于公司官网直发；1 req/s。

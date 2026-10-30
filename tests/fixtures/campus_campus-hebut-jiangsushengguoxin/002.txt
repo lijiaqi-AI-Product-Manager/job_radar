@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>江苏省国信集团2026年秋季集中招聘公告-江苏省国信集团有限公司</title>
+    <meta name="keywords" content="河北工业大学就业指导中心,招聘信息,江苏省国信集团2026年秋季集中招聘公告,江苏省国信集团有限公司" />
+    <meta name="description" content="河北工业大学就业指导中心招聘信息" />
+    <link rel="stylesheet" type="text/css" href="/Publicweb/css/index.css?334816938">
+    <link href="/Publicweb/css/rili.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Publicweb/css/font-awesome.css">
+    <script type="text/javascript" src="/Public/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/Publicweb/css/responsiveslides.css">
+    <script type="text/javascript" src="/Publicweb/js/responsiveslides.min.js"></script>
+    <script type="text/javascript" src="/Publicweb/js/schedule.js"></script>
+    <script type="text/javascript" src="/Public/js/base.js"></script>
+<style>
+.nav li{ width:150px;}
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="main">
+            <a href="https://career.hebut.edu.cn" class="logo" style="display: flex;align-items: center"><img src="/Uploads/2018-11-27/5bfcc39dbe6e7.png" style="align-items: center;max-height: 65px;vertical-align: middle;"></a>
+                                    <a href="https://career.hebut.edu.cn/System" class="syslogin userlogin" target="_blank">就业管理系统登录</a>
+            <div class="sousuo">
+                <form action="/search/index.html" method="post" onsubmit="return needkeywords();">
+                    <input type="hidden" name="formhash" value="">
+                    <input class="input" type="text" name="keywords" id="keywords" placeholder="搜索" autocomplete="off">
+                    <input type="submit" value="" class="sub">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function needkeywords(){
+            if(jQuery('#keywords').val()==''){
+                alert('请填写关键字!');
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <div class="nav">
+        <div class="main">
+            <ul>
+                <li ><a class="yiji" href="https://career.hebut.edu.cn">首页</a></li>
+                <li class="hover">
+                    <a class="yiji" href="javascript:void(0);">学生<span class="list"></span></a>
+                    <ul class="erji">
+                        <li><a href="/correcruit/index.html">招聘信息</a></li>
+                        <li><a href="/recruitment/index.html">招聘会信息</a></li>
+                        <li><a href="/shuangxuanhuis/index.html">空中双选会</a></li>
+                        <li><a href="/xuanjianghuis/index.html">空中宣讲会</a></li>
+                        <li><a href = "/basicrecruit/index.html">公招信息</a></li>                                                                        <li><a href="javascript:void(0);">就业桥</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a class="yiji" href="javascript:void(0);">雇主<span class="list"></span></a>
+                    <ul class="erji">
+                        <li><a href="/academeint/index.html">院系介绍</a></li>
+                        <li><a href="/news/sourceinf.html">生源信息</a></li>
+                        <li><a href="/recruitguide/index.html">招聘指南</a></li>
+                        <li><a href="/employgroup/index.html">就业小组</a></li>
+
+                    </ul>
+                </li>
+                <li >
+                    <a class="yiji" href="javascript:void(0);">新闻公告<span class="list"></span></a>
+                    <ul class="erji">
+                        <li><a href="/news/index.html">重要通知</a></li>
+                        <li><a href="/news/work.html">工作动态</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a class="yiji" href="javascript:void(0);">就业创业指导<span class="list"></span></a>
+                    <ul class="erji">
+                        <li><a href = "/applyguide/index.html">活动预告</a></li>
+                        <li><a href = "/careerquiz/index.html">职业测评</a></li>
+                        <li><a href = "https://career.hebut.edu.cn/System" target="_blank">生涯咨询</a></li>
+                        <li><a href = "/news/entrepreneurship.html">创业指导</a></li>
+                        <li><a href = "/news/employpolicy.html">就业政策</a></li>
+                        <li><a href = "/news/formalities.html">就业手续</a></li>
+                    </ul>
+                </li>
+                <li ><a class="yiji" href="/download/index.html">文件下载</a></li>
+                <li ><a class="yiji" href="/contact/index.html">联系我们</a></li>
+                <li><a href="https://hebut.ncss.cn/student/jobs/index.html" class="yiji" target="_blank">24365校园招聘服务</a></li>
+            </ul>
+        </div>
+    </div>
+
+<div class="banner2"></div>
+<script>
+    $(function(){
+        $('.opennav').click(function(){
+            var obj=$(this).parents('.nav1');
+            $('.nav1').addClass('nav-close');
+            if(obj.hasClass('nav-open')){
+                obj.addClass('nav-close');
+                obj.removeClass('nav-open');
+            }else{
+                $('.nav1').removeClass('nav-open');
+                obj.addClass('nav-open');
+                obj.removeClass('nav-close');
+            }
+        })
+    })
+</script>
+<div class="con clearfix">
+    <div class="main">
+        <div class="lnav">
+            <div class="nav1 nav-open">
+                <div class="title opennav">
+                    <p class="navbg"></p>
+                    <div class="titcon">
+                        <p class="navtit stuicon">学生</p>
+                        <a href="javascript:void(0);" class="opena"></a>
+                    </div>
+                </div>
+                <ul class="clearfix navlist">
+                    <li class="navtab"><p>招聘职位</p></li>
+                    <li class="navli "><a href="/reccalender/index.html"> 招聘日历</a></li>
+                    <li class="navli hover"><a href="/correcruit/index.html">招聘信息</a></li>
+                                        <li class="navli "><a href = "/basicrecruit/index.html">公招信息</a></li>                                        <li class="navtab"><p>招聘会信息</p></li>
+                    <li class="navli "><a href="/recruitment/index2.html"> 宣讲会信息</a></li>
+                    <li class="navli "><a href="/recruitment/index.html"> 双选会信息</a></li>
+                    <li class="navli "><a href="/shuangxuanhuis/index.html"> 空中双选会</a></li>
+                    <li class="navli "><a href="/xuanjianghuis/index.html"> 空中宣讲会</a></li>
+                    <li class="navtab"><p>办事大厅</p></li>
+                    <li class="navli "><a href="/dangan/index.html"> 档案查询</a></li>
+                    <li class="navli "><a href="/feedback/index.html"> 意见反馈</a></li>
+                    
+                </ul>
+            </div>
+            <div class="nav1 nav-close">
+                <div class="title opennav">
+                    <p class="navbg"></p>
+                    <div class="titcon">
+                        <p class="navtit gzicon">雇主</p>
+                        <a href="javascript:void(0);" class="opena"></a>
+                    </div>
+                </div>
+                <ul class="clearfix navlist">
+                    <li class="navli "><a href="/academeint/index.html">院系介绍</a></li>
+                    <li class="navli "><a href="/news/sourceinf.html">生源信息</a></li>
+                    <li class="navli "><a href="/recruitguide/index.html">招聘指南</a></li>
+                    <li class="navli "><a href="/employgroup/index.html">就业小组</a></li>
+                </ul>
+            </div>
+            <div class="nav1 nav-close">
+                <div class="title opennav">
+                    <p class="navbg"></p>
+                    <div class="titcon">
+                        <p class="navtit newsicon">新闻公告</p>
+                        <a href="javascript:void(0);" class="opena"></a>
+                    </div>
+                </div>
+                <ul class="clearfix navlist">
+                    <li class="navli "><a href = "/news/index.html">重要通知</a></li>
+                    <li class="navli "><a href = "/news/work.html">工作动态</a></li>
+                </ul>
+            </div>
+            <div class="nav1 nav-close">
+                <div class="title opennav">
+                    <p class="navbg"></p>
+                    <div class="titcon">
+                        <p class="navtit jycyicon">就业创业指导</p>
+                        <a href="javascript:void(0);" class="opena"></a>
+                    </div>
+                </div>
+                <ul class="clearfix navlist">
+                    <li class="navli "><a href = "/applyguide/index.html">活动预告</a></li>
+                    <li class="navli "><a href = "/careerquiz/index.html">职业测评</a></li>
+                    <li class="navli"><a href = "https://career.hebut.edu.cn/System" target="_blank">生涯咨询</a></li>
+                    <li class="navli "><a href = "/news/entrepreneurship.html">创业指导</a></li>
+                    <li class="navli "><a href = "/news/employpolicy.html">就业政策</a></li>
+                    <li class="navli "><a href = "/news/formalities.html">就业手续</a></li>
+                </ul>
+            </div>
+            <div class="btitle">
+                <div class="l">招聘会信息</div>
+                <a href="/recruitment/index.html" class="more">More+</a>
+            </div>
+            <ul class="rmzph clearfix">
+                <li>
+                    <a href="/recruitment/content/type/2/id/5461.html" title="天津数字经济产业集团有限公司-2027年校园招聘">
+                        <div class="l">
+                            <div class="up">11月</div>
+                            <div class="down">06</div>
+                        </div>
+                        <div class="r">
+                            <p class="up">天津数字经济产业集团有限公司-2027年校园招聘</p>
+                            <p class="down">2026/11/06 18:40</p>
+                        </div>
+                    </a>
+                </li><li>
+                    <a href="/recruitment/content/type/2/id/5388.html" title="2027江苏是为科技宣讲会">
+                        <div class="l">
+                            <div class="up">11月</div>
+                            <div class="down">06</div>
+                        </div>
+                        <div class="r">
+                            <p class="up">2027江苏是为科技宣讲会</p>
+                            <p class="down">2026/11/06 15:55</p>
+                        </div>
+                    </a>
+                </li><li>
+                    <a href="/recruitment/content/type/1/id/120.html" title="河北工业大学 “点燃职场，成就梦想”2027届毕业生秋季双选会">
+                        <div class="l">
+                            <div class="up">10月</div>
+                            <div class="down">16</div>
+                        </div>
+                        <div class="r">
+                            <p class="up">河北工业大学 “点燃职场，成就梦想”2027届毕业生秋季双选会</p>
+                            <p class="down">2026/10/16 14:00</p>
+                        </div>
+                    </a>
+                </li><li>
+                    <a href="/recruitment/content/type/1/id/119.html" title="工业力量集结号——机械、材料类专场招聘会（第二场）">
+                        <div class="l">
+                            <div class="up">9月</div>
+                            <div class="down">17</div>
+                        </div>
+                        <div class="r">
+                            <p class="up">工业力量集结号——机械、材料类专场招聘会（第二场）</p>
+                            <p class="down">2026/09/17 14:00</p>
+                        </div>
+                    </a>
+                </li>            </ul>
+            <div class="btitle">
+                <div class="l">通知公告</div>
+                <a href="/news/index.html" class="more">More+</a>
+            </div>
+            <ul class="gonggao clearfix">
+                <li>
+                    <a href="/news/content/id/915.html">
+                    <span class="dian">• </span>河北工业大学2027年秋季学期校园讲座邀请函                    </a>
+                </li><li>
+                    <a href="/news/content/id/906.html">
+                    <span class="dian">• </span>河北工业大学2027届毕业生生源信息表                    </a>
+                </li><li>
+                    <a href="/news/content/id/878.html">
+                    <span class="dian">• </span>就业系统操作指南——企业用户使用手册                    </a>
+                </li><li>
+                    <a href="/news/content/id/840.html">
+                    <span class="dian">• </span>关于“全国高校毕业生网上签约与毕业去向登记平台”网上签约的使用说明                    </a>
+                </li><li>
+                    <a href="/news/content/id/916.html">
+                    <span class="dian">• </span>河北工业大学2027届毕业生秋季学期校园招聘活动邀请函                    </a>
+                </li><li>
+                    <a href="/news/content/id/932.html">
+                    <span class="dian">• </span>山东能源集团2027年高校毕业生 校园招聘简章                    </a>
+                </li><li>
+                    <a href="/news/content/id/931.html">
+                    <span class="dian">• </span>2026年石家庄高层次人才交流洽谈会 定于11月7日举办                    </a>
+                </li>            </ul>
+        </div>
+        <div class="rnav">
+            <div class="top">
+                <div class="l">招聘信息</div>
+                <div class="weizhi"><a href="/index/index.html">首页</a> >  >招聘信息</div>
+            </div>
+    <div class="right-content">
+    	<div class="zpxq">
+			<div class="title">
+				江苏省国信集团2026年秋季集中招聘公告				<span class="gongzi">10000元以上</span>
+			</div>
+			<div class="info">
+				<p style="padding-bottom: 10px;">
+									 	<a class="p2" href="/company/index/id/3459.html" target="_blank">【江苏省国信集团有限公司】<img src="/Publicweb/images/renzheng.png"></a>
+				 						<span class="fb">发布时间：2026-10-29　　浏览量：64</span>
+				</p>
+				<p style="padding-bottom: 10px;">
+					工作地域：江苏省　　
+					职位类别：其他人员　　
+					学历要求：本科　　
+					招聘人数： 186人				</p>
+				<!-- songshijie 2025-09-28 -->
+				<p>
+											实习期工资待遇： 10000以上元　　
+						转正后工资待遇： 10000元以上									</p>
+			</div>
+						<div class="stitle">专业要求：</div>
+			<div class="content">会计、审计、政治学、马克思主义理论、哲学、汉语言、人力资源等相关专业（本科应取得工学或理学学位）；<br />能源与动力工程、电气工程及其自动化、新能源科学与工程、风能与动力工程等相关专业；<br />金融学、金融工程、保险学、投资学、金融数学、统计学等相关专业；<br />软件工程、计算机科学与技术、智能科学与技术、人工智能、数据科学与大数据技术等相关专业；<br />人力资源管理、劳动与社会保障等相关专业；</div>
+						<div class="stitle">职位描述：</div>
+			<div class="content">
+                        <p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-autospace:ideograph-numeric;text-align:center;line-height:47px"><span><span>江苏省国信集团</span>202</span><span><span>6</span></span><span><span>年</span></span><span>秋季</span><span><span>集中招聘公告</span></span></p><p style=";text-indent: 43px;line-height: 43px"><span>&nbsp;</span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>江苏省国信集团有限公司成立于</span>2001<span>年</span><span>8</span><span>月，是江苏省属大型国有独资企业集团</span></span><span>、省级</span><span><span>国有资本投资运营公司</span></span><span>，</span><span><span>承担综合能源保供、金融服务实体经济、支持战略性新兴产业发展等职责，拥有江苏国信（</span>SZ.002608<span>）、江苏新能（</span><span>SH.603693</span><span>）</span></span><span><span>2</span></span><span><span>家上市公司。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>省国信集团围绕增强核心功能、提高核心竞争力，积极发挥科技创新、产业控制和安全支撑</span><span>“</span><span>三个作用</span><span>”</span><span>，</span></span><span>发展</span><span><span>形成了能源、金融、战略性新兴产业投资三大主业</span></span><span>。</span><span><span>在能源业务方面，坚持发挥全省能源供应主力军作用，建立了</span><span>“</span><span>风、光、水、火、气、储</span><span>”</span><span>多能互补综合能源体系，已投产控股装机容量约</span><span>2</span></span><span><span>535</span></span><span><span>万千瓦，参股权益装机容量约</span>11</span><span><span>7</span></span><span>0<span>万千瓦，已核准和在建控股装机容量约</span></span><span><span>4</span></span><span>70<span>万千瓦；投运天然气管道</span></span><span><span>约</span><span>670</span></span><span><span>公里。在金融业务方面，省国信集团拥有信托公司、财务公司、期货公司、保险经纪公司、担保公司等金融机构，受托管理利安人寿，其中信托公司综合实力排名省内第一、位居行业前列</span></span><span>。积极</span><span><span>服务金融强省战略，参与发起组建了江苏银行、华泰证券、紫金保险等省级地方金融机构，均为第一大股东。在战略性新兴产业投资方面，省国信集团积极承担省委、省政府安排的重大战略出资任务，主动开展能源相关战略性新兴产业投资，更好服务江苏构建现代化产业体系。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>一、招聘对象</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>36</span></span><span><span>家用人单位面向高校毕业生、社会工作人员招聘</span></span><span><span>219</span></span><span><span>人</span></span><span>。</span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（一）校园招聘</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>校园招聘</span></span><span><span>186</span></span><span><span>人，面向</span>202</span><span><span>7</span></span><span><span>届毕业生、</span>202</span><span><span>6</span></span><span><span>届未就业毕业生。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>其中</span></span><span>，</span><span><span>面向</span>202</span><span><span>7</span></span><span><span>届名校优生，招聘能源电力方向、金融方向、人工智能方向</span></span><span>、综合方向</span><span><span>管培生</span>1</span><span><span>6</span></span><span><span>人。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（二）社会招聘</span></span></p><p style="text-indent:43px;text-autospace:ideograph-numeric;line-height:40px"><span><span>社会招聘</span><span>33</span><span>人，面向社会工作人员。参加社会招聘的人员应具备应聘岗位所要求的相关工作经验。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>二、应聘要求</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>1.<span>遵守法律法规，具有良好的思想品德和道德素质，无刑事犯罪记录；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>2.<span>校园招聘大学本科生一般为</span></span><span><span>2001</span></span><span><span>年</span>9<span>月</span><span>1</span><span>日以后出生，硕士研究生一般为</span><span>199</span></span><span><span>8</span></span><span><span>年</span>9<span>月</span><span>1</span><span>日以后出生，博士研究生一般为</span><span>199</span></span><span><span>5</span></span><span><span>年</span>9<span>月</span><span>1</span><span>日以后出生</span></span><span><span>；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>3.<span>国内毕业生应在</span><span>202</span></span><span><span>7</span></span><span><span>年</span>9<span>月底前取得相应学位学历证书（博士毕业生应在</span><span>202</span></span><span><span>7</span></span><span><span>年</span>12<span>月底前取得学位学历证书），国</span></span><span>（境）外</span><span><span>院校毕业生应在</span>202</span><span><span>6</span></span><span><span>年</span></span><span><span>7</span></span><span><span>月</span></span><span><span>1</span><span>日</span></span><span><span>至</span>202</span><span><span>7</span></span><span><span>年</span></span><span><span>8</span></span><span><span>月</span></span><span><span>31</span><span>日</span></span><span><span>期间</span></span><span>毕业并</span><span><span>取得</span></span><span>教育部</span><span><span>留学服务中心出具的学历</span></span><span>学位</span><span><span>认证书；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>4.<span>具有正常履职的身体条件（体检以国家《公务员录用体检通用标准（试行）》为基本标准）；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>5.<span>有下列情形之一的人员，不得参加本次招聘</span></span><span><span>：</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（</span>1<span>）受过刑事处罚、行政拘留的，因涉嫌违纪违法正在接受组织审查的；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（</span>2<span>）受过学校或原单位党纪处分、政务处分、组织处理未满规定时限或处分尚未解除的；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（</span>3<span>）被依法列为失信联合惩戒对象的；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（</span>4<span>）被原单位开除职务或与原单位有劳动纠纷的；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（</span>5<span>）其他不符合要求，影响入职的情形。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>6.</span><span><span>按照</span></span><span>集团</span><span><span>有关回避要求需要回避的，不得报考相应岗位</span></span><span><span>；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>7.<span>各岗位具体要求详见报名页面</span></span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>三、招聘流程及有关说明</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（一）网络报名</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:43px"><span>1.<span>报名方式</span></span><span><span>：</span></span></p><p style="text-align:center"><img src="/Upload/image/20261029/1793281925770259.png" title="1793281925770259.png" alt="国信集团网申二维码.png" width="165" height="158" style="width: 165px; height: 158px;"/></p><p style="text-align: center;"><span>网申二维码</span></p><p><br/></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>2.<span>应聘人员只能选择一个岗位报名；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>3.<span>报名期限：公告发布之日起至</span><span>202</span></span><span><span>6</span></span><span><span>年</span></span><span><span>11</span></span><span><span>月</span></span><span><span>15</span></span><span><span>日</span>18</span><span><span>时</span></span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（二）资格审核</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>报名结束后，用人单位根据应聘基本要求和岗位资格条件进行资格审查，并</span></span><span><span>按照</span></span><span><span>择优原则，确定参加笔试或面试人员</span></span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（三）笔试、面试</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>均</span><span><span>采用线下方式，时间地点另行通知</span></span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>（四）其他说明事项</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>1.</span><span><span>社招岗位</span></span><span><span>招聘条件所涉及的年龄、工作年限等计算</span></span><span><span>截止日期为</span></span><span>202</span><span><span>6</span></span><span><span>年</span></span><span><span>10</span></span><span><span>月</span></span><span><span>26</span></span><span><span>日</span></span><span><span>（</span></span><span><span>本公告发布日期</span></span><span><span>）</span></span><span><span>；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>2.</span><span><span>用人单位将通过短信、电话</span></span><span>、</span><span>邮件</span><span><span>等方式通知进入下一环节的应聘人员，请应聘</span></span><span><span>人员</span></span><span><span>保持通讯畅通。对未能进入下一环节的应聘人员，不再发送通知；</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>3.</span><span><span>应聘人员对个人填报信息的真实性</span></span><span><span>、</span></span><span><span>准确性</span></span><span><span>和完整性负责</span></span><span><span>。</span></span><span><span>伪造、</span></span><span><span>变造有关</span></span><span><span>证件</span></span><span><span>、</span></span><span><span>材料，</span></span><span><span>或在考试、体检过程中作弊，或违反有关招聘制度规定的，</span></span><span><span>一经查实，将取消应聘资格</span></span><span><span>；</span></span><span><span>已招聘入职的，用人单位有权解除劳动合同，且无需承担任何责任</span></span><span>；</span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>4.</span></span><span><span>本次招聘不指定考试辅导用书，不举办也不委托任何机构开展考试辅导培训</span></span><span>，</span><span>未向任何机构提供考试相关信息资料</span><span><span>。</span></span><span>在招聘过程中，不向应聘者收取任何费用。</span><span><span>请提高警惕，谨防诈骗。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>四、联系方式</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>各</span></span><span><span>用人</span></span><span><span>单位联系方式详见报名页面中单位介绍。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>报名技术支持：</span>020-35540437</span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>招聘投诉电话：</span><span><span>025-84736319</span><span>，</span><span>025-84784737</span></span><span><span>。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span><span>本公告未尽事宜，由江苏省国信集团有限公司人力资源部负责解释。</span></span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>&nbsp;</span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>&nbsp;</span></p><p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;text-indent:43px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:40px"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;202</span><span><span>6</span></span><span><span>年</span></span><span><span>10</span></span><span><span>月</span></span><span><span>26</span></span><span><span>日</span></span></p><p><br/></p>            </div>
+		</div>
+				<a class="tou_jianli" onclick="return Toudi(82141);">投递简历</a>
+			</div>
+</div>
+</div>
+</div>
+<div class="blackbg"></div>
+<div class="t_log_box">
+     <a class="tc_close"></a>
+	 <form action="/correcruit/jianli.html" method="post">
+	 <input type="hidden" name="zwid" value="82141" />
+	 <input type="hidden" name="scid" value="" />
+	 <div class="js_sid">
+	 </div>
+	 <div class="js_jianli">
+	 </div>
+	 <input type="submit" class="jianlibtn" value="投递简历" />
+	 </form>
+</div>
+<script type="text/javascript">
+function Toudi(id){
+	    $.ajax({
+		url:"https://career.hebut.edu.cn/System/Student/toudijianli/toudi_id/"+id+".html",
+		type:"get",
+		dataType:"json",
+		success:function(data){
+			if(data.state==1){
+				var sid='<input type="hidden" name="sid" value="'+data.sid+'" /><input type="hidden" name="type" value="'+data.type+'" />';
+				jQuery('.js_sid').append(sid);
+			    var jianli=data.jianli;
+			    var html = '';
+			    for(var i=0;i<jianli.length;i++){
+				   var html =html + '<label><input type="radio" name="jianli" value="'+jianli[i].jid+'" />&nbsp;&nbsp;'+jianli[i].jname+'</label>';
+			    }
+			    jQuery('.js_jianli').append(html);
+			    $('.blackbg').css('display','block');
+			    $('.t_log_box').css('display','block');
+			    var wSreenHeight=$(window).height();
+				var wSreenWidth=$(window).width();
+				var lHeight=$(".t_log_box").height() + 60;
+				var lWidth=$(".t_log_box").width();
+				var top=(wSreenHeight-lHeight)/2;
+				var left=(wSreenWidth-lWidth)/2;
+				$(".t_log_box").css({"top":top,"left":left});
+			}else if(data.state==2){
+			    alert('您还没有上传简历，请前往就业管理系统上传简历！');
+			}else if(data.state==3){
+				if(confirm('您还没有登录就业管理系统，请前往就业管理系统登录！')){
+					window.open("https://career.hebut.edu.cn/System");
+				}else{
+					return false;
+				}
+			}
+		},
+		error : function() {
+            alert('fail');
+        }
+	});
+	}
+$(".tc_close").bind("click",function(){
+	$('.js_jianli').html('');
+	$('.js_sid').html('');
+	$('.blackbg').css('display','none');
+	$('.t_log_box').css('display','none');
+})
+
+</script>
+<div class='footer' >
+    <div class='footerin'>
+	   <img src='/Public/webimages/top.png' id ='totop' >
+	   <ul class='ful'>
+	       <li>办公时间（节假日除外）</li>
+		   <li>上午：8:30-12:00 </li>
+		   <li>下午：13:30-17:30</li>
+	   </ul>
+	   <ul class='sul'>
+	       <li>联系地址</li>
+		   <li>天津市北辰区西平道 5340 号 大学生活动中心302</li>
+		   <li></li>
+	   </ul>
+	   <ul class='tul'>
+	       <li>河北工业大学就业指导中心</li>
+		   <li>版权所有</li>
+           <li>技术支持：鲸准科技</li>
+	   </ul>
+       <div class='erweima'>
+		   <p><img src='/Uploads/2018-11-13/5bea24d069200.jpg' width="72" ><span>服务号</span></p>	       <p style='margin-right:12px;'><img src='/Uploads/2018-11-12/5be943511ee7f.jpg' width="72"><span>订阅号</span></p>       </div>	   
+    </div>
+</div>
+
+<script>
+    $(function(){
+		$('#totop').click(function(){
+			$("html,body").stop().animate({scrollTop: 0});
+		});
+	});
+</script>
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6ed2cde7527b101e03a1a653a8526a36";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+</body>
+</html>

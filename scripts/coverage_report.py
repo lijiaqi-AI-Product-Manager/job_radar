@@ -36,6 +36,9 @@ def load_industry_aliases(path: Path = ROOT / "targets" / "industry_targets.yaml
 
 CAREERS_PATH = ROOT / "work" / "careers_confirmed.jsonl"
 
+# 聚合口径适配器：岗位由第三方站点/学校代发，非公司官方直发（grade C）。
+AGGREGATOR_ADAPTERS = frozenset({"shixiseng", "campus"})
+
 # 「没覆盖」的原因分类：只按我们记录过的招聘入口 URL 归类，没记录过的一律 unknown。
 REASON_PATTERNS = (
     ("moka", ("mokahr.com",)),
@@ -201,7 +204,7 @@ def main() -> int:
     targets = load_targets()
     sources = load_sources(ROOT / "sources")
     companies = {s.company for s in sources}
-    aggregator = {s.company for s in sources if s.adapter == "shixiseng"}
+    aggregator = {s.company for s in sources if s.adapter in AGGREGATOR_ADAPTERS}
     jobs = None
     if args.db:
         conn = sqlite3.connect(args.db)
