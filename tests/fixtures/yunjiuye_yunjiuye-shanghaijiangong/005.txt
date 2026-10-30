@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="Keywords" content="合工大智慧社区 云就业 高校 大学 大学生 就业 就业网 就业信息网 就业指导 就业指导中心 就业中心 创业 创业指导"/>
+<meta name="Description" content="合工大智慧社区 云就业 高校 大学 大学生 就业 就业网 就业信息网 就业指导 就业指导中心 就业中心 创业 创业指导"/>
+<link href="//o.bysjy.com.cn/website/blue/public/css/global.css" rel="stylesheet">
+<link href="//o.bysjy.com.cn/website/blue/public/css/layout.css" rel="stylesheet">
+<link href="//o.bysjy.com.cn/website/blue/public/css/common.css" rel="stylesheet">
+<link rel="stylesheet" href="https://o.bysjy.com.cn/public/website/public/css/base/base.css">
+<link rel="icon" href="/favicon.ico?1" type="image/x-icon"/>
+<style type="text/css">
+            html{min-width:1200px;}
+    /* 提高二级菜单层级 */
+    .main-nav .son-nav{
+      z-index: 99;
+    }
+</style>
+    <meta name="Keywords" content="职能管理岗-2026 上海建工二建集团有限公司"/>
+    <title>职位详情</title>
+    <!-- element 样式 -->
+    <link rel="stylesheet" href="//ss.bysjy.com.cn/static/element-ui/index.css">
+    <link rel="stylesheet" href="/public/huabi/font.css" />
+    <link rel="stylesheet" href="https://o.bysjy.com.cn/public/website/public/fonts/detail/iconfont.css?v=2026102001" />
+    <link rel="stylesheet" href="/css/details/shield.css">
+    <link rel="stylesheet" href="https://o.bysjy.com.cn/public/static/sharejs/css/share.min.css">
+    <link rel="stylesheet" href="https://o.bysjy.com.cn/public/website/public/css/share.min.css?v=2025120304">
+    <style>
+        [v-cloak] { display: none; }
+        :root {
+            /* 主题色（由后端注入 PAGE_THEME.colors，前端 JS applyTheme 直接设置本组变量；此处为默认兜底） */
+            --primary: #246bfd;
+            --primary-light: #edf3ff;
+            --primary-soft: #f0f6ff;
+            --primary-softer: #e8f1ff;
+            --primary-font: #fff;
+            /* 卡片蒙层：主题色从左往右渐变（JS applyTheme 动态覆盖；此处为默认兜底） */
+            --primary-overlay: linear-gradient(90deg, rgba(36, 107, 253, 1), rgba(36, 107, 253, 0.3));
+        }
+        .job-detail {
+            background: #f5f7fa;
+            min-height: 680px;
+            padding: 0 0 50px;
+            /* skin 的 bottom.html 会给 .container 加 flex:auto 撑满高度把 footer 顶到底部；本页根节点不是 .container，补等价 flex 避免大屏/缩放时底部留白 */
+            flex: 1 1 auto;
+        }
+        .job-detail-wrap {
+            width: 1200px;
+            max-width: calc(100% - 40px);
+            margin: 0 auto;
+        }
+        .job-detail-breadcrumb {
+            padding: 20px 0 16px;
+            color: #8c96a8;
+            font-size: 14px;
+        }
+        .job-detail-breadcrumb a { color: #5d6b82; }
+        .job-detail-breadcrumb .sep { margin: 0 8px; color: #c0c7d1; }
+        .job-warning {
+            margin: 0 0 16px;
+            padding: 12px 16px;
+            color: #e5484d;
+            line-height: 1.7;
+            background: #fff;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .job-warning .icon-xiaoxi-lingdang {
+            margin-right: 6px;
+            color: #e5484d;
+            font-size: 15px;
+            vertical-align: -1px;
+        }
+        .job-warning .job-warning-report {
+            margin-left: 12px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .job-detail-layout {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+        .job-detail-main {
+            flex: 1;
+            min-width: 0;
+        }
+        .job-detail-side {
+            width: 280px;
+            flex: 0 0 280px;
+        }
+        /* 卡片基础结构 */
+        .job-detail-card {
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(30, 55, 90, 0.06);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            background-color: #fff;
+        }
+        .job-detail-card > * { position: relative; }
+        /* 顶部信息卡：底层 bg7.png 背景图（职位专用，笔记本+简历插画）+ 主题色渐变蒙层 + 顶层内容 */
+        .job-detail-card.job-hero {
+            background: #fff url('https://o.bysjy.com.cn/public/website/public/images/detail/bg7.png') no-repeat center / cover;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 32px 28px 24px;
+        }
+        .job-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary-overlay);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .job-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        .job-hero-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .job-hero-main { flex: 1; min-width: 0; }
+        .job-hero-title {
+            margin: 0 0 12px;
+            color: var(--primary-font);
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .job-hero-company {
+            margin: 0;
+            color: var(--primary-font);
+            font-size: 15px;
+            opacity: 0.95;
+            word-break: break-all;
+        }
+        .job-hero-side { flex: 0 0 auto; text-align: right; }
+        .job-hero-salary {
+            color: #F7BA2A;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .job-hero-salary .salary-unit {
+            color: var(--primary-font);
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 2px;
+        }
+        .job-hero-cond {
+            margin-top: 10px;
+            color: var(--primary-font);
+            font-size: 14px;
+        }
+        .job-hero-cond span + span::before {
+            content: '|';
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+        /* 信息卡底部：统计项在左，操作按钮在右；顶部横线分隔（原型口径） */
+        .job-hero-bottom {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .job-hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 0;
+        }
+        /* 统计块之间的竖分隔线（原型口径）：块间用左右 padding 撑开，换行后行首块自然带线可接受 */
+        .job-hero-stat { padding-right: 36px; }
+        .job-hero-stat + .job-hero-stat {
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            padding-left: 36px;
+        }
+        .job-hero-stat-label {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+        .job-hero-stat-label .iconfontal {
+            margin-right: 6px;
+            font-size: 16px;
+        }
+        .job-hero-stat-value {
+            /* 缩进与 label 文本对齐：图标 16px + 间距 6px（改图标字号/间距需同步） */
+            padding-left: 22px;
+            margin-top: 6px;
+            color: var(--primary-font);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+            max-width: 300px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .job-hero-btns {
+            flex: 0 0 auto;
+            display: flex;
+            gap: 14px;
+            padding-bottom: 2px;
+        }
+        .job-hero-btns .el-button {
+            margin-left: 0 !important;
+         }
+         .job-hero-btns .el-button:focus, .job-hero-btns .el-button:hover {
+            color: #606266;
+            background: #fff;
+         }
+        .job-hero-btns .job-ai-btn {
+            background-color: #ff9900;
+            color: #fff;
+            border: 0;
+        }
+        .job-hero-btns .job-ai-btn:hover {
+            opacity: 0.8;
+            color: #fff;
+            background: #ff9900;
+        }
+        .job-ai-btn .job-ai-img {
+            width: 20px;
+            height: 12px;
+            margin-right: 4px;
+        }
+        /* 模拟面试（AI面试）二维码弹层：样式还原 uat2 版本 */
+        .popover {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            height: 500px;
+            width: 500px;
+        }
+        .popover::after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            width: 10px;
+            height: 10px;
+        }
+        .Qrcode-url{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 230px;
+            left: 275px;
+            width: 170px;
+            height: 170px;
+        }
+        .Qrcode-text{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background: url('https://o.bysjy.com.cn/yxqqnn2200000006/mates/202412/yxz675abda97b4c2.png') no-repeat;
+        }
+        .job-deliver-btn {
+            background: #fff;
+            color: var(--primary);
+            border-color: #fff;
+        }
+        .job-deliver-btn:hover,
+        .job-deliver-btn:focus {
+            background: #fff;
+            color: var(--primary);
+            border-color: #fff;
+            opacity: 0.9;
+        }
+        /* 老版已投递态保留：置灰不可点 */
+        .job-deliver-btn.is-applied,
+        .job-deliver-btn.is-applied.is-disabled,
+        .job-deliver-btn.is-applied:hover,
+        .job-deliver-btn.is-applied:focus {
+            background: #ececec !important;
+            border-color: #e7e6eb !important;
+            color: #666 !important;
+            opacity: 1;
+        }
+        /* 内容卡片标题：左侧主题色竖条 */
+        .job-detail-title {
+            display: flex;
+            align-items: center;
+            margin: 0 0 16px;
+            color: #172b4d;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .job-detail-title::before {
+            content: '';
+            flex: 0 0 auto;
+            width: 4px;
+            height: 18px;
+            border-radius: 2px;
+            background: var(--primary);
+            margin-right: 8px;
+        }
+        /* 同卡片内第二分区标题（单位简介）与上一分区的间距 */
+        .job-detail-title.job-detail-title-gap { margin-top: 28px; }
+        /* 薪酬福利 / 职位诱惑标签（keywords 经用户确认并入同一标签行） */
+        .job-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .job-tag-list .job-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--primary);
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary-softer);
+        }
+        /* 职位描述 / 单位简介富文本 */
+        .job-desc { color: #3a4557; font-size: 14px; }
+        /* 需求专业（职位描述上方，标题同款样式，随原文分隔符展示） */
+        .job-major-text { margin: 0 0 16px; color: #3a4557; font-size: 14px; line-height: 1.8; }
+        .job-desc-block { margin: 0 0 16px; }
+        .job-desc-block:last-child { margin-bottom: 0; }
+        .job-desc-label {
+            margin: 0 0 4px;
+            color: #172b4d;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .job-desc-text {
+            color: #3a4557;
+            font-size: 14px;
+            line-height: 1.8;
+            word-break: break-word;
+        }
+        .job-desc-text img { max-width: 100%; }
+        .job-desc-empty {
+            padding: 30px 0;
+            color: #8c96a8;
+            text-align: center;
+        }
+        /* 侧栏标题 */
+        .job-side-title {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #172b4d;
+            border-bottom: 1px solid #eee;
+            padding: 10px 20px;
+            margin: 0;
+        }
+        .job-detail-card > .job-side-title {
+            margin: -20px -24px 14px;
+        }
+        .job-side-title .iconfontal {
+            color: var(--primary);
+            margin-right: 6px;
+            font-size: 20px;
+        }
+        .job-side-title .side-title-icon { color: var(--primary); margin-right: 6px; font-size: 18px; }
+        /* 企业信息卡（参照 online.html） */
+        .job-company-head { display: flex; align-items: center; gap: 12px; }
+        .job-company-logo {
+            flex: 0 0 auto;
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            border: 1px solid #eef1f6;
+            background: #fff;
+            object-fit: contain;
+            padding: 2px;
+            box-sizing: border-box;
+        }
+        .job-company-meta { flex: 1; min-width: 0; }
+        .job-company-name {
+            margin: 0;
+            color: #172b4d;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .job-company-tags { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; }
+        .job-company-tags .ci-tag {
+            display: inline-flex;
+            align-items: center;
+            height: 24px;
+            max-width: 120px;
+            padding: 6px 12px;
+            border-radius: 12px;
+            background-color: #C6DBFB;
+            color: #10347B;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: default;
+        }
+        /* 企业信息字段：与 detail/career.html 的 .career-company-info 完全一致 */
+        .job-company-info { margin-top: 12px; color: #6b778c; font-size: 13px; line-height: 1.6; text-align: left; }
+        .job-company-info p { margin: 0; display: flex; }
+        .job-company-info b { flex: 0 0 auto; color: #344563; font-weight: 600; margin-right: 6px; }
+        .job-company-info .val { flex: 1; min-width: 0; word-break: break-all; }
+        .job-company-btn {
+            display: block;
+            margin-top: 16px;
+            height: 36px;
+            line-height: 34px;
+            text-align: center;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 18px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .job-company-btn:hover { background: var(--primary-light); }
+        .job-side-empty { padding: 24px 0 8px; color: #8c96a8; text-align: center; font-size: 13px; }
+        /* 企信等级卡（参照 online.html / career.html 的 qxdj：bg1 背景 + 左圆形进度条右文字 + 四项指标图块；
+           等级规则原样保留：投诉≥1 显示 D，三项全 A 变绿） */
+        .job-detail-card.qxdj { padding: 20px 0 0; }
+        .job-credit { text-align: center; }
+        .credit-qxdj {
+            positio

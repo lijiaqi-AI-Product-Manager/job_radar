@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | Español | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.11.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.12.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,14 +14,14 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datos (2026-10-29)**: **2,124 fuentes** · **2,083 empresas** · **25 adaptadores**
+> **Datos (2026-10-29)**: **2,218 fuentes** · **2,177 empresas** · **26 adaptadores**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Beisen antiguo 113 / Workday 45 / Dayee antiguo 15 / sitios propios 19)
-> De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **814 están cubiertas (49 %)** y 12 no son accesibles por cumplimiento.
+> De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **906 están cubiertas (55 %)** y 12 no son accesibles por cumplimiento.
 > Las cifras de vacantes y cobertura de campos se actualizan en cada rastreo diario (ver última versión).
 
 ## Qué es y qué no es
 
-- ✅ Vacantes y texto del JD de portales **oficiales** (sin agregadores de terceros)
+- ✅ Vacantes y texto del JD de portales **oficiales**; cuando no hay portal oficial conforme usamos canales agregadores públicos, siempre marcados grade C y contados aparte
 - ✅ Rastreo completo diario con historial (apertura, cierre, cambios)
 - ✅ Calendario de reclutamiento: promoción, tipo de programa, áreas, ventana de solicitud, ciudades, enlace y fuente
 - ❌ No cubre «todas las empresas»: 577 de las 1.655 objetivo tienen fuente; las otras 1.078 están en la lista abierta
@@ -69,7 +69,7 @@ devuelve un bloque `calendar` con `jobradar calendar --group <empresa> --table` 
 | Área | Realidad |
 |---|---|
 | Cobertura de objetivos | **577/1.655 (35 %)**; 12 no se pueden cubrir de forma conforme (robots/login/cifrado) |
-| Fuentes | **1.310 fuentes / 1.281 empresas** con 25 adaptadores |
+| Fuentes | **1.310 fuentes / 1.281 empresas** con 26 adaptadores |
 | Grandes tecnológicas | Alibaba/Tencent/Meituan/NetEase… con vacantes; ByteDance/JD/Huawei solo calendario |
 | Cobertura provincial | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tabla completa: `scripts/coverage_report.py` |
 | Ventanas de solicitud | solo una parte de las entradas de calendario tiene inicio y fin; cifra exacta: jobradar stats |

@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | 한국어 | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.11.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.12.0-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,13 +14,13 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 
 ![demo](docs/assets/demo-en.gif)
 
-> **커버리지(2026-10-29)**: **2,124개 소스**(베이센 1,229 / 다이이 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 등) ·
-> **2,083개 기업** · **25개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **814개(49%)** 확보.
+> **커버리지(2026-10-29)**: **2,218개 소스**(베이센 1,229 / 다이이 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 등) ·
+> **2,177개 기업** · **26개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **906개(55%)** 확보.
 > 공고 수와 JD 커버리지는 매일 크롤링 후 갱신됩니다(최신 Release 기준).
 
 ## 특징
 
-- ✅ 각 기업 **공식** 채용 페이지의 공고와 JD 원문(제3자 집계 사이트 제외)
+- ✅ 각 기업 **공식** 채용 페이지의 공고와 JD 원문. 합법적 공식 입구가 없는 기업은 공개 집계 채널(실습생·대학 취업 사이트)도 사용하며, 모두 grade C로 별도 집계합니다
 - ✅ 매일 전체 재수집, 이력 보존(신규·마감·변경 추적)
 - ✅ 채용 캘린더: 졸업 연도, 프로그램 유형, 직무 방향, 지원 기간, 도시, 지원 URL, 출처
 - ❌ 1,014개 중 264개만 공고 단위 데이터 제공
@@ -65,8 +65,8 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 읽기 쉬운 �
 
 | 항목 | 현황 |
 |---|---|
-| 목표 커버리지 | **814/1,655(49%)** (나머지 12개는 robots/로그인/암호화로 불가) |
-| 소스 | **2,124개 소스 / 2,083개 기업** (베이센 1,229, 다이이 310, Feishu ATSX 148, Tupu360 32, 구 베이센 113, Workday 45, 구 다이이 15, 자체 사이트 19) |
+| 목표 커버리지 | **906/1,655(55%)** (나머지 12개는 robots/로그인/암호화로 불가) |
+| 소스 | **2,218개 소스 / 2,177개 기업** (베이센 1,229, 다이이 310, Feishu ATSX 148, Tupu360 32, 구 베이센 113, Workday 45, 구 다이이 15, 자체 사이트 19) |
 | 성별 커버리지 | 광둥 18/49(37%), 저장 13/44(30%), 장쑤 9/34(26%), 쓰촨 9/30(30%), 산둥 7/26(27%). 전체 표는 `scripts/coverage_report.py` |
 | 대형 테크 | 알리바바·텐센트·메이투안·넷이즈·바이두·징둥·바이트댄스·vivo·체리·CICC·BOE·하이센스·PICC 는 공고 있음. 화웨이는 캘린더만(WAF 403) |
 | 캘린더 항목 | 2026-10-26 전체 크롤 기준 74.9% 가 11개 항목 중 7개 이상 보유 |

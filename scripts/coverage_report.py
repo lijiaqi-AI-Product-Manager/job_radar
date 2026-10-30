@@ -37,7 +37,7 @@ def load_industry_aliases(path: Path = ROOT / "targets" / "industry_targets.yaml
 CAREERS_PATH = ROOT / "work" / "careers_confirmed.jsonl"
 
 # 聚合口径适配器：岗位由第三方站点/学校代发，非公司官方直发（grade C）。
-AGGREGATOR_ADAPTERS = frozenset({"shixiseng", "campus"})
+AGGREGATOR_ADAPTERS = frozenset({"shixiseng", "campus", "yunjiuye"})
 
 # 「没覆盖」的原因分类：只按我们记录过的招聘入口 URL 归类，没记录过的一律 unknown。
 REASON_PATTERNS = (

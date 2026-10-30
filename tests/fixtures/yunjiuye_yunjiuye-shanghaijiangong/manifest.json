@@ -1,0 +1,50 @@
+[
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/module/getjobs?start=1&count=100&k=%E4%B8%8A%E6%B5%B7%E5%BB%BA%E5%B7%A5",
+    "body": "",
+    "status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "file": "001.json"
+  },
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/detail/job?id=2107447",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "002.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/detail/job?id=2624174",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "003.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/detail/job?id=2125200",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "004.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/detail/job?id=2107467",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "005.txt"
+  },
+  {
+    "method": "GET",
+    "url": "https://hfgydx.bysjy.com.cn/detail/job?id=2107457",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "file": "006.txt"
+  }
+]
