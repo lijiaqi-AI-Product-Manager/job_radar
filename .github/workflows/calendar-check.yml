@@ -2,6 +2,7 @@ name: calendar-check
 # 用最新发布的岗位数据 + 分支上的人工条目构建招聘日历，探活全部链接，打印覆盖率与异常链接（不发布）。
 on:
   push:
+    branches: [main]
     paths:
       - calendar/**
       - taxonomy/calendar.yaml

@@ -3,6 +3,7 @@ name: record-fixtures
 # 触发：推送修改了 docs/recon/record.txt 的提交（每行一个 source id），或手动触发。
 on:
   push:
+    branches: [main]
     paths:
       - docs/recon/record.txt
   workflow_dispatch:

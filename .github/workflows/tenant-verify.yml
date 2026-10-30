@@ -2,6 +2,7 @@ name: tenant-verify
 # 批量验证招聘平台租户（目前：北森 zhiye.com）。推送修改了租户清单的提交即触发；结果看日志中的 VERIFY 行。
 on:
   push:
+    branches: [main]
     paths:
       - docs/recon/beisen_tenants.txt
   workflow_dispatch:

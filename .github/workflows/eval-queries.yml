@@ -2,6 +2,7 @@ name: eval-queries
 # 用最新发布的数据执行 evals/commands.txt 中的查询（每行一条 jobradar 子命令），输出打印到日志供评测判分。
 on:
   push:
+    branches: [main]
     paths:
       - evals/commands.txt
   workflow_dispatch:

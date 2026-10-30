@@ -2,6 +2,7 @@ name: diag
 # 一次性诊断：docs/recon/diag.txt 每行一个 scripts/ 下的脚本及参数（# 开头为注释），在真实网络下运行。
 on:
   push:
+    branches: [main]
     paths:
       - docs/recon/diag.txt
   workflow_dispatch:

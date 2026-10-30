@@ -3,6 +3,7 @@ name: recon-probe
 # 触发：推送修改了 probe.txt 的提交，或手动触发。
 on:
   push:
+    branches: [main]
     paths:
       - docs/recon/probe.txt
   workflow_dispatch:

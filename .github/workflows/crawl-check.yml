@@ -3,6 +3,7 @@ name: crawl-check
 # 触发：推送修改了 docs/recon/crawl-check.txt 的提交（文件内容即本次说明，可为任意文本）。
 on:
   push:
+    branches: [main]
     paths:
       - docs/recon/crawl-check.txt
   workflow_dispatch:
