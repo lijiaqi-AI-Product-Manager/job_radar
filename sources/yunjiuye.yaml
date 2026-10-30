@@ -20,37 +20,49 @@ defaults:
 sources:
   - id: yunjiuye-shanghaijiangong
     company: 上海建工
-    params: {host: hfgydx.bysjy.com.cn, match: ["上海建工一建集团有限公司", "上海建工一建集团有限公司成都分公司", "上海建工二建集团有限公司"]}  # 3 岗
+    params: {host: aftvc.bysjy.com.cn, match: ["上海建工二建集团有限公司"]}  # 8 岗
   - id: yunjiuye-shanghaiqiche
     company: 上海汽车
-    params: {host: hnyzzy.bysjy.com.cn, match: ["上海汽车集团股份有限公司乘用车分公司", "上海汽车集团股份有限公司乘用车福建分公司"]}  # 5 岗
+    params: {host: hnyzzy.bysjy.com.cn, match: ["上海汽车集团股份有限公司乘用车分公司", "上海汽车集团股份有限公司乘用车福建分公司"]}  # 6 岗
   - id: yunjiuye-dongfangdianqi
     company: 东方电气
     params: {host: hunangy.bysjy.com.cn, match: ["东方电气（广州）重型机器有限公司"]}  # 1 岗
   - id: yunjiuye-dongfangcaifu
     company: 东方财富
-    params: {host: xjxy.bysjy.com.cn, match: ["东方财富证券股份有限公司"]}  # 4 岗
+    params: {host: asc.bysjy.com.cn, match: ["东方财富证券股份有限公司南昌红谷中大道证券营业部"]}  # 8 岗
   - id: yunjiuye-zhongxinbaochengrenshou
     company: 中信保诚人寿
-    params: {host: sxftc.bysjy.com.cn, match: ["中信保诚人寿保险有限公司山西省分公司"]}  # 1 岗
+    params: {host: tute.bysjy.com.cn, match: ["中信保诚人寿保险有限公司天津分公司", "中信保诚人寿保险有限公司山西省分公司"]}  # 2 岗
+  - id: yunjiuye-zhongguotaibao
+    company: 中国太保
+    params: {host: mszy.bysjy.com.cn, match: ["太平洋保险在线服务科技有限公司四川分公司"]}  # 1 岗
   - id: yunjiuye-zhongguoanneng
     company: 中国安能
-    params: {host: sdjzu.bysjy.com.cn, match: ["中国安能集团第三工程局有限公司", "中国安能集团第二工程局有限公司"]}  # 4 岗
+    params: {host: hbgc.bysjy.com.cn, match: ["中国安能集团第三工程局有限公司#", "中国安能集团第二工程局有限公司"]}  # 14 岗
   - id: yunjiuye-zhongguoxitu
     company: 中国稀土
-    params: {host: hnu.bysjy.com.cn, match: ["中国稀土集团有限公司"]}  # 1 岗
+    params: {host: kmac.bysjy.com.cn, match: ["中国稀土集团有限公司"]}  # 6 岗
   - id: yunjiuye-zhongguochengtong
     company: 中国诚通
-    params: {host: sycsxy.bysjy.com.cn, match: ["中国诚通商品贸易有限公司"]}  # 1 岗
+    params: {host: sycsxy.bysjy.com.cn, match: ["中国诚通商品贸易有限公司"]}  # 2 岗
   - id: yunjiuye-zhongtaihuaxue
     company: 中泰化学
     params: {host: gsjdxy.bysjy.com.cn, match: ["新疆中泰化学托克逊能化有限公司"]}  # 11 岗
   - id: yunjiuye-zhongmeinengyuan
     company: 中煤能源
     params: {host: hnu.bysjy.com.cn, match: ["中国中煤能源股份有限公司"]}  # 3 岗
+  - id: yunjiuye-zhongshiyou
+    company: 中石油
+    params: {host: syuct.bysjy.com.cn, match: ["中石油吉林化工工程有限公司"]}  # 2 岗
+  - id: yunjiuye-zhongcexiangjiao
+    company: 中策橡胶
+    params: {host: tute.bysjy.com.cn, match: ["中策橡胶（天津）有限公司"]}  # 7 岗
   - id: yunjiuye-zhongnengjian
     company: 中能建
-    params: {host: gzjtzy.bysjy.com.cn, match: ["中能建建筑集团有限公司"]}  # 1 岗
+    params: {host: cczyy.bysjy.com.cn, match: ["中能建建筑集团有限公司"]}  # 10 岗
+  - id: yunjiuye-zhongchuanzhonggong
+    company: 中船重工
+    params: {host: sjzptzy.bysjy.com.cn, match: ["中船重工双威智能装备有限公司"]}  # 1 岗
   - id: yunjiuye-zhonggangjituan
     company: 中钢集团
     params: {host: qlu.bysjy.com.cn, match: ["中钢集团衡阳机械有限公司"]}  # 1 岗
@@ -68,13 +80,16 @@ sources:
     params: {host: hfgydxxc.bysjy.com.cn, match: ["芜湖伯特利汽车安全系统股份有限公司"]}  # 1 岗
   - id: yunjiuye-zuoyebang
     company: 作业帮
-    params: {host: tjtwy.bysjy.com.cn, match: ["作业帮教育科技（上海）有限公司"]}  # 3 岗
+    params: {host: gdatv.bysjy.com.cn, match: ["作业帮教育科技（上海）有限公司"]}  # 12 岗
   - id: yunjiuye-xiuzhengyaoye
     company: 修正药业
-    params: {host: sntcm.bysjy.com.cn, match: ["修正药业集团股份有限公司", "修正药业集团营销有限公司"]}  # 20 岗
+    params: {host: sntcm.bysjy.com.cn, match: ["修正药业集团股份有限公司", "修正药业集团营销有限公司"]}  # 26 岗
   - id: yunjiuye-jidongshuini
     company: 冀东水泥
-    params: {host: tsc.bysjy.com.cn, match: ["冀东水泥滦州有限责任公司", "冀东水泥重庆合川有限责任公司", "大同冀东水泥盾石工程有限责任公司"]}  # 7 岗
+    params: {host: tsc.bysjy.com.cn, match: ["冀东水泥滦州有限责任公司", "冀东水泥重庆合川有限责任公司", "大同冀东水泥盾石工程有限责任公司", "米脂冀东水泥有限公司"]}  # 10 岗
+  - id: yunjiuye-beifangxitu
+    company: 北方稀土
+    params: {host: neau.bysjy.com.cn, match: ["中国北方稀土（集团）高科技股份有限公司"]}  # 1 岗
   - id: yunjiuye-hualanshengwu
     company: 华兰生物
     params: {host: cqsxxy.bysjy.com.cn, match: ["华兰生物工程重庆有限公司"]}  # 4 岗
@@ -95,19 +110,22 @@ sources:
     params: {host: cczyy.bysjy.com.cn, match: ["吉林敖东集团力源制药股份有限公司"]}  # 2 岗
   - id: yunjiuye-zhoudasheng
     company: 周大生
-    params: {host: hbjmdx.bysjy.com.cn, match: ["周大生珠宝股份有限公司"]}  # 1 岗
+    params: {host: hbgc.bysjy.com.cn, match: ["周大生珠宝股份有限公司"]}  # 6 岗
   - id: yunjiuye-sichuanhangkong
     company: 四川航空
     params: {host: gzjcxy.bysjy.com.cn, match: ["四川航空股份有限公司"]}  # 3 岗
   - id: yunjiuye-guojianengyuanjituan
     company: 国家能源集团
-    params: {host: xbmu.bysjy.com.cn, match: ["国家能源集团新疆哈密能源化工有限公司"]}  # 2 岗
+    params: {host: arttj.bysjy.com.cn, match: ["国家能源集团华北电力有限公司廊坊热电厂", "国家能源集团新疆开都河流域水电开发有限公司"]}  # 35 岗
   - id: yunjiuye-guotaijunan
     company: 国泰君安
     params: {host: hbjmdx.bysjy.com.cn, match: ["国泰君安期货有限公司河北分公司"]}  # 1 岗
+  - id: yunjiuye-dalianchuanbo
+    company: 大连船舶
+    params: {host: lngczyxy.bysjy.com.cn, match: ["大连船舶重工集团有限公司"]}  # 2 岗
   - id: yunjiuye-tianjinyiqi
     company: 天津一汽
-    params: {host: tjbhzy.bysjy.com.cn, match: ["天津一汽丰田发动机有限公司", "天津一汽汽车零部件有限公司"]}  # 2 岗
+    params: {host: tjbhzy.bysjy.com.cn, match: ["天津一汽丰田发动机有限公司", "天津一汽汽车零部件有限公司"]}  # 3 岗
   - id: yunjiuye-tianjintongrentang
     company: 天津同仁堂
     params: {host: tsguas.bysjy.com.cn, match: ["天津同仁堂集团股份有限公司"]}  # 1 岗
@@ -122,19 +140,19 @@ sources:
     params: {host: hpu.bysjy.com.cn, match: ["宁夏红墩子煤业有限公司"]}  # 3 岗
   - id: yunjiuye-anyanggangtie
     company: 安阳钢铁
-    params: {host: dmu.bysjy.com.cn, match: ["安阳钢铁集团有限责任公司职工总医院"]}  # 1 岗
+    params: {host: tute.bysjy.com.cn, match: ["安阳钢铁建设有限责任公司", "安阳钢铁集团有限责任公司职工总医院"]}  # 3 岗
   - id: yunjiuye-baojie
     company: 宝洁
-    params: {host: tjtdxy.bysjy.com.cn, match: ["天津宝洁工业有限公司"]}  # 8 岗
+    params: {host: tjtdxy.bysjy.com.cn, match: ["天津宝洁工业有限公司"]}  # 17 岗
   - id: yunjiuye-shanhezhineng
     company: 山河智能
     params: {host: hunangy.bysjy.com.cn, match: ["山河智能装备股份有限公司"]}  # 5 岗
   - id: yunjiuye-guangzhoushukong
     company: 广州数控
-    params: {host: gldz.bysjy.com.cn, match: ["广州数控设备有限公司"]}  # 7 岗
+    params: {host: gldz.bysjy.com.cn, match: ["广州数控设备有限公司"]}  # 8 岗
   - id: yunjiuye-yanzhangshiyou
     company: 延长石油
-    params: {host: lzpuvt.bysjy.com.cn, match: ["陕西延长石油西北橡胶有限责任公司", "陕西延长石油金石钻采设备有限公司", "陕西延长石油（集团）有限责任公司"]}  # 11 岗
+    params: {host: lzpuvt.bysjy.com.cn, match: ["陕西延长石油西北橡胶有限责任公司", "陕西延长石油金石钻采设备有限公司", "陕西延长石油（集团）有限责任公司"]}  # 13 岗
   - id: yunjiuye-huishangyinxing
     company: 徽商银行
     params: {host: hbjmdx.bysjy.com.cn, match: ["徽商银行股份有限公司深圳分行"]}  # 3 岗
@@ -149,16 +167,16 @@ sources:
     params: {host: hbgc.bysjy.com.cn, match: ["敬业集团有限公司"]}  # 12 岗
   - id: yunjiuye-xinjiangjiaojian
     company: 新疆交建
-    params: {host: lxxdzy.bysjy.com.cn, match: ["新疆交建智能交通信息科技有限公司"]}  # 1 岗
+    params: {host: xjzfu.bysjy.com.cn, match: ["新疆交建规划勘察设计有限公司"]}  # 1 岗
   - id: yunjiuye-xinjiangzhonghe
     company: 新疆众和
     params: {host: xagydxyjs.bysjy.com.cn, match: ["新疆众和股份有限公司"]}  # 4 岗
   - id: yunjiuye-xinjiangyouse
     company: 新疆有色
-    params: {host: asc.bysjy.com.cn, match: ["新疆有色金属工业（集团）有限责任公司"]}  # 2 岗
+    params: {host: hnzyy.bysjy.com.cn, match: ["新疆有色金属工业（集团）有限责任公司"]}  # 8 岗
   - id: yunjiuye-shinaidedianqi
     company: 施耐德电气
-    params: {host: gzjdzy.bysjy.com.cn, match: ["施耐德电气制造（武汉）有限公司"]}  # 1 岗
+    params: {host: asc.bysjy.com.cn, match: ["施耐德电气制造（武汉）有限公司"]}  # 4 岗
   - id: yunjiuye-shidailinli
     company: 时代邻里
     params: {host: yvtc.bysjy.com.cn, match: ["广州市时代邻里科技服务有限公司长沙分公司"]}  # 9 岗
@@ -173,7 +191,7 @@ sources:
     params: {host: sntcm.bysjy.com.cn, match: ["桂林三金药业股份有限公司"]}  # 1 岗
   - id: yunjiuye-taolimianbao
     company: 桃李面包
-    params: {host: gdyzy.bysjy.com.cn, match: ["东莞桃李面包有限公司", "广西桃李面包有限公司", "沈阳桃李面包有限公司"]}  # 4 岗
+    params: {host: gdyzy.bysjy.com.cn, match: ["东莞桃李面包有限公司", "广西桃李面包有限公司", "沈阳桃李面包有限公司"]}  # 6 岗
   - id: yunjiuye-senma
     company: 森马
     params: {host: jqzy.bysjy.com.cn, match: ["森马（嘉兴）物流投资有限公司", "浙江森马服饰股份有限公司"]}  # 2 岗
@@ -182,40 +200,40 @@ sources:
     params: {host: aftvc.bysjy.com.cn, match: ["浙江森马服饰股份有限公司"]}  # 1 岗
   - id: yunjiuye-oupaijiaju
     company: 欧派家居
-    params: {host: xawgy.bysjy.com.cn, match: ["欧派家居集团股份有限公司"]}  # 5 岗
+    params: {host: gdatv.bysjy.com.cn, match: ["欧派家居集团股份有限公司"]}  # 12 岗
   - id: yunjiuye-zhengbangkeji
     company: 正邦科技
-    params: {host: qlu.bysjy.com.cn, match: ["云南正邦科技有限公司", "江西正邦科技股份有限公司"]}  # 3 岗
+    params: {host: trzyjs.bysjy.com.cn, match: ["云南正邦科技有限公司", "江西正邦科技股份有限公司"]}  # 8 岗
   - id: yunjiuye-bubugao
     company: 步步高
     params: {host: hbgc.bysjy.com.cn, match: ["河北步步高电子产品销售有限公司"]}  # 12 岗
   - id: yunjiuye-buzhangzhiyao
     company: 步长制药
-    params: {host: fjwx.bysjy.com.cn, match: ["陕西步长制药有限公司"]}  # 1 岗
+    params: {host: fjwx.bysjy.com.cn, match: ["陕西步长制药有限公司"]}  # 2 岗
   - id: yunjiuye-wuhanguanggu
     company: 武汉光谷
     params: {host: lnlgzydx.bysjy.com.cn, match: ["武汉光谷康桥高级中学有限公司", "武汉光谷联合集团有限公司锦州分公司"]}  # 4 岗
   - id: yunjiuye-shenyangyaoda
     company: 沈阳药大
-    params: {host: cczyy.bysjy.com.cn, match: ["沈阳药大雷允上药业有限责任公司"]}  # 3 岗
+    params: {host: dqsfxy.bysjy.com.cn, match: ["沈阳药大雷允上药业有限责任公司"]}  # 12 岗
   - id: yunjiuye-langchao
     company: 浪潮
-    params: {host: gsjdxy.bysjy.com.cn, match: ["济南浪潮科技发展有限公司", "浙江浪潮精密机械有限公司"]}  # 13 岗
+    params: {host: gsjdxy.bysjy.com.cn, match: ["济南浪潮科技发展有限公司", "浙江浪潮精密机械有限公司", "湖南新浪潮信息科技有限公司"]}  # 15 岗
   - id: yunjiuye-haisike
     company: 海思科
-    params: {host: hnucm.bysjy.com.cn, match: ["海思科医药集团股份有限公司"]}  # 1 岗
+    params: {host: ahyz.bysjy.com.cn, match: ["海思科医药集团股份有限公司"]}  # 3 岗
   - id: yunjiuye-wenshi
     company: 温氏
     params: {host: asc.bysjy.com.cn, match: ["温氏食品集团股份有限公司"]}  # 38 岗
   - id: yunjiuye-hubeiyinxing
     company: 湖北银行
-    params: {host: csxy.bysjy.com.cn, match: ["湖北银行股份有限公司"]}  # 2 岗
+    params: {host: csxy.bysjy.com.cn, match: ["湖北银行股份有限公司"]}  # 52 岗
   - id: yunjiuye-pianzaihuang
     company: 片仔癀
     params: {host: fjwx.bysjy.com.cn, match: ["厦门片仔癀宏仁医药有限公司"]}  # 1 岗
   - id: yunjiuye-liepin
     company: 猎聘
-    params: {host: sztu.bysjy.com.cn, match: ["深圳千里马国际猎聘科技集团有限公司", "西安鹰眼猎聘人力资源服务有限公司"]}  # 4 岗
+    params: {host: sztu.bysjy.com.cn, match: ["深圳千里马国际猎聘科技集团有限公司", "西安鹰眼猎聘人力资源服务有限公司"]}  # 6 岗
   - id: yunjiuye-yuanfudao
     company: 猿辅导
     params: {host: hbgc.bysjy.com.cn, match: ["北京猿辅导线上学科培训学校"]}  # 6 岗
@@ -230,10 +248,13 @@ sources:
     params: {host: xjxy.bysjy.com.cn, match: ["瑞浦兰钧能源股份有限公司"]}  # 4 岗
   - id: yunjiuye-shengyikeji
     company: 生益科技
-    params: {host: hfgydxxc.bysjy.com.cn, match: ["常熟生益科技有限公司", "苏州生益科技有限公司"]}  # 6 岗
+    params: {host: asc.bysjy.com.cn, match: ["江西生益科技有限公司"]}  # 4 岗
   - id: yunjiuye-yongyouwangluo
     company: 用友网络
-    params: {host: ycu.bysjy.com.cn, match: ["用友网络科技股份有限公司山西分公司"]}  # 2 岗
+    params: {host: ycu.bysjy.com.cn, match: ["用友网络科技股份有限公司", "用友网络科技股份有限公司山西分公司"]}  # 3 岗
+  - id: yunjiuye-panjiangmeidian
+    company: 盘江煤电
+    params: {host: zmc.bysjy.com.cn, match: ["贵州盘江煤电集团有限责任公司医院"]}  # 16 岗
   - id: yunjiuye-panpanshipin
     company: 盼盼食品
     params: {host: fjwx.bysjy.com.cn, match: ["福建盼盼食品有限公司"]}  # 1 岗
@@ -245,13 +266,13 @@ sources:
     params: {host: tjfsu.bysjy.com.cn, match: ["紫金矿业集团股份有限公司"]}  # 4 岗
   - id: yunjiuye-hongqi
     company: 红旗
-    params: {host: hnyyyz.bysjy.com.cn, match: ["天津南开济兴医院有限责任公司红旗路医院", "沈阳红旗制药有限公司", "长沙市雨花区侯家塘街道红旗社区卫生服务中心", "陕西奥诚红旗汽车销售服务有限公司"]}  # 8 岗
+    params: {host: sykjxy.bysjy.com.cn, match: ["天津南开济兴医院有限责任公司红旗路医院", "沈阳红旗制药有限公司", "长沙市雨花区侯家塘街道红旗社区卫生服务中心", "陕西奥诚红旗汽车销售服务有限公司"]}  # 12 岗
   - id: yunjiuye-lvyezhiyao
     company: 绿叶制药
     params: {host: scwskf.bysjy.com.cn, match: ["四川绿叶制药股份有限公司"]}  # 1 岗
   - id: yunjiuye-xiangyuyiliao
     company: 翔宇医疗
-    params: {host: hnzyy.bysjy.com.cn, match: ["河南翔宇医疗设备股份有限公司"]}  # 6 岗
+    params: {host: hnzyy.bysjy.com.cn, match: ["河南翔宇医疗设备股份有限公司", "翔宇医疗康复设备成都有限公司"]}  # 8 岗
   - id: yunjiuye-laobandianqi
     company: 老板电器
     params: {host: hbrcsh.bysjy.com.cn, match: ["杭州老板电器股份有限公司"]}  # 2 岗
@@ -266,16 +287,22 @@ sources:
     params: {host: hfgydx.bysjy.com.cn, match: ["无锡药明合联生物技术有限公司"]}  # 1 岗
   - id: yunjiuye-cainiaowangluo
     company: 菜鸟网络
-    params: {host: tjdz.bysjy.com.cn, match: ["菜鸟网络科技有限公司"]}  # 1 岗
+    params: {host: tjdz.bysjy.com.cn, match: ["菜鸟网络科技有限公司"]}  # 2 岗
   - id: yunjiuye-gezhouba
     company: 葛洲坝
-    params: {host: gzqgxy.bysjy.com.cn, match: ["中国葛洲坝集团三峡建设工程有限公司", "中国葛洲坝集团易普力股份有限公司", "中国葛洲坝集团水泥有限公司"]}  # 5 岗
+    params: {host: gsjdxy.bysjy.com.cn, match: ["中国葛洲坝集团第三工程有限公司", "中国葛洲坝集团股份有限公司"]}  # 17 岗
+  - id: yunjiuye-kuihuayaoye
+    company: 葵花药业
+    params: {host: sjzptzy.bysjy.com.cn, match: ["葵花药业集团（衡水）得菲尔有限公司"]}  # 2 岗
   - id: yunjiuye-beitaini
     company: 贝泰妮
     params: {host: cswszy.bysjy.com.cn, match: ["云南贝泰妮生物科技集团股份有限公司"]}  # 1 岗
   - id: yunjiuye-guizhouluntai
     company: 贵州轮胎
     params: {host: gzqgxy.bysjy.com.cn, match: ["贵州轮胎股份有限公司"]}  # 5 岗
+  - id: yunjiuye-huishanruye
+    company: 辉山乳业
+    params: {host: neau.bysjy.com.cn, match: ["辽宁辉山乳业集团（沈阳）有限公司"]}  # 3 岗
   - id: yunjiuye-diruiyiliao
     company: 迪瑞医疗
     params: {host: gsws.bysjy.com.cn, match: ["迪瑞医疗科技股份有限公司"]}  # 1 岗
@@ -290,13 +317,19 @@ sources:
     params: {host: peihua.bysjy.com.cn, match: ["世纪金花股份有限公司"]}  # 1 岗
   - id: yunjiuye-jinsaiyaoye
     company: 金赛药业
-    params: {host: hlju.bysjy.com.cn, match: ["长春金赛药业有限责任公司"]}  # 19 岗
+    params: {host: dqsfxy.bysjy.com.cn, match: ["长春金赛药业有限责任公司"]}  # 6 岗
+  - id: yunjiuye-tonglingyouse
+    company: 铜陵有色
+    params: {host: vcit.bysjy.com.cn, match: ["铜陵有色金属集团铜冠矿山建设股份有限公司"]}  # 5 岗
   - id: yunjiuye-zhanghong
     company: 长虹
     params: {host: aftvc.bysjy.com.cn, match: ["长虹美菱股份有限公司"]}  # 51 岗
   - id: yunjiuye-shanxijiangong
     company: 陕西建工
-    params: {host: xagydxyjs.bysjy.com.cn, match: ["陕西建工安装集团智慧机电运营科技有限公司", "陕西建工安装集团检测技术服务有限公司", "陕西建工材料设备物流集团有限公司", "陕西建工第十一建设集团有限公司", "陕西建工第十六建设有限公司", "陕西建工第四建设集团有限公司"]}  # 13 岗
+    params: {host: xagydxyjs.bysjy.com.cn, match: ["陕西建工安装集团智慧机电运营科技有限公司", "陕西建工安装集团检测技术服务有限公司", "陕西建工材料设备物流集团有限公司", "陕西建工第七建设集团有限公司", "陕西建工第九建设集团有限公司", "陕西建工第二建设集团有限公司", "陕西建工第八建设集团有限公司", "陕西建工第十一建设集团有限公司", "陕西建工第十六建设有限公司", "陕西建工第四建设集团有限公司"]}  # 28 岗
   - id: yunjiuye-shanxiqiche
     company: 陕西汽车
-    params: {host: sxtbu.bysjy.com.cn, match: ["陕西汽车控股集团有限公司"]}  # 1 岗
+    params: {host: bjwlxy.bysjy.com.cn, match: ["陕西汽车控股集团有限公司"]}  # 52 岗
+  - id: yunjiuye-shanximeiye
+    company: 陕西煤业
+    params: {host: wnsfxy.bysjy.com.cn, match: ["陕西煤业化工集团神木天元化工有限公司"]}  # 1 岗

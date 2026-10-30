@@ -31,3 +31,6 @@ work/*.jsonl
 work/coverage_*.txt
 work/portal_hunted.txt
 work/sxs_index_page.txt
+work/saas_hosts.json
+work/saas_probe.txt
+work/saas_*_progress.txt

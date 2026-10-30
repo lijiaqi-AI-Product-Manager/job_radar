@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.12.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -16,8 +16,8 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 ![demo](docs/assets/demo-en.gif)
 
 > **Coverage snapshot (2026-10-29)**
-> **2,218 sources** (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 / 94 yun-campus / others) · **2,177 companies** · **26 adapters**
-> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **906 covered (55%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
+> **2,229 sources** (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 / 94 yun-campus / others) · **2,188 companies** · **26 adapters**
+> **1,655 targets** (1,117 in 20 sectors + 808 across 31 provincial regions): **917 covered (55%)**, 12 documented as not compliantly reachable; calendar has **1,383 files / 2,078 entries**
 > Job counts and field coverage refresh with each daily crawl — see the latest Release for current numbers.
 
 ## What it is / is not
@@ -25,7 +25,7 @@ one downloadable SQLite. Ships a CLI, an MCP server and a Skill so AI agents can
 - ✅ Jobs and JD text from **official** career sites; for companies without a compliant official portal we also read public aggregator channels (Shixiseng, university career boards), always marked grade C and counted separately
 - ✅ Full re-crawl daily, history kept (open / close / change events)
 - ✅ Recruitment calendar: graduation year, programme type, tracks, application window, cities, apply URL, source
-- ❌ Not "every company": 906 of the 1,655 targets have a working source; the other 737 are listed as pending reconnaissance
+- ❌ Not "every company": 906 of the 1,655 targets have a working source; the other 726 are listed as pending reconnaissance
 - ❌ No applications, referrals, interview reports or salary data; no captcha/login/signature bypass
 
 ## Quick start
@@ -86,8 +86,8 @@ instead of just "no data", plus the required `{company}希望你去他们的招�
 
 | Area | Reality |
 |---|---|
-| Target coverage | **906/1,655 (55%)**; 12 are robots/login/encryption-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
-| Sources | **2,218 sources / 2,177 companies**: Beisen 1,229, Dayee 310, Feishu ATSX 148, Tupu360 32, legacy Beisen 113, Workday 45, legacy Dayee 15, plus 19 bespoke sites |
+| Target coverage | **917/1,655 (55%)**; 12 are robots/login/encryption-blocked (evidence in `docs/internal/COVERAGE-PLAN.md`) |
+| Sources | **2,229 sources / 2,188 companies**: Beisen 1,229, Dayee 310, Feishu ATSX 148, Tupu360 32, legacy Beisen 113, Workday 45, legacy Dayee 15, plus 19 bespoke sites |
 | Provincial coverage | Guangdong 35/49 (71%), Zhejiang 24/44 (55%), Jiangsu 15/34 (44%), Sichuan 14/30 (47%), Shandong 15/26 (58%); full table via `scripts/coverage_report.py` |
 | Big tech | Alibaba/Tencent/Meituan/NetEase/Baidu/JD/ByteDance/vivo/Chery/CICC/BOE/Hisense/PICC have job data; Huawei is calendar-only (WAF 403) |
 | Calendar fields | 2026-10-26 full-crawl snapshot: 74.9% of entries carry ≥7 of 11 required fields; 60.7% by group; 38.0% of hand-curated entries |

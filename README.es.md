@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | Español | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.12.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,7 +14,7 @@ un SQLite listo para consultar. Incluye CLI, servidor MCP y Skill para que un ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datos (2026-10-29)**: **2,218 fuentes** · **2,177 empresas** · **26 adaptadores**
+> **Datos (2026-10-29)**: **2,229 fuentes** · **2,188 empresas** · **26 adaptadores**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Beisen antiguo 113 / Workday 45 / Dayee antiguo 15 / sitios propios 19)
 > De las **1.655 empresas objetivo** (1.117 en 20 sectores + 808 en 31 regiones provinciales), **906 están cubiertas (55 %)** y 12 no son accesibles por cumplimiento.
 > Las cifras de vacantes y cobertura de campos se actualizan en cada rastreo diario (ver última versión).

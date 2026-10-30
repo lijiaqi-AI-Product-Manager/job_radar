@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md) | 日本語 | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
-[![version](https://img.shields.io/badge/version-1.12.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
 [![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
 [![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
@@ -14,8 +14,8 @@ CLI・MCP・Skill を同梱しているので、AI エージェントは API キ
 
 ![demo](docs/assets/demo-en.gif)
 
-> **カバレッジ（2026-10-29 時点）**：**2,218 ソース**（北森 1,229 / 大易 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 ほか）·
-> **2,177 社** · **26 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **906 社（55%）** が取得可能。
+> **カバレッジ（2026-10-29 時点）**：**2,229 ソース**（北森 1,229 / 大易 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 ほか）·
+> **2,188 社** · **26 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **917 社（55%）** が取得可能。
 > 求人数・JD カバレッジは毎日のクロールで更新されます（最新の Release を参照）。
 
 ## 特長
@@ -65,8 +65,8 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 読みやすい
 
 | 項目 | 現状 |
 |---|---|
-| 目標網羅 | **906/1,655（55%）**（残り 12 社は robots／ログイン／暗号化で不可） |
-| ソース | **2,218 ソース / 2,177 社**（北森 1,229、大易 310、Feishu ATSX 148、Tupu360 32、旧北森 113、Workday 45、旧大易 15、独自サイト 19） |
+| 目標網羅 | **917/1,655（55%）**（残り 12 社は robots／ログイン／暗号化で不可） |
+| ソース | **2,229 ソース / 2,188 社**（北森 1,229、大易 310、Feishu ATSX 148、Tupu360 32、旧北森 113、Workday 45、旧大易 15、独自サイト 19） |
 | 省別網羅 | 広東 35/49（71%）、浙江 24/44（55%）、江蘇 15/34（44%）、四川 14/30（47%）、山東 15/26（58%）。全表は `scripts/coverage_report.py` |
 | 大手 | 阿里・騰訊・美団・網易・百度・京東・字節跳動・vivo・奇瑞・中金・BOE・海信・中国人保などは求人あり。華為はカレンダーのみ（WAF 403） |
 | カレンダー項目 | 2026-10-26 の全クロール時点で 74.9% が 11 項目中 7 項目以上 |
