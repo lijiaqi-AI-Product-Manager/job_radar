@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.0.0-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.0.0) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.0.0-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.0.0) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Español
 
@@ -12,8 +12,10 @@ Reúne ofertas públicas para recién graduados, prácticas y profesionales en S
 
 El paquete de PyPI se llama `jobsearchradar`; el comando instalado es `jobradar`. Requiere Python 3.11+ y funciona en Windows, macOS y Linux.
 
+Estos comandos instalan la versión **2.0.0 de GitHub**. Otros canales pueden ofrecer versiones distintas.
+
 ```bash
-pip install jobsearchradar
+pip install "https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/download/v2.0.0/jobsearchradar-2.0.0-py3-none-any.whl"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -52,7 +54,7 @@ La instantánea verificada del 29 de octubre de 2026 contiene 294.483 registros,
 ## Conectar MCP
 
 ```bash
-pip install "jobsearchradar[mcp]"
+pip install "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/download/v2.0.0/jobsearchradar-2.0.0-py3-none-any.whl"
 jobradar update
 ```
 
