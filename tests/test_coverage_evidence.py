@@ -94,7 +94,7 @@ def test_invalid_snapshot_is_not_silently_accepted(tmp_path, payload):
 
 def test_clean_checkout_reproduces_attribution_and_ignores_work_files(tmp_path):
     targets = cov.load_targets()
-    companies = {s.company for s in cov.load_sources(ROOT / "sources")}
+    companies = {s.company for s in cov.load_sources(ROOT / "sources") if s.enabled}
     matched = cov.match(targets, companies)
     expected = cov.uncovered_reasons(targets, matched, cov.load_careers())
     assert sum(n for reason, n in expected.items() if reason != "unknown") > 0

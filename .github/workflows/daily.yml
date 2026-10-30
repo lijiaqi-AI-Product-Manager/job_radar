@@ -51,9 +51,10 @@ jobs:
           gh release view data-latest >/dev/null 2>&1 || \
             gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
           # 压缩版供用户下载（CLI 优先取 .gz）；原文件保留给次日恢复与旧版 CLI
-          gzip -9 -k -f data/jobs.db data/jd_text.db
+          uv run python scripts/export_public_databases.py --home data --out data/public
+          gzip -9 -k -f data/public/jobs.db data/public/jd_text.db
           ls -l data/
-          gh release upload data-latest data/jobs.db data/jd_text.db data/jobs.db.gz data/jd_text.db.gz crawl-summary.json --clobber
+          gh release upload data-latest data/public/jobs.db data/public/jd_text.db data/public/jobs.db.gz data/public/jd_text.db.gz crawl-summary.json --clobber
 
       - name: Build recruiting calendar
         # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活。
@@ -79,7 +80,7 @@ jobs:
         run: |
           if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             d=$(date -u +%Y-%m-%d)
-            cp data/jobs.db "data/jobs-$d.db"
+            cp data/public/jobs.db "data/jobs-$d.db"
             uv run python scripts/weekly_report.py data/jobs.db --calendar data/calendar.db > "data/weekly-$d.md"
             gh release view data-archive >/dev/null 2>&1 || \
               gh release create data-archive --title "Weekly snapshots" --notes "每周主库快照与周报，用于灾备、历史回溯与传播。" --latest=false
