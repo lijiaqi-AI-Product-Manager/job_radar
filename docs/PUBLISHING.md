@@ -2,7 +2,7 @@
 
 目标：让用户一条命令装上——`pip install jobsearchradar`（**发布名**），装完命令仍是 `jobradar`。
 
-**已发布（1.1.1，2026-10-24）**：<https://pypi.org/project/jobsearchradar/>
+**已发布的包与当前可用版本**：<https://pypi.org/project/jobsearchradar/>
 `jobradar` 这个名字在 PyPI 上与已有的 `job-radar` 过于接近、无法注册，所以 distribution 叫
 `jobsearchradar`；import 包名、命令行（`jobradar` / `jobradar-mcp`）都不变。
 
@@ -36,15 +36,22 @@ uv lock
 # 3) 本地自检
 uv run pytest && uv run ruff check src tests scripts
 uv run python scripts/check_docs_links.py
-uv run python scripts/release_check.py --home ~/.jobradar
+uv run python scripts/release_check.py --home ~/.cache/jobradar
 
 # 4) 提交 + 打 tag + 推（tag 会触发 publish-pypi）
 git add -A && git commit -m "release: x.y.z"
-git tag vx.y.z && git push origin main --tags
+git tag -a vx.y.z -m "job_radar x.y.z"
+git push origin main vx.y.z
 
 # 5) 验证
 pip install -U jobsearchradar && jobradar --version
 ```
+
+## 代码版本与数据快照
+
+`v2.0.0` 是代码版本，源码中的版本号为 `2.0.0`；GitHub 版本说明介绍所包含的能力与有日期的数据规模。推送版本标签会执行仓库已配置的构建与发布流程。
+
+`data-latest` 和 `data-archive` 专门分发数据，不能删掉或改成代码版本号，否则现有下载与归档入口会失效。PyPI 和 GitHub 使用同一构建版本，但数据仍独立下载。
 
 ## 预演（TestPyPI）
 
