@@ -8,7 +8,7 @@ from pathlib import Path
 import httpx
 import yaml
 
-from jobradar.adapters.base import SkipRecord
+from jobradar.adapters.base import USER_AGENT, SkipRecord, make_client
 from jobradar.adapters.jsonportal import JsonPortalAdapter
 from jobradar.adapters.recording import ReplayTransport
 from jobradar.models import SourceConfig
@@ -75,3 +75,11 @@ def test_type_param_limits_recruit_types():
     """只配 campus 时不该把社招那一路也翻出来（社招岗挂 2027 届是错的）。"""
     jobs = run(source(recruit_types=["campus"]))
     assert {j.recruit_type for j in jobs} == {"campus"}
+
+
+def test_source_config_cannot_override_the_fixed_project_user_agent():
+    src = source()
+    src.params = {**src.params, "user_agent": "different-agent"}
+    with make_client(transport=httpx.MockTransport(lambda r: httpx.Response(200))) as client:
+        JsonPortalAdapter(src, client)
+        assert client.headers["User-Agent"] == USER_AGENT

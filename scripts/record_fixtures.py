@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from jobradar.adapters.base import load_all, make_client  # noqa: E402
 from jobradar.adapters.recording import RecordingTransport  # noqa: E402
+from jobradar.compliance import RobotsPolicy  # noqa: E402
 from jobradar.sources import load_sources  # noqa: E402
 
 
@@ -70,7 +71,7 @@ def main() -> int:
     out = ROOT / "tests" / "fixtures" / (f"{source.adapter}_{source.id}" if multi else source.adapter)
     cls = load_all(include_drafts=True)[source.adapter]
     transport = RecordingTransport(out, secret_patterns=cls.secret_patterns)
-    adapter = cls(source, make_client(transport))
+    adapter = cls(source, make_client(transport, policy=RobotsPolicy()))
     jobs = list(adapter.fetch_all())
     (out / "source.yaml").write_text(
         yaml.safe_dump(source.model_dump(mode="json"), allow_unicode=True, sort_keys=False), encoding="utf-8"

@@ -3,13 +3,14 @@
 关键不变量：只有"成功且可信"的抓取才能影响岗位状态。
 - 抓取失败（ok=False）：只记日志，岗位一律不动。
 - 结果异常（空、或比基线骤降）：拒收并记日志，岗位一律不动。
-- 岗位须在连续 close_after 次被接受的抓取中缺席才算下架。
+- 未知截止日的岗位须在连续 close_after 次被接受的抓取中缺席才算下架；明示截止日已过可关闭。
 """
 
 import json
 from dataclasses import dataclass
 
 from jobradar.models import Job
+from jobradar.timeutil import shanghai_date
 
 CLOSE_AFTER_MISSES = 3
 DROP_THRESHOLD = 0.5  # 比基线少了超过 50% 视为异常
@@ -116,44 +117,57 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
         return RunResult("rejected", reason=reason)
 
     res = RunResult("ok")
+    today = shanghai_date(ts)
     with conn:
         existing = {r["id"]: r for r in conn.execute("SELECT * FROM job WHERE source_id=?", (source_id,))}
+        company_ids = {}
         for jid, job in by_id.items():
             row = existing.get(jid)
+            if job.company not in company_ids:
+                company_ids[job.company] = _company_id(conn, job.company)
+            cid = company_ids[job.company]
+            # 字段缺失不证明雇主延长了已知截止日；明确给出未来日期时才解除到期关闭。
+            if row is not None and job.apply_end is None and row["apply_end"]:
+                job = job.model_copy(update={"apply_end": row["apply_end"]})
+            expired = bool(job.apply_end) and job.apply_end < today
             h = job.content_hash()
             if row is None:
-                cid = _company_id(conn, job.company)
                 conn.execute(
                     """INSERT INTO job(id, company_id, source_id, source_job_id, url, title, category,
                        subcategory, recruit_type, grad_year, batch, cities, degree_min, department,
-                       apply_end, publish_at, first_seen, last_seen, content_hash)
-                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       apply_end, publish_at, first_seen, last_seen, content_hash, closed_at)
+                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                     (jid, cid, source_id, job.source_job_id, job.url, job.title, job.category,
                      job.subcategory, job.recruit_type, job.grad_year, job.batch,
                      json.dumps(job.cities, ensure_ascii=False), job.degree_min, job.department,
-                     job.apply_end, job.publish_at, ts, ts, h),
+                     job.apply_end, job.publish_at, ts, ts, h, ts if expired else None),
                 )
-                _event(conn, jid, ts, "open")
-                res.opened += 1
+                if not expired:
+                    _event(conn, jid, ts, "open")
+                    res.opened += 1
                 continue
 
             was_closed = row["closed_at"] is not None
-            if h != row["content_hash"]:
-                diff = {"fields": _changed_fields(row, job)}
-                _write_fields(conn, job, ts)
+            company_changed = row["company_id"] != cid
+            if h != row["content_hash"] or company_changed:
+                fields = _changed_fields(row, job) if h != row["content_hash"] else []
+                if company_changed:
+                    fields.append("company")
+                diff = {"fields": fields}
+                if h != row["content_hash"]:
+                    _write_fields(conn, job, ts)
                 if not was_closed:
                     _event(conn, jid, ts, "change", diff)
                     res.changed += 1
             # 到期岗位仍然出现在列表里时，必须**保持下架**，不能顺手把它 reopen。
             # 这是第一版写的坑：`jid in by_id` 会提前 continue，导致下架分支永远走不到；
             # 改成在「已存在」分支里也判到期，并且在到期时不要 closed_at=NULL。
-            expired = bool(row["apply_end"]) and row["apply_end"] < ts[:10]
             conn.execute(
-                "UPDATE job SET last_seen=?, miss_count=0, closed_at=?, category=?, subcategory=? WHERE id=?",
-                (ts, ts if expired else None, job.category, job.subcategory, jid),
+                "UPDATE job SET last_seen=?, miss_count=0, closed_at=?, category=?, subcategory=?, company_id=? WHERE id=?",
+                (ts, (row["closed_at"] or ts) if expired else None, job.category, job.subcategory, cid, jid),
             )
             if expired and not was_closed:
-                _event(conn, jid, ts, "close", {"reason": f"passed deadline {row['apply_end']}"})
+                _event(conn, jid, ts, "close", {"reason": f"passed deadline {job.apply_end}"})
                 res.closed += 1
             elif expired:
                 pass          # 已经下架过，别重复记事件
@@ -169,9 +183,11 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
             if jid in by_id or row["closed_at"] is not None:
                 continue
             misses = row["miss_count"] + 1
-            if misses >= close_after:
+            expired = bool(row["apply_end"]) and row["apply_end"] < today
+            if expired or misses >= close_after:
                 conn.execute("UPDATE job SET miss_count=?, closed_at=? WHERE id=?", (misses, ts, jid))
-                _event(conn, jid, ts, "close")
+                diff = {"reason": f"passed deadline {row['apply_end']}"} if expired else None
+                _event(conn, jid, ts, "close", diff)
                 res.closed += 1
             else:
                 conn.execute("UPDATE job SET miss_count=? WHERE id=?", (misses, jid))

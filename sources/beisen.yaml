@@ -69,7 +69,15 @@ sources:
   - {id: beisen-cntaiping, company: 太平保险, params: {tenant: cntaiping}}    # 2026-10-22 新增：1502 岗
   - {id: beisen-ebscn, company: 光大证券, params: {tenant: ebscn}}           # 2026-10-22 新增：93 岗
   - {id: beisen-foundersc, company: 方正证券, params: {tenant: foundersc}}   # 2026-10-22 新增：8 岗
-  - {id: beisen-tongwei, company: 通威, params: {tenant: tongwei}}          # 2026-10-22 新增：12 岗
+  # 2026-10-31 核对门户标题为「通威股份有限公司」，不能据此覆盖母集团。
+  - id: beisen-tongwei
+    company: 通威股份
+    params: {tenant: tongwei}
+    compliance:
+      checked_on: 2026-10-31
+      robots: unavailable
+      terms: "公开公司招聘门户，匿名明文岗位；不调用投递或简历接口"
+      notes: "门户标题为通威股份有限公司；5 条抽样均有 JD。robots HTTP 4xx 按 RFC 9309 无适用规则；实际请求仍逐次受守卫约束。最小证据见 targets/source_checks.yaml。"
   - {id: beisen-h3c, company: 新华三, params: {tenant: h3c}}               # 2026-10-22 新增：381 岗
   - {id: beisen-transsion, company: 传音控股, params: {tenant: transsion}}   # 2026-10-22 新增：986 岗
   - {id: beisen-iqiyi, company: 爱奇艺, params: {tenant: iqiyi}}            # 2026-10-22 新增：13 岗（线下业务）

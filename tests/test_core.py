@@ -128,6 +128,16 @@ def test_search_dedupe_collapses_identical_reqs(jobs_db):
     assert "_rn" not in rows[0]
 
 
+def test_search_dedupe_ignores_city_order_and_repeated_city_labels(jobs_db):
+    jobs = [make_job(1, title="算法研发", cities=["北京", "上海"]),
+            make_job(2, title="算法研发", cities=["上海", "北京"]),
+            make_job(3, title="算法研发", cities=["北京", "上海", "上海"]),
+            make_job(4, title="算法研发", cities=["深圳"])]
+    ingest_run(jobs_db, "s1", jobs, ts=T(1))
+    rows = search_jobs(jobs_db, dedupe=True)
+    assert [(r["id"], r["variants"]) for r in rows] == [("s1:1", 3), ("s1:4", 1)]
+
+
 def test_diff_by_category_respects_company(jobs_db):
     """`diff --by category --company 某公司` 曾静默忽略 --company，把全库数字当该公司的。"""
     ingest_run(jobs_db, "a", [make_job(i, source_id="a", company="腾讯", category="技术") for i in range(1, 4)], ts=T(1))

@@ -6,6 +6,7 @@ README 说"尚未发布到 PyPI"，Skill 第一句却让用户 `pip install jobr
 
 用法：uv run python scripts/check_docs_links.py   （CI 里跑，失败即红）
 """
+import os
 import re
 import sys
 from pathlib import Path
@@ -18,7 +19,7 @@ for _stream in (sys.stdout, sys.stderr):
         pass
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP_DIRS = {".git", ".venv", "node_modules", ".uv-cache", "t-tmp", "dist", "build"}
+SKIP_DIRS = {".git", ".venv", "node_modules", ".uv-cache", ".tmp", "t-tmp", "dist", "build"}
 LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 # 明确的"未来时"说明，允许出现在安装指引旁边
 ALLOW_PIP_HINT = ("尚未发布", "发布后", "PYPI_ENABLED", "Trusted Publishing", "PUBLISHING")
@@ -26,10 +27,9 @@ ALLOW_PIP_HINT = ("尚未发布", "发布后", "PYPI_ENABLED", "Trusted Publishi
 
 def md_files() -> list[Path]:
     out = []
-    for p in ROOT.rglob("*.md"):
-        if any(part in SKIP_DIRS for part in p.parts):
-            continue
-        out.append(p)
+    for directory, dirs, files in os.walk(ROOT):
+        dirs[:] = [name for name in dirs if name not in SKIP_DIRS]
+        out.extend(Path(directory) / name for name in files if name.endswith(".md"))
     return sorted(out)
 
 

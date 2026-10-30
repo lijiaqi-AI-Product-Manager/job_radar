@@ -131,3 +131,23 @@ def test_data_sanity_flags_structural_anomalies(tmp_path):
 
 def test_data_sanity_clean_data_returns_zero(tmp_path):
     assert rc.data_sanity(None, None) == (0, "无异常")
+
+
+def test_data_coverage_keeps_blocked_targets_in_denominator():
+    targets = {"sectors": {"x": ["可访问公司", "受限公司"]}, "blocked": {"受限公司": "robots 禁止"}}
+    assert rc.data_coverage(targets, {"可访问公司", "受限公司"}) == (1, 2)
+
+
+def test_run_does_not_count_disabled_sources(tmp_path):
+    sources = tmp_path / "sources"
+    sources.mkdir()
+    (sources / "demo.yaml").write_text(
+        "defaults:\n  adapter: beisen\n"
+        "  compliance: {checked_on: '2026-10-31', robots: allowed, terms: 公开页面}\n"
+        "sources:\n  - {id: disabled, company: 停用公司, enabled: false, params: {tenant: x}}\n",
+        encoding="utf-8",
+    )
+    targets = tmp_path / "targets.yaml"
+    targets.write_text("sectors: {x: [停用公司]}\n", encoding="utf-8")
+    row = next(r for r in rc.run(None, sources, targets, None) if r["gate"] == "数据源覆盖")
+    assert row["value"] == "0/1"

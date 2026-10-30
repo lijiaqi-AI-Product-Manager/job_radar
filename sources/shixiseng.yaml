@@ -4,6 +4,7 @@
 # 口径：聚合源单独标记 source_kind=aggregator，覆盖率报告里与官方直连分开统计。
 defaults:
   adapter: shixiseng
+  source_kind: aggregator
   recruit_types: [intern]
   rate_limit_rps: 1
   params:

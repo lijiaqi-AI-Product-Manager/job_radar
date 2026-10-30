@@ -4,8 +4,8 @@
 
 [![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
+[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
+[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 
 **Un jeu de données qui se met à jour chaque jour** : sites carrières officiels → collecte quotidienne →
@@ -14,10 +14,11 @@ un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent 
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Données (2026-10-29)** : **1 749 sources** · **1 720 entreprises** · **26 adaptateurs**
+> **Données (2026-10-31)** : **2 230 sources** · **2 189 entreprises** · **26 adaptateurs**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / ancien Beisen 113 / Workday 45 / ancien Dayee 15 / sites maison 19)
-> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **906 sont couvertes (55 %)** et 12 ne sont pas accessibles pour raisons de conformité.
+> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **919 sont couvertes (55,53 %)** et 12 ne sont pas accessibles pour raisons de conformité.
 > Les volumes d'offres et la couverture des champs sont mis à jour à chaque collecte quotidienne (voir la dernière version).
+> Ces chiffres comptent les sources activées, pas les entreprises recrutant ce jour. L’objectif de 80 % reste à atteindre ([suivi](docs/internal/DELIVERY-PROGRESS.md)).
 
 ## Ce que c'est / ce que ce n'est pas
 

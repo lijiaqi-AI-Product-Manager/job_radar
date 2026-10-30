@@ -15,6 +15,12 @@ defaults:
 sources:
   - id: jsonportal-cec
     company: 中国电子
+    enabled: false
+    compliance:
+      checked_on: 2026-10-31
+      robots: unreachable
+      terms: "历史记录为公开招聘接口；当前固定项目 UA 下未能核实 robots，不据此确认可采"
+      notes: "2026-10-30T16:32:57Z 守卫在 robots 核查时停止，未请求岗位；移除旧 user_agent 覆盖后暂时停用，待同一固定 UA 复核。"
     params:
       base: https://campus.cec.com.cn/student-api/api/position/search
       method: POST
@@ -31,9 +37,6 @@ sources:
       page_path: data.current
       pages_path: data.pages
       detail_url: https://campus.cec.com.cn/position/{id}
-      # 这个站的 WAF 对默认长 UA（带括号与分号）回 403、对短 UA 回 200——是它的 header
-      # 解析缺陷，不是反爬。只对本站生效，不改全局 USER_AGENT。
-      user_agent: jobradar/0.1
       type_param:
         positionType: {campus: 0, social: 1}
       fields:

@@ -9,7 +9,7 @@ from jobradar.core import queries as q
 from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts
 
-REPO = "lijiaqimun-coder/job_radar"
+REPO = "lijiaqi-AI-Product-Manager/job_radar"
 GITEE_REPO = os.environ.get("JOBRADAR_GITEE_REPO", "qgauss/job_radar")  # 国内镜像（Gitee 发行版）
 RELEASE_TAG = "data-latest"
 DB_FILES = {"jobs": "jobs.db", "text": "jd_text.db", "calendar": "calendar.db"}

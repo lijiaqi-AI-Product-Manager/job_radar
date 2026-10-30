@@ -23,6 +23,8 @@ jobs:
       - run: uv run ruff check .
       # 文档自检：断链 / 版本号 / `pip install jobradar` 说法（2026-10-24 实测发现三处不一致）
       - run: uv run python scripts/check_docs_links.py
+      # 离线配置/fixtures 合规核验；实际网络请求另由运行时 robots 守卫检查。
+      - run: uv run python scripts/check_compliance.py
       - run: uv run pytest
       # 打包体积守卫：2026-10-22 曾把 .uv-cache 打进 sdist，产物 117MB（发布阻断）
       - name: Build sdist/wheel and check size

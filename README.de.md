@@ -4,8 +4,8 @@
 
 [![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
+[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
+[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 
 **Ein Datensatz, der sich täglich selbst aktualisiert**: offizielle Karriereseiten → täglicher Crawl →
@@ -14,10 +14,11 @@ eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Ag
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Datenstand (2026-10-29)**: **2,229 Quellen** · **2,188 Unternehmen** · **26 Adapter**
+> **Datenstand (2026-10-31)**: **2,230 Quellen** · **2,189 Unternehmen** · **26 Adapter**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Alt-Beisen 113 / Workday 45 / Alt-Dayee 15 / eigene Seiten 19)
-> Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **906 abgedeckt (55 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
+> Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **919 abgedeckt (55,53 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
 > Stellenzahlen und Feldabdeckung werden bei jedem täglichen Crawl aktualisiert (siehe neuestes Release).
+> Gezählt werden aktivierte Quellen, keine aktuell einstellenden Firmen. Das Ziel von 80 % ist noch offen ([Fortschritt](docs/internal/DELIVERY-PROGRESS.md)).
 
 ## Was es ist / was nicht
 
@@ -32,7 +33,7 @@ eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Ag
 ```bash
 pip install "jobsearchradar[mcp]"
 
-jobradar update     # ~20 MB + 35 MB; kein Download, wenn bereits aktuell
+jobradar update     # ~67 MB + 100 MB; kein Download, wenn bereits aktuell
 jobradar search --company 腾讯 --city 深圳 --category 算法 --table
 ```
 

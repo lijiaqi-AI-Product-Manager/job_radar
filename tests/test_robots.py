@@ -5,9 +5,10 @@ tupu360 共享域 774 岗，都是适配器跑通了、`opened` 数字很好看�
 所以这里的测试**不是**在测一个工具函数，是在锁住两条判断规则。
 """
 
+import httpx
 import pytest
 
-from jobradar.robots import _path_variants, allows, source_urls
+from jobradar.robots import _path_variants, allows, check, source_urls
 
 # 2026-10-26 原样抄下来的三份 robots
 LOREAL = [
@@ -112,3 +113,46 @@ def test_tenant_is_not_prepended_to_host():
 def test_unknown_source_returns_empty():
     """推断不出来就返回空，CLI 标 UNKNOWN。检查一个错域名得出的「允许」比不检查更危险。"""
     assert source_urls({}, "some_unknown_adapter") == []
+
+
+@pytest.mark.parametrize("status,body,content_type", [
+    (429, "slow down", "text/plain"),
+    (500, "server error", "text/plain"),
+    (200, '<html><script>captcha()</script></html>', "text/html"),
+    (200, '<textarea id="renderData">challenge</textarea>', "text/plain"),
+])
+def test_hard_failures_and_challenges_never_mean_permission(status, body, content_type):
+    client = httpx.Client(transport=httpx.MockTransport(
+        lambda request: httpx.Response(status, text=body, headers={"content-type": content_type})))
+    verdict = check(client, "https://example.com/jobs")
+    assert not verdict.allowed and verdict.host_robots == "unreachable"
+    client.close()
+
+
+def test_network_failure_does_not_grant_robots_permission():
+    def fail(request):
+        raise httpx.ConnectTimeout("offline", request=request)
+
+    with httpx.Client(transport=httpx.MockTransport(fail)) as client:
+        assert check(client, "https://example.com/jobs").allowed is False
+
+
+@pytest.mark.parametrize("status", [400, 401, 403, 404, 410])
+def test_robots_client_error_follows_rfc9309_unavailable_policy(status):
+    with httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(status))) as client:
+        verdict = check(client, "https://example.com/jobs")
+    assert verdict.allowed
+    assert verdict.host_robots == ("absent" if status in (404, 410) else "unavailable")
+
+
+def test_multiple_user_agents_in_one_group_are_honored():
+    rules = ["User-agent: *", "User-agent: otherbot", "Disallow: /private/"]
+    assert not allows(rules, "https://example.com/private/job")
+
+
+def test_wildcard_and_end_anchor_rules_are_not_ignored():
+    rules = ["User-agent: *", "Disallow: /*/private/*", "Disallow: /*.pdf$", "Allow: /public/allowed.pdf$"]
+    assert not allows(rules, "https://example.com/en/private/jobs")
+    assert not allows(rules, "https://example.com/manual.pdf")
+    assert allows(rules, "https://example.com/public/allowed.pdf")
+    assert allows(rules, "https://example.com/manual.pdf/extra")

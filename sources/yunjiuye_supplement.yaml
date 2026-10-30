@@ -1,0 +1,28 @@
+# 2026-10-30 在线复核：只收有未到期岗位和 JD、公司登记全名一致的定向补充。
+defaults:
+  adapter: yunjiuye
+  source_kind: aggregator
+  recruit_types: [campus, intern]
+  rate_limit_rps: 1
+  compliance:
+    checked_on: 2026-10-30
+    robots: unavailable
+    terms: "公开高校就业网岗位页，只读索引与原始链接；不调用投递、简历或账号接口"
+    notes: "robots 文件返回 HTTP 403，依 RFC 9309 §2.3.1.3 无适用规则；实际岗位 HTTP 200 且无挑战，仍逐请求经 robots 守卫。公司登记全名严格匹配；关键词为定向补充，不声称全量。样本证据见 targets/source_checks.yaml。"
+sources:
+  - id: yunjiuye-zhongtiangangtie
+    company: 中天钢铁
+    params:
+      host: lnkjdx.bysjy.com.cn
+      match: [中天钢铁集团有限公司]
+      keyword: 电气技术员
+      max_pages: 1
+      fallback_pages: 10
+  - id: yunjiuye-shenweiyaoye
+    company: 神威药业
+    params:
+      host: hbgc.bysjy.com.cn
+      match: [神威药业集团有限公司]
+      keyword: 信息管理
+      max_pages: 1
+      fallback_pages: 10

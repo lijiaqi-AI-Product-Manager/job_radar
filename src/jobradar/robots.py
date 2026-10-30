@@ -16,6 +16,7 @@
     PYTHONPATH=src python3 -m jobradar.cli doctor --robots
 """
 
+import re
 from dataclasses import dataclass
 from urllib.parse import urlsplit
 
@@ -31,7 +32,7 @@ PROBE_TIMEOUT = 10.0
 @dataclass
 class RobotsVerdict:
     url: str
-    host_robots: str      # "allow" / "deny" / "absent"（404 或不是文本）
+    host_robots: str      # present / absent（404/410）/ unavailable（其它4xx）/ unreachable（网络/5xx/挑战）
     allowed: bool
     reason: str
 
@@ -40,7 +41,7 @@ class RobotsVerdict:
 
 
 def fetch_robots(client: httpx.Client, url: str) -> tuple[str, list[str]]:
-    """返回 (状态, 规则行)。状态：allow（无规则/全允许）/ deny（Disallow: /）/ absent（404）。
+    """返回规则状态；RFC 9309 区分 4xx 规则不可用与网络/5xx 不可达。
 
     只认「整个主机全禁」这一种强信号；逐条前缀交给 `allows()` 判断 —— 因为
     `Disallow: /search-jobs` 这种前缀禁，`urls_allowed` 才能算准。这里不做判断。
@@ -48,13 +49,25 @@ def fetch_robots(client: httpx.Client, url: str) -> tuple[str, list[str]]:
     parts = urlsplit(url)
     robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
     try:
-        r = client.get(robots_url, headers={"User-Agent": USER_AGENT}, follow_redirects=True)
+        r = client.get(robots_url, headers={"User-Agent": USER_AGENT}, follow_redirects=True,
+                       extensions={"jobradar_robots_probe": True}, timeout=PROBE_TIMEOUT)
     except httpx.HTTPError:
+        return "unreachable", []
+    if r.status_code in (404, 410):
         return "absent", []
-    if r.status_code != 200 or "html" in r.headers.get("content-type", ""):
-        # 404 或返回 HTML（nginx 默认错误页）：没有 robots 规则可依
-        return "absent", []
+    if 400 <= r.status_code < 500 and r.status_code != 429:
+        # 仅指 robots 文件不可用，不是对岗位内容的授权；岗位的 401/403 仍按正常错误停止。
+        return "unavailable", [f"# robots.txt HTTP {r.status_code}; RFC 9309 section 2.3.1.3"]
+    if r.status_code == 204:
+        return "present", []
+    if r.status_code != 200 or "html" in r.headers.get("content-type", "").lower():
+        return "unreachable", []
+    if re.search(r"<(?:!doctype|html|script|textarea)\b", r.text, re.I):
+        return "unreachable", []
     lines = r.text.splitlines()
+    meaningful = [line.strip() for line in lines if line.strip() and not line.lstrip().startswith("#")]
+    if meaningful and not any(re.match(r"(?:user-agent|sitemap)\s*:", line, re.I) for line in meaningful):
+        return "unreachable", []
     return "present", lines
 
 
@@ -74,24 +87,16 @@ def _path_variants(path: str) -> list[str]:
     return out
 
 
-def allows(lines: list[str], url: str) -> bool:
-    """按 robots 规则判断单个 URL 是否允许。
-
-    自己实现而不是 `urllib.robotparser.RobotFileParser`：标准库会把 `User-agent: *` 与
-    具名 agent 规则合并得比较粗糙，而且我们需要**知道是哪条规则拒的**（写进报告）。
-
-    **比字面规范更保守一点**：除了标准的前缀匹配，还额外检查「规则去掉前导/内嵌语言段后
-    是否仍是前缀」。原因是欧莱雅这类站点写 `Disallow: /location/`，而英文页实际是
-    `/en/location/…` —— 按字面不匹配（标准库 `can_fetch` 也返回 True），但站点意图非常明确。
-    2026-10-26 就是因为抓着这条字面缝隙抓了 351 个岗位。宁可少抓。
-    """
+def _decision(lines: list[str], url: str) -> tuple[bool, str | None]:
     parts = urlsplit(url)
     path = parts.path or "/"
     if parts.query:
         path = f"{path}?{parts.query}"
 
-    applies = False       # 当前规则块是否适用 `*`
-    best: tuple[int, bool] | None = None   # (规则长度, 是否允许)，取最长匹配
+    agents: list[str] = []
+    rules_started = False
+    product = USER_AGENT.split("/", 1)[0].lower()
+    best: tuple[int, bool, str] | None = None
     for raw in lines:
         line = raw.split("#", 1)[0].strip()
         if not line:
@@ -100,41 +105,49 @@ def allows(lines: list[str], url: str) -> bool:
         key = key.strip().lower()
         value = value.strip()
         if key == "user-agent":
-            # `*` 或我们的 UA 都算适用；其它 agent 开始新块，停止适用
-            applies = value == "*" or "jobradar" in value.lower()
+            if rules_started:
+                agents = []
+                rules_started = False
+            agents.append(value.lower())
             continue
-        if not applies or key not in ("allow", "disallow"):
+        rules_started = True
+        if not any(agent in ("*", product) for agent in agents) or key not in ("allow", "disallow"):
             continue
         if not value:
             continue
-        # `Disallow: /search-jobs` 是前缀匹配（robots 规范如此，不是 glob）
+        anchored = value.endswith("$")
+        pattern = value[:-1] if anchored else value
+        regex = "^" + re.escape(pattern).replace(r"\*", ".*") + ("$" if anchored else "")
         for probe in _path_variants(path):
-            if probe.startswith(value):
-                cand = (len(value), key == "allow")
+            if re.search(regex, probe):
+                cand = (len(pattern.replace("*", "").encode("utf-8")), key == "allow", value)
                 if best is None or cand[0] > best[0] or (cand[0] == best[0] and cand[1]):
                     best = cand
                 break
     if best is None:
-        return True
-    return best[1]
+        return True, None
+    return best[1], best[2]
+
+
+def allows(lines: list[str], url: str) -> bool:
+    """最长规则、Allow 同长优先；支持 *、$、同组多个 UA 与保守的语言路径归一。
+
+    与原有规则一致，通配组和本项目具名组均核查，避免利用语言段绕过明确的栏目禁令。
+    """
+    return _decision(lines, url)[0]
 
 
 def check(client: httpx.Client, url: str) -> RobotsVerdict:
     """检查一个具体 URL 是否可抓。"""
     status, lines = fetch_robots(client, url)
     if status == "absent":
-        return RobotsVerdict(url, "absent", True, "robots.txt 404/非文本，无规则可依")
-    if not allows(lines, url):
-        # 找出拒它的那条规则，写进 reason，方便人工复核
-        parts = urlsplit(url)
-        path = parts.path or "/"
-        hit = next(
-            (v for k, v in (
-                (ln.split(":", 1)[0].strip().lower(), ln.split(":", 1)[1].strip())
-                for ln in lines if ":" in ln
-            ) if k == "disallow" and v and path.startswith(v)),
-            "?",
-        )
+        return RobotsVerdict(url, "absent", True, "robots.txt 404/410，无规则可依")
+    if status == "unreachable":
+        return RobotsVerdict(url, status, False, "robots.txt 无法核实（网络错误、拒绝或挑战页），暂停访问")
+    if status == "unavailable":
+        return RobotsVerdict(url, status, True, "robots.txt HTTP 4xx，按 RFC 9309 无适用规则；不代表内容使用授权")
+    allowed, hit = _decision(lines, url)
+    if not allowed:
         return RobotsVerdict(url, "present", False, f"命中 Disallow: {hit}")
     return RobotsVerdict(url, "present", True, "robots 有规则但本路径未被禁")
 

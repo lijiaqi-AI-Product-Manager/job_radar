@@ -63,3 +63,17 @@ def test_max_pages_inside_params_works(tmp_path):
         encoding="utf-8")
     (s,) = load_sources(tmp_path)
     assert s.max_pages == 3
+
+
+def test_source_kind_is_typed_and_defaults_to_official():
+    assert SourceConfig(id="official", company="A", adapter="example", enabled=False).source_kind == "official"
+    assert SourceConfig(id="third-party", company="A", adapter="new_channel", enabled=False,
+                        source_kind="aggregator").source_kind == "aggregator"
+    with pytest.raises(ValidationError):
+        SourceConfig(id="bad-kind", company="A", adapter="example", enabled=False, source_kind="guess")
+
+
+def test_existing_aggregator_sources_are_explicitly_classified():
+    for filename in ("shixiseng.yaml", "campus.yaml", "yunjiuye.yaml"):
+        sources = load_sources(SOURCES / filename)
+        assert sources and all(s.source_kind == "aggregator" for s in sources)

@@ -1,0 +1,43 @@
+schema_version: 1
+checks:
+  - source_id: beisen-tongwei
+    company: 通威股份
+    registered_company: 通威股份有限公司
+    checked_at: '2026-10-30T16:15:14Z'
+    current_jobs: 5
+    jobs_with_jd: 5
+    samples:
+      - source_job_id: 7e95cbc1-e456-4b04-b591-92f54d461237
+        url: https://tongwei.zhiye.com/social/detail?jobAdId=7e95cbc1-e456-4b04-b591-92f54d461237
+        title: 储能系统集成工程师(J12201)
+        publish_at: '2026-10-21'
+        apply_end: null
+      - source_job_id: 96b523ea-3e89-43b7-8cc0-20549e0d9d48
+        url: https://tongwei.zhiye.com/campus/detail?jobAdId=96b523ea-3e89-43b7-8cc0-20549e0d9d48
+        title: 通威校招生-商务类(J12041)
+        publish_at: '2026-08-26'
+        apply_end: null
+  - source_id: yunjiuye-zhongtiangangtie
+    company: 中天钢铁
+    registered_company: 中天钢铁集团有限公司
+    checked_at: '2026-10-30T15:57:09Z'
+    current_jobs: 1
+    jobs_with_jd: 1
+    samples:
+      - source_job_id: '2266135'
+        url: https://lnkjdx.bysjy.com.cn/detail/job?id=2266135
+        title: 电气技术员
+        publish_at: '2026-09-28'
+        apply_end: '2026-12-17'
+  - source_id: yunjiuye-shenweiyaoye
+    company: 神威药业
+    registered_company: 神威药业集团有限公司
+    checked_at: '2026-10-30T15:57:15Z'
+    current_jobs: 1
+    jobs_with_jd: 1
+    samples:
+      - source_job_id: '3270319'
+        url: https://hbgc.bysjy.com.cn/detail/job?id=3270319
+        title: 信息管理
+        publish_at: '2026-10-15'
+        apply_end: '2027-10-15'

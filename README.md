@@ -4,8 +4,8 @@
 
 [![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
-[![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
+[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
+[![data](https://img.shields.io/badge/data-每日更新-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.11%2B-3776ab)](pyproject.toml)
 
@@ -14,17 +14,18 @@
 
 ![demo](docs/assets/demo-zh.gif)
 
-> **当前覆盖（2026-10-30）**
-> **2,229 个数据源**（北森 1,229 / 大易 310 / 飞书 ATSX 148 / 图普惠 32 / Workday 45 / 高校就业网 109 / 实习僧 104 / 云就业 105 / 其余平台与自研站）· **2,188 家可采公司** · **26 个适配器**
-> 目标清单 **1,655 家**（20 个行业 1,117 家 + 31 个省级行政区 808 家，去重后 1,655）：已覆盖 **917 家（55%）**，其中官方直连 **606 家（37%）**、聚合渠道 **311 家（19%）**，不可合规覆盖 12 家；另有 365 行细分行业的 983 家代表企业清单（`targets/industry_targets.yaml`），其中 **391 家有源（40%）**、268 行有覆盖（73%）；两池合计 **2,224 家目标 / 1,003 家有源（45%）**；招聘日历 **1,383 个文件 / 2,078 条条目**
-> 岗位数、JD 覆盖率、城市与截止日覆盖每天抓取后刷新，以最新 Release 为准；自检：`uv run python scripts/release_check.py`（8 项门槛全绿）
+> **当前配置覆盖（2026-10-31）**
+> **2,230 个启用源**（北森 1,229 / 大易 310 / 飞书 ATSX 148 / 图普惠 32 / Workday 45 / 高校就业网 109 / 实习僧 104 / 云就业 107 / 其余平台与自研站）· **2,189 家配置公司** · **26 个适配器**
+> 目标清单 **1,655 家**（20 个行业 1,117 家 + 31 个省级行政区 808 家，去重后 1,655）：已覆盖 **919 家（55.53%）**，其中官方直连 **606 家（37%）**、聚合渠道 **313 家（19%）**，历史受限 12 家；另有 365 行细分行业的 983 家代表企业清单（`targets/industry_targets.yaml`），其中 **395 家有源（40%）**、268 行有覆盖（73%）；两池合计 **2,224 家目标 / 1,016 家有源（46%）**；招聘日历 **1,383 个文件 / 2,078 条人工条目**
+> 岗位数和字段覆盖随数据发布刷新；当前配置复算用 `scripts/coverage_report.py`，真实数据检查需给 `scripts/release_check.py` 指定 `--home`。
+> 配置覆盖以启用源为准，不等于当天在招；80% 目标尚未达到，见[持续交付进展](docs/internal/DELIVERY-PROGRESS.md)。
 
 ## 这是什么 / 不是什么
 
 - ✅ 各公司**官方**招聘页的岗位与 JD 原文；没有合规官方入口的公司另走公开聚合渠道（实习僧 / 高校就业网），一律标 grade C 并与官方口径分开计数
 - ✅ 每天全量重采、保留历史（下架、新开、变更都能回溯）
 - ✅ 招聘日历：届次、项目类型、方向、网申时间、城市、投递入口、来源
-- ❌ 不是「所有公司」：1,655 家目标里 917 家已建源、能拿到岗位级或日历级数据，其余 726 家如实列在待侦察清单里（见[已知限制](#覆盖与已知限制诚实版)）
+- ❌ 不是「所有公司」：1,655 家目标里 919 家已配置启用源，724 家待继续核验，另有 12 家历史受限；当日是否在招以真实数据为准（见[已知限制](#覆盖与已知限制诚实版)）
 - ❌ 不做投递、内推、面经、薪资；不绕过验证码/登录/签名
 
 ## 30 秒上手
@@ -32,7 +33,7 @@
 ```bash
 pip install "jobsearchradar[mcp]"
 
-jobradar update                        # 下载最新数据（约 20 MB + 35 MB；已是最新则秒回、0 下载）
+jobradar update                        # 下载最新数据（约 67 MB + 100 MB；已是最新则秒回、0 下载）
 jobradar search --company 复星 --type campus --grad-year 2027 --table
 ```
 
@@ -99,13 +100,14 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 
 | 文件 | 大小 | 内容 |
 |---|---|---|
-| `jobs.db.gz` | 20 MB | 岗位主库（岗位、公司、事件、数据源状态） |
-| `jd_text.db.gz` | 35 MB | 岗位职责与要求原文（全文检索用） |
+| `jobs.db.gz` | ~67 MB | 岗位主库（岗位、公司、事件、数据源状态） |
+| `jd_text.db.gz` | ~100 MB | 岗位职责与要求原文（全文检索用） |
 | `calendar.db.gz` | 约 1.1 MB | 招聘日历（1,655 家目标公司，2,078 条条目） |
 | `crawl-summary.json` | 32 KB | 每个源的状态、新增/下架数 |
 
 - 每日 UTC 19:17（北京时间 03:17）采集，采集完成后自动发布新 Release；Gitee 镜像同日同步
-- 下架判定：连续 3 次成功抓取中缺席；抓取失败**不会**导致岗位下架
+- 下架判定：明示截止日按北京时间自然日处理；没有已知截止日时，连续 3 次成功抓取中缺席才下架；抓取失败**不会**导致岗位下架
+- 首次升级会自动构建 FTS5 索引。约 29 万岗位的本机样本耗时约 1 分钟，主库与 JD 库额外占用约 199 MB；两字短词仍使用 LIKE，见[验证记录](docs/internal/DELIVERY-PROGRESS.md)
 - 字段说明：[skill/jobradar/references/fields.md](skill/jobradar/references/fields.md)
 - 数据许可：代码 MIT；岗位内容权利归原发布方，本库只做索引（草案见 [docs/DATA-LICENSE.md](docs/DATA-LICENSE.md)）
 
@@ -113,24 +115,24 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table
 
 | 维度 | 现状 |
 |---|---|
-| 目标公司覆盖 | **917/1,655（55%）**；12 家（大疆、拼多多、快手、微博等）因 robots/登录墙/加密不可合规覆盖，证据见 [docs/internal/COVERAGE-PLAN.md](docs/internal/COVERAGE-PLAN.md) |
-| 数据源 | **2,229 个源 / 2,188 家公司**：北森 1,229、大易 310、飞书 ATSX 148、图普惠 32、旧版北森 113、Workday 45、旧版大易 15，其余 19 个自研站/门户按公司各一条 |
-| 分省覆盖 | 广东 35/49（71%）、浙江 24/44（55%）、江苏 15/34（44%）、四川 14/30（47%）、山东 15/26（58%）；西藏/海南等仍偏低，全表见 `uv run python scripts/coverage_report.py` |
+| 目标公司覆盖 | **919/1,655（55.53%）**；12 家（大疆、拼多多、快手、微博等）因 robots/登录墙/加密不可合规覆盖，证据见 [docs/internal/COVERAGE-PLAN.md](docs/internal/COVERAGE-PLAN.md) |
+| 数据源 | **2,230 个源 / 2,189 家公司**：北森 1,229、大易 310、飞书 ATSX 148、图普惠 32、旧版北森 113、Workday 45、旧版大易 15，另有高校就业网、聚合渠道和自研门户 |
+| 分省配置覆盖 | 广东 35/49（71%）、浙江 25/44（57%）、江苏 16/34（47%）、四川 15/30（50%）、山东 15/26（58%）；全表见 `uv run python scripts/coverage_report.py` |
 | 头部大厂 | 阿里/腾讯/美团/网易/百度/京东/字节/vivo/奇瑞/中金/京东方/海信/中国人保等有岗位数据；华为目前只有日历（WAF 403） |
-| JD 正文 | 契约测试要求 ≥90%，最近一轮实测 99.8%（抓不到正文的源不进数据集；比例按在招岗位算） |
-| 日历字段完整度 | 2026-10-26 全量抓取口径：全部条目 **74.9%** 达到「11 个必填字段里 ≥7 个」；按集团 60.7%；纯人工条目 38.0% |
-| 网申时间 | 官网多数只写「9 月起」，完整网申起止仍是最短板（2026-10-26 口径 0.6%）；日历里的 `apply_end` 取职位表的多数派日期，不取 `min` |
+| JD 正文 | 数据截至 2026-10-29T23:17:25Z：276,008 个在招岗位的正文覆盖 **97.3%**；缺失正文不会被补造 |
+| 日历字段完整度 | 同一 Release：全部条目 **93.0%** 达到「11 个字段里 ≥7 个」；按集团 94.0%；人工条目 85.2% |
+| 网申时间 | 同一 Release 的校园活动口径 **45.1%** 至少有一端日期（全口径 39.2%）；这不是完整起止窗口覆盖率，日期缺失仍留空 |
 | 重复岗位 | 2026-10-26 口径 **9.2%** 是「同公司+同标题+同城市」的多条 req；`search --dedupe` 可折叠 |
 | 门店岗噪声 | 喜茶、星巴克门店帖约 8 千条；`search --exclude-store` 可排掉 |
-| 历史 | 从 2026-10-19 开始积累，趋势类问题目前只能看 5–7 天 |
+| 历史 | 从 2026-10-19 开始积累，趋势问题只使用数据库实际时间跨度 |
 
-不做的事：不爬第三方聚合站、不绕过验证码/登录/签名、不伪造 UA、不在流水线里用 LLM、不持久化任何凭据。
+不做的事：不抓取 robots、条款或访问控制禁止的入口，不把聚合渠道冒充官方；不绕过验证码/登录/签名、不伪造 UA、不在流水线里用 LLM、不持久化任何凭据。
 
 ## 架构
 
 ```text
 GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
-  ├─ crawl        2,229 个源 → 适配器（北森 / 大易 / 飞书 ATSX / Workday / 自研站）→ SQLite
+  ├─ crawl        2,230 个源 → 适配器（北森 / 大易 / 飞书 ATSX / Workday / 自研站）→ SQLite
   ├─ calendar     日历库：人工条目（A/B/C 三档）+ 数据层自动条目
   ├─ release      打包 gzip 上传 Release data-latest（+ 每周归档，保留 8 周）
   └─ mirror       同步到 Gitee 发行版（国内加速）
@@ -144,10 +146,12 @@ GitHub Actions（每日 UTC 19:17 = 北京时间 03:17）
 
 ```bash
 uv sync --all-extras
-uv run pytest                              # 504 个测试函数全绿
+uv run pytest                              # 全量回归
 uv run ruff check .
 uv run python scripts/check_docs_links.py  # 文档断链 / 版本 / 安装说法一致性
-uv run python scripts/release_check.py --home ~/.jobradar   # 8 项发布门槛
+uv run python scripts/check_compliance.py  # 离线源/fixtures/增补证据核验
+uv run python scripts/coverage_report.py --json --min-coverage 0.8  # 持续目标，当前未达标
+uv run python scripts/release_check.py --home ~/.jobradar   # 11 项既有发布门槛
 ```
 
 - 新增一家北森门户公司：在 [sources/beisen.yaml](sources/beisen.yaml) 加一行（`id/company/params.tenant`）

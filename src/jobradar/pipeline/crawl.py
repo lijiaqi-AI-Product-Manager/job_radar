@@ -98,6 +98,11 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           sleep: Callable[[float], None] = time.sleep,
           max_workers: int = 4, budget_seconds: float | None = None,
           order_seed: int | None = None) -> dict[str, RunResult]:
+    if client_factory is make_client:
+        from jobradar.compliance import RobotsPolicy
+
+        policy = RobotsPolicy()
+        client_factory = lambda: make_client(policy=policy)  # noqa: E731 — 每个站点组自己的连接，共用守卫
     adapters = adapters if adapters is not None else load_all()
     deadline = time.monotonic() + budget_seconds if budget_seconds else None
     # 并行单位从「适配器」改成「适配器 + 站点」：北森几百个租户各自是不同子域，

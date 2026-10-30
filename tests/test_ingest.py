@@ -219,3 +219,84 @@ def test_no_deadline_never_auto_closes(jobs_db):
     res = ingest_run(jobs_db, "s1", [make_job(1)], ts=T(20))
     assert res.closed == 0
     assert job_row(jobs_db, "s1:1")["closed_at"] is None
+
+
+def test_already_expired_first_import_is_never_reported_as_open(jobs_db):
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-09-30")], ts=T(1))
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(1)
+    assert res.opened == 0
+    assert events(jobs_db) == []
+
+
+def test_extended_deadline_reopens_on_the_same_successful_run(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-02")], ts=T(1))
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-02")], ts=T(3))
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-12-31")], ts=T(4))
+    assert job_row(jobs_db, "s1:1")["closed_at"] is None
+    assert res.reopened == 1
+
+
+def test_shortened_deadline_closes_on_the_same_successful_run(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-12-31")], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-09-30")], ts=T(2))
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(2)
+    assert res.closed == 1
+
+
+def test_absent_job_with_known_expired_deadline_closes_without_three_misses(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-02"), make_job(2)], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [make_job(2)], ts=T(3))
+    assert res.status == "ok" and res.closed == 1
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(3)
+
+
+def test_deadline_uses_shanghai_day_and_remains_open_on_deadline_day(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-01")], ts=T(1, 15))
+    assert job_row(jobs_db, "s1:1")["closed_at"] is None  # 北京时间 10-01 23:00
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-01")], ts=T(1, 16))
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(1, 16)  # 北京时间 10-02 00:00
+
+
+def test_missing_deadline_does_not_erase_known_expiry_and_reopen(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-02")], ts=T(1))
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-02")], ts=T(3))
+    res = ingest_run(jobs_db, "s1", [make_job(1, apply_end=None)], ts=T(4))
+    row = job_row(jobs_db, "s1:1")
+    assert row["closed_at"] is not None and row["apply_end"] == "2026-10-02"
+    assert res.reopened == 0
+
+
+def test_missing_future_deadline_is_retained_until_expiry(jobs_db):
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-10-10")], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [make_job(1)], ts=T(2))
+    assert job_row(jobs_db, "s1:1")["apply_end"] == "2026-10-10"
+    assert res.changed == 0
+    res = ingest_run(jobs_db, "s1", [make_job(1)], ts=T(11))
+    assert res.closed == 1
+    assert job_row(jobs_db, "s1:1")["closed_at"] == T(11)
+
+
+def test_repeated_expired_listing_preserves_original_close_time(jobs_db):
+    job = make_job(1, apply_end="2026-09-30")
+    ingest_run(jobs_db, "s1", [job], ts=T(1))
+    res = ingest_run(jobs_db, "s1", [job], ts=T(2))
+    row = job_row(jobs_db, "s1:1")
+    assert row["closed_at"] == T(1) and row["last_seen"] == T(2)
+    assert res.closed == res.reopened == 0
+    assert events(jobs_db) == []
+
+
+def test_verified_company_correction_updates_existing_jobs_only_after_success(jobs_db):
+    original = make_job(1, company="旧公司标注")
+    corrected = make_job(1, company="准确法律实体")
+    ingest_run(jobs_db, "s1", [original], ts=T(1))
+    ingest_run(jobs_db, "s2", [make_job(1, source_id="s2", company="旧公司标注")], ts=T(1))
+    old_id = job_row(jobs_db, "s1:1")["company_id"]
+    ingest_run(jobs_db, "s1", [corrected], ts=T(2), ok=False, error="network failed")
+    assert job_row(jobs_db, "s1:1")["company_id"] == old_id
+    res = ingest_run(jobs_db, "s1", [corrected], ts=T(3))
+    name = jobs_db.execute("SELECT c.name FROM job j JOIN company c ON c.id=j.company_id WHERE j.id='s1:1'").fetchone()[0]
+    assert name == "准确法律实体" and res.changed == 1
+    assert job_row(jobs_db, "s2:1")["company_id"] == old_id
+    diff = jobs_db.execute("SELECT diff FROM job_event WHERE job_id='s1:1' AND type='change'").fetchone()[0]
+    assert json.loads(diff) == {"fields": ["company"]}

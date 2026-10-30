@@ -30,8 +30,29 @@ def _like(term: str) -> str:
     return "%" + term.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
 
 
+def _use_fts(conn, table: str, term: str) -> bool:
+    # SQLite trigram LIKE 对 >=3 字符才有索引收益，且带 ESCAPE 时不能使用索引。
+    # 百分号/下划线仍走旧的字面量匹配，不能把用户输入解释成通配符或 FTS 语法。
+    return len(term) >= 3 and "%" not in term and "_" not in term and bool(conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone())
+
+
+def _title_ids(conn, term: str) -> list[str]:
+    if _use_fts(conn, "job_fts", term):
+        return [r[0] for r in conn.execute(
+            "SELECT id FROM job WHERE rowid IN (SELECT rowid FROM job_fts WHERE title LIKE ?)",
+            (f"%{term}%",))]
+    return [r[0] for r in conn.execute("SELECT id FROM job WHERE title LIKE ? ESCAPE '\\'", (_like(term),))]
+
+
 def _jd_ids(text_conn, term: str) -> list[str]:
     """JD 原文（职责 + 要求）中包含 term 的岗位 id。ASCII 不区分大小写。"""
+    if _use_fts(text_conn, "job_text_fts", term):
+        # 两列分别使用索引，再取并集；不用会破坏索引优化的 ESCAPE 或拼接表达式。
+        return [r[0] for r in text_conn.execute(
+            "SELECT job_id FROM job_text WHERE rowid IN ("
+            "SELECT rowid FROM job_text_fts WHERE description LIKE ? UNION "
+            "SELECT rowid FROM job_text_fts WHERE requirements LIKE ?)", (f"%{term}%", f"%{term}%"))]
     return [r[0] for r in text_conn.execute(
         "SELECT job_id FROM job_text WHERE COALESCE(description,'') || char(10) || COALESCE(requirements,'') "
         "LIKE ? ESCAPE '\\'", (_like(term),))]
@@ -176,13 +197,25 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if terms and text_conn is None:
         raise ValueError("全文检索需要 JD 原文库 jd_text.db")
     for t in terms:
-        where.append("(j.title LIKE ? ESCAPE '\\' OR j.id IN (SELECT value FROM json_each(?)))")
-        args += [_like(t), json.dumps(_jd_ids(text_conn, t))]
+        jd_ids = _jd_ids(text_conn, t)
+        if not _use_fts(conn, "job_fts", t):
+            # 短词无需额外全表扫描标题再按 id 回查；保留原有路径与 LIMIT/排序策略。
+            where.append("(j.title LIKE ? ESCAPE '\\' OR j.id IN (SELECT value FROM json_each(?)))")
+            args += [_like(t), json.dumps(jd_ids)]
+            continue
+        matching_ids = sorted(set(_title_ids(conn, t)) | set(jd_ids))
+        if not matching_ids:
+            return []
+        where.append("j.id IN (SELECT value FROM json_each(?))")
+        args.append(json.dumps(matching_ids))
     where_sql = (" WHERE " + " AND ".join(where)) if where else ""
     if dedupe:
         # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
         # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
-        part = "PARTITION BY j.company_id, j.title, j.cities"
+        # 城市是集合：JSON 元素顺序或重复标签不能把同岗拆成多个去重组。
+        city_key = ("(SELECT json_group_array(city) FROM "
+                    "(SELECT DISTINCT value AS city FROM json_each(j.cities) ORDER BY value))")
+        part = f"PARTITION BY j.company_id, j.title, {city_key}"
         sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
                f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
                f" FROM job j JOIN company c ON c.id = j.company_id{where_sql})"

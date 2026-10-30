@@ -24,7 +24,7 @@ from jobradar.sources import load_sources  # noqa: E402
 # 原来的 160/450 两个绝对值让「目标覆盖」变成 0/0，门槛形同虚设。
 # min_* 是绝对下限：只有 2 个目标时 1 个覆盖就是 50%，光看比例会误判成"达标"。
 GATES = {
-    # 有岗位数据的目标公司数（北森/大易等接口型源）
+    # 配置了启用源的目标公司数，不代表当日有在招岗位。
     "data_coverage_ratio": 0.15,
     "data_coverage_min": 100,
     # 至少一条日历条目的目标公司数
@@ -56,7 +56,8 @@ def _targets(path: Path) -> dict:
 
 def data_coverage(targets: dict, companies: set[str]) -> tuple[int, int]:
     matched = match_targets(targets, companies)
-    covered = sum(1 for names in matched.values() if names)
+    blocked = targets.get("blocked") or {}
+    covered = sum(1 for name, names in matched.items() if names and name not in blocked)
     return covered, len(target_names(targets))
 
 
@@ -311,7 +312,7 @@ THIRD_PARTY_HOSTS = ("offernotes", "nowcoder", "jobui", "kanzhun", "yingjiesheng
 
 def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path | None) -> list[dict]:
     t = _targets(targets_path)
-    companies = {s.company for s in load_sources(sources)}
+    companies = {s.company for s in load_sources(sources) if s.enabled}
     rows = []
 
     covered, total = data_coverage(t, companies)

@@ -59,16 +59,6 @@ class JsonPortalAdapter(Adapter):
     def _p(self, key, default=None):
         return self.source.params.get(key, default)
 
-    def __init__(self, *a, **kw):
-        super().__init__(*a, **kw)
-        # 部分站点（实测 campus.cec.com.cn）对默认长 UA（带括号与分号）回 403、对短 UA 回 200，
-        # 是它的 header 解析缺陷，不是反爬手段。基类 `_request` 会把 headers 里的 User-Agent
-        # 一律剥掉（防伪造 UA），所以只能在 client 层换 UA，且**只对本源生效**，
-        # 不动全局 USER_AGENT。
-        ua = self._p("user_agent")
-        if ua:
-            self.client.headers["User-Agent"] = ua
-
     def fetch_raw(self) -> Iterator[dict]:
         base = self._p("base")
         method = str(self._p("method", "POST")).upper()

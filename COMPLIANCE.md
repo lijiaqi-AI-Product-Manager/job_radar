@@ -14,6 +14,13 @@
 5. 注明来源：所有输出都带 `url` 与数据截至时间，引导用户回到官方页面投递。
 6. 每个源的核查记录在 `sources/*.yaml` 的 `compliance` 字段（核查日期、robots、条款、备注）；没有记录不得启用。
 
+## 运行时与离线检查
+
+- 实际采集、录制和重定向使用固定项目 UA，按 origin 共享 robots 缓存及至少 1 秒间隔；站点要求更长 Crawl-delay 时尊重该值，超出等待预算就暂停。
+- robots 网络失败、5xx、429 或挑战页不能作为许可。404/410 为 absent，其他 4xx 按 RFC 9309 的 unavailable 处理；这不授权访问受限岗位内容或转载受保护正文。
+- `python scripts/check_compliance.py` 核验启用源登记、已知受限渠道、配置/fixtures 请求凭据、UA 覆盖和增补源证据。它是离线检查，不能证明所有站点当前在线可采或已获转载授权。
+- 合法公开聚合渠道显式标 `source_kind: aggregator`，与官方分口径。牛客当前仅发现最小事实和原始入口；应届生缺少条款要求的书面许可，当前不启用。详见 [渠道复核](docs/recon/public-channels-2026-10-31.md)。
+
 ## 下线机制（kill switch）
 
 - 任何源可通过把 `enabled: false` 提交到主分支立即停用；下一次发布起不再抓取。

@@ -14,7 +14,7 @@
 | 字段 | 值 |
 |---|---|
 | PyPI Project Name | `jobsearchradar` |
-| Owner | `lijiaqimun-coder` |
+| Owner | `lijiaqi-AI-Product-Manager` |
 | Repository name | `job_radar` |
 | Workflow name | `publish.yml` |
 | Environment name | `pypi` |
@@ -53,7 +53,7 @@ GitHub → Actions → **publish-pypi** → Run workflow → `target` 选 `testp
 
 ## 发布了什么
 
-- wheel（`jobradar-<ver>-py3-none-any.whl`）+ sdist
+- wheel（`jobsearchradar-<ver>-py3-none-any.whl`）+ sdist
 - 只包含 `src/jobradar` + 少量数据文件（sources/taxonomy/targets/calendar/skill/docs），
   **不含**任何 `*.db`、缓存或密钥；CI 会检查产物 < 5MB
 - 数据本体不走 PyPI，仍由 `jobradar update` 从 Release / Gitee 下载（PyPI 有单文件大小限制）

@@ -6,6 +6,7 @@
 # 归属：params.match 是学校站上登记的公司全名，归一后完全相等才入库。
 defaults:
   adapter: yunjiuye
+  source_kind: aggregator
   recruit_types: ["campus", "intern"]
   rate_limit_rps: 1
   params:

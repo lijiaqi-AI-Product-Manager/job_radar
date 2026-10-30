@@ -4,8 +4,8 @@
 
 [![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
+[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
+[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 
 **Датасет, который обновляется сам каждый день**: официальные карьерные сайты → ежедневный сбор →
@@ -14,10 +14,11 @@
 
 ![demo](docs/assets/demo-en.gif)
 
-> **Данные (2026-10-29)**: **1 749 источников** · **1 720 компаний** · **26 адаптера**
+> **Данные (2026-10-31)**: **2 230 источников** · **2 189 компаний** · **26 адаптера**
 > (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / старый Beisen 113 / Workday 45 / старый Dayee 15 / собственные сайты 19)
-> Из **1 655 целей** (1 117 в 20 отраслях + 808 в 31 провинциальном регионе) **906 покрыты (55 %)**, ещё 12 недоступны по требованиям комплаенса.
+> Из **1 655 целей** (1 117 в 20 отраслях + 808 в 31 провинциальном регионе) **919 покрыты (55,53 %)**, ещё 12 недоступны по требованиям комплаенса.
 > Число вакансий и покрытие полей обновляются при каждом ежедневном сборе (см. последний релиз).
+> Это число активных настроек источников, а не компаний с вакансиями сегодня. Цель 80 % ещё не достигнута ([прогресс](docs/internal/DELIVERY-PROGRESS.md)).
 
 ## Что это и чем не является
 

@@ -58,6 +58,7 @@ class SourceConfig(BaseModel):
     id: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]*$")
     company: str
     adapter: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
+    source_kind: Literal["official", "aggregator"] = "official"
     params: dict = Field(default_factory=dict)
     recruit_types: list[RecruitType] = Field(default_factory=lambda: ["campus"])
     enabled: bool = True

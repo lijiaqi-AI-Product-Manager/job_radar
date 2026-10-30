@@ -7,7 +7,9 @@ import argparse
 import json
 import sqlite3
 import sys
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import yaml
 
@@ -34,10 +36,7 @@ def load_industry_aliases(path: Path = ROOT / "targets" / "industry_targets.yaml
     return yaml.safe_load(path.read_text(encoding="utf-8")).get("aliases") or {}
 
 
-CAREERS_PATH = ROOT / "work" / "careers_confirmed.jsonl"
-
-# 聚合口径适配器：岗位由第三方站点/学校代发，非公司官方直发（grade C）。
-AGGREGATOR_ADAPTERS = frozenset({"shixiseng", "campus", "yunjiuye"})
+CAREERS_PATH = ROOT / "targets" / "coverage_evidence.yaml"
 
 # 「没覆盖」的原因分类：只按我们记录过的招聘入口 URL 归类，没记录过的一律 unknown。
 REASON_PATTERNS = (
@@ -47,21 +46,44 @@ REASON_PATTERNS = (
 )
 
 
-def load_careers(path: Path = CAREERS_PATH) -> dict[str, str]:
-    """读过 `work/careers_confirmed.jsonl`，返回 公司名 -> 已确认的招聘页 URL。"""
-    if not path.exists():
-        return {}
+def validate_careers(payload: object) -> dict[str, str]:
+    """验证最小入口证据；缺失或损坏不能静默变成「全部 unknown」。"""
+    if (not isinstance(payload, dict) or type(payload.get("schema_version")) is not int
+            or payload["schema_version"] != 1):
+        raise ValueError("coverage evidence must have schema_version: 1")
+    entries = payload.get("entries")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError("coverage evidence must contain a non-empty entries list")
     out: dict[str, str] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        try:
-            row = json.loads(line)
-        except ValueError:
-            continue
-        best = row.get("best") or {}
-        url = best.get("url")
-        if row.get("company") and url:
-            out.setdefault(str(row["company"]), str(url))
+    for index, row in enumerate(entries, start=1):
+        if not isinstance(row, dict) or set(row) - {"company", "url", "checked_at"}:
+            raise ValueError(f"coverage evidence entry {index}: invalid fields")
+        company, url = row.get("company"), row.get("url")
+        if not isinstance(company, str) or not company.strip() or company in out:
+            raise ValueError(f"coverage evidence entry {index}: empty or duplicate company")
+        if not isinstance(url, str):
+            raise ValueError(f"coverage evidence entry {index}: URL must be a string")
+        parsed = urlsplit(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username or parsed.password:
+            raise ValueError(f"coverage evidence entry {index}: URL must be a public HTTP(S) entry")
+        checked_at = row.get("checked_at")
+        if checked_at is not None:
+            if not isinstance(checked_at, str):
+                raise ValueError(f"coverage evidence entry {index}: checked_at must be an ISO timestamp or null")
+            try:
+                stamp = datetime.fromisoformat(checked_at.replace("Z", "+00:00"))
+            except ValueError as exc:
+                raise ValueError(f"coverage evidence entry {index}: invalid checked_at timestamp") from exc
+            if stamp.tzinfo is None:
+                raise ValueError(f"coverage evidence entry {index}: checked_at must include a timezone")
+        out[company] = url
     return out
+
+
+def load_careers(path: Path | None = None) -> dict[str, str]:
+    """入口只是侦察线索，不证明公司归属、可抓取性或仅有这一条入口。"""
+    path = path if path is not None else CAREERS_PATH
+    return validate_careers(yaml.safe_load(path.read_text(encoding="utf-8-sig")))
 
 
 def reason_of(url: str) -> str:
@@ -93,8 +115,22 @@ def match(targets: dict, companies: set[str]) -> dict[str, list[str]]:
     return match_targets(targets, companies)
 
 
+def channel_coverage(targets: dict, sources: list) -> dict[str, set[str]]:
+    """官方优先，聚合只计补充覆盖；有两种入口的目标另报交集。停用源不计覆盖。"""
+    blocked = targets.get("blocked") or {}
+    covered = {}
+    for kind in ("official", "aggregator"):
+        companies = {s.company for s in sources if s.enabled and s.source_kind == kind}
+        covered[kind] = {name for name, found in match(targets, companies).items()
+                         if found and name not in blocked}
+    return {"official": covered["official"],
+            "aggregator": covered["aggregator"] - covered["official"],
+            "overlap": covered["aggregator"] & covered["official"]}
+
+
 def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | None = None,
-           companies: set[str] | None = None, aggregator: set[str] | None = None) -> str:
+           companies: set[str] | None = None, aggregator: set[str] | None = None,
+           careers: dict[str, str] | None = None, channels: dict[str, set[str]] | None = None) -> str:
     blocked = targets.get("blocked") or {}
     total = len(matched)
     # blocked 的公司即使被子串误匹配（「京东」in「京东方」）也不能算已覆盖
@@ -102,15 +138,20 @@ def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | 
     lines = ["# 覆盖率报告", "",
              f"目标 {total} 家：已覆盖 **{covered}**（{covered / total:.0%}），"
              f"不可合规覆盖 {len(blocked)}，待侦察 {total - covered - len(blocked)}。", ""]
-    if aggregator:
+    if channels is None and aggregator:
         agg_matched = match(targets, aggregator)
         agg_covered = {k for k, v in agg_matched.items() if v and k not in blocked}
-        official = covered - len(agg_covered)
+        all_covered = {k for k, v in matched.items() if v and k not in blocked}
+        channels = {"official": all_covered - agg_covered, "aggregator": agg_covered, "overlap": set()}
+    if channels is not None:
+        official, aggregate = len(channels["official"]), len(channels["aggregator"])
         lines += ["## 分口径", "",
                   "| 口径 | 已覆盖 | 覆盖率 | 说明 |", "|---|---|---|---|",
                   f"| 官方直连 | {official} | {official / total:.0%} | 公司自有招聘系统（北森/大易/飞书/Workday 等） |",
-                  f"| 聚合渠道 | {len(agg_covered)} | {len(agg_covered) / total:.0%} | 实习僧等公开聚合站，grade C |",
+                  f"| 聚合补充 | {aggregate} | {aggregate / total:.0%} | 公开聚合入口；不重复计入已有官方入口的目标 |",
                   f"| 合计 | {covered} | {covered / total:.0%} | 去重后 |", ""]
+        if channels["overlap"]:
+            lines += [f"另有 {len(channels['overlap'])} 家同时具备官方和聚合入口，计入官方口径。", ""]
     lines += [
              "| 行业 | 目标 | 已覆盖 | 覆盖率 |", "|---|---|---|---|"]
     for sector, names in targets["sectors"].items():
@@ -175,13 +216,14 @@ def render(targets: dict, matched: dict[str, list[str]], jobs: dict[str, int] | 
             f"两池合计目标 **{len(union)}** 家，已覆盖 **{len(union_cov)}**"
             f"（{len(union_cov) / len(union):.0%}）。",
         ]
-    reasons = uncovered_reasons(targets, matched, load_careers())
+    reasons = uncovered_reasons(targets, matched, load_careers() if careers is None else careers)
     if reasons:
-        label = {"moka": "只用 Moka（正文加密，红线不碰）", "aggregator": "只在智联/猎聘/前程等聚合站",
+        label = {"moka": "已记录 Moka 入口（访问限制需逐站复核）", "aggregator": "已记录第三方招聘入口",
                  "platform": "平台入口已知但没建成源", "self": "自建站或普通企业页",
                  "unknown": "没有记录过任何招聘入口"}
         total_un = sum(reasons.values())
         lines += ["", "## 未覆盖原因（按记录到的招聘入口）", "",
+                  "入口线索不代表已验证公司归属、可抓取性或唯一入口；分类来自版本管理内的最小证据快照。", "",
                   "| 原因 | 家数 | 占比 |", "|---|---|---|"]
         for key in ("platform", "self", "moka", "aggregator", "unknown"):
             if reasons.get(key):
@@ -200,22 +242,28 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", help="jobs.db 路径；给出时显示每家在招岗位数")
     ap.add_argument("--json", action="store_true", help="只输出摘要 JSON（给脚本/看板用）")
+    ap.add_argument("--evidence", type=Path, default=CAREERS_PATH, help="入口证据 YAML；默认 targets/coverage_evidence.yaml")
+    ap.add_argument("--min-coverage", type=float, help="验收下限（0..1），如 0.8；不足时输出报告并退出 1，不改变分母")
     args = ap.parse_args()
+    if args.min_coverage is not None and not 0 <= args.min_coverage <= 1:
+        ap.error("--min-coverage 必须在 0 到 1 之间")
     targets = load_targets()
-    sources = load_sources(ROOT / "sources")
+    sources = [s for s in load_sources(ROOT / "sources") if s.enabled]
     companies = {s.company for s in sources}
-    aggregator = {s.company for s in sources if s.adapter in AGGREGATOR_ADAPTERS}
+    aggregator = {s.company for s in sources if s.source_kind == "aggregator"}
+    channels = channel_coverage(targets, sources)
     jobs = None
     if args.db:
         conn = sqlite3.connect(args.db)
         jobs = dict(conn.execute("SELECT c.name, COUNT(*) FROM job j JOIN company c ON c.id=j.company_id "
                                  "WHERE j.closed_at IS NULL GROUP BY 1"))
     matched = match(targets, companies)
+    careers = load_careers(args.evidence)
+    blocked = targets.get("blocked") or {}
+    total = len(matched)
+    covered = sum(1 for k, v in matched.items() if v and k not in blocked)
+    exit_code = 0 if args.min_coverage is None or (total and covered / total >= args.min_coverage) else 1
     if args.json:
-        import json
-        blocked = targets.get("blocked") or {}
-        total = len(matched)
-        covered = sum(1 for k, v in matched.items() if v and k not in blocked)
         ind = load_industries()
         rows = hit = 0
         comp = companies
@@ -225,12 +273,16 @@ def main() -> int:
                 if any(match_targets({"sectors": {"x": [str(n)]}}, comp).get(str(n)) for n in names):
                     hit += 1
         print(json.dumps({"targets": total, "covered": covered, "blocked": len(blocked),
-                          "sources": len({s.id for s in load_sources(ROOT / "sources")}),
+                          "sources": len({s.id for s in sources}),
                           "companies": len(companies), "aggregator_companies": len(aggregator), "industry_rows": rows,
-                          "industry_covered": hit}, ensure_ascii=False))
-        return 0
-    print(render(targets, matched, jobs, companies, aggregator), end="")
-    return 0
+                          "official_covered": len(channels["official"]),
+                          "aggregator_covered": len(channels["aggregator"]),
+                          "overlap_covered": len(channels["overlap"]),
+                          "industry_covered": hit,
+                          "uncovered_reasons": uncovered_reasons(targets, matched, careers)}, ensure_ascii=False))
+        return exit_code
+    print(render(targets, matched, jobs, companies, aggregator, careers, channels), end="")
+    return exit_code
 
 
 if __name__ == "__main__":

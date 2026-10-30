@@ -106,13 +106,22 @@ class Adapter(ABC):
         self._last_request = time.monotonic()
 
 
-def make_client(transport: httpx.BaseTransport | None = None) -> httpx.Client:
-    return httpx.Client(
+def make_client(transport: httpx.BaseTransport | None = None, *, policy=None) -> httpx.Client:
+    # 显式 transport 是 fixtures/测试注入点；真实网络默认开启 robots 守卫。
+    if policy is None and transport is None:
+        from jobradar.compliance import RobotsPolicy
+
+        policy = RobotsPolicy()
+    client = httpx.Client(
         headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
         timeout=httpx.Timeout(20.0),
         follow_redirects=True,
         transport=transport,
     )
+    if policy is not None:
+        client.event_hooks["request"].append(lambda request: policy.on_request(client, request))
+        client.event_hooks["response"].append(policy.on_response)
+    return client
 
 
 # ---- 注册表 ----

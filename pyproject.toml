@@ -51,7 +51,7 @@ packages = ["src/jobradar"]
 include = [
   "src/jobradar", "tests", "sources", "taxonomy", "targets", "calendar",
   "scripts", "skill", "docs", "evals",
-  "README.md", "CLAUDE.md", "COMPLIANCE.md", "LICENSE", "pyproject.toml",
+  "README.md", "AGENTS.md", "CLAUDE.md", "COMPLIANCE.md", "LICENSE", "pyproject.toml",
 ]
 
 [tool.pytest.ini_options]
@@ -78,7 +78,7 @@ mcp = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lijiaqimun-coder/job_radar"
-Repository = "https://github.com/lijiaqimun-coder/job_radar"
-Changelog = "https://github.com/lijiaqimun-coder/job_radar/blob/main/CHANGELOG.md"
-Issues = "https://github.com/lijiaqimun-coder/job_radar/issues"
+Homepage = "https://github.com/lijiaqi-AI-Product-Manager/job_radar"
+Repository = "https://github.com/lijiaqi-AI-Product-Manager/job_radar"
+Changelog = "https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CHANGELOG.md"
+Issues = "https://github.com/lijiaqi-AI-Product-Manager/job_radar/issues"

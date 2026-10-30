@@ -1,5 +1,8 @@
 import importlib.util
+import json
 from pathlib import Path
+
+import pytest
 
 spec = importlib.util.spec_from_file_location(
     "coverage_report", Path(__file__).parent.parent / "scripts" / "coverage_report.py")
@@ -82,3 +85,35 @@ def test_uncovered_reasons_counts_only_uncovered():
     careers = {"乙公司": "https://a.zhiye.com/"}
     counts = cov.uncovered_reasons(targets, matched, careers)
     assert counts == {"platform": 1, "unknown": 1}
+
+
+def test_channel_coverage_uses_metadata_and_counts_overlap_once():
+    from jobradar.models import SourceConfig
+
+    targets = {"sectors": {"x": ["甲公司", "乙公司", "丙公司", "丁公司"]}, "blocked": {"丙公司": "blocked"}}
+
+    def source(sid, company, kind, enabled=True):
+        return SourceConfig(id=sid, company=company, adapter="future_platform", source_kind=kind,
+                            enabled=enabled, compliance={"checked_on": "2026-10-30", "robots": "allowed", "terms": "public"})
+
+    sources = [source("a-official", "甲公司", "official"), source("a-aggregator", "甲公司", "aggregator"),
+               source("b-aggregator", "乙公司", "aggregator"), source("c-blocked", "丙公司", "official"),
+               source("d-disabled", "丁公司", "official", enabled=False)]
+    channels = cov.channel_coverage(targets, sources)
+    assert channels == {"official": {"甲公司"}, "aggregator": {"乙公司"}, "overlap": {"甲公司"}}
+
+
+@pytest.mark.parametrize("minimum,expected_exit", [(0.5, 0), (0.8, 1)])
+def test_minimum_coverage_gate_keeps_blocked_targets_in_the_denominator(monkeypatch, capsys, minimum, expected_exit):
+    from jobradar.models import SourceConfig
+
+    source = SourceConfig(id="a", company="甲公司", adapter="example",
+                          compliance={"checked_on": "2026-10-30", "robots": "allowed", "terms": "public"})
+    monkeypatch.setattr(cov, "load_targets", lambda: {"sectors": {"x": ["甲公司", "乙公司"]}, "blocked": {"乙公司": "blocked"}})
+    monkeypatch.setattr(cov, "load_sources", lambda _: [source])
+    monkeypatch.setattr(cov, "load_industries", lambda: {})
+    monkeypatch.setattr(cov, "load_careers", lambda _: {})
+    monkeypatch.setattr("sys.argv", ["coverage_report.py", "--json", "--min-coverage", str(minimum)])
+    assert cov.main() == expected_exit
+    result = json.loads(capsys.readouterr().out)
+    assert (result["covered"], result["targets"]) == (1, 2)

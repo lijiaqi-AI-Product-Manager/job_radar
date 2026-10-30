@@ -4,8 +4,8 @@
 
 [![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
 [![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![tests](https://img.shields.io/badge/tests-504%20passed-brightgreen)](tests/)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqimun-coder/job_radar/releases/tag/data-latest)
+[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
+[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
 [![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 
 **매일 자동 갱신되는 중국 채용 데이터셋**. 각 기업의 공식 채용 페이지를 매일 수집해
@@ -14,16 +14,17 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 
 ![demo](docs/assets/demo-en.gif)
 
-> **커버리지(2026-10-29)**: **2,229개 소스**(베이센 1,229 / 다이이 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 등) ·
-> **2,188개 기업** · **26개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **906개(55%)** 확보.
+> **커버리지(2026-10-31)**: **2,230개 소스**(베이센 1,229 / 다이이 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 등) ·
+> **2,189개 기업** · **26개 어댑터**. 목표 **1,655개**(20개 업종 1,117 + 31개 성급 행정구 808) 중 **919개(55.53%)** 확보.
 > 공고 수와 JD 커버리지는 매일 크롤링 후 갱신됩니다(최신 Release 기준).
+> 활성 소스 설정 기준이며 당일 채용 중인 기업 수는 아닙니다. 80% 목표는 아직 미달입니다([진행 상황](docs/internal/DELIVERY-PROGRESS.md)).
 
 ## 특징
 
 - ✅ 각 기업 **공식** 채용 페이지의 공고와 JD 원문. 합법적 공식 입구가 없는 기업은 공개 집계 채널(실습생·대학 취업 사이트)도 사용하며, 모두 grade C로 별도 집계합니다
 - ✅ 매일 전체 재수집, 이력 보존(신규·마감·변경 추적)
 - ✅ 채용 캘린더: 졸업 연도, 프로그램 유형, 직무 방향, 지원 기간, 도시, 지원 URL, 출처
-- ❌ 1,014개 중 264개만 공고 단위 데이터 제공
+- ❌ 전체 기업을 포함하지 않습니다. 1,655개 중 919개에 활성 소스가 있으며, 724개는 추가 확인 중이고 12개는 접근 제한 기록이 있습니다
 - ❌ 지원 대행·추천·면접 후기·연봉은 다루지 않으며, 캡차/로그인/서명 우회도 하지 않습니다
 
 ## 빠른 시작
@@ -31,7 +32,7 @@ AI 에이전트가 API 키나 서버 없이 "누가, 무엇을, 언제까지, �
 ```bash
 pip install "jobsearchradar[mcp]"
 
-jobradar update     # 약 20 MB + 35 MB, 최신이면 다운로드 없음
+jobradar update     # 약 67 MB + 100 MB, 최신이면 다운로드 없음
 jobradar search --company 腾讯 --city 深圳 --category 算法 --table
 ```
 
@@ -65,8 +66,8 @@ jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 읽기 쉬운 �
 
 | 항목 | 현황 |
 |---|---|
-| 목표 커버리지 | **906/1,655(55%)** (나머지 12개는 robots/로그인/암호화로 불가) |
-| 소스 | **2,229개 소스 / 2,188개 기업** (베이센 1,229, 다이이 310, Feishu ATSX 148, Tupu360 32, 구 베이센 113, Workday 45, 구 다이이 15, 자체 사이트 19) |
+| 목표 커버리지 | **919/1,655(55.53%)** (나머지 12개는 robots/로그인/암호화로 불가) |
+| 소스 | **2,230개 소스 / 2,189개 기업** (베이센 1,229, 다이이 310, Feishu ATSX 148, Tupu360 32, 구 베이센 113, Workday 45, 구 다이이 15, 자체 사이트 19) |
 | 성별 커버리지 | 광둥 18/49(37%), 저장 13/44(30%), 장쑤 9/34(26%), 쓰촨 9/30(30%), 산둥 7/26(27%). 전체 표는 `scripts/coverage_report.py` |
 | 대형 테크 | 알리바바·텐센트·메이투안·넷이즈·바이두·징둥·바이트댄스·vivo·체리·CICC·BOE·하이센스·PICC 는 공고 있음. 화웨이는 캘린더만(WAF 403) |
 | 캘린더 항목 | 2026-10-26 전체 크롤 기준 74.9% 가 11개 항목 중 7개 이상 보유 |

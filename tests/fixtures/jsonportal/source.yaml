@@ -14,7 +14,6 @@ params:
   pages_path: data.pages
   extra_body: {name: "", degree: null, orgId: []}
   detail_url: https://campus.cec.com.cn/position/{id}
-  user_agent: jobradar/0.1
   type_param:
     positionType: {campus: '0'}
   fields:
