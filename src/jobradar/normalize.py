@@ -1,4 +1,4 @@
-"""从岗位标题等文本中提取校招字段。规则保守：拿不准就返回 None（CLAUDE.md：不要猜）。"""
+"""从岗位标题等文本中提取校招字段。规则保守：拿不准就返回 None（docs/DEVELOPMENT.md：不要猜）。"""
 
 import re
 from datetime import datetime, timedelta, timezone

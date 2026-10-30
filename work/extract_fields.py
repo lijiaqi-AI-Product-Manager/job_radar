@@ -12,7 +12,7 @@ P3  站内公告详情页 —— 从 P2 抽到公告链接后深入一层（最�
 P4  官方微信公众号推文（mp.weixin.qq.com）—— 校招公告的最权威来源之一，
     README 明确允许，但必须记录 source.date（推文日期）
 
-红线（CLAUDE.md）：
+红线（docs/DEVELOPMENT.md）：
 - 同主机 ≤1 请求/秒，不并发同主机；
 - UA 固定为项目 UA，不伪造浏览器；
 - 遇到验证码/登录墙/签名接口 → 记 blocked，不绕；

@@ -1,0 +1,137 @@
+{
+  "recorded_on": "2026-10-31",
+  "note": "Real CLI result excerpts; snapshot data, not a live screen recording.",
+  "scenes": [
+    {
+      "command": "jobradar search --company 复星医药 --type campus --grad-year 2027 --limit 3",
+      "data_as_of": "2026-10-29T23:17:25Z",
+      "results": [
+        {
+          "company": "复星医药",
+          "title": "【27年校招】CADD/AIDD研培生(J15129)",
+          "cities": [
+            "上海"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://fosunpharma.zhiye.com/campus/detail?jobAdId=7d00b879-6459-496d-b21b-ced19fede6fe"
+        },
+        {
+          "company": "复星医药",
+          "title": "【27年校招】转化医学研培生(J15122)",
+          "cities": [
+            "上海"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://fosunpharma.zhiye.com/campus/detail?jobAdId=0c45f5e9-d17d-42dd-bbf9-2798b5cd9fcf"
+        },
+        {
+          "company": "复星医药",
+          "title": "【27年校招】生物信息研培生(J15123)",
+          "cities": [
+            "上海"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://fosunpharma.zhiye.com/campus/detail?jobAdId=efebeaa0-91cd-471c-bc22-536b1f3217c3"
+        }
+      ]
+    },
+    {
+      "command": "jobradar search --text \"PyTorch 大模型\" --type campus --limit 3",
+      "data_as_of": "2026-10-29T23:17:25Z",
+      "results": [
+        {
+          "company": "曦望Sunrise",
+          "title": "27届秋招-高性能推理 Infra工程师（推理优化&模型算法大类）",
+          "cities": [
+            "杭州",
+            "深圳",
+            "上海",
+            "北京",
+            "成都"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://bcn95a8dacj3.jobs.feishu.cn/campus/position/7673460442816366884/detail"
+        },
+        {
+          "company": "曦望Sunrise",
+          "title": "27届秋招-AI核架构师",
+          "cities": [
+            "上海",
+            "杭州"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://bcn95a8dacj3.jobs.feishu.cn/campus/position/7674620880077621530/detail"
+        },
+        {
+          "company": "曦望Sunrise",
+          "title": "27届秋招-大模型推理性能优化算法工程师",
+          "cities": [
+            "杭州"
+          ],
+          "recruit_type": "campus",
+          "grad_year": 2027,
+          "apply_end": null,
+          "url": "https://bcn95a8dacj3.jobs.feishu.cn/campus/position/7674630072502339881/detail"
+        }
+      ]
+    },
+    {
+      "command": "jobradar calendar --group 阿里巴巴 --limit 1",
+      "data_as_of": "2026-10-30T00:48:12Z",
+      "results": [
+        {
+          "company": "阿里巴巴",
+          "cities": [
+            "北京",
+            "广州",
+            "杭州",
+            "上海",
+            "深圳",
+            "成都",
+            "新加坡",
+            "东莞"
+          ],
+          "grad_year": 2027,
+          "apply_end": "2026-10-31",
+          "group_name": "阿里巴巴",
+          "project_type": "校招",
+          "apply_start": "2026-08-06",
+          "apply_url": "https://campus-talent.alibaba.com/campus/index",
+          "source": {
+            "type": "official_site",
+            "name": "官方招聘站",
+            "url": "https://campus-talent.alibaba.com/campus/index",
+            "date": "2026-08-05"
+          },
+          "tracks": [
+            {
+              "direction": "算法"
+            },
+            {
+              "direction": "软件开发"
+            },
+            {
+              "direction": "数据"
+            },
+            {
+              "direction": "运维"
+            },
+            {
+              "direction": "医药研发"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

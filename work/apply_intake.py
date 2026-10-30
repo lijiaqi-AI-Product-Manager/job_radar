@@ -1,6 +1,6 @@
 """把 work/intake_proposal.jsonl 里 action=add 的候选落成真实 source（北森批量 / 飞书单公司文件）。
 
-规则（对齐 CLAUDE.md 与 P0-1）：
+规则（对齐 docs/DEVELOPMENT.md 与 P0-1）：
 - 同 adapter 同租户/同域名 → 已在库里，天然被 existing 去重挡掉；
 - 同 adapter 同公司（core 名相同）只留岗位数最大的那条，避免同一家公司两个租户；
 - 黑名单 slug（careers/moka/www/wecruit/portal-oss/campus…）直接丢；
@@ -223,7 +223,7 @@ params:
 compliance:
   checked_on: 2026-10-28
   robots: "none"            # {slug}.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表，不触达 /referral
-  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无登录、无验证码、无签名校验。会话 token 只在内存中使用（CLAUDE.md 铁律 1）。用户协议待人工复核"
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无登录、无验证码、无签名校验。会话 token 只在内存中使用（docs/DEVELOPMENT.md 铁律 1）。用户协议待人工复核"
   notes: "2026-10-28 从 Common Crawl 索引发现的 {slug} 租户；实测 portal_type={pt} 时 count={count}，门户 <title> 为「{title}」。"
 """
     for r in feishu:

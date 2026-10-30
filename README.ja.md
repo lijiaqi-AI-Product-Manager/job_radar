@@ -1,84 +1,77 @@
-# job_radar · 中国の校招／インターン／中途採用のオープン求人データセット
+![job_radar](docs/assets/hero-en.svg)
 
-[简体中文](README.md) | [English](README.en.md) | 日本語 | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
+[![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
-[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
-[![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
+[简体中文](README.md) · [English](README.en.md) · 日本語
 
-**毎日自動更新される中国の求人データセット**。各社の公式採用ページを毎日クロールし、すぐに検索できる SQLite として公開します。
-CLI・MCP・Skill を同梱しているので、AI エージェントは API キーもサーバーもなしで
-「どこが・何を・いつまで・どこに出願するか」を答えられます。
+**中国の新卒・インターン・中途採用情報を、ローカルのデータベースへ。**
 
-![demo](docs/assets/demo-en.gif)
-
-> **カバレッジ（2026-10-31 時点）**：**2,230 ソース**（北森 1,229 / 大易 310 / Feishu ATSX 148 / Tupu360 32 / Workday 45 ほか）·
-> **2,189 社** · **26 アダプタ**。目標 **1,655 社**（20 業界 1,117 社 + 31 省級行政区 808 社）のうち **919 社（55.53%）** が取得可能。
-> 求人数・JD カバレッジは毎日のクロールで更新されます（最新の Release を参照）。
-> 有効なソース設定の集計であり、当日の募集中企業数ではありません。80% 目標は未達です（[進捗](docs/internal/DELIVERY-PROGRESS.md)）。
-
-## 特長
-
-- ✅ 各社**公式**採用ページの求人と JD 原文。公式入口が無い企業は公開集約チャネル（実習生・大学就職サイト）も使い、いずれも grade C として区別して集計します
-- ✅ 毎日フルクロール、履歴保持（新規・クローズ・変更を追跡）
-- ✅ 採用カレンダー：卒業年度・プログラム種別・職種方向・応募期間・都市・応募 URL・出典
-- ❌ 全社ではありません（1,655 社中 919 社に有効ソースを設定、724 社は調査中、12 社にアクセス制限の記録あり）
-- ❌ 応募代行・リファラル・面接情報・給与は扱いません。CAPTCHA／ログイン／署名の回避も行いません
+公開されている求人と採用カレンダーを SQLite に整理。企業・都市・卒業年度で絞り込み、求人本文を検索し、元の応募ページを確認できます。CLI と MCP に対応し、検索用の API キーやサーバーは不要です。
 
 ## クイックスタート
 
+PyPI のパッケージ名は `jobsearchradar`、コマンドは `jobradar` です。Python 3.11+ が必要です。Windows / macOS / Linux に対応。
+
+```bash
+pip install jobsearchradar
+jobradar update
+jobradar search --company 复星医药 --type campus --grad-year 2027 --table
+```
+
+![job_radar demo](docs/assets/demo-en.gif)
+
+<sub>図は実際の検索結果の抜粋です。アニメーションの時間は検索速度を示しません。最新の状態と締切は元の求人ページで確認してください。</sub>
+
+## 検索例
+
+```bash
+jobradar search --text "PyTorch 大模型" --type campus --limit 3 --table
+jobradar search --city 上海 --category 算法 --type intern --dedupe --table
+jobradar calendar --group 阿里巴巴 --grad-year 2027 --table
+jobradar diff --days 7 --types open --table
+jobradar doctor
+```
+
+`--table` → table · default → JSON · `JOBRADAR_HOME` → data directory
+
+## データとカバレッジ
+
+2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+
+| 指標 | 値 |
+| :--- | ---: |
+| 有効なデータソース | 2,242 |
+| 設定済み企業 | 2,201 |
+| アダプター | 27 |
+| 固定対象企業の設定カバレッジ | 931 / 1,655 · 56.25% |
+
+2026-10-29 の検証済みスナップショットには 294,483 件の求人レコード（募集中 276,008 件）があり、募集中レコードの JD 本文カバー率は 97.3% です。設定の有無は当日の募集状況を示しません。集約サイトの採用告知は複数職種を含む場合があります。
+
+[Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
+
+## MCP 接続
+
 ```bash
 pip install "jobsearchradar[mcp]"
-
-jobradar update     # 約 67 MB + 100 MB。既に最新ならダウンロードなし
-jobradar search --company 腾讯 --city 深圳 --category 算法 --table
+jobradar update
 ```
 
-中国国内では Gitee ミラーを使用（失敗時は GitHub に自動フォールバック）：
-
-```bash
-jobradar update --mirror gitee
+```json
+{
+  "mcpServers": {
+    "jobradar": {
+      "command": "jobradar-mcp"
+    }
+  }
+}
 ```
 
-## できること
+stdio サービスとして `jobradar-mcp` を登録します。検索・詳細・変更履歴・比較・傾向・カレンダーなど 9 ツールを提供。独自のデータ保存先はサービスの `env` に `JOBRADAR_HOME` を指定します。
 
-```bash
-jobradar search --text "PyTorch 大模型" --type campus   # タイトル＋JD の全文検索
-jobradar search --company 喜茶 --exclude-store          # 店舗系の求人を除外（約 8,000 件）
-jobradar search --company 星巴克中国 --dedupe           # 重複 requisition を集約（variants 付き）
-jobradar diff --days 7 --by category --company 腾讯     # 会社単位の新着を職種別に
-jobradar calendar --group 阿里巴巴 --type 秋招 --table   # 読みやすいカレンダー表示
-```
+## ドキュメントと貢献
 
-求人が無いがカレンダーには載っている会社（字節跳動・華為・小米など）では、`search` は
-「データなし」ではなく `jobradar calendar --group <社名> --table` を案内します。
+公開ソースの追加、日付の修正、再現可能な不具合報告、翻訳を歓迎します。役に立ったら Star や共有で応援してください。
 
-## AI エージェント連携
+[English guide](README.en.md) · [文档 / Docs](docs/README.md) · [FAQ](docs/FAQ.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
-- **Claude Code**：`skill/jobradar/` を `~/.claude/skills/jobradar/` にコピー
-- **MCP クライアント**（Claude Desktop / Cursor など）：コマンドは `jobradar-mcp`（stdio、9 ツール）。
-  データ置き場が既定（`~/.cache/jobradar`）でない場合は MCP 設定の `env` に `JOBRADAR_HOME` を渡してください
-- ライブラリとしても利用可：`from jobradar.core import queries`
-
-## 既知の制限
-
-| 項目 | 現状 |
-|---|---|
-| 目標網羅 | **919/1,655（55.53%）**（残り 12 社は robots／ログイン／暗号化で不可） |
-| ソース | **2,230 ソース / 2,189 社**（北森 1,229、大易 310、Feishu ATSX 148、Tupu360 32、旧北森 113、Workday 45、旧大易 15、独自サイト 19） |
-| 省別網羅 | 広東 35/49（71%）、浙江 24/44（55%）、江蘇 15/34（44%）、四川 14/30（47%）、山東 15/26（58%）。全表は `scripts/coverage_report.py` |
-| 大手 | 阿里・騰訊・美団・網易・百度・京東・字節跳動・vivo・奇瑞・中金・BOE・海信・中国人保などは求人あり。華為はカレンダーのみ（WAF 403） |
-| カレンダー項目 | 2026-10-26 の全クロール時点で 74.9% が 11 項目中 7 項目以上 |
-| 応募期間 | 最も弱い項目（2026-10-26 時点で完全な期間は 0.6%）。`apply_end` は募集の最頻日を採用 |
-| 重複 | 2026-10-26 時点で 9.2% が同一会社・同一タイトル・同一都市（`--dedupe` で集約） |
-| 履歴 | 2026-10-19 以降。トレンド分析はまだ 5〜7 日分 |
-
-詳細は [CLAUDE.md](CLAUDE.md)、社内プロセス文書は [docs/internal/](docs/internal/)。
-
-## ライセンスとコンプライアンス
-
-コードは MIT。求人内容の権利は各発表者に帰属し、本リポジトリはインデックスのみ提供します。
-公開ページのみを 1 リクエスト/秒以下で取得し、CAPTCHA・ログイン・署名の回避は行いません
-（[COMPLIANCE.md](COMPLIANCE.md)）。
+コードは MIT ライセンスです。第三者の求人本文の権利は元の権利者に帰属し、コードのライセンスが追加の利用権を与えるものではありません。

@@ -1,0 +1,23 @@
+name: Source request / 招聘源补充
+description: Suggest a permitted public recruitment source or a data correction.
+title: "[Source] "
+body:
+  - type: input
+    id: company
+    attributes:
+      label: Company or platform / 公司或平台
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Public recruitment URL / 公开招聘链接
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should be added or corrected? / 建议补充或修正什么
+      description: Include the recruitment type, dates and evidence if available. Links requiring login or a CAPTCHA cannot be collected.
+    validations:
+      required: true

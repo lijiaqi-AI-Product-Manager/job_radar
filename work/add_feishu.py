@@ -1,7 +1,7 @@
 """把验证通过的「飞书招聘 ATSX」门户写成 `sources/<slug>.yaml`（一家一文件，沿用 nio/xpeng 的写法）。
 
 为什么一家一个文件：飞书站是**自研站**，`sources/` 的约定是「平台型进平台文件、自研站单独文件」
-（见 CLAUDE.md 命名规范）。这里机械生成，避免手写 YAML 漏 compliance。
+（见 docs/DEVELOPMENT.md 命名规范）。这里机械生成，避免手写 YAML 漏 compliance。
 
 用法：`python3 work/add_feishu.py --in /tmp/exp/feishu_ok2.jsonl --apply`
 每行是 `feishu_probe.py` 的输出：{company, base_url, website_path, count, jobs}
@@ -46,7 +46,7 @@ params:
 compliance:
   checked_on: {today}
   robots: "none"            # {host}/robots.txt → 404（平台层无站点级规则）；只读公开列表，不触达 /referral
-  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。token 只在内存中使用（CLAUDE.md 铁律 1）"
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。token 只在内存中使用（docs/DEVELOPMENT.md 铁律 1）"
   notes: "2026-10-27 实测 count={count}，样本岗位「{sample}」；接口必须 POST，GET 会掉回 SPA 首页 HTML。"
 """
 

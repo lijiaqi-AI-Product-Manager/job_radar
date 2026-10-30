@@ -1,6 +1,6 @@
 """阿里巴巴校园招聘 campus-talent.alibaba.com（应届生/实习生）。侦察：docs/recon/alibaba.md
 
-匿名会话（CLAUDE.md 铁律 1，2026-10-21 用户批准）：先打开公开职位页，站点给匿名访客下发会话 cookie，
+匿名会话（docs/DEVELOPMENT.md 铁律 1，2026-10-21 用户批准）：先打开公开职位页，站点给匿名访客下发会话 cookie，
 页面内嵌 `__token__`；列表接口 `POST /position/search?_csrf=<token>` 带着它即可访问。token 只在内存里。
 批次（应届生/实习生/顶尖人才计划）从 `POST /searchCondition/listBatch` 取，不写死届别。
 列表直接含职责（description）与要求（requirement）原文，无需详情请求。

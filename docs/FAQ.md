@@ -74,8 +74,8 @@ Gitee 上的大文件是分片存放的（`.partNN`），客户端会自动下�
 
 **Q：怎么让 AI agent 用上？**
 
-- Claude Code：把 `skill/jobradar/` 复制到 `~/.claude/skills/jobradar/`
-- MCP 客户端（Claude Desktop / Cursor）：命令填 `jobradar-mcp`（stdio）
+- CLI 集成：参考 `skill/jobradar/` 中的查询工作流
+- 支持 MCP 的客户端：命令填 `jobradar-mcp`（stdio）
 - 直接当库：`from jobradar.core import queries`
 
 **Q：数据可以商用/二次分发吗？**
@@ -87,7 +87,7 @@ Gitee 上的大文件是分片存放的（`.partNN`），客户端会自动下�
 
 **Q：怎么加一家公司？**
 
-先侦察（`docs/recon/`），再按 `CLAUDE.md` 的适配器流程做；北森/大易/Workday 只需在
+先侦察（`docs/recon/`），再按 `docs/DEVELOPMENT.md` 的适配器流程做；北森/大易/Workday 只需在
 `sources/*.yaml` 加一行。详见 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 
 **Q：改了查询逻辑怎么确认没变差？**

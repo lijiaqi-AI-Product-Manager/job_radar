@@ -1,0 +1,33 @@
+name: Bug report / 问题反馈
+description: Report a reproducible query, data or download issue.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / 发生了什么
+      description: Describe the result and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Command and steps / 命令与复现步骤
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Version and platform / 版本与系统
+      placeholder: jobradar --version; Python version; OS
+  - type: input
+    id: timestamp
+    attributes:
+      label: Data timestamp / 数据时间
+      description: Include data_as_of from the output or jobradar doctor.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Original source and evidence / 原始来源与证据
+      description: Include the public URL. Remove credentials and personal contact details.

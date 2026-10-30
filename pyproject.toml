@@ -1,11 +1,11 @@
 [project]
 name = "jobsearchradar"
 dynamic = ["version"]
-description = "每日自动更新的中国校招/实习/社招岗位开放数据集（PyPI 包名 jobsearchradar，命令 jobradar）：CLI + MCP + Skill，让 AI agent 直接查询（零服务器、可离线）"
+description = "中国校招、实习、社招与招聘日历的可追溯数据集：本地 SQLite、CLI 与 MCP，每日数据快照"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
-keywords = ["jobs", "campus-recruitment", "china", "dataset", "ai-agents", "mcp", "cli", "sqlite"]
+keywords = ["jobs", "campus-recruitment", "china", "dataset", "mcp", "cli", "sqlite"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -51,7 +51,7 @@ packages = ["src/jobradar"]
 include = [
   "src/jobradar", "tests", "sources", "taxonomy", "targets", "calendar",
   "scripts", "skill", "docs", "evals",
-  "README.md", "AGENTS.md", "CLAUDE.md", "COMPLIANCE.md", "LICENSE", "pyproject.toml",
+  "README.md", "AGENTS.md", "docs/DEVELOPMENT.md", "COMPLIANCE.md", "LICENSE", "pyproject.toml",
 ]
 
 [tool.pytest.ini_options]

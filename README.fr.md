@@ -1,86 +1,77 @@
-# job_radar · Jeu de données ouvert sur l'emploi en Chine (campus, stages, expérimentés)
+![job_radar](docs/assets/hero-en.svg)
 
-[简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | Français | [Deutsch](README.de.md) | [Русский](README.ru.md)
+[![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
-[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
-[![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
+[简体中文](README.md) · [English](README.en.md) · Français
 
-**Un jeu de données qui se met à jour chaque jour** : sites carrières officiels → collecte quotidienne →
-un SQLite interrogeable localement. CLI, serveur MCP et Skill inclus : un agent IA répond
-« qui recrute, quoi, jusqu'à quand, où postuler » sans clé API ni serveur.
+**Les offres d’emploi en Chine, dans une base de données que vous interrogez chez vous.**
 
-![demo](docs/assets/demo-en.gif)
+Offres publiques pour jeunes diplômés, stages, postes expérimentés et calendriers de recrutement, réunis dans SQLite. Filtrez par entreprise, ville et promotion, recherchez dans les descriptions originales et retrouvez le lien de candidature. CLI et MCP, sans clé API ni serveur à déployer.
 
-> **Données (2026-10-31)** : **2 230 sources** · **2 189 entreprises** · **26 adaptateurs**
-> (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / ancien Beisen 113 / Workday 45 / ancien Dayee 15 / sites maison 19)
-> Sur les **1 655 cibles** (1 117 dans 20 secteurs + 808 dans 31 régions provinciales), **919 sont couvertes (55,53 %)** et 12 ne sont pas accessibles pour raisons de conformité.
-> Les volumes d'offres et la couverture des champs sont mis à jour à chaque collecte quotidienne (voir la dernière version).
-> Ces chiffres comptent les sources activées, pas les entreprises recrutant ce jour. L’objectif de 80 % reste à atteindre ([suivi](docs/internal/DELIVERY-PROGRESS.md)).
+## Démarrage rapide
 
-## Ce que c'est / ce que ce n'est pas
-
-- ✅ Offres et texte du JD issus des sites **officiels** ; à défaut de portail officiel conforme, nous lisons des canaux agrégateurs publics, toujours marqués grade C et comptés séparément
-- ✅ Recollecte complète quotidienne, historique conservé (ouverture, fermeture, changement)
-- ✅ Calendrier de recrutement : promotion, type de programme, domaines, fenêtre de candidature, villes, lien, source
-- ❌ Pas « toutes les entreprises » : 577 des 1 655 cibles ont une source ; les 1 078 autres sont sur la liste ouverte
-- ❌ Pas de candidature, cooptation, retours d'entretien ni salaires ; aucun contournement de captcha/login/signature
-
-## Démarrage
+Le paquet PyPI s’appelle `jobsearchradar` ; la commande installée est `jobradar`. Python 3.11+ est requis. Compatible avec Windows, macOS et Linux.
 
 ```bash
-# Pas encore sur PyPI (pipeline prêt, voir docs/PUBLISHING.md) — installation depuis les sources :
+pip install jobsearchradar
+jobradar update
+jobradar search --company 复星医药 --type campus --grad-year 2027 --table
+```
+
+![job_radar demo](docs/assets/demo-en.gif)
+
+<sub>L’animation présente des extraits de résultats réels. Sa durée ne mesure pas la latence. Vérifiez l’état et les dates sur la page de recrutement d’origine.</sub>
+
+## Exemples de recherche
+
+```bash
+jobradar search --text "PyTorch 大模型" --type campus --limit 3 --table
+jobradar search --city 上海 --category 算法 --type intern --dedupe --table
+jobradar calendar --group 阿里巴巴 --grad-year 2027 --table
+jobradar diff --days 7 --types open --table
+jobradar doctor
+```
+
+`--table` → table · default → JSON · `JOBRADAR_HOME` → data directory
+
+## Données et couverture
+
+2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+
+| Indicateur | Valeur |
+| :--- | ---: |
+| Sources actives | 2,242 |
+| Entreprises configurées | 2,201 |
+| Adaptateurs | 27 |
+| Couverture du périmètre fixe d’entreprises cibles | 931 / 1,655 · 56.25% |
+
+L’instantané vérifié du 29 octobre 2026 contient 294 483 enregistrements, dont 276 008 ouverts. Le texte original est disponible pour 97,3 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
+
+[Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
+
+## Connexion MCP
+
+```bash
 pip install "jobsearchradar[mcp]"
-
-jobradar update     # ~20 Mo + 35 Mo ; aucun téléchargement si déjà à jour
-jobradar search --company 腾讯 --city 深圳 --category 算法 --table
+jobradar update
 ```
 
-Depuis la Chine continentale, utilisez le miroir Gitee (retour automatique vers GitHub en cas d'échec) :
-
-```bash
-jobradar update --mirror gitee
+```json
+{
+  "mcpServers": {
+    "jobradar": {
+      "command": "jobradar-mcp"
+    }
+  }
+}
 ```
 
-## Questions possibles
+Ajoutez `jobradar-mcp` comme service stdio. Neuf outils couvrent recherche, détail, changements, comparaison, tendances, calendriers et statistiques. Pour un répertoire personnalisé, transmettez `JOBRADAR_HOME` dans le champ `env` du service.
 
-```bash
-jobradar search --text "PyTorch 大模型" --type campus   # recherche plein texte titre + JD
-jobradar search --company 喜茶 --exclude-store          # exclut les postes en boutique (~8 000)
-jobradar search --company 星巴克中国 --dedupe           # regroupe les requisitions en double (variants)
-jobradar diff --days 7 --by category --company 腾讯     # nouveautés par entreprise et métier
-jobradar calendar --group 阿里巴巴 --type 秋招 --table   # calendrier lisible
-```
+## Documentation et contributions
 
-Si une entreprise n'a pas d'offres mais un calendrier (ByteDance, Huawei, Xiaomi…), `search`
-renvoie un bloc `calendar` avec `jobradar calendar --group <entreprise> --table` au lieu de
-« aucune donnée », plus la mention `{entreprise}希望你去他们的招聘页逛一逛哦~`.
+Ajoutez des sources publiques autorisées, corrigez des dates, signalez un problème reproductible ou améliorez les traductions. Une Star ou un partage aide d’autres personnes à découvrir le projet.
 
-## Pour les agents IA
+[English guide](README.en.md) · [文档 / Docs](docs/README.md) · [FAQ](docs/FAQ.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
-- **Claude Code** : copiez `skill/jobradar/` dans `~/.claude/skills/jobradar/`
-- **Clients MCP** (Claude Desktop, Cursor…) : commande `jobradar-mcp` (stdio, 9 outils).
-  Si vos données ne sont pas dans `~/.cache/jobradar`, passez `JOBRADAR_HOME` dans le bloc `env` MCP
-- Utilisable comme bibliothèque : `from jobradar.core import queries`
-
-## Limites connues
-
-| Domaine | Réalité |
-|---|---|
-| Couverture des cibles | **577/1 655 (35 %)** ; 12 ne sont pas couvrables en conformité (robots/login/chiffrement) |
-| Sources | **1 131 sources / 1 099 entreprises** via 26 adaptateurs |
-| Grandes technologiques | Alibaba/Tencent/Meituan/NetEase… avec offres ; ByteDance/JD/Huawei : calendrier seulement |
-| Couverture provinciale | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — tableau complet : `scripts/coverage_report.py` |
-| Fenêtres de candidature | seules une partie des entrées de calendrier ont un début et une fin ; chiffre exact : jobradar stats |
-| Doublons | 9,2 % même entreprise+titre+ville ; utilisez `--dedupe` |
-| Historique | depuis 2026-10-19, les tendances couvrent 5 à 7 jours |
-
-Les documents de processus internes sont dans [docs/internal/](docs/internal/).
-
-## Licence et conformité
-
-Code MIT. Le contenu des offres appartient à leurs auteurs ; ce dépôt ne fait qu'indexer.
-Accès aux pages publiques uniquement, ≤1 requête/seconde, sans contourner captcha, login ou signature
-([COMPLIANCE.md](COMPLIANCE.md)).
+Le code est sous licence MIT. Les droits sur les offres et les contenus tiers restent à leurs titulaires ; la licence du code n’accorde aucun droit supplémentaire sur ces contenus.

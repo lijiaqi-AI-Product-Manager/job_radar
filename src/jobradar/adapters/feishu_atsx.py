@@ -12,7 +12,7 @@ Momenta、月之暗面……用的是**同一套 ATSX 前端 + 同一套匿名 J
   | momenta.jobs.feishu.cn/campus | 200 | 200 | 30 条，project="Mstar计划" |
   | moonshot.jobs.feishu.cn/campus | 200 | 200 | 0 条（门户当时无开放岗位） |
 
-匿名会话（CLAUDE.md 铁律 1）：
+匿名会话（docs/DEVELOPMENT.md 铁律 1）：
   1) `POST /api/v1/csrf/token` body `{"portal_entrance":1}` → 在 `data.token` 返回会话令牌；
   2) 列表 `POST /api/v1/search/job/posts`，请求头带 `x-csrf-token: <data.token>`（**必须是 body 里
      那个原值**，不是 URL 编码后的 cookie 值）+ `Accept: application/json` → 200。
@@ -261,7 +261,7 @@ class FeishuAtsxAdapter(Adapter):
             if pub is None or pub < f"{date.today().year}-07-01":
                 grad = None
         # job_category 树：站点只给叶子（算法 / 后端 / 运营…），父节点是"研发"这类大方向。
-        # 用 taxonomy 的归类口径而不是自造树，跨公司才能对齐（CLAUDE.md：不要自造分类）。
+        # 用 taxonomy 的归类口径而不是自造树，跨公司才能对齐（docs/DEVELOPMENT.md：不要自造分类）。
         cat, subcat = categorize(title)
         if cat is None:
             # taxonomy 没命中时退回站点自己的职类名，至少保留信息量

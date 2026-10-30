@@ -28,7 +28,7 @@ class SkipRecord(Exception):
 
 class Adapter(ABC):
     id: ClassVar[str]  # 小写蛇形，必须与模块文件名一致，如 "moka"、"tencent"
-    # 站点下发给匿名访客的 token 的正则（各带一个分组）。录制 fixtures 时据此脱敏（CLAUDE.md 铁律 1）
+    # 站点下发给匿名访客的 token 的正则（各带一个分组）。录制 fixtures 时据此脱敏（docs/DEVELOPMENT.md 铁律 1）
     secret_patterns: ClassVar[list[str]] = []
 
     def __init__(self, source: SourceConfig, client: httpx.Client, *,

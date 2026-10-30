@@ -28,7 +28,7 @@ POST /api/v1/search/job/posts?keyword=&limit=10&offset=0&…&portal_type=6&…&p
 - 唯一对不上的就是 URL 里的 `_signature`：它是前端运行时算出来的，不是服务端下发的 token。
 - 同域 GET 全部正常，说明不是 IP/UA/网络问题，而是该 POST 路由要求签名。
 
-按 CLAUDE.md 铁律 1：「需要逆向请求签名/加密参数才能访问的接口：立即停止，不实现」。
+按 docs/DEVELOPMENT.md 铁律 1：「需要逆向请求签名/加密参数才能访问的接口：立即停止，不实现」。
 **不做**，不尝试复现签名算法。
 
 ## 3. 影响的公司

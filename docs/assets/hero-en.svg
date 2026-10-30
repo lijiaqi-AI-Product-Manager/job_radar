@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="430" viewBox="0 0 1600 430" role="img" aria-label="job_radar">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#142e40"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#58e0b3" stop-opacity=".18"/><stop offset="1" stop-color="#58e0b3" stop-opacity="0"/></radialGradient></defs>
+<rect width="1600" height="430" rx="24" fill="url(#bg)"/>
+<circle cx="1400" cy="206" r="255" fill="url(#glow)"/>
+<g fill="none" stroke="#58e0b3" stroke-opacity=".18"><circle cx="1400" cy="206" r="160"/><circle cx="1400" cy="206" r="110"/><circle cx="1400" cy="206" r="60"/><path d="M1205 206h390M1400 11v390"/></g>
+<path d="M1400 206l113-113a160 160 0 0 1 47 113Z" fill="#58e0b3" opacity=".10"/>
+<g fill="#58e0b3"><circle cx="1450" cy="140" r="7"/><circle cx="1305" cy="245" r="5"/><circle cx="1485" cy="278" r="5"/></g>
+<g font-family="Segoe UI,Microsoft YaHei,Noto Sans,sans-serif">
+<text x="70" y="100" fill="#58e0b3" font-size="18" letter-spacing="5">OPEN RECRUITMENT DATA</text>
+<text x="66" y="196" fill="#edf4fc" font-weight="750" font-size="84">job_radar<tspan fill="#58e0b3">.</tspan></text>
+<text x="70" y="266" fill="#edf4fc" font-size="35" font-weight="600">Find your next opportunity. Keep the data.</text>
+<text x="70" y="311" fill="#a3b6cc" font-size="22">China jobs & recruitment calendars. Search locally. Follow the source.</text>
+<g font-size="16" fill="#bcecdc"><rect x="70" y="350" width="88" height="34" rx="17" fill="#1c3940"/><text x="96" y="373">CLI</text>
+<rect x="170" y="350" width="96" height="34" rx="17" fill="#1c3940"/><text x="196" y="373">MCP</text>
+<rect x="278" y="350" width="110" height="34" rx="17" fill="#1c3940"/><text x="300" y="373">SQLite</text>
+<rect x="400" y="350" width="158" height="34" rx="17" fill="#1c3940"/><text x="421" y="373">Daily snapshots</text></g></g></svg>

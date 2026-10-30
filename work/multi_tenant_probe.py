@@ -7,7 +7,7 @@
   2. 大易 `{brand}.hotjob.cn` —— GET 首页，跳转到 `/wt/{tenant}/web/...` 即命中；
   3. 飞书 ATSX `{slug}.jobs.feishu.cn` —— POST `/api/v1/csrf/token`，拿到 `data.token` 即命中。
 
-红线（与 CLAUDE.md 一致）：
+红线（与 docs/DEVELOPMENT.md 一致）：
   - 每个主机 ≤1 rps：同一 host 上两次请求间隔 ≥1.05s（全局节流表）；
   - 只读公开列表/首页，不登录、不翻页、不抓 JD；
   - 只探测**目标公司清单里**的公司，不扫无关域名。

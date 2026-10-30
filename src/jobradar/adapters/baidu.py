@@ -20,7 +20,7 @@
 5. **必须带 `Referer`**（`https://talent.baidu.com/jobs/list?recruitType=...`），否则
    `{"status":"no-auth","message":"illegal-visit"}`。只加 `Origin: https://talent.baidu.com`
    也不行——实测只要 Referer 不要 Origin。Referer 是浏览器从列表页跳转时本来就会带的头，
-   不是伪造身份，符合 CLAUDE.md 铁律（不伪造 UA、不逆向签名）。
+   不是伪造身份，符合 docs/DEVELOPMENT.md 铁律（不伪造 UA、不逆向签名）。
 6. 列表一次给全：城市 `workPlace`、职类 `postType`、**发布日期 `publishDate`**、
    职责 `workContent`、要求 `serviceCondition`、招聘项目 `projectType`。不需要逐岗详情。
 

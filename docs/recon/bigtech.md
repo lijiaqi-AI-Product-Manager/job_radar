@@ -12,7 +12,7 @@
 | 小米 | hr.xiaomi.com | ⛔ 不做 | 2026-10-22 复侦察：只有品牌介绍页（校园招聘/项目/日程），投递走「小米招聘」公众号，无公开岗位列表 |
 | 字节 | jobs.bytedance.com | ✅ 已接入 | 2026-10-26 推翻旧结论：405 是缺 `Accept: application/json` + 用错了 CSRF 值（cookie 里那个是 URL 编码的），`_signature` 服务端不校验；`sources/bytedance.yaml` 7,044 条 |
 
-按 CLAUDE.md 铁律：验证码、需要登录/凭据、robots 禁止 → 不实现，不绕过。
+按 docs/DEVELOPMENT.md 铁律：验证码、需要登录/凭据、robots 禁止 → 不实现，不绕过。
 已可做：腾讯校招（`tencent.md` §9）、美团（`meituan.md`）。阿里、京东见各自文档。
 
 ## 2026-10-22 复侦察：其他大厂的 ATS 归属

@@ -12,5 +12,5 @@ params:
 compliance:
   checked_on: 2026-10-27
   robots: "none"            # 517tastien.jobs.feishu.cn/robots.txt → 404（平台层无站点级规则）；只读公开列表，不触达 /referral
-  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。token 只在内存中使用（CLAUDE.md 铁律 1）"
+  terms: "飞书招聘 ATSX 门户：匿名 csrf token + 公开职位列表 JSON，无需登录、无验证码、无签名校验。token 只在内存中使用（docs/DEVELOPMENT.md 铁律 1）"
   notes: "2026-10-27 实测 count=86，样本岗位「门店稽核经理」；接口必须 POST，GET 会掉回 SPA 首页 HTML。"

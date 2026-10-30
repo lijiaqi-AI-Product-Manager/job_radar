@@ -1,85 +1,77 @@
-# job_radar · Offener Datensatz zu Jobs in China (Campus, Praktika, Berufserfahrene)
+![job_radar](docs/assets/hero-en.svg)
 
-[简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | Deutsch | [Русский](README.ru.md)
+[![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
-[![version](https://img.shields.io/badge/version-1.12.1-blue)](CHANGELOG.md)
-[![pypi](https://img.shields.io/pypi/v/jobsearchradar)](https://pypi.org/project/jobsearchradar/)
-[![ci](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml)
-[![data](https://img.shields.io/badge/data-daily-success)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest)
-[![license](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
+[简体中文](README.md) · [English](README.en.md) · Deutsch
 
-**Ein Datensatz, der sich täglich selbst aktualisiert**: offizielle Karriereseiten → täglicher Crawl →
-eine lokal abfragbare SQLite-Datei. Mit CLI, MCP-Server und Skill kann ein KI-Agent
-„wer stellt ein, was, bis wann, wo bewerben" ohne API-Key und ohne Server beantworten.
+**Stellenangebote in China. Als lokale Datenbank, mit nachvollziehbaren Quellen.**
 
-![demo](docs/assets/demo-en.gif)
-
-> **Datenstand (2026-10-31)**: **2,230 Quellen** · **2,189 Unternehmen** · **26 Adapter**
-> (Beisen 1,229 / Dayee 310 / Feishu ATSX 148 / Tupu360 32 / Alt-Beisen 113 / Workday 45 / Alt-Dayee 15 / eigene Seiten 19)
-> Von den **1.655 Zielen** (1.117 in 20 Branchen + 808 in 31 Provinzregionen) sind **919 abgedeckt (55,53 %)**, 12 sind aus Compliance-Gründen nicht erreichbar.
-> Stellenzahlen und Feldabdeckung werden bei jedem täglichen Crawl aktualisiert (siehe neuestes Release).
-> Gezählt werden aktivierte Quellen, keine aktuell einstellenden Firmen. Das Ziel von 80 % ist noch offen ([Fortschritt](docs/internal/DELIVERY-PROGRESS.md)).
-
-## Was es ist / was nicht
-
-- ✅ Stellen und JD-Text von **offiziellen** Karriereseiten; ohne konformen offiziellen Zugang nutzen wir öffentliche Aggregator-Kanäle, stets als grade C markiert und getrennt gezählt
-- ✅ Täglicher Voll-Crawl, Historie bleibt erhalten (neu, geschlossen, geändert)
-- ✅ Rekrutierungskalender: Jahrgang, Programmtyp, Fachrichtungen, Bewerbungsfenster, Städte, Link, Quelle
-- ❌ Nicht „alle Unternehmen": 577 der 1.655 Ziele haben eine Quelle; die übrigen 1.078 stehen auf der offenen Liste
-- ❌ Keine Bewerbungen, Empfehlungen, Interviewberichte oder Gehälter; keine Captcha-/Login-/Signatur-Umgehung
+Öffentliche Angebote für Berufseinstieg, Praktika und Berufserfahrene sowie Recruiting-Kalender in SQLite. Nach Unternehmen, Stadt und Abschlussjahr filtern, Originalbeschreibungen durchsuchen und zur Bewerbungsseite wechseln. CLI und MCP, ohne API-Schlüssel oder eigenen Server.
 
 ## Schnellstart
 
+Das PyPI-Paket heißt `jobsearchradar`, der installierte Befehl `jobradar`. Erfordert Python 3.11+. Unterstützt Windows, macOS und Linux.
+
+```bash
+pip install jobsearchradar
+jobradar update
+jobradar search --company 复星医药 --type campus --grad-year 2027 --table
+```
+
+![job_radar demo](docs/assets/demo-en.gif)
+
+<sub>Die Animation zeigt Auszüge echter Abfragen. Die Wiedergabedauer entspricht keiner Laufzeitmessung. Aktuellen Status und Fristen auf der Originalseite prüfen.</sub>
+
+## Abfragebeispiele
+
+```bash
+jobradar search --text "PyTorch 大模型" --type campus --limit 3 --table
+jobradar search --city 上海 --category 算法 --type intern --dedupe --table
+jobradar calendar --group 阿里巴巴 --grad-year 2027 --table
+jobradar diff --days 7 --types open --table
+jobradar doctor
+```
+
+`--table` → table · default → JSON · `JOBRADAR_HOME` → data directory
+
+## Daten und Abdeckung
+
+2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+
+| Kennzahl | Wert |
+| :--- | ---: |
+| Aktivierte Quellen | 2,242 |
+| Konfigurierte Unternehmen | 2,201 |
+| Adapter | 27 |
+| Konfigurationsabdeckung der festen Zielliste | 931 / 1,655 · 56.25% |
+
+Der geprüfte Stand vom 29. Oktober 2026 enthält 294.483 Datensätze, davon 276.008 offene Einträge. Für 97,3 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
+
+[Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
+
+## MCP verbinden
+
 ```bash
 pip install "jobsearchradar[mcp]"
-
-jobradar update     # ~67 MB + 100 MB; kein Download, wenn bereits aktuell
-jobradar search --company 腾讯 --city 深圳 --category 算法 --table
+jobradar update
 ```
 
-Aus Festlandchina das Gitee-Mirror nutzen (fällt automatisch auf GitHub zurück):
-
-```bash
-jobradar update --mirror gitee
+```json
+{
+  "mcpServers": {
+    "jobradar": {
+      "command": "jobradar-mcp"
+    }
+  }
+}
 ```
 
-## Mögliche Fragen
+`jobradar-mcp` als stdio-Dienst eintragen. Neun Werkzeuge bieten Suche, Details, Änderungen, Vergleiche, Trends, Kalender und Statistiken. Für einen anderen Datenordner `JOBRADAR_HOME` im Feld `env` des Dienstes setzen.
 
-```bash
-jobradar search --text "PyTorch 大模型" --type campus   # Volltextsuche über Titel + JD
-jobradar search --company 喜茶 --exclude-store          # Filialstellen ausblenden (~8.000)
-jobradar search --company 星巴克中国 --dedupe           # doppelte Requisitionen bündeln (variants)
-jobradar diff --days 7 --by category --company 腾讯     # Neuzugänge je Unternehmen und Fachbereich
-jobradar calendar --group 阿里巴巴 --type 秋招 --table   # lesbarer Kalender
-```
+## Dokumentation und Beiträge
 
-Hat ein Unternehmen keine Stellen, aber Kalendereinträge (ByteDance, Huawei, Xiaomi…), liefert
-`search` einen `calendar`-Block mit `jobradar calendar --group <Name> --table` statt „keine Daten",
-inklusive des Hinweises `{Name}希望你去他们的招聘页逛一逛哦~`.
+Erlaubte öffentliche Quellen ergänzen, Termine berichtigen, reproduzierbare Fehler melden oder Übersetzungen verbessern. Ein Star oder das Teilen des Projekts hilft anderen bei der Entdeckung.
 
-## Für KI-Agenten
+[English guide](README.en.md) · [文档 / Docs](docs/README.md) · [FAQ](docs/FAQ.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
-- **Claude Code**: `skill/jobradar/` nach `~/.claude/skills/jobradar/` kopieren
-- **MCP-Clients** (Claude Desktop, Cursor…): Befehl `jobradar-mcp` (stdio, 9 Tools).
-  Liegen die Daten nicht in `~/.cache/jobradar`, `JOBRADAR_HOME` im MCP-`env`-Block setzen
-- Auch als Bibliothek nutzbar: `from jobradar.core import queries`
-
-## Bekannte Grenzen
-
-| Bereich | Realität |
-|---|---|
-| Zielabdeckung | **577/1.655 (35 %)**; 12 Ziele sind wegen robots/Login/Verschlüsselung nicht konform erreichbar |
-| Quellen | **1.310 Quellen / 1.281 Unternehmen** über 26 Adapter |
-| Große Tech-Firmen | Alibaba/Tencent/Meituan/NetEase… mit Stellen; ByteDance/JD/Huawei nur Kalender |
-| Provinzabdeckung | Guangdong 18/49, Zhejiang 13/44, Jiangsu 9/34, Sichuan 9/30, Shandong 7/26 — vollständige Tabelle: `scripts/coverage_report.py` |
-| Bewerbungsfenster | Beginn und Ende sind nur bei einem Teil der Kalendereinträge gesetzt; genaue Zahl: jobradar stats |
-| Duplikate | 9,2 % gleiches Unternehmen+Titel+Stadt; `--dedupe` nutzen |
-| Historie | seit 2026-10-19, Trends derzeit 5–7 Tage |
-
-Interne Prozessdokumente liegen unter [docs/internal/](docs/internal/).
-
-## Lizenz und Compliance
-
-Code MIT. Rechte an Stelleninhalten liegen bei den Veröffentlichern; dieses Repo indexiert nur.
-Nur öffentliche Seiten, ≤1 Anfrage/Sekunde, keine Umgehung von Captcha, Login oder Signatur
-([COMPLIANCE.md](COMPLIANCE.md)).
+Der Code steht unter MIT. Rechte an Stellenbeschreibungen und sonstigen Inhalten Dritter verbleiben bei den jeweiligen Rechteinhabern; die Code-Lizenz gewährt dafür keine zusätzlichen Rechte.

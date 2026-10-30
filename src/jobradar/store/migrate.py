@@ -1,6 +1,6 @@
 """SQLite 迁移：migrations/<kind>/NNNN_name.sql 按序执行，版本记在 PRAGMA user_version。
 
-规则（CLAUDE.md 同样写明）：已有迁移文件永远不改；改 schema = 新增下一个编号的迁移文件，
+规则（docs/DEVELOPMENT.md 同样写明）：已有迁移文件永远不改；改 schema = 新增下一个编号的迁移文件，
 并运行 scripts/update_schema_lock.py 登记。tests/test_schema_guard.py 会强制检查。
 """
 

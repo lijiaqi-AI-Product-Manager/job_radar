@@ -10,11 +10,11 @@
   GREP <url> <正则>           打印正则的去重匹配（用于在 JS 包里找接口）
   POSTGREP <url> <json> <正则>  POST 后对响应做正则匹配（json 内不能有空格）
   FORMGREP <url> <a=1&b=2> <正则> 以表单（application/x-www-form-urlencoded）POST 后做正则匹配
-  FLOW {json}                 匿名会话（CLAUDE.md 铁律 1）：先 GET 公开页面 page（保留站点下发的 cookie），
+  FLOW {json}                 匿名会话（docs/DEVELOPMENT.md 铁律 1）：先 GET 公开页面 page（保留站点下发的 cookie），
                               可从页面取匿名 token（token: {"re": 带一个分组的正则, "header"|"json"|"query": 名字}），
                               可把某个 cookie 回填到请求头（cookie_header: {"cookie": 名, "header": 名}），
                               再按 method/url/json/data/headers 请求接口，grep 可选。只打印 cookie 名与 token 长度，不打印值。
-  RENDER <url> [正则]          浏览器渲染（Playwright，CLAUDE.md 铁律 6）：打印页面可见文字（或正则匹配）、
+  RENDER <url> [正则]          浏览器渲染（Playwright，docs/DEVELOPMENT.md 铁律 6）：打印页面可见文字（或正则匹配）、
                               页面发出的 XHR/fetch 请求；出现验证码字样时提示停止。
   RENDERXHR <url> <正则>       同 RENDER，并对 URL 匹配正则的 XHR 打印请求体与响应体开头（token/签名值脱敏）。
                               接口要求反爬签名（如 _signature、X-Bogus）的站点不用浏览器去"代签"，按 blocked 处理。
@@ -36,7 +36,7 @@ INLINE_JSON = re.compile(r"""(window\.__[\w]+__\s*=|<script[^>]+type=["'](?:appl
 
 
 CAPTCHA_HINT = re.compile(r"验证码|滑块|安全验证|captcha|人机验证|请登录|登录后查看", re.I)
-# 日志里不出现 token/签名的值（CLAUDE.md 铁律 1）
+# 日志里不出现 token/签名的值（docs/DEVELOPMENT.md 铁律 1）
 SECRET = re.compile(r"""((?:_csrf|csrf[\w-]*|[\w-]*token|_signature|signature|msToken|X-Bogus|a_bogus|userId)["']?\s*[=:]\s*["']?)[^&\s"',}]+""", re.I)
 
 

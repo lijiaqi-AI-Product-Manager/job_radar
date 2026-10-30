@@ -10,7 +10,7 @@
 旧结论（本文档 2026-10-22 版）写：
 
 > 带 Referer/Origin 的 `POST /api/v1/search/job/posts` → **405**，响应体为空。
-> 按 CLAUDE.md 铁律 1：不逆向前端生成令牌 → 不实现。
+> 按 docs/DEVELOPMENT.md 铁律 1：不逆向前端生成令牌 → 不实现。
 
 那个判断有**两处偏差**，都在本次实测中被证伪：
 

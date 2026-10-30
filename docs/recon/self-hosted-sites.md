@@ -74,7 +74,7 @@ GET https://career.huawei.com/reccampportal/services/portal/portalpub/getJob/new
 另外：`POST` 该路径 → `405 Method Not Allowed`，只吃 GET。
 
 判断：即使 WAF 撤掉，校招也是 0 条——接口通了不等于有数据。
-**不绕 WAF**（CLAUDE.md 铁律），记 blocked。
+**不绕 WAF**（docs/DEVELOPMENT.md 铁律），记 blocked。
 
 ---
 

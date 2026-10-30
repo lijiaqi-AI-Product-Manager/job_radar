@@ -21,7 +21,7 @@
 - 也就是说：**除 LinkedInBot 外，所有爬虫都被禁止访问 `/v1/companies/`**，而职位列表/详情
   正是这个路径。
 - 接口本身（`GET /v1/companies/BoschGroup/postings?country=cn`）无需登录、无签名，
-  能返回 1,331 个中国岗位、详情含 JD——但按 CLAUDE.md 铁律 1（robots 明确禁止 → 不实现），
+  能返回 1,331 个中国岗位、详情含 JD——但按 docs/DEVELOPMENT.md 铁律 1（robots 明确禁止 → 不实现），
   **不接入**。
 
 ## 影响的目标

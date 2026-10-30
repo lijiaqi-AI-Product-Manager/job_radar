@@ -67,7 +67,7 @@ def test_missing_token_fails_loudly():
 
 
 def test_http_error_message_does_not_leak_token():
-    """异常信息会进健康报告和 issue：token 不能出现在里面（CLAUDE.md 铁律 1）。"""
+    """异常信息会进健康报告和 issue：token 不能出现在里面（docs/DEVELOPMENT.md 铁律 1）。"""
     secret = "TOKEN-SHOULD-NOT-LEAK"
     page = f'<script>window.__sysconfig = {{__token__: "{secret}"}}</script>'
 

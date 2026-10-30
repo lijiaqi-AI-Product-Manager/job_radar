@@ -1,30 +1,37 @@
-# 文档索引
+# 文档
 
-面向使用者的文档在 `docs/`；**内部过程文档**（阶段验收、进度记录、评审处置、覆盖计划）在 [internal/](internal/)，
-不面向使用者，保留是因为它们记录了决策依据。
+从安装到新增适配器，按你正在做的事情选择入口。
+
+## 使用数据
 
 | 文档 | 内容 |
-|---|---|
-| [../README.md](../README.md) | 项目介绍、安装、能问什么、已知限制（8 种语言：`README.<lang>.md`） |
-| [FAQ.md](FAQ.md) | 常见问题：空字段、下载慢、`--company` 匹配规则、agent 接入、商用边界 |
-| [../CLAUDE.md](../CLAUDE.md) | **施工规范**：铁律、适配器流程、命名规范、完成定义 |
-| [CALENDAR-FORMAT.md](CALENDAR-FORMAT.md) | 日历条目字段格式（长期要求）与完整度上限分析 |
-| [CALENDAR.md](CALENDAR.md) | 招聘日历入口分级（A/B/C 三档）与来源规则 |
-| [RELEASE.md](RELEASE.md) | 11 项既有数据门禁、独立的 80% 目标验收与真实快照验证 |
-| [ROADMAP.md](ROADMAP.md) | 路线图与阶段目标 |
-| [PUBLISHING.md](PUBLISHING.md) | 发布到 PyPI（Trusted Publishing 配置与发版流程） |
-| [DATA-LICENSE.md](DATA-LICENSE.md) | 数据许可草案（三个方案与建议，待维护者确认） |
-| [assets/](assets/) | 演示 GIF（中/英）与 social preview 图（`scripts/make_assets.py` 生成） |
-| [prompts/RECON-EXPAND-1000.md](prompts/RECON-EXPAND-1000.md) | 给外部 AI 的扩源任务书：公司 500 → 1000+，交回可合并的侦察产物 |
-| [recon/](recon/) | 各平台/公司的侦察结论（适配器的唯一输入） |
-| [internal/HANDOFF-2026-10-30.md](internal/HANDOFF-2026-10-30.md) | 接手基线、审计复核差异与环境还原 |
-| [internal/DELIVERY-PROGRESS.md](internal/DELIVERY-PROGRESS.md) | 80% 持续目标、当前进展、验证证据与剩余工作 |
-| [internal/COVERAGE-PLAN.md](internal/COVERAGE-PLAN.md) | 500 家目标公司的覆盖现状、逐家证据、扩源尝试结论 |
-| [internal/PROGRESS-2026-10-23.md](internal/PROGRESS-2026-10-23.md) | 2026-10-23 阶段验收（日历字段 + 数据源） |
-| [internal/PROGRESS-2026-10-24.md](internal/PROGRESS-2026-10-24.md) | 2026-10-24 阶段验收（PyPI/镜像分片/增量更新/自愈） |
-| [internal/REVIEW-TRIAGE-2026-10-24.md](internal/REVIEW-TRIAGE-2026-10-24.md) | 外部评审处置记录：改了什么、换了什么方案、还剩什么 |
-| [../evals/](../evals/) | 评测集：查询改动是否变好的客观依据 |
-| [../CHANGELOG.md](../CHANGELOG.md) | 版本变更记录 |
-| [../COMPLIANCE.md](../COMPLIANCE.md) | 合规声明：只读公开页面、不绕过限制 |
+| :--- | :--- |
+| [快速开始](../README.md#快速开始) | 安装、更新与第一条查询 |
+| [常见问题](FAQ.md) | 下载、镜像、空字段、公司匹配与 MCP 排错 |
+| [字段说明](../skill/jobradar/references/fields.md) | 岗位、日历和输出字段 |
+| [覆盖说明](COVERAGE.md) | 当前规模、固定目标池、记录类型与限制 |
+| [日历来源](CALENDAR.md) | 来源分级与招聘入口 |
+| [数据使用说明](DATA-LICENSE.md) | 代码许可和第三方内容 |
 
-自检：`uv run python scripts/check_docs_links.py`（断链 / 版本号 / 安装说法一致性，CI 会跑）。
+## 贡献与维护
+
+| 文档 | 内容 |
+| :--- | :--- |
+| [贡献指南](../CONTRIBUTING.md) | 问题反馈、补源与本地开发 |
+| [开发规范](DEVELOPMENT.md) | 架构、数据规则、适配器流程与命名 |
+| [侦察索引](recon/README.md) | 平台公开入口、字段与访问证据 |
+| [侦察模板](recon/TEMPLATE.md) | 新来源必须核实的内容 |
+| [日历格式](CALENDAR-FORMAT.md) | 字段格式与完整度 |
+| [发布检查](RELEASE.md) | 回归、真实数据门禁与数据库兼容 |
+| [PyPI 发布](PUBLISHING.md) | 版本、构建与 Trusted Publishing |
+| [路线图](ROADMAP.md) | 已提供能力与后续方向 |
+| [更新日志](../CHANGELOG.md) | 版本行为变化 |
+| [合规声明](../COMPLIANCE.md) | 公开访问边界与来源要求 |
+
+[历史记录](internal/)保留当时的工程背景，数值可能已经过时；当前统计以 [覆盖说明](COVERAGE.md) 和可执行报表为准。
+
+## 演示素材
+
+[中英文 GIF 与封面](assets/)由 `scripts/make_assets.py` 生成，数据来自 `docs/assets/demo-data.json` 中保存的真实 CLI 结果节选。生成需要 Pillow 和 CJK 字体，具体运行方式见脚本说明。
+
+文档检查：`uv run python scripts/check_docs_links.py`。

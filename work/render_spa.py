@@ -1,6 +1,6 @@
 """渲染通道：对「纯 JS 渲染、无公开 JSON」的招聘站，用 Playwright 拿真实正文。
 
-依据 CLAUDE.md 铁律 6（2026-10-21 用户批准）：
+依据 docs/DEVELOPMENT.md 铁律 6（2026-10-21 用户批准）：
 > 浏览器渲染（Playwright）可用，但只在公开页面必须执行 JS 才能拿到内容、
 > 且找不到公开 JSON 接口时使用。固定 UA、限速、robots 规则同样适用；
 > 渲染中出现验证码/登录框立即停止并标 blocked。
