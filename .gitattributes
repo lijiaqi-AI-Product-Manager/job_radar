@@ -1,5 +1,4 @@
-# 统一用 LF：Windows checkout 默认把 LF 转 CRLF，会让迁移文件的哈希与
-# tests/schema_lock.json 不一致（2026-10-22 Windows CI 实际踩到）。
+# 统一文本换行为 LF，保持跨平台数据库迁移哈希一致。
 * text=auto eol=lf
 *.sql text eol=lf
 *.py text eol=lf
