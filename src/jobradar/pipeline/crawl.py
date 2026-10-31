@@ -15,7 +15,7 @@ from datetime import datetime
 
 import httpx
 
-from jobradar.adapters.base import Adapter, load_all, make_client
+from jobradar.adapters.base import Adapter, CrawlBudgetExceeded, load_all, make_client
 from jobradar.models import Job, SourceConfig
 from jobradar.normalize import (
     categorize,
@@ -27,11 +27,16 @@ from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
 def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Client,
-           sleep: Callable[[float], None]) -> tuple[list[Job] | None, str | None, float]:
+           sleep: Callable[[float], None], *, deadline: float | None = None
+           ) -> tuple[list[Job] | None, str | None, float]:
     """返回 (岗位, 错误, 耗时秒)。耗时记进 source_run.duration_s，抓得慢的源要能被看见。"""
     started = time.monotonic()
     try:
-        jobs = list(adapter_cls(source, client, sleep=sleep).fetch_all())
+        adapter = adapter_cls(source, client, sleep=sleep)
+        adapter._crawl_deadline = deadline
+        jobs = list(adapter.fetch_all())
+    except CrawlBudgetExceeded:
+        return None, "crawl budget exceeded", time.monotonic() - started
     except Exception as e:  # noqa: BLE001 — 任何适配器错误都只算该源失败
         return None, f"{type(e).__name__}: {e}"[:500], time.monotonic() - started
     for j in jobs:
@@ -67,11 +72,11 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
     try:
         for s in sources:
             # 预算守卫：整轮采集有时间上限，超时就跳过剩下的源（标记为失败），
-            # 保证 daily 不会因为某个超慢的站点拖到 workflow 120 分钟上限而整体失败。
-            if deadline is not None and time.monotonic() > deadline:
+            # 正在分页的源也由基类逐次检查预算，不能只限制后续尚未开始的源。
+            if deadline is not None and time.monotonic() >= deadline:
                 out.append((s, None, "crawl budget exceeded", 0.0))
                 continue
-            out.append((s, *_fetch(s, adapter_cls, client, sleep)))
+            out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=deadline)))
         return out
     finally:
         client.close()
@@ -124,7 +129,11 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
     # 同一天内顺序稳定、跨天整体轮转，跑满 K 天每个源都会被轮到。
     items = list(groups.items())
     seed = order_seed if order_seed is not None else int(datetime.now().strftime("%Y%m%d"))
-    random.Random(seed).shuffle(items)
+    rng = random.Random(seed)
+    rng.shuffle(items)
+    # 共用 host 的源仍串行，但也要轮换组内顺序，避免同一批尾部租户每天都被预算跳过。
+    for _, srcs in items:
+        rng.shuffle(srcs)
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)

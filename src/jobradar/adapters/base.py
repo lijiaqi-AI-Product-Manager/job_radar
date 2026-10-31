@@ -26,6 +26,10 @@ class SkipRecord(Exception):
     """normalize() 遇到无法/不该入库的记录（如缺关键字段）时抛出，该条被跳过。"""
 
 
+class CrawlBudgetExceeded(RuntimeError):
+    """采集预算已到，当前源的部分结果必须整体丢弃。"""
+
+
 class Adapter(ABC):
     id: ClassVar[str]  # 小写蛇形，必须与模块文件名一致，如 "moka"、"tencent"
     # 站点下发给匿名访客的 token 的正则（各带一个分组）。录制 fixtures 时据此脱敏（docs/DEVELOPMENT.md 铁律 1）
@@ -37,6 +41,7 @@ class Adapter(ABC):
         self.client = client
         self._sleep = sleep
         self._last_request = 0.0
+        self._crawl_deadline: float | None = None
 
     # ---- 子类只需实现这两个 ----
     @abstractmethod
@@ -49,7 +54,9 @@ class Adapter(ABC):
 
     # ---- 基类提供 ----
     def fetch_all(self) -> Iterator[Job]:
+        self._check_deadline()
         for raw in self.fetch_raw():
+            self._check_deadline()
             try:
                 yield self.normalize(raw)
             except SkipRecord:
@@ -82,28 +89,50 @@ class Adapter(ABC):
                  headers=None) -> httpx.Response:
         headers = {k: v for k, v in (headers or {}).items() if k.lower() != "user-agent"} or None
         for attempt in range(3):
+            self._check_deadline()
             self._throttle()
+            self._check_deadline()
+            request_options = {}
+            if self._crawl_deadline is not None:
+                remaining = self._crawl_deadline - time.monotonic()
+                self._check_deadline()
+                request_options["timeout"] = httpx.Timeout(**{
+                    key: min(value, remaining) if value is not None else remaining
+                    for key, value in self.client.timeout.as_dict().items()
+                })
             try:
                 r = self.client.request(method, url, params=params, data=data, json=json,
-                                        headers=headers)
+                                        headers=headers, **request_options)
                 if r.status_code == 429 or r.status_code >= 500:
                     raise httpx.HTTPStatusError("retryable", request=r.request, response=r)
                 r.raise_for_status()
                 return r
             except (httpx.TransportError, httpx.HTTPStatusError) as e:
+                self._check_deadline()
                 retryable = isinstance(e, httpx.TransportError) or (
                     e.response.status_code == 429 or e.response.status_code >= 500
                 )
                 if not retryable or attempt == 2:
                     raise
-                self._sleep(2 ** (attempt + 1))
+                self._pause(2 ** (attempt + 1))
         raise AssertionError("unreachable")
 
     def _throttle(self):
         wait = (1.0 / self.source.rate_limit_rps) - (time.monotonic() - self._last_request)
         if wait > 0:
-            self._sleep(wait)
+            self._pause(wait)
         self._last_request = time.monotonic()
+
+    def _check_deadline(self):
+        if self._crawl_deadline is not None and time.monotonic() >= self._crawl_deadline:
+            raise CrawlBudgetExceeded("crawl budget exceeded")
+
+    def _pause(self, seconds: float):
+        self._check_deadline()
+        if self._crawl_deadline is not None:
+            seconds = min(seconds, max(0.0, self._crawl_deadline - time.monotonic()))
+        self._sleep(seconds)
+        self._check_deadline()
 
 
 def make_client(transport: httpx.BaseTransport | None = None, *, policy=None) -> httpx.Client:

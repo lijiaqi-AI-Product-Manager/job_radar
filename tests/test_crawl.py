@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from helpers import T
@@ -155,3 +156,87 @@ def test_crawl_rotates_site_group_order_by_seed(jobs_db, text_db):
     a, b = run(1), run(2)
     assert sorted(a) == sorted(b) == [f"s{i}" for i in range(8)]  # 每个源都跑到，只是顺序不同
     assert a != b
+
+
+def test_budget_interrupts_an_adapter_between_pages_without_ingesting_partial_results(
+    jobs_db, text_db, monkeypatch
+):
+    import jobradar.pipeline.crawl as module
+
+    clock = [100.0]
+    requests = []
+    monkeypatch.setattr(module.time, "monotonic", lambda: clock[0])
+
+    class Paged(ExampleAdapter):
+        def fetch_raw(self):
+            for page in range(20):
+                self.request_json("GET", "https://example.invalid/page", params={"page": page})
+                yield {"id": str(page), "title": "工程师"}
+
+        def normalize(self, raw):
+            return Job(source_id=self.source.id, source_job_id=raw["id"], company="示例公司",
+                       url="https://example.invalid/job", title=raw["title"], recruit_type="campus")
+
+    def respond(request):
+        requests.append(request)
+        clock[0] += 2
+        return httpx.Response(200, json={})
+
+    results = crawl([example_source()], jobs_db, text_db, ts=T(1),
+                    client_factory=lambda: httpx.Client(transport=httpx.MockTransport(respond)),
+                    adapters={"example": Paged}, sleep=lambda _: None,
+                    max_workers=1, budget_seconds=3)
+    assert len(requests) == 2
+    assert requests[1].extensions["timeout"]["read"] <= 1
+    result = results["example-corp"]
+    assert result.status == "failed" and result.reason == "crawl budget exceeded"
+    assert jobs_db.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 0
+    assert text_db.execute("SELECT COUNT(*) FROM job_text").fetchone()[0] == 0
+
+
+def test_shared_host_sources_rotate_instead_of_always_deferring_the_same_tail(jobs_db, text_db):
+    class OrderOnly(ExampleAdapter):
+        order = []
+
+        def fetch_raw(self):
+            self.order.append(self.source.id)
+            return iter(())
+
+    def run(seed):
+        OrderOnly.order = []
+        sources = [example_source(id=f"s{i}", params={"host": "shared.invalid"}) for i in range(8)]
+        crawl(sources, jobs_db, text_db, ts=T(1), adapters={"example": OrderOnly},
+              client_factory=lambda: httpx.Client(transport=httpx.MockTransport(lambda _: None)),
+              sleep=lambda _: None, max_workers=1, order_seed=seed)
+        return list(OrderOnly.order)
+
+    a, b = run(1), run(2)
+    assert sorted(a) == sorted(b) == [f"s{i}" for i in range(8)]
+    assert a == run(1)
+    assert a != b
+
+
+@pytest.mark.parametrize("retry", [False, True])
+def test_rate_limit_and_retry_waits_stop_at_the_budget(monkeypatch, retry):
+    import jobradar.adapters.base as base
+
+    clock = [100.0]
+    waits, requests = [], []
+    monkeypatch.setattr(base.time, "monotonic", lambda: clock[0])
+
+    def pause(seconds):
+        waits.append(seconds)
+        clock[0] += seconds
+
+    def respond(request):
+        requests.append(request)
+        return httpx.Response(503, json={})
+
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        adapter = ExampleAdapter(example_source(), client, sleep=pause)
+        adapter._crawl_deadline = 100.25
+        adapter._last_request = 0.0 if retry else 100.0
+        with pytest.raises(base.CrawlBudgetExceeded):
+            adapter.request_json("GET", "https://example.invalid/page")
+    assert waits == [0.25]
+    assert len(requests) == int(retry)
