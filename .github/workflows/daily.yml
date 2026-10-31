@@ -18,7 +18,8 @@ concurrency:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    # 90 分钟采集预算之外，预留迁移、入库、导出上传与最多 30 分钟日历构建的时间。
+    timeout-minutes: 180
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -99,11 +100,17 @@ jobs:
 
       - name: Health issue
         if: always()
+        env:
+          CRAWL_JOB_STATUS: ${{ job.status }}
         run: |
-          set +e
-          python3 scripts/health_report.py crawl-summary.json > report.md
-          bad=$?
-          set -e
+          bad=0
+          run_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          python3 scripts/health_report.py crawl-summary.json --run-status "$CRAWL_JOB_STATUS" --run-url "$run_url" > report.md || bad=$?
+          # 报告工具本身异常时仍提供运行入口，绝不把空正文写回现有 Issue。
+          if [ ! -s report.md ]; then
+            printf '采集健康报告生成失败，无法确认数据源已恢复。请查看[本次运行](%s)。\n' "$run_url" > report.md
+            bad=1
+          fi
           num=$(gh issue list --label data-health --state open --json number -q '.[0].number')
           if [ "$bad" != "0" ]; then
             if [ -n "$num" ]; then
