@@ -10,7 +10,7 @@
 <text x="70" y="100" fill="#58e0b3" font-size="18" letter-spacing="5">OPEN RECRUITMENT DATA</text>
 <text x="66" y="196" fill="#edf4fc" font-weight="750" font-size="84">job_radar<tspan fill="#58e0b3">.</tspan></text>
 <text x="70" y="266" fill="#edf4fc" font-size="35" font-weight="600">Find your next opportunity. Keep the data.</text>
-<text x="70" y="311" fill="#a3b6cc" font-size="22">China jobs & recruitment calendars. Search locally. Follow the source.</text>
+<text x="70" y="311" fill="#a3b6cc" font-size="22">China jobs &amp; recruitment calendars. Search locally. Follow the source.</text>
 <g font-size="16" fill="#bcecdc"><rect x="70" y="350" width="88" height="34" rx="17" fill="#1c3940"/><text x="96" y="373">CLI</text>
 <rect x="170" y="350" width="96" height="34" rx="17" fill="#1c3940"/><text x="196" y="373">MCP</text>
 <rect x="278" y="350" width="110" height="34" rx="17" fill="#1c3940"/><text x="300" y="373">SQLite</text>

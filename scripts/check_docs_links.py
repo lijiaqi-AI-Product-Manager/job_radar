@@ -9,6 +9,7 @@ README 说"尚未发布到 PyPI"，Skill 第一句却让用户 `pip install jobr
 import os
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 # Windows 的 GitHub runner 控制台是 cp1252，直接 print 中文会 UnicodeEncodeError（2026-10-24 CI 实测）
@@ -47,6 +48,22 @@ def broken_links(files: list[Path]) -> list[str]:
             if not (f.parent / path).exists() and not (ROOT / path).exists():
                 bad.append(f"{f.relative_to(ROOT)} -> {t}")
     return bad
+
+
+def homepage_problems() -> list[str]:
+    """主页只使用根目录 README，并验证仓库内的 SVG 可以被解析。"""
+    problems = []
+    hidden = ROOT / ".github"
+    if hidden.exists():
+        for path in sorted(hidden.iterdir()):
+            if path.is_file() and path.stem.casefold() == "readme":
+                problems.append(f"{path.relative_to(ROOT).as_posix()} 会覆盖根目录主页，请使用其他文档名称")
+    for path in sorted((ROOT / "docs/assets").glob("*.svg")):
+        try:
+            ET.parse(path)
+        except (ET.ParseError, OSError) as error:
+            problems.append(f"{path.relative_to(ROOT).as_posix()}: SVG 无效（{error}）")
+    return problems
 
 
 def versions() -> list[str]:
@@ -98,13 +115,14 @@ def main() -> int:
     bad = broken_links(files)
     ver = versions()
     inst = install_claims()
+    home = homepage_problems()
     print(f"扫描 {len(files)} 个 markdown 文件")
-    for title, items in (("断链", bad), ("版本不一致", ver), ("安装说法", inst)):
+    for title, items in (("断链", bad), ("版本不一致", ver), ("安装说法", inst), ("主页与图片", home)):
         if items:
             print(f"\n[{title}] {len(items)} 处")
             for it in items[:30]:
                 print("  -", it)
-    if bad or ver or inst:
+    if bad or ver or inst or home:
         return 1
     print("OK：无断链，版本与安装说法一致")
     return 0

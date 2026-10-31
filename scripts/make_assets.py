@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 from urllib.parse import urlsplit
+from xml.sax.saxutils import escape
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -131,6 +132,7 @@ def hero(language: str):
     heading = "Find your next opportunity. Keep the data." if en else "把招聘信息，变成你的本地数据库。"
     subtitle = ("China jobs & recruitment calendars. Search locally. Follow the source." if en
                 else "中国校招 · 实习 · 社招 · 招聘日历    /    本地查询，直达来源")
+    heading, subtitle = escape(heading), escape(subtitle)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="430" viewBox="0 0 1600 430" role="img" aria-label="job_radar">
 <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#142e40"/></linearGradient>
 <radialGradient id="glow"><stop stop-color="#58e0b3" stop-opacity=".18"/><stop offset="1" stop-color="#58e0b3" stop-opacity="0"/></radialGradient></defs>
