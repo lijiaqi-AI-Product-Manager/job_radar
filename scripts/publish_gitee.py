@@ -42,15 +42,24 @@ def verify_generation(client, repo, tag, manifest):
 
         def download(item):
             url, path, part = item
-            digest, size = hashlib.sha256(), 0
-            with client.stream("GET", url, follow_redirects=True) as response, path.open("wb") as handle:
-                response.raise_for_status()
-                for chunk in response.iter_bytes():
-                    size += len(chunk)
-                    if size > part["size"]:
-                        raise ValueError("匿名分片超过声明大小")
-                    digest.update(chunk)
-                    handle.write(chunk)
+            for attempt in range(3):
+                digest, size = hashlib.sha256(), 0
+                try:
+                    with client.stream("GET", url, follow_redirects=True) as response, path.open("wb") as handle:
+                        response.raise_for_status()
+                        for chunk in response.iter_bytes():
+                            size += len(chunk)
+                            if size > part["size"]:
+                                raise ValueError("匿名分片超过声明大小")
+                            digest.update(chunk)
+                            handle.write(chunk)
+                    break
+                except (httpx.TransportError, httpx.HTTPStatusError) as exc:
+                    if attempt == 2 or (isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code < 500
+                                        and exc.response.status_code not in {408, 429}):
+                        raise
+                    print(f"gitee: retry anonymous download {part['name']} ({type(exc).__name__})", flush=True)
+                    time.sleep(2 ** attempt)
             if size != part["size"] or digest.hexdigest() != part["sha256"]:
                 raise ValueError(f"{part['name']} 匿名下载摘要不匹配")
             print(f"gitee: anonymously verified {part['name']}", flush=True)

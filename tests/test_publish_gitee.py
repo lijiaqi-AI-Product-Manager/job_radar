@@ -173,3 +173,23 @@ def test_valid_part_hashes_with_wrong_whole_hash_still_fail():
     manifest = {'version':1,'files':{'jobs.db.gz':{'parts':[{'name':'jobs.db.gz','size':3,'sha256':hashlib.sha256(b'abc').hexdigest()}],'size':3,'sha256':'0'*64}}}
     with httpx.Client(transport=httpx.MockTransport(lambda req:httpx.Response(200,content=b'abc'))) as client, pytest.raises(ValueError,match='拼接摘要'):
         pg.verify_generation(client,'o/r','data-'+'a'*20,manifest)
+
+
+def test_truncated_anonymous_stream_retries_from_empty_file(monkeypatch):
+    monkeypatch.setattr(pg.time,'sleep',lambda _:None)
+    attempts=[]
+
+    class Truncated(httpx.SyncByteStream):
+        def __iter__(self):
+            yield b'ab'
+            raise httpx.RemoteProtocolError('truncated transport')
+
+    def handler(req):
+        attempts.append(req.url.path)
+        return httpx.Response(200,stream=Truncated()) if len(attempts)==1 else httpx.Response(200,content=b'abc')
+
+    digest=hashlib.sha256(b'abc').hexdigest()
+    manifest={'version':1,'files':{'jobs.db.gz':{'parts':[{'name':'jobs.db.gz','size':3,'sha256':digest}],'size':3,'sha256':digest}}}
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        pg.verify_generation(client,'o/r','data-'+'a'*20,manifest)
+    assert len(attempts)==2
