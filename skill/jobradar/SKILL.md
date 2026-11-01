@@ -7,6 +7,22 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 数据在本地 SQLite 中，通过 `jobradar` 命令查询，所有命令输出 JSON。**你只能根据命令返回的数据回答，不能用常识或记忆补充岗位信息。**
 
+## 安装或升级（首次使用或参数不受支持时）
+
+本指南对应已验证的固定源码提交 `ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8`：
+
+```bash
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+jobradar --version
+jobradar search --help
+jobradar calendar --help
+```
+
+2026-11-01 核实时，PyPI 只有旧版 `1.1.1`，不支持本指南的全部参数。已安装旧版也用上述命令升级，
+不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
+`calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
+先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。
+
 ## 第一步：检查数据（每次会话第一次使用时）
 
 ```bash
@@ -17,7 +33,7 @@ jobradar doctor
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
-- 没装 `jobradar`：`pip install "jobsearchradar[mcp]"`（PyPI 包名 `jobsearchradar`，命令仍是 `jobradar`）。数据目录不是默认的
+- 数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。
 
 ## 按问题类型选命令
@@ -49,7 +65,7 @@ jobradar doctor
 2. **附链接**：列出的每个岗位都附 `url`，引导用户去官网查看和投递。
 3. **只用返回的数据**：没查到就说没查到。不编造岗位、薪资、面试难度、往年数据、HC 数量。
 4. **查不到时说清楚是哪种情况**：
-   - 公司不在库里（`results` 为空，或 `compare` 的 `not_found` 里有它）→ "目前的数据里没有这家公司"，不要说"这家公司没在招"。
+   - 只有公司匹配为 `none`，或 `compare` 的 `missing_companies` 里有它，才说明公司未收录；筛选后 `results` 为空或旧字段 `not_found` 不能证明未收录，更不能说"这家公司没在招"。
    - **先看 `company_match`**（`search`/`diff`/`trends` 都带）：`match: none` = 这个名字在数据集中不存在（`candidates` 是相近的公司，可以顺势提示"你要找的是不是 X"）；`match: ambiguous` = 命中多家、故意不返回；`match: contains` = 按子串唯一命中（如 阿里→阿里巴巴）；`exact`/`alias` = 确定是这家。**`none`/`ambiguous` 时不能说"该公司没在招"**。
    - 岗位 `closed_at` 有值 → "该岗位已于 {closed_at} 下架"。
    - 字段为空（如北森门户的 `cities` 为空列表）→ 说明"数据中未提供该信息"，不要从标题或常识推断。

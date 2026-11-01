@@ -8,7 +8,8 @@
 
 ## 当前渠道状态
 
-GitHub 正式版为 `v2.0.0`，包含已验证的 wheel 与源码包。PyPI 当前发行版为 `1.1.1`；该服务尚未登记当前仓库的 Trusted Publisher，因此 `PYPI_ENABLED` 暂设为 `false`。用户通过 README 中的 GitHub 安装包地址安装 2.0。
+GitHub 正式版为 `v2.0.0`，包含发布时的 wheel 与源码包。2026-11-01 核实时，PyPI 仍只有 `1.1.1`；该服务尚未登记当前仓库的 Trusted Publisher，因此 `PYPI_ENABLED` 暂设为 `false`。
+当前 Skill 和 README 使用 [安装指南](INSTALLATION.md) 中已验证的固定源码提交，以包含正式版发布之后的参数与修正；不能将包索引旧版等同于当前指南。
 
 维护账号完成下表授权、核实项目归属后，再把 GitHub 仓库变量 `PYPI_ENABLED` 设为 `true` 并执行发布。
 

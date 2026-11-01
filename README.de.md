@@ -13,7 +13,7 @@
 Das PyPI-Paket heißt `jobsearchradar`, der installierte Befehl `jobradar`. Erfordert Python 3.11+. Unterstützt Windows, macOS und Linux.
 
 ```bash
-pip install jobsearchradar
+pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -52,7 +52,7 @@ Der geprüfte Stand vom 29. Oktober 2026 enthält 294.483 Datensätze, davon 276
 ## MCP verbinden
 
 ```bash
-pip install "jobsearchradar[mcp]"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
 jobradar update
 ```
 

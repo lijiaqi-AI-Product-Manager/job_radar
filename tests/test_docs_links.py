@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 
 
@@ -45,3 +46,26 @@ def test_homepage_checks_detect_shadowing_and_invalid_svg(tmp_path, monkeypatch)
     asset.write_text('<svg xmlns="http://www.w3.org/2000/svg"><text>jobs &amp; calendars</text></svg>',
                      encoding="utf-8")
     assert docs.homepage_problems() == []
+
+
+def test_current_install_guides_reject_old_pypi_or_unpinned_source(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location(
+        "check_docs_links", Path(__file__).resolve().parents[1] / "scripts/check_docs_links.py")
+    docs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(docs)
+    monkeypatch.setattr(docs, "ROOT", tmp_path)
+    config = tmp_path / "docs/install-target.json"
+    config.parent.mkdir()
+    target = {"distribution": "jobsearchradar", "repository": "owner/repo", "revision": "a" * 40}
+    config.write_text(json.dumps(target), encoding="utf-8")
+    guide = tmp_path / "README.md"
+    guide.write_text('pip install "jobsearchradar[mcp]"', encoding="utf-8")
+    assert docs.installation_problems([guide])
+    guide.write_text('pip install "jobsearchradar[mcp] @ https://github.com/owner/repo/archive/main.zip"',
+                     encoding="utf-8")
+    assert docs.installation_problems([guide])
+    url = f"https://github.com/owner/repo/archive/{target['revision']}.zip"
+    guide.write_text(f'pip install --upgrade "jobsearchradar[mcp] @ {url}"', encoding="utf-8")
+    assert docs.installation_problems([guide]) == []
+    guide.write_text(guide.read_text(encoding="utf-8") + '\npip install jobsearchradar', encoding="utf-8")
+    assert docs.installation_problems([guide])

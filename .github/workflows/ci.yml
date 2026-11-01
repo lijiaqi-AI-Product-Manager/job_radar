@@ -52,6 +52,13 @@ jobs:
           print(wheel, "->", target in names)
           sys.exit(0 if target in names else 1)
           PY
+      - name: Installed wheel CLI compatibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          py=$(uv run python -c "import sys; print(sys.executable.replace(chr(92), '/'))")
+          uv pip install --python "$py" --reinstall --no-deps dist/*.whl
+          "$py" scripts/check_installed_cli.py --python "$py"
 
   py311:
     # 兼容性下限：pyproject 声明 >=3.11，这里真跑一遍（只跑 ubuntu，省额度）

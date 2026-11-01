@@ -25,6 +25,9 @@ jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 
 需要 MCP 时以 `jobsearchradar[mcp] @ 安装包URL` 形式安装可选依赖，在客户端中以 stdio 运行 `jobradar-mcp`。完整示例见 [项目首页](../README.md)。PyPI 的实际可用版本以包索引为准；也可从本版本 GitHub Release 下载 wheel 安装。
 
+以上安装包对应 `v2.0.0` 发布时的代码，不包含后续全部修正。要使用当前 Skill 中的
+`calendar --include-expired` 等能力，请使用 [安装指南](INSTALLATION.md) 的固定源码版本。
+
 ## 数据与兼容
 
 - `v2.0.0` 是代码版本；`data-latest` 和 `data-archive` 继续独立分发 SQLite 数据。

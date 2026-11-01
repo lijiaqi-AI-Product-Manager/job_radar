@@ -13,7 +13,7 @@ Reúne ofertas públicas para recién graduados, prácticas y profesionales en S
 El paquete de PyPI se llama `jobsearchradar`; el comando instalado es `jobradar`. Requiere Python 3.11+ y funciona en Windows, macOS y Linux.
 
 ```bash
-pip install jobsearchradar
+pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -52,7 +52,7 @@ La instantánea verificada del 29 de octubre de 2026 contiene 294.483 registros,
 ## Conectar MCP
 
 ```bash
-pip install "jobsearchradar[mcp]"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
 jobradar update
 ```
 

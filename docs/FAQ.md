@@ -55,6 +55,12 @@ Gitee 镜像同日同步，通常比 GitHub 晚 30~60 分钟。
 
 ## 使用相关
 
+**Q：装完却不支持参数，或 `search --help` 报错？**
+
+先检查是否安装了 PyPI 的历史版本 `1.1.1`。当前指南需要 [固定源码安装](INSTALLATION.md)，
+安装或升级后确认帮助中有 `calendar --city`、`calendar --include-expired` 和 `search --deadline-before`。
+终端与 MCP 若使用不同环境，需要在实际运行的那个环境中安装。
+
 **Q：首次查询为什么很慢，网络盘怎么办？**
 
 兼容快照不包含全文索引。普通公司、城市查询及 `show`、`stats`、`doctor` 不再自动重建全文索引；

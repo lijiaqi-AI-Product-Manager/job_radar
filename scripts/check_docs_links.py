@@ -6,6 +6,7 @@ README 说"尚未发布到 PyPI"，Skill 第一句却让用户 `pip install jobr
 
 用法：uv run python scripts/check_docs_links.py   （CI 里跑，失败即红）
 """
+import json
 import os
 import re
 import sys
@@ -110,11 +111,33 @@ def install_claims() -> list[str]:
     return problems
 
 
+def installation_problems(files=None) -> list[str]:
+    """当前功能说明必须指向同一个已验证提交，不能落到旧包或浮动 main。"""
+    target = json.loads((ROOT / "docs/install-target.json").read_text(encoding="utf-8"))
+    revision = target["revision"]
+    if not re.fullmatch(r"[0-9a-f]{40}", revision):
+        return ["docs/install-target.json: revision 必须是完整提交哈希"]
+    url = f"https://github.com/{target['repository']}/archive/{revision}.zip"
+    if files is None:
+        files = [*sorted(ROOT.glob("README*.md")), ROOT / "skill/jobradar/SKILL.md",
+                 ROOT / "docs/INSTALLATION.md", ROOT / "src/jobradar/mcp_server.py"]
+    problems = []
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        if url not in text:
+            problems.append(f"{path.relative_to(ROOT)}: 未使用已验证的固定源码安装地址")
+        for command in re.findall(r"pip install[^\n`]+", text):
+            if target["distribution"] in command and url not in command:
+                problems.append(f"{path.relative_to(ROOT)}: 安装命令可能落到旧包或未验证版本")
+    return problems
+
+
 def main() -> int:
     files = md_files()
     bad = broken_links(files)
     ver = versions()
     inst = install_claims()
+    inst.extend(installation_problems())
     home = homepage_problems()
     print(f"扫描 {len(files)} 个 markdown 文件")
     for title, items in (("断链", bad), ("版本不一致", ver), ("安装说法", inst), ("主页与图片", home)):
