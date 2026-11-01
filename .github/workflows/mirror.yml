@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 150
     env:
       GH_TOKEN: ${{ github.token }}
+      GITEE_UPLOAD_WORKERS: "16"
       GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
       GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
     steps:

@@ -100,7 +100,10 @@ def publish(files, *, token, repo, client, anonymous_client=None):
                             return
                         time.sleep(2 ** attempt)
 
-            with ThreadPoolExecutor(max_workers=4) as pool:
+            workers = int(os.environ.get("GITEE_UPLOAD_WORKERS", "4"))
+            if not 1 <= workers <= 16:
+                raise ValueError("GITEE_UPLOAD_WORKERS 必须在1到16之间")
+            with ThreadPoolExecutor(max_workers=workers) as pool:
                 for future in [pool.submit(upload, path) for path in uploads]:
                     future.result()
             verify_manifest(anonymous, repo, tag, manifest)

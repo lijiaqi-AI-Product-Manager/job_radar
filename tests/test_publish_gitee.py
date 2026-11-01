@@ -95,6 +95,19 @@ def test_uploads_generation_files_in_parallel(tmp_path):
         pg.publish(files(tmp_path), token="fake", repo="o/r", client=client, anonymous_client=client)
 
 
+def test_configured_parallel_parts_are_all_verified(tmp_path, monkeypatch):
+    monkeypatch.setenv('GITEE_UPLOAD_WORKERS', '16')
+    monkeypatch.setattr(pg, 'CHUNK_MB', 8 / 1024 / 1024)
+    paths = files(tmp_path)
+    for path in paths:
+        path.write_bytes(b'01234567' * 8)
+    state = Gitee(barrier=threading.Barrier(16))
+    with httpx.Client(transport=httpx.MockTransport(state)) as client:
+        pg.publish(paths, token="fake", repo="o/r", client=client, anonymous_client=client)
+    stable = next(r for r in state.releases.values() if r['tag_name'] == 'data-latest')
+    assert sum(rid == stable['id'] and '.part' in name for rid, name in state.files) == 16
+
+
 def test_skips_without_credentials(monkeypatch, capsys):
     monkeypatch.delenv("GITEE_TOKEN", raising=False)
     monkeypatch.delenv("GITEE_REPO", raising=False)
