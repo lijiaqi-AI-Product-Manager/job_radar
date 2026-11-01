@@ -18,7 +18,7 @@ jobradar search --help
 jobradar calendar --help
 ```
 
-2026-11-01 已从官方索引安装并验证 `2.0.2`，GitHub 与 PyPI 的发行文件 SHA-256 一致。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
+2026-11-02 已从官方索引安装并验证 `2.0.2`，GitHub 与 PyPI 的发行文件 SHA-256 一致。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
 不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
 `calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
 先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。
