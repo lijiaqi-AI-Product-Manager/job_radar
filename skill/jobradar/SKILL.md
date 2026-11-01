@@ -9,10 +9,10 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应已验证的固定源码提交 `ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8`：
+本指南对应已验证的固定源码提交 `2e9df6d1c7e7907f3815388be7e9723c7e03f0c3`：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar --version
 jobradar search --help
 jobradar calendar --help

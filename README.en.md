@@ -43,7 +43,7 @@ Turn scattered public recruitment information into a traceable SQLite dataset. F
 Requires **Python 3.11+**. Supports Windows, macOS and Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -81,7 +81,7 @@ Omit `--table` for JSON output. Use `jobradar show <job_id>` for a listing and i
 ## Connect with MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar update
 ```
 

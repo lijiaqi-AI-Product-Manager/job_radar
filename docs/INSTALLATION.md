@@ -1,10 +1,10 @@
 # 安装与版本兼容
 
-当前功能指南固定到已验证的源码提交 `ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8`。
+当前功能指南固定到已验证的源码提交 `2e9df6d1c7e7907f3815388be7e9723c7e03f0c3`。
 直接下载源码归档安装，不要求本机安装 Git：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar --version
 jobradar search --help
 jobradar calendar --help

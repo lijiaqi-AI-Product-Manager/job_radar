@@ -43,7 +43,7 @@
 需要 **Python 3.11+**，支持 Windows、macOS 和 Linux。
 
 ```bash
-pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -87,7 +87,7 @@ jobradar trends 美团 --step-days 7
 ## 接入 MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ecbaa9bac9229ca8fd60c9d15c0d3a25ecc5f0c8.zip"
+pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar update
 ```
 
