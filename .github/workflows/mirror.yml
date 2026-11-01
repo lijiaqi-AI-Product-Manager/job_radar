@@ -4,7 +4,7 @@ name: mirror-gitee
 # 需要：仓库 secret GITEE_TOKEN；GITEE_REPO（variable 或 secret，默认 qgauss/job_radar）。
 on:
   workflow_run:
-    workflows: [daily-crawl]
+    workflows: [daily-crawl, calendar-data-repair]
     types: [completed]
   workflow_dispatch:
 
@@ -28,7 +28,11 @@ jobs:
       - name: Download release assets
         run: |
           mkdir -p d
-          gh release download data-latest -D d -p 'jobs.db.gz' -p 'jd_text.db.gz' -p 'calendar.db.gz' -p 'crawl-summary.json' || true
+          # 发布器会重建整个镜像 Release，必须先取得完整文件集；下载失败不能发残缺镜像。
+          gh release download data-latest -D d -p 'jobs.db.gz' -p 'jd_text.db.gz' -p 'calendar.db.gz' -p 'crawl-summary.json'
+          for name in jobs.db.gz jd_text.db.gz calendar.db.gz crawl-summary.json; do
+            test -s "d/$name" || exit 1
+          done
           ls -l d
       - name: Publish to Gitee
         run: uv run python -u scripts/publish_gitee.py d/*

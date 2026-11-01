@@ -15,6 +15,19 @@ uv run python scripts/release_check.py --home <数据目录>
 
 真实数据目录需含 `jobs.db`、`jd_text.db` 与 `calendar.db`；缺少数据的 SKIP 不算通过。80% 覆盖独立运行 `scripts/coverage_report.py --json --min-coverage 0.8`，当前为 931/1,655（56.25%），预期退出 1，仍差 393 家。
 
+## 日历定点修正
+
+已审核的截止日撤回清单位于 `calendar/corrections/`。先在下载副本上预演，再加 `--apply`：
+
+```bash
+uv run python scripts/apply_calendar_corrections.py --db calendar.db
+uv run python scripts/apply_calendar_corrections.py --db calendar.db --apply
+```
+
+该工具只撤回清单中旧的人工日期，保留原链接与观测时间；不会覆盖后续重新核实的数据，重复执行不再改动。
+`calendar-data-repair` 手动工作流会备份旧日历、修正 GitHub `data-latest` 的日历与压缩包；
+它与每日采集共享发布锁，完成后触发国内镜像同步，不重新采集或发布软件包。
+
 ## 既有质量门禁
 
 门槛定义于 `scripts/release_check.py`，不因文档或界面更新而放宽。

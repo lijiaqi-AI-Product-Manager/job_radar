@@ -37,7 +37,7 @@ entries:
     - 生产
     - 工艺
   apply_start: null
-  apply_end: '2026-10-31'
+  apply_end: null
   cities: []
   apply_url: ''
   source:
@@ -49,7 +49,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758047>；城市证据：中南就业网 招聘简章；中国华能希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758047>；城市证据：中南就业网 招聘简章；中国华能希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongguohuaneng-2027-chunz-v1
   company: 中国华能
   product: null

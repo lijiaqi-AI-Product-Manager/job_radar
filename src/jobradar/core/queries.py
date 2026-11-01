@@ -9,6 +9,7 @@ from datetime import date, timedelta
 from typing import NamedTuple
 
 from jobradar.aliases import match_names
+from jobradar.store.migrate import ensure_search_index
 from jobradar.timeutil import parse_ts
 
 _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category, j.subcategory,
@@ -33,8 +34,13 @@ def _like(term: str) -> str:
 def _use_fts(conn, table: str, term: str) -> bool:
     # SQLite trigram LIKE 对 >=3 字符才有索引收益，且带 ESCAPE 时不能使用索引。
     # 百分号/下划线仍走旧的字面量匹配，不能把用户输入解释成通配符或 FTS 语法。
-    return len(term) >= 3 and "%" not in term and "_" not in term and bool(conn.execute(
-        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone())
+    if len(term) < 3 or "%" in term or "_" in term:
+        return False
+    exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone()
+    if not exists:
+        ensure_search_index(conn, table)
+        exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone()
+    return bool(exists)
 
 
 def _title_ids(conn, term: str) -> list[str]:
@@ -375,16 +381,31 @@ def data_status_summary(rows) -> dict:
     }
 
 
+def source_freshness(rows, *, limit=20) -> dict:
+    """整体快照时间不能代表每个源都已刷新；返回有界的源级新鲜度摘要。"""
+    stale = sorted((r for r in rows if r["stale"]),
+                   key=lambda r: (r["last_ok"] or "", r["source_id"]))
+    return {
+        "counts": data_status_summary(rows)["counts"],
+        "stale_open_jobs": sum(r["open_jobs"] for r in stale),
+        "stale_sources": [{k: r[k] for k in ("source_id", "last_ok", "age_hours", "open_jobs")}
+                          for r in stale[:limit]],
+        "omitted_stale_sources": max(0, len(stale) - limit),
+    }
+
+
 def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, text=None,
-                  per_company=5) -> dict:
+                  per_company=5, meta=None) -> dict:
     """每家公司取 per_company 个同类岗位（按职类、标题关键词和/或 JD 全文）及其 JD 原文。对比由调用方（agent）完成。
     公司无匹配岗位 -> 空列表（调用方据此告知"库里没有"，不得编造）。"""
     if not category and not keyword and not text:
         raise ValueError("compare_roles needs category, keyword or text")
-    out = {}
+    out, matches = {}, {}
     for name in companies:
+        search_meta = {}
         jobs = search_jobs(jobs_conn, company=name, category=category, keyword=keyword,
-                           text=text, text_conn=text_conn, limit=per_company)
+                           text=text, text_conn=text_conn, limit=per_company, meta=search_meta)
+        matches[name] = search_meta["company_match"]
         for j in jobs:
             t = text_conn.execute(
                 "SELECT description, requirements FROM job_text WHERE job_id=?", (j["id"],)
@@ -392,6 +413,13 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
             j["description"] = t["description"] if t else None
             j["requirements"] = t["requirements"] if t else None
         out[name] = jobs
+    if meta is not None:
+        meta.update(
+            company_matches=matches,
+            missing_companies=[n for n, m in matches.items() if m["match"] == "none"],
+            ambiguous_companies=[n for n, m in matches.items() if m["match"] == "ambiguous"],
+            no_matching_jobs=[n for n, m in matches.items() if m["matched"] and not out[n]],
+        )
     return out
 
 

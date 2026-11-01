@@ -130,17 +130,20 @@ def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = N
 def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
                   text: str | None = None, per_company: int = 5) -> dict:
     """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category、标题关键词 keyword
-    或 JD 全文 text 选岗位（至少给一个）。not_found 列出数据里没有匹配岗位的公司。"""
+    或 JD 全文 text 选岗位（至少给一个）。missing_companies 是未收录公司；no_matching_jobs
+    是已收录但筛选后没有岗位；ambiguous_companies 需要澄清名称。旧字段 not_found 汇总所有空结果，
+    不能据此认定公司未收录或没有招聘。"""
     def run():
         with db("jobs") as conn, db("text", required=False) as text_conn:
             if text_conn is None:
                 return {"error": "对比需要 JD 原文库：运行 `jobradar update`", "results": {}}
             if not category and not keyword and not text:
                 return {"error": "需要 category、keyword 或 text", "results": {}}
+            meta = {}
             out = q.compare_roles(conn, text_conn, companies, category, keyword=keyword, text=text,
-                                  per_company=min(per_company, 20))
+                                  per_company=min(per_company, 20), meta=meta)
             return envelope(conn, out, category=category, keyword=keyword, text=text,
-                            not_found=[c for c, v in out.items() if not v])
+                            not_found=[c for c, v in out.items() if not v], **meta)
     return _guard(run)
 
 

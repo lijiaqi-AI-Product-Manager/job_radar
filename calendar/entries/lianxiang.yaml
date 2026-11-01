@@ -40,7 +40,7 @@ entries:
     - 交易
     - 证券
   apply_start: null
-  apply_end: '2026-11-25'
+  apply_end: null
   cities: []
   apply_url: https://talent.lenovo.com.cn/
   source:
@@ -52,7 +52,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：联想校园招聘；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019667>；城市证据：集大就业网 招聘简章；联想希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：联想校园招聘；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019667>；城市证据：集大就业网 招聘简章；联想希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: lianxiang-2027-qzzs-v1
   company: 联想
   product: null
@@ -60,7 +60,7 @@ entries:
   project_type: 秋招正式批
   tracks: *id001
   apply_start: null
-  apply_end: '2026-11-15'
+  apply_end: null
   cities:
   - 厦门
   apply_url: https://talent.lenovo.com.cn/
@@ -73,7 +73,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：联想校园招聘；网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997013>；城市证据：集大就业网 招聘简章；联想希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：联想校园招聘；公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997013>；城市证据：集大就业网 招聘简章；联想希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: lianxiang-2027-sxsx-v2
   company: 联想
   product: null

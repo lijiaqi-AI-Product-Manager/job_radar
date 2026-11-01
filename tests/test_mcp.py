@@ -37,6 +37,12 @@ def test_missing_data_is_an_error_not_a_crash(tmp_path, monkeypatch):
     assert "jobradar update" in out["error"] and out["results"] == []
 
 
+def test_compare_explains_empty_filtered_results(home):
+    out = mcp_server.compare_roles(["腾讯", "未知公司"], "财务")
+    assert out["missing_companies"] == ["未知公司"]
+    assert out["no_matching_jobs"] == ["腾讯"]
+
+
 def test_search_full_text(home):
     out = mcp_server.search_jobs(text="pytorch")
     assert out["results"][0]["id"] == "s1:1" and out["results"][0]["match"] == "PyTorch"

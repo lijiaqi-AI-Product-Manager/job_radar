@@ -32,7 +32,7 @@ entries:
     - 制造
     - 质量
   apply_start: null
-  apply_end: '2026-11-18'
+  apply_end: null
   cities: []
   apply_url: https://www.bgyfw.com/cn/join.html
   source:
@@ -44,7 +44,7 @@ entries:
   jd:
     status: official_page
     url: https://www.bgyfw.com/cn/join.html
-  notes: 入口页标题：首页 | 碧桂园服务-服务成就美好生活；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021105>；城市证据：招聘站职位列表
+  notes: "入口页标题：首页 | 碧桂园服务-服务成就美好生活；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021105>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: biguiyuanfuwu-2027-qzzs-v1
   company: 碧桂园服务
   product: null

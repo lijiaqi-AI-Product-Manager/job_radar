@@ -35,7 +35,7 @@ entries:
     roles:
     - 保险
   apply_start: null
-  apply_end: '2026-10-31'
+  apply_end: null
   cities:
   - 杭州
   apply_url: https://zhaopin.joyoung.com/campus/
@@ -48,7 +48,7 @@ entries:
   jd:
     status: official_page
     url: https://zhaopin.joyoung.com/campus/
-  notes: 入口页标题：九阳招聘；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020942>；城市证据：广工就业网 招聘简章
+  notes: "入口页标题：九阳招聘；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020942>；城市证据：广工就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: jiuyang-2027-rcsx-v1
   company: 九阳
   product: null

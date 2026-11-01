@@ -346,6 +346,19 @@ def test_data_status_summary_is_compact(jobs_db):
     assert s["slowest"] == []          # duration_s 为 NULL 时不编造耗时
 
 
+def test_source_freshness_limits_details_without_hiding_stale_job_count(jobs_db):
+    from jobradar.core.queries import source_freshness
+
+    ingest_run(jobs_db, "old", [make_job(1, source_id="old")], ts=T(1))
+    ingest_run(jobs_db, "never", [], ts=T(1), ok=False, error="blocked")
+    out = source_freshness(data_status(jobs_db, now=T(5)), limit=1)
+    assert out["counts"]["stale"] == 2
+    assert out["stale_open_jobs"] == 1
+    assert out["omitted_stale_sources"] == 1
+    assert out["stale_sources"] == [{"source_id": "never", "last_ok": None,
+                                    "age_hours": None, "open_jobs": 0}]
+
+
 def test_compare_roles_by_keyword(jobs_db, text_db):
     a = [make_job(1, company="药明康德", title="【2027校招】化学研发研究员", subcategory=None, category=None, requirements="有机化学"),
          make_job(2, company="药明康德", title="财务专员", subcategory=None, category=None)]

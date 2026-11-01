@@ -49,7 +49,7 @@ entries:
     - 生产系统开发工程师(J13895)
     - 良率提升研发工程师/专家(J14702)
   apply_start: '2026-08-17'
-  apply_end: '2026-12-06'
+  apply_end: null
   cities:
   - 武汉
   apply_url: https://ymtc-campus.zhiye.com/jobs
@@ -62,4 +62,4 @@ entries:
   jd:
     status: official_page
     url: https://ymtc-campus.zhiye.com/jobs
-  notes: 入口页标题：长江存储—专项；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019147>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：长江存储—专项；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019147>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

@@ -43,7 +43,7 @@ entries:
     - 质量
     - IE
   apply_start: null
-  apply_end: '2026-12-19'
+  apply_end: null
   cities:
   - 北京
   - 杭州
@@ -63,7 +63,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757780>；城市证据：西电就业网 招聘简章；建设银行希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757780>；城市证据：西电就业网 招聘简章；建设银行希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: jiansheyinxing-2027-qzzs-v1
   company: 建设银行
   product: null

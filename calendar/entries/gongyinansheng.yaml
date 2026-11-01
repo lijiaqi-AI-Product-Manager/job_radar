@@ -185,7 +185,7 @@ entries:
   project_type: 校招
   tracks: *id001
   apply_start: null
-  apply_end: '2026-12-09'
+  apply_end: null
   cities:
   - 上海
   apply_url: https://yhks.cn/y.php/n?d3=3
@@ -198,4 +198,4 @@ entries:
   jd:
     status: official_page
     url: https://yhks.cn/y.php/n?d3=3
-  notes: 入口页标题：2027年度工银安盛校园招聘公告-2027银行校园招聘_秋招公告_春招公告_笔试；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019290>；城市证据：招聘站职位列表
+  notes: "入口页标题：2027年度工银安盛校园招聘公告-2027银行校园招聘_秋招公告_春招公告_笔试；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019290>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

@@ -43,7 +43,7 @@ entries:
     - 机械
     - 质量
   apply_start: null
-  apply_end: '2026-12-09'
+  apply_end: null
   cities:
   - 武汉
   - 襄阳
@@ -63,7 +63,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：中信银行招聘官网；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758065>；城市证据：西电就业网 招聘简章；中信银行希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：中信银行招聘官网；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758065>；城市证据：西电就业网 招聘简章；中信银行希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongxinyinxing-sz-v1
   company: 中信银行
   product: null

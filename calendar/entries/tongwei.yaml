@@ -27,7 +27,7 @@ entries:
     roles:
     - 组件设备工程师(J10519)
   apply_start: '2026-08-26'
-  apply_end: '2027-01-06'
+  apply_end: null
   cities:
   - 成都
   apply_url: https://tongwei.zhiye.com/
@@ -40,4 +40,4 @@ entries:
   jd:
     status: official_page
     url: https://tongwei.zhiye.com/
-  notes: 入口页标题：通威股份有限公司；在招职位 12 条（结构化列表实测）；网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997085>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：通威股份有限公司；在招职位 12 条（结构化列表实测）；公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997085>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

@@ -43,7 +43,7 @@ entries:
     - 产品运营
     - AI产品
   apply_start: null
-  apply_end: '2026-12-31'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://careers.oppo.com/campus
@@ -56,7 +56,7 @@ entries:
   jd:
     status: official_page
     url: https://careers.oppo.com/campus
-  notes: 入口页标题：OPPO招聘 - 加入我们 join us；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758209>；城市证据：郑大就业网 招聘简章
+  notes: "入口页标题：OPPO招聘 - 加入我们 join us；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758209>；城市证据：郑大就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: oppo-sz-v1
   company: OPPO
   product: null

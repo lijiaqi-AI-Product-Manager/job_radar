@@ -77,7 +77,7 @@ entries:
   project_type: 提前批
   tracks: *id001
   apply_start: null
-  apply_end: '2026-11-05'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://liuxue.xdf.cn/recruit/
@@ -90,7 +90,7 @@ entries:
   jd:
     status: official_page
     url: https://liuxue.xdf.cn/recruit/
-  notes: 入口页标题：招聘_新东方前途出国；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018709>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：招聘_新东方前途出国；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018709>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: xindongfang-2027-sx-v2
   company: 新东方
   product: null

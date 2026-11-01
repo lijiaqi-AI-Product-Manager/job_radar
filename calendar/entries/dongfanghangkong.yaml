@@ -36,7 +36,7 @@ entries:
     - 风控
     - 资管
   apply_start: null
-  apply_end: '2026-11-20'
+  apply_end: null
   cities:
   - 上海
   - 昆明
@@ -52,7 +52,7 @@ entries:
   jd:
     status: official_page
     url: https://job.ceair.com/campus/campusJobList.html
-  notes: 入口页标题：校园招聘-职位列表；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758018>；城市证据：招聘站职位列表
+  notes: "入口页标题：校园招聘-职位列表；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758018>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: dongfanghangkong-2027-rcsx-v1
   company: 东方航空
   product: null

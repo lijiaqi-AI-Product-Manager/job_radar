@@ -43,7 +43,7 @@ entries:
     - 机械设计高级工程师
     - 机械设计工程师 (器件)
   apply_start: null
-  apply_end: '2026-12-12'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://inovance.zhiye.com/Campus
@@ -56,7 +56,7 @@ entries:
   jd:
     status: official_page
     url: https://inovance.zhiye.com/Campus
-  notes: 入口页标题：汇川技术招聘官网；在招职位 400 条（结构化列表实测）；网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997100>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：汇川技术招聘官网；在招职位 400 条（结构化列表实测）；公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997100>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: huichuanjishu-2027-sx-v1
   company: 汇川技术
   product: null

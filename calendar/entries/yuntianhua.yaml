@@ -76,7 +76,7 @@ entries:
   project_type: 秋招正式批
   tracks: *id001
   apply_start: null
-  apply_end: '2026-11-30'
+  apply_end: null
   cities:
   - 昆明
   apply_url: https://yythzb3.zhiye.com/campus/
@@ -89,7 +89,7 @@ entries:
   jd:
     status: official_page
     url: https://yythzb3.zhiye.com/campus/
-  notes: 入口页标题：云南云天化股份有限公司；在招职位 133 条（结构化列表实测）；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019792>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：云南云天化股份有限公司；在招职位 133 条（结构化列表实测）；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019792>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: yuntianhua-sz-v2
   company: 云天化
   product: null

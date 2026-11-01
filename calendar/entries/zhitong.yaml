@@ -41,7 +41,7 @@ entries:
     - 审计准则及资本市场实务研究经理/高级经理
     - 市场传播助理
   apply_start: null
-  apply_end: '2026-12-17'
+  apply_end: null
   cities:
   - 北京
   - 上海
@@ -61,7 +61,7 @@ entries:
   jd:
     status: official_page
     url: https://grantthornton.zhiye.com/
-  notes: 入口页标题：致同会计师事务所（特殊普通合伙）；在招职位 99 条（结构化列表实测）；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021102>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：致同会计师事务所（特殊普通合伙）；在招职位 99 条（结构化列表实测）；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021102>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhitong-2027-sx-v1
   company: 致同
   product: null

@@ -40,7 +40,7 @@ entries:
     - UX
     - 3D
   apply_start: null
-  apply_end: '2026-11-09'
+  apply_end: null
   cities: []
   apply_url: https://axera-tech.com/join/1
   source:
@@ -52,4 +52,4 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：校园招聘 | 爱芯元智半导体股份有限公司；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757424>；爱芯元智希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：校园招聘 | 爱芯元智半导体股份有限公司；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757424>；爱芯元智希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

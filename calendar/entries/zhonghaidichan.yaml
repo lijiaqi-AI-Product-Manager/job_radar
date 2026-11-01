@@ -40,7 +40,7 @@ entries:
     - 【海之子】人力资源岗-科技公司
     - 【海之子】人力资源岗-中海宏洋
   apply_start: '2026-09-08'
-  apply_end: '2026-12-12'
+  apply_end: null
   cities:
   - 厦门
   apply_url: https://www.coli688.com/careers/hiring/
@@ -53,7 +53,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：中海地产 &#8211; 员工招聘；网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997104>；城市证据：招聘站职位列表（结构化字段）；中海地产希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：中海地产 &#8211; 员工招聘；公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997104>；城市证据：招聘站职位列表（结构化字段）；中海地产希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhonghaidichan-2027-sxsx-v1
   company: 中海地产
   product: null

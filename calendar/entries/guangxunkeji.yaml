@@ -40,7 +40,7 @@ entries:
     - IE
     - 自动化
   apply_start: null
-  apply_end: '2026-12-09'
+  apply_end: null
   cities:
   - 武汉
   apply_url: ''
@@ -53,4 +53,4 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757449>；城市证据：西电就业网 招聘简章；光迅科技希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757449>；城市证据：西电就业网 招聘简章；光迅科技希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

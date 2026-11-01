@@ -49,7 +49,7 @@ entries:
     - 2027届-工艺技术研究员（流动化学/酶催化/化学催化/化工/工艺安全/结晶）-上海外高桥(J24891)
     - 2027届-工艺技术研究员（流动化学/酶催化/化学催化/化工/工艺安全/结晶）-江苏常州(J24892)
   apply_start: '2026-09-14'
-  apply_end: '2026-12-31'
+  apply_end: null
   cities:
   - 武汉
   apply_url: https://wuxiapptec.zhiye.com/campus
@@ -62,7 +62,7 @@ entries:
   jd:
     status: official_page
     url: https://wuxiapptec.zhiye.com/campus
-  notes: 入口页标题：药明康德招聘门户；在招职位 400 条（结构化列表实测）；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019893>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：药明康德招聘门户；在招职位 400 条（结构化列表实测）；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019893>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: yaomingkangde-2027-sx-v1
   company: 药明康德
   product: null

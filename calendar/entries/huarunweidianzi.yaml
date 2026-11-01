@@ -46,7 +46,7 @@ entries:
     - 结算
     - 保险
   apply_start: null
-  apply_end: '2026-12-22'
+  apply_end: null
   cities:
   - 上海
   - 重庆
@@ -64,7 +64,7 @@ entries:
   jd:
     status: official_page
     url: https://www.crmicro.com/talent/index.html
-  notes: 入口页标题：华润微电子欢迎您--人才发展；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757861>；城市证据：招聘站职位列表
+  notes: "入口页标题：华润微电子欢迎您--人才发展；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757861>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: huarunweidianzi-2027-rcsx-v1
   company: 华润微电子
   product: null

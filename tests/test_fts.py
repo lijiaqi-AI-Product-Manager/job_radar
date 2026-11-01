@@ -3,7 +3,7 @@ import sqlite3
 import pytest
 
 from helpers import T, make_job
-from jobradar.core.queries import search_jobs
+from jobradar.core.queries import get_job, search_jobs
 from jobradar.pipeline.ingest import ingest_run, upsert_texts
 from jobradar.store.migrate import MIGRATIONS_ROOT, migrate
 
@@ -91,3 +91,37 @@ def test_search_keeps_working_with_unmigrated_databases():
     assert [r["id"] for r in search_jobs(jobs, text="PyTorch 大模型", text_conn=text)] == ["s1:1"]
     jobs.close()
     text.close()
+
+
+@pytest.mark.parametrize("build_index", [True, False])
+def test_local_snapshot_defers_index_build_until_text_search(tmp_path, monkeypatch, build_index):
+    from jobradar.local import open_db
+
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    if not build_index:
+        monkeypatch.setenv("JOBRADAR_BUILD_SEARCH_INDEX", "0")
+    job = make_job(1, title="大模型研发", description="PyTorch 框架")
+    for kind, filename, version in (("jobs", "jobs.db", 2), ("text", "jd_text.db", 1)):
+        with sqlite3.connect(tmp_path / filename) as con:
+            con.row_factory = sqlite3.Row
+            for path in sorted((MIGRATIONS_ROOT / kind).glob("*.sql"))[:version]:
+                con.executescript(path.read_text(encoding="utf-8"))
+            con.execute(f"PRAGMA user_version={version}")
+            if kind == "jobs":
+                ingest_run(con, "s1", [job], ts=T(1))
+            else:
+                upsert_texts(con, [job], ts=T(1))
+        con.close()
+    jobs, text = open_db("jobs"), open_db("text")
+    try:
+        # 普通公司查询和详情读取不应先重建整个 JD 索引。
+        assert len(search_jobs(jobs, company=job.company)) == 1
+        assert get_job(jobs, text, job.id)["description"] == job.description
+        assert jobs.execute("PRAGMA user_version").fetchone()[0] == 2
+        assert text.execute("PRAGMA user_version").fetchone()[0] == 1
+        assert [r["id"] for r in search_jobs(jobs, text="PyTorch", text_conn=text)] == [job.id]
+        assert jobs.execute("PRAGMA user_version").fetchone()[0] == (3 if build_index else 2)
+        assert text.execute("PRAGMA user_version").fetchone()[0] == (2 if build_index else 1)
+    finally:
+        jobs.close()
+        text.close()

@@ -58,7 +58,7 @@ entries:
   project_type: 校招
   tracks: *id001
   apply_start: null
-  apply_end: '2026-12-15'
+  apply_end: null
   cities:
   - 北京
   - 上海
@@ -74,7 +74,7 @@ entries:
   jd:
     status: official_page
     url: https://bdochina.zhiye.com/campus
-  notes: 入口页标题：立信会计师事务所（特殊普通合伙）；在招职位 277 条（结构化列表实测）；网申时间证据：东秦就业网 <https://job.neuq.edu.cn/campus/view/id/861688>；城市证据：招聘站职位列表
+  notes: "入口页标题：立信会计师事务所（特殊普通合伙）；在招职位 277 条（结构化列表实测）；公告证据（不证明网申截止）：东秦就业网 <https://job.neuq.edu.cn/campus/view/id/861688>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: lixin-2027-hjsx-v2
   company: 立信
   product: null

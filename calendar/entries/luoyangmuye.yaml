@@ -35,7 +35,7 @@ entries:
     roles:
     - 资管
   apply_start: null
-  apply_end: '2026-12-29'
+  apply_end: null
   cities:
   - 上海
   - 洛阳
@@ -49,4 +49,4 @@ entries:
   jd:
     status: official_page
     url: https://wecruit.hotjob.cn/SU67e513c01c240e188726a2e9/pb/index.html
-  notes: 网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019735>；城市证据：郑大就业网 招聘简章
+  notes: "公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019735>；城市证据：郑大就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

@@ -28,7 +28,7 @@ entries:
     roles:
     - 资深技术员（Java开发方向）
   apply_start: null
-  apply_end: '2026-12-03'
+  apply_end: null
   cities:
   - 重庆
   apply_url: https://hr-campus.vivo.com/jobs
@@ -41,7 +41,7 @@ entries:
   jd:
     status: official_page
     url: https://hr-campus.vivo.com/jobs
-  notes: 入口页标题：vivo招聘；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757206>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：vivo招聘；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757206>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: vivo-sz-v1
   company: vivo
   product: null

@@ -36,7 +36,7 @@ entries:
     roles:
     - 保险
   apply_start: null
-  apply_end: '2026-12-19'
+  apply_end: null
   cities:
   - 北京
   - 杭州
@@ -56,7 +56,7 @@ entries:
   jd:
     status: official_page
     url: https://dew.dongfang.com/rczp/xyzp.htm
-  notes: 入口页标题：校园招聘-东方电气风电股份有限公司；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021121>；城市证据：招聘站职位列表
+  notes: "入口页标题：校园招聘-东方电气风电股份有限公司；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021121>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: dongfangdianqi-sz-v1
   company: 东方电气
   product: null

@@ -34,7 +34,7 @@ entries:
     - 基金
     - 保险
   apply_start: null
-  apply_end: '2026-12-15'
+  apply_end: null
   cities:
   - 上海
   apply_url: https://sast.zhiye.com/
@@ -47,7 +47,7 @@ entries:
   jd:
     status: official_page
     url: https://sast.zhiye.com/
-  notes: 入口页标题：上海航天技术研究院招聘系统；在招职位 15 条（结构化列表实测）；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757644>；城市证据：招聘站职位列表
+  notes: "入口页标题：上海航天技术研究院招聘系统；在招职位 15 条（结构化列表实测）；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757644>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: shanghaihangtian-sz-v1
   company: 上海航天
   product: null

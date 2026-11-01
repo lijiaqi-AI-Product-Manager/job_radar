@@ -23,7 +23,7 @@ entries:
     roles:
     - 生产
   apply_start: null
-  apply_end: '2026-12-10'
+  apply_end: null
   cities: []
   apply_url: ''
   source:
@@ -35,4 +35,4 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019314>；天宇股份希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019314>；天宇股份希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

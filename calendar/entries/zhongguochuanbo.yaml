@@ -40,7 +40,7 @@ entries:
     - 财务管理(J12039)
     - 财务管理专员(J12028)
   apply_start: null
-  apply_end: '2026-12-22'
+  apply_end: null
   cities:
   - 武汉
   - 青岛
@@ -57,7 +57,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757847>；城市证据：招聘站职位列表（结构化字段）；中国船舶希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757847>；城市证据：招聘站职位列表（结构化字段）；中国船舶希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongguochuanbo-2027-qzzs-v1
   company: 中国船舶
   product: null

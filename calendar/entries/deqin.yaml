@@ -20,7 +20,7 @@ entries:
     - 税务
     - 行政
   apply_start: null
-  apply_end: '2026-10-31'
+  apply_end: null
   cities:
   - 上海
   apply_url: https://wecruit.hotjob.cn/SU648133e50dcad45af15e3cb1/mc/position/campus
@@ -33,4 +33,4 @@ entries:
   jd:
     status: official_page
     url: https://wecruit.hotjob.cn/SU648133e50dcad45af15e3cb1/mc/position/campus
-  notes: 网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020808>；城市证据：郑大就业网 招聘简章
+  notes: "公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020808>；城市证据：郑大就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

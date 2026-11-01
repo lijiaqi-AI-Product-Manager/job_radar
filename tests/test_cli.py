@@ -48,6 +48,13 @@ def test_compare_reports_not_found(home, capsys):
     assert out["results"]["腾讯"][0]["requirements"] == "PyTorch"
 
 
+def test_compare_distinguishes_missing_company_from_no_matching_roles(home, capsys):
+    out = run(capsys, "compare", "腾讯", "字节跳动", "未知公司", "--category", "财务")
+    assert out["missing_companies"] == ["未知公司"]
+    assert out["no_matching_jobs"] == ["腾讯", "字节跳动"]
+    assert out["company_matches"]["腾讯"]["match"] == "exact"
+
+
 def test_diff_and_sources(home, capsys):
     assert len(run(capsys, "diff", "--days", "1")["results"]) == 2
     out = run(capsys, "sources")
@@ -496,6 +503,22 @@ def test_doctor_reports_field_coverage_and_jd_match(home, capsys):
     assert out["advice"]
     assert set(out["fields"]) >= {"cities", "campus_cities", "grad_year"}
     assert out["jd_text_match"] is not None
+
+
+def test_doctor_warns_about_stale_source_despite_fresh_snapshot(home, capsys, monkeypatch):
+    now = "2026-11-01T00:00:00Z"
+    monkeypatch.setattr(cli, "now_ts", lambda: now)
+    monkeypatch.setattr(local, "now_ts", lambda: now)
+    with connect(home / "jobs.db", "jobs") as conn:
+        conn.execute("UPDATE source_run SET ts=? WHERE source_id='s1'", ("2026-10-28T00:00:00Z",))
+        conn.execute("UPDATE source_run SET ts=? WHERE source_id='s2'", (now,))
+    out = run(capsys, "doctor")
+    assert out["stale"] is False
+    assert out["source_health"]["counts"]["stale"] == 1
+    assert out["source_health"]["stale_sources"][0]["source_id"] == "s1"
+    assert out["source_health"]["stale_sources"][0]["age_hours"] == 96
+    assert "源超过 48 小时" in out["advice"]
+    assert "jobradar sources --problems" in out["advice"]
 
 def test_sources_problems_shows_only_rejected_or_stale(home, capsys):
     """排障时只想看「没跑成功」的源：rejected 会一直挂着旧岗位，不能被淹没在几百个 ok 里。"""

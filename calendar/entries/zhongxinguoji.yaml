@@ -49,7 +49,7 @@ entries:
     - 生产优化与服务工程师-临港（2027届校招）(J13312)
     - 智能化生产运筹管理工程师（2027届校招）(J13327)
   apply_start: null
-  apply_end: '2026-11-16'
+  apply_end: null
   cities:
   - 上海
   apply_url: https://smics.zhiye.com/campus
@@ -62,7 +62,7 @@ entries:
   jd:
     status: official_page
     url: https://smics.zhiye.com/campus
-  notes: 入口页标题：中芯国际；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020768>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：中芯国际；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020768>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongxinguoji-2027-xysd-v1
   company: 中芯国际
   product: null

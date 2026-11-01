@@ -36,7 +36,7 @@ entries:
     - 售后
     - 品牌
   apply_start: null
-  apply_end: '2026-11-19'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://job.byd.com/portal/pc/
@@ -49,7 +49,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：比亚迪招聘；网申时间证据：东秦就业网 <https://job.neuq.edu.cn/campus/view/id/861565>；城市证据：东秦就业网 招聘简章；比亚迪希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：比亚迪招聘；公告证据（不证明网申截止）：东秦就业网 <https://job.neuq.edu.cn/campus/view/id/861565>；城市证据：东秦就业网 招聘简章；比亚迪希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: biyadi-sz-v1
   company: 比亚迪
   product: null

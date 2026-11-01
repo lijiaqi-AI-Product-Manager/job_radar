@@ -34,7 +34,7 @@ entries:
     - 生产
     - 自动化
   apply_start: null
-  apply_end: '2026-12-09'
+  apply_end: null
   cities: []
   apply_url: https://job.xiaohongshu.com/campus/position
   source:
@@ -46,7 +46,7 @@ entries:
   jd:
     status: official_page
     url: https://job.xiaohongshu.com/campus/position
-  notes: 入口页标题：小红书；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757479>；城市证据：招聘站渲染正文
+  notes: "入口页标题：小红书；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757479>；城市证据：招聘站渲染正文；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: xiaohongshu-sz-v1
   company: 小红书
   product: null

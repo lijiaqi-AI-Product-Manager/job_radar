@@ -4,7 +4,7 @@
   E1  ATS 结构化职位列表（work/fields.jsonl，来自北森/大易接口）
       —— 职位名本身就是证据：「2027届校招-药品注册工程师」「算法工程师-上海」
   E2  高校就业网招聘简章（work/edu_hits.jsonl）
-      —— 届次在标题里、网申截止在「过期时间」、城市在「工作地域」、方向在「职位类别」
+      —— 届次在标题里、网申日期只认正文明确语义，公告「过期时间」仅为展示元数据
   E3  浏览器渲染后的招聘站正文（work/rendered.jsonl）
       —— 「2027届校园招聘正式启动」「网申 8.17 开始」
   E4  服务端渲染的招聘站正文（work/fields.jsonl 里的 site 类页面文本摘要）
@@ -267,10 +267,8 @@ def merge_evidence(company: str, entry: dict, fields: dict | None,
 
     # ---- E2 高校就业网简章（每条各归各批）
     for h in edu:
-        # 站点自己在页面上打了「已过期」的，直接跳过：这种公告的批次/日期都是一年前的老数据，
-        # 拿去生成日历会让用户点进去看到「已截止」。实测 2199 条简章里有 1097 条属于这种。
-        if h.get("expired_flag"):
-            continue
+        # 高校公告的「已过期」只表示站内展示结束，不能据此判断企业停止收简历。
+        # 真实网申截止日仍由正文抽取，并由 build_entries 按该日期检查窗口。
         blob = (h.get("title") or "") + "\n" + (h.get("text") or "")
         for y in extract_grad_years(blob):
             out["grad_years"][y] += 1
@@ -297,15 +295,13 @@ def merge_evidence(company: str, entry: dict, fields: dict | None,
             elif mo == 12 or mo in (1, 2):
                 b = bucket("秋招补录")
         add_cities(b["cities"], cs, f"{h.get('site_short')} 简章工作地域")
-        # 网申窗口：公告「过期时间」= 硬截止；正文区间 = 起止
-        if h.get("expire"):
-            b["ends"].append(h["expire"])
-            out["ev"].setdefault("window", f"{h.get('site_short')} 公告过期时间 {h['expire']}")
+        # 公告 expire 是学校展示期限，不是企业网申截止。只采信正文日期。
         if a["apply_start"]:
             b["starts"].append(a["apply_start"])
         if a["apply_end"]:
             b["ends"].append(a["apply_end"])
-        b["ev"].append(f"{h.get('site_short')} <{h.get('url')}>")
+        if a["apply_start"] or a["apply_end"]:
+            b["ev"].append(f"{h.get('site_short')} 正文 {a['date_evidence']} <{h.get('url')}>")
         # 公告发布日期 = 「来源」这一列的日期。用户看到「来源：某校就业网 2026-09-12 简章」
         # 才能判断这条信息的时效；只给个站点名等于没给来源。
         # 这里**只采信当前这条公告自己的 publish**，不与别的公告取最大——那是跨公告串场。
@@ -441,8 +437,7 @@ def build_entries(company: str, entry: dict, merged: dict, slug: str = "",
         end = max(b["ends"]) if b["ends"] else None
         start, end = sensible_window(start, end)
         # 时效过滤：截止日已经早于数据时间戳的，说明这条公告过期了，不能再进日历
-        # （真实数据里 2026 春季招聘的公告还在高校网站上挂着，过期时间 2026-04-16，
-        #  用户点进去只会看到「已截止」）。留空则保留——没有截止日不等于过期。
+        # 只判断企业网申日期，不使用高校公告展示期限。没有截止日不等于已截止。
         if end and end < AS_OF:
             continue
         # 城市：优先用该批次自己的城市证据，没有才回落到全公司并集

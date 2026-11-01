@@ -268,6 +268,15 @@ def extract_window_md(text: str) -> dict:
     return {}
 
 
+def _deadline_end(text: str, match) -> str | None:
+    ctx = re.split(r"[。；;\n]", text[:match.start()])[-1][-30:]
+    if NOT_WINDOW.search(ctx):
+        return None
+    if match.group(0).startswith("截至") and not re.search(r"网申|报名|投递|申请|简历|接收", ctx):
+        return None  # 「截至某日，公司已有 N 家门店」只是公司介绍的统计日期。
+    return _d(*match.groups()[:3])
+
+
 def extract_window(text: str) -> dict:
     """网申起止。返回 {start, end, evidence}，抽不到就是空。"""
     for rx in (RANGE, RANGE_LOOSE):
@@ -283,10 +292,8 @@ def extract_window(text: str) -> dict:
     r = extract_window_md(text)
     if r:
         return r
-    m = DEADLINE.search(text)
-    if m:
-        ctx = text[max(0, m.start() - 20):m.start()]
-        end = None if NOT_WINDOW.search(ctx) else _d(*m.groups()[:3])
+    for m in DEADLINE.finditer(text):
+        end = _deadline_end(text, m)
         if end:
             return {"start": None, "end": end, "evidence": m.group(0)[:80]}
     for m in DEADLINE_IMPLICIT.finditer(text):
@@ -336,7 +343,7 @@ def extract_windows_multi(text: str) -> list[dict]:
                 seen.add((start, end))
                 out.append({"start": start, "end": end, "evidence": m.group(0)[:80]})
     for m in DEADLINE.finditer(text):
-        end = _d(*m.groups()[:3])
+        end = _deadline_end(text, m)
         if end and (None, end) not in seen:
             seen.add((None, end))
             out.append({"start": None, "end": end, "evidence": m.group(0)[:80]})

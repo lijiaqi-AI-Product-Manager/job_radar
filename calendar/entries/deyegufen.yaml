@@ -42,7 +42,7 @@ entries:
     - 机械设计助理工程师
     - 仿真工程师
   apply_start: '2026-08-27'
-  apply_end: '2026-12-02'
+  apply_end: null
   cities:
   - 宁波
   apply_url: https://www.deye.com.cn/join/campus.html
@@ -55,4 +55,4 @@ entries:
   jd:
     status: official_page
     url: https://www.deye.com.cn/join/campus.html
-  notes: 入口页标题：宁波德业科技股份有限公司-宁波德业科技股份有限公司；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757169>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：宁波德业科技股份有限公司-宁波德业科技股份有限公司；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757169>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

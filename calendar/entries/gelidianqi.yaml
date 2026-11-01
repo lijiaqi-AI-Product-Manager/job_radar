@@ -40,7 +40,7 @@ entries:
     - 动画
     - UI
   apply_start: null
-  apply_end: '2026-11-08'
+  apply_end: null
   cities:
   - 珠海
   apply_url: https://www.gree.cn/list/232.html
@@ -53,7 +53,7 @@ entries:
   jd:
     status: official_page
     url: https://www.gree.cn/list/232.html
-  notes: 入口页标题：珠海格力集团有限公司；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020954>；城市证据：招聘站职位列表
+  notes: "入口页标题：珠海格力集团有限公司；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020954>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: gelidianqi-2027-xz-v1
   company: 格力电器
   product: null

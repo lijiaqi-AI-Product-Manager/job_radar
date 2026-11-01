@@ -90,7 +90,7 @@ entries:
   project_type: 校园大使
   tracks: *id001
   apply_start: null
-  apply_end: '2026-11-30'
+  apply_end: null
   cities:
   - 广州
   - 深圳
@@ -107,7 +107,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：TCL招聘；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019053>；城市证据：招聘站职位列表；TCL希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：TCL招聘；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019053>；城市证据：招聘站职位列表；TCL希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: tcl-2027-sx-v3
   company: TCL
   product: null

@@ -42,7 +42,7 @@ entries:
     - 质量
     - 制造
   apply_start: null
-  apply_end: '2026-12-07'
+  apply_end: null
   cities:
   - 株洲
   - 常德
@@ -59,4 +59,4 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/996983>；城市证据：中南就业网 招聘简章；农业银行希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/996983>；城市证据：中南就业网 招聘简章；农业银行希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

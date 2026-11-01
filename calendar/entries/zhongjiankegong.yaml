@@ -35,7 +35,7 @@ entries:
     - 机械
     - 质量
   apply_start: null
-  apply_end: '2026-12-20'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://sstr.cscec.com/rlzy/zjtd/
@@ -48,7 +48,7 @@ entries:
   jd:
     status: official_page
     url: https://sstr.cscec.com/rlzy/zjtd/
-  notes: 入口页标题：中建科工集团有限公司；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019552>；城市证据：招聘站职位列表
+  notes: "入口页标题：中建科工集团有限公司；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019552>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongjiankegong-qzbl-v1
   company: 中建科工
   product: null

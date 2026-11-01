@@ -49,7 +49,7 @@ entries:
     - 酒店PMS渠道销售经理
     - 收单 渠道经理
   apply_start: null
-  apply_end: '2026-11-30'
+  apply_end: null
   cities:
   - 北京
   apply_url: https://zhaopin.meituan.com/web/campus
@@ -62,7 +62,7 @@ entries:
   jd:
     status: official_page
     url: https://zhaopin.meituan.com/web/campus
-  notes: 入口页标题：美团招聘；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018973>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：美团招聘；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018973>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: meituan-2027-xz-v1
   company: 美团
   product: null

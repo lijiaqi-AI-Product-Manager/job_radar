@@ -49,7 +49,7 @@ entries:
     - 日常实习生-AI产品经理-未来生活实验室
     - Happy Horse & Happy Oyster 产品设计实习生
   apply_start: '2026-08-06'
-  apply_end: '2026-10-31'
+  apply_end: null
   cities:
   - 北京
   - 广州
@@ -69,4 +69,4 @@ entries:
   jd:
     status: official_page
     url: https://campus-talent.alibaba.com/campus/index
-  notes: 入口页标题：阿里巴巴校园招聘；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018685>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：阿里巴巴校园招聘；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018685>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

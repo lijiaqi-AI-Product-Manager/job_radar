@@ -34,7 +34,7 @@ entries:
     - 品牌
     - 技术支持
   apply_start: null
-  apply_end: '2026-11-24'
+  apply_end: null
   cities:
   - 上海
   - 广州
@@ -48,7 +48,7 @@ entries:
   jd:
     status: official_page
     url: https://kurogame.jobs.feishu.cn/campus
-  notes: 入口页标题：库洛游戏校园招聘；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020818>；城市证据：广工就业网 招聘简章
+  notes: "入口页标题：库洛游戏校园招聘；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020818>；城市证据：广工就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: kuluoyouxi-2027-xz-v1
   company: 库洛游戏
   product: null

@@ -34,7 +34,7 @@ entries:
     roles:
     - 资管
   apply_start: null
-  apply_end: '2026-12-15'
+  apply_end: null
   cities:
   - 北京
   - 济南
@@ -54,4 +54,4 @@ entries:
   jd:
     status: official_page
     url: https://ztjs.hotjob.cn/
-  notes: 入口页标题：招聘官网；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757645>；城市证据：西电就业网 招聘简章
+  notes: "入口页标题：招聘官网；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757645>；城市证据：西电就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

@@ -37,7 +37,7 @@ entries:
     roles:
     - 伊利2027届校招-行政专训生（奶酪呼市）
   apply_start: null
-  apply_end: '2026-12-31'
+  apply_end: null
   cities:
   - 成都
   - 黄冈
@@ -57,7 +57,7 @@ entries:
   jd:
     status: official_page
     url: https://yili.hotjob.cn/wt/yili/web/index/CompyiliPageindex
-  notes: 入口页标题：伊利招聘官网；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019912>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：伊利招聘官网；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019912>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: yili-sz-v1
   company: 伊利
   product: null

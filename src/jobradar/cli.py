@@ -461,10 +461,11 @@ def cmd_compare(args):
             raise SystemExit("对比需要 JD 原文库：先运行 `jobradar update`。")
         if not args.category and not args.keyword and not args.text:
             raise SystemExit("compare 需要 --category、--keyword 或 --text")
+        meta = {}
         out = q.compare_roles(conn, text_conn, args.companies, args.category, keyword=args.keyword,
-                              text=args.text, per_company=args.per_company)
+                              text=args.text, per_company=args.per_company, meta=meta)
         _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword, text=args.text,
-                              not_found=[c for c, v in out.items() if not v]))
+                              not_found=[c for c, v in out.items() if not v], **meta))
 
 
 def cmd_trends(args):
@@ -506,12 +507,18 @@ def cmd_doctor(args):
         with _open("jobs") as conn:
             env = envelope(conn, [])
             out["fields"] = q.field_coverage(conn)
+            out["source_health"] = q.source_freshness(q.data_status(conn, now=now_ts()))
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
         cov = _text_coverage(home())
         if cov is not None:
             out["jd_text_match"] = round(cov, 3)
         campus_city = (out["fields"] or {}).get("campus_cities")
         advice = ["数据已过期，运行 `jobradar update`"] if env["stale"] else []
+        stale_sources = out["source_health"]["counts"]["stale"]
+        if stale_sources:
+            advice.append(f"{stale_sources} 个源超过 48 小时未成功刷新或从未成功，"
+                          "其岗位下架状态可能滞后；运行 `jobradar sources --problems` 查看，"
+                          "投递前打开原始链接确认；下载新快照不保证这些源已恢复")
         if cov is not None and cov < 0.9:
             advice.append("JD 原文库与岗位库对不上（镜像可能没同步完），再运行一次 `jobradar update`")
         if campus_city is not None and campus_city < 0.25:

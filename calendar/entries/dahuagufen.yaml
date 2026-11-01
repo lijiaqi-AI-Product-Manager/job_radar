@@ -75,7 +75,7 @@ entries:
   project_type: 秋招正式批
   tracks: *id001
   apply_start: null
-  apply_end: '2026-11-20'
+  apply_end: null
   cities:
   - 杭州
   apply_url: ''
@@ -88,7 +88,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021112>；城市证据：招聘站职位列表（结构化字段）；大华股份希望你去他们的招聘页逛一逛哦~
+  notes: "公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1021112>；城市证据：招聘站职位列表（结构化字段）；大华股份希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: dahuagufen-2027-sx-v2
   company: 大华股份
   product: null

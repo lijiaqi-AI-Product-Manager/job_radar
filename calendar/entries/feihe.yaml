@@ -44,7 +44,7 @@ entries:
     - 售后
     - 技术支持
   apply_start: null
-  apply_end: '2026-11-01'
+  apply_end: null
   cities:
   - 齐齐哈尔
   apply_url: https://www.feihe.com/about/joinUs/
@@ -57,7 +57,7 @@ entries:
   jd:
     status: official_page
     url: https://www.feihe.com/about/joinUs/
-  notes: 入口页标题：飞鹤奶粉 更适合中国宝宝体质；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757357>；城市证据：招聘站职位列表
+  notes: "入口页标题：飞鹤奶粉 更适合中国宝宝体质；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757357>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: feihe-2027-qzbl-v1
   company: 飞鹤
   product: null

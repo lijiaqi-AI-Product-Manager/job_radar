@@ -15,7 +15,7 @@ from datetime import date
 
 import pytest
 
-from jobradar.pipeline.calendar_extract import _d, extract_window
+from jobradar.pipeline.calendar_extract import _d, extract_window, extract_windows_multi
 
 
 @pytest.mark.parametrize("args", [
@@ -58,3 +58,11 @@ def test_window_ignores_placeholder_day_zero():
 def test_window_keeps_a_real_deadline():
     r = extract_window("网申截止时间：2026年11月30日")
     assert r["end"] == "2026-11-30"
+
+
+@pytest.mark.parametrize("extract", [extract_window, extract_windows_multi])
+def test_company_profile_as_of_date_is_not_application_deadline(extract):
+    # 新城控股简章的真实反例：截至某日的商场数量不是网申窗口。
+    got = extract("新城控股2027校园招聘。截至2026年8月25日，已在全国147个大中城市落子布局。")
+    windows = got if isinstance(got, list) else [got]
+    assert not any(w["end"] for w in windows)

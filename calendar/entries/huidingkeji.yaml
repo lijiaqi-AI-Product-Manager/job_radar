@@ -40,7 +40,7 @@ entries:
     - 嵌入式软件工程师(成都)(J11641)
     - 嵌入式软件工程师(武汉)(J11643)
   apply_start: null
-  apply_end: '2026-10-31'
+  apply_end: null
   cities:
   - 深圳
   apply_url: https://goodix.zhiye.com/Campus
@@ -53,7 +53,7 @@ entries:
   jd:
     status: official_page
     url: https://goodix.zhiye.com/Campus
-  notes: 入口页标题：深圳市汇顶科技股份有限公司招聘系统--校园招聘；在招职位 15 条（结构化列表实测）；网申时间证据：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020759>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：深圳市汇顶科技股份有限公司招聘系统--校园招聘；在招职位 15 条（结构化列表实测）；公告证据（不证明网申截止）：广工就业网 <https://career.gdut.edu.cn/campus/view/id/1020759>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: huidingkeji-2027-sx-v1
   company: 汇顶科技
   product: null

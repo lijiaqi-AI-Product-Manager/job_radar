@@ -41,7 +41,7 @@ entries:
     roles:
     - EP R&D 初级嵌入式软件工程师
   apply_start: '2026-09-23'
-  apply_end: '2026-12-15'
+  apply_end: null
   cities:
   - 上海
   - 深圳
@@ -57,7 +57,7 @@ entries:
   jd:
     status: official_page
     url: https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT
-  notes: 入口页标题：职位列表；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757668>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：职位列表；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757668>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: ximenzix-2027-qzzs-v1
   company: 西门子
   product: null
@@ -65,7 +65,7 @@ entries:
   project_type: 秋招正式批
   tracks: *id001
   apply_start: null
-  apply_end: '2026-12-22'
+  apply_end: null
   cities:
   - 上海
   - 北京
@@ -85,7 +85,7 @@ entries:
   jd:
     status: official_page
     url: https://jobs.siemens.com.cn/siemens/position/index?recruitmentType=CAMPUSRECRUITMENT
-  notes: 入口页标题：职位列表；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757888>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：职位列表；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757888>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: ximenzix-2027-xysd-v2
   company: 西门子
   product: null

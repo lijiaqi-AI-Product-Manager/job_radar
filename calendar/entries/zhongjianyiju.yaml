@@ -63,7 +63,7 @@ entries:
   project_type: 校招
   tracks: *id001
   apply_start: null
-  apply_end: '2026-12-17'
+  apply_end: null
   cities:
   - 北京
   - 新加坡
@@ -77,7 +77,7 @@ entries:
   jd:
     status: official_page
     url: https://www.fenbi.com/page/exam-information-detail/469978881223680
-  notes: 入口页标题：中建一局集团第二建筑有限公司2027年校园招聘-北京-北京市-河北-广东-江苏-；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019506>；城市证据：招聘站职位列表
+  notes: "入口页标题：中建一局集团第二建筑有限公司2027年校园招聘-北京-北京市-河北-广东-江苏-；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1019506>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: zhongjianyiju-2027-rcsx-v2
   company: 中建一局
   product: null

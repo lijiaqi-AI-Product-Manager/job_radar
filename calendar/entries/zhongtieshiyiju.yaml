@@ -37,7 +37,7 @@ entries:
     - 品牌
     - 技术支持
   apply_start: null
-  apply_end: '2026-12-09'
+  apply_end: null
   cities:
   - 北京
   - 武汉
@@ -51,4 +51,4 @@ entries:
   jd:
     status: official_page
     url: https://www.fenbi.com/page/positions/9/906264?quickPick=%7B%22examId%22%3A906264%7D
-  notes: 入口页标题：中铁十一局集团有限公司2027届校园招聘-湖北-武汉市-国企-2026-国央企正；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758060>；城市证据：招聘站职位列表
+  notes: "入口页标题：中铁十一局集团有限公司2027届校园招聘-湖北-武汉市-国企-2026-国央企正；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758060>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

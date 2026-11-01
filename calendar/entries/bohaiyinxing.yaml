@@ -42,7 +42,7 @@ entries:
     - 工艺
     - 质量
   apply_start: null
-  apply_end: '2026-12-16'
+  apply_end: null
   cities:
   - 北京
   - 上海
@@ -62,7 +62,7 @@ entries:
   jd:
     status: official_page
     url: https://www.cbhb.com.cn/cbhbank/jrwm/zpxx/index.shtml
-  notes: 入口页标题：渤海银行-总行；网申时间证据：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997022>；城市证据：招聘站职位列表
+  notes: "入口页标题：渤海银行-总行；公告证据（不证明网申截止）：集大就业网 <https://xsjyzd.jmu.edu.cn/campus/view/id/997022>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: bohaiyinxing-sz-v1
   company: 渤海银行
   product: null

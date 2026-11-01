@@ -45,7 +45,7 @@ entries:
     - CSIG技术产品商务培训生
     - 财经线培训生-专业类
   apply_start: null
-  apply_end: '2026-12-22'
+  apply_end: null
   cities:
   - 深圳
   - 北京
@@ -65,7 +65,7 @@ entries:
   jd:
     status: blocked
     url: null
-  notes: 入口页标题：首页 | 腾讯校招；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758305>；城市证据：招聘站职位列表（结构化字段）；腾讯希望你去他们的招聘页逛一逛哦~
+  notes: "入口页标题：首页 | 腾讯校招；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/758305>；城市证据：招聘站职位列表（结构化字段）；腾讯希望你去他们的招聘页逛一逛哦~；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: tengxun-2027-rcsx-v1
   company: 腾讯
   product: null

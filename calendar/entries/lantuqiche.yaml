@@ -35,7 +35,7 @@ entries:
     - 供应链
     - 管培生
   apply_start: null
-  apply_end: '2026-11-09'
+  apply_end: null
   cities:
   - 北京
   - 武汉
@@ -49,7 +49,7 @@ entries:
   jd:
     status: official_page
     url: https://m.dsmp.voyah.com.cn/joinus.html
-  notes: 入口页标题：加入我们-岚图汽车官网；网申时间证据：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018726>；城市证据：郑大就业网 招聘简章
+  notes: "入口页标题：加入我们-岚图汽车官网；公告证据（不证明网申截止）：郑大就业网 <https://job.zzu.edu.cn/campus/view/id/1018726>；城市证据：郑大就业网 招聘简章；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: lantuqiche-sz-v1
   company: 岚图汽车
   product: null

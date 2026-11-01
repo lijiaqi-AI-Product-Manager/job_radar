@@ -43,7 +43,7 @@ entries:
     - 供应链项目管理工程师（新加坡驻厂代表）(J19058)
     - 供应链项目管理工程师(J18172)
   apply_start: '2026-08-31'
-  apply_end: '2026-11-07'
+  apply_end: null
   cities:
   - 长安
   - 北京
@@ -62,7 +62,7 @@ entries:
   jd:
     status: official_page
     url: https://career.mindray.com/campus
-  notes: 入口页标题：迈瑞医疗；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757311>；城市证据：招聘站职位列表（结构化字段）
+  notes: "入口页标题：迈瑞医疗；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757311>；城市证据：招聘站职位列表（结构化字段）；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"
 - id: mairuiyiliao-2027-rcsx-v1
   company: 迈瑞医疗
   product: null

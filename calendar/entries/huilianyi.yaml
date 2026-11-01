@@ -38,7 +38,7 @@ entries:
     - 计划
     - 采购
   apply_start: null
-  apply_end: '2026-11-30'
+  apply_end: null
   cities:
   - 北京
   - 上海
@@ -55,4 +55,4 @@ entries:
   jd:
     status: official_page
     url: https://www.huilianyi.com/other/joinus
-  notes: 入口页标题：招聘 | 汇联易；网申时间证据：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757245>；城市证据：招聘站职位列表
+  notes: "入口页标题：招聘 | 汇联易；公告证据（不证明网申截止）：西电就业网 <https://job.xidian.edu.cn/campus/view/id/757245>；城市证据：招聘站职位列表；截止日修正（2026-11-01）：撤回高校公告展示过期日，企业网申截止待核实"

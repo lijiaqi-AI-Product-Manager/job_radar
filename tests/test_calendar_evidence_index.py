@@ -16,6 +16,7 @@ from build_calendar import (  # noqa: E402
     build_evidence_index,
     load_ats_evidence,
     lookup_evidence,
+    merge_evidence,
 )
 
 
@@ -43,6 +44,28 @@ def test_lookup_never_substring_matches():
     idx = build_evidence_index({"中国银行保险": {"company": "中国银行保险", "cities": ["北京"]}})
     assert lookup_evidence(idx, "中国银行") is None
     assert lookup_evidence(idx, "中国") is None
+
+
+def test_school_display_expiry_is_not_application_deadline():
+    # 广工/郑大公告：发布时间与过期时间是站内展示元数据。
+    notice = {"title": "2027届秋招", "publish": "2026-09-01",
+              "expire": "2026-11-01", "site_short": "广工就业网",
+              "url": "https://career.gdut.edu.cn/campus/view/id/1020881",
+              "text": "欢迎投递简历，招满即止。"}
+    merged = merge_evidence("汉得信息", {}, None, [notice], None)
+    batch = merged["batches"]["秋招正式批"]
+    assert batch["ends"] == []
+    assert "window" not in merged["ev"]
+
+
+def test_school_expired_label_does_not_override_explicit_application_window():
+    notice = {"title": "2027届秋招", "publish": "2026-09-01",
+              "expire": "2026-11-01", "expired_flag": True,
+              "text": "网申时间：2026年10月10日至2026年12月9日。"}
+    merged = merge_evidence("齐鲁制药", {}, None, [notice], None)
+    batch = merged["batches"]["秋招正式批"]
+    assert batch["starts"] == ["2026-10-10"]
+    assert batch["ends"] == ["2026-12-09"]
 
 
 def test_lookup_missing_returns_none():

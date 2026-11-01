@@ -52,7 +52,7 @@ def open_db(kind: str, required: bool = True):
             raise NoData(f"本地没有数据：{path}。先运行 `jobradar update`。")
         return None
     try:
-        return connect(path, kind)
+        return connect(path, kind, defer_search_index=True)
     except sqlite3.DatabaseError as e:
         # 文件在但打不开：多半是下载被截断/磁盘问题。给可执行的一条话，
         # 而不是把 sqlite3 的 traceback 甩给用户（CLI 与 MCP 都走这里）。
