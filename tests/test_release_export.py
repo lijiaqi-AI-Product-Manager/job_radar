@@ -51,3 +51,21 @@ def test_export_cannot_overwrite_the_working_database(tmp_path):
     source = tmp_path / 'jobs.db'
     with pytest.raises(ValueError):
         export_database(source, source, 'jobs')
+
+
+def test_calendar_export_preserves_field_evidence_and_old_client_version(tmp_path):
+    source, target = tmp_path / 'calendar.db', tmp_path / 'public/calendar.db'
+    con = connect(source, 'calendar')
+    con.execute("INSERT INTO entry(id,origin,group_name,project_type,source_type,source_name,as_of,jd_status) "
+                "VALUES ('x','manual','公司','校招','official_site','公告','2026-11-01','none')")
+    con.execute("INSERT INTO entry_field_evidence VALUES ('x', ?)", ('{"apply_end":{"scope":"batch"}}',))
+    con.commit()
+    con.close()
+    export_database(source, target, 'calendar')
+    with sqlite3.connect(target) as public:
+        assert public.execute('PRAGMA user_version').fetchone()[0] == 1
+        assert public.execute('SELECT COUNT(*) FROM entry_field_evidence').fetchone()[0] == 1
+    upgraded = connect(target, 'calendar')
+    assert upgraded.execute('PRAGMA user_version').fetchone()[0] == 2
+    assert upgraded.execute('SELECT COUNT(*) FROM entry_field_evidence').fetchone()[0] == 1
+    upgraded.close()

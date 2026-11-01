@@ -108,9 +108,9 @@ For CLI-based integrations, see the [query workflow](skill/jobradar/SKILL.md).
 | Metric | Value | Definition |
 | :--- | ---: | :--- |
 | Enabled sources | **2,242** | Enabled source configurations |
-| Configured companies | **2,201** | Distinct companies represented by enabled sources |
+| Configured companies | **2,202** | Distinct companies represented by enabled sources |
 | Adapters | **27** | Shared platforms and custom recruitment sites |
-| Core target coverage | **931 / 1,655 · 56.25%** | Configuration coverage of a fixed target pool |
+| Core target coverage | **929 / 1,655 · 56.13%** | Configuration coverage of a fixed target pool |
 | Official / aggregator | **606 / 325** | Official-first classification, without double counting |
 
 **Verified release snapshot · `2026-10-29T23:17:25Z`**

@@ -1,3 +1,4 @@
+import gzip
 import json
 import sqlite3
 
@@ -318,6 +319,44 @@ def test_download_rejects_non_sqlite(tmp_path, no_token):
     assert not (tmp_path / "jobs.db").exists()
 
 
+@pytest.mark.parametrize("payload", [b"", gzip.compress(b""), b"SQLite format 3\x00"])
+def test_empty_download_cannot_replace_good_database(tmp_path, no_token, payload):
+    import httpx
+
+    dest = tmp_path / "jobs.db"
+    original = _sqlite_bytes(tmp_path)
+    dest.write_bytes(original)
+    with pytest.raises(SystemExit):
+        cli._download("jobs.db", dest, client=_client(lambda request: httpx.Response(200, content=payload)))
+    assert dest.read_bytes() == original
+
+
+def test_wrong_schema_and_wrong_digest_preserve_good_database(tmp_path, no_token):
+    import gzip
+    import hashlib
+
+    import httpx
+
+    original = _sqlite_bytes(tmp_path)
+    dest = tmp_path / "jobs.db"
+    dest.write_bytes(original)
+    other = tmp_path / "other.db"
+    connect(other, "calendar").close()
+    with pytest.raises(SystemExit):
+        cli._download("jobs.db", dest, client=_client(lambda r: httpx.Response(200, content=other.read_bytes())))
+    assert dest.read_bytes() == original
+    verified = {}
+    digests = {"jobs.db.gz": "sha256:" + "0" * 64, "jobs.db": "sha256:" + "0" * 64}
+    def response(request):
+        return httpx.Response(200, content=gzip.compress(original, mtime=0) if str(request.url).endswith(".gz") else original)
+    with pytest.raises(SystemExit):
+        cli._download("jobs.db", dest, client=_client(response), digests=digests, verified=verified)
+    assert dest.read_bytes() == original and verified == {}
+    digests["jobs.db.gz"] = "sha256:" + hashlib.sha256(gzip.compress(original, mtime=0)).hexdigest()
+    cli._download("jobs.db", dest, client=_client(response), digests=digests, verified=verified)
+    assert verified == {"jobs.db.gz": digests["jobs.db.gz"]}
+
+
 def test_download_all_404_explains_private_repo(tmp_path, no_token):
     import httpx
     with pytest.raises(SystemExit, match="GITHUB_TOKEN"):
@@ -400,7 +439,7 @@ def test_update_downloads_in_parallel(home, monkeypatch, capsys):
     import threading
     barrier, done = threading.Barrier(3, timeout=5), []
 
-    def fake(name, dest, client=None, prefer=None):
+    def fake(name, dest, client=None, prefer=None, **kwargs):
         barrier.wait()  # 三个下载必须同时在途
         done.append(name)
         return "github"
@@ -412,7 +451,7 @@ def test_update_downloads_in_parallel(home, monkeypatch, capsys):
 
 
 def test_update_tolerates_missing_calendar_db(home, monkeypatch, capsys):
-    def fake(name, dest, client=None, prefer=None):
+    def fake(name, dest, client=None, prefer=None, **kwargs):
         if name == "calendar.db":
             raise SystemExit("404")
         return "github"
@@ -569,7 +608,7 @@ def test_update_skips_download_when_digest_unchanged(home, monkeypatch, capsys):
         con = connect(home / name, kind)
         con.close()
     digests = {"jobs.db.gz": "d1", "jd_text.db.gz": "d2", "calendar.db.gz": "d3"}
-    (home / ".sync.json").write_text(_json.dumps(digests), encoding="utf-8")
+    (home / ".sync.json").write_text(_json.dumps({**digests, "_verified_assets": digests}), encoding="utf-8")
     monkeypatch.setattr(local, "remote_digests", lambda timeout=6.0: dict(digests))
     called = []
     monkeypatch.setattr(cli, "_download", lambda *a, **k: called.append(a) or "github")
@@ -594,7 +633,7 @@ def test_update_redownloads_when_local_db_is_corrupt(home, monkeypatch, capsys):
 
     called = []
 
-    def fake(name, dest, client=None, prefer=None):
+    def fake(name, dest, client=None, prefer=None, **kwargs):
         called.append(name)
         if name in good:
             dest.write_bytes(good[name])                     # 模拟下载到好库

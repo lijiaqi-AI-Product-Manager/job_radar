@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Daten und Abdeckung
 
-2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-01 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Kennzahl | Wert |
 | :--- | ---: |
 | Aktivierte Quellen | 2,242 |
-| Konfigurierte Unternehmen | 2,201 |
+| Konfigurierte Unternehmen | 2,202 |
 | Adapter | 27 |
-| Konfigurationsabdeckung der festen Zielliste | 931 / 1,655 · 56.25% |
+| Konfigurationsabdeckung der festen Zielliste | 929 / 1,655 · 56.13% |
 
 Der geprüfte Stand vom 29. Oktober 2026 enthält 294.483 Datensätze, davon 276.008 offene Einträge. Für 97,3 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
 

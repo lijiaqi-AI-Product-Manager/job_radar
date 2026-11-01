@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 
 import httpx
+import pytest
 
 from jobradar.adapters.yunjiuye import (
     YunjiuyeAdapter,
@@ -170,3 +171,21 @@ def test_requires_host_param() -> None:
 def test_json_module_roundtrip() -> None:
     """确保测试里的假数据本身是合法 JSON（避免误把 Python dict 当接口响应）。"""
     assert json.loads(json.dumps(JOBS))["data"][0]["publish_id"] == "900001"
+
+
+@pytest.mark.parametrize("html, expected", [
+    ('<style>[v-cloak]{display:none}:root{color:red}</style><script>PAGE_THEME.colors=[]</script>'
+     '<div class="job-content"><p>岗位职责：负责桥梁设计与计算。</p></div><div>单位信息</div>', "负责桥梁设计"),
+    ('<style>[v-cloak]{display:none}</style><script>PAGE_THEME.colors=[]</script>'
+     '<body>{{ job.job_name }}</body>', None),
+    ('<script>const template=\'<div class="job-content">fake job body\';</script><body>页面加载中</body>', None),
+])
+def test_detail_never_uses_template_or_script_as_jd(html, expected):
+    adapter = YunjiuyeAdapter(_source(), httpx.Client(transport=httpx.MockTransport(
+        lambda r: httpx.Response(200, text=html))), sleep=lambda _: None)
+    got = adapter._detail("900001")
+    if expected:
+        assert expected in got
+        assert "v-cloak" not in got and "PAGE_THEME" not in got
+    else:
+        assert got is None

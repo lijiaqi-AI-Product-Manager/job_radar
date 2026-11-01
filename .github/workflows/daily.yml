@@ -66,8 +66,9 @@ jobs:
         timeout-minutes: 30
         run: |
           uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db --check-links
-          gzip -9 -k -f data/calendar.db
-          gh release upload data-latest data/calendar.db data/calendar.db.gz --clobber
+          uv run python -c "from pathlib import Path; from jobradar.release_export import export_database; export_database(Path('data/calendar.db'), Path('data/public/calendar.db'), 'calendar')"
+          gzip -9 -k -f data/public/calendar.db
+          gh release upload data-latest data/public/calendar.db data/public/calendar.db.gz --clobber
           uv run python - <<'PY'
           import sqlite3, sys, datetime
           ts = sqlite3.connect("data/calendar.db").execute("SELECT MAX(ts) FROM build").fetchone()[0]

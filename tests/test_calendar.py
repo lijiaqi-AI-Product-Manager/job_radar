@@ -64,6 +64,19 @@ def test_match_targets_still_uses_aliases_and_substrings():
     assert matched["网易"] == ["网易互娱"]   # 没有精确目标认领时，子串仍然生效
 
 
+def test_cec_never_claims_cetc_institute(jobs_db, cal_db):
+    name = "中国电子科技集团公司第三十六研究所0607"
+    targets = {"sectors": {"央企": ["中国电子", "中国电科"]},
+               "aliases": {"中国电科": ["中国电子科技集团"]}}
+    matched = cal.match_targets(targets, {name})
+    assert matched["中国电子"] == [] and matched["中国电科"] == [name]
+    ingest_run(jobs_db, "cetc36", [make_job(1, source_id="cetc36", company=name)], ts=T(21))
+    entry = cal.ManualEntry(group="中国电子", **manual(id="cec", company="中国电子"))
+    cal.build(cal_db, jobs_db, manual=[entry], sources=[], targets=targets, ts=T(21))
+    [row] = calendar_entries(cal_db, group="中国电子")
+    assert row["jd_company"] is None and row["jd_status"] != "linked"
+
+
 def write_entries(tmp_path, group, entries):
     d = tmp_path / "entries"
     d.mkdir(exist_ok=True)
@@ -482,6 +495,19 @@ def test_one_job_deadline_does_not_expire_an_entire_auto_batch(jobs_db, cal_db, 
     assert row["deadline_scope"] == "job_evidence"
     [on_day] = calendar_entries(cal_db, group="腾讯", open_on="2026-11-02")
     assert on_day["window_status"] == "unknown"
+
+
+def test_city_enrichment_does_not_change_official_deadline_scope(tmp_path, jobs, cal_db):
+    d = write_entries(tmp_path, "腾讯", [manual(id="official-ended", company="腾讯",
+                      cities=[], apply_end="2026-10-31",
+                      notes="城市证据：招聘站职位列表（结构化字段）；网申时间证据：官方公告明示截止")])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    assert calendar_entries(cal_db, group="腾讯", origin="manual") == []
+    [row] = calendar_entries(cal_db, group="腾讯", origin="manual", include_expired=True)
+    assert row["cities"]
+    assert row["deadline_scope"] == "batch"
+    assert row["field_evidence"]["apply_end"]["source_type"] == "official_site"
+    assert row["field_evidence"]["cities"]["source_type"] == "data_layer"
 
 
 def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):

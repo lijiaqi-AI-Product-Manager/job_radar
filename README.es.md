@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Datos y cobertura
 
-2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-01 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Métrica | Valor |
 | :--- | ---: |
 | Fuentes habilitadas | 2,242 |
-| Empresas configuradas | 2,201 |
+| Empresas configuradas | 2,202 |
 | Adaptadores | 27 |
-| Cobertura del conjunto fijo de empresas objetivo | 931 / 1,655 · 56.25% |
+| Cobertura del conjunto fijo de empresas objetivo | 929 / 1,655 · 56.13% |
 
 La instantánea verificada del 29 de octubre de 2026 contiene 294.483 registros, de los cuales 276.008 figuran abiertos. El 97,3 % de los registros abiertos tiene descripción original. Una fuente configurada no implica contratación activa hoy. Un anuncio de un agregador puede incluir varios puestos.
 

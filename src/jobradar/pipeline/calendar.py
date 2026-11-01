@@ -112,6 +112,7 @@ class ManualEntry(BaseModel):
     as_of: str
     jd: Jd = Jd(status="none")
     notes: str | None = None
+    field_evidence: dict[str, dict] = {}
 
     _d = field_validator("apply_start", "apply_end", "as_of", mode="before")(_check_date)
 
@@ -232,9 +233,15 @@ def match_targets(targets: dict, companies: set[str]) -> dict[str, list[str]]:
             for t in exact[c]:
                 out[t].append(c)
             continue
+        candidates = []
         for t in names:
             keys = [t, *aliases.get(t, [])]
-            if any(_matches(k, c) for k in keys):
+            score = max((len(k) for k in keys if _matches(k, c)), default=0)
+            if score:
+                candidates.append((score, t))
+        strongest = max((score for score, _ in candidates), default=0)
+        for score, t in candidates:
+            if score == strongest:
                 out[t].append(c)
     return {t: sorted(v) for t, v in out.items()}
 
@@ -360,6 +367,12 @@ def auto_entries(jobs_conn, sources: list[SourceConfig], targets: dict, *, as_of
             "source_url": url, "source_date": as_of[:10], "as_of": as_of,
             "jd_status": "linked", "jd_url": None, "jd_company": company, "open_jobs": len(items), "notes": None,
         })
+    for row in out:
+        row["field_evidence"] = {
+            key: {"source_type": "data_layer", "source_url": row.get("source_url"),
+                  "scope": "job_evidence", "source_date": row.get("observed_to"),
+                  "snapshot_as_of": as_of}
+            for key in ("cities", "grad_year", "tracks", "apply_start", "apply_end") if row.get(key)}
     return out
 
 
@@ -497,10 +510,13 @@ def manual_rows(entries: list[ManualEntry], jobs_conn, matched: dict[str, list[s
                 *, data_companies: set[str] | None = None) -> list[dict]:
     out = []
     for e in entries:
+        window_note = re.search(r"网申时间证据：([^；]+)", e.notes or "")
+        window_note = window_note.group(1) if window_note else ""
         data_cos = matched.get(e.group, [])
         if not data_cos and data_companies:
             # target 清单里没有这家 -> 用人工条目自己的公司名兜底匹配（见 match_entry_company）
-            data_cos = match_entry_company(e, data_companies)
+            claimed_elsewhere = {c for group, names in matched.items() if group != e.group for c in names}
+            data_cos = match_entry_company(e, data_companies - claimed_elsewhere)
         if e.company:
             narrowed = [c for c in data_cos if _matches(e.company, c)]
             data_cos = narrowed or data_cos
@@ -522,7 +538,15 @@ def manual_rows(entries: list[ManualEntry], jobs_conn, matched: dict[str, list[s
             "jd_status": "linked" if linked else e.jd.status, "jd_url": e.jd.url,
             "jd_company": "、".join(data_cos) if data_cos else None, "open_jobs": n if linked else None,
             "notes": e.notes,
+            "field_evidence": {
+                key: {"source_type": e.source.type, "source_url": e.source.url,
+                      "source_date": e.source.date,
+                      "scope": ("job_evidence" if key in ("apply_start", "apply_end")
+                                and re.search(r"招聘站职位列表|接口截止日|已下架职位的截止", window_note)
+                                else "batch"), "as_of": e.as_of}
+                for key in ("cities", "grad_year", "tracks", "apply_start", "apply_end") if getattr(e, key)},
         })
+        out[-1]["field_evidence"].update(e.field_evidence)
     return out
 
 
@@ -592,6 +616,10 @@ def dedupe_auto(rows: list[dict]) -> list[dict]:
                     if f not in hit or hit.get(f) or not r.get(f):
                         continue
                     hit[f] = r[f]
+                    if f in _CONTENT_FIELDS:
+                        hit.setdefault("field_evidence", {})[f] = r.get("field_evidence", {}).get(f, {
+                            "source_type": "data_layer", "source_url": r.get("source_url"),
+                            "scope": "job_evidence", "as_of": r.get("as_of")})
                     merged += 1
                     if f in _CONTENT_FIELDS:
                         borrowed += 1
@@ -659,12 +687,16 @@ def fill_from_data_layer(rows: list[dict], jobs_conn, *, as_of: str) -> int:
                 year, n = years.most_common(1)[0]
                 if n >= 3 and n / len(got) >= 0.6:
                     r["grad_year"] = year
+                    r.setdefault("field_evidence", {})["grad_year"] = {
+                        "source_type": "data_layer", "scope": "job_evidence", "snapshot_as_of": as_of}
                     borrowed += 1
         if not r.get("cities"):
             cities = Counter(c for g in got for c in json.loads(g["cities"] or "[]"))
             picked = [c for c, n in cities.most_common(10) if n >= 2]
             if picked:
                 r["cities"] = picked
+                r.setdefault("field_evidence", {})["cities"] = {
+                    "source_type": "data_layer", "scope": "job_evidence", "snapshot_as_of": as_of}
                 borrowed += 1
         if borrowed:
             filled += borrowed
@@ -695,11 +727,14 @@ def build(cal_conn, jobs_conn, *, manual: list[ManualEntry], sources: list[Sourc
         logging.getLogger(__name__).info("数据层补全：人工条目补到 %d 个字段", filled)
     blocked = targets.get("blocked") or {}
     with cal_conn:
+        cal_conn.execute("DELETE FROM entry_field_evidence")
         cal_conn.execute("DELETE FROM entry")
         cal_conn.execute("DELETE FROM target")
         for r in rows:
             vals = [json.dumps(r[c], ensure_ascii=False) if c in ("tracks", "cities") else r[c] for c in COLS]
             cal_conn.execute(f"INSERT INTO entry({','.join(COLS)}) VALUES ({','.join('?' * len(COLS))})", vals)
+            cal_conn.execute("INSERT INTO entry_field_evidence(entry_id, fields) VALUES (?,?)",
+                             (r["id"], json.dumps(r.get("field_evidence", {}), ensure_ascii=False)))
         for name, sector in target_names(targets):
             cal_conn.execute("INSERT INTO target(name, sector, blocked_reason, data_companies) VALUES (?,?,?,?)",
                              (name, sector, blocked.get(name), json.dumps(matched[name], ensure_ascii=False)))

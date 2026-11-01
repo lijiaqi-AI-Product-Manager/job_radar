@@ -510,7 +510,7 @@ sources:
   - {id: beisen-linkhou, company: 灵猴机器人, params: {tenant: linkhou}}   # 87 岗
   - {id: beisen-bankofbeijing, company: 北京银行, params: {tenant: bankofbeijing}}   # 80 岗
   - {id: beisen-zyhy, company: 中远海运, params: {tenant: zyhy}}   # 79 岗
-  - {id: beisen-ghbank, company: 华夏银行, params: {tenant: ghbank}}   # 73 岗
+  - {id: beisen-ghbank, company: 广东华兴银行, params: {tenant: ghbank}}   # 官方门户主体：广东华兴银行
   - {id: beisen-chandogroup, company: 自然堂, params: {tenant: chandogroup}}   # 69 岗
   - {id: beisen-sph2, company: 上药控股, params: {tenant: sph2}}   # 66 岗
   - {id: beisen-sgssemi, company: 盛美上海, params: {tenant: sgssemi}}   # 65 岗

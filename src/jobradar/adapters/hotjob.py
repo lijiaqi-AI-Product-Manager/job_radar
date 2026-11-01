@@ -11,11 +11,12 @@ source.params:
 已知：`recruitType` 1=校园、2=社招、3=实习；城市在 `workPlaceStr`（如「长沙市-长沙县」）。
 """
 
+import re
 from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, date_only, grad_year_from_text
+from jobradar.normalize import batch_from_text, date_only, degree_min_from_text, grad_year_from_text
 
 RECRUIT_CODE = {"campus": "1", "social": "2", "intern": "3"}
 PORTAL = {"campus": "campus", "social": "social", "intern": "campus"}
@@ -28,6 +29,13 @@ DEFAULT_PAGE_SIZE = 50
 _LONG_TERM_YEAR = 2100
 # workPlaceStr 的「全部地区」「不限」也不是城市
 _PLACE_NOISE = {"全部地区", "不限", "全国", "多个城市", "若干"}
+
+
+def verified_detail_fields(requirement: str) -> dict:
+    """已核验租户要求段中明确的单一届次和学历；调用方负责租户开关。"""
+    years = set(re.findall(r"(?<!\d)(20\d{2})\s*(?:届|年应届毕业生)", requirement))
+    return {"grad_year": int(next(iter(years))) if len(years) == 1 else None,
+            "degree_min": degree_min_from_text(requirement)}
 
 
 def _date_only(s) -> str | None:
@@ -121,6 +129,16 @@ class HotjobAdapter(Adapter):
             raise SkipRecord
         rtype = raw["recruit_type"]
         cities = _cities_from_place(it.get("workPlaceStr"))
+        year = grad_year_from_text(title, loose=True) if rtype != "social" else None
+        degree = detail.get("education") or it.get("educationStr") or None
+        if self.source.params.get("detail_fields"):
+            # 仅对已核验并显式启用的租户读取要求段；不是全适配器通用 JD 届次回填。
+            requirement = detail.get("serviceCondition") or ""
+            fields = verified_detail_fields(requirement)
+            if year is None and rtype != "social":
+                year = fields["grad_year"]
+            if not degree:
+                degree = fields["degree_min"]
         return Job(
             source_id=self.source.id,
             source_job_id=str(post_id),
@@ -129,10 +147,10 @@ class HotjobAdapter(Adapter):
                  f"?postId={post_id}&postType={PORTAL[rtype]}"),
             title=title,
             recruit_type=rtype,
-            grad_year=grad_year_from_text(title, loose=True) if rtype != "social" else None,
+            grad_year=year,
             batch=batch_from_text(title) if rtype == "campus" else None,
             cities=cities,
-            degree_min=(detail.get("education") or it.get("educationStr") or None),
+            degree_min=degree,
             department=(it.get("company") or None),
             # 大易列表接口直接给了这两个日期，抓到就是白拿的截止日
             apply_end=_date_only(it.get("endDate")),

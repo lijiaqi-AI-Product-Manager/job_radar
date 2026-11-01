@@ -114,7 +114,7 @@ sources:
     params: {host: cimc.hotjob.cn, tenant: SU652251308ac1ca0dbbc521c3}  # 4 岗实测（中集集团招聘官网）
   - id: hotjob-422dbe
     company: 华泰证券
-    params: {host: wecruit.hotjob.cn, tenant: SU5d4bd89a9b0d7889b8422dbe}
+    params: {host: wecruit.hotjob.cn, tenant: SU5d4bd89a9b0d7889b8422dbe, detail_fields: true}
     # 2026-10-27 搜索反查新增：校招 107 岗；城市 20/20、发布日 20/20；岗位代码前缀 HTSC
   - id: hotjob-22f6f8
     company: 碧桂园

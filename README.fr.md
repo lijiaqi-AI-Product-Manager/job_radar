@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Données et couverture
 
-2026-10-31 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-01 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Indicateur | Valeur |
 | :--- | ---: |
 | Sources actives | 2,242 |
-| Entreprises configurées | 2,201 |
+| Entreprises configurées | 2,202 |
 | Adaptateurs | 27 |
-| Couverture du périmètre fixe d’entreprises cibles | 931 / 1,655 · 56.25% |
+| Couverture du périmètre fixe d’entreprises cibles | 929 / 1,655 · 56.13% |
 
 L’instantané vérifié du 29 octobre 2026 contient 294 483 enregistrements, dont 276 008 ouverts. Le texte original est disponible pour 97,3 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
 

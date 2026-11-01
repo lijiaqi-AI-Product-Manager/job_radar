@@ -31,6 +31,9 @@
 `deadline_scope=job_evidence` 的日期来自岗位样本，不代表整批截止，不据此整批隐藏；
 `deadline_scope=batch` 才按批次截止处理，日期缺失为 `unknown`。
 
+字段证据独立保存在 `field_evidence`：城市、届次、开始日与截止日分别注明来源和作用域。
+补入岗位城市不改变官方批次截止的效力；旧的汇总 `source` 保留兼容，不能代替字段级证据。
+
 ## JD 规则（用户明确：不要求 100%）
 
 - **有公开 JD**：必须挂上 —— 关联数据层的岗位（`jd_status=linked`）或官方 JD 页链接（`jd_status=official_page`）

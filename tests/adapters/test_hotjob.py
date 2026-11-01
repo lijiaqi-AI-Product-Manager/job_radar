@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import httpx
@@ -42,3 +43,18 @@ def test_every_job_has_jd_text():
 def test_detail_can_be_disabled_to_save_requests():
     jobs = run(fetch_detail=False)
     assert jobs and all(j.description is None for j in jobs)
+
+
+def test_verified_htsc_requirements_supply_explicit_fields_only_when_enabled():
+    evidence = json.loads((FX / "htsc-requirement-evidence.json").read_text(encoding="utf-8"))
+    raw = {"list": {"postId": "6acf28c115a82a89c323b05c", "postName": evidence["title"]},
+           "detail": {"serviceCondition": evidence["requirement_excerpt"]}, "recruit_type": "campus"}
+    config = source(detail_fields=True, tenant="SU5d4bd89a9b0d7889b8422dbe")
+    config.company = "华泰证券"
+    enabled = HotjobAdapter(config, httpx.Client())
+    job = enabled.normalize(raw)
+    assert job.grad_year == 2027 and job.degree_min == "硕士"
+    disabled = HotjobAdapter(source(), httpx.Client())
+    assert disabled.normalize(raw).grad_year is None
+    raw["detail"]["serviceCondition"] += "2026届毕业生亦可。"
+    assert enabled.normalize(raw).grad_year is None

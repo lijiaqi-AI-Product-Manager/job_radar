@@ -37,6 +37,21 @@ def test_missing_data_is_an_error_not_a_crash(tmp_path, monkeypatch):
     assert "jobradar update" in out["error"] and out["results"] == []
 
 
+@pytest.mark.parametrize("name, arguments", [
+    ("search_jobs", {"limit": -1}),
+    ("calendar", {"limit": -1}),
+    ("compare_roles", {"companies": ["腾讯"], "category": "算法", "per_company": -1}),
+    ("compare_roles", {"companies": [""], "category": "算法"}),
+    ("company_trend", {"company": "腾讯", "step_days": 0}),
+    ("recent_changes", {"days": -1}),
+    ("search_jobs", {"deadline_before": "2026-02-30"}),
+])
+def test_invalid_tool_parameters_fail_without_unbounded_results(home, name, arguments):
+    connect(home / "calendar.db", "calendar").close()
+    out = getattr(mcp_server, name)(**arguments)
+    assert "error" in out and out["results"] == []
+
+
 def test_compare_explains_empty_filtered_results(home):
     out = mcp_server.compare_roles(["腾讯", "未知公司"], "财务")
     assert out["missing_companies"] == ["未知公司"]

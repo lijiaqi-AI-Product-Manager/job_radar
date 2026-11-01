@@ -5,6 +5,7 @@
 
 import argparse
 import gzip
+import hashlib
 import json
 import os
 import shutil
@@ -21,7 +22,7 @@ import httpx
 
 from jobradar.core import queries as q
 from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, asset_urls, db, envelope, home
-from jobradar.store.migrate import connect
+from jobradar.store.migrate import connect, migration_files
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
 
@@ -37,7 +38,8 @@ def _open(kind: str, required: bool = True):
 def _emit(args, payload: dict):
     if getattr(args, "table", False) and isinstance(payload.get("results"), list):
         rows = payload["results"]
-        print(f"# data_as_of: {payload.get('data_as_of')}  ({len(rows)} 条)")
+        count = f"返回 {len(rows)}/{payload['total']} 条" if "total" in payload else f"{len(rows)} 条"
+        print(f"# data_as_of: {payload.get('data_as_of')}  ({count})")
         if rows and "project_type" in rows[0]:  # 日历：一条一块，别把 20 个字段堆一行
             for r in rows:
                 _print_calendar_row(r)
@@ -122,7 +124,7 @@ def _now() -> float:
     return time.monotonic()
 
 
-def _local_db_ok(path: Path) -> bool:
+def _local_db_ok(path: Path, name: str | None = None) -> bool:
     """本地库是否能正常打开（增量更新「跳过下载」前必须验一下）。
 
     背景：digest 一致就跳过下载，但如果本地文件被截断/损坏，用户会一直卡在坏库上。
@@ -131,12 +133,31 @@ def _local_db_ok(path: Path) -> bool:
     if not path.exists():
         return False
     try:
-        con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+        with path.open("rb") as handle:
+            if handle.read(16) != b"SQLite format 3\x00":
+                return False
+        required = {
+            "jobs.db": {"job": {"id", "source_id", "company_id", "title", "closed_at"},
+                        "company": {"id", "name"}, "source_run": {"source_id", "status", "ts"},
+                        "job_event": {"job_id", "ts", "type"}},
+            "jd_text.db": {"job_text": {"job_id", "description", "requirements"}},
+            "calendar.db": {"entry": {"id", "origin", "group_name", "apply_end"},
+                            "target": {"name"}, "build": {"ts"}},
+        }.get(name or path.name)
+        if required is None:
+            return False
+        con = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)
         try:
-            return con.execute("PRAGMA quick_check(1)").fetchone()[0] == "ok"
+            kind = {"jobs.db": "jobs", "jd_text.db": "text", "calendar.db": "calendar"}[name or path.name]
+            version = con.execute("PRAGMA user_version").fetchone()[0]
+            if not 1 <= version <= len(migration_files(kind)):
+                return False
+            return (con.execute("PRAGMA quick_check(1)").fetchone()[0] == "ok"
+                    and all(columns <= {r[1] for r in con.execute(f'PRAGMA table_info("{table}")')}
+                            for table, columns in required.items()))
         finally:
             con.close()
-    except sqlite3.DatabaseError:
+    except (sqlite3.DatabaseError, OSError):
         return False
 
 
@@ -180,8 +201,14 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Pat
     return tmp
 
 
-def _install(tmp: Path, name: str, gz: bool, dest: Path):
+def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None):
     """解压（若为 .gz）并校验 SQLite 完整性后替换目标文件。"""
+    if expected_digest:
+        with tmp.open("rb") as handle:
+            actual = "sha256:" + hashlib.file_digest(handle, "sha256").hexdigest()
+        if actual != expected_digest:
+            tmp.unlink(missing_ok=True)
+            raise ValueError("下载字节与发布摘要不一致")
     if gz:
         raw = tmp.with_suffix(".raw")
         try:
@@ -193,13 +220,19 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path):
             raise ValueError("压缩包损坏") from None
         tmp.unlink()
         tmp = raw
-    con = sqlite3.connect(tmp)
-    try:
-        ok = con.execute("PRAGMA quick_check").fetchone()[0] == "ok"
-    except sqlite3.DatabaseError:
-        ok = False
-    finally:
-        con.close()  # 必须关闭：否则 Windows 上 replace 会失败（WinError 32）
+    ok = _local_db_ok(tmp, name)
+    if ok and _local_db_ok(dest, name):
+        table = {"jobs.db": "job", "jd_text.db": "job_text", "calendar.db": "entry"}[name]
+        with closing(sqlite3.connect(tmp)) as new, closing(sqlite3.connect(dest)) as old:
+            new_count = new.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            old_count = old.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            ok = not (old_count and (new_count == 0 or (name == "jobs.db" and new_count < old_count)))
+            stamp = {"jobs.db": "SELECT MAX(ts) FROM source_run WHERE status='ok'",
+                     "jd_text.db": "SELECT MAX(fetched_at) FROM job_text",
+                     "calendar.db": "SELECT MAX(ts) FROM build"}[name]
+            old_ts, new_ts = old.execute(stamp).fetchone()[0], new.execute(stamp).fetchone()[0]
+            if old_ts and (not new_ts or new_ts < old_ts):
+                ok = False
     if not ok:
         tmp.unlink()
         raise ValueError("不是有效的数据库")
@@ -240,7 +273,8 @@ def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -
     return tmp_all
 
 
-def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None) -> str:
+def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None,
+              digests=None, verified=None) -> str:
     """依次尝试各镜像，每个镜像先取压缩版 <name>.gz，没有再取原文件。返回实际使用的镜像名。"""
     client = client or httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True)
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -253,7 +287,14 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
         if tmp is None:
             raise SystemExit(f"下载 {name} 失败（404）")
         try:
-            _install(tmp, name, False, dest)
+            expected = (digests or {}).get(name)
+            if digests and not expected:
+                tmp.unlink(missing_ok=True)
+                raise ValueError("发布摘要缺失，无法核验下载内容")
+            _install(tmp, name, False, dest, expected)
+            if expected and verified is not None:
+                verified.pop(name + ".gz", None)
+                verified[name] = expected
         except ValueError as e:
             raise SystemExit(f"下载的 {name} {e}") from None
         return "github"
@@ -267,7 +308,16 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                     tmp = _fetch_parts(client, name + ".gz", mirror, dest.parent)
                 if tmp is None:
                     continue
-                _install(tmp, name, gz, dest)
+                asset = name + ".gz" if gz else name
+                expected = (digests or {}).get(asset)
+                if digests and not expected:
+                    tmp.unlink(missing_ok=True)
+                    raise ValueError("发布摘要缺失，无法核验下载内容")
+                _install(tmp, name, gz, dest, expected)
+                if expected and verified is not None:
+                    verified.pop(name, None)
+                    verified.pop(name + ".gz", None)
+                    verified[asset] = expected
                 return mirror
             except httpx.HTTPError as e:
                 errors.append(f"{mirror}: {type(e).__name__}")
@@ -314,13 +364,15 @@ def cmd_update(args):
     # 增量：先比对 Release 里各 asset 的 sha256，与本地记录一致就跳过下载（省 55MB）
     from jobradar.local import load_sync_meta, remote_digests, save_sync_meta
     meta = load_sync_meta()
-    remote = {} if getattr(args, "force", False) else remote_digests()
+    remote = remote_digests()
+    verified = {}
     skipped: list[str] = []
-    if remote:
+    if remote and not getattr(args, "force", False):
         for k in list(kinds):
-            gz = DB_FILES[k] + ".gz"
-            digest = remote.get(gz)
-            if digest and meta.get(gz) == digest and _local_db_ok(home() / DB_FILES[k]):
+            assets = (DB_FILES[k] + ".gz", DB_FILES[k])
+            trusted = meta.get("_verified_assets", {})
+            if (any(remote.get(a) and trusted.get(a) == remote[a] for a in assets)
+                    and _local_db_ok(home() / DB_FILES[k])):
                 kinds.remove(k)
                 skipped.append(k)
     if skipped and not kinds:
@@ -330,7 +382,8 @@ def cmd_update(args):
         return
     # 三个库并行下载：总耗时从"三个文件之和"降到"最慢的那个"（jd_text 最大）
     with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
-        futures = [(k, pool.submit(_download, DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror))
+        futures = [(k, pool.submit(_download, DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror,
+                                  **({"digests": remote, "verified": verified} if remote else {})))
                    for k in kinds]
         for k, fut in futures:
             try:
@@ -346,7 +399,8 @@ def cmd_update(args):
             print(f"JD 原文库与岗位库对不上（采样 {cov:.0%}），可能镜像还在同步；改从 GitHub 重下…",
                   file=sys.stderr)
             try:
-                used["text"] = _download(DB_FILES["text"], home() / DB_FILES["text"], prefer="github")
+                used["text"] = _download(DB_FILES["text"], home() / DB_FILES["text"], prefer="github",
+                                         **({"digests": remote, "verified": verified} if remote else {}))
                 cov = _text_coverage(home())
             except SystemExit as e:
                 print(f"重下失败：{e}", file=sys.stderr)
@@ -357,12 +411,16 @@ def cmd_update(args):
         for k in kinds:
             if k in errors or used.get(k) is None:
                 continue
-            digest = remote.get(DB_FILES[k] + ".gz")
-            if digest:
-                meta[DB_FILES[k] + ".gz"] = digest
+            for asset in (DB_FILES[k], DB_FILES[k] + ".gz"):
+                meta.pop(asset, None)
+                meta.setdefault("_verified_assets", {}).pop(asset, None)
+                if asset in verified:
+                    meta[asset] = verified[asset]
+                    meta["_verified_assets"][asset] = verified[asset]
         save_sync_meta(meta)
     with _open("jobs") as conn:
-        out = {"updated": kinds, "mirror": {k: used.get(k) for k in kinds},
+        out = {"updated": [k for k in kinds if k not in errors and used.get(k) is not None],
+               "mirror": {k: used.get(k) for k in kinds},
                "data_as_of": q.data_as_of(conn), "home": str(home())}
         if skipped:
             out["skipped"] = skipped
@@ -424,7 +482,7 @@ def cmd_search(args):
         if cal_hint:
             payload["calendar"] = cal_hint
             hints = [h for h in hints if "公司名没有唯一确定" not in h]   # 名字是对的，只是没岗位数据
-            hints.append(f"岗位数据里没有，但日历里有 {cal_hint['entries']} 条：`{cal_hint['cli_hint']}`")
+            hints.append(q.calendar_supplement_hint(meta, cal_hint) + f"：`{cal_hint['cli_hint']}`")
             if cal_hint.get("hint"):
                 hints.append(cal_hint["hint"])
         if hints:
@@ -440,6 +498,7 @@ def cmd_show(args):
 
 
 def cmd_diff(args):
+    q.positive(args.days, "days")
     with _open("jobs") as conn:
         since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
         meta = {}
@@ -465,7 +524,8 @@ def cmd_compare(args):
             raise SystemExit("compare 需要 --category、--keyword 或 --text")
         meta = {}
         out = q.compare_roles(conn, text_conn, args.companies, args.category, keyword=args.keyword,
-                              text=args.text, per_company=args.per_company, meta=meta)
+                              text=args.text, per_company=args.per_company, meta=meta,
+                              city=args.city, recruit_type=args.type, grad_year=args.grad_year)
         _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword, text=args.text,
                               not_found=[c for c, v in out.items() if not v], **meta))
 
@@ -575,6 +635,7 @@ def _doctor_robots(args) -> None:
 
 def cmd_calendar(args):
     with _open("calendar") as conn:
+        meta = {}
         rows = q.calendar_entries(conn, group=args.group, company=args.company, project_type=args.type,
                                   grad_year=args.grad_year, origin=args.origin, open_on=args.open_on,
                                   has_tracks=getattr(args, "has_tracks", False),
@@ -584,8 +645,8 @@ def cmd_calendar(args):
                                   deadline_before=getattr(args, "deadline_before", None),
                                   deadline_after=getattr(args, "deadline_after", None),
                                   include_expired=getattr(args, "include_expired", False),
-                                  limit=args.limit)
-        env = envelope(None, rows, as_of=q.calendar_as_of(conn))
+                                  limit=args.limit, meta=meta)
+        env = envelope(None, rows, as_of=q.calendar_as_of(conn), **meta)
         if not rows and args.group:
             reason = q.calendar_blocked_reason(conn, args.group)
             if reason:
@@ -595,7 +656,10 @@ def cmd_calendar(args):
             # 不解释的话，agent 会把这个说成"北京没有岗位"，属于事实性错误。
             env["hint"] = q.calendar_filter_advice(
                 conn, city=getattr(args, "city", None),
-                direction=getattr(args, "direction", None))
+                direction=getattr(args, "direction", None), group=args.group, company=args.company,
+                project_type=args.type, grad_year=args.grad_year, origin=args.origin, open_on=args.open_on,
+                include_expired=args.include_expired, has_tracks=args.has_tracks, has_window=args.has_window,
+                deadline_before=args.deadline_before, deadline_after=args.deadline_after)
         _emit(args, env)
 
 
@@ -732,6 +796,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--keyword", help="标题关键词，如 研发")
     sp.add_argument("--text", help="JD 全文检索词，如 论文；与 --keyword 不同，它在职责/要求原文里找")
     sp.add_argument("--per-company", type=int, default=5)
+    sp.add_argument("--city", help="所有公司统一按该城市筛选")
+    sp.add_argument("--type", choices=["campus", "intern", "social"])
+    sp.add_argument("--grad-year", type=int)
 
     sp = add("trends", cmd_trends, "某公司在招岗位数随时间变化")
     sp.add_argument("company")
@@ -830,6 +897,8 @@ def main(argv=None):
         # 也不能让用户对着 traceback 发愣。
         raise SystemExit(f"本地数据读取失败（{e}）。先运行 `jobradar doctor`；"
                          "若提示损坏，用 `jobradar update --force` 重新下载。") from None
+    except ValueError as e:
+        raise SystemExit(f"参数或数据无效：{e}") from None
 
 
 if __name__ == "__main__":

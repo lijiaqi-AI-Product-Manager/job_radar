@@ -13,7 +13,7 @@ uv run python scripts/coverage_report.py --json
 uv run python scripts/release_check.py --home <数据目录>
 ```
 
-真实数据目录需含 `jobs.db`、`jd_text.db` 与 `calendar.db`；缺少数据的 SKIP 不算通过。80% 覆盖独立运行 `scripts/coverage_report.py --json --min-coverage 0.8`，当前为 931/1,655（56.25%），预期退出 1，仍差 393 家。
+真实数据目录需含 `jobs.db`、`jd_text.db` 与 `calendar.db`；缺少数据的 SKIP 不算通过。80% 覆盖独立运行 `scripts/coverage_report.py --json --min-coverage 0.8`，当前为 929/1,655（56.13%），预期退出 1，仍差 395 家。
 
 ## 日历定点修正
 
@@ -49,6 +49,10 @@ uv run python scripts/apply_calendar_corrections.py --db calendar.db --apply
 2026-10-31 对公开三库完整副本的核验通过上述门禁，岗位数据截至 `2026-10-29T23:17:25Z`。详细数量与限制见 [覆盖说明](COVERAGE.md)。这不是一次新的全量采集，新增截止日规则需后续成功抓取才会更新公开数据。
 
 ## 公开数据库兼容
+
+日历工作库为 schema 2，字段证据保存在独立的 `entry_field_evidence` 表。
+公开导出继续标记 calendar schema 1，保留可忽略的证据表；旧客户端读取原表，
+新客户端可幂等升级并读取字段证据。每日与修正发布均先兼容导出再上传。
 
 主分支工作库为 jobs schema 3 / text schema 2，包含本地 FTS5 索引。既有已发布客户端只能读取 jobs 2 / text 1；因此每日发布先生成独立的兼容副本：
 

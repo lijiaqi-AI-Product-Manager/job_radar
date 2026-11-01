@@ -15,7 +15,9 @@ def main():
     parser.add_argument('--home', type=Path, default=ROOT / 'data')
     parser.add_argument('--out', type=Path, default=ROOT / 'data/public')
     args = parser.parse_args()
-    for kind, name in (('jobs', 'jobs.db'), ('text', 'jd_text.db')):
+    for kind, name in (('jobs', 'jobs.db'), ('text', 'jd_text.db'), ('calendar', 'calendar.db')):
+        if kind == 'calendar' and not (args.home / name).exists():
+            continue
         export_database(args.home / name, args.out / name, kind)
         print(f'{name}: compatible export verified')
 

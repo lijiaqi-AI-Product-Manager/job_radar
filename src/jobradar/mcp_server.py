@@ -15,7 +15,7 @@ from jobradar.core import queries as q
 from jobradar.local import NoData, db, envelope
 from jobradar.timeutil import FMT, now_ts, parse_ts
 
-INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），来自各公司官方招聘页，每日更新。
+INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包含官方招聘页与公开聚合来源，每日调度；每个来源的成功刷新时间可能不同。
 回答时：注明 data_as_of；每个岗位附 url；只用返回的数据，不编造；results 为空说明"数据里没有"，
 而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。"""
 
@@ -27,6 +27,8 @@ def _guard(fn):
         return fn()
     except NoData as e:
         return {"error": str(e), "results": []}
+    except ValueError as e:
+        return {"error": f"参数或数据无效：{e}", "results": []}
     except sqlite3.DatabaseError as e:
         return {"error": f"本地数据读取失败（{e}）；运行 `jobradar update --force` 重新下载", "results": []}
 
@@ -53,7 +55,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     默认自动隐藏明示截止日已过的岗位（按北京时间，截止当天仍保留）；include_closed=True
     可查已下架或已到期的历史记录。来源没有截止日时不会仅因记录陈旧而隐藏。
     deadline_before / deadline_after 为 YYYY-MM-DD，按**网申截止日**筛（"这周快截止的"用
-    deadline_before=本周日）。只有源里明确写了截止日的岗位参与比较——目前约 2.6%，
+    deadline_before=本周日）。只有源里明确写了截止日的岗位参与比较，字段覆盖率以本次 stats 为准，
     所以返回为空不等于"没有快截止的岗位"，要在回答里说明这个口径。"""
     def run():
         text_cm = db("text", required=False) if text else nullcontext(None)
@@ -76,7 +78,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                     if cal is not None and (ch := q.calendar_hint(cal, company)):
                         payload["calendar"] = ch
                         hints = [h for h in hints if "公司名没有唯一确定" not in h]
-                        hints.append(f"岗位数据里没有，但日历里有 {ch['entries']} 条"
+                        hints.append(q.calendar_supplement_hint(meta, ch) +
                                      f"（届次：{'、'.join(map(str, ch['grad_years'])) or '未标注'}；"
                                      f"批次：{'、'.join(ch['project_types']) or '未标注'}）")
                         if ch.get("apply_url"):
@@ -105,6 +107,7 @@ def recent_changes(days: int = 7, company: str | None = None, types: list[str] |
     """最近 N 天的岗位变化。types 可选 open(新开)/close(下架)/change(变更)/reopen(重开)。"""
     def run():
         with db("jobs") as conn:
+            q.positive(days, "days")
             since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
             meta = {}
             rows = q.recent_changes(conn, since=since, company=company, types=types,
@@ -120,6 +123,7 @@ def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = N
     company 可选：只统计这家公司。回答「最近哪类职位新增最多」用它，不要自己比对两次 search 结果。"""
     def run():
         with db("jobs") as conn:
+            q.positive(days, "days")
             since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
             meta = {}
             rows = q.new_jobs_by_category(conn, since=since, limit=min(limit, 50),
@@ -130,7 +134,8 @@ def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = N
 
 @server.tool()
 def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
-                  text: str | None = None, per_company: int = 5) -> dict:
+                  text: str | None = None, per_company: int = 5, city: str | None = None,
+                  recruit_type: str | None = None, grad_year: int | None = None) -> dict:
     """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category、标题关键词 keyword
     或 JD 全文 text 选岗位（至少给一个）。missing_companies 是未收录公司；no_matching_jobs
     是已收录但筛选后没有岗位；ambiguous_companies 需要澄清名称。旧字段 not_found 汇总所有空结果，
@@ -143,7 +148,8 @@ def compare_roles(companies: list[str], category: str | None = None, keyword: st
                 return {"error": "需要 category、keyword 或 text", "results": {}}
             meta = {}
             out = q.compare_roles(conn, text_conn, companies, category, keyword=keyword, text=text,
-                                  per_company=min(per_company, 20), meta=meta)
+                                  per_company=min(per_company, 20), meta=meta, city=city,
+                                  recruit_type=recruit_type, grad_year=grad_year)
             return envelope(conn, out, category=category, keyword=keyword, text=text,
                             not_found=[c for c, v in out.items() if not v], **meta)
     return _guard(run)
@@ -196,11 +202,12 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
     has_tracks=True 只返回有方向的条目，has_window=True 只返回有网申时间的条目（起止**任一**有值即可，
     只有截止日的也算——那正是「什么时候之前必须投」）。
 
-    重要口径：只有部分条目写了城市和截止日（校招/实习口径：城市约 45%、网申时间约 20%），
+    重要口径：只有部分条目写了城市和截止日（覆盖率以本次 stats 为准），
     所以「city=某地 返回空」不等于「该地没有岗位」，回答时要说明这一点，不能让用户以为没机会。
     另外条目里 project_type=社招 的那些是社招板岗位，没有届次也没有批次窗口，别当校招批次讲。"""
     def run():
         with db("calendar") as conn:
+            meta = {}
             rows = q.calendar_entries(conn, group=group, company=company, project_type=project_type,
                                       grad_year=grad_year, origin=origin, open_on=open_on,
                                       city=city, direction=direction,
@@ -208,11 +215,15 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
                                       has_tracks=True if has_tracks else None,
                                       has_window=True if has_window else None,
                                       include_expired=include_expired,
-                                      limit=min(limit, 200))
-            env = envelope(None, rows, as_of=q.calendar_as_of(conn))
+                                      limit=min(limit, 200), meta=meta)
+            env = envelope(None, rows, as_of=q.calendar_as_of(conn), **meta)
             # 空结果不能只说「没有」：把「是因为筛选太窄还是真的没有」讲清楚
             if not rows and (city or direction):
-                env["advice"] = q.calendar_filter_advice(conn, city=city, direction=direction)
+                env["advice"] = q.calendar_filter_advice(
+                    conn, city=city, direction=direction, group=group, company=company,
+                    project_type=project_type, grad_year=grad_year, origin=origin, open_on=open_on,
+                    has_tracks=has_tracks, has_window=has_window, include_expired=include_expired,
+                    deadline_before=deadline_before, deadline_after=deadline_after)
             return env
     return _guard(run)
 

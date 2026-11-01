@@ -99,6 +99,16 @@ Gitee 镜像同日同步，通常比 GitHub 晚 30~60 分钟。
 查看 `missing_companies`（未收录）、`no_matching_jobs`（已收录但筛选无结果）和
 `ambiguous_companies`（名称需要澄清）；`company_matches` 给出具体匹配方式与候选。
 
+对比支持 `--city`、`--type`、`--grad-year`，对所有公司应用同样的严格条件。
+搜索返回 `empty_reason` 与 `company_coverage` 区分未收录、没有当前岗位和筛选无匹配；
+`total` 是筛选总数，`returned` 是返回数，`truncated` 表示是否只返回了部分样本。
+
+**Q：异常下载会覆盖原来的数据库吗？**
+
+下载先核验实际字节与发布摘要，再校验 SQLite 文件头、必需表与完整性；校验失败保留原库。
+已有岗位库还会检查记录数和观测时间不倒退。旧版没有验证来源的摘要缓存会重新核验，
+只有与实际下载字节匹配的摘要才用于后续跳过下载；强制更新也不会跳过摘要检查。
+
 **Q：需要 API key 吗？**
 
 不需要。数据是公开的 Release 资产，匿名即可下载；查询完全在本地 SQLite 上跑。

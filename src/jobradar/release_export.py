@@ -6,7 +6,7 @@ import tempfile
 from contextlib import closing
 from pathlib import Path
 
-_FORMATS = {'jobs': (2, 3, 'job_fts'), 'text': (1, 2, 'job_text_fts')}
+_FORMATS = {'jobs': (2, 3, 'job_fts'), 'text': (1, 2, 'job_text_fts'), 'calendar': (1, 2, None)}
 
 
 def export_database(source: Path, target: Path, kind: str) -> None:
@@ -25,9 +25,10 @@ def export_database(source: Path, target: Path, kind: str) -> None:
             with closing(sqlite3.connect(temporary)) as published:
                 original.backup(published)
                 with published:
-                    for suffix in ('insert', 'update', 'delete'):
-                        published.execute(f'DROP TRIGGER IF EXISTS {index}_{suffix}')
-                    published.execute(f'DROP TABLE IF EXISTS {index}')
+                    if index:
+                        for suffix in ('insert', 'update', 'delete'):
+                            published.execute(f'DROP TRIGGER IF EXISTS {index}_{suffix}')
+                        published.execute(f'DROP TABLE IF EXISTS {index}')
                     published.execute(f'PRAGMA user_version={baseline}')
                 published.execute('VACUUM')
                 if published.execute('PRAGMA quick_check').fetchone()[0] != 'ok':

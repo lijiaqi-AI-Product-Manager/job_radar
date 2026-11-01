@@ -1,0 +1,42 @@
+name: reviewed-data-repair
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-crawl
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download and preserve original snapshots
+        run: |
+          mkdir -p original data
+          gh release download data-latest -D original -p jobs.db.gz -p jd_text.db.gz -p calendar.db.gz
+          for name in jobs.db jd_text.db calendar.db; do gzip -dc "original/$name.gz" > "data/$name"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snapshots-before-reviewed-repair
+          path: original/*.gz
+          retention-days: 14
+      - name: Apply reviewed corrections and rebuild calendar
+        shell: bash
+        run: |
+          uv run python scripts/repair_reviewed_data.py --home data --apply | tee repair-report.json
+          uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db
+          uv run python scripts/export_public_databases.py --home data --out data/public
+          uv run python scripts/release_check.py --home data/public
+          for name in jobs.db jd_text.db calendar.db; do gzip -n -9 -k "data/public/$name"; done
+      - name: Publish verified compatible snapshots
+        run: gh release upload data-latest data/public/*.db data/public/*.gz --clobber
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-repair-report
+          path: repair-report.json

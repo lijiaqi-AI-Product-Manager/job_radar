@@ -44,7 +44,7 @@
 |---|---|---|
 | `app.mokahr.com`（28 家） | 前端签名，需要逆向 | [moka.md](moka.md) |
 | 飞书 ATSX（33 家） | 需要 `x-atsx-*` 签名头 | [atsx.md](atsx.md) |
-| 华为 `career.huawei.com` | WAF 对接口路径返回 403 | [blocked.jsonl](../../blocked.jsonl) `waf_403` |
+| 华为 `career.huawei.com` | WAF 对接口路径返回 403 | `blocked.jsonl`（本地侦察记录，不随发行包分发） `waf_403` |
 | 各站 `403` / DNS 不可达 | 站点侧限制，不做任何绕过 | 本页探测日志 |
 
 ## 复现
