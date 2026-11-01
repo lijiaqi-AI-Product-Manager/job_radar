@@ -97,6 +97,9 @@ def test_adapter_contract(aid, fx):
 # 对这些源，本测试改成「录到的详情必须全部解析出正文」，而不是要求 90% 覆盖 ——
 # 覆盖率由全量抓取核对，不由 fixtures 核对（fixtures 是离线回放，不可能录满）。
 _DETAIL_ONLY = {"tupu360:tupu360", "radancy:radancy"}
+# 2026-10-30原录制仅保留16KB<head>样式且无<body>，曾被误计为正文。
+# 保留这组真实截断响应作为负例；不降低其他回放及真实快照的覆盖门槛。
+_TRUNCATED_NO_BODY = {"yunjiuye:yunjiuye_yunjiuye-shanghaijiangong"}
 
 
 @pytest.mark.parametrize(("aid", "fx"), CASES, ids=IDS)
@@ -105,6 +108,10 @@ def test_adapter_stores_jd_text(aid, fx):
     source = SourceConfig(**yaml.safe_load((fx / "source.yaml").read_text(encoding="utf-8")))
     jobs = list(fixture_adapter(aid, source, httpx.Client(transport=ReplayTransport(fx))).fetch_all())
     with_jd = [j for j in jobs if (j.description or "").strip() or (j.requirements or "").strip()]
+    if f"{aid}:{fx.name}" in _TRUNCATED_NO_BODY:
+        assert not with_jd, "截断的样式头不允许被当作JD"
+        assert all("<body" not in page.read_text(encoding="utf-8").lower() for page in fx.glob("*.txt"))
+        return
     if f"{aid}:{fx.name}" in _DETAIL_ONLY:
         # 回放里录了几个详情，就必须解出几个正文；一个都没解出来说明正文抽取正则坏了
         assert with_jd, f"{aid}/{fx.name}: 录了详情却一条正文都没解出来（抽取正则大概率坏了）"

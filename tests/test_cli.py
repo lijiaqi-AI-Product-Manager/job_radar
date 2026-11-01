@@ -424,8 +424,9 @@ def test_version_flag(capsys):
 
 
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
+    connect(home / "calendar.db", "calendar").close()
     got = []
-    monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None: got.append(name) or "github")
+    monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None, **kwargs: got.append(name) or "github")
     monkeypatch.setattr(cli, "_text_coverage", lambda *a, **k: None)  # 这个用例不测一致性检查
     cli.main(["update"])
     assert sorted(got) == ["calendar.db", "jd_text.db", "jobs.db"]  # 并行下载，完成顺序不保证
@@ -437,6 +438,7 @@ def test_update_downloads_text_by_default(home, monkeypatch, capsys):
 def test_update_downloads_in_parallel(home, monkeypatch, capsys):
     """三个库并行下载：jd_text 最大，串行时总耗时是三者之和（2026-10-22 实测 82s）。"""
     import threading
+    connect(home / "calendar.db", "calendar").close()
     barrier, done = threading.Barrier(3, timeout=5), []
 
     def fake(name, dest, client=None, prefer=None, **kwargs):
@@ -450,14 +452,17 @@ def test_update_downloads_in_parallel(home, monkeypatch, capsys):
     assert sorted(done) == ["calendar.db", "jd_text.db", "jobs.db"]
 
 
-def test_update_tolerates_missing_calendar_db(home, monkeypatch, capsys):
+def test_update_calendar_failure_keeps_original_snapshot(home, monkeypatch, capsys):
+    original = (home / "jobs.db").read_bytes()
     def fake(name, dest, client=None, prefer=None, **kwargs):
         if name == "calendar.db":
             raise SystemExit("404")
         return "github"
     monkeypatch.setattr(cli, "_download", fake)
-    cli.main(["update"])
-    assert json.loads(capsys.readouterr().out)["mirror"]["calendar"] is None
+    with pytest.raises(SystemExit, match="404"):
+        cli.main(["update"])
+    assert (home / "jobs.db").read_bytes() == original
+    assert not (home / ".active.json").exists()
 
 
 def test_sources_table_prints_status_columns(home, capsys):
@@ -626,7 +631,8 @@ def test_update_redownloads_when_local_db_is_corrupt(home, monkeypatch, capsys):
 
     digests = {"jobs.db.gz": "d1", "jd_text.db.gz": "d2", "calendar.db.gz": "d3"}
     (home / ".sync.json").write_text(_json.dumps(digests), encoding="utf-8")
-    good = {name: (home / name).read_bytes() for name in ("jobs.db", "jd_text.db")}
+    connect(home / "calendar.db", "calendar").close()
+    good = {name: (home / name).read_bytes() for name in ("jobs.db", "jd_text.db", "calendar.db")}
     for name in ("jobs.db", "jd_text.db", "calendar.db"):
         (home / name).write_bytes(b"not a sqlite file")      # 三个都损坏
     monkeypatch.setattr(local, "remote_digests", lambda timeout=6.0: dict(digests))

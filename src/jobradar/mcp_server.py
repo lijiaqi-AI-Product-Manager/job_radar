@@ -1,32 +1,34 @@
 """jobradar MCP server：只读薄壳，所有逻辑在 core/queries.py。
 
-安装：pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
+安装指南：https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/INSTALLATION.md
 运行：jobradar-mcp（stdio）。数据需先用 `jobradar update` 下载。
 """
 
 import sqlite3
 from contextlib import nullcontext
-from datetime import timedelta
 
 from mcp.server.mcpserver import MCPServer
 
 from jobradar import __version__
 from jobradar.core import queries as q
-from jobradar.local import NoData, db, envelope
-from jobradar.timeutil import FMT, now_ts, parse_ts
+from jobradar.local import NoData, db, envelope, snapshot
+from jobradar.timeutil import now_ts
 
 INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包含官方招聘页与公开聚合来源，每日调度；每个来源的成功刷新时间可能不同。
 回答时：注明 data_as_of；每个岗位附 url；只用返回的数据，不编造；results 为空说明"数据里没有"，
 而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。"""
 
-server = MCPServer("jobradar", instructions=INSTRUCTIONS)
+server = MCPServer("jobradar", version=__version__, instructions=INSTRUCTIONS)
 
 
 def _guard(fn):
     try:
-        return fn()
+        with snapshot():
+            return fn()
     except NoData as e:
         return {"error": str(e), "results": []}
+    except OSError as e:
+        return {"error": f"本地文件操作失败（{type(e).__name__}），请检查空间和权限", "results": []}
     except ValueError as e:
         return {"error": f"参数或数据无效：{e}", "results": []}
     except sqlite3.DatabaseError as e:
@@ -45,7 +47,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
     company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
     「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配；
-    dedupe=True 折叠「同公司+同标题+同城市」的多条 req（全库约 9.2%，结果带 variants 原条数）；
+    dedupe=True 折叠「同公司+同标题+同城市」的多条 req（结果带 variants 原条数）；
     exclude_store=True 排掉门店/零售岗（校招用户常用）。
     结果为 0 且该公司在日历里有条目时，返回里的 calendar 字段给出 `jobradar calendar --group X`，
     按它引导用户，不要说"这家公司没在招"。
@@ -107,8 +109,7 @@ def recent_changes(days: int = 7, company: str | None = None, types: list[str] |
     """最近 N 天的岗位变化。types 可选 open(新开)/close(下架)/change(变更)/reopen(重开)。"""
     def run():
         with db("jobs") as conn:
-            q.positive(days, "days")
-            since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
+            since = q.lookback_since(days, now=now_ts())
             meta = {}
             rows = q.recent_changes(conn, since=since, company=company, types=types,
                                     limit=min(limit, 500), contains=contains, meta=meta)
@@ -123,8 +124,7 @@ def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = N
     company 可选：只统计这家公司。回答「最近哪类职位新增最多」用它，不要自己比对两次 search 结果。"""
     def run():
         with db("jobs") as conn:
-            q.positive(days, "days")
-            since = (parse_ts(now_ts()) - timedelta(days=days)).strftime(FMT)
+            since = q.lookback_since(days, now=now_ts())
             meta = {}
             rows = q.new_jobs_by_category(conn, since=since, limit=min(limit, 50),
                                           company=company, contains=contains, meta=meta)
@@ -169,7 +169,7 @@ def company_trend(company: str, step_days: int = 7, contains: bool = False) -> d
 
 @server.tool()
 def data_status(verbose: bool = False) -> dict:
-    """各数据源最近抓取状态与数据新鲜度。默认返回计数 + 有问题的源（整表 277 行约 15k tokens，
+    """各数据源最近抓取状态与数据新鲜度。默认返回计数 + 有问题的源（完整源表可能很大，
     多数情况下你只需要知道"有没有源坏了"）；需要逐源明细时传 verbose=True。"""
     def run():
         with db("jobs") as conn:
@@ -177,7 +177,7 @@ def data_status(verbose: bool = False) -> dict:
             failing = [r["source_id"] for r in rows if r["stale"]]
             if verbose:
                 return envelope(conn, rows, failing=failing)
-            return envelope(conn, [], failing=failing, **q.data_status_summary(rows))
+            return envelope(conn, [], failing=failing[:20], omitted_failing=max(0, len(failing) - 20), **q.data_status_summary(rows))
     return _guard(run)
 
 
@@ -230,7 +230,7 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
 
 @server.tool()
 def stats() -> dict:
-    """覆盖率：目标公司（500 家）中有招聘日历的、有 JD 的，按行业分布；岗位、JD 正文数量与字段覆盖率（jobs.fields）。"""
+    """覆盖率：固定目标池公司中有招聘日历的、有 JD 的，按行业分布；岗位、JD 正文数量与字段覆盖率（jobs.fields）。"""
     def run():
         out = {}
         with db("calendar", required=False) as cal_conn, db("jobs", required=False) as jobs_conn, \

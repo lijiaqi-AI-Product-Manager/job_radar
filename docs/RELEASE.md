@@ -62,7 +62,9 @@ uv run python scripts/export_public_databases.py --home data --out data/public
 
 导出使用 SQLite backup 读取工作库副本，去掉可重建的全文索引和相应触发器，恢复公开版本号，执行 VACUUM 与完整性检查，再原子替换输出。岗位、正文与业务事件保留；工作库不改变。未知 schema 拒绝导出，不能静默降级。
 
-`daily.yml` 只上传 `data/public/` 中的岗位与正文数据库，Release 文件名保持不变。日历 schema 不变。新版客户端下载后本地建立全文索引，旧客户端继续读取兼容快照。
+`daily.yml` 在日历构建、兼容导出和真实质量门禁成功后，上传三库的不可变压缩文件，再原子更新 Release 中的完整性清单。旧文件名继续供历史客户端读取。新版客户端使用清单中的同一代三库，首次全文检索时才补建索引。
+
+本地更新使用 `JOBRADAR_HOME/snapshots/<代号>/` 存放成套三库，验证完成后原子切换 `.active.json`。CLI/MCP 的一次查询固定同一代；失败不覆盖已有数据，`doctor` 输出实际 `data_dir`。国内镜像先暂存完整分片，匿名校验每片及整文件的 SHA-256，再切换稳定入口；失败保留上一代。
 
 ## 版本发布
 

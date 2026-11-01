@@ -197,11 +197,15 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
 
 
 def upsert_texts(text_conn, jobs, *, ts) -> int:
+    from jobradar.jd_text import template_pollution
+
     n = 0
     with text_conn:
         for j in jobs:
             if j.description is None and j.requirements is None:
-                continue
+                old = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (j.id,)).fetchone()
+                if not old or not any(template_pollution(value) for value in old):
+                    continue
             text_conn.execute(
                 """INSERT INTO job_text(job_id, description, requirements, fetched_at) VALUES (?,?,?,?)
                    ON CONFLICT(job_id) DO UPDATE SET description=excluded.description,

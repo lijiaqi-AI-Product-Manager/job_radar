@@ -22,6 +22,7 @@ import yaml
 from pydantic import BaseModel, field_validator, model_validator
 
 from jobradar.adapters.base import USER_AGENT
+from jobradar.core import queries as q
 from jobradar.models import SourceConfig
 
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9\-]*$")
@@ -298,12 +299,13 @@ def _group_of(company: str, matched: dict[str, list[str]]) -> str:
 
 def auto_entries(jobs_conn, sources: list[SourceConfig], targets: dict, *, as_of: str) -> list[dict]:
     by_id = {s.id: s for s in sources}
+    condition, today = q.current_job_condition()
     rows = jobs_conn.execute(
-        """SELECT j.source_id, c.name AS company, j.recruit_type, j.batch, j.grad_year, j.title,
+        f"""SELECT j.source_id, c.name AS company, j.recruit_type, j.batch, j.grad_year, j.title,
                   j.category, j.subcategory, j.cities, j.first_seen, j.last_seen,
-                  j.apply_end, j.publish_at
+                  j.apply_end, j.publish_at, ({condition}) AS current_visible
            FROM job j JOIN company c ON c.id = j.company_id WHERE j.closed_at IS NULL
-           ORDER BY j.first_seen, j.id""").fetchall()
+           ORDER BY j.first_seen, j.id""", (today,)).fetchall()
     matched = match_targets(targets, {r["company"] for r in rows})
     groups: dict[tuple, list] = defaultdict(list)
     for r in rows:
@@ -365,7 +367,8 @@ def auto_entries(jobs_conn, sources: list[SourceConfig], targets: dict, *, as_of
             "cities": [c for c, _ in cities.most_common(10)],
             "apply_url": url, "source_type": "data_layer", "source_name": f"数据层自动生成（{sid}）",
             "source_url": url, "source_date": as_of[:10], "as_of": as_of,
-            "jd_status": "linked", "jd_url": None, "jd_company": company, "open_jobs": len(items), "notes": None,
+            "jd_status": "linked", "jd_url": None, "jd_company": company,
+            "open_jobs": sum(r["current_visible"] for r in items), "notes": None,
         })
     for row in out:
         row["field_evidence"] = {
@@ -377,15 +380,7 @@ def auto_entries(jobs_conn, sources: list[SourceConfig], targets: dict, *, as_of
 
 
 def _open_count(jobs_conn, companies: list[str], recruit_type: str | None) -> int:
-    if not companies:
-        return 0
-    sql = (f"SELECT COUNT(*) FROM job j JOIN company c ON c.id=j.company_id WHERE j.closed_at IS NULL "
-           f"AND c.name IN ({','.join('?' * len(companies))})")
-    args = list(companies)
-    if recruit_type:
-        sql += " AND j.recruit_type = ?"
-        args.append(recruit_type)
-    return jobs_conn.execute(sql, args).fetchone()[0]
+    return q.count_current_jobs(jobs_conn, companies, recruit_type)
 
 
 def export_job_evidence(jobs_conn, out_path: Path, *, ts: str) -> int:

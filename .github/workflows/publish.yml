@@ -21,6 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen --all-extras
+      - run: uv run ruff check .
+      - run: uv run python scripts/check_docs_links.py
+      - run: uv run python scripts/check_compliance.py
+      - run: uv run pytest
       - name: Build sdist + wheel
         run: |
           rm -rf dist
@@ -37,6 +42,11 @@ jobs:
         with:
           name: dist
           path: dist/
+      - name: Verify installed release wheel
+        run: |
+          py=$(uv run python -c 'import sys;print(sys.executable)')
+          uv pip install --python "$py" --reinstall --no-deps dist/*.whl
+          "$py" scripts/check_installed_cli.py --python "$py"
 
   publish-testpypi:
     # 仓库变量 PYPI_ENABLED=true 才会真的发（未配置 Trusted Publishing 前不会红）

@@ -67,5 +67,9 @@ def test_current_install_guides_reject_old_pypi_or_unpinned_source(tmp_path, mon
     url = f"https://github.com/owner/repo/archive/{target['revision']}.zip"
     guide.write_text(f'pip install --upgrade "jobsearchradar[mcp] @ {url}"', encoding="utf-8")
     assert docs.installation_problems([guide]) == []
+    target.update(version="2.0.1", revision="v2.0.1")
+    config.write_text(json.dumps(target), encoding="utf-8")
+    guide.write_text('pip install --upgrade "jobsearchradar[mcp]==2.0.1"', encoding="utf-8")
+    assert docs.installation_problems([guide]) == []
     guide.write_text(guide.read_text(encoding="utf-8") + '\npip install jobsearchradar', encoding="utf-8")
     assert docs.installation_problems([guide])

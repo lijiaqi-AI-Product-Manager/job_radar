@@ -28,13 +28,14 @@ jobs:
       - name: Download release assets
         run: |
           mkdir -p d
-          # 发布器会重建整个镜像 Release，必须先取得完整文件集；下载失败不能发残缺镜像。
-          gh release download data-latest -D d -p 'jobs.db.gz' -p 'jd_text.db.gz' -p 'calendar.db.gz' -p 'crawl-summary.json'
+          # 同一清单下载完整文件集；暂存、匿名校验后才切换镜像稳定入口。
+          uv run python scripts/download_snapshots.py --out d --compressed
+          gh release download data-latest -D d -p 'crawl-summary.json'
           for name in jobs.db.gz jd_text.db.gz calendar.db.gz crawl-summary.json; do
             test -s "d/$name" || exit 1
           done
           ls -l d
       - name: Publish to Gitee
-        run: uv run python -u scripts/publish_gitee.py d/*
-      - name: Anonymous download check（整文件或分片求和，必须与本地一致）
-        run: uv run python -u scripts/verify_gitee.py d/*
+        run: uv run python -u scripts/publish_gitee.py d/jobs.db.gz d/jd_text.db.gz d/calendar.db.gz d/crawl-summary.json
+      - name: Anonymous download check（逐片与整文件 SHA-256）
+        run: uv run python -u scripts/verify_gitee.py d/jobs.db.gz d/jd_text.db.gz d/calendar.db.gz d/crawl-summary.json

@@ -115,8 +115,8 @@ def installation_problems(files=None) -> list[str]:
     """当前功能说明必须指向同一个已验证提交，不能落到旧包或浮动 main。"""
     target = json.loads((ROOT / "docs/install-target.json").read_text(encoding="utf-8"))
     revision = target["revision"]
-    if not re.fullmatch(r"[0-9a-f]{40}", revision):
-        return ["docs/install-target.json: revision 必须是完整提交哈希"]
+    if not re.fullmatch(r"[0-9a-f]{40}|v\d+\.\d+\.\d+", revision):
+        return ["docs/install-target.json: revision 必须是完整提交哈希或固定版本标签"]
     url = f"https://github.com/{target['repository']}/archive/{revision}.zip"
     if files is None:
         files = [*sorted(ROOT.glob("README*.md")), ROOT / "skill/jobradar/SKILL.md",
@@ -124,10 +124,14 @@ def installation_problems(files=None) -> list[str]:
     problems = []
     for path in files:
         text = path.read_text(encoding="utf-8")
-        if url not in text:
-            problems.append(f"{path.relative_to(ROOT)}: 未使用已验证的固定源码安装地址")
-        for command in re.findall(r"pip install[^\n`]+", text):
-            if target["distribution"] in command and url not in command:
+        commands = re.findall(r"pip install[^\n`]+", text)
+        pinned = re.compile(re.escape(target["distribution"]) + r"(?:\[[a-z,]+\])?==" + re.escape(target.get("version", "UNSET")) + r"(?=[\"'\s]|$)")
+        if not commands and path.suffix == ".py":
+            continue
+        if url not in text and not pinned.search(text):
+            problems.append(f"{path.relative_to(ROOT)}: 未使用固定源码或固定发行版本")
+        for command in commands:
+            if target["distribution"] in command and url not in command and not pinned.search(command):
                 problems.append(f"{path.relative_to(ROOT)}: 安装命令可能落到旧包或未验证版本")
     return problems
 

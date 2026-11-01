@@ -7,7 +7,8 @@
 ```
 
 - `data_as_of`：最近一次成功抓取的时间（UTC）。回答时换算成北京时间更友好（+8 小时）。
-- `stale`：数据超过 48 小时未更新。
+- `stale`：全局数据超过 48 小时未更新，或本次返回岗位含超过 48 小时未成功的来源。
+- 岗位的 `source_last_ok` / `source_age_hours` / `source_stale`：对应来源最近成功时间、距今小时数及是否过期；`availability` 区分已下架、已到期、旧来源尚未确认及最近观测，不能作为实时可投保证。
 
 ## 招聘公告记录
 
@@ -53,7 +54,7 @@
 | `source` | `{type, name, url, date}`：官方公众号 / 官网 / 政府平台；第三方日历不采 |
 | `origin` | `manual` 人工从官方渠道整理 / `auto` 由岗位数据自动生成 |
 | `tracks` | 方向（track 级）：`[{direction, roles}]`，roles 是具体岗位名，可能为空 |
-| `open_jobs` | 仅 `auto` 条目：该批次当前在招岗位数 |
+| `open_jobs` | 仅 `auto` 条目：与默认搜索一致，排除已下架及明确截止日已过的岗位；不等于当前实时可投数量 |
 | `observed_from` / `observed_to` | 仅 `auto` 条目：数据里首次/最近一次看到在招的日期（不是网申起止） |
 | `as_of` | 这条信息人工核实/自动生成的日期 |
 
@@ -72,7 +73,7 @@
 | `department` | 部门/事业群 |
 | `first_seen` | 第一次被抓到的时间（≈发布时间，但不等于官方发布日期） |
 | `last_seen` | 最后一次确认在招的时间 |
-| `closed_at` | 下架时间；为空表示仍在招 |
+| `closed_at` | 已观测到的下架时间；为空只表示尚未确认下架，需结合截止日期及来源新鲜度 |
 | `description` / `requirements` | JD 原文（职责 / 要求）；`search --text` 全文检索 |
 | `match` | 仅 `search --text` 返回：JD 原文中命中处的片段（只命中标题时为 null） |
 

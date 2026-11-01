@@ -28,6 +28,50 @@ def positive(value, name="limit"):
     return value
 
 
+def lookback_since(days, *, now=None):
+    positive(days, "days")
+    if days > 3660:
+        raise ValueError("days 不能超过 3660")
+    return (parse_ts(now or now_ts()) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _filter_domains(grad_year=None, recruit_type=None):
+    if grad_year is not None and (not isinstance(grad_year, int) or isinstance(grad_year, bool) or not 1000 <= grad_year <= 9999):
+        raise ValueError("grad_year 必须是四位年份")
+    if recruit_type is not None and recruit_type not in {"campus", "intern", "social"}:
+        raise ValueError("recruit_type 必须是 campus、intern 或 social")
+
+
+def current_job_condition(alias="j"):
+    if alias not in {"j", ""}:
+        raise ValueError("invalid SQL alias")
+    prefix = alias + "." if alias else ""
+    return (f"{prefix}closed_at IS NULL AND ({prefix}apply_end IS NULL OR {prefix}apply_end >= ?)",
+            shanghai_date(now_ts()))
+
+
+def count_current_jobs(conn, companies, recruit_type=None):
+    if not companies:
+        return 0
+    condition, today = current_job_condition()
+    # 固定从已筛选公司开始，避免日历每个批次都扫描所有未下架岗位。
+    sql = ("SELECT COUNT(*) FROM company c CROSS JOIN job j "
+           "WHERE c.name IN (SELECT value FROM json_each(?)) AND j.company_id=c.id AND " + condition)
+    args = [json.dumps(companies), today]
+    if recruit_type:
+        sql += " AND j.recruit_type=?"
+        args.append(recruit_type)
+    return conn.execute(sql, args).fetchone()[0]
+
+
+def due_source_ids(conn, source_ids, *, hours, now=None):
+    positive(hours, "stale_only_hours")
+    current = parse_ts(now or now_ts())
+    last_ok = dict(conn.execute("SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' GROUP BY source_id"))
+    return {sid for sid in source_ids if sid not in last_ok or
+            (current - parse_ts(last_ok[sid])).total_seconds() >= hours * 3600}
+
+
 def _date_parameter(value, name):
     if value is not None:
         if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
@@ -47,6 +91,26 @@ def _job_dict(row) -> dict:
     d = dict(row)
     d["cities"] = json.loads(d["cities"])
     return d
+
+
+def _source_annotations(conn, rows):
+    if not rows:
+        return rows
+    ids = sorted({row["source_id"] for row in rows})
+    last_ok = dict(conn.execute(
+        "SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' "
+        "AND source_id IN (SELECT value FROM json_each(?)) GROUP BY source_id", (json.dumps(ids),)))
+    now = parse_ts(now_ts())
+    today = shanghai_date(now_ts())
+    for row in rows:
+        stamp = last_ok.get(row["source_id"])
+        age = max(0, (now - parse_ts(stamp)).total_seconds() / 3600) if stamp else None
+        stale = age is None or age > 48
+        row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
+                   source_stale=stale,
+                   availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
+                                 else "unconfirmed_stale" if stale else "observed_recently"))
+    return rows
 
 
 def _like(term: str) -> str:
@@ -187,6 +251,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     """
     where, args = [], []
     positive(limit)
+    _filter_domains(grad_year, recruit_type)
     _company_parameter(company)
     _date_parameter(deadline_before, "deadline_before")
     _date_parameter(deadline_after, "deadline_after")
@@ -215,8 +280,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         where.append("(j.category = ? OR j.subcategory = ?)")
         args += [category, category]
     if city:
-        where.append("EXISTS (SELECT 1 FROM json_each(j.cities) WHERE value = ?)")
-        args.append(city)
+        where.append("EXISTS (SELECT 1 FROM json_each(j.cities) WHERE value IN (?, ?))")
+        args += [city.removesuffix("市"), city.removesuffix("市") + "市"]
     if recruit_type:
         where.append("j.recruit_type = ?")
         args.append(recruit_type)
@@ -290,7 +355,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if terms:
         for r in rows:
             r["match"] = _snippet(text_conn, r["id"], terms)
-    return rows
+    return _source_annotations(conn, rows)
 
 
 def recent_changes(conn, *, since, company=None, types=None, limit=200,
@@ -316,6 +381,9 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200,
         d = dict(r)
         d["diff"] = json.loads(d["diff"]) if d["diff"] else None
         out.append(d)
+    if meta is not None:
+        total = conn.execute("SELECT COUNT(*) FROM (" + sql.rsplit(" ORDER BY", 1)[0] + ")", args).fetchone()[0]
+        meta.update(total=total, returned=len(out), truncated=total > len(out))
     return out
 
 
@@ -339,14 +407,15 @@ def new_jobs_by_category(conn, *, since, limit=20, company=None, contains=False,
         args += company_args
         if meta is not None:
             meta["company_match"] = match.as_meta()
-    rows = conn.execute(
-        f"""SELECT COALESCE(NULLIF(j.category, ''), '未分类') AS category, COUNT(*) AS n
+    sql = f"""SELECT COALESCE(NULLIF(j.category, ''), '未分类') AS category, COUNT(*) AS n
            FROM job_event e JOIN job j ON j.id = e.job_id{join}
            WHERE {' AND '.join(where)}
-           GROUP BY category ORDER BY n DESC, category LIMIT ?""",
-        (*args, limit),
-    )
-    return [{"category": r["category"], "n": r["n"]} for r in rows]
+           GROUP BY category ORDER BY n DESC, category LIMIT ?"""
+    out = [{"category": r["category"], "n": r["n"]} for r in conn.execute(sql, (*args, limit))]
+    if meta is not None:
+        total = conn.execute("SELECT COUNT(*) FROM (" + sql.rsplit(" ORDER BY", 1)[0] + ")", args).fetchone()[0]
+        meta.update(total=total, returned=len(out), truncated=total > len(out))
+    return out
 
 
 def company_trend(conn, company, *, until, step_days=7, contains=False, meta=None) -> list[dict]:
@@ -424,12 +493,13 @@ def data_status(conn, *, now, stale_after_hours=48) -> list[dict]:
     return out
 
 
-def data_status_summary(rows) -> dict:
+def data_status_summary(rows, *, limit=20) -> dict:
     """把 277 行压成 agent 真正需要的东西：计数 + 有问题的源。
 
     原来的整表是 52KB（约 15k tokens），而 95% 的信息是"一切正常"。
     """
-    problems = [r for r in rows if r["stale"] or r["last_status"] != "ok"]
+    problems = sorted((r for r in rows if r["stale"] or r["last_status"] != "ok"),
+                      key=lambda r: (r.get("last_ok") or "", r["source_id"]))
     return {
         "counts": {
             "sources": len(rows),
@@ -443,7 +513,8 @@ def data_status_summary(rows) -> dict:
             ({"source_id": r["source_id"], "duration_s": round(r["duration_s"], 1)}
              for r in rows if r["duration_s"]),
             key=lambda d: d["duration_s"], reverse=True)[:5],
-        "problems": problems,
+        "problems": [{**r, "error": r.get("error", "")[:180] if r.get("error") else None} for r in problems[:limit]],
+        "omitted_problems": max(0, len(problems) - limit),
     }
 
 
@@ -512,7 +583,7 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
         ).fetchone()
     d["description"] = t["description"] if t else None
     d["requirements"] = t["requirements"] if t else None
-    return d
+    return _source_annotations(jobs_conn, [d])[0]
 
 
 def data_as_of(conn) -> str | None:
@@ -568,6 +639,9 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     显式 open_on 时以指定日期为准，不再套用今天的过期筛选。
     """
     positive(limit)
+    _filter_domains(grad_year)
+    if origin is not None and origin not in {"manual", "auto"}:
+        raise ValueError("origin 必须是 manual 或 auto")
     _company_parameter(company)
     _company_parameter(group)
     for value, label in ((open_on, "open_on"), (deadline_before, "deadline_before"), (deadline_after, "deadline_after")):

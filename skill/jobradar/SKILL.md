@@ -18,7 +18,7 @@ jobradar search --help
 jobradar calendar --help
 ```
 
-2026-11-01 核实时，PyPI 只有旧版 `1.1.1`，不支持本指南的全部参数。已安装旧版也用上述命令升级，
+2026-11-01 已核实 PyPI `2.0.0` 发布；本轮修正使用独立的 `2.0.1` 补丁。发布状态以 [安装指南](../../docs/INSTALLATION.md) 为准。已安装旧版也用上述命令升级，
 不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
 `calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
 先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。
@@ -31,6 +31,7 @@ jobradar doctor
 
 - 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
+- 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的

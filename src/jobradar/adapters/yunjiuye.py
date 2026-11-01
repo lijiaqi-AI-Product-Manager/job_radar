@@ -32,6 +32,7 @@ from collections.abc import Iterator
 import httpx
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
+from jobradar.jd_text import extract_job_body
 from jobradar.models import Job
 from jobradar.normalize import date_only, degree_min_from_text
 
@@ -112,27 +113,7 @@ class YunjiuyeAdapter(Adapter):
         if not self.fetch_detail:
             return None
         html = self.request_text("GET", f"{self.base}/detail/job", params={"id": publish_id})
-        html = _INERT.sub(" ", html)
-        content = re.search(r'<[^>]+class=[\"\'][^\"\']*\bjob-content\b[^\"\']*[\"\'][^>]*>', html, re.I)
-        if content:
-            html = html[content.end():]
-        text = _text(html)
-        i = text.find("职位详情")
-        if i >= 0:
-            text = text[i + len("职位详情"):]
-        elif not content:
-            anchors = [text.find(s) for s in ("岗位职责", "任职要求", "职位描述", "工作职责") if s in text]
-            if not anchors:
-                return None
-            text = text[min(anchors):]
-        # 详情页正文里夹着导航与页脚，截到「单位信息」/「联系方式」之前
-        stops = [text.find(s) for s in ("单位信息", "联系方式", "相关职位")]
-        stops = [c for c in stops if c > 0]
-        if stops:
-            text = text[: min(stops)]
-        text = re.sub(r"版权所有.*$", "", text).strip()
-        text = re.sub(r"\{\{.*?\}\}", "", text).strip()
-        return text or None
+        return extract_job_body(html)
 
     def _collect(self, keyword: str, pages: int | None = None) -> list[dict]:
         out: list[dict] = []

@@ -189,3 +189,19 @@ def test_detail_never_uses_template_or_script_as_jd(html, expected):
         assert "v-cloak" not in got and "PAGE_THEME" not in got
     else:
         assert got is None
+
+
+@pytest.mark.parametrize("page", [
+    '<html><head><title>职位详情</title></head><body><nav>首页 国家大学生就业服务平台</nav>'
+    '<div>{{ job.job_desc }}</div><footer>版权所有</footer></body></html>',
+    '<title>职位详情</title><div class="job-desc" v-html="job.job_desc"></div><p>招聘提示</p>',
+])
+def test_detail_title_navigation_and_empty_vue_container_are_not_jd(page):
+    adapter = YunjiuyeAdapter(_source(), httpx.Client(transport=httpx.MockTransport(
+        lambda r: httpx.Response(200, text=page))), sleep=lambda _: None)
+    assert adapter._detail("900001") is None
+def test_empty_section_headings_are_not_job_description():
+    from jobradar.jd_text import extract_job_body
+
+    page = '<div class="job-desc"><h3>岗位职责：</h3>{{ detail.duty }}<h3>岗位要求：</h3>{{ detail.requirement }}<h3>投递说明：</h3><h3>其他描述：</h3></div>'
+    assert extract_job_body(page) is None

@@ -19,7 +19,7 @@ jobs:
       - name: Download and preserve original snapshots
         run: |
           mkdir -p original data
-          gh release download data-latest -D original -p jobs.db.gz -p jd_text.db.gz -p calendar.db.gz
+          uv run python scripts/download_snapshots.py --out original --compressed
           for name in jobs.db jd_text.db calendar.db; do gzip -dc "original/$name.gz" > "data/$name"; done
       - uses: actions/upload-artifact@v4
         with:
@@ -35,7 +35,7 @@ jobs:
           uv run python scripts/release_check.py --home data/public
           for name in jobs.db jd_text.db calendar.db; do gzip -n -9 -k "data/public/$name"; done
       - name: Publish verified compatible snapshots
-        run: gh release upload data-latest data/public/*.db data/public/*.gz --clobber
+        run: uv run python scripts/publish_snapshots.py --home data/public
       - uses: actions/upload-artifact@v4
         with:
           name: reviewed-repair-report

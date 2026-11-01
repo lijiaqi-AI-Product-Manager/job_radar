@@ -253,8 +253,25 @@ def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
                 "GROUP BY 1,2 HAVING COUNT(*) > 1)").fetchone()[0]
             if dups:
                 problems.append(f"同源重复 {dups}")
+            columns = {r[1] for r in j.execute("PRAGMA table_info(job)")}
+            if "cities" in columns:
+                n = j.execute("SELECT COUNT(*) FROM job WHERE EXISTS "
+                              "(SELECT 1 FROM json_each(job.cities) WHERE value GLOB 'TP[0-9]*')").fetchone()[0]
+                if n:
+                    problems.append(f"城市编码 {n}")
         finally:
             j.close()
+    if home and (home / "jd_text.db").exists():
+        from jobradar.jd_text import template_pollution
+        t = sqlite3.connect(home / "jd_text.db")
+        try:
+            n = sum(any(template_pollution(value) for value in row) for row in t.execute(
+                "SELECT description, requirements FROM job_text WHERE description LIKE '%.job-desc%' "
+                "OR description LIKE '%PAGE_THEME%' OR requirements LIKE '%.job-desc%' OR requirements LIKE '%PAGE_THEME%'"))
+            if n:
+                problems.append(f"模板污染 {n}")
+        finally:
+            t.close()
     if calendar_db and calendar_db.exists():
         c = sqlite3.connect(calendar_db)
         try:

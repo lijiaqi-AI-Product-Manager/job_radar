@@ -66,6 +66,21 @@ def test_jd_ratio_requires_both_dbs(tmp_path):
     assert rc.jd_ratio(tmp_path) == 0.5
 
 
+def test_release_sanity_rejects_city_codes_and_known_template_body(tmp_path):
+    from contextlib import closing
+
+    from helpers import T, make_job
+    from jobradar.pipeline.ingest import ingest_run, upsert_texts
+    from jobradar.store.migrate import connect
+
+    with closing(connect(tmp_path / "jobs.db", "jobs")) as jobs, closing(connect(tmp_path / "jd_text.db", "text")) as texts:
+        sample = make_job(cities=["TP07138"], description="职位描述 / 单位简介富文本 */ .job-desc {font-size:14px;}")
+        ingest_run(jobs, "s1", [sample], ts=T(1))
+        upsert_texts(texts, [sample], ts=T(1))
+    n, detail = rc.data_sanity(tmp_path, None)
+    assert n >= 2 and "城市编码" in detail and "模板污染" in detail
+
+
 def test_calendar_fields_reports_manual_ratio_and_all_entries(tmp_path):
     """人工口径是发布门槛（没有数据源的公司只能靠人工条目）；全部条目口径只做展示。"""
     db = tmp_path / "calendar.db"

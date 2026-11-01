@@ -216,6 +216,25 @@ def test_shared_host_sources_rotate_instead_of_always_deferring_the_same_tail(jo
     assert a != b
 
 
+def test_oldest_success_is_scheduled_before_fresh_sources(jobs_db, text_db):
+    from jobradar.pipeline.ingest import ingest_run
+
+    class Ordered(ExampleAdapter):
+        seen = []
+
+        def fetch_raw(self):
+            self.seen.append(self.source.id)
+            return iter(())
+
+    sources = [example_source(id=sid, params={"host": "shared.invalid"}) for sid in ("fresh", "old", "never")]
+    ingest_run(jobs_db, "fresh", [], ts=T(20), allow_empty=True)
+    ingest_run(jobs_db, "old", [], ts=T(1), allow_empty=True)
+    crawl(sources, jobs_db, text_db, ts=T(21), adapters={"example": Ordered},
+          client_factory=lambda: httpx.Client(transport=httpx.MockTransport(lambda _: None)),
+          sleep=lambda _: None, max_workers=1, order_seed=1)
+    assert Ordered.seen == ["never", "old", "fresh"]
+
+
 @pytest.mark.parametrize("retry", [False, True])
 def test_rate_limit_and_retry_waits_stop_at_the_budget(monkeypatch, retry):
     import jobradar.adapters.base as base

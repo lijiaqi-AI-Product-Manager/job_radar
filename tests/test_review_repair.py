@@ -31,3 +31,14 @@ def test_review_repair_preserves_observation_and_status_and_is_idempotent(jobs_d
     assert jobs_db.execute("SELECT c.name FROM job j JOIN company c ON c.id=j.company_id WHERE j.source_id='beisen-ghbank'").fetchone()[0] == "广东华兴银行"
     assert jobs_db.execute("SELECT c.name FROM job j JOIN company c ON c.id=j.company_id WHERE j.source_id='unrelated'").fetchone()[0] == "华夏银行"
     assert text_db.execute("SELECT description FROM job_text WHERE job_id='yunjiuye-demo:3'").fetchone()[0] == "岗位职责：负责产品研发。"
+
+
+def test_css_comment_residual_is_not_treated_as_business_heading():
+    text = ('职位描述 / 单位简介富文本 */ .job-desc { color: #3a4557; font-size: 14px; } '
+            '首页 国家大学生就业服务平台 {{ job.job_desc }}')
+    assert repair.clean_saved_jd(text) is None
+
+
+def test_legitimate_frontend_requirement_is_not_css_pollution():
+    text = "岗位职责：开发前端。任职要求：熟悉 CSS font-size:、color: 与组件开发。"
+    assert repair.clean_saved_jd(text) == text

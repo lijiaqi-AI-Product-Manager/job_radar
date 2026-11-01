@@ -21,6 +21,7 @@ from jobradar.normalize import (
     categorize,
     cities_from_title,
     degree_min_from_jd,
+    normalize_cities,
     normalize_degree,
 )
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
@@ -55,6 +56,7 @@ def _enrich(j: Job) -> None:
     """
     if j.category is None and j.subcategory is None:
         j.category, j.subcategory = categorize(j.title)
+    j.cities = normalize_cities(j.cities)
     if not j.cities:
         j.cities = cities_from_title(j.title)
     # 学历：平台原值先归一到四档；平台没给（或只写"不限"）时才从 JD 正文用带锚点的规则补。
@@ -66,7 +68,7 @@ def _enrich(j: Job) -> None:
         j.degree_min = degree_min_from_jd(f"{j.description or ''}\n{j.requirements or ''}")
 
 
-def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
+def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, source_budget=None):
     client = client_factory()
     out = []
     try:
@@ -76,7 +78,8 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None):
             if deadline is not None and time.monotonic() >= deadline:
                 out.append((s, None, "crawl budget exceeded", 0.0))
                 continue
-            out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=deadline)))
+            source_deadline = min(deadline or float("inf"), time.monotonic() + source_budget) if source_budget else deadline
+            out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=source_deadline)))
         return out
     finally:
         client.close()
@@ -102,7 +105,7 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           adapters: dict[str, type[Adapter]] | None = None,
           sleep: Callable[[float], None] = time.sleep,
           max_workers: int = 4, budget_seconds: float | None = None,
-          order_seed: int | None = None) -> dict[str, RunResult]:
+          order_seed: int | None = None, source_budget: float | None = None) -> dict[str, RunResult]:
     if client_factory is make_client:
         from jobradar.compliance import RobotsPolicy
 
@@ -131,12 +134,15 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
     seed = order_seed if order_seed is not None else int(datetime.now().strftime("%Y%m%d"))
     rng = random.Random(seed)
     rng.shuffle(items)
+    last_ok = dict(jobs_conn.execute("SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' GROUP BY source_id"))
     # 共用 host 的源仍串行，但也要轮换组内顺序，避免同一批尾部租户每天都被预算跳过。
     for _, srcs in items:
         rng.shuffle(srcs)
+        srcs.sort(key=lambda source: last_ok.get(source.id, ""))
+    items.sort(key=lambda item: min(last_ok.get(source.id, "") for source in item[1]))
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline)
+        futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget)
                    for (aid, _site), srcs in items]
         for fut in as_completed(futures):
             for source, jobs, error, elapsed in fut.result():

@@ -1,8 +1,8 @@
 {
   "distribution": "jobsearchradar",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": "lijiaqi-AI-Product-Manager/job_radar",
   "revision": "2e9df6d1c7e7907f3815388be7e9723c7e03f0c3",
   "verified_on": "2026-11-01",
-  "pypi_version_checked": "1.1.1"
+  "pypi_version_checked": "2.0.0"
 }

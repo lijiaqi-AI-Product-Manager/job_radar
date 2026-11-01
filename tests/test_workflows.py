@@ -33,9 +33,18 @@ def test_crawl_has_time_budget():
 def test_calendar_step_asserts_freshness():
     """日历步骤必须在上传后校验 build 时间戳，避免"超时了但没人发现"。"""
     run = _step("Build recruiting calendar")["run"]
-    assert "--check-links" in run
     assert "SELECT MAX(ts) FROM build" in run
     assert "sys.exit" in run
+
+
+def test_daily_quality_and_calendar_finish_before_publication():
+    steps = _steps()
+    build = next(i for i, s in enumerate(steps) if s.get("name") == "Build recruiting calendar")
+    publish = next(i for i, s in enumerate(steps) if s.get("name") == "Publish data-latest")
+    assert build < publish
+    assert not steps[build].get("continue-on-error", False)
+    assert "release_check.py" in steps[publish]["run"]
+    assert "publish_snapshots.py" in steps[publish]["run"]
 
 def test_all_workflows_parse():
     """所有工作流必须能被 YAML 解析：改坏一个文件会让整个流水线静默不跑。"""

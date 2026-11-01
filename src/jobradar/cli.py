@@ -13,17 +13,31 @@ import sqlite3
 import sys
 import tempfile
 import time
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing, contextmanager, nullcontext
-from datetime import timedelta
 from pathlib import Path
 
 import httpx
 
 from jobradar.core import queries as q
-from jobradar.local import DB_FILES, RELEASE_TAG, REPO, NoData, asset_urls, db, envelope, home
-from jobradar.store.migrate import connect, migration_files
-from jobradar.timeutil import FMT, now_ts, parse_ts
+from jobradar.file_lock import file_lock
+from jobradar.local import (
+    DB_FILES,
+    RELEASE_TAG,
+    REPO,
+    NoData,
+    activate,
+    asset_urls,
+    data_dir,
+    db,
+    discard_uncommitted,
+    envelope,
+    home,
+    snapshot,
+)
+from jobradar.store.migrate import connect
+from jobradar.timeutil import now_ts
 
 
 @contextmanager
@@ -136,28 +150,17 @@ def _local_db_ok(path: Path, name: str | None = None) -> bool:
         with path.open("rb") as handle:
             if handle.read(16) != b"SQLite format 3\x00":
                 return False
-        required = {
-            "jobs.db": {"job": {"id", "source_id", "company_id", "title", "closed_at"},
-                        "company": {"id", "name"}, "source_run": {"source_id", "status", "ts"},
-                        "job_event": {"job_id", "ts", "type"}},
-            "jd_text.db": {"job_text": {"job_id", "description", "requirements"}},
-            "calendar.db": {"entry": {"id", "origin", "group_name", "apply_end"},
-                            "target": {"name"}, "build": {"ts"}},
-        }.get(name or path.name)
-        if required is None:
+        kind = {"jobs.db": "jobs", "jd_text.db": "text", "calendar.db": "calendar"}.get(name or path.name)
+        if kind is None:
             return False
         con = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)
         try:
-            kind = {"jobs.db": "jobs", "jd_text.db": "text", "calendar.db": "calendar"}[name or path.name]
-            version = con.execute("PRAGMA user_version").fetchone()[0]
-            if not 1 <= version <= len(migration_files(kind)):
-                return False
-            return (con.execute("PRAGMA quick_check(1)").fetchone()[0] == "ok"
-                    and all(columns <= {r[1] for r in con.execute(f'PRAGMA table_info("{table}")')}
-                            for table, columns in required.items()))
+            from jobradar.store.validate import validate_database
+            validate_database(con, kind)
+            return True
         finally:
             con.close()
-    except (sqlite3.DatabaseError, OSError):
+    except (sqlite3.DatabaseError, OSError, ValueError):
         return False
 
 
@@ -276,30 +279,35 @@ def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -
 def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None,
               digests=None, verified=None) -> str:
     """依次尝试各镜像，每个镜像先取压缩版 <name>.gz，没有再取原文件。返回实际使用的镜像名。"""
-    client = client or httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True)
+    if client is None:
+        with httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True) as owned:
+            return _download(name, dest, client=owned, prefer=prefer, digests=digests, verified=verified)
     dest.parent.mkdir(parents=True, exist_ok=True)
+    names = getattr(digests, "asset_names", {})
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if token:  # 私有仓库：只能走 GitHub API
-        found = _github_api_asset(name, client, token)
+        asset = name + ".gz" if name + ".gz" in names else name
+        found = _github_api_asset(names.get(asset, asset), client, token)
         if found is None:
             raise SystemExit(f"Release {RELEASE_TAG} 中没有 {name}")
         tmp = _fetch(client, found[0], found[1], dest.parent)
         if tmp is None:
             raise SystemExit(f"下载 {name} 失败（404）")
         try:
-            expected = (digests or {}).get(name)
+            expected = (digests or {}).get(asset)
             if digests and not expected:
                 tmp.unlink(missing_ok=True)
                 raise ValueError("发布摘要缺失，无法核验下载内容")
-            _install(tmp, name, False, dest, expected)
+            _install(tmp, name, asset.endswith(".gz"), dest, expected)
             if expected and verified is not None:
+                verified.pop(name, None)
                 verified.pop(name + ".gz", None)
-                verified[name] = expected
+                verified[asset] = expected
         except ValueError as e:
             raise SystemExit(f"下载的 {name} {e}") from None
         return "github"
     errors, invalid = [], False
-    for (mirror, url), (_, gz_url) in zip(asset_urls(name, prefer), asset_urls(name + ".gz", prefer), strict=True):
+    for (mirror, url), (_, gz_url) in zip(asset_urls(name, prefer, asset_names=names), asset_urls(name + ".gz", prefer, asset_names=names), strict=True):
         for candidate, gz in ((gz_url, True), (url, False)):
             try:
                 tmp = _fetch(client, candidate, {}, dest.parent)
@@ -356,15 +364,24 @@ def _text_coverage(home_dir: Path, sample: int = 300) -> float | None:
 
 
 def cmd_update(args):
+    with file_lock(home() / ".update.lock", timeout=0):
+        _update_snapshot(args)
+
+
+def _update_snapshot(args):
     home().mkdir(parents=True, exist_ok=True)
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
-    used: dict[str, str | None] = {}
-    errors: dict[str, SystemExit] = {}
-
-    # 增量：先比对 Release 里各 asset 的 sha256，与本地记录一致就跳过下载（省 55MB）
-    from jobradar.local import load_sync_meta, remote_digests, save_sync_meta
-    meta = load_sync_meta()
+    from jobradar.local import load_sync_meta, remote_digests
+    try:
+        old = data_dir()
+        meta = load_sync_meta()
+    except NoData:
+        if not args.force:
+            raise
+        old, meta = home(), {}
     remote = remote_digests()
+    if not remote:
+        raise SystemExit("无法核实远端完整性清单，保留本地快照；请稍后或切换网络重试")
     verified = {}
     skipped: list[str] = []
     if remote and not getattr(args, "force", False):
@@ -372,7 +389,7 @@ def cmd_update(args):
             assets = (DB_FILES[k] + ".gz", DB_FILES[k])
             trusted = meta.get("_verified_assets", {})
             if (any(remote.get(a) and trusted.get(a) == remote[a] for a in assets)
-                    and _local_db_ok(home() / DB_FILES[k])):
+                    and _local_db_ok(old / DB_FILES[k])):
                 kinds.remove(k)
                 skipped.append(k)
     if skipped and not kinds:
@@ -380,48 +397,66 @@ def cmd_update(args):
             print(json.dumps({"updated": [], "skipped": skipped, "data_as_of": q.data_as_of(conn),
                               "home": str(home())}, ensure_ascii=False))
         return
-    # 三个库并行下载：总耗时从"三个文件之和"降到"最慢的那个"（jd_text 最大）
-    with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
-        futures = [(k, pool.submit(_download, DB_FILES[k], home() / DB_FILES[k], prefer=args.mirror,
-                                  **({"digests": remote, "verified": verified} if remote else {})))
-                   for k in kinds]
-        for k, fut in futures:
-            try:
-                used[k] = fut.result()
-            except SystemExit as e:
-                errors[k] = e
-    if "jobs" in errors or "text" in errors:  # 日历库在旧版发布中不存在：缺失不影响岗位数据
-        raise errors.get("jobs") or errors["text"]
-    used["calendar"] = None if "calendar" in errors else used.get("calendar")
-    if "text" not in errors:
-        cov = _text_coverage(home())
-        if cov is not None and cov < 0.9:
-            print(f"JD 原文库与岗位库对不上（采样 {cov:.0%}），可能镜像还在同步；改从 GitHub 重下…",
-                  file=sys.stderr)
-            try:
-                used["text"] = _download(DB_FILES["text"], home() / DB_FILES["text"], prefer="github",
-                                         **({"digests": remote, "verified": verified} if remote else {}))
-                cov = _text_coverage(home())
-            except SystemExit as e:
-                print(f"重下失败：{e}", file=sys.stderr)
-            if cov is not None and cov < 0.9:
-                print(f"警告：JD 原文库仍不匹配（{cov:.0%}）——全文检索可能缺结果，稍后再 update",
-                      file=sys.stderr)
-    if remote:
-        for k in kinds:
-            if k in errors or used.get(k) is None:
+    parent = home() / "snapshots"
+    parent.mkdir(exist_ok=True)
+    if parent.is_symlink():
+        raise SystemExit("快照目录不能是符号链接")
+    staging = parent / uuid.uuid4().hex
+    staging.mkdir()
+    committed = False
+    used = {}
+    try:
+        # backup读取一致SQLite视图，避免复制正处于本地FTS事务中的文件。
+        for kind, name in DB_FILES.items():
+            if args.jobs_only and kind == "text" and "jobs" in kinds:
                 continue
-            for asset in (DB_FILES[k], DB_FILES[k] + ".gz"):
+            source = old / name
+            if _local_db_ok(source, name):
+                with closing(sqlite3.connect(source.resolve().as_uri() + "?mode=ro", uri=True)) as original, \
+                        closing(sqlite3.connect(staging / name)) as copied:
+                    original.backup(copied)
+        with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
+            futures = [(kind, pool.submit(_download, DB_FILES[kind], staging / DB_FILES[kind], prefer=args.mirror,
+                        **({"digests": remote, "verified": verified} if remote else {}))) for kind in kinds]
+            errors = []
+            for kind, future in futures:
+                try:
+                    used[kind] = future.result()
+                except BaseException as exc:
+                    errors.append(exc)
+            if errors:
+                raise errors[0]
+        for kind in set(kinds) | set(skipped):
+            if not _local_db_ok(staging / DB_FILES[kind]):
+                raise SystemExit(f"{DB_FILES[kind]} 业务结构校验失败，保留原快照")
+        if not args.jobs_only:
+            cov = _text_coverage(staging)
+            if cov is not None and cov < 0.9:
+                raise SystemExit(f"三库对应不足（JD采样覆盖 {cov:.0%}），保留原快照")
+            with closing(sqlite3.connect(staging / DB_FILES["jobs"])) as check:
+                check.execute("ATTACH DATABASE ? AS jd", (str(staging / DB_FILES["text"]),))
+                if check.execute("SELECT 1 FROM jd.job_text t LEFT JOIN job j ON j.id=t.job_id WHERE j.id IS NULL LIMIT 1").fetchone():
+                    raise SystemExit("正文含无法关联岗位，保留原快照")
+        for kind in kinds:
+            for asset in (DB_FILES[kind], DB_FILES[kind] + ".gz"):
                 meta.pop(asset, None)
                 meta.setdefault("_verified_assets", {}).pop(asset, None)
                 if asset in verified:
-                    meta[asset] = verified[asset]
-                    meta["_verified_assets"][asset] = verified[asset]
-        save_sync_meta(meta)
+                    meta[asset] = meta["_verified_assets"][asset] = verified[asset]
+        if not (staging / DB_FILES["text"]).exists():
+            for asset in (DB_FILES["text"], DB_FILES["text"] + ".gz"):
+                meta.pop(asset, None)
+                meta.setdefault("_verified_assets", {}).pop(asset, None)
+        (staging / ".sync.json").write_text(json.dumps(meta), encoding="utf-8")
+        activate(staging)
+        committed = True
+    finally:
+        if not committed:
+            discard_uncommitted(staging)
     with _open("jobs") as conn:
-        out = {"updated": [k for k in kinds if k not in errors and used.get(k) is not None],
+        out = {"updated": kinds,
                "mirror": {k: used.get(k) for k in kinds},
-               "data_as_of": q.data_as_of(conn), "home": str(home())}
+               "data_as_of": q.data_as_of(conn), "home": str(home()), "data_dir": str(data_dir())}
         if skipped:
             out["skipped"] = skipped
         print(json.dumps(out, ensure_ascii=False))
@@ -498,9 +533,8 @@ def cmd_show(args):
 
 
 def cmd_diff(args):
-    q.positive(args.days, "days")
     with _open("jobs") as conn:
-        since = (parse_ts(now_ts()) - timedelta(days=args.days)).strftime(FMT)
+        since = q.lookback_since(args.days, now=now_ts())
         meta = {}
         if args.by:
             rows = q.new_jobs_by_category(conn, since=since, limit=args.limit, company=args.company,
@@ -545,7 +579,8 @@ def cmd_sources(args):
             # 排障用：只看「上次没成功」或「过期」的源（rejected 会一直挂着旧岗位，值得盯）
             rows = [r for r in rows if r["stale"] or r.get("last_status") != "ok"]
         if getattr(args, "summary", False):
-            payload = envelope(conn, [], failing=[r["source_id"] for r in rows if r["stale"]],
+            failing = [r["source_id"] for r in rows if r["stale"]]
+            payload = envelope(conn, [], failing=failing[:20], omitted_failing=max(0, len(failing) - 20),
                                **q.data_status_summary(rows))
         else:
             payload = envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]])
@@ -556,11 +591,11 @@ def cmd_doctor(args):
     if getattr(args, "robots", False):
         _doctor_robots(args)
         return
-    out = {"home": str(home()),
-           "jobs_db": _local_db_ok(home() / DB_FILES["jobs"]),
-           "jd_text_db": _local_db_ok(home() / DB_FILES["text"]),
-           "calendar_db": _local_db_ok(home() / DB_FILES["calendar"])}
-    if not out["jobs_db"] and (home() / DB_FILES["jobs"]).exists():
+    out = {"home": str(home()), "data_dir": str(data_dir()),
+           "jobs_db": _local_db_ok(data_dir() / DB_FILES["jobs"]),
+           "jd_text_db": _local_db_ok(data_dir() / DB_FILES["text"]),
+           "calendar_db": _local_db_ok(data_dir() / DB_FILES["calendar"])}
+    if not out["jobs_db"] and (data_dir() / DB_FILES["jobs"]).exists():
         # 文件在但打不开：多半是下载被截断/磁盘问题，别让用户对着 traceback 发愣
         out["advice"] = "本地库损坏，运行 `jobradar update --force` 重新下载"
         print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -571,7 +606,7 @@ def cmd_doctor(args):
             out["fields"] = q.field_coverage(conn)
             out["source_health"] = q.source_freshness(q.data_status(conn, now=now_ts()))
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
-        cov = _text_coverage(home())
+        cov = _text_coverage(data_dir())
         if cov is not None:
             out["jd_text_match"] = round(cov, 3)
         campus_city = (out["fields"] or {}).get("campus_cities")
@@ -688,7 +723,7 @@ def cmd_calendar_build(args):
     sources = load_sources(sources_dir) if sources_dir.exists() else []
     targets = yaml.safe_load(Path(args.targets).read_text(encoding="utf-8"))
     with closing(connect(Path(args.out), "calendar")) as cal_conn, \
-            closing(connect(Path(args.jobs), "jobs")) as jobs_conn:
+            closing(connect(Path(args.jobs), "jobs", defer_search_index=True)) as jobs_conn:
         counts = cal.build(cal_conn, jobs_conn, manual=cal.load_manual(Path(args.entries)),
                            sources=sources, targets=targets, ts=now_ts())
         if args.check_links:
@@ -725,8 +760,11 @@ def cmd_crawl(args):
         raise SystemExit(f"没匹配到任何源（--sources {args.sources}）")
     with closing(connect(out / DB_FILES["jobs"], "jobs")) as jobs_conn, \
             closing(connect(out / DB_FILES["text"], "text")) as text_conn:
+        if getattr(args, "stale_only_hours", 0):
+            due = q.due_source_ids(jobs_conn, [s.id for s in sources], hours=args.stale_only_hours, now=now_ts())
+            sources = [s for s in sources if s.id in due]
         results = crawl(sources, jobs_conn, text_conn, ts=now_ts(), budget_seconds=args.budget_seconds,
-                        max_workers=getattr(args, "workers", 4))
+                        max_workers=getattr(args, "workers", 4), source_budget=getattr(args, "source_budget", None))
     summary = {sid: {"status": r.status, "opened": r.opened, "closed": r.closed,
                      "changed": r.changed, "reason": r.reason} for sid, r in sorted(results.items())}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
@@ -765,7 +803,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--dedupe", action="store_true",
                     # 注意：argparse 对 help 文本做 % 插值，裸 `%` 会让 `search --help` 直接抛
                     # ValueError: unsupported format character（2026-10-27 实测）→ 写成 `%%`
-                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants（全库约 9.2%% 是这种重复）")
+                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants")
     sp.add_argument("--exclude-store", action="store_true",
                     help="排除门店/零售岗（门店/店员/导购/收银/咖啡师/店长…；喜茶、星巴克门店帖约 8 千条）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
@@ -823,7 +861,7 @@ def build_parser() -> argparse.ArgumentParser:
     add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
     sp = add("sources", cmd_sources, "各数据源的抓取状态与新鲜度")
     sp.add_argument("--problems", action="store_true", help="只看上次未成功或已过期的源")
-    sp.add_argument("--summary", action="store_true", help="只给计数与有问题的源（277 行整表约 52KB）")
+    sp.add_argument("--summary", action="store_true", help="只给计数与有问题的源（默认最多20条异常详情，其余按需展开）")
     sp = add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
     sp.add_argument("--robots", action="store_true",
                     help="逐个源检查 robots.txt 是否允许抓它的列表页（抓新站前必跑）")
@@ -837,6 +875,8 @@ def build_parser() -> argparse.ArgumentParser:
                     help="整轮采集的时间预算；超出后剩余源标记为失败（daily 用，防止拖到 workflow 上限）")
     sp.add_argument("--workers", type=int, default=4,
                     help="并行站点数（按「适配器+站点」分组，同站点仍串行）")
+    sp.add_argument("--source-budget", type=float, default=None, help="单源完整采集的时间预算；超时丢弃本源部分结果")
+    sp.add_argument("--stale-only-hours", type=int, default=0, help="只刷新最近成功时间超过指定小时或从未成功的源；0为全部")
 
     sp = add("calendar-build", cmd_calendar_build, "（开发/CI）重建招聘日历库")
     sp.add_argument("--jobs", default="data/jobs.db")
@@ -891,7 +931,12 @@ def main(argv=None):
     _configure_stdio()
     args = build_parser().parse_args(argv)
     try:
-        args.fn(args)
+        with snapshot() if args.cmd not in {"update", "crawl", "calendar-build"} else nullcontext():
+            args.fn(args)
+    except NoData as e:
+        raise SystemExit(str(e)) from None
+    except OSError as e:
+        raise SystemExit(f"本地文件操作失败（{type(e).__name__}）；既有快照保持可用，请检查空间和权限") from None
     except sqlite3.DatabaseError as e:
         # 兜底：local.open_db 之外的路径（写库、只读库、锁库）漏出来的 sqlite 错误
         # 也不能让用户对着 traceback 发愣。

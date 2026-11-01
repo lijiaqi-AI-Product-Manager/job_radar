@@ -8,15 +8,20 @@ from contextlib import closing
 from pathlib import Path
 
 from jobradar.adapters.hotjob import verified_detail_fields
+from jobradar.jd_text import template_pollution
 from jobradar.models import Job
+from jobradar.normalize import normalize_cities
 from jobradar.pipeline.ingest import _event
 from jobradar.timeutil import now_ts
 
 
 def clean_saved_jd(text):
-    if not text or not all(marker in text for marker in ("[v-cloak]", ":root", "PAGE_THEME")):
+    if not template_pollution(text):
         return text
-    match = re.search(r"岗位职责|工作职责|职位描述|任职要求", text)
+    # CSS注释中的“职位描述”不是正文起点；这类残留无法从丢失DOM的文本可靠还原。
+    if ".job-desc" in text and "单位简介富文本" in text[:150]:
+        return None
+    match = re.search(r"(?:岗位职责|工作职责|职位描述|任职要求)\s*[:：]", text)
     if not match:
         return None
     body = re.split(r"单位信息|联系方式|相关职位|版权所有", text[match.start():], maxsplit=1)[0]
@@ -24,10 +29,11 @@ def clean_saved_jd(text):
 
 
 def apply_fixes(jobs, texts, *, ts, apply=False):
-    report = dict(changed=0, owner=0, jd=0, grad_year=0, degree_min=0)
+    report = dict(changed=0, owner=0, jd=0, cities=0, grad_year=0, degree_min=0)
     rows = jobs.execute(
         "SELECT j.*, c.name AS company FROM job j JOIN company c ON c.id=j.company_id "
-        "WHERE j.source_id IN ('beisen-ghbank','hotjob-422dbe') OR j.source_id LIKE 'yunjiuye-%'").fetchall()
+        "WHERE j.source_id IN ('beisen-ghbank','hotjob-422dbe') OR j.source_id LIKE 'yunjiuye-%' "
+        "OR j.cities LIKE '%市%' OR j.cities LIKE '%TP%' OR j.cities LIKE '%,%'").fetchall()
     former_owners = set()
     with jobs, texts:
         for row in rows:
@@ -37,6 +43,11 @@ def apply_fixes(jobs, texts, *, ts, apply=False):
             values.update(company=row["company"], cities=json.loads(row["cities"]),
                           description=description, requirements=requirements)
             fields = []
+            normalized_cities = normalize_cities(values["cities"])
+            if normalized_cities != values["cities"]:
+                values["cities"] = normalized_cities
+                fields.append("cities")
+                report["cities"] += 1
             if row["source_id"] == "beisen-ghbank" and row["company"] != "广东华兴银行":
                 former_owners.add(row["company_id"])
                 values["company"] = "广东华兴银行"
@@ -65,8 +76,8 @@ def apply_fixes(jobs, texts, *, ts, apply=False):
             job = Job(**values)
             jobs.execute("INSERT OR IGNORE INTO company(name) VALUES (?)", (job.company,))
             company_id = jobs.execute("SELECT id FROM company WHERE name=?", (job.company,)).fetchone()[0]
-            jobs.execute("UPDATE job SET company_id=?, grad_year=?, degree_min=?, content_hash=? WHERE id=?",
-                         (company_id, job.grad_year, job.degree_min, job.content_hash(), row["id"]))
+            jobs.execute("UPDATE job SET company_id=?, grad_year=?, degree_min=?, cities=?, content_hash=? WHERE id=?",
+                         (company_id, job.grad_year, job.degree_min, json.dumps(job.cities, ensure_ascii=False), job.content_hash(), row["id"]))
             if "text" in fields:
                 texts.execute("UPDATE job_text SET description=?, requirements=? WHERE job_id=?",
                               (job.description, job.requirements, row["id"]))

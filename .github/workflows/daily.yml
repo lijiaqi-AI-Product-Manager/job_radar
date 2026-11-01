@@ -5,6 +5,15 @@ on:
   schedule:
     - cron: "17 19 * * *"   # UTC 19:17 = 北京时间 03:17
   workflow_dispatch:
+    inputs:
+      budget_seconds:
+        type: number
+        default: 14400
+        description: 整轮采集预算（秒）
+      stale_only_hours:
+        type: number
+        default: 0
+        description: 只补超过指定小时未成功的源，0为全部
 
 permissions:
   contents: write
@@ -18,8 +27,8 @@ concurrency:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    # 90 分钟采集预算之外，预留迁移、入库、导出上传与最多 30 分钟日历构建的时间。
-    timeout-minutes: 180
+    # 四小时采集预算之外，预留迁移、入库、日历构建、质量门禁与上传时间。
+    timeout-minutes: 330
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -32,43 +41,34 @@ jobs:
         run: |
           mkdir -p data
           if gh release view data-latest >/dev/null 2>&1; then
-            gh release download data-latest -D data -p 'jobs.db' -p 'jd_text.db'
-            # 日历库保存链接探活历史（连续失败起始时间）；旧发布里没有它，缺失不报错
-            gh release download data-latest -D data -p 'calendar.db' || echo "no calendar.db yet"
+            uv run python scripts/download_snapshots.py --out data
             python3 -c "import sqlite3; c=sqlite3.connect('data/jobs.db'); assert c.execute('PRAGMA quick_check').fetchone()[0]=='ok'; print('restored jobs:', c.execute('SELECT COUNT(*) FROM job').fetchone()[0])"
           else
             echo "no data-latest release yet, starting fresh"
           fi
           python3 -c "import sqlite3,os; p='data/jobs.db'; print(sqlite3.connect(p).execute('SELECT COUNT(*) FROM job').fetchone()[0] if os.path.exists(p) else 0)" > restored_count.txt
 
+      - name: Preserve snapshots before manual recovery
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshots-before-recovery
+          path: data/*.db
+          compression-level: 9
+          retention-days: 14
+
       - name: Crawl
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
-        run: uv run jobradar crawl --sources sources --out data --budget-seconds 5400 --workers 12 | tee crawl-summary.json
+        run: uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget 900 --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" | tee crawl-summary.json
 
-      - name: Publish data-latest
-        run: |
-          # 入库从不删行：岗位行数变少说明库出了问题，拒绝发布
-          python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); print('jobs', old, '->', n); assert n >= old, 'job rows decreased; refusing to publish'"
-          gh release view data-latest >/dev/null 2>&1 || \
-            gh release create data-latest --title "Latest data" --notes "每日自动更新。jobs.db 为主库，jd_text.db 为 JD 原文库。" --latest=false
-          # 压缩版供用户下载（CLI 优先取 .gz）；原文件保留给次日恢复与旧版 CLI
-          uv run python scripts/export_public_databases.py --home data --out data/public
-          gzip -9 -k -f data/public/jobs.db data/public/jd_text.db
-          ls -l data/
-          gh release upload data-latest data/public/jobs.db data/public/jd_text.db data/public/jobs.db.gz data/public/jd_text.db.gz crawl-summary.json --clobber
+      - name: Apply reviewed data corrections
+        run: uv run python scripts/repair_reviewed_data.py --home data --apply
 
       - name: Build recruiting calendar
-        # 人工条目（calendar/entries）+ 数据层自动生成 -> calendar.db，并对全部链接探活。
-        # 失败不阻塞岗位数据发布，但**不再静默**：上传后校验 build 时间戳是不是今天，
-        # 不是就让这一步失败（2026-10-23 之前串行探活常年超时 + continue-on-error，
-        # 发布里的 calendar.db 停在旧版本好几轮都没人发现）。
-        continue-on-error: true
+        # 三库成套发布；日历构建与质量门禁失败均阻止切换。链接探活由独立任务完成。
         timeout-minutes: 30
         run: |
-          uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db --check-links
-          uv run python -c "from pathlib import Path; from jobradar.release_export import export_database; export_database(Path('data/calendar.db'), Path('data/public/calendar.db'), 'calendar')"
-          gzip -9 -k -f data/public/calendar.db
-          gh release upload data-latest data/public/calendar.db data/public/calendar.db.gz --clobber
+          uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db
           uv run python - <<'PY'
           import sqlite3, sys, datetime
           ts = sqlite3.connect("data/calendar.db").execute("SELECT MAX(ts) FROM build").fetchone()[0]
@@ -77,6 +77,17 @@ jobs:
           if not str(ts).startswith(today):
               sys.exit(f"calendar.db 没有更新到今天（{ts}），发布里会继续是旧数据")
           PY
+
+      - name: Publish data-latest
+        shell: bash
+        run: |
+          python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); assert n >= old, 'job rows decreased; refusing to publish'"
+          gh release view data-latest >/dev/null 2>&1 || gh release create data-latest --title "Latest data" --notes "Verified recruiting snapshots" --latest=false
+          uv run python scripts/export_public_databases.py --home data --out data/public
+          uv run python scripts/release_check.py --home data/public
+          gzip -n -9 -k -f data/public/jobs.db data/public/jd_text.db data/public/calendar.db
+          uv run python scripts/publish_snapshots.py --home data/public
+          gh release upload data-latest crawl-summary.json --clobber
 
       - name: Weekly archive snapshot
         run: |

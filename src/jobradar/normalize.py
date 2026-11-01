@@ -99,6 +99,27 @@ def cities_from_text(text: str | None) -> list[str]:
     return out
 
 
+def normalize_cities(values: list[str]) -> list[str]:
+    """规范已提供的城市文本；已确认的TP职位编号不作地点推断。"""
+    out = []
+    for value in values:
+        value = value.strip()
+        if not value or re.fullmatch(r"TP\d{4,}", value, re.I):
+            continue
+        parts = []
+        if re.search(r"[\u3400-\u9fff]", value):
+            for part in _CITY_SPLIT.split(value):
+                levels = [level.strip() for level in _CITY_LEVELS.split(part) if level.strip()]
+                known = next((level.removesuffix("市") for level in levels if level.removesuffix("市") in KNOWN_CITIES), None)
+                parts.append(known or part.strip().removesuffix("市"))
+        else:
+            parts = [value]
+        for city in parts:
+            if city and city not in out:
+                out.append(city)
+    return out
+
+
 # 标题中被分隔符明确隔开的城市名才算（"验证工程师-深圳-2027"、"临床医师（武汉）"）；不做模糊匹配
 KNOWN_CITIES = frozenset("""
 北京 上海 天津 重庆 深圳 广州 杭州 南京 苏州 成都 武汉 西安 合肥 长沙 郑州 济南 青岛 厦门 福州 宁波
