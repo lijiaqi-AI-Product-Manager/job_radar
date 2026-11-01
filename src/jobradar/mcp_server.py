@@ -1,6 +1,6 @@
 """jobradar MCP server：只读薄壳，所有逻辑在 core/queries.py。
 
-安装：pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
+安装：pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 运行：jobradar-mcp（stdio）。数据需先用 `jobradar update` 下载。
 """
 

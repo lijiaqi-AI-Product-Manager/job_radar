@@ -1,10 +1,12 @@
 # 安装与版本兼容
 
+安装命令使用 `--force-reinstall`：不同源码修订可能使用同一版本号，仅加 `--upgrade` 会保留先前安装的代码。
+
 当前功能指南固定到已验证的源码提交 `2e9df6d1c7e7907f3815388be7e9723c7e03f0c3`。
 直接下载源码归档安装，不要求本机安装 Git：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
