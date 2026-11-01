@@ -440,6 +440,50 @@ def test_calendar_open_on_excludes_expired(tmp_path, jobs, cal_db):
     assert got == {"live", "unknown"}
 
 
+def test_calendar_automatically_hides_expired_and_keeps_history(tmp_path, jobs, cal_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    d = write_entries(tmp_path, "字节跳动", [
+        manual(id="deadline-day", apply_end="2026-11-01"),
+        manual(id="unknown-end", apply_end=None),
+    ])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T15:59:59Z")
+    assert len(calendar_entries(cal_db, group="字节跳动")) == 2
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T16:00:00Z")
+    assert [r["id"] for r in calendar_entries(cal_db, group="字节跳动")] == ["unknown-end"]
+    assert len(calendar_entries(cal_db, group="字节跳动", include_expired=True)) == 2
+    assert len(calendar_entries(cal_db, group="字节跳动", open_on="2026-11-01")) == 2
+    assert cal_db.execute("SELECT COUNT(*) FROM entry WHERE origin='manual'").fetchone()[0] == 2
+
+
+def test_expired_exact_company_never_falls_back_to_another_company(tmp_path, jobs, cal_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    d = write_entries(tmp_path, "京东", [manual(id="jd-ended", company="京东", apply_end="2026-11-01")])
+    write_entries(tmp_path, "京东方", [manual(id="boe-open", company="京东方", apply_end=None)])
+    cal.build(cal_db, jobs, manual=cal.load_manual(d), sources=[], targets=TARGETS, ts=T(21))
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T16:00:00Z")
+    assert calendar_entries(cal_db, group="京东") == []
+    assert calendar_entries(cal_db, company="京东") == []
+
+
+def test_one_job_deadline_does_not_expire_an_entire_auto_batch(jobs_db, cal_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    ingest_run(jobs_db, "s1", [
+        make_job(1, apply_end="2026-11-01"),
+        make_job(2, apply_end="2026-12-31"),
+    ], ts=T(21))
+    cal.build(cal_db, jobs_db, manual=[], sources=[], targets={"sectors": {}}, ts=T(21))
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T16:00:00Z")
+    [row] = calendar_entries(cal_db, group="腾讯")
+    assert row["apply_end"] == "2026-11-01"  # 自动汇总记录的是最早岗位截止，并非整批截止。
+    assert row["deadline_scope"] == "job_evidence"
+    [on_day] = calendar_entries(cal_db, group="腾讯", open_on="2026-11-02")
+    assert on_day["window_status"] == "unknown"
+
+
 def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
     """--has-tracks / --has-window：只返回「有方向」/「有网申时间」的条目。
 
@@ -457,8 +501,9 @@ def test_calendar_filter_by_tracks_and_window(tmp_path, jobs, cal_db):
 
     # 只看人工条目：数据层自动条目也可能有 tracks（来自岗位职类）
     assert {r["id"] for r in calendar_entries(cal_db, has_tracks=True, origin="manual")} == {"x-dir"}
-    assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual")} == {"x-end-only", "x-win"}
-    assert len(calendar_entries(cal_db, origin="manual")) == 4
+    assert {r["id"] for r in calendar_entries(cal_db, has_window=True, origin="manual",
+                                             include_expired=True)} == {"x-end-only", "x-win"}
+    assert len(calendar_entries(cal_db, origin="manual", include_expired=True)) == 4
 
 def test_calendar_stats_exposes_both_coverage_definitions(built, jobs):
     """stats 里「有日历条目」与「有日历或数据」是两种口径，都要给出来且不相等。"""

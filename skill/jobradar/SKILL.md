@@ -16,6 +16,7 @@ jobradar doctor
 - 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
+- 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 没装 `jobradar`：`pip install "jobsearchradar[mcp]"`（PyPI 包名 `jobsearchradar`，命令仍是 `jobradar`）。数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。
 
@@ -62,6 +63,7 @@ jobradar doctor
    - 每条都有 `source`（来源名称、链接、发布日期）与 `as_of`（核实日期），回答时注明，例如"据字节跳动校园招聘官网（核实于 2026-10-21）"。
    - `origin: manual` 是人工从官方公众号/官网/政府平台整理的；`origin: auto` 是从岗位数据自动汇总的（`apply_end` 取该批尚未过期的最早截止日，全部过期时取最晚截止日；它不代表所有岗位同一天截止。`apply_start` 只在多数职位同一天上架时才给，否则为 `null`——单条上架日是补录日，不是开放日）。
    - 高校公告的「过期时间」「已过期」只表示展示期限，不能据此断定企业截止投递。已撤回的日期不能从 `notes` 里的历史链接再补回来。
+   - `deadline_scope: job_evidence` 的日期来自岗位样本，不能说成整个批次截止；这类条目不会仅因某个岗位截止就整批隐藏，`window_status: unknown` 时仍需到原页确认。
    - 字段为 `null` 表示来源没写，**不要补全或推测**（例如不要根据往年推测今年截止日期）。
    - `jd_status: linked` → 可以接着用 `jobradar search --company <jd_company>` 列出具体岗位与 JD。
    - `jd_status: blocked` → 只给日历信息，并**把 `hint` 原样放在回答最后一句**（如"拼多多希望你去他们的招聘页逛一逛哦~"），附 `apply_url`。

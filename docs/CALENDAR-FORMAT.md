@@ -25,6 +25,12 @@
 没有正文依据时留空，并在 `notes` 保留证据链接与不确定性。
 2026-11-01 撤回的日期见 [修正记录](../calendar/corrections/2026-11-01-deadlines.yaml)。
 
+默认查询按北京时间自动隐藏 `apply_end` 早于今天的批次，截止当天仍保留。
+`calendar --include-expired` 可查历史；`--open-on` 以指定日期判断。
+缺少截止日的条目继续保留，不能把未知当成已截止。日历源文件和证据无须每日手动删改。
+`deadline_scope=job_evidence` 的日期来自岗位样本，不代表整批截止，不据此整批隐藏；
+`deadline_scope=batch` 才按批次截止处理，日期缺失为 `unknown`。
+
 ## JD 规则（用户明确：不要求 100%）
 
 - **有公开 JD**：必须挂上 —— 关联数据层的岗位（`jd_status=linked`）或官方 JD 页链接（`jd_status=official_page`）

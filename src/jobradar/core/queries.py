@@ -10,7 +10,7 @@ from typing import NamedTuple
 
 from jobradar.aliases import match_names
 from jobradar.store.migrate import ensure_search_index
-from jobradar.timeutil import parse_ts
+from jobradar.timeutil import now_ts, parse_ts, shanghai_date
 
 _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category, j.subcategory,
     j.recruit_type, j.grad_year, j.batch, j.cities, j.degree_min, j.department,
@@ -164,6 +164,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     where, args = [], []
     if not include_closed:
         where.append("j.closed_at IS NULL")
+        # 快照可能早于今天：明示截止日一过就从当前岗位中隐藏，无需等该源再次成功抓取。
+        # 这是查询过滤，不改 closed_at / miss_count，失败与拒收仍不能改变岗位状态。
+        where.append("(j.apply_end IS NULL OR j.apply_end >= ?)")
+        args.append(shanghai_date(now_ts()))
     if exclude_store:
         # 只按标题关键词排，不用公司名（公司名排会误伤整家公司的正常岗位）
         where.append("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")")
@@ -457,6 +461,8 @@ def _cal_dict(r) -> dict:
         d[k] = json.loads(d[k]) if d[k] else []
     d["source"] = {"type": d.pop("source_type"), "name": d.pop("source_name"),
                    "url": d.pop("source_url"), "date": d.pop("source_date")}
+    d["deadline_scope"] = ("job_evidence" if d["source"]["type"] == "data_layer" else "batch") \
+        if d["apply_end"] else "unknown"
     # 提示语用公司名（用户要求："字节跳动希望你去他们的招聘页逛一逛哦~"）；
     # 用 product 会出现"管理培训生（TET）希望你去…"这种病句（2026-10-22 实测）。
     d["hint"] = BLOCKED_HINT.format(name=d["group_name"]) if d["jd_status"] == "blocked" else None
@@ -466,7 +472,7 @@ def _cal_dict(r) -> dict:
 def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
                      origin=None, open_on=None, has_tracks=None, has_window=None,
                      city=None, direction=None, deadline_before=None, deadline_after=None,
-                     limit=100) -> list[dict]:
+                     include_expired=False, limit=100) -> list[dict]:
     """日历条目。
 
     过滤先按**精确**匹配；没有结果再退化为子串（`--group 字节` 仍能找到「字节跳动」）。
@@ -485,8 +491,14 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     deadline_before / deadline_after：按**截止日**筛（YYYY-MM-DD）。只看 apply_end 有值的条目，
     `--deadline-before` 用来找「快截止的」，`--deadline-after` 用来排除已过的。
     没写截止日的条目**不会**被这两个筛选返回——语义是"我知道它什么时候截止，且符合范围"。
+    默认按北京时间隐藏已明确截止的批次；include_expired=True 可查历史。
+    显式 open_on 时以指定日期为准，不再套用今天的过期筛选。
     """
+    today = shanghai_date(now_ts())
+    exact_identity_found = False
+
     def run(exact: bool) -> list[dict]:
+        nonlocal exact_identity_found
         where, args = [], []
         if group:
             names = match_names(group)
@@ -501,6 +513,14 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
             else:
                 where.append("(" + " OR ".join(["company LIKE ?", "product LIKE ?", "group_name LIKE ?"] * len(names)) + ")")
                 args += [f"%{n}%" for n in names for _ in range(3)]
+        if exact and where:
+            # 精确公司只有过期条目时，也不能退化到另一家名字相似的公司。
+            exact_identity_found = bool(cal_conn.execute(
+                "SELECT 1 FROM entry WHERE " + " AND ".join(where) + " LIMIT 1", args).fetchone())
+        if not include_expired and not open_on:
+            # 数据层自动汇总取的是最早岗位截止，不能据此判定整批结束。
+            where.append("(apply_end IS NULL OR apply_end >= ? OR source_type='data_layer')")
+            args.append(today)
         if project_type:
             where.append("project_type LIKE ?")
             args.append(f"%{project_type}%")
@@ -535,14 +555,13 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         if deadline_after:
             where.append("apply_end IS NOT NULL AND apply_end >= ?")
             args.append(deadline_after)
+        if (deadline_before or deadline_after) and not include_expired and not open_on:
+            where.append("apply_end >= ?")
+            args.append(today)
         if open_on:
-            where.append("(apply_start IS NULL OR apply_start <= ?) AND (apply_end IS NULL OR apply_end >= ?)")
+            where.append("(apply_start IS NULL OR apply_start <= ?) AND "
+                         "(apply_end IS NULL OR apply_end >= ? OR source_type='data_layer')")
             args += [open_on, open_on]
-            # 明确问「某天还在开放」时，已经过了截止日的条目绝不能算进来。
-            # 上面那个条件对 apply_end 为 NULL 的条目是放行的（没写截止日 ≠ 已截止），
-            # 但写了截止日且早于那天的必须挡掉——否则「今天还能投什么」会返回去年的批次。
-            where.append("(apply_end IS NULL OR apply_end >= ?)")
-            args.append(open_on)
         sql = "SELECT * FROM entry"
         if where:
             sql += " WHERE " + " AND ".join(where)
@@ -561,13 +580,14 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         rows = [_cal_dict(r) for r in cal_conn.execute(sql, [*args, limit])]
         if open_on:
             for d in rows:
-                known = d["apply_start"] is not None and d["apply_end"] is not None
+                known = (d["apply_start"] is not None and d["apply_end"] is not None
+                         and d["deadline_scope"] == "batch")
                 d["window_status"] = "open" if known else "unknown"
         return rows
 
     if group or company:
         rows = run(exact=True)
-        if rows:
+        if rows or exact_identity_found:
             return rows
     return run(exact=False)
 

@@ -106,6 +106,15 @@ def test_calendar_tool_filters_by_city_and_direction(cal_home):
     assert mcp_server.calendar(has_tracks=True)["results"]
 
 
+def test_calendar_tool_expires_by_default_but_keeps_history(cal_home, monkeypatch):
+    from jobradar.core import queries as q
+
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-12-01T00:00:00Z")
+    assert mcp_server.calendar(group="腾讯")["results"] == []
+    assert len(mcp_server.calendar(group="腾讯", include_expired=True)["results"]) == 1
+    assert len(mcp_server.calendar(group="腾讯", open_on="2026-11-30")["results"]) == 1
+
+
 def test_calendar_tool_empty_city_says_why(cal_home):
     """按城市筛空了要给出 advice：只有部分条目写了城市，空≠没有岗位。
     不说清楚的话，用户会以为「拉萨真的没有校招」而放弃。"""

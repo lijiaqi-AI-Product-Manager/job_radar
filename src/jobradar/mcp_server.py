@@ -50,6 +50,8 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
     结果带 match（JD 中命中处的片段，仅标题命中时为 null）。
+    默认自动隐藏明示截止日已过的岗位（按北京时间，截止当天仍保留）；include_closed=True
+    可查已下架或已到期的历史记录。来源没有截止日时不会仅因记录陈旧而隐藏。
     deadline_before / deadline_after 为 YYYY-MM-DD，按**网申截止日**筛（"这周快截止的"用
     deadline_before=本周日）。只有源里明确写了截止日的岗位参与比较——目前约 2.6%，
     所以返回为空不等于"没有快截止的岗位"，要在回答里说明这个口径。"""
@@ -179,12 +181,15 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
              city: str | None = None, direction: str | None = None,
              deadline_before: str | None = None, deadline_after: str | None = None,
              has_tracks: bool = False, has_window: bool = False,
-             limit: int = 50) -> dict:
+             include_expired: bool = False, limit: int = 50) -> dict:
     """招聘日历：各公司的招聘项目（提前批/秋招正式批/暑期实习/社招…）、届次、方向、网申时间、城市、投递入口与来源。
     覆盖抓不到 JD 的大厂（人工从官方公众号/官网/政府平台整理，origin=manual），以及数据层自动生成的条目（origin=auto）。
     group 集团（如 阿里巴巴）、company 具体公司或产品（如 飞猪）、project_type 子串匹配（如 秋招、实习）；
     open_on=YYYY-MM-DD 只看当天网申开放中的；jd_status=linked 表示可用 search_jobs 查到 JD；
     jd_status=blocked 时把 hint 原样放在回答末尾。
+    默认按北京时间自动隐藏已明确截止的批次；include_expired=True 查询历史。
+    传 open_on 时以指定日期判断开放情况。缺少截止日不能视为已截止。
+    deadline_scope=job_evidence 的日期来自岗位样本，不能据此说整批结束；这类条目不因单岗到期整批隐藏。
 
     按城市/方向/截止日筛（回答「我能在北京投什么」「11 月前截止的还有哪些」用这几个参数）：
     city（如 北京）、direction（方向名子串，如 算法 / 技术类）、deadline_before / deadline_after（YYYY-MM-DD）。
@@ -202,6 +207,7 @@ def calendar(group: str | None = None, company: str | None = None, project_type:
                                       deadline_before=deadline_before, deadline_after=deadline_after,
                                       has_tracks=True if has_tracks else None,
                                       has_window=True if has_window else None,
+                                      include_expired=include_expired,
                                       limit=min(limit, 200))
             env = envelope(None, rows, as_of=q.calendar_as_of(conn))
             # 空结果不能只说「没有」：把「是因为筛选太窄还是真的没有」讲清楚

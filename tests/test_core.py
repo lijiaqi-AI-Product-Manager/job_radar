@@ -465,3 +465,15 @@ def test_search_deadline_filters_only_known_deadlines(jobs_db):
     assert [r["id"] for r in later] == ["s1:2"]
     # 不传截止日条件时三条都在（未知截止日 ≠ 已截止）
     assert len(search_jobs(jobs_db, limit=10)) == 3
+
+
+def test_search_automatically_hides_expired_snapshot_jobs_without_mutating_status(jobs_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    ingest_run(jobs_db, "s1", [make_job(1, apply_end="2026-11-01"), make_job(2)], ts=T(1))
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T15:59:59Z")
+    assert len(search_jobs(jobs_db)) == 2  # 北京时间截止当天仍可投
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T16:00:00Z")
+    assert [r["id"] for r in search_jobs(jobs_db)] == ["s1:2"]
+    assert len(search_jobs(jobs_db, include_closed=True)) == 2
+    assert jobs_db.execute("SELECT closed_at FROM job WHERE id='s1:1'").fetchone()[0] is None

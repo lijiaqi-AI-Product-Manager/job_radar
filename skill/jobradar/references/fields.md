@@ -44,6 +44,7 @@
 | `company` / `product` | 具体公司/产品线，可能为空 |
 | `project_type` | 提前批/秋招正式批/春招/暑期实习/日常实习/校招/社招… |
 | `apply_start` / `apply_end` | 网申起止（来源写明才填，否则为空） |
+| `deadline_scope` | `batch` 批次截止 / `job_evidence` 岗位样本日期（不代表整批截止）/ `unknown` 截止日未知 |
 | `cities` | 工作城市（同上） |
 | `apply_url` | 投递入口（官方招聘站） |
 | `jd_status` | `linked`（数据层有 JD）/ `official_page`（有公开 JD 页）/ `blocked`（被挡，只给日历）/ `none` |

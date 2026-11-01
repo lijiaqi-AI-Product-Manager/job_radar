@@ -36,6 +36,24 @@ def test_search_envelope(home, capsys):
     assert [r["company"] for r in out["results"]] == ["字节跳动"]
 
 
+def test_calendar_cli_automatically_expires_and_can_query_history(home, capsys, monkeypatch):
+    from jobradar.core import queries as q
+    from jobradar.pipeline import calendar as cal
+
+    jobs = connect(home / "jobs.db", "jobs")
+    calendar = connect(home / "calendar.db", "calendar")
+    entry = cal.ManualEntry(id="expired", group="独立批次", project_type="校招",
+                            apply_end="2026-11-01", as_of="2026-10-01",
+                            source={"type": "official_site", "name": "招聘官网", "url": "https://join.qq.com"})
+    cal.build(calendar, jobs, manual=[entry], sources=[], targets={"sectors": {}}, ts=T(1))
+    calendar.close()
+    jobs.close()
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-01T16:00:00Z")
+    assert run(capsys, "calendar", "--origin", "manual")["results"] == []
+    assert len(run(capsys, "calendar", "--origin", "manual", "--include-expired")["results"]) == 1
+    assert len(run(capsys, "calendar", "--origin", "manual", "--open-on", "2026-11-01")["results"]) == 1
+
+
 def test_show_found_and_missing(home, capsys):
     assert run(capsys, "show", "s1:1")["results"][0]["requirements"] == "PyTorch"
     out = run(capsys, "show", "nope")

@@ -88,6 +88,8 @@ def _print_calendar_row(r: dict):
             parts.append(f"{t.get('direction')}（{roles}）" if roles else str(t.get("direction")))
         print(f"  方向：{'；'.join(parts)}")
     print(f"  网申：{_fmt_window(r)}")
+    if r.get("deadline_scope") == "job_evidence":
+        print("  注意：日期来自岗位样本，不代表整个批次同一天截止")
     print(f"  城市：{'、'.join(r.get('cities') or []) or '未提供'}")
     print(f"  入口：{r.get('apply_url') or '未提供'}")
     src = r.get("source") or {}
@@ -581,6 +583,7 @@ def cmd_calendar(args):
                                   direction=getattr(args, "direction", None),
                                   deadline_before=getattr(args, "deadline_before", None),
                                   deadline_after=getattr(args, "deadline_after", None),
+                                  include_expired=getattr(args, "include_expired", False),
                                   limit=args.limit)
         env = envelope(None, rows, as_of=q.calendar_as_of(conn))
         if not rows and args.group:
@@ -709,7 +712,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--text", help="全文检索：标题 + JD 原文，多个词用空格分隔（都须出现），如 \"PyTorch 大模型\"")
     sp.add_argument("--deadline-before", help="YYYY-MM-DD：只看截止日不晚于该日的岗位（找快截止的）")
     sp.add_argument("--deadline-after", help="YYYY-MM-DD：只看截止日不早于该日的岗位（排除已过期）")
-    sp.add_argument("--include-closed", action="store_true")
+    sp.add_argument("--include-closed", action="store_true", help="包含已下架或已明确到期的历史岗位")
     sp.add_argument("--limit", type=int, default=50)
 
     sp = add("show", cmd_show, "岗位详情（含 JD 原文，若已下载）")
@@ -740,6 +743,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--type", help="项目类型（子串匹配），如 秋招 / 提前批 / 实习 / 社招")
     sp.add_argument("--grad-year", type=int)
     sp.add_argument("--origin", choices=["manual", "auto"], help="manual=人工编辑，auto=数据层自动生成")
+    sp.add_argument("--include-expired", action="store_true", help="包含已明确截止的历史批次（默认自动隐藏）")
     sp.add_argument("--open-on", help="YYYY-MM-DD：该日可能在投的（没写起止的条目也会返回，带 window_status=unknown）")
     sp.add_argument("--has-tracks", action="store_true", help="只看有方向（track）的条目")
     sp.add_argument("--has-window", action="store_true", help="只看写了网申起止的条目")
