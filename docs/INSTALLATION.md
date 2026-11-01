@@ -2,18 +2,18 @@
 
 安装命令使用 `--force-reinstall`：不同源码修订可能使用同一版本号，仅加 `--upgrade` 会保留先前安装的代码。
 
-当前功能指南固定到已验证的源码提交 `2e9df6d1c7e7907f3815388be7e9723c7e03f0c3`。
+当前功能指南固定到已验证的源码提交 `ebe2aba4e9c80f9cec93505599cde7ad12ddaac3`。
 直接下载源码归档安装，不要求本机安装 Git：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/2e9df6d1c7e7907f3815388be7e9723c7e03f0c3.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ebe2aba4e9c80f9cec93505599cde7ad12ddaac3.zip"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
 已安装旧版时也执行同一条升级命令；请在运行 CLI 或 MCP 的那个 Python 环境中安装。
-仅有 `jobradar` 命令存在，或 `--version` 显示 `2.0.0`，不能证明包含最近的修正，固定提交地址用于明确代码来源。
+仅有 `jobradar` 命令存在不能证明包含最近的修正；本次安装后应显示 `2.0.1`，固定提交地址用于明确代码来源。
 
 ## 渠道区别
 
@@ -21,7 +21,7 @@ jobradar calendar --help
 | :--- | :--- | :--- |
 | PyPI | `2.0.0` 已发布，`2.0.1` 正在完成发布验收 | 补丁发布后以官方索引重新安装核验 |
 | GitHub `v2.0.0` | 2.0 正式版安装包 | 发布时的固定版本，不包含发布之后的全部修正 |
-| 上述固定源码提交 | 代码版本 `2.0.0`，含截止筛选、日历城市筛选、自动到期与历史回查 | 本指南的默认安装目标 |
+| 上述固定源码提交 | 代码版本 `2.0.1`，含城市召回、正文验证、来源新鲜度与成套快照更新 | 本指南的默认安装目标 |
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供包索引当前版本。
 固定提交记录维护于 [install-target.json](install-target.json)，当前仓库的后续文档修订不改变该提交的内容。
