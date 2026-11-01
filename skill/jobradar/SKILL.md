@@ -9,16 +9,16 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应已验证的固定源码提交 `ebe2aba4e9c80f9cec93505599cde7ad12ddaac3`：
+本指南对应已在全新环境验证的 PyPI `2.0.1`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ebe2aba4e9c80f9cec93505599cde7ad12ddaac3.zip"
+pip install --upgrade "jobsearchradar[mcp]==2.0.1"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-2026-11-01 已核实 PyPI `2.0.0` 发布；本轮修正使用独立的 `2.0.1` 补丁。发布状态以 [安装指南](../../docs/INSTALLATION.md) 为准。已安装旧版也用上述命令升级，
+2026-11-01 已从官方索引安装并验证 `2.0.1`，GitHub 与 PyPI 的发行文件 SHA-256 一致。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
 不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
 `calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
 先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。

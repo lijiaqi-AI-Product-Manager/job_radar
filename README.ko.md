@@ -13,7 +13,7 @@
 PyPI 패키지 이름은 `jobsearchradar`, 설치 후 명령은 `jobradar`입니다. Python 3.11+가 필요하며 Windows / macOS / Linux를 지원합니다.
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ebe2aba4e9c80f9cec93505599cde7ad12ddaac3.zip"
+pip install --upgrade "jobsearchradar==2.0.1"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -52,7 +52,7 @@ jobradar doctor
 ## MCP 연결
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ebe2aba4e9c80f9cec93505599cde7ad12ddaac3.zip"
+pip install --upgrade "jobsearchradar[mcp]==2.0.1"
 jobradar update
 ```
 
