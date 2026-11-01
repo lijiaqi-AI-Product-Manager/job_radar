@@ -988,6 +988,18 @@ def field_coverage(jobs_conn) -> dict:
             "campus_cities": ratio(campus_city, campus), "campus_grad_year": ratio(campus_gy, campus)}
 
 
+def jd_row_coverage(jobs_conn, text_conn):
+    """全部未下架岗位的正文行覆盖，不把缺失正文推断为不同代快照。"""
+    ids = [r[0] for r in jobs_conn.execute("SELECT id FROM job WHERE closed_at IS NULL")]
+    if not ids:
+        return None
+    found = 0
+    for offset in range(0, len(ids), 2000):
+        found += text_conn.execute("SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?))",
+                                  (json.dumps(ids[offset:offset + 2000]),)).fetchone()[0]
+    return found / len(ids)
+
+
 def data_summary(jobs_conn, text_conn=None) -> dict:
     """岗位数据层概况；with_jd_text 为有 JD 正文的在招岗位数（未下载原文库时为 None）。"""
     today = shanghai_date(now_ts())

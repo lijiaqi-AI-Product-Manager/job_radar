@@ -115,3 +115,35 @@ def test_failed_pointer_replace_keeps_previous_generation(tmp_path, monkeypatch)
     assert not (tmp_path / ".active.json").exists()
     with local.db("jobs") as conn:
         assert conn.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 1
+
+
+def test_valid_bundle_may_contain_jobs_without_jd(tmp_path, monkeypatch):
+    """无正文是合法缺失，不能据其比例认定三库混代。"""
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    seed(tmp_path)
+    monkeypatch.setattr(cli, "_download", lambda *a, **kw: "github")
+    cli.main(["update", "--force"])
+    assert local.data_dir() != tmp_path
+    with local.db("jobs") as conn:
+        assert conn.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 1
+    with local.db("text") as conn:
+        assert conn.execute("SELECT COUNT(*) FROM job_text").fetchone()[0] == 0
+
+
+def test_orphan_text_still_rejects_entire_bundle(tmp_path, monkeypatch):
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    seed(tmp_path)
+    original = {name:(tmp_path/name).read_bytes() for name in local.DB_FILES.values()}
+
+    def download(name,destination,**kwargs):
+        if name == 'jd_text.db':
+            with closing(sqlite3.connect(destination)) as conn:
+                conn.execute('INSERT INTO job_text VALUES (?,?,?,?)',('unknown:1','孤立正文',None,T(2)))
+                conn.commit()
+        return 'github'
+
+    monkeypatch.setattr(cli,'_download',download)
+    with pytest.raises(SystemExit,match='无法关联岗位'):
+        cli.main(['update','--force'])
+    assert local.data_dir()==tmp_path
+    assert all((tmp_path/name).read_bytes()==value for name,value in original.items())

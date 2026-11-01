@@ -3,24 +3,25 @@
 需要 Python 3.11+。在实际运行 CLI 或 MCP 的 Python 环境中升级：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.0.1"
+pip install --upgrade "jobsearchradar[mcp]==2.0.2"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-仅使用 CLI 可以安装 `jobsearchradar==2.0.1`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+仅使用 CLI 可以安装 `jobsearchradar==2.0.2`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
-2026-11-01 已从官方 PyPI 在全新环境安装 `2.0.1`，验证帮助、城市、历史、截止筛选与公司简称。
+2026-11-01 已从官方 PyPI 在全新环境安装 `2.0.2`，验证帮助、城市、历史、截止筛选与公司简称。
 GitHub Release 与 PyPI 的 wheel / sdist 逐项 SHA-256 相同；主分支与安装包的 Python 及迁移文件逐项对照一致。
 
 ## 渠道与固定源码
 
 | 渠道 | 已核实状态（2026-11-01） | 用途 |
 | :--- | :--- | :--- |
-| PyPI `2.0.1` | 官方索引安装与兼容检查通过 | 默认安装目标 |
-| GitHub `v2.0.1` | 与 PyPI 使用相同发行文件 | 下载 wheel 或源码包 |
-| 固定源码提交 | `ebe2aba4e9c80f9cec93505599cde7ad12ddaac3`，代码版本 `2.0.1` | 可复现的备用安装 |
+| PyPI `2.0.2` | 官方索引安装与兼容检查通过 | 默认安装目标 |
+| GitHub `v2.0.2` | 与 PyPI 使用相同发行文件 | 下载 wheel 或源码包 |
+| 固定源码提交 | `ebe2aba4e9c80f9cec93505599cde7ad12ddaac3`，代码版本 `2.0.2` | 可复现的备用安装 |
+| `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.0.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
@@ -34,7 +35,7 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 
 ## 安装后检查
 
-`--version` 应显示 `2.0.1`；`search --help` 应正常退出，并列出 `--deadline-before`；
+`--version` 应显示 `2.0.2`；`search --help` 应正常退出，并列出 `--deadline-before`；
 `calendar --help` 应列出 `--city` 和 `--include-expired`。参数不受支持或帮助报错时，
 先核对终端与 MCP 使用的 Python 环境，再按上述命令升级，不要删除筛选条件。
 

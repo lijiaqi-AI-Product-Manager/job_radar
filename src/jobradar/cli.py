@@ -339,25 +339,15 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                      "国内网络可试 `jobradar update --mirror gitee`；若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
 
 
-def _text_coverage(home_dir: Path, sample: int = 300) -> float | None:
-    """jd_text.db 能对上 jobs.db 的比例（采样在招岗位的 id）。
-
-    镜像同步大文件很慢（jd_text 28MB，Gitee 上行约 10KB/s），会出现「jobs 已更新、jd_text 还是旧的」：
-    两个库的岗位 id 对不上，全文检索会静默缺结果。用比例把这种情况显式暴露出来。
-    """
+def _text_coverage(home_dir: Path) -> float | None:
+    """全部未下架岗位的正文行覆盖率，仅诊断缺失，不作快照一致性证据。"""
     jobs_db, text_db = home_dir / DB_FILES["jobs"], home_dir / DB_FILES["text"]
     if not jobs_db.exists() or not text_db.exists():
         return None
     j = sqlite3.connect(jobs_db)
     t = sqlite3.connect(text_db)
     try:
-        ids = [r[0] for r in j.execute(
-            "SELECT id FROM job WHERE closed_at IS NULL ORDER BY last_seen DESC LIMIT ?", (sample,))]
-        if not ids:
-            return None
-        found = t.execute("SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?))",
-                          (json.dumps(ids),)).fetchone()[0]
-        return found / len(ids)
+        return q.jd_row_coverage(j, t)
     finally:
         j.close()
         t.close()
@@ -430,9 +420,6 @@ def _update_snapshot(args):
             if not _local_db_ok(staging / DB_FILES[kind]):
                 raise SystemExit(f"{DB_FILES[kind]} 业务结构校验失败，保留原快照")
         if not args.jobs_only:
-            cov = _text_coverage(staging)
-            if cov is not None and cov < 0.9:
-                raise SystemExit(f"三库对应不足（JD采样覆盖 {cov:.0%}），保留原快照")
             with closing(sqlite3.connect(staging / DB_FILES["jobs"])) as check:
                 check.execute("ATTACH DATABASE ? AS jd", (str(staging / DB_FILES["text"]),))
                 if check.execute("SELECT 1 FROM jd.job_text t LEFT JOIN job j ON j.id=t.job_id WHERE j.id IS NULL LIMIT 1").fetchone():
@@ -617,7 +604,7 @@ def cmd_doctor(args):
                           "其岗位下架状态可能滞后；运行 `jobradar sources --problems` 查看，"
                           "投递前打开原始链接确认；下载新快照不保证这些源已恢复")
         if cov is not None and cov < 0.9:
-            advice.append("JD 原文库与岗位库对不上（镜像可能没同步完），再运行一次 `jobradar update`")
+            advice.append(f"未下架岗位的正文行覆盖为 {cov:.0%}；来源可能未提供正文，缺失比例不能证明三库不同代")
         if campus_city is not None and campus_city < 0.25:
             advice.append(f"校园岗城市覆盖只有 {campus_city:.0%}：多数北森门户不返回城市，搜城市时结果会偏少")
         # 日期同理：覆盖率低时搜「最近截止/最近发布」会漏掉大批岗位，最好提前说清。

@@ -540,8 +540,8 @@ def test_calendar_build_evidence_out_writes_file(home, capsys, tmp_path):
 def test_calendar_without_db_tells_user_to_update(home, capsys):
     with pytest.raises(SystemExit, match="jobradar update"):
         cli.main(["calendar"])
-def test_text_coverage_detects_stale_jd_text(tmp_path):
-    """镜像同步慢时 jobs 新、jd_text 旧，两个库 id 对不上——必须能测出来。"""
+def test_text_coverage_reports_missing_rows(tmp_path):
+    """正文行覆盖描述缺失情况，不直接推断快照不同代。"""
     import sqlite3
     jobs = sqlite3.connect(tmp_path / "jobs.db")
     jobs.execute("CREATE TABLE job(id TEXT, closed_at TEXT, last_seen TEXT)")
@@ -558,6 +558,21 @@ def test_text_coverage_detects_stale_jd_text(tmp_path):
 
 def test_text_coverage_none_without_dbs(tmp_path):
     assert cli._text_coverage(tmp_path) is None
+
+
+def test_text_coverage_does_not_sample_only_newest_jobs(tmp_path):
+    import sqlite3
+    from contextlib import closing
+
+    with closing(sqlite3.connect(tmp_path / 'jobs.db')) as jobs:
+        jobs.execute('CREATE TABLE job(id TEXT, closed_at TEXT, last_seen TEXT)')
+        jobs.executemany('INSERT INTO job VALUES (?,NULL,?)', [(f'j:{i}', '2026-11-01' if i<300 else '2026-10-30') for i in range(400)])
+        jobs.commit()
+    with closing(sqlite3.connect(tmp_path / 'jd_text.db')) as texts:
+        texts.execute('CREATE TABLE job_text(job_id TEXT, description TEXT, requirements TEXT)')
+        texts.executemany("INSERT INTO job_text VALUES (?,'正文',NULL)", [(f'j:{i}',) for i in range(300,400)])
+        texts.commit()
+    assert cli._text_coverage(tmp_path) == .25
 def test_doctor_reports_field_coverage_and_jd_match(home, capsys):
     """doctor 要告诉用户数据能不能用：字段覆盖率、JD 原文库是否对得上。"""
     cli.main(["doctor"])
