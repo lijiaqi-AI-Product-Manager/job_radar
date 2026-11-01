@@ -5,8 +5,9 @@ import sys
 from pathlib import Path
 
 import httpx
+from publish_gitee import verify_generation
 
-from jobradar.snapshot_manifest import digest_file, verify_manifest
+from jobradar.snapshot_manifest import digest_file
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
         for path in paths:
             if manifest.get("files", {}).get(path.name, {}).get("sha256") != digest_file(path):
                 raise ValueError(f"{path.name} 不是本次本地快照")
-        verify_manifest(client, repo, "data-latest", manifest)
+        verify_generation(client, repo, "data-latest", manifest)
     print("OK：全部镜像文件匿名下载、分片连续性与SHA256校验通过")
     return 0
 

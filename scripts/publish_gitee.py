@@ -3,11 +3,14 @@
 import hashlib
 import json
 import os
+import re
 import sys
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
 from pathlib import Path
+from types import SimpleNamespace
 
 import httpx
 
@@ -17,6 +20,56 @@ API = "https://gitee.com/api/v5/repos/{repo}"
 TAG = "data-latest"
 CHUNK_MB = float(os.environ.get("GITEE_CHUNK_MB", "4"))
 MAX_PARTS = 99
+
+
+def verify_generation(client, repo, tag, manifest):
+    """匿名并行落盘分片，顺序重读并验证整文件；不复用其他标签的缓存。"""
+    if not re.fullmatch(r"data-(?:[a-f0-9]{20}|latest)", tag):
+        raise ValueError("非法数据代标签")
+    with tempfile.TemporaryDirectory(prefix="gitee-verify-") as directory:
+        cache, pending = {}, []
+        for name, info in manifest.get("files", {}).items():
+            if not re.fullmatch(r"(?:jobs\.db\.gz|jd_text\.db\.gz|calendar\.db\.gz|crawl-summary\.json)", name):
+                raise ValueError("非法快照文件名")
+            for index, part in enumerate(info["parts"], 1):
+                expected = name if len(info["parts"]) == 1 else f"{name}.part{index:02d}"
+                if part["name"] != expected or type(part["size"]) is not int or part["size"] < 0:
+                    raise ValueError("非法分片")
+                url = f"https://gitee.com/{repo}/releases/download/{tag}/{expected}"
+                path = Path(directory) / str(len(pending))
+                cache[url] = path
+                pending.append((url, path, part))
+
+        def download(item):
+            url, path, part = item
+            digest, size = hashlib.sha256(), 0
+            with client.stream("GET", url, follow_redirects=True) as response, path.open("wb") as handle:
+                response.raise_for_status()
+                for chunk in response.iter_bytes():
+                    size += len(chunk)
+                    if size > part["size"]:
+                        raise ValueError("匿名分片超过声明大小")
+                    digest.update(chunk)
+                    handle.write(chunk)
+            if size != part["size"] or digest.hexdigest() != part["sha256"]:
+                raise ValueError(f"{part['name']} 匿名下载摘要不匹配")
+            print(f"gitee: anonymously verified {part['name']}", flush=True)
+
+        with ThreadPoolExecutor(max_workers=16) as pool:
+            for future in [pool.submit(download, item) for item in pending]:
+                future.result()
+
+        def chunks(path):
+            with path.open("rb") as handle:
+                while chunk := handle.read(1024 * 1024):
+                    yield chunk
+
+        class Downloaded:
+            @contextmanager
+            def stream(self, method, url, **kwargs):
+                yield SimpleNamespace(raise_for_status=lambda: None, iter_bytes=lambda: chunks(cache[url]))
+
+        verify_manifest(Downloaded(), repo, tag, manifest)
 
 
 def split_file(path, chunk_bytes, out_dir):
@@ -65,7 +118,7 @@ def publish(files, *, token, repo, client, anonymous_client=None):
         if stable and stable.get("body") == tag:
             response = anonymous.get(f"https://gitee.com/{repo}/releases/download/{TAG}/snapshot-manifest.json")
             response.raise_for_status()
-            verify_manifest(anonymous, repo, TAG, response.json())
+            verify_generation(anonymous, repo, TAG, response.json())
             return
         stage = ensure_release(client, base, token, tag)
         rid = stage["id"]
@@ -106,7 +159,7 @@ def publish(files, *, token, repo, client, anonymous_client=None):
             with ThreadPoolExecutor(max_workers=workers) as pool:
                 for future in [pool.submit(upload, path) for path in uploads]:
                     future.result()
-            verify_manifest(anonymous, repo, tag, manifest)
+            verify_generation(anonymous, repo, tag, manifest)
             marker = workdir / "snapshot-manifest.json"
             marker.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
             upload(marker)
@@ -121,15 +174,15 @@ def publish(files, *, token, repo, client, anonymous_client=None):
             response.raise_for_status()
 
         # 旧Release仅改为备份标签，保留所有附件；新代已完整验证才切换。
-        if stable and stable["id"] != rid:
-            rename(stable, f"data-previous-{stable['id']}", "Previous verified data", stable.get("body") or "Previous snapshot")
         try:
+            if stable and stable["id"] != rid:
+                rename(stable, f"data-previous-{stable['id']}", "Previous data", stable.get("body") or "Previous snapshot")
             rename(stage, TAG, "Latest verified data", tag)
         except BaseException:
             if stable and stable["id"] != rid:
                 rename(stable, TAG, stable.get("name") or "Latest data", stable.get("body") or "Previous snapshot")
             raise
-        verify_manifest(anonymous, repo, TAG, manifest)
+        verify_generation(anonymous, repo, TAG, manifest)
         print(f"gitee: verified and promoted {tag}", flush=True)
     finally:
         if owned:

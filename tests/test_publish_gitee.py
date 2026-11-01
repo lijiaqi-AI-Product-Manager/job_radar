@@ -1,3 +1,4 @@
+import hashlib
 import importlib.util
 import re
 import threading
@@ -151,3 +152,24 @@ def test_rerun_reuses_verified_files_without_reupload(tmp_path):
         before = sum(method == "POST" for method, _ in state.calls)
         pg.publish(paths, token="fake", repo="o/r", client=client, anonymous_client=client)
     assert sum(method == "POST" for method, _ in state.calls) == before
+
+
+def test_anonymous_part_verification_is_parallel_and_checks_whole_digest():
+    values = [bytes([i]) * 8 for i in range(16)]
+    barrier = threading.Barrier(16)
+    parts = [{'name':f'jobs.db.gz.part{i+1:02d}','size':len(value),'sha256':hashlib.sha256(value).hexdigest()} for i,value in enumerate(values)]
+    manifest = {'version':1,'files':{'jobs.db.gz':{'parts':parts,'size':128,'sha256':hashlib.sha256(b''.join(values)).hexdigest()}}}
+
+    def handler(req):
+        assert 'Authorization' not in req.headers
+        barrier.wait(timeout=5)
+        return httpx.Response(200,content=values[int(req.url.path[-2:])-1])
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        pg.verify_generation(client,'o/r','data-'+'a'*20,manifest)
+
+
+def test_valid_part_hashes_with_wrong_whole_hash_still_fail():
+    manifest = {'version':1,'files':{'jobs.db.gz':{'parts':[{'name':'jobs.db.gz','size':3,'sha256':hashlib.sha256(b'abc').hexdigest()}],'size':3,'sha256':'0'*64}}}
+    with httpx.Client(transport=httpx.MockTransport(lambda req:httpx.Response(200,content=b'abc'))) as client, pytest.raises(ValueError,match='拼接摘要'):
+        pg.verify_generation(client,'o/r','data-'+'a'*20,manifest)
