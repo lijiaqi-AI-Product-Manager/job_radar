@@ -20,14 +20,14 @@ GitHub Release 与 PyPI 的 wheel / sdist 逐项 SHA-256 相同；主分支与�
 | :--- | :--- | :--- |
 | PyPI `2.0.2` | 官方索引安装与兼容检查通过 | 默认安装目标 |
 | GitHub `v2.0.2` | 与 PyPI 使用相同发行文件 | 下载 wheel 或源码包 |
-| 固定源码提交 | `ebe2aba4e9c80f9cec93505599cde7ad12ddaac3`，代码版本 `2.0.2` | 可复现的备用安装 |
+| 固定源码提交 | `c8966e513f1bd9a047d6254bc361ca5d0cdae496`，代码版本 `2.0.2` | 可复现的备用安装 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.0.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/ebe2aba4e9c80f9cec93505599cde7ad12ddaac3.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/c8966e513f1bd9a047d6254bc361ca5d0cdae496.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
