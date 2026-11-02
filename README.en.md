@@ -1,7 +1,7 @@
 ![job_radar — Find your next opportunity. Keep the data.](docs/assets/hero-en.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.2"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.3"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
@@ -113,9 +113,9 @@ For CLI-based integrations, see the [query workflow](skill/jobradar/SKILL.md).
 | Core target coverage | **952 / 1,655 · 57.52%** | Configuration coverage of a fixed target pool |
 | Official / aggregator | **604 / 348** | Official-first classification, without double counting |
 
-**Verified release snapshot · `2026-11-02T12:44:23Z`**
+**Verified release snapshot · `2026-11-02T14:39:29Z`**
 
-**298,627 total job records**, including **277,563 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **5,140 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
+**298,631 total job records**, including **277,567 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **5,135 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
 
 Configured coverage does not mean an employer is hiring today. An aggregator recruitment notice may describe multiple roles. Missing dates remain empty; a university notice's display expiry is kept separate from an employer's application deadline. See [coverage methodology and limitations](docs/COVERAGE.md).
 
