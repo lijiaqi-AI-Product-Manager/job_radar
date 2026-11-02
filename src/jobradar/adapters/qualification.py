@@ -32,7 +32,3 @@ def requirement_grad_year(requirement: str | None) -> int | None:
     return year if 2023 <= year <= 2032 else None
 
 
-def uncertain_title_cohort(title: str) -> bool:
-    """标题明确写了届次但无法表达为受支持单届时，要求段不能覆盖其范围。"""
-    text = unescape(re.sub(r"<[^>]+>", " ", title))
-    return bool(_COHORT.search(text)) and requirement_grad_year(text) is None

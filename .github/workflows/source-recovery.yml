@@ -56,7 +56,7 @@ jobs:
       - name: Publish complete verified generation
         run: |
           uv run python scripts/publish_snapshots.py --home data/public
-          gh release upload data-latest source-recovery-report.json --clobber
+          gh release upload data-latest source-recovery-report.json cohort-correction-report.json --clobber
       - uses: actions/upload-artifact@v4
         with:
           name: verified-source-recovery-report

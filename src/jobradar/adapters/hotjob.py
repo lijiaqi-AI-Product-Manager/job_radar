@@ -15,7 +15,7 @@ from collections.abc import Iterator
 from datetime import timedelta
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
-from jobradar.adapters.qualification import requirement_grad_year, uncertain_title_cohort
+from jobradar.adapters.qualification import requirement_grad_year
 from jobradar.jd_text import template_pollution
 from jobradar.models import Job
 from jobradar.normalize import (
@@ -24,6 +24,7 @@ from jobradar.normalize import (
     degree_min_from_text,
     grad_year_from_text,
     normalize_degree,
+    uncertain_title_cohort,
 )
 from jobradar.timeutil import now_ts, parse_ts
 

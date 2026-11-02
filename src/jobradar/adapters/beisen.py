@@ -21,9 +21,15 @@ import re
 from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
-from jobradar.adapters.qualification import requirement_grad_year, uncertain_title_cohort
+from jobradar.adapters.qualification import requirement_grad_year
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, cities_from_title, date_only, grad_year_from_text
+from jobradar.normalize import (
+    batch_from_text,
+    cities_from_title,
+    date_only,
+    grad_year_from_text,
+    uncertain_title_cohort,
+)
 
 # `{host}` 既可能是 `xxx.zhiye.com`，也可能是白标域名 —— 两个模板都只用 host，不再拼后缀
 LIST_URL = "https://{host}/api/Jobad/GetJobAdPageList"

@@ -8,11 +8,10 @@ from contextlib import closing
 from pathlib import Path
 
 from jobradar.adapters.hotjob import verified_detail_fields
-from jobradar.adapters.qualification import uncertain_title_cohort
 from jobradar.adapters.tencent import public_post_url
 from jobradar.jd_text import template_pollution
 from jobradar.models import Job
-from jobradar.normalize import normalize_cities
+from jobradar.normalize import normalize_cities, uncertain_title_cohort
 from jobradar.pipeline.ingest import _event
 from jobradar.timeutil import now_ts
 
