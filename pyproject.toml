@@ -51,7 +51,7 @@ packages = ["src/jobradar"]
 include = [
   "src/jobradar", "tests", "sources", "taxonomy", "targets", "calendar",
   "scripts", "skill", "docs", "evals",
-  "README*.md", "CHANGELOG.md", "AGENTS.md", "CONTRIBUTING.md", ".github/AUTOMATION.md",
+  "README*.md", "CHANGELOG.md", "AGENTS.md", "CONTRIBUTING.md", ".github", "uv.lock",
   "work/*.py", "docs/DEVELOPMENT.md", "COMPLIANCE.md", "LICENSE", "pyproject.toml",
 ]
 
