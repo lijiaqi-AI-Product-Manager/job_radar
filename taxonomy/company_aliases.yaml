@@ -7,6 +7,9 @@
 # 值必须是库中公司名的一段子串（`LIKE %值%`），与 targets/top_companies.yaml 的写法保持一致。
 
 aliases:
+  # 官方中国站链接同一招聘入口：https://www.pg.com.cn/ 与 https://careers.pg.com.cn/cn/en/our-locations
+  "P&G": "宝洁"
+  "Procter & Gamble": "宝洁"
   中国电子: 中国电子信息产业集团
   中国电科: 中国电子科技集团
   中核: 中国核工业集团

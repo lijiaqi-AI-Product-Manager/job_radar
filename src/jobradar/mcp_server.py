@@ -18,7 +18,10 @@ from jobradar.timeutil import now_ts
 
 INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包含官方招聘页与公开聚合来源，每日调度；每个来源的成功刷新时间可能不同。
 回答时：注明 data_as_of；每个岗位附 url；只用返回的数据，不编造；results 为空说明"数据里没有"，
-而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。"""
+而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。
+用户修改条件时替换旧条件；多城市分别查询并按岗位ID合并。放宽条件的结果必须单列，不能冒充原条件匹配。
+学历、经验、薪资、远程与实习安排需原文证据；未知不等于不限。text_observed_at 是正文观测时间，不能用列表刷新时间代替。
+招聘公告链接可能不是雇主的直接申请入口；来源陈旧或截止时刻未知时，不能保证当前可投。"""
 
 class _RadarServer(MCPServer):
     async def call_tool(self, name, arguments, context=None):
@@ -73,11 +76,13 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
     结果带 match（JD 中命中处的片段，仅标题命中时为 null）。
+    text_observed_at 是该正文的实际观测时间，不等于列表最近刷新时间。
     默认自动隐藏明示截止日已过的岗位（按北京时间，截止当天仍保留）；include_closed=True
     可查已下架或已到期的历史记录。来源没有截止日时不会仅因记录陈旧而隐藏。
     deadline_before / deadline_after 为 YYYY-MM-DD，按**网申截止日**筛（"这周快截止的"用
     deadline_before=本周日）。只有源里明确写了截止日的岗位参与比较，字段覆盖率以本次 stats 为准，
-    所以返回为空不等于"没有快截止的岗位"，要在回答里说明这个口径。"""
+    所以返回为空不等于"没有快截止的岗位"，要在回答里说明这个口径。
+    按截止日筛选时更早截止的机会优先；未传日期范围时仍按最近发现排序。"""
     def run():
         text_cm = db("text", required=False) if text else nullcontext(None)
         with db("jobs") as conn, text_cm as text_conn:

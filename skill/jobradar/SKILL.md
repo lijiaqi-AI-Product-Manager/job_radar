@@ -9,7 +9,7 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应 `2.1.2`：
+本指南对应 `2.1.3`：
 
 ```bash
 pip install --upgrade "jobsearchradar[mcp]==2.1.3"
@@ -37,6 +37,12 @@ jobradar doctor
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。
+
+## 按个人条件找机会
+
+用户提出多城市、排除公司、学历/经验要求、实习安排或连续修改条件时，参见
+[个人求职条件与连续追问](references/candidate-workflow.md)。该流程区分可直接筛选的条件、
+需要阅读原文的要求，以及尚未核实的资格；放宽条件后的结果必须单列。
 
 ## 按问题类型选命令
 

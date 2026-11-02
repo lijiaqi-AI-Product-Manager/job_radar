@@ -9,6 +9,7 @@
 - `data_as_of`：最近一次成功抓取的时间（UTC）。回答时换算成北京时间更友好（+8 小时）。
 - `stale`：全局数据超过 48 小时未更新，或本次返回岗位含超过 48 小时未成功的来源。
 - 岗位的 `source_last_ok` / `source_age_hours` / `source_stale`：对应来源最近成功时间、距今小时数及是否过期；`availability` 区分已下架、已到期、旧来源尚未确认及最近观测，不能作为实时可投保证。
+- `text_observed_at`：详情、对比及全文检索所附正文的实际观测时间；为空时不能从 `last_seen` 补成新读正文。按截止日筛选的岗位优先返回更早的明确截止日；不传日期范围时保持最近发现优先。
 
 ## 招聘公告记录
 
@@ -120,9 +121,9 @@
 
 | 键 | 含义 |
 |---|---|
-| `calendar.calendar_covered` / `calendar_entries_covered` | **有日历条目**的目标公司数（490） |
-| `calendar.covered_any` | **有日历条目或有岗位数据**（494）——README 与发布自检用这个口径 |
-| `calendar.jd_covered` / `jd_page_covered` | 有**公开 JD 页/关联**的公司数（326），不是岗位比例 |
+| `calendar.calendar_covered` / `calendar_entries_covered` | **有日历条目**的目标公司数，以本次返回为准 |
+| `calendar.covered_any` | **有日历条目或有岗位数据**的目标公司数，与岗位数据源配置覆盖分别报告 |
+| `calendar.jd_covered` / `jd_page_covered` | 有**公开 JD 页/关联**的公司数，不是岗位比例 |
 | `calendar.entries` | 人工条目数 / 数据层自动条目数 |
 | `calendar.by_sector` | 按行业的 `targets` / `calendar_covered` / `jd_covered` |
 | `jobs.with_jd_text` | **岗位**里有 JD 正文的数量（与上面的「公司数」不是一个量纲） |
