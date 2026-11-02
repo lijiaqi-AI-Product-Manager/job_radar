@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.1.3-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.1.4-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · 한국어
 
@@ -13,7 +13,7 @@
 PyPI 패키지 이름은 `jobsearchradar`, 설치 후 명령은 `jobradar`입니다. Python 3.11+가 필요하며 Windows / macOS / Linux를 지원합니다.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -36,14 +36,14 @@ jobradar doctor
 
 ## 데이터와 커버리지
 
-2026-11-02 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-03 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | 지표 | 값 |
 | :--- | ---: |
-| 활성 소스 | 2,264 |
-| 설정된 기업 | 2,225 |
+| 활성 소스 | 2,262 |
+| 설정된 기업 | 2,223 |
 | 어댑터 | 27 |
-| 고정 대상 기업의 설정 커버리지 | 952 / 1,655 · 57.52% |
+| 고정 대상 기업의 설정 커버리지 | 950 / 1,655 · 57.40% |
 
 2026-11-02 UTC 검증 스냅샷에는 총 298,631건, 모집 중 277,567건의 기록이 있습니다. 모집 중 기록의 JD 본문 커버리지는 97.3%입니다. 소스 설정이 있다고 오늘 채용 중이라는 뜻은 아닙니다. 집계 사이트의 채용 안내 하나에 여러 직무가 포함될 수 있습니다.
 
@@ -52,7 +52,7 @@ jobradar doctor
 ## MCP 연결
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 

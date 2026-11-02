@@ -143,3 +143,19 @@ def test_search_does_not_expire_its_own_result_across_midnight(jobs_db, monkeypa
     rows = q.search_jobs(jobs_db, company="腾讯", meta=meta)
     assert len(rows) == meta["company_coverage"]["visible_jobs"] == 1
     assert rows[0]["availability"] == "observed_recently"
+
+
+@pytest.mark.parametrize("kind", ["search", "detail"])
+def test_disabled_source_is_not_confirmed_by_a_recent_old_observation(jobs_db, text_db, monkeypatch, kind):
+    from jobradar import source_catalog
+
+    ingest_run(jobs_db, "s1", [make_job(1)], ts="2026-11-01T00:00:00Z")
+    monkeypatch.setattr(source_catalog, "catalog", lambda: {"s1": {"enabled": False,
+                        "source_kind": "aggregator", "record_kind": "recruitment_notice"}})
+    before = tuple(jobs_db.execute("SELECT * FROM job WHERE id='s1:1'").fetchone())
+    row = q.search_jobs(jobs_db)[0] if kind == "search" else q.get_job(jobs_db, text_db, "s1:1")
+    assert row["source_enabled"] is False
+    assert row["source_stale"] is False
+    assert row["availability"] == "unconfirmed_disabled"
+    assert row["source_last_ok"] == "2026-11-01T00:00:00Z"
+    assert tuple(jobs_db.execute("SELECT * FROM job WHERE id='s1:1'").fetchone()) == before

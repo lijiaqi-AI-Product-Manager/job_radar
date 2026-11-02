@@ -21,7 +21,8 @@ INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包
 而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。
 用户修改条件时替换旧条件；多城市分别查询并按岗位ID合并。放宽条件的结果必须单列，不能冒充原条件匹配。
 学历、经验、薪资、远程与实习安排需原文证据；未知不等于不限。text_observed_at 是正文观测时间，不能用列表刷新时间代替。
-招聘公告链接可能不是雇主的直接申请入口；来源陈旧或截止时刻未知时，不能保证当前可投。"""
+招聘公告链接可能不是雇主的直接申请入口；来源陈旧或截止时刻未知时，不能保证当前可投。
+source_enabled=false或availability=unconfirmed_disabled表示来源当前已停用，近期历史成功也不能当作当前已核实。"""
 
 class _RadarServer(MCPServer):
     async def call_tool(self, name, arguments, context=None):

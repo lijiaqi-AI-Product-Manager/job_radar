@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.1.3-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.1.4-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · 日本語
 
@@ -13,7 +13,7 @@
 PyPI のパッケージ名は `jobsearchradar`、コマンドは `jobradar` です。Python 3.11+ が必要です。Windows / macOS / Linux に対応。
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -36,14 +36,14 @@ jobradar doctor
 
 ## データとカバレッジ
 
-2026-11-02 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-03 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | 指標 | 値 |
 | :--- | ---: |
-| 有効なデータソース | 2,264 |
-| 設定済み企業 | 2,225 |
+| 有効なデータソース | 2,262 |
+| 設定済み企業 | 2,223 |
 | アダプター | 27 |
-| 固定対象企業の設定カバレッジ | 952 / 1,655 · 57.52% |
+| 固定対象企業の設定カバレッジ | 950 / 1,655 · 57.40% |
 
 2026-11-02 UTC の検証済みスナップショットには 298,631 件の求人レコード（募集中 277,567 件）があり、募集中レコードの JD 本文カバー率は 97.3% です。設定の有無は当日の募集状況を示しません。集約サイトの採用告知は複数職種を含む場合があります。
 
@@ -52,7 +52,7 @@ jobradar doctor
 ## MCP 接続
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 

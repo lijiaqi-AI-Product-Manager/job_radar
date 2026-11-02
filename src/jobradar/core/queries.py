@@ -114,11 +114,13 @@ def _source_annotations(conn, rows, *, clock=None):
         stamp = last_ok.get(row["source_id"])
         age = max(0, (now - parse_ts(stamp)).total_seconds() / 3600) if stamp else None
         stale = age is None or age > 48
-        row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
-                   source_stale=stale,
-                   availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
-                                 else "unconfirmed_stale" if stale else "observed_recently"))
         info = sources.get(row["source_id"], {})
+        enabled = info.get("enabled")
+        row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
+                   source_stale=stale, source_enabled=enabled,
+                   availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
+                                 else "unconfirmed_disabled" if enabled is False
+                                 else "unconfirmed_stale" if stale else "observed_recently"))
         row.update(source_kind=info.get("source_kind", "unknown"),
                    record_kind=info.get("record_kind", "unknown"))
     return rows

@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.1.3-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.1.4-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Русский
 
@@ -13,7 +13,7 @@
 Пакет PyPI называется `jobsearchradar`, установленная команда — `jobradar`. Нужен Python 3.11+. Поддерживаются Windows, macOS и Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Данные и охват
 
-2026-11-02 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-03 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Показатель | Значение |
 | :--- | ---: |
-| Активные источники | 2,264 |
-| Настроенные компании | 2,225 |
+| Активные источники | 2,262 |
+| Настроенные компании | 2,223 |
 | Адаптеры | 27 |
-| Охват фиксированного списка целевых компаний | 952 / 1,655 · 57.52% |
+| Охват фиксированного списка целевых компаний | 950 / 1,655 · 57.40% |
 
 Проверенный снимок от 2 ноября 2026 года (UTC) содержит 298 458 записи, из них 277 482 открытых. Оригинальный текст есть у 97,3 % открытых записей. Настроенный источник не означает, что компания нанимает сегодня. Объявление агрегатора может описывать несколько должностей.
 
@@ -52,7 +52,7 @@ jobradar doctor
 ## Подключение MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 

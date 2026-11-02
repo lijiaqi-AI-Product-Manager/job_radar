@@ -183,6 +183,15 @@ def test_search_table_shows_deadline_column(tmp_path, monkeypatch, capsys):
     assert "未知" in out
 
 
+def test_table_warns_when_a_recent_source_is_disabled(home, monkeypatch, capsys):
+    from jobradar import source_catalog
+
+    monkeypatch.setattr(source_catalog, "catalog", lambda: {"s1": {"enabled": False}})
+    cli.main(["search", "--company", "腾讯", "--table"])
+    out = capsys.readouterr().out
+    assert "来源已停用" in out and "历史观测" in out
+
+
 def test_stale_data_is_flagged(tmp_path, monkeypatch, capsys):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     jobs = connect(tmp_path / "jobs.db", "jobs")

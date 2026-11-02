@@ -10,6 +10,7 @@
 - `stale`：全局数据超过 48 小时未更新，或本次返回岗位含超过 48 小时未成功的来源。
 - 岗位的 `source_last_ok` / `source_age_hours` / `source_stale`：对应来源最近成功时间、距今小时数及是否过期；`availability` 区分已下架、已到期、旧来源尚未确认及最近观测，不能作为实时可投保证。
 - `text_observed_at`：详情、对比及全文检索所附正文的实际观测时间；为空时不能从 `last_seen` 补成新读正文。按截止日筛选的岗位优先返回更早的明确截止日；不传日期范围时保持最近发现优先。
+- `source_enabled`：客户端来源目录中的启用状态，未知为 `null`；`false` 对应 `availability: unconfirmed_disabled`，旧成功记录不能覆盖停用状态。已下架或已到期仍优先显示相应状态。
 
 ## 招聘公告记录
 
