@@ -1,6 +1,7 @@
 """才立方公开招聘公告（聚合）；路径边界见 docs/recon/jysd.md。
 
-params: host、match（登记主体全名）、title_terms、max_pages（默认 200）。
+params: host、match（登记主体全名）、title_terms、max_pages（默认 200）；
+notice_ids 可指定已核验的有限公告集合，完整读取该集合，不声称覆盖企业的全部岗位。
 一条记录是一份公告，可能含多岗；学校过期时间不是雇主网申截止日。
 """
 
@@ -20,13 +21,13 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
+from jobradar.adapters.qualification import requirement_grad_year
 from jobradar.models import Job
 from jobradar.normalize import (
     KNOWN_CITIES,
     batch_from_text,
     cities_from_text,
     date_only,
-    grad_year_from_text,
 )
 from jobradar.timeutil import now_ts, shanghai_date
 
@@ -41,9 +42,18 @@ _CONTACT = re.compile(r"^(?:招聘|咨询|投递)?(?:联系人|联系电话|联�
 _EMAIL = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
 _PHONE = re.compile(r"(?<!\d)(?:1[3-9]\d{9}|0\d{2,3}[-－]\d{7,8})(?!\d)")
 _CAMPUS = re.compile(r"校园|校招|应届|毕业生|20\d{2}\s*届")
+_APPLICATION = r"(?:报名|网申|简历投递|在线申请|投递|申请|简历接收)"
+_DATE = r"(20\d{2})\s*[年./-]\s*(\d{1,2})\s*[月./-]\s*(\d{1,2})日?"
 _DEADLINE = re.compile(
-    r"(?:报名|网申|简历投递|在线申请)(?:截止(?:时间|日期)?|时间截至)[：:\s]*"
-    r"(?:北京时间\s*)?(20\d{2})[年./-](\d{1,2})[月./-](\d{1,2})日?"
+    _APPLICATION + r"(?:截止(?:时间|日期)?|时间(?:截至|截止)|截至)[：:\s]*"
+    r"(?:为|至|到|于)?\s*(?:北京时间\s*)?" + _DATE
+)
+_OPENING_PERIOD = re.compile(
+    _APPLICATION + r"时间[：:\s]*(?:即日起|自公告发布之日起)\s*(?:至|到)\s*" + _DATE
+)
+_APPLICATION_PERIOD = re.compile(
+    _APPLICATION + r"(?:时间|起止日期|起止时间)[：:\s]*(?:自\s*)?" + _DATE
+    + r"\s*(?:至|到|[—－~～-])\s*" + _DATE
 )
 
 
@@ -180,6 +190,30 @@ def _description(node):
     return _PHONE.sub("[联系方式已略]", _EMAIL.sub("[联系方式已略]", text))
 
 
+def _application_end(description):
+    def convert(parts):
+        year, month, day = parts
+        value = date_only(f"{year}-{int(month):02d}-{int(day):02d}")
+        try:
+            return date.fromisoformat(value).isoformat() if value else None
+        except ValueError:
+            return None
+
+    ends = set()
+    for pattern in (_DEADLINE, _OPENING_PERIOD):
+        for parts in pattern.findall(description):
+            value = convert(parts)
+            if value is None:
+                return None
+            ends.add(value)
+    for parts in _APPLICATION_PERIOD.findall(description):
+        start, end = convert(parts[:3]), convert(parts[3:])
+        if start is None or end is None or start > end:
+            return None
+        ends.add(end)
+    return next(iter(ends)) if len(ends) == 1 else None
+
+
 def parse_detail(html: str) -> dict:
     root = _DOM(html).root
     title_block = next(root.find(cls="details-title"), None)
@@ -191,13 +225,12 @@ def parse_detail(html: str) -> dict:
     expiry = next(title_block.find(cls="expired_time"), None)
     message = next(root.find(cls="title-message"), None)
     description = _description(body)
-    deadlines = {date_only(f"{y}-{int(m):02d}-{int(d):02d}") for y, m, d in _DEADLINE.findall(description)} - {None}
     city = re.search(r"(?:工作地点|工作城市)[：:]\s*([^\n]{1,100})", description)
     location = re.split(r"学历要求|招聘人数|岗位职责|专业要求", city[1])[0] if city else ""
     published = re.search(r"发布时间[：:]\s*(20\d{2}-\d{2}-\d{2})", _text(title_block) + " " + _text(message))
     return {"title": _text(heading), "company": _text(company), "listing_end": _date_in(_text(expiry)),
             "published": date_only(published[1]) if published else None, "description": description,
-            "apply_end": next(iter(deadlines)) if len(deadlines) == 1 else None,
+            "apply_end": _application_end(description),
             "cities": [c for c in cities_from_text(location) if c in KNOWN_CITIES]}
 
 
@@ -269,6 +302,21 @@ class JysdAdapter(Adapter):
             return rows
 
     def fetch_raw(self) -> Iterator[dict]:
+        if "notice_ids" in self.source.params:
+            values = self.source.params["notice_ids"]
+            if not isinstance(values, list) or not values:
+                raise ValueError("notice_ids 必须为非空且不重复的公告数字ID列表")
+            identifiers = [str(value) for value in values]
+            if len(set(identifiers)) != len(identifiers) or any(
+                not re.fullmatch(r"[1-9]\d{0,11}", value) for value in identifiers
+            ):
+                raise ValueError("notice_ids 必须为非空且不重复的公告数字ID列表")
+            base = "https://" + self.source.params["host"]
+            for ident in identifiers:
+                url = base + "/campus/view/id/" + ident
+                detail = parse_detail(self.request_text("GET", url))
+                yield {"item": {"id": ident, "url": url, "title": detail["title"]}, "detail": detail}
+            return
         terms = self.source.params.get("title_terms") or [self.source.company]
         for item in self._index():
             if not any(str(term).casefold() in item["title"].casefold() for term in terms):
@@ -290,8 +338,10 @@ class JysdAdapter(Adapter):
             raise SkipRecord("不是标题明示的校园/应届招聘公告")
         if not detail["description"]:
             raise ValueError("公告正文缺失，不能作为健康采集结果")
+        # 招聘年度不一定等于毕业届次；混合校招/实习公告也不能压成首个年份。
+        cohort_title = re.sub(r"(?<![\dA-Za-z])(2[4-9]|3[0-2])(\s*届)", r"20\1\2", title)
         return Job(source_id=self.source.id, source_job_id=item["id"], company=self.source.company,
-                   url=item["url"], title=title, recruit_type="campus", grad_year=grad_year_from_text(title, loose=True),
+                   url=item["url"], title=title, recruit_type="campus", grad_year=requirement_grad_year(cohort_title),
                    batch=batch_from_text(title), cities=detail["cities"], degree_min=None,
                    publish_at=detail["published"] or item.get("published"), apply_end=detail["apply_end"],
                    description=detail["description"])
