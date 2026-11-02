@@ -11,10 +11,10 @@ source.params:
 已知：`recruitType` 1=校园、2=社招、3=实习；城市在 `workPlaceStr`（如「长沙市-长沙县」）。
 """
 
-import re
 from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
+from jobradar.adapters.qualification import requirement_grad_year
 from jobradar.models import Job
 from jobradar.normalize import batch_from_text, date_only, degree_min_from_text, grad_year_from_text
 
@@ -33,8 +33,7 @@ _PLACE_NOISE = {"全部地区", "不限", "全国", "多个城市", "若干"}
 
 def verified_detail_fields(requirement: str) -> dict:
     """已核验租户要求段中明确的单一届次和学历；调用方负责租户开关。"""
-    years = set(re.findall(r"(?<!\d)(20\d{2})\s*(?:届|年应届毕业生)", requirement))
-    return {"grad_year": int(next(iter(years))) if len(years) == 1 else None,
+    return {"grad_year": requirement_grad_year(requirement),
             "degree_min": degree_min_from_text(requirement)}
 
 

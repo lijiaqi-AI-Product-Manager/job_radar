@@ -1,0 +1,50 @@
+[
+  {
+    "source_id": "hotjob-450aa2",
+    "checked_at": "2026-11-02T06:13:16Z",
+    "url": "https://wecruit.hotjob.cn/SU612f55eebef57c0616450aa2/pb/posDetail.html?postId=6ad2152515a82a89c3289657&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6ad2152515a82a89c3289657",
+        "postName": "工艺工程师"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1.2027届毕业生，电气、机械相关专业；\n2.品行良好，有责任心，接受倒班；\n3.非外语类专业毕业生，要求外语水平达到国家四级水平；\n4.在校期间担任学生干部、获奖学金及学生党员者优先考虑。"
+      }
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "hotjob-ctsec",
+    "checked_at": "2026-11-02T06:13:54Z",
+    "url": "https://wecruit.hotjob.cn/SU60613f74bef57c36adc66d0b/pb/posDetail.html?postId=6a2a70861d4c30777ae5aa4c&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6a2a70861d4c30777ae5aa4c",
+        "postName": "综合办公室-机要岗"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1.2027届硕士研究生及以上应届毕业生；\n2.具有严密的逻辑思维和分析判断能力，以及良好的团队协作能力、沟通表达能力和文字写作能力；\n3.具有金融机构职能条线实习经历者优先。"
+      }
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "hotjob-xyzq",
+    "checked_at": "2026-11-02T06:13:55Z",
+    "url": "https://wecruit.hotjob.cn/SU68fb2499b7da1347a9dd852c/pb/posDetail.html?postId=6ac70ea3f0cfabf2b4e52370&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6ac70ea3f0cfabf2b4e52370",
+        "postName": "兴业证券博士后"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1.具有良好的思想政治素质，遵纪守法，品行端正；\n2.2027届博士毕业生或者获得博士学位不超过3年；\n3.具有与研究课题相关的专业知识，具备较强的科研能力；\n4.具有敬业精神和团队合作精神，能尽职尽责完成博士后研究工作；\n5.身体健康，有足够的时间和精力脱产从事博士后研究工作。\n\n兴业证券股份有限公司博士后科研工作站 \n经国家人力资源和社会保障部、全国博士后管理委员会批准，兴业证券于2018年获准设立国家级博士后科研工作站。工作站定位为公司决策提供智库支持、为行业发展以及政府和监管部门建言献策、为公司孵化“学术实践型”高层次人才，以高起点、高标准、高质量为建设原则，以建设金融行业国家级一流博士后工作站为愿景，为博士后研究人员提供行业一流的科研平台。"
+      }
+    },
+    "expected_grad_year": 2027
+  }
+]

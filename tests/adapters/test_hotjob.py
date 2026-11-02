@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from jobradar.adapters.hotjob import HotjobAdapter
@@ -58,3 +59,13 @@ def test_verified_htsc_requirements_supply_explicit_fields_only_when_enabled():
     assert disabled.normalize(raw).grad_year is None
     raw["detail"]["serviceCondition"] += "2026届毕业生亦可。"
     assert enabled.normalize(raw).grad_year is None
+
+
+@pytest.mark.parametrize('evidence', json.loads((FX/'verified-requirements.json').read_text(encoding='utf-8')),
+                         ids=lambda r:r['source_id'])
+def test_current_verified_tenant_requirement_evidence(evidence):
+    with httpx.Client() as client:
+        enabled=HotjobAdapter(source(detail_fields=True),client)
+        assert enabled.normalize(evidence['raw']).grad_year==evidence['expected_grad_year']
+        disabled=HotjobAdapter(source(detail_fields=False),client)
+        assert disabled.normalize(evidence['raw']).grad_year is None
