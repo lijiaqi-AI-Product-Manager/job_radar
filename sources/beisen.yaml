@@ -17,8 +17,8 @@ sources:
   - {id: beisen-hisense, company: 海信, params: {tenant: hisense1}}   # 2026-10-22 新增：1201 岗
   - {id: beisen-miniso, company: 名创优品, params: {tenant: miniso}}   # 2026-10-22 新增：57 岗
   - {id: beisen-popmart, company: 泡泡玛特, params: {tenant: popmart}}  # 2026-10-22 新增：313 岗
-  - {id: beisen-changan, company: 长安汽车, params: {tenant: changan}}  # 2026-10-22 新增：375 岗
-  - {id: beisen-weichai, company: 潍柴动力, params: {tenant: weichai}}  # 2026-10-22 新增：246 岗
+  - {id: beisen-changan, company: 长安汽车, params: {detail_fields: true, tenant: changan}}  # 2026-10-22 新增：375 岗
+  - {id: beisen-weichai, company: 潍柴动力, params: {detail_fields: true, tenant: weichai}}  # 2026-10-22 新增：246 岗
   - {id: beisen-iflytek, company: 科大讯飞, params: {tenant: iflytek}}  # 2026-10-22 新增：884 岗
   - {id: beisen-picc, company: 中国人保, params: {tenant: picc}}        # 2026-10-22 新增：2323 岗
   - {id: beisen-cohl, company: 中海地产, params: {tenant: cohl}}        # 2026-10-22 新增：54 岗
@@ -61,7 +61,7 @@ sources:
   - {id: beisen-maxscend, company: 卓胜微, params: {tenant: maxscend}}
   - {id: beisen-cicc, company: 中金公司, params: {tenant: cicc}}
   - {id: beisen-cjzq, company: 长江证券, params: {tenant: cjzq}}
-  - {id: beisen-cmhk, company: 招商局集团, params: {tenant: cmhk}}
+  - {id: beisen-cmhk, company: 招商局集团, params: {detail_fields: true, tenant: cmhk}}
   - {id: beisen-chinastock, company: 中国银河证券, params: {tenant: chinastock}}
   - {id: beisen-bosc, company: 上海银行, params: {tenant: bosc}}
   - {id: beisen-chinalife, company: 中国人寿, params: {tenant: chinalife}}
@@ -79,10 +79,10 @@ sources:
       terms: "公开公司招聘门户，匿名明文岗位；不调用投递或简历接口"
       notes: "门户标题为通威股份有限公司；5 条抽样均有 JD。robots HTTP 4xx 按 RFC 9309 无适用规则；实际请求仍逐次受守卫约束。最小证据见 targets/source_checks.yaml。"
   - {id: beisen-h3c, company: 新华三, params: {tenant: h3c}}               # 2026-10-22 新增：381 岗
-  - {id: beisen-transsion, company: 传音控股, params: {tenant: transsion}}   # 2026-10-22 新增：986 岗
+  - {id: beisen-transsion, company: 传音控股, params: {detail_fields: true, tenant: transsion}}   # 2026-10-22 新增：986 岗
   - {id: beisen-iqiyi, company: 爱奇艺, params: {tenant: iqiyi}}            # 2026-10-22 新增：13 岗（线下业务）
   - {id: beisen-jobtaikang, company: 泰康, params: {tenant: jobtaikang}}   # 2026-10-22 新增：1739 岗
-  - {id: beisen-xdf, company: 新东方, params: {tenant: xdf}}             # 2026-10-22 新增：4436 岗
+  - {id: beisen-xdf, company: 新东方, params: {detail_fields: true, tenant: xdf}}             # 2026-10-22 新增：4436 岗
   - {id: beisen-huolala, company: 货拉拉, params: {tenant: huolala}}       # 2026-10-22 新增：532 岗
   - {id: beisen-csc108, company: 中信建投证券, params: {tenant: csc108}}
   - {id: beisen-h618, company: 航空工业自控所, params: {tenant: h618}}
@@ -94,7 +94,7 @@ sources:
   - {id: beisen-szly, company: 联友科技, params: {tenant: szly}}
   - {id: beisen-ankai, company: 安凯客车, params: {tenant: ankai}}
   - {id: beisen-hongyantruck1, company: 上汽红岩, params: {tenant: hongyantruck1}}
-  - {id: beisen-luxshare-tech, company: 立讯技术, params: {tenant: luxshare-tech}}
+  - {id: beisen-luxshare-tech, company: 立讯技术, params: {detail_fields: true, tenant: luxshare-tech}}
   - {id: beisen-junlebaoruye, company: 君乐宝, params: {tenant: junlebaoruye}}
   - {id: beisen-haitian, company: 海天集团, params: {tenant: haitian}}
   - {id: beisen-guofanggroup1, company: 国芳集团, params: {tenant: guofanggroup1}}
@@ -120,7 +120,7 @@ sources:
   - {id: beisen-unix-group, company: 优理奇, params: {tenant: unix-group}}
   - {id: beisen-jssoft, company: 金山云, params: {tenant: jssoft}}
   - {id: beisen-amlogicsh, company: 晶晨半导体, params: {tenant: amlogicsh}}
-  - {id: beisen-norincogroupzhaopin, company: 中国兵器工业集团, params: {tenant: norincogroupzhaopin}}
+  - {id: beisen-norincogroupzhaopin, company: 中国兵器工业集团, params: {detail_fields: true, tenant: norincogroupzhaopin}}
   - {id: beisen-qilu-pharma, company: 齐鲁制药, params: {tenant: qilu-pharma}}
   - {id: beisen-haige, company: 海格通信, params: {tenant: haige}}
   - {id: beisen-sacavic, company: 沈阳飞机工业, params: {tenant: sacavic}}
@@ -135,7 +135,7 @@ sources:
   - {id: beisen-genori, company: 臻宝科技, params: {tenant: genori}}
   - {id: beisen-bozhon4, company: 灵猴机器人, params: {tenant: bozhon4}}
   - {id: beisen-nerin, company: 中国瑞林, params: {tenant: nerin}}
-  - {id: beisen-wondersharecampus, company: 万兴科技, params: {tenant: wondersharecampus}}
+  - {id: beisen-wondersharecampus, company: 万兴科技, params: {detail_fields: true, tenant: wondersharecampus}}
   - {id: beisen-ryytn, company: 认养一头牛, params: {tenant: ryytn}}
   - {id: beisen-xmhjjt, company: 厦门火炬集团, params: {tenant: xmhjjt}}
   - {id: beisen-smbccn, company: 三井住友银行（中国）, params: {tenant: smbccn}}
@@ -179,7 +179,7 @@ sources:
   - {id: beisen-imou, company: 华橙网络, params: {tenant: imou}}
   - {id: beisen-ymtc, company: 长江存储, params: {tenant: ymtc}}
   - {id: beisen-yuguanggold-lead, company: 豫光金铅, params: {tenant: yuguanggold-lead}}
-  - {id: beisen-kingfa, company: 金发科技, params: {tenant: kingfa}}
+  - {id: beisen-kingfa, company: 金发科技, params: {detail_fields: true, tenant: kingfa}}
   - {id: beisen-zhongkehuanbao, company: 中科环保, params: {tenant: zhongkehuanbao}}
   - {id: beisen-gzmetro, company: 广州地铁, params: {tenant: gzmetro}}
   - {id: beisen-mindray, company: 迈瑞医疗, params: {tenant: mindray}}
@@ -203,8 +203,8 @@ sources:
   - {id: beisen-sanycampus, company: 三一集团（校招门户）, params: {tenant: sanycampus}}
   - {id: beisen-jnzhaopin, company: 江南造船, params: {tenant: jnzhaopin}}
   - {id: beisen-hsingchen, company: 湖北星辰, params: {tenant: hsingchen}}
-  - {id: beisen-cnnc, company: 中核集团, params: {tenant: cnnc}}
-  - {id: beisen-polynew, company: 保利发展, params: {tenant: polynew}}
+  - {id: beisen-cnnc, company: 中核集团, params: {detail_fields: true, tenant: cnnc}}
+  - {id: beisen-polynew, company: 保利发展, params: {detail_fields: true, tenant: polynew}}
   - {id: beisen-jggroup2, company: 晋钢控股, params: {tenant: jggroup2}}
   - {id: beisen-tzcpa, company: 天职国际, params: {tenant: tzcpa}}
   - {id: beisen-neweastech, company: 新毅东, params: {tenant: neweastech}}
@@ -213,7 +213,7 @@ sources:
   - {id: beisen-zspcl, company: 众生药业, params: {tenant: zspcl}}
   - {id: beisen-znlh, company: 众能联合, params: {tenant: znlh}}
   - {id: beisen-shsus, company: 康恒环境, params: {tenant: shsus}}
-  - {id: beisen-syamt, company: 富创精密, params: {tenant: syamt}}
+  - {id: beisen-syamt, company: 富创精密, params: {detail_fields: true, tenant: syamt}}
   - {id: beisen-thdk, company: 通号低空, params: {tenant: thdk}}
   - {id: beisen-govtor, company: 江苏高科技投资集团, params: {tenant: govtor}}
   - {id: beisen-gyzq, company: 国元证券, params: {tenant: gyzq}}
@@ -254,7 +254,7 @@ sources:
   - {id: beisen-starnet, company: 星网锐捷, params: {tenant: starnet}}
   - {id: beisen-jxrt, company: 融通供应链, params: {tenant: jxrt}}
   - {id: beisen-scement16, company: 南方新材料, params: {tenant: scement16}}
-  - {id: beisen-ronbay, company: 容百科技, params: {tenant: ronbay}}
+  - {id: beisen-ronbay, company: 容百科技, params: {detail_fields: true, tenant: ronbay}}
   - {id: beisen-cinda, company: 中国信达, params: {tenant: cinda}}     # 2026-10-24 新增：35 岗（探测 1,448 次命中）
   - {id: beisen-yuwell, company: 鱼跃医疗, params: {tenant: yuwellhr}}  # 2026-10-24 新增：1 岗（营销管培生）
   - id: beisen-laiyifen
@@ -486,8 +486,8 @@ sources:
   - {id: beisen-hilton, company: 希尔顿中国, params: {tenant: hilton}}   # 1989 岗
   - {id: beisen-innoventbio, company: 信达生物, params: {tenant: innoventbio}}   # 1241 岗
   - {id: beisen-campus, company: 闻泰科技, params: {tenant: campus}}   # 1216 岗
-  - {id: beisen-smpv, company: 上汽集团, params: {tenant: smpv}}   # 990 岗
-  - {id: beisen-polycareer, company: 保利, params: {tenant: polycareer}}   # 782 岗
+  - {id: beisen-smpv, company: 上汽集团, params: {detail_fields: true, tenant: smpv}}   # 990 岗
+  - {id: beisen-polycareer, company: 保利, params: {detail_fields: true, tenant: polycareer}}   # 782 岗
   - {id: beisen-cn, company: 菜鸟, params: {tenant: cn}}   # 444 岗
   - {id: beisen-mywind, company: 明阳智能, params: {tenant: mywind}}   # 321 岗
   - {id: beisen-zgyh, company: 中国银河, params: {tenant: zgyh}}   # 282 岗
@@ -590,7 +590,7 @@ sources:
   - {id: beisen-cyys, company: 茶颜悦色, params: {tenant: cyys}}  # 2026-10-27 搜索反查新增：1426 岗；城市 30/30、发布日 30/30；title=「湖南茶悦文化发展集团有限公司」
   - {id: beisen-dfdchem1, company: 多氟多, params: {tenant: dfdchem1}}  # 2026-10-27 搜索反查新增：29 岗；城市 29/29、发布日 29/29；title=「多氟多」
   - {id: beisen-dongpeng, company: 东鹏饮料, params: {tenant: dongpeng}}  # 2026-10-27 搜索反查新增：100 岗；城市 30/30、发布日 30/30；title=「广东东鹏控股股份有限公司」
-  - {id: beisen-genertec, company: 通用技术集团, params: {tenant: genertec}}  # 2026-10-27 搜索反查新增：1094 岗；城市 30/30、发布日 30/30；title=「通用技术集团招聘门户」
+  - {id: beisen-genertec, company: 通用技术集团, params: {detail_fields: true, tenant: genertec}}  # 2026-10-27 搜索反查新增：1094 岗；城市 30/30、发布日 30/30；title=「通用技术集团招聘门户」
   - {id: beisen-jingxinpharm, company: 京新药业, params: {tenant: jingxinpharm}}  # 2026-10-27 搜索反查新增：110 岗；城市 30/30、发布日 30/30；title=「浙江京新药业股份有限公司」
   - {id: beisen-lzljjt, company: 泸州老窖, params: {tenant: lzljjt}}  # 2026-10-27 搜索反查新增：129 岗；城市 30/30、发布日 30/30；title=「泸州老窖集团」
   - {id: beisen-silanslw, company: 士兰微, params: {tenant: silanslw}}  # 2026-10-27 搜索反查新增：62 岗；城市 30/30、发布日 30/30；title=「士兰半导体制造事业总部」
@@ -624,7 +624,7 @@ sources:
   - {id: beisen-hengan1, company: 恒安, params: {tenant: hengan1}}  # 2026-10-27 搜索反查新增：8 岗；城市 8/8、发布日 8/8；title=「恒安集团」
   - {id: beisen-hoshine, company: 合盛硅业, params: {tenant: hoshine}}  # 2026-10-27 搜索反查新增：270 岗；城市 30/30、发布日 30/30；title=「合盛」
   - {id: beisen-hxhk, company: 华夏航空, params: {tenant: hxhk}}  # 2026-10-27 搜索反查新增：70 岗；城市 30/30、发布日 30/30；title=「华夏航空股份有限公司」
-  - {id: beisen-infore, company: 盈峰环境, params: {tenant: infore}}  # 2026-10-27 搜索反查新增：203 岗；城市 30/30、发布日 30/30；title=「盈峰集团招聘官网」
+  - {id: beisen-infore, company: 盈峰环境, params: {detail_fields: true, tenant: infore}}  # 2026-10-27 搜索反查新增：203 岗；城市 30/30、发布日 30/30；title=「盈峰集团招聘官网」
   - {id: beisen-jmc, company: 江铃汽车, params: {tenant: jmc}}  # 2026-10-27 搜索反查新增：208 岗；城市 30/30、发布日 30/30；title=「江铃汽车招聘」
   - {id: beisen-jxnm, company: 巨星农牧, params: {tenant: jxnm}}  # 2026-10-27 搜索反查新增：24 岗；城市 24/24、发布日 24/24；title=「巨星农牧招聘官网」
   - {id: beisen-kangni, company: 康尼机电, params: {tenant: kangni}}  # 2026-10-27 搜索反查新增：60 岗；城市 30/30、发布日 30/30；title=「南京康尼机电股份有限公司」
@@ -711,7 +711,7 @@ sources:
   - {id: beisen-chimelong, company: 长隆集团, params: {tenant: chimelong}}  # 2026-10-27 新增：136 岗
   - {id: beisen-aesc-group, company: 远景动力, params: {tenant: aesc-group}}  # 2026-10-27 新增：114 岗
   - {id: beisen-funde-ins, company: 富德保险控股, params: {tenant: funde-ins}}  # 2026-10-27 新增：100 岗
-  - {id: beisen-fii-foxconn, company: 工业富联, params: {tenant: fii-foxconn}}  # 2026-10-27 新增：94 岗
+  - {id: beisen-fii-foxconn, company: 工业富联, params: {detail_fields: true, tenant: fii-foxconn}}  # 2026-10-27 新增：94 岗
   - {id: beisen-zjadgroup, company: 浙江省农村发展集团, params: {tenant: zjadgroup}}  # 2026-10-27 新增：89 岗
   - {id: beisen-simic1, company: 新微半导体, params: {tenant: simic1}}  # 2026-10-27 新增：85 岗（社招门户）
   - {id: beisen-juhua, company: 巨化集团, params: {tenant: juhua}}  # 2026-10-27 新增：78 岗
@@ -935,8 +935,8 @@ sources:
   - {id: beisen-htsolargroup, company: 唐山海泰新能科技, params: {tenant: htsolargroup}}  # 2026-10-28 新增：1 岗
   - {id: beisen-huaqinghuashi1, company: 华卿教育, params: {tenant: huaqinghuashi1}}  # 2026-10-28 新增：1 岗
 # 2026-10-28 subdomain.center 子域枚举 + 门户 <title> 定归属（逐条探活，岗数取首页 Count）
-  - {id: beisen-sinosigcampus, company: 阳光保险, params: {tenant: sinosigcampus}}  # 2026-10-28 新增：712 岗
-  - {id: beisen-centurygame, company: CenturyGames点点互动, params: {tenant: centurygame}}  # 2026-10-28 新增：283 岗
+  - {id: beisen-sinosigcampus, company: 阳光保险, params: {detail_fields: true, tenant: sinosigcampus}}  # 2026-10-28 新增：712 岗
+  - {id: beisen-centurygame, company: CenturyGames点点互动, params: {detail_fields: true, tenant: centurygame}}  # 2026-10-28 新增：283 岗
   - {id: beisen-qingmutec, company: 青木科技, params: {tenant: qingmutec}}  # 2026-10-28 新增：183 岗
   - {id: beisen-hantele, company: 瀚信, params: {tenant: hantele}}  # 2026-10-28 新增：158 岗
   - {id: beisen-hdec, company: 中国电建集团华东勘测设计研究院, params: {tenant: hdec}}  # 2026-10-28 新增：154 岗
@@ -1108,7 +1108,7 @@ sources:
   - {id: beisen-iwhalecloud1, company: 浩鲸科技, params: {tenant: iwhalecloud1}}  # 2026-10-28 新增：81 岗
   - {id: beisen-snowman, company: 福建雪人, params: {tenant: snowman}}  # 2026-10-28 新增：80 岗
   - {id: beisen-xinje, company: 信捷电气, params: {tenant: xinje}}  # 2026-10-28 新增：80 岗
-  - {id: beisen-xynovatech, company: 曦诺未来, params: {tenant: xynovatech}}  # 2026-10-28 新增：80 岗
+  - {id: beisen-xynovatech, company: 曦诺未来, params: {detail_fields: true, tenant: xynovatech}}  # 2026-10-28 新增：80 岗
   - {id: beisen-zhxcn, company: 中迅农科, params: {tenant: zhxcn}}  # 2026-10-28 新增：80 岗
   - {id: beisen-crystal-optech1, company: 浙江水晶光电科技, params: {tenant: crystal-optech1}}  # 2026-10-28 新增：78 岗
   - {id: beisen-ldrobot, company: 乐动机器人, params: {tenant: ldrobot}}  # 2026-10-28 新增：78 岗
@@ -1238,7 +1238,7 @@ sources:
   - {id: beisen-yntrust, company: 云南国际信托, params: {tenant: yntrust}}  # 2026-10-28 新增：66 岗
   - {id: beisen-gxck, company: 青岛高测科技, params: {tenant: gxck}}  # 2026-10-28 新增：65 岗
   - {id: beisen-hcmicro, company: 华创微官方网申渠道, params: {tenant: hcmicro}}  # 2026-10-28 新增：62 岗
-  - {id: beisen-ahccs, company: 门户网站, params: {tenant: ahccs}}  # 2026-10-28 新增：58 岗
+  - {id: beisen-ahccs, company: 门户网站, params: {detail_fields: true, tenant: ahccs}}  # 2026-10-28 新增：58 岗
   - {id: beisen-vinda, company: 维达国际, params: {tenant: vinda}}  # 2026-10-28 新增：58 岗
   - {id: beisen-ytam, company: YTAM, params: {tenant: ytam}}  # 2026-10-28 新增：57 岗
   - {id: beisen-luxottica, company: 依视路陆逊梯卡, params: {tenant: luxottica}}  # 2026-10-28 新增：55 岗
@@ -1388,7 +1388,7 @@ sources:
   - {id: beisen-wasionelectric, company: 威胜能源, params: {tenant: wasionelectric}}  # 2026-10-29 新增：82 岗
   - {id: beisen-hibr, company: 翰博高新, params: {tenant: hibr}}  # 2026-10-29 新增：75 岗
   - {id: beisen-yofccampus, company: 长飞光纤, params: {tenant: yofccampus}}  # 2026-10-29 新增：72 岗
-  - {id: beisen-polyharmony, company: 保利和润, params: {tenant: polyharmony}}  # 2026-10-29 新增：69 岗
+  - {id: beisen-polyharmony, company: 保利和润, params: {detail_fields: true, tenant: polyharmony}}  # 2026-10-29 新增：69 岗
   - {id: beisen-aispeech1, company: 思必驰, params: {tenant: aispeech1}}  # 2026-10-29 新增：62 岗
   - {id: beisen-cictmobile, company: 中信科移动, params: {tenant: cictmobile}}  # 2026-10-29 新增：61 岗
   - {id: beisen-snowvalleyfood, company: 雪川农业, params: {tenant: snowvalleyfood}}  # 2026-10-29 新增：58 岗
@@ -1443,7 +1443,7 @@ sources:
   - {id: beisen-cnoocshell, company: 中海壳牌, params: {tenant: cnoocshell}}  # 2026-10-29 新增：3 岗
 
 # 2026-10-29 新增：官网反查拿到的白标北森域（接口挂在自有域名下，tenant 猜不到）
-  - {id: beisen-xdfqt, company: 新东方前途出国, params: {tenant: xdfqt, host: zhaopin.xdf.cn}}  # 2026-10-29 新增：首屏 4447 岗（白标，robots.txt Allow: /）
+  - {id: beisen-xdfqt, company: 新东方前途出国, params: {detail_fields: true, tenant: xdfqt, host: zhaopin.xdf.cn}}  # 2026-10-29 新增：首屏 4447 岗（白标，robots.txt Allow: /）
   - {id: beisen-babycare, company: Babycare, params: {tenant: babycare}}  # 2026-10-29 新增：148 岗
   - {id: beisen-xadzgc, company: 西安电子工程研究所, params: {tenant: xadzgc}}  # 2026-10-29 新增：47 岗（exa 搜索命中门户，标题定归属）
   - {id: beisen-nader, company: 上海良信电器, params: {tenant: nader}}  # 2026-10-29 新增：1 岗（JSON 接口关闭，走 /alljob 服务端渲染）

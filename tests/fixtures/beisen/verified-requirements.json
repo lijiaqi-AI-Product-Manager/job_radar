@@ -1,0 +1,410 @@
+[
+  {
+    "source_id": "beisen-changan",
+    "checked_at": "2026-11-02T06:13:16Z",
+    "url": "https://changan.zhiye.com/campus/detail?jobAdId=9acc449d-1413-4c15-97f5-09923588fb98",
+    "raw": {
+      "Id": "9acc449d-1413-4c15-97f5-09923588fb98",
+      "JobAdName": "重庆铃耀-生产管理(J28645)",
+      "CategoryId": "2",
+      "LocNames": [
+        "重庆市"
+      ],
+      "PostDate": "2026-09-01T08:50:47",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.招聘对象：2027届本科及以上学历毕业生。\n2.专业要求：管理类、工业工程、统计学、数学、大数据管理等相关专业。\n3.语言要求：通过CET-4。\n4.综合素质：乐观开朗、积极上进、视野开阔、思维敏捷，有较强的自主学习能力、创新能力、沟通能力及抗压能力，善于运用新的工作方法解决问题。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-polynew",
+    "checked_at": "2026-11-02T06:13:16Z",
+    "url": "https://polynew.zhiye.com/campus/detail?jobAdId=e7d64f31-0005-41a0-b340-f0ed9459cf1b",
+    "raw": {
+      "Id": "e7d64f31-0005-41a0-b340-f0ed9459cf1b",
+      "JobAdName": "计划运营岗（湖北公司）-秋招(J29691)",
+      "CategoryId": "2",
+      "LocNames": [
+        "湖北省"
+      ],
+      "PostDate": "2026-10-02T11:49:32",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届应届本科及以上学历毕业生，房地产管理/房地产经济/经济统计学/工程管理等相关专业；\n2.具备较强的计划组织能力、分析判断能力、文字表达能力;\n3.严谨，踏实，思维敏捷、具有较好的人际沟通能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-polycareer",
+    "checked_at": "2026-11-02T06:13:16Z",
+    "url": "https://polycareer.zhiye.com/campus/detail?jobAdId=e7d64f31-0005-41a0-b340-f0ed9459cf1b",
+    "raw": {
+      "Id": "e7d64f31-0005-41a0-b340-f0ed9459cf1b",
+      "JobAdName": "计划运营岗（湖北公司）-秋招(J29691)",
+      "CategoryId": "2",
+      "LocNames": [
+        "湖北省"
+      ],
+      "PostDate": "2026-10-02T11:49:32",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届应届本科及以上学历毕业生，房地产管理/房地产经济/经济统计学/工程管理等相关专业；\n2.具备较强的计划组织能力、分析判断能力、文字表达能力;\n3.严谨，踏实，思维敏捷、具有较好的人际沟通能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-xdf",
+    "checked_at": "2026-11-02T06:13:30Z",
+    "url": "https://xdf.zhiye.com/campus/detail?jobAdId=d97936d0-9204-44f9-a37a-73e8e9af1b06",
+    "raw": {
+      "Id": "d97936d0-9204-44f9-a37a-73e8e9af1b06",
+      "JobAdName": "骄阳计划销售培训生",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-08-26T14:50:11.2283842",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、统招2026届全日制本科应届毕业生，专业不限；\n 2、具备良好的学习能力、沟通能力、抗压能力，责任心强； \n3、在校期间有班干部、学生会、社团工作经历者优先； \n4、有新东方或其他企业实习经验者优先。\n工作地点:北京市内"
+    },
+    "expected_grad_year": 2026
+  },
+  {
+    "source_id": "beisen-xdfqt",
+    "checked_at": "2026-11-02T06:13:31Z",
+    "url": "https://zhaopin.xdf.cn/campus/detail?jobAdId=d97936d0-9204-44f9-a37a-73e8e9af1b06",
+    "raw": {
+      "Id": "d97936d0-9204-44f9-a37a-73e8e9af1b06",
+      "JobAdName": "骄阳计划销售培训生",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-08-26T14:50:11.2283842",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、统招2026届全日制本科应届毕业生，专业不限；\n 2、具备良好的学习能力、沟通能力、抗压能力，责任心强； \n3、在校期间有班干部、学生会、社团工作经历者优先； \n4、有新东方或其他企业实习经验者优先。\n工作地点:北京市内"
+    },
+    "expected_grad_year": 2026
+  },
+  {
+    "source_id": "beisen-kingfa",
+    "checked_at": "2026-11-02T06:13:32Z",
+    "url": "https://kingfa.zhiye.com/campus/detail?jobAdId=c03c1cba-12cb-4473-b276-305762fef815",
+    "raw": {
+      "Id": "c03c1cba-12cb-4473-b276-305762fef815",
+      "JobAdName": "维修工程师（辽宁金发）",
+      "CategoryId": "2",
+      "LocNames": [
+        "辽宁省·盘锦市"
+      ],
+      "PostDate": "2026-08-26T14:24:01",
+      "EndTime": "2026-12-31T00:00:00",
+      "Require": "我们希望你：\r\n1. 学历专业： 2027届全日制本科及以上学历，机械工程、机械设计制造及其自动化、过程装备与控制工程、机械电子工程等相关专业；\r\n2.专业能力：具备扎实的机械原理、机械设计等专业基础；能识读机械装配图与零件图，了解泵、压缩机等常见化工设备结构及原理。入职后向设备维修管理、机械加工数控、状态监测与频谱分析方向定向培养；\r\n3.综合素质：性格外向，亲和力强，善于与人交往；具备强烈的成就动机和快速成长的渴望；具有较强的沟通影响能力和抗压能力；\r\n4.其他要求：专业排名前20%、担任班干部/学生会干部、参加专业类科技竞赛者优先；身体健康，无色盲色弱（必备），适应现场作业；工作严谨，安全意识强，严守操作规程；双休，月值班3-4次。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-ronbay",
+    "checked_at": "2026-11-02T06:13:36Z",
+    "url": "https://ronbay.zhiye.com/campus/detail?jobAdId=6fb5187d-64c1-483f-b342-b87aaad751b3",
+    "raw": {
+      "Id": "6fb5187d-64c1-483f-b342-b87aaad751b3",
+      "JobAdName": "制程工程师(J12404)",
+      "CategoryId": "2",
+      "LocNames": [
+        "贵州省·毕节市·织金县"
+      ],
+      "PostDate": "2026-09-09T17:07:18",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、基本条件：2027届本科及以上学历应届毕业生，材料、化学、工业工程、质量管理等相关专业。\n2、核心素质：严谨细致，责任心强，具备良好的逻辑分析能力、沟通协调能力及团队合作精神。\n3、关键技能：了解质量管理体系（如ISO9001、IATF16949）及质量工具（如SPC、FMEA）基础知识。熟练使用相关办公软件，具备良好的数据处理与分析能力。学习能力强，能快速理解生产工艺流程与质量控制要点。\n4、发展潜力：对质量管理与持续改进有浓厚兴趣，具备良好的问题发现与解决潜能；有质量相关实习、项目经验优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-sinosigcampus",
+    "checked_at": "2026-11-02T06:13:36Z",
+    "url": "https://sinosigcampus.zhiye.com/campus/detail?jobAdId=d12eb47c-f7f0-4e39-b51f-4cd4823b31e9",
+    "raw": {
+      "Id": "d12eb47c-f7f0-4e39-b51f-4cd4823b31e9",
+      "JobAdName": "集团AI应用开发工程师（企划方向）｜2027雏鹰管培生(J22477)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-10-27T19:29:41",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 2027届毕业生，硕士及以上学历在读，计算机类、人工智能类、数据科学类专业，具备企业管理/经济/金融/保险等复合背景优先；\n2. 扎实的编程基础，熟练掌握 Python，熟悉常用的AI开发框架（如LangChain、Langgraph等）；\n3. 有基于大模型的Agent编排、工具调用或多智能体协同的实战经验（课程项目、实习或开源贡献均可）；\n4. 具备较强的学习能力、责任担当意识、分析判断能力、执行力和团队协作能力，工作严谨细致，对数据敏感，对AI有热情、对前沿技术与产品好奇；\n5. 动手能力强，积极主动体验市场中先进的模型和产品，独立阅读论文/技术报告等并快速复现，快速主动尝试落地AI应用项目；\n6. 需熟练使用各类AI工具进行工作提效。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-genertec",
+    "checked_at": "2026-11-02T06:13:40Z",
+    "url": "https://genertec.zhiye.com/campus/detail?jobAdId=40bbaa1e-c7aa-45fa-8799-a4f7412ca2e8",
+    "raw": {
+      "Id": "40bbaa1e-c7aa-45fa-8799-a4f7412ca2e8",
+      "JobAdName": "数字信息化专员(J21285)",
+      "CategoryId": "2",
+      "LocNames": [
+        "浙江省·绍兴市·越城区"
+      ],
+      "PostDate": "2026-10-26T14:09:48",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 本科及以上学历，2027届应届毕业生，计算机、软件工程等相关专业；  \n2. 掌握Java核心语法，了解JVM基础概念；熟练使用Spring Framework（IoC、AOP）及Spring Boot，熟练使用MyBatis或MyBatis-Plus进行数据库开发；  \n3. 了解Spring Cloud或Dubbo等微服务框架，熟悉服务注册发现、配置中心、负载均衡、熔断降级等基本概念；  \n4. 掌握MySQL或PostgreSQL等至少一种关系型数据库，具备基本SQL编写能力，了解索引、事务、锁机制及常见数据库设计范式；  \n5. 具备较强的逻辑思维能力、责任心和学习能力，工作细致耐心，善于思考总结；  \n6. 具备良好的团队协作意识和沟通能力；  \n7. 有课程设计、实习或相关项目经验者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-cnnc",
+    "checked_at": "2026-11-02T06:13:45Z",
+    "url": "https://cnnc.zhiye.com/campus/detail?jobAdId=18635e7d-614f-4297-b124-3e8de5b631a9",
+    "raw": {
+      "Id": "18635e7d-614f-4297-b124-3e8de5b631a9",
+      "JobAdName": "中核建中-科研生产岗(J29956)",
+      "CategoryId": "2",
+      "LocNames": [
+        "四川省·宜宾市"
+      ],
+      "PostDate": "2026-09-01T17:42:08",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.政治立场坚定，无犯罪记录；\n2.2027届应届毕业生，本科及以上学历；\n3.认同中核集团企业文化和使命，身体健康，学习成绩佳；\n4.人工智能、机械、计算机、自动化、电气、电子信息、仪器控制、核工程等专业；\n5.按时取得学历、学位证书；\n6.原则上本科英语四级、硕士及以上英语六级。\n注：请在证明附件里提交PDF版简历"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-centurygame",
+    "checked_at": "2026-11-02T06:13:46Z",
+    "url": "https://centurygame.zhiye.com/campus/detail?jobAdId=8980ed86-6268-4bc2-8b45-05973845e452",
+    "raw": {
+      "Id": "8980ed86-6268-4bc2-8b45-05973845e452",
+      "JobAdName": "C/C ++后端开发工程师-福州(J13813)",
+      "CategoryId": "2",
+      "LocNames": [
+        "福建省·福州市"
+      ],
+      "PostDate": "2026-08-12T10:34:22",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "【任职资格】\r\n1、2027届统招本科及以上学历，计算机专业优先\r\n2、熟悉C++/C语言，数据结构与算法，网络和系统知识扎实\r\n3、热爱编程，善于学习思考总结，对新技术有高度敏感，例如AI等\r\n4、专注耐心，细致，具备用户导向和共情能力"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-polyharmony",
+    "checked_at": "2026-11-02T06:13:48Z",
+    "url": "https://polyharmony.zhiye.com/campus/detail?jobAdId=1afbc9ef-e454-4889-af11-7ca4eeb9b02c",
+    "raw": {
+      "Id": "1afbc9ef-e454-4889-af11-7ca4eeb9b02c",
+      "JobAdName": "销售管培生（保利和润-安徽）-秋招(J29666)",
+      "CategoryId": "2",
+      "LocNames": [
+        "安徽省·合肥市"
+      ],
+      "PostDate": "2026-09-22T16:43:29",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027 届应届本科或硕士毕业生，专业不限，房地产、市场营销类、管理类及金融经济类相关专业优先；\n2、优秀的沟通表达能力和资源整合能力，自驱力强；\n3、目标感强，结果导向，有责任心及团队合作意识，有意愿往销售管理方向深耕；\n4、首年到基地集中培养，能接受地点灵活调配者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-ahccs",
+    "checked_at": "2026-11-02T06:13:52Z",
+    "url": "https://ahccs.zhiye.com/campus/detail?jobAdId=e55d3654-24b2-4ba9-ac12-a256d22043c1",
+    "raw": {
+      "Id": "e55d3654-24b2-4ba9-ac12-a256d22043c1",
+      "JobAdName": "综合维护工程师(J11752)",
+      "CategoryId": "2",
+      "LocNames": [
+        "安徽省·合肥市·高新区"
+      ],
+      "PostDate": "2026-09-14T08:28:01",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届本科及以上学历高校毕业生；\n2.计算机类、电子信息类、自动化类、建筑电气与智能化相关专业；\n3.熟悉综合布线、动环监控、门禁安防、楼宇自控等弱电系统基础原理，掌握相关专业基础知识，具备良好的学习能力和问题排查思维，愿意深耕数据中心弱电运维方向；\n4.能够熟练使用办公软件及CAD等制图软件；\n5.工作严谨负责、责任心强，具备良好的团队协作能力与安全保密意识，能适应数据中心轮班倒班运维工作，身体健康可胜任现场作业。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-smpv",
+    "checked_at": "2026-11-02T06:13:57Z",
+    "url": "https://smpv.zhiye.com/campus/detail?jobAdId=4638e92d-32b2-481b-ab11-91e29da50c97",
+    "raw": {
+      "Id": "4638e92d-32b2-481b-ab11-91e29da50c97",
+      "JobAdName": "创新研发方向-整车集成与架构开发",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市·嘉定区"
+      ],
+      "PostDate": "2026-09-01T15:48:00",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届应届毕业生；\n2、本科及以上学历，车辆工程、机械电子工程、电气工程及其自动化、电子科学与技术、通信工程、计算机、工业设计、产品设计等相关专业优先；\n3、英语CET-6或同等英语证书，具备良好的听说读写能力；\n4、可使用CATIA、UG等三维建模软件，工作计划性强、较强的自我学习能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-infore",
+    "checked_at": "2026-11-02T06:13:57Z",
+    "url": "https://infore.zhiye.com/campus/detail?jobAdId=cbc0d7c8-f7bf-4aa4-9e2b-430db23effb6",
+    "raw": {
+      "Id": "cbc0d7c8-f7bf-4aa4-9e2b-430db23effb6",
+      "JobAdName": "营销管培生",
+      "CategoryId": "2",
+      "LocNames": [
+        "全国"
+      ],
+      "PostDate": "2026-02-28T16:11:02",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 统招2026届本科及以上学历，市场营销类、环境工程类、机械类、汽车工程类等相关专业优先；\n2. 有良好的职业道德和责任心，做事认真负责，诚实守信，无不良记录，有想法、有激情、有干劲，积极向上、执行力强；\n3. 熟悉政府类招投标项目操作流程，有相关政府类项目销售经验者优先；\n4. 具备良好的商务形象和公关能力，优秀的谈判能力；\n5. 有良好的的沟通协调能力，能熟练使用 Office 等办公软件，用于撰写报告、制作方案和分析数据等；\n6. 可接受全国范围内派驻。"
+    },
+    "expected_grad_year": 2026
+  },
+  {
+    "source_id": "beisen-cmhk",
+    "checked_at": "2026-11-02T06:13:58Z",
+    "url": "https://cmhk.zhiye.com/campus/detail?jobAdId=61120534-4a69-41a8-8e4c-257f9de81977",
+    "raw": {
+      "Id": "61120534-4a69-41a8-8e4c-257f9de81977",
+      "JobAdName": "合规管理岗(J34011)",
+      "CategoryId": "2",
+      "LocNames": [
+        "湖北省·武汉市"
+      ],
+      "PostDate": "2026-10-15T14:30:31",
+      "EndTime": "2026-11-14T00:00:00",
+      "Require": "1.2027届高校毕业生，硕士及以上学历，财务、法律、企业管理相关专业；通过法律职业资格考试。\n2.熟练使用Office办公软件，具备良好的分析能力。\n3.吃苦耐劳，抗压能力强；工作严谨细致，责任心强；具备良好的沟通协调能力和团队合作精神。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-luxshare-tech",
+    "checked_at": "2026-11-02T06:14:00Z",
+    "url": "https://luxshare-tech.zhiye.com/campus/detail?jobAdId=f502fc8a-72b7-4d38-bfee-9009e507340e",
+    "raw": {
+      "Id": "f502fc8a-72b7-4d38-bfee-9009e507340e",
+      "JobAdName": "光学工程师",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·东莞市"
+      ],
+      "PostDate": "2026-08-27T17:38:21",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 2027届本科及以上学历，硕士优先，光学工程、光电信息、物理、激光等相关专业；\r\n2. 掌握几何光学、物理光学、激光原理等专业基础知识；\r\n3. 熟悉Zemax、Code V等光学设计/仿真工具或具备相关项目经验者优先；\r\n4. 具备较强的实验动手、数据分析和问题解决能力；\r\n5. 有光模块、光器件、激光应用等课题、竞赛或实习经历者优先；\r\n6. 具备良好的学习能力、沟通协作意识和英文资料阅读能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-syamt",
+    "checked_at": "2026-11-02T06:14:03Z",
+    "url": "https://syamt.zhiye.com/campus/detail?jobAdId=e5e686fd-684f-4d35-8bc8-85f814b268e8",
+    "raw": {
+      "Id": "e5e686fd-684f-4d35-8bc8-85f814b268e8",
+      "JobAdName": "设备调试工程师-自动化部（沈阳）(J10827)",
+      "CategoryId": "2",
+      "LocNames": [
+        "辽宁省·沈阳市"
+      ],
+      "PostDate": "2026-09-14T08:55:54",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.熟悉机械装配图，能够独立完成机械结构的组装与调试；\n2.具备较强的问题分析与解决能力，能独立处理调试过程中出现的技术难题；\n3.具备良好的沟通协调能力，能够适应出差，胜任客户现场调试工作；\n4.具备责任心和团队合作精神；\n5.2027届本科及以上学历，机电一体化、电气工程、机器人应用等相关专业。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-transsion",
+    "checked_at": "2026-11-02T06:14:09Z",
+    "url": "https://transsion.zhiye.com/campus/detail?jobAdId=6bae1ffa-9424-4668-9d04-207ebbd5fed5",
+    "raw": {
+      "Id": "6bae1ffa-9424-4668-9d04-207ebbd5fed5",
+      "JobAdName": "AI全栈开发工程师（重庆）(J20347)",
+      "CategoryId": "2",
+      "LocNames": [
+        "重庆市"
+      ],
+      "PostDate": "2026-09-16T10:13:41.4262836",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "2027 届本科及以上学历，计算机、软件工程、人工智能、信息管理、数据科学等相关专业优先。\r\n具备良好的编程基础，熟悉至少一种后端开发语言，如 Python、JavaScript/TypeScript、Java 等。\r\n熟悉前端开发基础，了解 React、Vue 等主流框架之一，能够完成基础页面开发与交互实现。\r\n了解常见服务端开发流程，能够进行接口开发、数据存储、系统联调和问题排查。\r\n熟悉数据库和基础工程能力，了解 MySQL/PostgreSQL、Redis、Git、Linux 等常用技术。\r\n对大模型和 AIGC 应用有浓厚兴趣，了解文本生成、检索增强、Agent、工作流编排等技术者优先。\r\n对内容营销、品牌传播、用户增长有兴趣，愿意理解内容生产与分发链路。\r\n具备较强的学习能力、产品意识和沟通协作能力，能够快速理解业务并推动功能落地。\r\n有以下经历优先：\r\n有 AI 内容工具、CMS、推荐系统、营销工具相关项目或实习经验；\r\n有文案生成、多语言内容处理、内容分析等相关项目经验；\r\n有个人作品、开源项目、比赛成果或完整 Demo 展示。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-norincogroupzhaopin",
+    "checked_at": "2026-11-02T06:14:11Z",
+    "url": "https://norincogroupzhaopin.zhiye.com/campus/detail?jobAdId=a5ff49ce-3c0f-4afe-932d-e4099a4951b3",
+    "raw": {
+      "Id": "a5ff49ce-3c0f-4afe-932d-e4099a4951b3",
+      "JobAdName": "电机及能源系统类岗",
+      "CategoryId": "2",
+      "LocNames": [
+        "浙江省·杭州市·西湖区"
+      ],
+      "PostDate": "2026-09-01T08:46:34",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、硕士及以上学历；\n2、2027届应届毕业生；\n3、车辆、能源大类专业为主。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-wondersharecampus",
+    "checked_at": "2026-11-02T06:14:14Z",
+    "url": "https://wondersharecampus.zhiye.com/campus/detail?jobAdId=6492ee42-4460-4666-b853-2a1a86e47745",
+    "raw": {
+      "Id": "6492ee42-4460-4666-b853-2a1a86e47745",
+      "JobAdName": "音频算法工程师",
+      "CategoryId": "2",
+      "LocNames": [
+        "湖南省·长沙市"
+      ],
+      "PostDate": "2026-09-30T14:26:47",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027 届硕士研究生及以上学历，计算机、通信、信号处理等相关专业，专业课无挂科记录；\n2、数字信号处理基础扎实，熟悉算法实现优化和落地；\n3、具备Linux环境下开发与调试经验，具有较好的C、C++或者python编程能力；\n4、熟练掌握至少一种深度学习框架PyTorch/TensorFlow/Caffe等，具备扎实的机器学习深度学习能力；\n5、优先条件：\n（1）有声音3A算法经验者；\n（2）有直接音效和音频分析开发经验者；\n（3）有AIGC音效音乐开发经验者。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-xynovatech",
+    "checked_at": "2026-11-02T06:14:16Z",
+    "url": "https://xynovatech.zhiye.com/campus/detail?jobAdId=870723f6-54e1-4616-8c05-d4f64eeb28cb",
+    "raw": {
+      "Id": "870723f6-54e1-4616-8c05-d4f64eeb28cb",
+      "JobAdName": "混驱手机械工程师",
+      "CategoryId": "2",
+      "LocNames": [
+        "浙江省·杭州市"
+      ],
+      "PostDate": "2026-08-03T16:41:34",
+      "EndTime": "2027-06-30T00:00:00",
+      "Require": "任职要求\n1、教育背景：全日制本科及以上学历，机械工程、机械设计制造及其自动化、机电一体化等相关专业，2027届毕业生。\n2、专业技能：掌握机械设计原理，熟悉齿轮、丝杠、连杆、带传动等常用机构，了解电机、减速器等标准件的选型；\n3、熟练使用至少一种三维设计软件，具备扎实的曲面造型、3D建模及工程图绘制能力，了解GD&T公差分析；\n4、了解机加工（CNC、车铣）、3D打印等主流制造工艺及常用金属材料特性，具备DFMA（面向制造与装配的设计）初步意识。\n5、项目经历（加分项）：\n有机器人（人形/协作/AGV）、机械臂、灵巧手相关课程设计、毕业设计或实验室项目经验；参加过全国大学生机械创新设计大赛、“互联网+”、RoboMaster等高水平科创竞赛并获奖；\n有专利撰写或发表相关学术论文者优先。\n6、综合素质：具备优秀的动手能力与实践精神，逻辑思维清晰，善于复盘总结；拥有强烈的责任心和团队协作精神，对机器人行业充满热情，具备良好的抗压能力与主动钻研精神。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-fii-foxconn",
+    "checked_at": "2026-11-02T06:14:17Z",
+    "url": "https://fii-foxconn.zhiye.com/campus/detail?jobAdId=f020a040-3d7c-4ab5-91da-f2add628958f",
+    "raw": {
+      "Id": "f020a040-3d7c-4ab5-91da-f2add628958f",
+      "JobAdName": "硬件研发工程师（南宁）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广西壮族自治区·南宁市"
+      ],
+      "PostDate": "2026-10-08T14:52:55",
+      "EndTime": "2027-03-31T00:00:00",
+      "Require": "1.2027届毕业生，本科及以上学历，电子、通讯相关专业，模电/数电/电路分析/微机原理等核心专业课成绩优异，有电子类竞赛/毕业设计硬件开发经验/相关实习经历者优先；\n2.通过英语CET4，具备良好的英语听说读写能力；\n3.性格开朗，主动好学，责任心强，有较强的表达和沟通能力，可承受一定的工作压力；\n4.可配合工作出差。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-weichai",
+    "checked_at": "2026-11-02T06:14:20Z",
+    "url": "https://weichai.zhiye.com/campus/detail?jobAdId=6d2ae249-eec5-4669-8559-93ec515ae15d",
+    "raw": {
+      "Id": "6d2ae249-eec5-4669-8559-93ec515ae15d",
+      "JobAdName": "B-驱动系统产品类(J12712)",
+      "CategoryId": "2",
+      "LocNames": [
+        "山东省·潍坊市"
+      ],
+      "PostDate": "2026-08-31T18:02:53",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.统招本科及以上学历2027届毕业生, 电机、电力电子、机械、车辆工程、自动化、电气、控制工程等理工类相关专业。\n2.具备扎实的专业功底。\n3.具备良好的团队合作精神和创新意识。\n4.具备较强的英语沟通能力。"
+    },
+    "expected_grad_year": 2027
+  }
+]
