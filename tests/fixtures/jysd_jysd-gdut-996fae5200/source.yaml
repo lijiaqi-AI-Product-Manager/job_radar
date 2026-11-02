@@ -1,0 +1,19 @@
+adapter: jysd
+source_kind: aggregator
+recruit_types:
+- campus
+rate_limit_rps: 1
+id: jysd-gdut-996fae5200
+company: 中国东方电气集团有限公司
+compliance:
+  checked_on: '2026-11-02'
+  robots: absent
+  terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+  notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+params:
+  host: career.gdut.edu.cn
+  match:
+  - 中国东方电气集团有限公司
+  notice_ids:
+  - '1021121'
+  allow_empty: true

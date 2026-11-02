@@ -3,31 +3,31 @@
 需要 Python 3.11+。在实际运行 CLI 或 MCP 的 Python 环境中升级：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.0"
+pip install --upgrade "jobsearchradar[mcp]==2.1.1"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-仅使用 CLI 可以安装 `jobsearchradar==2.1.0`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+仅使用 CLI 可以安装 `jobsearchradar==2.1.1`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
-2026-11-02 已从 PyPI 官方索引在全新环境安装 `2.1.0`，通过帮助、城市、历史、截止筛选、公司简称与包内来源目录共七项兼容检查及 MCP 启动帮助检查。发布流水线也会独立安装构建出的发行包验证。
+发布流水线会在独立环境安装构建出的 `2.1.1`，验证帮助、城市、历史、截止筛选、公司简称与来源目录；正式发布后还须从 PyPI 官方索引复验。上次官方新环境安装已验证至 `2.1.0`。
 GitHub Release 与 PyPI 的 wheel / sdist 逐项 SHA-256 相同；主分支与安装包的 Python、迁移与来源目录文件统一换行符后逐项对照一致，公司简称映射也一致。
 
 ## 渠道与固定源码
 
 | 渠道 | 已核实状态（2026-11-02） | 用途 |
 | :--- | :--- | :--- |
-| PyPI `2.1.0` | 发行包安装与兼容检查 | 默认安装目标 |
-| GitHub `v2.1.0` | 与 PyPI 使用相同发行文件 | 下载 wheel 或源码包 |
-| 固定源码标签 | `v2.1.0`，代码版本 `2.1.0` | 可复现的备用安装 |
-| `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.0；失败时旧数据保留 |
+| PyPI `2.1.1` | 发行包安装与兼容检查 | 默认安装目标 |
+| GitHub `v2.1.1` | 与 PyPI 使用相同发行文件 | 下载 wheel 或源码包 |
+| 固定源码标签 | `v2.1.1`，代码版本 `2.1.1` | 可复现的备用安装 |
+| `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.1；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.1.0.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.1.1.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
@@ -35,7 +35,7 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 
 ## 安装后检查
 
-`--version` 应显示 `2.1.0`；`search --help` 应正常退出，并列出 `--deadline-before`；
+`--version` 应显示 `2.1.1`；`search --help` 应正常退出，并列出 `--deadline-before`；
 `calendar --help` 应列出 `--city` 和 `--include-expired`。参数不受支持或帮助报错时，
 先核对终端与 MCP 使用的 Python 环境，再按上述命令升级，不要删除筛选条件。
 

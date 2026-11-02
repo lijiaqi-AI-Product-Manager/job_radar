@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://career.sysu.edu.cn/campus/view/id/997419",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html",
+    "file": "001.html"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://myjob.dlmu.edu.cn/campus/view/id/869484",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html",
+    "file": "001.html"
+  }
+]

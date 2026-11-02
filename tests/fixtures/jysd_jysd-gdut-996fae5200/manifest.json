@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://career.gdut.edu.cn/campus/view/id/1021121",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html",
+    "file": "001.html"
+  }
+]

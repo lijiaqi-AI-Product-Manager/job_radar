@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "url": "https://job.xidian.edu.cn/campus/view/id/757348",
+    "body": "",
+    "status": 200,
+    "content_type": "text/html",
+    "file": "001.html"
+  }
+]

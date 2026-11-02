@@ -14,6 +14,10 @@ on:
         type: number
         default: 0
         description: 只补超过指定小时未成功的源，0为全部
+      only_sources:
+        type: string
+        default: ""
+        description: 定向复验的源ID，逗号分隔；留空按原计划采集全部源
 
 permissions:
   contents: write
@@ -59,7 +63,12 @@ jobs:
 
       - name: Crawl
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
-        run: uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget 900 --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" | tee crawl-summary.json
+        env:
+          CRAWL_ONLY_SOURCES: ${{ inputs.only_sources }}
+        run: |
+          selection=()
+          if [ -n "$CRAWL_ONLY_SOURCES" ]; then selection=(--only "$CRAWL_ONLY_SOURCES"); fi
+          uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget 900 --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" "${selection[@]}" | tee crawl-summary.json
 
       - name: Apply reviewed data corrections
         run: uv run python scripts/repair_reviewed_data.py --home data --apply
@@ -111,7 +120,7 @@ jobs:
           fi
 
       - name: Health issue
-        if: always()
+        if: always() && inputs.only_sources == ''
         env:
           CRAWL_JOB_STATUS: ${{ job.status }}
         run: |

@@ -1,0 +1,330 @@
+# 已核验高校公开招聘公告；一条公告不等于单个职位。
+defaults:
+  adapter: jysd
+  source_kind: aggregator
+  recruit_types:
+  - campus
+  rate_limit_rps: 1
+sources:
+- id: jysd-gdut-05bc312c1d
+  company: 潮州三环（集团）股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 潮州三环（集团）股份有限公司
+    notice_ids:
+    - '1020781'
+    allow_empty: true
+- id: jysd-sysu-42a354400e
+  company: 广东东鹏控股股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 广东东鹏控股股份有限公司
+    notice_ids:
+    - '997168'
+    allow_empty: true
+- id: jysd-gdut-996fae5200
+  company: 中国东方电气集团有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 中国东方电气集团有限公司
+    notice_ids:
+    - '1021121'
+    allow_empty: true
+- id: jysd-xidian-27a62192e5
+  company: 中国能源建设股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 中国能源建设股份有限公司
+    notice_ids:
+    - '757348'
+    allow_empty: true
+- id: jysd-dlmu-e53094408f
+  company: 中国铝业集团有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: myjob.dlmu.edu.cn
+    match:
+    - 中国铝业集团有限公司
+    notice_ids:
+    - '869053'
+    allow_empty: true
+- id: jysd-gdut-4cd941dd19
+  company: 深圳中科飞测科技股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 深圳中科飞测科技股份有限 公司
+    notice_ids:
+    - '1020780'
+    allow_empty: true
+- id: jysd-gdut-f266caf8d2
+  company: 乐元素科技（北京）股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 乐元素科技（北京）股份有限公司
+    notice_ids:
+    - '1020761'
+    allow_empty: true
+- id: jysd-xidian-eaa87e452a
+  company: 武汉光迅科技股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 武汉光迅科技股份有限公司
+    notice_ids:
+    - '757449'
+    allow_empty: true
+- id: jysd-sysu-e4771204d9
+  company: 广东省广新控股集团有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 广东省广新控股集团有限公司
+    notice_ids:
+    - '997265'
+    allow_empty: true
+- id: jysd-xidian-5a3616a5bd
+  company: 广西玉柴机器股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 广西玉柴机器股份有限公司
+    notice_ids:
+    - '757312'
+    allow_empty: true
+- id: jysd-xidian-63942c89e6
+  company: 深圳思谋信息科技有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 深圳思谋信息科技有限公司
+    notice_ids:
+    - '758379'
+    allow_empty: true
+- id: jysd-sysu-4f94e7224a
+  company: 北京畅游天下网络技术集团有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 北京畅游天下网络技术集团有限公司
+    notice_ids:
+    - '997277'
+    allow_empty: true
+- id: jysd-dlmu-9278660cb7
+  company: 汇丰软件开发（广东）有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: myjob.dlmu.edu.cn
+    match:
+    - 汇丰软件开发（广东）有限公司
+    notice_ids:
+    - '869484'
+    allow_empty: true
+- id: jysd-sysu-0c572761f6
+  company: 烽火通信科技股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 烽火通信科技股份有限公司
+    notice_ids:
+    - '996376'
+    allow_empty: true
+- id: jysd-xidian-b46cd4b459
+  company: 爱芯元智半导体股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 爱芯元智半导体股份有限公司
+    notice_ids:
+    - '757424'
+    allow_empty: true
+- id: jysd-xidian-ae7c0e4839
+  company: 瑞芯微电子股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 瑞芯微电子股份有限公司
+    notice_ids:
+    - '757494'
+    allow_empty: true
+- id: jysd-sysu-d693f3abf0
+  company: 百联集团有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 百联集团有限公司
+    notice_ids:
+    - '996718'
+    allow_empty: true
+- id: jysd-sysu-5df41f4144
+  company: 祖龙（天津）科技股份有限公司北京分公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 祖龙（天津）科技股份有限公司北京分公司
+    notice_ids:
+    - '997419'
+    allow_empty: true
+- id: jysd-xidian-9dbb14d337
+  company: 神龙汽车有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 神龙汽车有限公司
+    notice_ids:
+    - '757647'
+    allow_empty: true
+- id: jysd-sysu-77c4089d99
+  company: 上海米哈游网络科技股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: unavailable
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。 robots返回HTTP403，依RFC9309无适用规则；公告本身匿名HTTP200且无挑战，未绕过岗位访问限制。
+  params:
+    host: career.sysu.edu.cn
+    match:
+    - 上海米哈游网络科技股份有限公司
+    notice_ids:
+    - '996378'
+    allow_empty: true
+- id: jysd-gdut-f0e92ce64d
+  company: 苏州纳芯微电子股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 苏州纳芯微电子股份有限公司
+    notice_ids:
+    - '1020774'
+    allow_empty: true
+- id: jysd-dlmu-90acd3ef2d
+  company: 杭州长川科技股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: myjob.dlmu.edu.cn
+    match:
+    - 杭州长川科技股份有限公司
+    notice_ids:
+    - '868419'
+    allow_empty: true
+- id: jysd-xidian-baa31edd3b
+  company: 广东领益智造股份有限公司
+  compliance:
+    checked_on: '2026-11-02'
+    robots: absent
+    terms: 高校公开招聘栏目和公告详情匿名可读；页面未提供独立使用条款链接。仅只读索引并保留原始链接，不推定转载许可。
+    notes: 固定项目UA、逐请求robots守卫、1rps。只读取已核验的公告ID集合，不声称企业全量岗位。保留登记法人或分支名；公告展示到期与雇主网申截止日分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 广东领益智造股份有限公司
+    notice_ids:
+    - '757942'
+    allow_empty: true

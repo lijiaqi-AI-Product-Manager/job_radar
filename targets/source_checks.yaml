@@ -215,3 +215,325 @@ checks:
     publish_at: '2026-09-22'
     apply_end: null
     listing_end: '2026-11-22'
+- source_id: jysd-gdut-05bc312c1d
+  company: 潮州三环（集团）股份有限公司
+  registered_company: 潮州三环（集团）股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:15Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1020781'
+    title: 三环集团2027届秋季招聘
+    url: https://career.gdut.edu.cn/campus/view/id/1020781
+    publish_at: '2026-08-19'
+    apply_end: null
+    listing_end: '2026-11-17'
+- source_id: jysd-sysu-42a354400e
+  company: 广东东鹏控股股份有限公司
+  registered_company: 广东东鹏控股股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:09Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '997168'
+    title: 广东东鹏控股股份有限公司 2027届校园招聘简章
+    url: https://career.sysu.edu.cn/campus/view/id/997168
+    publish_at: '2026-09-17'
+    apply_end: null
+    listing_end: '2026-12-16'
+- source_id: jysd-gdut-996fae5200
+  company: 中国东方电气集团有限公司
+  registered_company: 中国东方电气集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:17:58Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1021121'
+    title: 中国东方电气集团有限公司2027届 校园招聘简章
+    url: https://career.gdut.edu.cn/campus/view/id/1021121
+    publish_at: '2026-09-20'
+    apply_end: null
+    listing_end: '2026-12-19'
+- source_id: jysd-xidian-27a62192e5
+  company: 中国能源建设股份有限公司
+  registered_company: 中国能源建设股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:41Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757348'
+    title: “聚能成势，共建美好” 中国能建2027届全球校园招聘正式启动
+    url: https://job.xidian.edu.cn/campus/view/id/757348
+    publish_at: '2026-09-08'
+    apply_end: null
+    listing_end: '2026-12-07'
+- source_id: jysd-dlmu-e53094408f
+  company: 中国铝业集团有限公司
+  registered_company: 中国铝业集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:17:54Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '869053'
+    title: 中国铝业集团有限公司2027年度高校毕业生招聘公告
+    url: https://myjob.dlmu.edu.cn/campus/view/id/869053
+    publish_at: '2026-09-19'
+    apply_end: '2027-03-07'
+    listing_end: '2026-12-18'
+- source_id: jysd-gdut-4cd941dd19
+  company: 深圳中科飞测科技股份有限公司
+  registered_company: 深圳中科飞测科技股份有限 公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:19Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1020780'
+    title: 中科飞测2027届校园招聘启动
+    url: https://career.gdut.edu.cn/campus/view/id/1020780
+    publish_at: '2026-08-19'
+    apply_end: null
+    listing_end: '2026-11-17'
+- source_id: jysd-gdut-f266caf8d2
+  company: 乐元素科技（北京）股份有限公司
+  registered_company: 乐元素科技（北京）股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:31Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1020761'
+    title: 乐元素27届秋季招聘｜应届+实习全年开放（北京上海）
+    url: https://career.gdut.edu.cn/campus/view/id/1020761
+    publish_at: '2026-08-11'
+    apply_end: null
+    listing_end: '2026-11-09'
+- source_id: jysd-xidian-eaa87e452a
+  company: 武汉光迅科技股份有限公司
+  registered_company: 武汉光迅科技股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:39Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757449'
+    title: 武汉光迅科技2027校园招聘
+    url: https://job.xidian.edu.cn/campus/view/id/757449
+    publish_at: '2026-09-10'
+    apply_end: null
+    listing_end: '2026-12-09'
+- source_id: jysd-sysu-e4771204d9
+  company: 广东省广新控股集团有限公司
+  registered_company: 广东省广新控股集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:07Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '997265'
+    title: 广东广新控股集团2027届校园招聘
+    url: https://career.sysu.edu.cn/campus/view/id/997265
+    publish_at: '2026-09-21'
+    apply_end: null
+    listing_end: '2026-12-20'
+- source_id: jysd-xidian-5a3616a5bd
+  company: 广西玉柴机器股份有限公司
+  registered_company: 广西玉柴机器股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:43Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757312'
+    title: 广西玉柴机器股份有限公司2026年秋季校园招聘会
+    url: https://job.xidian.edu.cn/campus/view/id/757312
+    publish_at: '2026-09-07'
+    apply_end: null
+    listing_end: '2026-12-06'
+- source_id: jysd-xidian-63942c89e6
+  company: 深圳思谋信息科技有限公司
+  registered_company: 深圳思谋信息科技有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:04Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '758379'
+    title: SmartMore思谋科技2027校园招聘
+    url: https://job.xidian.edu.cn/campus/view/id/758379
+    publish_at: '2026-10-29'
+    apply_end: null
+    listing_end: '2026-12-29'
+- source_id: jysd-sysu-4f94e7224a
+  company: 北京畅游天下网络技术集团有限公司
+  registered_company: 北京畅游天下网络技术集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:06Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '997277'
+    title: 搜狐畅游2027届校园招聘
+    url: https://career.sysu.edu.cn/campus/view/id/997277
+    publish_at: '2026-09-21'
+    apply_end: null
+    listing_end: '2026-12-20'
+- source_id: jysd-dlmu-9278660cb7
+  company: 汇丰软件开发（广东）有限公司
+  registered_company: 汇丰软件开发（广东）有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:17:48Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '869484'
+    title: 汇丰科技中国2027校园招聘
+    url: https://myjob.dlmu.edu.cn/campus/view/id/869484
+    publish_at: '2026-10-29'
+    apply_end: null
+    listing_end: '2026-12-31'
+- source_id: jysd-sysu-0c572761f6
+  company: 烽火通信科技股份有限公司
+  registered_company: 烽火通信科技股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:24Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '996376'
+    title: 烽火通信2027届校园招聘
+    url: https://career.sysu.edu.cn/campus/view/id/996376
+    publish_at: '2026-08-04'
+    apply_end: null
+    listing_end: '2026-11-02'
+- source_id: jysd-xidian-b46cd4b459
+  company: 爱芯元智半导体股份有限公司
+  registered_company: 爱芯元智半导体股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:40Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757424'
+    title: 【芯火相传，智启未来】爱芯元智 2027 届校园招聘
+    url: https://job.xidian.edu.cn/campus/view/id/757424
+    publish_at: '2026-09-09'
+    apply_end: null
+    listing_end: '2026-11-09'
+- source_id: jysd-xidian-ae7c0e4839
+  company: 瑞芯微电子股份有限公司
+  registered_company: 瑞芯微电子股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:37Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757494'
+    title: 瑞芯微电子2027届校园招聘
+    url: https://job.xidian.edu.cn/campus/view/id/757494
+    publish_at: '2026-09-11'
+    apply_end: null
+    listing_end: '2026-11-11'
+- source_id: jysd-sysu-d693f3abf0
+  company: 百联集团有限公司
+  registered_company: 百联集团有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:17Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '996718'
+    title: 百联集团2027届校园招聘
+    url: https://career.sysu.edu.cn/campus/view/id/996718
+    publish_at: '2026-09-02'
+    apply_end: null
+    listing_end: '2026-11-02'
+- source_id: jysd-sysu-5df41f4144
+  company: 祖龙（天津）科技股份有限公司北京分公司
+  registered_company: 祖龙（天津）科技股份有限公司北京分公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:17:59Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '997419'
+    title: 祖龙娱乐2027届秋季校园招聘公告
+    url: https://career.sysu.edu.cn/campus/view/id/997419
+    publish_at: '2026-09-29'
+    apply_end: null
+    listing_end: '2026-12-28'
+- source_id: jysd-xidian-9dbb14d337
+  company: 神龙汽车有限公司
+  registered_company: 神龙汽车有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:32Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757647'
+    title: 神龙汽车有限公司2027届校园招聘简章
+    url: https://job.xidian.edu.cn/campus/view/id/757647
+    publish_at: '2026-09-16'
+    apply_end: null
+    listing_end: '2026-12-01'
+- source_id: jysd-sysu-77c4089d99
+  company: 上海米哈游网络科技股份有限公司
+  registered_company: 上海米哈游网络科技股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:24Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '996378'
+    title: 米哈游27届秋季校招&28届及全年实习招聘
+    url: https://career.sysu.edu.cn/campus/view/id/996378
+    publish_at: '2026-08-04'
+    apply_end: null
+    listing_end: '2026-11-02'
+- source_id: jysd-gdut-f0e92ce64d
+  company: 苏州纳芯微电子股份有限公司
+  registered_company: 苏州纳芯微电子股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:22Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '1020774'
+    title: 苏州纳芯微电子股份有限公司2027届校园招聘简章
+    url: https://career.gdut.edu.cn/campus/view/id/1020774
+    publish_at: '2026-08-17'
+    apply_end: null
+    listing_end: '2026-11-15'
+- source_id: jysd-dlmu-90acd3ef2d
+  company: 杭州长川科技股份有限公司
+  registered_company: 杭州长川科技股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:06Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '868419'
+    title: 长川科技2027届校园招聘简章 青春正燃，逐梦长川
+    url: https://myjob.dlmu.edu.cn/campus/view/id/868419
+    publish_at: '2026-08-19'
+    apply_end: null
+    listing_end: '2026-11-17'
+- source_id: jysd-xidian-baa31edd3b
+  company: 广东领益智造股份有限公司
+  registered_company: 广东领益智造股份有限公司
+  record_kind: recruitment_notice
+  checked_at: '2026-11-02T07:18:16Z'
+  current_records: 1
+  records_with_jd: 1
+  samples:
+  - source_job_id: '757942'
+    title: 广东领益智造股份有限公司-2027届西北线校园招聘
+    url: https://job.xidian.edu.cn/campus/view/id/757942
+    publish_at: '2026-09-28'
+    apply_end: null
+    listing_end: '2026-12-27'
