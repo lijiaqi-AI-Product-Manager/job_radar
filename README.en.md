@@ -107,15 +107,15 @@ For CLI-based integrations, see the [query workflow](skill/jobradar/SKILL.md).
 
 | Metric | Value | Definition |
 | :--- | ---: | :--- |
-| Enabled sources | **2,265** | Enabled source configurations |
+| Enabled sources | **2,264** | Enabled source configurations |
 | Configured companies | **2,225** | Distinct companies represented by enabled sources |
 | Adapters | **27** | Shared platforms and custom recruitment sites |
 | Core target coverage | **952 / 1,655 · 57.52%** | Configuration coverage of a fixed target pool |
 | Official / aggregator | **604 / 348** | Official-first classification, without double counting |
 
-**Verified release snapshot · `2026-11-02T09:11:52Z`**
+**Verified release snapshot · `2026-11-02T12:44:23Z`**
 
-**298,458 total job records**, including **277,482 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **5,069 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
+**298,627 total job records**, including **277,563 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **5,140 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
 
 Configured coverage does not mean an employer is hiring today. An aggregator recruitment notice may describe multiple roles. Missing dates remain empty; a university notice's display expiry is kept separate from an employer's application deadline. See [coverage methodology and limitations](docs/COVERAGE.md).
 

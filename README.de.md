@@ -40,7 +40,7 @@ jobradar doctor
 
 | Kennzahl | Wert |
 | :--- | ---: |
-| Aktivierte Quellen | 2,265 |
+| Aktivierte Quellen | 2,264 |
 | Konfigurierte Unternehmen | 2,225 |
 | Adapter | 27 |
 | Konfigurationsabdeckung der festen Zielliste | 952 / 1,655 · 57.52% |
