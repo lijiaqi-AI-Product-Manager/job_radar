@@ -1,7 +1,7 @@
 ![job_radar — Find your next opportunity. Keep the data.](docs/assets/hero-en.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.3"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4"><img src="https://img.shields.io/badge/release-v2.1.4-58bfa5" alt="Release 2.1.4"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
@@ -43,7 +43,7 @@ Turn scattered public recruitment information into a traceable SQLite dataset. F
 Requires **Python 3.11+**. Supports Windows, macOS and Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -81,7 +81,7 @@ Omit `--table` for JSON output. Use `jobradar show <job_id>` for a listing and i
 ## Connect with MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 
@@ -103,15 +103,15 @@ For CLI-based integrations, see the [query workflow](skill/jobradar/SKILL.md).
 
 ## Data and coverage
 
-**Source configuration · November 2, 2026**
+**Source configuration · November 3, 2026**
 
 | Metric | Value | Definition |
 | :--- | ---: | :--- |
-| Enabled sources | **2,264** | Enabled source configurations |
-| Configured companies | **2,225** | Distinct companies represented by enabled sources |
+| Enabled sources | **2,262** | Enabled source configurations |
+| Configured companies | **2,223** | Distinct companies represented by enabled sources |
 | Adapters | **27** | Shared platforms and custom recruitment sites |
-| Core target coverage | **952 / 1,655 · 57.52%** | Configuration coverage of a fixed target pool |
-| Official / aggregator | **604 / 348** | Official-first classification, without double counting |
+| Core target coverage | **950 / 1,655 · 57.40%** | Configuration coverage of a fixed target pool |
+| Official / aggregator | **604 / 346** | Official-first classification, without double counting |
 
 **Verified release snapshot · `2026-11-02T14:39:29Z`**
 

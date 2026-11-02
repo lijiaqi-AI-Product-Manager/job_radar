@@ -41,34 +41,6 @@ checks:
     title: 信息管理
     publish_at: '2026-10-15'
     apply_end: '2027-10-15'
-- source_id: jysd-zzu-kunlun
-  company: 昆仑万维科技股份有限公司
-  registered_company: 昆仑万维科技股份有限公司
-  record_kind: recruitment_notice
-  checked_at: '2026-10-30T17:41:38Z'
-  current_records: 1
-  records_with_jd: 1
-  samples:
-  - source_job_id: '1019971'
-    url: https://job.zzu.edu.cn/campus/view/id/1019971
-    title: 昆仑万维科技股份有限公司2027届校园招聘
-    publish_at: '2026-10-21'
-    apply_end: null
-    listing_end: '2026-12-31'
-- source_id: jysd-zzu-09d0286f9f
-  company: 中铁十一局集团有限公司
-  registered_company: 中铁十一局集团有限公司
-  record_kind: recruitment_notice
-  checked_at: '2026-10-30T17:41:41Z'
-  current_records: 1
-  records_with_jd: 1
-  samples:
-  - source_job_id: '1019159'
-    url: https://job.zzu.edu.cn/campus/view/id/1019159
-    title: 中铁十一局集团有限公司2027届校园招聘
-    publish_at: '2026-09-07'
-    apply_end: null
-    listing_end: '2026-11-07'
 - source_id: jysd-zzu-50ef08e444
   company: 浙江华海药业股份有限公司
   registered_company: 浙江华海药业股份有限公司

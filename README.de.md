@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.1.3-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.1.4-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Deutsch
 
@@ -13,7 +13,7 @@
 Das PyPI-Paket heißt `jobsearchradar`, der installierte Befehl `jobradar`. Erfordert Python 3.11+. Unterstützt Windows, macOS und Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Daten und Abdeckung
 
-2026-11-02 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-03 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Kennzahl | Wert |
 | :--- | ---: |
-| Aktivierte Quellen | 2,264 |
-| Konfigurierte Unternehmen | 2,225 |
+| Aktivierte Quellen | 2,262 |
+| Konfigurierte Unternehmen | 2,223 |
 | Adapter | 27 |
-| Konfigurationsabdeckung der festen Zielliste | 952 / 1,655 · 57.52% |
+| Konfigurationsabdeckung der festen Zielliste | 950 / 1,655 · 57.40% |
 
 Der geprüfte Stand vom 2. November 2026 (UTC) enthält 298.458 Datensätze, davon 277.482 offene Einträge. Für 97,3 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
 
@@ -52,7 +52,7 @@ Der geprüfte Stand vom 2. November 2026 (UTC) enthält 298.458 Datensätze, dav
 ## MCP verbinden
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 

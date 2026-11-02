@@ -97,15 +97,16 @@ def _job_dict(row) -> dict:
     return d
 
 
-def _source_annotations(conn, rows):
+def _source_annotations(conn, rows, *, clock=None):
     if not rows:
         return rows
     ids = sorted({row["source_id"] for row in rows})
     last_ok = dict(conn.execute(
         "SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' "
         "AND source_id IN (SELECT value FROM json_each(?)) GROUP BY source_id", (json.dumps(ids),)))
-    now = parse_ts(now_ts())
-    today = shanghai_date(now_ts())
+    clock = clock or now_ts()
+    now = parse_ts(clock)
+    today = shanghai_date(clock)
     from jobradar.source_catalog import catalog
 
     sources = catalog()
@@ -113,11 +114,13 @@ def _source_annotations(conn, rows):
         stamp = last_ok.get(row["source_id"])
         age = max(0, (now - parse_ts(stamp)).total_seconds() / 3600) if stamp else None
         stale = age is None or age > 48
-        row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
-                   source_stale=stale,
-                   availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
-                                 else "unconfirmed_stale" if stale else "observed_recently"))
         info = sources.get(row["source_id"], {})
+        enabled = info.get("enabled")
+        row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
+                   source_stale=stale, source_enabled=enabled,
+                   availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
+                                 else "unconfirmed_disabled" if enabled is False
+                                 else "unconfirmed_stale" if stale else "observed_recently"))
         row.update(source_kind=info.get("source_kind", "unknown"),
                    record_kind=info.get("record_kind", "unknown"))
     return rows
@@ -171,17 +174,18 @@ def _jd_ids(text_conn, term: str, candidate_ids=None) -> list[str]:
         "OR requirements LIKE ? ESCAPE '\\'", (_like(term), _like(term)))]
 
 
-def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> str | None:
-    row = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (job_id,)).fetchone()
+def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> tuple[str | None, str | None]:
+    """返回正文命中片段和正文自身的观测时间；仅标题命中时片段为空。"""
+    row = text_conn.execute("SELECT description, requirements, fetched_at FROM job_text WHERE job_id=?", (job_id,)).fetchone()
     if row is None:
-        return None
+        return None, None
     body = "\n".join(x for x in (row["description"], row["requirements"]) if x)
     low = body.lower()
     for t in terms:
         i = low.find(t.lower())
         if i >= 0:
-            return body[max(0, i - width):i + len(t) + width].replace("\n", " ")
-    return None
+            return body[max(0, i - width):i + len(t) + width].replace("\n", " "), row["fetched_at"]
+    return None, row["fetched_at"]
 
 
 class CompanyMatch(NamedTuple):
@@ -243,6 +247,9 @@ def resolve_company(conn, term: str, *, contains: bool = False) -> CompanyMatch:
     if contains:
         return (CompanyMatch("contains", [r["id"] for r in cands], cand_names, [], target)
                 if cands else CompanyMatch("none", [], [], [], target))
+    if target:
+        # 登记的是确定主体；仅有子公司或相近名称时保留候选，不自动更换主体。
+        return CompanyMatch("ambiguous" if len(cands) > 1 else "none", [], [], cand_names, target)
     if not cands:
         return CompanyMatch("none", [], [], [], target)
     if len(cands) == 1:
@@ -278,6 +285,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     _date_parameter(deadline_after, "deadline_after")
     if deadline_before and deadline_after and deadline_before < deadline_after:
         raise ValueError("截止日范围起止颠倒")
+    clock = now_ts()
+    today = shanghai_date(clock)
     if meta is not None:
         meta.update(total=0, returned=0, truncated=False, empty_reason=None)
     if not include_closed:
@@ -285,7 +294,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         # 快照可能早于今天：明示截止日一过就从当前岗位中隐藏，无需等该源再次成功抓取。
         # 这是查询过滤，不改 closed_at / miss_count，失败与拒收仍不能改变岗位状态。
         where.append("(j.apply_end IS NULL OR j.apply_end >= ?)")
-        args.append(shanghai_date(now_ts()))
+        args.append(today)
     if exclude_store:
         # 只按标题关键词排，不用公司名（公司名排会误伤整家公司的正常岗位）
         where.append("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")")
@@ -352,6 +361,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         where.append("j.id IN (SELECT value FROM json_each(?))")
         args.append(json.dumps(sorted(candidates)))
     where_sql = (" WHERE " + " AND ".join(where)) if where else ""
+    order = "apply_end, " if deadline_before or deadline_after else ""
     if dedupe:
         # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
         # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
@@ -362,10 +372,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
                f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
                f"{from_sql}{where_sql})"
-               " WHERE _rn = 1 ORDER BY first_seen DESC, id LIMIT ?")
+               f" WHERE _rn = 1 ORDER BY {order}first_seen DESC, id LIMIT ?")
     else:
         sql = f"SELECT {_JOB_COLS}{from_sql}{where_sql}"
-        sql += " ORDER BY j.first_seen DESC, j.id LIMIT ?"
+        sql += f" ORDER BY {order}j.first_seen DESC, j.id LIMIT ?"
     rows = [_job_dict(r) for r in conn.execute(sql, [*args, limit])]
     if meta is not None:
         total = conn.execute("SELECT COUNT(*) FROM (" + sql.rsplit(" LIMIT ?", 1)[0] + ")", args).fetchone()[0]
@@ -375,7 +385,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             recorded, visible = conn.execute(
                 "SELECT COUNT(*), SUM(j.closed_at IS NULL AND (j.apply_end IS NULL OR j.apply_end>=?)) "
                 f"FROM job j JOIN company c ON c.id=j.company_id WHERE {clause}",
-                [shanghai_date(now_ts()), *company_args]).fetchone()
+                [today, *company_args]).fetchone()
             meta["company_coverage"] = {"indexed": bool(match.ids), "recorded_jobs": recorded,
                                         "visible_jobs": visible or 0}
             if not rows:
@@ -389,8 +399,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             r.pop("_rn", None)
     if terms:
         for r in rows:
-            r["match"] = _snippet(text_conn, r["id"], terms)
-    return _source_annotations(conn, rows)
+            r["match"], r["text_observed_at"] = _snippet(text_conn, r["id"], terms)
+    return _source_annotations(conn, rows, clock=clock)
 
 
 def recent_changes(conn, *, since, company=None, types=None, limit=200,
@@ -587,10 +597,11 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
         totals[name] = {k: search_meta[k] for k in ("total", "returned", "truncated")}
         for j in jobs:
             t = text_conn.execute(
-                "SELECT description, requirements FROM job_text WHERE job_id=?", (j["id"],)
+                "SELECT description, requirements, fetched_at FROM job_text WHERE job_id=?", (j["id"],)
             ).fetchone()
             j["description"] = t["description"] if t else None
             j["requirements"] = t["requirements"] if t else None
+            j["text_observed_at"] = t["fetched_at"] if t else None
         out[name] = jobs
     if meta is not None:
         meta.update(
@@ -646,8 +657,7 @@ def _cal_dict(r) -> dict:
     d["deadline_scope"] = (d["field_evidence"].get("apply_end", {}).get("scope")
                            or ("job_evidence" if d["source"]["type"] == "data_layer" else "batch")) \
         if d["apply_end"] else "unknown"
-    # 提示语用公司名（用户要求："字节跳动希望你去他们的招聘页逛一逛哦~"）；
-    # 用 product 会出现"管理培训生（TET）希望你去…"这种病句（2026-10-22 实测）。
+    # 提示语使用公司名，避免把招聘项目名称误写成雇主。
     d["hint"] = BLOCKED_HINT.format(name=d["group_name"]) if d["jd_status"] == "blocked" else None
     return d
 
@@ -793,6 +803,9 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         rows = run(exact=True)
         if rows or exact_identity_found:
             return rows
+        if any(len(match_names(term)) > 1 for term in (group, company) if term):
+            # 有明确别名的主体未命中时，不能把其子公司当作原主体补上。
+            return rows
     return run(exact=False)
 
 
@@ -867,12 +880,15 @@ def calendar_hint(cal_conn, term: str) -> dict | None:
     """
     if not term:
         return None
-    rows = calendar_entries(cal_conn, group=term, company=term, limit=20)
+    rows = calendar_entries(cal_conn, company=term, limit=1_000_000)
     reason = calendar_blocked_reason(cal_conn, term)
     if not rows and not reason:
         return None
     types = sorted({r["project_type"] for r in rows if r.get("project_type")})
     years = sorted({r["grad_year"] for r in rows if r.get("grad_year")}, reverse=True)
+    names = {_norm_name(name) for name in match_names(term)}
+    flag = "group" if all(_norm_name(r["group_name"]) in names for r in rows) else "company"
+    hint_term = rows[0]["group_name"] if rows and flag == "group" else term
     out = {
         "entries": len(rows),
         "grad_years": years,
@@ -880,7 +896,7 @@ def calendar_hint(cal_conn, term: str) -> dict | None:
         "apply_url": next((r["apply_url"] for r in rows if r.get("apply_url")), None),
         # cmd 只是「想看完整条目时在终端里怎么敲」，MCP 的 AI 助手用不上也不该照念，
         # 所以字段名写清楚用途，避免被当作用户可执行的下一步。
-        "cli_hint": f"jobradar calendar --group {term} --table",
+        "cli_hint": f"jobradar calendar --{flag} {hint_term} --table",
     }
     if reason:
         out["blocked_reason"] = reason
@@ -894,16 +910,28 @@ def calendar_blocked_reason(cal_conn, term: str) -> str | None:
     没有条目的 blocked 目标（BOSS直聘/微博/招商蛇口…）在 `calendar --group` 里会返回空，
     用户看不出是"没数据"还是"不能做"。CLI 用这个把原因带出来。
     """
-    for name in match_names(term):
+    names = match_names(term)
+    identity_found = False
+    for name in names:
         row = cal_conn.execute(
-            "SELECT blocked_reason FROM target WHERE name = ? AND COALESCE(blocked_reason,'') <> ''",
+            "SELECT blocked_reason FROM target WHERE name = ?",
             (name,)).fetchone()
         if row:
-            return row[0]
-    row = cal_conn.execute(
-        "SELECT blocked_reason FROM target WHERE name LIKE ? AND COALESCE(blocked_reason,'') <> '' LIMIT 1",
-        (f"%{term}%",)).fetchone()
-    return row[0] if row else None
+            identity_found = True
+            if row[0]:
+                return row[0]
+    if identity_found or len(names) > 1:
+        return None
+    rows = cal_conn.execute(
+        "SELECT name, blocked_reason FROM target WHERE name LIKE ? ESCAPE '\\' "
+        "AND COALESCE(blocked_reason,'') <> ''", (_like(term),)).fetchall()
+    if len(rows) != 1:
+        return None
+    name = _norm_name(rows[0]["name"])
+    lookup = _norm_name(term)
+    if name.startswith(lookup) and len(name) - len(lookup) <= _PREFIX_TAIL_GUESS_LIMIT:
+        return None
+    return rows[0]["blocked_reason"]
 
 
 def calendar_stats(cal_conn) -> dict:

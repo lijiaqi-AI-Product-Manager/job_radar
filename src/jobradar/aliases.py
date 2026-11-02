@@ -11,6 +11,7 @@
   否则 pip 装完就没有 taxonomy 目录，简称映射在真实用户那里等于没启用）
 """
 
+import unicodedata
 from functools import cache
 from pathlib import Path
 
@@ -46,7 +47,14 @@ def match_names(term: str) -> list[str]:
     """返回同名候选：原词 + 简称对应的全名（去重、保持顺序）。"""
     term = term.strip()
     names = [term]
+    def normalized(value):
+        return "".join(unicodedata.normalize("NFKC", value).split()).casefold()
+
     full = _aliases().get(term)
+    if full is None:
+        key = normalized(term)
+        targets = {value for name, value in _aliases().items() if normalized(name) == key}
+        full = next(iter(targets)) if len(targets) == 1 else None
     if full and full not in names:
         names.append(full)
     return names

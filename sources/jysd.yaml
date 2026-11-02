@@ -21,7 +21,12 @@ sources:
     - 昆仑万维科技股份有限公司
     title_terms:
     - 昆仑万维
-  enabled: true
+  enabled: false
+  compliance:
+    checked_on: '2026-11-03'
+    robots: not_checked
+    terms: 公告详情当前转向学生登录页，停止自动读取；不登录、不绕过验证码，历史观测保留。
+    notes: 匿名浏览器访问 https://job.zzu.edu.cn/campus/view/id/1019971 转向 /user/login?referer=/campus/view/id/1019971，页面要求学号、密码及验证码。HTTP 200不代表公告可匿名读取。
 - id: jysd-zzu-09d0286f9f
   company: 中铁十一局集团有限公司
   params:
@@ -29,7 +34,12 @@ sources:
     - 中铁十一局集团有限公司
     title_terms:
     - 中铁十一局
-  enabled: true
+  enabled: false
+  compliance:
+    checked_on: '2026-11-03'
+    robots: not_checked
+    terms: 公告详情当前转向学生登录页，停止自动读取；不登录、不绕过验证码，历史观测保留。
+    notes: 匿名浏览器访问 https://job.zzu.edu.cn/campus/view/id/1019159 转向 /user/login?referer=/campus/view/id/1019159，页面要求学号、密码及验证码。HTTP 200不代表公告可匿名读取。
 - id: jysd-zzu-50ef08e444
   company: 浙江华海药业股份有限公司
   params:

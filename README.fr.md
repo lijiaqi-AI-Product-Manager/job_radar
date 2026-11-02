@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.1.3-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.1.4-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Français
 
@@ -13,7 +13,7 @@ Offres publiques pour jeunes diplômés, stages, postes expérimentés et calend
 Le paquet PyPI s’appelle `jobsearchradar` ; la commande installée est `jobradar`. Python 3.11+ est requis. Compatible avec Windows, macOS et Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.3"
+pip install --upgrade "jobsearchradar==2.1.4"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -36,14 +36,14 @@ jobradar doctor
 
 ## Données et couverture
 
-2026-11-02 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-03 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Indicateur | Valeur |
 | :--- | ---: |
-| Sources actives | 2,264 |
-| Entreprises configurées | 2,225 |
+| Sources actives | 2,262 |
+| Entreprises configurées | 2,223 |
 | Adaptateurs | 27 |
-| Couverture du périmètre fixe d’entreprises cibles | 952 / 1,655 · 57.52% |
+| Couverture du périmètre fixe d’entreprises cibles | 950 / 1,655 · 57.40% |
 
 L’instantané vérifié du 2 novembre 2026 (UTC) contient 298 458 enregistrements, dont 277 482 ouverts. Le texte original est disponible pour 97,3 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
 
@@ -52,7 +52,7 @@ L’instantané vérifié du 2 novembre 2026 (UTC) contient 298 458 enregistreme
 ## Connexion MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar update
 ```
 

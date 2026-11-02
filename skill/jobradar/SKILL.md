@@ -9,10 +9,10 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应 `2.1.2`：
+本指南对应 `2.1.4`：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.3"
+pip install --upgrade "jobsearchradar[mcp]==2.1.4"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
@@ -32,11 +32,18 @@ jobradar doctor
 - 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
+- `source_enabled: false` 或 `availability: unconfirmed_disabled` → 来源当前已停用；即使旧成功观测尚不足48小时，也不能表述为当前已核实可投。停用不等于岗位已关闭。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
 - `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。
+
+## 按个人条件找机会
+
+用户提出多城市、排除公司、学历/经验要求、实习安排或连续修改条件时，参见
+[个人求职条件与连续追问](references/candidate-workflow.md)。该流程区分可直接筛选的条件、
+需要阅读原文的要求，以及尚未核实的资格；放宽条件后的结果必须单列。
 
 ## 按问题类型选命令
 
