@@ -5,7 +5,7 @@
   },
   "jobs": {
     "0001_init.sql": "8cc382f2628b9f974053c0234bca3b4ae55f7f88ce9baa7317b1f662f6bdd373",
-    "0002_job_window.sql": "71cd163bad80de97fcdcae7983685984a6a30849e75485a12063c55d421d63b9",
+    "0002_job_window.sql": "ab6611a2e102ea2763fb278ac47e580d14df271303ea0a39c41f9cb0671af3f2",
     "0003_add_title_fts.sql": "d78a836e19fafccec351273ff62f5d4e233056cfe8fe0ecb6c97a88e50c6038f"
   },
   "text": {
