@@ -1,0 +1,53 @@
+[
+  {
+    "source_id": "hotjob-f11c21",
+    "adapter": "hotjob",
+    "checked_at": "2026-11-02T10:59:26Z",
+    "url": "https://sinochem.hotjob.cn/SU610b91ee0dcad4106ff11c21/pb/posDetail.html?postId=6aa3563842efacd5904b9f91&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6aa3563842efacd5904b9f91",
+        "postName": "方舟生-技术研发类"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1.暖通供热、空调工程、建筑环境与能源应用工程、计算机、自动化、软件工程、人工智能等相关专业。\n2.国内外重点大学硕士及以上学历（2027年应届毕业生），专业基础扎实；\n3.具备良好的逻辑能力和敏锐的观察力，能够处理复杂的问题；\n4.具备良好的团队协作能力，优秀的分析、沟通、协调与应变能力；\n5.成熟度较高，具备高度的责任心及职业素养，有较强的抗压能力。"
+      }
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "hotjob-faw",
+    "adapter": "hotjob",
+    "checked_at": "2026-11-02T10:59:56Z",
+    "url": "https://faw-zhaopin.hotjob.cn/SU603374380dcad4635b836531/pb/posDetail.html?postId=6aab8f46f0cfabf2b4c5bcc3&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6aab8f46f0cfabf2b4c5bcc3",
+        "postName": "工艺工程师"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1、2027届本科及以上学历，材料、化学、电化学、化工、新能源、高分子、机械、自动化、电气、物理等相关专业；\n2、具备锂电池基础知识，了解电芯制造流程及关键工艺者优先；\n3、有锂电池企业实习、科研项目、竞赛或论文/专利经历者优先；\n4、熟悉DOE、FMEA、SPC、8D、APQP、PPAP、IATF16949等质量/工艺工具者优先；\n5、英语CET-4及以上，具备英文文献阅读能力；\n6、逻辑清晰，动手能力强，具备良好的沟通协作能力和抗压能力； "
+      }
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "hotjob-yunnanbaiyao",
+    "adapter": "hotjob",
+    "checked_at": "2026-11-02T11:00:13Z",
+    "url": "https://wecruit.hotjob.cn/SU6136b970bef57c3b638162c4/pb/posDetail.html?postId=6aa3c4cc38cb5261fe5fd4cf&postType=campus",
+    "raw": {
+      "list": {
+        "postId": "6aa3c4cc38cb5261fe5fd4cf",
+        "postName": "集团财务岗"
+      },
+      "recruit_type": "campus",
+      "detail": {
+        "serviceCondition": "1.2027届应届硕士毕业生，会计学、财务管理等财务相关专业。\n2.持有CPA/CMA/ACCA相关证书者优先，有财务相关实习经验（尤其是医药、大健康领域）者优先。\n3. 具备良好的财务数据敏感度，逻辑思维清晰，能准确识别财务数据异常，具备基础的数据分析与问题解决能力。\n（该岗位前期于财务共享中心各板块轮岗，后续发展方向经营分析/预算/财务BP）"
+      }
+    },
+    "expected_grad_year": 2027
+  }
+]

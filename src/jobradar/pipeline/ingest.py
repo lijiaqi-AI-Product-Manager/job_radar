@@ -10,7 +10,7 @@ import json
 from dataclasses import dataclass
 
 from jobradar.models import Job
-from jobradar.timeutil import shanghai_date
+from jobradar.timeutil import parse_ts, shanghai_date
 
 CLOSE_AFTER_MISSES = 3
 DROP_THRESHOLD = 0.5  # 比基线少了超过 50% 视为异常
@@ -86,6 +86,8 @@ def ingest_run(conn, source_id, jobs, *, ts, ok=True, error=None, allow_empty=Fa
     for j in jobs:
         if j.source_id != source_id:
             raise ValueError(f"job {j.id} does not belong to source {source_id}")
+        if j.text_observed_at and parse_ts(j.text_observed_at) > parse_ts(ts):
+            raise ValueError("text observation cannot be later than the source observation")
         by_id[j.id] = j  # 同一次抓取内重复 id，后者生效
 
     baseline = conn.execute(
@@ -202,19 +204,24 @@ def upsert_texts(text_conn, jobs, *, ts) -> int:
     n = 0
     with text_conn:
         for j in jobs:
-            old = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (j.id,)).fetchone()
+            observed = j.text_observed_at or ts
+            old = text_conn.execute("SELECT description, requirements, fetched_at FROM job_text WHERE job_id=?", (j.id,)).fetchone()
+            if old and observed < old[2]:
+                if tuple(old)[:2] != (j.description, j.requirements):
+                    raise ValueError("older cached text cannot overwrite a newer observation")
+                observed = old[2]
             if j.description is None and j.requirements is None:
-                if not old or not any(template_pollution(value) for value in old):
+                if not old or not any(template_pollution(value) for value in tuple(old)[:2]):
                     continue
-            if old and tuple(old) == (j.description, j.requirements):
-                text_conn.execute("UPDATE job_text SET fetched_at=? WHERE job_id=?", (ts, j.id))
+            if old and tuple(old)[:2] == (j.description, j.requirements):
+                text_conn.execute("UPDATE job_text SET fetched_at=? WHERE job_id=?", (observed, j.id))
                 n += 1
                 continue
             text_conn.execute(
                 """INSERT INTO job_text(job_id, description, requirements, fetched_at) VALUES (?,?,?,?)
                    ON CONFLICT(job_id) DO UPDATE SET description=excluded.description,
                    requirements=excluded.requirements, fetched_at=excluded.fetched_at""",
-                (j.id, j.description, j.requirements, ts),
+                (j.id, j.description, j.requirements, observed),
             )
             n += 1
     return n

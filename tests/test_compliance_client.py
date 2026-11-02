@@ -105,6 +105,16 @@ def test_known_terms_restriction_stops_before_any_network_request():
     assert seen == []
 
 
+@pytest.mark.parametrize("host", ["careers.tencent.com", "CAREERS.TENCENT.COM."])
+def test_tencent_recruitment_terms_stop_before_robots_or_content(host):
+    seen = []
+    with make_client(transport=httpx.MockTransport(lambda r: seen.append(r) or httpx.Response(404)),
+                     policy=policy()) as client:
+        with pytest.raises(ComplianceError, match="7.2.4"):
+            client.get(f"https://{host}/jobdesc.html?positionId=123")
+    assert seen == []
+
+
 def test_modified_client_agent_stops_before_any_network_request():
     seen = []
     with make_client(transport=httpx.MockTransport(lambda r: seen.append(r) or httpx.Response(404)),

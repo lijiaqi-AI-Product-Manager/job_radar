@@ -9,7 +9,7 @@
 -- publish_at：岗位发布时间（UTC ISO8601）。NULL = 源没给。
 --    用途：按发布日期推断批次（8-11 月发布多为秋招、3-5 月多为春招）。
 --
--- 不改 0001：CLAUDE.md 规定已有迁移永不修改。
+-- 不改 0001：项目规范要求已有迁移永不修改。
 
 ALTER TABLE job ADD COLUMN apply_end  TEXT;
 ALTER TABLE job ADD COLUMN publish_at TEXT;

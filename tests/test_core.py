@@ -54,6 +54,17 @@ def test_search_by_company_alias(jobs_db):
     assert titles(search_jobs(jobs_db, company="中国核工业集团")) == ["核工程研发"]
 
 
+def test_chalco_short_name_reaches_verified_registered_employer(jobs_db):
+    # 大连海事大学公开公告869053登记的是集团法人，不合并上市子公司。
+    source = "jysd-dlmu-e53094408f"
+    ingest_run(jobs_db, source, [make_job(1, source_id=source, company="中国铝业集团有限公司",
+                                      title="校园招聘公告")], ts=T(1))
+    ingest_run(jobs_db, "listed-company", [make_job(1, source_id="listed-company",
+               company="中国铝业股份有限公司", title="另一法人")], ts=T(1))
+    assert titles(search_jobs(jobs_db, company="中铝")) == ["校园招聘公告"]
+    assert titles(search_jobs(jobs_db, company="中国铝业集团有限公司")) == ["校园招聘公告"]
+
+
 def test_company_alias_does_not_fuzzy_match(jobs_db):
     """映射表里没有的说法保持原样，不做模糊猜测。"""
     ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
@@ -298,8 +309,39 @@ def test_get_job_with_text_and_unknown(jobs_db, text_db):
     upsert_texts(text_db, [j], ts=T(1))
     got = get_job(jobs_db, text_db, "s1:1")
     assert got["title"] == j.title and got["requirements"] == "熟悉 Go" and got["url"].startswith("http")
+    assert got["text_observed_at"] == T(1)
     assert get_job(jobs_db, None, "s1:1")["requirements"] is None  # 未下载 JD 库也能用
     assert get_job(jobs_db, text_db, "nope") is None
+
+
+def test_summary_separates_listing_freshness_from_text_observation(jobs_db, text_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    monkeypatch.setattr(q, "now_ts", lambda: "2026-11-02T12:00:00Z")
+    jobs = [make_job(1, description="较旧职责"), make_job(2, description="近期职责")]
+    ingest_run(jobs_db, "s1", jobs, ts="2026-11-02T11:00:00Z")
+    upsert_texts(text_db, jobs[:1], ts="2026-10-29T12:00:00Z")
+    upsert_texts(text_db, jobs[1:], ts="2026-11-01T12:00:00Z")
+    summary = q.data_summary(jobs_db, text_db)
+    assert summary["with_jd_text"] == 2
+    assert summary["jd_observation"] == {"fresh_48h": 1, "older_than_48h": 1,
+                                         "oldest": "2026-10-29T12:00:00Z", "newest": "2026-11-01T12:00:00Z"}
+    assert q.get_job(jobs_db, text_db, "s1:1")["text_observed_at"] == "2026-10-29T12:00:00Z"
+
+
+def test_summary_uses_one_clock_for_visible_counts_and_fields(jobs_db, text_db, monkeypatch):
+    from jobradar.core import queries as q
+
+    job = make_job(1, apply_end="2026-11-02", cities=["北京"])
+    ingest_run(jobs_db, "s1", [job], ts="2026-11-02T15:00:00Z")
+    calls = []
+    def clock():
+        calls.append(True)
+        return "2026-11-02T15:59:59Z" if len(calls) == 1 else "2026-11-02T16:00:00Z"
+    monkeypatch.setattr(q, "now_ts", clock)
+    summary = q.data_summary(jobs_db, text_db)
+    assert summary["open_jobs"] == 1 and summary["fields"]["cities"] == 1
+    assert len(calls) == 1
 
 
 def test_data_as_of_is_latest_successful_run(jobs_db):

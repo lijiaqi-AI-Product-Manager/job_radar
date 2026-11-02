@@ -2,7 +2,7 @@
 
 用法：uv run python scripts/record_fixtures.py <source_id> [--max-pages 2]
 - 只发少量请求（max_pages 限量），遵守 source 的限速。
-- 录完必须人工/Claude 检查：不含 cookie/token/个人信息；体积 < 300KB；必要时裁剪 items。
+- 录完必须维护者检查：不含 cookie/token/个人信息；体积 < 300KB；必要时裁剪 items。
 - 运行后同目录会写入 source.yaml（max_pages 已固定），供契约测试使用。
 - `--truncate N --anchor 片段`：只保留 anchor **最后一次出现处**往后的内容（拿不到 N 字节就用全部）。
   直接截前 N 字节是错的：详情页的 JD 正文在 60~90KB 处，截头就没正文了（2026-10-26 实测）。

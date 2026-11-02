@@ -13,6 +13,7 @@ def requirement_grad_year(requirement: str | None) -> int | None:
     """多届、开放范围或排除条款不能表示一个grad_year。
 
     只读已逐源确认用途的任职要求字段；不从通用JD、当前年份或观测时间推导。
+    结构化范围沿用公开数据门禁的2023—2032；范围外原文保留，字段未知。
     “2026、2027届”中2026没有紧邻“届”，仍属于同一申请范围。
     """
     if not isinstance(requirement, str):
@@ -25,4 +26,7 @@ def requirement_grad_year(requirement: str | None) -> int | None:
         if _EARLIER_MEMBER.search(before) or _EXCLUSION.search(before) or _OPEN_RANGE.match(after):
             return None
         years.add(int(match[1]))
-    return next(iter(years)) if len(years) == 1 else None
+    if len(years) != 1:
+        return None
+    year = next(iter(years))
+    return year if 2023 <= year <= 2032 else None

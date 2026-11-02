@@ -32,6 +32,8 @@ class Job(BaseModel):
     # 原文，进 jd_text.db，不进主库
     description: str | None = None
     requirements: str | None = None
+    # 复用同一岗位已有正文时保留真实读取时间；不改变岗位内容身份。
+    text_observed_at: str | None = None
 
     @property
     def id(self) -> str:
@@ -39,7 +41,7 @@ class Job(BaseModel):
 
     def content_hash(self) -> str:
         # category/subcategory 是按规则推导的数据，不计入：规则调整不应产生"变更"事件
-        payload = self.model_dump(exclude={"source_id", "source_job_id", "company", "category", "subcategory"})
+        payload = self.model_dump(exclude={"source_id", "source_job_id", "company", "category", "subcategory", "text_observed_at"})
         payload["cities"] = sorted(self.cities)
         raw = json.dumps(payload, sort_keys=True, ensure_ascii=False)
         return hashlib.sha1(raw.encode()).hexdigest()

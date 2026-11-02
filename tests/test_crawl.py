@@ -37,6 +37,28 @@ def test_crawl_ingests_jobs_and_texts(jobs_db, text_db):
     assert cats == {"101": "后端", "102": "算法"}  # 适配器未给职类 -> crawl 按 taxonomy 归类
 
 
+def test_existing_text_cache_is_prepared_before_workers_and_retains_text_age(jobs_db, text_db):
+    from jobradar.pipeline.ingest import ingest_run, upsert_texts
+
+    original = _job(source_id="example-corp", description="原岗位职责", requirements="本科")
+    ingest_run(jobs_db, original.source_id, [original], ts=T(1))
+    upsert_texts(text_db, [original], ts=T(1))
+
+    class Cached(ExampleAdapter):
+        def fetch_raw(self):
+            yield self.cached_texts["1"]
+
+        def normalize(self, raw):
+            return _job(source_id="example-corp", description=raw["description"],
+                        requirements=raw["requirements"], text_observed_at=raw["fetched_at"])
+
+    config = example_source(adapter="hotjob", params={"detail_cache_hours": 168})
+    result = crawl([config], jobs_db, text_db, ts=T(3), client_factory=replay_client,
+                   adapters={"hotjob": Cached}, sleep=lambda _: None)
+    assert result[config.id].status == "ok"
+    assert text_db.execute("SELECT fetched_at FROM job_text").fetchone()[0] == T(1)
+
+
 def test_crawl_records_per_source_duration(jobs_db, text_db):
     """每源耗时写进 source_run.duration_s（这一列以前永远是 NULL，慢源无法定位）。"""
     crawl([example_source()], jobs_db, text_db, ts=T(1), client_factory=replay_client,
@@ -147,6 +169,14 @@ def test_site_key_separates_tenants_but_keeps_shared_hosts_serial():
     assert _site_key(src("b", tenant="beta")) == "beta"          # 不同租户 → 不同组 → 可并行
     assert _site_key(src("c", host="wecruit.hotjob.cn", tenant="SU1")) == "wecruit.hotjob.cn"
     assert _site_key(src("d", host="wecruit.hotjob.cn", tenant="SU2")) == "wecruit.hotjob.cn"  # 同站 → 同组
+
+
+def test_hotjob_default_host_is_the_same_site_as_an_explicit_host():
+    from jobradar.pipeline.crawl import _site_key
+
+    base = example_source(adapter="hotjob", params={"tenant": "SU-one"})
+    other = example_source(id="other", adapter="hotjob", params={"tenant": "SU-two", "host": "wecruit.hotjob.cn"})
+    assert _site_key(base) == _site_key(other) == "wecruit.hotjob.cn"
 
 
 class Recording(ExampleAdapter):

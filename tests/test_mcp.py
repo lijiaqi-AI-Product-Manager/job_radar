@@ -1,3 +1,6 @@
+import asyncio
+import json
+
 import pytest
 
 from helpers import make_job
@@ -35,6 +38,35 @@ def test_missing_data_is_an_error_not_a_crash(tmp_path, monkeypatch):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     out = mcp_server.search_jobs()
     assert "jobradar update" in out["error"] and out["results"] == []
+
+
+@pytest.mark.parametrize("name, arguments", [
+    ("search_jobs", {}), ("get_job", {"job_id": "missing:1"}),
+    ("recent_changes", {}), ("new_jobs_by_category", {}),
+    ("compare_roles", {"companies": ["腾讯"], "category": "算法"}),
+    ("company_trend", {"company": "腾讯"}), ("data_status", {}),
+    ("calendar", {}), ("stats", {}),
+])
+def test_missing_data_uses_mcp_error_flag(tmp_path, monkeypatch, name, arguments):
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    result = asyncio.run(mcp_server.server.call_tool(name, arguments))
+    assert result.is_error is True
+    assert result.structured_content["error"]
+    assert json.loads(result.content[0].text) == result.structured_content
+
+
+def test_protocol_domain_error_does_not_break_next_request(home):
+    result = asyncio.run(mcp_server.server.call_tool("search_jobs", {"limit": -1}))
+    assert result.is_error and result.structured_content["results"] == []
+    following = asyncio.run(mcp_server.server.call_tool("search_jobs", {"company": "腾讯"}))
+    assert not following.is_error
+    assert json.loads(following.content[0].text)["results"][0]["id"] == "s1:1"
+
+
+def test_valid_empty_result_is_not_a_protocol_error(home):
+    result = asyncio.run(mcp_server.server.call_tool("search_jobs", {"company": "未收录企业"}))
+    assert not result.is_error
+    assert json.loads(result.content[0].text)["results"] == []
 
 
 @pytest.mark.parametrize("name, arguments", [
