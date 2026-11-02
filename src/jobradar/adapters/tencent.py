@@ -6,7 +6,9 @@ source.params:
   page_size: 每页条数，默认 50（录 fixtures 时用小值）
 """
 
+import re
 from collections.abc import Iterator
+from urllib.parse import quote, urlsplit, urlunsplit
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
@@ -15,6 +17,21 @@ from jobradar.normalize import date_only
 LIST_URL = "https://careers.tencent.com/tencentcareer/api/post/Query"
 DETAIL_URL = "https://careers.tencent.com/tencentcareer/api/post/ByPostId"
 PAGE_SIZE = 50
+
+
+def public_post_url(value, post_id):
+    value = str(value or "").strip()
+    if value.startswith("//"):
+        value = "https:" + value
+    value = re.sub(r"^https?:/{2,}", "https://", value, flags=re.I)
+    try:
+        parts = urlsplit(value)
+        if (parts.scheme == "https" and parts.hostname and parts.port != 0
+                and not parts.username and not parts.password and not re.search(r"[\x00-\x20]", parts.netloc)):
+            return urlunsplit(parts)
+    except ValueError:
+        pass
+    return f"https://careers.tencent.com/jobdesc.html?postId={quote(str(post_id), safe='')}"
 
 
 @register
@@ -50,9 +67,7 @@ class TencentAdapter(Adapter):
     def normalize(self, raw: dict) -> Job:
         if not raw.get("PostId") or not raw.get("RecruitPostName") or raw.get("IsValid") is False:
             raise SkipRecord
-        url = (raw.get("PostURL") or "").replace("http://", "https://", 1)
-        if not url:
-            url = f"https://careers.tencent.com/jobdesc.html?postId={raw['PostId']}"
+        url = public_post_url(raw.get("PostURL"), raw["PostId"])
         city = (raw.get("LocationName") or "").strip()
         return Job(
             source_id=self.source.id,
