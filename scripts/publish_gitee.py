@@ -198,6 +198,26 @@ def publish(files, *, token, repo, client, anonymous_client=None):
             anonymous.close()
 
 
+def failure_summary(exc):
+    """只报告固定阶段和状态码，不输出请求URL、响应正文或异常消息。"""
+    if not isinstance(exc, httpx.HTTPStatusError):
+        return type(exc).__name__
+    path = exc.request.url.path
+    if "/releases/download/" in path:
+        phase = "匿名下载"
+    elif path.endswith("/attach_files"):
+        phase = "分片上传"
+    elif "/releases/tags/" in path:
+        phase = "发布状态读取"
+    elif exc.request.method == "PATCH" and "/releases/" in path:
+        phase = "稳定代切换"
+    elif exc.request.method == "POST" and path.endswith("/releases"):
+        phase = "暂存代创建"
+    else:
+        phase = "镜像接口"
+    return f"{type(exc).__name__}，HTTP {exc.response.status_code}，{phase}"
+
+
 def main():
     token, repo = os.environ.get("GITEE_TOKEN"), os.environ.get("GITEE_REPO")
     if not token or not repo:
@@ -213,5 +233,5 @@ if __name__ == "__main__":
         sys.exit(main())
     except (httpx.HTTPError, ValueError) as exc:
         # Gitee令牌仅在请求参数中使用，不把含令牌的异常URL写入日志。
-        print(f"镜像发布未完成（{type(exc).__name__}），保留上一代与暂存分片", file=sys.stderr)
+        print(f"镜像发布未完成（{failure_summary(exc)}），保留上一代与暂存分片", file=sys.stderr)
         sys.exit(1)
