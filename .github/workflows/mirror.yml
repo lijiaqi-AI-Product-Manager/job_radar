@@ -10,7 +10,8 @@ on:
 
 concurrency:
   group: mirror-gitee
-  cancel-in-progress: true
+  # 完成正在传输的完整代；排队任务启动后读取当时最新清单，避免频繁发布饿死慢上传。
+  cancel-in-progress: false
 
 jobs:
   mirror:
@@ -25,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync
+      - run: uv sync --frozen
       - name: Download release assets
         run: |
           mkdir -p d

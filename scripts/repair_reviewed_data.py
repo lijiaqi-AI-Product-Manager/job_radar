@@ -8,6 +8,7 @@ from contextlib import closing
 from pathlib import Path
 
 from jobradar.adapters.hotjob import verified_detail_fields
+from jobradar.adapters.qualification import uncertain_title_cohort
 from jobradar.adapters.tencent import public_post_url
 from jobradar.jd_text import template_pollution
 from jobradar.models import Job
@@ -96,10 +97,48 @@ def apply_fixes(jobs, texts, *, ts, apply=False):
     return report
 
 
+def withdraw_cohort_fixes(jobs, texts, *, ts, apply=False, corrections=None):
+    """按已保存的标题证据撤回错误单届；不产生成功采集或刷新观测时间。"""
+    if corrections is None:
+        path = Path(__file__).resolve().parents[1] / "targets/cohort_title_corrections.json"
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        if manifest.get("schema_version") != 1:
+            raise ValueError("unsupported cohort correction manifest")
+        corrections = manifest["rows"]
+    report = dict(changed=0, already_unknown=0, source_changed=0, missing=0)
+    with jobs:
+        for evidence in corrections:
+            if not uncertain_title_cohort(evidence["title"]):
+                raise ValueError("correction requires explicit uncertain title evidence")
+            jid = evidence["source_id"] + ":" + evidence["source_job_id"]
+            row = jobs.execute("SELECT j.*,c.name AS company FROM job j JOIN company c ON c.id=j.company_id WHERE j.id=?", (jid,)).fetchone()
+            if row is None:
+                report["missing"] += 1
+                continue
+            if row["grad_year"] is None:
+                report["already_unknown"] += 1
+                continue
+            if (row["title"], row["url"], row["grad_year"]) != (evidence["title"], evidence["url"], evidence["grad_year"]):
+                report["source_changed"] += 1
+                continue
+            report["changed"] += 1
+            if not apply:
+                continue
+            body = texts.execute("SELECT description,requirements FROM job_text WHERE job_id=?", (jid,)).fetchone()
+            values = {k:row[k] for k in Job.model_fields if k in row.keys()}
+            values.update(company=row["company"], cities=json.loads(row["cities"]), grad_year=None,
+                          description=body[0] if body else None, requirements=body[1] if body else None)
+            job = Job(**values)
+            jobs.execute("UPDATE job SET grad_year=NULL,content_hash=? WHERE id=?", (job.content_hash(), jid))
+            _event(jobs, jid, ts, "change", {"fields":["grad_year"], "reason":"reviewed title cohort correction"})
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--home", type=Path, required=True)
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--cohort-only", action="store_true")
     args = parser.parse_args()
     with closing(sqlite3.connect((args.home / "jobs.db").resolve().as_uri() + "?mode=rw", uri=True)) as jobs, \
             closing(sqlite3.connect((args.home / "jd_text.db").resolve().as_uri() + "?mode=rw", uri=True)) as texts:
@@ -107,7 +146,8 @@ def main():
         for connection in (jobs, texts):
             if connection.execute("PRAGMA quick_check").fetchone()[0] != "ok":
                 raise RuntimeError("snapshot integrity check failed")
-        print(json.dumps(apply_fixes(jobs, texts, ts=now_ts(), apply=args.apply), ensure_ascii=False))
+        operation = withdraw_cohort_fixes if args.cohort_only else apply_fixes
+        print(json.dumps(operation(jobs, texts, ts=now_ts(), apply=args.apply), ensure_ascii=False))
 
 
 if __name__ == "__main__":

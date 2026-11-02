@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "scope": "仅撤回既有标题无法支持的单届值，保留岗位状态和原观测时间。",
+  "rows": [
+    {
+      "source_id": "beisen-hongyantruck1",
+      "source_job_id": "f03ab220-e710-436e-8352-480024d4b16d",
+      "url": "https://hongyantruck1.zhiye.com/campus/detail?jobAdId=f03ab220-e710-436e-8352-480024d4b16d",
+      "title": "2024-2027届研发储备生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-bozhon4",
+      "source_job_id": "e6f72212-dc91-4ec1-87eb-705c05f13cb8",
+      "url": "https://bozhon4.zhiye.com/intern/detail?jobAdId=e6f72212-dc91-4ec1-87eb-705c05f13cb8",
+      "title": "招聘专员（实习生）2026届或2027届(J11966)",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-bozhon4",
+      "source_job_id": "50049b64-207f-4f58-97ec-adbd22604a17",
+      "url": "https://bozhon4.zhiye.com/intern/detail?jobAdId=50049b64-207f-4f58-97ec-adbd22604a17",
+      "title": "招聘专员（实习生）2026届或2027届(J11966)",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "3f6a07c9-cf49-4c5f-8ce7-d7d35eb7646d",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=3f6a07c9-cf49-4c5f-8ce7-d7d35eb7646d",
+      "title": "2025/2026届 12吋工艺工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "b7dcbd54-14b0-49ec-85f7-51a92446766e",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=b7dcbd54-14b0-49ec-85f7-51a92446766e",
+      "title": "2025/2026届 12吋工艺整合工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "fea0e4b1-3b34-49bb-a8d0-8bbbd5826d93",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=fea0e4b1-3b34-49bb-a8d0-8bbbd5826d93",
+      "title": "2025/2026届 12吋设备工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "5a3ff4f5-af26-4b04-b4b5-93a242bdda7b",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=5a3ff4f5-af26-4b04-b4b5-93a242bdda7b",
+      "title": "2025/2026届 12吋制造工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "485b80fe-2cf8-4ebd-afb2-2cf1a8499291",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=485b80fe-2cf8-4ebd-afb2-2cf1a8499291",
+      "title": "非2027届 12吋采购管理",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "cf8c3bce-6a0d-484b-9b09-6ac78014e58e",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=cf8c3bce-6a0d-484b-9b09-6ac78014e58e",
+      "title": "非2027届 12吋物料控制",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "bf3109e0-be04-47bc-b223-82219bdd0dcd",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=bf3109e0-be04-47bc-b223-82219bdd0dcd",
+      "title": "非2027届 12吋生产计划",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "a82a6d81-5fc0-488d-a047-3505d377f03f",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=a82a6d81-5fc0-488d-a047-3505d377f03f",
+      "title": "非2027届 12吋IT工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "f65e5e5c-cf7a-4936-aa2a-5c5f2546e919",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=f65e5e5c-cf7a-4936-aa2a-5c5f2546e919",
+      "title": "非2027届 12吋IE工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "c09ee113-7b31-461b-9163-c9335215c3ba",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=c09ee113-7b31-461b-9163-c9335215c3ba",
+      "title": "非2027届 12吋MES工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "5e4e21ff-ca07-4924-8102-28bb47c1c5bf",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=5e4e21ff-ca07-4924-8102-28bb47c1c5bf",
+      "title": "非2027届 12吋YE工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "hotjob-su5ff30f5b9b0d78e6f4283a0b",
+      "source_job_id": "6a7d96e11ad6db7cf800c53e",
+      "url": "https://atl.hotjob.cn/SU5ff30f5b9b0d78e6f4283a0b/pb/posDetail.html?postId=6a7d96e11ad6db7cf800c53e&postType=campus",
+      "title": "往届生社招专属通道（ 非2027届可投 ）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-jianhuabm",
+      "source_job_id": "b9d4cb1e-c48e-4a81-b170-1bbc59846971",
+      "url": "https://jianhuabm.zhiye.com/campus/detail?jobAdId=b9d4cb1e-c48e-4a81-b170-1bbc59846971",
+      "title": "中山职院-建华机电管理班-2027至2028届(J10076)",
+      "grad_year": 2028
+    },
+    {
+      "source_id": "beisen-jianhuabm",
+      "source_job_id": "6be37a5a-605a-469d-80a1-9853856a08fe",
+      "url": "https://jianhuabm.zhiye.com/campus/detail?jobAdId=6be37a5a-605a-469d-80a1-9853856a08fe",
+      "title": "湖北工业大学建华班-2027至2029届(J10066)",
+      "grad_year": 2029
+    },
+    {
+      "source_id": "beisen-asustek",
+      "source_job_id": "72dbe7cb-28b8-42d1-a950-c36502361ded",
+      "url": "https://asustek.zhiye.com/campus/detail?jobAdId=72dbe7cb-28b8-42d1-a950-c36502361ded",
+      "title": "嵌入式软件研发工程师（2026/2027届）(J10853)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-qingmutec",
+      "source_job_id": "483ed23b-9284-455a-b7e1-5d4f25087898",
+      "url": "https://qingmutec.zhiye.com/campus/detail?jobAdId=483ed23b-9284-455a-b7e1-5d4f25087898",
+      "title": "电商客服实习生【2026/2027届】",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-warrant",
+      "source_job_id": "da056fdb-2c90-443b-bb76-000fc3e2949f",
+      "url": "https://warrant.zhiye.com/campus/detail?jobAdId=da056fdb-2c90-443b-bb76-000fc3e2949f",
+      "title": "实习生（2027届/2028届）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-iwhalecloud1",
+      "source_job_id": "f291f4bf-e05a-4c86-b0e0-5a7897e560d5",
+      "url": "https://iwhalecloud1.zhiye.com/campus/detail?jobAdId=f291f4bf-e05a-4c86-b0e0-5a7897e560d5",
+      "title": "开发工程师—南京—2027届校招（2026届可投）(J18082)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-iwhalecloud1",
+      "source_job_id": "7679db28-0dad-4a20-90ab-cbc57e65c5ab",
+      "url": "https://iwhalecloud1.zhiye.com/campus/detail?jobAdId=7679db28-0dad-4a20-90ab-cbc57e65c5ab",
+      "title": "测试工程师—南京—2027届校招（2026届可投）(J18083)",
+      "grad_year": 2027
+    }
+  ]
+}
