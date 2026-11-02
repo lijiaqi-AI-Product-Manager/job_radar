@@ -146,13 +146,14 @@ def test_fetch_detail_can_be_disabled() -> None:
 
 
 def test_list_shape_is_json() -> None:
-    """接口返回必须是带 code=1 的 JSON，否则视为空（防止把 HTML 错误页当数据）。"""
+    """错误页必须使采集失败，不能成为成功的空集合或部分集合。"""
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, text="<html>error</html>")
 
     source = _source()
     client = httpx.Client(transport=httpx.MockTransport(handler))
-    assert list(YunjiuyeAdapter(source, client).fetch_all()) == []
+    with pytest.raises(RuntimeError, match="合法JSON"):
+        list(YunjiuyeAdapter(source, client).fetch_all())
 
 
 def test_requires_host_param() -> None:

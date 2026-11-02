@@ -87,6 +87,7 @@ class YunjiuyeAdapter(Adapter):
 
     def _list(self, keyword: str, pages: int | None = None) -> list[dict]:
         out: list[dict] = []
+        seen: set[str] = set()
         for page in range(pages or self.max_pages):
             resp = self.request_text(
                 "GET",
@@ -96,17 +97,27 @@ class YunjiuyeAdapter(Adapter):
             )
             try:
                 payload = json.loads(resp)
-            except (TypeError, ValueError):
+            except (TypeError, ValueError) as exc:
+                raise RuntimeError("云就业公开列表不是合法JSON，拒绝部分结果") from exc
+            if not isinstance(payload, dict) or str(payload.get("code")) != "1":
+                raise RuntimeError("云就业公开列表返回异常状态，拒绝部分结果")
+            items = payload.get("data")
+            if not isinstance(items, list) or any(
+                not isinstance(item, dict) or not item.get("publish_id") for item in items
+            ):
+                raise ValueError("云就业公开列表记录结构异常，拒绝部分结果")
+            if not items:
                 break
-            if not isinstance(payload, dict) or int(payload.get("code") or 0) != 1:
-                break
-            items = payload.get("data") or []
-            if not isinstance(items, list) or not items:
-                break
-            kept = [it for it in items if isinstance(it, dict) and it.get("publish_id")]
+            kept = [item for item in items if str(item["publish_id"]) not in seen]
+            if not kept:
+                raise ValueError("云就业公开列表分页重复，拒绝部分结果")
             out.extend(kept)
+            seen.update(str(item["publish_id"]) for item in kept)
             if len(items) < 100:
                 break
+        else:
+            if not self.source.params.get("allow_partial"):
+                raise ValueError("云就业公开列表超过页数上限，未完成采集，拒绝部分结果")
         return out
 
     def _detail(self, publish_id: str) -> str | None:
