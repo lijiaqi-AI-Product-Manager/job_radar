@@ -42,3 +42,14 @@ def test_css_comment_residual_is_not_treated_as_business_heading():
 def test_legitimate_frontend_requirement_is_not_css_pollution():
     text = "岗位职责：开发前端。任职要求：熟悉 CSS font-size:、color: 与组件开发。"
     assert repair.clean_saved_jd(text) == text
+
+
+def test_reviewed_malformed_external_url_is_fixed_without_claiming_new_observation(jobs_db,text_db):
+    row=make_job(123,source_id='tencent',url='https:////tencent.wd1.myworkdayjobs.com/Tencent_Careers/job/Engineer_R104904')
+    ingest_run(jobs_db,'tencent',[row],ts=T(1))
+    before=tuple(jobs_db.execute('SELECT last_seen,closed_at,miss_count FROM job').fetchone())
+    report=repair.apply_fixes(jobs_db,text_db,ts=T(2),apply=True)
+    assert report['url']==1
+    assert jobs_db.execute('SELECT url FROM job').fetchone()[0]=='https://tencent.wd1.myworkdayjobs.com/Tencent_Careers/job/Engineer_R104904'
+    assert tuple(jobs_db.execute('SELECT last_seen,closed_at,miss_count FROM job').fetchone())==before
+    assert repair.apply_fixes(jobs_db,text_db,ts=T(3),apply=True)['changed']==0

@@ -8,6 +8,7 @@ from contextlib import closing
 from pathlib import Path
 
 from jobradar.adapters.hotjob import verified_detail_fields
+from jobradar.adapters.tencent import public_post_url
 from jobradar.jd_text import template_pollution
 from jobradar.models import Job
 from jobradar.normalize import normalize_cities
@@ -29,10 +30,10 @@ def clean_saved_jd(text):
 
 
 def apply_fixes(jobs, texts, *, ts, apply=False):
-    report = dict(changed=0, owner=0, jd=0, cities=0, grad_year=0, degree_min=0)
+    report = dict(changed=0, owner=0, jd=0, cities=0, grad_year=0, degree_min=0, url=0)
     rows = jobs.execute(
         "SELECT j.*, c.name AS company FROM job j JOIN company c ON c.id=j.company_id "
-        "WHERE j.source_id IN ('beisen-ghbank','hotjob-422dbe') OR j.source_id LIKE 'yunjiuye-%' "
+        "WHERE j.source_id IN ('beisen-ghbank','hotjob-422dbe','tencent') OR j.source_id LIKE 'yunjiuye-%' "
         "OR j.cities LIKE '%市%' OR j.cities LIKE '%TP%' OR j.cities LIKE '%,%'").fetchall()
     former_owners = set()
     with jobs, texts:
@@ -43,6 +44,12 @@ def apply_fixes(jobs, texts, *, ts, apply=False):
             values.update(company=row["company"], cities=json.loads(row["cities"]),
                           description=description, requirements=requirements)
             fields = []
+            if row['source_id']=='tencent':
+                corrected_url=public_post_url(values['url'],row['source_job_id'])
+                if corrected_url!=values['url']:
+                    values['url']=corrected_url
+                    fields.append('url')
+                    report['url']+=1
             normalized_cities = normalize_cities(values["cities"])
             if normalized_cities != values["cities"]:
                 values["cities"] = normalized_cities
@@ -76,8 +83,8 @@ def apply_fixes(jobs, texts, *, ts, apply=False):
             job = Job(**values)
             jobs.execute("INSERT OR IGNORE INTO company(name) VALUES (?)", (job.company,))
             company_id = jobs.execute("SELECT id FROM company WHERE name=?", (job.company,)).fetchone()[0]
-            jobs.execute("UPDATE job SET company_id=?, grad_year=?, degree_min=?, cities=?, content_hash=? WHERE id=?",
-                         (company_id, job.grad_year, job.degree_min, json.dumps(job.cities, ensure_ascii=False), job.content_hash(), row["id"]))
+            jobs.execute("UPDATE job SET company_id=?, grad_year=?, degree_min=?, cities=?, url=?, content_hash=? WHERE id=?",
+                         (company_id, job.grad_year, job.degree_min, json.dumps(job.cities, ensure_ascii=False), job.url, job.content_hash(), row["id"]))
             if "text" in fields:
                 texts.execute("UPDATE job_text SET description=?, requirements=? WHERE job_id=?",
                               (job.description, job.requirements, row["id"]))

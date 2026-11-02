@@ -21,6 +21,18 @@ def test_data_coverage_counts_only_matched_targets():
     assert (covered, total) == (2, 3)
 
 
+def test_malformed_https_url_is_a_release_failure(tmp_path):
+    from helpers import T, make_job
+    from jobradar.pipeline.ingest import ingest_run
+    from jobradar.store.migrate import connect
+
+    with connect(tmp_path/'jobs.db','jobs') as conn:
+        ingest_run(conn,'s1',[make_job(1,url='https:////tencent.wd1.myworkdayjobs.com/Tencent_Careers/job/Engineer')],ts=T(1))
+    count,detail=rc.data_sanity(tmp_path,None)
+    assert count>0
+    assert '链接' in detail
+
+
 def test_calendar_coverage_counts_data_or_entry(tmp_path):
     db = tmp_path / "calendar.db"
     con = sqlite3.connect(db)

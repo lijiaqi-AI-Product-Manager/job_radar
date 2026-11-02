@@ -12,6 +12,7 @@ import json
 import sqlite3
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
@@ -242,12 +243,23 @@ def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
                                  "AND recruit_type NOT IN ('campus','intern','social')"),
                 "届次越界": ("SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND grad_year IS NOT NULL "
                              "AND (grad_year < 2023 OR grad_year > 2032)"),
-                "链接非 http": "SELECT COUNT(*) FROM job WHERE closed_at IS NULL AND url NOT LIKE 'http%'",
             }
             for label, sql in checks.items():
                 n = j.execute(sql).fetchone()[0]
                 if n:
                     problems.append(f"{label} {n}")
+            invalid_urls=0
+            for (url,) in j.execute('SELECT url FROM job WHERE closed_at IS NULL'):
+                try:
+                    parsed=urlsplit(url or '')
+                    valid=(parsed.scheme in {'http','https'} and parsed.hostname and parsed.port!=0
+                           and not parsed.username and not parsed.password
+                           and not any(ord(char)<33 for char in parsed.netloc))
+                except ValueError:
+                    valid=False
+                invalid_urls+=not bool(valid)
+            if invalid_urls:
+                problems.append(f'岗位链接无效 {invalid_urls}')
             dups = j.execute(
                 "SELECT COUNT(*) FROM (SELECT source_id, source_job_id FROM job WHERE closed_at IS NULL "
                 "GROUP BY 1,2 HAVING COUNT(*) > 1)").fetchone()[0]
