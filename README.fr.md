@@ -40,7 +40,7 @@ jobradar doctor
 
 | Indicateur | Valeur |
 | :--- | ---: |
-| Sources actives | 2,265 |
+| Sources actives | 2,264 |
 | Entreprises configurées | 2,225 |
 | Adaptateurs | 27 |
 | Couverture du périmètre fixe d’entreprises cibles | 952 / 1,655 · 57.52% |

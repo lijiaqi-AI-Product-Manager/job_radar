@@ -40,7 +40,7 @@ jobradar doctor
 
 | Métrica | Valor |
 | :--- | ---: |
-| Fuentes habilitadas | 2,265 |
+| Fuentes habilitadas | 2,264 |
 | Empresas configuradas | 2,225 |
 | Adaptadores | 27 |
 | Cobertura del conjunto fijo de empresas objetivo | 952 / 1,655 · 57.52% |
