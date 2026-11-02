@@ -4,10 +4,12 @@
 运行：jobradar-mcp（stdio）。数据需先用 `jobradar update` 下载。
 """
 
+import json
 import sqlite3
 from contextlib import nullcontext
 
 from mcp.server.mcpserver import MCPServer
+from mcp.types import CallToolResult
 
 from jobradar import __version__
 from jobradar.core import queries as q
@@ -18,7 +20,24 @@ INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包
 回答时：注明 data_as_of；每个岗位附 url；只用返回的数据，不编造；results 为空说明"数据里没有"，
 而不是"该公司没在招"；stale 为 true 时提醒用户运行 `jobradar update`。"""
 
-server = MCPServer("jobradar", version=__version__, instructions=INSTRUCTIONS)
+class _RadarServer(MCPServer):
+    async def call_tool(self, name, arguments, context=None):
+        result = await super().call_tool(name, arguments, context)
+        if isinstance(result, CallToolResult):
+            payload = result.structured_content
+            if payload is None and len(result.content) == 1 and result.content[0].type == "text":
+                try:
+                    payload = json.loads(result.content[0].text)
+                except (ValueError, TypeError):
+                    payload = None
+            if isinstance(payload, dict) and payload.get("error"):
+                # 保留既有JSON错误包，同时向标准MCP客户端明确标记业务失败。
+                result.is_error = True
+                result.structured_content = payload
+        return result
+
+
+server = _RadarServer("jobradar", version=__version__, instructions=INSTRUCTIONS)
 
 
 def _guard(fn):
