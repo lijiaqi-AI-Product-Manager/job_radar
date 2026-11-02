@@ -14,6 +14,10 @@ on:
         type: number
         default: 0
         description: 只补超过指定小时未成功的源，0为全部
+      source_budget_seconds:
+        type: number
+        default: 900
+        description: 单源完整读取预算（秒），大源复验时可延长；默认保持900秒
       only_sources:
         type: string
         default: ""
@@ -65,10 +69,11 @@ jobs:
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
         env:
           CRAWL_ONLY_SOURCES: ${{ inputs.only_sources }}
+          CRAWL_SOURCE_BUDGET_SECONDS: ${{ inputs.source_budget_seconds || 900 }}
         run: |
           selection=()
           if [ -n "$CRAWL_ONLY_SOURCES" ]; then selection=(--only "$CRAWL_ONLY_SOURCES"); fi
-          uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget 900 --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" "${selection[@]}" | tee crawl-summary.json
+          uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget "$CRAWL_SOURCE_BUDGET_SECONDS" --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" "${selection[@]}" | tee crawl-summary.json
 
       - name: Apply reviewed data corrections
         run: uv run python scripts/repair_reviewed_data.py --home data --apply

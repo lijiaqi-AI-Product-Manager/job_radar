@@ -4,7 +4,7 @@ name: mirror-gitee
 # 需要：仓库 secret GITEE_TOKEN；GITEE_REPO（variable 或 secret，默认 qgauss/job_radar）。
 on:
   workflow_run:
-    workflows: [daily-crawl, calendar-data-repair, reviewed-data-repair]
+    workflows: [daily-crawl, calendar-data-repair, reviewed-data-repair, verified-source-recovery]
     types: [completed]
   workflow_dispatch:
 

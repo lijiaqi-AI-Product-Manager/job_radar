@@ -1,0 +1,62 @@
+name: verified-source-recovery
+on:
+  workflow_dispatch:
+    inputs:
+      asset_id:
+        description: 本仓库临时观测附件ID（已通过公开访问守卫的完整结果）
+        type: string
+        required: true
+      sha256:
+        description: 观测附件的完整SHA-256
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: daily-crawl
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download coherent originals and preserve backup
+        run: |
+          mkdir -p original data
+          uv run python scripts/download_snapshots.py --out original --compressed
+          for name in jobs.db jd_text.db calendar.db; do gzip -dc "original/$name.gz" > "data/$name"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snapshots-before-source-recovery
+          path: original/*.gz
+          retention-days: 14
+      - name: Read bounded observation from this repository
+        env:
+          RECOVERY_ASSET_ID: ${{ inputs.asset_id }}
+          RECOVERY_SHA256: ${{ inputs.sha256 }}
+        run: |
+          [[ "$RECOVERY_ASSET_ID" =~ ^[0-9]+$ ]]
+          [[ "$RECOVERY_SHA256" =~ ^[a-f0-9]{64}$ ]]
+          size=$(gh api "repos/$GITHUB_REPOSITORY/releases/assets/$RECOVERY_ASSET_ID" --jq '.size')
+          test "$size" -gt 0 && test "$size" -le 52428800
+          gh api "repos/$GITHUB_REPOSITORY/releases/assets/$RECOVERY_ASSET_ID" -H 'Accept: application/octet-stream' > observations.json
+          uv run python scripts/import_verified_crawl.py --home data --payload observations.json --sha256 "$RECOVERY_SHA256" | tee source-recovery-report.json
+      - name: Build calendar and verify compatible snapshots
+        run: |
+          uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db
+          uv run python scripts/export_public_databases.py --home data --out data/public
+          uv run python scripts/release_check.py --home data/public
+          for name in jobs.db jd_text.db calendar.db; do gzip -n -9 -k "data/public/$name"; done
+      - name: Publish complete verified generation
+        run: |
+          uv run python scripts/publish_snapshots.py --home data/public
+          gh release upload data-latest source-recovery-report.json --clobber
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-source-recovery-report
+          path: source-recovery-report.json

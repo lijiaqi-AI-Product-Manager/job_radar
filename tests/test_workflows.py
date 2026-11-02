@@ -30,6 +30,26 @@ def test_crawl_has_time_budget():
     assert "--budget-seconds" in run
 
 
+def test_manual_large_source_budget_keeps_default_and_uses_environment():
+    trigger = DAILY.get("on", DAILY.get(True))
+    assert trigger["workflow_dispatch"]["inputs"]["source_budget_seconds"]["default"] == 900
+    step = _step("Crawl")
+    assert "--source-budget \"$CRAWL_SOURCE_BUDGET_SECONDS\"" in step["run"]
+    assert "inputs.source_budget_seconds || 900" in step["env"]["CRAWL_SOURCE_BUDGET_SECONDS"]
+
+
+def test_observation_recovery_uses_publication_lock_and_all_quality_gates():
+    doc = yaml.safe_load((ROOT / ".github/workflows/source-recovery.yml").read_text(encoding="utf-8"))
+    assert doc["concurrency"] == DAILY["concurrency"]
+    steps = doc["jobs"]["recover"]["steps"]
+    run = "\n".join(s.get("run", "") for s in steps)
+    assert run.index("import_verified_crawl.py") < run.index("calendar-build")
+    assert run.index("release_check.py") < run.index("publish_snapshots.py")
+    assert "export_public_databases.py" in run
+    assert "--sha256 \"$RECOVERY_SHA256\"" in run
+    assert not any(s.get("continue-on-error") for s in steps)
+
+
 def test_calendar_step_asserts_freshness():
     """日历步骤必须在上传后校验 build 时间戳，避免"超时了但没人发现"。"""
     run = _step("Build recruiting calendar")["run"]
