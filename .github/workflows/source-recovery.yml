@@ -48,6 +48,7 @@ jobs:
           uv run python scripts/import_verified_crawl.py --home data --payload observations.json --sha256 "$RECOVERY_SHA256" | tee source-recovery-report.json
       - name: Build calendar and verify compatible snapshots
         run: |
+          uv run python scripts/repair_reviewed_data.py --home data --cohort-only --apply | tee cohort-correction-report.json
           uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db
           uv run python scripts/export_public_databases.py --home data --out data/public
           uv run python scripts/release_check.py --home data/public
@@ -55,8 +56,10 @@ jobs:
       - name: Publish complete verified generation
         run: |
           uv run python scripts/publish_snapshots.py --home data/public
-          gh release upload data-latest source-recovery-report.json --clobber
+          gh release upload data-latest source-recovery-report.json cohort-correction-report.json --clobber
       - uses: actions/upload-artifact@v4
         with:
           name: verified-source-recovery-report
-          path: source-recovery-report.json
+          path: |
+            source-recovery-report.json
+            cohort-correction-report.json

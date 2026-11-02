@@ -11,6 +11,13 @@ from pathlib import Path
 
 import yaml
 
+
+def test_mirror_finishes_running_transfer_before_next_generation():
+    from pathlib import Path
+
+    workflow = yaml.safe_load((Path(__file__).parents[1] / ".github/workflows/mirror.yml").read_text(encoding="utf-8"))
+    assert workflow["concurrency"] == {"group": "mirror-gitee", "cancel-in-progress": False}
+
 ROOT = Path(__file__).parent.parent
 DAILY = yaml.safe_load((ROOT / ".github" / "workflows" / "daily.yml").read_text(encoding="utf-8"))
 

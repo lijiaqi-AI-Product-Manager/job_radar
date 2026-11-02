@@ -47,7 +47,13 @@ import httpx
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, categorize, grad_year_from_jd, grad_year_from_text
+from jobradar.normalize import (
+    batch_from_text,
+    categorize,
+    grad_year_from_jd,
+    grad_year_from_text,
+    uncertain_title_cohort,
+)
 
 DEFAULT_BASE = "https://jobs.bytedance.com"
 DEFAULT_PATH = "campus"
@@ -260,6 +266,8 @@ class FeishuAtsxAdapter(Adapter):
             pub = publish_date(raw.get("publish_time"))
             if pub is None or pub < f"{date.today().year}-07-01":
                 grad = None
+        if uncertain_title_cohort(title) or uncertain_title_cohort(subject):
+            grad = None
         # job_category 树：站点只给叶子（算法 / 后端 / 运营…），父节点是"研发"这类大方向。
         # 用 taxonomy 的归类口径而不是自造树，跨公司才能对齐（docs/DEVELOPMENT.md：不要自造分类）。
         cat, subcat = categorize(title)

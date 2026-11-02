@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 
 from helpers import T, make_job
@@ -7,6 +8,39 @@ from jobradar.pipeline.ingest import ingest_run, upsert_texts
 spec = importlib.util.spec_from_file_location("review_repair", Path(__file__).resolve().parents[1] / "scripts/repair_reviewed_data.py")
 repair = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(repair)
+
+
+def test_cohort_withdrawal_preserves_observation_state_and_text_and_is_idempotent(jobs_db, text_db):
+    evidence = json.loads((Path(__file__).parents[1] / "targets/cohort_title_corrections.json").read_text(encoding="utf-8"))["rows"][0]
+    job = make_job(evidence["source_job_id"], source_id=evidence["source_id"], title=evidence["title"],
+                   url=evidence["url"], grad_year=evidence["grad_year"], requirements="原岗位要求")
+    ingest_run(jobs_db, job.source_id, [job], ts=T(1))
+    upsert_texts(text_db, [job], ts=T(1))
+    before = dict(jobs_db.execute("SELECT * FROM job").fetchone())
+    text_before = tuple(text_db.execute("SELECT * FROM job_text").fetchone())
+    runs_before = tuple(jobs_db.execute("SELECT * FROM source_run").fetchone())
+    assert repair.withdraw_cohort_fixes(jobs_db, text_db, ts=T(2), corrections=[evidence])["changed"] == 1
+    assert dict(jobs_db.execute("SELECT * FROM job").fetchone()) == before
+    assert repair.withdraw_cohort_fixes(jobs_db, text_db, ts=T(2), apply=True, corrections=[evidence])["changed"] == 1
+    after = dict(jobs_db.execute("SELECT * FROM job").fetchone())
+    assert after["grad_year"] is None and after["content_hash"] != before["content_hash"]
+    assert {k:v for k,v in after.items() if k not in {"grad_year", "content_hash"}} == {k:v for k,v in before.items() if k not in {"grad_year", "content_hash"}}
+    assert tuple(text_db.execute("SELECT * FROM job_text").fetchone()) == text_before
+    assert tuple(jobs_db.execute("SELECT * FROM source_run").fetchone()) == runs_before
+    count = jobs_db.execute("SELECT COUNT(*) FROM job_event").fetchone()[0]
+    assert repair.withdraw_cohort_fixes(jobs_db, text_db, ts=T(3), apply=True, corrections=[evidence])["changed"] == 0
+    assert jobs_db.execute("SELECT COUNT(*) FROM job_event").fetchone()[0] == count
+
+
+def test_cohort_withdrawal_cannot_override_changed_title_evidence(jobs_db, text_db):
+    evidence = json.loads((Path(__file__).parents[1] / "targets/cohort_title_corrections.json").read_text(encoding="utf-8"))["rows"][0]
+    job = make_job(evidence["source_job_id"], source_id=evidence["source_id"], title="2028届研发工程师",
+                   url=evidence["url"], grad_year=2028)
+    ingest_run(jobs_db, job.source_id, [job], ts=T(1))
+    before = tuple(jobs_db.execute("SELECT * FROM job").fetchone())
+    report = repair.withdraw_cohort_fixes(jobs_db, text_db, ts=T(2), apply=True, corrections=[evidence])
+    assert report["changed"] == 0 and report["source_changed"] == 1
+    assert tuple(jobs_db.execute("SELECT * FROM job").fetchone()) == before
 
 
 def test_review_repair_preserves_observation_and_status_and_is_idempotent(jobs_db, text_db):

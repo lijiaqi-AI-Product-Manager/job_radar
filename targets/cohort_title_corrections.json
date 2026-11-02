@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "scope": "仅撤回既有标题无法支持的单届值，保留岗位状态和原观测时间。",
+  "rows": [
+    {
+      "source_id": "beisen-hongyantruck1",
+      "source_job_id": "f03ab220-e710-436e-8352-480024d4b16d",
+      "url": "https://hongyantruck1.zhiye.com/campus/detail?jobAdId=f03ab220-e710-436e-8352-480024d4b16d",
+      "title": "2024-2027届研发储备生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-bozhon4",
+      "source_job_id": "e6f72212-dc91-4ec1-87eb-705c05f13cb8",
+      "url": "https://bozhon4.zhiye.com/intern/detail?jobAdId=e6f72212-dc91-4ec1-87eb-705c05f13cb8",
+      "title": "招聘专员（实习生）2026届或2027届(J11966)",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-bozhon4",
+      "source_job_id": "50049b64-207f-4f58-97ec-adbd22604a17",
+      "url": "https://bozhon4.zhiye.com/intern/detail?jobAdId=50049b64-207f-4f58-97ec-adbd22604a17",
+      "title": "招聘专员（实习生）2026届或2027届(J11966)",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-wondersharecampus",
+      "source_job_id": "a3e83c66-f36b-42fd-9c3f-2a33c64776ba",
+      "url": "https://wondersharecampus.zhiye.com/intern/detail?jobAdId=a3e83c66-f36b-42fd-9c3f-2a33c64776ba",
+      "title": "测试开发实习生【27/28届】",
+      "grad_year": 2028
+    },
+    {
+      "source_id": "beisen-inovance",
+      "source_job_id": "815579cd-ba89-4493-aed9-78f9fe5e898f",
+      "url": "https://inovance.zhiye.com/intern/detail?jobAdId=815579cd-ba89-4493-aed9-78f9fe5e898f",
+      "title": "【26/27届见习生】海外技术服务工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "b62f72b6-6f19-41a1-a9a8-f0a047e96f5f",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=b62f72b6-6f19-41a1-a9a8-f0a047e96f5f",
+      "title": "双汇26&27届-企业管理类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "49f4e730-4512-414a-a4dc-53f0635eb838",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=49f4e730-4512-414a-a4dc-53f0635eb838",
+      "title": "双汇26&27届-物流类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "c02c08ea-d5c8-477c-8d93-fd66c9828560",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=c02c08ea-d5c8-477c-8d93-fd66c9828560",
+      "title": "双汇26&27届-食品科学类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "fa1d5d44-51e0-4d23-91c5-fd9b1d45e72b",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=fa1d5d44-51e0-4d23-91c5-fd9b1d45e72b",
+      "title": "双汇26&27届-市场营销类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "231bb84e-2ffa-4b27-b09e-903b257e6061",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=231bb84e-2ffa-4b27-b09e-903b257e6061",
+      "title": "双汇26&27届-人力资源类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "2b5b0f20-aa10-4d8a-89a7-0f4632c72fe5",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=2b5b0f20-aa10-4d8a-89a7-0f4632c72fe5",
+      "title": "双汇26&27届-计算机软件类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "565f0173-7e20-410b-a054-4f7c570771ce",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=565f0173-7e20-410b-a054-4f7c570771ce",
+      "title": "双汇26&27届-机械设备类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "82fc56b3-7fde-4eb4-91fa-edcd18b1e971",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=82fc56b3-7fde-4eb4-91fa-edcd18b1e971",
+      "title": "双汇26&27届-财务类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "6a98e865-c32b-45e4-841c-58f2a7b7a962",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=6a98e865-c32b-45e4-841c-58f2a7b7a962",
+      "title": "双汇26&27届-畜牧养殖类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "41aee56b-fa7b-4879-b5b3-2c073c94f735",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=41aee56b-fa7b-4879-b5b3-2c073c94f735",
+      "title": "双汇26&27届-法律类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "86ba1bbe-81f9-4321-9897-1cdd2ccd04c7",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=86ba1bbe-81f9-4321-9897-1cdd2ccd04c7",
+      "title": "双汇26&27届-安全工程类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-shuanghui",
+      "source_job_id": "6a030cf7-50db-44a5-9752-a2fc424355af",
+      "url": "https://shuanghui.zhiye.com/campus/detail?jobAdId=6a030cf7-50db-44a5-9752-a2fc424355af",
+      "title": "双汇26&27届-包装工程类管培生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-popmart",
+      "source_job_id": "b039b72f-ae75-41a9-97c7-27663b6271d6",
+      "url": "https://popmart.zhiye.com/intern/detail?jobAdId=b039b72f-ae75-41a9-97c7-27663b6271d6",
+      "title": "3D实习生（27届及以后）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "hotjob-gwm",
+      "source_job_id": "68c4d89a778ced4f39433716",
+      "url": "https://zhaopin.gwm.cn/SU692d3058ea11b01b6c54d0ea/pb/posDetail.html?postId=68c4d89a778ced4f39433716&postType=campus",
+      "title": "天津动力-储备管理岗（25、26届校招）35097",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-hellobike",
+      "source_job_id": "a7e539c0-dc30-4cd5-a673-b7f7150fd23f",
+      "url": "https://hellobike.zhiye.com/intern/detail?jobAdId=a7e539c0-dc30-4cd5-a673-b7f7150fd23f",
+      "title": "27届＆28届-实习岗(J20733)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7680031215635138867",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7680031215635138867/detail",
+      "title": "初级 EMS 产品经理（25-26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7662674673436395782",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7662674673436395782/detail",
+      "title": "设计项目管理专员(24-25届）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7657483643790575923",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7657483643790575923/detail",
+      "title": "【24-26届】MKT",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7657482868151798054",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7657482868151798054/detail",
+      "title": "【23-25届】渠道销售运营",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7654874294984214820",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7654874294984214820/detail",
+      "title": "软件测试工程师（24-26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7654562277216258330",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7654562277216258330/detail",
+      "title": "24/25届信息安全工程师（AI驱动防御）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7651800303248247090",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7651800303248247090/detail",
+      "title": "AI数据工程师（25/26届专项）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7629187467028367658",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7629187467028367658/detail",
+      "title": "财务专员（24&25&26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7612883718990793011",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7612883718990793011/detail",
+      "title": "24/25届-销售运营",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7612876538380765503",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7612876538380765503/detail",
+      "title": "24/25届-GTM",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7605124048771664134",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7605124048771664134/detail",
+      "title": "法务专员（24-25届）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7604700854940059940",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7604700854940059940/detail",
+      "title": "招聘专员（24/25届）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7601094381060180250",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7601094381060180250/detail",
+      "title": "24/25届-EU1-BM",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7597013435667417370",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7597013435667417370/detail",
+      "title": "AI全栈开发工程师（25/26届专项）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7591830130713495862",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7591830130713495862/detail",
+      "title": "AI应用工程师（24/25届启航计划）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7591829247912757554",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7591829247912757554/detail",
+      "title": "AI应用工程师（24/25届启航计划）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7591792167623739686",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7591792167623739686/detail",
+      "title": "专利工程师（24-25届）",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7580312847045921060",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7580312847045921060/detail",
+      "title": "AI全栈工程师（24-26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7514516966975998217",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7514516966975998217/detail",
+      "title": "机器人专项-26/27届毕业生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-babybus",
+      "source_job_id": "cf4e9280-3492-447e-a851-1795cffda091",
+      "url": "https://babybus.zhiye.com/intern/detail?jobAdId=cf4e9280-3492-447e-a851-1795cffda091",
+      "title": "配音导演实习生（27届&28届）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-njcttq",
+      "source_job_id": "118b2e3c-e112-44ee-adab-68c1070b95b9",
+      "url": "https://njcttq.zhiye.com/campus/detail?jobAdId=118b2e3c-e112-44ee-adab-68c1070b95b9",
+      "title": "医药代表实习生（26/27届）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-michelin",
+      "source_job_id": "66c140bb-aa9d-47d1-be19-37a084094bc2",
+      "url": "https://michelin.zhiye.com/campus/detail?jobAdId=66c140bb-aa9d-47d1-be19-37a084094bc2",
+      "title": "2027校招_M+实习，27/28届",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "3f6a07c9-cf49-4c5f-8ce7-d7d35eb7646d",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=3f6a07c9-cf49-4c5f-8ce7-d7d35eb7646d",
+      "title": "2025/2026届 12吋工艺工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "b7dcbd54-14b0-49ec-85f7-51a92446766e",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=b7dcbd54-14b0-49ec-85f7-51a92446766e",
+      "title": "2025/2026届 12吋工艺整合工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "fea0e4b1-3b34-49bb-a8d0-8bbbd5826d93",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=fea0e4b1-3b34-49bb-a8d0-8bbbd5826d93",
+      "title": "2025/2026届 12吋设备工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "5a3ff4f5-af26-4b04-b4b5-93a242bdda7b",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=5a3ff4f5-af26-4b04-b4b5-93a242bdda7b",
+      "title": "2025/2026届 12吋制造工程师",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "485b80fe-2cf8-4ebd-afb2-2cf1a8499291",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=485b80fe-2cf8-4ebd-afb2-2cf1a8499291",
+      "title": "非2027届 12吋采购管理",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "cf8c3bce-6a0d-484b-9b09-6ac78014e58e",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=cf8c3bce-6a0d-484b-9b09-6ac78014e58e",
+      "title": "非2027届 12吋物料控制",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "bf3109e0-be04-47bc-b223-82219bdd0dcd",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=bf3109e0-be04-47bc-b223-82219bdd0dcd",
+      "title": "非2027届 12吋生产计划",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "a82a6d81-5fc0-488d-a047-3505d377f03f",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=a82a6d81-5fc0-488d-a047-3505d377f03f",
+      "title": "非2027届 12吋IT工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "f65e5e5c-cf7a-4936-aa2a-5c5f2546e919",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=f65e5e5c-cf7a-4936-aa2a-5c5f2546e919",
+      "title": "非2027届 12吋IE工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "c09ee113-7b31-461b-9163-c9335215c3ba",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=c09ee113-7b31-461b-9163-c9335215c3ba",
+      "title": "非2027届 12吋MES工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-silanslw",
+      "source_job_id": "5e4e21ff-ca07-4924-8102-28bb47c1c5bf",
+      "url": "https://silanslw.zhiye.com/campus/detail?jobAdId=5e4e21ff-ca07-4924-8102-28bb47c1c5bf",
+      "title": "非2027届 12吋YE工程师",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "hotjob-su5ff30f5b9b0d78e6f4283a0b",
+      "source_job_id": "6a7d96e11ad6db7cf800c53e",
+      "url": "https://atl.hotjob.cn/SU5ff30f5b9b0d78e6f4283a0b/pb/posDetail.html?postId=6a7d96e11ad6db7cf800c53e&postType=campus",
+      "title": "往届生社招专属通道（ 非2027届可投 ）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "sangfor",
+      "source_job_id": "4533",
+      "url": "https://hr.sangfor.com/Sociology?jobId=4533",
+      "title": "27届/28届校招-校园大使（与其他岗位不冲突）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "sangfor",
+      "source_job_id": "4251",
+      "url": "https://hr.sangfor.com/Sociology?jobId=4251",
+      "title": "27届/28届校招-校园大使（与其他岗位不冲突）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-jianhuabm",
+      "source_job_id": "b9d4cb1e-c48e-4a81-b170-1bbc59846971",
+      "url": "https://jianhuabm.zhiye.com/campus/detail?jobAdId=b9d4cb1e-c48e-4a81-b170-1bbc59846971",
+      "title": "中山职院-建华机电管理班-2027至2028届(J10076)",
+      "grad_year": 2028
+    },
+    {
+      "source_id": "beisen-jianhuabm",
+      "source_job_id": "6be37a5a-605a-469d-80a1-9853856a08fe",
+      "url": "https://jianhuabm.zhiye.com/campus/detail?jobAdId=6be37a5a-605a-469d-80a1-9853856a08fe",
+      "title": "湖北工业大学建华班-2027至2029届(J10066)",
+      "grad_year": 2029
+    },
+    {
+      "source_id": "beisen-asustek",
+      "source_job_id": "72dbe7cb-28b8-42d1-a950-c36502361ded",
+      "url": "https://asustek.zhiye.com/campus/detail?jobAdId=72dbe7cb-28b8-42d1-a950-c36502361ded",
+      "title": "嵌入式软件研发工程师（2026/2027届）(J10853)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-qingmutec",
+      "source_job_id": "483ed23b-9284-455a-b7e1-5d4f25087898",
+      "url": "https://qingmutec.zhiye.com/campus/detail?jobAdId=483ed23b-9284-455a-b7e1-5d4f25087898",
+      "title": "电商客服实习生【2026/2027届】",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-inm",
+      "source_job_id": "140a87f1-1218-4c0c-a5c3-f6d3a567adad",
+      "url": "https://inm.zhiye.com/campus/detail?jobAdId=140a87f1-1218-4c0c-a5c3-f6d3a567adad",
+      "title": "（25届、26届）物流储干(J11779)",
+      "grad_year": 2025
+    },
+    {
+      "source_id": "beisen-warrant",
+      "source_job_id": "da056fdb-2c90-443b-bb76-000fc3e2949f",
+      "url": "https://warrant.zhiye.com/campus/detail?jobAdId=da056fdb-2c90-443b-bb76-000fc3e2949f",
+      "title": "实习生（2027届/2028届）",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "anker-in",
+      "source_job_id": "7650356494538934578",
+      "url": "https://anker-in.jobs.feishu.cn/index/position/7650356494538934578/detail",
+      "title": "财经专员（24&25&26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-legacy-deyi",
+      "source_job_id": "230937803",
+      "url": "https://deyi.zhiye.com/zpdetail/230937803",
+      "title": "监察审计专员——26/27届校招",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "d2902675-ae41-4a60-9675-cd2bd7c2c4f3",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=d2902675-ae41-4a60-9675-cd2bd7c2c4f3",
+      "title": "【万辰集团总部-辰星计划】运营管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "0c1004fe-16c8-4752-a8bc-e70c21b933b9",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=0c1004fe-16c8-4752-a8bc-e70c21b933b9",
+      "title": "【万辰集团总部-辰星计划】商品采购管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "6bfe2fa7-effb-4e77-9e96-ab92cdba735e",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=6bfe2fa7-effb-4e77-9e96-ab92cdba735e",
+      "title": "【万辰集团总部-辰星计划】品控管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "1368b7d4-029b-42ad-a181-4f82d9678732",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=1368b7d4-029b-42ad-a181-4f82d9678732",
+      "title": "【万辰集团总部-辰星计划】供应链管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "2237fe51-6470-441a-906c-673294639d3e",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=2237fe51-6470-441a-906c-673294639d3e",
+      "title": "【万辰集团总部-辰星计划】招拓管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "cc0a82b4-e31f-4e18-ac92-94de521b9a73",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=cc0a82b4-e31f-4e18-ac92-94de521b9a73",
+      "title": "【万辰集团总部-辰星计划】品牌市场管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "b86da5b0-b922-47ab-837b-e6b2053f8078",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=b86da5b0-b922-47ab-837b-e6b2053f8078",
+      "title": "【万辰集团总部-辰星计划】会员运营管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "0e16eda3-2fe6-4f94-90cb-0a73f70ef5db",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=0e16eda3-2fe6-4f94-90cb-0a73f70ef5db",
+      "title": "【万辰集团总部-辰星计划】AI管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "fbd6b7cf-7502-4e38-9ec5-b76c18f5375c",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=fbd6b7cf-7502-4e38-9ec5-b76c18f5375c",
+      "title": "【万辰集团总部-辰星计划】大数据管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "fb65c6c8-7595-4f36-9ea2-e18a7cc9265f",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=fb65c6c8-7595-4f36-9ea2-e18a7cc9265f",
+      "title": "【万辰集团总部-辰星计划】产品管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "0a84e299-8f10-4ee2-b671-a8a70aba6625",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=0a84e299-8f10-4ee2-b671-a8a70aba6625",
+      "title": "【万辰集团总部-辰星计划】开发管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "00de873d-212e-4c79-bbd3-9f6632894261",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=00de873d-212e-4c79-bbd3-9f6632894261",
+      "title": "【万辰集团总部-辰星计划】财务管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "9152df64-74c7-4b96-8fa3-cae0af588470",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=9152df64-74c7-4b96-8fa3-cae0af588470",
+      "title": "【万辰集团总部-辰星计划】法务管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-vanchen1",
+      "source_job_id": "df13ac12-cbfb-4a6b-a1af-32ec78e6e6a5",
+      "url": "https://vanchen1.zhiye.com/campus/detail?jobAdId=df13ac12-cbfb-4a6b-a1af-32ec78e6e6a5",
+      "title": "【万辰集团总部-辰星计划】人力资源管培生 26届-27届可投",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-maitianzhaopinjjr",
+      "source_job_id": "310993979",
+      "url": "https://maitianzhaopinjjr.zhiye.com/zpdetail/310993979?o=1",
+      "title": "高端房产销售管培生（23-26届）",
+      "grad_year": 2026
+    },
+    {
+      "source_id": "beisen-iwhalecloud1",
+      "source_job_id": "f291f4bf-e05a-4c86-b0e0-5a7897e560d5",
+      "url": "https://iwhalecloud1.zhiye.com/campus/detail?jobAdId=f291f4bf-e05a-4c86-b0e0-5a7897e560d5",
+      "title": "开发工程师—南京—2027届校招（2026届可投）(J18082)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-iwhalecloud1",
+      "source_job_id": "7679db28-0dad-4a20-90ab-cbc57e65c5ab",
+      "url": "https://iwhalecloud1.zhiye.com/campus/detail?jobAdId=7679db28-0dad-4a20-90ab-cbc57e65c5ab",
+      "title": "测试工程师—南京—2027届校招（2026届可投）(J18083)",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-ahxz",
+      "source_job_id": "cc3593c2-555f-42c4-839d-9cc4cdf85f50",
+      "url": "https://ahxz.dbappsecurity.com.cn/intern/detail?jobAdId=cc3593c2-555f-42c4-839d-9cc4cdf85f50",
+      "title": "【26/27届校招】区域行销实习生",
+      "grad_year": 2027
+    },
+    {
+      "source_id": "beisen-ahxz",
+      "source_job_id": "a62aefe3-60c1-4ed1-a971-41aa17bc9d0a",
+      "url": "https://ahxz.dbappsecurity.com.cn/intern/detail?jobAdId=a62aefe3-60c1-4ed1-a971-41aa17bc9d0a",
+      "title": "【26/27届校招】区域行销实习生",
+      "grad_year": 2027
+    }
+  ]
+}

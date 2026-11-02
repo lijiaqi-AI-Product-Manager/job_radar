@@ -30,3 +30,5 @@ def requirement_grad_year(requirement: str | None) -> int | None:
         return None
     year = next(iter(years))
     return year if 2023 <= year <= 2032 else None
+
+

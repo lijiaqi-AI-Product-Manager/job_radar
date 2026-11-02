@@ -3,6 +3,7 @@
 import re
 from datetime import datetime, timedelta, timezone
 from functools import cache
+from html import unescape
 from pathlib import Path
 
 import yaml
@@ -16,6 +17,10 @@ _GRAD = re.compile(
 _GRAD_LOOSE = re.compile(r"(?<![\dA-Za-z])20(2[4-9]|3[0-2])(?!\d)(?!\s*年(?:以上|及以上|经验|工作))")
 # 标题开头的【2027】/[27] 这类只写年份的括号
 _GRAD_BRACKET = re.compile(r"^\s*[【\[](?:20)?(2[4-9]|3[0-2])[】\]]")
+_TITLE_COHORT = re.compile(r"(?<!\d)(20\d{2}|2[3-9]|3[0-2])\s*(?:届|年应届毕业生)")
+_TITLE_EARLIER_YEAR = re.compile(r"(?<![\dA-Za-z])(?:20\d{2}|2[3-9]|3[0-2])\s*(?:[、,，/\-—~～&]|或|至|到|和|及)\s*$")
+_TITLE_OPEN_RANGE = re.compile(r"\s*(?:[（(]\s*含\s*[）)]\s*)?(?:及|或|和)?\s*(?:以前|之前|以后|之后|以上|以下|往届)")
+_TITLE_EXCLUSION = re.compile(r"(?:不接受|不招收|不含|不包括|非|除)\s*$")
 # 顺序即优先级：更具体的批次在前
 _BATCHES = (
     ("提前批", ("提前批",)),
@@ -26,9 +31,25 @@ _BATCHES = (
 )
 
 
+def uncertain_title_cohort(title: str) -> bool:
+    """明确多届、范围或否定的标题不能表示单届；两位年份仅用于拒绝歧义。"""
+    import unicodedata
+
+    text = unicodedata.normalize("NFKC", unescape(re.sub(r"<[^>]+>", " ", title)))
+    years = set()
+    for match in _TITLE_COHORT.finditer(text):
+        before, after = text[max(0, match.start()-40):match.start()], text[match.end():]
+        year = int(match[1]) + (2000 if len(match[1]) == 2 else 0)
+        if (_TITLE_EARLIER_YEAR.search(before) or _TITLE_EXCLUSION.search(before)
+                or _TITLE_OPEN_RANGE.match(after) or not 2023 <= year <= 2032):
+            return True
+        years.add(year)
+    return len(years) > 1
+
+
 def grad_year_from_text(text: str | None, *, loose: bool = False) -> int | None:
     """loose=True 只应用于校招/实习岗位的标题。"""
-    if not text:
+    if not text or uncertain_title_cohort(text):
         return None
     m = _GRAD.search(text) or _GRAD_BRACKET.search(text) or (_GRAD_LOOSE.search(text) if loose else None)
     return 2000 + int(m.group(1)) if m else None

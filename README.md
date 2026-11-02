@@ -1,7 +1,7 @@
 ![job_radar — 把招聘信息，变成你的本地数据库](docs/assets/hero.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.2"><img src="https://img.shields.io/badge/release-v2.1.2-58bfa5" alt="Release 2.1.2"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.2"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily data snapshots"></a>
@@ -43,7 +43,7 @@
 需要 **Python 3.11+**，支持 Windows、macOS 和 Linux。
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.2"
+pip install --upgrade "jobsearchradar==2.1.3"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -87,7 +87,7 @@ jobradar trends 美团 --step-days 7
 ## 接入 MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.2"
+pip install --upgrade "jobsearchradar[mcp]==2.1.3"
 jobradar update
 ```
 

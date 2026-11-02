@@ -24,6 +24,7 @@ from jobradar.normalize import (
     degree_min_from_text,
     grad_year_from_text,
     normalize_degree,
+    uncertain_title_cohort,
 )
 from jobradar.timeutil import now_ts, parse_ts
 
@@ -182,13 +183,14 @@ class HotjobAdapter(Adapter):
             raise SkipRecord
         rtype = raw["recruit_type"]
         cities = _cities_from_place(it.get("workPlaceStr"))
-        year = grad_year_from_text(title, loose=True) if rtype != "social" else None
+        uncertain = uncertain_title_cohort(title)
+        year = grad_year_from_text(title, loose=True) if rtype != "social" and not uncertain else None
         degree = detail.get("education") or it.get("educationStr") or None
         if self.source.params.get("detail_fields"):
             # 仅对已核验并显式启用的租户读取要求段；不是全适配器通用 JD 届次回填。
             requirement = detail.get("serviceCondition") or ""
             fields = verified_detail_fields(requirement)
-            if year is None and rtype != "social":
+            if year is None and rtype != "social" and not uncertain:
                 year = fields["grad_year"]
             if not degree:
                 degree = fields["degree_min"]
