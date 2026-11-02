@@ -103,19 +103,19 @@ For CLI-based integrations, see the [query workflow](skill/jobradar/SKILL.md).
 
 ## Data and coverage
 
-**Source configuration · October 31, 2026**
+**Source configuration · November 2, 2026**
 
 | Metric | Value | Definition |
 | :--- | ---: | :--- |
-| Enabled sources | **2,242** | Enabled source configurations |
-| Configured companies | **2,202** | Distinct companies represented by enabled sources |
+| Enabled sources | **2,265** | Enabled source configurations |
+| Configured companies | **2,225** | Distinct companies represented by enabled sources |
 | Adapters | **27** | Shared platforms and custom recruitment sites |
-| Core target coverage | **929 / 1,655 · 56.13%** | Configuration coverage of a fixed target pool |
-| Official / aggregator | **606 / 325** | Official-first classification, without double counting |
+| Core target coverage | **952 / 1,655 · 57.52%** | Configuration coverage of a fixed target pool |
+| Official / aggregator | **604 / 348** | Official-first classification, without double counting |
 
-**Verified release snapshot · `2026-10-29T23:17:25Z`**
+**Verified release snapshot · `2026-11-02T09:11:52Z`**
 
-**294,483 total job records**, including **276,008 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **4,874 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
+**298,458 total job records**, including **277,482 open records**, with original JD text for **97.3%** of open records. The calendar sample contains **5,069 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
 
 Configured coverage does not mean an employer is hiring today. An aggregator recruitment notice may describe multiple roles. Missing dates remain empty; a university notice's display expiry is kept separate from an employer's application deadline. See [coverage methodology and limitations](docs/COVERAGE.md).
 
@@ -130,7 +130,7 @@ Configured coverage does not mean an employer is hiring today. An aggregator rec
 
 Scheduled GitHub Actions publish `data-latest`. The CLI downloads snapshots and runs queries locally. Failed crawls do not directly close listings. Always check `data_as_of` and the original source.
 
-The main branch adds FTS5 trigram indexes while preserving literal substring matching; short terms fall back to LIKE. Indexes are built locally on first use by the newer client. A local 294k-record sample took about one minute and added about 199 MB. Public exports retain the older compatible database format. See [release and compatibility notes](docs/RELEASE.md).
+Version 2.1 queries compatible snapshots directly and reuses existing FTS5 trigram indexes. For repeated full-text searches, use `jobradar update --prepare-index` to prepare indexes before switching to the new snapshot. See [release and compatibility notes](docs/RELEASE.md).
 
 </details>
 
