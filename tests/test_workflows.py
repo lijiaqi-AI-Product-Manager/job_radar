@@ -30,12 +30,14 @@ def test_crawl_has_time_budget():
     assert "--budget-seconds" in run
 
 
-def test_manual_large_source_budget_keeps_default_and_uses_environment():
+def test_large_source_budget_allows_complete_reading_within_round_budget():
     trigger = DAILY.get("on", DAILY.get(True))
-    assert trigger["workflow_dispatch"]["inputs"]["source_budget_seconds"]["default"] == 900
+    # 特变电工既有1672条记录，逐岗读取详情在1 req/s下不可能于900秒内完成。
+    assert trigger["workflow_dispatch"]["inputs"]["source_budget_seconds"]["default"] == 3600
+    assert trigger["workflow_dispatch"]["inputs"]["budget_seconds"]["default"] == 14400
     step = _step("Crawl")
     assert "--source-budget \"$CRAWL_SOURCE_BUDGET_SECONDS\"" in step["run"]
-    assert "inputs.source_budget_seconds || 900" in step["env"]["CRAWL_SOURCE_BUDGET_SECONDS"]
+    assert "inputs.source_budget_seconds || 3600" in step["env"]["CRAWL_SOURCE_BUDGET_SECONDS"]
 
 
 def test_observation_recovery_uses_publication_lock_and_all_quality_gates():
