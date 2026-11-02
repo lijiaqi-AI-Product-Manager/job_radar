@@ -260,9 +260,10 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *
         tmp.unlink()
         tmp = raw
     ok = _local_db_ok(tmp, name)
+    invalid_reason = "不是有效的数据库"
     if ok and _local_db_ok(baseline, name):
         table = {"jobs.db": "job", "jd_text.db": "job_text", "calendar.db": "entry"}[name]
-        with closing(sqlite3.connect(tmp)) as new, closing(sqlite3.connect(baseline.resolve().as_uri()+"?mode=ro", uri=True)) as old:
+        with closing(sqlite3.connect(tmp.resolve().as_uri()+"?mode=rw", uri=True)) as new, closing(sqlite3.connect(baseline.resolve().as_uri()+"?mode=ro", uri=True)) as old:
             new_count = new.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             old_count = old.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             ok = not (old_count and (new_count == 0 or (name == "jobs.db" and new_count < old_count)))
@@ -272,9 +273,17 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *
             old_ts, new_ts = old.execute(stamp).fetchone()[0], new.execute(stamp).fetchone()[0]
             if old_ts and (not new_ts or new_ts < old_ts):
                 ok = False
+            if ok and name == "jobs.db":
+                new.execute("ATTACH DATABASE ? AS previous_snapshot", (baseline.resolve().as_uri()+"?mode=ro",))
+                lost_history = new.execute(
+                    "SELECT 1 FROM previous_snapshot.job old LEFT JOIN main.job current ON current.id=old.id "
+                    "WHERE current.id IS NULL OR current.first_seen IS NOT old.first_seen LIMIT 1").fetchone()
+                if lost_history:
+                    ok = False
+                    invalid_reason = "快照缺少已有岗位或改写首次观测时间，保留历史数据"
     if not ok:
         tmp.unlink()
-        raise ValueError("不是有效的数据库")
+        raise ValueError(invalid_reason)
     tmp.replace(dest)
 
 

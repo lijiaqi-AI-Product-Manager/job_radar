@@ -190,3 +190,24 @@ def test_client_cannot_downgrade_a_newer_local_schema(tmp_path, separate_baselin
     assert baseline.read_bytes() == before
     if separate_baseline:
         assert not dest.exists()
+
+
+@pytest.mark.parametrize("fault", ["missing_id", "first_seen"])
+def test_equal_row_count_cannot_hide_history_loss(tmp_path, fault):
+    from contextlib import closing
+
+    from helpers import T, make_job
+    from jobradar.pipeline.ingest import ingest_run
+
+    previous = tmp_path / "previous.db"
+    incoming = tmp_path / "incoming.db"
+    dest = tmp_path / "new.db"
+    with closing(connect(previous, "jobs")) as conn:
+        ingest_run(conn, "s1", [make_job(1)], ts=T(1))
+    with closing(connect(incoming, "jobs")) as conn:
+        ingest_run(conn, "s1", [make_job(2 if fault == "missing_id" else 1)], ts=T(2))
+    before = previous.read_bytes()
+    with pytest.raises(ValueError, match="历史"):
+        cli._install(incoming, "jobs.db", False, dest, previous=previous)
+    assert previous.read_bytes() == before
+    assert not dest.exists()
