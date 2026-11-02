@@ -12,7 +12,7 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 本指南对应 `2.1.2`：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.2"
+pip install --upgrade "jobsearchradar[mcp]==2.1.3"
 jobradar --version
 jobradar search --help
 jobradar calendar --help

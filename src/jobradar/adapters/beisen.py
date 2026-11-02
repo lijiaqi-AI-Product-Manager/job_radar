@@ -21,7 +21,7 @@ import re
 from collections.abc import Iterator
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
-from jobradar.adapters.qualification import requirement_grad_year
+from jobradar.adapters.qualification import requirement_grad_year, uncertain_title_cohort
 from jobradar.models import Job
 from jobradar.normalize import batch_from_text, cities_from_title, date_only, grad_year_from_text
 
@@ -189,7 +189,7 @@ class BeisenAdapter(Adapter):
             url=f"https://{self.host}/zpdetail/{raw['id']}?o=1",
             title=title,
             recruit_type=recruit_type,
-            grad_year=grad_year_from_text(title) if recruit_type != "social" else None,
+            grad_year=grad_year_from_text(title) if recruit_type != "social" and not uncertain_title_cohort(title) else None,
             batch=batch_from_text(title) if recruit_type == "campus" else None,
             cities=cities,
             degree_min=None,
@@ -238,8 +238,9 @@ class BeisenAdapter(Adapter):
         apply_end = _not_sentinel(end_raw)
         if publish_at is None and apply_end is None:
             publish_at = date_only(raw.get("ChangeDate"))
-        year = grad_year_from_text(title) if recruit_type != "social" else None
-        if year is None and recruit_type != "social" and self.source.params.get("detail_fields"):
+        uncertain = uncertain_title_cohort(title)
+        year = grad_year_from_text(title) if recruit_type != "social" and not uncertain else None
+        if year is None and recruit_type != "social" and not uncertain and self.source.params.get("detail_fields"):
             # 仅对逐源回读确认的Require字段启用；不在采集编排层做通用JD回填。
             year = requirement_grad_year(raw.get("Require"))
         return Job(
