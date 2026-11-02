@@ -202,10 +202,14 @@ def upsert_texts(text_conn, jobs, *, ts) -> int:
     n = 0
     with text_conn:
         for j in jobs:
+            old = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (j.id,)).fetchone()
             if j.description is None and j.requirements is None:
-                old = text_conn.execute("SELECT description, requirements FROM job_text WHERE job_id=?", (j.id,)).fetchone()
                 if not old or not any(template_pollution(value) for value in old):
                     continue
+            if old and tuple(old) == (j.description, j.requirements):
+                text_conn.execute("UPDATE job_text SET fetched_at=? WHERE job_id=?", (ts, j.id))
+                n += 1
+                continue
             text_conn.execute(
                 """INSERT INTO job_text(job_id, description, requirements, fetched_at) VALUES (?,?,?,?)
                    ON CONFLICT(job_id) DO UPDATE SET description=excluded.description,

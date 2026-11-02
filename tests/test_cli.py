@@ -31,6 +31,21 @@ def run(capsys, *argv):
     return json.loads(capsys.readouterr().out)
 
 
+def test_collector_keeps_compatible_databases_without_building_search_indexes(tmp_path, monkeypatch, capsys):
+    import jobradar.pipeline.crawl as pipeline
+    from jobradar.sources import SourceConfig
+
+    source = SourceConfig(id="sample", company="示例公司", adapter="beisen",
+                          base_url="https://example.com", enabled=False)
+    monkeypatch.setattr("jobradar.sources.load_sources", lambda path: [source])
+    monkeypatch.setattr(pipeline, "crawl", lambda *a, **kw: {})
+    cli.main(["crawl", "--sources", str(tmp_path), "--out", str(tmp_path)])
+    capsys.readouterr()
+    for filename, expected in (("jobs.db", 2), ("jd_text.db", 1)):
+        with sqlite3.connect(tmp_path / filename) as conn:
+            assert conn.execute("PRAGMA user_version").fetchone()[0] == expected
+
+
 def test_search_envelope(home, capsys):
     out = run(capsys, "search", "--city", "北京")
     assert out["data_as_of"] and out["stale"] is False

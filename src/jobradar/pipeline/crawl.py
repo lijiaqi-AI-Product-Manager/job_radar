@@ -40,6 +40,14 @@ def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Clien
         jobs = list(adapter.fetch_all())
     except CrawlBudgetExceeded:
         return None, "crawl budget exceeded", time.monotonic() - started
+    except httpx.HTTPError as e:
+        # HTTP异常文本可能带匿名会话查询值；只保留可诊断的状态与无查询参数的入口。
+        try:
+            address = str(e.request.url.copy_with(query=None))
+        except RuntimeError:
+            address = ""
+        status = f"HTTP {e.response.status_code}" if isinstance(e, httpx.HTTPStatusError) else ""
+        return None, f"{type(e).__name__}: {status} {address}"[:500], time.monotonic() - started
     except Exception as e:  # noqa: BLE001 — 任何适配器错误都只算该源失败
         return None, f"{type(e).__name__}: {e}"[:500], time.monotonic() - started
     for j in jobs:

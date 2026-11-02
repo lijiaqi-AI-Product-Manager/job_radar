@@ -69,6 +69,23 @@ def test_unknown_adapter_and_disabled_sources(jobs_db, text_db):
     assert "off" not in res
 
 
+def test_request_query_session_values_are_not_saved_in_failure_logs(jobs_db,text_db):
+    secret='anonymous-session-only-in-memory'
+
+    class SessionFailure(ExampleAdapter):
+        def fetch_raw(self):
+            request=httpx.Request('GET',f'https://example.test/jobs?csrf_token={secret}&page=2')
+            response=httpx.Response(503,request=request)
+            response.raise_for_status()
+
+    result=crawl([example_source()],jobs_db,text_db,ts=T(1),adapters={'example':SessionFailure},
+                 client_factory=replay_client,sleep=lambda _:None)
+    reason=result['example-corp'].reason
+    stored=jobs_db.execute('SELECT error FROM source_run').fetchone()[0]
+    assert secret not in reason and secret not in stored
+    assert '503' in reason
+
+
 def test_unmatched_request_counts_as_failure(jobs_db, text_db, tmp_path):
     # 回放里没有这个请求 -> 适配器异常 -> 失败，而不是让整次 crawl 崩溃
     (tmp_path / "manifest.json").write_text("[]")

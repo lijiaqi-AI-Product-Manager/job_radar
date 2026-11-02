@@ -46,3 +46,16 @@ def test_non_json_response_says_what_happened():
     msg = str(exc.value)
     assert "不是 JSON" in msg and "200" in msg and "限流" in msg
 
+
+def test_non_json_errors_never_echo_response_session_values():
+    import pytest
+
+    secret='session-value-that-must-stay-in-memory'
+    src=SourceConfig(id='s',company='c',adapter='probe',enabled=False)
+    with make_client(httpx.MockTransport(lambda _:httpx.Response(200,text=f'<html>csrf_token={secret}</html>'))) as client:
+        adapter=_A(src,client,sleep=lambda _:None)
+        with pytest.raises(RuntimeError) as error:
+            adapter.request_json('GET','https://example.test/jobs')
+    assert secret not in str(error.value)
+    assert '不是 JSON' in str(error.value)
+

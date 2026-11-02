@@ -14,6 +14,7 @@ from typing import ClassVar
 
 import httpx
 
+from jobradar.http_limits import DEADLINE_EXTENSION, RequestBudgetExceeded, limit_response
 from jobradar.models import Job, SourceConfig
 
 USER_AGENT = (
@@ -26,8 +27,7 @@ class SkipRecord(Exception):
     """normalize() 遇到无法/不该入库的记录（如缺关键字段）时抛出，该条被跳过。"""
 
 
-class CrawlBudgetExceeded(RuntimeError):
-    """采集预算已到，当前源的部分结果必须整体丢弃。"""
+CrawlBudgetExceeded = RequestBudgetExceeded
 
 
 class Adapter(ABC):
@@ -42,6 +42,8 @@ class Adapter(ABC):
         self._sleep = sleep
         self._last_request = 0.0
         self._crawl_deadline: float | None = None
+        if limit_response not in self.client.event_hooks["response"]:
+            self.client.event_hooks["response"].insert(0, limit_response)
 
     # ---- 子类只需实现这两个 ----
     @abstractmethod
@@ -58,9 +60,12 @@ class Adapter(ABC):
         for raw in self.fetch_raw():
             self._check_deadline()
             try:
-                yield self.normalize(raw)
+                job = self.normalize(raw)
+                self._check_deadline()
+                yield job
             except SkipRecord:
                 continue
+        self._check_deadline()
 
     def request_json(self, method: str, url: str, *, params=None, data=None, json=None,
                      headers=None) -> dict:
@@ -74,9 +79,8 @@ class Adapter(ABC):
             # 2026-10-24 实测：Workday 被限流时返回 303/500 + 空 body，原来只报
             # "Expecting value: line 1 column 1" —— 排障时完全看不出是被挡了。
             ct = (r.headers.get("content-type") or "")[:40]
-            body = " ".join(r.text[:120].split())
             raise RuntimeError(
-                f"{method} {url.split('?')[0]} 返回的不是 JSON（HTTP {r.status_code}, {ct}）：{body!r}。"
+                f"{method} {url.split('?')[0]} 返回的不是 JSON（HTTP {r.status_code}, {ct}）。"
                 "常见原因：被限流/反爬拦截（Workday 会给 303/500），或接口已改版。"
             ) from e
 
@@ -92,7 +96,8 @@ class Adapter(ABC):
             self._check_deadline()
             self._throttle()
             self._check_deadline()
-            request_options = {}
+            deadline = self._crawl_deadline if self._crawl_deadline is not None else time.monotonic() + 60
+            request_options = {"extensions": {DEADLINE_EXTENSION: deadline}}
             if self._crawl_deadline is not None:
                 remaining = self._crawl_deadline - time.monotonic()
                 self._check_deadline()
@@ -147,6 +152,7 @@ def make_client(transport: httpx.BaseTransport | None = None, *, policy=None) ->
         follow_redirects=True,
         transport=transport,
     )
+    client.event_hooks["response"].append(limit_response)
     if policy is not None:
         client.event_hooks["request"].append(lambda request: policy.on_request(client, request))
         client.event_hooks["response"].append(policy.on_response)

@@ -745,8 +745,8 @@ def cmd_crawl(args):
         sources = [s for s in sources if s.id in set(wanted)]
     if not sources:
         raise SystemExit(f"没匹配到任何源（--sources {args.sources}）")
-    with closing(connect(out / DB_FILES["jobs"], "jobs")) as jobs_conn, \
-            closing(connect(out / DB_FILES["text"], "text")) as text_conn:
+    with closing(connect(out / DB_FILES["jobs"], "jobs", defer_search_index=True)) as jobs_conn, \
+            closing(connect(out / DB_FILES["text"], "text", defer_search_index=True)) as text_conn:
         if getattr(args, "stale_only_hours", 0):
             due = q.due_source_ids(jobs_conn, [s.id for s in sources], hours=args.stale_only_hours, now=now_ts())
             sources = [s for s in sources if s.id in due]

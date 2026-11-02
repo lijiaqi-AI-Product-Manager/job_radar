@@ -8,6 +8,7 @@ from urllib.parse import urlsplit
 
 import httpx
 
+from jobradar.http_limits import DEADLINE_EXTENSION, RequestBudgetExceeded, check_deadline
 from jobradar.robots import _decision, fetch_robots
 
 PROBE_EXTENSION = "jobradar_robots_probe"
@@ -60,18 +61,24 @@ class RobotsPolicy:
         self._locks: dict[str, threading.RLock] = {}
         self._lock = threading.Lock()
 
-    def _pace(self, origin: str, interval: float) -> None:
+    def _pace(self, origin: str, interval: float, deadline=None) -> None:
+        check_deadline(deadline)
         previous = self._last.get(origin)
         wait = interval - (self.clock() - previous) if previous is not None else 0
         if wait > 30:
             raise ComplianceError("站点要求的请求间隔超出本次等待预算，暂停该源")
         if wait > 0:
+            if deadline is not None:
+                wait = min(wait, max(0, deadline-time.monotonic()))
             self.sleep(wait)
+            check_deadline(deadline)
         self._last[origin] = self.clock()
 
     def on_request(self, client: httpx.Client, request: httpx.Request) -> None:
         from jobradar.adapters.base import USER_AGENT
 
+        deadline = request.extensions.get(DEADLINE_EXTENSION)
+        check_deadline(deadline)
         if request.headers.get("user-agent") != USER_AGENT:
             raise ComplianceError("请求 UA 必须使用项目固定 USER_AGENT，不能按站点替换")
         parts = urlsplit(str(request.url))
@@ -83,12 +90,16 @@ class RobotsPolicy:
         origin = f"{parts.scheme}://{parts.netloc}"
         with self._lock:
             lock = self._locks.setdefault(origin, threading.RLock())
-        with lock:
+        acquired = lock.acquire(timeout=max(0, deadline-time.monotonic())) if deadline is not None else lock.acquire()
+        if not acquired:
+            raise RequestBudgetExceeded("request budget exceeded waiting for robots check")
+        try:
+            check_deadline(deadline)
             cached = self._cache.get(origin)
             ttl = min(self.ttl, 30) if cached and cached[1] == "unreachable" else self.ttl
             if cached is None or self.clock() - cached[0] >= ttl:
-                self._pace(origin, 1)
-                status, lines = fetch_robots(client, str(request.url))
+                self._pace(origin, 1, deadline)
+                status, lines = fetch_robots(client, str(request.url), deadline=deadline)
                 cached = (self.clock(), status, lines)
                 self._cache[origin] = cached
             _, status, lines = cached
@@ -97,7 +108,13 @@ class RobotsPolicy:
             permitted, rule = _decision(lines, str(request.url))
             if not permitted:
                 raise ComplianceError(f"{origin}{parts.path}: robots Disallow: {rule}")
-            self._pace(origin, _crawl_delay(lines))
+            self._pace(origin, _crawl_delay(lines), deadline)
+            if deadline is not None:
+                remaining = max(.001, deadline-time.monotonic())
+                timeout = request.extensions.get("timeout", {})
+                request.extensions["timeout"] = {k:min(v,remaining) if v is not None else remaining for k,v in timeout.items()}
+        finally:
+            lock.release()
 
     @staticmethod
     def on_response(response: httpx.Response) -> None:

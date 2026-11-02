@@ -17,12 +17,20 @@
 """
 
 import re
+import time
 from dataclasses import dataclass
 from urllib.parse import urlsplit
 
 import httpx
 
 from jobradar.adapters.base import USER_AGENT
+from jobradar.http_limits import (
+    DEADLINE_EXTENSION,
+    LIMIT_EXTENSION,
+    ResponseLimitExceeded,
+    check_deadline,
+    limit_response,
+)
 
 # 这些路径前缀用来判断「该主机的**列表/详情页**是否被禁」。源配置里 params 的
 # base + tenant/path 拼出来的实际 URL 会逐个过一遍。
@@ -40,7 +48,7 @@ class RobotsVerdict:
         return f"{self.url} -> {'OK' if self.allowed else 'BLOCKED'}（{self.reason}）"
 
 
-def fetch_robots(client: httpx.Client, url: str) -> tuple[str, list[str]]:
+def fetch_robots(client: httpx.Client, url: str, *, deadline=None) -> tuple[str, list[str]]:
     """返回规则状态；RFC 9309 区分 4xx 规则不可用与网络/5xx 不可达。
 
     只认「整个主机全禁」这一种强信号；逐条前缀交给 `allows()` 判断 —— 因为
@@ -48,10 +56,16 @@ def fetch_robots(client: httpx.Client, url: str) -> tuple[str, list[str]]:
     """
     parts = urlsplit(url)
     robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
+    deadline = min(deadline, time.monotonic() + PROBE_TIMEOUT) if deadline is not None else time.monotonic() + PROBE_TIMEOUT
+    check_deadline(deadline)
+    if limit_response not in client.event_hooks["response"]:
+        client.event_hooks["response"].insert(0, limit_response)
     try:
         r = client.get(robots_url, headers={"User-Agent": USER_AGENT}, follow_redirects=True,
-                       extensions={"jobradar_robots_probe": True}, timeout=PROBE_TIMEOUT)
-    except httpx.HTTPError:
+                       extensions={"jobradar_robots_probe": True, DEADLINE_EXTENSION: deadline,
+                                   LIMIT_EXTENSION: 512 * 1024},
+                       timeout=max(.001, deadline-time.monotonic()))
+    except (httpx.HTTPError, ResponseLimitExceeded):
         return "unreachable", []
     if r.status_code in (404, 410):
         return "absent", []

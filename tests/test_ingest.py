@@ -154,6 +154,19 @@ def test_upsert_texts(jobs_db, text_db):
     r = text_db.execute("SELECT * FROM job_text WHERE job_id='s1:1'").fetchone()
     assert (r["description"], r["requirements"], r["fetched_at"]) == ("D2", "R2", T(2))
 
+
+def test_unchanged_text_refreshes_observation_without_rewriting_body(text_db):
+    text_db.executescript("CREATE TABLE body_writes(value);CREATE TRIGGER watch_body AFTER UPDATE OF description,requirements ON job_text BEGIN INSERT INTO body_writes VALUES (1);END;")
+    job=make_job(1,description='岗位职责正文',requirements='岗位要求正文')
+    upsert_texts(text_db,[job],ts=T(1))
+    assert upsert_texts(text_db,[job],ts=T(2))==1
+    row=text_db.execute('SELECT * FROM job_text').fetchone()
+    assert row['fetched_at']==T(2)
+    assert row['description']=='岗位职责正文'
+    assert text_db.execute('SELECT COUNT(*) FROM body_writes').fetchone()[0]==0
+    upsert_texts(text_db,[make_job(1,description='职责已变更',requirements='岗位要求正文')],ts=T(3))
+    assert text_db.execute('SELECT COUNT(*) FROM body_writes').fetchone()[0]==1
+
 def test_expected_max_absorbs_the_drop_caused_by_a_new_page_cap(jobs_db):
     """给源加 max_pages 限额后，岗位数会从「历史全量」掉到「限额」，不应该被骤降保护拦下。
 
