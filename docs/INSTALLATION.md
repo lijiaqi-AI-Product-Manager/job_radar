@@ -11,8 +11,8 @@ jobradar calendar --help
 
 仅使用 CLI 可以安装 `jobsearchradar==2.1.0`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
-发布流水线会安装构建出的发行包，验证帮助、城市、历史、截止筛选、公司简称与包内来源目录。
-GitHub Release 与 PyPI 的 wheel / sdist 逐项 SHA-256 相同；主分支与安装包的 Python 及迁移文件逐项对照一致。
+2026-11-02 已从 PyPI 官方索引在全新环境安装 `2.1.0`，通过帮助、城市、历史、截止筛选、公司简称与包内来源目录共七项兼容检查及 MCP 启动帮助检查。发布流水线也会独立安装构建出的发行包验证。
+GitHub Release 与 PyPI 的 wheel / sdist 逐项 SHA-256 相同；主分支与安装包的 Python、迁移与来源目录文件统一换行符后逐项对照一致，公司简称映射也一致。
 
 ## 渠道与固定源码
 
