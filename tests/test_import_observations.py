@@ -1,7 +1,11 @@
 """离线复验：恢复完整观测不能覆盖较新结果或绕过入库保护。"""
 
 import copy
+import gzip
+import hashlib
 import importlib.util
+import json
+import sys
 from pathlib import Path
 
 import pytest
@@ -122,8 +126,8 @@ def test_unknown_or_disabled_source_is_rejected(jobs_db, text_db):
 
 
 def test_existing_verified_public_host_supports_fixed_host_adapters(jobs_db, text_db):
-    source = sample("tencent").model_copy(update={"adapter": "tencent", "params": {}})
-    old = make_job(1, source_id=source.id, company=source.company, url="https://careers.tencent.com/jobdesc.html?positionId=1")
+    source = sample("fixed-host").model_copy(update={"adapter": "moka", "params": {}})
+    old = make_job(1, source_id=source.id, company=source.company, url="https://jobs.example.org/job/1")
     ingest_run(jobs_db, source.id, [old], ts=OLD)
     value = payload(source)
     value["sources"][0]["jobs"][0]["url"] = old.url
@@ -142,3 +146,35 @@ def test_future_cached_text_timestamp_is_rejected_before_import(jobs_db, text_db
     with pytest.raises(ValueError):
         recovery.apply_observations(jobs_db, text_db, value, [source], now=NOW)
     assert state(jobs_db, text_db) == before
+
+
+@pytest.mark.parametrize("kind", ["valid", "wrong_digest", "truncated", "decoded_too_large"])
+def test_compressed_recovery_input_is_verified_before_database_changes(tmp_path, monkeypatch, kind):
+    from contextlib import closing
+
+    from jobradar.store.migrate import connect
+
+    source = sample()
+    raw = json.dumps(payload(source)).encode()
+    value = gzip.compress(b"x" * (50 * 1024 * 1024 + 1) if kind == "decoded_too_large" else raw)
+    if kind == "truncated":
+        value = value[:-8]
+    path = tmp_path / "observations.json.gz"
+    path.write_bytes(value)
+    for name, schema in (("jobs.db", "jobs"), ("jd_text.db", "text")):
+        with closing(connect(tmp_path / name, schema, defer_search_index=True)):
+            pass
+    before = {name: (tmp_path / name).read_bytes() for name in ("jobs.db", "jd_text.db")}
+    digest = "0" * 64 if kind == "wrong_digest" else hashlib.sha256(value).hexdigest()
+    monkeypatch.setattr(sys, "argv", ["import_verified_crawl.py", "--home", str(tmp_path),
+                                     "--payload", str(path), "--sha256", digest])
+    monkeypatch.setattr(recovery, "load_sources", lambda _: [source])
+    monkeypatch.setattr(recovery, "now_ts", lambda: NOW)
+    if kind == "valid":
+        recovery.main()
+        with closing(connect(tmp_path / "jobs.db", "jobs", defer_search_index=True)) as conn:
+            assert conn.execute("SELECT last_seen FROM job WHERE id='s1:1'").fetchone()[0] == OBSERVED
+    else:
+        with pytest.raises((ValueError, EOFError, OSError)):
+            recovery.main()
+        assert {name: (tmp_path / name).read_bytes() for name in before} == before

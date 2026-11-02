@@ -19,6 +19,9 @@ def terms_block_reason(host: str) -> str | None:
     if host == "yingjiesheng.com" or host.endswith(".yingjiesheng.com"):
         return ("应届生用户协议第五节要求抓取/转载前取得书面许可，当前未提供此许可；"
                 "https://www.yingjiesheng.com/about/service/user-agreement202108.pdf")
+    if host == "careers.tencent.com" or host.endswith(".careers.tencent.com"):
+        return ("腾讯招聘服务协议7.2.4(4)-(5)限制程序抓取及未经授权的第三方数据获取，"
+                "当前未提供腾讯授权；https://careers.tencent.com/termsservice.html")
     return None
 
 
