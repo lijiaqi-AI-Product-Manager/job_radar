@@ -34,3 +34,18 @@ def test_qualification_opt_ins_have_current_adapter_specific_evidence():
         assert source.adapter in {'beisen','hotjob'} and source.params['detail_fields'] is True
         assert record['field']=={'beisen':'Require','hotjob':'serviceCondition'}[source.adapter]
         assert (ROOT/record['fixture']).is_file()
+
+
+def test_new_notice_companies_are_recalled_by_verified_brand(jobs_db):
+    from jobradar.core import queries
+    from jobradar.models import Job
+    from jobradar.pipeline.ingest import ingest_run
+
+    evidence=yaml.safe_load((ROOT/'targets/university_notice_checks.yaml').read_text(encoding='utf-8'))
+    for record in evidence['checks']:
+        job=Job(source_id=record['source_id'],source_job_id='brand-recall',company=record['company'],
+                title='离线校招公告',url=record['url'],recruit_type='campus')
+        ingest_run(jobs_db,record['source_id'],[job],ts='2026-11-02T00:00:00Z')
+    for record in evidence['checks']:
+        rows=queries.search_jobs(jobs_db,company=record['target'])
+        assert any(r['source_id']==record['source_id'] for r in rows),record['target']
