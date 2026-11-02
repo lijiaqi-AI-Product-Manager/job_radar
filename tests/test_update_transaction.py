@@ -1,3 +1,4 @@
+import shutil
 import sqlite3
 from contextlib import closing
 
@@ -16,6 +17,12 @@ def seed(home):
                 ingest_run(conn, "s1", [make_job(1)], ts=T(1))
 
 
+def copied_download(home, name, destination):
+    """下载替身须实际生成所请求的文件，不能依赖更新器先复制旧文件。"""
+    shutil.copyfile(home / name, destination)
+    return "github"
+
+
 def test_failed_required_download_never_changes_active_database_set(tmp_path, monkeypatch):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     seed(tmp_path)
@@ -24,6 +31,7 @@ def test_failed_required_download_never_changes_active_database_set(tmp_path, mo
     def download(name, destination, **kw):
         if name == "jd_text.db":
             raise SystemExit("正文摘要错误")
+        copied_download(tmp_path, name, destination)
         if name == "jobs.db":
             with closing(connect(destination, "jobs", defer_search_index=True)) as conn:
                 ingest_run(conn, "s1", [make_job(1), make_job(2)], ts=T(2))
@@ -42,6 +50,7 @@ def test_successful_update_switches_all_files_and_preserves_legacy_copy(tmp_path
     seed(tmp_path)
 
     def download(name, destination, **kw):
+        copied_download(tmp_path, name, destination)
         if name == "jobs.db":
             with closing(connect(destination, "jobs", defer_search_index=True)) as conn:
                 ingest_run(conn, "s1", [make_job(1), make_job(2)], ts=T(2))
@@ -85,7 +94,7 @@ def test_missing_remote_metadata_keeps_existing_files(tmp_path, monkeypatch):
 def test_failure_immediately_after_pointer_commit_never_deletes_active_generation(tmp_path, monkeypatch):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     seed(tmp_path)
-    monkeypatch.setattr(cli, "_download", lambda *a, **kw: "github")
+    monkeypatch.setattr(cli, "_download", lambda name, destination, **kw: copied_download(tmp_path, name, destination))
     activate = cli.activate
 
     def interrupted(directory):
@@ -103,7 +112,7 @@ def test_failure_immediately_after_pointer_commit_never_deletes_active_generatio
 def test_failed_pointer_replace_keeps_previous_generation(tmp_path, monkeypatch):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     seed(tmp_path)
-    monkeypatch.setattr(cli, "_download", lambda *a, **kw: "github")
+    monkeypatch.setattr(cli, "_download", lambda name, destination, **kw: copied_download(tmp_path, name, destination))
 
     def disk_failure(*args):
         raise OSError("模拟磁盘写入失败")
@@ -121,7 +130,7 @@ def test_valid_bundle_may_contain_jobs_without_jd(tmp_path, monkeypatch):
     """无正文是合法缺失，不能据其比例认定三库混代。"""
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     seed(tmp_path)
-    monkeypatch.setattr(cli, "_download", lambda *a, **kw: "github")
+    monkeypatch.setattr(cli, "_download", lambda name, destination, **kw: copied_download(tmp_path, name, destination))
     cli.main(["update", "--force"])
     assert local.data_dir() != tmp_path
     with local.db("jobs") as conn:
@@ -136,6 +145,7 @@ def test_orphan_text_still_rejects_entire_bundle(tmp_path, monkeypatch):
     original = {name:(tmp_path/name).read_bytes() for name in local.DB_FILES.values()}
 
     def download(name,destination,**kwargs):
+        copied_download(tmp_path, name, destination)
         if name == 'jd_text.db':
             with closing(sqlite3.connect(destination)) as conn:
                 conn.execute('INSERT INTO job_text VALUES (?,?,?,?)',('unknown:1','孤立正文',None,T(2)))
