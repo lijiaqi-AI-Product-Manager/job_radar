@@ -106,7 +106,9 @@ class BeisenAdapter(Adapter):
                 return
             data = _loads(text)
             if data.get("Code") != 200:
-                raise RuntimeError(f"beisen {self.tenant} code={data.get('Code')} {data.get('Message')}")
+                code = data.get("Code")
+                safe_code = code if type(code) is int else "unknown"
+                raise RuntimeError(f"beisen {self.tenant} code={safe_code}")
             items = data.get("Data") or []
             yield from items
             total = data.get("Count") or 0
@@ -297,7 +299,7 @@ def _loads(text: str) -> dict:
     try:
         return json.loads(text)
     except ValueError as e:
-        raise RuntimeError(f"beisen 列表接口返回的不是 JSON：{text[:120]!r}") from e
+        raise RuntimeError("beisen 列表接口返回的不是 JSON") from e
 
 
 # 两种行结构都见过（2026-10-27 实测）：

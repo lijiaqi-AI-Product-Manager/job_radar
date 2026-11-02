@@ -133,6 +133,20 @@ def test_api_error_raises():
         list(a.fetch_all())
 
 
+def test_invalid_response_does_not_expose_session_material():
+    from jobradar.adapters.beisen import _loads
+
+    secret = "anonymous-session-must-stay-in-memory"
+    with pytest.raises(RuntimeError) as failure:
+        _loads("csrf_token=" + secret)
+    assert secret not in str(failure.value)
+    adapter = BeisenAdapter(source(), httpx.Client(transport=httpx.MockTransport(
+        lambda _: httpx.Response(200, json={"Code": 500, "Message": secret}))), sleep=lambda _: None)
+    with pytest.raises(RuntimeError) as failure:
+        list(adapter.fetch_all())
+    assert secret not in str(failure.value)
+
+
 # ---- 2026-10-26 补：列表接口里的日期与占位 JD ----
 
 def test_post_date_and_end_time_are_mapped():
