@@ -235,6 +235,52 @@ def test_oldest_success_is_scheduled_before_fresh_sources(jobs_db, text_db):
     assert Ordered.seen == ["never", "old", "fresh"]
 
 
+def test_unverified_sources_cannot_occupy_all_refresh_workers(jobs_db, text_db):
+    import threading
+
+    from jobradar.pipeline.ingest import ingest_run
+
+    observed_started = threading.Event()
+
+    class WaitForObserved(ExampleAdapter):
+        def fetch_raw(self):
+            if self.source.id == 'observed':
+                observed_started.set()
+                return iter([{}])
+            if not observed_started.wait(.5):
+                raise RuntimeError('observed refresh starved by unverified sources')
+            return iter(())
+
+        def normalize(self, raw):
+            return _job(source_id=self.source.id)
+
+    ingest_run(jobs_db,'observed',[_job(source_id='observed')],ts=T(1))
+    sources=[example_source(id=f'never-{i}') for i in range(8)]+[example_source(id='observed')]
+    results=crawl(sources,jobs_db,text_db,ts=T(21),adapters={'example':WaitForObserved},
+                  client_factory=lambda:httpx.Client(transport=httpx.MockTransport(lambda _:None)),
+                  sleep=lambda _:None,max_workers=2,order_seed=1)
+    assert results['observed'].status=='ok'
+    assert all(r.status=='ok' for r in results.values())
+
+
+def test_shared_host_refreshes_observed_jobs_before_new_empty_sources(jobs_db, text_db):
+    from jobradar.pipeline.ingest import ingest_run
+
+    class Ordered(ExampleAdapter):
+        seen=[]
+
+        def fetch_raw(self):
+            self.seen.append(self.source.id)
+            return iter(())
+
+    ingest_run(jobs_db,'observed',[_job(source_id='observed')],ts=T(1))
+    sources=[example_source(id=sid,params={'host':'shared.invalid'}) for sid in ['never','observed']]
+    crawl(sources,jobs_db,text_db,ts=T(21),adapters={'example':Ordered},
+          client_factory=lambda:httpx.Client(transport=httpx.MockTransport(lambda _:None)),
+          sleep=lambda _:None,max_workers=2,order_seed=1)
+    assert Ordered.seen==['observed','never']
+
+
 @pytest.mark.parametrize("retry", [False, True])
 def test_rate_limit_and_retry_waits_stop_at_the_budget(monkeypatch, retry):
     import jobradar.adapters.base as base

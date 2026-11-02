@@ -11,11 +11,13 @@ import time
 from collections import defaultdict
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import ExitStack
 from datetime import datetime
 
 import httpx
 
 from jobradar.adapters.base import Adapter, CrawlBudgetExceeded, load_all, make_client
+from jobradar.core import queries as q
 from jobradar.models import Job, SourceConfig
 from jobradar.normalize import (
     categorize,
@@ -134,16 +136,32 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
     seed = order_seed if order_seed is not None else int(datetime.now().strftime("%Y%m%d"))
     rng = random.Random(seed)
     rng.shuffle(items)
-    last_ok = dict(jobs_conn.execute("SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' GROUP BY source_id"))
+    state = q.data_status(jobs_conn, now=ts)
+    last_ok = {r["source_id"]: r["last_ok"] for r in state if r["last_ok"]}
+    workloads = {r["source_id"]: r["open_jobs"] for r in state}
     # 共用 host 的源仍串行，但也要轮换组内顺序，避免同一批尾部租户每天都被预算跳过。
     for _, srcs in items:
         rng.shuffle(srcs)
-        srcs.sort(key=lambda source: last_ok.get(source.id, ""))
-    items.sort(key=lambda item: min(last_ok.get(source.id, "") for source in item[1]))
+        srcs.sort(key=lambda source: (not workloads.get(source.id, 0), last_ok.get(source.id, ""),
+                                     -workloads.get(source.id, 0)))
+    items.sort(key=lambda item: (last_ok.get(item[1][0].id, ""),
+                                 -sum(workloads.get(source.id, 0) for source in item[1])))
 
-    with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = [pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget)
-                   for (aid, _site), srcs in items]
+    observed = [item for item in items if any(workloads.get(s.id, 0) for s in item[1])]
+    discovery = [item for item in items if not any(workloads.get(s.id, 0) for s in item[1])]
+    with ExitStack() as stack:
+        # 未验证源可能持续等到单源预算，不能把全部线程占满、让十万条已有岗位失去刷新机会。
+        # 保留独立探索容量；同站点仍在同一个串行组中，所有客户端共用访问守卫与origin限速。
+        if observed and discovery and max_workers > 1:
+            discovery_workers = max(1, max_workers // 5)
+            lanes = [(observed, max_workers - discovery_workers), (discovery, discovery_workers)]
+        else:
+            lanes = [(items, max_workers)]
+        futures = []
+        for groups_in_lane, workers in lanes:
+            pool = stack.enter_context(ThreadPoolExecutor(max_workers=workers))
+            futures.extend(pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget)
+                           for (aid, _site), srcs in groups_in_lane)
         for fut in as_completed(futures):
             for source, jobs, error, elapsed in fut.result():
                 if jobs is None:
