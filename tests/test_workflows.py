@@ -77,6 +77,15 @@ def test_all_workflows_parse():
         assert isinstance(doc.get("jobs"), dict) and doc["jobs"], f.name
 
 
+def test_ci_covers_three_operating_systems_with_frozen_dependencies():
+    doc = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
+    job = doc["jobs"]["test"]
+    assert {"ubuntu-latest", "windows-latest", "macos-latest"} <= set(job["strategy"]["matrix"]["os"])
+    assert any(step.get("run") == "uv sync --frozen --all-extras" for step in job["steps"])
+    build = next(step for step in job["steps"] if step.get("name") == "Build sdist/wheel and check size")
+    assert "stat -c" not in build["run"]
+
+
 def test_publish_workflow_uses_trusted_publishing():
     """PyPI 发布走 OIDC（不存 token）：缺 id-token 权限会直接失败，这条测试守着它。"""
     doc = yaml.safe_load((ROOT / ".github" / "workflows" / "publish.yml").read_text(encoding="utf-8"))

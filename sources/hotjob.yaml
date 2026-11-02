@@ -8,6 +8,7 @@ defaults:
   rate_limit_rps: 1
   params:
     page_size: 50
+    detail_cache_hours: 168
   compliance:
     checked_on: 2026-10-22
     robots: allowed            # 抽查 wecruit/goertek/yili：User-agent: * / Allow: /

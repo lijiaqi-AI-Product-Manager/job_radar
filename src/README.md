@@ -13,6 +13,6 @@
 | `cli.py` / `mcp_server.py` | 命令行与 MCP stdio 入口 |
 | `release_export.py` | 兼容既有客户端的数据库导出 |
 
-主分支版本为 **2.1.1**。工作库支持 FTS5 trigram 索引，公开数据库保持兼容格式，默认直接查询兼容快照，已有索引时复用；可通过 `update --prepare-index` 在新快照中预建索引。
+主分支版本为 **2.1.2**。工作库支持 FTS5 trigram 索引，公开数据库保持兼容格式，默认直接查询兼容快照，已有索引时复用；可通过 `update --prepare-index` 在新快照中预建索引。
 
 安装与查询见 [项目首页](../README.md)，工程约束见 [开发规范](../docs/DEVELOPMENT.md)。

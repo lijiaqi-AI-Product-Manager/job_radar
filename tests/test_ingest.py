@@ -155,6 +155,36 @@ def test_upsert_texts(jobs_db, text_db):
     assert (r["description"], r["requirements"], r["fetched_at"]) == ("D2", "R2", T(2))
 
 
+def test_reused_text_does_not_claim_a_new_observation(jobs_db, text_db):
+    old = make_job(1, description="公开原文", requirements="本科")
+    ingest_run(jobs_db, "s1", [old], ts=T(1))
+    upsert_texts(text_db, [old], ts=T(1))
+    cached = make_job(1, description="公开原文", requirements="本科", text_observed_at=T(1))
+    result = ingest_run(jobs_db, "s1", [cached], ts=T(3))
+    upsert_texts(text_db, [cached], ts=T(3))
+    assert result.changed == 0 and cached.content_hash() == old.content_hash()
+    assert job_row(jobs_db, "s1:1")["last_seen"] == T(3)
+    assert text_db.execute("SELECT fetched_at FROM job_text").fetchone()[0] == T(1)
+
+
+def test_older_cached_body_cannot_overwrite_newer_text(text_db):
+    import pytest
+
+    upsert_texts(text_db, [make_job(1, description="新正文")], ts=T(3))
+    with pytest.raises(ValueError):
+        upsert_texts(text_db, [make_job(1, description="旧正文", text_observed_at=T(1))], ts=T(4))
+    assert tuple(text_db.execute("SELECT description,fetched_at FROM job_text").fetchone()) == ("新正文", T(3))
+
+
+def test_future_text_observation_is_rejected_before_job_state_changes(jobs_db):
+    import pytest
+
+    with pytest.raises(ValueError):
+        ingest_run(jobs_db, "s1", [make_job(1, text_observed_at=T(3))], ts=T(1))
+    assert jobs_db.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 0
+    assert jobs_db.execute("SELECT COUNT(*) FROM source_run").fetchone()[0] == 0
+
+
 def test_unchanged_text_refreshes_observation_without_rewriting_body(text_db):
     text_db.executescript("CREATE TABLE body_writes(value);CREATE TRIGGER watch_body AFTER UPDATE OF description,requirements ON job_text BEGIN INSERT INTO body_writes VALUES (1);END;")
     job=make_job(1,description='岗位职责正文',requirements='岗位要求正文')

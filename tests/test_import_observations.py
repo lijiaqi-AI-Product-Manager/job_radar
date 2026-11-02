@@ -119,3 +119,26 @@ def test_unknown_or_disabled_source_is_rejected(jobs_db, text_db):
     for configs in ([], [source.model_copy(update={"enabled": False})]):
         with pytest.raises(ValueError):
             recovery.apply_observations(jobs_db, text_db, payload(source), configs, now=NOW)
+
+
+def test_existing_verified_public_host_supports_fixed_host_adapters(jobs_db, text_db):
+    source = sample("tencent").model_copy(update={"adapter": "tencent", "params": {}})
+    old = make_job(1, source_id=source.id, company=source.company, url="https://careers.tencent.com/jobdesc.html?positionId=1")
+    ingest_run(jobs_db, source.id, [old], ts=OLD)
+    value = payload(source)
+    value["sources"][0]["jobs"][0]["url"] = old.url
+    assert recovery.apply_observations(jobs_db, text_db, value, [source], now=NOW)["accepted_sources"] == 1
+    changed = payload(source)
+    changed["sources"][0]["jobs"][0]["url"] = "https://unverified.example.org/1"
+    with pytest.raises(ValueError):
+        recovery.apply_observations(jobs_db, text_db, changed, [source], now=NOW)
+
+
+def test_future_cached_text_timestamp_is_rejected_before_import(jobs_db, text_db):
+    source = sample()
+    value = payload(source)
+    value["sources"][0]["jobs"][0]["text_observed_at"] = NOW
+    before = state(jobs_db, text_db)
+    with pytest.raises(ValueError):
+        recovery.apply_observations(jobs_db, text_db, value, [source], now=NOW)
+    assert state(jobs_db, text_db) == before

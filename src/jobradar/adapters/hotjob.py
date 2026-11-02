@@ -12,11 +12,20 @@ source.params:
 """
 
 from collections.abc import Iterator
+from datetime import timedelta
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.adapters.qualification import requirement_grad_year
+from jobradar.jd_text import template_pollution
 from jobradar.models import Job
-from jobradar.normalize import batch_from_text, date_only, degree_min_from_text, grad_year_from_text
+from jobradar.normalize import (
+    batch_from_text,
+    date_only,
+    degree_min_from_text,
+    grad_year_from_text,
+    normalize_degree,
+)
+from jobradar.timeutil import now_ts, parse_ts
 
 RECRUIT_CODE = {"campus": "1", "social": "2", "intern": "3"}
 PORTAL = {"campus": "campus", "social": "social", "intern": "campus"}
@@ -94,26 +103,71 @@ class HotjobAdapter(Adapter):
         )
         return data.get("data") or {}
 
+    def _cached_detail(self, item, recruit_type, *, allow_old=False):
+        hours = self.source.params.get("detail_cache_hours", 0)
+        if type(hours) is not int or not 0 < hours <= 168:
+            return None
+        cached = getattr(self, "cached_texts", {}).get(str(item.get("postId")))
+        if not cached or cached.get("title") != (item.get("postName") or "").strip():
+            return None
+        if cached.get("recruit_type") != recruit_type or cached.get("publish_at") != _date_only(item.get("publishDate") or item.get("publishFirstDate")):
+            return None
+        if normalize_degree(cached.get("degree_min")) != normalize_degree(item.get("educationStr")):
+            return None
+        body = (cached.get("description"), cached.get("requirements"))
+        if not any(body) or any(template_pollution(value) for value in body):
+            return None
+        try:
+            observed = parse_ts(cached["fetched_at"])
+            current = parse_ts(now_ts())
+        except (ValueError, TypeError, KeyError):
+            return None
+        if observed > current or (not allow_old and current - observed > timedelta(hours=hours)):
+            return None
+        return {"workContent": body[0], "serviceCondition": body[1], "education": cached.get("degree_min")}, cached["fetched_at"]
+
     def fetch_raw(self) -> Iterator[dict]:
         fetch_detail = bool(self.source.params.get("fetch_detail", True))
         for rtype in self.source.recruit_types:
             code = RECRUIT_CODE[rtype]
             page = 1
+            seen_pages = set()
             while True:
                 data = self._list(code, page)
-                form = (data.get("data") or {}).get("pageForm") or {}
-                items = form.get("pageData") or []
+                inner = data.get("data") if isinstance(data, dict) else None
+                form = inner.get("pageForm") if isinstance(inner, dict) else None
+                if not isinstance(form, dict) or not isinstance(form.get("pageData"), list):
+                    raise RuntimeError("hotjob invalid list page")
+                items = form["pageData"]
+                try:
+                    total = int(form["totalPage"])
+                except (ValueError, TypeError, KeyError) as exc:
+                    raise RuntimeError("hotjob invalid pagination") from exc
                 if not items:
+                    if total != 0 or page != 1:
+                        raise RuntimeError("hotjob incomplete empty page")
                     break
+                if total < page or any(not isinstance(item, dict) or not item.get("postId") for item in items):
+                    raise RuntimeError("hotjob incomplete list records")
+                signature = tuple(str(item["postId"]) for item in items)
+                if signature in seen_pages:
+                    raise RuntimeError("hotjob repeated full page")
+                seen_pages.add(signature)
                 for it in items:
                     detail = {}
+                    observed = None
                     if fetch_detail and it.get("postId"):
-                        try:
-                            detail = self._detail(it["postId"])
-                        except Exception:  # noqa: BLE001 — 详情失败不影响列表入库，只是缺正文
-                            detail = {}
-                    yield {"list": it, "detail": detail, "recruit_type": rtype}
-                total = int(form.get("totalPage") or 0)
+                        cached = self._cached_detail(it, rtype)
+                        if cached:
+                            detail, observed = cached
+                        else:
+                            try:
+                                detail = self._detail(it["postId"])
+                            except Exception:  # noqa: BLE001 — 列表完整时保留已有正文及其实际观测时间
+                                fallback = self._cached_detail(it, rtype, allow_old=True)
+                                if fallback:
+                                    detail, observed = fallback
+                    yield {"list": it, "detail": detail, "recruit_type": rtype, "text_observed_at": observed}
                 if page >= total:
                     break
                 if self.source.max_pages and page >= self.source.max_pages:
@@ -156,4 +210,5 @@ class HotjobAdapter(Adapter):
             publish_at=_date_only(it.get("publishDate") or it.get("publishFirstDate")),
             description=(detail.get("workContent") or None),
             requirements=(detail.get("serviceCondition") or None),
+            text_observed_at=raw.get("text_observed_at"),
         )

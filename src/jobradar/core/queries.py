@@ -7,6 +7,7 @@ import json
 import os
 import re
 import unicodedata
+from contextlib import closing
 from datetime import date, timedelta
 from typing import NamedTuple
 
@@ -328,9 +329,20 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if terms and text_conn is None:
         raise ValueError("全文检索需要 JD 原文库 jd_text.db")
     candidates = None
+    scoped = False
+    from_sql = " FROM job j JOIN company c ON c.id = j.company_id"
+    if (terms and os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX") != "1"
+            and any((company, category, city, recruit_type, grad_year, keyword,
+                     deadline_before, deadline_after, exclude_store))):
+        # 只在集合足够小时使用主键读取；较大集合继续原路径，不截断匹配结果。
+        with closing(conn.execute("SELECT j.id" + from_sql + " WHERE " + " AND ".join(where), args)) as cursor:
+            eligible = cursor.fetchmany(10001)
+        if len(eligible) <= 10000:
+            candidates = {row[0] for row in eligible}
+            scoped = True
     for t in terms:
         narrowed = candidates
-        if candidates is not None and _use_fts(conn, "job_fts", t) and _use_fts(text_conn, "job_text_fts", t):
+        if not scoped and candidates is not None and _use_fts(conn, "job_fts", t) and _use_fts(text_conn, "job_text_fts", t):
             narrowed = None  # 已有索引时复用索引；未建索引时只检查上一词留下的候选。
         matching = set(_title_ids(conn, t, narrowed)) | set(_jd_ids(text_conn, t, narrowed))
         candidates = matching if candidates is None else candidates & matching
@@ -340,7 +352,6 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         where.append("j.id IN (SELECT value FROM json_each(?))")
         args.append(json.dumps(sorted(candidates)))
     where_sql = (" WHERE " + " AND ".join(where)) if where else ""
-    from_sql = " FROM job j JOIN company c ON c.id = j.company_id"
     if dedupe:
         # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
         # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
@@ -603,10 +614,11 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
     t = None
     if text_conn is not None:
         t = text_conn.execute(
-            "SELECT description, requirements FROM job_text WHERE job_id=?", (job_id,)
+            "SELECT description, requirements, fetched_at FROM job_text WHERE job_id=?", (job_id,)
         ).fetchone()
     d["description"] = t["description"] if t else None
     d["requirements"] = t["requirements"] if t else None
+    d["text_observed_at"] = t["fetched_at"] if t else None
     from jobradar.source_catalog import catalog
 
     d["source"] = catalog().get(d["source_id"], {"source_kind":"unknown", "record_kind":"unknown"}).copy()
@@ -985,7 +997,7 @@ def calendar_as_of(cal_conn) -> str | None:
     return row[0] if row else None
 
 
-def field_coverage(jobs_conn) -> dict:
+def field_coverage(jobs_conn, *, today=None) -> dict:
     """在招岗位的字段覆盖率（0~1）。让 agent 回答前知道哪些字段不可靠。
 
     城市/届次缺失是"来源没给"，不是"没有"——见 skill/jobradar/references/fields.md。
@@ -1002,7 +1014,7 @@ def field_coverage(jobs_conn) -> dict:
                SUM(publish_at IS NOT NULL),
                SUM(apply_end IS NOT NULL)
         FROM job WHERE closed_at IS NULL AND (apply_end IS NULL OR apply_end >= ?)""",
-        (shanghai_date(now_ts()),)).fetchone()
+        (today or shanghai_date(now_ts()),)).fetchone()
 
     def ratio(x, base):
         return round((x or 0) / base, 3) if base else None
@@ -1029,18 +1041,24 @@ def jd_row_coverage(jobs_conn, text_conn):
 
 def data_summary(jobs_conn, text_conn=None) -> dict:
     """岗位数据层概况；with_jd_text 为有 JD 正文的在招岗位数（未下载原文库时为 None）。"""
-    today = shanghai_date(now_ts())
+    clock = now_ts()
+    today = shanghai_date(clock)
     visible = "closed_at IS NULL AND (apply_end IS NULL OR apply_end >= ?)"
     open_ids = [r[0] for r in jobs_conn.execute(f"SELECT id FROM job WHERE {visible}", (today,))]
     companies = jobs_conn.execute(
         f"SELECT COUNT(DISTINCT company_id) FROM job WHERE {visible}", (today,)).fetchone()[0]
     recorded = jobs_conn.execute("SELECT COUNT(*) FROM job WHERE closed_at IS NULL").fetchone()[0]
     with_text = None
+    jd_observation = None
     if text_conn is not None:
-        with_text = text_conn.execute(
-            "SELECT COUNT(*) FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
+        observed = text_conn.execute(
+            "SELECT COUNT(*),COALESCE(SUM(fetched_at>=? AND fetched_at<=?),0),MIN(fetched_at),MAX(fetched_at) "
+            "FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
             "AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')",
-            (json.dumps(open_ids),)).fetchone()[0]
+            (lookback_since(2, now=clock), clock, json.dumps(open_ids))).fetchone()
+        with_text = observed[0]
+        jd_observation = {"fresh_48h": observed[1], "older_than_48h": with_text-observed[1],
+                          "oldest": observed[2], "newest": observed[3]}
     by_type = dict(jobs_conn.execute(
         f"SELECT recruit_type, COUNT(*) FROM job WHERE {visible} GROUP BY 1", (today,)).fetchall())
     from jobradar.source_catalog import catalog
@@ -1054,8 +1072,9 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
         by_record_kind[record_kind] = by_record_kind.get(record_kind, 0) + count
         by_source_kind[source_kind] = by_source_kind.get(source_kind, 0) + count
     return {"open_jobs": len(open_ids), "companies": companies, "with_jd_text": with_text,
+            "jd_observation": jd_observation,
             "recorded_open_jobs": recorded, "expired_hidden": recorded - len(open_ids),
             "count_as_of": today,
             "by_recruit_type": by_type,
             "by_record_kind": by_record_kind, "by_source_kind": by_source_kind,
-            "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn)}
+            "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn, today=today)}

@@ -30,13 +30,14 @@ from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
 
 
 def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Client,
-           sleep: Callable[[float], None], *, deadline: float | None = None
+           sleep: Callable[[float], None], *, deadline: float | None = None, cached_texts=None
            ) -> tuple[list[Job] | None, str | None, float]:
     """返回 (岗位, 错误, 耗时秒)。耗时记进 source_run.duration_s，抓得慢的源要能被看见。"""
     started = time.monotonic()
     try:
         adapter = adapter_cls(source, client, sleep=sleep)
         adapter._crawl_deadline = deadline
+        adapter.cached_texts = cached_texts or {}
         jobs = list(adapter.fetch_all())
     except CrawlBudgetExceeded:
         return None, "crawl budget exceeded", time.monotonic() - started
@@ -78,7 +79,7 @@ def _enrich(j: Job) -> None:
         j.degree_min = degree_min_from_jd(f"{j.description or ''}\n{j.requirements or ''}")
 
 
-def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, source_budget=None):
+def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, source_budget=None, cached_texts=None):
     client = client_factory()
     out = []
     try:
@@ -89,7 +90,8 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, sou
                 out.append((s, None, "crawl budget exceeded", 0.0))
                 continue
             source_deadline = min(deadline or float("inf"), time.monotonic() + source_budget) if source_budget else deadline
-            out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=source_deadline)))
+            out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=source_deadline,
+                                   cached_texts=(cached_texts or {}).get(s.id))))
         return out
     finally:
         client.close()
@@ -107,7 +109,30 @@ def _expected_max(source: SourceConfig) -> int | None:
 def _site_key(source: SourceConfig) -> str:
     """同一个站点（同 host 或同租户）的源必须串行，保证对单站点的 1 req/s。"""
     p = source.params or {}
+    if source.adapter == "hotjob":
+        return str(p.get("host") or "wecruit.hotjob.cn")
     return str(p.get("host") or p.get("tenant") or source.id)
+
+
+def _saved_texts(sources, jobs_conn, text_conn):
+    """主线程读取缓存；SQLite连接不会被交给抓取线程。"""
+    result = {}
+    for source in sources:
+        hours = source.params.get("detail_cache_hours", 0)
+        if not source.enabled or source.adapter != "hotjob" or type(hours) is not int or not 0 < hours <= 168:
+            continue
+        metadata = {r["id"]: dict(r) for r in jobs_conn.execute(
+            "SELECT id,source_job_id,title,publish_at,recruit_type,degree_min FROM job WHERE source_id=?", (source.id,))}
+        prefix = source.id + ":"
+        cached = {}
+        for row in text_conn.execute(
+                "SELECT job_id,description,requirements,fetched_at FROM job_text WHERE job_id>=? AND job_id<?",
+                (prefix, source.id + ";")):
+            meta = metadata.get(row[0])
+            if meta is not None:
+                cached[meta["source_job_id"]] = {**meta, "description": row[1], "requirements": row[2], "fetched_at": row[3]}
+        result[source.id] = cached
+    return result
 
 
 def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
@@ -123,6 +148,7 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
         client_factory = lambda: make_client(policy=policy)  # noqa: E731 — 每个站点组自己的连接，共用守卫
     adapters = adapters if adapters is not None else load_all()
     deadline = time.monotonic() + budget_seconds if budget_seconds else None
+    cached_texts = _saved_texts(sources, jobs_conn, text_conn)
     # 并行单位从「适配器」改成「适配器 + 站点」：北森几百个租户各自是不同子域，
     # 串行跑一轮要 70+ 分钟（daily 常年贴着 90 分钟预算）；按站点分组后不同子域可以并行，
     # 同一站点（如 wecruit.hotjob.cn 上的多个租户）仍然串行，1 req/s 的承诺不变。
@@ -168,7 +194,7 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
         futures = []
         for groups_in_lane, workers in lanes:
             pool = stack.enter_context(ThreadPoolExecutor(max_workers=workers))
-            futures.extend(pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget)
+            futures.extend(pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget, cached_texts)
                            for (aid, _site), srcs in groups_in_lane)
         for fut in as_completed(futures):
             for source, jobs, error, elapsed in fut.result():

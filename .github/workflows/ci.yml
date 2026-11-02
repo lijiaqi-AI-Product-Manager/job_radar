@@ -14,12 +14,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync --all-extras
+      - run: uv sync --frozen --all-extras
       - run: uv run ruff check .
       # 文档自检：断链 / 版本号 / `pip install jobradar` 说法（2026-10-24 实测发现三处不一致）
       - run: uv run python scripts/check_docs_links.py
@@ -33,7 +33,7 @@ jobs:
           set -euo pipefail
           rm -rf dist
           uv build
-          size=$(stat -c%s dist/*.tar.gz)
+          size=$(uv run python -c "import glob; from pathlib import Path; print(Path(glob.glob('dist/*.tar.gz')[0]).stat().st_size)")
           echo "sdist: $size bytes"
           if [ "$size" -gt 5242880 ]; then
             echo "::error::sdist 超过 5MB，检查是否有缓存/数据库被打包"
@@ -68,5 +68,5 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.11"
-      - run: uv sync --all-extras
+      - run: uv sync --frozen --all-extras
       - run: uv run pytest

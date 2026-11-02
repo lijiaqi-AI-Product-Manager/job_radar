@@ -1,7 +1,9 @@
 """在工作副本恢复完整公开观测；保留实际时间，继续经过标准入库保护。"""
 
 import argparse
+import gzip
 import hashlib
+import io
 import json
 import sqlite3
 from contextlib import closing
@@ -24,7 +26,7 @@ def config_sha256(source):
     return hashlib.sha256(value).hexdigest()
 
 
-def _validated(payload, sources, now):
+def _validated(payload, sources, now, known_hosts=None):
     if payload.get("schema_version") != 1 or payload.get("application_version") != __version__:
         raise ValueError("unsupported observation schema or application version")
     clock = parse_ts(now)
@@ -52,7 +54,10 @@ def _validated(payload, sources, now):
             host = f"{source.params['tenant']}.zhiye.com"
         if not host and source.adapter == "hotjob":
             host = "wecruit.hotjob.cn"
-        if not host:
+        allowed_hosts = {host} if host else set()
+        if source.adapter not in {"beisen", "hotjob", "jysd"}:
+            allowed_hosts.update((known_hosts or {}).get(sid, set()))
+        if not allowed_hosts:
             raise ValueError("adapter requires an explicitly verified recovery host")
         values = record.get("jobs")
         if not isinstance(values, list) or not 1 <= len(values) <= 50000:
@@ -63,9 +68,11 @@ def _validated(payload, sources, now):
             url = urlsplit(job.url)
             if (job.source_id != sid or not job.source_job_id.strip() or job.company != source.company
                     or job.recruit_type not in source.recruit_types or job.id in job_ids
-                    or url.scheme != "https" or url.hostname != host or url.username or url.password
+                    or url.scheme != "https" or url.hostname not in allowed_hosts or url.username or url.password
                     or url.port not in (None, 443)):
                 raise ValueError("job identity, employer, type or public host mismatch")
+            if job.text_observed_at and parse_ts(job.text_observed_at) > observed:
+                raise ValueError("text observation is newer than the source observation")
             for day in (job.apply_end, job.publish_at):
                 if day is not None:
                     if len(day) != 10 or not 1900 <= date.fromisoformat(day).year < 2100:
@@ -78,7 +85,12 @@ def _validated(payload, sources, now):
 
 
 def apply_observations(jobs, texts, payload, sources, *, now):
-    checked = _validated(payload, sources, now)
+    known_hosts = {}
+    for record in payload.get("sources", []):
+        sid = record.get("source_id")
+        known_hosts[sid] = {urlsplit(row[0]).hostname for row in jobs.execute(
+            "SELECT DISTINCT url FROM job WHERE source_id=?", (sid,)) if urlsplit(row[0]).scheme == "https"}
+    checked = _validated(payload, sources, now, known_hosts)
     report = {"accepted_sources": 0, "skipped_sources": 0, "observed_jobs": 0, "sources": []}
     # ingest_run commits each source. Stage the complete batch separately so any
     # rejection cannot leave a partially imported batch in the working databases.
@@ -132,6 +144,11 @@ def main():
     value = args.payload.read_bytes()
     if len(value) > 50 * 1024 * 1024 or hashlib.sha256(value).hexdigest() != args.sha256:
         raise ValueError("observation size or SHA-256 mismatch")
+    if value.startswith(b"\x1f\x8b"):
+        with gzip.GzipFile(fileobj=io.BytesIO(value)) as stream:
+            value = stream.read(50 * 1024 * 1024 + 1)
+        if len(value) > 50 * 1024 * 1024:
+            raise ValueError("decoded observation exceeds size limit")
     for name in ("jobs.db", "jd_text.db"):
         if not (args.home / name).is_file():
             raise ValueError("recovery requires existing snapshot copies")
