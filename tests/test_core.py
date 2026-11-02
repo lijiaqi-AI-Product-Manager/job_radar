@@ -54,6 +54,17 @@ def test_search_by_company_alias(jobs_db):
     assert titles(search_jobs(jobs_db, company="中国核工业集团")) == ["核工程研发"]
 
 
+def test_chalco_short_name_reaches_verified_registered_employer(jobs_db):
+    # 大连海事大学公开公告869053登记的是集团法人，不合并上市子公司。
+    source = "jysd-dlmu-e53094408f"
+    ingest_run(jobs_db, source, [make_job(1, source_id=source, company="中国铝业集团有限公司",
+                                      title="校园招聘公告")], ts=T(1))
+    ingest_run(jobs_db, "listed-company", [make_job(1, source_id="listed-company",
+               company="中国铝业股份有限公司", title="另一法人")], ts=T(1))
+    assert titles(search_jobs(jobs_db, company="中铝")) == ["校园招聘公告"]
+    assert titles(search_jobs(jobs_db, company="中国铝业集团有限公司")) == ["校园招聘公告"]
+
+
 def test_company_alias_does_not_fuzzy_match(jobs_db):
     """映射表里没有的说法保持原样，不做模糊猜测。"""
     ingest_run(jobs_db, "s3", [make_job(1, source_id="s3", company="中国核工业集团", title="核工程研发")], ts=T(1))
