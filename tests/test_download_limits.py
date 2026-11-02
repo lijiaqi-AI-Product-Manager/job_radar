@@ -132,6 +132,26 @@ def test_metadata_size_is_bounded_before_json_parse(tmp_path):
     assert list(tmp_path.iterdir()) == []
 
 
+def test_install_still_checks_previous_snapshot_when_destination_is_new(tmp_path):
+    from contextlib import closing
+
+    from helpers import T, make_job
+    from jobradar.pipeline.ingest import ingest_run
+
+    old = tmp_path / "old.db"
+    incoming = tmp_path / "incoming.db"
+    destination = tmp_path / "new.db"
+    with closing(connect(old, "jobs")) as conn:
+        ingest_run(conn, "s1", [make_job(1), make_job(2)], ts=T(1))
+    with closing(connect(incoming, "jobs")) as conn:
+        ingest_run(conn, "s1", [make_job(1)], ts=T(2))
+    original = old.read_bytes()
+    with pytest.raises(ValueError):
+        cli._install(incoming, "jobs.db", False, destination, previous=old)
+    assert old.read_bytes() == original
+    assert not destination.exists()
+
+
 def test_part_budget_is_shared_instead_of_restarting_per_request(tmp_path, monkeypatch):
     clock = [0.0]
     monkeypatch.setattr(cli, "_now", lambda: clock[0])
@@ -147,3 +167,26 @@ def test_part_budget_is_shared_instead_of_restarting_per_request(tmp_path, monke
         with pytest.raises(httpx.ReadTimeout):
             cli._fetch(client, "https://example.test/part", {}, tmp_path, deadline=2)
     assert list(tmp_path.iterdir()) == []
+
+
+@pytest.mark.parametrize("separate_baseline", [False, True])
+def test_client_cannot_downgrade_a_newer_local_schema(tmp_path, separate_baseline):
+    import sqlite3
+    from contextlib import closing
+
+    dest = tmp_path / "destination.db"
+    baseline = tmp_path / "previous.db" if separate_baseline else dest
+    incoming = tmp_path / "incoming.db"
+    for path in (baseline, incoming):
+        with closing(connect(path, "jobs")):
+            pass
+    with sqlite3.connect(baseline) as conn:
+        conn.execute("PRAGMA user_version=999")
+    before = baseline.read_bytes()
+    with pytest.raises(ValueError, match="升级"):
+        cli._install(
+            incoming, "jobs.db", False, dest, previous=baseline if separate_baseline else None
+        )
+    assert baseline.read_bytes() == before
+    if separate_baseline:
+        assert not dest.exists()

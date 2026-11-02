@@ -76,3 +76,22 @@ def test_unchanged_compatible_snapshot_prepares_once_without_redownloading(
     second = json.loads(capsys.readouterr().out)
     assert second["updated"] == []
     assert local.data_dir() == generation
+
+
+def test_force_update_does_not_copy_old_files_that_it_will_replace(
+    snapshot_files, monkeypatch, capsys
+):
+    for name in local.DB_FILES.values():
+        shutil.copyfile(snapshot_files.parent / "remote" / name, snapshot_files / name)
+    original = sqlite3.connect
+
+    class NoUnneededBackup(sqlite3.Connection):
+        def backup(self, *args, **kwargs):
+            raise AssertionError("即将重新下载的数据库不应先复制旧文件")
+
+    def connect(*args, **kwargs):
+        return original(*args, **kwargs, factory=NoUnneededBackup)
+
+    monkeypatch.setattr(sqlite3, "connect", connect)
+    cli.main(["update", "--force"])
+    assert set(json.loads(capsys.readouterr().out)["updated"]) == {"jobs", "text", "calendar"}

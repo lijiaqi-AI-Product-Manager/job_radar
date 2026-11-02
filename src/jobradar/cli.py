@@ -36,7 +36,7 @@ from jobradar.local import (
     home,
     snapshot,
 )
-from jobradar.store.migrate import connect
+from jobradar.store.migrate import connect, migration_files
 from jobradar.timeutil import now_ts
 
 
@@ -228,8 +228,20 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path, *, dea
     return tmp
 
 
-def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None):
+def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *, previous=None):
     """解压（若为 .gz）并校验 SQLite 完整性后替换目标文件。"""
+    baseline = Path(previous) if previous is not None else dest
+    kind = {value:key for key,value in DB_FILES.items()}.get(name)
+    if kind and baseline.is_file():
+        try:
+            with closing(sqlite3.connect(baseline.resolve().as_uri()+"?mode=ro", uri=True)) as old:
+                local_version = old.execute("PRAGMA user_version").fetchone()[0]
+        except sqlite3.DatabaseError:
+            local_version = None
+        if local_version is not None and local_version > len(migration_files(kind)):
+            if tmp != baseline:
+                tmp.unlink(missing_ok=True)
+            raise ValueError("本地数据库版本高于客户端，请先升级软件；保留原目录并可改用新的 JOBRADAR_HOME")
     if expected_digest:
         with tmp.open("rb") as handle:
             actual = "sha256:" + hashlib.file_digest(handle, "sha256").hexdigest()
@@ -248,9 +260,9 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None):
         tmp.unlink()
         tmp = raw
     ok = _local_db_ok(tmp, name)
-    if ok and _local_db_ok(dest, name):
+    if ok and _local_db_ok(baseline, name):
         table = {"jobs.db": "job", "jd_text.db": "job_text", "calendar.db": "entry"}[name]
-        with closing(sqlite3.connect(tmp)) as new, closing(sqlite3.connect(dest)) as old:
+        with closing(sqlite3.connect(tmp)) as new, closing(sqlite3.connect(baseline.resolve().as_uri()+"?mode=ro", uri=True)) as old:
             new_count = new.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             old_count = old.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             ok = not (old_count and (new_count == 0 or (name == "jobs.db" and new_count < old_count)))
@@ -302,11 +314,11 @@ def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path, *
 
 
 def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer: str | None = None,
-              digests=None, verified=None) -> str:
+              digests=None, verified=None, previous=None) -> str:
     """依次尝试各镜像，每个镜像先取压缩版 <name>.gz，没有再取原文件。返回实际使用的镜像名。"""
     if client is None:
         with httpx.Client(timeout=httpx.Timeout(60, connect=10), follow_redirects=True) as owned:
-            return _download(name, dest, client=owned, prefer=prefer, digests=digests, verified=verified)
+            return _download(name, dest, client=owned, prefer=prefer, digests=digests, verified=verified, previous=previous)
     dest.parent.mkdir(parents=True, exist_ok=True)
     names = getattr(digests, "asset_names", {})
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -323,7 +335,7 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
             if digests and not expected:
                 tmp.unlink(missing_ok=True)
                 raise ValueError("发布摘要缺失，无法核验下载内容")
-            _install(tmp, name, asset.endswith(".gz"), dest, expected)
+            _install(tmp, name, asset.endswith(".gz"), dest, expected, previous=previous)
             if expected and verified is not None:
                 verified.pop(name, None)
                 verified.pop(name + ".gz", None)
@@ -355,7 +367,7 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                 if digests and not expected:
                     tmp.unlink(missing_ok=True)
                     raise ValueError("发布摘要缺失，无法核验下载内容")
-                _install(tmp, name, gz, dest, expected)
+                _install(tmp, name, gz, dest, expected, previous=previous)
                 if expected and verified is not None:
                     verified.pop(name, None)
                     verified.pop(name + ".gz", None)
@@ -459,13 +471,15 @@ def _update_snapshot(args):
         for kind, name in DB_FILES.items():
             if args.jobs_only and kind == "text" and "jobs" in kinds:
                 continue
+            if kind in kinds:
+                continue  # 即将下载的文件直接与旧代核对，无需先复制后覆盖。
             source = old / name
             if _local_db_ok(source, name):
                 with closing(sqlite3.connect(source.resolve().as_uri() + "?mode=ro", uri=True)) as original, \
                         closing(sqlite3.connect(staging / name)) as copied:
                     original.backup(copied)
         with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as pool:
-            futures = [(kind, pool.submit(_download, DB_FILES[kind], staging / DB_FILES[kind], prefer=args.mirror,
+            futures = [(kind, pool.submit(_download, DB_FILES[kind], staging / DB_FILES[kind], prefer=args.mirror, previous=old / DB_FILES[kind],
                         **({"digests": remote, "verified": verified} if remote else {}))) for kind in kinds]
             errors = []
             for kind, future in futures:

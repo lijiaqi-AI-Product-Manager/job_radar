@@ -441,7 +441,11 @@ def test_version_flag(capsys):
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     connect(home / "calendar.db", "calendar").close()
     got = []
-    monkeypatch.setattr(cli, "_download", lambda name, dest, client=None, prefer=None, **kwargs: got.append(name) or "github")
+    def fake(name, dest, client=None, prefer=None, **kwargs):
+        dest.write_bytes((home / name).read_bytes())
+        got.append(name)
+        return "github"
+    monkeypatch.setattr(cli, "_download", fake)
     monkeypatch.setattr(cli, "_text_coverage", lambda *a, **k: None)  # 这个用例不测一致性检查
     cli.main(["update"])
     assert sorted(got) == ["calendar.db", "jd_text.db", "jobs.db"]  # 并行下载，完成顺序不保证
@@ -458,6 +462,7 @@ def test_update_downloads_in_parallel(home, monkeypatch, capsys):
 
     def fake(name, dest, client=None, prefer=None, **kwargs):
         barrier.wait()  # 三个下载必须同时在途
+        dest.write_bytes((home / name).read_bytes())
         done.append(name)
         return "github"
 
