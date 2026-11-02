@@ -1,0 +1,183 @@
+[
+  {
+    "source_id": "beisen-yifanyy",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:11Z",
+    "url": "https://yifanyy.zhiye.com/campus/detail?jobAdId=d01cbb96-483e-425a-9af0-2fbfd6e306aa",
+    "raw": {
+      "Id": "d01cbb96-483e-425a-9af0-2fbfd6e306aa",
+      "JobAdName": "医药推广实习生-北京(J12010)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-05-18T14:02:33",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、全日制大专及以上学历，2027届毕业生，药学、护理、临床、生物、医药营销等相关专业优先；\n2、全日制实习，每周出勤5天，能接受外勤工作；\n3、沟通表达自然大方，亲和力强，抗压能力强。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-baixiangfood",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:11Z",
+    "url": "https://baixiangfood.zhiye.com/campus/detail?jobAdId=23b1b66d-4240-4c9a-8732-9c0fb65938d9",
+    "raw": {
+      "Id": "23b1b66d-4240-4c9a-8732-9c0fb65938d9",
+      "JobAdName": "安全校招生",
+      "CategoryId": "2",
+      "LocNames": [
+        "山西省·晋中市"
+      ],
+      "PostDate": "2026-10-27T08:31:19",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届山西农业大学、山西农业大学信息学院、中北大学等院校应届毕业生\n2、学历：全日制专科及以上\n3、专业：安全工程、安全生产监管、行政管理 、公共事业管理\n4、可接受集团内分子公司间、总部轮调"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-ascentagepharma",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:12Z",
+    "url": "https://ascentagepharma.zhiye.com/campus/detail?jobAdId=442ded42-2920-4c51-a3ab-ecd04b2ff2d1",
+    "raw": {
+      "Id": "442ded42-2920-4c51-a3ab-ecd04b2ff2d1",
+      "JobAdName": "学术推广管培生-大连(J10853)",
+      "CategoryId": "2",
+      "LocNames": [
+        "辽宁省·大连市"
+      ],
+      "PostDate": "2026-10-23T14:25:28",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、专业背景要求：医药、临床、生物、化学等相关专业本科及以上学历，面向2027届应届毕业生，具备扎实的专业知识基础。\n2、核心综合素质：热爱医药健康事业，具备优秀的沟通表达与公众演讲能力；目标导向，拥有出色的抗压能力与进取心，渴望在销售领域深耕发展。\n3、优先加分亮点：拥有学生会或社团管理经验、校园创业项目经历，或具备医药销售、市场推广相关实习经验者优先考虑。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-xchengtech",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:12Z",
+    "url": "https://xchengtech.zhiye.com/campus/detail?jobAdId=1199a580-a2f0-4ddd-856c-3482328575ed",
+    "raw": {
+      "Id": "1199a580-a2f0-4ddd-856c-3482328575ed",
+      "JobAdName": "（校招）见习基带工程师（Pioneer）-宜宾",
+      "CategoryId": "2",
+      "LocNames": [
+        "四川省·宜宾市"
+      ],
+      "PostDate": "2026-09-11T01:50:13.4969412",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、本科及以上学历，2027年应届毕业生\n2、电子信息工程、通信工程、电子科学与技术、集成电路设计与集成系统、自动化等相关专业\n3、具有良好的英语阅读能力，通过英语CET-4及以上\n4、对硬件电路拥有浓厚兴趣，具有独立钻研新技术的热情和能力\n5、具备良好的团队协作能力和学习意愿"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-chinalife",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:12Z",
+    "url": "https://chinalife.zhiye.com/campus/detail?jobAdId=9e5cb750-ebef-4447-bd7c-3a9e75d280a9",
+    "raw": {
+      "Id": "9e5cb750-ebef-4447-bd7c-3a9e75d280a9",
+      "JobAdName": "鑫翎计划管培生（省本部-营销管理类）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·广州市"
+      ],
+      "PostDate": "2026-09-08T21:26:18",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届本科及以上学历毕业生，须在2027年6月底前取得毕业证与学位证（国（境）外院校毕业生以教育部留服认证时间为准）。\r\n2.具备良好的公众表达与沟通影响力，有在校期间公开演讲、主持、辩论或授课经历者优先。\r\n3.具备较强的抗压韧性与目标感，能适应快节奏的业务推动工作氛围。\r\n4.熟练使用办公软件。\r\n5.认同保险行业的社会价值与保障功能，认同公司企业文化。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-chery1",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:13Z",
+    "url": "https://chery1.zhiye.com/campus/detail?jobAdId=18c92c8c-93ea-4d7a-94cf-42d30e76da0c",
+    "raw": {
+      "Id": "18c92c8c-93ea-4d7a-94cf-42d30e76da0c",
+      "JobAdName": "AIGC设计师(南京)(J34812)",
+      "CategoryId": "2",
+      "LocNames": [
+        "江苏省·南京市"
+      ],
+      "PostDate": "2026-09-06T17:22:55",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、6个月以上AIGC视频领域工作经验(如动态漫画、短剧等)或2026届毕业生，动漫/影视/数字媒体等相关专业，能力优秀者\r\n审美力在线，结合AI工具提升制作效率与内容质量，熟练掌握至少2款AI视频/图像生成工具(如SD/MJ/即梦)3、理解镜头语言(景别切换/推拉摇移)，能通过AI工具实现分镜表达\r\n学习能力强，能快速掌握新技术工具并解决实际问题;责任心强，注重细节，适应团队协作与工作节奏需提交作品集证明实操能力，有个人AI动画项目和AI创作赛事获奖经历优先"
+    },
+    "expected_grad_year": 2026
+  },
+  {
+    "source_id": "beisen-baicgroup",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:13Z",
+    "url": "https://baicgroup.zhiye.com/campus/detail?jobAdId=b09ff266-4cf3-413d-9cf3-d5ba97c1dfeb",
+    "raw": {
+      "Id": "b09ff266-4cf3-413d-9cf3-d5ba97c1dfeb",
+      "JobAdName": "智能营销专项管理(J13947)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市·顺义区"
+      ],
+      "PostDate": "2026-09-02T10:15:56",
+      "EndTime": "2027-08-31T00:00:00",
+      "Require": "1. 学历与专业背景\n面向2027届海内外应届毕业生，研究生学历。计算机、人工智能、数据科学、市场营销、电子商务、统计学等相关专业优先。\n2. 核心技能与AI素养\nAI Native思维：具备“先问AI能不能做、再谈人工怎么做”的本能意识，熟练使用通用对话式AI、AIGC工具（如Midjourney、Runway等）辅助工作。\nAgent与工具搭建：了解主流大模型原理，具备Agent工作流搭建能力（如熟悉Dify、Coze、LangChain等），能理解知识库、提示词及工具调用的关系。\n数据素养：掌握大数据分析工具，能够设计评测集、定义评价指标，具备用数据驱动决策的能力。\n3. 业务拆解与逻辑思维\n具备优秀的场景拆解能力，能将真实的业务痛点转化为AI可以处理的子任务，并输出完整的解决方案。逻辑思维强，具备出色的跨团队沟通与资源整合能力。\n4. 持续学习与自驱力\n对AI新技术保持强烈的好奇心与热情，乐于主动学习并快速掌握新功能，具备持续探索创新应用场景的自驱力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-hellobike",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:14Z",
+    "url": "https://hellobike.zhiye.com/campus/detail?jobAdId=c0e1a38d-f655-4566-99e2-ee947e212f5f",
+    "raw": {
+      "Id": "c0e1a38d-f655-4566-99e2-ee947e212f5f",
+      "JobAdName": "【英才2027】用户运营（Hello100）-两轮出行事业部(J21746)",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-09-18T15:42:42",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 2027届本科及以上学历应届毕业生\n2. 有社团活动经验、有长期运动爱好（尤其骑行、跑步、徒步等户外运动）、小红书/抖音账号运营经历或相关运营实习经验者优先；\n3. 逻辑思维好，具备优秀的沟通协调能力，能完成跨部门沟通协作；\n4. 自主学习能力强，善于使用AI、Notion、obsidian等项目管理、文档管理等软件；"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-raytrontek1",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:15Z",
+    "url": "https://raytrontek1.zhiye.com/campus/detail?jobAdId=23678df3-5893-49e9-8867-c3564283b1ca",
+    "raw": {
+      "Id": "23678df3-5893-49e9-8867-c3564283b1ca",
+      "JobAdName": "法务管培生（上海）",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-09-28T13:28:25",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、 2027届全日制本科及以上学历，五院四系或985综合性大学法学/法律专业优先，已通过法律职业资格考试（A证），具有美国、欧盟、英国、澳大利亚等法域法学教育背景者优先；\n2、 具备扎实的法律基础和法律分析能力，能够准确理解法律规则、监管文件、合同条款及法律意见，并在指导下将复杂问题拆解为事实、规则、风险和解决方案；\n3、 具备良好的涉外法律能力和国际化视野，能够关注并理解美国、欧盟、英国等主要市场的合规监管动态，理解境外法律规则对中国制造业、科技企业出海业务的影响；\n4、 具备扎实的非诉工作基本功和法律文书能力，理解通常非诉及合规工作的基本流程、专业要求和交付标准，有知名律所非诉团队、科技企业法务合规部门实习经历者优先；\n5、 逻辑清晰，细致严谨，责任心强，执行力好，能够适应多任务并行的工作节奏，在不确定业务事实和复杂监管规则下保持审慎、准确和有条理的工作习惯；\n6、 具备良好的团队协作意识，能够在团队内部保持及时、清晰、可靠的信息同步，主动反馈工作进展和问题卡点，同时具备基础业务沟通能力，能够理解业务问题、整理事实背景，并在指导下协助推动事项闭环；\n7、 认同制造业及科技企业合规法务工作的价值，具备持续学习复杂监管规则和支持业务落地的职业意愿。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-longshine",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:16Z",
+    "url": "https://longshine.zhiye.com/campus/detail?jobAdId=a63e3fc0-2684-4017-9333-6d485bf260b8",
+    "raw": {
+      "Id": "a63e3fc0-2684-4017-9333-6d485bf260b8",
+      "JobAdName": "AI工程师(J16233)",
+      "CategoryId": "2",
+      "LocNames": [
+        "江苏省·无锡市",
+        "天津市"
+      ],
+      "PostDate": "2026-10-18T10:39:28",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "- 本科及以上学历，计算机/软件/AI/信管/自动化等相关专业优先；2027 届应届毕业生\n1. 能读懂需求文档，主动理解业务背景，参与业务沟通会议；\n2.熟悉至少一门主流语言（Python/Java/Go 等），了解数据结构、数据库与 API 集成；\n3. 了解大模型、Prompt、智能体（Agent）等概念，能用 AI 工具辅助编码、调试与测试；\n4.对前后端、数据库有基本认知，愿意突破单一技术栈边界；\n5. 关注代码可读性、安全性与规范性。"
+    },
+    "expected_grad_year": 2027
+  }
+]

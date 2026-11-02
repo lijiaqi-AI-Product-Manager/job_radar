@@ -1,0 +1,189 @@
+[
+  {
+    "source_id": "beisen-synear",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:40Z",
+    "url": "https://synear.zhiye.com/campus/detail?jobAdId=f5542fd3-958d-424e-8ed1-d2b311402f6b",
+    "raw": {
+      "Id": "f5542fd3-958d-424e-8ed1-d2b311402f6b",
+      "JobAdName": "计划管培生（思创生）",
+      "CategoryId": "2",
+      "LocNames": [
+        "河南省·郑州市"
+      ],
+      "PostDate": "2026-08-31T18:59:34",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届本科及以上学历应届毕业生，专业不限（财务、计算机、食品科学、机械、工商管理、市场营销、法学等优先）；\n2、具备良好的学习能力、逻辑思维和沟通表达能力，有较强的进取心和抗压能力；\n3、认同食品行业，有清晰职业规划和管理潜力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-chinacpt",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:40Z",
+    "url": "https://chinacpt.zhiye.com/campus/detail?jobAdId=1b8a7c98-5db5-4467-8955-113c9fa20774",
+    "raw": {
+      "Id": "1b8a7c98-5db5-4467-8955-113c9fa20774",
+      "JobAdName": "渠道销售管培生2027",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市·朝阳区"
+      ],
+      "PostDate": "2026-09-11T11:04:36",
+      "EndTime": "2027-03-31T00:00:00",
+      "Require": "专业需求\n2027 届本科及以上应届毕业生（2027 年 7 月前毕业），专业不限；体育、市场营销、食品科学等相关专业优先\n能接受一线跑动与高频出差（京津冀区域）——这是这份工作的日常，不是偶尔\n软性素质要求（我们看重三件事）\n扛得住事：数据难看、被客户拒绝、努力没结果时，不崩、不甩锅，能复盘、能调整，然后接着上\n说得清话：敢跟陌生人开口，能把事讲明白、讲得有逻辑，听得懂对方在说什么——不用自来熟，能把话讲清楚就行\n停不下来：没人盯着也能持续产出，能把一件事做到底、做出结果，而不是三分钟热度\n加分项（有则写进简历）：学生干部或社团骨干、长期运动经历（马拉松、球类等）、销售 / 市场类实习、竞赛获奖\n发展路径：先成为骨干，再走向管理。前两三年先在市场上做出拿得出手的业绩——定岗表现是转正与后续发展的主要依据。公司正处于渠道扩张期，对能打下一片市场的人，成长空间是实实在在的。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-qhkyfund",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:42Z",
+    "url": "https://qhkyfund.zhiye.com/campus/detail?jobAdId=7c8d265f-77c9-4d0e-b989-b8e20bdc63b9",
+    "raw": {
+      "Id": "7c8d265f-77c9-4d0e-b989-b8e20bdc63b9",
+      "JobAdName": "华南渠道销售【C】",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市"
+      ],
+      "PostDate": "2026-10-15T13:15:55",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届硕士毕业生，专业不限，金融经济类专业优先； \n2、沟通表达能力强，形象气质佳，人际协调能力强，抗压能力强，诚实守信；\n3、在校内有社团、协会等学生组织任职经历优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-ccccltd",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:42Z",
+    "url": "https://ccccltd.zhiye.com/campus/detail?jobAdId=f97e8d4c-c545-4ff0-8a77-795780a16a11",
+    "raw": {
+      "Id": "f97e8d4c-c545-4ff0-8a77-795780a16a11",
+      "JobAdName": "财务管理类(J48031)",
+      "CategoryId": "2",
+      "LocNames": [
+        "河南省·郑州市"
+      ],
+      "PostDate": "2026-08-25T11:56:31",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、学历要求：2027届应届生，本科及以上学历；\t\t\n2、专业要求：会计学、财务管理等专业；\n3、学习成绩：学习成绩良好、无挂科记录，综合排名靠前者优先考虑；\t\t\n4、政治面貌：具有较高的政治素养，党员优先考虑；\t\t\n5、个人能力：沟通表达能力佳，具备较强的适应能力、抗压能力和学习能力，良好的综合素质与培养潜力，无不良嗜好，在校无违规违纪记录；\t\t\n6、英语成绩：通过大学英语四级；\t\t\n7、其他：有学生会或社团干部相关经验者优先考虑。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-yangzijiang",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:42Z",
+    "url": "https://yangzijiang.zhiye.com/campus/detail?jobAdId=5f903d24-ead3-4a5b-be82-5741978124a1",
+    "raw": {
+      "Id": "5f903d24-ead3-4a5b-be82-5741978124a1",
+      "JobAdName": "生产工艺员(J25049)",
+      "CategoryId": "2",
+      "LocNames": [
+        "江苏省"
+      ],
+      "PostDate": "2026-09-10T13:40:25",
+      "EndTime": "2027-08-01T00:00:00",
+      "Require": "1.2027届本科学历及以上，药学、化学等相关专业；\r\n2.熟悉药品生产，质量相关的法律法规；\r\n3.良好的团队意识、计划及时间管理能力、较强的抗压能力。\r\n4、党员、学生干部、奖学金获得者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-deppon",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:43Z",
+    "url": "https://deppon.zhiye.com/campus/detail?jobAdId=3aec832d-b695-406f-a56c-d4ae0d375a70",
+    "raw": {
+      "Id": "3aec832d-b695-406f-a56c-d4ae0d375a70",
+      "JobAdName": "运营类-运力规划岗",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省",
+        "河北省",
+        "山东省",
+        "浙江省",
+        "江苏省",
+        "陕西省",
+        "河南省",
+        "上海市"
+      ],
+      "PostDate": "2026-08-13T17:51:50",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届统招本科毕业生；\n2、专业要求：物流管理、交通运输、车辆工程、机械工程、管理科学与工程、统计学、数学等相关专业；\n3、具备较强的团队协作、沟通能力、数据复盘能力和自主学习能力；\n4、了解物流车队运维、车辆后市场、运力维保体系及行业成本管控趋势者优先。\n5、符合德邦价值观：客户为先、创新、拼搏、担当、感恩、诚信"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-sansec",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:44Z",
+    "url": "https://sansec.zhiye.com/campus/detail?jobAdId=dafb0e71-07f3-4d68-a376-4a6f1c7483d3",
+    "raw": {
+      "Id": "dafb0e71-07f3-4d68-a376-4a6f1c7483d3",
+      "JobAdName": "AI应用工程师(J10058)",
+      "CategoryId": "2",
+      "LocNames": [
+        "山东省·济南市"
+      ],
+      "PostDate": "2026-05-15T10:59:54",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.本科及以上学历，理工类专业均可投递，其中计算机、软件工程、人工智能等相关专业优先，2027届应届毕业生；\n2.熟悉Python，了解FastAPI/Flask等Web框架，能独立完成小项目开发；\n3.对大模型应用开发有基础了解，接触过LangChain、Dify等AI开发框架或AI编程工具；\n4.了解Prompt Engineering的基本思路，有RAG或Agent相关的课程设计/比赛/项目经验者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-nesc",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:44Z",
+    "url": "https://nesc.zhiye.com/campus/detail?jobAdId=c0792708-1ab4-45d8-80a2-30ac28658e22",
+    "raw": {
+      "Id": "c0792708-1ab4-45d8-80a2-30ac28658e22",
+      "JobAdName": "销售交易业务岗(J13991)",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-08-31T18:18:12",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届硕士及以上学历的应届生， 金融工程，数学，计算机等相关专业；\n2.熟悉场外衍生品业务，有相关的储备和经验；\n3.具有银行、券商等业务部门实习经验者优先；\n4.作风踏实，具备团队合作精神和优秀的沟通协调能力；\n5.认同行业及公司文化，认同公司经营理念，不属于公司规定的亲属回避的对象。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-desaydc",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:45Z",
+    "url": "https://desaydc.zhiye.com/campus/detail?jobAdId=de2a0f9d-1d65-49f1-802a-badcba350c41",
+    "raw": {
+      "Id": "de2a0f9d-1d65-49f1-802a-badcba350c41",
+      "JobAdName": "平台技术开发工程师（电芯）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·惠州市"
+      ],
+      "PostDate": "2026-10-08T00:04:41",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 2027届硕士及以上学历，博士优先，电化学、材料、化学等理工科相关专业；\n2. 掌握电化学基本原理，熟悉锂离子电池工作原理与主流材料体系；\n3. 有电芯/电池相关课题研究经历者优先，固态电解质、硅负极方向或有一作论文、专利者加分；\n4. 熟悉充放电、CV、EIS 等电化学测试及 XRD、SEM 等表征手段，具备实验设计与数据分析能力；\n5. 英文文献阅读能力好，逻辑清晰，具备跨部门协作意识。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-milkgroundxiaozhao",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:47Z",
+    "url": "https://milkgroundxiaozhao.zhiye.com/campus/detail?jobAdId=a7fcb606-9609-4d1c-99f8-edccc5e19ba7",
+    "raw": {
+      "Id": "a7fcb606-9609-4d1c-99f8-edccc5e19ba7",
+      "JobAdName": "KA管培生（TOC）(J11461)",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市·浦东新区"
+      ],
+      "PostDate": "2026-10-26T14:06:56",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "任职要求：\n1、2027 届本科学历，市场营销、工商管理、经济学等相关专业，专业不限。\n2、具备较强的数据分析能力和团队协作能力，有快消品销售管理实习经验优先。\n3、具备强烈目标导向，一定的领导力潜质，抗压能力强，能协调团队解决销售中的实际问题。"
+    },
+    "expected_grad_year": 2027
+  }
+]

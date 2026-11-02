@@ -1,0 +1,183 @@
+[
+  {
+    "source_id": "beisen-ugreen",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:05Z",
+    "url": "https://ugreen.zhiye.com/campus/detail?jobAdId=ecb22642-dc84-45d0-8dae-a869d5303bc9",
+    "raw": {
+      "Id": "ecb22642-dc84-45d0-8dae-a869d5303bc9",
+      "JobAdName": "法务助理（国际方向）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市·龙华区"
+      ],
+      "PostDate": "2026-09-15T17:54:36",
+      "EndTime": "2026-12-31T00:00:00",
+      "Require": "1.学历专业：法学、知识产权、国际法、涉外法务等相关专业，本科及以上学历，2027届应届毕业生；\n2.专业基础：具备扎实的法律基础知识，熟悉合同法、公司法、知识产权法、涉外法律或合规相关知识，有国际贸易、出口管制、数据合规等相关课程或学习经历者优先；\n3.英语能力：英语听说读写能力良好，雅思6.5分及以上；能够熟练阅读英文法律法规、合同及专业资料，具备一定英文沟通及书面表达能力；\n分析与研究能力：具备较强的信息检索、法规研究、逻辑分析及文字表达能力，能够快速理解业务场景并提炼法律风险；\n4.业务意识：对海外业务、国际贸易、出口管制、市场准入、知识产权等领域有较强兴趣，具备较好的商业敏感度和风险意识；\n5.沟通协作：具备良好的沟通协调能力和团队协作意识，能够与业务、研发、采购、财务等多部门协同推进事项；\n6.综合素质：责任心强，具备较强的学习能力、执行力和问题解决能力，能够适应快节奏、多任务的工作环境；有海外学习经历、涉外法律实习或相关项目经验者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-tuopaishede",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:05Z",
+    "url": "https://tuopaishede.zhiye.com/campus/detail?jobAdId=a5893a10-1480-4a1f-a99c-23bfbc7e2262",
+    "raw": {
+      "Id": "a5893a10-1480-4a1f-a99c-23bfbc7e2262",
+      "JobAdName": "营销校招生（沱牌四川）(J10914)",
+      "CategoryId": "2",
+      "LocNames": [
+        "四川省·绵阳市"
+      ],
+      "PostDate": "2023-12-18T10:52:42",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "任职要求：\n1、有较强的事业心，良好的人际沟通、表达能力；\n2、熟悉白酒品牌，热爱白酒文化，认同我司企业文化；\n3、2024届统招本科及以上学历，市场营销及工商管理类专业优先；\n4、有学生干部或社团以及其他活动的组织运营、社会实践活动等相关经历者优先。"
+    },
+    "expected_grad_year": 2024
+  },
+  {
+    "source_id": "beisen-xiaoguantea",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:06Z",
+    "url": "https://xiaoguantea.zhiye.com/campus/detail?jobAdId=83fba738-6ac6-4369-941b-0b1c15527d27",
+    "raw": {
+      "Id": "83fba738-6ac6-4369-941b-0b1c15527d27",
+      "JobAdName": "品牌方向管培生(J10165)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2024-09-11T17:06:10",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2025届应届生； \n2.有过校级社团或班级干部经历； \n3.学习成绩优异，有过校级以上奖学金获奖经历； \n4.有过一段以上岗位相关实习经历。"
+    },
+    "expected_grad_year": 2025
+  },
+  {
+    "source_id": "beisen-ctghr",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:06Z",
+    "url": "https://ctghr.zhiye.com/campus/detail?jobAdId=63d17d19-98c4-44b5-98ae-8a0c3f44e3b4",
+    "raw": {
+      "Id": "63d17d19-98c4-44b5-98ae-8a0c3f44e3b4",
+      "JobAdName": "实习生（管培）(J10636)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2023-04-23T15:04:25",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、 2023年应届毕业生，大专或以上学历，人力资源、财务会计、法学相关专业优先考虑；\n\n2、 具有良好沟通表达能力、团队合作精神、责任心强、服务意识佳，并愿意在人力资源行业长期发展；\n\n3、 性格开朗，热情大方，有较好亲和力，具备一定数据分析能力，可熟练使用办公软件（PPT/WORD/EXCEL）\n\n4、 接受短期派驻工作（视岗位情况，可能安排驻场工作，易才各直营分公司有岗位空缺可优先安排）"
+    },
+    "expected_grad_year": 2023
+  },
+  {
+    "source_id": "beisen-resoft",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:08Z",
+    "url": "https://resoft.zhiye.com/campus/detail?jobAdId=3220edcc-316c-43f9-8d2b-6b6a6d64d4a3",
+    "raw": {
+      "Id": "3220edcc-316c-43f9-8d2b-6b6a6d64d4a3",
+      "JobAdName": "管理培训生(J10565)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市",
+        "上海市"
+      ],
+      "PostDate": "2026-09-16T10:46:10",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "我们期待这样的你\n基本条件\n1. 2027届统招本科及以上学历，专业不限，金融、经管、计算机等相关专业优先；\n2. 具备优秀的逻辑思维能力和分析判断能力；\n3. 沟通表达能力强，具备跨部门协调的潜力；\n4. 有较强的自驱力和成就动机；\n5. 积极拥抱AI工具，愿意用新技术提升工作效率。\n加分项\n• 有AI工具深度使用经验，有实际应用案例者优先；\n• 有学生干部、社团负责人经历或重要竞赛获奖经历者优先；\n• 有学生会主席、社团主要负责人或创业经历者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-hbglobal",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:08Z",
+    "url": "https://hbglobal.zhiye.com/campus/detail?jobAdId=56a43404-a157-4a61-907a-bc9b849f1f6d",
+    "raw": {
+      "Id": "56a43404-a157-4a61-907a-bc9b849f1f6d",
+      "JobAdName": "海外人事管培生",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-09-03T09:07:56",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "任职资格与要求：\n• 2027届应届毕业生，本科及以上学历；\n• 英语、人力资源管理、心理学、法学等相关专业；\n• 英语流利，可作为工作语言；\n• 亲和力强，做事细致有条理，具备良好的沟通与保密意识。\n\n本科年薪：14万。硕士年薪18万。博士年薪30万。\n\n提供五险一金、专项激励奖金、节日礼金、健康体检、工作餐、住宿或者住宿补贴、专家老师带教等其它各种福利"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-bjdaoxiangcun1",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:08Z",
+    "url": "https://bjdaoxiangcun1.zhiye.com/campus/detail?jobAdId=055484f3-d72b-4cb7-970e-d70aa3c53bc3",
+    "raw": {
+      "Id": "055484f3-d72b-4cb7-970e-d70aa3c53bc3",
+      "JobAdName": "2027年管培生（营销策划方向）(J10210)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市·东城区"
+      ],
+      "PostDate": "2026-09-21T08:24:28",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027年应届毕业生；\n2.本科及以上学历；\n3.专业要求：市场营销、广告学、新闻学、工商管理、经济管理等相关专业，有营销策划实习经历优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-hitrendtech1",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:09Z",
+    "url": "https://hitrendtech1.zhiye.com/campus/detail?jobAdId=51f60cd0-a240-4039-b8dc-b069bddd38e3",
+    "raw": {
+      "Id": "51f60cd0-a240-4039-b8dc-b069bddd38e3",
+      "JobAdName": "系统设计工程师-MCU",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-08-07T16:37:00",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.学历要求：2027届应届硕士毕业生，本科及硕士均就读于985院校；\n2.专业要求：电子工程、微电子、集成电路、计算机科学与技术、自动化等相关专业；\n3.学科基础：具备扎实的数字电路与模拟电路理论基础，熟悉数字逻辑设计、时序分析及数模混合信号基本概念，能理解芯片底层硬件行为\n4.熟练掌握 C/C++ 编程语言，具备良好的面向对象设计与软件工程思维；\n5.了解 QEMU 或 Renode 仿真框架，熟悉设备树（Device Tree）配置或QEMU Machine模型开发流程者优先；\n6.熟悉 SystemC 建模语言及TLM-2.0传输协议，有事务级建模经验者优先；\n7.了解ARM/RISC-V等主流处理器架构及AMBA总线协议（AHB/APB/AXI）；\n8.具备较强的英文文献阅读能力和技术攻坚能力，对芯片虚拟化与仿真技术有浓厚兴趣。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-cetccq",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:10Z",
+    "url": "https://cetccq.zhiye.com/campus/detail?jobAdId=4f6aceb3-124e-438c-88d7-bdc5c4ff2e6f",
+    "raw": {
+      "Id": "4f6aceb3-124e-438c-88d7-bdc5c4ff2e6f",
+      "JobAdName": "（2027校）IE工程师(J11638)",
+      "CategoryId": "2",
+      "LocNames": [
+        "重庆市"
+      ],
+      "PostDate": "2026-10-10T11:15:34",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027 届毕业生\n2.熟悉基础IE工具（如工时测量、布局规划），具备数据分析能力，能使用CAD或相关软件者优先；\n3.细致严谨，善于跨部门沟通，适应制造现场工作环境。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-mengniu",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:11Z",
+    "url": "https://mengniu.zhiye.com/campus/detail?jobAdId=c74bbcc3-66b3-4bc1-bea8-3ba098675bc5",
+    "raw": {
+      "Id": "c74bbcc3-66b3-4bc1-bea8-3ba098675bc5",
+      "JobAdName": "供应链未来星（运营方向）(J67603)",
+      "CategoryId": "2",
+      "LocNames": [
+        "内蒙古自治区·呼和浩特市"
+      ],
+      "PostDate": "2026-08-27T18:26:22",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "\r\n1. 教育背景\r\n-统招本科及以上学历，2027届毕业生。\r\n-专业要求：供应链管理、工业工程、管理科学与工程、自动化、食品科学与工程、乳品工程等相关专业\r\n\r\n2. 硬性技能要求\r\n-精益/IE工具：了解VSM、5S、看板管理、SMED（快速换型）、TPM、标准作业等精益工具的基本原理与应用场景。\r\n-流程思维：具备流程梳理与建模能力（如SIPOC、流程图绘制），能快速理解复杂业务流程的逻辑与痛点。\r\n\r\n3. 软性能力\r\n-现场力：愿意且能够深入一线（车间、仓库）进行现场观察与数据采集，不畏惧现场环境与基层沟通\r\n-问题解决：具备结构化的根因分析能力（如5Why、鱼骨图、8D等），能从表象深入本质\r\n-变革推动：具备影响力与说服力，能推动跨部门团队接受并执行改善方案\r\n-数据叙事：能将复杂的数据分析结果转化为清晰的管理建议与可视化报告，向不同层级的管理者汇报\r\n-自驱力：在相对模糊的改善课题中能够主动定义问题、规划路径、推动闭环"
+    },
+    "expected_grad_year": 2027
+  }
+]

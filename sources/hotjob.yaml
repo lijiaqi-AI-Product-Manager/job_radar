@@ -26,7 +26,7 @@ sources:
     params: {host: zhaopin.gwm.cn, tenant: SU692d3058ea11b01b6c54d0ea, max_pages: 0}  # 校招 517 岗/社招 2644 岗（2026-10-27 审计），max_pages 已放开
   - id: hotjob-faw
     company: 一汽
-    params: {host: faw-zhaopin.hotjob.cn, tenant: SU603374380dcad4635b836531, max_pages: 0}  # 校招 511 岗/社招 1113 岗（2026-10-27 审计），max_pages 已放开
+    params: {detail_fields: true, host: faw-zhaopin.hotjob.cn, tenant: SU603374380dcad4635b836531, max_pages: 0}  # 校招 511 岗/社招 1113 岗（2026-10-27 审计），max_pages 已放开
   - id: hotjob-horizon
     company: 地平线
     params: {tenant: SU64819a4f2f9d2433ba8b043a, max_pages: 0}   # 地平线；校招 100 岗/社招 282 岗
@@ -75,7 +75,7 @@ sources:
     params: {host: crrc.hotjob.cn, tenant: SU64d480906202cc36e27a5fd8, max_pages: 0}
   - id: hotjob-yunnanbaiyao
     company: 云南白药
-    params: {tenant: SU6136b970bef57c3b638162c4}
+    params: {detail_fields: true, tenant: SU6136b970bef57c3b638162c4}
   - id: hotjob-yonyou
     company: 用友
     params: {host: career.yonyou.com, tenant: SU67ac41886202cc7916ae3029}
@@ -122,7 +122,7 @@ sources:
     # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；自定义域名归属
   - id: hotjob-f11c21
     company: 中国中化
-    params: {host: sinochem.hotjob.cn, tenant: SU610b91ee0dcad4106ff11c21}
+    params: {detail_fields: true, host: sinochem.hotjob.cn, tenant: SU610b91ee0dcad4106ff11c21}
     # 2026-10-27 搜索反查新增：校招 602 岗；城市 12/12、发布日 12/12；岗位代码前缀 Sinochem
   - id: hotjob-450aa2
     company: 特变电工

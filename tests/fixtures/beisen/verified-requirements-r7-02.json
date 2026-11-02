@@ -1,0 +1,183 @@
+[
+  {
+    "source_id": "beisen-hengdian",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:17Z",
+    "url": "https://hengdian.zhiye.com/campus/detail?jobAdId=514d23ea-59c8-4e86-8ff9-bfbac3e4b0bb",
+    "raw": {
+      "Id": "514d23ea-59c8-4e86-8ff9-bfbac3e4b0bb",
+      "JobAdName": "嘉利-销售助理",
+      "CategoryId": "2",
+      "LocNames": [
+        "全国"
+      ],
+      "PostDate": "2026-09-10T09:36:24",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、学历专业：本科及以上学历，2027届应届毕业生，国际贸易、市场营销、工商管理、财务/统计类、语言类（英语/日语）等相关专业优先，工科背景且具备语言能力者优先；\r\n2、专业基础：对国际贸易与市场营销有基本概念，了解制造业客户开发与项目定点流程者优先；\r\n3、工具技能：熟练使用Office办公软件，具备良好的书面与口头表达能力；\r\n4、综合素质：乐于并善于与人打交道；有学生会/社团负责人经历、组织过大型校园活动，或有销售、市场类实习与社会实践、商业/创新项目经历者优先；\r\n5、工作适配：能适应出差或驻外工作生活。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-51world",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:17Z",
+    "url": "https://51world.zhiye.com/campus/detail?jobAdId=dfc817bd-d157-492e-b3ee-5159291d3d06",
+    "raw": {
+      "Id": "dfc817bd-d157-492e-b3ee-5159291d3d06",
+      "JobAdName": "VLM 自动标注算法工程师",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-09-14T11:22:20",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027 届硕士及以上学历，计算机视觉、机器学习或相关专业；\n2、深入理解生成式视觉语言模型（Qwen3-VL、InternVL3 一类），有微调（SFT / LoRA）与推理部署的实操；用过长上下文视频模型做时序理解与秒级定位；\n3、熟练使用 Python 与 PyTorch，能独立完成从数据准备、模型微调、批量推理到结果评估的完整链路；\n4、熟悉开放词汇检测与视频分割（Grounding DINO、SAM 2 一类）在标注链路中的应用，能用它们做手物接触一类的事件判定；\n5、有标注质量度量与一致性管理的实践，能把标注正确率变成可复算的指标；\n6、具备工程成本意识：清楚一条标注的算力成本与准确率之间怎么权衡；\n7、熟练使用 Claude Code、Codex 等 AI 编码工具，熟悉 Agent 框架与工作流编排。\n\n加分项\n1、有自动标注或数据引擎方向的项目、实习或论文；\n2、有多模态大模型评测体系搭建经历；\n3、熟悉具身或自动驾驶场景的数据标注规范。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-szly",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:18Z",
+    "url": "https://szly.zhiye.com/campus/detail?jobAdId=003d0957-fede-40db-91f5-267419b180c3",
+    "raw": {
+      "Id": "003d0957-fede-40db-91f5-267419b180c3",
+      "JobAdName": "校招-财务会计-广州",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·广州市"
+      ],
+      "PostDate": "2026-09-07T16:35:55",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "① 2027届应届本科及以上学历，211/双一流及以上院校优先，会计学、财务管理、审计、税务、金融、人工智能、计算机科学与技术、数据科学等相关专业。\n② 掌握财务会计、管理会计、税务等基础理论知识，了解企业账务处理、核算流程与财务规范。\n③ 对 AI 技术应用有浓厚兴趣，了解大模型、RPA、OCR、智能审核等基本原理，有意愿探索 AI 在财务场景的应用与落地。\n④ 熟悉主流财务系统（用友 / SAP / 金蝶等）或 AI 开发工具（Python、Prompt 工程、AI Agent 框架等）者优先。\n⑤ 具备良好的逻辑分析能力、业务理解能力与跨部门沟通协作能力，能独立完成业务调研与方案输出。\n⑥ 责任心强、主动性好，对财务数字化、智能化转型有持续学习意愿。\n⑦ 有财务实习、AI 项目经历、流程梳理、咨询项目、数据治理项目等经历者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-delixi-electric3",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:19Z",
+    "url": "https://delixi-electric3.zhiye.com/campus/detail?jobAdId=dcb8bf3d-2a40-45fd-aa5b-270f82f756fb",
+    "raw": {
+      "Id": "dcb8bf3d-2a40-45fd-aa5b-270f82f756fb",
+      "JobAdName": "电商培训生(J14182)",
+      "CategoryId": "2",
+      "LocNames": [
+        "浙江省·杭州市"
+      ],
+      "PostDate": "2026-09-19T19:05:23",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届全日制本科及以上学历，电子商务、大数据管理与分析、工商管理、市场营销等相关专业优先；\n2、性格开朗、乐观皮实，有强烈的目标导向感，能接受较大工作压力；\n3、逻辑清晰，情商在线，沟通及跨部门协调能力强；\n4、对电商行业有浓厚兴趣，期望在电商行业长远发展。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-stec-sucg",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:19Z",
+    "url": "https://stec-sucg.zhiye.com/campus/detail?jobAdId=857cc4a8-b479-49a1-9d2d-ecc4a5150a0d",
+    "raw": {
+      "Id": "857cc4a8-b479-49a1-9d2d-ecc4a5150a0d",
+      "JobAdName": "企业战略管理、产业研究",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2025-09-29T10:44:19.7303801",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2026届应届毕业生，博士研究生学历，985、211、或双一流高校毕业，企业管理、行政管理、土木工程、环境工程、环境科学等专业。\n2、学习成绩优良，专业、学历等符合招聘要求。\n3、遵纪守法，品行端正，热爱环境建设事业，积极阳光，身心健康。\n4、综合职业素质能够适应招聘岗位工作要求，服从企业对岗位安排和调整。"
+    },
+    "expected_grad_year": 2026
+  },
+  {
+    "source_id": "beisen-mediatek",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:20Z",
+    "url": "https://mediatek.zhiye.com/campus/detail?jobAdId=c5550f93-046e-4eac-b1fa-0dcc028ad495",
+    "raw": {
+      "Id": "c5550f93-046e-4eac-b1fa-0dcc028ad495",
+      "JobAdName": "多媒体算法工程师（算法架构与硬件实现）",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-10-09T13:16:50",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "[ 必备条件 ]\n       1. 2027届硕士，计算机、电子、通信、图像处理等相关专业优先；\n       2. 熟练掌握 C/C++，具有扎实的编程功底和良好编码习惯；\n       3. 具备良好的英文技术文档阅读与撰写能力；\n       4. 具有较强的主动性、学习能力和团队合作精神。\n \n   [ 加分项目 ] (具备以下任意一项即是优势)\n       - 具备一定的计算机体系结构基础，或有 Verilog / HLS 硬件设计经验；\n       - 熟悉图像/视频处理或新一代视频编解码算法；\n        - 熟悉 Python/Shell，具有数据分析或自动化测试工具开发经验。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-csci",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:21Z",
+    "url": "https://csci.zhiye.com/campus/detail?jobAdId=4649c934-c8c4-4ec3-992f-518dd89fd3ff",
+    "raw": {
+      "Id": "4649c934-c8c4-4ec3-992f-518dd89fd3ff",
+      "JobAdName": "港澳投资岗",
+      "CategoryId": "2",
+      "LocNames": [
+        "香港特别行政区",
+        "澳门特别行政区"
+      ],
+      "PostDate": "2026-09-09T14:55:47",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 知名院校经济学、金融学、房地产、城乡规划、工程管理、土木工程等相关专业2027年应届毕业生；\n2. 具备较好的逻辑分析、财务测算和商务沟通能力，对基础设施、城市更新、房地产及相关投资业务有兴趣；\n3. 在校成绩良好，英语六级或同等水平；\n4. 有投资、咨询、地产或行业研究相关实习经历者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-purcotton",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:22Z",
+    "url": "https://purcotton.zhiye.com/campus/detail?jobAdId=cf9c2d27-13e8-4a78-a092-5f34135b592c",
+    "raw": {
+      "Id": "cf9c2d27-13e8-4a78-a092-5f34135b592c",
+      "JobAdName": "零售管培生",
+      "CategoryId": "2",
+      "LocNames": [
+        "全国"
+      ],
+      "PostDate": "2026-08-25T19:44:45",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "任职资格\n1、2027届毕业生（毕业时间在2026年8月-2027年7月），本科及以上学历，学习成绩优秀，在校期间无挂科；\n2、良好的沟通协调能力，性格开朗积极，具备出色的服务意识与亲和力，善于团队协作；\n3、抗压能力强，能适应零售业工作节奏，具备主动学习和快速适应能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-leoking",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:23Z",
+    "url": "https://leoking.zhiye.com/campus/detail?jobAdId=360e1421-2d9c-4aa5-9a07-08fbac76c3c5",
+    "raw": {
+      "Id": "360e1421-2d9c-4aa5-9a07-08fbac76c3c5",
+      "JobAdName": "人力资源管培生",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市"
+      ],
+      "PostDate": "2026-09-01T17:22:12.018943",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届本科毕业生；\n2、生物工程、生物技术、生物科学、食品科学与工程、食品营养与健康、生物化学与分子生物学、生物技术与工程、食品科学、食品发酵工程、发酵工程、生物化学与分子生物学、微生物学、食品加工与安全等专业优先考虑；\n3、在校无不良记录，成绩优异，按时取得学位证/毕业证，学生干部优先考虑；\n4、积极乐观、坚韧抗压、合作专注，责任心、自驱力、学习力强。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-xiangyu",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:24Z",
+    "url": "https://xiangyu.zhiye.com/campus/detail?jobAdId=dc89bbc4-929c-4c6d-a1cf-74cac95ae6c7",
+    "raw": {
+      "Id": "dc89bbc4-929c-4c6d-a1cf-74cac95ae6c7",
+      "JobAdName": "象屿铝业本部-营销岗(J17534)",
+      "CategoryId": "2",
+      "LocNames": [
+        "天津市"
+      ],
+      "PostDate": "2026-09-07T18:54:24",
+      "EndTime": "2027-08-01T00:00:00",
+      "Require": "1.2027届应届毕业生，本科及以上学历；市场营销、材料科学与工程、金属材料、冶金等相关专业优先；\n2.有意愿在铝加工/铝贸易行业从事营销工作，渴望获得快速发展的机会；\n3.综合素质高，具备良好的学习力、内驱力、沟通力、抗压力及领导潜力（符合管培生素质模型）；\n4.中共党员、校级学生会/研究生会主要干部、有销售或市场实习经历者优先。"
+    },
+    "expected_grad_year": 2027
+  }
+]

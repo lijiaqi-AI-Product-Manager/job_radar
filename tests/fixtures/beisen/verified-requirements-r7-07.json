@@ -1,0 +1,182 @@
+[
+  {
+    "source_id": "beisen-360campus",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:55Z",
+    "url": "https://360campus.zhiye.com/campus/detail?jobAdId=c2cc00e1-f785-490a-a5a9-f35193bd56f4",
+    "raw": {
+      "Id": "c2cc00e1-f785-490a-a5a9-f35193bd56f4",
+      "JobAdName": "27秋-采购专员（北京）-5427(J12492)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-10-19T20:54:46",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.本科及以上学历，供应链管理、物流、工商管理、经管类等专业优先，2027届应届生，可接受无全职采购经验；\n2.熟练使用Office，精通Excel（VLOOKUP、数据透视表），能够独立搭建数据台账，具备良好的数据整理能力；\n3.熟练使用主流AI工具，能运用AI辅助完成数据整理、信息检索、报告撰写与初步分析，具备Prompt编写与优化意识；有“AI+Excel”实际使用经验者优先；\n4.对AI在采购/供应链场景的应用（智能比价、供应商画像、合同要点提取等）有基本认知或浓厚兴趣，愿意主动探索AI提效方案；\n5.具备良好沟通协调能力，逻辑清晰，细心严谨，有成本意识，做事有责任心，抗压能力强；\n6.了解采购基础流程，对多品类物资管理感兴趣；有物资采购、社团活动物资统筹、供应链相关实习/项目经历优先；\n7.恪守采购职业道德，诚信自律，重视流程合规；"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-pudutech",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:55Z",
+    "url": "https://pudutech.zhiye.com/campus/detail?jobAdId=5de6bed2-156e-4d13-9826-eea7470f3feb",
+    "raw": {
+      "Id": "5de6bed2-156e-4d13-9826-eea7470f3feb",
+      "JobAdName": "服务运营(J12775)",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市"
+      ],
+      "PostDate": "2026-06-23T17:23:45",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027届本科及以上应届生，理工科、计算机、自动化、工商管理、服务管理等相关专业优先。\n2.沟通协调能力强，执行力、目标感、抗压能力良好，愿意接受海内外业务节奏。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-weigao",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:56Z",
+    "url": "https://weigao.zhiye.com/campus/detail?jobAdId=9a3f89e3-79bb-4712-b2b4-c4a70f5a0259",
+    "raw": {
+      "Id": "9a3f89e3-79bb-4712-b2b4-c4a70f5a0259",
+      "JobAdName": "【集团总部】财务专员(J15232)",
+      "CategoryId": "2",
+      "LocNames": [
+        "山东省·威海市"
+      ],
+      "PostDate": "2026-10-14T19:29:16",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、本科及以上学历，2027届毕业生；会计学、财务管理、审计学、税务等财经类专业优先。\n2、具备扎实的财务专业知识，熟悉企业会计准则及相关财税法规；通过CPA单科或多科者优先考虑。\n3、技能要求：熟练使用Excel、PPT等办公软件；有财务软件（如SAP、用友、金蝶）使用经验者优先。\n4、具备较强的逻辑思维能力和数据分析能力，对数据敏感；\n5、工作细致严谨，责任心强，具有良好的职业道德和保密意识；\n6、具备良好的沟通协调能力和团队合作精神，能够承受一定的工作压力。\n招聘联系人：刘女士 [联系方式已略]"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-sanyuan",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:57Z",
+    "url": "https://sanyuan.zhiye.com/campus/detail?jobAdId=a07763db-1df9-419f-9796-6fd34f2c5aac",
+    "raw": {
+      "Id": "a07763db-1df9-419f-9796-6fd34f2c5aac",
+      "JobAdName": "数字化管培生(J10303)",
+      "CategoryId": "2",
+      "LocNames": [
+        "北京市"
+      ],
+      "PostDate": "2026-09-09T11:38:20",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 2027届毕业生，本科及以上学历，硕士研究生优先；市场营销、工商管理、国际贸易、电子商务、统计学等相关专业；\n3. 有销售运营、数字化营销、数据分析能力。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-meritsandtree",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T10:59:58Z",
+    "url": "https://meritsandtree.zhiye.com/campus/detail?jobAdId=13675135-9bf6-4f78-b14d-19ce392ac2b5",
+    "raw": {
+      "Id": "13675135-9bf6-4f78-b14d-19ce392ac2b5",
+      "JobAdName": "资本市场法律实习生(J10232)",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市·南山区"
+      ],
+      "PostDate": "2025-10-16T10:08:02",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "【职位要求】：\n1.优先考虑国内外知名法学院2027届研究生；\n2.有资本市场/投融资并购/公司法领域实习经验优先考虑； \n3.英文能力优秀，可作为工作语言；\n4.法学理论功底扎实，通过法律职业资格考试；\n5.正直善良、诚实守信、责任心强、踏实肯干，抗压力强，具有团队协作精神。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-ti5robot1",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:00Z",
+    "url": "https://ti5robot1.zhiye.com/campus/detail?jobAdId=a2a838d7-fe63-4b20-8941-598fe5074ae2",
+    "raw": {
+      "Id": "a2a838d7-fe63-4b20-8941-598fe5074ae2",
+      "JobAdName": "硬件测试工程师",
+      "CategoryId": "2",
+      "LocNames": [
+        "上海市"
+      ],
+      "PostDate": "2026-09-03T17:13:42",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.全日制本科及以上学历，机械工程、自动化、电力电子、机电一体化、电子信息等相关专业，2027届应届毕业生；\n2.具备扎实的数字/模拟电路、电力电子基础知识；\n3.了解IIC、RS232/485、CAN、EtherCAT等常用通信协议；\n4.会使用万用表、示波器、信号发生器、逻辑分析仪等常规测试仪器，具备基础硬件调试能力；\n5.具备较强的问题分析与故障复现能力，良好的责任心和跨部门沟通协作能力，学习能力强。\n\n【加分项】\n1.了解人形机器人典型硬件架构，对电机驱动器、传感器（IMU/相机/雷达）、电源管理等基本原理有学习或实践经验者优先；\n2.有具身智能/人形机器人/工业机器人/协作臂相关项目、竞赛或实习经验者优先。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-gdinsight",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:00Z",
+    "url": "https://gdinsight.zhiye.com/campus/detail?jobAdId=d6fc5bb1-d965-4d55-b130-32759775bcc2",
+    "raw": {
+      "Id": "d6fc5bb1-d965-4d55-b130-32759775bcc2",
+      "JobAdName": "红人营销&数字营销类",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·广州市"
+      ],
+      "PostDate": "2026-10-29T11:06:13",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "面向2027届应届毕业生（本科/硕士/博士不限） \n目标院校：双一流、985/211高校、八大美院、QS排名前100海外院校 \n专业方向：广告学、传播学、视觉传达、市场营销等相关专业"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-winnermedical",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:00Z",
+    "url": "https://winnermedical.zhiye.com/campus/detail?jobAdId=0248857e-185e-4cf1-aa18-e52aec02a729",
+    "raw": {
+      "Id": "0248857e-185e-4cf1-aa18-e52aec02a729",
+      "JobAdName": "管理培训生（B端产品开发方向）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市"
+      ],
+      "PostDate": "2026-09-10T13:39:57",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1、2027届毕业生，本科及以上学历，高分子、医疗器械等相关专业；\n2、对产品设计，开发感兴趣，有产品相关实习经验优先；\n3、具有较强的沟通表达能力和执行力； \n4、具有较强的抗压能力、逻辑思维能力和责任心。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-greenway-battery",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:01Z",
+    "url": "https://greenway-battery.zhiye.com/campus/detail?jobAdId=665bba72-dc6a-4b91-b5e7-a8a352a61753",
+    "raw": {
+      "Id": "665bba72-dc6a-4b91-b5e7-a8a352a61753",
+      "JobAdName": "软件测试工程师（2027）",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·东莞市·东城街道"
+      ],
+      "PostDate": "2026-10-14T14:29:59",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1. 本科及以上学历，自动化、电气工程、电子信息、计算机、测控等相关专业，2027 届应届毕业生。\n2. 了解 BMS 电池管理系统基础原理，熟悉嵌入式软件测试基本思路优先。\n3. 掌握 CAPL/Python 编程语言优先，具备编写测试脚本能力。\n4. 具备良好逻辑思维，能设计测试用例，有嵌入式软件测试项目、竞赛或实习经历优先。\n5. 细心严谨，具备问题排查能力，良好文档撰写、跨团队沟通能力。\n6. 了解硬件在环 HIL 测试基本概念，有电摩 / 储能电池相关项目经验加分。"
+    },
+    "expected_grad_year": 2027
+  },
+  {
+    "source_id": "beisen-jlcehr",
+    "adapter": "beisen",
+    "checked_at": "2026-11-02T11:00:04Z",
+    "url": "https://jlcehr.zhiye.com/campus/detail?jobAdId=fb4302f5-792a-4a87-bffb-487f526d1c08",
+    "raw": {
+      "Id": "fb4302f5-792a-4a87-bffb-487f526d1c08",
+      "JobAdName": "AI搜索运营专员(J12013)",
+      "CategoryId": "2",
+      "LocNames": [
+        "广东省·深圳市"
+      ],
+      "PostDate": "2026-09-14T11:48:49",
+      "EndTime": "2222-02-02T00:00:00",
+      "Require": "1.2027 届应届毕业生, 计算机、软件工程、新媒体广告营销相关专业；\n2.性格开朗、活泼，对GEO/SEO 领域抱有浓厚热情与兴趣，主动学习行业新技术、新趋势，具备较强的学习能力；\n3.具备良好的数据分析能力，逻辑思维清晰，能完成基础数据拆解与分析工作，有SEO经验者优先；\n4.具备良好的沟通协调能力与执行力，能高效配合团队推进工作；\n5.了解GEO（AISEO）基础方法论，对AI内容生成、语义分析、智能推荐等技术在SEO中的应用有一定认知。"
+    },
+    "expected_grad_year": 2027
+  }
+]
