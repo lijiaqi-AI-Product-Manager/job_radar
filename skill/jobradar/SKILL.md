@@ -9,16 +9,16 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应已在全新环境验证的 PyPI `2.0.2`：
+本指南对应 `2.1.0`：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.0.2"
+pip install --upgrade "jobsearchradar[mcp]==2.1.0"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-2026-11-02 已从官方索引安装并验证 `2.0.2`，GitHub 与 PyPI 的发行文件 SHA-256 一致。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
+发行包经过独立安装与命令兼容性检查，实际安装后仍须核对版本和参数。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
 不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
 `calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
 先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。
@@ -33,6 +33,7 @@ jobradar doctor
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
+- `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。

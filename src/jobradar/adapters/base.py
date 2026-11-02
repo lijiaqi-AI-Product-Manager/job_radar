@@ -14,11 +14,12 @@ from typing import ClassVar
 
 import httpx
 
+from jobradar import __version__
 from jobradar.http_limits import DEADLINE_EXTENSION, RequestBudgetExceeded, limit_response
 from jobradar.models import Job, SourceConfig
 
 USER_AGENT = (
-    "jobradar/0.1 (+https://github.com/lijiaqimun-coder/job_radar; open dataset, "
+    f"jobradar/{__version__} (+https://github.com/lijiaqi-AI-Product-Manager/job_radar; open dataset, "
     "polite crawler; contact via GitHub issues)"
 )
 

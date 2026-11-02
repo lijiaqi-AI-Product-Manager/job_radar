@@ -67,3 +67,7 @@ uv build
 ```
 
 新增迁移后运行 `scripts/update_schema_lock.py`。公开数据先经 `scripts/export_public_databases.py` 导出，不能把工作库的新 schema 直接推给旧客户端。发布前安装构建出的 wheel 验证 CLI / MCP 与包内公司映射，检查 sdist 小于 5 MiB。真实数据与版本流程见 [发布检查](RELEASE.md)和[PyPI 发布](PUBLISHING.md)。
+
+来源配置变更后运行 `scripts/update_source_catalog.py`。安装包中的来源目录只含分类、适配器、启用状态与合规核查日期，不包含请求参数或会话值。查询结果的 `source_kind` 区分官方与聚合，`record_kind` 区分职位与招聘公告；目录以外的来源显示 `unknown`，不会按名称猜测。合规核查日期表示配置的核查时间，不表示今天仍可读取。
+
+兼容快照的首次全文查询直接检索标题、职责与要求，不等待整库索引建立；已有全文索引时继续复用。设置 `JOBRADAR_BUILD_SEARCH_INDEX=1` 可选择原有的同步索引路径，适合需要大量重复全文查询的环境；设为 `0` 可关闭自动建索引。查询不会隐式提交调用者的业务事务。公开数据始终使用兼容导出。

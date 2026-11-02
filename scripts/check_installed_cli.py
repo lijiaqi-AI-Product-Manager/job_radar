@@ -19,6 +19,7 @@ from jobradar.models import Job
 from jobradar.pipeline.ingest import ingest_run
 from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts, shanghai_date
+from jobradar.source_catalog import catalog
 
 assert Path(jobradar.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()), "import came from source tree"
 home = Path(os.environ["JOBRADAR_HOME"])
@@ -43,7 +44,9 @@ cal.commit()
 cal.close()
 direct = metadata.distribution("jobsearchradar").read_text("direct_url.json")
 print(json.dumps({"version": jobradar.__version__, "module": jobradar.__file__, "deadline": end,
-                  "direct_url": json.loads(direct) if direct else None}))
+                  "direct_url": json.loads(direct) if direct else None,
+                  "catalog_entries":len(catalog()),
+                  "catalog_kinds":sorted({r['source_kind'] for r in catalog().values()})}))
 '''
 
 
@@ -99,6 +102,7 @@ def main():
         response = json.loads(run([cli, "search", "--company", "中核"]))
         check("company-alias", response["company_match"]["match"] == "alias"
               and len(response["results"]) == 2)
+        check("source-catalog", info["catalog_entries"] > 0 and info["catalog_kinds"] == ["aggregator", "official"])
         run([mcp, "--help"])
         print(json.dumps({"version": info["version"], "direct_url": info["direct_url"],
                           "checks_passed": len(checks), "checks": checks, "mcp_help": "passed"},

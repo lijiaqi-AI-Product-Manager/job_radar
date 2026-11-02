@@ -98,8 +98,7 @@ def test_local_snapshot_defers_index_build_until_text_search(tmp_path, monkeypat
     from jobradar.local import open_db
 
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
-    if not build_index:
-        monkeypatch.setenv("JOBRADAR_BUILD_SEARCH_INDEX", "0")
+    monkeypatch.setenv("JOBRADAR_BUILD_SEARCH_INDEX", "1" if build_index else "0")
     job = make_job(1, title="大模型研发", description="PyTorch 框架")
     for kind, filename, version in (("jobs", "jobs.db", 2), ("text", "jd_text.db", 1)):
         with sqlite3.connect(tmp_path / filename) as con:

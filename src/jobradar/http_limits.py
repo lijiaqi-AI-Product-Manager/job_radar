@@ -23,15 +23,22 @@ def check_deadline(deadline):
 
 
 class DeadlineStream(httpx.SyncByteStream):
-    def __init__(self, original, deadline):
+    def __init__(self, original, deadline, *, clock=None):
         self.original, self.deadline = original, deadline
+        self.clock = clock
+
+    def check(self):
+        if self.clock is None:
+            check_deadline(self.deadline)
+        elif self.deadline is not None and self.clock() >= self.deadline:
+            raise RequestBudgetExceeded("request budget exceeded")
 
     def __iter__(self):
-        check_deadline(self.deadline)
+        self.check()
         for chunk in self.original:
-            check_deadline(self.deadline)
+            self.check()
             yield chunk
-        check_deadline(self.deadline)
+        self.check()
 
     def close(self):
         self.original.close()

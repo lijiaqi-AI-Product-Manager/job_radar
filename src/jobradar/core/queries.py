@@ -4,6 +4,7 @@
 """
 
 import json
+import os
 import re
 import unicodedata
 from datetime import date, timedelta
@@ -25,6 +26,8 @@ STORE_TITLE_WORDS = ("门店", "店员", "导购", "收银", "服务员", "咖�
 def positive(value, name="limit"):
     if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
         raise ValueError(f"{name} 必须是正整数")
+    if value > 1_000_000:
+        raise ValueError(f"{name} 不能超过 1000000")
     return value
 
 
@@ -102,6 +105,9 @@ def _source_annotations(conn, rows):
         "AND source_id IN (SELECT value FROM json_each(?)) GROUP BY source_id", (json.dumps(ids),)))
     now = parse_ts(now_ts())
     today = shanghai_date(now_ts())
+    from jobradar.source_catalog import catalog
+
+    sources = catalog()
     for row in rows:
         stamp = last_ok.get(row["source_id"])
         age = max(0, (now - parse_ts(stamp)).total_seconds() / 3600) if stamp else None
@@ -110,6 +116,9 @@ def _source_annotations(conn, rows):
                    source_stale=stale,
                    availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
                                  else "unconfirmed_stale" if stale else "observed_recently"))
+        info = sources.get(row["source_id"], {})
+        row.update(source_kind=info.get("source_kind", "unknown"),
+                   record_kind=info.get("record_kind", "unknown"))
     return rows
 
 
@@ -124,12 +133,18 @@ def _use_fts(conn, table: str, term: str) -> bool:
         return False
     exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone()
     if not exists:
-        ensure_search_index(conn, table)
+        filename = next((r[2] for r in conn.execute("PRAGMA database_list") if r[1] == "main"), "")
+        if not filename or os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX") == "1":
+            ensure_search_index(conn, table)
         exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone()
     return bool(exists)
 
 
-def _title_ids(conn, term: str) -> list[str]:
+def _title_ids(conn, term: str, candidate_ids=None) -> list[str]:
+    if candidate_ids is not None:
+        return [r[0] for r in conn.execute(
+            "SELECT id FROM job WHERE id IN (SELECT value FROM json_each(?)) AND title LIKE ? ESCAPE '\\'",
+            (json.dumps(sorted(candidate_ids)), _like(term)))]
     if _use_fts(conn, "job_fts", term):
         return [r[0] for r in conn.execute(
             "SELECT id FROM job WHERE rowid IN (SELECT rowid FROM job_fts WHERE title LIKE ?)",
@@ -137,8 +152,13 @@ def _title_ids(conn, term: str) -> list[str]:
     return [r[0] for r in conn.execute("SELECT id FROM job WHERE title LIKE ? ESCAPE '\\'", (_like(term),))]
 
 
-def _jd_ids(text_conn, term: str) -> list[str]:
+def _jd_ids(text_conn, term: str, candidate_ids=None) -> list[str]:
     """JD 原文（职责 + 要求）中包含 term 的岗位 id。ASCII 不区分大小写。"""
+    if candidate_ids is not None:
+        return [r[0] for r in text_conn.execute(
+            "SELECT job_id FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
+            "AND (description LIKE ? ESCAPE '\\' OR requirements LIKE ? ESCAPE '\\')",
+            (json.dumps(sorted(candidate_ids)), _like(term), _like(term)))]
     if _use_fts(text_conn, "job_text_fts", term):
         # 两列分别使用索引，再取并集；不用会破坏索引优化的 ESCAPE 或拼接表达式。
         return [r[0] for r in text_conn.execute(
@@ -146,8 +166,8 @@ def _jd_ids(text_conn, term: str) -> list[str]:
             "SELECT rowid FROM job_text_fts WHERE description LIKE ? UNION "
             "SELECT rowid FROM job_text_fts WHERE requirements LIKE ?)", (f"%{term}%", f"%{term}%"))]
     return [r[0] for r in text_conn.execute(
-        "SELECT job_id FROM job_text WHERE COALESCE(description,'') || char(10) || COALESCE(requirements,'') "
-        "LIKE ? ESCAPE '\\'", (_like(term),))]
+        "SELECT job_id FROM job_text WHERE description LIKE ? ESCAPE '\\' "
+        "OR requirements LIKE ? ESCAPE '\\'", (_like(term), _like(term)))]
 
 
 def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> str | None:
@@ -289,8 +309,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         where.append("j.grad_year = ?")
         args.append(grad_year)
     if keyword:
-        where.append("j.title LIKE ?")
-        args.append(f"%{keyword}%")
+        where.append("j.title LIKE ? ESCAPE '\\'")
+        args.append(_like(keyword))
     # 截止日筛选：只有「确实知道截止日」的岗位才参与比较。
     # 没有截止日的岗位（北森门户全部、大易的长期开放岗）不能被当成「已过期」排除，
     # 也不能被当成「还在招」放进 --deadline-after 的结果——两种都会误导用户。
@@ -300,23 +320,27 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if deadline_after:
         where.append("j.apply_end IS NOT NULL AND j.apply_end >= ?")
         args.append(deadline_after)
-    terms = text.split() if text else []
+    if text is not None and (not isinstance(text, str) or len(text) > 4096):
+        raise ValueError("全文检索必须为不超过 4096 字符的文本")
+    terms = sorted(dict.fromkeys(text.split()), key=len, reverse=True) if text else []
+    if len(terms) > 16:
+        raise ValueError("全文检索最多包含 16 个不同的词")
     if terms and text_conn is None:
         raise ValueError("全文检索需要 JD 原文库 jd_text.db")
+    candidates = None
     for t in terms:
-        jd_ids = _jd_ids(text_conn, t)
-        if not _use_fts(conn, "job_fts", t):
-            # 短词无需额外全表扫描标题再按 id 回查；保留原有路径与 LIMIT/排序策略。
-            where.append("(j.title LIKE ? ESCAPE '\\' OR j.id IN (SELECT value FROM json_each(?)))")
-            args += [_like(t), json.dumps(jd_ids)]
-            continue
-        matching_ids = sorted(set(_title_ids(conn, t)) | set(jd_ids))
-        if not matching_ids:
-            where.append("0")
+        narrowed = candidates
+        if candidates is not None and _use_fts(conn, "job_fts", t) and _use_fts(text_conn, "job_text_fts", t):
+            narrowed = None  # 已有索引时复用索引；未建索引时只检查上一词留下的候选。
+        matching = set(_title_ids(conn, t, narrowed)) | set(_jd_ids(text_conn, t, narrowed))
+        candidates = matching if candidates is None else candidates & matching
+        if not candidates:
             break
+    if terms:
         where.append("j.id IN (SELECT value FROM json_each(?))")
-        args.append(json.dumps(matching_ids))
+        args.append(json.dumps(sorted(candidates)))
     where_sql = (" WHERE " + " AND ".join(where)) if where else ""
+    from_sql = " FROM job j JOIN company c ON c.id = j.company_id"
     if dedupe:
         # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
         # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
@@ -326,10 +350,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         part = f"PARTITION BY j.company_id, j.title, {city_key}"
         sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
                f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
-               f" FROM job j JOIN company c ON c.id = j.company_id{where_sql})"
+               f"{from_sql}{where_sql})"
                " WHERE _rn = 1 ORDER BY first_seen DESC, id LIMIT ?")
     else:
-        sql = f"SELECT {_JOB_COLS} FROM job j JOIN company c ON c.id = j.company_id{where_sql}"
+        sql = f"SELECT {_JOB_COLS}{from_sql}{where_sql}"
         sql += " ORDER BY j.first_seen DESC, j.id LIMIT ?"
     rows = [_job_dict(r) for r in conn.execute(sql, [*args, limit])]
     if meta is not None:
@@ -538,8 +562,8 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
     if not category and not keyword and not text:
         raise ValueError("compare_roles needs category, keyword or text")
     positive(per_company, "per_company")
-    if not companies:
-        raise ValueError("至少提供一家公司")
+    if not isinstance(companies, (list, tuple)) or not companies:
+        raise ValueError("公司列表至少提供一家公司")
     for name in companies:
         _company_parameter(name)
     out, matches, totals = {}, {}, {}
@@ -583,6 +607,9 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
         ).fetchone()
     d["description"] = t["description"] if t else None
     d["requirements"] = t["requirements"] if t else None
+    from jobradar.source_catalog import catalog
+
+    d["source"] = catalog().get(d["source_id"], {"source_kind":"unknown", "record_kind":"unknown"}).copy()
     return _source_annotations(jobs_conn, [d])[0]
 
 
@@ -661,17 +688,17 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
         where, args = [], []
         if group:
             names = match_names(group)
-            op = " = ?" if exact else " LIKE ?"
+            op = " = ?" if exact else " LIKE ? ESCAPE '\\'"
             where.append("(" + " OR ".join(f"group_name{op}" for _ in names) + ")")
-            args += [n if exact else f"%{n}%" for n in names]
+            args += [n if exact else _like(n) for n in names]
         if company:
             names = match_names(company)
             if exact:
                 where.append("(" + " OR ".join(["company = ?", "product = ?", "group_name = ?"] * len(names)) + ")")
                 args += [n for n in names for _ in range(3)]
             else:
-                where.append("(" + " OR ".join(["company LIKE ?", "product LIKE ?", "group_name LIKE ?"] * len(names)) + ")")
-                args += [f"%{n}%" for n in names for _ in range(3)]
+                where.append("(" + " OR ".join(["company LIKE ? ESCAPE '\\'", "product LIKE ? ESCAPE '\\'", "group_name LIKE ? ESCAPE '\\'"] * len(names)) + ")")
+                args += [_like(n) for n in names for _ in range(3)]
         if exact and where:
             # 精确公司只有过期条目时，也不能退化到另一家名字相似的公司。
             exact_identity_found = bool(cal_conn.execute(
@@ -681,8 +708,8 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
             where.append(f"(apply_end IS NULL OR apply_end >= ? OR ({scope}) != 'batch')")
             args.append(today)
         if project_type:
-            where.append("project_type LIKE ?")
-            args.append(f"%{project_type}%")
+            where.append("project_type LIKE ? ESCAPE '\\'")
+            args.append(_like(project_type))
         if grad_year:
             where.append("grad_year = ?")
             args.append(grad_year)
@@ -702,12 +729,12 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
             where.append(
                 "EXISTS (SELECT 1 FROM json_each(entry.cities) c "
                 "WHERE c.value = ? OR c.value = ?)")
-            args += [city, city.removesuffix("市")]
+            args += [city.removesuffix("市"), city.removesuffix("市") + "市"]
         if direction:
             where.append(
                 "EXISTS (SELECT 1 FROM json_each(entry.tracks) t "
-                "WHERE json_extract(t.value, '$.direction') LIKE ?)")
-            args.append(f"%{direction}%")
+                "WHERE json_extract(t.value, '$.direction') LIKE ? ESCAPE '\\')")
+            args.append(_like(direction))
         if deadline_before:
             where.append("apply_end IS NOT NULL AND apply_end <= ?")
             args.append(deadline_before)
@@ -1016,8 +1043,19 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
             (json.dumps(open_ids),)).fetchone()[0]
     by_type = dict(jobs_conn.execute(
         f"SELECT recruit_type, COUNT(*) FROM job WHERE {visible} GROUP BY 1", (today,)).fetchall())
+    from jobradar.source_catalog import catalog
+
+    sources = catalog()
+    by_record_kind, by_source_kind = {}, {}
+    for source_id, count in jobs_conn.execute(
+            f"SELECT source_id, COUNT(*) FROM job WHERE {visible} GROUP BY source_id", (today,)):
+        info = sources.get(source_id, {})
+        record_kind, source_kind = info.get("record_kind", "unknown"), info.get("source_kind", "unknown")
+        by_record_kind[record_kind] = by_record_kind.get(record_kind, 0) + count
+        by_source_kind[source_kind] = by_source_kind.get(source_kind, 0) + count
     return {"open_jobs": len(open_ids), "companies": companies, "with_jd_text": with_text,
             "recorded_open_jobs": recorded, "expired_hidden": recorded - len(open_ids),
             "count_as_of": today,
             "by_recruit_type": by_type,
+            "by_record_kind": by_record_kind, "by_source_kind": by_source_kind,
             "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn)}

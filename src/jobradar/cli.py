@@ -54,6 +54,10 @@ def _emit(args, payload: dict):
         rows = payload["results"]
         count = f"返回 {len(rows)}/{payload['total']} 条" if "total" in payload else f"{len(rows)} 条"
         print(f"# data_as_of: {payload.get('data_as_of')}  ({count})")
+        if payload.get("stale"):
+            print("# 数据陈旧：部分来源超过 48 小时未核实，岗位是否仍在招需查看来源。可先运行 jobradar update。")
+        if payload.get("truncated"):
+            print("# 结果已截断：请缩小筛选范围，或调整返回条数。")
         if rows and "project_type" in rows[0]:  # 日历：一条一块，别把 20 个字段堆一行
             for r in rows:
                 _print_calendar_row(r)
@@ -74,6 +78,8 @@ def _emit(args, payload: dict):
                 print(" | ".join("" if r.get(c) is None else str(r.get(c)) for c in cols))
         if payload.get("hint"):
             print(f"\n{payload['hint']}")
+        for hint in payload.get("hints") or []:
+            print(f"# {hint}")
         return
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
@@ -132,6 +138,7 @@ SLOW_AFTER_SECONDS = 30      # 开始评估吞吐
 SLOW_MIN_RATE = 25 * 1024    # 低于 25KB/s 视为不可用
 SLOW_MAX_PROJECTED = 300     # 按当前速率预计还要超过 5 分钟，就别等了
 MAX_DOWNLOAD_SECONDS = 480   # 单个文件的硬上限
+MAX_MIRROR_SECONDS = 120     # 给另一个镜像保留切换机会
 
 
 def _now() -> float:
@@ -164,7 +171,8 @@ def _local_db_ok(path: Path, name: str | None = None) -> bool:
         return False
 
 
-def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Path | None:
+def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path, *, deadline=None,
+           max_bytes=1024 * 1024 * 1024) -> Path | None:
     """下载到临时文件；404 返回 None。
 
     先关闭文件再删除：Windows 上删除仍被打开的文件会报 WinError 32。
@@ -175,16 +183,29 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Pat
     tmp = Path(name)
     not_found = False
     started, received, slow_checked = _now(), 0, False
+    deadline = min(deadline, started + MAX_DOWNLOAD_SECONDS) if deadline is not None else started + MAX_DOWNLOAD_SECONDS
     try:
-        with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers=headers) as resp:
+        from jobradar.http_limits import DeadlineStream, RequestBudgetExceeded
+
+        if _now() >= deadline:
+            os.close(fd)
+            raise RequestBudgetExceeded("request budget exceeded")
+        remaining = max(.001, deadline - _now())
+        with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers=headers,
+                timeout=httpx.Timeout(min(20, remaining), connect=min(8, remaining))) as resp:
+            resp.stream = DeadlineStream(resp.stream, deadline, clock=_now)
             if resp.status_code == 404:
                 not_found = True
             else:
                 resp.raise_for_status()
                 size = int(resp.headers.get("content-length") or 0)
+                if size > max_bytes:
+                    raise ValueError("下载大小超过上限")
                 for chunk in resp.iter_bytes():
-                    out.write(chunk)
                     received += len(chunk)
+                    if received > max_bytes:
+                        raise ValueError("下载大小超过上限")
+                    out.write(chunk)
                     elapsed = _now() - started
                     if elapsed > MAX_DOWNLOAD_SECONDS:
                         raise httpx.ReadTimeout(f"下载超时（{elapsed:.0f}s，已收 {received} 字节）")
@@ -195,6 +216,9 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path) -> Pat
                         if rate < SLOW_MIN_RATE and (not size or projected > SLOW_MAX_PROJECTED):
                             raise httpx.ReadTimeout(
                                 f"下载太慢（{rate / 1024:.0f}KB/s，预计还需 {projected:.0f}s）")
+    except RequestBudgetExceeded:
+        tmp.unlink(missing_ok=True)
+        raise httpx.ReadTimeout("下载超过整份文件时间预算") from None
     except BaseException:
         tmp.unlink(missing_ok=True)
         raise
@@ -242,7 +266,7 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None):
     tmp.replace(dest)
 
 
-def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -> Path | None:
+def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path, *, deadline=None) -> Path | None:
     """按 `<name>.part01/.part02…` 顺序下载并拼成一个临时文件；一个分片都没有则返回 None。
 
     Gitee 上行慢，大文件在镜像侧是分片存放的（见 scripts/publish_gitee.py）。
@@ -250,13 +274,14 @@ def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -
     """
     tmp_all = None
     count = 0
+    deadline = deadline if deadline is not None else _now() + MAX_DOWNLOAD_SECONDS
     try:
         for idx in range(1, 100):
             part = f"{name}.part{idx:02d}"
             url = dict(asset_urls(part)).get(mirror)
             if not url:
                 break
-            piece = _fetch(client, url, {}, dest_dir)
+            piece = _fetch(client, url, {}, dest_dir, deadline=deadline)
             if piece is None:
                 break
             if tmp_all is None:
@@ -266,7 +291,7 @@ def _fetch_parts(client: httpx.Client, name: str, mirror: str, dest_dir: Path) -
                 shutil.copyfileobj(src, out)
             piece.unlink(missing_ok=True)
             count += 1
-    except httpx.HTTPError:
+    except BaseException:
         if tmp_all is not None:
             tmp_all.unlink(missing_ok=True)
         raise
@@ -307,13 +332,22 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
             raise SystemExit(f"下载的 {name} {e}") from None
         return "github"
     errors, invalid = [], False
+    overall_deadline = _now() + MAX_DOWNLOAD_SECONDS
     for (mirror, url), (_, gz_url) in zip(asset_urls(name, prefer, asset_names=names), asset_urls(name + ".gz", prefer, asset_names=names), strict=True):
+        deadline = min(overall_deadline, _now() + MAX_MIRROR_SECONDS)
         for candidate, gz in ((gz_url, True), (url, False)):
             try:
-                tmp = _fetch(client, candidate, {}, dest.parent)
+                if mirror == "gitee" and gz and digests:
+                    from jobradar.mirror_download import fetch_snapshot
+
+                    tmp = fetch_snapshot(client, name + ".gz", dest.parent,
+                                         expected=digests.get(name + ".gz"), fetch=_fetch,
+                                         deadline=deadline, clock=_now)
+                else:
+                    tmp = _fetch(client, candidate, {}, dest.parent, deadline=deadline)
                 if tmp is None and gz:
                     # 大文件在镜像侧是分片存放的：整文件 404 时按 .partNN 拼接
-                    tmp = _fetch_parts(client, name + ".gz", mirror, dest.parent)
+                    tmp = _fetch_parts(client, name + ".gz", mirror, dest.parent, deadline=deadline)
                 if tmp is None:
                     continue
                 asset = name + ".gz" if gz else name
@@ -333,6 +367,8 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
             except ValueError as e:
                 errors.append(f"{mirror}: {e}")
                 invalid = True
+                if mirror == "gitee" and digests:
+                    break
     if invalid:
         raise SystemExit(f"下载的 {name} 不是有效的数据库（{'; '.join(errors)}）")
     raise SystemExit(f"下载 {name} 失败（{'; '.join(errors) or '404'}）。"
@@ -358,9 +394,32 @@ def cmd_update(args):
         _update_snapshot(args)
 
 
+def _missing_indexes(directory, kinds):
+    tables = {"jobs":"job_fts", "text":"job_text_fts"}
+    missing = []
+    for kind in kinds:
+        if kind not in tables or not (directory / DB_FILES[kind]).is_file():
+            continue
+        with closing(sqlite3.connect((directory / DB_FILES[kind]).resolve().as_uri()+"?mode=ro", uri=True)) as conn:
+            if not conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (tables[kind],)).fetchone():
+                missing.append(kind)
+    return missing
+
+
+def _prepare_indexes(directory, kinds):
+    prepared = _missing_indexes(directory, kinds)
+    for kind in prepared:
+        print(f"准备 {DB_FILES[kind]} 的全文索引，完成后切换快照…", file=sys.stderr, flush=True)
+        with closing(connect(directory / DB_FILES[kind], kind)):
+            pass
+    return prepared
+
+
 def _update_snapshot(args):
     home().mkdir(parents=True, exist_ok=True)
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
+    requested = kinds.copy()
+    prepare_indexes = getattr(args, "prepare_index", False) and not getattr(args, "no_index", False)
     from jobradar.local import load_sync_meta, remote_digests
     try:
         old = data_dir()
@@ -382,7 +441,7 @@ def _update_snapshot(args):
                     and _local_db_ok(old / DB_FILES[k])):
                 kinds.remove(k)
                 skipped.append(k)
-    if skipped and not kinds:
+    if skipped and not kinds and (not prepare_indexes or not _missing_indexes(old, requested)):
         with _open("jobs") as conn:
             print(json.dumps({"updated": [], "skipped": skipped, "data_as_of": q.data_as_of(conn),
                               "home": str(home())}, ensure_ascii=False))
@@ -405,7 +464,7 @@ def _update_snapshot(args):
                 with closing(sqlite3.connect(source.resolve().as_uri() + "?mode=ro", uri=True)) as original, \
                         closing(sqlite3.connect(staging / name)) as copied:
                     original.backup(copied)
-        with ThreadPoolExecutor(max_workers=len(kinds)) as pool:
+        with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as pool:
             futures = [(kind, pool.submit(_download, DB_FILES[kind], staging / DB_FILES[kind], prefer=args.mirror,
                         **({"digests": remote, "verified": verified} if remote else {}))) for kind in kinds]
             errors = []
@@ -424,6 +483,7 @@ def _update_snapshot(args):
                 check.execute("ATTACH DATABASE ? AS jd", (str(staging / DB_FILES["text"]),))
                 if check.execute("SELECT 1 FROM jd.job_text t LEFT JOIN job j ON j.id=t.job_id WHERE j.id IS NULL LIMIT 1").fetchone():
                     raise SystemExit("正文含无法关联岗位，保留原快照")
+        prepared = _prepare_indexes(staging, requested) if prepare_indexes else []
         for kind in kinds:
             for asset in (DB_FILES[kind], DB_FILES[kind] + ".gz"):
                 meta.pop(asset, None)
@@ -444,6 +504,7 @@ def _update_snapshot(args):
         out = {"updated": kinds,
                "mirror": {k: used.get(k) for k in kinds},
                "data_as_of": q.data_as_of(conn), "home": str(home()), "data_dir": str(data_dir())}
+        out["indexes_prepared"] = prepared
         if skipped:
             out["skipped"] = skipped
         print(json.dumps(out, ensure_ascii=False))
@@ -780,6 +841,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = add("update", cmd_update, "下载最新数据")
     sp.add_argument("--jobs-only", action="store_true", help="只下载岗位主库，不下载 JD 原文库（全文检索、对比要求需要原文库）")
+    sp.add_argument("--no-index", action="store_true", help="跳过本地全文索引准备，节省空间；全文查询使用正文扫描")
+    sp.add_argument("--prepare-index", action="store_true", help="激活前准备全文索引，适合频繁全文查询；会增加更新耗时和磁盘占用")
     sp.add_argument("--with-text", action="store_true", help=argparse.SUPPRESS)  # 兼容旧参数：现在默认就下载原文库
     sp.add_argument("--mirror", choices=["github", "gitee"], help="下载源；国内网络建议 gitee。失败时自动换另一个")
     sp.add_argument("--force", action="store_true", help="忽略增量比对，强制重新下载全部数据")

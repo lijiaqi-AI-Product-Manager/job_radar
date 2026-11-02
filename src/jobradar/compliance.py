@@ -53,8 +53,9 @@ def _crawl_delay(lines: list[str]) -> float:
 class RobotsPolicy:
     def __init__(self, *, ttl_seconds: float = 21600,
                  clock: Callable[[], float] = time.monotonic,
-                 sleep: Callable[[float], None] = time.sleep):
+                 sleep: Callable[[float], None] = time.sleep, min_interval: float = 1):
         self.ttl = ttl_seconds
+        self.min_interval = max(1, min_interval)
         self.clock, self.sleep = clock, sleep
         self._cache: dict[str, tuple[float, str, list[str]]] = {}
         self._last: dict[str, float] = {}
@@ -108,7 +109,7 @@ class RobotsPolicy:
             permitted, rule = _decision(lines, str(request.url))
             if not permitted:
                 raise ComplianceError(f"{origin}{parts.path}: robots Disallow: {rule}")
-            self._pace(origin, _crawl_delay(lines), deadline)
+            self._pace(origin, max(self.min_interval, _crawl_delay(lines)), deadline)
             if deadline is not None:
                 remaining = max(.001, deadline-time.monotonic())
                 timeout = request.extensions.get("timeout", {})

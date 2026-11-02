@@ -15,7 +15,6 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
-from urllib.robotparser import RobotFileParser
 
 import httpx
 import yaml
@@ -757,6 +756,14 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
     20 秒超时，daily 的日历步骤 30 分钟直接超时、发布里一直是旧的 calendar.db。现在按主机分桶、
     桶内仍保持 1 rps，桶间并行；同一主机首次就连接失败时，剩余链接直接记 error，不再逐个等超时。
     """
+    from jobradar.compliance import ComplianceError, RobotsPolicy
+    from jobradar.http_limits import (
+        DEADLINE_EXTENSION,
+        RequestBudgetExceeded,
+        ResponseLimitExceeded,
+        limit_response,
+    )
+
     urls = sorted({u for (u,) in cal_conn.execute(
         """SELECT apply_url FROM entry UNION SELECT jd_url FROM entry UNION
            SELECT source_url FROM entry WHERE origin='manual'""") if u})
@@ -765,26 +772,32 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
         by_host.setdefault(_host(url), []).append(url)
     lock = threading.Lock()
     skipped = [0]
+    policy = RobotsPolicy(sleep=sleep, min_interval=min_interval)
 
     def one_host(host_urls: list[str]) -> list[tuple[str, str, int | None]]:
-        rp = _robots(client, host_urls[0])
-        allowed = [u for u in host_urls if rp is None or rp.can_fetch(USER_AGENT, u)]
-        with lock:
-            skipped[0] += len(host_urls) - len(allowed)
         out: list[tuple[str, str, int | None]] = []
-        for i, url in enumerate(allowed):
-            if i:
-                sleep(min_interval)
+        for i, url in enumerate(host_urls):
             try:
-                # 只看状态码，不下载正文（避免大文件或慢速流把探活拖住）
+                # 与采集共用访问守卫，所有重定向目标也必须重新核实 robots。
                 with client.stream("GET", url, headers={"User-Agent": USER_AGENT, "Accept": _ACCEPT},
-                                   follow_redirects=True) as r:
+                                   follow_redirects=True,
+                                   extensions={DEADLINE_EXTENSION:time.monotonic()+30}) as r:
                     code = r.status_code
                 status = "ok" if code < 400 else ("dead" if code in _DEAD else "error")
+            except ComplianceError as error:
+                if "Disallow:" in str(error):
+                    with lock:
+                        skipped[0] += 1
+                    continue
+                out.extend((u, "error", None) for u in host_urls[i:])
+                return out
+            except (RequestBudgetExceeded, ResponseLimitExceeded):
+                out.extend((u, "error", None) for u in host_urls[i:])
+                return out
             except (httpx.ConnectError, httpx.ConnectTimeout):
                 # 整个主机连不上：剩下的不再逐个等超时
                 out.append((url, "error", None))
-                out.extend((u, "error", None) for u in allowed[i + 1:])
+                out.extend((u, "error", None) for u in host_urls[i + 1:])
                 return out
             except httpx.HTTPError:
                 code, status = None, "error"
@@ -792,9 +805,17 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
         return out
 
     results: list[tuple[str, str, int | None]] = []
-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        for chunk in pool.map(one_host, list(by_host.values())):
-            results.extend(chunk)
+    original_hooks = {key:list(hooks) for key,hooks in client.event_hooks.items()}
+    client.event_hooks["request"].append(lambda request:policy.on_request(client,request))
+    if limit_response not in client.event_hooks["response"]:
+        client.event_hooks["response"].insert(0, limit_response)
+    client.event_hooks["response"].append(policy.on_response)
+    try:
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            for chunk in pool.map(one_host, list(by_host.values())):
+                results.extend(chunk)
+    finally:
+        client.event_hooks = original_hooks
 
     counts = Counter()
     if skipped[0]:
@@ -812,17 +833,4 @@ def check_links(cal_conn, client: httpx.Client, *, ts: str, sleep=time.sleep, mi
     return dict(counts)
 
 
-def _robots(client: httpx.Client, url: str) -> RobotFileParser | None:
-    """取主机的 robots.txt；取不到或不是文本时视为未限制（返回 None）。"""
-    parts = urlsplit(url)
-    try:
-        r = client.get(f"{parts.scheme}://{parts.netloc}/robots.txt", headers={"User-Agent": USER_AGENT},
-                       follow_redirects=True)
-    except httpx.HTTPError:
-        return None
-    if r.status_code != 200 or "html" in r.headers.get("content-type", ""):
-        return None
-    rp = RobotFileParser()
-    rp.parse(r.text.splitlines())
-    return rp
 

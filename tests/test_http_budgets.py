@@ -148,3 +148,17 @@ def test_oversized_robots_is_unverified_and_never_allows_content():
         with pytest.raises(ComplianceError,match='无法核实'):
             client.get('https://example.test/jobs')
     assert seen==['/robots.txt']
+
+
+def test_shared_policy_honors_a_stricter_caller_interval():
+    clock=Clock()
+    seen=[]
+
+    def handler(req):
+        seen.append(clock.now)
+        return httpx.Response(404) if req.url.path=='/robots.txt' else httpx.Response(200)
+
+    with make_client(httpx.MockTransport(handler),policy=RobotsPolicy(clock=clock.read,sleep=clock.sleep,min_interval=2)) as client:
+        client.get('https://example.test/jobs')
+        client.get('https://example.test/next')
+    assert seen[-1]-seen[-2]>=2

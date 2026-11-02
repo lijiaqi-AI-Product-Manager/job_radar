@@ -64,6 +64,8 @@ def ensure_search_index(conn: sqlite3.Connection, table: str) -> None:
     """本地全文搜索首次需要时才补建索引；网络盘可禁用补建并走兼容查询。"""
     if os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX", "1").strip() == "0":
         return
+    if conn.in_transaction:
+        return  # 查询不能隐式提交调用者尚未提交的业务写入。
     kind = {"job_fts": "jobs", "job_text_fts": "text"}.get(table)
     if kind is None:
         return
