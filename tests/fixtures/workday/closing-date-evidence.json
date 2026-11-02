@@ -1,0 +1,272 @@
+[
+  {
+    "source_id": "workday-abb",
+    "company": "ABB中国",
+    "checked_at": "2026-11-02T07:54:25Z",
+    "params": {
+      "host": "abb.wd3.myworkdayjobs.com",
+      "tenant": "abb",
+      "site": "External_Career_Page"
+    },
+    "raw": {
+      "title": "Marketing Communication Specialist-China",
+      "externalPath": "/job/Shanghai-Shanghai-China/Marketing-Communication-Specialist-China_JR00045993",
+      "locationsText": "Shanghai, Shanghai, China",
+      "bulletFields": [
+        "JR00045993"
+      ],
+      "detail": {
+        "title": "Marketing Communication Specialist-China",
+        "jobPostingId": "Marketing-Communication-Specialist-China_JR00045993",
+        "jobReqId": "JR00045993",
+        "startDate": "2026-10-13",
+        "endDate": "2027-01-31",
+        "location": "Shanghai, Shanghai, China"
+      }
+    },
+    "expected_apply_end": "2027-01-31"
+  },
+  {
+    "source_id": "workday-abb",
+    "company": "ABB中国",
+    "checked_at": "2026-11-02T07:54:25Z",
+    "params": {
+      "host": "abb.wd3.myworkdayjobs.com",
+      "tenant": "abb",
+      "site": "External_Career_Page"
+    },
+    "raw": {
+      "title": "Solutions Center Manager, ELDS China",
+      "externalPath": "/job/Xiamen-Fujian-China/Solutions-Center-Manager--ELDS-China_JR00044196",
+      "locationsText": "Xiamen, Fujian, China",
+      "bulletFields": [
+        "JR00044196"
+      ],
+      "detail": {
+        "title": "Solutions Center Manager, ELDS China",
+        "jobPostingId": "Solutions-Center-Manager--ELDS-China_JR00044196",
+        "jobReqId": "JR00044196",
+        "startDate": "2026-10-23",
+        "endDate": "2026-11-20",
+        "location": "Xiamen, Fujian, China"
+      }
+    },
+    "expected_apply_end": "2026-11-20"
+  },
+  {
+    "source_id": "workday-abbott",
+    "company": "雅培",
+    "checked_at": "2026-11-02T07:54:28Z",
+    "params": {
+      "host": "abbott.wd5.myworkdayjobs.com",
+      "tenant": "abbott",
+      "site": "abbottcareers"
+    },
+    "raw": {
+      "title": "Medical Representative",
+      "externalPath": "/job/China---Beijing/Medical-Representative_31166378",
+      "locationsText": "China - Beijing",
+      "bulletFields": [
+        "31166378"
+      ],
+      "detail": {
+        "title": "Medical Representative",
+        "jobPostingId": "Medical-Representative_31166378",
+        "jobReqId": "31166378",
+        "startDate": "2026-11-02",
+        "endDate": "2027-04-30",
+        "location": "China - Beijing"
+      }
+    },
+    "expected_apply_end": "2027-04-30"
+  },
+  {
+    "source_id": "workday-abbott",
+    "company": "雅培",
+    "checked_at": "2026-11-02T07:54:28Z",
+    "params": {
+      "host": "abbott.wd5.myworkdayjobs.com",
+      "tenant": "abbott",
+      "site": "abbottcareers"
+    },
+    "raw": {
+      "title": "Medical Representative",
+      "externalPath": "/job/China--Remote/Medical-Representative_31166395",
+      "locationsText": "China : Remote",
+      "bulletFields": [
+        "31166395"
+      ],
+      "detail": {
+        "title": "Medical Representative",
+        "jobPostingId": "Medical-Representative_31166395",
+        "jobReqId": "31166395",
+        "startDate": "2026-11-02",
+        "endDate": "2027-02-28",
+        "location": "China : Remote"
+      }
+    },
+    "expected_apply_end": "2027-02-28"
+  },
+  {
+    "source_id": "workday-astrazeneca",
+    "company": "阿斯利康",
+    "checked_at": "2026-11-02T07:54:23Z",
+    "params": {
+      "host": "astrazeneca.wd3.myworkdayjobs.com",
+      "tenant": "astrazeneca",
+      "site": "Careers"
+    },
+    "raw": {
+      "title": "DSM-GI-内蒙or山西",
+      "externalPath": "/job/China/DSM-GI-or_R-263197",
+      "locationsText": "China",
+      "bulletFields": [
+        "R-263197"
+      ],
+      "detail": {
+        "title": "DSM-GI-内蒙or山西",
+        "jobPostingId": "DSM-GI-or_R-263197",
+        "jobReqId": "R-263197",
+        "startDate": "2026-11-02",
+        "endDate": "2026-11-30",
+        "location": "China"
+      }
+    },
+    "expected_apply_end": "2026-11-30"
+  },
+  {
+    "source_id": "workday-astrazeneca",
+    "company": "阿斯利康",
+    "checked_at": "2026-11-02T07:54:23Z",
+    "params": {
+      "host": "astrazeneca.wd3.myworkdayjobs.com",
+      "tenant": "astrazeneca",
+      "site": "Careers"
+    },
+    "raw": {
+      "title": "DSM-GI-长春",
+      "externalPath": "/job/China/DSM-GI-_R-263208",
+      "locationsText": "China",
+      "bulletFields": [
+        "R-263208"
+      ],
+      "detail": {
+        "title": "DSM-GI-长春",
+        "jobPostingId": "DSM-GI-_R-263208",
+        "jobReqId": "R-263208",
+        "startDate": "2026-11-02",
+        "endDate": "2026-11-30",
+        "location": "China"
+      }
+    },
+    "expected_apply_end": "2026-11-30"
+  },
+  {
+    "source_id": "workday-jll-china",
+    "company": "仲量联行中国",
+    "checked_at": "2026-11-02T07:54:29Z",
+    "params": {
+      "host": "jll.wd1.myworkdayjobs.com",
+      "tenant": "jll",
+      "site": "jllcareerschina"
+    },
+    "raw": {
+      "title": "Technician",
+      "externalPath": "/job/Kunshan-JS/Technician_REQ546259",
+      "locationsText": "Kunshan, JS",
+      "bulletFields": [
+        "REQ546259"
+      ],
+      "detail": {
+        "title": "Technician",
+        "jobPostingId": "Technician_REQ546259",
+        "jobReqId": "REQ546259",
+        "startDate": "2026-11-02",
+        "endDate": "2026-12-31",
+        "location": "Kunshan, JS"
+      }
+    },
+    "expected_apply_end": "2026-12-31"
+  },
+  {
+    "source_id": "workday-jll-china",
+    "company": "仲量联行中国",
+    "checked_at": "2026-11-02T07:54:29Z",
+    "params": {
+      "host": "jll.wd1.myworkdayjobs.com",
+      "tenant": "jll",
+      "site": "jllcareerschina"
+    },
+    "raw": {
+      "title": "Technician",
+      "externalPath": "/job/Chengdu-SC/Technician_REQ546257-1",
+      "locationsText": "Chengdu, SC",
+      "bulletFields": [
+        "REQ546257"
+      ],
+      "detail": {
+        "title": "Technician",
+        "jobPostingId": "Technician_REQ546257-1",
+        "jobReqId": "REQ546257",
+        "startDate": "2026-11-02",
+        "endDate": "2027-01-31",
+        "location": "Chengdu, SC"
+      }
+    },
+    "expected_apply_end": "2027-01-31"
+  },
+  {
+    "source_id": "workday-jll",
+    "company": "仲量联行",
+    "checked_at": "2026-11-02T07:54:28Z",
+    "params": {
+      "host": "jll.wd1.myworkdayjobs.com",
+      "tenant": "jll",
+      "site": "jllcareers"
+    },
+    "raw": {
+      "title": "Assistant Facilities Officer",
+      "externalPath": "/job/Hong-Kong-SAR-China/Assistant-Facilities-Officer_REQ545897",
+      "locationsText": "Hong Kong, SAR, China",
+      "bulletFields": [
+        "REQ545897"
+      ],
+      "detail": {
+        "title": "Assistant Facilities Officer",
+        "jobPostingId": "Assistant-Facilities-Officer_REQ545897",
+        "jobReqId": "REQ545897",
+        "startDate": "2026-11-02",
+        "endDate": "2026-11-30",
+        "location": "Hong Kong, SAR, China"
+      }
+    },
+    "expected_apply_end": "2026-11-30"
+  },
+  {
+    "source_id": "workday-jll",
+    "company": "仲量联行",
+    "checked_at": "2026-11-02T07:54:28Z",
+    "params": {
+      "host": "jll.wd1.myworkdayjobs.com",
+      "tenant": "jll",
+      "site": "jllcareers"
+    },
+    "raw": {
+      "title": "Facilities Officer",
+      "externalPath": "/job/Hong-Kong-SAR-China/Facilities-Officer_REQ545900",
+      "locationsText": "Hong Kong, SAR, China",
+      "bulletFields": [
+        "REQ545900"
+      ],
+      "detail": {
+        "title": "Facilities Officer",
+        "jobPostingId": "Facilities-Officer_REQ545900",
+        "jobReqId": "REQ545900",
+        "startDate": "2026-11-02",
+        "endDate": "2026-11-30",
+        "location": "Hong Kong, SAR, China"
+      }
+    },
+    "expected_apply_end": "2026-11-30"
+  }
+]

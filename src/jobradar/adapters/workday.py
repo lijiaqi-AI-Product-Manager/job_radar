@@ -20,7 +20,7 @@ source.params:
 
 import re
 from collections.abc import Iterator
-from datetime import datetime
+from datetime import date, datetime
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
 from jobradar.models import Job
@@ -250,6 +250,14 @@ def _posted_on(text) -> str | None:
     return None
 
 
+def _closing_date(value) -> str | None:
+    value = date_only(value)
+    try:
+        return date.fromisoformat(value).isoformat() if value else None
+    except ValueError:
+        return None
+
+
 def cities_of_many(*locations) -> list[str]:
     """多地点岗位：Workday 详情里有 `location` + `additionalLocations` 列表。
 
@@ -425,6 +433,8 @@ class WorkdayAdapter(Adapter):
             # Workday 详情给的是 startDate（真实上架日），列表给的是 postedOn（"Posted Today"/
             # "Posted 30+ Days Ago" 这类相对文案，解析不出日期就不猜）。
             publish_at=date_only(info.get("startDate")) or _posted_on(raw.get("postedOn")),
+            # 匿名CXS详情的明确截止字段；未填时不从上架日或相对文案推算。
+            apply_end=_closing_date(info.get("endDate")),
             description=_text(info.get("jobDescription")),
             requirements=None,
         )
