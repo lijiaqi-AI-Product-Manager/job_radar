@@ -1,7 +1,7 @@
 ![job_radar — 把招聘信息，变成你的本地数据库](docs/assets/hero.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.2"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.3"><img src="https://img.shields.io/badge/release-v2.1.3-58bfa5" alt="Release 2.1.3"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily data snapshots"></a>
@@ -119,9 +119,9 @@ jobradar update
 | 核心目标覆盖 | **952 / 1,655 · 57.52%** | 固定目标池中的配置覆盖 |
 | 其中官方 / 聚合 | **604 / 348** | 优先按官方归类，不重复计数 |
 
-**已核验发布快照 · `2026-11-02T12:44:23Z`**
+**已核验发布快照 · `2026-11-02T14:39:29Z`**
 
-共 **298,627 条岗位记录**，其中 **277,563 条在招记录**；在招 JD 正文覆盖率 **97.3%**。招聘日历样本共 **5,140 条**，含 **2,078 条人工整理条目**。这是有日期的历史快照，实时规模以本地 `jobradar stats` 和最新 [数据 Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) 为准。
+共 **298,631 条岗位记录**，其中 **277,567 条在招记录**；在招 JD 正文覆盖率 **97.3%**。招聘日历样本共 **5,135 条**，含 **2,078 条人工整理条目**。这是有日期的历史快照，实时规模以本地 `jobradar stats` 和最新 [数据 Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) 为准。
 
 配置覆盖不等于当天在招；聚合招聘简章可能对应多个岗位，不能按单个职位理解。日期缺失保留为空，学校公告展示截止日与企业网申截止日分别处理。更多口径、可复算命令与已知限制见 [覆盖说明](docs/COVERAGE.md)。
 
