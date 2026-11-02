@@ -115,6 +115,22 @@ def test_skips_without_credentials(monkeypatch, capsys):
     assert pg.main() == 0 and "跳过" in capsys.readouterr().out
 
 
+@pytest.mark.parametrize("path,method,phase,status", [
+    ("/api/v5/repos/o/r/releases/10/attach_files", "POST", "分片上传", 403),
+    ("/api/v5/repos/o/r/releases/tags/data-latest", "GET", "发布状态读取", 503),
+    ("/o/r/releases/download/data-latest/jobs.db.gz", "GET", "匿名下载", 429),
+])
+def test_failure_diagnostic_exposes_status_and_phase_without_credentials(path, method, phase, status):
+    private = "private-session-material"
+    request = httpx.Request(method, "https://gitee.com" + path + "?access_token=" + private,
+                            headers={"Authorization": "Bearer " + private})
+    error = httpx.HTTPStatusError(private, request=request,
+                                 response=httpx.Response(status, text=private))
+    summary = pg.failure_summary(error)
+    assert str(status) in summary and phase in summary
+    assert private not in summary and "access_token" not in summary and "https://" not in summary
+
+
 def test_promotion_failure_restores_previous_stable_alias(tmp_path):
     state = Gitee()
 
