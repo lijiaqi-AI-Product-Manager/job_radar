@@ -42,6 +42,12 @@ jobs:
         with:
           name: dist
           path: dist/
+      - name: Package standalone skill
+        run: uv run python scripts/package_skill.py --output .tmp/skill/jobradar-skill.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jobradar-skill
+          path: .tmp/skill/jobradar-skill.zip
       - name: Verify installed release wheel
         run: |
           py=$(uv run python -c 'import sys;print(sys.executable)')

@@ -219,7 +219,7 @@ def main():
                             duration=durations, loop=0, optimize=True, disposal=1)
             frames[-1].save(ASSETS / "candidate-preview.png", optimize=True)
         else:
-            frames[-1].save(ASSETS / "candidate-poster.png", optimize=True)
+            frames[-1].save(ASSETS / "candidate-flow-preview.png", optimize=True)
         if args.video_dir:
             args.video_dir.mkdir(parents=True, exist_ok=True)
             video(frames, durations, args.video_dir.resolve(), portrait)

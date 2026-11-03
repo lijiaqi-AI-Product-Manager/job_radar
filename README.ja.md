@@ -1,22 +1,38 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.2.1-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.1) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.2.2-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.2) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · 日本語
 
-**中国の新卒・インターン・中途採用情報を、ローカルのデータベースへ。**
+**いつもの AI アシスタントに、仕事探しのスキルを。**
 
-公開されている求人と採用カレンダーを SQLite に整理。企業・都市・卒業年度で絞り込み、求人本文を検索し、元の応募ページを確認できます。CLI と MCP に対応し、検索用の API キーやサーバーは不要です。
+希望する都市・職種・条件を伝えると、中国の新卒採用・インターン・中途採用・採用カレンダーを調べ、募集要件と出典リンクを整理します。スキルやローカルツールを使える Agent モードでの利用を推奨します。
 
 ## クイックスタート
+
+次の依頼を対応するアシスタントに送ってください。初回は案内に従って接続し、その後は会話で検索できます。
+
+```text
+このリポジトリの jobradar 求職検索スキルを接続してください。まず現在の環境が対応しているか確認し、接続後に上海のプロダクト関連インターンを探して、募集要件・出典リンク・明記された締切を示してください。不明な情報は分けてください。
+https://github.com/lijiaqi-AI-Product-Manager/job_radar
+```
+
+必要なら Release の jobradar-skill.zip をスキル画面から取り込んでください。取り込み後も検索ツールとデータの準備が必要です。通常のウェブチャットだけでローカルツールが使えるとは限りません。
+
+[Platform routes / 平台接入](docs/PLATFORMS.md) · [Skill download](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest)
+
+<details>
+<summary><strong>手動セットアップ（設定する人・アシスタント向け）</strong></summary>
 
 PyPI のパッケージ名は `jobsearchradar`、コマンドは `jobradar` です。Python 3.11+ が必要です。Windows / macOS / Linux に対応。
 
 ```bash
-pip install --upgrade "jobsearchradar==2.2.1"
+pip install --upgrade "jobsearchradar==2.2.2"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
+
+</details>
 
 ![job_radar demo](docs/assets/demo-en.gif)
 
@@ -52,7 +68,7 @@ jobradar doctor
 ## MCP 接続
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.1"
+pip install --upgrade "jobsearchradar[mcp]==2.2.2"
 jobradar update
 ```
 

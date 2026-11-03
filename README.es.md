@@ -1,22 +1,38 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.2.1-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.1) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.2.2-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.2) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Español
 
-**Empleo en China, calendarios de selección y una base de datos que puedes consultar localmente.**
+**Añade una habilidad para buscar empleo a tu asistente de IA habitual.**
 
-Reúne ofertas públicas para recién graduados, prácticas y profesionales en SQLite. Filtra por empresa, ciudad o promoción, busca en las descripciones originales y accede al enlace de candidatura. CLI y MCP, sin clave de API ni servidor que desplegar.
+Dile las ciudades, el puesto y tus condiciones. El asistente consulta empleo en China para recién graduados, prácticas y profesionales, lee los requisitos y presenta enlaces a las fuentes. Recomendamos un modo agente con habilidades o herramientas locales.
 
 ## Inicio rápido
+
+Envía esta petición a un asistente compatible. Sigue las indicaciones de conexión inicial y después busca conversando.
+
+```text
+Conecta la habilidad de búsqueda de empleo jobradar de este repositorio. Comprueba primero si este entorno es compatible. Después busca prácticas de producto en Shanghái y muestra requisitos, enlaces originales y plazos indicados. Separa la información desconocida.
+https://github.com/lijiaqi-AI-Product-Manager/job_radar
+```
+
+Si pide un archivo, importa jobradar-skill.zip de la última Release. Después de importarlo aún hay que preparar las herramientas y los datos. Un chat web normal no siempre puede ejecutar herramientas locales.
+
+[Platform routes / 平台接入](docs/PLATFORMS.md) · [Skill download](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest)
+
+<details>
+<summary><strong>Configuración manual (para quien configure el asistente)</strong></summary>
 
 El paquete de PyPI se llama `jobsearchradar`; el comando instalado es `jobradar`. Requiere Python 3.11+ y funciona en Windows, macOS y Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.2.1"
+pip install --upgrade "jobsearchradar==2.2.2"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
+
+</details>
 
 ![job_radar demo](docs/assets/demo-en.gif)
 
@@ -52,7 +68,7 @@ La instantánea verificada del 2 de noviembre de 2026 (UTC) contiene 298.458 reg
 ## Conectar MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.1"
+pip install --upgrade "jobsearchradar[mcp]==2.2.2"
 jobradar update
 ```
 

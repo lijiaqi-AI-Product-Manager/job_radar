@@ -3,23 +3,29 @@ name: jobradar
 description: 查询中国公司（含大厂与招聘平台上的公司）当前在招的校招/实习/社招岗位、近期新开/下架变化、岗位要求对比和招聘趋势。用户问"某公司在招什么岗位""这周新开了什么岗""A 和 B 的某类岗位要求有什么差异""某公司招聘是在扩张还是收缩"时使用。数据包含官方招聘页与公开聚合来源，每日调度，本地查询，单源新鲜度以返回时间为准。
 ---
 
-# jobradar：中国岗位数据查询
+# jobradar：对话式求职搜索技能
 
 用户通过对话提出求职需求，宿主优先调用已连接的 MCP 工具；未连接时可使用 `jobradar` 的 JSON 输出。
 两者共用查询规则。**只能根据工具返回的数据回答，不能用常识或记忆补充岗位信息，也不要要求求职者理解命令行参数。**
 
+## 首次接入
+
+用户要求安装、导入或接入本技能时，先阅读 [首次准备](references/setup.md)，检查当前平台能否执行本地工具或连接本地 MCP，再准备工具和数据并实际查询。未调用成功前不要声称已接入；只阅读了技能或仓库不等于已经具备查询能力。
+
+已有可用 MCP 时优先使用其工具，无需要求用户再安装另一套入口。求职者只需说需求，配置细节由助手处理；需要界面操作时给出当前一步即可。
+
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应 `2.2.1`；正式渠道核验状态见安装指南：
+本指南对应 `2.2.2`；正式渠道核验状态见安装指南：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.1"
+pip install --upgrade "jobsearchradar[mcp]==2.2.2"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-发行包经过独立安装与命令兼容性检查，实际安装后仍须核对版本和参数。固定源码备用安装及版本说明见 [安装指南](../../docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
+发行包经过独立安装与命令兼容性检查，实际安装后仍须核对版本和参数。固定源码备用安装及版本说明见 [安装指南](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/INSTALLATION.md)。已安装旧版也用上述命令升级，
 不要仅因本机已有 `jobradar` 命令就跳过版本兼容检查。帮助中应有 `calendar --city`、
 `calendar --include-expired` 与 `search --deadline-before`；旧版帮助报错或不支持参数时，
 先在 CLI / MCP 实际使用的环境中升级，不能通过删掉筛选参数来改变用户的问题。
@@ -34,7 +40,7 @@ jobradar doctor
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - `source_enabled: false` 或 `availability: unconfirmed_disabled` → 来源当前已停用；即使旧成功观测尚不足48小时，也不能表述为当前已核实可投。停用不等于岗位已关闭。
-- 用户在国内、下载慢或失败时：`jobradar update --mirror gitee`。
+- 下载使用默认 GitHub 渠道；失败时先检查网络和数据状态，不将当前未核实可用的镜像作为首选。见[渠道状态](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。
 - `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的

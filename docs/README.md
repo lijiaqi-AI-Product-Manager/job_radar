@@ -2,6 +2,10 @@
 
 这里包含安装查询、数据字段、覆盖口径、来源核验和项目维护文档。按你正在做的事情选择入口。
 
+## 用助手找工作
+
+先看[第一次使用](GETTING-STARTED.md)：复制接入请求，按平台提示完成一次准备，之后直接聊求职需求。不需要先学命令行。
+
 ## 使用数据
 
 | 文档 | 内容 |
@@ -9,7 +13,8 @@
 | [2.0 发布说明](RELEASE-2.0.md) | 2.0 发布时的内容与数据规模，供历史参考 |
 | [快速开始](../README.md#快速开始) | 安装、更新与第一条查询 |
 | [安装与版本兼容](INSTALLATION.md) | 正式包安装、版本检查与备用路径 |
-| [第一次使用](GETTING-STARTED.md) | 安装、下载、接入助手与第一句提问 |
+| [第一次使用](GETTING-STARTED.md) | 把需求发给助手、接入并验证第一条查询 |
+| [平台接入](PLATFORMS.md) | WorkBuddy、千问办公、Kimi、Claude、ChatGPT、扣子等的接入条件 |
 | [安装渠道](DISTRIBUTION.md) | PyPI、GitHub、Gitee与npm的实际状态 |
 | [常见问题](FAQ.md) | 下载、镜像、空字段、公司匹配与 MCP 排错 |
 | [字段说明](../skill/jobradar/references/fields.md) | 岗位、日历和输出字段 |
@@ -37,6 +42,8 @@
 
 ## 演示素材
 
-[中英文 GIF 与封面](assets/)由 `scripts/make_assets.py` 生成，数据来自 `docs/assets/demo-data.json` 中保存的真实 CLI 结果节选。生成需要 Pillow 和 CJK 字体，具体运行方式见脚本说明。
+[中英文 GIF 与封面](assets/)中保留的 CLI 动画由 `scripts/make_assets.py` 生成，数据来自 `docs/assets/demo-data.json` 中保存的真实 CLI 结果节选。生成需要 Pillow 和 CJK 字体，具体运行方式见脚本说明。
+
+新的[分享海报与流程演示](SHOWCASE.md)提供配图、配文和技能导入包入口。
 
 文档检查：`uv run python scripts/check_docs_links.py`。
