@@ -403,7 +403,9 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
     if invalid:
         raise SystemExit(f"下载的 {name} 不是有效的数据库（{'; '.join(errors)}）")
     raise SystemExit(f"下载 {name} 失败（{'; '.join(errors) or '404'}）。"
-                     "国内网络可试 `jobradar update --mirror gitee`；若仓库尚未公开，请设置环境变量 GITHUB_TOKEN 后重试。")
+                     "请检查GitHub网络连接后重试 `jobradar update`。镜像状态见 "
+                     "https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md；"
+                     "仅访问私有发行版时需要设置 GITHUB_TOKEN。")
 
 
 def _text_coverage(home_dir: Path) -> float | None:
@@ -881,7 +883,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--no-index", action="store_true", help="跳过本地全文索引准备，节省空间；全文查询使用正文扫描")
     sp.add_argument("--prepare-index", action="store_true", help="激活前准备全文索引，适合频繁全文查询；会增加更新耗时和磁盘占用")
     sp.add_argument("--with-text", action="store_true", help=argparse.SUPPRESS)  # 兼容旧参数：现在默认就下载原文库
-    sp.add_argument("--mirror", choices=["github", "gitee"], help="下载源；国内网络建议 gitee。失败时自动换另一个")
+    sp.add_argument("--mirror", choices=["github", "gitee"], help="下载源（默认GitHub）；镜像状态见项目文档，失败时尝试备用源")
     sp.add_argument("--force", action="store_true", help="忽略增量比对，强制重新下载全部数据")
 
     sp = add("search", cmd_search, "搜索在招岗位")

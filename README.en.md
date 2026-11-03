@@ -1,7 +1,7 @@
-![job_radar — Find your next opportunity. Keep the data.](docs/assets/hero-en.svg)
+![job_radar — Bring job data to your assistant.](docs/assets/hero-en.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.0"><img src="https://img.shields.io/badge/release-v2.2.0-58bfa5" alt="Release 2.2.0"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.1"><img src="https://img.shields.io/badge/release-v2.2.1-58bfa5" alt="Release 2.2.1"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
@@ -16,6 +16,8 @@
 **China's campus, internship and experienced-hire listings, with recruitment calendars. Download once. Query locally.**
 
 Turn scattered public recruitment information into a traceable SQLite dataset. Filter by employer, city and graduation year, search original job descriptions, and follow the original application link. Use the CLI or MCP without an API key or a server to deploy.
+
+Connect a compatible MCP / skill assistant and ask in everyday language: “Find campus finance roles in Suzhou or Wuxi, exclude Shanghai, and separate explicit 2027 graduation-year matches from unknowns.” See the [first-use guide](docs/GETTING-STARTED.md).
 
 <p align="center">
   <a href="#quick-start">Quick start</a> · <a href="#query-examples">Examples</a> · <a href="#data-and-coverage">Data & coverage</a> · <a href="docs/README.md">Documentation</a> · <a href="CONTRIBUTING.md">Contribute</a>
@@ -43,17 +45,14 @@ Turn scattered public recruitment information into a traceable SQLite dataset. F
 Requires **Python 3.11+**. Supports Windows, macOS and Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.2.0"
+pip install --upgrade "jobsearchradar==2.2.1"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
 
 The package is **`jobsearchradar`**; the installed command is **`jobradar`**. The first update downloads the structured and JD databases. Later updates check the release version and skip downloads when current.
 
-```bash
-# Optional mirror for networks with slow GitHub downloads
-jobradar update --mirror gitee
-```
+Use the default GitHub data channel. The configured Gitee public repository and manifest returned 404 on November 3, 2026; npm has no verified project release under the three checked names. See [distribution status](docs/DISTRIBUTION.md).
 
 Data lives in `~/.cache/jobradar` by default. Set `JOBRADAR_HOME` to use another directory. See the [FAQ](docs/FAQ.md) for downloads and troubleshooting.
 
@@ -81,7 +80,7 @@ Omit `--table` for JSON output. Use `jobradar show <job_id>` for a listing and i
 ## Connect with MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.0"
+pip install --upgrade "jobsearchradar[mcp]==2.2.1"
 jobradar update
 ```
 

@@ -9,6 +9,8 @@
 | [2.0 发布说明](RELEASE-2.0.md) | 2.0 发布时的内容与数据规模，供历史参考 |
 | [快速开始](../README.md#快速开始) | 安装、更新与第一条查询 |
 | [安装与版本兼容](INSTALLATION.md) | 正式包安装、版本检查与备用路径 |
+| [第一次使用](GETTING-STARTED.md) | 安装、下载、接入助手与第一句提问 |
+| [安装渠道](DISTRIBUTION.md) | PyPI、GitHub、Gitee与npm的实际状态 |
 | [常见问题](FAQ.md) | 下载、镜像、空字段、公司匹配与 MCP 排错 |
 | [字段说明](../skill/jobradar/references/fields.md) | 岗位、日历和输出字段 |
 | [个人条件查询](CANDIDATE-SEARCH.md) | 多城市与排除项、未知届次、资格冲突和展示分组 |

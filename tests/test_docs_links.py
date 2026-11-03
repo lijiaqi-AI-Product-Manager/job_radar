@@ -73,3 +73,26 @@ def test_current_install_guides_reject_old_pypi_or_unpinned_source(tmp_path, mon
     assert docs.installation_problems([guide]) == []
     guide.write_text(guide.read_text(encoding="utf-8") + '\npip install jobsearchradar', encoding="utf-8")
     assert docs.installation_problems([guide])
+
+
+def test_homepage_media_rejects_relative_urls_that_break_on_package_index(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location(
+        "check_docs_links", Path(__file__).resolve().parents[1] / "scripts/check_docs_links.py",
+    )
+    docs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(docs)
+    monkeypatch.setattr(docs, "ROOT", tmp_path)
+    readme = tmp_path / "README.md"
+    readme.write_text(
+        '![Cover](docs/assets/hero.svg)\n<img src="docs/assets/demo.gif" alt="demo">',
+        encoding="utf-8",
+    )
+    errors = docs.homepage_problems()
+    assert any("hero.svg" in error for error in errors)
+    assert any("demo.gif" in error for error in errors)
+    readme.write_text(
+        '![Cover](https://raw.githubusercontent.com/owner/repo/main/docs/assets/hero.svg)\n'
+        '<img src="https://raw.githubusercontent.com/owner/repo/main/docs/assets/demo.gif" alt="demo">',
+        encoding="utf-8",
+    )
+    assert docs.homepage_problems() == []

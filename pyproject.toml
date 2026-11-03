@@ -1,11 +1,14 @@
 [project]
 name = "jobsearchradar"
 dynamic = ["version"]
-description = "中国校招、实习、社招与招聘日历的可追溯数据集：本地 SQLite、CLI 与 MCP，每日数据快照"
+description = "面向助手的中国招聘信息索引：校招、实习、社招与招聘日历，支持本地 SQLite、CLI 和 MCP"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
-keywords = ["jobs", "campus-recruitment", "china", "dataset", "mcp", "cli", "sqlite"]
+keywords = [
+    "job-search", "jobs", "campus-recruitment", "internship", "recruitment", "china",
+    "dataset", "mcp", "mcp-server", "model-context-protocol", "cli", "sqlite",
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",

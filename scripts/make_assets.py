@@ -129,7 +129,7 @@ def animation(data: dict, language: str):
 
 def hero(language: str):
     en = language == "en"
-    heading = "Find your next opportunity. Keep the data." if en else "把招聘信息，变成你的本地数据库。"
+    heading = "Bring job data to your assistant." if en else "把招聘信息，接入你的助手。"
     subtitle = ("China jobs & recruitment calendars. Search locally. Follow the source." if en
                 else "中国校招 · 实习 · 社招 · 招聘日历    /    本地查询，直达来源")
     heading, subtitle = escape(heading), escape(subtitle)
@@ -163,7 +163,7 @@ def social_preview():
     d.ellipse((1168, 114, 1182, 128), fill=GREEN)
     d.text((72, 60), "OPEN RECRUITMENT DATA", font=font(22, True), fill=GREEN)
     d.text((66, 126), "job_radar.", font=font(92, True), fill=WHITE)
-    d.text((72, 278), "把招聘信息，变成你的本地数据库。", font=font(42, True), fill=WHITE)
+    d.text((72, 278), "把招聘信息，接入你的助手。", font=font(42, True), fill=WHITE)
     d.text((72, 350), "校招 / 实习 / 社招 / 招聘日历", font=font(28), fill=MUTED)
     d.text((72, 431), "CLI     MCP     SQLite     Daily snapshots", font=font(27, True), fill=GREEN)
     d.line((72, 508, 1208, 508), fill=LINE, width=2)

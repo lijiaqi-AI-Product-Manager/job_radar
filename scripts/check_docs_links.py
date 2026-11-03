@@ -54,6 +54,16 @@ def broken_links(files: list[Path]) -> list[str]:
 def homepage_problems() -> list[str]:
     """主页只使用根目录 README，并验证仓库内的 SVG 可以被解析。"""
     problems = []
+    readme = ROOT / "README.md"
+    if readme.exists():
+        media = re.findall(
+            r'!\[[^\]]*\]\(([^)]+)\)|<img\b[^>]*\bsrc=["\']([^"\']+)["\']',
+            readme.read_text(encoding="utf-8"), re.I,
+        )
+        for markdown_url, html_url in media:
+            url = (markdown_url or html_url).strip()
+            if not url.startswith("https://"):
+                problems.append(f"README.md -> {url}: 发行包说明中的图片需使用完整HTTPS地址")
     hidden = ROOT / ".github"
     if hidden.exists():
         for path in sorted(hidden.iterdir()):

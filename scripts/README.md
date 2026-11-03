@@ -12,6 +12,7 @@
 | 适配器样本录制 | `record_fixtures.py <source_id>` |
 | 单源网络体检 | `smoke_sources.py <source_id>` |
 | README 封面与 GIF | `make_assets.py`（需要 Pillow 与 CJK 字体） |
+| 求职流程 GIF 与短片 | `make_showcase.py`（Pillow；生成视频另需FFmpeg） |
 
 在仓库根目录使用 `uv run python scripts/<脚本>`，各脚本的 `--help` 或模块说明列出具体参数。
 

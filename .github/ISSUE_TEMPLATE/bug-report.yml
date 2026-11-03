@@ -12,15 +12,15 @@ body:
   - type: textarea
     id: reproduce
     attributes:
-      label: Command and steps / 命令与复现步骤
-      render: shell
+      label: Your question or steps / 原始提问或操作步骤
+      description: Paste the question you asked your assistant and any follow-up conditions, or include the CLI command if you used one. No resume or private contact details are needed.
     validations:
       required: true
   - type: input
     id: environment
     attributes:
       label: Version and platform / 版本与系统
-      placeholder: jobradar --version; Python version; OS
+      placeholder: App used; OS; jobradar version if known
   - type: input
     id: timestamp
     attributes:
