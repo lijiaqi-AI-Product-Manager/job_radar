@@ -134,6 +134,11 @@ class JsonPortalAdapter(Adapter):
         deadline = date_only(raw.get(f.get("deadline", "closeDate")))
         grad = grad_year_from_text(title) if rtype != "social" else None
         org = str(raw.get(f.get("org", "org")) or "").strip() or None
+        type_values = next(iter((self._p("type_param") or {}).values()), {})
+        type_value = type_values.get(rtype)
+        detail_url = str(self._p("detail_url", ""))
+        if "{type_value}" in detail_url and type_value is None:
+            raise ValueError(f"detail_url 的招聘类型没有配置映射：{rtype}")
         return Job(
             source_id=self.source.id,
             source_job_id=str(raw.get(f.get("code", "id")) or raw.get("id") or ""),
@@ -147,6 +152,6 @@ class JsonPortalAdapter(Adapter):
             requirements=req or None,
             apply_end=deadline,
             publish_at=date_only(raw.get(f.get("publish", "publishDate"))),
-            url=(str(self._p("detail_url", "")).format(id=raw.get("id")) or None),
+            url=(detail_url.format(id=raw.get("id"), type_value=type_value) or None),
             department=str(raw.get(f.get("dept", "positionSecondOrg")) or "") or None,
         )
