@@ -6,6 +6,7 @@ fixtures：tests/fixtures/jsonportal/，录自中国电子校招门户
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from jobradar.adapters.base import USER_AGENT, SkipRecord, make_client
@@ -43,7 +44,7 @@ def test_field_mapping():
     assert j.cities == ["深圳"]
     assert j.recruit_type == "campus"
     assert j.apply_end and j.apply_end.startswith("2026-")
-    assert j.url.startswith("https://campus.cec.com.cn/position/")
+    assert j.url == "https://campus.cec.com.cn/position?positionType=0"
 
 
 def test_jd_split_into_description_and_requirements():
@@ -75,6 +76,24 @@ def test_type_param_limits_recruit_types():
     """只配 campus 时不该把社招那一路也翻出来（社招岗挂 2027 届是错的）。"""
     jobs = run(source(recruit_types=["campus"]))
     assert {j.recruit_type for j in jobs} == {"campus"}
+
+
+def test_public_listing_link_uses_the_requested_recruitment_channel():
+    src = source()
+    src.params["detail_url"] = "https://campus.cec.com.cn/position?positionType={type_value}"
+    src.params["type_param"] = {"positionType": {"campus": 0, "social": 1}}
+    adapter = JsonPortalAdapter(src, httpx.Client(), sleep=lambda seconds: None)
+    for rtype, value in (("campus", 0), ("social", 1)):
+        job = adapter.normalize({"id": "sample", "name": "软件工程师", "__recruit_type": rtype})
+        assert job.url == f"https://campus.cec.com.cn/position?positionType={value}"
+
+
+def test_listing_route_does_not_guess_an_unconfigured_channel():
+    src = source()
+    src.params["detail_url"] = "https://campus.cec.com.cn/position?positionType={type_value}"
+    adapter = JsonPortalAdapter(src, httpx.Client(), sleep=lambda seconds: None)
+    with pytest.raises(ValueError, match="配置映射"):
+        adapter.normalize({"id": "sample", "name": "软件工程师", "__recruit_type": "intern"})
 
 
 def test_source_config_cannot_override_the_fixed_project_user_agent():

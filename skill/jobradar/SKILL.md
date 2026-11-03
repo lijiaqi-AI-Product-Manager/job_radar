@@ -5,14 +5,15 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 # jobradar：中国岗位数据查询
 
-数据在本地 SQLite 中，通过 `jobradar` 命令查询，所有命令输出 JSON。**你只能根据命令返回的数据回答，不能用常识或记忆补充岗位信息。**
+用户通过对话提出求职需求，宿主优先调用已连接的 MCP 工具；未连接时可使用 `jobradar` 的 JSON 输出。
+两者共用查询规则。**只能根据工具返回的数据回答，不能用常识或记忆补充岗位信息，也不要要求求职者理解命令行参数。**
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应 `2.1.4`：
+本指南对应 `2.2.0`；正式渠道核验状态见安装指南：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.4"
+pip install --upgrade "jobsearchradar[mcp]==2.2.0"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
@@ -78,7 +79,7 @@ jobradar doctor
    - **先看 `company_match`**（`search`/`diff`/`trends` 都带）：`match: none` = 这个名字在数据集中不存在（`candidates` 是相近的公司，可以顺势提示"你要找的是不是 X"）；`match: ambiguous` = 命中多家、故意不返回；`match: contains` = 按子串唯一命中（如 阿里→阿里巴巴）；`exact`/`alias` = 确定是这家。**`none`/`ambiguous` 时不能说"该公司没在招"**。
    - 岗位 `closed_at` 有值 → "该岗位已于 {closed_at} 下架"。
    - 字段为空（如北森门户的 `cities` 为空列表）→ 说明"数据中未提供该信息"，不要从标题或常识推断。
-   - **过滤条件会漏掉字段为空的岗位**：`--grad-year`、`--city`、`--category` 只命中该字段有值的岗位（届别来自标题或 JD 原文里明写的年份，很多校招岗位两处都不写）。加了这些过滤后结果为 0 或很少时，去掉该过滤再查一次（如只用 `--type campus`），再如实说明"其中 N 个岗位写明了 2027 届"。
+   - **有结果也可能漏掉字段为空的岗位**：每次阅读 `filter_coverage` 和 `hints`，说明未标注届次或截止日的范围，不能只在空结果时检查。需要保留未知届次候选时使用 `include_unknown_grad_year=true`；这些记录的 `grad_year_match=unknown` 仍待核实。统计中的 `unit=records` 未做展示折叠，不能与分组总数直接比较。正文检索未复算放宽后的数量时如实说明，不编造漏岗数。
    - 某公司未收录或只覆盖了部分招聘类型：`jobradar sources` 可看各源；不要因为没查到就说"该公司没有校招"，应说"数据里没有"。
      **字节跳动、蔚来、小鹏汽车、Momenta 已收录**（同为飞书招聘 ATSX 门户，2026-10-26 起，见 `docs/recon/feishu-atsx.md`），
      是否有匹配岗位、城市与 JD 是否完整，都以本次返回为准，不能凭历史样本承诺 100%。
@@ -90,6 +91,7 @@ jobradar doctor
    - 高校公告的「过期时间」「已过期」只表示展示期限，不能据此断定企业截止投递。已撤回的日期不能从 `notes` 里的历史链接再补回来。
    - `deadline_scope: job_evidence` 的日期来自岗位样本，不能说成整个批次截止；这类条目不会仅因某个岗位截止就整批隐藏，`window_status: unknown` 时仍需到原页确认。
    - 字段为 `null` 表示来源没写，**不要补全或推测**（例如不要根据往年推测今年截止日期）。
+   - `open_on` 的总数包含未知窗口候选，不能直接称为“今天可投N个批次”。读取 `window_counts` 和 `hints`，计数仅代表返回页。只看明确完整批次窗口时使用 `confirmed_open_only=true`，但日期窗口也不保证实时投递成功。
    - `jd_status: linked` → 可以接着用 `jobradar search --company <jd_company>` 列出具体岗位与 JD。
    - `jd_status: blocked` → 只给日历信息，并**把 `hint` 原样放在回答最后一句**（如"拼多多希望你去他们的招聘页逛一逛哦~"），附 `apply_url`。
    - **城市和网申时间不是每条都有**：`--city` / `--deadline-before` 只命中写了该字段的条目（当前覆盖率从 `doctor` / `stats` 查询，不能套用固定百分比）。所以
@@ -99,7 +101,7 @@ jobradar doctor
    - `--has-window` 的口径是**起止任一有值**：只有截止日、没写开始日的批次也算"有网申时间"，回答时说"截止 X 月 X 日"即可，不要说"没有网申时间"。
    - `project_type: 社招` 的条目来自社招板（一家几千条），没有届次也没有批次窗口，**不要当校招批次讲**。
    - 一条日历 = 一个批次（秋招正式批 / 暑期实习 / 社招…），不是一条 = 一个岗位。想知道具体岗位，用 `search --company`。
-8. **超出范围的请求**（投递简历、内推、面试评价、薪资）→ 说明本工具不提供，建议去官网或其他渠道。
+8. **资格与待遇需要原文**：先读 `field_warnings` 和 `qualification_evidence`；学历字段与正文冲突时不得只按字段排除。社招渠道也可能接受应届或毕业不久人群，不能把渠道标签当作资格。薪资、出勤天数和实习月数仅引用正文或明确标注；未提供则未知。校招不代表不要求经验，正文提到英语不代表英语是硬性门槛。投递简历、内推和面试评价超出本工具范围。
 
 ## 输出建议
 

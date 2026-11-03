@@ -4,9 +4,12 @@
 # 简称会直接查不到（2026-10-22 评测 neg-05）。这里登记**能确认唯一**的简称；
 # 拿不准的（如「中电」同时指中电科芯片、中电科蓝天）不要加——宁可查不到，也不要串到别家。
 #
-# 值必须是库中公司名的一段子串（`LIKE %值%`），与 targets/top_companies.yaml 的写法保持一致。
+# 值为确定主体；查询先找规范全名，不把子公司自动当作集团主体。
 
 aliases:
+  # 品牌中英文对应：https://seed.bytedance.com/zh/ 与 https://news.microsoft.com/zh-cn/inside_ms/
+  "ByteDance": "字节跳动"
+  "Microsoft": "微软"
   # 官方中国站链接同一招聘入口：https://www.pg.com.cn/ 与 https://careers.pg.com.cn/cn/en/our-locations
   "P&G": "宝洁"
   "Procter & Gamble": "宝洁"

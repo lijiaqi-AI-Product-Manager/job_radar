@@ -52,6 +52,21 @@ def test_search_envelope(home, capsys):
     assert [r["company"] for r in out["results"]] == ["字节跳动"]
 
 
+def test_search_folding_exclusions_and_conflicts_have_same_cli_contract(home, capsys):
+    with connect(home / "jobs.db", "jobs") as jobs, connect(home / "jd_text.db", "text") as text:
+        rows = [make_job(1, title="软件工程师", degree_min="硕士", requirements="本科及以上学历"),
+                make_job(2, title="软件工程师", degree_min="硕士", requirements="本科及以上学历")]
+        ingest_run(jobs, "s1", rows, ts=now_ts())
+        upsert_texts(text, rows, ts=now_ts())
+    out = run(capsys, "search", "--cities", "深圳", "北京", "--exclude-city", "上海", "--grad-year", "2027")
+    qq = [r for r in out["results"] if r["company"] == "腾讯"]
+    assert len(qq) == 1 and qq[0]["variants"] == 2
+    assert qq[0]["qualification_evidence"]["degree"]["conflict"] is True
+    assert out["count_unit"] == "folded_groups"
+    raw = run(capsys, "search", "--company", "腾讯", "--no-dedupe")
+    assert len(raw["results"]) == 2 and raw["count_unit"] == "records"
+
+
 def test_calendar_cli_automatically_expires_and_can_query_history(home, capsys, monkeypatch):
     from jobradar.core import queries as q
     from jobradar.pipeline import calendar as cal
@@ -127,7 +142,7 @@ def test_empty_search_reports_hints(home, capsys):
     assert out["results"] == [] and any("届别" in h for h in out["hints"])
     miss = run(capsys, "search", "--company", "京东")
     assert miss["company_match"]["match"] == "none"
-    assert any("公司名没有唯一确定" in h for h in miss["hints"])
+    assert any("未收录" in h for h in miss["hints"])
     ok = run(capsys, "search", "--company", "腾讯")
     assert ok["results"] and "hints" not in ok
 

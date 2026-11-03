@@ -41,6 +41,30 @@ def test_all_jobs_have_jd_text():
     assert all((j.description or "").strip() for j in jobs)
 
 
+def test_public_detail_preserves_pay_and_internship_schedule():
+    j = next(j for j in run() if j.source_job_id == "inn_93nlott6b9fb")
+    assert "薪资：180-200/天" in j.requirements
+    assert "每周出勤：5天/周" in j.requirements
+    assert "实习时长：4个月" in j.requirements
+    assert "负责影剧综漫" in j.description
+
+
+def test_unreadable_pay_and_missing_detail_do_not_create_terms():
+    a = ShixisengAdapter(source(), httpx.Client(), sleep=lambda s: None)
+    raw = {"list": {"uuid": "sample", "name": "实习生", "cname": "快手", "minsal": "180", "maxsal": "200"},
+           "detail": {"minsal": "&#xe2f2", "maxsal": "200", "day": 0, "month": None}}
+    j = a.normalize(raw)
+    assert j.requirements is None
+    assert a.normalize({"list": raw["list"]}).requirements is None
+
+
+def test_invalid_ranges_never_become_promised_pay_or_schedule():
+    a = ShixisengAdapter(source(), httpx.Client(), sleep=lambda s: None)
+    raw = {"list": {"uuid": "sample", "name": "实习生", "cname": "快手"},
+           "detail": {"minsal": "300", "maxsal": "100", "day": 8, "month": -1}}
+    assert a.normalize(raw).requirements is None
+
+
 def test_detail_can_be_disabled_to_save_requests():
     jobs = run(fetch_detail=False)
     assert jobs and all(j.description is None for j in jobs)

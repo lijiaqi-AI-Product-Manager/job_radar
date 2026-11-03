@@ -36,7 +36,8 @@ sources:
       total_path: data.total
       page_path: data.current
       pages_path: data.pages
-      detail_url: https://campus.cec.com.cn/position/{id}
+      # 官网在列表内展开详情，不存在 /position/{id} 页面；保持当前停用状态。
+      detail_url: https://campus.cec.com.cn/position?positionType={type_value}
       type_param:
         positionType: {campus: 0, social: 1}
       fields:

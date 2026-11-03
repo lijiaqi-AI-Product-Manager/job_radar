@@ -6,6 +6,7 @@
 import json
 import os
 import re
+import sqlite3
 import unicodedata
 from contextlib import closing
 from datetime import date, timedelta
@@ -22,6 +23,37 @@ _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category,
 # 门店/零售岗的标题特征：喜茶、星巴克一家就 2,900+ 条，校招用户搜「在招岗位」时基本是噪声。
 # 只用于 `--exclude-store`（默认不过滤），避免替用户做决定。
 STORE_TITLE_WORDS = ("门店", "店员", "导购", "收银", "服务员", "咖啡师", "店长", "值班主管")
+
+# 只映射范围相同的具体职类；不把「财务」放宽成包含人事、行政的整个职能大类。
+_CATEGORY_ALIASES = {"财务": "财务审计", "会计": "财务审计", "审计": "财务审计",
+                     "backend": "后端", "frontend": "前端", "hr": "人力"}
+EVENT_TYPES = frozenset({"open", "close", "change", "reopen"})
+
+
+def _text_list(values, name):
+    if values is None:
+        return []
+    if not isinstance(values, (list, tuple)) or len(values) > 100:
+        raise ValueError(f"{name} 必须是最多100项的文本列表")
+    if any(not isinstance(v, str) or not v.strip() or len(v) > 256 for v in values):
+        raise ValueError(f"{name} 每项必须是1至256字符的非空文本")
+    return list(dict.fromkeys(v.strip() for v in values))
+
+
+def category_vocabulary(conn):
+    """当前数据中的实际职类；随查询返回，安装包用户无需另外寻找词表文件。"""
+    return sorted({value for row in conn.execute("SELECT DISTINCT category,subcategory FROM job")
+                   for value in row if value})
+
+
+def _category_match(conn, term):
+    available = category_vocabulary(conn)
+    if term in available:
+        return {"match": "exact", "matched": [term]}
+    target = _CATEGORY_ALIASES.get(_norm_name(term))
+    if target in available:
+        return {"match": "alias", "matched": [target], "input": term}
+    return {"match": "none", "matched": [], "available": available}
 
 
 def positive(value, name="limit"):
@@ -97,6 +129,33 @@ def _job_dict(row) -> dict:
     return d
 
 
+def _cec_listing(url, recruit_type):
+    if not re.fullmatch(r"https://campus\.cec\.com\.cn/position/\d+", url or ""):
+        return None
+    channel = {"campus": 0, "social": 1}.get(recruit_type)
+    return f"https://campus.cec.com.cn/position?positionType={channel}" if channel is not None else None
+
+
+def _annotate_url(row, info):
+    cec_listing = False
+    if row["source_id"] == "jsonportal-cec":
+        # 2026-11-03官网导航与同名职位确认：详情在列表内展开，旧拼接路径为空白。
+        corrected = _cec_listing(row.get("url"), row.get("recruit_type"))
+        if corrected:
+            row["recorded_url"], row["url"] = row["url"], corrected
+            row["url_evidence_as_of"] = "2026-11-03"
+            cec_listing = True
+        elif re.fullmatch(r"https://campus\.cec\.com\.cn/position\?positionType=[01]", row.get("url") or ""):
+            cec_listing = True
+    if info.get("adapter") == "netease" or cec_listing:
+        row["url_scope"] = "project_listing"
+        row["url_hint"] = "链接为项目职位列表，需按岗位标题查找；不是该岗位的直接详情或申请链接"
+    elif info.get("record_kind") == "recruitment_notice":
+        row["url_scope"] = "source_notice"
+    else:
+        row["url_scope"] = "unknown"
+
+
 def _source_annotations(conn, rows, *, clock=None):
     if not rows:
         return rows
@@ -123,6 +182,7 @@ def _source_annotations(conn, rows, *, clock=None):
                                  else "unconfirmed_stale" if stale else "observed_recently"))
         row.update(source_kind=info.get("source_kind", "unknown"),
                    record_kind=info.get("record_kind", "unknown"))
+        _annotate_url(row, info)
     return rows
 
 
@@ -186,6 +246,40 @@ def _snippet(text_conn, job_id: str, terms: list[str], width: int = 40) -> tuple
         if i >= 0:
             return body[max(0, i - width):i + len(t) + width].replace("\n", " "), row["fetched_at"]
     return None, row["fetched_at"]
+
+
+def _qualification_evidence(row, description, requirements, observed_at):
+    from jobradar.normalize import degree_min_from_jd, normalize_degree
+
+    body = "\n".join(x for x in (description, requirements) if x)
+    jd_degree = degree_min_from_jd(body)
+    structured = normalize_degree(row.get("degree_min"))
+    conflict = bool(structured and jd_degree and structured != jd_degree)
+    excerpt = next((line.strip()[:240] for line in re.split(r"[\n。；]", body)
+                    if jd_degree and jd_degree in line and any(
+                        anchor in line for anchor in ("学历", "学位", "及以上", "以上", "任职", "要求"))), None)
+    row["qualification_evidence"] = {
+        "degree": {"structured": row.get("degree_min"), "jd": jd_degree,
+                   "conflict": conflict, "excerpt": excerpt}, "text_observed_at": observed_at}
+    warnings = []
+    if conflict:
+        warnings.append(f"学历字段「{row['degree_min']}」与正文候选要求「{jd_degree}」不一致；"
+                        "不能仅凭字段判定符合或排除，需核实原始要求及正文观测时间")
+    if row.get("recruit_type") == "social" and row.get("grad_year"):
+        warnings.append("社招渠道也可能面向应届或毕业不久人群；渠道标签不等于投递资格，需读原文核实")
+    row["field_warnings"] = warnings
+
+
+def _annotate_qualifications(text_conn, rows):
+    if text_conn is None or not rows:
+        return
+    texts = {r["job_id"]: r for r in text_conn.execute(
+        "SELECT job_id,description,requirements,fetched_at FROM job_text "
+        "WHERE job_id IN (SELECT value FROM json_each(?))", (json.dumps([r["id"] for r in rows]),))}
+    for row in rows:
+        t = texts.get(row["id"])
+        _qualification_evidence(row, t["description"] if t else None,
+                                t["requirements"] if t else None, t["fetched_at"] if t else None)
 
 
 class CompanyMatch(NamedTuple):
@@ -270,14 +364,21 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
                 grad_year=None, keyword=None, text=None, text_conn=None,
                 include_closed=False, limit=50, contains=False, meta=None,
                 dedupe=False, exclude_store=False, deadline_before=None,
-                deadline_after=None) -> list[dict]:
+                deadline_after=None, cities=None, exclude_cities=None,
+                exclude_keywords=None, exclude_companies=None,
+                include_unknown_grad_year=False) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
     dedupe=True 时把「同公司+同标题+同城市」的多条 req 折叠成一条，并给出 `variants`（原条数）。
     exclude_store=True 排掉门店/零售岗（喜茶、星巴克那类门店帖占了 8 千条，校招用户基本不需要）。
     """
-    where, args = [], []
+    where, args, predicates = [], [], []
+    def add(clause, *values, field=None):
+        where.append(clause)
+        args.extend(values)
+        predicates.append((clause, values, field))
+
     positive(limit)
     _filter_domains(grad_year, recruit_type)
     _company_parameter(company)
@@ -285,51 +386,81 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     _date_parameter(deadline_after, "deadline_after")
     if deadline_before and deadline_after and deadline_before < deadline_after:
         raise ValueError("截止日范围起止颠倒")
+    cities = _text_list(cities, "cities")
+    exclude_cities = _text_list(exclude_cities, "exclude_cities")
+    exclude_keywords = _text_list(exclude_keywords, "exclude_keywords")
+    exclude_companies = _text_list(exclude_companies, "exclude_companies")
+    if city and cities:
+        raise ValueError("city 与 cities 不能同时指定；多城市使用 cities")
+    if city is not None and (not isinstance(city, str) or not city.strip()):
+        raise ValueError("city 必须是非空文本")
+    if include_unknown_grad_year and grad_year is None:
+        raise ValueError("include_unknown_grad_year 需要同时指定 grad_year")
     clock = now_ts()
     today = shanghai_date(clock)
     if meta is not None:
         meta.update(total=0, returned=0, truncated=False, empty_reason=None)
+        # 调用方可复用同一个字典，上一轮筛选信息不能泄漏到下一轮。
+        for key in ("company_match", "company_coverage", "category_match", "filter_coverage", "hints",
+                    "excluded_company_matches", "text_match_semantics"):
+            meta.pop(key, None)
     if not include_closed:
-        where.append("j.closed_at IS NULL")
+        add("j.closed_at IS NULL")
         # 快照可能早于今天：明示截止日一过就从当前岗位中隐藏，无需等该源再次成功抓取。
         # 这是查询过滤，不改 closed_at / miss_count，失败与拒收仍不能改变岗位状态。
-        where.append("(j.apply_end IS NULL OR j.apply_end >= ?)")
-        args.append(today)
+        add("(j.apply_end IS NULL OR j.apply_end >= ?)", today)
     if exclude_store:
         # 只按标题关键词排，不用公司名（公司名排会误伤整家公司的正常岗位）
-        where.append("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")")
-        args += [f"%{w}%" for w in STORE_TITLE_WORDS]
+        add("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")",
+            *[f"%{w}%" for w in STORE_TITLE_WORDS])
     if company:
         match = resolve_company(conn, company, contains=contains)
         clause, company_args = _company_sql(match)
-        where.append(clause)
-        args += company_args
+        add(clause, *company_args)
         if meta is not None:
             meta["company_match"] = match.as_meta()
     if category:
-        where.append("(j.category = ? OR j.subcategory = ?)")
-        args += [category, category]
-    if city:
-        where.append("EXISTS (SELECT 1 FROM json_each(j.cities) WHERE value IN (?, ?))")
-        args += [city.removesuffix("市"), city.removesuffix("市") + "市"]
+        category_match = _category_match(conn, category)
+        category_term = next(iter(category_match["matched"]), category)
+        add("(j.category = ? OR j.subcategory = ?)", category_term, category_term)
+        if meta is not None:
+            meta["category_match"] = category_match
+    wanted_cities = [city.strip()] if city else cities
+    if wanted_cities:
+        labels = sorted({label for c in wanted_cities for label in (c.removesuffix("市"), c.removesuffix("市") + "市")})
+        add("EXISTS (SELECT 1 FROM json_each(j.cities) WHERE value IN (SELECT value FROM json_each(?)))",
+            json.dumps(labels))
+    if exclude_cities:
+        labels = sorted({label for c in exclude_cities for label in (c.removesuffix("市"), c.removesuffix("市") + "市")})
+        add("NOT EXISTS (SELECT 1 FROM json_each(j.cities) WHERE value IN (SELECT value FROM json_each(?)))",
+            json.dumps(labels))
+    for word in exclude_keywords:
+        add("j.title NOT LIKE ? ESCAPE '\\'", _like(word))
+    excluded_matches = {}
+    for name in exclude_companies:
+        excluded = resolve_company(conn, name)
+        if excluded.mode == "ambiguous":
+            raise ValueError(f"排除公司「{name}」不唯一，请写完整名称：{'、'.join(excluded.candidates)}")
+        excluded_matches[name] = excluded.as_meta()
+        if excluded.ids:
+            clause, values = _company_sql(excluded)
+            add(f"NOT ({clause})", *values)
+    if meta is not None and excluded_matches:
+        meta["excluded_company_matches"] = excluded_matches
     if recruit_type:
-        where.append("j.recruit_type = ?")
-        args.append(recruit_type)
+        add("j.recruit_type = ?", recruit_type)
     if grad_year:
-        where.append("j.grad_year = ?")
-        args.append(grad_year)
+        add("(j.grad_year = ? OR j.grad_year IS NULL)" if include_unknown_grad_year else "j.grad_year = ?",
+            grad_year, field="grad_year")
     if keyword:
-        where.append("j.title LIKE ? ESCAPE '\\'")
-        args.append(_like(keyword))
+        add("j.title LIKE ? ESCAPE '\\'", _like(keyword))
     # 截止日筛选：只有「确实知道截止日」的岗位才参与比较。
     # 没有截止日的岗位（北森门户全部、大易的长期开放岗）不能被当成「已过期」排除，
     # 也不能被当成「还在招」放进 --deadline-after 的结果——两种都会误导用户。
     if deadline_before:
-        where.append("j.apply_end IS NOT NULL AND j.apply_end <= ?")
-        args.append(deadline_before)
+        add("j.apply_end IS NOT NULL AND j.apply_end <= ?", deadline_before, field="apply_end")
     if deadline_after:
-        where.append("j.apply_end IS NOT NULL AND j.apply_end >= ?")
-        args.append(deadline_after)
+        add("j.apply_end IS NOT NULL AND j.apply_end >= ?", deadline_after, field="apply_end")
     if text is not None and (not isinstance(text, str) or len(text) > 4096):
         raise ValueError("全文检索必须为不超过 4096 字符的文本")
     terms = sorted(dict.fromkeys(text.split()), key=len, reverse=True) if text else []
@@ -342,7 +473,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     from_sql = " FROM job j JOIN company c ON c.id = j.company_id"
     if (terms and os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX") != "1"
             and any((company, category, city, recruit_type, grad_year, keyword,
-                     deadline_before, deadline_after, exclude_store))):
+                     deadline_before, deadline_after, exclude_store, cities, exclude_cities,
+                     exclude_keywords, exclude_companies))):
         # 只在集合足够小时使用主键读取；较大集合继续原路径，不截断匹配结果。
         with closing(conn.execute("SELECT j.id" + from_sql + " WHERE " + " AND ".join(where), args)) as cursor:
             eligible = cursor.fetchmany(10001)
@@ -358,8 +490,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         if not candidates:
             break
     if terms:
-        where.append("j.id IN (SELECT value FROM json_each(?))")
-        args.append(json.dumps(sorted(candidates)))
+        add("j.id IN (SELECT value FROM json_each(?))", json.dumps(sorted(candidates)))
     where_sql = (" WHERE " + " AND ".join(where)) if where else ""
     order = "apply_end, " if deadline_before or deadline_after else ""
     if dedupe:
@@ -368,7 +499,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         # 城市是集合：JSON 元素顺序或重复标签不能把同岗拆成多个去重组。
         city_key = ("(SELECT json_group_array(city) FROM "
                     "(SELECT DISTINCT value AS city FROM json_each(j.cities) ORDER BY value))")
-        part = f"PARTITION BY j.company_id, j.title, {city_key}"
+        part = (f"PARTITION BY j.company_id, j.title, {city_key}, j.recruit_type, j.grad_year, "
+                "j.degree_min, j.apply_end, j.department, j.batch")
         sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
                f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
                f"{from_sql}{where_sql})"
@@ -394,12 +526,61 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
                                         "no_current_jobs" if not visible else "no_matching_jobs")
         elif not rows:
             meta["empty_reason"] = "no_matching_jobs"
+        hints = empty_result_hints(rows, company_match=meta.get("company_match"), grad_year=grad_year, city=city)
+        if terms:
+            meta["text_match_semantics"] = "literal_terms"
+            hints.append("关键词命中不代表满足资格：正文可能包含否定、优先或更高的最低要求，需读原文逐项核实")
+        if not rows and cities:
+            hints.append("城市并集没有匹配记录；这不表示这些城市没有招聘，可去掉城市条件核实未标注工作地的候选")
+        if category and category_match["match"] == "none":
+            hints.append(f"职类「{category}」不在当前数据词表中；可用 category_match.available 选择具体职类，"
+                         "或改用标题关键词/正文检索，不会自动放宽为整个大类")
+        coverage = {}
+        for field, label, enabled in (("grad_year", "届次", grad_year is not None),
+                                       ("apply_end", "截止日", bool(deadline_before or deadline_after))):
+            if not enabled:
+                continue
+            if terms:
+                info = {"total": None, "known": None, "unknown": None, "unit": "records",
+                        "scope": "not_counted_for_fulltext"}
+                hints.append(f"本次{label}筛选只按已标注字段判断；正文检索未复算放宽后的缺失数量，"
+                             f"不能把结果当作全部机会；可去掉{label}条件对照查询")
+            else:
+                scoped = [(clause, values) for clause, values, tag in predicates if tag != field]
+                scoped_sql = " WHERE " + " AND ".join(clause for clause, _ in scoped) if scoped else ""
+                n, known = conn.execute(
+                    f"SELECT COUNT(*),COALESCE(SUM(j.{field} IS NOT NULL),0)" + from_sql + scoped_sql,
+                    [v for _, values in scoped for v in values]).fetchone()
+                info = {"total": n, "known": known, "unknown": n-known, "unit": "records",
+                        "scope": "other_filters"}
+                if n-known:
+                    hints.append(f"保留其他条件、去掉{label}筛选时有{n}条记录，其中{n-known}条未标注{label}；"
+                                 "未知不等于不符合，也不等于符合；记录数未折叠")
+            coverage[field] = info
+        if coverage:
+            meta["filter_coverage"] = coverage
+        if include_unknown_grad_year:
+            hints.append("已同时返回届次未标注候选；grad_year_match=unknown需要另行核实，不能宣称符合届次")
+        if exclude_cities:
+            hints.append("排除城市按岗位列出的任一城市执行；城市缺失仍未知，不能据此保证工作地符合要求")
+        if exclude_keywords:
+            hints.append("排除关键词仅匹配标题字面量，不代表已排除正文中的资格要求或语义相近岗位")
+        for name, info in excluded_matches.items():
+            if info["match"] == "none":
+                hints.append(f"排除公司「{name}」未精确匹配收录主体，未移除相近名称公司；需核实名称")
+        if hints:
+            meta["hints"] = hints
+        meta["count_unit"] = "folded_groups" if dedupe else "records"
     if dedupe:
         for r in rows:
             r.pop("_rn", None)
     if terms:
         for r in rows:
             r["match"], r["text_observed_at"] = _snippet(text_conn, r["id"], terms)
+    if grad_year is not None:
+        for row in rows:
+            row["grad_year_match"] = "unknown" if row["grad_year"] is None else "explicit"
+    _annotate_qualifications(text_conn, rows)
     return _source_annotations(conn, rows, clock=clock)
 
 
@@ -407,6 +588,9 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200,
                    contains=False, meta=None) -> list[dict]:
     positive(limit)
     _company_parameter(company)
+    if types is not None and (not isinstance(types, (list, tuple)) or not types
+            or any(not isinstance(t, str) or t not in EVENT_TYPES for t in types)):
+        raise ValueError("types 必须是非空列表，可用 open、close、change、reopen；下架使用 close")
     where, args = ["e.ts >= ?"], [since]
     if company:
         match = resolve_company(conn, company, contains=contains)
@@ -418,13 +602,17 @@ def recent_changes(conn, *, since, company=None, types=None, limit=200,
     if types:
         where.append(f"e.type IN ({','.join('?' * len(types))})")
         args += list(types)
-    sql = f"""SELECT e.ts, e.type, e.job_id, e.diff, c.name AS company, j.title, j.url
+    sql = f"""SELECT e.ts, e.type, e.job_id, e.diff, c.name AS company, j.title, j.url, j.source_id, j.recruit_type
               FROM job_event e JOIN job j ON j.id = e.job_id JOIN company c ON c.id = j.company_id
               WHERE {' AND '.join(where)} ORDER BY e.ts DESC, e.id DESC LIMIT ?"""
     out = []
+    from jobradar.source_catalog import catalog
+
+    sources = catalog()
     for r in conn.execute(sql, [*args, limit]):
         d = dict(r)
         d["diff"] = json.loads(d["diff"]) if d["diff"] else None
+        _annotate_url(d, sources.get(d["source_id"], {}))
         out.append(d)
     if meta is not None:
         total = conn.execute("SELECT COUNT(*) FROM (" + sql.rsplit(" ORDER BY", 1)[0] + ")", args).fetchone()[0]
@@ -602,6 +790,7 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
             j["description"] = t["description"] if t else None
             j["requirements"] = t["requirements"] if t else None
             j["text_observed_at"] = t["fetched_at"] if t else None
+            _qualification_evidence(j, j["description"], j["requirements"], j["text_observed_at"])
         out[name] = jobs
     if meta is not None:
         meta.update(
@@ -630,6 +819,7 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
     d["description"] = t["description"] if t else None
     d["requirements"] = t["requirements"] if t else None
     d["text_observed_at"] = t["fetched_at"] if t else None
+    _qualification_evidence(d, d["description"], d["requirements"], d["text_observed_at"])
     from jobradar.source_catalog import catalog
 
     d["source"] = catalog().get(d["source_id"], {"source_kind":"unknown", "record_kind":"unknown"}).copy()
@@ -659,13 +849,22 @@ def _cal_dict(r) -> dict:
         if d["apply_end"] else "unknown"
     # 提示语使用公司名，避免把招聘项目名称误写成雇主。
     d["hint"] = BLOCKED_HINT.format(name=d["group_name"]) if d["jd_status"] == "blocked" else None
+    rtype = ("social" if d["project_type"] == "社招" else "campus" if d["project_type"] in {
+        "提前批", "秋招正式批", "秋招补录", "春招", "校招", "校园大使"} else None)
+    if corrected := _cec_listing(d.get("apply_url"), rtype):
+        d["recorded_apply_url"], d["apply_url"] = d["apply_url"], corrected
+        d["apply_url_scope"] = "project_listing"
+    elif re.fullmatch(r"https://campus\.cec\.com\.cn/position\?positionType=[01]", d.get("apply_url") or ""):
+        d["apply_url_scope"] = "project_listing"
+    elif re.fullmatch(r"https://campus(?:\.game)?\.163\.com/app/job/position\?id=\d+", d.get("apply_url") or ""):
+        d["apply_url_scope"] = "project_listing"
     return d
 
 
 def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, grad_year=None,
                      origin=None, open_on=None, has_tracks=None, has_window=None,
                      city=None, direction=None, deadline_before=None, deadline_after=None,
-                     include_expired=False, limit=100, meta=None) -> list[dict]:
+                     include_expired=False, limit=100, meta=None, confirmed_open_only=False) -> list[dict]:
     """日历条目。
 
     过滤先按**精确**匹配；没有结果再退化为子串（`--group 字节` 仍能找到「字节跳动」）。
@@ -689,6 +888,11 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
     """
     positive(limit)
     _filter_domains(grad_year)
+    if confirmed_open_only and open_on is None:
+        raise ValueError("confirmed_open_only 需要同时提供 open_on 日期")
+    if meta is not None:
+        meta.pop("window_counts", None)
+        meta.pop("hints", None)
     if origin is not None and origin not in {"manual", "auto"}:
         raise ValueError("origin 必须是 manual 或 auto")
     _company_parameter(company)
@@ -770,6 +974,8 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
             where.append("(apply_start IS NULL OR apply_start <= ?) AND "
                          f"(apply_end IS NULL OR apply_end >= ? OR ({scope}) != 'batch')")
             args += [open_on, open_on]
+            if confirmed_open_only:
+                where.append(f"apply_start IS NOT NULL AND apply_end IS NOT NULL AND ({scope}) = 'batch'")
         sql = "SELECT * FROM entry"
         if has_evidence:
             sql = ("SELECT entry.*, ev.fields AS field_evidence FROM entry "
@@ -797,6 +1003,13 @@ def calendar_entries(cal_conn, *, group=None, company=None, project_type=None, g
                 known = (d["apply_start"] is not None and d["apply_end"] is not None
                          and d["deadline_scope"] == "batch")
                 d["window_status"] = "open" if known else "unknown"
+            if meta is not None:
+                known = sum(row["window_status"] == "open" for row in rows)
+                unknown = len(rows)-known
+                meta["window_counts"] = {"scope": "returned", "open": known, "unknown": unknown}
+                if unknown:
+                    meta["hints"] = [f"本次匹配{meta['total']}条日历候选，本页{len(rows)}条中{known}条有明确完整批次窗口、"
+                                     f"{unknown}条窗口未知；未知候选不能直接称为当前可投，需去原页核实"]
         return rows
 
     if group or company:
@@ -860,7 +1073,11 @@ def empty_result_hints(rows, *, company_match=None, grad_year=None, city=None,
         return []
     out = []
     cm = company_match or {}
-    if cm.get("match") in ("none", "ambiguous"):
+    if cm.get("match") == "none":
+        target = cm.get("alias_target")
+        out.append((f"该名称映射到「{target}」，但该主体未收录岗位记录" if target else "该名称未收录岗位记录")
+                   + "；这不表示没有招聘，可核实完整公司名或查询招聘日历")
+    if cm.get("match") == "ambiguous":
         cands = "、".join(cm.get("candidates") or [])
         out.append(f"公司名没有唯一确定（{cm['match']}）" + (f"，候选：{cands}" if cands else "")
                    + "；换完整公司名，或用子串匹配再搜一次")
@@ -1079,10 +1296,20 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
     with_text = None
     jd_observation = None
     if text_conn is not None:
+        try:
+            text_conn.execute("SELECT octet_length('')").fetchone()
+        except sqlite3.OperationalError as error:
+            if "no such function: octet_length" not in str(error):
+                raise
+            body_condition = "(COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')"
+        else:
+            # SQLite >=3.43可从列元数据取得字节长度，避免仅为判空读取大段正文。
+            # https://www.sqlite.org/lang_corefunc.html#octet_length
+            body_condition = "(octet_length(description)>0 OR octet_length(requirements)>0)"
         observed = text_conn.execute(
             "SELECT COUNT(*),COALESCE(SUM(fetched_at>=? AND fetched_at<=?),0),MIN(fetched_at),MAX(fetched_at) "
             "FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
-            "AND (COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')",
+            "AND " + body_condition,
             (lookback_since(2, now=clock), clock, json.dumps(open_ids))).fetchone()
         with_text = observed[0]
         jd_observation = {"fresh_48h": observed[1], "older_than_48h": with_text-observed[1],
@@ -1104,5 +1331,6 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
             "recorded_open_jobs": recorded, "expired_hidden": recorded - len(open_ids),
             "count_as_of": today,
             "by_recruit_type": by_type,
+            "category_vocabulary": category_vocabulary(jobs_conn),
             "by_record_kind": by_record_kind, "by_source_kind": by_source_kind,
             "data_as_of": data_as_of(jobs_conn), "fields": field_coverage(jobs_conn, today=today)}

@@ -40,6 +40,27 @@ def test_missing_data_is_an_error_not_a_crash(tmp_path, monkeypatch):
     assert "jobradar update" in out["error"] and out["results"] == []
 
 
+def test_search_defaults_to_folding_and_exposes_evidence_and_exclusions(home):
+    with connect(home / "jobs.db", "jobs") as jobs, connect(home / "jd_text.db", "text") as text:
+        rows = [make_job(1, title="软件工程师", degree_min="硕士", requirements="本科及以上学历"),
+                make_job(2, title="软件工程师", degree_min="硕士", requirements="本科及以上学历"),
+                make_job(3, cities=["上海", "无锡"])]
+        ingest_run(jobs, "s1", rows, ts=now_ts())
+        upsert_texts(text, rows, ts=now_ts())
+    result = mcp_server.search_jobs(cities=["深圳", "无锡"], exclude_cities=["上海"], grad_year=2027)
+    assert len(result["results"]) == 1 and result["results"][0]["variants"] == 2
+    assert result["results"][0]["qualification_evidence"]["degree"]["conflict"] is True
+    assert result["count_unit"] == "folded_groups" and "filter_coverage" in result
+    assert len(mcp_server.search_jobs(dedupe=False, exclude_cities=["上海"])["results"]) == 2
+
+
+def test_wrong_event_type_uses_protocol_error_and_next_call_recovers(home):
+    result = asyncio.run(mcp_server.server.call_tool("recent_changes", {"types": ["closed"]}))
+    assert result.is_error and "close" in result.structured_content["error"]
+    following = asyncio.run(mcp_server.server.call_tool("recent_changes", {"types": ["open"]}))
+    assert not following.is_error and json.loads(following.content[0].text)["results"]
+
+
 @pytest.mark.parametrize("name, arguments", [
     ("search_jobs", {}), ("get_job", {"job_id": "missing:1"}),
     ("recent_changes", {}), ("new_jobs_by_category", {}),
@@ -168,3 +189,15 @@ def test_calendar_tool_empty_city_says_why(cal_home):
     out = mcp_server.calendar(city="拉萨")
     assert out["results"] == []
     assert out.get("advice") and "拉萨" in out["advice"]
+
+
+def test_calendar_tool_cannot_turn_candidates_into_confirmed_windows(cal_home):
+    with connect(cal_home / "calendar.db", "calendar") as conn:
+        conn.execute("INSERT INTO entry(id,origin,group_name,project_type,source_type,source_name,"
+                     "as_of,jd_status) VALUES ('unknown','manual','腾讯','秋招正式批','official_site',"
+                     "'公开招聘页','2026-10-30','none')")
+    payload = mcp_server.calendar(group="腾讯", open_on="2026-11-01")
+    assert payload["window_counts"] == {"scope": "returned", "open": 1, "unknown": 1}
+    assert payload["hints"]
+    strict = mcp_server.calendar(group="腾讯", open_on="2026-11-01", confirmed_open_only=True)
+    assert strict["total"] == 1 and strict["window_counts"]["unknown"] == 0

@@ -3,13 +3,13 @@
 需要 Python 3.11+。在实际运行 CLI 或 MCP 的 Python 环境中升级：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.4"
+pip install --upgrade "jobsearchradar[mcp]==2.2.0"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-仅使用 CLI 可以安装 `jobsearchradar==2.1.4`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+仅使用 CLI 可以安装 `jobsearchradar==2.2.0`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
 2026-11-03已从正式PyPI索引全新安装 `2.1.4`：7项CLI兼容检查、MCP九工具、11次CLI结果对照及标准错误恢复通过。72个包内运行文件与固定标签逐字节一致，简称映射相同；GitHub、CI与PyPI的wheel和源码包摘要一致。
 
@@ -17,23 +17,26 @@ jobradar calendar --help
 
 历史验证：2026-11-02 从 PyPI 全新安装 `2.1.3`，七项兼容检查、MCP九工具与错误恢复、23个品牌及公告分类通过。该版本的GitHub/PyPI产物摘要及72个包内文件与固定标签一致；历史结果不代替新版本验收。
 
+2.2.0 的正式索引安装需在发行后单独核验；下方2.1.4记录只代表历史验证，不能代替新版本检查。
+
 ## 渠道与固定源码
 
 | 渠道 | 版本与核验范围 | 用途 |
 | :--- | :--- | :--- |
+| PyPI `2.2.0` | 待发行后正式索引核验 | 当前版本目标 |
 | PyPI `2.1.4` | 全新安装、7项CLI检查、九工具与错误恢复通过；统计延迟限制见上文 | 推荐安装 |
 | PyPI `2.1.3` | 全新安装、7项CLI检查、MCP九工具与错误恢复通过 | 历史安装记录 |
 | PyPI `2.1.2` | 已核实的历史发行包 | 历史安装记录 |
 | PyPI `2.1.1` | 已核验的上一版发行包 | 历史安装记录 |
-| GitHub `v2.1.4` | 固定发行标签，产物分别核对摘要 | 下载 wheel 或源码包 |
-| 固定源码标签 | `v2.1.4`，代码版本 `2.1.4` | 发布后可复现的备用安装 |
+| GitHub `v2.2.0` | 固定发行标签，产物分别核对摘要 | 下载 wheel 或源码包 |
+| 固定源码标签 | `v2.2.0`，代码版本 `2.2.0` | 发布后可复现的备用安装 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.1.4.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.2.0.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
@@ -41,7 +44,7 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 
 ## 安装后检查
 
-`--version` 应显示 `2.1.4`；`search --help` 应正常退出，并列出 `--deadline-before`；
+`--version` 应显示 `2.2.0`；`search --help` 应正常退出，并列出 `--deadline-before`；
 `calendar --help` 应列出 `--city` 和 `--include-expired`。参数不受支持或帮助报错时，
 先核对终端与 MCP 使用的 Python 环境，再按上述命令升级，不要删除筛选条件。
 
