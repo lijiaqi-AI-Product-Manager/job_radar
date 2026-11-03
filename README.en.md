@@ -36,8 +36,8 @@ Tell it where you want to work, what you want to do and what matters to you. It 
 | Find relevant opportunities | Combine employer, city, role category, recruitment type and graduation-year filters |
 | Read actual requirements | Search titles and original JD text; keep the source link |
 | Follow recruitment activity | Application calendars and open / change / close history |
-| Build your own tools | JSON by default, readable CLI tables, and nine MCP tools |
-| Work with your own copy | Local SQLite queries, offline analysis, separate code and data releases |
+| Keep using your familiar assistant | Ask naturally, refine conditions and compare candidates after initial setup |
+| Spend less time switching sites | Query listings, original requirements, recent activity and calendars in one workflow |
 | Assess the evidence | Separate official and aggregator sources; preserve missing values and reproducible counts |
 
 ## Quick start
