@@ -1,7 +1,7 @@
 ![job_radar — 把招聘信息，变成你的本地数据库](docs/assets/hero.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.1.4"><img src="https://img.shields.io/badge/release-v2.1.4-58bfa5" alt="Release 2.1.4"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.0"><img src="https://img.shields.io/badge/release-v2.2.0-58bfa5" alt="Release 2.2.0"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily data snapshots"></a>
@@ -17,6 +17,8 @@
 
 把分散的公开招聘信息整理成可追溯的 SQLite 数据集。按公司、城市、届次筛选，搜索职位描述，查看招聘时间与原始投递入口。提供 CLI 和 MCP，查询无需 API key，也无需部署服务器。
 
+**接入支持 MCP / skill 的助手后，直接用日常语言找机会。** 比如“苏州、无锡都可以，但不要上海”“2027届校招，把届次没写的候选单独列出”。助手调用本地工具，结果保留来源、未知条件与核实依据。
+
 <p align="center">
   <a href="#快速开始">快速开始</a> · <a href="#查询示例">查询示例</a> · <a href="#数据与覆盖">数据与覆盖</a> · <a href="docs/README.md">使用文档</a> · <a href="CONTRIBUTING.md">参与贡献</a>
 </p>
@@ -31,19 +33,19 @@
 
 | 你想做的事 | 项目提供的能力 |
 | :--- | :--- |
-| 找到适合自己的岗位 | 按公司、城市、职类、校招 / 实习 / 社招、毕业年份组合筛选 |
+| 找到适合自己的岗位 | 多城市并集，排除城市、公司和标题词；按招聘类型、职类与毕业年份组合筛选 |
 | 阅读真正的岗位要求 | 搜索标题与 JD 原文，保留原始招聘链接 |
 | 跟上招聘节奏 | 招聘日历、网申窗口，以及开岗 / 变更 / 下架历史 |
 | 接入自己的工作流 | CLI 默认输出 JSON，支持表格；MCP 共用同一查询层 |
 | 掌握自己的数据 | SQLite 本地查询，可离线分析；代码与数据分开发版 |
-| 判断信息是否可靠 | 官方与聚合来源分开标注，缺失字段留空，统计可复算 |
+| 判断信息是否可靠 | 官方与聚合来源分开标注，提示字段缺失与学历冲突，统计可复算 |
 
 ## 快速开始
 
 需要 **Python 3.11+**，支持 Windows、macOS 和 Linux。
 
 ```bash
-pip install --upgrade "jobsearchradar==2.1.4"
+pip install --upgrade "jobsearchradar==2.2.0"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -71,6 +73,9 @@ jobradar search --text "PyTorch 大模型" --type campus --limit 3 --table
 
 # 城市、职类与去重
 jobradar search --city 上海 --category 算法 --type intern --dedupe --table
+
+# 可选城市取并集，排除含上海的多城市记录
+jobradar search --cities 苏州 无锡 --exclude-city 上海 --category 财务 --table
 ```
 
 **查看日历与最近变化**
@@ -84,10 +89,13 @@ jobradar trends 美团 --step-days 7
 
 省略 `--table` 即输出 JSON，便于脚本处理。用 `jobradar show <job_id>` 查看单岗详情与 JD；用 `jobradar doctor` 检查本地数据状态。更多参数见 `jobradar --help` 与 [字段说明](skill/jobradar/references/fields.md)。
 
+CLI / MCP 默认折叠相同展示分组，`variants` 保留原条数；查看全部记录用 `--no-dedupe`。
+按届次或截止日筛选时，即使有结果也会提示未标注字段的范围。未知候选与明确匹配分别说明，不能把关键词命中当作资格保证。详见[个人条件查询](docs/CANDIDATE-SEARCH.md)。
+
 ## 接入 MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.1.4"
+pip install --upgrade "jobsearchradar[mcp]==2.2.0"
 jobradar update
 ```
 

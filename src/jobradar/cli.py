@@ -60,6 +60,12 @@ def _emit(args, payload: dict):
             print("# 部分记录的来源已停用：这些记录属于历史观测，当前可投状态需另行核实；停用不等于岗位已关闭。")
         if payload.get("truncated"):
             print("# 结果已截断：请缩小筛选范围，或调整返回条数。")
+        if payload.get("count_unit") == "folded_groups":
+            print("# 已折叠相同展示分组；variants为原记录数，--no-dedupe可查看全部记录。")
+        if any(r.get("field_warnings") for r in rows):
+            print("# 部分岗位有资格字段冲突或跨届次渠道；请查看详情中的field_warnings和qualification_evidence。")
+        if any(r.get("url_scope") == "project_listing" for r in rows):
+            print("# 部分链接为项目职位列表，需按标题查找；并非直达岗位详情或申请链接。")
         if rows and "project_type" in rows[0]:  # 日历：一条一块，别把 20 个字段堆一行
             for r in rows:
                 _print_calendar_row(r)
@@ -116,6 +122,8 @@ def _print_calendar_row(r: dict):
         print("  注意：日期来自岗位样本，不代表整个批次同一天截止")
     print(f"  城市：{'、'.join(r.get('cities') or []) or '未提供'}")
     print(f"  入口：{r.get('apply_url') or '未提供'}")
+    if r.get("apply_url_scope") == "project_listing":
+        print("  入口说明：项目职位列表，需按岗位标题查找，并非直达申请页")
     src = r.get("source") or {}
     when = f"（{src['date']}）" if src.get("date") else ""
     print(f"  来源：{src.get('name')}{when}")
@@ -565,7 +573,7 @@ def _company_note(term, info, err=None, quiet=False):
 
 
 def cmd_search(args):
-    text_cm = _open("text", required=False) if args.text else nullcontext(None)
+    text_cm = _open("text", required=False)
     with _open("jobs") as conn, text_cm as text:
         if args.text and text is None:
             raise SystemExit("全文检索需要 JD 原文库：先运行 `jobradar update`")
@@ -576,10 +584,12 @@ def cmd_search(args):
                              limit=args.limit, contains=args.contains, meta=meta,
                              dedupe=args.dedupe, exclude_store=args.exclude_store,
                              deadline_before=getattr(args, "deadline_before", None),
-                             deadline_after=getattr(args, "deadline_after", None))
+                             deadline_after=getattr(args, "deadline_after", None),
+                             cities=args.cities, exclude_cities=args.exclude_city,
+                             exclude_keywords=args.exclude_keyword, exclude_companies=args.exclude_company,
+                             include_unknown_grad_year=args.include_unknown_grad_year)
         payload = envelope(conn, rows, **meta)
-        hints = q.empty_result_hints(rows, company_match=meta.get("company_match"),
-                                     grad_year=args.grad_year, city=args.city, category=args.category)
+        hints = list(meta.get("hints", []))
         cal_hint = None
         if not rows and args.company:
             # 「字节/华为/小米」这类只做日历的公司，不能只回一句"数据里没有"
@@ -753,6 +763,7 @@ def cmd_calendar(args):
                                   deadline_before=getattr(args, "deadline_before", None),
                                   deadline_after=getattr(args, "deadline_after", None),
                                   include_expired=getattr(args, "include_expired", False),
+                                  confirmed_open_only=getattr(args, "confirmed_open_only", False),
                                   limit=args.limit, meta=meta)
         env = envelope(None, rows, as_of=q.calendar_as_of(conn), **meta)
         if not rows and args.group:
@@ -767,6 +778,7 @@ def cmd_calendar(args):
                 direction=getattr(args, "direction", None), group=args.group, company=args.company,
                 project_type=args.type, grad_year=args.grad_year, origin=args.origin, open_on=args.open_on,
                 include_expired=args.include_expired, has_tracks=args.has_tracks, has_window=args.has_window,
+                confirmed_open_only=args.confirmed_open_only,
                 deadline_before=args.deadline_before, deadline_after=args.deadline_after)
         _emit(args, env)
 
@@ -875,16 +887,21 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("search", cmd_search, "搜索在招岗位")
     sp.add_argument("--company", help="公司名（支持简称映射；只差一个字的前缀延伸不猜，如 京东≠京东方）")
     sp.add_argument("--contains", action="store_true", help="--company 按子串匹配（会命中多家，如 --company 中国）")
-    sp.add_argument("--dedupe", action="store_true",
+    sp.add_argument("--dedupe", action=argparse.BooleanOptionalAction, default=True,
                     # 注意：argparse 对 help 文本做 % 插值，裸 `%` 会让 `search --help` 直接抛
                     # ValueError: unsupported format character（2026-10-27 实测）→ 写成 `%%`
-                    help="折叠「同公司+同标题+同城市」的多条 req，并给出去重前的条数 variants")
+                    help="默认折叠相同展示分组并给出variants原条数；--no-dedupe查看全部记录")
     sp.add_argument("--exclude-store", action="store_true",
                     help="排除门店/零售岗（门店/店员/导购/收银/咖啡师/店长…；喜茶、星巴克门店帖约 8 千条）")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
     sp.add_argument("--city")
+    sp.add_argument("--cities", nargs="+", help="多个城市取并集，不能与--city同时使用")
+    sp.add_argument("--exclude-city", action="append", help="排除任一列出的城市，可重复")
+    sp.add_argument("--exclude-keyword", action="append", help="排除标题字面量，可重复；不代表语义排除")
+    sp.add_argument("--exclude-company", action="append", help="排除确定主体，可重复；歧义名称需澄清")
     sp.add_argument("--type", choices=["campus", "intern", "social"])
     sp.add_argument("--grad-year", type=int)
+    sp.add_argument("--include-unknown-grad-year", action="store_true", help="同时保留届次未标注候选，需与--grad-year配合核实")
     sp.add_argument("--keyword", help="标题关键词")
     sp.add_argument("--text", help="全文检索：标题 + JD 原文，多个词用空格分隔（都须出现），如 \"PyTorch 大模型\"")
     sp.add_argument("--deadline-before", help="YYYY-MM-DD：只看截止日不晚于该日的岗位（找快截止的）")
@@ -925,6 +942,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--origin", choices=["manual", "auto"], help="manual=人工编辑，auto=数据层自动生成")
     sp.add_argument("--include-expired", action="store_true", help="包含已明确截止的历史批次（默认自动隐藏）")
     sp.add_argument("--open-on", help="YYYY-MM-DD：该日可能在投的（没写起止的条目也会返回，带 window_status=unknown）")
+    sp.add_argument("--confirmed-open-only", action="store_true", help="与--open-on配合，只返回明确完整批次日期窗口，仍需核实原站")
     sp.add_argument("--has-tracks", action="store_true", help="只看有方向（track）的条目")
     sp.add_argument("--has-window", action="store_true", help="只看写了网申起止的条目")
     sp.add_argument("--city", help="城市，如 北京 / 杭州（只命中写了城市的条目）")
