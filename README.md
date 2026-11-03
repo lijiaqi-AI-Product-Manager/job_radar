@@ -215,3 +215,33 @@ uv run ruff check .
 [文档索引](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/README.md) · [常见问题](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/FAQ.md) · [覆盖说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/COVERAGE.md) · [更新日志](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CHANGELOG.md) · [合规声明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/COMPLIANCE.md)
 
 代码采用 [MIT License](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/LICENSE)。招聘文本与来源站点内容的权利归原权利人；代码许可不构成对第三方内容的额外授权。项目只访问允许公开读取的内容，不绕过登录、验证码或访问限制。详见 [数据使用说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DATA-LICENSE.md)。
+
+<!-- project-growth:start -->
+
+## 项目增长
+
+Star 历史每天自动更新。更新日期采用 UTC，Star 日期沿用 GitHub 聚合口径。 同时展示 PyPI 每日下载请求量。
+
+<a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/stargazers">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-light.svg" width="960" alt="job_radar · GitHub Star 历史">
+</picture>
+</a>
+
+<a href="https://pypistats.org/packages/jobsearchradar">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-light.svg" width="960" alt="job_radar · 每日下载请求趋势">
+</picture>
+</a>
+
+下载请求包含重复与自动化访问，不等于独立用户或活跃用户。
+
+[数据来源与统计口径](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
+
+<!-- project-growth:end -->

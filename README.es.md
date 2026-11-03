@@ -94,3 +94,33 @@ Puedes añadir fuentes públicas permitidas, corregir fechas, informar de errore
 [English guide](README.en.md) · [文档 / Docs](docs/README.md) · [FAQ](docs/FAQ.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 El código usa la licencia MIT. Los textos de ofertas y demás contenido de terceros conservan los derechos de sus titulares; la licencia del código no concede derechos adicionales sobre ese contenido.
+
+<!-- project-growth:start -->
+
+## Evolución del proyecto
+
+El historial de Stars se actualiza a diario. Las fechas de actualización usan UTC; las fechas de Stars siguen los agregados de GitHub. También se muestran las solicitudes diarias de descarga de PyPI.
+
+<a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/stargazers">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-light.svg" width="960" alt="job_radar · Historial de Stars de GitHub">
+</picture>
+</a>
+
+<a href="https://pypistats.org/packages/jobsearchradar">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-light.svg" width="960" alt="job_radar · Solicitudes diarias de descarga">
+</picture>
+</a>
+
+Las solicitudes incluyen accesos repetidos y automatizados; no equivalen a usuarios únicos o activos.
+
+[Fuentes de datos y definición de métricas](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
+
+<!-- project-growth:end -->

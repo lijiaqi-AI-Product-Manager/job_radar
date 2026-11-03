@@ -94,3 +94,33 @@ stdio サービスとして `jobradar-mcp` を登録します。検索・詳細�
 [English guide](README.en.md) · [文档 / Docs](docs/README.md) · [FAQ](docs/FAQ.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 コードは MIT ライセンスです。第三者の求人本文の権利は元の権利者に帰属し、コードのライセンスが追加の利用権を与えるものではありません。
+
+<!-- project-growth:start -->
+
+## プロジェクトの推移
+
+Star 履歴は毎日自動更新されます。更新日は UTC、Star の日付は GitHub の集計基準です。 PyPI の日別ダウンロードリクエスト数も表示します。
+
+<a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/stargazers">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-light.svg" width="960" alt="job_radar · GitHub Star 履歴">
+</picture>
+</a>
+
+<a href="https://pypistats.org/packages/jobsearchradar">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-light.svg" width="960" alt="job_radar · 日別ダウンロードリクエスト数">
+</picture>
+</a>
+
+リクエストには重複や自動アクセスが含まれ、ユニークユーザー数やアクティブユーザー数ではありません。
+
+[データソースと指標の定義](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
+
+<!-- project-growth:end -->

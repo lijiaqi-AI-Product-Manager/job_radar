@@ -196,3 +196,33 @@ If job_radar saved you a few trips across recruitment sites, a **Star** or a rec
 [Documentation](docs/README.md) · [FAQ](docs/FAQ.md) · [Coverage](docs/COVERAGE.md) · [Changelog](CHANGELOG.md) · [Compliance](COMPLIANCE.md)
 
 Code is licensed under [MIT](LICENSE). Recruitment text and third-party content remain subject to their owners' rights; the code license does not grant additional rights to that content. Collection respects public-access rules and does not bypass login walls, CAPTCHAs or access controls. See [data usage notes](docs/DATA-LICENSE.md).
+
+<!-- project-growth:start -->
+
+## Project growth
+
+Star history updates daily. Refresh dates use UTC; Star dates follow GitHub's aggregates. Daily PyPI download requests are also shown.
+
+<a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/stargazers">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/stars-light.svg" width="960" alt="job_radar · GitHub Star history">
+</picture>
+</a>
+
+<a href="https://pypistats.org/packages/jobsearchradar">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/job_radar/downloads-light.svg" width="960" alt="job_radar · Daily download requests">
+</picture>
+</a>
+
+Download requests include repeated and automated traffic; they are not unique or active users.
+
+[Data sources and metric definitions](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
+
+<!-- project-growth:end -->
