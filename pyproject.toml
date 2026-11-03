@@ -1,7 +1,7 @@
 [project]
 name = "jobsearchradar"
 dynamic = ["version"]
-description = "面向助手的中国招聘信息索引：校招、实习、社招与招聘日历，支持本地 SQLite、CLI 和 MCP"
+description = "给 AI 助手的求职搜索技能：用自然语言查询中国校招、实习、社招与招聘日历，支持 Skill 和 MCP"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"

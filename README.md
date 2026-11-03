@@ -1,7 +1,7 @@
 ![job_radar — 把招聘信息，接入你的助手](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/hero.svg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.1"><img src="https://img.shields.io/badge/release-v2.2.1-58bfa5" alt="Release 2.2.1"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.2"><img src="https://img.shields.io/badge/release-v2.2.2-58bfa5" alt="Release 2.2.2"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily data snapshots"></a>
@@ -13,11 +13,11 @@
   简体中文 · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.en.md">English</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.ja.md">日本語</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.ko.md">한국어</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.es.md">Español</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.fr.md">Français</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.de.md">Deutsch</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/README.ru.md">Русский</a>
 </p>
 
-**对助手说出你的求职需求，查中国校招、实习、社招与招聘日历。**
+**给你常用的 AI 助手，加一个找工作的技能。**
 
-把分散在企业招聘站和公开招聘公告里的信息，整理成可追溯的本地索引。按城市、公司、方向与届次发现机会，读原始 JD，核对日期，再回到来源页确认投递。适合找校招的应届生、找实习的在校生，以及寻找社招机会的求职者。
+你说想去哪里、做什么、有什么条件，助手帮你查中国校招、实习、社招与招聘日历，读岗位要求，再把候选和来源链接整理给你。适合应届生、在校实习生和寻找社招机会的求职者。
 
-**接入支持 MCP / skill 的助手后，日常查询只需对话。** 数据在本地，提供 CLI 与 MCP 两种入口；查询工具不需要 API key。你使用的助手由其服务方单独提供。
+**推荐通过 Agent 平台的技能或 MCP 接入，日常使用直接聊需求。** WorkBuddy、千问办公可从技能导入开始；Kimi 的本地 Agent 模式、Claude Desktop、ChatGPT 等按客户端能力选择接入路径。扣子、智谱清言等平台的适用条件见[平台说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/PLATFORMS.md)。首次按平台提示准备工具和数据，之后不用记命令或参数。
 
 <p align="center">
   <a href="#快速开始">快速开始</a> · <a href="#查询示例">查询示例</a> · <a href="#数据与覆盖">数据与覆盖</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/README.md">使用文档</a> · <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CONTRIBUTING.md">参与贡献</a>
@@ -42,24 +42,45 @@
 | 找到适合自己的岗位 | 多城市并集，排除城市、公司和标题词；按招聘类型、职类与毕业年份组合筛选 |
 | 阅读真正的岗位要求 | 搜索标题与 JD 原文，保留原始招聘链接 |
 | 跟上招聘节奏 | 招聘日历、网申窗口，以及开岗 / 变更 / 下架历史 |
-| 接入自己的工作流 | CLI 默认输出 JSON，支持表格；MCP 共用同一查询层 |
-| 掌握自己的数据 | SQLite 本地查询，可离线分析；代码与数据分开发版 |
+| 沿用熟悉的助手 | 完成首次接入后，用自然语言提问、补充条件和比较候选 |
+| 减少重复翻找 | 在同一工作流中查询岗位、原始要求、近期变化与招聘日历 |
 | 判断信息是否可靠 | 官方与聚合来源分开标注，提示字段缺失与学历冲突，统计可复算 |
 
 ## 快速开始
 
-需要 **Python 3.11+**，支持 Windows、macOS 和 Linux。首次完成下面的配置后，即可在兼容助手中对话查询。详细排错见[首次使用指南](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/GETTING-STARTED.md)。
+**1. 打开你常用助手中支持技能或本地工具的 Agent 工作模式。** 不确定选哪个？先看[平台接入说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/PLATFORMS.md)。
 
-**1. 安装工具，下载本地数据**
+**2. 把这段话发给它，跟随平台提示完成首次接入。**
 
-```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.1"
-jobradar update
+```text
+请帮我接入这个仓库里的 jobradar 求职搜索技能：
+https://github.com/lijiaqi-AI-Product-Manager/job_radar
+先阅读接入说明，检查当前平台是否支持；完成后，帮我找上海的产品实习，列
+出岗位要求、来源链接和已注明的截止日期，没写清的信息单独说明。
 ```
 
-**2. 在助手中添加 MCP 服务**
+需要上传文件时，从[当前代码 Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest)下载 **`jobradar-skill.zip`**，或导入仓库的 `skill/jobradar` 文件夹。技能包内有助手需要的准备步骤；导入说明后仍需安装查询工具和下载数据。
 
-在客户端的 MCP 配置中添加 stdio 服务；不同客户端的配置入口可能不同：
+**3. 之后直接说需求，也可以继续追问。**
+
+> “换成深圳，还是产品实习。把没写截止日期的单独列出来。”
+
+成功接入后，助手应实际查询并给出候选、来源链接和数据时间。普通网页聊天或只接受远程服务地址的模式可能需要换用兼容入口；不能只凭读过仓库介绍就当作已经接入。[完整首次使用指南](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/GETTING-STARTED.md)中有说明。
+
+Skill 是助手的求职查询说明，MCP 是它调用工具的连接方式，选平台支持的一种即可。查询工具不需要单独的 API key；你使用的助手可能按其套餐收费。项目不要求上传简历，不代投。
+
+<details>
+<summary><strong>手动安装与本地 MCP 配置（给负责配置的人或助手）</strong></summary>
+
+需要 Python 3.11+，支持 Windows、macOS 和 Linux：
+
+```bash
+python -m pip install --upgrade "jobsearchradar[mcp]==2.2.2"
+jobradar update
+jobradar doctor
+```
+
+在兼容客户端添加本地 stdio 服务，具体顶层字段以客户端界面为准：
 
 ```json
 {
@@ -71,17 +92,20 @@ jobradar update
 }
 ```
 
-**3. 新建对话，说出你的条件**
+客户端需能找到安装环境里的可执行文件，找不到时使用其绝对路径。自定义数据目录时，在服务 `env` 中设置同一 `JOBRADAR_HOME`。技能路径也可按[查询工作流](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/skill/jobradar/SKILL.md)直接调用本地工具，无需同时配置 MCP。
 
-例如：“帮我找上海的算法实习，列出原始链接、数据时间和需要核实的要求。”客户端需能找到安装环境里的 `jobradar-mcp`；找不到命令时使用可执行文件的绝对路径。也可让支持 skill 的助手按[查询工作流](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/skill/jobradar/SKILL.md)调用 CLI。
+包名为 `jobsearchradar`，命令为 `jobradar` / `jobradar-mcp`。首次更新需联网下载岗位、正文与日历三库，需预留下载和解压空间；下载后本地查询可离线使用。后续让助手检查并更新快照；默认目录为 `~/.cache/jobradar`。只用终端可安装 `jobsearchradar==2.2.2`。
 
-包名是 **`jobsearchradar`**，命令是 **`jobradar` / `jobradar-mcp`**。首次更新需要联网下载三库；下载后可以离线查询，后续执行 `jobradar update` 检查新快照。默认目录为 `~/.cache/jobradar`，可通过 `JOBRADAR_HOME` 修改。
+当前推荐默认的 GitHub 数据渠道；Gitee 与 npm 的核查状态见[安装渠道](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。[安装与排错](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/INSTALLATION.md)提供环境检查和固定源码备用方式。
 
-当前推荐 GitHub 数据渠道。2026-11-03 核查时 Gitee 镜像入口返回 404，暂不作为可用下载承诺；npm 暂无本项目发行包。详见[安装渠道](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。
-
-只使用终端时，安装 `jobsearchradar==2.2.1` 后运行 `jobradar search --company 复星医药 --type campus --limit 3 --table` 即可开始。
+</details>
 
 ## 查询示例
+
+日常使用可直接说“找上海算法实习”“看看这周新开的岗位”“对比这几家公司的要求”。下面的命令供助手和终端使用者参考。
+
+<details>
+<summary><strong>查看命令与参数示例</strong></summary>
 
 **按条件找岗位**
 
@@ -113,9 +137,11 @@ jobradar trends 美团 --step-days 7
 CLI / MCP 默认折叠相同展示分组，`variants` 保留原条数；查看全部记录用 `--no-dedupe`。
 按届次或截止日筛选时，即使有结果也会提示未标注字段的范围。未知候选与明确匹配分别说明，不能把关键词命中当作资格保证。详见[个人条件查询](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/CANDIDATE-SEARCH.md)。
 
-## 接入 MCP
+</details>
 
-提供搜索、单岗详情、近期变化、职类新增、公司对比、趋势、数据状态、招聘日历和统计 **9 个工具**。安装配置见[快速开始](#快速开始)。自定义数据目录时，在该服务的 `env` 中传入 `JOBRADAR_HOME`；MCP 与 CLI 共用查询规则。
+## 助手可以调用哪些能力
+
+提供搜索、单岗详情、近期变化、职类新增、公司对比、趋势、数据状态、招聘日历和统计 **9 个工具**。技能与 MCP 两种接入方式共用查询规则；首次接入见[快速开始](#快速开始)。
 
 薪资、经验、每周实习天数和远程等精细条件需要读取详情逐条核实，不能将全文词语命中直接写成“满足要求”。缺失日期和资格条件会保留未知。更多示例见[个人条件查询](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/CANDIDATE-SEARCH.md)。
 
@@ -180,7 +206,7 @@ uv run pytest
 uv run ruff check .
 ```
 
-从 [贡献指南](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CONTRIBUTING.md)、[开发规范](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DEVELOPMENT.md) 和 [路线图](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/ROADMAP.md) 开始。问题反馈请附命令、数据时间与原始来源链接，帮助维护者快速定位。
+从 [贡献指南](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/CONTRIBUTING.md)、[开发规范](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DEVELOPMENT.md) 和 [路线图](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/ROADMAP.md) 开始。问题反馈请附原始提问或操作步骤、数据时间与来源链接；如知道所用客户端，也请一并说明，帮助维护者快速定位。
 
 如果它帮你少翻了几个招聘网站，欢迎 **Star**，也欢迎分享给正在找工作的朋友。
 

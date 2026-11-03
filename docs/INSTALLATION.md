@@ -1,15 +1,19 @@
 # 安装与版本兼容
 
+日常求职推荐先按[第一次使用](GETTING-STARTED.md)把需求发给助手，由它引导接入。各平台的技能与 MCP 路径见[平台说明](PLATFORMS.md)。以下细节供负责配置的人或助手参考。
+
 需要 Python 3.11+。在实际运行 CLI 或 MCP 的 Python 环境中升级：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.2.1"
+pip install --upgrade "jobsearchradar[mcp]==2.2.2"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-仅使用 CLI 可以安装 `jobsearchradar==2.2.1`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+仅使用 CLI 可以安装 `jobsearchradar==2.2.2`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+
+以下为已完成的历史安装记录；新版本发布后另行登记。
 
 2026-11-03已在独立环境从正式PyPI索引无缓存复装 `2.2.1`：7项CLI兼容检查、MCP九工具16次调用、15次CLI结果对照及错误恢复通过。72个包内运行文件与固定标签逐字节一致；GitHub与PyPI的wheel及源码包SHA-256一致。依赖沿用该独立环境中已验证的官方依赖。
 
@@ -27,21 +31,22 @@ jobradar calendar --help
 
 | 渠道 | 版本与核验范围 | 用途 |
 | :--- | :--- | :--- |
-| PyPI `2.2.1` | 正式索引无缓存复装、7项CLI检查、九工具16次调用及错误恢复通过 | 推荐安装 |
+| PyPI `2.2.2` | 对话入口与独立技能包修订；正式渠道发布后核验 | 当前安装目标 |
+| PyPI `2.2.1` | 正式索引无缓存复装、7项CLI检查、九工具16次调用及错误恢复通过 | 历史安装记录 |
 | PyPI `2.2.0` | 全新安装、7项CLI检查、九工具16次调用及错误恢复通过 | 历史安装记录 |
 | PyPI `2.1.4` | 全新安装、7项CLI检查、九工具与错误恢复通过；统计延迟限制见上文 | 历史安装记录 |
 | PyPI `2.1.3` | 全新安装、7项CLI检查、MCP九工具与错误恢复通过 | 历史安装记录 |
 | PyPI `2.1.2` | 已核实的历史发行包 | 历史安装记录 |
 | PyPI `2.1.1` | 已核验的上一版发行包 | 历史安装记录 |
-| GitHub `v2.2.1` | 展示与安装入口修订的固定标签 | 下载 wheel 或源码包 |
-| 固定源码标签 | `v2.2.1`，代码版本 `2.2.1` | 发布后可复现的备用安装 |
+| GitHub `v2.2.2` | 对话入口与技能导入包的固定标签 | 下载 wheel 或源码包 |
+| 固定源码标签 | `v2.2.2`，代码版本 `2.2.2` | 发布后可复现的备用安装 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.2.1.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.2.2.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
@@ -49,7 +54,7 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 
 ## 安装后检查
 
-`--version` 应显示 `2.2.1`；`search --help` 应正常退出，并列出 `--deadline-before`；
+`--version` 应显示 `2.2.2`；`search --help` 应正常退出，并列出 `--deadline-before`；
 `calendar --help` 应列出 `--city` 和 `--include-expired`。参数不受支持或帮助报错时，
 先核对终端与 MCP 使用的 Python 环境，再按上述命令升级，不要删除筛选条件。
 
