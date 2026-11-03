@@ -123,6 +123,27 @@ def parse_detail_page(html: str) -> dict:
     return eval_assignments(html, keys=DETAIL_KEYS)
 
 
+def _public_terms(detail: dict) -> str | None:
+    """保留详情页公开明示的数值；不解码列表字体混淆，不从缺失值推断不限。"""
+    def number(key, maximum):
+        value = detail.get(key)
+        if isinstance(value, bool) or not re.fullmatch(r"[0-9]+", str(value)):
+            return None
+        value = int(value)
+        return value if 0 < value <= maximum else None
+
+    lines = []
+    low, high = number("minsal", 999999), number("maxsal", 999999)
+    # 公开详情页显示「180-200/天」；只保存明示区间，不推断币种、税前税后或转正薪资。
+    if low is not None and high is not None and low <= high:
+        lines.append(f"薪资：{low}-{high}/天")
+    if (days := number("day", 7)) is not None:
+        lines.append(f"每周出勤：{days}天/周")
+    if (months := number("month", 60)) is not None:
+        lines.append(f"实习时长：{months}个月")
+    return "实习僧详情页标注（具体资格以正文为准）：\n" + "\n".join(lines) if lines else None
+
+
 @register
 class ShixisengAdapter(Adapter):
     id = "shixiseng"
@@ -204,4 +225,5 @@ class ShixisengAdapter(Adapter):
             degree_min=degree_min_from_text(str(degree)) if degree else None,
             apply_end=date_only(detail.get("endtime"), floor_year=2024),
             description=info,
+            requirements=_public_terms(detail),
         )
