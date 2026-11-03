@@ -31,7 +31,7 @@
 区分必需、优先、可协商和未知，不把“优先”写成硬性门槛。
 
 最低学历只能提供部分信息，不能代替专业、在校身份等要求；空值不等于不限。
-`qualification_evidence.degree.conflict=true` 时并列说明平台字段和正文候选要求；
+`qualification_evidence.degree.conflict=true` 时并列说明已存学历字段和正文候选要求；
 正文提取只是定位证据，不能覆盖原字段或代替资格确认，必须注明其观测时间。
 薪资未公开时保留未知，不根据公司、职级或市场行情补值。
 正文的 `text_observed_at` 与岗位的 `last_seen` 分开说明，旧正文不能当成本次刚核实。
