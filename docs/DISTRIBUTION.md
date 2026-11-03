@@ -4,7 +4,7 @@
 
 | 渠道 | 当前状态 | 如何使用 |
 | :--- | :--- | :--- |
-| [PyPI](https://pypi.org/project/jobsearchradar/) | 2.2.1已从官方JSON与普通安装索引确认，独立环境复装、CLI/MCP通过 | 使用当前文档固定的发行版本 |
+| [PyPI](https://pypi.org/project/jobsearchradar/) | 2.2.2已从官方JSON与普通安装索引确认，独立环境无缓存安装、CLI/MCP通过 | 使用当前文档固定的发行版本 |
 | [GitHub代码Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases) | 与PyPI分别核对版本及发行文件 | 下载源码包或wheel |
 | [GitHub数据Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) | 按三库完整性清单分发；2026-11-03有新一代附件 | 执行 `jobradar update` |
 | Gitee `qgauss/job_radar` | 公开仓库API和快照清单均返回404；最近一次同步在发布步骤失败 | 暂不作为可用镜像推荐 |

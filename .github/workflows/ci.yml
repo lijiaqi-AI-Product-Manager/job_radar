@@ -59,6 +59,8 @@ jobs:
           py=$(uv run python -c "import sys; print(sys.executable.replace(chr(92), '/'))")
           uv pip install --python "$py" --reinstall --no-deps dist/*.whl
           "$py" scripts/check_installed_cli.py --python "$py"
+      - name: Standalone skill package
+        run: uv run python scripts/package_skill.py --output .tmp/skill/jobradar-skill.zip
 
   py311:
     # 兼容性下限：pyproject 声明 >=3.11，这里真跑一遍（只跑 ubuntu，省额度）
