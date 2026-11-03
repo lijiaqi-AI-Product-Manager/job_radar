@@ -1,0 +1,115 @@
+{
+  "repository": "https://github.com/lijiaqi-AI-Product-Manager/job_radar",
+  "queried_on": "2026-11-03",
+  "tool_version": "2.2.0",
+  "scope": "Illustrated workflow using real tool-result excerpts; not a host-client recording or timing benchmark.",
+  "search": {
+    "data_as_of": "2026-11-02T14:39:29Z",
+    "total": 31,
+    "returned": 2,
+    "count_unit": "folded_groups",
+    "filter_coverage": {
+      "grad_year": {
+        "total": 31,
+        "known": 16,
+        "unknown": 15,
+        "unit": "records",
+        "scope": "other_filters"
+      }
+    },
+    "results": [
+      {
+        "id": "beisen-fox-ess:36f1672e-000f-4fda-8804-66dd0170def7",
+        "company": "麦田能源",
+        "title": "会计助理（27届）(J11501)",
+        "cities": [
+          "温州",
+          "无锡"
+        ],
+        "grad_year": 2027,
+        "url": "https://fox-ess.zhiye.com/campus/detail?jobAdId=36f1672e-000f-4fda-8804-66dd0170def7",
+        "source_id": "beisen-fox-ess",
+        "source_kind": "official",
+        "record_kind": "position",
+        "last_seen": "2026-11-02T02:28:47Z",
+        "source_stale": false,
+        "grad_year_match": "explicit"
+      },
+      {
+        "id": "beisen-fox-ess:728bc64f-9acd-4134-a1d3-3d57e6512468",
+        "company": "麦田能源",
+        "title": "海外财务助理（27届）(J11502)",
+        "cities": [
+          "无锡"
+        ],
+        "grad_year": 2027,
+        "url": "https://fox-ess.zhiye.com/campus/detail?jobAdId=728bc64f-9acd-4134-a1d3-3d57e6512468",
+        "source_id": "beisen-fox-ess",
+        "source_kind": "official",
+        "record_kind": "position",
+        "last_seen": "2026-11-02T02:28:47Z",
+        "source_stale": false,
+        "grad_year_match": "explicit"
+      }
+    ]
+  },
+  "qualification": {
+    "id": "beisen-bj-tct:60052ea3-d406-4454-b5a1-68685ec06dae",
+    "company": "交控科技",
+    "title": "北京-F1专列计划软件开发工程师-2027校招",
+    "cities": [
+      "北京"
+    ],
+    "degree_min": "硕士",
+    "url": "https://bj-tct.zhiye.com/campus/detail?jobAdId=60052ea3-d406-4454-b5a1-68685ec06dae",
+    "text_observed_at": "2026-11-02T02:28:47Z",
+    "qualification_evidence": {
+      "degree": {
+        "structured": "硕士",
+        "jd": "本科",
+        "conflict": true,
+        "excerpt": "1、本科及以上学历，计算机、软件、信号等相关专业"
+      },
+      "text_observed_at": "2026-11-02T02:28:47Z"
+    }
+  },
+  "calendar": {
+    "data_as_of": "2026-11-02T14:51:04Z",
+    "total": 127,
+    "returned": 127,
+    "window_counts": {
+      "scope": "returned",
+      "open": 4,
+      "unknown": 123
+    },
+    "examples": [
+      {
+        "id": "zhongguoyidong-2027-qzzs-v1",
+        "group_name": "中国移动",
+        "grad_year": 2027,
+        "apply_start": "2026-09-01",
+        "apply_end": "2026-11-11",
+        "as_of": "2026-10-27",
+        "deadline_scope": "batch"
+      },
+      {
+        "id": "zhongguoyouzheng-2027-qzzs-v1",
+        "group_name": "中国邮政",
+        "grad_year": 2027,
+        "apply_start": "2026-09-07",
+        "apply_end": "2026-12-10",
+        "as_of": "2026-10-27",
+        "deadline_scope": "batch"
+      },
+      {
+        "id": "xindashengwu-2027-qzzs",
+        "group_name": "信达生物",
+        "grad_year": 2027,
+        "apply_start": "2026-09-22",
+        "apply_end": "2026-12-31",
+        "as_of": "2026-10-27",
+        "deadline_scope": "batch"
+      }
+    ]
+  }
+}

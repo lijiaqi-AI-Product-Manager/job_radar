@@ -764,7 +764,17 @@ def test_download_error_message_is_actionable(tmp_path, no_token):
     with pytest.raises(SystemExit) as ei:
         cli._download("jobs.db", tmp_path / "jobs.db", client=_client(handler))
     msg = str(ei.value)
-    assert "update" in msg and "--mirror gitee" in msg
+    assert "jobradar update" in msg and "DISTRIBUTION.md" in msg
+    assert "--mirror gitee" not in msg
+
+
+def test_update_help_does_not_promise_unverified_mirror(capsys):
+    with pytest.raises(SystemExit) as result:
+        cli.main(["update", "--help"])
+    assert result.value.code == 0
+    help_text = capsys.readouterr().out
+    assert "国内网络建议 gitee" not in help_text
+    assert "镜像状态" in help_text
 
 def test_commands_without_data_give_actionable_error(tmp_path, monkeypatch, capsys):
     """全新环境第一次跑查询：要告诉用户「先 update」，而不是 KeyError/SQL 报错。"""
