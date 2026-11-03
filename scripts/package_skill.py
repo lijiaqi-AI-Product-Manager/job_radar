@@ -10,7 +10,10 @@ SKILL = ROOT / "skill/jobradar"
 
 
 def package(destination: Path) -> None:
-    files = sorted([SKILL / "SKILL.md", *(SKILL / "references").glob("*.md")])
+    files = sorted(
+        [SKILL / "SKILL.md", *(SKILL / "references").glob("*.md")],
+        key=lambda path: path.relative_to(SKILL).as_posix(),
+    )
     names = {path.relative_to(SKILL).as_posix() for path in files}
     for path in files:
         for link in re.findall(r"\[[^\]]*\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
@@ -23,9 +26,10 @@ def package(destination: Path) -> None:
     with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in files:
             info = zipfile.ZipInfo(path.relative_to(SKILL).as_posix(), (2026, 11, 3, 0, 0, 0))
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
-            archive.writestr(info, path.read_bytes())
+            archive.writestr(info, path.read_bytes().replace(b"\r\n", b"\n"))
     print(f"{destination}: {len(files)} files, {destination.stat().st_size} bytes")
 
 

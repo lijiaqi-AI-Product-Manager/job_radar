@@ -8,6 +8,8 @@
 
 ## 当前渠道状态
 
+2026-11-03已核实PyPI `2.2.2`发布成功；普通安装索引同步后，本次独立环境无缓存安装、7项CLI兼容检查与MCP九工具16次调用通过，72个包内运行文件与固定标签一致。GitHub与PyPI的wheel和源码包SHA-256一致，五份Release附件逐个下载核验通过。技能包使用固定文件顺序、LF换行与统一ZIP平台标记，Windows导出与Linux发行构建逐字节一致。
+
 2026-11-03已核实PyPI `2.2.1`发布成功；普通安装索引同步后，独立环境无缓存复装、7项CLI检查与MCP九工具16次调用通过。GitHub与PyPI的wheel/源码包摘要一致，7份Release附件逐个下载验证；30秒横竖版短片与海报独立于Python包分发。
 
 历史记录：2026-11-03 已核实 PyPI `2.2.0` 发布成功，并从官方索引在全新环境安装复测。七项安装兼容检查、九工具16次调用与标准错误恢复通过；GitHub/CI/PyPI发行文件逐项SHA-256一致。Trusted Publisher与`PYPI_ENABLED`已生效，不能重复上传已有版本。
@@ -81,3 +83,5 @@ GitHub → Actions → **publish-pypi** → Run workflow → `target` 选 `testp
 - **`invalid-publisher`**：PyPI 上的 pending publisher 和实际 workflow 文件/环境名对不上，逐字段核对上表
 - **`File already exists`**：PyPI 不允许覆盖已发布版本，必须升版本号
 - **想撤回**：PyPI 允许 yank（不删），`pip install` 默认会跳过 yanked 版本
+
+独立技能包的导出命令：`python scripts/package_skill.py --output .tmp/skill/jobradar-skill.zip`。常规CI也执行该导出，检查包内相对引用能否独立读取。
