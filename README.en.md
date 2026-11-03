@@ -48,7 +48,10 @@ Tell it where you want to work, what you want to do and what matters to you. It 
 ```text
 Please connect the jobradar job-search skill from this repository:
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
-Read the setup guide and check whether this environment supports it. Once connected, find product internships in Shanghai and show requirements, source links and stated deadlines. Keep missing information separate.
+Read the setup guide and check whether this environment supports it.
+Once connected, find product internships in Shanghai and show
+requirements, source links and stated deadlines. Keep missing
+information separate.
 ```
 
 If the platform asks for a skill file, download **`jobradar-skill.zip`** from the [latest code release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest), or import `skill/jobradar` from this repository. Importing instructions still requires the query tools and data to be prepared. A plain web chat or remote-only MCP connector cannot automatically run a local tool from a repository link.

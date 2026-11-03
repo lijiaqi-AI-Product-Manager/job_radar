@@ -9,7 +9,8 @@ job_radar 是给 AI 助手使用的求职搜索技能。你说想去哪里、做
 ```text
 请帮我接入这个仓库里的 jobradar 求职搜索技能：
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
-先阅读接入说明，检查当前平台是否支持；完成后，帮我找上海的产品实习，列出岗位要求、来源链接和已注明的截止日期，没写清的信息单独说明。
+先阅读接入说明，检查当前平台是否支持；完成后，帮我找上海的产品实习，列
+出岗位要求、来源链接和已注明的截止日期，没写清的信息单独说明。
 ```
 
 助手会根据所在平台选择技能或 MCP 接入方式。提示需要导入文件时，可从[当前代码 Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest)下载 `jobradar-skill.zip`，在平台的技能页面选择导入；也可导入仓库中的 `skill/jobradar` 文件夹。

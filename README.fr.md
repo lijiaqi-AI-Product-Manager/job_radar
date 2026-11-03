@@ -13,7 +13,11 @@ Indiquez vos villes, métiers et contraintes. Votre assistant consulte les recru
 Envoyez cette demande à un assistant compatible. Suivez les indications de connexion initiale, puis faites vos recherches en langage naturel.
 
 ```text
-Connecte la compétence de recherche d’emploi jobradar de ce dépôt. Vérifie d’abord la compatibilité de cet environnement. Une fois connecté, trouve des stages en produit à Shanghai, avec exigences, liens sources et échéances indiquées. Sépare les informations inconnues.
+Connecte la compétence de recherche d’emploi jobradar de ce dépôt.
+Vérifie d’abord la compatibilité de cet environnement. Une fois
+connecté, trouve des stages en produit à Shanghai, avec exigences,
+liens sources et échéances indiquées. Sépare les informations
+inconnues.
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
 ```
 

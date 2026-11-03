@@ -13,7 +13,10 @@ Nennen Sie Städte, Tätigkeit und Bedingungen. Ihr Assistent durchsucht Einstie
 Senden Sie diese Anfrage an einen kompatiblen Assistenten. Folgen Sie einmalig den Einrichtungshinweisen und suchen Sie danach im Gespräch.
 
 ```text
-Verbinde den jobradar-Skill zur Jobsuche aus diesem Repository. Prüfe zuerst, ob diese Umgebung ihn unterstützt. Suche danach Produktpraktika in Shanghai und nenne Anforderungen, Originalquellen und angegebene Fristen. Führe unbekannte Angaben gesondert auf.
+Verbinde den jobradar-Skill zur Jobsuche aus diesem Repository. Prüfe
+zuerst, ob diese Umgebung ihn unterstützt. Suche danach
+Produktpraktika in Shanghai und nenne Anforderungen, Originalquellen
+und angegebene Fristen. Führe unbekannte Angaben gesondert auf.
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
 ```
 

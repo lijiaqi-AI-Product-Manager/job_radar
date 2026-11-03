@@ -55,7 +55,8 @@
 ```text
 请帮我接入这个仓库里的 jobradar 求职搜索技能：
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
-先阅读接入说明，检查当前平台是否支持；完成后，帮我找上海的产品实习，列出岗位要求、来源链接和已注明的截止日期，没写清的信息单独说明。
+先阅读接入说明，检查当前平台是否支持；完成后，帮我找上海的产品实习，列
+出岗位要求、来源链接和已注明的截止日期，没写清的信息单独说明。
 ```
 
 需要上传文件时，从[当前代码 Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest)下载 **`jobradar-skill.zip`**，或导入仓库的 `skill/jobradar` 文件夹。技能包内有助手需要的准备步骤；导入说明后仍需安装查询工具和下载数据。

@@ -13,7 +13,10 @@ Dile las ciudades, el puesto y tus condiciones. El asistente consulta empleo en 
 Envía esta petición a un asistente compatible. Sigue las indicaciones de conexión inicial y después busca conversando.
 
 ```text
-Conecta la habilidad de búsqueda de empleo jobradar de este repositorio. Comprueba primero si este entorno es compatible. Después busca prácticas de producto en Shanghái y muestra requisitos, enlaces originales y plazos indicados. Separa la información desconocida.
+Conecta la habilidad de búsqueda de empleo jobradar de este
+repositorio. Comprueba primero si este entorno es compatible. Después
+busca prácticas de producto en Shanghái y muestra requisitos, enlaces
+originales y plazos indicados. Separa la información desconocida.
 https://github.com/lijiaqi-AI-Product-Manager/job_radar
 ```
 
