@@ -288,6 +288,8 @@ class JysdAdapter(Adapter):
                     raise ValueError("公开列表分页重复，停止该源")
                 pages.add(url)
                 parsed = parse_index(self.request_text("GET", url), base)
+                if not partial and (parsed["last_page"] or 0) > limit:
+                    raise ValueError("公开索引超过 max_pages，未完成采集，不能据此下架岗位")
                 fresh = [r for r in parsed["items"] if r["id"] not in seen]
                 if parsed["items"] and not fresh:
                     raise ValueError("公开列表内容重复，停止该源")
