@@ -319,6 +319,7 @@ sources:
     # 2026-10-27 搜索反查新增：校招 430 岗；城市 20/20、发布日 20/20；岗位代码前缀 ZYJob
   - id: hotjob-76d597
     company: 飞鹤
+    enabled: false  # 与hotjob-feihe使用同一SU租户且类型重合；停止重复采集，历史记录继续分发并标注。
     params: {host: wecruit.hotjob.cn, tenant: SU6304eeb40dcad45aa776d597}
     # 2026-10-27 搜索反查新增：校招 8 岗；城市 8/8、发布日 8/8；岗位代码前缀 feihe
   - id: hotjob-de36ef

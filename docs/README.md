@@ -19,6 +19,7 @@
 | [常见问题](FAQ.md) | 下载、镜像、空字段、公司匹配与 MCP 排错 |
 | [字段说明](../skill/jobradar/references/fields.md) | 岗位、日历和输出字段 |
 | [个人条件查询](CANDIDATE-SEARCH.md) | 多城市与排除项、未知届次、资格冲突和展示分组 |
+| [来源重合与历史记录](SOURCE-QUALITY.md) | 同租户标记、只读重合检查与暂停采集的状态说明 |
 | [覆盖说明](COVERAGE.md) | 当前规模、固定目标池、记录类型与限制 |
 | [日历来源](CALENDAR.md) | 来源分级与招聘入口 |
 | [数据使用说明](DATA-LICENSE.md) | 代码许可和第三方内容 |

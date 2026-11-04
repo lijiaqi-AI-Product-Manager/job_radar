@@ -4,12 +4,15 @@
 """
 
 import json
+import math
 import os
 import re
 import sqlite3
 import unicodedata
+from collections import Counter, defaultdict
 from contextlib import closing
 from datetime import date, timedelta
+from itertools import combinations
 from typing import NamedTuple
 
 from jobradar.aliases import match_names
@@ -186,6 +189,21 @@ def _source_annotations(conn, rows, *, clock=None):
                                  else "unconfirmed_stale" if stale else "observed_recently"))
         row.update(source_kind=info.get("source_kind", "unknown"),
                    record_kind=info.get("record_kind", "unknown"))
+        row["availability_label"] = {
+            "closed":"已下架", "expired":"已超过记录截止日",
+            "unconfirmed_disabled":"历史记录，来源已暂停采集",
+            "unconfirmed_stale":"历史记录，来源超过48小时未确认",
+            "observed_recently":"最近观测到，投递前仍需核实官网",
+        }[row["availability"]]
+        row["source_tenant_peers"] = info.get("tenant_peers", [])
+        warnings = []
+        if enabled is False:
+            warnings.append("该来源已暂停采集，历史记录继续展示；不能据此确认当前可投，也不表示岗位已关闭")
+        elif stale:
+            warnings.append("该来源超过48小时未成功确认；这是历史观测，当前可投状态需核实原站")
+        if row["source_tenant_peers"]:
+            warnings.append("同一招聘租户还登记在其他来源下，岗位可能重复；跨来源数量不能直接相加")
+        row["source_warnings"] = warnings
         _annotate_url(row, info)
     return rows
 
@@ -840,6 +858,59 @@ def get_job(jobs_conn, text_conn, job_id) -> dict | None:
 def data_as_of(conn) -> str | None:
     """数据截至时间 = 最近一次成功抓取的时间。所有对外回答都应带上它。"""
     return conn.execute("SELECT MAX(ts) FROM source_run WHERE status='ok'").fetchone()[0]
+
+
+def source_record_overlaps(conn, sources, *, minimum_overlap=3, minimum_ratio=.9, clock=None):
+    """只读审计跨源重合；相同记录不是同租户或雇主归属的自动确认。"""
+    positive(minimum_overlap, "minimum_overlap")
+    if type(minimum_ratio) not in (int, float) or not math.isfinite(minimum_ratio) or not 0 < minimum_ratio <= 1:
+        raise ValueError("minimum_ratio 必须在0到1之间，且不能为0")
+    today = shanghai_date(clock or now_ts())
+    records = defaultdict(set)
+    counts = Counter()
+    companies = defaultdict(set)
+    for row in conn.execute("""SELECT j.source_id,j.source_job_id,j.title,j.recruit_type,j.cities,
+            j.grad_year,j.degree_min,j.batch,j.department,j.apply_end,c.name AS company
+            FROM job j JOIN company c ON c.id=j.company_id
+            WHERE j.closed_at IS NULL AND (j.apply_end IS NULL OR j.apply_end>=?)""", (today,)):
+        sid = row["source_id"]
+        adapter = sources.get(sid, {}).get("adapter")
+        if not adapter:
+            continue
+        key = (adapter, row["source_job_id"], row["title"], row["recruit_type"],
+               tuple(sorted(set(json.loads(row["cities"])))), row["grad_year"], row["degree_min"],
+               row["batch"], row["department"], row["apply_end"])
+        records[key].add(sid)
+        counts[sid] += 1
+        companies[sid].add(row["company"])
+    overlap = Counter()
+    samples = defaultdict(list)
+    collision_groups = 0
+    for key, ids in records.items():
+        if len(ids) < 2:
+            continue
+        collision_groups += 1
+        for pair in combinations(sorted(ids), 2):
+            overlap[pair] += 1
+            if len(samples[pair]) < 3:
+                samples[pair].append(key[1])
+    pairs = []
+    for (a,b), count in sorted(overlap.items(), key=lambda item:(-item[1], item[0])):
+        ratio_a, ratio_b = count / counts[a], count / counts[b]
+        if count < minimum_overlap or max(ratio_a, ratio_b) < minimum_ratio:
+            continue
+        same_tenant = b in sources[a].get("tenant_peers", [])
+        pairs.append({"source_a":a, "source_b":b, "adapter":sources[a]["adapter"],
+                      "companies_a":sorted(companies[a]), "companies_b":sorted(companies[b]),
+                      "overlap":count, "records_a":counts[a], "records_b":counts[b],
+                      "ratio_a":round(ratio_a,6), "ratio_b":round(ratio_b,6),
+                      "same_configured_tenant":same_tenant,
+                      "classification":"same_configured_tenant" if same_tenant else "record_overlap_candidate",
+                      "sample_job_ids":sorted(samples[(a,b)])})
+    return {"data_as_of":data_as_of(conn), "scope":"open_unexpired_records",
+            "as_of_date":today, "collision_groups":collision_groups, "pairs":pairs,
+            "minimum_overlap":minimum_overlap, "minimum_ratio":minimum_ratio,
+            "notice":"岗位重合仅为待核实线索，不自动合并雇主、停用来源或修改岗位状态"}
 
 
 # ---------- 招聘日历（calendar.db） ----------
