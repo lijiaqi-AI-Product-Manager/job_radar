@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from time import sleep
 
 from jobradar.snapshot_manifest import digest_file
 from jobradar.store.validate import validate_database
@@ -17,6 +18,7 @@ from jobradar.store.validate import validate_database
 REPO = "lijiaqi-AI-Product-Manager/job_radar"
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ("jobs.db.gz", "jd_text.db.gz", "calendar.db.gz")
+ALIASES = (*FILES, "jobs.db", "jd_text.db", "calendar.db")
 
 
 def make_manifest(home):
@@ -45,6 +47,34 @@ def publication_items(manifest):
 def gh(*args, capture=False):
     result = subprocess.run(["gh", *args], check=True, capture_output=capture, text=True, encoding="utf-8")
     return json.loads(result.stdout) if capture else None
+
+
+def publish_aliases(home, names=ALIASES):
+    """逐个核对兼容附件；瞬时失败后先复查，避免删除已经完成的文件。"""
+    names = tuple(names)
+    if set(names) - set(ALIASES):
+        raise ValueError("兼容发布只允许固定历史文件名")
+    local = [(home / name, digest_file(home / name), (home / name).stat().st_size) for name in names]
+    endpoint = f"repos/{REPO}/releases/tags/data-latest"
+    for path, sha, size in local:
+        def matches(release, name=path.name, size=size, sha=sha):
+            return any(asset.get("name") == name and asset.get("size") == size
+                       and asset.get("digest") == "sha256:" + sha for asset in release.get("assets", []))
+
+        for attempt in range(3):
+            try:
+                if matches(gh("api", endpoint, capture=True)):
+                    break
+                gh("release", "upload", "data-latest", str(path), "--repo", REPO, "--clobber")
+                if not matches(gh("api", endpoint, capture=True)):
+                    raise ValueError("远端兼容附件大小或摘要不一致")
+                break
+            except (subprocess.CalledProcessError, ValueError) as error:
+                if attempt == 2:
+                    raise RuntimeError(f"兼容附件{path.name}经过3次尝试仍未通过校验") from error
+                print(f"::warning::兼容附件{path.name}尚未确认，稍后重新核对并重试", file=sys.stderr)
+                sleep(2 ** (attempt + 1))
+    return list(names)
 
 
 def publish(home):
@@ -91,9 +121,9 @@ def publish(home):
                          f"<!--jobradar-snapshot:{marker}-->\n", encoding="utf-8")
         gh("release", "edit", "data-latest", "--repo", REPO, "--notes-file", str(notes), "--latest=false")
         # 新客户端已使用完整不可变代；旧客户端文件名继续分发兼容schema。
-        aliases = [str(home / name) for name in (*FILES, "jobs.db", "jd_text.db", "calendar.db")]
-        gh("release", "upload", "data-latest", *aliases, "--repo", REPO, "--clobber")
-    print(json.dumps({"published_generation": manifest["generation"], "verified_files": list(manifest["files"])}))
+        aliases = publish_aliases(home)
+    print(json.dumps({"published_generation": manifest["generation"], "verified_files": list(manifest["files"]),
+                      "verified_aliases": aliases}))
 
 
 def main():
