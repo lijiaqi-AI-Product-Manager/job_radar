@@ -105,3 +105,15 @@ def test_incomplete_recovery_context_never_suppresses_report(tmp_path, capsys, c
     metadata.write_text(json.dumps(context), encoding="utf-8")
     assert health.main(str(summary), context_path=str(metadata)) == 1
     assert "无法确认" in capsys.readouterr().out
+
+
+def test_report_separates_scheduling_from_started_recovery(tmp_path, capsys):
+    summary = tmp_path / "summary.json"
+    summary.write_text('{"a":{"status":"failed"},"b":{"status":"ok"}}', encoding="utf-8")
+    metadata = tmp_path / "context.json"
+    metadata.write_text(json.dumps({"schema_version": 1, "expected_source_ids": ["a", "b"],
+                                    "scheduled": ["a", "b"], "attempted": ["b"], "recovered": ["b"],
+                                    "before_bad": 2, "after_bad": 1}), encoding="utf-8")
+    assert health.main(str(summary), context_path=str(metadata)) == 1
+    report = capsys.readouterr().out
+    assert "排队 2 个" in report and "实际启动 1 个" in report and "恢复 1 个" in report

@@ -132,3 +132,18 @@ def test_invalid_recovery_outcome_cannot_replace_full_summary(jobs_db, text_db):
         recovery.recover([source("a")], summary, jobs_db, text_db, budget_seconds=30,
                          crawl_fn=lambda *a, **kw: {})
     assert summary == {"a": result()}
+
+
+def test_budget_deferred_items_are_scheduled_but_not_counted_as_started(jobs_db, text_db):
+    def fake(sources, *args, **kw):
+        for sid, duration in (("a", 0), ("b", 2)):
+            ingest_run(jobs_db, sid, [], ts=kw["ts"], ok=False,
+                       error="crawl budget exceeded", duration_s=duration)
+        return {s.id: RunResult("failed", reason="crawl budget exceeded") for s in sources}
+
+    _, report = recovery.recover([source("a"), source("b")], {"a": result(), "b": result()},
+                                 jobs_db, text_db, budget_seconds=30, crawl_fn=fake)
+    assert report["scheduled"] == ["a", "b"]
+    assert report["attempted"] == ["b"]
+    assert report["not_started"] == ["a"]
+    assert report["after_bad"] == 2

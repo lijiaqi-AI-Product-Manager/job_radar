@@ -72,7 +72,7 @@ def recover(sources, summary, jobs, texts, *, budget_seconds=1800, source_budget
     selected.sort(key=lambda s: (estimates.get(s.id) or 60, latest.get(s.id, {}).get("ts", ""), s.id))
     report = {"schema_version": 1, "scope": "full", "started_at": now_ts(),
               "expected_source_ids": sorted(merged), "before_bad": sum(r["status"] != "ok" for r in merged.values()),
-              "attempted": [], "recovered": [], "budget_spent": sorted(spent),
+              "scheduled": [], "attempted": [], "not_started": [], "recovered": [], "budget_spent": sorted(spent),
               "eligible": [s.id for s in selected], "budget_seconds": budget_seconds}
     deadline = clock() + budget_seconds
     policy = RobotsPolicy()
@@ -88,14 +88,20 @@ def recover(sources, summary, jobs, texts, *, budget_seconds=1800, source_budget
                            client_factory=lambda: make_client(policy=policy))
         values = {sid: asdict(value) for sid, value in outcome.items()}
         _validate(batch, values)
+        observations = _latest(jobs)
         for sid, value in values.items():
             value.update({field: merged[sid].get(field, 0) + value[field] for field in EVENTS})
             value["observed_at"] = ts
             merged[sid] = value
-            report["attempted"].append(sid)
+            report["scheduled"].append(sid)
+            row = observations.get(sid, {})
+            started = (value.get("reason") != "crawl budget exceeded"
+                       or (row.get("id") != latest.get(sid, {}).get("id") and (row.get("duration_s") or 0) > 0))
+            report["attempted" if started else "not_started"].append(sid)
             if value["status"] == "ok":
                 report["recovered"].append(sid)
-        print(f"recovery accepted: {len(report['recovered'])}/{len(report['attempted'])}", flush=True)
+        print(f"recovery: scheduled={len(report['scheduled'])}, started={len(report['attempted'])}, "
+              f"accepted={len(report['recovered'])}", flush=True)
     report["after_bad"] = sum(r["status"] != "ok" for r in merged.values())
     report["completed_at"] = now_ts()
     return merged, report
