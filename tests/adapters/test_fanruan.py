@@ -5,9 +5,11 @@
 列表直接给 `duty` / `requirement` 全文，不需要详情页。
 """
 
+import json
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from jobradar.adapters.fanruan import FanruanAdapter
@@ -52,10 +54,32 @@ def test_headers_contract():
         return httpx.Response(200, json={"list": [], "pageTotal": 1, "dataTotal": "0"})
 
     with httpx.Client(transport=httpx.MockTransport(handler)) as c:
-        list(FanruanAdapter(_source(paths=["social"]), c, sleep=lambda s: None).fetch_all())
+        list(FanruanAdapter(_source(paths=["social"], api_style="current"), c, sleep=lambda s: None).fetch_all())
     assert seen, "一次请求都没发"
     req = seen[0]
     assert req.method == "POST"
     assert req.headers["x-requested-with"] == "XMLHttpRequest"
     assert req.headers["referer"] == "https://join.fanruan.com/social"
-    assert str(req.url) == "https://join.fanruan.com/social"
+    assert str(req.url) == "https://join.fanruan.com/api/search.php"
+    assert json.loads(req.content) == {'type': 2, 'job_cate': [], 'types': [], 'departs': [], 'citys': [], 'page': 1, 'w': ''}
+
+
+def test_current_public_json_api_replays_all_three_recruitment_types():
+    directory = FX.parent / 'fanruan_current'
+    config = SourceConfig(**yaml.safe_load((directory / 'source.yaml').read_text(encoding='utf-8')))
+    with httpx.Client(transport=ReplayTransport(directory)) as client:
+        jobs = list(FanruanAdapter(config, client, sleep=lambda _: None).fetch_all())
+    assert len(jobs) == 29
+    assert {j.recruit_type for j in jobs} == {'campus', 'intern', 'social'}
+    assert all(j.description and j.requirements for j in jobs)
+
+
+@pytest.mark.parametrize('bad', [{}, {'list': None}, {'list': [], 'pageTotal': 2},
+                                 {'list': [{'id': 1, 'job_name': '工程师'}], 'pageTotal': 2, 'curPage': 1}])
+def test_bad_second_page_cannot_become_an_accepted_partial_source(bad):
+    config = _source(paths=['social'], max_pages=None, api_style='current')
+    adapter = FanruanAdapter(config, httpx.Client(), sleep=lambda _: None)
+    pages = iter([{'list': [{'id': 1, 'job_name': '工程师'}], 'pageTotal': 2, 'curPage': 1}, bad])
+    adapter._page = lambda *_: next(pages)
+    with pytest.raises(RuntimeError):
+        list(adapter.fetch_all())

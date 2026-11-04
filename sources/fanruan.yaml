@@ -6,7 +6,7 @@ rate_limit_rps: 1
 params:
   paths: ["social", "campus", "trainee"]
 compliance:
-  checked_on: 2026-10-27
+  checked_on: 2026-11-04
   robots: "none"
-  terms: "帆软招聘官网 join.fanruan.com：WordPress 主题自带的分页接口，匿名 POST 当前页面 URL 即可，无需登录/验证码/签名"
-  notes: "2026-10-27 实测：社招 84 + 校招 23 + 实习 8 = 115 岗，列表接口直接带职责与要求全文，无需详情页"
+  terms: "官方前端POST JSON到/api/search.php；匿名公开分页，无需登录、验证码或签名，只读岗位。"
+  notes: "2026-11-04前端与JSON列表复核：社招85、校招23、实习9。类型2/1/3及空数组筛选均来自对应页面公开脚本；历史入口不再返回JSON。"
