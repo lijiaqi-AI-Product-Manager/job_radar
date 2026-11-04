@@ -53,7 +53,8 @@ def _query(arguments, jobs, texts, calendar):
     meta = {}
     if command == "search":
         kwargs = _kwargs(q.search_jobs, arguments, {"type":"recruit_type", "exclude_city":"exclude_cities",
-                           "exclude_keyword":"exclude_keywords", "exclude_company":"exclude_companies"})
+                           "exclude_keyword":"exclude_keywords", "exclude_company":"exclude_companies",
+                           "exclude_category":"exclude_categories"})
         q.search_jobs(jobs, text_conn=texts, meta=meta, **kwargs)
         return meta["total"]
     if command == "calendar":
@@ -62,7 +63,8 @@ def _query(arguments, jobs, texts, calendar):
     if command == "show":
         return int(q.get_job(jobs, texts, arguments.job_id) is not None)
     if command == "compare":
-        result = q.compare_roles(jobs, texts, **_kwargs(q.compare_roles, arguments, {"type":"recruit_type"}))
+        result = q.compare_roles(jobs, texts, **_kwargs(q.compare_roles, arguments,
+                                   {"type":"recruit_type", "exclude_category":"exclude_categories"}))
         return sum(map(len, result.values())) if all(result.values()) else 0
     if command == "diff":
         since = q.lookback_since(arguments.days)

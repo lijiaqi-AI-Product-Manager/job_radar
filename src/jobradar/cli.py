@@ -597,6 +597,7 @@ def cmd_search(args):
                              text=args.text, text_conn=text, include_closed=args.include_closed,
                              limit=args.limit, contains=args.contains, meta=meta,
                              dedupe=args.dedupe, exclude_store=args.exclude_store,
+                             include_frontline=args.include_frontline, exclude_categories=args.exclude_category,
                              deadline_before=getattr(args, "deadline_before", None),
                              deadline_after=getattr(args, "deadline_after", None),
                              cities=args.cities, exclude_cities=args.exclude_city,
@@ -656,7 +657,8 @@ def cmd_compare(args):
         meta = {}
         out = q.compare_roles(conn, text_conn, args.companies, args.category, keyword=args.keyword,
                               text=args.text, per_company=args.per_company, meta=meta,
-                              city=args.city, recruit_type=args.type, grad_year=args.grad_year)
+                              city=args.city, recruit_type=args.type, grad_year=args.grad_year,
+                              include_frontline=args.include_frontline, exclude_categories=args.exclude_category)
         _emit(args, envelope(conn, out, category=args.category, keyword=args.keyword, text=args.text,
                               not_found=[c for c, v in out.items() if not v], **meta))
 
@@ -904,9 +906,11 @@ def build_parser() -> argparse.ArgumentParser:
                     # 注意：argparse 对 help 文本做 % 插值，裸 `%` 会让 `search --help` 直接抛
                     # ValueError: unsupported format character（2026-10-27 实测）→ 写成 `%%`
                     help="默认折叠相同展示分组并给出variants原条数；--no-dedupe查看全部记录")
-    sp.add_argument("--exclude-store", action="store_true",
-                    help="排除门店/零售岗（门店/店员/导购/收银/咖啡师/店长…；喜茶、星巴克门店帖约 8 千条）")
+    frontline = sp.add_mutually_exclusive_group()
+    frontline.add_argument("--exclude-store", action="store_true", help="所有查询类型主动过滤明确的一线门店、房产经纪标题")
+    frontline.add_argument("--include-frontline", action="store_true", help="包含校招/实习默认过滤的一线门店、房产经纪岗位")
     sp.add_argument("--category", help="职类，如 技术/产品/算法/后端")
+    sp.add_argument("--exclude-category", action="append", help="按固定大类或子类排除，可重复；缺失职类仍需核实")
     sp.add_argument("--city")
     sp.add_argument("--cities", nargs="+", help="多个城市取并集，不能与--city同时使用")
     sp.add_argument("--exclude-city", action="append", help="排除任一列出的城市，可重复")
@@ -939,6 +943,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--keyword", help="标题关键词，如 研发")
     sp.add_argument("--text", help="JD 全文检索词，如 论文；与 --keyword 不同，它在职责/要求原文里找")
     sp.add_argument("--per-company", type=int, default=5)
+    sp.add_argument("--include-frontline", action="store_true", help="对比时包含校招/实习默认过滤的一线岗位")
+    sp.add_argument("--exclude-category", action="append", help="按固定大类或子类排除，可重复")
     sp.add_argument("--city", help="所有公司统一按该城市筛选")
     sp.add_argument("--type", choices=["campus", "intern", "social"])
     sp.add_argument("--grad-year", type=int)

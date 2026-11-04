@@ -35,6 +35,7 @@ def documented_home(tmp_path, monkeypatch):
         ("美团", "social", "北京", "技术", "算法", "算法工程师"),
         ("药明康德", "campus", "上海", "医药", "医药研发", "化学研发工程师"),
         ("正大天晴", "campus", "南京", "医药", "医药研发", "化学研发研究员"),
+        ("示例门店", "intern", "无锡", "门店零售", "门店运营", "门店实习生"),
     ], 1):
         rows.append(make_job(i, source_id="documented", company=company, recruit_type=kind,
                              cities=[city], category=category, subcategory=subcategory, title=title,

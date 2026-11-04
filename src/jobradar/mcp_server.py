@@ -26,6 +26,8 @@ source_enabled=false或availability=unconfirmed_disabled表示来源当前已停
 source_warnings和availability_label必须体现在对应岗位说明里；source_tenant_peers非空表示同租户登记，跨来源数量不能直接相加。
 有结果也必须说明filter_coverage与hints里的字段缺失；grad_year_match=unknown是待核实候选。
 先看field_warnings与qualification_evidence，学历字段与正文冲突时不得仅凭字段排除。
+校招和实习搜索默认过滤明确的一线门店、房产经纪标题；用户寻找此类岗位时主动传include_frontline=true。
+frontline_filter是展示过滤，不代表岗位删除；被过滤的记录数不等于独立岗位数，也不表示用户不具备资格。
 默认折叠同公司、标题、城市且资格与截止日相同的记录；total以count_unit为准，variants不是新增岗位。"""
 
 class _RadarServer(MCPServer):
@@ -73,13 +75,17 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                 deadline_after: str | None = None,
                 cities: list[str] | None = None, exclude_cities: list[str] | None = None,
                 exclude_keywords: list[str] | None = None, exclude_companies: list[str] | None = None,
-                include_unknown_grad_year: bool = False) -> dict:
+                include_unknown_grad_year: bool = False, include_frontline: bool = False,
+                exclude_categories: list[str] | None = None) -> dict:
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
     company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
     「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配；
     默认dedupe=True折叠同公司、标题、城市、类型、届次、学历、部门、批次和截止日相同的记录（variants为原条数）；
     dedupe=False查看全部记录；折叠是展示分组，不保证多条req职责完全相同。
-    exclude_store=True 排掉门店/零售岗（校招用户常用）。
+    recruit_type为campus或intern时默认过滤明确的一线门店、房产经纪标题，保留产品、技术等专业岗位反例；
+    用户想找咖啡师、店员等岗位时传include_frontline=True，不能与exclude_store=True同时用。
+    不限类型与social不默认过滤，exclude_store=True可主动过滤；exclude_categories按固定大类或子类排除。
+    frontline_filter报告模式与未折叠的排除记录数；正文检索不复算数量时为null，不能编造。
     结果为 0 且该公司在日历里有条目时，返回里的 calendar 字段给出 `jobradar calendar --group X`，
     按它引导用户，不要说"这家公司没在招"。
     category 匹配职类大类或子类（如 技术、算法、后端、产品）；keyword 只匹配岗位标题；
@@ -111,7 +117,8 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                                  deadline_before=deadline_before,
                                  deadline_after=deadline_after, cities=cities, exclude_cities=exclude_cities,
                                  exclude_keywords=exclude_keywords, exclude_companies=exclude_companies,
-                                 include_unknown_grad_year=include_unknown_grad_year)
+                                 include_unknown_grad_year=include_unknown_grad_year,
+                                 include_frontline=include_frontline, exclude_categories=exclude_categories)
             payload = envelope(conn, rows, **meta)
             hints = list(meta.get("hints", []))
             if not rows and company:
@@ -174,11 +181,13 @@ def new_jobs_by_category(days: int = 7, limit: int = 10, company: str | None = N
 @server.tool()
 def compare_roles(companies: list[str], category: str | None = None, keyword: str | None = None,
                   text: str | None = None, per_company: int = 5, city: str | None = None,
-                  recruit_type: str | None = None, grad_year: int | None = None) -> dict:
+                  recruit_type: str | None = None, grad_year: int | None = None,
+                  include_frontline: bool = False, exclude_categories: list[str] | None = None) -> dict:
     """取多家公司同类岗位的 JD 原文，供对比要求差异。按职类 category、标题关键词 keyword
     或 JD 全文 text 选岗位（至少给一个）。missing_companies 是未收录公司；no_matching_jobs
     是已收录但筛选后没有岗位；ambiguous_companies 需要澄清名称。旧字段 not_found 汇总所有空结果，
-    不能据此认定公司未收录或没有招聘。"""
+    不能据此认定公司未收录或没有招聘。校招/实习默认过滤明确的一线岗位，include_frontline=True可包含；
+    exclude_categories排除固定职类，company_filters说明各公司的过滤情况。"""
     def run():
         with db("jobs") as conn, db("text", required=False) as text_conn:
             if text_conn is None:
@@ -188,7 +197,8 @@ def compare_roles(companies: list[str], category: str | None = None, keyword: st
             meta = {}
             out = q.compare_roles(conn, text_conn, companies, category, keyword=keyword, text=text,
                                   per_company=min(per_company, 20), meta=meta, city=city,
-                                  recruit_type=recruit_type, grad_year=grad_year)
+                                  recruit_type=recruit_type, grad_year=grad_year,
+                                  include_frontline=include_frontline, exclude_categories=exclude_categories)
             return envelope(conn, out, category=category, keyword=keyword, text=text,
                             not_found=[c for c, v in out.items() if not v], **meta)
     return _guard(run)
