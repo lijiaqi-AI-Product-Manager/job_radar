@@ -20,6 +20,7 @@ from jobradar.pipeline.ingest import ingest_run
 from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts, shanghai_date
 from jobradar.source_catalog import catalog
+from jobradar.normalize import categorize
 
 assert Path(jobradar.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()), "import came from source tree"
 home = Path(os.environ["JOBRADAR_HOME"])
@@ -30,9 +31,12 @@ expired = shanghai_date((today - timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%SZ
 jobs = connect(home / "jobs.db", "jobs")
 ingest_run(jobs, "smoke", [
     Job(source_id="smoke", source_job_id=str(n), company="中国核工业集团", title="离线校招样本",
-        url="https://example.invalid/job", recruit_type="campus", apply_end=deadline)
+        url="https://example.invalid/job", recruit_type="campus", apply_end=deadline,
+        category="职能", subcategory="财务审计", cities=["苏州"])
     for n, deadline in ((1, end), (2, None))
 ], ts=ts)
+ingest_run(jobs,"other",[Job(source_id="other",source_job_id="1",company="离线另一主体",
+    title="财务经理",url="https://example.invalid/other",recruit_type="social",category="财务",cities=["北京"])],ts=ts)
 jobs.close()
 cal = connect(home / "calendar.db", "calendar")
 for eid, city, deadline in (("beijing-open", "北京", end), ("shanghai-open", "上海", end),
@@ -46,6 +50,7 @@ direct = metadata.distribution("jobsearchradar").read_text("direct_url.json")
 print(json.dumps({"version": jobradar.__version__, "module": jobradar.__file__, "deadline": end,
                   "direct_url": json.loads(direct) if direct else None,
                   "catalog_entries":len(catalog()),
+                  "finance_category":categorize("财务会计"),
                   "catalog_kinds":sorted({r['source_kind'] for r in catalog().values()})}))
 '''
 
@@ -103,6 +108,11 @@ def main():
         check("company-alias", response["company_match"]["match"] == "alias"
               and len(response["results"]) == 2)
         check("source-catalog", info["catalog_entries"] > 0 and info["catalog_kinds"] == ["aggregator", "official"])
+        check("packaged-category-rules", info["finance_category"] == ["职能", "财务审计"])
+        response = json.loads(run([cli, "search", "--cities", "苏州", "无锡", "--exclude-city", "上海", "--category", "财务"]))
+        check("category-alias-with-legacy-label", response["total"] == 2
+              and response["category_match"]["match"] == "alias"
+              and "财务审计" in response["category_match"]["matched"])
         run([mcp, "--help"])
         print(json.dumps({"version": info["version"], "direct_url": info["direct_url"],
                           "checks_passed": len(checks), "checks": checks, "mcp_help": "passed"},

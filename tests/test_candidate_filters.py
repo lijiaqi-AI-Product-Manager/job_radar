@@ -129,7 +129,7 @@ def test_finance_words_reach_the_specific_category_without_broadening_to_all_sup
                                       category="职能", subcategory="行政")], ts=T(1))
     meta = {}
     assert [r["id"] for r in q.search_jobs(jobs_db, category=term, meta=meta)] == ["s1:1"]
-    assert meta["category_match"]["matched"] == ["财务审计"]
+    assert meta["category_match"]["matched"] == ["财务审计", "会计", "审计", "财务"]
 
 
 def test_unknown_category_explains_vocabulary_instead_of_blaming_missing_data(jobs_db):

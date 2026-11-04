@@ -47,6 +47,7 @@ packages = ["src/jobradar"]
 # 不打进 wheel 的话 pip 用户拿不到映射（源码树里跑测试却是绿的）。
 [tool.hatch.build.targets.wheel.force-include]
 "taxonomy/company_aliases.yaml" = "jobradar/_data/company_aliases.yaml"
+"taxonomy/categories.yaml" = "jobradar/_data/categories.yaml"
 
 # sdist 白名单：只打包需要的东西。默认行为会把 .uv-cache/（几十 MB）一起塞进 tar，
 # 2026-10-22 实测产物 117MB——这是发布阻断项。

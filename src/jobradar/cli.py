@@ -17,9 +17,11 @@ import uuid
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing, contextmanager, nullcontext
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import httpx
 
+from jobradar import __version__
 from jobradar.core import queries as q
 from jobradar.file_lock import file_lock
 from jobradar.local import (
@@ -140,8 +142,21 @@ def _github_api_asset(name: str, client: httpx.Client, token: str) -> tuple[str,
     auth = {"Authorization": f"Bearer {token}"}
     r = client.get(f"https://api.github.com/repos/{REPO}/releases/tags/{RELEASE_TAG}", headers=auth)
     r.raise_for_status()
-    asset = next((a for a in r.json().get("assets", []) if a["name"] == name), None)
-    return (asset["url"], {**auth, "Accept": "application/octet-stream"}) if asset else None
+    data = r.json()
+    if not isinstance(data, dict) or not isinstance(data.get("assets"), list):
+        raise ValueError("GitHub发行元数据无效")
+    asset = next((a for a in data["assets"] if isinstance(a, dict) and a.get("name") == name), None)
+    if asset is None:
+        return None
+    url = asset.get("url")
+    parts = urlsplit(url) if isinstance(url, str) else None
+    prefix = f"/repos/{REPO}/releases/assets/"
+    asset_id = parts.path.removeprefix(prefix) if parts and parts.path.startswith(prefix) else ""
+    if (parts is None or parts.scheme != "https" or parts.netloc != "api.github.com"
+            or parts.query or parts.fragment
+            or not asset_id.isascii() or not asset_id.isdecimal()):
+        raise ValueError("GitHub资源地址超出授权范围")
+    return (url, {**auth, "Accept": "application/octet-stream"})
 
 
 SLOW_AFTER_SECONDS = 30      # 开始评估吞吐
@@ -201,7 +216,7 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path, *, dea
             os.close(fd)
             raise RequestBudgetExceeded("request budget exceeded")
         remaining = max(.001, deadline - _now())
-        with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers=headers,
+        with os.fdopen(fd, "wb") as out, client.stream("GET", url, headers={"User-Agent": f"jobradar/{__version__}", **headers},
                 timeout=httpx.Timeout(min(20, remaining), connect=min(8, remaining))) as resp:
             resp.stream = DeadlineStream(resp.stream, deadline, clock=_now)
             if resp.status_code == 404:
@@ -340,28 +355,7 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
             return _download(name, dest, client=owned, prefer=prefer, digests=digests, verified=verified, previous=previous)
     dest.parent.mkdir(parents=True, exist_ok=True)
     names = getattr(digests, "asset_names", {})
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if token:  # 私有仓库：只能走 GitHub API
-        asset = name + ".gz" if name + ".gz" in names else name
-        found = _github_api_asset(names.get(asset, asset), client, token)
-        if found is None:
-            raise SystemExit(f"Release {RELEASE_TAG} 中没有 {name}")
-        tmp = _fetch(client, found[0], found[1], dest.parent)
-        if tmp is None:
-            raise SystemExit(f"下载 {name} 失败（404）")
-        try:
-            expected = (digests or {}).get(asset)
-            if digests and not expected:
-                tmp.unlink(missing_ok=True)
-                raise ValueError("发布摘要缺失，无法核验下载内容")
-            _install(tmp, name, asset.endswith(".gz"), dest, expected, previous=previous)
-            if expected and verified is not None:
-                verified.pop(name, None)
-                verified.pop(name + ".gz", None)
-                verified[asset] = expected
-        except ValueError as e:
-            raise SystemExit(f"下载的 {name} {e}") from None
-        return "github"
+    token = os.environ.get("JOBRADAR_GITHUB_TOKEN", "").strip()
     errors, invalid = [], False
     overall_deadline = _now() + MAX_DOWNLOAD_SECONDS
     for (mirror, url), (_, gz_url) in zip(asset_urls(name, prefer, asset_names=names), asset_urls(name + ".gz", prefer, asset_names=names), strict=True):
@@ -375,8 +369,23 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                                          expected=digests.get(name + ".gz"), fetch=_fetch,
                                          deadline=deadline, clock=_now)
                 else:
-                    tmp = _fetch(client, candidate, {}, dest.parent, deadline=deadline)
-                if tmp is None and gz:
+                    try:
+                        tmp = _fetch(client, candidate, {}, dest.parent, deadline=deadline)
+                    except httpx.HTTPStatusError as error:
+                        if not (mirror == "github" and token and error.response.status_code == 401):
+                            raise
+                        tmp = None
+                if tmp is None and mirror == "github" and token:
+                    try:
+                        asset = name + ".gz" if gz else name
+                        found = _github_api_asset(names.get(asset, asset), client, token)
+                        if found is not None:
+                            tmp = _fetch(client, found[0], found[1], dest.parent, deadline=deadline)
+                    except httpx.HTTPError as error:
+                        errors.append(f"github 授权：{type(error).__name__}")
+                    except ValueError:
+                        errors.append("github 授权元数据无效")
+                if tmp is None and gz and mirror != "github":
                     # 大文件在镜像侧是分片存放的：整文件 404 时按 .partNN 拼接
                     tmp = _fetch_parts(client, name + ".gz", mirror, dest.parent, deadline=deadline)
                 if tmp is None:
@@ -405,7 +414,7 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
     raise SystemExit(f"下载 {name} 失败（{'; '.join(errors) or '404'}）。"
                      "请检查GitHub网络连接后重试 `jobradar update`。镜像状态见 "
                      "https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md；"
-                     "仅访问私有发行版时需要设置 GITHUB_TOKEN。")
+                     "仅在明确需要授权访问时使用 JOBRADAR_GITHUB_TOKEN，公开快照无需令牌。")
 
 
 def _text_coverage(home_dir: Path) -> float | None:
@@ -664,9 +673,7 @@ def cmd_sources(args):
             # 排障用：只看「上次没成功」或「过期」的源（rejected 会一直挂着旧岗位，值得盯）
             rows = [r for r in rows if r["stale"] or r.get("last_status") != "ok"]
         if getattr(args, "summary", False):
-            failing = [r["source_id"] for r in rows if r["stale"]]
-            payload = envelope(conn, [], failing=failing[:20], omitted_failing=max(0, len(failing) - 20),
-                               **q.data_status_summary(rows))
+            payload = envelope(conn, [], **q.data_status_summary(rows))
         else:
             payload = envelope(conn, rows, failing=[r["source_id"] for r in rows if r["stale"]])
         _emit(args, payload)
@@ -689,7 +696,8 @@ def cmd_doctor(args):
         with _open("jobs") as conn:
             env = envelope(conn, [])
             out["fields"] = q.field_coverage(conn)
-            out["source_health"] = q.source_freshness(q.data_status(conn, now=now_ts()))
+            out["source_health"] = q.source_freshness(q.data_status(conn, now=now_ts()),
+                                                      limit=None if getattr(args, "verbose", False) else 10)
         out.update(data_as_of=env["data_as_of"], stale=env["stale"])
         cov = _text_coverage(data_dir())
         if cov is not None:
@@ -956,8 +964,9 @@ def build_parser() -> argparse.ArgumentParser:
     add("stats", cmd_stats, "覆盖率：目标公司的日历覆盖、JD 覆盖、岗位与正文数量")
     sp = add("sources", cmd_sources, "各数据源的抓取状态与新鲜度")
     sp.add_argument("--problems", action="store_true", help="只看上次未成功或已过期的源")
-    sp.add_argument("--summary", action="store_true", help="只给计数与有问题的源（默认最多20条异常详情，其余按需展开）")
+    sp.add_argument("--summary", action="store_true", help="计数与影响岗位最多的10个异常来源")
     sp = add("doctor", cmd_doctor, "检查本地数据是否存在、是否过期")
+    sp.add_argument("--verbose", action="store_true", help="展开全部来源的新鲜度明细；默认最多10个")
     sp.add_argument("--robots", action="store_true",
                     help="逐个源检查 robots.txt 是否允许抓它的列表页（抓新站前必跑）")
     sp.add_argument("--sources", default="sources", help="--robots 用的源目录")

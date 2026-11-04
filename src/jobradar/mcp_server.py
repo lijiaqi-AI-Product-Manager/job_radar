@@ -207,15 +207,15 @@ def company_trend(company: str, step_days: int = 7, contains: bool = False) -> d
 
 @server.tool()
 def data_status(verbose: bool = False) -> dict:
-    """各数据源最近抓取状态与数据新鲜度。默认返回计数 + 有问题的源（完整源表可能很大，
-    多数情况下你只需要知道"有没有源坏了"）；需要逐源明细时传 verbose=True。"""
+    """各来源状态与新鲜度。默认只给计数及影响岗位最多的10个异常来源，
+    omitted_problems说明未展开数量；需要完整逐源明细时传verbose=True。"""
     def run():
         with db("jobs") as conn:
             rows = q.data_status(conn, now=now_ts())
-            failing = [r["source_id"] for r in rows if r["stale"]]
+            summary = q.data_status_summary(rows, limit=None if verbose else 10)
             if verbose:
-                return envelope(conn, rows, failing=failing)
-            return envelope(conn, [], failing=failing[:20], omitted_failing=max(0, len(failing) - 20), **q.data_status_summary(rows))
+                return envelope(conn, rows, **{k:v for k,v in summary.items() if k not in {"problems", "omitted_problems"}})
+            return envelope(conn, [], **summary)
     return _guard(run)
 
 

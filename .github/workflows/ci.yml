@@ -40,7 +40,7 @@ jobs:
             exit 1
           fi
       # wheel 里必须带简称映射表，否则 pip 装完 `--company 中核` 查不到（源码树里测不出来）
-      - name: Wheel must contain company_aliases.yaml
+      - name: Wheel must contain taxonomy resources
         shell: bash
         run: |
           set -euo pipefail
@@ -48,9 +48,9 @@ jobs:
           import glob, sys, zipfile
           wheel = sorted(glob.glob("dist/*.whl"))[-1]
           names = zipfile.ZipFile(wheel).namelist()
-          target = "jobradar/_data/company_aliases.yaml"
-          print(wheel, "->", target in names)
-          sys.exit(0 if target in names else 1)
+          targets = ["jobradar/_data/company_aliases.yaml", "jobradar/_data/categories.yaml"]
+          print(wheel, "->", {target: target in names for target in targets})
+          sys.exit(0 if all(target in names for target in targets) else 1)
           PY
       - name: Installed wheel CLI compatibility
         shell: bash

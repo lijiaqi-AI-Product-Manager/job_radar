@@ -56,15 +56,15 @@ jobradar doctor
 
 | 用户在问 | 命令 |
 |---|---|
-| 某公司/城市/职类在招什么 | `jobradar search --company 腾讯 --category 技术 --city 深圳 --type campus --grad-year 2027 --limit 20` |
+| 某公司/城市/职类在招什么 | `jobradar search --company 复星医药 --category 医药研发 --city 上海 --type campus --grad-year 2027 --limit 20` |
 | 标题关键词 | `jobradar search --keyword 大模型` |
 | 按技能/要求找岗位（JD 原文里出现的词） | `jobradar search --text "PyTorch 多模态" --type campus --limit 20`（空格分隔的词须全部出现；结果的 `match` 是命中处原文片段） |
 | 某个岗位详情、要求 | `jobradar show <job_id>` |
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |
 | 最近哪类职位新增最多 | `jobradar diff --days 7 --by category`（返回 `[{category, n}]`，按数量降序；没职类的归「未分类」） |
-| 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --category 算法 --per-company 5`；按标题关键词用 `--keyword 研发`，按 JD 原文（如「论文」）用 `--text 论文` |
+| 两家或多家公司同类岗位要求对比 | `jobradar compare 药明康德 正大天晴 --keyword 研发 --per-company 5`；按职类用 `--category 医药研发`，按 JD 原文（如「论文」）用 `--text 论文` |
 | 招聘规模趋势 | `jobradar trends 腾讯 --step-days 7` |
-| 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含目前只有日历、没有岗位数据的大厂**） | `jobradar calendar --group 字节跳动 --type 秋招 --grad-year 2027` |
+| 某公司有哪些招聘项目/批次、网申什么时候截止、去哪投（**含目前只有日历、没有岗位数据的大厂**） | `jobradar calendar --group 字节跳动 --grad-year 2027` |
 | 现在还能投哪些 | `jobradar calendar --type 秋招正式批 --open-on <今天日期>` |
 | 快截止的岗位（按网申截止日） | `jobradar search --deadline-before <本月末> --type campus`；日历同理用 `jobradar calendar --deadline-before <日期>` |
 | 某城市有哪些校招 | `jobradar calendar --city 北京` / `jobradar search --city 北京` |

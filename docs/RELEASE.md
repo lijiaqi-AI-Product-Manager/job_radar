@@ -46,6 +46,8 @@ uv run python scripts/apply_calendar_corrections.py --db calendar.db --apply
 
 门槛定义于 `scripts/release_check.py`，不因文档或界面更新而放宽。
 
+发布检查还会以只读连接执行8种首页及技能中的去重命令示例。查询类示例必须有结果，帮助、更新与采集命令仅校验参数，不在此步骤联网或写库；岗位ID取快照现有记录，日期占位符以当天或当月末展开。详细结果可运行 `python scripts/check_readme_examples.py --home <数据目录>` 查看。安装后的wheel另外验证固定职类词表及“财务”别名在旧原值存在时仍可召回。
+
 | 项目 | 门槛 |
 | :--- | :--- |
 | 配置目标覆盖 | 至少 15% 且至少 100 家；这是发布最低门槛 |
