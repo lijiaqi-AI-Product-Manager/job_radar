@@ -27,18 +27,35 @@ from jobradar.normalize import (
     normalize_degree,
 )
 from jobradar.pipeline.ingest import RunResult, ingest_run, upsert_texts
+from jobradar.timeutil import parse_ts
 
 
 def _fetch(source: SourceConfig, adapter_cls: type[Adapter], client: httpx.Client,
-           sleep: Callable[[float], None], *, deadline: float | None = None, cached_texts=None
+           sleep: Callable[[float], None], *, deadline: float | None = None, cached_texts=None, detail_cache_dir=None, ts=None
            ) -> tuple[list[Job] | None, str | None, float]:
     """返回 (岗位, 错误, 耗时秒)。耗时记进 source_run.duration_s，抓得慢的源要能被看见。"""
     started = time.monotonic()
     try:
         adapter = adapter_cls(source, client, sleep=sleep)
         adapter._crawl_deadline = deadline
-        adapter.cached_texts = cached_texts or {}
-        jobs = list(adapter.fetch_all())
+        adapter.cached_texts = dict(cached_texts or {})
+        checkpoint = None
+        if detail_cache_dir is not None and ts is not None:
+            from jobradar.pipeline.detail_checkpoint import DetailCheckpoint
+            checkpoint = DetailCheckpoint(detail_cache_dir, source, adapter_cls, ts)
+            for jid, item in checkpoint.load().items():
+                existing = adapter.cached_texts.get(jid)
+                try:
+                    newer = existing is None or parse_ts(item['fetched_at']) > parse_ts(existing['fetched_at'])
+                except (ValueError, TypeError, KeyError):
+                    newer = True
+                if newer:
+                    adapter.cached_texts[jid] = item
+        jobs = []
+        for job in adapter.fetch_all():
+            jobs.append(job)
+            if checkpoint is not None:
+                checkpoint.record(job)
     except CrawlBudgetExceeded:
         return None, "crawl budget exceeded", time.monotonic() - started
     except httpx.HTTPError as e:
@@ -79,7 +96,8 @@ def _enrich(j: Job) -> None:
         j.degree_min = degree_min_from_jd(f"{j.description or ''}\n{j.requirements or ''}")
 
 
-def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, source_budget=None, cached_texts=None):
+def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, source_budget=None, cached_texts=None,
+                 detail_cache_dir=None, ts=None):
     client = client_factory()
     out = []
     try:
@@ -91,7 +109,7 @@ def _fetch_group(sources, adapter_cls, client_factory, sleep, deadline=None, sou
                 continue
             source_deadline = min(deadline or float("inf"), time.monotonic() + source_budget) if source_budget else deadline
             out.append((s, *_fetch(s, adapter_cls, client, sleep, deadline=source_deadline,
-                                   cached_texts=(cached_texts or {}).get(s.id))))
+                                   cached_texts=(cached_texts or {}).get(s.id), detail_cache_dir=detail_cache_dir, ts=ts)))
         return out
     finally:
         client.close()
@@ -143,7 +161,7 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           sleep: Callable[[float], None] = time.sleep,
           max_workers: int = 4, budget_seconds: float | None = None,
           order_seed: int | None = None, source_budget: float | None = None,
-          preserve_source_order: bool = False) -> dict[str, RunResult]:
+          preserve_source_order: bool = False, detail_cache_dir=None) -> dict[str, RunResult]:
     if client_factory is make_client:
         from jobradar.compliance import RobotsPolicy
 
@@ -204,7 +222,8 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
         futures = []
         for groups_in_lane, workers in lanes:
             pool = stack.enter_context(ThreadPoolExecutor(max_workers=workers))
-            futures.extend(pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget, cached_texts)
+            futures.extend(pool.submit(_fetch_group, srcs, adapters[aid], client_factory, sleep, deadline, source_budget,
+                                       cached_texts, detail_cache_dir, ts)
                            for (aid, _site), srcs in groups_in_lane)
         for fut in as_completed(futures):
             for source, jobs, error, elapsed in fut.result():

@@ -240,7 +240,8 @@ class ShixisengAdapter(Adapter):
     def fetch_raw(self) -> Iterator[dict]:
         fetch_detail = bool(self.source.params.get("fetch_detail", True))
         page = 1
-        seen = set()
+        seen, signatures, listed = set(), set(), []
+        returned = 0
         while True:
             items, total = self._list(page)
             if not items:
@@ -248,32 +249,40 @@ class ShixisengAdapter(Adapter):
                     raise RuntimeError('实习僧列表中途为空，未完成采集')
                 break
             ids = {str(item['uuid']) for item in items}
-            if len(ids) != len(items) or seen.intersection(ids):
+            signature = tuple(str(item['uuid']) for item in items)
+            fresh = ids - seen
+            if signature in signatures or not fresh:
                 raise RuntimeError('实习僧列表重复分页，未完成采集')
+            signatures.add(signature)
+            returned += len(items)
+            for item in items:
+                uid = str(item['uuid'])
+                if uid in fresh:
+                    listed.append(item)
+                    fresh.remove(uid)
             seen.update(ids)
-            for it in items:
-                if it.get('cname') and not belongs_to_company(it['cname'], self.source.company):
-                    continue
-                detail = {}
-                cached = self._cached_detail(it) if fetch_detail else None
-                if fetch_detail:
-                    if not cached:
-                        try:
-                            detail = self._detail(str(it["uuid"]))
-                        except CrawlBudgetExceeded:
-                            raise
-                        except Exception:  # noqa: BLE001 — 正文失败保留原观测，完整列表仍受分页校验。
-                            detail = {}
-                        if not detail:
-                            cached = self._cached_detail(it, allow_old=True)
-                yield {"list": it, "detail": detail, 'cached': cached}
             if page * PAGE_SIZE >= total:
-                if len(seen) < total:
+                if returned < total:
                     raise RuntimeError('实习僧列表数量不足，未完成采集')
                 break
             if self.source.max_pages and page >= self.source.max_pages:
                 break
             page += 1
+        for it in listed:
+            if it.get('cname') and not belongs_to_company(it['cname'], self.source.company):
+                continue
+            detail = {}
+            cached = self._cached_detail(it) if fetch_detail else None
+            if fetch_detail and not cached:
+                try:
+                    detail = self._detail(str(it["uuid"]))
+                except CrawlBudgetExceeded:
+                    raise
+                except Exception:  # noqa: BLE001 — 正文失败保留原观测，完整列表仍受分页校验。
+                    detail = {}
+                if not detail:
+                    cached = self._cached_detail(it, allow_old=True)
+            yield {"list": it, "detail": detail, 'cached': cached}
 
     def normalize(self, raw: dict) -> Job:
         it, detail = raw["list"], raw.get("detail") or {}

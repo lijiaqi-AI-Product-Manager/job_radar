@@ -898,7 +898,8 @@ def cmd_crawl(args):
             due = q.due_source_ids(jobs_conn, [s.id for s in sources], hours=args.stale_only_hours, now=now_ts())
             sources = [s for s in sources if s.id in due]
         results = crawl(sources, jobs_conn, text_conn, ts=now_ts(), budget_seconds=args.budget_seconds,
-                        max_workers=getattr(args, "workers", 4), source_budget=getattr(args, "source_budget", None))
+                        max_workers=getattr(args, "workers", 4), source_budget=getattr(args, "source_budget", None),
+                        detail_cache_dir=out / 'detail-cache')
     summary = {sid: {"status": r.status, "opened": r.opened, "closed": r.closed,
                      "changed": r.changed, "reason": r.reason} for sid, r in sorted(results.items())}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
