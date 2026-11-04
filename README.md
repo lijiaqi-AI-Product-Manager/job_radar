@@ -1,8 +1,6 @@
 ![job_radar：找工作，说句话就好。首次接入后即可对话查询。 / Job search. Just ask your assistant. Connect once, then ask naturally.](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/hero-bilingual.jpg)
 
-![四类机会，一个入口：校招、实习、社招与招聘日历。 / Graduate roles, internships, experienced hires and recruitment calendars.](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/opportunities-bilingual.jpg)
-
-![一句话开始，继续聊下去：说出需求、发现机会、核对来源。 / Ask. Refine. Explore. Search roles, read requirements and follow source links.](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/workflow-bilingual.jpg)
+![机会与路径，一眼看清：校招、实习、社招、招聘日历，以及说需求、找机会、看来源。 / Opportunities and workflow: graduate roles, internships, experienced hires, calendars; ask, discover and verify.](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/features-bilingual.jpg)
 
 <p align="center">
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.2.2"><img src="https://img.shields.io/badge/release-v2.2.2-58bfa5" alt="Release 2.2.2"></a>
