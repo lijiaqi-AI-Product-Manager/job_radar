@@ -3,7 +3,7 @@
 ![机会与路径，一眼看清：校招、实习、社招、招聘日历，以及说需求、找机会、看来源。 / Opportunities and workflow: graduate roles, internships, experienced hires, calendars; ask, discover and verify.](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/features-bilingual.jpg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/release-v2.3.0-58bfa5" alt="Release 2.2.2"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/release-v2.3.0-58bfa5" alt="Release 2.3.0"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily data snapshots"></a>
@@ -49,6 +49,8 @@
 | 判断信息是否可靠 | 官方与聚合来源分开标注，提示字段缺失与学历冲突，统计可复算 |
 
 ## 快速开始
+
+代码包与招聘数据分开下载。正文采用无损精简存储，默认自动清理无读者的旧快照；全部岗位关联和观测时间保留。[下载与空间说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/STORAGE.md)。
 
 **1. 打开你常用助手中支持技能或本地工具的 Agent 工作模式。** 不确定选哪个？先看[平台接入说明](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/PLATFORMS.md)。
 

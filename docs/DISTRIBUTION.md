@@ -1,14 +1,14 @@
 # 安装与数据渠道
 
-核查日期：2026-11-03。代码版本、数据快照与镜像同步分别核实；搜索引擎缓存不作为当前版本依据。
+分项核查日期见下表。代码版本、数据快照与镜像同步分别核实；搜索引擎缓存不作为当前版本依据。
 
 | 渠道 | 当前状态 | 如何使用 |
 | :--- | :--- | :--- |
-| [PyPI](https://pypi.org/project/jobsearchradar/) | 2.2.2已从官方JSON与普通安装索引确认，独立环境无缓存安装、CLI/MCP通过 | 使用当前文档固定的发行版本 |
-| [GitHub代码Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases) | 与PyPI分别核对版本及发行文件 | 下载源码包或wheel |
-| [GitHub数据Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) | 按三库完整性清单分发；2026-11-03有新一代附件 | 执行 `jobradar update` |
-| Gitee `qgauss/job_radar` | 公开仓库API和快照清单均返回404；最近一次同步在发布步骤失败 | 暂不作为可用镜像推荐 |
-| npm | `jobsearchradar`、`jobradar`、`job_radar`三个名称的官方注册表均返回404 | 当前项目通过Python安装，不提供npm安装命令 |
+| [PyPI](https://pypi.org/project/jobsearchradar/) | 2026-11-04核实2.3.0；官方普通索引全新安装、14项兼容检查与MCP九工具通过 | 使用当前文档固定的发行版本 |
+| [GitHub代码Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases) | 2026-11-04核实v2.3.0；wheel和源码包SHA-256与PyPI一致 | 下载源码包或wheel |
+| [GitHub数据Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) | 2026-11-04核实原格式三库及无损精简正文；正式客户端真实下载通过 | 执行 `jobradar update` |
+| Gitee `qgauss/job_radar` | 同步暂缓；最近公开入口核查仍为404，不作为当前可用渠道 | 暂不作为可用镜像推荐 |
+| npm | `jobsearchradar`、`jobradar`、`job_radar`三个名称在2026-11-03核查的官方注册表均返回404 | 当前项目通过Python安装，不提供npm安装命令 |
 
 以上npm核查仅覆盖列出的三个名称，不能据此推断所有作用域中的同类包。第三方同名项目也不能视为本项目发行版。
 

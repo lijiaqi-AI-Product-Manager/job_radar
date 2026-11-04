@@ -3,7 +3,7 @@
 ![Opportunities. One clear workflow: graduate roles, internships, experienced hires and recruitment calendars; ask, discover and verify. / 校招、实习、社招、招聘日历；说需求、找机会、看来源。](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/features-bilingual.jpg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/release-v2.3.0-58bfa5" alt="Release 2.2.2"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/release-v2.3.0-58bfa5" alt="Release 2.3.0"></a>
   <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
@@ -43,6 +43,8 @@ Tell it where you want to work, what you want to do and what matters to you. It 
 | Assess the evidence | Separate official and aggregator sources; preserve missing values and reproducible counts |
 
 ## Quick start
+
+The code package and recruitment data are separate downloads. Lossless compact descriptions preserve every listing and observation timestamp; unused older snapshots are cleaned up automatically. See [downloads and storage](docs/STORAGE.md).
 
 1. Open an agent mode that supports skills or local tools.
 2. Paste this request and follow the platform's initial setup prompts:
