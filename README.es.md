@@ -1,6 +1,6 @@
 ![job_radar](docs/assets/hero-en.svg)
 
-[![Release](https://img.shields.io/badge/release-v2.3.0-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.0) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v2.3.1-58bfa5)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.1) [![PyPI](https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5)](https://pypi.org/project/jobsearchradar/) [![CI](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg)](https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/python-3.11%2B-7bb7ff)](pyproject.toml) [![MIT](https://img.shields.io/badge/license-MIT-7bb7ff)](LICENSE)
 
 [简体中文](README.md) · [English](README.en.md) · Español
 
@@ -30,7 +30,7 @@ Si pide un archivo, importa jobradar-skill.zip de la última Release. Después d
 El paquete de PyPI se llama `jobsearchradar`; el comando instalado es `jobradar`. Requiere Python 3.11+ y funciona en Windows, macOS y Linux.
 
 ```bash
-pip install --upgrade "jobsearchradar==2.3.0"
+pip install --upgrade "jobsearchradar==2.3.1"
 jobradar update
 jobradar search --company 复星医药 --type campus --grad-year 2027 --table
 ```
@@ -71,7 +71,7 @@ La instantánea verificada del 2 de noviembre de 2026 (UTC) contiene 298.458 reg
 ## Conectar MCP
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.3.0"
+pip install --upgrade "jobsearchradar[mcp]==2.3.1"
 jobradar update
 ```
 

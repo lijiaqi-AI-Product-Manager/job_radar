@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: "3.12"
       - run: pip install httpx playwright && python -m playwright install --with-deps chromium
@@ -24,7 +24,7 @@ jobs:
         run: python scripts/render_extract.py --file calendar/enrich-targets.json --out enrich-open.json
       - name: Parse official WeChat articles
         run: python scripts/wechat_parse.py --file calendar/wechat-urls.json --out wechat-parsed.json || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: enrich-open
           path: |
