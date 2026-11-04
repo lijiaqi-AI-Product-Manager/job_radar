@@ -76,3 +76,32 @@ def test_cli_produces_a_report_for_the_cancelled_workflow(tmp_path):
     assert result.returncode == 1
     assert "无法确认" in result.stdout and url in result.stdout
     assert not result.stderr
+
+
+def test_partial_summary_cannot_close_full_source_health():
+    with pytest.raises(ValueError, match="source set"):
+        health.render({"a": {"status": "ok"}}, expected_ids={"a", "b"})
+
+
+def test_recovery_context_does_not_disguise_old_ok_observations():
+    report, bad = health.render({"a": {"status": "ok", "observed_at": "2026-11-01T00:00:00Z"}},
+                                expected_ids={"a"}, now="2026-11-04T00:00:00Z")
+    assert bad and "观测超过 24 小时" in report
+
+
+def test_standing_health_issue_reuses_only_marked_closed_reports():
+    assert health.issue_action([{"number": 31, "state": "closed", "body": health.MARKER},
+                                {"number": 13, "state": "closed", "body": "historical"}], True) == ("reopen", 31)
+    assert health.issue_action([{"number": 13, "state": "closed", "body": "historical"}], True) == ("create", None)
+    assert health.issue_action([{"number": 31, "state": "open", "body": "existing"}], True) == ("update", 31)
+    assert health.issue_action([{"number": 31, "state": "open", "body": health.MARKER}], False) == ("close", 31)
+
+
+@pytest.mark.parametrize("context", [{"schema_version": 1}, {"schema_version": 1, "expected_source_ids": ["s1"]}])
+def test_incomplete_recovery_context_never_suppresses_report(tmp_path, capsys, context):
+    summary = tmp_path / "summary.json"
+    summary.write_text('{"s1":{"status":"ok"}}', encoding="utf-8")
+    metadata = tmp_path / "context.json"
+    metadata.write_text(json.dumps(context), encoding="utf-8")
+    assert health.main(str(summary), context_path=str(metadata)) == 1
+    assert "无法确认" in capsys.readouterr().out

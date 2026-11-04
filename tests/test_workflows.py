@@ -37,6 +37,22 @@ def test_crawl_has_time_budget():
     assert "--budget-seconds" in run
 
 
+def test_daily_has_bounded_recovery_and_preserves_full_diagnostics():
+    steps = _steps()
+    names = [s.get("name") for s in steps]
+    assert names.index("Crawl") < names.index("Recover deferred sources") < names.index("Build recruiting calendar")
+    assert "recover_sources.py" in _step("Recover deferred sources")["run"]
+    assert "--budget-seconds" in _step("Recover deferred sources")["run"]
+    diagnostics = _step("Preserve crawl diagnostics")
+    assert diagnostics["if"] == "always()"
+    assert diagnostics["with"]["retention-days"] == 14
+    assert "initial-summary.json" in diagnostics["with"]["path"]
+    assert "inputs.stale_only_hours" in _step("Health issue")["if"]
+    assert "--sources sources" in _step("Health issue")["run"]
+    assert "sync_health_issue.py" in _step("Health issue")["run"]
+    assert "inputs.only_sources" in _step("Publish health diagnostics")["if"]
+
+
 def test_large_source_budget_allows_complete_reading_within_round_budget():
     trigger = DAILY.get("on", DAILY.get(True))
     # 特变电工既有1672条记录，逐岗读取详情在1 req/s下不可能于900秒内完成。
