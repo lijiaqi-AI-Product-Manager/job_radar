@@ -29,126 +29,192 @@ sources:
   # 只收 ≥8 岗且 meta 明确写出公司全名的租户；`tupuats`/`tupuCampus`/`jobs`/`tupu1592`
   # 这类「图谱演示环境」「Tupujobs」是 ATS 自家的样板站，一律不收。
   - id: tupu360-wuxiapptec
+    enabled: false
+    compliance: &shared_host_blocked
+      checked_on: 2026-11-04
+      robots: disallowed
+      terms: "该主机公开robots禁止自动读取，未取得另行授权，停止采集。"
+      notes: "https://careersite.tupu360.com/robots.txt：User-agent: * / Disallow: /。历史记录及原观测时间继续保留分发；独立域名的许可不能套用到本主机。"
     company: 药明康德
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: wuxiapptec, fetch_detail: true}   # 校招 216 / 社招 386
   - id: tupu360-pharmaron
+    enabled: false
+    compliance: *shared_host_blocked
     company: 康龙化成
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: pharmaron-bj, fetch_detail: true}  # 144 / 828，岗位标题带「2027届-」
   - id: tupu360-astrazeneca-social
+    enabled: false
+    compliance: *shared_host_blocked
     company: 阿斯利康
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: astrazeneca, fetch_detail: true}   # 社招 312
   - id: tupu360-viatris
+    enabled: false
+    compliance: *shared_host_blocked
     company: 晖致医药
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: Viatris, fetch_detail: true}       # 16 / 258
   - id: tupu360-pfizer-social
+    enabled: false
+    compliance: *shared_host_blocked
     company: 辉瑞
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: pfizer, fetch_detail: true}        # 社招 266
   - id: tupu360-siemens-healthineers
+    enabled: false
+    compliance: *shared_host_blocked
     company: 西门子医疗
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: healthineers, fetch_detail: true}  # 25 / 195
   - id: tupu360-sanofi-social
+    enabled: false
+    compliance: *shared_host_blocked
     company: 赛诺菲
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: sanofi, fetch_detail: true}        # 社招 136
   - id: tupu360-bmw-brilliance
+    enabled: false
+    compliance: *shared_host_blocked
     company: 华晨宝马
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: bmw-brillianceats, fetch_detail: true}  # 61 / 41
   - id: tupu360-accenture
+    enabled: false
+    compliance: *shared_host_blocked
     company: 埃森哲
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: accentureats, fetch_detail: true}  # 10 / 85
   - id: tupu360-schaeffler
+    enabled: false
+    compliance: *shared_host_blocked
     company: 舍弗勒
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: schaeffler, fetch_detail: true}    # 11 / 77
   - id: tupu360-cummins
+    enabled: false
+    compliance: *shared_host_blocked
     company: 康明斯
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: cummins, fetch_detail: true}       # 25 / 52
   - id: tupu360-wanji
+    enabled: false
+    compliance: *shared_host_blocked
     company: 万集科技
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: wanji, fetch_detail: true}         # 56 / 15
   - id: tupu360-simedarby
+    enabled: false
+    compliance: *shared_host_blocked
     company: 森达美信昌
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: simedarbyats.industrial, fetch_detail: true}  # 2 / 63
   - id: tupu360-xmhx
+    enabled: false
+    compliance: *shared_host_blocked
     company: 厦门恒兴集团
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: xmhxgroup.com, fetch_detail: true}  # 社招 63
   - id: tupu360-skhynix
+    enabled: false
+    compliance: *shared_host_blocked
     company: SK海力士
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: skhynix, fetch_detail: true}       # 6 / 53
   - id: tupu360-iqvia
+    enabled: false
+    compliance: *shared_host_blocked
     company: 艾昆纬
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: iqvia, fetch_detail: true}         # 12 / 11
   - id: tupu360-andritz
+    enabled: false
+    compliance: *shared_host_blocked
     company: 安德里茨
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: andritz, fetch_detail: true}       # 1 / 47
   - id: tupu360-tsingyun
+    enabled: false
+    compliance: *shared_host_blocked
     company: 清云智通
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: tsingyun, fetch_detail: true}      # 8 / 37
   - id: tupu360-bd
+    enabled: false
+    compliance: *shared_host_blocked
     company: 碧迪医疗
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: bd, fetch_detail: true}            # 1 / 40
   - id: tupu360-weinview
+    enabled: false
+    compliance: *shared_host_blocked
     company: 威纶通
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: weinview, fetch_detail: true}      # 8 / 33
   - id: tupu360-estee
+    enabled: false
+    compliance: *shared_host_blocked
     company: 雅诗兰黛中国
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: estee, fetch_detail: true}         # 社招 37
   - id: tupu360-scania
+    enabled: false
+    compliance: *shared_host_blocked
     company: 斯堪尼亚
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: scania, fetch_detail: true}        # 社招 36
   - id: tupu360-airliquide
+    enabled: false
+    compliance: *shared_host_blocked
     company: 液化空气
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: airliquide, fetch_detail: true}    # 30 / 3
   - id: tupu360-carrier
+    enabled: false
+    compliance: *shared_host_blocked
     company: 开利空调
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: carrier, fetch_detail: true}       # 5 / 24
   - id: tupu360-heraeus
+    enabled: false
+    compliance: *shared_host_blocked
     company: 贺利氏
     recruit_types: [campus, social]
     params: {base: https://careersite.tupu360.com, tenant: heraeus, fetch_detail: true}       # 5 / 24
   - id: tupu360-intel-campus
+    enabled: false
+    compliance: *shared_host_blocked
     company: 英特尔
     recruit_types: [campus]
     params: {base: https://careersite.tupu360.com, tenant: intelcampus, fetch_detail: true, max_pages: 2}   # positionTotal=16 但首页只有 1 条（含「测试职位-校招」），实测翻页无效
   - id: tupu360-ibm-campus
+    enabled: false
+    compliance: *shared_host_blocked
     company: IBM
     recruit_types: [campus]
     params: {base: https://careersite.tupu360.com, tenant: ibmcampus, fetch_detail: true}     # 校招 12
   - id: tupu360-lilly
+    enabled: false
+    compliance: *shared_host_blocked
     company: 礼来
     recruit_types: [campus]
     params: {base: https://careersite.tupu360.com, tenant: lilly, fetch_detail: true}         # 校招 18
   - id: tupu360-bmw
+    enabled: false
+    compliance: *shared_host_blocked
     company: 宝马中国
     recruit_types: [social, campus]
     params: {base: https://careersite.tupu360.com, tenant: bmw, fetch_detail: true}           # 社招 19 / 校招 0
   - id: tupu360-toyota
+    enabled: false
+    compliance: *shared_host_blocked
     company: 丰田汽车中国
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: toyota, fetch_detail: true}        # 社招 11
   - id: tupu360-swireproperties
+    enabled: false
+    compliance: *shared_host_blocked
     company: 太古地产中国
     recruit_types: [social]
     params: {base: https://careersite.tupu360.com, tenant: swireproperties, fetch_detail: true}  # 社招 9

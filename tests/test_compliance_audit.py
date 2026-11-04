@@ -85,3 +85,16 @@ def test_expired_school_notice_is_not_valid_current_evidence():
     payload = evidence(record_kind="recruitment_notice", current_records=1, records_with_jd=1)
     payload["checks"][0]["samples"][0]["listing_end"] = "2026-10-30"
     assert any("截止" in p for p in audit_source_checks(payload, [source()]))
+
+
+def test_shared_recruitment_host_cannot_inherit_another_hosts_robot_permission():
+    from datetime import date
+
+    from jobradar.sources import load_sources
+    sources = load_sources(Path(__file__).parents[1] / 'sources')
+    restricted = [s for s in sources if s.params.get('base') == 'https://careersite.tupu360.com']
+    assert len(restricted) == 31
+    assert all(not s.enabled and s.compliance.robots == 'disallowed'
+               and s.compliance.checked_on >= date(2026, 11, 4) for s in restricted)
+    siemens = next(s for s in sources if s.id == 'tupu360-siemens')
+    assert siemens.enabled and siemens.params['base'] == 'https://jobs.siemens.com.cn'
