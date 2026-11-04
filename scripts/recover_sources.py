@@ -55,7 +55,7 @@ def _validate(sources, summary):
 
 
 def recover(sources, summary, jobs, texts, *, budget_seconds=1800, source_budget=3600,
-            crawl_fn=crawl, clock=time.monotonic):
+            crawl_fn=crawl, clock=time.monotonic, detail_cache_dir=None):
     _validate(sources, summary)
     if not 0 < budget_seconds <= 3600 or not 0 < source_budget <= 14400:
         raise ValueError("recovery budget must be within 1..3600; source budget within 1..14400 seconds")
@@ -86,6 +86,7 @@ def recover(sources, summary, jobs, texts, *, budget_seconds=1800, source_budget
         outcome = crawl_fn(batch, jobs, texts, ts=ts, max_workers=24,
                            budget_seconds=remaining, source_budget=min(remaining_source[s.id] for s in batch),
                            preserve_source_order=True,
+                           **({'detail_cache_dir': detail_cache_dir} if detail_cache_dir is not None else {}),
                            client_factory=lambda: make_client(policy=policy))
         values = {sid: asdict(value) for sid, value in outcome.items()}
         _validate(batch, values)
@@ -136,7 +137,7 @@ def main():
             value.setdefault("observed_at", baseline[sid]["observed_at"])
         write_json("initial-summary.json", summary)
         merged, report = recover(sources, summary, jobs, texts, budget_seconds=args.budget_seconds,
-                                 source_budget=args.source_budget)
+                                 source_budget=args.source_budget, detail_cache_dir=args.home / 'detail-cache')
         report["scope"] = "recovery_only" if args.recovery_only else "full"
         write_json("recovery-report.json", report)
         write_json(args.summary, merged)

@@ -84,6 +84,14 @@ jobs:
           compression-level: 9
           retention-days: 14
 
+      - name: Restore detail progress
+        uses: actions/cache/restore@v6.1.0
+        continue-on-error: true
+        with:
+          path: data/detail-cache
+          key: details-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: details-v1-
+
       - name: Crawl
         if: inputs.recovery_only != true
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
@@ -157,6 +165,14 @@ jobs:
                   fi
                 done
           fi
+
+      - name: Save detail progress
+        if: always()
+        uses: actions/cache/save@v6.1.0
+        continue-on-error: true
+        with:
+          path: data/detail-cache
+          key: details-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Health issue
         if: always() && inputs.only_sources == '' && (inputs.stale_only_hours == 0 || inputs.stale_only_hours == '')

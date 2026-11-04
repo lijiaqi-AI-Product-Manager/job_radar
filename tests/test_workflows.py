@@ -53,6 +53,15 @@ def test_daily_has_bounded_recovery_and_preserves_full_diagnostics():
     assert "inputs.only_sources" in _step("Publish health diagnostics")["if"]
 
 
+def test_detail_progress_is_restored_before_crawl_and_saved_even_after_failure():
+    names = [s.get('name') for s in _steps()]
+    assert names.index('Restore detail progress') < names.index('Crawl')
+    save = _step('Save detail progress')
+    assert save['if'] == 'always()'
+    assert save['with']['path'] == 'data/detail-cache'
+    assert _step('Restore detail progress')['with']['path'] == 'data/detail-cache'
+
+
 def test_large_source_budget_allows_complete_reading_within_round_budget():
     trigger = DAILY.get("on", DAILY.get(True))
     # 特变电工既有1672条记录，逐岗读取详情在1 req/s下不可能于900秒内完成。

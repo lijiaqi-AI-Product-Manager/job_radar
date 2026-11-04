@@ -184,3 +184,18 @@ def test_detail_budget_failure_is_not_swallowed():
     adapter._detail = interrupted
     with pytest.raises(CrawlBudgetExceeded):
         list(adapter.fetch_all())
+
+
+def test_listing_completes_before_details_and_overlapping_rows_are_deduplicated():
+    adapter = ShixisengAdapter(source(max_pages=None), httpx.Client(), sleep=lambda _: None)
+    order = []
+    def listing(page):
+        order.append(('list', page))
+        start = 0 if page == 1 else 19
+        return ([{'uuid': str(i), 'name': '实习生', 'cname': '快手'} for i in range(start, start + 20)], 40)
+    adapter._list = listing
+    adapter._detail = lambda uid: order.append(('detail', uid)) or {'cname': '快手', 'info': '真实工作职责'}
+    jobs = list(adapter.fetch_all())
+    assert len(jobs) == 39
+    assert order[:2] == [('list', 1), ('list', 2)]
+    assert len([item for item in order if item[0] == 'detail']) == 39
