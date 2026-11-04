@@ -92,7 +92,9 @@ def main(path: str, *, run_status: str = "success", run_url: str | None = None,
             context = json.loads(Path(context_path).read_text(encoding="utf-8"))
             if context.get("schema_version") != 1 or set(context["expected_source_ids"]) != set(summary):
                 raise ValueError("invalid recovery context")
-            lines += [f"限时补采：尝试 {len(context['attempted'])} 个，恢复 {len(context['recovered'])} 个；"
+            activity = (f"排队 {len(context['scheduled'])} 个，实际启动 {len(context['attempted'])} 个"
+                        if "scheduled" in context else f"排队 {len(context['attempted'])} 个")
+            lines += [f"限时补采：{activity}，恢复 {len(context['recovered'])} 个；"
                       f"异常由 {context['before_bad']} 降至 {context['after_bad']}。", ""]
             if context.get("scope") == "recovery_only":
                 lines += ["本次为补采：保留其他来源各自的最近观测，未重抓全部来源；下列总数不是本次全量采集完成数。", ""]

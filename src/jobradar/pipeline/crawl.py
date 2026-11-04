@@ -142,7 +142,8 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
           adapters: dict[str, type[Adapter]] | None = None,
           sleep: Callable[[float], None] = time.sleep,
           max_workers: int = 4, budget_seconds: float | None = None,
-          order_seed: int | None = None, source_budget: float | None = None) -> dict[str, RunResult]:
+          order_seed: int | None = None, source_budget: float | None = None,
+          preserve_source_order: bool = False) -> dict[str, RunResult]:
     if client_factory is make_client:
         from jobradar.compliance import RobotsPolicy
 
@@ -176,12 +177,19 @@ def crawl(sources: list[SourceConfig], jobs_conn, text_conn, *, ts: str,
     last_ok = {r["source_id"]: r["last_ok"] for r in state if r["last_ok"]}
     workloads = {r["source_id"]: r["open_jobs"] for r in state}
     # 共用 host 的源仍串行，但也要轮换组内顺序，避免同一批尾部租户每天都被预算跳过。
-    for _, srcs in items:
-        rng.shuffle(srcs)
-        srcs.sort(key=lambda source: (not workloads.get(source.id, 0), last_ok.get(source.id, ""),
-                                     -workloads.get(source.id, 0)))
-    items.sort(key=lambda item: (last_ok.get(item[1][0].id, ""),
-                                 -sum(workloads.get(source.id, 0) for source in item[1])))
+    if preserve_source_order:
+        # 补采已按完整读取耗时排好优先级，不能再次被全量轮转规则覆盖。
+        positions = {s.id: i for i, s in enumerate(sources)}
+        for _, srcs in items:
+            srcs.sort(key=lambda source: positions[source.id])
+        items.sort(key=lambda item: positions[item[1][0].id])
+    else:
+        for _, srcs in items:
+            rng.shuffle(srcs)
+            srcs.sort(key=lambda source: (not workloads.get(source.id, 0), last_ok.get(source.id, ""),
+                                         -workloads.get(source.id, 0)))
+        items.sort(key=lambda item: (last_ok.get(item[1][0].id, ""),
+                                     -sum(workloads.get(source.id, 0) for source in item[1])))
 
     observed = [item for item in items if any(workloads.get(s.id, 0) for s in item[1])]
     discovery = [item for item in items if not any(workloads.get(s.id, 0) for s in item[1])]
