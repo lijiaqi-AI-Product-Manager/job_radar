@@ -256,7 +256,7 @@ def _fetch(client: httpx.Client, url: str, headers: dict, dest_dir: Path, *, dea
     return tmp
 
 
-def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *, previous=None):
+def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *, previous=None, text_stream=False):
     """解压（若为 .gz）并校验 SQLite 完整性后替换目标文件。"""
     baseline = Path(previous) if previous is not None else dest
     kind = {value:key for key,value in DB_FILES.items()}.get(name)
@@ -276,7 +276,20 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *
         if actual != expected_digest:
             tmp.unlink(missing_ok=True)
             raise ValueError("下载字节与发布摘要不一致")
-    if gz:
+    if text_stream:
+        from jobradar.text_stream import import_text_stream
+        raw = tmp.with_suffix(".raw")
+        try:
+            if name != "jd_text.db" or not gz:
+                raise ValueError("正文流只能用于正文库")
+            import_text_stream(tmp, raw)
+        except (OSError, ValueError) as error:
+            raw.unlink(missing_ok=True)
+            raise ValueError("正文流无效或本地空间不足，保留已有快照") from error
+        finally:
+            tmp.unlink(missing_ok=True)
+        tmp = raw
+    elif gz:
         raw = tmp.with_suffix(".raw")
         try:
             with gzip.open(tmp) as src, open(raw, "wb") as out:
@@ -402,7 +415,9 @@ def _download(name: str, dest: Path, client: httpx.Client | None = None, prefer:
                 if digests and not expected:
                     tmp.unlink(missing_ok=True)
                     raise ValueError("发布摘要缺失，无法核验下载内容")
-                _install(tmp, name, gz, dest, expected, previous=previous)
+                _install(tmp, name, gz, dest, expected, previous=previous,
+                         **({"text_stream": True} if gz and name == "jd_text.db"
+                            and getattr(digests, "text_transport", None) == "stream" else {}))
                 if expected and verified is not None:
                     verified.pop(name, None)
                     verified.pop(name + ".gz", None)
