@@ -37,7 +37,8 @@ def test_crawl_ingests_jobs_and_texts(jobs_db, text_db):
     assert cats == {"101": "后端", "102": "算法"}  # 适配器未给职类 -> crawl 按 taxonomy 归类
 
 
-def test_existing_text_cache_is_prepared_before_workers_and_retains_text_age(jobs_db, text_db):
+@pytest.mark.parametrize('adapter_name', ['hotjob', 'shixiseng'])
+def test_existing_text_cache_is_prepared_before_workers_and_retains_text_age(jobs_db, text_db, adapter_name):
     from jobradar.pipeline.ingest import ingest_run, upsert_texts
 
     original = _job(source_id="example-corp", description="原岗位职责", requirements="本科")
@@ -52,9 +53,9 @@ def test_existing_text_cache_is_prepared_before_workers_and_retains_text_age(job
             return _job(source_id="example-corp", description=raw["description"],
                         requirements=raw["requirements"], text_observed_at=raw["fetched_at"])
 
-    config = example_source(adapter="hotjob", params={"detail_cache_hours": 168})
+    config = example_source(adapter=adapter_name, params={"detail_cache_hours": 168})
     result = crawl([config], jobs_db, text_db, ts=T(3), client_factory=replay_client,
-                   adapters={"hotjob": Cached}, sleep=lambda _: None)
+                   adapters={adapter_name: Cached}, sleep=lambda _: None)
     assert result[config.id].status == "ok"
     assert text_db.execute("SELECT fetched_at FROM job_text").fetchone()[0] == T(1)
 

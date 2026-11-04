@@ -25,13 +25,17 @@ source.params:
 
 from __future__ import annotations
 
+import json
 import re
 from collections.abc import Iterator
+from datetime import timedelta
 
-from jobradar.adapters.base import Adapter, SkipRecord, register
+from jobradar.adapters.base import Adapter, CrawlBudgetExceeded, SkipRecord, register
+from jobradar.jd_text import template_pollution
 from jobradar.models import Job
-from jobradar.normalize import date_only, degree_min_from_text
+from jobradar.normalize import date_only, degree_min_from_text, normalize_cities, normalize_degree
 from jobradar.nuxt import NuxtParseError, eval_assignments, eval_returning
+from jobradar.timeutil import now_ts, parse_ts
 
 BASE = "https://www.shixiseng.com"
 LIST_URL = f"{BASE}/interns"
@@ -56,6 +60,21 @@ def clean_title(text: str | None) -> str:
     if not text:
         return ""
     return re.sub(r"\s+", " ", _ICON_ENTITY.sub("", text)).strip()
+
+
+def _same_list_title(listed, verified):
+    if not isinstance(listed, str) or not isinstance(verified, str):
+        return False
+    if clean_title(listed) == verified:
+        return True
+    # 不还原字体字符；只把未知位置与既有、带观测时间的标题逐字符比较。
+    listed = re.sub(r'\s+', ' ', listed).strip()
+    parts, start = [], 0
+    for match in _ICON_ENTITY.finditer(listed):
+        parts.extend((re.escape(listed[start:match.start()]), '.'))
+        start = match.end()
+    parts.append(re.escape(listed[start:]))
+    return bool(re.fullmatch(''.join(parts), verified))
 
 
 def company_core(name: str | None) -> str:
@@ -89,6 +108,13 @@ def same_company(a: str | None, b: str | None) -> bool:
     return False
 
 
+def belongs_to_company(observed, target):
+    actual, expected = company_core(observed), company_core(target)
+    if actual and actual != expected and expected.startswith(actual):
+        return False  # 母品牌名称不足以证明岗位归属某一个子公司。
+    return same_company(observed, target)
+
+
 def _html_to_text(fragment: str | None) -> str | None:
     """详情页 JD 是 HTML 片段，落库要纯文本。"""
     if not fragment:
@@ -112,10 +138,16 @@ def parse_list_page(html: str) -> tuple[list[dict], int]:
         interns = block.get("interns")
         if not isinstance(interns, dict):
             continue
-        jobs = [j for j in (interns.get("data") or []) if isinstance(j, dict) and j.get("uuid")]
+        jobs = interns.get("data")
+        if not isinstance(jobs, list) or any(not isinstance(j, dict) or not j.get("uuid") for j in jobs):
+            raise RuntimeError("实习僧列表记录不完整")
         total = interns.get("total")
-        return jobs, int(total) if isinstance(total, int) else len(jobs)
-    return [], 0
+        if type(total) is not int and not (isinstance(total, str) and total.isascii() and total.isdecimal()):
+            raise RuntimeError("实习僧列表总数无效")
+        if int(total) < 0:
+            raise RuntimeError("实习僧列表总数无效")
+        return jobs, int(total)
+    raise RuntimeError("实习僧列表结构不完整")
 
 
 def parse_detail_page(html: str) -> dict:
@@ -175,22 +207,69 @@ class ShixisengAdapter(Adapter):
         except NuxtParseError:
             return {}
 
+    def _cached_detail(self, item, *, allow_old=False):
+        hours = self.source.params.get('detail_cache_hours', 0)
+        if type(hours) is not int or not 0 < hours <= 168:
+            return None
+        cached = getattr(self, 'cached_texts', {}).get(str(item.get('uuid')))
+        if not cached or not belongs_to_company(item.get('cname'), self.source.company):
+            return None
+        if not _same_list_title(item.get('name'), cached.get('title')):
+            return None
+        degree = normalize_degree(str(item.get('degree') or ''))
+        if degree and normalize_degree(cached.get('degree_min')) != degree:
+            return None
+        try:
+            cities = json.loads(cached['cities']) if isinstance(cached['cities'], str) else cached['cities']
+            listed = normalize_cities(re.split(r'[,，/、]', str(item.get('city') or '')))
+            if listed and listed != normalize_cities(cities):
+                return None
+            observed, current = parse_ts(cached['fetched_at']), parse_ts(now_ts())
+            if observed > current or (not allow_old and current - observed > timedelta(hours=hours)):
+                return None
+        except (ValueError, TypeError, KeyError):
+            return None
+        body = (cached.get('description'), cached.get('requirements'))
+        if not any(body) or any(template_pollution(value) for value in body):
+            return None
+        end = date_only(item.get('endtime'), floor_year=2024)
+        if end and end != cached.get('apply_end'):
+            return None
+        return {**cached, 'cities': cities}
+
     def fetch_raw(self) -> Iterator[dict]:
         fetch_detail = bool(self.source.params.get("fetch_detail", True))
         page = 1
+        seen = set()
         while True:
             items, total = self._list(page)
             if not items:
+                if page != 1 or total != 0:
+                    raise RuntimeError('实习僧列表中途为空，未完成采集')
                 break
+            ids = {str(item['uuid']) for item in items}
+            if len(ids) != len(items) or seen.intersection(ids):
+                raise RuntimeError('实习僧列表重复分页，未完成采集')
+            seen.update(ids)
             for it in items:
+                if it.get('cname') and not belongs_to_company(it['cname'], self.source.company):
+                    continue
                 detail = {}
+                cached = self._cached_detail(it) if fetch_detail else None
                 if fetch_detail:
-                    try:
-                        detail = self._detail(str(it["uuid"]))
-                    except Exception:  # noqa: BLE001 — 详情失败不该让整源失败，只是缺 JD
-                        detail = {}
-                yield {"list": it, "detail": detail}
+                    if not cached:
+                        try:
+                            detail = self._detail(str(it["uuid"]))
+                        except CrawlBudgetExceeded:
+                            raise
+                        except Exception:  # noqa: BLE001 — 正文失败保留原观测，完整列表仍受分页校验。
+                            detail = {}
+                        if not detail:
+                            cached = self._cached_detail(it, allow_old=True)
+                yield {"list": it, "detail": detail, 'cached': cached}
             if page * PAGE_SIZE >= total:
+                if len(seen) < total:
+                    raise RuntimeError('实习僧列表数量不足，未完成采集')
                 break
             if self.source.max_pages and page >= self.source.max_pages:
                 break
@@ -198,19 +277,20 @@ class ShixisengAdapter(Adapter):
 
     def normalize(self, raw: dict) -> Job:
         it, detail = raw["list"], raw.get("detail") or {}
+        cached = raw.get('cached') or {}
         uuid = it.get("uuid")
         if not uuid:
             raise SkipRecord
         cname = detail.get("cname") or it.get("cname")
-        if not same_company(cname, self.source.company):
+        if not belongs_to_company(cname, self.source.company):
             # 关键词搜出来的别家岗位，不能算到本公司头上
             raise SkipRecord
-        title = clean_title(detail.get("iname") or it.get("name"))
+        title = cached.get('title') if cached else clean_title(detail.get("iname") or it.get("name"))
         if not title:
             raise SkipRecord
         city = str(detail.get("city") or it.get("city") or "").strip()
-        cities = [c for c in re.split(r"[,，/、]", city) if c][:3]
-        degree = detail.get("degree") or it.get("degree")
+        cities = cached.get('cities') if cached else [c for c in re.split(r"[,，/、]", city) if c][:3]
+        degree = cached.get('degree_min') if cached else detail.get("degree") or it.get("degree")
         info = detail.get("info")
         if detail.get("info_is_html") is not False:
             info = _html_to_text(info)
@@ -223,7 +303,8 @@ class ShixisengAdapter(Adapter):
             recruit_type="intern",
             cities=cities,
             degree_min=degree_min_from_text(str(degree)) if degree else None,
-            apply_end=date_only(detail.get("endtime"), floor_year=2024),
-            description=info,
-            requirements=_public_terms(detail),
+            apply_end=cached.get('apply_end') if cached else date_only(detail.get("endtime"), floor_year=2024),
+            description=cached.get('description') if cached else info,
+            requirements=cached.get('requirements') if cached else _public_terms(detail),
+            text_observed_at=cached.get('fetched_at') if cached else None,
         )
