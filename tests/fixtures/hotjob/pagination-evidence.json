@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-11-04",
+  "source_id": "hotjob-luxshare",
+  "entry": "https://wecruit.hotjob.cn/wecruit/positionInfo/listPosition/SU601778b25d83dc072073230a",
+  "recruit_type": "campus",
+  "first_request": {"currentPage": 1, "pageSize": 50},
+  "first_response": {"totalPage": 2, "pageSize": 12, "currentPage": 1, "dataCount": 19, "returned": 12},
+  "second_request_with_old_size": {"currentPage": 2, "pageSize": 50},
+  "second_response_with_old_size": {"totalPage": 1, "pageSize": 50, "currentPage": 2, "dataCount": 19, "returned": 0}
+}

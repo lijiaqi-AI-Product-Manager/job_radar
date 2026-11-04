@@ -150,3 +150,54 @@ def test_current_verified_tenant_requirement_evidence(evidence):
         assert enabled.normalize(evidence['raw']).grad_year==evidence['expected_grad_year']
         disabled=HotjobAdapter(source(detail_fields=False),client)
         assert disabled.normalize(evidence['raw']).grad_year is None
+
+
+def test_followup_pages_use_actual_server_page_size():
+    evidence = json.loads((FX / 'pagination-evidence.json').read_text(encoding='utf-8'))
+    requested = []
+    def respond(request):
+        page = int(request.url.params['currentPage'])
+        size = int(request.url.params['pageSize'])
+        requested.append((page, size))
+        actual_size = evidence['first_response']['pageSize'] if page == 1 else size
+        start = 0 if page == 1 else (page - 1) * size
+        rows = [{'postId': str(i), 'postName': '工程师'} for i in range(start + 1, min(start + actual_size, 19) + 1)]
+        form = {'totalPage': (19 + actual_size - 1) // actual_size, 'pageSize': actual_size,
+                'currentPage': page, 'dataCount': 19, 'pageData': rows}
+        return httpx.Response(200, json={'data': {'pageForm': form}})
+    config = source(fetch_detail=False, page_size=50, max_pages=None).model_copy(update={'recruit_types': ['campus']})
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        jobs = list(HotjobAdapter(config, client, sleep=lambda _: None).fetch_all())
+    assert len(jobs) == 19
+    assert requested == [(1, 50), (2, 12)]
+
+
+def test_explicit_empty_first_page_is_valid_but_cannot_hide_incomplete_page():
+    config = source(fetch_detail=False).model_copy(update={'recruit_types': ['campus']})
+    adapter = HotjobAdapter(config, httpx.Client(), sleep=lambda _: None)
+    adapter._list = lambda *_: {'data': {'pageForm': {'totalPage': 1, 'dataCount': 0, 'pageData': []}}}
+    assert list(adapter.fetch_all()) == []
+    adapter._list = lambda *_: {'data': {'pageForm': {'totalPage': 1, 'dataCount': 19, 'pageData': []}}}
+    with pytest.raises(RuntimeError, match='incomplete'):
+        list(adapter.fetch_all())
+
+
+def test_public_tenant_identifiers_use_canonical_hex_case():
+    with httpx.Client() as client:
+        adapter = HotjobAdapter(source(tenant='SU6149FF530DCAD47003D01511'), client)
+        assert adapter.tenant == 'SU6149ff530dcad47003d01511'
+
+
+def test_missing_platform_degree_does_not_invalidate_derived_cache(monkeypatch):
+    monkeypatch.setattr('jobradar.adapters.hotjob.now_ts', lambda: '2026-11-02T00:00:00Z')
+    original = run()[0]
+    with httpx.Client() as client:
+        adapter = HotjobAdapter(source(detail_cache_hours=168), client)
+        adapter.cached_texts = _cache([original])
+        adapter.cached_texts[original.source_job_id]['degree_min'] = '本科'
+        item = {'postId': original.source_job_id, 'postName': original.title,
+                'publishDate': original.publish_at, 'educationStr': None}
+        cached = adapter._cached_detail(item, original.recruit_type)
+        assert cached is not None and cached[1] == '2026-11-01T00:00:00Z'
+        item['educationStr'] = '硕士'
+        assert adapter._cached_detail(item, original.recruit_type) is None

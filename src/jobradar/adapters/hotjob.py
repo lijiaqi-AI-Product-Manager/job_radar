@@ -11,6 +11,7 @@ source.params:
 已知：`recruitType` 1=校园、2=社招、3=实习；城市在 `workPlaceStr`（如「长沙市-长沙县」）。
 """
 
+import re
 from collections.abc import Iterator
 from datetime import timedelta
 
@@ -77,7 +78,8 @@ class HotjobAdapter(Adapter):
 
     @property
     def tenant(self) -> str:
-        return self.source.params["tenant"]
+        value = self.source.params["tenant"]
+        return "SU" + value[2:].lower() if re.fullmatch(r"[Ss][Uu][0-9a-fA-F]{24}", value) else value
 
     @property
     def host(self) -> str:
@@ -91,7 +93,8 @@ class HotjobAdapter(Adapter):
         return self.request_json(
             "GET", f"https://{self.host}/wecruit/positionInfo/listPosition/{self.tenant}",
             params=self._params(isFrompb="true", recruitType=code,
-                                pageSize=str(int(self.source.params.get("page_size", DEFAULT_PAGE_SIZE))),
+                                pageSize=str(getattr(self, "_effective_page_size",
+                                                     int(self.source.params.get("page_size", DEFAULT_PAGE_SIZE)))),
                                 currentPage=str(page)),
             headers={"Referer": f"https://{self.host}/{self.tenant}/pb/social.html"},
         )
@@ -113,7 +116,8 @@ class HotjobAdapter(Adapter):
             return None
         if cached.get("recruit_type") != recruit_type or cached.get("publish_at") != _date_only(item.get("publishDate") or item.get("publishFirstDate")):
             return None
-        if normalize_degree(cached.get("degree_min")) != normalize_degree(item.get("educationStr")):
+        listed_degree = normalize_degree(item.get("educationStr"))
+        if listed_degree and normalize_degree(cached.get("degree_min")) != listed_degree:
             return None
         body = (cached.get("description"), cached.get("requirements"))
         if not any(body) or any(template_pollution(value) for value in body):
@@ -131,6 +135,7 @@ class HotjobAdapter(Adapter):
         fetch_detail = bool(self.source.params.get("fetch_detail", True))
         for rtype in self.source.recruit_types:
             code = RECRUIT_CODE[rtype]
+            self._effective_page_size = int(self.source.params.get("page_size", DEFAULT_PAGE_SIZE))
             page = 1
             seen_pages = set()
             while True:
@@ -145,7 +150,8 @@ class HotjobAdapter(Adapter):
                 except (ValueError, TypeError, KeyError) as exc:
                     raise RuntimeError("hotjob invalid pagination") from exc
                 if not items:
-                    if total != 0 or page != 1:
+                    explicit_zero = type(form.get("dataCount")) is int and form["dataCount"] == 0
+                    if page != 1 or not (total == 0 or (total == 1 and explicit_zero)):
                         raise RuntimeError("hotjob incomplete empty page")
                     break
                 if total < page or any(not isinstance(item, dict) or not item.get("postId") for item in items):
@@ -154,6 +160,14 @@ class HotjobAdapter(Adapter):
                 if signature in seen_pages:
                     raise RuntimeError("hotjob repeated full page")
                 seen_pages.add(signature)
+                if "pageSize" in form:
+                    try:
+                        actual_size = int(form["pageSize"])
+                    except (TypeError, ValueError) as error:
+                        raise RuntimeError("hotjob invalid page size") from error
+                    if type(form["pageSize"]) is bool or not 0 < actual_size <= 1000:
+                        raise RuntimeError("hotjob invalid page size")
+                    self._effective_page_size = actual_size
                 for it in items:
                     detail = {}
                     observed = None
