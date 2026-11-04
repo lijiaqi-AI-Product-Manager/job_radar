@@ -41,6 +41,7 @@ jobradar doctor
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - `source_enabled: false` 或 `availability: unconfirmed_disabled` → 来源当前已停用；即使旧成功观测尚不足48小时，也不能表述为当前已核实可投。停用不等于岗位已关闭。
 - 展示 `availability_label` 和 `source_warnings` 对当前可投状态的限制。`source_tenant_peers` 非空表示同一招聘租户还登记在其他来源下，岗位可能重复；不要跨来源相加，也不要据此擅自更改雇主归属。
+- 明确指定校招/实习时，搜索与对比默认过滤标题明确的一线门店和房产经纪岗位。用户明确寻找此类岗位时传`include_frontline=true`（CLI `--include-frontline`）；不限类型与社招不默认过滤。说明`frontline_filter`的模式和计数，全文检索计数为`null`时不能编造。`exclude_categories`是字段排除，未知职类需修正，空字段仍需原文核实。
 - 下载使用默认 GitHub 渠道；失败时先检查网络和数据状态，不将当前未核实可用的镜像作为首选。见[渠道状态](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。
 - `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
@@ -59,6 +60,7 @@ jobradar doctor
 |---|---|
 | 某公司/城市/职类在招什么 | `jobradar search --company 复星医药 --category 医药研发 --city 上海 --type campus --grad-year 2027 --limit 20` |
 | 标题关键词 | `jobradar search --keyword 大模型` |
+| 用户明确希望查门店实习 | `jobradar search --type intern --include-frontline --keyword 门店 --limit 20` |
 | 按技能/要求找岗位（JD 原文里出现的词） | `jobradar search --text "PyTorch 多模态" --type campus --limit 20`（空格分隔的词须全部出现；结果的 `match` 是命中处原文片段） |
 | 某个岗位详情、要求 | `jobradar show <job_id>` |
 | 这周/最近新开、下架、变化 | `jobradar diff --days 7 --company 腾讯 --types open` |

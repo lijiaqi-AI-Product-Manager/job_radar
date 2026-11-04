@@ -37,6 +37,8 @@ ingest_run(jobs, "smoke", [
 ], ts=ts)
 ingest_run(jobs,"other",[Job(source_id="other",source_job_id="1",company="离线另一主体",
     title="财务经理",url="https://example.invalid/other",recruit_type="social",category="财务",cities=["北京"])],ts=ts)
+ingest_run(jobs,"store",[Job(source_id="store",source_job_id="1",company="离线门店品牌",
+    title="门店实习生",url="https://example.invalid/store",recruit_type="intern")],ts=ts)
 jobs.close()
 cal = connect(home / "calendar.db", "calendar")
 for eid, city, deadline in (("beijing-open", "北京", end), ("shanghai-open", "上海", end),
@@ -113,6 +115,12 @@ def main():
         check("category-alias-with-legacy-label", response["total"] == 2
               and response["category_match"]["match"] == "alias"
               and "财务审计" in response["category_match"]["matched"])
+        response = json.loads(run([cli, "search", "--type", "intern"]))
+        check("intern-frontline-default", response["total"] == 0 and response["frontline_filter"]["excluded_records"] == 1)
+        response = json.loads(run([cli, "search", "--type", "intern", "--include-frontline"]))
+        check("frontline-explicit-inclusion", response["total"] == 1)
+        response = json.loads(run([cli, "search", "--type", "campus", "--exclude-category", "财务"]))
+        check("category-exclusion", response["total"] == 0)
         run([mcp, "--help"])
         print(json.dumps({"version": info["version"], "direct_url": info["direct_url"],
                           "checks_passed": len(checks), "checks": checks, "mcp_help": "passed"},

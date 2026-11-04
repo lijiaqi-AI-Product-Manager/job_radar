@@ -24,9 +24,18 @@ _JOB_COLS = """j.id, c.name AS company, j.source_id, j.url, j.title, j.category,
     j.recruit_type, j.grad_year, j.batch, j.cities, j.degree_min, j.department,
     j.apply_end, j.publish_at, j.first_seen, j.last_seen, j.closed_at"""
 
-# 门店/零售岗的标题特征：喜茶、星巴克一家就 2,900+ 条，校招用户搜「在招岗位」时基本是噪声。
-# 只用于 `--exclude-store`（默认不过滤），避免替用户做决定。
-STORE_TITLE_WORDS = ("门店", "店员", "导购", "收银", "服务员", "咖啡师", "店长", "值班主管")
+# 标题明确的一线岗位信号；专业岗位优先保留，不能把“导购产品实习生”当作导购员。
+_PROFESSIONAL_TITLE = re.compile(
+    r"研发|工程师|架构|开发|算法|数据|产品|设计|技术|系统|财务|会计|审计|税务|法务|人力|HRBP|"
+    r"供应链|采购|战略|培训师|培训经理|总部|电商|天猫|淘宝|网店|京东|直播", re.I)
+_FRONTLINE_TITLE = re.compile(
+    r"咖啡师|调茶师|店员|营业员|导购|收银|店长|店经理|门店主管|值班主管|餐厅服务员|餐饮服务员|"
+    r"门店(?:运营|实习|兼职|全职|储备|用工|伙伴)|置业顾问|(?:房产|地产|置业|租赁).{0,12}经纪(?:人|顾问)|"
+    r"店.{0,40}(?:转介绍|诚聘合作伙伴)", re.I)
+
+
+def _frontline_title(title):
+    return int(bool(title and _FRONTLINE_TITLE.search(title) and not _PROFESSIONAL_TITLE.search(title)))
 
 # 只映射范围相同的具体职类；不把「财务」放宽成包含人事、行政的整个职能大类。
 _CATEGORY_ALIASES = {"财务": "财务审计", "会计": "财务审计", "审计": "财务审计",
@@ -388,12 +397,14 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
                 dedupe=False, exclude_store=False, deadline_before=None,
                 deadline_after=None, cities=None, exclude_cities=None,
                 exclude_keywords=None, exclude_companies=None,
-                include_unknown_grad_year=False) -> list[dict]:
+                include_unknown_grad_year=False, include_frontline=False,
+                exclude_categories=None) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
     dedupe=True 时把「同公司+同标题+同城市」的多条 req 折叠成一条，并给出 `variants`（原条数）。
-    exclude_store=True 排掉门店/零售岗（喜茶、星巴克那类门店帖占了 8 千条，校招用户基本不需要）。
+    校招和实习查询默认过滤明确的一线门店、房产经纪标题，include_frontline=True可主动包含。
+    exclude_store=True可对其他类型主动过滤；exclude_categories按固定职类及其已登记旧值排除。
     """
     where, args, predicates = [], [], []
     def add(clause, *values, field=None):
@@ -402,6 +413,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         predicates.append((clause, values, field))
 
     positive(limit)
+    if type(include_frontline) is not bool or type(exclude_store) is not bool:
+        raise ValueError("include_frontline 与 exclude_store 必须为布尔值")
+    if include_frontline and exclude_store:
+        raise ValueError("include_frontline 与 exclude_store 不能同时使用")
     _filter_domains(grad_year, recruit_type)
     _company_parameter(company)
     if category is not None and (not isinstance(category, str) or not category.strip()):
@@ -414,6 +429,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     exclude_cities = _text_list(exclude_cities, "exclude_cities")
     exclude_keywords = _text_list(exclude_keywords, "exclude_keywords")
     exclude_companies = _text_list(exclude_companies, "exclude_companies")
+    exclude_categories = _text_list(exclude_categories, "exclude_categories")
     if city and cities:
         raise ValueError("city 与 cities 不能同时指定；多城市使用 cities")
     if city is not None and (not isinstance(city, str) or not city.strip()):
@@ -426,17 +442,19 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         meta.update(total=0, returned=0, truncated=False, empty_reason=None)
         # 调用方可复用同一个字典，上一轮筛选信息不能泄漏到下一轮。
         for key in ("company_match", "company_coverage", "category_match", "filter_coverage", "hints",
-                    "excluded_company_matches", "text_match_semantics"):
+                    "excluded_company_matches", "text_match_semantics", "excluded_category_matches", "frontline_filter"):
             meta.pop(key, None)
     if not include_closed:
         add("j.closed_at IS NULL")
         # 快照可能早于今天：明示截止日一过就从当前岗位中隐藏，无需等该源再次成功抓取。
         # 这是查询过滤，不改 closed_at / miss_count，失败与拒收仍不能改变岗位状态。
         add("(j.apply_end IS NULL OR j.apply_end >= ?)", today)
-    if exclude_store:
-        # 只按标题关键词排，不用公司名（公司名排会误伤整家公司的正常岗位）
-        add("(" + " AND ".join(["j.title NOT LIKE ?"] * len(STORE_TITLE_WORDS)) + ")",
-            *[f"%{w}%" for w in STORE_TITLE_WORDS])
+    frontline_mode = ("exclude" if exclude_store else "include" if include_frontline else
+                      "auto_campus_intern" if recruit_type in {"campus", "intern"} else "off")
+    frontline_clause = None
+    if frontline_mode in {"exclude", "auto_campus_intern"}:
+        conn.create_function("jobradar_frontline", 1, _frontline_title, deterministic=True)
+        frontline_clause = "jobradar_frontline(j.title)=0"
     if company:
         match = resolve_company(conn, company, contains=contains)
         clause, company_args = _company_sql(match)
@@ -450,6 +468,18 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             "OR j.subcategory COLLATE NOCASE IN (SELECT value FROM json_each(?)))", values, values)
         if meta is not None:
             meta["category_match"] = category_match
+    excluded_categories = {}
+    for term in exclude_categories:
+        matched = _category_match(conn, term)
+        if not matched["matched"]:
+            raise ValueError(f"不支持排除职类「{term}」，请使用固定职类词表")
+        excluded_categories[term] = matched
+    if excluded_categories:
+        values = json.dumps(sorted({v for match in excluded_categories.values() for v in match["matched"]}))
+        add("NOT (COALESCE(j.category,'') COLLATE NOCASE IN (SELECT value FROM json_each(?)) "
+            "OR COALESCE(j.subcategory,'') COLLATE NOCASE IN (SELECT value FROM json_each(?)))", values, values)
+        if meta is not None:
+            meta["excluded_category_matches"] = excluded_categories
     wanted_cities = [city.strip()] if city else cities
     if wanted_cities:
         labels = sorted({label for c in wanted_cities for label in (c.removesuffix("市"), c.removesuffix("市") + "市")})
@@ -486,6 +516,9 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         add("j.apply_end IS NOT NULL AND j.apply_end <= ?", deadline_before, field="apply_end")
     if deadline_after:
         add("j.apply_end IS NOT NULL AND j.apply_end >= ?", deadline_after, field="apply_end")
+    if frontline_clause:
+        # 先按公司、城市、类型等条件缩小范围，避免对整库先做标题规则。
+        add(frontline_clause, field="frontline")
     if text is not None and (not isinstance(text, str) or len(text) > 4096):
         raise ValueError("全文检索必须为不超过 4096 字符的文本")
     terms = sorted(dict.fromkeys(text.split()), key=len, reverse=True) if text else []
@@ -499,7 +532,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if (terms and os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX") != "1"
             and any((company, category, city, recruit_type, grad_year, keyword,
                      deadline_before, deadline_after, exclude_store, cities, exclude_cities,
-                     exclude_keywords, exclude_companies))):
+                     exclude_keywords, exclude_companies, exclude_categories))):
         # 只在集合足够小时使用主键读取；较大集合继续原路径，不截断匹配结果。
         with closing(conn.execute("SELECT j.id" + from_sql + " WHERE " + " AND ".join(where), args)) as cursor:
             eligible = cursor.fetchmany(10001)
@@ -590,6 +623,23 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             hints.append("排除城市按岗位列出的任一城市执行；城市缺失仍未知，不能据此保证工作地符合要求")
         if exclude_keywords:
             hints.append("排除关键词仅匹配标题字面量，不代表已排除正文中的资格要求或语义相近岗位")
+        if excluded_categories:
+            hints.append("职类排除只按已标注的大类、子类及登记旧值执行；职类缺失仍可能包含相关岗位，需要核实标题和原文")
+        removed = 0
+        scope = "other_filters"
+        if frontline_clause:
+            if terms:
+                removed, scope = None, "not_counted_for_fulltext"
+            else:
+                scoped = [(clause, values) for clause, values, tag in predicates if tag != "frontline"]
+                scoped_sql = " WHERE " + " AND ".join(clause for clause, _ in scoped) if scoped else " WHERE 1"
+                removed = conn.execute("SELECT COUNT(*)" + from_sql + scoped_sql + f" AND NOT ({frontline_clause})",
+                                       [v for _, values in scoped for v in values]).fetchone()[0]
+            amount = f"{removed}条记录" if removed is not None else "符合标题规则的候选（正文检索未复算数量）"
+            hints.append(f"已按标题过滤一线门店、房产经纪岗位：{amount}；标题规则不判断资格或合同性质，"
+                         "需包含时使用--include-frontline（MCP: include_frontline=true）；不能与exclude_store同时使用")
+        meta["frontline_filter"] = {"mode":frontline_mode, "excluded_records":removed,
+                                    "unit":"records", "scope":scope}
         for name, info in excluded_matches.items():
             if info["match"] == "none":
                 hints.append(f"排除公司「{name}」未精确匹配收录主体，未移除相近名称公司；需核实名称")
@@ -794,7 +844,8 @@ def source_freshness(rows, *, limit=10) -> dict:
 
 
 def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=None, text=None,
-                  per_company=5, meta=None, city=None, recruit_type=None, grad_year=None) -> dict:
+                  per_company=5, meta=None, city=None, recruit_type=None, grad_year=None,
+                  include_frontline=False, exclude_categories=None) -> dict:
     """每家公司取 per_company 个同类岗位（按职类、标题关键词和/或 JD 全文）及其 JD 原文。对比由调用方（agent）完成。
     公司无匹配岗位 -> 空列表（调用方据此告知"库里没有"，不得编造）。"""
     if not category and not keyword and not text:
@@ -804,14 +855,16 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
         raise ValueError("公司列表至少提供一家公司")
     for name in companies:
         _company_parameter(name)
-    out, matches, totals = {}, {}, {}
+    out, matches, totals, filters = {}, {}, {}, {}
     for name in companies:
         search_meta = {}
         jobs = search_jobs(jobs_conn, company=name, category=category, keyword=keyword,
                            text=text, text_conn=text_conn, limit=per_company, meta=search_meta,
-                           city=city, recruit_type=recruit_type, grad_year=grad_year)
+                           city=city, recruit_type=recruit_type, grad_year=grad_year,
+                           include_frontline=include_frontline, exclude_categories=exclude_categories)
         matches[name] = search_meta["company_match"]
         totals[name] = {k: search_meta[k] for k in ("total", "returned", "truncated")}
+        filters[name] = {k: search_meta[k] for k in ("frontline_filter", "hints") if k in search_meta}
         for j in jobs:
             t = text_conn.execute(
                 "SELECT description, requirements, fetched_at FROM job_text WHERE job_id=?", (j["id"],)
@@ -825,6 +878,7 @@ def compare_roles(jobs_conn, text_conn, companies, category=None, *, keyword=Non
         meta.update(
             company_matches=matches,
             company_counts=totals,
+            company_filters=filters,
             missing_companies=[n for n, m in matches.items() if m["match"] == "none"],
             ambiguous_companies=[n for n, m in matches.items() if m["match"] == "ambiguous"],
             no_matching_jobs=[n for n, m in matches.items() if m["matched"] and not out[n]],

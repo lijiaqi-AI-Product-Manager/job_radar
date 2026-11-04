@@ -11,6 +11,8 @@
 - 岗位的 `source_last_ok` / `source_age_hours` / `source_stale`：对应来源最近成功时间、距今小时数及是否过期；`availability` 区分已下架、已到期、旧来源尚未确认及最近观测，不能作为实时可投保证。
 - `text_observed_at`：详情、对比及全文检索所附正文的实际观测时间；为空时不能从 `last_seen` 补成新读正文。按截止日筛选的岗位优先返回更早的明确截止日；不传日期范围时保持最近发现优先。
 - `source_enabled`：客户端来源目录中的启用状态，未知为 `null`；`false` 对应 `availability: unconfirmed_disabled`，旧成功记录不能覆盖停用状态。已下架或已到期仍优先显示相应状态。
+- `availability_label` / `source_warnings`：中文状态及历史来源限制；`source_tenant_peers`非空表示配置中同一租户还登记在其他来源下，不能将来源数量直接相加。
+- `frontline_filter`：校招/实习查询的一线岗位标题过滤模式、排除记录数和计数范围；不修改岗位状态，全文检索未复算数量时为`null`。`include_frontline=true`可主动包含，`exclude_categories`按固定职类字段排除；对比的`company_filters`逐公司返回说明。
 
 ## 招聘公告记录
 
@@ -108,7 +110,7 @@
 
 由 `taxonomy/categories.yaml` 按岗位标题规则归类；**没命中规则的岗位职类为空**，查询时请同时用 `--keyword` 按标题关键词搜索，不要因为某职类无结果就断言"没有这类岗位"。
 
-`stats.jobs.category_vocabulary` 是当前数据的实际词表；`category_match` 说明精确、别名或未匹配。
+`stats.jobs.category_vocabulary` 是安装包分发的固定词表，不会被平台遗留职类改变；`category_match` 说明精确、别名或未匹配，`matched`列出实际检索值。
 财务/会计/审计映射到具体的财务审计，backend/frontend分别映射后端/前端，不自动扩成整个技术或职能大类。
 
 | category | subcategory |
