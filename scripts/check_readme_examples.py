@@ -95,6 +95,9 @@ def check_examples(home, *, root=ROOT):
             conn = stack.enter_context(closing(sqlite3.connect((home / name).resolve().as_uri()+"?mode=ro", uri=True)))
             conn.row_factory = sqlite3.Row
             conn.execute("PRAGMA query_only=ON")
+            if name == "jd_text.db":
+                from jobradar.compact_text import register_compact_functions
+                register_compact_functions(conn)
             connections.append(conn)
         jobs, texts, calendar = connections
         first = q.search_jobs(jobs, limit=1)

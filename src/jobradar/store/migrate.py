@@ -11,7 +11,7 @@ import sqlite3
 from pathlib import Path
 
 MIGRATIONS_ROOT = Path(__file__).parent / "migrations"
-KINDS = ("jobs", "text", "calendar")
+KINDS = ("jobs", "text", "calendar", "text_compact")
 _NAME = re.compile(r"^(\d{4})_[a-z0-9_]+\.sql$")
 SEARCH_MIGRATIONS = {"jobs": "0003_add_title_fts.sql", "text": "0002_add_text_fts.sql"}
 
@@ -56,13 +56,23 @@ def connect(path: str | Path, kind: str, *, defer_search_index=False) -> sqlite3
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys=ON")
+    if kind == "text":
+        from jobradar.compact_text import is_compact_text, register_compact_functions
+        if is_compact_text(conn):
+            if conn.execute("PRAGMA user_version").fetchone()[0] != 1:
+                conn.close()
+                raise RuntimeError("精简正文格式更新，请升级jobradar")
+            register_compact_functions(conn)
+            conn.execute("PRAGMA query_only=ON")
+            return conn
     migrate(conn, kind, defer_search_index=defer_search_index)
     return conn
 
 
 def ensure_search_index(conn: sqlite3.Connection, table: str) -> None:
     """本地全文搜索首次需要时才补建索引；网络盘可禁用补建并走兼容查询。"""
-    if os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX", "1").strip() == "0":
+    from jobradar.compact_text import is_compact_text
+    if is_compact_text(conn) or os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX", "1").strip() == "0":
         return
     if conn.in_transaction:
         return  # 查询不能隐式提交调用者尚未提交的业务写入。

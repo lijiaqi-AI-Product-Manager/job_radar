@@ -11,5 +11,8 @@
   "text": {
     "0001_init.sql": "cb509a2841c143f8c7385a1221c84a335bd76a2a28b091b8009f477b8ec59e6b",
     "0002_add_text_fts.sql": "f3b62475429a18aba35aaafc4d0c896810786aaf1725cff8a9a963ea6b39f3d6"
+  },
+  "text_compact": {
+    "0001_init.sql": "276907862487407038f3a6f502d4abb0fcaad48345f1d2846fdccf1f8272c077"
   }
 }

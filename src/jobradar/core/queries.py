@@ -254,6 +254,13 @@ def _jd_ids(text_conn, term: str, candidate_ids=None) -> list[str]:
             "SELECT job_id FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
             "AND (description LIKE ? ESCAPE '\\' OR requirements LIKE ? ESCAPE '\\')",
             (json.dumps(sorted(candidate_ids)), _like(term), _like(term)))]
+    from jobradar.compact_text import is_compact_text
+    if is_compact_text(text_conn):
+        # 每份独立正文只解压、匹配一次，再按索引映射回全部岗位关联。
+        return [r[0] for r in text_conn.execute(
+            "SELECT job_id FROM jd_ref WHERE body_id IN (SELECT id FROM jd_body WHERE "
+            "json_extract(jobradar_unpack(payload),'$[0]') LIKE ? ESCAPE '\\' OR "
+            "json_extract(jobradar_unpack(payload),'$[1]') LIKE ? ESCAPE '\\')",(_like(term),_like(term)))]
     if _use_fts(text_conn, "job_text_fts", term):
         # 两列分别使用索引，再取并集；不用会破坏索引优化的 ESCAPE 或拼接表达式。
         return [r[0] for r in text_conn.execute(

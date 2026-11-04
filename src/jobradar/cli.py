@@ -292,6 +292,10 @@ def _install(tmp: Path, name: str, gz: bool, dest: Path, expected_digest=None, *
     if ok and _local_db_ok(baseline, name):
         table = {"jobs.db": "job", "jd_text.db": "job_text", "calendar.db": "entry"}[name]
         with closing(sqlite3.connect(tmp.resolve().as_uri()+"?mode=rw", uri=True)) as new, closing(sqlite3.connect(baseline.resolve().as_uri()+"?mode=ro", uri=True)) as old:
+            if name == "jd_text.db":
+                from jobradar.compact_text import register_compact_functions
+                register_compact_functions(new)
+                register_compact_functions(old)
             new_count = new.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             old_count = old.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             ok = not (old_count and (new_count == 0 or (name == "jobs.db" and new_count < old_count)))
@@ -428,6 +432,8 @@ def _text_coverage(home_dir: Path) -> float | None:
     j = sqlite3.connect(jobs_db)
     t = sqlite3.connect(text_db)
     try:
+        from jobradar.compact_text import register_compact_functions
+        register_compact_functions(t)
         return q.jd_row_coverage(j, t)
     finally:
         j.close()
@@ -461,11 +467,13 @@ def _prepare_indexes(directory, kinds):
 
 
 def _update_snapshot(args):
+    from jobradar.local import _retention, prune_snapshots, storage_usage
+    keep = _retention(getattr(args,"keep",1))
     home().mkdir(parents=True, exist_ok=True)
     kinds = ["jobs", "calendar"] if args.jobs_only else ["jobs", "text", "calendar"]
     requested = kinds.copy()
     prepare_indexes = getattr(args, "prepare_index", False) and not getattr(args, "no_index", False)
-    from jobradar.local import load_sync_meta, remote_digests
+    from jobradar.local import load_sync_meta, remote_digests, select_text_storage
     try:
         old = data_dir()
         meta = load_sync_meta()
@@ -474,6 +482,7 @@ def _update_snapshot(args):
             raise
         old, meta = home(), {}
     remote = remote_digests()
+    remote = select_text_storage(remote,compact=not prepare_indexes and not getattr(args,"plain_text",False))
     if not remote:
         raise SystemExit("无法核实远端完整性清单，保留本地快照；请稍后或切换网络重试")
     verified = {}
@@ -487,16 +496,18 @@ def _update_snapshot(args):
                 kinds.remove(k)
                 skipped.append(k)
     if skipped and not kinds and (not prepare_indexes or not _missing_indexes(old, requested)):
+        prune_snapshots(keep=keep)
         with _open("jobs") as conn:
             print(json.dumps({"updated": [], "skipped": skipped, "data_as_of": q.data_as_of(conn),
-                              "home": str(home())}, ensure_ascii=False))
+                              "home": str(home()),"storage":storage_usage()}, ensure_ascii=False))
         return
     parent = home() / "snapshots"
     parent.mkdir(exist_ok=True)
-    if parent.is_symlink():
+    if parent.is_symlink() or parent.resolve().parent != home().resolve():
         raise SystemExit("快照目录不能是符号链接")
     staging = parent / uuid.uuid4().hex
     staging.mkdir()
+    (staging/".building").touch()
     committed = False
     used = {}
     try:
@@ -527,6 +538,8 @@ def _update_snapshot(args):
                 raise SystemExit(f"{DB_FILES[kind]} 业务结构校验失败，保留原快照")
         if not args.jobs_only:
             with closing(sqlite3.connect(staging / DB_FILES["jobs"])) as check:
+                from jobradar.compact_text import register_compact_functions
+                register_compact_functions(check)
                 check.execute("ATTACH DATABASE ? AS jd", (str(staging / DB_FILES["text"]),))
                 if check.execute("SELECT 1 FROM jd.job_text t LEFT JOIN job j ON j.id=t.job_id WHERE j.id IS NULL LIMIT 1").fetchone():
                     raise SystemExit("正文含无法关联岗位，保留原快照")
@@ -542,7 +555,10 @@ def _update_snapshot(args):
                 meta.pop(asset, None)
                 meta.setdefault("_verified_assets", {}).pop(asset, None)
         (staging / ".sync.json").write_text(json.dumps(meta), encoding="utf-8")
-        activate(staging)
+        if keep == 1:
+            activate(staging)
+        else:
+            activate(staging,keep=keep)
         committed = True
     finally:
         if not committed:
@@ -552,6 +568,7 @@ def _update_snapshot(args):
                "mirror": {k: used.get(k) for k in kinds},
                "data_as_of": q.data_as_of(conn), "home": str(home()), "data_dir": str(data_dir())}
         out["indexes_prepared"] = prepared
+        out["storage"] = storage_usage()
         if skipped:
             out["skipped"] = skipped
         print(json.dumps(out, ensure_ascii=False))
@@ -685,6 +702,7 @@ def cmd_sources(args):
 
 
 def cmd_doctor(args):
+    from jobradar.local import storage_usage
     if getattr(args, "robots", False):
         _doctor_robots(args)
         return
@@ -692,6 +710,7 @@ def cmd_doctor(args):
            "jobs_db": _local_db_ok(data_dir() / DB_FILES["jobs"]),
            "jd_text_db": _local_db_ok(data_dir() / DB_FILES["text"]),
            "calendar_db": _local_db_ok(data_dir() / DB_FILES["calendar"])}
+    out["storage"] = storage_usage()
     if not out["jobs_db"] and (data_dir() / DB_FILES["jobs"]).exists():
         # 文件在但打不开：多半是下载被截断/磁盘问题，别让用户对着 traceback 发愣
         out["advice"] = "本地库损坏，运行 `jobradar update --force` 重新下载"
@@ -893,6 +912,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = add("update", cmd_update, "下载最新数据")
     sp.add_argument("--jobs-only", action="store_true", help="只下载岗位主库，不下载 JD 原文库（全文检索、对比要求需要原文库）")
+    sp.add_argument("--plain-text", action="store_true", help="使用原格式正文，供直接SQL读取或预建全文索引；默认优先无损精简格式")
+    sp.add_argument("--keep",type=int,default=1,help="保留的本地快照代数（1到10，默认1）；被查询使用的旧代暂不清理")
     sp.add_argument("--no-index", action="store_true", help="跳过本地全文索引准备，节省空间；全文查询使用正文扫描")
     sp.add_argument("--prepare-index", action="store_true", help="激活前准备全文索引，适合频繁全文查询；会增加更新耗时和磁盘占用")
     sp.add_argument("--with-text", action="store_true", help=argparse.SUPPRESS)  # 兼容旧参数：现在默认就下载原文库

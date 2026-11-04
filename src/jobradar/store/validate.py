@@ -33,6 +33,12 @@ def _contract(kind, version):
 
 
 def validate_database(conn, kind):
+    from jobradar.compact_text import is_compact_text, verify_compact_text
+    compact = kind == "text" and is_compact_text(conn)
+    if compact:
+        validate_database(conn,"text_compact")
+        verify_compact_text(conn)
+        return
     version = conn.execute("PRAGMA user_version").fetchone()[0]
     latest = len(migration_files(kind))
     if not 1 <= version <= latest:
@@ -59,7 +65,7 @@ def validate_database(conn, kind):
         raise ValueError("数据库外键关联不完整")
     arrays = {"jobs": (("job", "cities"),), "text": (),
               "calendar": (("entry", "cities"), ("entry", "tracks"), ("target", "data_companies"))}
-    for table, column in arrays[kind]:
+    for table, column in arrays.get(kind, ()):
         if conn.execute(f'SELECT 1 FROM "{table}" WHERE NOT json_valid("{column}") '
                         f'OR json_type("{column}") != \'array\' LIMIT 1').fetchone():
             raise ValueError(f"{table}.{column} 不是 JSON 数组")
