@@ -60,6 +60,8 @@ def _emit(args, payload: dict):
             print("# 数据陈旧：部分来源超过 48 小时未核实，岗位是否仍在招需查看来源。可先运行 jobradar update。")
         if any(r.get("source_enabled") is False for r in rows):
             print("# 部分记录的来源已停用：这些记录属于历史观测，当前可投状态需另行核实；停用不等于岗位已关闭。")
+        if any(r.get("source_tenant_peers") for r in rows):
+            print("# 部分来源使用同一招聘租户，岗位可能重复；跨来源数量不能直接相加。")
         if payload.get("truncated"):
             print("# 结果已截断：请缩小筛选范围，或调整返回条数。")
         if payload.get("count_unit") == "folded_groups":
@@ -72,13 +74,14 @@ def _emit(args, payload: dict):
             for r in rows:
                 _print_calendar_row(r)
         elif rows and "title" in rows[0]:  # 岗位 / 事件
-            print("截止日 | 公司 | 岗位 | 城市 | 类型 | 届次 | URL")
+            print("状态 | 截止日 | 公司 | 岗位 | 城市 | 类型 | 届次 | URL")
             for r in rows:
                 cities = "/".join(r.get("cities") or [])
                 # 截止日：用户最先想知道的就是「还能不能投」。没有截止日写「未知」而不是空，
                 # 也不能写成「已截止」——源没说就是没说。
                 print(" | ".join(str(x) for x in (
-                    r.get("apply_end") or "未知", r.get("company"), r.get("title"), cities or "-",
+                    r.get("availability_label") or "见来源", r.get("apply_end") or "未知",
+                    r.get("company"), r.get("title"), cities or "-",
                     r.get("type") or r.get("recruit_type"),
                     r.get("grad_year") or "-", r.get("url"))))
         elif rows:  # 其他（数据源状态、趋势）：按字段输出

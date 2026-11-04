@@ -23,6 +23,7 @@ INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包
 招聘公告链接可能不是雇主的直接申请入口；来源陈旧或截止时刻未知时，不能保证当前可投。
 url_scope=project_listing是项目列表，需按标题查找；不能将其称为直达岗位详情或申请链接。
 source_enabled=false或availability=unconfirmed_disabled表示来源当前已停用，近期历史成功也不能当作当前已核实。
+source_warnings和availability_label必须体现在对应岗位说明里；source_tenant_peers非空表示同租户登记，跨来源数量不能直接相加。
 有结果也必须说明filter_coverage与hints里的字段缺失；grad_year_match=unknown是待核实候选。
 先看field_warnings与qualification_evidence，学历字段与正文冲突时不得仅凭字段排除。
 默认折叠同公司、标题、城市且资格与截止日相同的记录；total以count_unit为准，variants不是新增岗位。"""
@@ -88,7 +89,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     cities是城市并集，不能与city同时用；exclude_cities排除包含任一指定城市的整条记录，缺失城市仍未知。
     exclude_keywords只排除标题中的字面量；exclude_companies按确定公司主体排除，歧义时返回错误。
     include_unknown_grad_year=True需同时给grad_year；未知候选标为grad_year_match=unknown，不能声称符合。
-    有结果仍需读filter_coverage/hints；category_match.available返回当前数据实际职类。
+    有结果仍需读filter_coverage/hints和source_warnings；category_match.available返回安装包支持的固定职类。
     qualification_evidence/field_warnings只提示正文证据和字段冲突，不替代资格核实。
     默认自动隐藏明示截止日已过的岗位（按北京时间，截止当天仍保留）；include_closed=True
     可查已下架或已到期的历史记录。来源没有截止日时不会仅因记录陈旧而隐藏。
