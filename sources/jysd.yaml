@@ -7,7 +7,7 @@ defaults:
   rate_limit_rps: 1
   params:
     host: job.zzu.edu.cn
-    max_pages: 200
+    max_pages: 400
   compliance:
     checked_on: '2026-10-31'
     robots: absent

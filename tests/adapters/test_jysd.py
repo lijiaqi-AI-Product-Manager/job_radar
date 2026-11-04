@@ -1,6 +1,7 @@
 """才立方公开列表/公告的离线解析与归属、日期边界。"""
 
 import base64
+import json
 import zlib
 from datetime import date
 from pathlib import Path
@@ -13,6 +14,7 @@ from jobradar.adapters.base import SkipRecord
 from jobradar.adapters.jysd import JysdAdapter, parse_detail, parse_index, public_html
 from jobradar.adapters.recording import ReplayTransport
 from jobradar.models import SourceConfig
+from jobradar.sources import load_sources
 
 
 def source(**params):
@@ -193,3 +195,36 @@ def test_self_link_before_declared_last_page_is_an_error():
             '<li class="next"><a href="/campus/index/page/2">下一页</a></li></div>')
     with pytest.raises(ValueError, match='分页'):
         parse_index(html, 'https://example.invalid')
+
+
+def test_index_limit_stops_at_first_explicit_evidence_of_incompleteness(monkeypatch):
+    import jobradar.adapters.jysd as module
+
+    monkeypatch.setattr(module, '_INDEX_CACHE', {})
+    boundary = json.loads((Path(__file__).parents[1] /
+                           'fixtures/jysd_pagination/index-boundary-2026-11-04.json').read_text(encoding='utf-8'))
+    seen = []
+
+    def handle(request):
+        page = 1 if request.url.path.endswith('/index') else int(request.url.path.rsplit('/', 1)[1])
+        seen.append(page)
+        html = ('<div class="campus-index-front-list">' + ITEM.replace('/123', f'/{page}') + '</div>'
+                f'<li class="page selected"><a href="/campus/index/page/{page}">{page}</a></li>'
+                f'<li class="page"><a>{boundary["last_page"]}</a></li>'
+                f'<li class="next"><a href="/campus/index/page/{page + 1}">下一页</a></li>')
+        return httpx.Response(200, text=html)
+
+    with httpx.Client(transport=httpx.MockTransport(handle)) as client:
+        with pytest.raises(ValueError, match='超过 max_pages'):
+            JysdAdapter(source(max_pages=200), client, sleep=lambda _: None)._index()
+    assert seen == [1]
+    assert module._INDEX_CACHE == {}
+
+
+def test_enabled_index_configs_fit_the_verified_public_pagination():
+    root = Path(__file__).parents[2]
+    evidence = json.loads((root / 'tests/fixtures/jysd_pagination/index-boundary-2026-11-04.json')
+                          .read_text(encoding='utf-8'))
+    sources = [s for s in load_sources(root / 'sources/jysd.yaml') if s.enabled and not s.params.get('notice_ids')]
+    assert len(sources) == 10
+    assert all(s.max_pages >= evidence['last_page'] and not s.params.get('allow_partial') for s in sources)
