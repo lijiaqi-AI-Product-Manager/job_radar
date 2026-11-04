@@ -13,9 +13,31 @@ concurrency:
   # 完成正在传输的完整代；排队任务启动后读取当时最新清单，避免频繁发布饿死慢上传。
   cancel-in-progress: false
 
+permissions:
+  contents: read
+
 jobs:
-  mirror:
+  preflight:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      ready: ${{ steps.repository.outputs.ready }}
+      state: ${{ steps.repository.outputs.state }}
+    env:
+      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+      GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Check public Gitee repository
+        id: repository
+        run: uv run python scripts/check_gitee_readiness.py
+
+  mirror:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 150
     env:
