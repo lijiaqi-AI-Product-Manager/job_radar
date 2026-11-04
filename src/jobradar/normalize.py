@@ -4,6 +4,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from functools import cache
 from html import unescape
+from importlib.resources import files
 from pathlib import Path
 
 import yaml
@@ -83,10 +84,15 @@ TAXONOMY = Path(__file__).resolve().parents[2] / "taxonomy" / "categories.yaml"
 
 @cache
 def _rules() -> list[tuple[str, str, re.Pattern]]:
-    if not TAXONOMY.exists():  # 以库的形式安装时没有规则表；归类只在采集端进行
-        return []
-    doc = yaml.safe_load(TAXONOMY.read_text(encoding="utf-8"))
+    resource = TAXONOMY if TAXONOMY.is_file() else files("jobradar").joinpath("_data/categories.yaml")
+    doc = yaml.safe_load(resource.read_text(encoding="utf-8"))
     return [(r["category"], r["subcategory"], re.compile("|".join(r["any"]), re.I)) for r in doc["rules"]]
+
+
+def category_labels() -> tuple[frozenset[str], frozenset[str]]:
+    """采集与查询共用的固定大类、子类集合，不从平台原始字段推断词表。"""
+    rules = _rules()
+    return frozenset(c for c, _, _ in rules), frozenset(s for _, s, _ in rules)
 
 
 def categorize(title: str | None) -> tuple[str | None, str | None]:

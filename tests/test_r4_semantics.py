@@ -60,8 +60,10 @@ def test_status_summary_is_bounded_and_reports_omitted_items():
     rows = [dict(source_id=str(i), last_status="failed", last_run=T(1), last_ok=None,
                  stale=True, open_jobs=1, duration_s=1, age_hours=None, error="failed") for i in range(1000)]
     summary = q.data_status_summary(rows)
-    assert len(summary["problems"]) <= 20
-    assert summary["omitted_problems"] == 980
+    assert len(summary["problems"]) == 10
+    assert summary["omitted_problems"] == 990
+    expanded = q.data_status_summary(rows, limit=20)
+    assert len(expanded["problems"]) == 20 and expanded["omitted_problems"] == 980
 
 
 def test_extreme_days_is_rejected_with_actionable_error():

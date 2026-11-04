@@ -397,8 +397,8 @@ def test_source_freshness_limits_details_without_hiding_stale_job_count(jobs_db)
     assert out["counts"]["stale"] == 2
     assert out["stale_open_jobs"] == 1
     assert out["omitted_stale_sources"] == 1
-    assert out["stale_sources"] == [{"source_id": "never", "last_ok": None,
-                                    "age_hours": None, "open_jobs": 0}]
+    assert out["stale_sources"] == [{"source_id": "old", "last_ok": T(1),
+                                    "age_hours": 96, "open_jobs": 1}]
 
 
 def test_compare_roles_by_keyword(jobs_db, text_db):

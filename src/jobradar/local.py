@@ -12,6 +12,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from pathlib import Path
 
+from jobradar import __version__
 from jobradar.core import queries as q
 from jobradar.file_lock import file_lock
 from jobradar.store.migrate import connect
@@ -258,18 +259,24 @@ def remote_digests(timeout: float = 6.0) -> dict[str, str]:
     import httpx
 
     url = f"https://api.github.com/repos/{REPO}/releases/tags/{RELEASE_TAG}"
-    try:
-        headers = {"User-Agent": "jobradar/0.1"}
-        token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-        if token:
-            headers["Authorization"] = f"Bearer {token}"
-        with httpx.Client(headers=headers, timeout=timeout, follow_redirects=True) as c:
-            response = c.get(url)
-            response.raise_for_status()
-            data = response.json()
-    except Exception:  # noqa: BLE001 — 仅对元数据请求失败尝试独立的匿名镜像会话
+    token = os.environ.get("JOBRADAR_GITHUB_TOKEN", "").strip()
+    requests = [{}] + ([{"Authorization": f"Bearer {token}"}] if token else [])
+    for auth in requests:
         try:
-            with httpx.Client(timeout=timeout, follow_redirects=True) as mirror:
+            with httpx.Client(headers={"User-Agent": f"jobradar/{__version__}"},
+                              timeout=timeout, follow_redirects=True) as c:
+                response = c.get(url, headers=auth)
+                response.raise_for_status()
+                data = response.json()
+        except (httpx.HTTPError, ValueError):
+            continue
+        else:
+            # 已提交但无效的清单仍拒绝；不能以镜像掩盖损坏的主发布清单。
+            return snapshot_digests(data)
+    else:
+        try:
+            with httpx.Client(headers={"User-Agent": f"jobradar/{__version__}"},
+                              timeout=timeout, follow_redirects=True) as mirror:
                 response = mirror.get(gitee_url("snapshot-manifest.json"))
                 response.raise_for_status()
                 manifest = response.json()
@@ -283,4 +290,3 @@ def remote_digests(timeout: float = 6.0) -> dict[str, str]:
             return RemoteDigests(values, generation=manifest["generation"])
         except Exception:  # noqa: BLE001
             return {}
-    return snapshot_digests(data)

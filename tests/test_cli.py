@@ -243,6 +243,7 @@ def _sqlite_bytes(tmp_path):
 def no_token(monkeypatch):
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
     monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.delenv("JOBRADAR_GITHUB_TOKEN", raising=False)
     monkeypatch.delenv("JOBRADAR_MIRROR", raising=False)
 
 
@@ -334,15 +335,18 @@ def test_download_aborts_slow_mirror_and_falls_back(tmp_path, no_token, monkeypa
 
 def test_download_private_with_token(tmp_path, monkeypatch):
     import httpx
-    monkeypatch.setenv("GITHUB_TOKEN", "t0k")
+    monkeypatch.setenv("JOBRADAR_GITHUB_TOKEN", "t0k")
     monkeypatch.delenv("JOBRADAR_MIRROR", raising=False)
     body = _sqlite_bytes(tmp_path)
 
     def handler(request):
+        if request.url.host == "github.com":
+            assert "authorization" not in request.headers
+            return httpx.Response(404)
         assert request.headers["authorization"] == "Bearer t0k"
         if request.url.path.endswith("/releases/tags/data-latest"):
-            return httpx.Response(200, json={"assets": [{"name": "jobs.db", "url": "https://api.github.com/assets/7"}]})
-        assert str(request.url) == "https://api.github.com/assets/7"
+            return httpx.Response(200, json={"assets": [{"name": "jobs.db", "url": f"https://api.github.com/repos/{local.REPO}/releases/assets/7"}]})
+        assert str(request.url) == f"https://api.github.com/repos/{local.REPO}/releases/assets/7"
         assert request.headers["accept"] == "application/octet-stream"
         return httpx.Response(200, content=body)
 

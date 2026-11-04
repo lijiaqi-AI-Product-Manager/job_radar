@@ -13,6 +13,7 @@ from datetime import date, timedelta
 from typing import NamedTuple
 
 from jobradar.aliases import match_names
+from jobradar.normalize import category_labels
 from jobradar.store.migrate import ensure_search_index
 from jobradar.timeutil import now_ts, parse_ts, shanghai_date
 
@@ -41,18 +42,21 @@ def _text_list(values, name):
 
 
 def category_vocabulary(conn):
-    """当前数据中的实际职类；随查询返回，安装包用户无需另外寻找词表文件。"""
-    return sorted({value for row in conn.execute("SELECT DISTINCT category,subcategory FROM job")
-                   for value in row if value})
+    """随安装包分发的固定职类词表；旧平台原值不改变检索词义。"""
+    categories, subcategories = category_labels()
+    return sorted(categories | subcategories)
 
 
 def _category_match(conn, term):
     available = category_vocabulary(conn)
-    if term in available:
-        return {"match": "exact", "matched": [term]}
-    target = _CATEGORY_ALIASES.get(_norm_name(term))
-    if target in available:
-        return {"match": "alias", "matched": [target], "input": term}
+    normalized = _norm_name(term)
+    alias = _CATEGORY_ALIASES.get(normalized)
+    canonical = {_norm_name(value): value for value in available}
+    target = alias or canonical.get(normalized)
+    if target is not None and target in available:
+        # 已登记的等价旧值也参与并集；平台出现一个“财务”原值不能覆盖“财务审计”。
+        legacy = sorted(name for name, value in _CATEGORY_ALIASES.items() if value == target)
+        return {"match": "alias" if alias else "exact", "matched": [target, *legacy], "input": term}
     return {"match": "none", "matched": [], "available": available}
 
 
@@ -382,6 +386,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     positive(limit)
     _filter_domains(grad_year, recruit_type)
     _company_parameter(company)
+    if category is not None and (not isinstance(category, str) or not category.strip()):
+        raise ValueError("职类必须是非空文本")
     _date_parameter(deadline_before, "deadline_before")
     _date_parameter(deadline_after, "deadline_after")
     if deadline_before and deadline_after and deadline_before < deadline_after:
@@ -421,8 +427,9 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             meta["company_match"] = match.as_meta()
     if category:
         category_match = _category_match(conn, category)
-        category_term = next(iter(category_match["matched"]), category)
-        add("(j.category = ? OR j.subcategory = ?)", category_term, category_term)
+        values = json.dumps(category_match["matched"])
+        add("(j.category COLLATE NOCASE IN (SELECT value FROM json_each(?)) "
+            "OR j.subcategory COLLATE NOCASE IN (SELECT value FROM json_each(?)))", values, values)
         if meta is not None:
             meta["category_match"] = category_match
     wanted_cities = [city.strip()] if city else cities
@@ -533,7 +540,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         if not rows and cities:
             hints.append("城市并集没有匹配记录；这不表示这些城市没有招聘，可去掉城市条件核实未标注工作地的候选")
         if category and category_match["match"] == "none":
-            hints.append(f"职类「{category}」不在当前数据词表中；可用 category_match.available 选择具体职类，"
+            hints.append(f"职类「{category}」不在支持的词表中；可用 category_match.available 选择具体职类，"
                          "或改用标题关键词/正文检索，不会自动放宽为整个大类")
         coverage = {}
         for field, label, enabled in (("grad_year", "届次", grad_year is not None),
@@ -726,13 +733,14 @@ def data_status(conn, *, now, stale_after_hours=48) -> list[dict]:
     return out
 
 
-def data_status_summary(rows, *, limit=20) -> dict:
+def data_status_summary(rows, *, limit=10) -> dict:
     """把 277 行压成 agent 真正需要的东西：计数 + 有问题的源。
 
     原来的整表是 52KB（约 15k tokens），而 95% 的信息是"一切正常"。
     """
     problems = sorted((r for r in rows if r["stale"] or r["last_status"] != "ok"),
-                      key=lambda r: (r.get("last_ok") or "", r["source_id"]))
+                      key=lambda r: (-r["open_jobs"], r.get("last_ok") or "", r["source_id"]))
+    size = len(problems) if limit is None else positive(limit)
     return {
         "counts": {
             "sources": len(rows),
@@ -746,21 +754,24 @@ def data_status_summary(rows, *, limit=20) -> dict:
             ({"source_id": r["source_id"], "duration_s": round(r["duration_s"], 1)}
              for r in rows if r["duration_s"]),
             key=lambda d: d["duration_s"], reverse=True)[:5],
-        "problems": [{**r, "error": r.get("error", "")[:180] if r.get("error") else None} for r in problems[:limit]],
-        "omitted_problems": max(0, len(problems) - limit),
+        "problems": [{**r, "error": r.get("error", "")[:180] if r.get("error") else None} for r in problems[:size]],
+        "omitted_problems": max(0, len(problems) - size),
+        "failing": [r["source_id"] for r in problems[:size]],
+        "omitted_failing": max(0, len(problems) - size),
     }
 
 
-def source_freshness(rows, *, limit=20) -> dict:
+def source_freshness(rows, *, limit=10) -> dict:
     """整体快照时间不能代表每个源都已刷新；返回有界的源级新鲜度摘要。"""
     stale = sorted((r for r in rows if r["stale"]),
-                   key=lambda r: (r["last_ok"] or "", r["source_id"]))
+                   key=lambda r: (-r["open_jobs"], r["last_ok"] or "", r["source_id"]))
+    size = len(stale) if limit is None else positive(limit)
     return {
         "counts": data_status_summary(rows)["counts"],
         "stale_open_jobs": sum(r["open_jobs"] for r in stale),
         "stale_sources": [{k: r[k] for k in ("source_id", "last_ok", "age_hours", "open_jobs")}
-                          for r in stale[:limit]],
-        "omitted_stale_sources": max(0, len(stale) - limit),
+                          for r in stale[:size]],
+        "omitted_stale_sources": max(0, len(stale) - size),
     }
 
 
