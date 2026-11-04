@@ -85,6 +85,7 @@ def recover(sources, summary, jobs, texts, *, budget_seconds=1800, source_budget
         print(f"recovery batch: {len(batch)} sources, {remaining:.0f}s remaining", flush=True)
         outcome = crawl_fn(batch, jobs, texts, ts=ts, max_workers=24,
                            budget_seconds=remaining, source_budget=min(remaining_source[s.id] for s in batch),
+                           preserve_source_order=True,
                            client_factory=lambda: make_client(policy=policy))
         values = {sid: asdict(value) for sid, value in outcome.items()}
         _validate(batch, values)

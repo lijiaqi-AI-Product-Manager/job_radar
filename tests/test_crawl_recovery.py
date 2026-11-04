@@ -47,6 +47,7 @@ def test_recovery_merges_full_context_and_accumulates_real_events(jobs_db, text_
     calls = []
 
     def fake_crawl(sources, *args, **kwargs):
+        assert kwargs["preserve_source_order"] is True
         calls.append([s.id for s in sources])
         return {"retry": RunResult("ok", opened=3, closed=1)}
 

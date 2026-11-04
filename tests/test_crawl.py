@@ -336,6 +336,25 @@ def test_shared_host_refreshes_observed_jobs_before_new_empty_sources(jobs_db, t
     assert Ordered.seen==['observed','never']
 
 
+def test_recovery_can_preserve_explicit_short_source_priority(jobs_db, text_db):
+    from jobradar.pipeline.ingest import ingest_run
+
+    class Ordered(ExampleAdapter):
+        seen = []
+
+        def fetch_raw(self):
+            self.seen.append(self.source.id)
+            return iter(())
+
+    for sid, ts in (("slow", T(1)), ("fast", T(2))):
+        ingest_run(jobs_db, sid, [_job(source_id=sid)], ts=ts)
+    sources = [example_source(id=sid, params={"host": "shared.invalid"}) for sid in ("fast", "slow")]
+    crawl(sources, jobs_db, text_db, ts=T(21), adapters={"example": Ordered},
+          client_factory=lambda: httpx.Client(transport=httpx.MockTransport(lambda _: None)),
+          sleep=lambda _: None, max_workers=1, preserve_source_order=True)
+    assert Ordered.seen == ["fast", "slow"]
+
+
 @pytest.mark.parametrize("retry", [False, True])
 def test_rate_limit_and_retry_waits_stop_at_the_budget(monkeypatch, retry):
     import jobradar.adapters.base as base
