@@ -280,14 +280,21 @@ def save_sync_meta(meta: dict) -> None:
 
 
 class RemoteDigests(dict):
-    def __init__(self, values, *, asset_names=None, generation=None, compact_text=None):
+    def __init__(self, values, *, asset_names=None, generation=None, compact_text=None, text_stream=None, text_transport=None):
         super().__init__(values)
         self.asset_names = asset_names or {}
         self.generation = generation
         self.compact_text = compact_text
+        self.text_stream = text_stream
+        self.text_transport = text_transport
 
 
 def select_text_storage(remote, *, compact=True):
+    stream = getattr(remote, "text_stream", None)
+    if compact and stream:
+        return RemoteDigests({**remote, "jd_text.db.gz": "sha256:" + stream["sha256"]},
+            asset_names={**remote.asset_names, "jd_text.db.gz": stream["asset"]}, generation=remote.generation,
+            compact_text=remote.compact_text, text_stream=stream, text_transport="stream")
     variant = getattr(remote, "compact_text", None)
     if not compact or not variant:
         return remote
@@ -328,7 +335,16 @@ def snapshot_digests(data):
                     or variant.get("source_sha256") != files["jd_text.db.gz"]["sha256"]
                     or type(variant.get("size")) is not int or variant["size"] <= 0):
                 raise ValueError
-        return RemoteDigests(digests, asset_names=names, generation=manifest["generation"],compact_text=variant)
+        stream = variants.get("text_stream")
+        if stream is not None:
+            if (not isinstance(stream, dict) or type(stream.get("version")) is not int or stream["version"] != 1
+                    or not re.fullmatch(r"[a-f0-9]{64}", str(stream.get("sha256", "")))
+                    or stream.get("asset") != stream["sha256"][:20] + "-jd_text.rows.jsonl.xz"
+                    or stream.get("source_sha256") != files["jd_text.db.gz"]["sha256"]
+                    or type(stream.get("size")) is not int or not 0 < stream["size"] <= 1024 ** 3):
+                raise ValueError
+        return RemoteDigests(digests, asset_names=names, generation=manifest["generation"],
+                             compact_text=variant, text_stream=stream)
     except (ValueError, KeyError, TypeError):
         raise ValueError("已提交的快照清单无效，保留本地数据") from None
 

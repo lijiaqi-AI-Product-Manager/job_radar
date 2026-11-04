@@ -34,13 +34,21 @@ def make_manifest(home):
         sha = digest_file(compact)
         manifest["variants"] = {"text_compact":{"version":1,"sha256":sha,"size":compact.stat().st_size,
             "asset":sha[:20]+"-"+compact.name,"source_sha256":files["jd_text.db.gz"]["sha256"]}}
+    stream = home / "jd_text.rows.jsonl.xz"
+    if stream.is_file():
+        sha = digest_file(stream)
+        manifest.setdefault("variants", {})["text_stream"] = {
+            "version": 1, "sha256": sha, "size": stream.stat().st_size,
+            "asset": sha[:20] + "-" + stream.name, "source_sha256": files["jd_text.db.gz"]["sha256"]}
     return manifest
 
 
 def publication_items(manifest):
     items = list(manifest["files"].items())
-    if manifest.get("variants"):
+    if manifest.get("variants", {}).get("text_compact"):
         items.append(("jd_text.compact.db.gz",manifest["variants"]["text_compact"]))
+    if manifest.get("variants", {}).get("text_stream"):
+        items.append(("jd_text.rows.jsonl.xz", manifest["variants"]["text_stream"]))
     return items
 
 
@@ -91,6 +99,9 @@ def publish(home):
     with (home/"jd_text.compact.db").open("rb") as source, (home/"jd_text.compact.db.gz").open("wb") as output:
         with gzip.GzipFile(filename="",mode="wb",fileobj=output,mtime=0,compresslevel=9) as compressed:
             shutil.copyfileobj(source,compressed)
+    from jobradar.text_stream import export_text_stream, verify_text_stream
+    export_text_stream(home / "jd_text.compact.db", home / "jd_text.rows.jsonl.xz")
+    verify_text_stream(home / "jd_text.compact.db", home / "jd_text.rows.jsonl.xz")
     manifest = make_manifest(home)
     endpoint = f"repos/{REPO}/releases/tags/data-latest"
     previous = gh("api", endpoint, capture=True)
