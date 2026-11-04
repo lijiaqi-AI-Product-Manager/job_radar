@@ -45,7 +45,7 @@ def test_failed_required_download_never_changes_active_database_set(tmp_path, mo
         assert conn.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 1
 
 
-def test_successful_update_switches_all_files_and_preserves_legacy_copy(tmp_path, monkeypatch, capsys):
+def test_successful_update_can_preserve_legacy_copy_with_keep_two(tmp_path, monkeypatch, capsys):
     monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
     seed(tmp_path)
 
@@ -62,7 +62,7 @@ def test_successful_update_switches_all_files_and_preserves_legacy_copy(tmp_path
         return "github"
 
     monkeypatch.setattr(cli, "_download", download)
-    cli.main(["update"])
+    cli.main(["update", "--keep", "2"])
     assert local.data_dir() != tmp_path
     with local.db("jobs") as conn:
         assert conn.execute("SELECT COUNT(*) FROM job").fetchone()[0] == 2

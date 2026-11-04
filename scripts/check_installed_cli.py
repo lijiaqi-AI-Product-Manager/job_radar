@@ -21,6 +21,8 @@ from jobradar.store.migrate import connect
 from jobradar.timeutil import now_ts, parse_ts, shanghai_date
 from jobradar.source_catalog import catalog
 from jobradar.normalize import categorize
+from jobradar.compact_text import export_compact_text
+from jobradar.pipeline.ingest import upsert_texts
 
 assert Path(jobradar.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()), "import came from source tree"
 home = Path(os.environ["JOBRADAR_HOME"])
@@ -40,6 +42,12 @@ ingest_run(jobs,"other",[Job(source_id="other",source_job_id="1",company="离线
 ingest_run(jobs,"store",[Job(source_id="store",source_job_id="1",company="离线门店品牌",
     title="门店实习生",url="https://example.invalid/store",recruit_type="intern")],ts=ts)
 jobs.close()
+plain = connect(home / "plain-text.db", "text", defer_search_index=True)
+upsert_texts(plain, [Job(source_id="smoke",source_job_id="1",company="中国核工业集团",
+    title="离线校招样本",url="https://example.invalid/job",recruit_type="campus",
+    description="完整中文正文 PyTorch CUDA",requirements="本科及以上")],ts=ts)
+plain.close()
+export_compact_text(home/"plain-text.db",home/"jd_text.db")
 cal = connect(home / "calendar.db", "calendar")
 for eid, city, deadline in (("beijing-open", "北京", end), ("shanghai-open", "上海", end),
                             ("beijing-ended", "北京", expired)):
@@ -121,6 +129,10 @@ def main():
         check("frontline-explicit-inclusion", response["total"] == 1)
         response = json.loads(run([cli, "search", "--type", "campus", "--exclude-category", "财务"]))
         check("category-exclusion", response["total"] == 0)
+        response = json.loads(run([cli,"show","smoke:1"]))
+        check("compact-text-detail",response["results"][0]["description"] == "完整中文正文 PyTorch CUDA")
+        response = json.loads(run([cli,"search","--text","PyTorch CUDA"]))
+        check("compact-text-search",response["total"] == 1)
         run([mcp, "--help"])
         print(json.dumps({"version": info["version"], "direct_url": info["direct_url"],
                           "checks_passed": len(checks), "checks": checks, "mcp_help": "passed"},

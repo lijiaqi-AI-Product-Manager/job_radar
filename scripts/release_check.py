@@ -209,6 +209,8 @@ def jd_ratio(home: Path | None) -> float | None:
     if not jobs.exists() or not text.exists():
         return None
     j, t = sqlite3.connect(jobs), sqlite3.connect(text)
+    from jobradar.compact_text import register_compact_functions
+    register_compact_functions(t)
     try:
         import json as _json
 
@@ -277,6 +279,8 @@ def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
     if home and (home / "jd_text.db").exists():
         from jobradar.jd_text import template_pollution
         t = sqlite3.connect(home / "jd_text.db")
+        from jobradar.compact_text import register_compact_functions
+        register_compact_functions(t)
         try:
             n = sum(any(template_pollution(value) for value in row) for row in t.execute(
                 "SELECT description, requirements FROM job_text WHERE description LIKE '%.job-desc%' "

@@ -468,9 +468,10 @@ def test_version_flag(capsys):
 
 def test_update_downloads_text_by_default(home, monkeypatch, capsys):
     connect(home / "calendar.db", "calendar").close()
+    remote_files = {name:(home/name).read_bytes() for name in local.DB_FILES.values()}
     got = []
     def fake(name, dest, client=None, prefer=None, **kwargs):
-        dest.write_bytes((home / name).read_bytes())
+        dest.write_bytes(remote_files[name])
         got.append(name)
         return "github"
     monkeypatch.setattr(cli, "_download", fake)

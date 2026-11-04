@@ -2,6 +2,7 @@
 
 import argparse
 import base64
+import gzip
 import hashlib
 import json
 import shutil
@@ -25,7 +26,20 @@ def make_manifest(home):
         sha = digest_file(path)
         files[name] = {"sha256": sha, "size": path.stat().st_size, "asset": sha[:20] + "-" + name}
     generation = hashlib.sha256(json.dumps(files, sort_keys=True).encode()).hexdigest()[:20]
-    return {"version": 1, "generation": generation, "files": files}
+    manifest = {"version": 1, "generation": generation, "files": files}
+    compact = home / "jd_text.compact.db.gz"
+    if compact.is_file():
+        sha = digest_file(compact)
+        manifest["variants"] = {"text_compact":{"version":1,"sha256":sha,"size":compact.stat().st_size,
+            "asset":sha[:20]+"-"+compact.name,"source_sha256":files["jd_text.db.gz"]["sha256"]}}
+    return manifest
+
+
+def publication_items(manifest):
+    items = list(manifest["files"].items())
+    if manifest.get("variants"):
+        items.append(("jd_text.compact.db.gz",manifest["variants"]["text_compact"]))
+    return items
 
 
 def gh(*args, capture=False):
@@ -42,6 +56,11 @@ def publish(home):
     for kind, name in (("jobs", "jobs.db"), ("text", "jd_text.db"), ("calendar", "calendar.db")):
         with closing(sqlite3.connect((home / name).resolve().as_uri() + "?mode=ro", uri=True)) as conn:
             validate_database(conn, kind)
+    from jobradar.compact_text import export_compact_text
+    export_compact_text(home/"jd_text.db",home/"jd_text.compact.db")
+    with (home/"jd_text.compact.db").open("rb") as source, (home/"jd_text.compact.db.gz").open("wb") as output:
+        with gzip.GzipFile(filename="",mode="wb",fileobj=output,mtime=0,compresslevel=9) as compressed:
+            shutil.copyfileobj(source,compressed)
     manifest = make_manifest(home)
     endpoint = f"repos/{REPO}/releases/tags/data-latest"
     previous = gh("api", endpoint, capture=True)
@@ -49,7 +68,7 @@ def publish(home):
     with tempfile.TemporaryDirectory(prefix="snapshot-publish-", dir=home.parent) as directory:
         staging = Path(directory)
         pending = []
-        for name, item in manifest["files"].items():
+        for name, item in publication_items(manifest):
             existing = assets.get(item["asset"])
             if existing:
                 if existing.get("digest") != "sha256:" + item["sha256"] or existing["size"] != item["size"]:
@@ -62,7 +81,7 @@ def publish(home):
             gh("release", "upload", "data-latest", *pending, "--repo", REPO)
         verified = gh("api", endpoint, capture=True)
         actual = {a["name"]: a for a in verified.get("assets", [])}
-        for item in manifest["files"].values():
+        for _,item in publication_items(manifest):
             if actual.get(item["asset"], {}).get("digest") != "sha256:" + item["sha256"]:
                 raise ValueError("远端不可变文件摘要校验失败，尚未切换清单")
         marker = base64.b64encode(json.dumps(manifest, sort_keys=True).encode()).decode()

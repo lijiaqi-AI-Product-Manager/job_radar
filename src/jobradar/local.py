@@ -6,7 +6,6 @@ import os
 import re
 import shutil
 import sqlite3
-import time
 import uuid
 from contextlib import contextmanager
 from contextvars import ContextVar
@@ -44,7 +43,8 @@ def _active_directory():
         if metadata.get("version") != 1 or not isinstance(relative, str) or not re.fullmatch(r"snapshots/[a-f0-9]{32}", relative):
             raise ValueError
         directory = home() / relative
-        if directory.is_symlink() or directory.parent.is_symlink() or not directory.is_dir():
+        if (directory.is_symlink() or directory.parent.is_symlink() or not directory.is_dir()
+                or directory.resolve().parent != home().resolve()/"snapshots"):
             raise ValueError
         return directory
     except (ValueError, KeyError, TypeError, OSError):
@@ -63,10 +63,9 @@ def snapshot():
     lease = None
     with file_lock(home() / ".catalog.lock"):
         directory = _active_directory()
-        if directory != home():
-            lease = directory / (".reader-" + uuid.uuid4().hex)
-            guard = file_lock(lease)
-            guard.__enter__()
+        lease = directory / (".reader-" + uuid.uuid4().hex)
+        guard = file_lock(lease)
+        guard.__enter__()
     token = _PIN.set(directory)
     try:
         yield
@@ -77,7 +76,82 @@ def snapshot():
             lease.unlink(missing_ok=True)
 
 
-def activate(directory):
+def _retention(keep):
+    if type(keep) is not int or not 1 <= keep <= 10:
+        raise ValueError("keep 必须是1到10之间的整数")
+    return keep
+
+
+def _managed_directories():
+    parent = home() / "snapshots"
+    if not parent.exists() or parent.is_symlink() or parent.resolve().parent != home().resolve():
+        return []
+    return [p for p in parent.iterdir() if re.fullmatch(r"[a-f0-9]{32}",p.name)
+            and p.is_dir() and not p.is_symlink() and p.resolve().parent == parent.resolve()]
+
+
+def _in_use(directory):
+    for lease in directory.glob(".reader-*"):
+        try:
+            with file_lock(lease,timeout=0):
+                pass
+        except (ValueError,OSError):
+            return True
+    return False
+
+
+def _prune_locked(keep):
+    active = _active_directory()
+    candidates = sorted(_managed_directories(),key=lambda p:(p.stat().st_mtime,p.name),reverse=True)
+    previous = [p for p in candidates if p != active and not (p/".building").exists()]
+    retained = {active,*previous[:keep-1]}
+    removed = 0
+    for old in previous:
+        if old in retained or _in_use(old):
+            continue
+        try:
+            # 绝对目标已核实为本项目快照目录的直接子目录，拒绝符号链接及junction。
+            if old.resolve().parent != (home()/"snapshots").resolve():
+                continue
+            shutil.rmtree(old)
+            removed += 1
+        except OSError:
+            pass
+    if active != home() and len(retained) >= keep and not _in_use(home()):
+        for name in (*DB_FILES.values(),SYNC_META):
+            legacy = home()/name
+            if (active/name).is_file() and legacy.is_file() and not legacy.is_symlink():
+                try:
+                    legacy.unlink()
+                except OSError:
+                    pass
+    return removed
+
+
+def prune_snapshots(*, keep=1):
+    _retention(keep)
+    with file_lock(home()/".catalog.lock"):
+        return _prune_locked(keep)
+
+
+def storage_usage():
+    active = _active_directory()
+    directories = _managed_directories()
+    def size(directory):
+        return sum((directory/name).stat().st_size for name in (*DB_FILES.values(),SYNC_META)
+                   if (directory/name).is_file() and not (directory/name).is_symlink())
+    active_bytes = size(active)
+    total = sum(size(p) for p in directories) + size(home())
+    return {"active_bytes":active_bytes,"total_bytes":total,"reclaimable_bytes":max(0,total-active_bytes),
+            "snapshot_count":len(directories),"active_files":{name:(active/name).stat().st_size
+                for name in DB_FILES.values() if (active/name).is_file()}}
+
+
+def activate(directory, *, keep=1):
+    _retention(keep)
+    if (not re.fullmatch(r"[a-f0-9]{32}",directory.name) or directory.is_symlink()
+            or directory.resolve().parent != home().resolve()/"snapshots" or not directory.is_dir()):
+        raise ValueError("活动快照必须位于本地快照目录内")
     relative = directory.relative_to(home()).as_posix()
     with file_lock(home() / ".catalog.lock"):
         temporary = home() / (".active-" + uuid.uuid4().hex)
@@ -92,23 +166,11 @@ def activate(directory):
                 temporary.unlink(missing_ok=True)
             except OSError:
                 pass
-        # 至少保留当前与上一代；24小时内的旧代及仍有读者的代也保留。
         try:
-            candidates = sorted((home() / "snapshots").iterdir(), key=lambda p: p.stat().st_mtime, reverse=True)
+            (directory/".building").unlink(missing_ok=True)
+            _prune_locked(keep)
         except OSError:
-            return
-        for old in candidates[2:]:
-            try:
-                if old == directory or old.is_symlink() or not re.fullmatch(r"[a-f0-9]{32}", old.name):
-                    continue
-                if time.time() - old.stat().st_mtime < 86400:
-                    continue
-                for lease in old.glob(".reader-*"):
-                    with file_lock(lease, timeout=0):
-                        pass
-                shutil.rmtree(old)
-            except (ValueError, OSError):
-                pass
+            pass  # 已提交后清理失败不回滚，也不删除正在使用的旧代。
 
 
 def discard_uncommitted(directory):
@@ -218,10 +280,20 @@ def save_sync_meta(meta: dict) -> None:
 
 
 class RemoteDigests(dict):
-    def __init__(self, values, *, asset_names=None, generation=None):
+    def __init__(self, values, *, asset_names=None, generation=None, compact_text=None):
         super().__init__(values)
         self.asset_names = asset_names or {}
         self.generation = generation
+        self.compact_text = compact_text
+
+
+def select_text_storage(remote, *, compact=True):
+    variant = getattr(remote, "compact_text", None)
+    if not compact or not variant:
+        return remote
+    return RemoteDigests({**remote, "jd_text.db.gz":"sha256:"+variant["sha256"]},
+        asset_names={**remote.asset_names,"jd_text.db.gz":variant["asset"]},
+        generation=remote.generation, compact_text=variant)
 
 
 def snapshot_digests(data):
@@ -245,7 +317,18 @@ def snapshot_digests(data):
                 raise ValueError
             names[name] = info["asset"]
             digests[name] = "sha256:" + info["sha256"]
-        return RemoteDigests(digests, asset_names=names, generation=manifest["generation"])
+        variants = manifest.get("variants", {})
+        if not isinstance(variants,dict):
+            raise ValueError
+        variant = variants.get("text_compact")
+        if variant is not None:
+            if (not isinstance(variant,dict) or variant.get("version") != 1
+                    or not re.fullmatch(r"[a-f0-9]{64}",str(variant.get("sha256", "")))
+                    or variant.get("asset") != variant["sha256"][:20]+"-jd_text.compact.db.gz"
+                    or variant.get("source_sha256") != files["jd_text.db.gz"]["sha256"]
+                    or type(variant.get("size")) is not int or variant["size"] <= 0):
+                raise ValueError
+        return RemoteDigests(digests, asset_names=names, generation=manifest["generation"],compact_text=variant)
     except (ValueError, KeyError, TypeError):
         raise ValueError("已提交的快照清单无效，保留本地数据") from None
 
