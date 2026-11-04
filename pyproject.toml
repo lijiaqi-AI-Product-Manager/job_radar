@@ -51,6 +51,8 @@ packages = ["src/jobradar"]
 # sdist 白名单：只打包需要的东西。默认行为会把 .uv-cache/（几十 MB）一起塞进 tar，
 # 2026-10-22 实测产物 117MB——这是发布阻断项。
 [tool.hatch.build.targets.sdist]
+# 首页宣传图片由完整HTTPS地址加载，独立于Python源码包分发。
+exclude = ["/docs/assets/readme/**"]
 include = [
   "src/jobradar", "tests", "sources", "taxonomy", "targets", "calendar",
   "scripts", "skill", "docs", "evals",
