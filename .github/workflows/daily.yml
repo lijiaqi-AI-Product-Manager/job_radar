@@ -22,6 +22,14 @@ on:
         type: string
         default: ""
         description: 定向复验的源ID，逗号分隔；留空按原计划采集全部源
+      recovery_only:
+        type: boolean
+        default: false
+        description: 仅补采最近观测中的预算未完成与瞬时故障，不重跑整轮
+      recovery_budget_seconds:
+        type: number
+        default: 1800
+        description: 自动补采预算（秒，最多3600）；原单源预算不重置
 
 permissions:
   contents: write
@@ -42,7 +50,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync
+      - run: uv sync --frozen
+
+      - name: Validate recovery selection
+        env:
+          RECOVERY_ONLY: ${{ inputs.recovery_only }}
+          ONLY_SOURCES: ${{ inputs.only_sources }}
+          STALE_HOURS: ${{ inputs.stale_only_hours || 0 }}
+        run: |
+          if [ "$RECOVERY_ONLY" = "true" ] && { [ -n "$ONLY_SOURCES" ] || [ "$STALE_HOURS" != "0" ]; }; then
+            echo "recovery_only requires full source context; leave only_sources and stale_only_hours empty"
+            exit 1
+          fi
 
       - name: Restore previous databases
         # 历史是核心资产：Release 存在但下载失败时必须失败退出，绝不能"从零开始"后覆盖历史
@@ -66,6 +85,7 @@ jobs:
           retention-days: 14
 
       - name: Crawl
+        if: inputs.recovery_only != true
         shell: bash   # 启用 pipefail：全部源失败时 tee 不会吞掉退出码
         env:
           CRAWL_ONLY_SOURCES: ${{ inputs.only_sources }}
@@ -74,6 +94,17 @@ jobs:
           selection=()
           if [ -n "$CRAWL_ONLY_SOURCES" ]; then selection=(--only "$CRAWL_ONLY_SOURCES"); fi
           uv run jobradar crawl --sources sources --out data --budget-seconds "${{ inputs.budget_seconds || 14400 }}" --source-budget "$CRAWL_SOURCE_BUDGET_SECONDS" --workers 24 --stale-only-hours "${{ inputs.stale_only_hours || 0 }}" "${selection[@]}" | tee crawl-summary.json
+
+      - name: Recover deferred sources
+        if: inputs.only_sources == '' && (inputs.stale_only_hours == 0 || inputs.stale_only_hours == '')
+        env:
+          RECOVERY_ONLY: ${{ inputs.recovery_only }}
+          RECOVERY_BUDGET: ${{ inputs.recovery_budget_seconds || 1800 }}
+          SOURCE_BUDGET: ${{ inputs.source_budget_seconds || 3600 }}
+        run: |
+          selection=()
+          if [ "$RECOVERY_ONLY" = "true" ]; then selection=(--recovery-only); fi
+          uv run python scripts/recover_sources.py --home data --sources sources --summary crawl-summary.json --budget-seconds "$RECOVERY_BUDGET" --source-budget "$SOURCE_BUDGET" "${selection[@]}"
 
       - name: Apply reviewed data corrections
         run: uv run python scripts/repair_reviewed_data.py --home data --apply
@@ -101,7 +132,10 @@ jobs:
           uv run python scripts/release_check.py --home data/public
           gzip -n -9 -k -f data/public/jobs.db data/public/jd_text.db data/public/calendar.db
           uv run python scripts/publish_snapshots.py --home data/public
-          gh release upload data-latest crawl-summary.json --clobber
+
+      - name: Publish health diagnostics
+        if: inputs.only_sources == '' && (inputs.stale_only_hours == 0 || inputs.stale_only_hours == '')
+        run: gh release upload data-latest crawl-summary.json recovery-report.json --clobber
 
       - name: Weekly archive snapshot
         run: |
@@ -125,29 +159,32 @@ jobs:
           fi
 
       - name: Health issue
-        if: always() && inputs.only_sources == ''
+        if: always() && inputs.only_sources == '' && (inputs.stale_only_hours == 0 || inputs.stale_only_hours == '')
         env:
           CRAWL_JOB_STATUS: ${{ job.status }}
         run: |
           bad=0
           run_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          python3 scripts/health_report.py crawl-summary.json --run-status "$CRAWL_JOB_STATUS" --run-url "$run_url" > report.md || bad=$?
+          uv run python scripts/health_report.py crawl-summary.json --sources sources --context recovery-report.json --run-status "$CRAWL_JOB_STATUS" --run-url "$run_url" > report.md || bad=$?
           # 报告工具本身异常时仍提供运行入口，绝不把空正文写回现有 Issue。
           if [ ! -s report.md ]; then
             printf '采集健康报告生成失败，无法确认数据源已恢复。请查看[本次运行](%s)。\n' "$run_url" > report.md
             bad=1
           fi
-          num=$(gh issue list --label data-health --state open --json number -q '.[0].number')
-          if [ "$bad" != "0" ]; then
-            if [ -n "$num" ]; then
-              gh issue edit "$num" --body-file report.md
-            else
-              gh label create data-health --color B60205 --description "每日抓取健康报告" --force
-              gh issue create --title "数据源健康报告" --label data-health --body-file report.md
-            fi
-          elif [ -n "$num" ]; then
-            gh issue close "$num" --comment "$(date -u +%F)：全部数据源恢复正常。"
-          fi
+          uv run python scripts/sync_health_issue.py --report report.md --bad "$bad"
+
+      - name: Preserve crawl diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            crawl-summary.json
+            initial-summary.json
+            recovery-report.json
+            report.md
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Keep schedule alive
         # 公开仓库 60 天无活动会自动停用定时任务；每月 1 日重新启用一次

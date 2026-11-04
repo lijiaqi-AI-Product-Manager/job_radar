@@ -111,6 +111,8 @@ def _site_key(source: SourceConfig) -> str:
     p = source.params or {}
     if source.adapter == "hotjob":
         return str(p.get("host") or "wecruit.hotjob.cn")
+    if source.adapter == "shixiseng":
+        return "www.shixiseng.com"
     return str(p.get("host") or p.get("tenant") or source.id)
 
 

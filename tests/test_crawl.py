@@ -179,6 +179,14 @@ def test_hotjob_default_host_is_the_same_site_as_an_explicit_host():
     assert _site_key(base) == _site_key(other) == "wecruit.hotjob.cn"
 
 
+def test_shixiseng_keywords_share_one_origin_queue():
+    from jobradar.pipeline.crawl import _site_key
+
+    a = example_source(adapter="shixiseng", params={"keyword": "甲"})
+    b = example_source(id="other", adapter="shixiseng", params={"keyword": "乙"})
+    assert _site_key(a) == _site_key(b) == "www.shixiseng.com"
+
+
 class Recording(ExampleAdapter):
     """按开始顺序记下被调度的源（每源单独一个站点组）。"""
 
