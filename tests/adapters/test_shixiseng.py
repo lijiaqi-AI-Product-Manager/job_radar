@@ -1,6 +1,8 @@
+import json
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from jobradar.adapters.recording import ReplayTransport
@@ -94,3 +96,91 @@ def test_skips_jobs_of_other_companies():
     )
     a.source.company = "宁德时代"
     assert list(a.fetch_all()) == []
+
+
+def test_foreign_company_rows_are_skipped_before_detail_requests():
+    adapter = ShixisengAdapter(source(), httpx.Client(), sleep=lambda _: None)
+    adapter._list = lambda _: ([{'uuid': 'foreign', 'name': '实习生', 'cname': '宁德时代'},
+                               {'uuid': 'matched', 'name': '实习生', 'cname': '快手'}], 2)
+    requests = []
+    adapter._detail = lambda uid: requests.append(uid) or {'cname': '快手', 'info': '工作职责'}
+    assert len(list(adapter.fetch_all())) == 1
+    assert requests == ['matched']
+
+
+def _text_cache(jobs, stamp='2026-11-03T00:00:00Z'):
+    return {j.source_job_id: {'title': j.title, 'degree_min': j.degree_min,
+        'cities': json.dumps(j.cities, ensure_ascii=False), 'apply_end': j.apply_end,
+        'description': j.description, 'requirements': j.requirements, 'fetched_at': stamp} for j in jobs}
+
+
+def test_recent_verified_text_is_reused_without_claiming_a_new_observation(monkeypatch):
+    monkeypatch.setattr('jobradar.adapters.shixiseng.now_ts', lambda: '2026-11-04T00:00:00Z', raising=False)
+    original = run()
+    adapter = ShixisengAdapter(source(detail_cache_hours=48), httpx.Client(transport=ReplayTransport(FX)), sleep=lambda _: None)
+    adapter.cached_texts = _text_cache(original)
+    requests = []
+    adapter._detail = lambda uid: requests.append(uid) or {}
+    jobs = list(adapter.fetch_all())
+    assert requests == []
+    assert len(jobs) == len(original)
+    assert all(j.text_observed_at == '2026-11-03T00:00:00Z' for j in jobs)
+    assert [(j.description, j.requirements) for j in jobs] == [(j.description, j.requirements) for j in original]
+
+
+@pytest.mark.parametrize('stamp', ['2026-10-01T00:00:00Z', '2027-01-01T00:00:00Z'])
+def test_expired_or_future_text_requires_detail_read(monkeypatch, stamp):
+    monkeypatch.setattr('jobradar.adapters.shixiseng.now_ts', lambda: '2026-11-04T00:00:00Z', raising=False)
+    original = run()
+    adapter = ShixisengAdapter(source(detail_cache_hours=48), httpx.Client(transport=ReplayTransport(FX)), sleep=lambda _: None)
+    adapter.cached_texts = _text_cache(original, stamp)
+    requests = []
+    detail = adapter._detail
+    adapter._detail = lambda uid: requests.append(uid) or detail(uid)
+    jobs = list(adapter.fetch_all())
+    assert len(requests) == len(original)
+    assert all(j.text_observed_at is None for j in jobs)
+
+
+def test_parent_brand_does_not_prove_a_specific_subsidiary_owns_the_job():
+    from jobradar.adapters.base import SkipRecord
+    adapter = ShixisengAdapter(source(), httpx.Client())
+    adapter.source.company = '网易有道'
+    with pytest.raises(SkipRecord):
+        adapter.normalize({'list': {'uuid': 'example', 'name': '实习生', 'cname': '网易'}})
+
+
+@pytest.mark.parametrize('tail', [([], 40), ([{'uuid': str(i), 'name': '实习生', 'cname': '快手'} for i in range(20)], 40)])
+def test_empty_or_repeated_second_page_is_never_a_complete_source(tail):
+    adapter = ShixisengAdapter(source(fetch_detail=False, max_pages=None),
+                              httpx.Client(), sleep=lambda _: None)
+    pages = iter([([{'uuid': str(i), 'name': '实习生', 'cname': '快手'} for i in range(20)], 40), tail])
+    adapter._list = lambda _: next(pages)
+    with pytest.raises(RuntimeError):
+        list(adapter.fetch_all())
+
+
+def test_changed_city_invalidates_cached_text(monkeypatch):
+    monkeypatch.setattr('jobradar.adapters.shixiseng.now_ts', lambda: '2026-11-04T00:00:00Z')
+    original = run()
+    adapter = ShixisengAdapter(source(detail_cache_hours=48), httpx.Client(transport=ReplayTransport(FX)), sleep=lambda _: None)
+    adapter.cached_texts = _text_cache(original)
+    adapter.cached_texts[original[0].source_job_id]['cities'] = '["广州"]'
+    calls = []
+    detail = adapter._detail
+    adapter._detail = lambda uid: calls.append(uid) or detail(uid)
+    jobs = list(adapter.fetch_all())
+    assert calls == [original[0].source_job_id]
+    assert jobs[0].text_observed_at is None
+    assert all(j.text_observed_at for j in jobs[1:])
+
+
+def test_detail_budget_failure_is_not_swallowed():
+    from jobradar.adapters.base import CrawlBudgetExceeded
+    adapter = ShixisengAdapter(source(), httpx.Client(), sleep=lambda _: None)
+    adapter._list = lambda _: ([{'uuid': 'one', 'name': '实习生', 'cname': '快手'}], 1)
+    def interrupted(_):
+        raise CrawlBudgetExceeded('crawl budget exceeded')
+    adapter._detail = interrupted
+    with pytest.raises(CrawlBudgetExceeded):
+        list(adapter.fetch_all())

@@ -9,6 +9,7 @@ defaults:
   rate_limit_rps: 1
   params:
     fetch_detail: true
+    detail_cache_hours: 48
     url_filter: "/intern/[^/]+$"
   compliance:
     checked_on: 2026-10-29

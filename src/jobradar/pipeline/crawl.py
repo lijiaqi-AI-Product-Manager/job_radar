@@ -121,10 +121,10 @@ def _saved_texts(sources, jobs_conn, text_conn):
     result = {}
     for source in sources:
         hours = source.params.get("detail_cache_hours", 0)
-        if not source.enabled or source.adapter != "hotjob" or type(hours) is not int or not 0 < hours <= 168:
+        if not source.enabled or source.adapter not in {"hotjob", "shixiseng"} or type(hours) is not int or not 0 < hours <= 168:
             continue
         metadata = {r["id"]: dict(r) for r in jobs_conn.execute(
-            "SELECT id,source_job_id,title,publish_at,recruit_type,degree_min FROM job WHERE source_id=?", (source.id,))}
+            "SELECT id,source_job_id,title,publish_at,recruit_type,degree_min,cities,apply_end FROM job WHERE source_id=?", (source.id,))}
         prefix = source.id + ":"
         cached = {}
         for row in text_conn.execute(
