@@ -2,6 +2,7 @@ id: fanruan
 company: 帆软
 adapter: fanruan
 params:
+  api_style: legacy
   paths:
   - social
   - campus

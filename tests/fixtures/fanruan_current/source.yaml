@@ -1,0 +1,13 @@
+id: fanruan
+company: 帆软
+adapter: fanruan
+recruit_types: [campus, intern, social]
+rate_limit_rps: 1
+params:
+  paths: [social, campus, trainee]
+  max_pages: 1
+compliance:
+  checked_on: 2026-11-04
+  robots: none
+  terms: "官方前端公开JSON分页接口，无需登录、验证码或签名；只读职位列表。"
+  notes: "仅录制三类招聘第一页用于回放，非完整采集授权；首次写入前已移除非岗位字段并脱敏手机号及邮箱。"

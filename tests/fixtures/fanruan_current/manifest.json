@@ -1,0 +1,26 @@
+[
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/api/search.php",
+    "body": "{\"type\":2,\"job_cate\":[],\"types\":[],\"departs\":[],\"citys\":[],\"page\":1,\"w\":\"\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "001.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/api/search.php",
+    "body": "{\"type\":1,\"job_cate\":[],\"types\":[],\"departs\":[],\"citys\":[],\"page\":1,\"w\":\"\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "002.json"
+  },
+  {
+    "method": "POST",
+    "url": "https://join.fanruan.com/api/search.php",
+    "body": "{\"type\":3,\"job_cate\":[],\"types\":[],\"departs\":[],\"citys\":[],\"page\":1,\"w\":\"\"}",
+    "status": 200,
+    "content_type": "application/json",
+    "file": "003.json"
+  }
+]
