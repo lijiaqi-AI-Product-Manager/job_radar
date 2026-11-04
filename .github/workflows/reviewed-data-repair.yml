@@ -13,15 +13,15 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Download and preserve original snapshots
         run: |
           mkdir -p original data
           uv run python scripts/download_snapshots.py --out original --compressed
           for name in jobs.db jd_text.db calendar.db; do gzip -dc "original/$name.gz" > "data/$name"; done
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: snapshots-before-reviewed-repair
           path: original/*.gz
@@ -36,7 +36,7 @@ jobs:
           for name in jobs.db jd_text.db calendar.db; do gzip -n -9 -k "data/public/$name"; done
       - name: Publish verified compatible snapshots
         run: uv run python scripts/publish_snapshots.py --home data/public
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: reviewed-repair-report
           path: repair-report.json

@@ -28,8 +28,8 @@ jobs:
       GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
       GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Check public Gitee repository
         id: repository
@@ -46,8 +46,8 @@ jobs:
       GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
       GITEE_REPO: ${{ vars.GITEE_REPO || secrets.GITEE_REPO || 'qgauss/job_radar' }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Download release assets
         run: |

@@ -22,15 +22,15 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Download coherent originals and preserve backup
         run: |
           mkdir -p original data
           uv run python scripts/download_snapshots.py --out original --compressed
           for name in jobs.db jd_text.db calendar.db; do gzip -dc "original/$name.gz" > "data/$name"; done
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: snapshots-before-source-recovery
           path: original/*.gz
@@ -57,7 +57,7 @@ jobs:
         run: |
           uv run python scripts/publish_snapshots.py --home data/public
           gh release upload data-latest source-recovery-report.json cohort-correction-report.json --clobber
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: verified-source-recovery-report
           path: |

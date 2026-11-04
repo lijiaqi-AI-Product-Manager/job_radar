@@ -127,6 +127,14 @@ def test_publish_workflow_uses_trusted_publishing():
     assert any("pypa/gh-action-pypi-publish" in step.get("uses", "") for step in job["steps"])
 
 
+def test_ci_runs_the_full_suite_on_python_313():
+    doc = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
+    job = doc["jobs"]["py313"]
+    assert any(step.get("with", {}).get("python-version") == "3.13" for step in job["steps"])
+    assert any(step.get("run") == "uv sync --frozen --all-extras" for step in job["steps"])
+    assert any(step.get("run") == "uv run pytest" for step in job["steps"])
+
+
 def test_mirror_verification_uses_size_checker():
     """镜像校验必须比较大小（Gitee 删除单个大附件不生效，会出现"假成功"）。"""
     doc = yaml.safe_load((ROOT / ".github" / "workflows" / "mirror.yml").read_text(encoding="utf-8"))

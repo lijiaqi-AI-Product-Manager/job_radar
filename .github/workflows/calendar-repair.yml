@@ -17,8 +17,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Download published calendar
         run: |
@@ -26,7 +26,7 @@ jobs:
           gh release download data-latest -D original -p calendar.db
           cp original/calendar.db repaired/calendar.db
       - name: Preserve original snapshot
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: calendar-before-correction
           path: original/calendar.db

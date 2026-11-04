@@ -5,13 +5,13 @@
 需要 Python 3.11+。在实际运行 CLI 或 MCP 的 Python 环境中升级：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.3.0"
+pip install --upgrade "jobsearchradar[mcp]==2.3.1"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
 ```
 
-仅使用 CLI 可以安装 `jobsearchradar==2.3.0`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
+仅使用 CLI 可以安装 `jobsearchradar==2.3.1`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
 2026-11-04已从PyPI官方普通索引无缓存全新安装`2.3.0`：14项安装兼容检查、MCP九工具16次调用、15组CLI结果对照和错误恢复通过。74个包内运行文件及2份职类/公司映射与固定标签逐字节一致；GitHub与PyPI的wheel、源码包SHA-256一致。正式安装完成精简三库真实下载，再次更新跳过全部未变化文件。
 
@@ -45,15 +45,15 @@ jobradar calendar --help
 | PyPI `2.1.3` | 全新安装、7项CLI检查、MCP九工具与错误恢复通过 | 历史安装记录 |
 | PyPI `2.1.2` | 已核实的历史发行包 | 历史安装记录 |
 | PyPI `2.1.1` | 已核验的上一版发行包 | 历史安装记录 |
-| GitHub `v2.3.0` | 对话入口与技能导入包的固定标签 | 下载 wheel 或源码包 |
-| 固定源码标签 | `v2.3.0`，代码版本 `2.3.0` | 发布后可复现的备用安装 |
+| GitHub `v2.3.1` | 对话入口与技能导入包的固定标签 | 下载 wheel 或源码包 |
+| 固定源码标签 | `v2.3.1`，代码版本 `2.3.1` | 发布后可复现的备用安装 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.0.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.1.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
@@ -61,7 +61,7 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 
 ## 安装后检查
 
-`--version` 应显示 `2.3.0`；`search --help` 应正常退出，并列出 `--deadline-before`；
+`--version` 应显示 `2.3.1`；`search --help` 应正常退出，并列出 `--deadline-before`；
 `calendar --help` 应列出 `--city` 和 `--include-expired`。参数不受支持或帮助报错时，
 先核对终端与 MCP 使用的 Python 环境，再按上述命令升级，不要删除筛选条件。
 
@@ -73,3 +73,5 @@ pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.co
 `doctor` 会显示实际 `data_dir`。快照下载成功不代表全部来源已刷新，需同时查看来源新鲜度。
 
 发布流程与账号配置见 [发布配置](PUBLISHING.md)。
+
+2.3.1增加正文流整体压缩传输，下载后无损重建原有精简库；采集详情可保留未完成进度。下载和空间数据见[存储说明](STORAGE.md)。正式索引核验记录按实际完成的版本保留。
