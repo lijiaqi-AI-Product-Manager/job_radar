@@ -2,6 +2,16 @@
 
 流程演示采用真实工具结果节选，说明从求职条件到候选、资格核实和招聘日历的流程。流程画面由仓库脚本排版生成，不是第三方客户端录屏，不代表自然语言任务的端到端实测，也不代表查询耗时。
 
+## 首页双语图
+
+中英文README顶部使用同一组三张双语图片，依次说明产品定位、招聘信息范围和对话查询流程。网页用图为1983×793的压缩JPEG，可独立分享；通过完整HTTPS地址加载，不进入Python源码包。
+
+| 图片 | 内容 |
+| :--- | :--- |
+| [开场宣传 / Introduction](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/hero-bilingual.jpg) | 给助手添加求职搜索技能，完成首次接入后用自然语言查询 |
+| [机会范围 / Opportunities](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/opportunities-bilingual.jpg) | 校招、实习、社招与招聘日历 |
+| [查询流程 / Workflow](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/workflow-bilingual.jpg) | 说出需求、发现机会、阅读原文并核对来源 |
+
 ## 素材
 
 | 文件 | 用途 |
