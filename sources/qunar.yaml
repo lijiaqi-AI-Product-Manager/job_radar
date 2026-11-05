@@ -1,7 +1,7 @@
 id: qunar
 company: 去哪儿
 adapter: feishu_atsx
-recruit_types: [campus, intern]
+recruit_types: [campus, intern, social]
 rate_limit_rps: 1
 params:
   base_url: "https://hf7l9aiqzx.jobs.feishu.cn"

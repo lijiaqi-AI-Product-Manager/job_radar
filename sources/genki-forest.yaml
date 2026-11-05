@@ -1,7 +1,7 @@
 id: genki-forest
 company: 元气森林
 adapter: feishu_atsx
-recruit_types: [campus, intern]
+recruit_types: [campus, intern, social]
 rate_limit_rps: 1
 params:
   base_url: "https://k11pnjpvz1.jobs.feishu.cn"

@@ -8,6 +8,7 @@
   feishu_atsx_momenta   Momenta    project="Mstar计划"（项目名不带届次）
 """
 
+import json
 from pathlib import Path
 
 import httpx
@@ -22,6 +23,7 @@ from jobradar.adapters.feishu_atsx import (
 )
 from jobradar.adapters.recording import ReplayTransport
 from jobradar.models import Compliance, SourceConfig
+from jobradar.sources import load_sources
 
 
 def cfg(sid: str, **params) -> SourceConfig:
@@ -163,3 +165,28 @@ def test_cities_of_falls_back_to_city_info():
 ])
 def test_publish_date(ms, want):
     assert publish_date(ms) == want
+
+
+@pytest.fixture(scope='module')
+def configured_index_sources():
+    return {s.id:s for s in load_sources(Path(__file__).parents[2]/'sources')}
+
+
+@pytest.mark.parametrize('evidence', json.loads((FX/'feishu_atsx_index_scope.json').read_text(encoding='utf-8'))['sources'],
+                         ids=lambda item:item['source_id'])
+def test_verified_mixed_index_portals_retain_their_explicit_social_listings(evidence, configured_index_sources):
+    from jobradar.adapters.base import SkipRecord
+
+    source=configured_index_sources[evidence['source_id']]
+    def no_network(request):
+        pytest.fail('normalization must not access the network')
+    with httpx.Client(transport=httpx.MockTransport(no_network)) as client:
+        adapter=FeishuAtsxAdapter(source,client)
+        for sample in evidence['samples']:
+            job=adapter.normalize(sample['raw'])
+            assert job.recruit_type==sample['expected_type']
+            assert job.source_id==source.id and job.company==source.company
+        campus_only=FeishuAtsxAdapter(source.model_copy(update={'recruit_types':['campus','intern']}),client)
+        social=next(sample['raw'] for sample in evidence['samples'] if sample['expected_type']=='social')
+        with pytest.raises(SkipRecord):
+            campus_only.normalize(social)

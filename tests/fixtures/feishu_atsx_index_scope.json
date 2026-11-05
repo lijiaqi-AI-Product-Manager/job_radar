@@ -1,0 +1,214 @@
+{
+  "checked_on": "2026-11-05",
+  "endpoint_path": "/api/v1/search/job/posts",
+  "sources": [
+    {
+      "source_id": "qunar",
+      "raw_count": 72,
+      "type_counts": {
+        "social": 71,
+        "intern": 1
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7701187436147591434",
+            "title": "综合岗-base天津武清",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        },
+        {
+          "expected_type": "intern",
+          "raw": {
+            "id": "7581799934992812314",
+            "title": "直播运营实习生-旅游度假事业部",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "实习",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "idreamsky",
+      "raw_count": 37,
+      "type_counts": {
+        "intern": 11,
+        "social": 26
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7701647941047666970",
+            "title": "商务运营经理（游托邦）",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        },
+        {
+          "expected_type": "intern",
+          "raw": {
+            "id": "7703785232986032394",
+            "title": "AI 平台测试实习生",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "实习",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "tastien",
+      "raw_count": 99,
+      "type_counts": {
+        "social": 99
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7701157834269083931",
+            "title": "应用研发专家",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "minimax",
+      "raw_count": 190,
+      "type_counts": {
+        "social": 184,
+        "intern": 6
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7703546588224211263",
+            "title": "RL 训练与推理工程师-多模态生成方向",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        },
+        {
+          "expected_type": "intern",
+          "raw": {
+            "id": "7696350107280722202",
+            "title": "10x Team Intern (Legal)",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "实习",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "genki-forest",
+      "raw_count": 314,
+      "type_counts": {
+        "social": 311,
+        "intern": 3
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7432184056232282419",
+            "title": "外星人-产品负责人",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        },
+        {
+          "expected_type": "intern",
+          "raw": {
+            "id": "7676403531260578091",
+            "title": "商业分析实习生（经营分析与AI应用方向）",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "实习",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "cmge",
+      "raw_count": 7,
+      "type_counts": {
+        "social": 7
+      },
+      "samples": [
+        {
+          "expected_type": "social",
+          "raw": {
+            "id": "7655202047054547251",
+            "title": "投放视频设计",
+            "job_subject": null,
+            "recruit_type": {
+              "name": "全职",
+              "parent": {
+                "name": "社招",
+                "i18n_name": "社招"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
