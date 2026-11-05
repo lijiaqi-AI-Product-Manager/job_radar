@@ -55,7 +55,7 @@ jobradar doctor
 
 ## データとカバレッジ
 
-2026-11-04 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-05 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | 指標 | 値 |
 | :--- | ---: |
@@ -64,7 +64,7 @@ jobradar doctor
 | アダプター | 27 |
 | 固定対象企業の設定カバレッジ | 944 / 1,655 · 57.04% |
 
-2026-11-04 UTC の検証済みスナップショットには 331,440 件の求人レコード（募集中 306,924 件）があり、募集中レコードの JD 本文カバー率は 97.5% です。設定の有無は当日の募集状況を示しません。集約サイトの採用告知は複数職種を含む場合があります。
+2026-11-05 UTC の検証済みスナップショットには 346,267 件の求人レコード（募集中 320,348 件）があり、募集中レコードの JD 本文カバー率は 97.6% です。設定の有無は当日の募集状況を示しません。集約サイトの採用告知は複数職種を含む場合があります。
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 

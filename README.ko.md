@@ -55,7 +55,7 @@ jobradar doctor
 
 ## 데이터와 커버리지
 
-2026-11-04 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-05 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | 지표 | 값 |
 | :--- | ---: |
@@ -64,7 +64,7 @@ jobradar doctor
 | 어댑터 | 27 |
 | 고정 대상 기업의 설정 커버리지 | 944 / 1,655 · 57.04% |
 
-2026-11-04 UTC 검증 스냅샷에는 총 331,440건, 모집 중 306,924건의 기록이 있습니다. 모집 중 기록의 JD 본문 커버리지는 97.5%입니다. 소스 설정이 있다고 오늘 채용 중이라는 뜻은 아닙니다. 집계 사이트의 채용 안내 하나에 여러 직무가 포함될 수 있습니다.
+2026-11-05 UTC 검증 스냅샷에는 총 346,267건, 모집 중 320,348건의 기록이 있습니다. 모집 중 기록의 JD 본문 커버리지는 97.6%입니다. 소스 설정이 있다고 오늘 채용 중이라는 뜻은 아닙니다. 집계 사이트의 채용 안내 하나에 여러 직무가 포함될 수 있습니다.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 
