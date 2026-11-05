@@ -286,3 +286,33 @@ def test_attachment_ids_accept_only_the_explicit_numeric_scope():
 def test_ambiguous_or_invalid_attachment_ids_are_rejected(text):
     with pytest.raises(ValueError):
         retention.asset_ids(text)
+
+
+def test_late_historical_record_does_not_evict_a_recent_committed_generation():
+    release, old = history()
+    record = next(a for a in release.assets if a["name"] == retention.manifest_name(old))
+    record.update(label="jobradar:historical", created_at=(NOW-timedelta(days=4)).isoformat(),
+                  updated_at=(NOW-timedelta(days=4)).isoformat())
+    with release.client() as client:
+        result = retention.maintain(client, now=NOW)
+    assert old["generation"] not in result["retained_generations"]
+    assert len(result["retained_generations"]) == 3
+
+
+def test_supplemental_history_does_not_satisfy_the_three_generation_minimum():
+    release = Release()
+    old = release.generation("supplemental", days=8)
+    next(a for a in release.assets if a["name"] == retention.manifest_name(old))["label"] = "jobradar:historical"
+    release.generation("previous", days=6)
+    release.generation("current", days=5)
+    with release.client() as client:
+        result = retention.maintain(client, now=NOW)
+    assert result["deferred"] == "insufficient_generation_history" and not result["candidates"]
+
+
+def test_concurrent_history_label_change_stops_remaining_deletions():
+    release, _ = history()
+    release.on_delete_check = lambda state: state.assets[0].update(label="jobradar:historical")
+    with release.client() as client, pytest.raises(ValueError, match="changed"):
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
+    assert len(release.deleted) == 1
