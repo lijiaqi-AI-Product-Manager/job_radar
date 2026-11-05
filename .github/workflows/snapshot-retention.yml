@@ -6,6 +6,10 @@ on:
         type: boolean
         default: false
         description: 应用已核对的无引用附件清理；默认仅预演
+      asset_ids:
+        type: string
+        default: ""
+        description: 已确认的附件编号，逗号分隔；应用时必填，只处理这些附件
 
 permissions:
   contents: write
@@ -27,9 +31,10 @@ jobs:
       - name: Check snapshot retention
         env:
           APPLY: ${{ inputs.apply }}
+          ASSET_IDS: ${{ inputs.asset_ids }}
         run: |
           options=()
-          if [ "$APPLY" = "true" ]; then options=(--apply); fi
+          if [ "$APPLY" = "true" ]; then options=(--apply --asset-ids "$ASSET_IDS"); fi
           uv run python scripts/prune_snapshot_assets.py "${options[@]}" | tee snapshot-retention.json
       - uses: actions/upload-artifact@v7.0.2
         if: always()

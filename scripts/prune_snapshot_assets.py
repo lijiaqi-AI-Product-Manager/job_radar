@@ -146,7 +146,10 @@ def _ledger(assets):
     return {a["id"]: {key: a.get(key) for key in ("name", "size", "digest", "created_at", "updated_at")} for a in assets}
 
 
-def maintain(client, *, now=None, apply=False, record=False, previous=None):
+def maintain(client, *, now=None, apply=False, record=False, previous=None, approved_ids=None):
+    if apply and (not isinstance(approved_ids, (set, frozenset, list, tuple))
+                  or not 0 < len(approved_ids) <= 100 or any(type(i) is not int or i <= 0 for i in approved_ids)):
+        raise ValueError("cleanup requires explicit approved attachment IDs")
     now = now or datetime.now(UTC)
     release = _release(client)
     current = _manifest(release)
@@ -163,7 +166,8 @@ def maintain(client, *, now=None, apply=False, record=False, previous=None):
     records.sort(key=lambda r: (_stamp(r[0]["created_at"]), r[0]["id"]), reverse=True)
     generations = list(dict.fromkeys(m["generation"] for _, m in records))
     result = {"generation": current["generation"], "asset_count": len(release["assets"]),
-              "retained_generations": generations[:3], "candidates": [], "deleted": [], "deferred": None}
+              "retained_generations": generations[:3], "candidates": [], "deleted": [], "deferred": None,
+              "approved_ids": sorted(set(approved_ids or []))}
     _verify_references([current], release["assets"])
     if len(generations) < 3 or current["generation"] not in generations:
         result["deferred"] = "insufficient_generation_history"
@@ -189,6 +193,8 @@ def maintain(client, *, now=None, apply=False, record=False, previous=None):
         return result
     expected = _ledger(release["assets"])
     for asset in result["candidates"]:
+        if asset["id"] not in approved_ids:
+            continue
         fresh = _release(client)
         if fresh["id"] != release["id"] or fresh["body"] != release["body"] or _ledger(fresh["assets"]) != expected:
             raise ValueError("release or assets changed; stopped cleanup")
@@ -198,12 +204,28 @@ def maintain(client, *, now=None, apply=False, record=False, previous=None):
     return result
 
 
+def asset_ids(text):
+    items = [part.strip() for part in text.split(",")]
+    if (len(text) > 3000 or not 0 < len(items) <= 100
+            or any(not re.fullmatch(r"[1-9][0-9]*", part) for part in items)):
+        raise ValueError("asset IDs must be explicit positive integers")
+    values = {int(part) for part in items}
+    if len(values) != len(items):
+        raise ValueError("duplicate asset IDs")
+    return values
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true", help="仅在采集发布互斥锁内执行")
     parser.add_argument("--record", action="store_true", help="只补齐清单记录并生成预演，不删除附件")
+    parser.add_argument("--asset-ids", default="", help="预演后明确确认的附件编号，逗号分隔；应用必填")
     parser.add_argument("--previous", type=Path, help="本次发布切换前实际读取的Release元数据")
     args = parser.parse_args()
+    try:
+        approved = asset_ids(args.asset_ids) if args.apply or args.asset_ids else None
+    except ValueError as error:
+        parser.error(str(error))
     token = os.environ.get("GH_TOKEN", "").strip()
     if (args.apply or args.record) and not token:
         token = subprocess.run(["gh", "auth", "token"], check=True, capture_output=True,
@@ -215,7 +237,8 @@ def main():
         headers["Authorization"] = "Bearer " + token
     previous = json.loads(args.previous.read_text(encoding="utf-8")) if args.previous else None
     with httpx.Client(headers=headers, timeout=60) as client:
-        print(json.dumps(maintain(client, apply=args.apply, record=args.record, previous=previous), ensure_ascii=False))
+        print(json.dumps(maintain(client, apply=args.apply, record=args.record,
+                                  previous=previous, approved_ids=approved), ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -90,6 +90,9 @@ def test_snapshot_cleanup_shares_publisher_lock_and_defaults_to_preview():
     assert doc.get("on", doc.get(True))["workflow_dispatch"]["inputs"]["apply"]["default"] is False
     steps = doc["jobs"]["retain"]["steps"]
     assert "prune_snapshot_assets.py" in "\n".join(s.get("run", "") for s in steps)
+    run = next(s for s in steps if s.get("name") == "Check snapshot retention")
+    assert "--asset-ids \"$ASSET_IDS\"" in run["run"]
+    assert run["env"]["ASSET_IDS"] == "${{ inputs.asset_ids }}"
 
 
 def test_calendar_step_asserts_freshness():

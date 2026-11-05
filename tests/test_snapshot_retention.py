@@ -119,7 +119,7 @@ def test_aliases_diagnostics_unknown_names_and_new_assets_are_never_deleted():
         release.asset(name, b"keep", days=10)
     recent = release.asset("e" * 20 + "-jobs.db.gz", b"new", days=0)
     with release.client() as client:
-        result = retention.maintain(client, now=NOW, apply=True)
+        result = retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     remaining = {a["name"] for a in release.assets}
     assert set(names) <= remaining and recent["name"] in remaining
     assert result["deleted"] and release.deleted
@@ -154,7 +154,7 @@ def test_missing_protected_file_aborts_before_any_deletion():
     name = release.current["files"]["jobs.db.gz"]["asset"]
     release.assets = [a for a in release.assets if a["name"] != name]
     with release.client() as client, pytest.raises(ValueError, match="referenced"):
-        retention.maintain(client, now=NOW, apply=True)
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert not release.deleted
 
 
@@ -169,7 +169,7 @@ def test_invalid_history_cannot_be_used_as_a_cleanup_authorization(corruption):
     else:
         item["digest"] = "sha256:" + "0" * 64
     with release.client() as client, pytest.raises(ValueError):
-        retention.maintain(client, now=NOW, apply=True)
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert not release.deleted
 
 
@@ -177,7 +177,7 @@ def test_concurrent_manifest_change_stops_remaining_deletions():
     release, _ = history()
     release.on_delete_check = lambda state: state.release.update(body=state.release["body"] + "changed")
     with release.client() as client, pytest.raises(ValueError, match="changed"):
-        retention.maintain(client, now=NOW, apply=True)
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert len(release.deleted) == 1
 
 
@@ -188,8 +188,8 @@ def test_current_and_verified_previous_manifests_are_recorded_without_overwrite(
     previous.update(deepcopy(release.release))
     release.generation("current", record=False)
     with release.client() as client:
-        result = retention.maintain(client, now=NOW, apply=True, previous=previous)
-        retention.maintain(client, now=NOW, apply=True, previous=previous)
+        result = retention.maintain(client, now=NOW, apply=True, previous=previous, approved_ids=set(release.bodies))
+        retention.maintain(client, now=NOW, apply=True, previous=previous, approved_ids=set(release.bodies))
     assert len(release.uploaded) == 2 and not release.deleted
     assert result["deferred"] == "insufficient_generation_history"
 
@@ -215,15 +215,15 @@ def test_all_supported_text_variants_are_protected_by_current_manifest():
     marker = base64.b64encode(json.dumps(manifest).encode()).decode()
     release.release["body"] = f"<!--jobradar-snapshot:{marker}-->"
     with release.client() as client:
-        retention.maintain(client, now=NOW, apply=True)
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert {i["asset"] for i in manifest["variants"].values()} <= {a["name"] for a in release.assets}
 
 
 def test_rerun_after_cleanup_is_safe_and_requires_no_further_deletions():
     release, _ = history()
     with release.client() as client:
-        first = retention.maintain(client, now=NOW, apply=True)
-        second = retention.maintain(client, now=NOW, apply=True)
+        first = retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
+        second = retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert first["deleted"] and not second["deleted"]
 
 
@@ -241,7 +241,7 @@ def test_asset_arriving_before_first_delete_aborts_cleanup():
         return original(req)
 
     with httpx.Client(transport=httpx.MockTransport(respond)) as client, pytest.raises(ValueError, match="changed"):
-        retention.maintain(client, now=NOW, apply=True)
+        retention.maintain(client, now=NOW, apply=True, approved_ids=set(release.bodies))
     assert not release.deleted
 
 
@@ -252,3 +252,37 @@ def test_recording_history_only_does_not_apply_the_cleanup_plan():
         result = retention.maintain(client, now=NOW, record=True)
     assert release.uploaded and result["candidates"]
     assert not result["deleted"] and not release.deleted
+
+
+def test_cleanup_requires_explicit_attachment_ids():
+    release, _ = history()
+    with release.client() as client, pytest.raises(ValueError, match="approved"):
+        retention.maintain(client, now=NOW, apply=True)
+    assert not release.deleted and not release.uploaded
+
+
+def test_cleanup_cannot_expand_beyond_the_approved_attachments():
+    release, old = history()
+    approved = next(a["id"] for a in release.assets if a["name"] == old["files"]["jobs.db.gz"]["asset"])
+    with release.client() as client:
+        result = retention.maintain(client, now=NOW, apply=True, approved_ids={approved})
+    assert result["deleted"] == release.deleted == [approved]
+    assert len(result["candidates"]) > 1
+
+
+@pytest.mark.parametrize("ids", [set(), {True}, {-1}, {"123"}])
+def test_invalid_attachment_scope_is_rejected_before_any_write(ids):
+    release, _ = history()
+    with release.client() as client, pytest.raises(ValueError):
+        retention.maintain(client, now=NOW, apply=True, approved_ids=ids)
+    assert not release.deleted and not release.uploaded
+
+
+def test_attachment_ids_accept_only_the_explicit_numeric_scope():
+    assert retention.asset_ids("698752363, 698752364") == {698752363, 698752364}
+
+
+@pytest.mark.parametrize("text", ["", "1,1", "0", "-2", "1;2", "1,", "1\n2"])
+def test_ambiguous_or_invalid_attachment_ids_are_rejected(text):
+    with pytest.raises(ValueError):
+        retention.asset_ids(text)
