@@ -3,8 +3,8 @@
 ![Opportunities. One clear workflow: graduate roles, internships, experienced hires and recruitment calendars; ask, discover and verify. / 校招、实习、社招、招聘日历；说需求、找机会、看来源。](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/job_radar/main/docs/assets/readme/features-bilingual.jpg)
 
 <p align="center">
-  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest"><img src="https://img.shields.io/github/v/release/lijiaqi-AI-Product-Manager/job_radar?color=58bfa5" alt="Latest release"></a>
-  <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?color=58bfa5&label=PyPI" alt="PyPI"></a>
+  <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/latest"><img src="https://img.shields.io/github/v/release/lijiaqi-AI-Product-Manager/job_radar?cacheSeconds=300&color=58bfa5" alt="Latest release"></a>
+  <a href="https://pypi.org/project/jobsearchradar/"><img src="https://img.shields.io/pypi/v/jobsearchradar?cacheSeconds=300&color=58bfa5&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml"><img src="https://github.com/lijiaqi-AI-Product-Manager/job_radar/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest"><img src="https://img.shields.io/badge/data-daily_snapshots-58bfa5" alt="Daily snapshots"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.11%2B-7bb7ff" alt="Python 3.11+"></a>

@@ -122,3 +122,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: uv run python scripts/publish_code_release.py --dist dist --skill .tmp/skill/jobradar-skill.zip --tag "$RELEASE_TAG"
+      - name: Verify visible GitHub release badges
+        run: uv run python scripts/check_visible_badges.py --repair --wait-seconds 600
