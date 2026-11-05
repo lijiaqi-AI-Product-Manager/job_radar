@@ -18,6 +18,23 @@ def module():
     return mod
 
 
+@pytest.mark.parametrize(
+    "before,after,old,new,allowed",
+    [
+        ("same", "same", "1.2.3", "1.2.3", True),
+        ("old", "new", "1.2.3", "1.2.3", False),
+        ("old", "new", "1.2.3", "1.2.4", True),
+        ("old", "new", "1.2.3", "1.2.2", False),
+    ],
+)
+def test_readme_only_pr_cannot_leave_pypi_behind(before, after, old, new, allowed):
+    if allowed:
+        module().validate_readme_change(before, after, old, new)
+    else:
+        with pytest.raises(ValueError):
+            module().validate_readme_change(before, after, old, new)
+
+
 @pytest.fixture
 def root(tmp_path):
     (tmp_path / "docs").mkdir()

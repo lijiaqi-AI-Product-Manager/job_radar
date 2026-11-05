@@ -20,6 +20,14 @@ jobs:
       - uses: actions/checkout@v7.0.1
       - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen --all-extras
+      - name: README changes require a release version
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          uv run python scripts/check_release_consistency.py --base "$BASE_SHA"
       - run: uv run ruff check .
       # 文档自检：断链 / 版本号 / `pip install jobradar` 说法（2026-10-24 实测发现三处不一致）
       - run: uv run python scripts/check_docs_links.py

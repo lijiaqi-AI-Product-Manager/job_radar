@@ -129,3 +129,5 @@ python scripts/detail_progress.py export --cache-root data/detail-cache --only S
 发行前运行`uv run python scripts/check_release_consistency.py --dist dist --online`。`docs/release-snapshot.json`绑定公开快照代号、时间、总记录、可见记录与日历口径；八种介绍与覆盖说明使用同一份记录。构建后的wheel与源码包README必须与源码一致。上传前再次核对GitHub main的介绍及当前公开快照证据，变化时阻止上传；PyPI元数据及首页正文核对通过后，才公开GitHub代码发行。
 
 README作为发行介绍，在发版准备时统一更新；发布后的安装验证记录放在安装与发布文档，不再单独改变主页统计。招聘数据继续独立更新，实时规模通过数据快照与查询结果获取。
+
+PR检查同时阻止在版本不变时单独修改主页介绍；调整README必须准备新的正式版本，避免发行后文案再次分离。

@@ -4,6 +4,7 @@ import argparse
 import base64
 import json
 import re
+import subprocess
 import tarfile
 import zipfile
 from email import policy
@@ -16,6 +17,30 @@ from jobradar import __version__
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://api.github.com/repos/lijiaqi-AI-Product-Manager/job_radar"
+
+
+def validate_readme_change(before, after, old_version, new_version):
+    old = tuple(map(int, old_version.split(".")))
+    new = tuple(map(int, new_version.split(".")))
+    if new < old or (before != after and new <= old):
+        raise ValueError("主页介绍变化必须准备新的发行版本，不能只更新main而遗漏PyPI")
+
+
+def check_base(root, revision):
+    if not re.fullmatch("[a-f0-9]{40,64}", revision):
+        raise ValueError("比较基线必须为固定提交")
+
+    def show(name):
+        return (
+            subprocess.check_output(["git", "show", revision + ":" + name], cwd=root)
+            .decode("utf-8-sig")
+            .replace("\r\n", "\n")
+        )
+
+    old_version = re.search(r'__version__\s*=\s*["\']([0-9.]+)', show("src/jobradar/__init__.py"))[
+        1
+    ]
+    validate_readme_change(show("README.md"), text(root / "README.md"), old_version, __version__)
 
 
 def text(path):
@@ -126,8 +151,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dist", type=Path)
     parser.add_argument("--online", action="store_true")
+    parser.add_argument("--base", help="PR基线提交，用于阻止单独修改主页介绍")
     args = parser.parse_args()
     snapshot = validate(ROOT, __version__)
+    if args.base:
+        check_base(ROOT, args.base)
     if args.dist:
         validate_artifacts(ROOT, args.dist, __version__)
     if args.online:
