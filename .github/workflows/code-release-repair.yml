@@ -1,0 +1,46 @@
+name: code-release-repair
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        type: string
+        required: true
+        description: 已完成PyPI发布的固定版本标签
+      build_run_id:
+        type: string
+        required: true
+        description: 原publish-pypi运行编号
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: code-release-${{ inputs.release_tag }}
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      SOURCE_RUN: ${{ inputs.build_run_id }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
+      - name: Validate original tagged build
+        run: uv run python scripts/publish_code_release.py --tag "$RELEASE_TAG" --check-build-run "$SOURCE_RUN"
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.build_run_id }}
+          name: dist
+          path: dist/
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.build_run_id }}
+          name: jobradar-skill
+          path: .tmp/skill/
+      - name: Continue verified code release
+        run: uv run python scripts/publish_code_release.py --dist dist --skill .tmp/skill/jobradar-skill.zip --tag "$RELEASE_TAG" --source-run-id "$SOURCE_RUN"
