@@ -6,6 +6,7 @@ import json
 import re
 import subprocess
 import tempfile
+import zipfile
 from pathlib import Path
 from time import sleep
 
@@ -48,7 +49,7 @@ def release_notes(changelog, version):
     raise ValueError("CHANGELOG缺少当前正式版本内容")
 
 
-def wait_for_pypi(files, version, *, client, sleep=sleep, attempts=12):
+def wait_for_pypi(files, version, *, client, sleep=sleep, attempts=12, expected_readme=None):
     expected = {path.name: {"size": path.stat().st_size, "sha256": digest(path)} for path in files}
     url = f"https://pypi.org/pypi/jobsearchradar/{version}/json"
     for attempt in range(attempts):
@@ -60,6 +61,8 @@ def wait_for_pypi(files, version, *, client, sleep=sleep, attempts=12):
                 info = metadata.get("info", {})
                 if info.get("name") != "jobsearchradar" or info.get("version") != version:
                     raise ValueError("PyPI项目或版本不一致")
+                if expected_readme is not None and info.get('description', '').replace('\r\n','\n') != expected_readme:
+                    raise ValueError('PyPI首页介绍与发行README不一致')
                 remote = {item["filename"]: item for item in metadata.get("urls", [])}
                 for name, local in expected.items():
                     if name in remote and (remote[name].get("size") != local["size"]
@@ -188,7 +191,12 @@ def main():
     notes += ("\n\nPython安装包与独立技能包来自同一构建；招聘数据继续通过`jobradar update`获取。"
               "\n\n| 文件 | 字节 | SHA-256 |\n| :--- | ---: | :--- |\n" + checksums + "\n")
     with httpx.Client(timeout=15, headers={"User-Agent": f"jobradar/{__version__}"}) as client:
-        wait_for_pypi(files[:2], version, client=client)
+        with zipfile.ZipFile(files[0]) as wheel:
+            from email import policy
+            from email.parser import BytesParser
+            name=next(n for n in wheel.namelist() if n.endswith('.dist-info/METADATA'))
+            readme=BytesParser(policy=policy.default).parsebytes(wheel.read(name)).get_payload(decode=True).decode("utf-8").replace('\r\n','\n')
+        wait_for_pypi(files[:2], version, client=client, expected_readme=readme)
     publish_github(files, args.tag, notes)
     print(json.dumps({"tag": args.tag, "verified_files": [path.name for path in files]}))
 

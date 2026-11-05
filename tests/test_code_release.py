@@ -95,6 +95,15 @@ def test_pypi_digest_mismatch_stops_before_creating_release(tmp_path):
     assert len(requests) == 1
 
 
+def test_pypi_readme_mismatch_blocks_github_publication(tmp_path):
+    mod, files = module(), artifacts(tmp_path)
+    meta = metadata(files)
+    meta['info']['description'] = '旧介绍'
+    with httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200,json=meta))) as client:
+        with pytest.raises(ValueError,match='首页介绍'):
+            mod.wait_for_pypi(files[:2],'1.2.3',client=client,expected_readme='新介绍')
+
+
 def test_pypi_propagation_is_bounded_and_requires_both_artifacts(tmp_path):
     mod, files = module(), artifacts(tmp_path)
     count = 0

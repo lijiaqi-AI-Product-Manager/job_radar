@@ -47,6 +47,8 @@ jobs:
         with:
           name: dist
           path: dist/
+      - name: Validate release presentation
+        run: uv run python scripts/check_release_consistency.py --dist dist
       - name: Package standalone skill
         run: uv run python scripts/package_skill.py --output .tmp/skill/jobradar-skill.zip
       - uses: actions/upload-artifact@v7.0.2
@@ -84,10 +86,15 @@ jobs:
     permissions:
       id-token: write # Trusted Publishing（OIDC）
     steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
       - uses: actions/download-artifact@v8.0.2
         with:
           name: dist
           path: dist/
+      - name: Verify main README and current public snapshot before upload
+        run: uv run python scripts/check_release_consistency.py --dist dist --online
       - uses: pypa/gh-action-pypi-publish@release/v1
 
 
