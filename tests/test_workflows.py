@@ -84,6 +84,14 @@ def test_observation_recovery_uses_publication_lock_and_all_quality_gates():
     assert not any(s.get("continue-on-error") for s in steps)
 
 
+def test_snapshot_cleanup_shares_publisher_lock_and_defaults_to_preview():
+    doc = yaml.safe_load((ROOT / ".github/workflows/snapshot-retention.yml").read_text(encoding="utf-8"))
+    assert doc["concurrency"] == DAILY["concurrency"]
+    assert doc.get("on", doc.get(True))["workflow_dispatch"]["inputs"]["apply"]["default"] is False
+    steps = doc["jobs"]["retain"]["steps"]
+    assert "prune_snapshot_assets.py" in "\n".join(s.get("run", "") for s in steps)
+
+
 def test_calendar_step_asserts_freshness():
     """日历步骤必须在上传后校验 build 时间戳，避免"超时了但没人发现"。"""
     run = _step("Build recruiting calendar")["run"]

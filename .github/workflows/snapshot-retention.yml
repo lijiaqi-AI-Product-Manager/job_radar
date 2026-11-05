@@ -1,0 +1,40 @@
+name: snapshot-retention
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        type: boolean
+        default: false
+        description: 应用已核对的无引用附件清理；默认仅预演
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-crawl
+  cancel-in-progress: false
+
+jobs:
+  retain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
+      - name: Check snapshot retention
+        env:
+          APPLY: ${{ inputs.apply }}
+        run: |
+          options=()
+          if [ "$APPLY" = "true" ]; then options=(--apply); fi
+          uv run python scripts/prune_snapshot_assets.py "${options[@]}" | tee snapshot-retention.json
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: snapshot-retention-${{ github.run_id }}
+          path: snapshot-retention.json
+          if-no-files-found: warn
+          retention-days: 90

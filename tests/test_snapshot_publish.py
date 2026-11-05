@@ -145,3 +145,22 @@ def test_alias_repair_cannot_target_immutable_files(tmp_path, monkeypatch):
     monkeypatch.setattr(publisher, "gh", lambda *a, **kw: pytest.fail("must not contact release"))
     with pytest.raises(ValueError):
         publisher.publish_aliases(tmp_path, ("12345678901234567890-jd_text.db.gz",))
+
+
+def test_retention_only_runs_after_all_compatibility_aliases_are_verified(tmp_path, monkeypatch):
+    calls = []
+    monkeypatch.setattr(publisher, "publish_aliases", lambda home: calls.append("aliases") or list(publisher.ALIASES))
+    monkeypatch.setattr(publisher.subprocess, "run", lambda args, **kw: calls.append((args, kw)))
+    aliases = publisher.finish_publication(tmp_path, {"id": 123}, tmp_path)
+    assert aliases == list(publisher.ALIASES) and calls[0] == "aliases"
+    assert "prune_snapshot_assets.py" in calls[1][0][1] and "--apply" in calls[1][0]
+    assert calls[1][1]["check"] is True
+
+
+def test_partial_alias_failure_never_starts_retention(tmp_path, monkeypatch):
+    def fail(home):
+        raise RuntimeError("aliases not verified")
+    monkeypatch.setattr(publisher, "publish_aliases", fail)
+    monkeypatch.setattr(publisher.subprocess, "run", lambda *a, **kw: pytest.fail("must preserve all remote files"))
+    with pytest.raises(RuntimeError, match="aliases"):
+        publisher.finish_publication(tmp_path, {"id": 123}, tmp_path)
