@@ -15,7 +15,7 @@
 在将实际运行查询的 Python 环境中执行：
 
 ```bash
-python -m pip install --upgrade "jobsearchradar[mcp]==2.3.1"
+python -m pip install --upgrade "jobsearchradar[mcp]"
 jobradar --version
 jobradar update
 jobradar doctor

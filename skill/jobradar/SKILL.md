@@ -16,10 +16,10 @@ description: 查询中国公司（含大厂与招聘平台上的公司）当前�
 
 ## 安装或升级（首次使用或参数不受支持时）
 
-本指南对应 `2.3.1`；正式渠道核验状态见安装指南：
+最低已验证兼容基线为 `2.3.1`；默认升级至当前正式版，再核对版本和功能参数。正式渠道核验状态见安装指南：
 
 ```bash
-pip install --upgrade "jobsearchradar[mcp]==2.3.1"
+pip install --upgrade "jobsearchradar[mcp]"
 jobradar --version
 jobradar search --help
 jobradar calendar --help
