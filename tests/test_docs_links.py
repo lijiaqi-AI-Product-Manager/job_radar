@@ -122,3 +122,27 @@ def test_release_badges_and_install_target_follow_current_code_version(tmp_path,
     assert docs.versions()
     english.write_text(readme.read_text(encoding="utf-8"), encoding="utf-8")
     assert docs.versions() == []
+
+
+def test_latest_install_requires_upgrade_and_a_verified_compatibility_floor(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location("check_docs_links", Path(__file__).resolve().parents[1] / "scripts/check_docs_links.py")
+    docs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(docs)
+    monkeypatch.setattr(docs, "ROOT", tmp_path)
+    config = tmp_path / "docs/install-target.json"
+    config.parent.mkdir()
+    target = {"distribution": "jobsearchradar", "repository": "owner/repo", "revision": "v2.3.2",
+              "version": "2.3.2", "minimum_version": "2.3.1", "pypi_version_checked": "2.3.1"}
+    config.write_text(json.dumps(target), encoding="utf-8")
+    guide = tmp_path / "README.md"
+    guide.write_text('pip install --upgrade "jobsearchradar[mcp]"', encoding="utf-8")
+    assert docs.installation_problems([guide]) == []
+    for command in ['pip install "jobsearchradar[mcp]"', 'pip install --upgrade "jobsearchradar[mcp]==1.1.1"',
+                    'pip install --upgrade "jobsearchradar[mcp] @ https://github.com/owner/repo/archive/main.zip"']:
+        guide.write_text(command, encoding="utf-8")
+        assert docs.installation_problems([guide])
+    guide.write_text('pip install -U "jobsearchradar[mcp]"', encoding="utf-8")
+    assert docs.installation_problems([guide]) == []
+    target["pypi_version_checked"] = "2.2.2"
+    config.write_text(json.dumps(target), encoding="utf-8")
+    assert docs.installation_problems([guide])

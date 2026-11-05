@@ -9,6 +9,7 @@ README 说"尚未发布到 PyPI"，Skill 第一句却让用户 `pip install jobr
 import json
 import os
 import re
+import shlex
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -127,8 +128,24 @@ def install_claims() -> list[str]:
     return problems
 
 
+def _latest_upgrade(command, target):
+    def number(value):
+        return tuple(map(int, value.split("."))) if isinstance(value, str) and re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", value) else None
+    minimum, checked, current = (number(target.get(key)) for key in ("minimum_version", "pypi_version_checked", "version"))
+    if not all((minimum, checked, current)) or not minimum <= checked <= current:
+        return False
+    try:
+        parts = shlex.split(command)
+    except ValueError:
+        return False
+    packages = {target["distribution"], target["distribution"] + "[mcp]"}
+    return (len(parts) >= 4 and parts[:2] == ["pip", "install"] and parts[-1] in packages
+            and bool(set(parts[2:-1]) & {"-U", "--upgrade"})
+            and set(parts[2:-1]) <= {"-U", "--upgrade", "--force-reinstall", "--no-cache-dir"})
+
+
 def installation_problems(files=None) -> list[str]:
-    """当前功能说明必须指向同一个已验证提交，不能落到旧包或浮动 main。"""
+    """默认升级已有正式兼容基线，固定源码备用入口仍绑定修订。"""
     target = json.loads((ROOT / "docs/install-target.json").read_text(encoding="utf-8"))
     revision = target["revision"]
     if not re.fullmatch(r"[0-9a-f]{40}|v\d+\.\d+\.\d+", revision):
@@ -144,10 +161,10 @@ def installation_problems(files=None) -> list[str]:
         pinned = re.compile(re.escape(target["distribution"]) + r"(?:\[[a-z,]+\])?==" + re.escape(target.get("version", "UNSET")) + r"(?=[\"'\s]|$)")
         if not commands and path.suffix == ".py":
             continue
-        if url not in text and not pinned.search(text):
-            problems.append(f"{path.relative_to(ROOT)}: 未使用固定源码或固定发行版本")
+        if url not in text and not pinned.search(text) and not any(_latest_upgrade(command, target) for command in commands):
+            problems.append(f"{path.relative_to(ROOT)}: 未使用已验证基线的升级入口或固定版本")
         for command in commands:
-            if target["distribution"] in command and url not in command and not pinned.search(command):
+            if target["distribution"] in command and url not in command and not pinned.search(command) and not _latest_upgrade(command, target):
                 problems.append(f"{path.relative_to(ROOT)}: 安装命令可能落到旧包或未验证版本")
     return problems
 
