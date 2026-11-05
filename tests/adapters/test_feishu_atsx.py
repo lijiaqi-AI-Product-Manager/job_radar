@@ -167,13 +167,17 @@ def test_publish_date(ms, want):
     assert publish_date(ms) == want
 
 
+@pytest.fixture(scope='module')
+def configured_index_sources():
+    return {s.id:s for s in load_sources(Path(__file__).parents[2]/'sources')}
+
+
 @pytest.mark.parametrize('evidence', json.loads((FX/'feishu_atsx_index_scope.json').read_text(encoding='utf-8'))['sources'],
                          ids=lambda item:item['source_id'])
-def test_verified_mixed_index_portals_retain_their_explicit_social_listings(evidence):
+def test_verified_mixed_index_portals_retain_their_explicit_social_listings(evidence, configured_index_sources):
     from jobradar.adapters.base import SkipRecord
 
-    sources={s.id:s for s in load_sources(Path(__file__).parents[2]/'sources')}
-    source=sources[evidence['source_id']]
+    source=configured_index_sources[evidence['source_id']]
     def no_network(request):
         pytest.fail('normalization must not access the network')
     with httpx.Client(transport=httpx.MockTransport(no_network)) as client:
