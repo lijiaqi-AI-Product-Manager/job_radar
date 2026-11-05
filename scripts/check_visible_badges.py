@@ -12,7 +12,7 @@ import httpx
 from jobradar import __version__
 
 REPO = "lijiaqi-AI-Product-Manager/job_radar"
-PATHS = {"/pypi/v/jobsearchradar": "pypi", "/github/v/release/" + REPO: "release"}
+PATHS = {"/badge/dynamic/json": "pypi", "/github/v/release/" + REPO: "release"}
 
 
 class Images(HTMLParser):
@@ -32,6 +32,12 @@ class Images(HTMLParser):
         ):
             if parse_qs(u.query).get("cacheSeconds") != ["300"]:
                 raise ValueError("Badge cache policy must be 300 seconds")
+            params = parse_qs(u.query)
+            if PATHS[u.path] == "pypi" and (
+                params.get("url") != ["https://pypi.org/pypi/jobsearchradar/json"]
+                or params.get("query") != ["$.info.version"]
+            ):
+                raise ValueError("PyPI badge must read the official project version")
             self.images[PATHS[u.path]] = (source, a.get("src", ""))
 
 
@@ -76,11 +82,11 @@ def verify(client, version, *, repair=False, purged=None):
         except ValueError:
             if not repair or cached in purged:
                 raise
+            purged.add(cached)
             result = client.request("PURGE", cached, follow_redirects=False)
             result.raise_for_status()
             if result.json().get("status") != "ok":
                 raise ValueError("GitHub image cache refresh failed") from None
-            purged.add(cached)
             r = client.get(cached, headers={"Cache-Control": "no-cache"})
             r.raise_for_status()
             check_svg(r.text, version)

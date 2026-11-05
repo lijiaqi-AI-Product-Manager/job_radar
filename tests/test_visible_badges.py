@@ -33,7 +33,7 @@ def test_checks_actual_github_image_and_only_repairs_when_origin_is_current(
         if r.url.host == "github.com":
             return httpx.Response(
                 200,
-                text='<img src="https://camo.githubusercontent.com/abc/123" data-canonical-src="https://img.shields.io/pypi/v/jobsearchradar?cacheSeconds=300"><img src="https://camo.githubusercontent.com/def/456" data-canonical-src="https://img.shields.io/github/v/release/lijiaqi-AI-Product-Manager/job_radar?cacheSeconds=300">',
+                text='<img src="https://camo.githubusercontent.com/abc/123" data-canonical-src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fjobsearchradar%2Fjson&query=%24.info.version&label=PyPI&prefix=v&color=58bfa5&cacheSeconds=300"><img src="https://camo.githubusercontent.com/def/456" data-canonical-src="https://img.shields.io/github/v/release/lijiaqi-AI-Product-Manager/job_radar?cacheSeconds=300">',
             )
         if r.method == "PURGE":
             purged.append(str(r.url))
