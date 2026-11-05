@@ -65,7 +65,7 @@ jobradar doctor
 | Adaptateurs | 27 |
 | Couverture du périmètre fixe d’entreprises cibles | 944 / 1,655 · 57.04% |
 
-L’instantané vérifié du 5 novembre 2026 (UTC) contient 346 267 enregistrements, dont 320 348 ouverts. Le texte original est disponible pour 97,6 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
+L’instantané vérifié du 5 novembre 2026 (UTC) contient 346 273 enregistrements, dont 320 353 ouverts. Le texte original est disponible pour 97,6 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 

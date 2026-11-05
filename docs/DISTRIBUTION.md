@@ -4,8 +4,8 @@
 
 | 渠道 | 当前状态 | 如何使用 |
 | :--- | :--- | :--- |
-| [PyPI](https://pypi.org/project/jobsearchradar/) | 2026-11-05核实2.3.2；官方普通索引全新安装、14项兼容检查与MCP九工具通过 | 按安装说明升级当前正式版 |
-| [GitHub代码Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases) | 2026-11-05核实v2.3.2；wheel和源码包SHA-256与PyPI一致 | 下载源码包或wheel |
+| [PyPI](https://pypi.org/project/jobsearchradar/) | 2026-11-05核实2.3.3；官方普通索引全新安装、14项兼容检查与MCP九工具通过 | 按安装说明升级当前正式版 |
+| [GitHub代码Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases) | 2026-11-05核实v2.3.3；wheel和源码包SHA-256与PyPI一致 | 下载源码包或wheel |
 | [GitHub数据Release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) | 2026-11-05核实三库、无损正文流及兼容附件；正式客户端约139MB下载、约543MB活动占用 | 执行 `jobradar update` |
 | Gitee `qgauss/job_radar` | 同步暂缓；最近公开入口核查仍为404，不作为当前可用渠道 | 暂不作为可用镜像推荐 |
 | npm | `jobsearchradar`、`jobradar`、`job_radar`三个名称在2026-11-03核查的官方注册表均返回404 | 当前项目通过Python安装，不提供npm安装命令 |

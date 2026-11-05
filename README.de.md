@@ -64,7 +64,7 @@ jobradar doctor
 | Adapter | 27 |
 | Konfigurationsabdeckung der festen Zielliste | 944 / 1,655 · 57.04% |
 
-Der geprüfte Stand vom 5. November 2026 (UTC) enthält 346.267 Datensätze, davon 320.348 offene Einträge. Für 97,6 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
+Der geprüfte Stand vom 5. November 2026 (UTC) enthält 346.273 Datensätze, davon 320.353 offene Einträge. Für 97,6 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 
