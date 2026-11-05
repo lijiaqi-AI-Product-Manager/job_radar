@@ -161,7 +161,7 @@ def main():
     if args.online:
         with httpx.Client(timeout=30, follow_redirects=True) as client:
             verify_online(ROOT, snapshot, client)
-    print("发行版本、README与数据口径一致")
+    print("Release version, README and snapshot are consistent")
 
 
 if __name__ == "__main__":

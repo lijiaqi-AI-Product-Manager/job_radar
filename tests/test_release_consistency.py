@@ -2,12 +2,25 @@ import base64
 import importlib.util
 import io
 import json
+import os
+import subprocess
+import sys
 import tarfile
 import zipfile
 from pathlib import Path
 
 import httpx
 import pytest
+
+
+def test_preflight_supports_non_utf8_windows_console():
+    script = Path(__file__).parents[1] / "scripts/check_release_consistency.py"
+    result = subprocess.run(
+        [sys.executable, str(script)],
+        env=dict(os.environ, PYTHONIOENCODING="cp1252"),
+        capture_output=True,
+    )
+    assert result.returncode == 0, result.stderr.decode("ascii", "replace")
 
 
 def module():
