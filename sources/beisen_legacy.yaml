@@ -824,16 +824,16 @@ sources:
     # 2026-10-29 新增：首屏至少 3 岗
   - id: beisen-legacy-shjahwa
     company: 上海家化
-    adapter: beisen_legacy
+    adapter: beisen
     enabled: true
     recruit_types: [campus]
     rate_limit_rps: 1.0
-    params: {tenant: shjahwa, portal: campus}
+    params: {tenant: shjahwa, job_id_field: JobAdId}
     compliance:
       checked_on: 2026-10-29
       robots: not_applicable   # 抽查宏发、良信等 6 个站点 robots.txt 为空文件
       terms: "公开招聘门户列表页，无需登录、无验证码"
-      notes: "列表页 + 每岗 1 次详情页（JD 原文），1 req/s"
+      notes: "2026-11-05公开接口复核：新版JSON保留校园范围，Category明确标为校园招聘；用JobAdId延续原编号，详情链接使用发布Id，限速1 req/s。"
     # 2026-10-29 新增：首屏至少 3 岗
   - id: beisen-legacy-fen-z
     company: 分子互动

@@ -9,6 +9,7 @@ source.params:
         所以配 host 时 tenant 只用于 source_job_id 前缀与 URL 拼装，请求一律走 host。
   页尺寸/详情页走 portal（social 默认），详见 normalize。
   page_size: 每页条数，默认 100（录 fixtures 时用小值）
+  job_id_field: 默认Id；已核实的旧门户迁移可用JobAdId保持原岗位编号，链接仍用发布编号。
 
 **`DisplayFields` 是拿城市和发布日期的唯一开关**（2026-10-26 实测）。
 不带这个字段时服务端只回 `LocNames: []`、`PostDate: "0001-01-01T00:00:00"` ——
@@ -81,6 +82,19 @@ PORTAL = {"social": "social", "campus": "campus", "intern": "intern"}
 @register
 class BeisenAdapter(Adapter):
     id = "beisen"
+
+    def _source_job_id(self, raw):
+        field = self.source.params.get('job_id_field', 'Id')
+        if field == 'Id':
+            return raw['Id']
+        if field != 'JobAdId':
+            raise RuntimeError('unsupported beisen job identity field')
+        value = raw.get('JobAdId')
+        if type(value) is int and value > 0:
+            return str(value)
+        if isinstance(value, str) and re.fullmatch(r'[1-9][0-9]*', value):
+            return value
+        raise RuntimeError('verified legacy job identity is missing or invalid')
 
     @property
     def tenant(self) -> str:
@@ -251,7 +265,7 @@ class BeisenAdapter(Adapter):
             year = requirement_grad_year(raw.get("Require"))
         return Job(
             source_id=self.source.id,
-            source_job_id=raw["Id"],
+            source_job_id=self._source_job_id(raw),
             company=self.source.company,
             url=DETAIL_URL.format(host=self.host, portal=PORTAL[recruit_type], id=raw["Id"]),
             title=title,

@@ -1,5 +1,14 @@
 # 侦察：北森控股（北森新版 · beisen.zhiye.com）
 
+## 2026-11-05上海家化入口与编号复核
+
+`shjahwa.zhiye.com/campus/`已改为新版页面，旧HTML解析没有职位行；当前公开`/api/Jobad/GetJobAdPageList`返回完整JSON，本次40条中3条的`Category`明确为“校园招聘”。只恢复该源原有校园范围，不将其他类型混入校招。
+
+同一职位同时具有数字`JobAdId`和GUID发布`Id`。三个旧记录编号为230894140、230894145、230894158，与接口的`JobAdId`逐一相同；数字编号继续作为岗位身份，发布GUID仅用于当前详情链接。迁移源显式配置`job_id_field: JobAdId`，字段缺失或无效时整源停止，不回退到新编号，避免重复岗位和错误下架；其他源继续使用原`Id`规则。
+
+最小公开字段样本见`tests/fixtures/beisen/shjahwa-current-api.json`，正文仅保留脱敏测试节选，生产仍读取完整列表与原文。接口访问继续经过robots、固定UA与限速守卫，原记录与首次发现时间保留。
+
+
 - 侦察日期：2026-10-25
 - 侦察人：自研批量探针（work/probe_beisen.py，串行 ≤1 req/s）
 - **结论：可做**（实测 194 条在招，列表接口明文 JSON，JD 在列表内）
