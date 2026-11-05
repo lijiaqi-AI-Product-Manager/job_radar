@@ -92,10 +92,16 @@ def versions() -> list[str]:
     body = re.search(r"代码 v?([0-9]+\.[0-9]+\.[0-9]+)", readme)
     if body and body.group(1) != ver:
         problems.append(f"README 正文 {body.group(1)} != pyproject {ver}")
+    install_target = ROOT / "docs/install-target.json"
+    if install_target.exists() and json.loads(install_target.read_text(encoding="utf-8")).get("version") != ver:
+        problems.append("docs/install-target.json: 当前安装版本与代码版本不一致")
     # 发布名必须和 README 里的安装命令一致（2026-10-24 踩过：PyPI 建的是 jobsearchradar，文档写的是 jobradar）
     dist = re.search(r'^name = "([^"]+)"', py, re.M).group(1)
     for f in sorted(ROOT.glob("README*.md")):
         text = f.read_text(encoding="utf-8")
+        for release in re.findall(r"badge/(?:release|version)-v?([0-9]+\.[0-9]+\.[0-9]+)-", text):
+            if release != ver:
+                problems.append(f"{f.name}: 发行徽章 {release} != jobradar.__version__ {ver}")
         m = re.search(r'pip install "([a-z0-9_.-]+)\[mcp\]"', text)
         if m and m.group(1).lower().replace("_", "-") != dist.lower().replace("_", "-"):
             problems.append(f"{f.name}: 安装名 {m.group(1)} != pyproject name {dist}")

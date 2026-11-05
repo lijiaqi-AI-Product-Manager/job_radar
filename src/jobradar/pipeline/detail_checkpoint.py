@@ -37,7 +37,11 @@ class DetailCheckpoint:
                 return
             settings = json.dumps({'id': source.id, 'company': source.company, 'adapter': source.adapter,
                 'params': source.params, 'recruit_types': source.recruit_types}, sort_keys=True, separators=(',', ':')).encode()
-            self.signature = hashlib.sha256(settings + Path(inspect.getfile(adapter)).read_bytes()).hexdigest()
+            raw_code = Path(inspect.getfile(adapter)).read_bytes()
+            canonical_code = raw_code.replace(b'\r\n', b'\n')
+            self.signature = hashlib.sha256(settings + canonical_code).hexdigest()
+            self._signatures = {self.signature, hashlib.sha256(settings + raw_code).hexdigest(),
+                                hashlib.sha256(settings + canonical_code.replace(b'\n', b'\r\n')).hexdigest()}
             self.directory = directory
         except (OSError, TypeError, ValueError):
             pass  # 辅助进度不可用时仍执行正常完整采集。
@@ -63,7 +67,7 @@ class DetailCheckpoint:
                         entry = json.loads(path.read_text(encoding='utf-8'))
                         if (not isinstance(entry, dict) or set(entry) != {'version', 'signature', 'job', 'observed_at'}
                                 or type(entry.get('version')) is not int or entry['version'] != 1
-                                or entry.get('signature') != self.signature
+                                or entry.get('signature') not in self._signatures
                                 or not isinstance(entry.get('job'), dict) or set(entry['job']) - set(Job.model_fields)):
                             path.unlink(missing_ok=True)
                             continue
@@ -106,7 +110,7 @@ class DetailCheckpoint:
                 if path.exists() and path.stat().st_size <= MAX_RECORD_BYTES:
                     try:
                         old = json.loads(path.read_text(encoding='utf-8'))
-                        if isinstance(old, dict) and old.get('signature') == self.signature and parse_ts(old['observed_at']) > parse_ts(self.ts):
+                        if isinstance(old, dict) and old.get('signature') in self._signatures and parse_ts(old['observed_at']) > parse_ts(self.ts):
                             return
                     except (OSError, ValueError, KeyError, TypeError):
                         pass
