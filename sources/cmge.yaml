@@ -1,7 +1,7 @@
 id: cmge
 company: 中手游
 adapter: feishu_atsx
-recruit_types: [campus, intern]
+recruit_types: [campus, intern, social]
 rate_limit_rps: 1
 params:
   base_url: "https://vop2mwhhcp.jobs.feishu.cn"
