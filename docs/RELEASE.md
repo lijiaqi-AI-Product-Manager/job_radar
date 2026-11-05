@@ -95,3 +95,15 @@ uv run python scripts/export_public_databases.py --home data --out data/public
 ## 正文观测与增量读取
 
 岗位列表与正文分别记录观测时间。大易来源复用正文时不刷新原正文时间，新岗位或标题、招聘类型、发布日期、学历变化时读取详情；最多168小时后要求重读。列表始终完整读取，异常分页或列表失败不能使用缓存冒充成功。详情及统计口径见 [岗位与正文的观测时间](FRESHNESS.md)。
+
+## 详情进度交接
+
+本地按同一套公开访问守卫完整或部分读取的详情，可以交给云端的定向复验继续使用：
+
+```bash
+python scripts/detail_progress.py export --cache-root data/detail-cache --only SOURCE_ID --out detail-progress.json.gz
+```
+
+导出只包含标准化岗位正文、原读取时间与来源/适配器签名，不包含请求参数、会话值或原始响应。文件不提交Git。将文件上传本仓库的临时Release附件后，在`daily-crawl`手动运行中填写附件ID、打印的SHA-256及相同的`only_sources`，保持`recovery_only=false`和`stale_only_hours=0`。
+
+云端先核对本仓库附件、摘要、解压容量、来源、雇主、适配器版本与原详情时效，再合并进度；较新的已有正文保留。采集仍重新读取完整列表并执行访问、归属、分页和入库检查，进度导入本身不会改变岗位、事件或来源健康状态。失败或未完成的来源继续保留旧岗位；只有实际完整读取成功才计为恢复。

@@ -22,6 +22,14 @@ on:
         type: string
         default: ""
         description: 定向复验的源ID，逗号分隔；留空按原计划采集全部源
+      detail_progress_asset_id:
+        type: string
+        default: ""
+        description: 本仓库的规范化详情进度附件ID，仅用于明确指定来源的复验
+      detail_progress_sha256:
+        type: string
+        default: ""
+        description: 详情进度附件SHA-256，与附件ID成对填写
       recovery_only:
         type: boolean
         default: false
@@ -91,6 +99,23 @@ jobs:
           path: data/detail-cache
           key: details-v1-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: details-v1-
+
+      - name: Import verified detail progress
+        if: github.event_name == 'workflow_dispatch' && (inputs.detail_progress_asset_id != '' || inputs.detail_progress_sha256 != '')
+        env:
+          PROGRESS_ASSET_ID: ${{ inputs.detail_progress_asset_id }}
+          PROGRESS_SHA256: ${{ inputs.detail_progress_sha256 }}
+          ONLY_SOURCES: ${{ inputs.only_sources }}
+          RECOVERY_ONLY: ${{ inputs.recovery_only }}
+          STALE_HOURS: ${{ inputs.stale_only_hours || 0 }}
+        run: |
+          [[ "$PROGRESS_ASSET_ID" =~ ^[0-9]+$ ]]
+          [[ "$PROGRESS_SHA256" =~ ^[a-f0-9]{64}$ ]]
+          test -n "$ONLY_SOURCES" && test "$RECOVERY_ONLY" != "true" && test "$STALE_HOURS" = "0"
+          size=$(gh api "repos/$GITHUB_REPOSITORY/releases/assets/$PROGRESS_ASSET_ID" --jq '.size')
+          test "$size" -gt 0 && test "$size" -le 52428800
+          gh api "repos/$GITHUB_REPOSITORY/releases/assets/$PROGRESS_ASSET_ID" -H 'Accept: application/octet-stream' > detail-progress.json.gz
+          uv run python scripts/detail_progress.py import --cache-root data/detail-cache --payload detail-progress.json.gz --sha256 "$PROGRESS_SHA256" --only "$ONLY_SOURCES"
 
       - name: Crawl
         if: inputs.recovery_only != true
