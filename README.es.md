@@ -64,7 +64,7 @@ jobradar doctor
 | Adaptadores | 27 |
 | Cobertura del conjunto fijo de empresas objetivo | 944 / 1,655 · 57.04% |
 
-La instantánea verificada del 5 de noviembre de 2026 (UTC) contiene 346.267 registros, de los cuales 320.348 figuran abiertos. El 97,6 % de los registros abiertos tiene descripción original. Una fuente configurada no implica contratación activa hoy. Un anuncio de un agregador puede incluir varios puestos.
+La instantánea verificada del 5 de noviembre de 2026 (UTC) contiene 346.273 registros, de los cuales 320.353 figuran abiertos. El 97,6 % de los registros abiertos tiene descripción original. Una fuente configurada no implica contratación activa hoy. Un anuncio de un agregador puede incluir varios puestos.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 
