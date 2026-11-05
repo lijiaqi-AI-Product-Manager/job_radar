@@ -143,7 +143,7 @@ def _history(client, assets):
 
 
 def _ledger(assets):
-    return {a["id"]: {key: a.get(key) for key in ("name", "size", "digest", "created_at", "updated_at")} for a in assets}
+    return {a["id"]: {key: a.get(key) for key in ("name", "label", "size", "digest", "created_at", "updated_at")} for a in assets}
 
 
 def maintain(client, *, now=None, apply=False, record=False, previous=None, approved_ids=None):
@@ -164,7 +164,8 @@ def maintain(client, *, now=None, apply=False, record=False, previous=None, appr
             raise ValueError("publication changed during manifest recording")
     records = _history(client, release["assets"])
     records.sort(key=lambda r: (_stamp(r[0]["created_at"]), r[0]["id"]), reverse=True)
-    generations = list(dict.fromkeys(m["generation"] for _, m in records))
+    # 补录的旧清单提供引用保护，但其上传时间不是最近发布顺序。
+    generations = list(dict.fromkeys(m["generation"] for a, m in records if a.get("label") != "jobradar:historical"))
     result = {"generation": current["generation"], "asset_count": len(release["assets"]),
               "retained_generations": generations[:3], "candidates": [], "deleted": [], "deferred": None,
               "approved_ids": sorted(set(approved_ids or []))}
