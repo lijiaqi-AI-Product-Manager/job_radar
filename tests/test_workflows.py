@@ -142,3 +142,14 @@ def test_mirror_verification_uses_size_checker():
     steps = doc["jobs"]["mirror"]["steps"]
     check = next(s for s in steps if "download check" in (s.get("name") or ""))
     assert "verify_gitee.py" in check["run"]
+
+
+def test_manual_progress_transfer_is_bounded_and_precedes_complete_crawl():
+    names = [step.get("name") for step in _steps()]
+    step = _step("Import verified detail progress")
+    assert names.index("Restore detail progress") < names.index(step["name"]) < names.index("Crawl")
+    assert "workflow_dispatch" in step["if"]
+    assert not step.get("continue-on-error")
+    assert "--sha256" in step["run"] and "--only" in step["run"]
+    assert "52428800" in step["run"]
+    assert 'repos/$GITHUB_REPOSITORY/releases/assets/' in step["run"]
