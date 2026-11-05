@@ -147,6 +147,40 @@ def test_enrich_still_fills_category_and_cities():
     _enrich(j)
     assert j.category == "技术"
     assert j.cities == ["深圳"]
+
+
+@pytest.mark.parametrize(('category', 'subcategory', 'title', 'expected'), [
+    ('财务', None, '财务专员', ('职能', '财务审计')),
+    ('互联网 / 电子 / 网游', None, '后端开发工程师', ('技术', '后端')),
+    ('产品经理', None, '产品经理', ('产品', '产品经理')),
+    ('技术', None, '算法工程师', ('技术', '算法')),
+    ('技术', '平台原值', '算法工程师', ('技术', '算法')),
+    ('安全', None, '【27届校招】安全研究员', ('技术', '安全')),
+    ('财务', None, '岗位A1', ('职能', '财务审计')),
+    ('互联网 / 电子 / 网游', None, '模型压缩工程师（AI Infra）', ('技术', '算法')),
+    ('研发', None, 'Java高级工程师 - 绿洲', ('技术', '后端')),
+    (None, '财务审计', '岗位A1', ('职能', '财务审计')),
+    (None, '财务', '岗位A1', ('职能', '财务审计')),
+    ('技术', 'Backend', '岗位A1', ('技术', '后端')),
+    ('职能', '平台原值', '岗位A1', ('职能', None)),
+    ('未审核职类', None, '岗位A1', (None, None)),
+])
+def test_enrich_canonicalizes_platform_categories_without_inventing_other_fields(category, subcategory, title, expected):
+    job = _job(category=category, subcategory=subcategory, title=title, cities=['杭州'],
+               degree_min='本科', description='面向2027届毕业生', grad_year=None)
+    before = job.model_dump()
+    before_hash = job.content_hash()
+    _enrich(job)
+    assert (job.category, job.subcategory) == expected
+    assert {k:v for k,v in job.model_dump().items() if k not in {'category', 'subcategory'}} == {
+        k:v for k,v in before.items() if k not in {'category', 'subcategory'}}
+    assert job.content_hash() == before_hash
+
+
+def test_enrich_preserves_a_valid_platform_category_pair():
+    job = _job(category='产品', subcategory='产品经理', title='产品运营工程师')
+    _enrich(job)
+    assert (job.category, job.subcategory) == ('产品', '产品经理')
 def test_budget_exceeded_skips_remaining_sources(jobs_db, text_db):
     """整轮采集有预算：超时后剩余源标记失败，不拖到 workflow 上限（2026-10-22 daily 跑了 75 分钟+）。"""
     sources = [example_source(), example_source(id="later")]

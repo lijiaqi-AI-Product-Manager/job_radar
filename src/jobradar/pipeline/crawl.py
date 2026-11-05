@@ -20,7 +20,7 @@ from jobradar.adapters.base import Adapter, CrawlBudgetExceeded, load_all, make_
 from jobradar.core import queries as q
 from jobradar.models import Job, SourceConfig
 from jobradar.normalize import (
-    categorize,
+    canonical_category,
     cities_from_title,
     degree_min_from_jd,
     normalize_cities,
@@ -82,8 +82,7 @@ def _enrich(j: Job) -> None:
     JD 里写着"2023届"，适配器已按发布时间把它判为不可信并留空，这里用
     grad_year_from_jd 又补回 2027 —— 于是"2027届在招"出现在一个 2023 年的岗位上。
     """
-    if j.category is None and j.subcategory is None:
-        j.category, j.subcategory = categorize(j.title)
+    j.category, j.subcategory = canonical_category(j.title, j.category, j.subcategory)
     j.cities = normalize_cities(j.cities)
     if not j.cities:
         j.cities = cities_from_title(j.title)

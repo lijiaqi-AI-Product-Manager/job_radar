@@ -62,3 +62,12 @@ def test_title_categorization_works_from_packaged_taxonomy(tmp_path, monkeypatch
         assert normalize.categorize("财务会计") == ("职能", "财务审计")
     finally:
         normalize._rules.cache_clear()
+
+
+@pytest.mark.parametrize(('title','expected'), [
+    ('Java高级测试工程师', ('技术','测试')),
+    ('Java培训讲师', ('教育培训','教师')),
+    ('模型压缩设备操作工', ('工程制造','生产')),
+])
+def test_specific_title_rules_keep_other_professions(title, expected):
+    assert normalize.categorize(title) == expected

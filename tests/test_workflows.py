@@ -112,7 +112,8 @@ def test_all_workflows_parse():
 def test_ci_covers_three_operating_systems_with_frozen_dependencies():
     doc = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
     job = doc["jobs"]["test"]
-    assert {"ubuntu-latest", "windows-latest", "macos-latest"} <= set(job["strategy"]["matrix"]["os"])
+    platforms = {label.split("-", 1)[0] for label in job["strategy"]["matrix"]["os"]}
+    assert {"ubuntu", "windows", "macos"} <= platforms
     assert any(step.get("run") == "uv sync --frozen --all-extras" for step in job["steps"])
     build = next(step for step in job["steps"] if step.get("name") == "Build sdist/wheel and check size")
     assert "stat -c" not in build["run"]

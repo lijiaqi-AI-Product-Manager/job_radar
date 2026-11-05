@@ -1,6 +1,7 @@
 """从岗位标题等文本中提取校招字段。规则保守：拿不准就返回 None（docs/DEVELOPMENT.md：不要猜）。"""
 
 import re
+import unicodedata
 from datetime import datetime, timedelta, timezone
 from functools import cache
 from html import unescape
@@ -81,6 +82,10 @@ def batch_from_text(text: str | None) -> str | None:
 
 TAXONOMY = Path(__file__).resolve().parents[2] / "taxonomy" / "categories.yaml"
 
+# 采集归一化与查询匹配共用的等价词，不将具体岗位扩大到整个职能大类。
+CATEGORY_ALIASES = {'财务':'财务审计', '会计':'财务审计', '审计':'财务审计',
+                    'backend':'后端', 'frontend':'前端', 'hr':'人力'}
+
 
 @cache
 def _rules() -> list[tuple[str, str, re.Pattern]]:
@@ -102,6 +107,25 @@ def categorize(title: str | None) -> tuple[str | None, str | None]:
             if pattern.search(title):
                 return category, subcategory
     return None, None
+
+
+def canonical_category(title: str, category: str | None, subcategory: str | None) -> tuple[str | None, str | None]:
+    """保留有效平台分类；其余按明确标题及固定词表归一，不保留行业原值充当职类。"""
+    category = (category or '').strip() or None
+    subcategory = (subcategory or '').strip() or None
+    subcategory = CATEGORY_ALIASES.get(unicodedata.normalize('NFKC', subcategory or '').casefold(), subcategory)
+    pairs = {(parent, child) for parent, child, _ in _rules()}
+    if (category, subcategory) in pairs:
+        return category, subcategory
+    parent, child = categorize(title)
+    if category in {pair[0] for pair in pairs}:
+        return category, child if parent == category else None
+    equivalent = CATEGORY_ALIASES.get(unicodedata.normalize('NFKC', category or '').casefold(), category)
+    for candidate in (subcategory, equivalent):
+        parents = {parent for parent, child in pairs if child == candidate}
+        if len(parents) == 1:
+            return parents.pop(), candidate
+    return parent, child
 
 
 _CITY_SPLIT = re.compile(r"[,，、;；/|]")

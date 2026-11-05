@@ -16,6 +16,7 @@ from itertools import combinations
 from typing import NamedTuple
 
 from jobradar.aliases import match_names
+from jobradar.normalize import CATEGORY_ALIASES as _CATEGORY_ALIASES
 from jobradar.normalize import category_labels
 from jobradar.store.migrate import ensure_search_index
 from jobradar.timeutil import now_ts, parse_ts, shanghai_date
@@ -37,9 +38,6 @@ _FRONTLINE_TITLE = re.compile(
 def _frontline_title(title):
     return int(bool(title and _FRONTLINE_TITLE.search(title) and not _PROFESSIONAL_TITLE.search(title)))
 
-# 只映射范围相同的具体职类；不把「财务」放宽成包含人事、行政的整个职能大类。
-_CATEGORY_ALIASES = {"财务": "财务审计", "会计": "财务审计", "审计": "财务审计",
-                     "backend": "后端", "frontend": "前端", "hr": "人力"}
 EVENT_TYPES = frozenset({"open", "close", "change", "reopen"})
 
 
