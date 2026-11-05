@@ -37,7 +37,7 @@
 | [发布检查](RELEASE.md) | 回归、真实数据门禁与数据库兼容 |
 | [PyPI 发布](PUBLISHING.md) | 版本、构建与 Trusted Publishing |
 | [路线图](ROADMAP.md) | 已提供能力与后续方向 |
-| [更新日志](../CHANGELOG.md) | 版本行为变化 |
+| [更新日志](../CHANGELOG.md) | 当前版本行为变化；[1.x归档](changelog-1.x.md)保留早期记录 |
 | [合规声明](../COMPLIANCE.md) | 公开访问边界与来源要求 |
 
 [历史记录](internal/)保留当时的工程背景，数值可能已经过时；当前统计以 [覆盖说明](COVERAGE.md) 和可执行报表为准。

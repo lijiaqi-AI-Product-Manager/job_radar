@@ -146,3 +146,16 @@ def test_latest_install_requires_upgrade_and_a_verified_compatibility_floor(tmp_
     target["pypi_version_checked"] = "2.2.2"
     config.write_text(json.dumps(target), encoding="utf-8")
     assert docs.installation_problems([guide])
+
+
+def test_historical_changelog_claims_do_not_disable_current_install_checks(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location("check_docs_links", Path(__file__).resolve().parents[1] / "scripts/check_docs_links.py")
+    docs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(docs)
+    monkeypatch.setattr(docs, "ROOT", tmp_path)
+    folder = tmp_path / "docs"
+    folder.mkdir()
+    (folder / "changelog-1.x.md").write_text("- PyPI尚未发布，这是当时的历史记录", encoding="utf-8")
+    (folder / "INSTALLATION.md").write_text("- PyPI尚未发布，这是当前安装说明", encoding="utf-8")
+    problems = docs.install_claims()
+    assert len(problems) == 1 and "INSTALLATION.md" in problems[0]

@@ -117,7 +117,7 @@ def install_claims() -> list[str]:
     problems = []
     for f in md_files():
         rel = f.relative_to(ROOT).as_posix()
-        if rel == "CHANGELOG.md" or rel.startswith("docs/internal/"):
+        if rel in {"CHANGELOG.md", "docs/changelog-1.x.md"} or rel.startswith("docs/internal/"):
             continue
         text = f.read_text(encoding="utf-8", errors="replace")
         for i, line in enumerate(text.splitlines(), 1):
