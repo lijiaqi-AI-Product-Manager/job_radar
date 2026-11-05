@@ -81,9 +81,13 @@ def gh(*args, capture=False):
 
 def _release(tag, gh):
     try:
-        value = gh("api", f"repos/{REPO}/releases/tags/{tag}", capture=True)
+        lookup = gh("release", "view", tag, "--repo", REPO, "--json", "apiUrl", capture=True)
+        url = lookup.get("apiUrl", "")
+        if not re.fullmatch(r"https://api\.github\.com/repos/" + re.escape(REPO) + r"/releases/[1-9][0-9]*", url, re.I):
+            raise ValueError("发行查询未返回本仓库的Release编号")
+        value = gh("api", url, capture=True)
     except subprocess.CalledProcessError as error:
-        if "404" in (error.stderr or ""):
+        if "404" in (error.stderr or "") or "release not found" in (error.stderr or "").lower():
             return None
         raise
     if value.get("tag_name") != tag:
@@ -139,27 +143,52 @@ def publish_github(files, tag, notes, *, gh=gh, sleep=sleep):
             raise ValueError("发行仍为草稿，尚未公开")
 
 
+def validate_build_run(run_id, tag, *, gh=gh):
+    if type(run_id) is not int or run_id <= 0 or not re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+", tag):
+        raise ValueError("原构建编号或标签无效")
+    commit = gh("api", f"repos/{REPO}/commits/{tag}", capture=True)
+    run = gh("api", f"repos/{REPO}/actions/runs/{run_id}", capture=True)
+    if (run.get("head_sha") != commit.get("sha") or not re.fullmatch(r"[a-f0-9]{40,64}", commit.get("sha", ""))
+            or run.get("path") != ".github/workflows/publish.yml" or run.get("status") != "completed"):
+        raise ValueError("原构建与固定版本标签不一致或尚未结束")
+    jobs = gh("api", f"repos/{REPO}/actions/runs/{run_id}/jobs?filter=latest&per_page=100", capture=True)
+    completed = {job["name"] for job in jobs.get("jobs", []) if job.get("conclusion") == "success"}
+    if not {"build", "publish-pypi"} <= completed:
+        raise ValueError("原安装包构建或PyPI发布未成功")
+    return {"source_run_id": run_id, "head_sha": commit["sha"]}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dist", type=Path)
     parser.add_argument("--skill", type=Path)
     parser.add_argument("--tag", required=True)
     parser.add_argument("--check-tag", action="store_true", help="仅检查正式标签，不联网或发布")
+    parser.add_argument("--check-build-run", type=int, help="仅核对原标签构建，不发布")
+    parser.add_argument("--source-run-id", type=int, help="从已核验的原构建继续发行")
     args = parser.parse_args()
-    if args.tag != "v" + __version__:
+    if not re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+", args.tag):
+        raise SystemExit("仅接受固定正式版本标签")
+    if args.check_build_run is not None:
+        print(json.dumps(validate_build_run(args.check_build_run, args.tag)))
+        return
+    if args.source_run_id is None and args.tag != "v" + __version__:
         raise SystemExit("发行标签与代码版本不一致")
+    if args.source_run_id is not None:
+        validate_build_run(args.source_run_id, args.tag)
+    version = args.tag[1:]
     if args.check_tag:
         print("发行标签与代码版本一致")
         return
     if not args.dist or not args.skill:
         parser.error("发布需要--dist及--skill")
-    files = distribution_files(args.dist, args.skill, __version__)
-    notes = release_notes((ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), __version__)
+    files = distribution_files(args.dist, args.skill, version)
+    notes = release_notes((ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), version)
     checksums = "\n".join(f"| {path.name} | {path.stat().st_size:,} | `{digest(path)}` |" for path in files)
     notes += ("\n\nPython安装包与独立技能包来自同一构建；招聘数据继续通过`jobradar update`获取。"
               "\n\n| 文件 | 字节 | SHA-256 |\n| :--- | ---: | :--- |\n" + checksums + "\n")
     with httpx.Client(timeout=15, headers={"User-Agent": f"jobradar/{__version__}"}) as client:
-        wait_for_pypi(files[:2], __version__, client=client)
+        wait_for_pypi(files[:2], version, client=client)
     publish_github(files, args.tag, notes)
     print(json.dumps({"tag": args.tag, "verified_files": [path.name for path in files]}))
 

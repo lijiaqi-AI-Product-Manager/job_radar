@@ -37,6 +37,10 @@ class Releases:
 
     def __call__(self, *args, capture=False):
         self.calls.append(args)
+        if args[:2] == ("release", "view"):
+            if self.existing is None:
+                raise subprocess.CalledProcessError(1, args, stderr="release not found")
+            return {"apiUrl": "https://api.github.com/repos/lijiaqi-AI-Product-Manager/job_radar/releases/7"}
         if args[0] == "api":
             if self.existing is None:
                 raise subprocess.CalledProcessError(1, args, stderr="HTTP 404")
@@ -66,7 +70,7 @@ def test_release_is_published_only_after_all_files_are_verified(tmp_path):
     assert len([c for c in gh.calls if c[:2] == ("release", "upload")]) == 3
     before = len(gh.calls)
     mod.publish_github(files, "v1.2.3", "新说明不覆盖已发布说明", gh=gh)
-    assert all(call[0] == "api" for call in gh.calls[before:])
+    assert all(call[0] == "api" or call[:2] == ("release", "view") for call in gh.calls[before:])
 
 
 def test_existing_version_asset_is_never_overwritten(tmp_path):
@@ -75,7 +79,7 @@ def test_existing_version_asset_is_never_overwritten(tmp_path):
                    "assets": [{"name": files[0].name, "size": 1, "digest": "sha256:wrong"}]})
     with pytest.raises(ValueError):
         mod.publish_github(files, "v1.2.3", "内容", gh=gh)
-    assert all(call[0] == "api" for call in gh.calls)
+    assert all(call[0] == "api" or call[:2] == ("release", "view") for call in gh.calls)
 
 
 def test_pypi_digest_mismatch_stops_before_creating_release(tmp_path):
@@ -139,3 +143,36 @@ def test_production_tag_preflight_does_not_contact_publication_endpoints(monkeyp
     monkeypatch.setattr(sys, "argv", ["release", "--check-tag", "--tag", "main"])
     with pytest.raises(SystemExit):
         mod.main()
+
+
+def test_unpublished_draft_is_resolved_separately_from_published_tag():
+    mod = module()
+    url = f"https://api.github.com/repos/{mod.REPO}/releases/7"
+    draft = {"id": 7, "tag_name": "v1.2.3", "draft": True, "assets": []}
+    def read(*args, capture=False):
+        if args[:2] == ("release", "view"):
+            return {"apiUrl": url}
+        if args == ("api", url):
+            return draft
+        raise subprocess.CalledProcessError(1, args, stderr="HTTP 404")
+    assert mod._release("v1.2.3", read) == draft
+
+
+def test_recovery_artifacts_require_original_tag_commit_and_successful_build():
+    mod = module()
+    run = {"head_sha": "b" * 40, "path": ".github/workflows/publish.yml", "status": "completed"}
+    jobs = [{"name": "build", "conclusion": "success"}, {"name": "publish-pypi", "conclusion": "success"}]
+    def read(*args, capture=False):
+        path = args[1]
+        if "/commits/" in path:
+            return {"sha": "a" * 40}
+        if path.endswith("/jobs?filter=latest&per_page=100"):
+            return {"jobs": jobs}
+        return run
+    with pytest.raises(ValueError):
+        mod.validate_build_run(100, "v1.2.3", gh=read)
+    run["head_sha"] = "a" * 40
+    assert mod.validate_build_run(100, "v1.2.3", gh=read)["head_sha"] == "a" * 40
+    jobs[-1]["conclusion"] = "failure"
+    with pytest.raises(ValueError):
+        mod.validate_build_run(100, "v1.2.3", gh=read)
