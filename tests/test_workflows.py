@@ -153,3 +153,14 @@ def test_manual_progress_transfer_is_bounded_and_precedes_complete_crawl():
     assert "--sha256" in step["run"] and "--only" in step["run"]
     assert "52428800" in step["run"]
     assert 'repos/$GITHUB_REPOSITORY/releases/assets/' in step["run"]
+
+
+def test_derived_classification_maintenance_keeps_audit_before_publication():
+    names = [step.get("name") for step in _steps()]
+    repair = _step("Normalize snapshot categories")
+    assert names.index("Apply reviewed data corrections") < names.index(repair["name"]) < names.index("Build recruiting calendar")
+    assert "repair_categories.py" in repair["run"] and "--audit" in repair["run"]
+    assert not repair.get("continue-on-error")
+    audit = _step("Preserve category audit")
+    assert "always()" in audit["if"]
+    assert audit["with"]["retention-days"] == 90

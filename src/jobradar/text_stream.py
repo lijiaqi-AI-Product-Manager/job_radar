@@ -11,7 +11,7 @@ from contextlib import closing
 from itertools import zip_longest
 from pathlib import Path
 
-from jobradar.compact_text import MAX_BODY_BYTES, _decode, is_compact_text
+from jobradar.compact_text import MAX_BODY_BYTES, _decode, is_compact_text, vacuum_compact_text
 from jobradar.store.migrate import connect
 from jobradar.store.validate import validate_database
 from jobradar.timeutil import parse_ts
@@ -122,7 +122,7 @@ def import_text_stream(source, target):
                     conn.execute('INSERT INTO jd_ref VALUES (?,?,?)', tuple(row[1:]))
                 if next(records, None) != ['end', bodies, refs] or next(records, None) is not None:
                     raise ValueError('正文传输记录数或结束标记无效')
-            conn.execute('VACUUM')
+            vacuum_compact_text(conn)
             validate_database(conn, 'text')
         os.replace(temporary, target)
     except (lzma.LZMAError, sqlite3.DatabaseError, UnicodeError) as error:

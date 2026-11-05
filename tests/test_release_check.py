@@ -178,3 +178,19 @@ def test_run_does_not_count_disabled_sources(tmp_path):
     targets.write_text("sectors: {x: [停用公司]}\n", encoding="utf-8")
     row = next(r for r in rc.run(None, sources, targets, None) if r["gate"] == "数据源覆盖")
     assert row["value"] == "0/1"
+
+
+def test_release_sanity_rejects_platform_industry_as_job_category(tmp_path):
+    from contextlib import closing
+
+    from helpers import T, make_job
+    from jobradar.pipeline.ingest import ingest_run
+    from jobradar.store.migrate import connect
+
+    with closing(connect(tmp_path / "jobs.db", "jobs")) as jobs:
+        ingest_run(jobs, "s1", [make_job(category="互联网 / 电子 / 网游")], ts=T(1))
+    count, detail = rc.data_sanity(tmp_path, None)
+    assert count == 1 and "职类" in detail
+    with sqlite3.connect(tmp_path / "jobs.db") as jobs:
+        jobs.execute("UPDATE job SET category='技术',subcategory='后端'")
+    assert rc.data_sanity(tmp_path, None) == (0, "无异常")
