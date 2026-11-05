@@ -22,6 +22,11 @@ jobs:
       - uses: actions/checkout@v7.0.1
       - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen --all-extras
+      - name: Validate production tag
+        if: github.event_name == 'push' || inputs.target == 'pypi'
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: uv run python scripts/publish_code_release.py --check-tag --tag "$RELEASE_TAG"
       - run: uv run ruff check .
       - run: uv run python scripts/check_docs_links.py
       - run: uv run python scripts/check_compliance.py
@@ -72,7 +77,7 @@ jobs:
           repository-url: https://test.pypi.org/legacy/
 
   publish-pypi:
-    if: vars.PYPI_ENABLED == 'true' && (startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.target == 'pypi'))
+    if: vars.PYPI_ENABLED == 'true' && startsWith(github.ref, 'refs/tags/v') && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.target == 'pypi'))
     needs: build
     runs-on: ubuntu-latest
     environment: pypi
@@ -84,3 +89,29 @@ jobs:
           name: dist
           path: dist/
       - uses: pypa/gh-action-pypi-publish@release/v1
+
+
+  publish-github:
+    if: startsWith(github.ref, 'refs/tags/v') && needs['publish-pypi'].result == 'success'
+    needs: [build, publish-pypi]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: dist
+          path: dist/
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: jobradar-skill
+          path: .tmp/skill/
+      - name: Verify PyPI and publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: uv run python scripts/publish_code_release.py --dist dist --skill .tmp/skill/jobradar-skill.zip --tag "$RELEASE_TAG"

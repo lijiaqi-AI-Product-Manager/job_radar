@@ -164,3 +164,16 @@ def test_derived_classification_maintenance_keeps_audit_before_publication():
     audit = _step("Preserve category audit")
     assert "always()" in audit["if"]
     assert audit["with"]["retention-days"] == 90
+
+
+def test_code_release_uses_same_build_after_pypi_and_validates_production_tag():
+    workflow = yaml.safe_load((ROOT / ".github/workflows/publish.yml").read_text(encoding="utf-8"))
+    job = workflow["jobs"]["publish-github"]
+    assert set(job["needs"]) == {"build", "publish-pypi"}
+    assert job["permissions"] == {"contents": "write"}
+    assert "startsWith(github.ref, 'refs/tags/v')" in job["if"]
+    artifacts = [step["with"]["name"] for step in job["steps"] if "download-artifact@" in step.get("uses", "")]
+    assert set(artifacts) == {"dist", "jobradar-skill"}
+    assert any("publish_code_release.py" in step.get("run", "") for step in job["steps"])
+    build = workflow["jobs"]["build"]["steps"]
+    assert any("--check-tag" in step.get("run", "") for step in build)

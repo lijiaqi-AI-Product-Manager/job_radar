@@ -87,3 +87,9 @@ GitHub → Actions → **publish-pypi** → Run workflow → `target` 选 `testp
 - **想撤回**：PyPI 允许 yank（不删），`pip install` 默认会跳过 yanked 版本
 
 独立技能包的导出命令：`python scripts/package_skill.py --output .tmp/skill/jobradar-skill.zip`。常规CI也执行该导出，检查包内相对引用能否独立读取。
+
+## 两个正式渠道保持一致
+
+正式发行使用与源码版本一致的固定`vX.Y.Z`标签。标签推送先通过源码检查、构建和安装兼容检查，再用Trusted Publishing上传PyPI；GitHub代码Release复用同一次构建的wheel、源码包和独立技能包。发布前核对PyPI官方元数据中的文件大小与SHA-256，GitHub附件逐个核验后才公开草稿。已有版本附件不覆盖，重复执行复用相同文件；临时上传响应丢失时先复查再有限重试。
+
+手动预演可选`none`或`testpypi`。手动选择`pypi`时同样必须选择固定版本标签，分支名或版本不匹配会在构建阶段明确失败。需要重试时选择失败作业，已成功发布的PyPI版本不重新上传。该流程完成后仍须从正式PyPI索引安装，验证CLI/MCP与真实快照；元数据摘要一致不能替代安装体验验收。

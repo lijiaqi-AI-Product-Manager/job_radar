@@ -96,3 +96,29 @@ def test_homepage_media_rejects_relative_urls_that_break_on_package_index(tmp_pa
         encoding="utf-8",
     )
     assert docs.homepage_problems() == []
+
+
+def test_release_badges_and_install_target_follow_current_code_version(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location("check_docs_links", Path(__file__).resolve().parents[1] / "scripts/check_docs_links.py")
+    docs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(docs)
+    monkeypatch.setattr(docs, "ROOT", tmp_path)
+    init = tmp_path / "src/jobradar/__init__.py"
+    init.parent.mkdir(parents=True)
+    init.write_text('__version__ = "2.3.2"', encoding="utf-8")
+    (tmp_path / "pyproject.toml").write_text('name = "jobsearchradar"\ndynamic = ["version"]\n[tool.hatch.version]\npath = "src/jobradar/__init__.py"\n', encoding="utf-8")
+    target = tmp_path / "docs/install-target.json"
+    target.parent.mkdir()
+    target.write_text(json.dumps({"version": "2.3.2"}), encoding="utf-8")
+    readme = tmp_path / "README.md"
+    readme.write_text("https://img.shields.io/badge/release-v2.3.1-58bfa5", encoding="utf-8")
+    assert docs.versions()
+    readme.write_text("https://img.shields.io/badge/release-v2.3.2-58bfa5", encoding="utf-8")
+    target.write_text(json.dumps({"version": "2.3.1"}), encoding="utf-8")
+    assert docs.versions()
+    target.write_text(json.dumps({"version": "2.3.2"}), encoding="utf-8")
+    english = tmp_path / "README.en.md"
+    english.write_text("https://img.shields.io/badge/release-v2.3.1-58bfa5", encoding="utf-8")
+    assert docs.versions()
+    english.write_text(readme.read_text(encoding="utf-8"), encoding="utf-8")
+    assert docs.versions() == []

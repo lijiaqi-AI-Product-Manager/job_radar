@@ -127,3 +127,42 @@ def test_older_checkpoint_cannot_replace_newer_database_text(jobs_db, text_db, t
         adapters={'hotjob': Resumable}, sleep=lambda _: None)
     assert result['s1'].status == 'ok'
     assert tuple(text_db.execute("SELECT description,fetched_at FROM job_text WHERE job_id='s1:1'").fetchone()) == ('新正文', T(5))
+
+
+def test_checkpoint_survives_platform_line_ending_difference(tmp_path, monkeypatch):
+    import jobradar.pipeline.detail_checkpoint as checkpoint
+
+    code = tmp_path / "adapter.py"
+    code.write_bytes(b"class Adapter:\r\n    pass\r\n")
+    monkeypatch.setattr(checkpoint.inspect, "getfile", lambda _: str(code))
+    root = tmp_path / "details"
+    checkpoint.DetailCheckpoint(root, config(), Resumable, T(1)).record(make_job(1, description="原文"))
+    code.write_bytes(b"class Adapter:\n    pass\n")
+    assert "1" in checkpoint.DetailCheckpoint(root, config(), Resumable, T(2)).load()
+    code.write_bytes(b"class Adapter:\n    changed = True\n")
+    assert not checkpoint.DetailCheckpoint(root, config(), Resumable, T(2)).load()
+
+
+def test_legacy_crlf_signature_keeps_newer_original_observation(tmp_path, monkeypatch):
+    import hashlib
+
+    import jobradar.pipeline.detail_checkpoint as checkpoint
+
+    code = tmp_path / "adapter.py"
+    code.write_bytes(b"class Adapter:\r\n    pass\r\n")
+    monkeypatch.setattr(checkpoint.inspect, "getfile", lambda _: str(code))
+    source = config()
+    root = tmp_path / "details"
+    checkpoint.DetailCheckpoint(root, source, Resumable, T(3)).record(make_job(1, description="较新原文"))
+    path = next(root.rglob("*.json"))
+    entry = json.loads(path.read_text(encoding="utf-8"))
+    settings = json.dumps({"id": source.id, "company": source.company, "adapter": source.adapter,
+        "params": source.params, "recruit_types": source.recruit_types}, sort_keys=True, separators=(",", ":")).encode()
+    entry["signature"] = hashlib.sha256(settings + code.read_bytes()).hexdigest()
+    path.write_text(json.dumps(entry, ensure_ascii=False), encoding="utf-8")
+    code.write_bytes(code.read_bytes().replace(b"\r\n", b"\n"))
+    store = checkpoint.DetailCheckpoint(root, source, Resumable, T(1))
+    store.loaded = True
+    store.record(make_job(1, description="较旧原文"))
+    result = checkpoint.DetailCheckpoint(root, source, Resumable, T(4)).load()["1"]
+    assert result["description"] == "较新原文" and result["fetched_at"] == T(3)
