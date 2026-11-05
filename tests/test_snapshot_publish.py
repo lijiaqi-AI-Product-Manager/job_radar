@@ -153,7 +153,8 @@ def test_retention_only_runs_after_all_compatibility_aliases_are_verified(tmp_pa
     monkeypatch.setattr(publisher.subprocess, "run", lambda args, **kw: calls.append((args, kw)))
     aliases = publisher.finish_publication(tmp_path, {"id": 123}, tmp_path)
     assert aliases == list(publisher.ALIASES) and calls[0] == "aliases"
-    assert "prune_snapshot_assets.py" in calls[1][0][1] and "--apply" in calls[1][0]
+    assert "prune_snapshot_assets.py" in calls[1][0][1] and "--record" in calls[1][0]
+    assert "--apply" not in calls[1][0]
     assert calls[1][1]["check"] is True
 
 
