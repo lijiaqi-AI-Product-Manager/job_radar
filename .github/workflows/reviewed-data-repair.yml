@@ -30,6 +30,7 @@ jobs:
         shell: bash
         run: |
           uv run python scripts/repair_reviewed_data.py --home data --apply | tee repair-report.json
+          uv run python scripts/repair_categories.py --db data/jobs.db --apply --audit data/category-plan.json | tee category-report.json
           uv run jobradar calendar-build --jobs data/jobs.db --out data/calendar.db
           uv run python scripts/export_public_databases.py --home data --out data/public
           uv run python scripts/release_check.py --home data/public
@@ -40,3 +41,13 @@ jobs:
         with:
           name: reviewed-repair-report
           path: repair-report.json
+
+      - name: Preserve category audit
+        if: always() && hashFiles('data/category-plan.json') != ''
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: category-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/category-plan.json
+            category-report.json
+          retention-days: 90

@@ -269,6 +269,13 @@ def data_sanity(home: Path | None, calendar_db: Path | None) -> tuple[int, str]:
             if dups:
                 problems.append(f"同源重复 {dups}")
             columns = {r[1] for r in j.execute("PRAGMA table_info(job)")}
+            if {"category", "subcategory"} <= columns:
+                from jobradar.normalize import canonical_category
+                n = sum(count for category, subcategory, count in j.execute(
+                    "SELECT category,subcategory,COUNT(*) FROM job GROUP BY category,subcategory")
+                    if canonical_category("", category, subcategory) != (category, subcategory))
+                if n:
+                    problems.append(f"职类不规范 {n}")
             if "cities" in columns:
                 n = j.execute("SELECT COUNT(*) FROM job WHERE EXISTS "
                               "(SELECT 1 FROM json_each(job.cities) WHERE value GLOB 'TP[0-9]*')").fetchone()[0]

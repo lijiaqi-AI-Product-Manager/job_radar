@@ -74,6 +74,15 @@ def verify_compact_text(conn):
                 raise ValueError("精简正文内容摘要不匹配")
 
 
+def vacuum_compact_text(conn):
+    # 小库保持4KiB页面，避免固定元数据页放大；完整正文库减少页内空闲。
+    current = conn.execute('PRAGMA page_size').fetchone()[0]
+    live = conn.execute('PRAGMA page_count').fetchone()[0] - conn.execute('PRAGMA freelist_count').fetchone()[0]
+    size = 16384 if live * current >= 4 * 1024 ** 2 else 4096
+    conn.execute(f'PRAGMA page_size={size}')
+    conn.execute('VACUUM')
+
+
 def export_compact_text(source, target):
     from jobradar.store.migrate import connect
     from jobradar.store.validate import validate_database
@@ -102,7 +111,7 @@ def export_compact_text(source, target):
                                                  (digest,zlib.compress(raw,9))).lastrowid
                         known[digest] = body
                     published.execute("INSERT INTO jd_ref VALUES (?,?,?)",(jid,body,stamp))
-            published.execute("VACUUM")
+            vacuum_compact_text(published)
             validate_database(published,"text")
             with closing(original.execute("SELECT job_id,description,requirements,fetched_at FROM job_text ORDER BY job_id")) as a, \
                     closing(published.execute("SELECT job_id,description,requirements,fetched_at FROM job_text ORDER BY job_id")) as b:
