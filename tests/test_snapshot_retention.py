@@ -243,3 +243,12 @@ def test_asset_arriving_before_first_delete_aborts_cleanup():
     with httpx.Client(transport=httpx.MockTransport(respond)) as client, pytest.raises(ValueError, match="changed"):
         retention.maintain(client, now=NOW, apply=True)
     assert not release.deleted
+
+
+def test_recording_history_only_does_not_apply_the_cleanup_plan():
+    release, _ = history()
+    release.generation("new-unrecorded", record=False)
+    with release.client() as client:
+        result = retention.maintain(client, now=NOW, record=True)
+    assert release.uploaded and result["candidates"]
+    assert not result["deleted"] and not release.deleted

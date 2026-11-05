@@ -146,11 +146,11 @@ def _ledger(assets):
     return {a["id"]: {key: a.get(key) for key in ("name", "size", "digest", "created_at", "updated_at")} for a in assets}
 
 
-def maintain(client, *, now=None, apply=False, previous=None):
+def maintain(client, *, now=None, apply=False, record=False, previous=None):
     now = now or datetime.now(UTC)
     release = _release(client)
     current = _manifest(release)
-    if apply:
+    if apply or record:
         if previous is not None:
             if previous.get("id") != release["id"] or previous.get("tag_name") != "data-latest":
                 raise ValueError("previous manifest is from a different release")
@@ -201,20 +201,21 @@ def maintain(client, *, now=None, apply=False, previous=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true", help="仅在采集发布互斥锁内执行")
+    parser.add_argument("--record", action="store_true", help="只补齐清单记录并生成预演，不删除附件")
     parser.add_argument("--previous", type=Path, help="本次发布切换前实际读取的Release元数据")
     args = parser.parse_args()
     token = os.environ.get("GH_TOKEN", "").strip()
-    if args.apply and not token:
+    if (args.apply or args.record) and not token:
         token = subprocess.run(["gh", "auth", "token"], check=True, capture_output=True,
                                text=True, encoding="utf-8").stdout.strip()
-    if args.apply and not token:
-        parser.error("应用需要发布环境的GH_TOKEN或已登录的gh")
+    if (args.apply or args.record) and not token:
+        parser.error("记录或应用需要发布环境的GH_TOKEN或已登录的gh")
     headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "jobradar-snapshot-maintenance"}
     if token:
         headers["Authorization"] = "Bearer " + token
     previous = json.loads(args.previous.read_text(encoding="utf-8")) if args.previous else None
     with httpx.Client(headers=headers, timeout=60) as client:
-        print(json.dumps(maintain(client, apply=args.apply, previous=previous), ensure_ascii=False))
+        print(json.dumps(maintain(client, apply=args.apply, record=args.record, previous=previous), ensure_ascii=False))
 
 
 if __name__ == "__main__":

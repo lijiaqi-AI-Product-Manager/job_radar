@@ -88,7 +88,7 @@ def publish_aliases(home, names=ALIASES):
 def finish_publication(home, previous, staging):
     """兼容附件全部通过后，记录前后两代引用，再检查可清理资源。"""
     aliases = publish_aliases(home)
-    args = [sys.executable, str(ROOT / "scripts/prune_snapshot_assets.py"), "--apply"]
+    args = [sys.executable, str(ROOT / "scripts/prune_snapshot_assets.py"), "--record"]
     if "<!--jobradar-snapshot:" in (previous.get("body") or ""):
         path = staging / "previous-release.json"
         path.write_text(json.dumps(previous), encoding="utf-8")
