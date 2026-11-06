@@ -352,7 +352,7 @@ THIRD_PARTY_HOSTS = ("offernotes", "nowcoder", "jobui", "kanzhun", "yingjiesheng
 
 
 def documented_examples(home, *, root=ROOT):
-    row = {"gate":"文档查询示例", "target":"全部只读查询示例有结果；其他命令参数有效", "ok":False}
+    row = {"gate":"文档查询示例", "target":"机会示例有结果；历史查询执行有效、主体明确；其他参数有效", "ok":False}
     if home is None or any(not (home / name).is_file() for name in ("jobs.db", "jd_text.db", "calendar.db")):
         return {**row, "value":"缺少完整三库", "skip":True}
     spec = importlib.util.spec_from_file_location("release_readme_examples", ROOT / "scripts/check_readme_examples.py")
@@ -363,9 +363,12 @@ def documented_examples(home, *, root=ROOT):
     except (OSError, ValueError, sqlite3.DatabaseError) as error:
         return {**row, "value":f"无法执行（{type(error).__name__}）"}
     failures = [r for r in examples if not r["ok"]]
+    empty_history = sum(r.get("ok") and r.get("outcome") == "no_events_in_window" for r in examples)
     detail = "; ".join(r["command"] for r in failures[:3])
     return {**row, "ok":bool(examples) and not failures,
-            "value":f"{len(examples)-len(failures)}/{len(examples)}" + (f"；失败：{detail}" if detail else "")}
+            "value":f"{len(examples)-len(failures)}/{len(examples)}"
+            + (f"；{empty_history}个历史窗口无变更" if empty_history else "")
+            + (f"；失败：{detail}" if detail else "")}
 
 
 def run(home: Path | None, sources: Path, targets_path: Path, calendar_db: Path | None) -> list[dict]:

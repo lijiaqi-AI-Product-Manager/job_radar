@@ -76,6 +76,37 @@ def test_concrete_zero_result_example_is_not_counted_as_passing(tmp_path, docume
     assert len(result) == 1 and result[0]["count"] == 0 and not result[0]["ok"]
 
 
+@pytest.mark.parametrize("suffix", ["--types open", "--by category"])
+def test_valid_history_example_can_have_no_events_in_its_window(tmp_path, documented_home, monkeypatch, suffix):
+    monkeypatch.setattr(examples.q, "now_ts", lambda: "2026-11-15T00:00:00Z")
+    (tmp_path / "README.md").write_text(
+        f"jobradar diff --days 7 --company 腾讯 {suffix}\n", encoding="utf-8")
+    before = {p.name: p.read_bytes() for p in documented_home.glob("*.db")}
+    row, = examples.check_examples(documented_home, root=tmp_path)
+    assert row["ok"] and row["count"] == 0
+    assert row["mode"] == "history" and row["outcome"] == "no_events_in_window"
+    assert row["company_match"]["matched"] == ["腾讯"]
+    assert all(p.read_bytes() == before[p.name] for p in documented_home.glob("*.db"))
+
+
+@pytest.mark.parametrize("suffix", ["--company 未收录公司", "--company 腾讯 --types closed"])
+def test_empty_history_does_not_hide_unknown_company_or_invalid_event_types(tmp_path, documented_home, suffix):
+    (tmp_path / "README.md").write_text(f"jobradar diff --days 7 {suffix}\n", encoding="utf-8")
+    row, = examples.check_examples(documented_home, root=tmp_path)
+    assert not row["ok"]
+
+
+def test_history_query_failure_is_not_an_empty_success(tmp_path, documented_home, monkeypatch):
+    import sqlite3
+
+    (tmp_path / "README.md").write_text("jobradar diff --days 7 --company 腾讯\n", encoding="utf-8")
+    def broken(*args, **kwargs):
+        raise sqlite3.DatabaseError("history unavailable")
+    monkeypatch.setattr(examples.q, "recent_changes", broken)
+    row, = examples.check_examples(documented_home, root=tmp_path)
+    assert not row["ok"] and row["error"] == "history unavailable"
+
+
 def test_release_gate_includes_actual_documented_query_results(tmp_path, documented_home):
     spec = importlib.util.spec_from_file_location("release_check_examples", ROOT / "scripts/release_check.py")
     release = importlib.util.module_from_spec(spec)

@@ -1,4 +1,4 @@
-"""离线校验首页与技能中的命令；只读查询示例必须有结果，下载和采集只校验参数。"""
+"""离线校验文档命令；机会示例必须有结果，历史窗口允许真实的零变更。"""
 
 import argparse
 import contextlib
@@ -48,9 +48,9 @@ def _kwargs(function, arguments, rename=None):
             if rename.get(key, key) in inspect.signature(function).parameters}
 
 
-def _query(arguments, jobs, texts, calendar):
+def _query(arguments, jobs, texts, calendar, *, meta=None):
     command = arguments.cmd
-    meta = {}
+    meta = {} if meta is None else meta
     if command == "search":
         kwargs = _kwargs(q.search_jobs, arguments, {"type":"recruit_type", "exclude_city":"exclude_cities",
                            "exclude_keyword":"exclude_keywords", "exclude_company":"exclude_companies",
@@ -70,9 +70,10 @@ def _query(arguments, jobs, texts, calendar):
         since = q.lookback_since(arguments.days)
         if arguments.by:
             return len(q.new_jobs_by_category(jobs, since=since, company=arguments.company,
-                                              contains=arguments.contains, limit=arguments.limit))
+                                              contains=arguments.contains, limit=arguments.limit, meta=meta))
         return len(q.recent_changes(jobs, since=since, company=arguments.company, contains=arguments.contains,
-                                    limit=arguments.limit, types=arguments.types.split(",") if arguments.types else None))
+                                    limit=arguments.limit, types=arguments.types.split(",") if arguments.types else None,
+                                    meta=meta))
     if command == "trends":
         return len(q.company_trend(jobs, arguments.company, until=q.now_ts(), step_days=arguments.step_days))
     if command == "stats":
@@ -119,8 +120,18 @@ def check_examples(home, *, root=ROOT):
                             rows.append(row)
                             continue
                         raise ValueError("示例参数不受支持") from None
-                count = _query(arguments, jobs, texts, calendar)
+                query_meta = {}
+                count = _query(arguments, jobs, texts, calendar, meta=query_meta)
                 row.update(count=count, mode="syntax" if count is None else "query", ok=count is None or count > 0)
+                if arguments.cmd == "diff":
+                    match = query_meta.get("company_match")
+                    known_company = not arguments.company or bool(match and match.get("matched"))
+                    row.update(mode="history", ok=known_company,
+                               outcome="events_found" if count else "no_events_in_window")
+                    if match is not None:
+                        row["company_match"] = match
+                    if not known_company:
+                        row.update(ok=False, outcome="unresolved_company", error="示例公司未确定匹配收录主体")
             except (OSError, ValueError, TypeError, sqlite3.DatabaseError) as error:
                 row["error"] = str(error)
             rows.append(row)
