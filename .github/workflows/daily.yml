@@ -170,6 +170,7 @@ jobs:
           PY
 
       - name: Publish data-latest
+        id: publish_data
         shell: bash
         run: |
           python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); assert n >= old, 'job rows decreased; refusing to publish'"
@@ -178,6 +179,19 @@ jobs:
           uv run python scripts/release_check.py --home data/public
           gzip -n -9 -k -f data/public/jobs.db data/public/jd_text.db data/public/calendar.db
           uv run python scripts/publish_snapshots.py --home data/public
+
+      - name: Preserve unpublished snapshots
+        if: failure() && steps.publish_data.outcome == 'failure'
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: unpublished-snapshots-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/jobs.db
+            data/jd_text.db
+            data/calendar.db
+          if-no-files-found: error
+          compression-level: 1
+          retention-days: 3
 
       - name: Publish health diagnostics
         if: inputs.only_sources == '' && (inputs.stale_only_hours == 0 || inputs.stale_only_hours == '')

@@ -111,6 +111,17 @@ def test_daily_quality_and_calendar_finish_before_publication():
     assert "release_check.py" in steps[publish]["run"]
     assert "publish_snapshots.py" in steps[publish]["run"]
 
+
+def test_failed_publication_preserves_unpublished_databases_without_bypassing_gates():
+    publish = _step("Publish data-latest")
+    backup = _step("Preserve unpublished snapshots")
+    assert publish["id"] == "publish_data"
+    assert backup["if"] == "failure() && steps.publish_data.outcome == 'failure'"
+    assert {"data/jobs.db", "data/jd_text.db", "data/calendar.db"} == set(backup["with"]["path"].split())
+    assert backup["with"]["retention-days"] == 3
+    assert not publish.get("continue-on-error")
+    assert _steps().index(publish) < _steps().index(backup)
+
 def test_all_workflows_parse():
     """所有工作流必须能被 YAML 解析：改坏一个文件会让整个流水线静默不跑。"""
     files = sorted((ROOT / ".github" / "workflows").glob("*.yml"))
