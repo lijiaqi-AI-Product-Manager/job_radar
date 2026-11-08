@@ -249,8 +249,15 @@ def envelope(conn, results, *, as_of: str | None = None, **extra) -> dict:
     as_of = as_of if conn is None else q.data_as_of(conn)
     stale = as_of is None or (parse_ts(now_ts()) - parse_ts(as_of)).total_seconds() > STALE_HOURS * 3600
     rows = results if isinstance(results, list) else [r for group in results.values() if isinstance(group, list) for r in group] if isinstance(results, dict) else []
-    if any(isinstance(row, dict) and row.get("source_stale") for row in rows):
+    if any(isinstance(row, dict) and (row.get("source_stale") or row.get("job_stale")) for row in rows):
         stale = True
+    availability = {}
+    for row in rows:
+        if isinstance(row, dict) and row.get("availability"):
+            key = row["availability"]
+            availability[key] = availability.get(key, 0) + 1
+    if availability:
+        extra["availability_counts"] = availability
     return {"data_as_of": as_of, "stale": stale, **extra, "results": results}
 
 SYNC_META = ".sync.json"

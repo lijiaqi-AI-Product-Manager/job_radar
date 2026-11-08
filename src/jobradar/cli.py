@@ -60,6 +60,8 @@ def _emit(args, payload: dict):
             print("# 数据陈旧：部分来源超过 48 小时未核实，岗位是否仍在招需查看来源。可先运行 jobradar update。")
         if any(r.get("source_enabled") is False for r in rows):
             print("# 部分记录的来源已停用：这些记录属于历史观测，当前可投状态需另行核实；停用不等于岗位已关闭。")
+        if any(r.get("not_seen_in_latest_success") for r in rows):
+            print("# 部分岗位在来源最新一次成功采集中未再次出现，仍保留历史记录；请核实原始链接，不代表已下架。")
         if any(r.get("source_tenant_peers") for r in rows):
             print("# 部分来源使用同一招聘租户，岗位可能重复；跨来源数量不能直接相加。")
         if payload.get("truncated"):

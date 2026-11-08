@@ -41,6 +41,7 @@ jobradar doctor
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - `source_enabled: false` 或 `availability: unconfirmed_disabled` → 来源当前已停用；即使旧成功观测尚不足48小时，也不能表述为当前已核实可投。停用不等于岗位已关闭。
 - 展示 `availability_label` 和 `source_warnings` 对当前可投状态的限制。`source_tenant_peers` 非空表示同一招聘租户还登记在其他来源下，岗位可能重复；不要跨来源相加，也不要据此擅自更改雇主归属。
+- 来源最近刷新不等于岗位再次出现。`availability=unconfirmed_not_seen` / `not_seen_in_latest_success=true` 表示该岗位在最新成功采集中未再次见到，只能作为待核实历史候选；不能说当前可投，也不能直接说已下架。看岗位自己的`last_seen` / `job_age_hours`，`availability_counts`仅统计本次返回记录。
 - 明确指定校招/实习时，搜索与对比默认过滤标题明确的一线门店和房产经纪岗位。用户明确寻找此类岗位时传`include_frontline=true`（CLI `--include-frontline`）；不限类型与社招不默认过滤。说明`frontline_filter`的模式和计数，全文检索计数为`null`时不能编造。`exclude_categories`是字段排除，未知职类需修正，空字段仍需原文核实。
 - 下载使用默认 GitHub 渠道；失败时先检查网络和数据状态，不将当前未核实可用的镜像作为首选。见[渠道状态](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。
 - `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。

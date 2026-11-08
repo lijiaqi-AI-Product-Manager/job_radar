@@ -23,6 +23,9 @@ INSTRUCTIONS = """中国公司在招岗位数据（校招/实习/社招），包
 招聘公告链接可能不是雇主的直接申请入口；来源陈旧或截止时刻未知时，不能保证当前可投。
 url_scope=project_listing是项目列表，需按标题查找；不能将其称为直达岗位详情或申请链接。
 source_enabled=false或availability=unconfirmed_disabled表示来源当前已停用，近期历史成功也不能当作当前已核实。
+last_seen和job_age_hours是该岗位自身的观测时间和年龄；来源刷新不等于每个岗位再次出现。
+availability=unconfirmed_not_seen表示最新成功采集中未再次见到，只能作为待核实历史候选，不能宣称当前可投或已下架。
+availability_counts只统计本次返回记录（对比时为各列表合计），不能当作全库或完整查询的状态分布。
 source_warnings和availability_label必须体现在对应岗位说明里；source_tenant_peers非空表示同租户登记，跨来源数量不能直接相加。
 有结果也必须说明filter_coverage与hints里的字段缺失；grad_year_match=unknown是待核实候选。
 先看field_warnings与qualification_evidence，学历字段与正文冲突时不得仅凭字段排除。
