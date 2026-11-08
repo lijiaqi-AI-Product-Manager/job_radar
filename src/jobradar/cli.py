@@ -57,9 +57,14 @@ def _emit(args, payload: dict):
         count = f"返回 {len(rows)}/{payload['total']} 条" if "total" in payload else f"{len(rows)} 条"
         print(f"# data_as_of: {payload.get('data_as_of')}  ({count})")
         if payload.get("stale"):
-            print("# 数据陈旧：部分来源超过 48 小时未核实，岗位是否仍在招需查看来源。可先运行 jobradar update。")
+            if payload.get("snapshot_stale", True):
+                print("# 数据陈旧：部分来源超过 48 小时未核实，岗位是否仍在招需查看来源。可先运行 jobradar update。")
+            else:
+                print("# 当前快照较新，部分岗位或来源观测陈旧；请核实原始链接，重复下载不能保证恢复。")
         if any(r.get("source_enabled") is False for r in rows):
             print("# 部分记录的来源已停用：这些记录属于历史观测，当前可投状态需另行核实；停用不等于岗位已关闭。")
+        if any(r.get("not_seen_in_latest_success") for r in rows):
+            print("# 部分岗位在来源最新一次成功采集中未再次出现，仍保留历史记录；请核实原始链接，不代表已下架。")
         if any(r.get("source_tenant_peers") for r in rows):
             print("# 部分来源使用同一招聘租户，岗位可能重复；跨来源数量不能直接相加。")
         if payload.get("truncated"):

@@ -7,8 +7,10 @@
 ```
 
 - `data_as_of`：最近一次成功抓取的时间（UTC）。回答时换算成北京时间更友好（+8 小时）。
-- `stale`：全局数据超过 48 小时未更新，或本次返回岗位含超过 48 小时未成功的来源。
+- `stale`：全局数据超过48小时未更新，或本次返回岗位包含超过48小时未确认的来源或岗位观测；来源新鲜不能覆盖岗位自身的陈旧。
+- `snapshot_stale`：只判断全局快照是否超过48小时；为`false`而`stale`为`true`时，应核实陈旧岗位的原始链接，不把重复下载同一快照作为恢复证据。
 - 岗位的 `source_last_ok` / `source_age_hours` / `source_stale`：对应来源最近成功时间、距今小时数及是否过期；`availability` 区分已下架、已到期、旧来源尚未确认及最近观测，不能作为实时可投保证。
+- `last_seen` / `job_age_hours` / `job_stale`：岗位自身最近观测、距今小时数及是否超过48小时。`not_seen_in_latest_success=true`表示最近成功采集中没有再次见到该岗位；`availability=unconfirmed_not_seen`仍保留历史记录，不能直接推定关闭或保证可投。`availability_counts`只汇总返回页；对比时为各家公司返回列表合计，不等于全库分布。
 - `text_observed_at`：详情、对比及全文检索所附正文的实际观测时间；为空时不能从 `last_seen` 补成新读正文。按截止日筛选的岗位优先返回更早的明确截止日；不传日期范围时保持最近发现优先。
 - `source_enabled`：客户端来源目录中的启用状态，未知为 `null`；`false` 对应 `availability: unconfirmed_disabled`，旧成功记录不能覆盖停用状态。已下架或已到期仍优先显示相应状态。
 - `availability_label` / `source_warnings`：中文状态及历史来源限制；`source_tenant_peers`非空表示配置中同一租户还登记在其他来源下，不能将来源数量直接相加。

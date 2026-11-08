@@ -187,18 +187,26 @@ def _source_annotations(conn, rows, *, clock=None):
         stamp = last_ok.get(row["source_id"])
         age = max(0, (now - parse_ts(stamp)).total_seconds() / 3600) if stamp else None
         stale = age is None or age > 48
+        observed = parse_ts(row["last_seen"]) if row.get("last_seen") else None
+        job_age = max(0, (now - observed).total_seconds() / 3600) if observed else None
+        job_stale = job_age is None or job_age > 48
+        not_seen = bool(stamp and observed and observed < parse_ts(stamp))
         info = sources.get(row["source_id"], {})
         enabled = info.get("enabled")
         row.update(source_last_ok=stamp, source_age_hours=round(age, 2) if age is not None else None,
                    source_stale=stale, source_enabled=enabled,
+                   job_age_hours=round(job_age, 2) if job_age is not None else None,
+                   job_stale=job_stale, not_seen_in_latest_success=not_seen,
                    availability=("closed" if row["closed_at"] else "expired" if row["apply_end"] and row["apply_end"] < today
                                  else "unconfirmed_disabled" if enabled is False
-                                 else "unconfirmed_stale" if stale else "observed_recently"))
+                                 else "unconfirmed_not_seen" if not_seen
+                                 else "unconfirmed_stale" if stale or job_stale else "observed_recently"))
         row.update(source_kind=info.get("source_kind", "unknown"),
                    record_kind=info.get("record_kind", "unknown"))
         row["availability_label"] = {
             "closed":"已下架", "expired":"已超过记录截止日",
             "unconfirmed_disabled":"历史记录，来源已暂停采集",
+            "unconfirmed_not_seen":"历史记录，最新采集中未再次见到",
             "unconfirmed_stale":"历史记录，来源超过48小时未确认",
             "observed_recently":"最近观测到，投递前仍需核实官网",
         }[row["availability"]]
@@ -206,6 +214,9 @@ def _source_annotations(conn, rows, *, clock=None):
         warnings = []
         if enabled is False:
             warnings.append("该来源已暂停采集，历史记录继续展示；不能据此确认当前可投，也不表示岗位已关闭")
+        elif not_seen:
+            warnings.append("该岗位在来源最近一次完整成功采集中未再次出现，仍保留历史记录；"
+                            "不能据此确认当前可投，也不直接判定已下架，需打开原始链接核实")
         elif stale:
             warnings.append("该来源超过48小时未成功确认；这是历史观测，当前可投状态需核实原站")
         if row["source_tenant_peers"]:
@@ -418,6 +429,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         predicates.append((clause, values, field))
 
     positive(limit)
+    if keyword is not None and (not isinstance(keyword, str) or not keyword.strip() or len(keyword) > 4096):
+        raise ValueError("标题关键词必须是不超过4096字符的非空文本；不筛选时省略keyword")
     if type(include_frontline) is not bool or type(exclude_store) is not bool:
         raise ValueError("include_frontline 与 exclude_store 必须为布尔值")
     if include_frontline and exclude_store:
@@ -524,8 +537,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if frontline_clause:
         # 先按公司、城市、类型等条件缩小范围，避免对整库先做标题规则。
         add(frontline_clause, field="frontline")
-    if text is not None and (not isinstance(text, str) or len(text) > 4096):
-        raise ValueError("全文检索必须为不超过 4096 字符的文本")
+    if text is not None and (not isinstance(text, str) or not text.strip() or len(text) > 4096):
+        raise ValueError("全文检索必须为不超过4096字符的非空文本；不筛选时省略text")
     terms = sorted(dict.fromkeys(text.split()), key=len, reverse=True) if text else []
     if len(terms) > 16:
         raise ValueError("全文检索最多包含 16 个不同的词")
@@ -558,14 +571,14 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     order = "apply_end, " if deadline_before or deadline_after else ""
     if dedupe:
         # ATS 上同一个岗位常开成多条 req（同公司+同标题+同城市），全库实测 9.2% 是这种重复。
-        # 折叠后保留最早出现的一条，并给出去重前的条数 `variants`——不改变默认查询的计数口径。
+        # 优先保留最近实际观测的记录，再以首次发现时间和ID稳定排序；不能用已消失的旧记录代表仍出现的同组记录。
         # 城市是集合：JSON 元素顺序或重复标签不能把同岗拆成多个去重组。
         city_key = ("(SELECT json_group_array(city) FROM "
                     "(SELECT DISTINCT value AS city FROM json_each(j.cities) ORDER BY value))")
         part = (f"PARTITION BY j.company_id, j.title, {city_key}, j.recruit_type, j.grad_year, "
                 "j.degree_min, j.apply_end, j.department, j.batch")
         sql = (f"SELECT * FROM (SELECT {_JOB_COLS}, COUNT(*) OVER ({part}) AS variants,"
-               f" ROW_NUMBER() OVER ({part} ORDER BY j.first_seen, j.id) AS _rn"
+               f" ROW_NUMBER() OVER ({part} ORDER BY j.last_seen DESC, j.first_seen, j.id) AS _rn"
                f"{from_sql}{where_sql})"
                f" WHERE _rn = 1 ORDER BY {order}first_seen DESC, id LIMIT ?")
     else:
