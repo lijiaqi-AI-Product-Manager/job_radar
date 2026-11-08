@@ -36,7 +36,7 @@ jobradar calendar --help
 jobradar doctor
 ```
 
-- 没有数据，或 `stale: true` → 先运行 `jobradar update`（同时下载岗位库与 JD 原文库），再继续。
+- 没有数据，或`snapshot_stale: true` → 先运行`jobradar update`（同时下载岗位库与JD原文库），再继续。若`snapshot_stale: false`而`stale: true`，说明返回岗位或来源陈旧，需核实原始链接，不能反复下载相同快照代替核实；旧版未返回`snapshot_stale`时核对`data_as_of`再决定是否更新。
 - `source_health.counts.stale > 0` → 部分来源超过 48 小时未成功刷新，整体快照较新也不能证明这些岗位仍在招。用 `jobradar sources --problems` 查看；提及受影响岗位时注明 `last_seen`，建议打开原链接确认。更新快照不能保证来源已恢复。
 - 岗位 `source_stale: true` 或 `availability: unconfirmed_stale` → 表述为历史观测岗位，不能断言当前可投；注明 `source_last_ok`。`observed_recently` 也只表示最近采集成功，投递仍以原站为准。
 - `source_enabled: false` 或 `availability: unconfirmed_disabled` → 来源当前已停用；即使旧成功观测尚不足48小时，也不能表述为当前已核实可投。停用不等于岗位已关闭。

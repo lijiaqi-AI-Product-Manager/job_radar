@@ -33,6 +33,7 @@ def test_missing_from_latest_success_is_visible_but_not_confirmed(jobs_db, text_
     assert "未再次" in row["availability_label"]
     assert any("不能据此确认" in text for text in row["source_warnings"])
     assert local.envelope(jobs_db, [row])["stale"] is True
+    assert local.envelope(jobs_db, [row])["snapshot_stale"] is False
     assert local.envelope(jobs_db, [row])["availability_counts"] == {"unconfirmed_not_seen": 1}
     assert [tuple(r) for r in jobs_db.execute("SELECT * FROM job")] == before
     assert [tuple(r) for r in jobs_db.execute("SELECT * FROM job_event")] == events
@@ -101,6 +102,22 @@ def test_table_explains_candidate_missing_from_latest_success(capsys):
         "not_seen_in_latest_success": True, "availability_label": "历史记录，最新采集中未再次见到"}]})
     output = capsys.readouterr().out
     assert "未再次出现" in output and "不代表已下架" in output
+
+
+def test_recent_snapshot_with_old_candidate_does_not_request_repeated_download(capsys):
+    from argparse import Namespace
+    cli._emit(Namespace(table=True), {"stale": True, "snapshot_stale": False,
+        "results": [{"title": "研发工程师", "company": "示例", "job_stale": True}]})
+    output = capsys.readouterr().out
+    assert "快照较新" in output and "原始链接" in output
+    assert "可先运行 jobradar update" not in output
+
+
+def test_old_global_snapshot_still_requests_update(jobs_db, monkeypatch):
+    monkeypatch.setattr(local, "now_ts", lambda: T(5))
+    ingest_run(jobs_db, "s1", [make_job(1)], ts=T(1))
+    result = local.envelope(jobs_db, [])
+    assert result["snapshot_stale"] is result["stale"] is True
 
 
 @pytest.mark.parametrize("kind", ["search", "detail"])
