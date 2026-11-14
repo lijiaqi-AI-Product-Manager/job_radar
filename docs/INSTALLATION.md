@@ -67,14 +67,14 @@ jobradar calendar --help
 | PyPI `2.1.2` | 已核实的历史发行包 | 历史安装记录 |
 | PyPI `2.1.1` | 已核验的上一版发行包 | 历史安装记录 |
 | GitHub `v2.3.2` | 已发布源码标签；渠道核验以顶部有日期记录为准 | 固定版本复现 |
-| 固定源码目标 | `v2.3.6`，代码版本 `2.3.6`；已发布并核验 | 发布后可复现的备用安装 |
+| 固定源码目标 | `v2.3.7`，代码版本 `2.3.7`；本轮发行目标 | 发布后可复现的备用安装；正式安装核验见顶部有日期记录 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.6.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.7.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
