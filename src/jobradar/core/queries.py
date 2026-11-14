@@ -803,8 +803,10 @@ def data_status(conn, *, now, stale_after_hours=48) -> list[dict]:
         last[r["source_id"]] = dict(r)
     last_ok = {r[0]: r[1] for r in conn.execute(
         "SELECT source_id, MAX(ts) FROM source_run WHERE status='ok' GROUP BY source_id")}
+    # 与搜索、stats使用同一北京时间截止规则；快照保留的过期历史不计为当前在招。
     open_jobs = {r[0]: r[1] for r in conn.execute(
-        "SELECT source_id, COUNT(*) FROM job WHERE closed_at IS NULL GROUP BY source_id")}
+        "SELECT source_id, COUNT(*) FROM job WHERE closed_at IS NULL "
+        "AND (apply_end IS NULL OR apply_end>=?) GROUP BY source_id", (shanghai_date(now),))}
     out = []
     for sid in sorted(last):
         row = last[sid]
