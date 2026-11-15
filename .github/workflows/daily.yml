@@ -72,6 +72,8 @@ jobs:
           fi
 
       - name: Restore previous databases
+        env:
+          JOBRADAR_GITHUB_TOKEN: ${{ github.token }}
         # 历史是核心资产：Release 存在但下载失败时必须失败退出，绝不能"从零开始"后覆盖历史
         run: |
           mkdir -p data
