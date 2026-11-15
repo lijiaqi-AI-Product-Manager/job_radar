@@ -199,3 +199,10 @@ def test_code_release_uses_same_build_after_pypi_and_validates_production_tag():
     assert any("publish_code_release.py" in step.get("run", "") for step in job["steps"])
     build = workflow["jobs"]["build"]["steps"]
     assert any("--check-tag" in step.get("run", "") for step in build)
+
+
+def test_daily_restore_can_use_dedicated_metadata_authorization():
+    # 公共元数据不可达时使用仓库的专用授权回退；不依赖客户端读取通用令牌。
+    step = _step("Restore previous databases")
+    assert step.get("env", {}).get("JOBRADAR_GITHUB_TOKEN") == "${{ github.token }}"
+    assert not step.get("continue-on-error")
