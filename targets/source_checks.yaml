@@ -1,5 +1,18 @@
 schema_version: 1
 checks:
+- source_id: campus-tiangong-shijiazhuangyiling
+  company: 石家庄以岭
+  registered_company: 石家庄以岭药业股份有限公司
+  checked_at: '2026-11-23T03:47:41Z'
+  current_records: 1
+  records_with_jd: 1
+  record_kind: recruitment_notice
+  samples:
+  - source_job_id: '57060'
+    url: https://jobs.tiangong.edu.cn/correcruit/content/id/57060.html
+    title: 财务管培生
+    publish_at: '2026-11-12'
+    apply_end: null
 - source_id: beisen-tongwei
   company: 通威股份
   registered_company: 通威股份有限公司

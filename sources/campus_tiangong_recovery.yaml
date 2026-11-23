@@ -1,0 +1,16 @@
+id: campus-tiangong-shijiazhuangyiling
+company: 石家庄以岭
+adapter: campus
+source_kind: aggregator
+recruit_types: [campus]
+rate_limit_rps: 1
+params:
+  school: tiangong
+  match: [石家庄以岭药业股份有限公司]
+  max_pages: 60
+  list_cache_ttl: 600
+compliance:
+  checked_on: 2026-11-23
+  robots: allowed
+  terms: "核查学校就业指导中心公开招聘栏目与详情。未发现该栏目禁止索引的专门条款。只读公开信息，不访问登录、简历、投递或后台接口。"
+  notes: "天津工业大学就业指导中心发布，按登记雇主全名匹配。保留原始链接，不把学校公开展示视为企业确认仍可投递。"

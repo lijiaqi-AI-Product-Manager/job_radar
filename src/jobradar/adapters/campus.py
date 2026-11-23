@@ -26,10 +26,12 @@ from __future__ import annotations
 import re
 import time
 from collections.abc import Iterator
+from html import unescape
 
 import httpx
 
 from jobradar.adapters.base import Adapter, SkipRecord, register
+from jobradar.compliance import ComplianceError
 from jobradar.models import Job
 from jobradar.normalize import date_only, degree_min_from_text
 
@@ -115,17 +117,15 @@ _ZHAOPIN_UL = re.compile(
     re.S,
 )
 
-# 列表页进程内缓存：同一所学校的多个源共用一次翻页，避免把站点打成上千次请求。
-_LIST_CACHE: dict[tuple[str, int], tuple[float, list[dict]]] = {}
+# 同校共用列表页。访问拒绝也在同一缓存窗口共享，始终作为失败处理。
+_LIST_CACHE: dict[tuple[str, int], tuple[float, list[dict] | int]] = {}
 
 
 def _text(fragment: str | None) -> str:
     """HTML 片段 -> 单行纯文本。"""
     if not fragment:
         return ""
-    s = _TAG.sub(" ", fragment)
-    s = (s.replace("&nbsp;", " ").replace("&amp;", "&").replace("&lt;", "<")
-          .replace("&gt;", ">").replace("&quot;", '"').replace("&#39;", "'"))
+    s = unescape(_TAG.sub(" ", fragment))
     return _WS.sub(" ", s).strip()
 
 
@@ -311,22 +311,26 @@ class CampusAdapter(Adapter):
         cfg = SCHOOLS[self.school]
         key = (self.school, page)
         ttl = self._cache_ttl()
-        now = time.monotonic()
+        url = cfg["list"].format(page=page) if page > 1 else cfg["list_url"]
         if ttl > 0:
             hit = _LIST_CACHE.get(key)
-            if hit is not None and now - hit[0] < ttl:
-                return hit[1]
-        url = cfg["list"].format(page=page) if page > 1 else cfg["list_url"]
+            if hit is not None and time.monotonic() - hit[0] < ttl:
+                _, result = hit
+                if isinstance(result, int):
+                    raise ComplianceError(f"HTTP {result} {url}：共用招聘列表已拒绝访问")
+                return result
         try:
             html = self.request_text("GET", url)
         except httpx.HTTPStatusError as exc:
+            if ttl > 0 and exc.response.status_code in (401, 403):
+                _LIST_CACHE[key] = (time.monotonic(), exc.response.status_code)
             # 就业网栏目长度各校不同（南开 50 页、天工大 60+ 页），翻到尾部返回 404 属正常结束
             if exc.response.status_code in (404, 410):
                 return []
             raise
         items = parse_list_page(html, cfg["base"])
         if ttl > 0:
-            _LIST_CACHE[key] = (now, items)
+            _LIST_CACHE[key] = (time.monotonic(), items)
         return items
 
     def _detail(self, item: dict) -> dict:
