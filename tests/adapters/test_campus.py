@@ -12,6 +12,7 @@ fixtures 由 `scripts/record_fixtures.py campus-hebut-jiangsushengguoxin --multi
 from pathlib import Path
 
 import httpx
+import pytest
 import yaml
 
 from jobradar.adapters.campus import (
@@ -118,3 +119,38 @@ def test_detail_parser_reads_labelled_fields():
     assert d["publish"] == "2026-10-08"
     assert d["apply_url"] == "https://example.com/campus"
     assert "做事情" in (d["description"] or "")
+
+
+def test_detail_parser_decodes_school_spacing():
+    html = (
+        "<p>工作地域：北京市&nbsp&nbsp&nbsp</p><p>职位类别：金融业务人员</p>"
+        "<p>学历要求：硕士研究生在学&nbsp&nbsp&nbsp</p>"
+        "<p>招聘人数：5人</p><p>职位描述：财务分析与核算</p>"
+    )
+    result = parse_detail_page(html)
+    assert result["city"] == "北京市"
+    assert result["degree"] == "硕士研究生在学"
+
+
+def test_list_access_denial_is_shared_across_sources_but_not_other_schools(monkeypatch):
+    from jobradar.adapters import campus
+    from jobradar.compliance import ComplianceError
+
+    monkeypatch.setattr(campus, "_LIST_CACHE", {})
+    requests = []
+
+    def respond(request):
+        requests.append(request.url.host)
+        if request.url.host == "career.hebut.edu.cn":
+            return httpx.Response(403)
+        return httpx.Response(200, text=THEME_A)
+
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        for sid in ("first", "second"):
+            config = source(school="hebut").model_copy(update={"id": sid})
+            adapter = CampusAdapter(config, client, sleep=lambda _: None)
+            with pytest.raises((ComplianceError, httpx.HTTPStatusError), match="403"):
+                adapter._list(1)
+        alternative = CampusAdapter(source(school="tiangong"), client, sleep=lambda _: None)
+        assert alternative._list(1)[0]["title"] == "算法工程师"
+    assert requests == ["career.hebut.edu.cn", "jobs.tiangong.edu.cn"]

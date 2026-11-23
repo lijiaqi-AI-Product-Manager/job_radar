@@ -21,89 +21,117 @@ defaults:
     notes: "聚合渠道 grade C：岗位由学校就业网发布，不等于公司官网直发；1 req/s。"
 
 sources:
-  # hebut
+  # 河北工业大学招聘列表 2026-11-23 返回 HTTP 403。暂停访问，保留原来源 ID 与历史。
   - id: campus-hebut-zhongguoshiyou
+    enabled: false
     company: 中国石油
     params: {school: hebut, match: ["中国石油化工股份有限公司茂名分公司", "中国石油天然气股份有限公司吉林石化分公司", "中国石油天然气股份有限公司塔里木油田分公司", "中国石油天然气股份有限公司独山子石化分公司", "中国石油集团测井有限公司天津分公司", "中国石油集团渤海钻探工程有限公司"]}
   - id: campus-hebut-zhongguoshihua
+    enabled: false
     company: 中国石化
     params: {school: hebut, match: ["中国石化仪征化纤有限责任公司", "中国石化润滑油有限公司北京研究院", "中国石化集团胜利石油管理局有限公司", "中国石化集团重庆川维化工有限公司"]}
   - id: campus-hebut-zhongshihua
+    enabled: false
     company: 中石化
     params: {school: hebut, match: ["中石化中原石油工程有限公司", "中石化中原石油工程设计有限公司", "中石化第四建设有限公司", "中石化经纬有限公司"]}
   - id: campus-hebut-zhongtiejiangong
+    enabled: false
     company: 中铁建工
     params: {school: hebut, match: ["中铁建工集团发展有限公司", "中铁建工集团有限公司", "中铁建工集团有限公司北京基础设施建设分公司"]}
   - id: campus-hebut-guojiaguanwang
+    enabled: false
     company: 国家管网
     params: {school: hebut, match: ["国家管网集团北京管道有限公司河北输油气分公司"]}
   - id: campus-hebut-tcl
+    enabled: false
     company: TCL
     params: {school: hebut, match: ["惠州TCL电器销售有限公司"]}
   - id: campus-hebut-guangdayinxing
+    enabled: false
     company: 光大银行
     params: {school: hebut, match: ["中国光大银行股份有限公司", "中国光大银行股份有限公司北京分行", "中国光大银行股份有限公司武汉分行", "中国光大银行股份有限公司石家庄分行", "中国光大银行零售与财富管理部远程银行中心"]}
   - id: campus-hebut-jiangzhongyaoye
+    enabled: false
     company: 江中药业
     params: {school: hebut, match: ["华润江中药业股份有限公司"]}
   - id: campus-hebut-zhongguominshengyinxing
+    enabled: false
     company: 中国民生银行
     params: {school: hebut, match: ["中国民生银行股份有限公司北京分行", "中国民生银行股份有限公司天津分行", "中国民生银行股份有限公司苏州分行"]}
   - id: campus-hebut-beijingjiangong
+    enabled: false
     company: 北京建工
     params: {school: hebut, match: ["北京建工一建工程建设有限公司", "北京建工土木工程有限公司"]}
   - id: campus-hebut-mingyuanyun
+    enabled: false
     company: 明源云
     params: {school: hebut, match: ["深圳市明源云科技有限公司"]}
   - id: campus-hebut-guangfayinxing
+    enabled: false
     company: 广发银行
     params: {school: hebut, match: ["广发银行股份有限公司", "广发银行股份有限公司长沙分行"]}
   - id: campus-hebut-songxia
+    enabled: false
     company: 松下
     params: {school: hebut, match: ["唐山松下产业机器有限公司"]}
   - id: campus-hebut-zhongguoyituo
+    enabled: false
     company: 中国一拖
     params: {school: hebut, match: ["中国一拖集团有限公司"]}
   - id: campus-hebut-tianjingang
+    enabled: false
     company: 天津港
     params: {school: hebut, match: ["天津港（集团）有限公司"]}
   - id: campus-hebut-rizhaogangtie
+    enabled: false
     company: 日照钢铁
     params: {school: hebut, match: ["日照钢铁控股集团有限公司"]}
   - id: campus-hebut-shijiazhuangyiling
+    enabled: false
     company: 石家庄以岭
     params: {school: hebut, match: ["石家庄以岭药业股份有限公司"]}
   - id: campus-hebut-dongfanghangkong
+    enabled: false
     company: 东方航空
     params: {school: hebut, match: ["中国东方航空股份有限公司"]}
   - id: campus-hebut-zhongjianbaju
+    enabled: false
     company: 中建八局
     params: {school: hebut, match: ["中建八局浙江建设有限公司", "中建八局第二建设有限公司"]}
   - id: campus-hebut-hadianjituan
+    enabled: false
     company: 哈电集团
     params: {school: hebut, match: ["哈电集团（秦皇岛）重型装备有限公司"]}
   - id: campus-hebut-shijiazhuangsiyao
+    enabled: false
     company: 石家庄四药
     params: {school: hebut, match: ["石家庄四药有限公司"]}
   - id: campus-hebut-shougangjituan
+    enabled: false
     company: 首钢集团
     params: {school: hebut, match: ["首钢集团有限公司矿业公司"]}
   - id: campus-hebut-zhongjiankegong
+    enabled: false
     company: 中建科工
     params: {school: hebut, match: ["中建科工集团有限公司"]}
   - id: campus-hebut-xinyongzhonghe
+    enabled: false
     company: 信永中和
     params: {school: hebut, match: ["信永中和会计师事务所（特殊普通合伙）"]}
   - id: campus-hebut-jilinshihua
+    enabled: false
     company: 吉林石化
     params: {school: hebut, match: ["中国石油天然气股份有限公司吉林石化分公司"]}
   - id: campus-hebut-taipingyangrenshou
+    enabled: false
     company: 太平洋人寿
     params: {school: hebut, match: ["中国太平洋人寿保险股份有限公司河北分公司"]}
   - id: campus-hebut-jiangsushengguoxin
+    enabled: false
     company: 江苏省国信
     params: {school: hebut, match: ["江苏省国信集团有限公司"]}
   - id: campus-hebut-angangjituan
+    enabled: false
     company: 鞍钢集团
     params: {school: hebut, match: ["鞍钢集团工程技术有限公司"]}
   # nankai
