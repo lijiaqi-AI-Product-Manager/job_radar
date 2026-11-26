@@ -77,6 +77,44 @@ def test_corrupt_body_is_rejected_before_activation(compact):
         validate_database(conn,"text")
 
 
+def test_compact_statistics_read_each_body_once_and_preserve_text_semantics(compact, jobs_db, monkeypatch):
+    import zlib
+
+    from jobradar import compact_text
+
+    plain, packed, rows = compact
+    monkeypatch.setattr(q, "now_ts", lambda: T(4))
+    extras = [make_job(n, description="正文") for n in range(10, 50)]
+    ingest_run(jobs_db, "s1", [*rows, *extras], ts=T(2))
+    samples = [
+        (b'[ null , "" ]', None, ""),
+        (b'["null", null]', "null", None),
+        (b'[ "", " " ]', "", " "),
+        (b'[null,"\\u0000"]', None, "\x00"),
+    ]
+    with closing(connect(plain, "text")) as original, closing(sqlite3.connect(packed)) as compressed:
+        for n, job in enumerate(extras):
+            raw, description, requirements = samples[n % len(samples)]
+            digest = hashlib.sha256(raw).digest()
+            compressed.execute("INSERT OR IGNORE INTO jd_body(digest,payload) VALUES (?,?)",
+                               (digest, zlib.compress(raw)))
+            compressed.execute("INSERT INTO jd_ref SELECT ?, id, ? FROM jd_body WHERE digest=?",
+                               (job.id, T(2), digest))
+            original.execute("INSERT INTO job_text VALUES (?,?,?,?)",
+                             (job.id, description, requirements, T(2)))
+        expected = q.data_summary(jobs_db, original)
+        compact_text.register_compact_functions(compressed)
+        calls = []
+        inflate = compact_text._inflate
+        monkeypatch.setattr(compact_text, "_inflate", lambda p: calls.append(1) or inflate(p))
+        before = compressed.total_changes
+        actual = q.data_summary(jobs_db, compressed)
+        assert actual == expected
+        assert actual["with_jd_text"] == 33
+        assert compressed.total_changes == before
+        assert len(calls) <= compressed.execute("SELECT COUNT(*) FROM jd_body").fetchone()[0]
+
+
 def test_compact_manifest_is_opt_in_for_new_downloads_and_stays_bound_to_base():
     import base64
     import json

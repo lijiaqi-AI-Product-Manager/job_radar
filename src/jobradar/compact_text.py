@@ -3,6 +3,7 @@
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import tempfile
 import zlib
@@ -14,13 +15,14 @@ from pathlib import Path
 APPLICATION_ID = 0x4A524354
 MAX_BODY_BYTES = 16 * 1024 * 1024
 CACHE_BYTES = 4 * 1024 * 1024
+_EMPTY_FIELDS = re.compile(rb'[ \t\n\r]*\[[ \t\n\r]*(?:null|"")[ \t\n\r]*,[ \t\n\r]*(?:null|"")[ \t\n\r]*\][ \t\n\r]*')
 
 
 def is_compact_text(conn):
     return conn.execute("PRAGMA application_id").fetchone()[0] == APPLICATION_ID
 
 
-def _decode(payload):
+def _inflate(payload):
     if not isinstance(payload, bytes) or len(payload) > MAX_BODY_BYTES:
         raise ValueError("精简正文压缩块无效")
     decoder = zlib.decompressobj()
@@ -28,12 +30,26 @@ def _decode(payload):
         raw = decoder.decompress(payload, MAX_BODY_BYTES + 1)
         if len(raw) > MAX_BODY_BYTES or not decoder.eof or decoder.unused_data:
             raise ValueError("精简正文超过上限或不完整")
+        return raw
+    except zlib.error as error:
+        raise ValueError("精简正文解压失败") from error
+
+
+def _decode(payload):
+    raw = _inflate(payload)
+    try:
         value = json.loads(raw)
         if not isinstance(value, list) or len(value) != 2 or any(v is not None and not isinstance(v, str) for v in value):
             raise ValueError("精简正文字段无效")
         return raw.decode("utf-8")
-    except (zlib.error, UnicodeError, json.JSONDecodeError) as error:
+    except (UnicodeError, json.JSONDecodeError) as error:
         raise ValueError("精简正文解压失败") from error
+
+
+def empty_body_ids(conn):
+    """已校验的正文是两个字符串或 null 组成的数组。只解压每份不同的正文一次。"""
+    with closing(conn.execute("SELECT id, payload FROM jd_body")) as bodies:
+        return [body_id for body_id, payload in bodies if _EMPTY_FIELDS.fullmatch(_inflate(payload))]
 
 
 def register_compact_functions(conn):

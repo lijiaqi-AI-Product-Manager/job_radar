@@ -16,6 +16,7 @@ from itertools import combinations
 from typing import NamedTuple
 
 from jobradar.aliases import match_names
+from jobradar.compact_text import empty_body_ids, is_compact_text
 from jobradar.normalize import CATEGORY_ALIASES as _CATEGORY_ALIASES
 from jobradar.normalize import category_labels
 from jobradar.store.migrate import ensure_search_index
@@ -1476,21 +1477,25 @@ def data_summary(jobs_conn, text_conn=None) -> dict:
     with_text = None
     jd_observation = None
     if text_conn is not None:
-        try:
-            text_conn.execute("SELECT octet_length('')").fetchone()
-        except sqlite3.OperationalError as error:
-            if "no such function: octet_length" not in str(error):
-                raise
-            body_condition = "(COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')"
+        params = [lookback_since(2, now=clock), clock, json.dumps(open_ids)]
+        if is_compact_text(text_conn):
+            table = "jd_ref"
+            body_condition = "body_id NOT IN (SELECT value FROM json_each(?))"
+            params.append(json.dumps(empty_body_ids(text_conn) if open_ids else []))
         else:
-            # SQLite >=3.43可从列元数据取得字节长度，避免仅为判空读取大段正文。
-            # https://www.sqlite.org/lang_corefunc.html#octet_length
-            body_condition = "(octet_length(description)>0 OR octet_length(requirements)>0)"
+            table = "job_text"
+            try:
+                text_conn.execute("SELECT octet_length('')").fetchone()
+            except sqlite3.OperationalError as error:
+                if "no such function: octet_length" not in str(error):
+                    raise
+                body_condition = "(COALESCE(description,'') != '' OR COALESCE(requirements,'') != '')"
+            else:
+                body_condition = "(octet_length(description)>0 OR octet_length(requirements)>0)"
         observed = text_conn.execute(
             "SELECT COUNT(*),COALESCE(SUM(fetched_at>=? AND fetched_at<=?),0),MIN(fetched_at),MAX(fetched_at) "
-            "FROM job_text WHERE job_id IN (SELECT value FROM json_each(?)) "
-            "AND " + body_condition,
-            (lookback_since(2, now=clock), clock, json.dumps(open_ids))).fetchone()
+            f"FROM {table} WHERE job_id IN (SELECT value FROM json_each(?)) AND " + body_condition,
+            params).fetchone()
         with_text = observed[0]
         jd_observation = {"fresh_48h": observed[1], "older_than_48h": with_text-observed[1],
                           "oldest": observed[2], "newest": observed[3]}
