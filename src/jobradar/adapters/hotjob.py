@@ -140,6 +140,8 @@ class HotjobAdapter(Adapter):
             seen_pages = set()
             while True:
                 data = self._list(code, page)
+                if isinstance(data, dict) and data.get("msg") == "该官网已关闭，无法继续访问!":
+                    raise RuntimeError("hotjob 招聘门户已关闭，保留历史岗位")
                 inner = data.get("data") if isinstance(data, dict) else None
                 form = inner.get("pageForm") if isinstance(inner, dict) else None
                 if not isinstance(form, dict) or not isinstance(form.get("pageData"), list):

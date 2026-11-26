@@ -135,6 +135,17 @@ def verify_online(root, snapshot, client):
         + ".json"
     )
     proof = get(url)
+    counters = proof.get("preservation")
+    if proof.get("all_preserved") is not True or not isinstance(counters, dict):
+        raise ValueError("缺少岗位与历史完整性核验")
+    required = {"lost_or_changed_events", "missing_jd_links", "changed_unrefreshed_job_rows"}
+    identity = {"missing_ids", "changed_first_seen"}
+    combined = "missing_or_changed_first_seen"
+    if combined not in counters and not identity.issubset(counters):
+        raise ValueError("缺少岗位身份与首次观测核验")
+    for key in required | ((identity | {combined}) & counters.keys()):
+        if type(counters.get(key)) is not int or counters[key] != 0:
+            raise ValueError("岗位或招聘历史完整性核验未通过")
     if (
         proof["snapshot_generation"] != snapshot["generation"]
         or proof["data_as_of"] != snapshot["data_as_of"]

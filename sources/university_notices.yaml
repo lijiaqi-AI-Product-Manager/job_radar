@@ -328,3 +328,42 @@ sources:
     notice_ids:
     - '757942'
     allow_empty: true
+- id: jysd-xidian-cjsc
+  company: 长江证券
+  compliance:
+    checked_on: '2026-11-26'
+    robots: absent
+    terms: 学校公开发布的企业招聘公告，栏目及详情可匿名读取，页面未列独立使用条款。仅索引招聘公告并保留原始链接。
+    notes: 按登记主体全名核实，仅收录本次验证的公告编号。学校展示期限与企业投递截止分开。
+  params:
+    host: job.xidian.edu.cn
+    match:
+    - 长江证券股份有限公司
+    notice_ids:
+    - '758641'
+- id: jysd-gdut-liby
+  company: 立白
+  compliance:
+    checked_on: '2026-11-26'
+    robots: absent
+    terms: 学校公开发布的企业招聘公告，栏目及详情可匿名读取，页面未列独立使用条款。仅索引招聘公告并保留原始链接。
+    notes: 按登记主体全名核实，仅收录本次验证的公告编号。学校展示期限与企业投递截止分开。
+  params:
+    host: career.gdut.edu.cn
+    match:
+    - 广州立白企业集团有限公司
+    notice_ids:
+    - '1021297'
+- id: jysd-dlmu-trinasolar
+  company: 天合光能
+  compliance:
+    checked_on: '2026-11-26'
+    robots: absent
+    terms: 学校公开发布的企业招聘公告，栏目及详情可匿名读取，页面未列独立使用条款。仅索引招聘公告并保留原始链接。
+    notes: 按登记主体全名核实，仅收录本次验证的公告编号。学校展示期限与企业投递截止分开。
+  params:
+    host: myjob.dlmu.edu.cn
+    match:
+    - 天合光能股份有限公司
+    notice_ids:
+    - '869574'

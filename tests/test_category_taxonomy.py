@@ -37,6 +37,22 @@ def test_vocabulary_is_fixed_even_for_empty_or_polluted_snapshots(jobs_db):
     assert meta["category_match"]["match"] == "none"
 
 
+@pytest.mark.parametrize("term,expected", [("机械", "机械设计工程师"), ("电气", "电气工程师")])
+def test_engineering_direction_requires_matching_title_within_combined_category(jobs_db, term, expected):
+    jobs = [make_job(i, title=title, category="工程制造", subcategory="机械/电气", cities=["沈阳"])
+            for i, title in enumerate(("机械设计工程师", "电气工程师", "结构工程师"), 1)]
+    jobs.append(make_job(4, title="机械翻译算法", category="技术", subcategory="算法", cities=["沈阳"]))
+    jobs.append(make_job(5, title="其他岗位", category=None, subcategory=None, cities=["沈阳"]))
+    ingest_run(jobs_db, "s1", jobs, ts=T(1))
+    meta = {}
+    result = q.search_jobs(jobs_db, category=term, city="沈阳", limit=1, meta=meta)
+    assert [r["title"] for r in result] == [expected] and meta["total"] == 1
+    assert meta["category_match"]["title_term"] == term
+    assert {r["title"] for r in q.search_jobs(jobs_db, exclude_categories=[term])} == {
+        j.title for j in jobs if j.title != expected
+    }
+
+
 @pytest.mark.parametrize("term", ["backend", "Backend", "ＢＡＣＫＥＮＤ", "后端"])
 def test_equivalent_role_names_include_canonical_and_legacy_values(jobs_db, term):
     ingest_run(jobs_db, "s1", [make_job(1, category="技术", subcategory="后端"),

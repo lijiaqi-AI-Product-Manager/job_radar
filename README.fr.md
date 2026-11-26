@@ -56,16 +56,16 @@ jobradar doctor
 
 ## Données et couverture
 
-2026-11-23 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-26 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Indicateur | Valeur |
 | :--- | ---: |
-| Sources actives | 2,203 |
-| Entreprises configurées | 2,172 |
+| Sources actives | 2,202 |
+| Entreprises configurées | 2,168 |
 | Adaptateurs | 27 |
-| Couverture du périmètre fixe d’entreprises cibles | 917 / 1,655 · 55.41% |
+| Couverture du périmètre fixe d’entreprises cibles | 916 / 1,655 · 55.35% |
 
-L’instantané vérifié du 23 novembre 2026 (UTC) contient 360 178 enregistrements, dont 314 384 ouverts. Le texte original est disponible pour 97,6 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
+L’instantané vérifié du 25 novembre 2026 (UTC) contient 362 387 enregistrements, dont 315 906 ouverts. Le texte original est disponible pour 97,6 % des enregistrements ouverts. Une source configurée ne signifie pas que l’entreprise recrute aujourd’hui. Une annonce d’agrégateur peut décrire plusieurs postes.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 
