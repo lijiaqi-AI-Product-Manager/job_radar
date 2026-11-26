@@ -13,6 +13,8 @@ jobradar calendar --help
 
 仅使用 CLI 可以安装 `jobsearchradar`。包名是 `jobsearchradar`，命令仍为 `jobradar` / `jobradar-mcp`。
 
+2026-11-26 从 PyPI 官方索引在全新环境安装 `2.3.9`，14 项安装检查通过。安装后的 76 个运行文件及两份词表与发布标签逐字节一致。GitHub 和 PyPI 的 wheel、源码包 SHA-256 一致，两枚首页徽章与安装版本一致。
+
 2026-11-23 在独立环境从 PyPI 官方索引无缓存安装 `2.3.8`，14 项安装检查及 MCP 帮助命令通过。GitHub 和 PyPI 的 wheel、源码包 SHA-256 一致，PyPI 首页正文与 GitHub main 的 README 一致。
 
 2026-11-14已从PyPI官方普通索引无缓存全新安装`2.3.7`：14项安装检查、MCP九工具17次调用、16组CLI结果对照与协议错误恢复通过。76个运行文件、2份分类资源与固定标签逐字节一致；GitHub/PyPI首页正文、wheel与源码包摘要一致，两枚实际徽章均为2.3.7。同代三库核验、过期默认隐藏和历史保留记录见[11月14日检查](../evals/results/2026-11-14.md)。
@@ -71,14 +73,14 @@ jobradar calendar --help
 | PyPI `2.1.2` | 已核实的历史发行包 | 历史安装记录 |
 | PyPI `2.1.1` | 已核验的上一版发行包 | 历史安装记录 |
 | GitHub `v2.3.2` | 已发布源码标签；渠道核验以顶部有日期记录为准 | 固定版本复现 |
-| 固定源码目标 | `v2.3.9`，代码版本 `2.3.9` | 可复现的备用安装；正式安装核验见顶部有日期记录 |
+| 固定源码目标 | `v2.3.10`，代码版本 `2.3.10` | 可复现的备用安装；正式安装核验见顶部有日期记录 |
 | `2.0.1` | 历史补丁 | 最新一批缺失JD时可能误拒收合法更新，请升级至2.1.2；失败时旧数据保留 |
 | `2.0.0` / `1.1.1` | 历史发行版 | 不包含本轮全部可靠性修正 |
 
 备用源码安装不要求本机安装 Git。不同源码修订可能使用同一版本号，因此源码安装使用 `--force-reinstall`：
 
 ```bash
-pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.9.zip"
+pip install --upgrade --force-reinstall "jobsearchradar[mcp] @ https://github.com/lijiaqi-AI-Product-Manager/job_radar/archive/v2.3.10.zip"
 ```
 
 [PyPI 官方元数据](https://pypi.org/pypi/jobsearchradar/json)提供索引当前版本。
