@@ -146,9 +146,9 @@ Each result distinguishes source refreshes from the job’s own observation. Job
 | Core target coverage | **916 / 1,655 · 55.35%** | Configuration coverage of a fixed target pool |
 | Official / aggregator | **597 / 319** | Official-first classification, without double counting |
 
-**Verified release snapshot · `2026-11-25T07:25:19Z`**
+**Verified release snapshot · `2026-11-26T04:47:14Z`**
 
-**362,387 total job records**, including **315,906 records visible on November 26 in Beijing**, with original JD text for **97.6%** of visible records. The calendar sample contains **5,611 entries**, including **2,079 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
+**363,217 total job records**, including **315,373 records visible on November 26 in Beijing**, with original JD text for **97.6%** of visible records. The calendar sample contains **5,619 entries**, including **2,079 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
 
 Configured coverage does not mean an employer is hiring today. An aggregator recruitment notice may describe multiple roles. Missing dates remain empty; a university notice's display expiry is kept separate from an employer's application deadline. See [coverage methodology and limitations](docs/COVERAGE.md).
 
