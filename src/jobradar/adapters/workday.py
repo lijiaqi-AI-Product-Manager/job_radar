@@ -22,7 +22,10 @@ import re
 from collections.abc import Iterator
 from datetime import date, datetime
 
-from jobradar.adapters.base import Adapter, SkipRecord, register
+import httpx
+
+from jobradar.adapters.base import Adapter, CrawlBudgetExceeded, SkipRecord, register
+from jobradar.compliance import ComplianceError
 from jobradar.models import Job
 from jobradar.normalize import _CST, city_from_english, date_only
 
@@ -79,13 +82,13 @@ def country_locations(facets, country: str, facet: str = "locations", prefix_mat
     values = _facet_values(facets, facet)
     if prefix_match:
         # "China, Shanghai" / "China - Shanghai - Shanghai" / "China" 都要认
-        pat = re.compile(rf"^{re.escape(country)}\b")
+        pat = re.compile(rf"^{re.escape(country)}(?:$|\s*[,/\-])", re.I)
         ok = lambda d: isinstance(d, str) and bool(pat.match(d.strip()))    # noqa: E731
     else:
         ok = lambda d: isinstance(d, str) and d.strip() == country          # noqa: E731
 
     def pick(vs):
-        return [v["id"] for v in vs if ok(v.get("descriptor"))]
+        return [v["id"] for v in vs if v.get("id") and ok(v.get("descriptor"))]
 
     # **顺序不能反**：`locationMainGroup` 里的值叫 "Primary Location" / "Asia Pacific"，
     # 永远匹配不上国家名。先试它会把 `locations` 和 `Location_Country` 一起挡掉
@@ -362,22 +365,41 @@ class WorkdayAdapter(Adapter):
         # 惠普/史赛克的国家分面叫 `Location_Country`，传错名字服务端当成未知分面直接忽略，
         # 于是「筛了中国」其实拿到的是全球岗位。优先用配置的 location_facet，
         # 否则从 facets 里反查「哪个分面里装着这个国家」。
-        key = facet
-        if not probe.get("facets") or not _facet_values(probe.get("facets"), facet):
-            key = _facet_containing(probe.get("facets"), ids) or facet
-        applied = {key: ids}
+        facets = probe["facets"]
+        matched = set(ids)
+        if not any(v.get("id") in matched for v in _facet_values(facets, facet)):
+            facet = _facet_containing(facets, ids)
+        if not facet:
+            raise RuntimeError("workday 无法核实地点分面的参数名")
+        applied = {facet: list(dict.fromkeys(v["id"] for v in _facet_values(facets, facet)
+                                               if v.get("id") in matched))}
         yield from self._paged(applied, limit, "")
 
     def _paged(self, applied: dict, limit: int, search: str, local_country: str | None = None):
         offset, page, total = 0, 0, None
+        seen = set()
         while True:
             data = self.request_json("POST", self._base(), json={
                 "appliedFacets": applied, "limit": limit, "offset": offset, "searchText": search,
             })
-            items = data.get("jobPostings") or []
+            items = data.get("jobPostings") if isinstance(data, dict) else None
+            if not isinstance(items, list):
+                raise RuntimeError("workday 职位列表缺失或格式异常")
             if total is None:
                 # 只有第一页的 total 可信：Workday 从第二页起返回 total=0（2026-10-22 实测）
-                total = data.get("total") or 0
+                total = data.get("total")
+                if type(total) is not int or total < 0:
+                    raise RuntimeError("workday 缺少有效的首页总数")
+            if not items and offset < total:
+                raise RuntimeError("workday 提前返回空页，未完整读取")
+            paths = [item.get("externalPath") if isinstance(item, dict) else None for item in items]
+            if any(not isinstance(path, str) or not path.startswith("/") for path in paths):
+                raise RuntimeError("workday 职位缺少详情路径")
+            if len(set(paths)) != len(paths) or seen.intersection(paths):
+                raise RuntimeError("workday 列表重复，无法核实分页完整性")
+            seen.update(paths)
+            if len(seen) > total:
+                raise RuntimeError("workday 职位数超过首页总数")
             for item in items:
                 # 关键词兜底的源必须本地点名过滤：searchText=China 会命中
                 # "APAC Payroll Administrator - China"（地点在菲律宾）这类岗位。
@@ -391,8 +413,13 @@ class WorkdayAdapter(Adapter):
                 try:
                     payload = self.request_json("GET", self._base(item["externalPath"]))
                     detail = payload.get("jobPostingInfo") or {}
-                except Exception:  # noqa: BLE001 — 单条详情失败不影响整源，JD 留空
-                    detail = {}
+                except (ComplianceError, CrawlBudgetExceeded):
+                    raise
+                except httpx.HTTPStatusError as error:
+                    if error.response.status_code in (401, 403):
+                        raise
+                except (httpx.RequestError, RuntimeError, ValueError):
+                    pass
                 if local_country and _row_known_foreign(item.get("locationsText") or ""):
                     # 列表页是「N Locations」，但详情页把真实地点写出来了（英特尔 2026-10-27：
                     # 34 条 China 检索里 3 条实际在 India/Malaysia）。详情页有 **结构化国家**
@@ -400,14 +427,14 @@ class WorkdayAdapter(Adapter):
                     if not _detail_in_country(detail, local_country):
                         continue
                 yield {**item, "detail": detail}
-            offset += limit
+            offset += len(items)
             page += 1
-            if not items or len(items) < limit:
-                return
-            if total and offset >= total:
+            if offset == total:
                 return
             if self.source.max_pages and page >= self.source.max_pages:
-                return
+                if self.source.params.get("allow_partial"):
+                    return
+                raise RuntimeError("workday 已达 max_pages，未完整读取")
 
     def normalize(self, raw: dict) -> Job:
         info = raw.get("detail") or {}

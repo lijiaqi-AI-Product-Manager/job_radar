@@ -43,7 +43,6 @@ sources:
       site: PfizerCareers
       location_facet: Location_Country   # 辉瑞用国家分面（descriptor 就是 "China"）
       country_exact: true
-      max_pages: 12
 
   - id: workday-astrazeneca
     company: 阿斯利康
@@ -52,7 +51,6 @@ sources:
       tenant: astrazeneca
       site: Careers
       country: China
-      max_pages: 12
 
   # 2026-10-26 新增：从 careers.dupont.com/cn/zh 的岗位链接里读出真实 CXS 租户（站点名就是 Jobs）。
   # 中国岗位没有国家分面可选（facets 只有 jobFamilyGroup/workerSubType/timeType/locationMainGroup），

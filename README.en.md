@@ -136,19 +136,19 @@ Each result distinguishes source refreshes from the job’s own observation. Job
 
 ## Data and coverage
 
-**Source configuration · November 23, 2026**
+**Source configuration · November 26, 2026**
 
 | Metric | Value | Definition |
 | :--- | ---: | :--- |
-| Enabled sources | **2,203** | Enabled source configurations |
-| Configured companies | **2,172** | Distinct companies represented by enabled sources |
+| Enabled sources | **2,202** | Enabled source configurations |
+| Configured companies | **2,168** | Distinct companies represented by enabled sources |
 | Adapters | **27** | Shared platforms and custom recruitment sites |
-| Core target coverage | **917 / 1,655 · 55.41%** | Configuration coverage of a fixed target pool |
-| Official / aggregator | **598 / 319** | Official-first classification, without double counting |
+| Core target coverage | **916 / 1,655 · 55.35%** | Configuration coverage of a fixed target pool |
+| Official / aggregator | **597 / 319** | Official-first classification, without double counting |
 
-**Verified release snapshot · `2026-11-23T01:53:40Z`**
+**Verified release snapshot · `2026-11-25T07:25:19Z`**
 
-**360,178 total job records**, including **314,384 visible records**, with original JD text for **97.6%** of visible records. The calendar sample contains **5,600 entries**, including **2,078 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
+**362,387 total job records**, including **315,906 records visible on November 26 in Beijing**, with original JD text for **97.6%** of visible records. The calendar sample contains **5,611 entries**, including **2,079 manually curated entries**. These are dated snapshot statistics. Use `jobradar stats` and the latest [data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) for current figures.
 
 Configured coverage does not mean an employer is hiring today. An aggregator recruitment notice may describe multiple roles. Missing dates remain empty; a university notice's display expiry is kept separate from an employer's application deadline. See [coverage methodology and limitations](docs/COVERAGE.md).
 

@@ -255,7 +255,7 @@ jobs:
             category-report.json
             report.md
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 30
 
       - name: Keep schedule alive
         # 公开仓库 60 天无活动会自动停用定时任务；每月 1 日重新启用一次

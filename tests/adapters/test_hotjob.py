@@ -188,6 +188,14 @@ def test_public_tenant_identifiers_use_canonical_hex_case():
         assert adapter.tenant == 'SU6149ff530dcad47003d01511'
 
 
+def test_closed_public_portal_cannot_be_accepted_as_an_empty_listing():
+    with httpx.Client() as client:
+        adapter = HotjobAdapter(source(), client)
+        adapter._list = lambda *_: {"msg": "该官网已关闭，无法继续访问!"}
+        with pytest.raises(RuntimeError, match="招聘门户已关闭"):
+            list(adapter.fetch_all())
+
+
 def test_missing_platform_degree_does_not_invalidate_derived_cache(monkeypatch):
     monkeypatch.setattr('jobradar.adapters.hotjob.now_ts', lambda: '2026-11-02T00:00:00Z')
     original = run()[0]

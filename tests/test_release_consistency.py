@@ -101,7 +101,9 @@ def test_public_metadata_must_match_main_readme_and_snapshot(root):
             mod.verify_online(root, snapshot, client)
 
 
-@pytest.mark.parametrize("drift", [None, "main", "generation", "counts"])
+@pytest.mark.parametrize("drift", [
+    None, "main", "generation", "counts", "not_preserved", "missing_counter", "changed_jobs", "boolean_counter",
+])
 def test_online_gate_detects_changes_before_upload(root, drift):
     mod = module()
     snapshot = mod.validate(root, "1.2.3")
@@ -111,9 +113,20 @@ def test_online_gate_detects_changes_before_upload(root, drift):
         "snapshot_generation": snapshot["generation"],
         "data_as_of": snapshot["data_as_of"],
         "statistics": dict(snapshot),
+        "all_preserved": True,
+        "preservation": dict.fromkeys(("missing_ids", "changed_first_seen", "lost_or_changed_events",
+                                       "missing_jd_links", "changed_unrefreshed_job_rows"), 0),
     }
     if drift == "counts":
         proof["statistics"]["total_jobs"] = 1234
+    elif drift == "not_preserved":
+        proof["all_preserved"] = False
+    elif drift == "missing_counter":
+        del proof["preservation"]["missing_jd_links"]
+    elif drift == "changed_jobs":
+        proof["preservation"]["changed_first_seen"] = 1
+    elif drift == "boolean_counter":
+        proof["preservation"]["missing_ids"] = False
 
     def respond(request):
         if "/contents/" in request.url.path:

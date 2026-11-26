@@ -45,7 +45,7 @@ def test_daily_has_bounded_recovery_and_preserves_full_diagnostics():
     assert "--budget-seconds" in _step("Recover deferred sources")["run"]
     diagnostics = _step("Preserve crawl diagnostics")
     assert diagnostics["if"] == "always()"
-    assert diagnostics["with"]["retention-days"] == 14
+    assert diagnostics["with"]["retention-days"] == 30
     assert "initial-summary.json" in diagnostics["with"]["path"]
     assert "inputs.stale_only_hours" in _step("Health issue")["if"]
     assert "--sources sources" in _step("Health issue")["run"]

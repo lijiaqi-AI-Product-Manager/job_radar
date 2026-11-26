@@ -13,7 +13,7 @@ uv run python scripts/coverage_report.py --json
 uv run python scripts/release_check.py --home <数据目录>
 ```
 
-真实数据目录需含 `jobs.db`、`jd_text.db` 与 `calendar.db`；缺少数据的 SKIP 不算通过。80% 覆盖独立运行 `scripts/coverage_report.py --json --min-coverage 0.8`，当前启用配置为917/1,655（55.41%，2026-11-23复算），预期退出1，仍差407家。
+真实数据目录需含 `jobs.db`、`jd_text.db` 与 `calendar.db`；缺少数据的 SKIP 不算通过。80% 覆盖独立运行 `scripts/coverage_report.py --json --min-coverage 0.8`，当前启用配置为916/1,655（55.35%，2026-11-26复算），预期退出1，仍差408家。
 
 ## 日历定点修正
 

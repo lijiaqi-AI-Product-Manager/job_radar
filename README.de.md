@@ -55,16 +55,16 @@ jobradar doctor
 
 ## Daten und Abdeckung
 
-2026-11-23 · [Methodology / 统计口径](docs/COVERAGE.md)
+2026-11-26 · [Methodology / 统计口径](docs/COVERAGE.md)
 
 | Kennzahl | Wert |
 | :--- | ---: |
-| Aktivierte Quellen | 2,203 |
-| Konfigurierte Unternehmen | 2,172 |
+| Aktivierte Quellen | 2,202 |
+| Konfigurierte Unternehmen | 2,168 |
 | Adapter | 27 |
-| Konfigurationsabdeckung der festen Zielliste | 917 / 1,655 · 55.41% |
+| Konfigurationsabdeckung der festen Zielliste | 916 / 1,655 · 55.35% |
 
-Der geprüfte Stand vom 23. November 2026 (UTC) enthält 360.178 Datensätze, davon 314.384 offene Einträge. Für 97,6 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
+Der geprüfte Stand vom 25. November 2026 (UTC) enthält 362.387 Datensätze, davon 315.906 offene Einträge. Für 97,6 % der offenen Einträge liegt der Originaltext vor. Eine konfigurierte Quelle bedeutet nicht, dass heute eingestellt wird. Eine Sammelanzeige kann mehrere Stellen beschreiben.
 
 [Latest data release](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/data-latest) · `jobradar stats`
 

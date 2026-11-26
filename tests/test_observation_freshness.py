@@ -51,6 +51,40 @@ def test_recent_missing_candidate_is_unconfirmed_without_claiming_48h_old(jobs_d
     assert local.envelope(jobs_db, [row])["stale"] is False
 
 
+def test_observed_only_uses_last_complete_observation_before_count_and_limit(tmp_path, monkeypatch, capsys):
+    from jobradar import source_catalog
+
+    monkeypatch.setenv("JOBRADAR_HOME", str(tmp_path))
+    monkeypatch.setattr(q, "now_ts", lambda: T(5))
+    monkeypatch.setattr(source_catalog, "catalog", lambda: {
+        sid: {"enabled": sid != "paused"} for sid in ("s1", "edge", "old", "paused", "future")})
+    with connect(tmp_path / "jobs.db", "jobs") as conn:
+        seen, missing, expired = make_job(1), make_job(2), make_job(3, apply_end="2026-10-04")
+        ingest_run(conn, "s1", [seen, missing, expired], ts=T(1))
+        ingest_run(conn, "s1", [seen, expired], ts=T(4))
+        ingest_run(conn, "s1", [], ts=T(5), ok=False, error="ReadTimeout")
+        for sid, ts in (("edge", T(3)), ("old", T(2, 23)), ("paused", T(4)),
+                        ("unknown", T(4)), ("future", T(6))):
+            ingest_run(conn, sid, [make_job(4, source_id=sid)], ts=ts)
+        previous = conn.total_changes
+        meta = {}
+        rows = q.search_jobs(conn, observed_only=True, meta=meta)
+        assert {r["source_id"] for r in rows} == {"s1", "edge"}
+        assert all(r["availability"] == "observed_recently" for r in rows)
+        assert seen.id in {r["id"] for r in rows} and meta["total"] == 2
+        assert len(q.search_jobs(conn, observed_only=True, limit=1, meta=meta)) == 1 and meta["total"] == 2
+        assert any("48小时" in hint for hint in meta["hints"])
+        assert conn.total_changes == previous
+        with pytest.raises(ValueError, match="include_closed"):
+            q.search_jobs(conn, observed_only=True, include_closed=True)
+    cli.main(["search", "--observed-only", "--limit", "1"])
+    cli_payload = json.loads(capsys.readouterr().out)
+    mcp = pytest.importorskip("jobradar.mcp_server")
+    mcp_payload = mcp.search_jobs(observed_only=True, dedupe=False, limit=1)
+    assert [r["id"] for r in cli_payload["results"]] == [r["id"] for r in mcp_payload["results"]]
+    assert cli_payload["total"] == mcp_payload["total"] == 2
+
+
 def test_failed_or_rejected_run_does_not_claim_a_job_disappeared(jobs_db, monkeypatch):
     monkeypatch.setattr(q, "now_ts", lambda: T(2))
     job = make_job(1)

@@ -13,11 +13,11 @@ MARKER = "<!-- jobradar:data-health -->"
 
 
 def issue_action(issues, bad):
-    opened = next((i for i in issues if i["state"] == "open"), None)
+    marked = [i for i in issues if MARKER in (i.get("body") or "")]
+    opened = next((i for i in marked if i["state"] == "open"), None)
     if opened:
         return ("update" if bad else "close", opened["number"])
-    marked = next((i for i in issues if MARKER in (i.get("body") or "")), None)
-    return ("reopen", marked["number"]) if bad and marked else (("create", None) if bad else ("none", None))
+    return ("reopen", marked[0]["number"]) if bad and marked else (("create", None) if bad else ("none", None))
 
 
 def render(summary: dict, *, expected_ids=None, now=None) -> tuple[str, bool]:

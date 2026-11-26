@@ -79,7 +79,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
                 cities: list[str] | None = None, exclude_cities: list[str] | None = None,
                 exclude_keywords: list[str] | None = None, exclude_companies: list[str] | None = None,
                 include_unknown_grad_year: bool = False, include_frontline: bool = False,
-                exclude_categories: list[str] | None = None) -> dict:
+                exclude_categories: list[str] | None = None, observed_only: bool = False) -> dict:
     """搜索在招岗位。recruit_type: campus(校招)/intern(实习)/social(社招)；
     company 为公司名（支持「中核」这类简称映射）；匹配不上时返回空 + company_match 说明是
     「未收录」还是「命中多家」，不要据此推断该公司没在招。contains=True 才按子串匹配；
@@ -95,6 +95,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
     text 为全文检索（标题 + JD 职责/要求原文，空格分隔的词须全部出现，如 "PyTorch 大模型"），
     结果带 match（JD 中命中处的片段，仅标题命中时为 null）。
     text_observed_at 是该正文的实际观测时间，不等于列表最近刷新时间。
+    用户要求最近确认的岗位时，observed_only=True 仅保留启用来源过去48小时内最近成功采集仍出现的记录。
     cities是城市并集，不能与city同时用；exclude_cities排除包含任一指定城市的整条记录，缺失城市仍未知。
     exclude_keywords只排除标题中的字面量；exclude_companies按确定公司主体排除，歧义时返回错误。
     include_unknown_grad_year=True需同时给grad_year；未知候选标为grad_year_match=unknown，不能声称符合。
@@ -114,7 +115,7 @@ def search_jobs(company: str | None = None, category: str | None = None, city: s
             meta = {}
             rows = q.search_jobs(conn, company=company, category=category, city=city,
                                  recruit_type=recruit_type, grad_year=grad_year, keyword=keyword,
-                                 text=text, text_conn=text_conn, include_closed=include_closed,
+                                 text=text, text_conn=text_conn, include_closed=include_closed, observed_only=observed_only,
                                  limit=min(limit, 200), contains=contains, meta=meta,
                                  dedupe=dedupe, exclude_store=exclude_store,
                                  deadline_before=deadline_before,

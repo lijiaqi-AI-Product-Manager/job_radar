@@ -93,7 +93,7 @@ def test_missing_country_facet_fails_instead_of_ingesting_global_jobs():
 def test_pagination_ignores_total_after_first_page():
     """Workday 从第二页起返回 total=0（实测），不能因此提前停止翻页。"""
     a = WorkdayAdapter(source(page_size=20, max_pages=99), httpx.Client(), sleep=lambda s: None)
-    pages = {0: (20, 244), 20: (20, 0), 40: (3, 0)}
+    pages = {0: (20, 43), 20: (20, 0), 40: (3, 0)}
     seen = []
 
     def fake(method, url, *, params=None, json=None, headers=None):
@@ -205,3 +205,74 @@ def test_remote_location_becomes_remote_tag():
     assert cities_of("China---Remote") == ["远程"]
     assert cities_of("Remote - China") == ["远程"]
     assert cities_of("Dalian-Liaoning-China") == ["大连"]   # 有城市时不能被「远程」占位
+
+
+def _listed(*paths, total=0):
+    return {"total": total, "jobPostings": [
+        {"title": path, "externalPath": "/job/" + path, "locationsText": "Shanghai"}
+        for path in paths
+    ]}
+
+
+@pytest.mark.parametrize("pages,cap", [
+    ([_listed("one", "two", total=4)], 1),
+    ([_listed("one", "two", total=4), _listed()], None),
+    ([_listed("one", "two", total=4), {"total": 0}], None),
+    ([_listed("one", "two", total=4), _listed("two", "three")], None),
+    ([{"jobPostings": []}], None),
+])
+def test_incomplete_workday_list_cannot_confirm_absent_jobs(pages, cap):
+    with httpx.Client() as client:
+        adapter = WorkdayAdapter(source(max_pages=cap, allow_partial=False), client)
+        replies = iter(pages)
+        adapter.request_json = lambda method, *args, **kwargs: (
+            next(replies) if method == "POST" else {"jobPostingInfo": {}}
+        )
+        with pytest.raises(RuntimeError, match="workday"):
+            list(adapter._paged({}, 2, ""))
+
+
+def test_short_workday_pages_advance_by_received_rows():
+    offsets = []
+    def page(method, url, *, json=None):
+        if method == "GET":
+            return {"jobPostingInfo": {}}
+        offsets.append(json["offset"])
+        return [_listed("one", total=2), _listed("two")][json["offset"]]
+    with httpx.Client() as client:
+        adapter = WorkdayAdapter(source(max_pages=None), client)
+        adapter.request_json = page
+        assert len(list(adapter._paged({}, 20, ""))) == 2
+        assert offsets == [0, 1]
+
+
+def test_fallback_uses_the_location_facet_that_owns_the_id():
+    facets = [
+        {"facetParameter": "locations", "values": [{"id": "us", "descriptor": "Boston"}]},
+        {"facetParameter": "Location_Country", "values": [{"id": "cn", "descriptor": "China"}]},
+    ]
+    with httpx.Client() as client:
+        adapter = WorkdayAdapter(source(), client)
+        adapter.request_json = lambda *args, **kwargs: {"facets": facets}
+        adapter._paged = lambda applied, *args: [applied]
+        assert list(adapter.fetch_raw()) == [{"Location_Country": ["cn"]}]
+
+
+def test_location_facet_excludes_china_lake():
+    values = [{"id": "us", "descriptor": "China Lake, CA"}, {"id": "cn", "descriptor": "China, Suzhou"}]
+    assert country_locations([{"facetParameter": "locations", "values": values}], "China") == ["cn"]
+
+
+def test_detail_access_denial_stops_the_workday_source():
+    from jobradar.compliance import ComplianceError
+
+    def respond(method, *args, **kwargs):
+        if method == "GET":
+            raise ComplianceError("robots Disallow")
+        return _listed("one", total=1)
+
+    with httpx.Client() as client:
+        adapter = WorkdayAdapter(source(), client)
+        adapter.request_json = respond
+        with pytest.raises(ComplianceError):
+            list(adapter._paged({}, 2, ""))

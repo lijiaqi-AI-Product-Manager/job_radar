@@ -60,6 +60,9 @@ def category_vocabulary(conn):
 def _category_match(conn, term):
     available = category_vocabulary(conn)
     normalized = _norm_name(term)
+    if normalized in {"机械", "电气"}:
+        return {"match": "category_and_title", "matched": ["机械/电气"], "input": term,
+                "title_term": normalized}
     alias = _CATEGORY_ALIASES.get(normalized)
     canonical = {_norm_name(value): value for value in available}
     target = alias or canonical.get(normalized)
@@ -68,6 +71,15 @@ def _category_match(conn, term):
         legacy = sorted(name for name, value in _CATEGORY_ALIASES.items() if value == target)
         return {"match": "alias" if alias else "exact", "matched": [target, *legacy], "input": term}
     return {"match": "none", "matched": [], "available": available}
+
+
+def _category_filter(match):
+    labels = json.dumps(match["matched"])
+    clause = ("(j.category COLLATE NOCASE IN (SELECT value FROM json_each(?)) "
+              "OR j.subcategory COLLATE NOCASE IN (SELECT value FROM json_each(?)))")
+    if "title_term" in match:
+        return f"({clause} AND instr(j.title, ?) > 0)", [labels, labels, match["title_term"]]
+    return clause, [labels, labels]
 
 
 def positive(value, name="limit"):
@@ -414,7 +426,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
                 deadline_after=None, cities=None, exclude_cities=None,
                 exclude_keywords=None, exclude_companies=None,
                 include_unknown_grad_year=False, include_frontline=False,
-                exclude_categories=None) -> list[dict]:
+                exclude_categories=None, observed_only=False) -> list[dict]:
     """keyword 只匹配标题；text 为全文检索：空格分隔的每个词都须出现在标题或 JD 原文中（需要 text_conn）。
 
     meta 传入 dict 时写入 `company_match`（命中方式/候选），供 CLI/MCP 回显"这是猜的还是确定的"。
@@ -429,6 +441,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         predicates.append((clause, values, field))
 
     positive(limit)
+    if type(observed_only) is not bool:
+        raise ValueError("observed_only 必须为布尔值")
+    if observed_only and include_closed:
+        raise ValueError("observed_only 与 include_closed 不能同时使用")
     if keyword is not None and (not isinstance(keyword, str) or not keyword.strip() or len(keyword) > 4096):
         raise ValueError("标题关键词必须是不超过4096字符的非空文本；不筛选时省略keyword")
     if type(include_frontline) is not bool or type(exclude_store) is not bool:
@@ -467,6 +483,13 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         # 快照可能早于今天：明示截止日一过就从当前岗位中隐藏，无需等该源再次成功抓取。
         # 这是查询过滤，不改 closed_at / miss_count，失败与拒收仍不能改变岗位状态。
         add("(j.apply_end IS NULL OR j.apply_end >= ?)", today)
+    if observed_only:
+        from jobradar.source_catalog import catalog
+
+        enabled = [sid for sid, info in catalog().items() if info.get("enabled") is True]
+        add("(j.source_id, j.last_seen) IN (SELECT source_id, MAX(ts) FROM source_run "
+            "WHERE status='ok' AND ts >= ? AND source_id IN (SELECT value FROM json_each(?)) "
+            "GROUP BY source_id HAVING MAX(ts) <= ?)", lookback_since(2, now=clock), json.dumps(enabled), clock)
     frontline_mode = ("exclude" if exclude_store else "include" if include_frontline else
                       "auto_campus_intern" if recruit_type in {"campus", "intern"} else "off")
     frontline_clause = None
@@ -481,9 +504,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             meta["company_match"] = match.as_meta()
     if category:
         category_match = _category_match(conn, category)
-        values = json.dumps(category_match["matched"])
-        add("(j.category COLLATE NOCASE IN (SELECT value FROM json_each(?)) "
-            "OR j.subcategory COLLATE NOCASE IN (SELECT value FROM json_each(?)))", values, values)
+        clause, values = _category_filter(category_match)
+        add(clause, *values)
         if meta is not None:
             meta["category_match"] = category_match
     excluded_categories = {}
@@ -492,12 +514,10 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         if not matched["matched"]:
             raise ValueError(f"不支持排除职类「{term}」，请使用固定职类词表")
         excluded_categories[term] = matched
-    if excluded_categories:
-        values = json.dumps(sorted({v for match in excluded_categories.values() for v in match["matched"]}))
-        add("NOT (COALESCE(j.category,'') COLLATE NOCASE IN (SELECT value FROM json_each(?)) "
-            "OR COALESCE(j.subcategory,'') COLLATE NOCASE IN (SELECT value FROM json_each(?)))", values, values)
-        if meta is not None:
-            meta["excluded_category_matches"] = excluded_categories
+        clause, values = _category_filter(matched)
+        add(f"NOT COALESCE({clause}, 0)", *values)
+    if excluded_categories and meta is not None:
+        meta["excluded_category_matches"] = excluded_categories
     wanted_cities = [city.strip()] if city else cities
     if wanted_cities:
         labels = sorted({label for c in wanted_cities for label in (c.removesuffix("市"), c.removesuffix("市") + "市")})
@@ -550,7 +570,7 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
     if (terms and os.environ.get("JOBRADAR_BUILD_SEARCH_INDEX") != "1"
             and any((company, category, city, recruit_type, grad_year, keyword,
                      deadline_before, deadline_after, exclude_store, cities, exclude_cities,
-                     exclude_keywords, exclude_companies, exclude_categories))):
+                     exclude_keywords, exclude_companies, exclude_categories, observed_only))):
         # 只在集合足够小时使用主键读取；较大集合继续原路径，不截断匹配结果。
         with closing(conn.execute("SELECT j.id" + from_sql + " WHERE " + " AND ".join(where), args)) as cursor:
             eligible = cursor.fetchmany(10001)
@@ -611,6 +631,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
         if category and category_match["match"] == "none":
             hints.append(f"职类「{category}」不在支持的词表中；可用 category_match.available 选择具体职类，"
                          "或改用标题关键词/正文检索，不会自动放宽为整个大类")
+        if category and category_match.get("title_term"):
+            hints.append(f"已在机械/电气职类内筛选标题明写「{category_match['title_term']}」的岗位")
         coverage = {}
         for field, label, enabled in (("grad_year", "届次", grad_year is not None),
                                        ("apply_end", "截止日", bool(deadline_before or deadline_after))):
@@ -635,6 +657,8 @@ def search_jobs(conn, *, company=None, category=None, city=None, recruit_type=No
             coverage[field] = info
         if coverage:
             meta["filter_coverage"] = coverage
+        if observed_only:
+            hints.append("仅含过去48小时内启用来源最近一次成功采集中仍出现的岗位，投递前请核实招聘原文")
         if include_unknown_grad_year:
             hints.append("已同时返回届次未标注候选；grad_year_match=unknown需要另行核实，不能宣称符合届次")
         if exclude_cities:

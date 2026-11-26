@@ -182,6 +182,7 @@ sources:
     params: {host: wecruit.hotjob.cn, tenant: SU6a94e5b85e09b14b274b6888}
     # 2026-10-27 搜索反查新增：校招 117 岗；城市 20/20、发布日 20/20；岗位代码前缀 GPC
   - id: hotjob-3e1c5b
+    enabled: false  # 2026-11-26 大易明确返回“该官网已关闭，无法继续访问”；保留既有记录。
     company: 中国电科
     params: {host: wecruit.hotjob.cn, tenant: SU6056ebe60dcad424d03e1c5b}
     # 2026-10-27 搜索反查新增：校招 136 岗；城市 20/20、发布日 20/20；岗位代码前缀 cetc
@@ -347,6 +348,7 @@ sources:
     params: {host: wecruit.hotjob.cn, tenant: SU650D409E6202CC7D7A295264, page_size: 50}
     # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 30 岗
   - id: hotjob-su6056b00a0dcad424d03e153c
+    enabled: false  # 2026-11-26 大易明确返回“该官网已关闭，无法继续访问”；保留既有记录。
     company: 中国电科院
     params: {host: wecruit.hotjob.cn, tenant: SU6056B00A0DCAD424D03E153C, page_size: 50}
     # 2026-10-28 subdomain.center 枚举 + 首页 SU 租户 id；首页 27 岗
@@ -881,6 +883,7 @@ sources:
     params: {host: wecruit.hotjob.cn, tenant: SU6513bedd1eb8054296dc453c, page_size: 50}
     # 2026-10-28 新增：10 岗
   - id: hotjob-su6513d4281c240e3d6804d22d
+    enabled: false  # 2026-11-26 大易明确返回“该官网已关闭，无法继续访问”；保留既有记录。
     company: 广州康养集团有限公司
     params: {host: wecruit.hotjob.cn, tenant: SU6513d4281c240e3d6804d22d, page_size: 50}
     # 2026-10-28 新增：10 岗
@@ -1157,6 +1160,7 @@ sources:
     params: {host: wecruit.hotjob.cn, tenant: SU6266796a0dcad47b9fd6fb2e, page_size: 50}
     # 2026-10-28 新增：2 岗
   - id: hotjob-su6535c6701c240e5299cb039b
+    enabled: false  # 2026-11-26 大易明确返回“该官网已关闭，无法继续访问”；保留既有记录。
     company: 上海镭镆科技有限公司
     params: {host: wecruit.hotjob.cn, tenant: SU6535c6701c240e5299cb039b, page_size: 50}
     # 2026-10-28 新增：2 岗

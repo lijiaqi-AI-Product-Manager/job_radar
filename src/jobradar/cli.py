@@ -632,6 +632,7 @@ def cmd_search(args):
         rows = q.search_jobs(conn, company=args.company, category=args.category, city=args.city,
                              recruit_type=args.type, grad_year=args.grad_year, keyword=args.keyword,
                              text=args.text, text_conn=text, include_closed=args.include_closed,
+                             observed_only=args.observed_only,
                              limit=args.limit, contains=args.contains, meta=meta,
                              dedupe=args.dedupe, exclude_store=args.exclude_store,
                              include_frontline=args.include_frontline, exclude_categories=args.exclude_category,
@@ -966,6 +967,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--deadline-before", help="YYYY-MM-DD：只看截止日不晚于该日的岗位（找快截止的）")
     sp.add_argument("--deadline-after", help="YYYY-MM-DD：只看截止日不早于该日的岗位（排除已过期）")
     sp.add_argument("--include-closed", action="store_true", help="包含已下架或已明确到期的历史岗位")
+    sp.add_argument("--observed-only", action="store_true", help="只看过去48小时内来源最近一次成功采集时仍出现的岗位")
     sp.add_argument("--limit", type=int, default=50)
 
     sp = add("show", cmd_show, "岗位详情（含 JD 原文，若已下载）")

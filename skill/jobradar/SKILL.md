@@ -45,6 +45,7 @@ jobradar doctor
 - 明确指定校招/实习时，搜索与对比默认过滤标题明确的一线门店和房产经纪岗位。用户明确寻找此类岗位时传`include_frontline=true`（CLI `--include-frontline`）；不限类型与社招不默认过滤。说明`frontline_filter`的模式和计数，全文检索计数为`null`时不能编造。`exclude_categories`是字段排除，未知职类需修正，空字段仍需原文核实。
 - 下载使用默认 GitHub 渠道；失败时先检查网络和数据状态，不将当前未核实可用的镜像作为首选。见[渠道状态](https://github.com/lijiaqi-AI-Product-Manager/job_radar/blob/main/docs/DISTRIBUTION.md)。
 - `record_kind: recruitment_notice` 是招聘公告，可能包含多个职位，不能将公告条数表述为岗位数；`source_kind: aggregator` 是公开聚合来源，引用时说明来源。`unknown` 不能按名称猜测。详情中的 `source.compliance_checked_on` 是配置的合规核查日期，不代表今天已成功读取。`stats` 的 `by_record_kind` 与 `by_source_kind` 提供分层计数。
+- 用户只想看最近还能找到的岗位时，搜索使用 `observed_only=true`（CLI `--observed-only`）。返回的岗位均在启用来源过去48小时内最近一次成功采集中出现。若为空，说明本次没有近期观测结果。给出投递链接前仍需核对原文。
 - 默认搜索和日历按北京时间自动隐藏明确截止日已过的记录，截止当天仍保留；查历史岗位用 `search --include-closed`，查历史日历用 `calendar --include-expired`（MCP 对应 `include_closed` / `include_expired`）。`calendar --open-on` 以指定日期为准。不要通过补填未知日期来让条目过期。
 - 数据目录不是默认的
   `~/.cache/jobradar` 时，给 MCP 配置的 `env` 传 `JOBRADAR_HOME`。

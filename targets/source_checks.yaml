@@ -1,5 +1,47 @@
 schema_version: 1
 checks:
+- source_id: jysd-xidian-cjsc
+  company: 长江证券
+  registered_company: 长江证券股份有限公司
+  checked_at: '2026-11-26T03:57:57Z'
+  current_records: 1
+  records_with_jd: 1
+  record_kind: recruitment_notice
+  samples:
+  - source_job_id: '758641'
+    url: https://job.xidian.edu.cn/campus/view/id/758641
+    title: 长江证券2027届校园招聘
+    grad_year: 2027
+    publish_at: '2026-11-23'
+    apply_end: null
+- source_id: jysd-gdut-liby
+  company: 立白
+  registered_company: 广州立白企业集团有限公司
+  checked_at: '2026-11-26T03:57:57Z'
+  current_records: 1
+  records_with_jd: 1
+  record_kind: recruitment_notice
+  samples:
+  - source_job_id: '1021297'
+    url: https://career.gdut.edu.cn/campus/view/id/1021297
+    title: 立白科技集团2027届校园招聘简章 ——年少有为 LI未来
+    grad_year: 2027
+    publish_at: '2026-10-22'
+    apply_end: null
+- source_id: jysd-dlmu-trinasolar
+  company: 天合光能
+  registered_company: 天合光能股份有限公司
+  checked_at: '2026-11-26T03:57:57Z'
+  current_records: 1
+  records_with_jd: 1
+  record_kind: recruitment_notice
+  samples:
+  - source_job_id: '869574'
+    url: https://myjob.dlmu.edu.cn/campus/view/id/869574
+    title: 天合光能股份有限公司2027校园招聘
+    grad_year: null
+    publish_at: '2026-11-11'
+    apply_end: null
 - source_id: campus-tiangong-shijiazhuangyiling
   company: 石家庄以岭
   registered_company: 石家庄以岭药业股份有限公司

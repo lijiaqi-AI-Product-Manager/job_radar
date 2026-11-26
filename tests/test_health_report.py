@@ -93,8 +93,15 @@ def test_standing_health_issue_reuses_only_marked_closed_reports():
     assert health.issue_action([{"number": 31, "state": "closed", "body": health.MARKER},
                                 {"number": 13, "state": "closed", "body": "historical"}], True) == ("reopen", 31)
     assert health.issue_action([{"number": 13, "state": "closed", "body": "historical"}], True) == ("create", None)
-    assert health.issue_action([{"number": 31, "state": "open", "body": "existing"}], True) == ("update", 31)
+    assert health.issue_action([{"number": 31, "state": "open", "body": health.MARKER}], True) == ("update", 31)
     assert health.issue_action([{"number": 31, "state": "open", "body": health.MARKER}], False) == ("close", 31)
+
+
+@pytest.mark.parametrize("bad,expected", [(True, ("reopen", 31)), (False, ("none", None))])
+def test_human_report_is_never_overwritten_or_closed_by_label(bad, expected):
+    issues = [{"number": 82, "state": "open", "body": "企业反馈的独立问题"},
+              {"number": 31, "state": "closed", "body": health.MARKER}]
+    assert health.issue_action(issues, bad) == expected
 
 
 @pytest.mark.parametrize("context", [{"schema_version": 1}, {"schema_version": 1, "expected_source_ids": ["s1"]}])
