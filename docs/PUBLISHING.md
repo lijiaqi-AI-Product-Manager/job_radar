@@ -8,6 +8,8 @@
 
 ## 当前渠道状态
 
+2026-11-26 发布 2.3.10。PyPI 首页正文与 GitHub 主分支 README 一致，两枚公开版本徽章均显示 2.3.10。分别从两个渠道下载的 wheel 和源码包各自 SHA-256 一致，独立技能包与 GitHub 公布的 SHA-256 一致。[GitHub 发行](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.10) · [PyPI 发行](https://pypi.org/project/jobsearchradar/2.3.10/)
+
 2026-11-26 已核对 2.3.9 的 GitHub 和 PyPI 首页、版本徽章、发行文件摘要与安装后代码。[GitHub 发行](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.9) · [PyPI 发行](https://pypi.org/project/jobsearchradar/2.3.9/)
 
 2026-11-23 已发布 `2.3.8`。[GitHub 发行](https://github.com/lijiaqi-AI-Product-Manager/job_radar/releases/tag/v2.3.8) 与 [PyPI](https://pypi.org/project/jobsearchradar/2.3.8/) 的版本、首页介绍和两个安装包摘要均已核对。独立环境的安装检查见[安装指南](INSTALLATION.md)。
