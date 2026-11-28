@@ -12,3 +12,23 @@ entries:
   jd:
     status: none
   notes: 【仅官网首页·未直连验证】官网域名；本次网络环境无法直连验证（部分国内站点在采集环境不可达），日期 2026-10-23。
+- id: reptbattero-wenzhou-social
+  company: 瑞浦兰钧能源股份有限公司
+  product: 温州龙湾社招
+  project_type: 社招
+  cities: [温州]
+  apply_url: https://cn.reptbattero.com/join-us/
+  tracks:
+  - direction: 技术类
+    roles: [FA专家, 海外售前解决方案工程师, 工艺工程师]
+  - direction: 职能类
+    roles: [会计主管, 涉外法务专员]
+  source:
+    type: official_site
+    name: 瑞浦兰钧招聘
+    url: https://cn.reptbattero.com/join-us/
+  as_of: '2026-11-28'
+  jd:
+    status: official_page
+    url: https://cn.reptbattero.com/join-us/
+  notes: 核实时官网列出12个温州龙湾社招职位，含每岗职责、任职要求及申请入口；此处列出代表岗位。官网未公布统一截止日。
