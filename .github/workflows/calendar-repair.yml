@@ -13,27 +13,35 @@ concurrency:
 jobs:
   repair:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
+      JOBRADAR_GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
-      - name: Download published calendar
+      - name: Download verified snapshot set
         run: |
           mkdir -p original repaired
-          gh release download data-latest -D original -p calendar.db
-          cp original/calendar.db repaired/calendar.db
+          uv run python scripts/download_snapshots.py --out original --compressed
+          for name in jobs.db jd_text.db calendar.db; do
+            gzip -dc "original/$name.gz" > "repaired/$name"
+          done
+          cp original/jobs.db.gz original/jd_text.db.gz repaired/
       - name: Preserve original snapshot
         uses: actions/upload-artifact@v7.0.2
         with:
           name: calendar-before-correction
-          path: original/calendar.db
+          path: original/calendar.db.gz
           retention-days: 14
       - name: Apply reviewed corrections
+        id: apply
+        shell: bash
         run: |
-          uv run python scripts/apply_calendar_corrections.py --db repaired/calendar.db --apply
-          gzip -9 -k repaired/calendar.db
-      - name: Publish corrected calendar
-        run: gh release upload data-latest repaired/calendar.db repaired/calendar.db.gz --clobber
+          uv run python scripts/apply_calendar_corrections.py --db repaired/calendar.db --apply | tee calendar-corrections.json
+          jq -er '"corrected=" + (.corrected | tostring)' calendar-corrections.json >> "$GITHUB_OUTPUT"
+          gzip -n -9 -k repaired/calendar.db
+      - name: Publish verified compatible snapshots
+        if: steps.apply.outputs.corrected != '0'
+        run: uv run python scripts/publish_snapshots.py --home repaired --restored-manifest original/download-manifest.json

@@ -5,6 +5,7 @@ import base64
 import gzip
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -12,6 +13,7 @@ import tempfile
 from pathlib import Path
 from time import sleep
 
+from jobradar.local import snapshot_digests
 from jobradar.snapshot_manifest import digest_file
 from jobradar.store.validate import validate_database
 
@@ -57,6 +59,23 @@ def gh(*args, capture=False):
     return json.loads(result.stdout) if capture else None
 
 
+def check_restored_base(release, restored):
+    """当前公开三库必须与本次恢复时的摘要一致。首次发布可暂存不可变附件。"""
+    if not isinstance(restored, dict):
+        raise ValueError("恢复清单格式无效")
+    current = snapshot_digests(release)
+    if restored == {}:
+        if current.generation or set(ALIASES).intersection(current):
+            raise ValueError("发行渠道已有数据库，不能按首次采集发布")
+        return
+    for name in FILES:
+        digest = restored.get(name)
+        if not isinstance(digest, str) or not re.fullmatch(r"sha256:[a-f0-9]{64}", digest):
+            raise ValueError(f"恢复清单缺少有效的 {name} 摘要")
+        if current.get(name) != digest:
+            raise ValueError(f"{name} 在恢复后已换代，停止发布")
+
+
 def publish_aliases(home, names=ALIASES):
     """逐个核对兼容附件；瞬时失败后先复查，避免删除已经完成的文件。"""
     names = tuple(names)
@@ -97,7 +116,7 @@ def finish_publication(home, previous, staging):
     return aliases
 
 
-def publish(home):
+def publish(home, restored_manifest=None):
     import sqlite3
     from contextlib import closing
 
@@ -114,9 +133,20 @@ def publish(home):
     from jobradar.text_stream import export_text_stream, verify_text_stream
     export_text_stream(home / "jd_text.compact.db", home / "jd_text.rows.jsonl.xz")
     verify_text_stream(home / "jd_text.compact.db", home / "jd_text.rows.jsonl.xz")
-    manifest = make_manifest(home)
+    publish_generation(home, make_manifest(home), restored_manifest)
+
+
+def publish_generation(home, manifest, restored_manifest):
     endpoint = f"repos/{REPO}/releases/tags/data-latest"
-    previous = gh("api", endpoint, capture=True)
+    restored = json.loads(restored_manifest.read_text(encoding="utf-8")) if restored_manifest is not None else None
+
+    def read_release():
+        release = gh("api", endpoint, capture=True)
+        if restored_manifest is not None:
+            check_restored_base(release, restored)
+        return release
+
+    previous = read_release()
     assets = {a["name"]: a for a in previous.get("assets", [])}
     with tempfile.TemporaryDirectory(prefix="snapshot-publish-", dir=home.parent) as directory:
         staging = Path(directory)
@@ -132,11 +162,12 @@ def publish(home):
                 pending.append(str(dest))
         if pending:
             gh("release", "upload", "data-latest", *pending, "--repo", REPO)
-        verified = gh("api", endpoint, capture=True)
+        verified = read_release()
         actual = {a["name"]: a for a in verified.get("assets", [])}
-        for _,item in publication_items(manifest):
-            if actual.get(item["asset"], {}).get("digest") != "sha256:" + item["sha256"]:
-                raise ValueError("远端不可变文件摘要校验失败，尚未切换清单")
+        for _, item in publication_items(manifest):
+            asset = actual.get(item["asset"], {})
+            if asset.get("digest") != "sha256:" + item["sha256"] or asset.get("size") != item["size"]:
+                raise ValueError("远端不可变文件摘要或大小校验失败，尚未切换清单")
         marker = base64.b64encode(json.dumps(manifest, sort_keys=True).encode()).decode()
         notes = staging / "notes.md"
         notes.write_text("# Latest verified data\n\n中国招聘岗位、JD正文与招聘日历；三库通过真实数据门禁后成套发布。\n\n"
@@ -152,8 +183,10 @@ def publish(home):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--home", type=Path, required=True)
+    parser.add_argument("--restored-manifest", type=Path,
+                        help="恢复前代三库时生成的 download-manifest.json")
     args = parser.parse_args()
-    publish(args.home)
+    publish(args.home, args.restored_manifest)
 
 
 if __name__ == "__main__":

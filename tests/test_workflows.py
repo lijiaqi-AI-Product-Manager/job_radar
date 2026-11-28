@@ -206,3 +206,16 @@ def test_daily_restore_can_use_dedicated_metadata_authorization():
     step = _step("Restore previous databases")
     assert step.get("env", {}).get("JOBRADAR_GITHUB_TOKEN") == "${{ github.token }}"
     assert not step.get("continue-on-error")
+
+
+def test_all_snapshot_writers_use_the_manifest_from_their_restore_step():
+    restore = _step("Restore previous databases")["run"]
+    assert "--allow-first-publication" in restore
+    assert "gh release view" not in restore
+    publish = _step("Publish data-latest")["run"]
+    assert "--restored-manifest data/download-manifest.json" in publish
+    for file in ("calendar-repair.yml", "source-recovery.yml", "reviewed-data-repair.yml"):
+        job = next(iter(yaml.safe_load((ROOT / ".github/workflows" / file).read_text(encoding="utf-8"))["jobs"].values()))
+        run = "\n".join(step.get("run", "") for step in job["steps"])
+        assert "download_snapshots.py --out original --compressed" in run
+        assert "--restored-manifest original/download-manifest.json" in run

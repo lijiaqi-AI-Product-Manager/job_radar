@@ -1,4 +1,6 @@
+import base64
 import importlib.util
+import json
 import subprocess
 from pathlib import Path
 
@@ -9,6 +11,90 @@ from jobradar.local import snapshot_digests
 spec = importlib.util.spec_from_file_location("publish_snapshots", Path(__file__).parents[1] / "scripts/publish_snapshots.py")
 publisher = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(publisher)
+
+spec = importlib.util.spec_from_file_location("download_snapshots", Path(__file__).parents[1] / "scripts/download_snapshots.py")
+downloader = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(downloader)
+
+
+def test_first_crawl_requires_absence_of_both_local_and_published_history(tmp_path, monkeypatch):
+    recorded = tmp_path / "release-snapshot.json"
+    recorded.write_text("{}")
+    monkeypatch.setattr(subprocess, "check_output", lambda *a, **kw: pytest.fail("known history"))
+    assert not downloader.first_publication(recorded)
+    recorded.unlink()
+    for tags, expected in [("data-archive\n", False), ("data-latest\n", False), ("", True)]:
+        monkeypatch.setattr(subprocess, "check_output", lambda *a, value=tags, **kw: value)
+        assert downloader.first_publication(recorded) is expected
+
+    def offline(*args, **kwargs):
+        raise subprocess.CalledProcessError(1, "gh")
+
+    monkeypatch.setattr(subprocess, "check_output", offline)
+    with pytest.raises(subprocess.CalledProcessError):
+        downloader.first_publication(recorded)
+
+
+def test_publication_requires_the_three_restored_database_digests(tmp_path):
+    for name in publisher.FILES:
+        (tmp_path / name).write_bytes(name.encode())
+    manifest = publisher.make_manifest(tmp_path)
+    marker = base64.b64encode(json.dumps(manifest).encode()).decode()
+    current = {"body": "<!--jobradar-snapshot:" + marker + "-->", "assets": []}
+    restored = dict(snapshot_digests(current))
+    publisher.check_restored_base(current, restored)
+    for name in publisher.FILES:
+        other = {**restored, name: "sha256:" + "0" * 64}
+        with pytest.raises(ValueError):
+            publisher.check_restored_base(current, other)
+        with pytest.raises(ValueError):
+            publisher.check_restored_base(current, {k: v for k, v in restored.items() if k != name})
+    for bad in (None, [], {}, {name: "" for name in publisher.FILES}):
+        with pytest.raises(ValueError):
+            publisher.check_restored_base(current, bad)
+
+
+def test_first_publication_rejects_existing_legacy_databases_but_allows_staging():
+    publisher.check_restored_base({"assets": [{"name": "new-content-jobs.db.gz"}]}, {})
+    for name in publisher.ALIASES:
+        with pytest.raises(ValueError):
+            publisher.check_restored_base({"assets": [{"name": name, "digest": ""}]}, {})
+
+
+@pytest.mark.parametrize("concurrent_publication", [False, True])
+def test_publish_rechecks_base_before_switching_manifest(tmp_path, monkeypatch, concurrent_publication):
+    def release(content):
+        return {"assets": [
+            {"name": name, "digest": "sha256:" + content * 64} for name in publisher.FILES
+        ]}
+
+    previous = release("a")
+    restored = tmp_path / "download-manifest.json"
+    restored.write_text(json.dumps(dict(snapshot_digests(previous))), encoding="utf-8")
+    for name in publisher.FILES:
+        (tmp_path / name).write_bytes(name.encode())
+    manifest = publisher.make_manifest(tmp_path)
+    next_release = release("b") if concurrent_publication else release("a")
+    next_release["assets"].extend({
+        "name": item["asset"], "digest": "sha256:" + item["sha256"], "size": item["size"],
+    } for item in manifest["files"].values())
+    snapshots = iter([previous, next_release])
+    commands = []
+
+    def gh(*args, **kwargs):
+        if args[0] == "api":
+            return next(snapshots)
+        commands.append(args[1])
+
+    monkeypatch.setattr(publisher, "gh", gh)
+    monkeypatch.setattr(publisher, "finish_publication", lambda *args: commands.append("aliases") or [])
+    if concurrent_publication:
+        with pytest.raises(ValueError, match="在恢复后已换代"):
+            publisher.publish_generation(tmp_path, manifest, restored)
+        assert commands == ["upload"]
+    else:
+        publisher.publish_generation(tmp_path, manifest, restored)
+        assert commands == ["upload", "edit", "aliases"]
 
 
 def test_manifest_is_content_addressed_and_stable(tmp_path):
