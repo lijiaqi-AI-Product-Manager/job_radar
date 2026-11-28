@@ -26,6 +26,8 @@ jobs:
       - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --frozen
       - name: Download coherent originals and preserve backup
+        env:
+          JOBRADAR_GITHUB_TOKEN: ${{ github.token }}
         run: |
           mkdir -p original data
           uv run python scripts/download_snapshots.py --out original --compressed
@@ -56,7 +58,7 @@ jobs:
           for name in jobs.db jd_text.db calendar.db; do gzip -n -9 -k "data/public/$name"; done
       - name: Publish complete verified generation
         run: |
-          uv run python scripts/publish_snapshots.py --home data/public
+          uv run python scripts/publish_snapshots.py --home data/public --restored-manifest original/download-manifest.json
           gh release upload data-latest source-recovery-report.json cohort-correction-report.json --clobber
       - uses: actions/upload-artifact@v7.0.2
         with:

@@ -74,16 +74,24 @@ jobs:
       - name: Restore previous databases
         env:
           JOBRADAR_GITHUB_TOKEN: ${{ github.token }}
-        # 历史是核心资产：Release 存在但下载失败时必须失败退出，绝不能"从零开始"后覆盖历史
+        shell: bash
         run: |
-          mkdir -p data
-          if gh release view data-latest >/dev/null 2>&1; then
-            uv run python scripts/download_snapshots.py --out data
-            python3 -c "import sqlite3; c=sqlite3.connect('data/jobs.db'); assert c.execute('PRAGMA quick_check').fetchone()[0]=='ok'; print('restored jobs:', c.execute('SELECT COUNT(*) FROM job').fetchone()[0])"
+          uv run python scripts/download_snapshots.py --out data --allow-first-publication
+          if [[ "$(cat data/download-manifest.json)" == '{}' ]]; then
+            printf '0\n' > restored_count.txt
           else
-            echo "no data-latest release yet, starting fresh"
+            python3 - <<'PY'
+          import sqlite3
+          from pathlib import Path
+
+          with sqlite3.connect("file:data/jobs.db?mode=ro", uri=True) as conn:
+              if conn.execute("PRAGMA quick_check").fetchall() != [("ok",)]:
+                  raise SystemExit("恢复的岗位库未通过完整性检查")
+              count = conn.execute("SELECT COUNT(*) FROM job").fetchone()[0]
+          Path("restored_count.txt").write_text(str(count))
+          print("restored jobs:", count)
+          PY
           fi
-          python3 -c "import sqlite3,os; p='data/jobs.db'; print(sqlite3.connect(p).execute('SELECT COUNT(*) FROM job').fetchone()[0] if os.path.exists(p) else 0)" > restored_count.txt
 
       - name: Preserve snapshots before manual recovery
         if: github.event_name == 'workflow_dispatch'
@@ -176,11 +184,13 @@ jobs:
         shell: bash
         run: |
           python3 -c "import sqlite3; n=sqlite3.connect('data/jobs.db').execute('SELECT COUNT(*) FROM job').fetchone()[0]; old=int(open('restored_count.txt').read()); assert n >= old, 'job rows decreased; refusing to publish'"
-          gh release view data-latest >/dev/null 2>&1 || gh release create data-latest --title "Latest data" --notes "Verified recruiting snapshots" --latest=false
           uv run python scripts/export_public_databases.py --home data --out data/public
           uv run python scripts/release_check.py --home data/public
           gzip -n -9 -k -f data/public/jobs.db data/public/jd_text.db data/public/calendar.db
-          uv run python scripts/publish_snapshots.py --home data/public
+          if [[ "$(cat data/download-manifest.json)" == '{}' ]]; then
+            gh release create data-latest --title "Latest data" --notes "Verified recruiting snapshots" --latest=false
+          fi
+          uv run python scripts/publish_snapshots.py --home data/public --restored-manifest data/download-manifest.json
 
       - name: Preserve unpublished snapshots
         if: failure() && steps.publish_data.outcome == 'failure'
